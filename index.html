@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCRD 戰隊戰作業轉換器</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1><span class="icon">⚔️</span> PCRD 戰隊戰小工具</h1>
+            <p class="subtitle">戰隊戰作業轉換與初步整理工具</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" onclick="openTab('converter')">作業轉換器</button>
+            <button class="tab-btn" onclick="openTab('preprocessor')">網頁作業初步整理</button>
+        </nav>
+
+        <!-- 分頁 1: 作業轉換器 -->
+        <div id="converter" class="tab-content active">
+            <section class="config-section">
+                <div class="glass-card">
+                    <h3>角色設定 (由上至下 1-5 號位)</h3>
+                    <div class="char-inputs">
+                        <input type="text" id="char1" placeholder="1號位 (前)" value="">
+                        <input type="text" id="char2" placeholder="2號位" value="">
+                        <input type="text" id="char3" placeholder="3號位" value="">
+                        <input type="text" id="char4" placeholder="4號位" value="">
+                        <input type="text" id="char5" placeholder="5號位 (後)" value="">
+                    </div>
+                    <div class="control-row">
+                        <div class="helper-text">貼上原始作業後，系統會自動嘗試解析角色名稱</div>
+                        <label class="switch-container">
+                            <input type="checkbox" id="smartSort" checked>
+                            <span class="switch-label">智能站位映射 (位元自動校對站位)</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <main class="main-content">
+                <div class="input-area">
+                    <div class="label-row">
+                        <label for="sourceText">原始作業 (Format 2)</label>
+                        <button class="btn-clear" onclick="clearInput()">清空</button>
+                    </div>
+                    <textarea id="sourceText" placeholder="請在此貼上 OOXX 格式的作業...&#10;5★日和（薩拉薩利亞）&#10;5★格蕾斯...&#10;...&#10;開場：...&#10;108 堇→ XXXOX"></textarea>
+                </div>
+
+                <div class="divider">
+                    <div class="arrow">→</div>
+                </div>
+
+                <div class="output-area">
+                    <div class="label-row">
+                        <label for="resultText">轉換結果 (Format 1)</label>
+                        <button class="btn-copy" onclick="copyResult()">一鍵複製</button>
+                    </div>
+                    <div id="resultPreview" class="result-box" readonly></div>
+                    <textarea id="hiddenResult" style="display:none"></textarea>
+                </div>
+            </main>
+        </div>
+
+        <!-- 分頁 2: 預處理器 -->
+        <div id="preprocessor" class="tab-content">
+            <main class="main-content">
+                <div class="input-area">
+                    <div class="label-row">
+                        <label>簡體/混亂原始作業</label>
+                        <button class="btn-clear" onclick="clearPre()">清空</button>
+                    </div>
+                    <textarea id="preSource" placeholder="請在此貼上中國討論區的簡體或格式混亂作業..."></textarea>
+                </div>
+                <div class="divider">
+                    <button class="btn-convert-main" onclick="runPreCleanup()">🪄一鍵整理</button>
+                </div>
+                <div class="output-area">
+                    <div class="label-row">
+                        <label>整理後結果 (繁體/標準化)</label>
+                        <button class="btn-copy" onclick="copyPreToMain()">複製到轉換器</button>
+                    </div>
+                    <div id="preResult" class="result-box" readonly></div>
+                </div>
+            </main>
+        </div>
+
+        <footer>
+            <p>Made with ❤️ for PCRD Clan Battle Specialists</p>
+        </footer>
+    </div>
+    <script src="index.js?v=3.6"></script>
+</body>
+</html>
