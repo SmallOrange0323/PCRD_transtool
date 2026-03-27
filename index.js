@@ -1,20 +1,7 @@
 // --- 1. 基礎數據與配置已遷移至 data.js ---
 
+// --- 2. 繁簡轉換與工具函式已遷移至 utils.js ---
 
-const S2T_STR_S = "队战业开场预设点击关连打后转换个别角色说明总凱留帆希萝茜薇欧莉特萨拉亚里伦蒂娜始源琴堇普蕾西亚夏若菜栞游侠菲娅凤凰涅妃星界咏装圣学园陆王实装诅咒灵风万圣华镜妮卡似花矛依里备注兰忍伤害阶段自动全对应輸出手动簡單容易優化調整補充貓羅龍員";
-const S2T_STR_T = "隊戰業開場預設點擊關連打後轉換個別角色說明總凱留帆希蘿茜薇歐莉特薩拉亞里倫蒂娜始源琴堇普蕾西亞夏若菜栞遊俠菲婭鳳凰涅妃星界泳裝聖學園陸王實裝詛咒靈風萬聖華鏡妮卡似花矛依里備註蘭忍傷害階段自動全對應輸出手動簡單容易優化調整補充貓羅龍員";
-const S2T_MAP = {};
-for(let i=0; i<S2T_STR_S.length; i++) { S2T_MAP[S2T_STR_S[i]] = S2T_STR_T[i]; }
-const COMMON_S2T = { "发": "發", "门": "門", "无": "無", "报": "報", "记": "記", "时": "時", "间": "間", "轴": "軸", "对": "對", "态": "態", "备": "備" };
-Object.assign(S2T_MAP, COMMON_S2T);
-
-function s2t(str) {
-    if (!str) return "";
-    let res = str.split('').map(char => S2T_MAP[char] || char).join('');
-    // 全形數字轉半形
-    res = res.replace(/[０-９]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0));
-    return res;
-}
 
 function getPosition(name) {
     if (!name) return 999;
