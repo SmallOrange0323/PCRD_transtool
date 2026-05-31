@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCR Tool 數據整合演示</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PCR Tool <span class="accent">Data Hub</span></h1>
+            <p>台版遊戲數據即時追蹤與整合演示</p>
+        </header>
+
+        <section class="status-grid">
+            <div class="card glass">
+                <h3>數據版本</h3>
+                <div id="version-val" class="loading-spinner"></div>
+                <p class="label">Truth Version</p>
+            </div>
+            <div class="card glass">
+                <h3>最後更新</h3>
+                <div id="time-val" class="loading-spinner"></div>
+                <p class="label">Update Time</p>
+            </div>
+            <div class="card glass">
+                <h3>數據校驗</h3>
+                <div id="hash-val" class="loading-spinner"></div>
+                <p class="label">MD5 Hash</p>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <div class="card glass info-card">
+                <h2>整合方案：自動化同步流水線</h2>
+                <div class="workflow">
+                    <div class="step">
+                        <div class="icon">🔍</div>
+                        <p>1. 檢查更新 (API)</p>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="step">
+                        <div class="icon">📥</div>
+                        <p>2. 下載 DB (Brotli)</p>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="step">
+                        <div class="icon">⚡</div>
+                        <p>3. 數據解壓與讀取</p>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="step">
+                        <div class="icon">🚀</div>
+                        <p>4. 前端展示</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card glass search-card">
+                <h2>角色數據預覽</h2>
+                <div class="search-box">
+                    <input type="text" id="unit-search" placeholder="輸入角色名稱... (目前為模擬數據)">
+                    <button id="search-btn">查詢</button>
+                </div>
+                <div id="unit-results" class="results-grid">
+                    <!-- 角色卡片將顯示在這邊 -->
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>數據由 wthee/pcr-tool 提供 · 演示由 Antigravity 構建</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
