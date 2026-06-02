@@ -334,17 +334,53 @@ const QuestMapModule = {
                 videoFrame.setAttribute('src', videoUrl);
             }
 
-            // 動態拉取本章節的對白大綱 (我們由故事背景來撰寫本地精彩描述與大綱，做為台詞的展現)
-            dialogueEl.innerHTML = `
-                <div class="dialogue-line">
-                    <span class="speaker">【系統大綱】</span>
-                    <span class="speech-text">「${story.chapter} - ${story.title}」故事正式拉開序幕！玩家可透過右側影片嵌入視窗直接觀看該話的繁體中文完整配音與劇情演出。</span>
-                </div>
-                <div class="dialogue-line" style="margin-top: 12px; border-top: 1px dashed rgba(255, 255, 255, 0.1); padding-top: 8px;">
-                    <span class="speaker">⚖️ 冒險手札：</span>
-                    <span class="speech-text" style="color: #ffa94d;">主角在此處獲得了力量的指引，美食殿堂的羈絆得到了進一步的昇華。</span>
-                </div>
-            `;
+            // 本地載入 So-net 官方繁中逐字劇情文本對白
+            dialogueEl.innerHTML = `<div class="dialogue-line"><span class="speaker">【系統】</span><span class="speech-text" style="color: #ffa94d;">正在從硬碟載入本地 So-net 官方劇情對白...</span></div>`;
+            
+            fetch(`./story/${storyId}.json`)
+                .then(res => {
+                    if (!res.ok) throw new Error("檔案不存在");
+                    return res.json();
+                })
+                .then(dialogueList => {
+                    if (dialogueList && dialogueList.length > 0) {
+                        let html = "";
+                        dialogueList.forEach(line => {
+                            let speakerColor = "#4dadff"; // 預設藍色
+                            if (line.name === "佩可莉姆") speakerColor = "#ff6b9d"; // 櫻花粉
+                            if (line.name === "凱留") speakerColor = "#cc5cff"; // 貓咪紫
+                            if (line.name === "可可蘿") speakerColor = "#4dfa7b"; // 嫩芽綠
+                            if (line.name === "旁白" || line.name === "【系統】") speakerColor = "#ffa94d"; // 系統橘
+                            
+                            html += `
+                                <div class="dialogue-line" style="margin-bottom: 12px; line-height: 1.6;">
+                                    <span class="speaker" style="color: ${speakerColor}; font-weight: 700; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 2px;">
+                                        【${line.name}】
+                                    </span>
+                                    <span class="speech-text" style="color: #fff; margin-left: 6px; word-break: break-all;">
+                                        ${line.words}
+                                    </span>
+                                </div>
+                            `;
+                        });
+                        dialogueEl.innerHTML = html;
+                    } else {
+                        throw new Error("格式空白");
+                    }
+                })
+                .catch(err => {
+                    console.warn("[QuestMapModule] 無法讀取本地對白檔案, 啟用備用大綱描述:", err);
+                    dialogueEl.innerHTML = `
+                        <div class="dialogue-line">
+                            <span class="speaker">【系統大綱】</span>
+                            <span class="speech-text">「${story.chapter} - ${story.title}」故事正式拉開序幕！玩家可透過右側影片嵌入視窗直接觀看該話的繁體中文完整配音與劇情演出。</span>
+                        </div>
+                        <div class="dialogue-line" style="margin-top: 12px; border-top: 1px dashed rgba(255, 255, 255, 0.1); padding-top: 8px;">
+                            <span class="speaker">⚖️ 冒險手札：</span>
+                            <span class="speech-text" style="color: #ffa94d;">主角在此處獲得了力量的指引，美食殿堂的羈絆得到了進一步的昇華。請先執行 download_stories.py 下載官方繁中文本。</span>
+                        </div>
+                    `;
+                });
         }
     },
 
