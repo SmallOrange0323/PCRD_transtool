@@ -39,6 +39,7 @@
         <div class="nav-tabs">
             <button id="tab-cb-btn" class="tab-btn active" onclick="switchTab('clan-battle')">戰隊戰</button>
             <button id="tab-characters-btn" class="tab-btn" onclick="switchTab('characters')">角色圖鑑</button>
+            <button id="tab-map-btn" class="tab-btn" onclick="switchTab('map')">劇情地圖</button>
             <button id="tab-events-btn" class="tab-btn" onclick="switchTab('events')">活動日曆</button>
             <button id="tab-stats-btn" class="tab-btn" onclick="switchTab('stats')">作業統計</button>
         </div>
@@ -61,10 +62,13 @@
         <!-- 分頁 2: 角色 -->
         <div id="characters-tab" class="tab-content"></div>
 
-        <!-- 分頁 3: 活動 -->
+        <!-- 分頁 3: 劇情地圖 -->
+        <div id="map-tab" class="tab-content"></div>
+
+        <!-- 分頁 4: 活動 -->
         <div id="events-tab" class="tab-content"></div>
 
-        <!-- 分頁 4: 作業統計 -->
+        <!-- 分頁 5: 作業統計 -->
         <div id="stats-tab" class="tab-content"></div>
     </main>
 
@@ -80,6 +84,7 @@
     <script src="db.js"></script>
     <script src="characters.js"></script>
     <script src="clan-battle.js"></script>
+    <script src="map.js"></script>
     <script src="events.js"></script>
     <script src="usage-stats.js"></script>
 
@@ -106,6 +111,8 @@
                 ClanBattleModule.render();
             } else if (tabId === 'characters' && document.getElementById('characters-tab').innerHTML.trim() === '') {
                 CharactersModule.render();
+            } else if (tabId === 'map' && document.getElementById('map-tab').innerHTML.trim() === '') {
+                QuestMapModule.render();
             } else if (tabId === 'events' && document.getElementById('events-tab').innerHTML.includes('loading-mini')) {
                 EventsModule.render();
             } else if (tabId === 'stats' && document.getElementById('stats-tab').innerHTML.trim() === '') {
