@@ -718,14 +718,14 @@ body {
 }
 
 /* ==========================================================================
-   🗺️ 劇情地圖模組 (QuestMapModule) 專屬樣式
+   🗺️ 劇情放映室 (QuestMapModule) 專屬樣式
    ========================================================================== */
 
 .map-container {
     padding: 30px;
     margin-bottom: 2rem;
     border-radius: 24px;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.01);
     border: 1px solid var(--glass-border);
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
 }
@@ -780,139 +780,110 @@ body {
     box-shadow: 0 6px 18px rgba(255, 107, 157, 0.3);
 }
 
-/* 地圖佈局 */
+/* 佈局：電影放映區 vs 風琴目錄 */
 .map-layout {
     display: grid;
-    grid-template-columns: 1fr 360px;
+    grid-template-columns: 1fr 380px;
     gap: 30px;
-    height: 520px;
+    height: 580px;
     margin-bottom: 30px;
 }
 
-/* 地圖視覺區 */
+/* 左側電影放映區 */
 .map-visual-area {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-    background: radial-gradient(circle at 50% 50%, #151d33 0%, #060910 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
     height: 100%;
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8), 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 20px;
 }
 
-.world-map {
-    width: 100%;
+.cinema-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     height: 100%;
+}
+
+.cinema-screen {
+    background: #000;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+
+.video-container {
     position: relative;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
     overflow: hidden;
 }
 
-/* 精美古風羅盤與星軌背景 */
-.world-map::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 320px;
-    height: 320px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='rgba(255,169,77,0.03)' stroke-width='0.5'/%3E%3Ccircle cx='50' cy='50' r='35' fill='none' stroke='rgba(255,169,77,0.02)' stroke-width='0.3'/%3E%3Cpath d='M50,5 L50,95 M5,50 L95,50' stroke='rgba(255,169,77,0.02)' stroke-width='0.3'/%3E%3Cpath d='M20,20 L80,80 M20,80 L80,20' stroke='rgba(255,169,77,0.01)' stroke-width='0.2'/%3E%3C/svg%3E") no-repeat center;
-    background-size: contain;
-    pointer-events: none;
-}
-
-.map-grid {
+.video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    z-index: 1;
 }
 
-/* 動態地標點 */
-.map-landmark-node {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    z-index: 10;
-    transition: var(--transition);
+.cinema-meta {
+    flex: 1;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
 }
 
-.landmark-dot {
-    width: 18px;
-    height: 18px;
-    background: #ffa94d;
-    border: 3px solid #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 12px rgba(255, 169, 77, 0.8);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.cinema-meta::-webkit-scrollbar {
+    width: 4px;
 }
 
-.landmark-pulse {
-    position: absolute;
-    top: -11px;
-    left: -11px;
-    width: 40px;
-    height: 40px;
-    border: 2px solid rgba(255, 169, 77, 0.4);
-    border-radius: 50%;
-    animation: markerPulse 2s infinite ease-out;
-    pointer-events: none;
+.cinema-meta::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
 }
 
-.landmark-label {
-    position: absolute;
-    top: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(10, 14, 26, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 5px 12px;
+.cinema-ch-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ch-tag {
+    background: var(--accent-gradient);
+    padding: 4px 12px;
     border-radius: 8px;
     font-size: 0.75rem;
-    font-weight: 600;
-    white-space: nowrap;
-    color: #fff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: var(--transition);
-}
-
-/* 地標聚焦與 Hover 狀態 */
-.map-landmark-node:hover .landmark-dot {
-    transform: scale(1.2);
-    background: #ff6b9d;
-    box-shadow: 0 0 16px rgba(255, 107, 157, 0.9);
-}
-
-.map-landmark-node.focused .landmark-dot {
-    background: #ff6b9d;
-    transform: scale(1.4);
-    border-color: #fff;
-    box-shadow: 0 0 25px rgba(255, 107, 157, 1);
-}
-
-.map-landmark-node.focused .landmark-pulse {
-    border-color: rgba(255, 107, 157, 0.6);
-}
-
-.map-landmark-node.focused .landmark-label {
-    background: var(--accent-gradient);
-    border-color: transparent;
-    color: #fff;
     font-weight: 700;
-    box-shadow: 0 4px 12px rgba(255, 107, 157, 0.3);
+    color: #fff;
 }
 
-@keyframes markerPulse {
-    0% { transform: scale(0.4); opacity: 1; }
-    100% { transform: scale(1.6); opacity: 0; }
+.summary-section {
+    text-align: left;
 }
 
-/* 劇情控制台 */
+.summary-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 8px;
+}
+
+.summary-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* 右側：雙層風琴式摺疊目錄 */
 .map-control-panel {
     display: flex;
     flex-direction: column;
@@ -952,63 +923,127 @@ body {
     background: rgba(255, 255, 255, 0.2);
 }
 
-.story-list {
+/* 風琴選單項目樣式 */
+.accordion-container {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
+.accordion-item {
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.accordion-item.active {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    cursor: pointer;
+    transition: var(--transition);
+    user-select: none;
+}
+
+.accordion-header:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.acc-header-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.acc-folder-icon {
+    font-size: 1.1rem;
+}
+
+.acc-ch-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #fff;
+}
+
+.acc-count {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+/* 子列表風琴式展開動畫 */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 10px;
+}
+
+.accordion-item.active .accordion-content {
+    padding: 8px 10px;
+}
+
+/* 話數子項樣式 */
 .story-item {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px 14px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    border-radius: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
     cursor: pointer;
+    border: 1px solid transparent;
     transition: var(--transition);
 }
 
 .story-item:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.1);
-    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.04);
+    transform: translateX(4px);
 }
 
 .story-item.active {
-    background: rgba(255, 107, 157, 0.08);
-    border-color: rgba(255, 107, 157, 0.3);
-    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.1);
+    background: rgba(255, 107, 157, 0.06);
+    border-color: rgba(255, 107, 157, 0.2);
 }
 
-.story-ch-badge {
-    background: rgba(255, 255, 255, 0.06);
-    border-radius: 8px;
-    padding: 4px 8px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #ffa94d;
-    min-width: 65px;
-    text-align: center;
+.story-dot {
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: var(--transition);
 }
 
-.story-item.active .story-ch-badge {
-    background: rgba(255, 107, 157, 0.2);
-    color: #ff6b9d;
+.story-item.active .story-dot {
+    background: #ff6b9d;
+    box-shadow: 0 0 8px #ff6b9d;
+    transform: scale(1.3);
 }
 
 .story-item-content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 1px;
     text-align: left;
     overflow: hidden;
 }
 
 .story-item-ch {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--text-secondary);
 }
 
@@ -1021,194 +1056,168 @@ body {
     text-overflow: ellipsis;
 }
 
-/* 劇情詳細抽屜面板 */
-.story-detail-drawer {
-    border-radius: 20px;
-    padding: 25px;
-    margin-top: 15px;
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--glass-border);
-    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.drawer-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding-bottom: 15px;
-}
-
-.drawer-title-row {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.ch-tag {
-    background: var(--accent-gradient);
-    padding: 4px 12px;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #fff;
-}
-
-.btn-close-drawer {
-    background: none;
-    border: none;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.btn-close-drawer:hover {
-    color: #ff6b6b;
-}
-
-.drawer-body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-}
-
-.drawer-info-col {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.landmark-info-card {
-    padding: 18px;
-    border-radius: 15px;
-    background: rgba(0, 0, 0, 0.2) !important;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-}
-
-.landmark-title {
-    font-weight: 700;
-    font-size: 0.95rem;
-    color: #ffa94d;
-    margin-bottom: 8px;
-    text-align: left;
-}
-
-.landmark-desc {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin: 0;
-    text-align: left;
-}
-
-/* 經典場景節錄 */
-.classic-dialogue {
-    flex: 1;
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    background: rgba(0, 0, 0, 0.25) !important;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    max-height: 220px;
-    overflow-y: auto;
-}
-
-.dialogue-header {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--accent-color);
-    margin-bottom: 12px;
-    text-align: left;
-}
-
-.dialogue-text {
-    flex: 1;
-    text-align: left;
-    overflow-y: auto;
-    font-size: 0.85rem;
-    line-height: 1.6;
-    padding-right: 5px;
-}
-
-.dialogue-text::-webkit-scrollbar {
-    width: 4px;
-}
-
-.dialogue-text::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.dialogue-line {
-    margin-bottom: 10px;
-}
-
-.speaker {
-    font-weight: 700;
-    color: #4dadff;
-    margin-right: 6px;
-}
-
-.speech-text {
-    color: #fff;
-}
-
-/* 影片區 */
-.drawer-video-col {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.2) !important;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-}
-
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 ratio */
-    height: 0;
-    overflow: hidden;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-    background: #000;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.video-tip {
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    margin-top: 10px;
-    text-align: center;
-}
-
 /* RWD 適應 */
 @media (max-width: 992px) {
     .map-layout {
         grid-template-columns: 1fr;
         height: auto;
     }
-    .map-visual-area {
-        height: 380px;
-    }
-    .drawer-body {
-        grid-template-columns: 1fr;
-    }
 }
+
+/* ====================================================
+   🎬 主線劇情逐字台詞看板與沉浸式氣泡樣式
+   ==================================================== */
+
+.dialogue-section {
+    width: 100%;
+}
+
+.dialogue-toggle-btn {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+    padding: 10px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: var(--transition);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dialogue-toggle-btn:hover {
+    background: rgba(255, 107, 157, 0.08);
+    border-color: rgba(255, 107, 157, 0.3);
+    box-shadow: 0 0 12px rgba(255, 107, 157, 0.15);
+    transform: translateY(-1px);
+}
+
+.dialogue-toggle-btn:active {
+    transform: translateY(1px);
+}
+
+/* 磨砂玻璃對白看板 */
+.dialogue-board {
+    border-radius: 14px;
+    background: rgba(10, 14, 26, 0.45) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: var(--transition);
+}
+
+/* 自訂精細高科技滾動條 */
+.dialogue-board::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dialogue-board::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.dialogue-board::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+}
+
+.dialogue-board::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 107, 157, 0.2);
+}
+
+/* 基礎對白行 */
+.dialogue-line {
+    margin-bottom: 14px;
+}
+
+.dialogue-line:last-child {
+    margin-bottom: 0;
+}
+
+.dialogue-speaker {
+    display: inline-block;
+    padding-left: 4px;
+    margin-bottom: 3px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 700;
+}
+
+.dialogue-bubble {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* 🌸 說話者特色配色與發光特效 🌸 */
+
+/* 佩可莉姆 (橘黃暖色) */
+.role-pecorine .dialogue-speaker {
+    color: #ffa94d;
+    text-shadow: 0 0 8px rgba(255, 169, 77, 0.3);
+}
+.role-pecorine .dialogue-bubble {
+    background: rgba(255, 169, 77, 0.05);
+    border-color: rgba(255, 169, 77, 0.12);
+}
+
+/* 可可蘿 (清新柔綠) */
+.role-kokkoro .dialogue-speaker {
+    color: #4dfa7b;
+    text-shadow: 0 0 8px rgba(77, 250, 123, 0.3);
+}
+.role-kokkoro .dialogue-bubble {
+    background: rgba(77, 250, 123, 0.05);
+    border-color: rgba(77, 250, 123, 0.12);
+}
+
+/* 凱留 (傲嬌紫黑) */
+.role-kyaru .dialogue-speaker {
+    color: #b197fc;
+    text-shadow: 0 0 8px rgba(177, 151, 252, 0.3);
+}
+.role-kyaru .dialogue-bubble {
+    background: rgba(177, 151, 252, 0.05);
+    border-color: rgba(177, 151, 252, 0.12);
+}
+
+/* 旁白 (灰色傾斜) */
+.role-narrator .dialogue-speaker {
+    color: rgba(255, 255, 255, 0.35);
+    font-style: italic;
+    font-weight: 500;
+}
+.role-narrator .dialogue-bubble {
+    background: rgba(255, 255, 255, 0.01);
+    border-color: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-style: italic;
+}
+
+/* 選擇肢 (亮麗粉紅置中) */
+.role-choice .dialogue-speaker {
+    color: #ff6b9b;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(255, 107, 157, 0.3);
+}
+.role-choice .dialogue-bubble {
+    background: rgba(255, 107, 157, 0.08);
+    border-color: rgba(255, 107, 157, 0.25);
+    text-align: center;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(255, 107, 157, 0.1);
+}
+
+/* Spinner 動畫 */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
 
