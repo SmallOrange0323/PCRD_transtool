@@ -725,18 +725,25 @@ body {
     padding: 30px;
     margin-bottom: 2rem;
     border-radius: 24px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
 }
 
 .map-header {
     margin-bottom: 25px;
     border-left: 4px solid var(--accent-color);
     padding-left: 15px;
+    text-align: left;
 }
 
 .map-header h2 {
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 5px;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* 部別切換器 */
@@ -763,6 +770,7 @@ body {
 .part-btn:hover {
     color: var(--text-primary);
     background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .part-btn.active {
@@ -775,10 +783,10 @@ body {
 /* 地圖佈局 */
 .map-layout {
     display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 25px;
-    height: 480px;
-    margin-bottom: 25px;
+    grid-template-columns: 1fr 360px;
+    gap: 30px;
+    height: 520px;
+    margin-bottom: 30px;
 }
 
 /* 地圖視覺區 */
@@ -786,17 +794,31 @@ body {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-    background: radial-gradient(circle at center, #141c30 0%, #080b14 100%);
-    border: 1px solid var(--glass-border);
+    background: radial-gradient(circle at 50% 50%, #151d33 0%, #060910 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     height: 100%;
-    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8), 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .world-map {
     width: 100%;
     height: 100%;
     position: relative;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M30,30 Q50,20 70,30 T90,70' fill='none' stroke='rgba(255,255,255,0.01)' stroke-width='1'/%3E%3C/svg%3E");
+    overflow: hidden;
+}
+
+/* 精美古風羅盤與星軌背景 */
+.world-map::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 320px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='rgba(255,169,77,0.03)' stroke-width='0.5'/%3E%3Ccircle cx='50' cy='50' r='35' fill='none' stroke='rgba(255,169,77,0.02)' stroke-width='0.3'/%3E%3Cpath d='M50,5 L50,95 M5,50 L95,50' stroke='rgba(255,169,77,0.02)' stroke-width='0.3'/%3E%3Cpath d='M20,20 L80,80 M20,80 L80,20' stroke='rgba(255,169,77,0.01)' stroke-width='0.2'/%3E%3C/svg%3E") no-repeat center;
+    background-size: contain;
+    pointer-events: none;
 }
 
 .map-grid {
@@ -806,6 +828,7 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
+    z-index: 1;
 }
 
 /* 動態地標點 */
@@ -818,19 +841,19 @@ body {
 }
 
 .landmark-dot {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     background: #ffa94d;
     border: 3px solid #fff;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(255, 169, 77, 0.8);
-    transition: var(--transition);
+    box-shadow: 0 0 12px rgba(255, 169, 77, 0.8);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .landmark-pulse {
     position: absolute;
-    top: -12px;
-    left: -12px;
+    top: -11px;
+    left: -11px;
     width: 40px;
     height: 40px;
     border: 2px solid rgba(255, 169, 77, 0.4);
@@ -841,27 +864,35 @@ body {
 
 .landmark-label {
     position: absolute;
-    top: 22px;
+    top: 24px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(10, 14, 26, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 4px 10px;
+    background: rgba(10, 14, 26, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 5px 12px;
     border-radius: 8px;
     font-size: 0.75rem;
     font-weight: 600;
     white-space: nowrap;
     color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     transition: var(--transition);
 }
 
-/* 地標聚焦狀態 */
+/* 地標聚焦與 Hover 狀態 */
+.map-landmark-node:hover .landmark-dot {
+    transform: scale(1.2);
+    background: #ff6b9d;
+    box-shadow: 0 0 16px rgba(255, 107, 157, 0.9);
+}
+
 .map-landmark-node.focused .landmark-dot {
     background: #ff6b9d;
-    transform: scale(1.3);
-    box-shadow: 0 0 20px rgba(255, 107, 157, 0.9);
+    transform: scale(1.4);
+    border-color: #fff;
+    box-shadow: 0 0 25px rgba(255, 107, 157, 1);
 }
 
 .map-landmark-node.focused .landmark-pulse {
@@ -873,11 +904,12 @@ body {
     border-color: transparent;
     color: #fff;
     font-weight: 700;
+    box-shadow: 0 4px 12px rgba(255, 107, 157, 0.3);
 }
 
 @keyframes markerPulse {
-    0% { transform: scale(0.5); opacity: 1; }
-    100% { transform: scale(1.5); opacity: 0; }
+    0% { transform: scale(0.4); opacity: 1; }
+    100% { transform: scale(1.6); opacity: 0; }
 }
 
 /* 劇情控制台 */
@@ -886,6 +918,9 @@ body {
     flex-direction: column;
     height: 100%;
     padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
 }
 
 .panel-section-title {
@@ -895,6 +930,7 @@ body {
     margin-bottom: 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding-bottom: 10px;
+    text-align: left;
 }
 
 .story-list-scrollbar {
@@ -904,12 +940,16 @@ body {
 }
 
 .story-list-scrollbar::-webkit-scrollbar {
-    width: 4px;
+    width: 6px;
 }
 
 .story-list-scrollbar::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
+}
+
+.story-list-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .story-list {
@@ -922,7 +962,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 10px 14px;
+    padding: 12px 14px;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.04);
     border-radius: 12px;
@@ -933,22 +973,23 @@ body {
 .story-item:hover {
     background: rgba(255, 255, 255, 0.06);
     border-color: rgba(255, 255, 255, 0.1);
-    transform: translateX(3px);
+    transform: translateX(5px);
 }
 
 .story-item.active {
     background: rgba(255, 107, 157, 0.08);
     border-color: rgba(255, 107, 157, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.1);
 }
 
 .story-ch-badge {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.06);
     border-radius: 8px;
     padding: 4px 8px;
     font-size: 0.75rem;
     font-weight: 700;
     color: #ffa94d;
-    min-width: 60px;
+    min-width: 65px;
     text-align: center;
 }
 
@@ -963,6 +1004,7 @@ body {
     flex-direction: column;
     gap: 2px;
     text-align: left;
+    overflow: hidden;
 }
 
 .story-item-ch {
@@ -983,6 +1025,9 @@ body {
 .story-detail-drawer {
     border-radius: 20px;
     padding: 25px;
+    margin-top: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
     animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1043,7 +1088,9 @@ body {
 
 .landmark-info-card {
     padding: 18px;
+    border-radius: 15px;
     background: rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .landmark-title {
@@ -1051,6 +1098,7 @@ body {
     font-size: 0.95rem;
     color: #ffa94d;
     margin-bottom: 8px;
+    text-align: left;
 }
 
 .landmark-desc {
@@ -1068,6 +1116,8 @@ body {
     display: flex;
     flex-direction: column;
     background: rgba(0, 0, 0, 0.25) !important;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
     max-height: 220px;
     overflow-y: auto;
 }
@@ -1077,6 +1127,7 @@ body {
     font-weight: 700;
     color: var(--accent-color);
     margin-bottom: 12px;
+    text-align: left;
 }
 
 .dialogue-text {
@@ -1089,7 +1140,7 @@ body {
 }
 
 .dialogue-text::-webkit-scrollbar {
-    width: 3px;
+    width: 4px;
 }
 
 .dialogue-text::-webkit-scrollbar-thumb {
@@ -1117,6 +1168,8 @@ body {
     flex-direction: column;
     justify-content: center;
     background: rgba(0, 0, 0, 0.2) !important;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .video-container {
