@@ -54,6 +54,19 @@ const QuestMapModule = {
         return "https://www.youtube.com/embed/videoseries?list=PLyq2B7I_N8v_aM-1xMvS7z8z_wM75pE_E"; // 第三部
     },
 
+    // 取得官方遊戲大地圖原畫
+    getMapBackgroundImage(part) {
+        if (part === 1) {
+            // 第一部官方原版地圖：蘭德索爾平原與遠方的索爾之塔 (官方美術大圖 105431)
+            return "https://redive.estertion.win/card/full/105431.webp";
+        } else if (part === 2) {
+            // 第二部官方原版地圖：索爾神殿之頂 (官方美術大圖 109431)
+            return "https://redive.estertion.win/card/full/109431.webp";
+        }
+        // 第三部官方原版地圖：異世界崩壞場景 (官方美術大圖 106031)
+        return "https://redive.estertion.win/card/full/106031.webp";
+    },
+
     async loadData() {
         if (this.stories.length > 0) return;
         
@@ -99,6 +112,7 @@ const QuestMapModule = {
         
         const filtered = this.getFilteredStories();
         const firstStory = filtered[0] || {};
+        const mapBg = this.getMapBackgroundImage(this.currentPart);
         
         tab.innerHTML = `
             <div class="map-container glass-card">
@@ -117,7 +131,8 @@ const QuestMapModule = {
                 <div class="map-layout">
                     <!-- 地圖視覺區 -->
                     <div class="map-visual-area">
-                        <div class="world-map" id="world-map-canvas">
+                        <!-- 載入實際的遊戲大地圖美術原畫 -->
+                        <div class="world-map" id="world-map-canvas" style="background-image: url('${mapBg}'); background-size: cover; background-position: center;">
                             <!-- 帶有網格線與神秘背景的 SVG 地圖 -->
                             <svg class="map-grid" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
