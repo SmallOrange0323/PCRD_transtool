@@ -124,6 +124,9 @@ const QuestMapModule = {
     getCharaRealName(name) {
         if (!name) return "";
         
+        // 如果包含多個名字（如「貪吃佩可、普蕾西亞」或「靜流＆璃乃」），只取第一個名字進行 profile 與頭像匹配
+        let singleName = name.split(/[、＆&]|和|與/)[0].trim();
+        
         // 先做全名完整匹配別名
         const aliases = {
             // ===== 主線主要角色 =====
@@ -165,10 +168,10 @@ const QuestMapModule = {
             "莫妮卡的聲音":     "莫妮卡",
         };
         
-        if (aliases[name]) return aliases[name];
+        if (aliases[singleName]) return aliases[singleName];
         
         // 移除常見括號限定語，例如 "貪吃佩可（夏日）" -> "貪吃佩可"
-        let clean = name.replace(/（[^）]+）/g, "").replace(/\([^)]+\)/g, "").trim();
+        let clean = singleName.replace(/（[^）]+）/g, "").replace(/\([^)]+\)/g, "").trim();
         if (aliases[clean]) return aliases[clean];
         
         // 移除「的聲音」後綴
@@ -178,6 +181,16 @@ const QuestMapModule = {
         return clean;
     },
 
+    getAvatarHtml(realName) {
+        const unitId = this.speakerAvatars[realName];
+        if (unitId) {
+            const baseId = Math.floor(unitId / 100) * 100;
+            const avatarUrl = `https://redive.estertion.win/icon/unit/${baseId + 31}.webp`;
+            return `<img src="${avatarUrl}" style="width: 100%; height: 100%; object-fit: cover;" onerror="if(this.src.includes('31.webp')) { this.src=this.src.replace('31.webp', '11.webp'); } else { this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;npc-avatar-placeholder&quot;>${realName.substring(0, 2)}</div>'; }">`;
+        } else {
+            return `<div class="npc-avatar-placeholder">${realName.substring(0, 2)}</div>`;
+        }
+    },
 
     async loadData() {
         try {
@@ -372,10 +385,10 @@ const QuestMapModule = {
                 
                 <div class="map-layout" style="margin-top: 20px;">
                     <!-- 左側：官方大綱與對白面板 -->
-                    <div class="map-visual-area glass-card">
+                    <div class="map-visual-area">
                         <div class="cinema-panel" style="height: 100%;">
                             <!-- 官方大綱與冒險手札 -->
-                            <div class="cinema-meta glass-card" style="height: 100%; display: flex; flex-direction: column;">
+                            <div class="cinema-meta" style="height: 100%; display: flex; flex-direction: column;">
                                 <div class="cinema-ch-row" style="display: flex; align-items: center; justify-content: space-between;">
                                     <div style="display: flex; align-items: center; gap: 10px;">
                                         <span id="cinema-ch-tag" class="ch-tag">第 1 章</span>
@@ -710,15 +723,32 @@ const QuestMapModule = {
                 return;
             }
 
-            // 1. 動態批次拉取說話者頭像 ID
-            const speakerNames = [...new Set(dialogueList.map(item => item.name))].filter(Boolean);
+            // 1. 動態批次拉取說話者頭像 ID（支持多發言者拆分）
+            const speakerNames = [];
+            dialogueList.forEach(item => {
+                if (item.name) {
+                    const names = item.name.split(/[、＆&]|和|與/).map(n => n.trim()).filter(Boolean);
+                    names.forEach(name => {
+                        if (!speakerNames.includes(name)) {
+                            speakerNames.push(name);
+                        }
+                    });
+                }
+            });
             await this.loadDialogueAvatars(speakerNames);
 
             // 2. 渲染頂部登場角色頭像徽章列
             const badgesBar = document.getElementById('chara-badges-bar');
             if (badgesBar) {
                 const validSpeakers = speakerNames.filter(n => n !== "旁白" && n !== "【系統】" && !n.includes("【選擇肢】") && !n.includes("【選擇】") && n !== "？？？");
-                if (validSpeakers.length === 0) {
+                
+                // 為了視覺清爽度：過濾掉在資料庫中查無頭像的純路人 NPC，只在頂部顯示實裝人物頭像
+                const playableSpeakers = validSpeakers.filter(name => {
+                    const realName = this.getCharaRealName(name);
+                    return !!this.speakerAvatars[realName];
+                });
+
+                if (playableSpeakers.length === 0) {
                     badgesBar.style.display = "none";
                 } else {
                     badgesBar.style.display = "flex";
@@ -726,7 +756,7 @@ const QuestMapModule = {
                     const renderedSet = new Set();
                     const badgeHtmls = [];
 
-                    validSpeakers.forEach(name => {
+                    playableSpeakers.forEach(name => {
                         const realName = this.getCharaRealName(name);
                         if (renderedSet.has(realName)) return;
                         renderedSet.add(realName);
@@ -765,18 +795,12 @@ const QuestMapModule = {
                 let avatarHtml = "";
                 if (!isNarrator && !isChoice) {
                     const realName = QuestMapModule.getCharaRealName(speaker);
-                    const unitId = QuestMapModule.speakerAvatars[realName];
-                    let avatarUrl = "https://redive.estertion.win/icon/unit/000000.webp";
-                    
-                    if (unitId) {
-                        const baseId = Math.floor(unitId / 100) * 100;
-                        avatarUrl = `https://redive.estertion.win/icon/unit/${baseId + 31}.webp`;
-                    }
+                    const avatarContent = QuestMapModule.getAvatarHtml(realName);
                     
                     avatarHtml = `
                         <div class="game-chara-avatar-wrapper" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})" style="cursor: pointer;">
                             <div class="game-chara-avatar">
-                                <img src="${avatarUrl}" onerror="if(this.src.includes('31.webp')) { this.src=this.src.replace('31.webp', '11.webp'); } else { this.src='https://redive.estertion.win/icon/unit/000000.webp'; }">
+                                ${avatarContent}
                             </div>
                         </div>
                     `;
