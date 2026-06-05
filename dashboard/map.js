@@ -110,12 +110,30 @@ const QuestMapModule = {
             "第7章": "約定之時已到，所有的羈絆在最後的舞台交織，向命運發起總挑戰。",
             "第8章": "為了守護彼此生存的世界與信念，所有人燃盡力量展開最終之戰。",
             "第9章": "在奇蹟中迎來重逢，希望之歌響徹蘭德索爾，世界的輪廓重新清晰。",
-            "第10章": "終焉的光輝散去，迎來全新的黎明，少年與少女們向著明天再度邁開腳步。"
+            "第10章": "終焉的光輝散去，迎來全新的黎明，少年與少女們向著明天再度邁開腳步。",
+            "第11章": "【惡魔偽王國軍】等公會參戰，展開激烈的跳躍遊戲，蘭德索爾的命運再度受到多方牽制。",
+            "第12章": "前往伊麗莎白牧場，眾人在溫馨與逃亡的日常中，逐步揭開彌勒暗中操弄的巨大秘密。",
+            "第13章": "彌勒的陰謀逐漸明朗，以人質要脅各方，【森林守衛】等公會為了守護蘭德索爾全力奮戰。",
+            "第14章": "冰龍與魁首龍等強大災厄降臨，眾人在絕境中展現出真摯的羈絆，勇於直面黑暗的考驗。",
+            "第15章": "各路勇士齊聚一堂，做好最後的決意與備戰，誓言守護與同伴們共同擁有的珍貴回憶。",
+            "第16章": "七冠史無前例地攜手共鬥，展開奪回索爾魔珠的最後決戰，將第二部的宿命帶向終焉的解答。"
         },
         3: {
             "第1章": "來到全新的陌生世界，開始了不可思議的校園與日常生活，但未知的謎團依然存在。",
             "第2章": "幕後黑手在暗中窺伺，黑白兩股對立勢力逐漸浮上檯面，虛無世界的世界觀展現。",
-            "第3章": "追尋失去的關鍵記憶與交錯的世界軌跡，為守護這份新日常而再度執劍。"
+            "第3章": "追尋失去的關鍵記憶與交錯的世界軌跡，為守護這份新日常而再度執劍。",
+            "第4章": "在全新的世界中，深夜的密會伴隨著突然的宣戰，【好朋友社】等公會再次被捲入動盪的漩渦。",
+            "第5章": "妖魔人與煉獄的公主現身，眾人召開討伐神祕強敵『六凶』的作戰會議，展開新世界的反擊。",
+            "第6章": "深入吉歐・格黑納的熱鬧宴會，探尋被遺漏的世界真相，同時遭遇了流浪的神祕三姊妹。",
+            "第7章": "火山燃燒，蠍獅少女帶來強烈威脅，華音的叛亂讓局勢更加複雜，考驗著眾人的應變實力。",
+            "第8章": "吉歐・提格尼亞的代表與各方勢力進行早餐會談，神祕的薇歐莉特與格蕾斯在此正式浮上檯面。",
+            "第9章": "傀儡的絲線在暗中垂落，粉碎的願望伴隨著靈魂的歸處，讓這場新世界的探索陷入更深的迷霧。",
+            "第10章": "冥府的代表者與死者們迎面而來，帶來大壞蛋大復活的混亂，眾人必須在生死邊緣展開防線。",
+            "第11章": "凱留與普蕾西亞在冰雪中展開新牽絆，巨鯨城近侍與潛藏的憤怒交織，新世界的衝突逐步升溫。",
+            "第12章": "在短暫的停戰與堇色悲哀後，眾人重整旗鼓，正式朝著攻略神祕『黑曜宮』的目標進發。",
+            "第13章": "大江戶的公主們齊聚一堂召開第二次公主會議，面對真實的告白與考驗，做出攸關未來的決定。",
+            "第14章": "尋找主人的下落，眾人登上龍之浮島，接受來自阿爾莎特的邀請，揭開更深層的世界核心。",
+            "第15章": "邪惡的公主騎士們與伏龍現身，伴隨著『嚮導幼君』的謎團，命運的齒輪再度加速運轉。"
         }
     },
 
@@ -362,7 +380,7 @@ const QuestMapModule = {
         }
 
         tab.innerHTML = `
-            <div class="map-container glass-card">
+            <div class="map-container">
                 <div class="map-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                     <div>
                         <h2>📖 阿斯特萊亞劇情編年史</h2>
@@ -392,14 +410,14 @@ const QuestMapModule = {
                                 <div class="cinema-ch-row" style="display: flex; align-items: center; justify-content: space-between;">
                                     <div style="display: flex; align-items: center; gap: 10px;">
                                         <span id="cinema-ch-tag" class="ch-tag">第 1 章</span>
-                                        <h3 id="cinema-title" style="margin: 0; color: #fff;">話標題</h3>
+                                        <h3 id="cinema-title" style="margin: 0; color: var(--text-primary);">話標題</h3>
                                     </div>
                                 </div>
                                 <div class="summary-section" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 15px;">
                                     <!-- 頁籤選擇器：單話大綱 vs 整章摘要 -->
-                                    <div class="summary-tabs" style="display: flex; border-bottom: 2px solid rgba(255,255,255,0.1); margin-bottom: 10px; gap: 8px;">
-                                        <button id="tab-summary-episode" class="summary-tab active" onclick="QuestMapModule.switchSummaryTab('episode')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid #ff7675; color: #fff; cursor: pointer; font-weight: bold; font-size: 0.88rem;">📜 單話大綱</button>
-                                        <button id="tab-summary-chapter" class="summary-tab" onclick="QuestMapModule.switchSummaryTab('chapter')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid transparent; color: rgba(255,255,255,0.6); cursor: pointer; font-size: 0.88rem;">📖 整章摘要簡介</button>
+                                    <div class="summary-tabs" style="display: flex; border-bottom: 2px solid rgba(94, 107, 125, 0.15); margin-bottom: 10px; gap: 8px;">
+                                        <button id="tab-summary-episode" class="summary-tab active" onclick="QuestMapModule.switchSummaryTab('episode')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid var(--accent-color); color: var(--accent-color); cursor: pointer; font-weight: bold; font-size: 0.88rem;">📜 單話大綱</button>
+                                        <button id="tab-summary-chapter" class="summary-tab" onclick="QuestMapModule.switchSummaryTab('chapter')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid transparent; color: var(--text-secondary); cursor: pointer; font-size: 0.88rem;">📖 整章摘要簡介</button>
                                     </div>
                                     <div id="cinema-summary" class="summary-text" style="flex: 1; overflow-y: auto; display: flex; flex-direction: column;">
                                         點擊右側章節清單，即刻載入大綱與對白文本。
@@ -410,15 +428,16 @@ const QuestMapModule = {
                     </div>
                     
                     <!-- 右側：階層式「章 ➔ 話」雙層風琴式摺疊選單 (Accordion) -->
-                    <div class="map-control-panel glass-card">
+                    <div class="map-control-panel">
                         <div class="panel-section-title">
                             📖 ${this.activeTabType === 'main' ? '主線劇情編年史目錄' : '歷年活動劇情目錄'}
                         </div>
                         <div class="story-list-scrollbar">
                             <div class="accordion-container">
-                                ${chapterKeys.map(chKey => {
+                                ${chapterKeys.map((chKey, chIndex) => {
                                     const isExpanded = this.expandedChapter === chKey;
                                     const childStories = this.chapters[chKey];
+                                    const safeId = `acc-item-${chIndex}`;
                                     
                                     let chTitle = "";
                                     let chIcon = isExpanded ? '📂' : '📁';
@@ -437,8 +456,8 @@ const QuestMapModule = {
                                         chTitle = partTitles[chKey] ? ` - ${partTitles[chKey]}` : "";
                                         
                                         return `
-                                            <div class="accordion-item ${isExpanded ? 'active' : ''}" id="acc-item-${chKey}">
-                                                <div class="accordion-header" onclick="QuestMapModule.toggleChapter('${chKey}')">
+                                            <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
+                                                <div class="accordion-header" onclick="QuestMapModule.toggleChapter(${chIndex})">
                                                     <div class="acc-header-title">
                                                         <span class="acc-folder-icon" style="display: flex; align-items: center; justify-content: center;">${chIcon}</span>
                                                         <span class="acc-ch-name" style="margin-left: 8px;">${cleanChKey}${chTitle}</span>
@@ -468,8 +487,8 @@ const QuestMapModule = {
                                             chIcon = `<img src="https://redive.estertion.win/event_still/banner_${firstStory.eventValue}.webp" onerror="this.onerror=null; this.src='https://redive.estertion.win/icon/unit/000000.webp';" style="width: 32px; height: 32px; border-radius: 4px; object-fit: cover; border: 1px solid rgba(255,255,255,0.15);">`;
                                         }
                                         return `
-                                            <div class="accordion-item ${isExpanded ? 'active' : ''}" id="acc-item-${chKey}">
-                                                <div class="accordion-header" onclick="QuestMapModule.toggleChapter('${chKey}')">
+                                            <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
+                                                <div class="accordion-header" onclick="QuestMapModule.toggleChapter(${chIndex})">
                                                     <div class="acc-header-title">
                                                         <span class="acc-folder-icon" style="display: flex; align-items: center; justify-content: center;">${chIcon}</span>
                                                         <span class="acc-ch-name" style="margin-left: 8px;">${chKey}</span>
@@ -478,7 +497,7 @@ const QuestMapModule = {
                                                 </div>
                                                 <div class="accordion-content" style="max-height: ${isExpanded ? 'none' : '0px'}">
                                                     ${childStories.map(s => {
-                                                        const cleanEventTitle = chKey.substring(chKey.indexOf('】') + 1).trim();
+                                                        const cleanEventTitle = chKey.substring(chKey.indexOf('\u300d') + 1).trim();
                                                         let displayChapterName = s.chapter.replace(cleanEventTitle, '').trim();
                                                         if (!displayChapterName) displayChapterName = s.chapter;
                                                         return `
@@ -518,26 +537,35 @@ const QuestMapModule = {
         this.render();
     },
 
-    // 控制風琴選單的展開與收合
-    toggleChapter(chKey) {
+    // 控制風琴選單的展開與收合（接受索引數字，避免特殊字元破壞 DOM id）
+    toggleChapter(chIndex) {
+        const chapterKeys = Object.keys(this.chapters);
+        const chKey = chapterKeys[chIndex];
+        if (!chKey) return;
+
         const prevChapter = this.expandedChapter;
-        
+        const prevChIndex = chapterKeys.indexOf(prevChapter);
+
         if (this.expandedChapter === chKey) {
             this.expandedChapter = null;
         } else {
             this.expandedChapter = chKey;
         }
 
-        const prevItem = document.getElementById(`acc-item-${prevChapter}`);
-        if (prevItem) {
-            prevItem.classList.remove('active');
-            prevItem.querySelector('.accordion-content').style.maxHeight = "0px";
-            if (this.activeTabType === 'main') {
-                prevItem.querySelector('.acc-folder-icon').innerText = "📁";
+        // 收合上一個展開的章節
+        if (prevChIndex !== -1) {
+            const prevItem = document.getElementById(`acc-item-${prevChIndex}`);
+            if (prevItem) {
+                prevItem.classList.remove('active');
+                prevItem.querySelector('.accordion-content').style.maxHeight = "0px";
+                if (this.activeTabType === 'main') {
+                    prevItem.querySelector('.acc-folder-icon').innerText = "📁";
+                }
             }
         }
 
-        const currItem = document.getElementById(`acc-item-${chKey}`);
+        // 展開當前章節
+        const currItem = document.getElementById(`acc-item-${chIndex}`);
         if (currItem && this.expandedChapter === chKey) {
             currItem.classList.add('active');
             const childStories = this.chapters[chKey];
@@ -590,18 +618,18 @@ const QuestMapModule = {
         if (btnEp && btnCh) {
             if (tabType === 'episode') {
                 btnEp.classList.add('active');
-                btnEp.style.borderBottom = "2px solid #ff7675";
-                btnEp.style.color = "#fff";
+                btnEp.style.borderBottom = "2px solid var(--accent-color)";
+                btnEp.style.color = "var(--accent-color)";
                 btnCh.classList.remove('active');
                 btnCh.style.borderBottom = "2px solid transparent";
-                btnCh.style.color = "rgba(255,255,255,0.6)";
+                btnCh.style.color = "var(--text-secondary)";
             } else {
                 btnCh.classList.add('active');
-                btnCh.style.borderBottom = "2px solid #ff7675";
-                btnCh.style.color = "#fff";
+                btnCh.style.borderBottom = "2px solid var(--accent-color)";
+                btnCh.style.color = "var(--accent-color)";
                 btnEp.classList.remove('active');
                 btnEp.style.borderBottom = "2px solid transparent";
-                btnEp.style.color = "rgba(255,255,255,0.6)";
+                btnEp.style.color = "var(--text-secondary)";
             }
         }
         
@@ -626,27 +654,59 @@ const QuestMapModule = {
                     officialSummary = result[0].sub_title;
                 }
                 summaryEl.innerHTML = `
-                    <div class="official-summary-box" style="text-align: left; line-height: 1.6; font-size: 0.92rem; color: #fff;">
-                        <span style="color: #4dfa7b; font-weight: 700;">📌 官方話數大綱：</span>
-                        <span>${officialSummary || "本話為重要主線劇情，美食殿堂的羈絆在此得到了進一步的昇華。"}</span>
-                        
+                    <div style="display: flex; flex-direction: column; gap: 14px; text-align: left;">
+
+                        <!-- 官方話數大綱卡片 -->
+                        <div style="
+                            background: linear-gradient(135deg, rgba(232,56,117,0.04) 0%, rgba(196,36,106,0.04) 100%);
+                            border: 1px solid rgba(232,56,117,0.15);
+                            border-radius: 12px;
+                            padding: 14px 16px;
+                            line-height: 1.7;
+                            font-size: 0.9rem;
+                            color: var(--text-primary);
+                        ">
+                            <div style="display:flex; align-items:center; gap:6px; margin-bottom:8px;">
+                                <span style="
+                                    background: var(--accent-gradient);
+                                    color:#fff;
+                                    font-size:0.72rem;
+                                    font-weight:700;
+                                    padding: 2px 10px;
+                                    border-radius: 20px;
+                                    letter-spacing:1px;
+                                ">📌 官方大綱</span>
+                            </div>
+                            <p style="margin:0; color: var(--text-primary);">${officialSummary || "本話為重要主線劇情，美食殿堂的羈絆在此得到了進一步的昇華。"}</p>
+                        </div>
+
                         <!-- 逐字台詞面板區 -->
-                        <div class="dialogue-section" style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
-                            <div class="game-dialogue-panel" style="background: transparent; border: none; padding: 0; box-shadow: none;">
-                                <!-- 頂部藍色標題裝飾條與登場角色頭像列 -->
-                                <div class="game-dialogue-header" style="border-radius: 8px 8px 0 0;">顯示劇情全文</div>
-                                <div id="chara-badges-bar" class="game-chara-list-bar" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-top: none;">
-                                    <span style="color: rgba(255,255,255,0.5); font-size: 0.8rem;">正在載入登場角色頭像...</span>
+                        <div class="dialogue-section">
+                            <div class="game-dialogue-panel">
+                                <!-- 頂部標題裝飾條 -->
+                                <div class="game-dialogue-header" style="border-radius: 12px 12px 0 0;">✦ 劇情全文 ✦</div>
+                                <!-- 登場角色頭像列 -->
+                                <div id="chara-badges-bar" class="game-chara-list-bar" style="
+                                    background: rgba(252,242,246,0.9);
+                                    border-left: 1.5px solid rgba(232,56,117,0.15);
+                                    border-right: 1.5px solid rgba(232,56,117,0.15);
+                                    border-top: none;
+                                    border-bottom: 1px solid rgba(232,56,117,0.1);
+                                ">
+                                    <span style="color: var(--text-secondary); font-size: 0.8rem;">正在載入登場角色頭像...</span>
                                 </div>
-                                <div id="dialogue-board" class="game-dialogue-board" style="max-height: 380px; overflow-y: auto; background: rgba(20, 26, 46, 0.5); border: 1px solid rgba(255,255,255,0.1); border-top: none;">
+                                <!-- 對白捲動區 -->
+                                <div id="dialogue-board" class="game-dialogue-board" style="max-height: 360px; overflow-y: auto;">
                                     <!-- 台詞渲染容器 -->
                                 </div>
-                                <div class="game-dialogue-footer" style="border-radius: 0 0 8px 8px;">
-                                    <div class="game-footer-btn close" onclick="document.getElementById('dialogue-board').scrollTop = 0">回到頂端</div>
-                                    <div class="game-footer-btn skip" onclick="document.getElementById('dialogue-board').scrollTop = 99999">跳至底端</div>
+                                <!-- 底部按鈕 -->
+                                <div class="game-dialogue-footer" style="border-radius: 0 0 12px 12px;">
+                                    <div class="game-footer-btn close" onclick="document.getElementById('dialogue-board').scrollTop = 0">⬆ 回到頂端</div>
+                                    <div class="game-footer-btn skip" onclick="document.getElementById('dialogue-board').scrollTop = 99999">⬇ 跳至底端</div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 `;
             } catch (e) {
@@ -655,19 +715,47 @@ const QuestMapModule = {
             }
         } else {
             // 整章摘要
-            let chName = story.chapter.match(/^(第\d+部\s*)?([^\s]+章|[^\s]+序章|[^\s]+幕間[^\s]*)/);
-            let cleanChKey = chName ? chName[2] : "其他章節";
-            if (story.chapter.includes("序章")) cleanChKey = "序章";
+            if (this.activeTabType === 'event') {
+                const currentEvent = this.events.find(e => e.story_group_id === story.groupId);
+                if (currentEvent) {
+                    const date = new Date(currentEvent.start_time);
+                    const timeLabel = isNaN(date.getFullYear()) ? "未知時間" : `${date.getFullYear()}年${date.getMonth() + 1}月`;
+                    const totalEpisodes = this.eventStories.filter(s => s.groupId === currentEvent.story_group_id).length;
+                    summaryEl.innerHTML = `
+                        <div class="chapter-summary-box" style="text-align: left; line-height: 1.6; font-size: 0.92rem; color: var(--text-primary); padding: 15px; background: rgba(232, 56, 117, 0.03); border-radius: 8px; border: 1px solid rgba(232, 56, 117, 0.08);">
+                            <span style="color: var(--accent-color); font-weight: 700; font-size: 1rem; display: block; margin-bottom: 8px;">🏆 【${currentEvent.title}】 活動介紹：</span>
+                            <p style="color: var(--text-primary); margin: 0 0 10px 0; font-size: 0.88rem; line-height: 1.7;">
+                                本劇情為 <strong>${timeLabel}</strong> 登場的期間限定角色活動劇情。講述了與該活動核心主角們展開的專屬冒險篇章。
+                            </p>
+                            <div style="font-size: 0.82rem; color: var(--text-secondary); border-top: 1px dashed rgba(232, 56, 117, 0.15); padding-top: 10px; margin-top: 10px;">
+                                📅 登場時間：${currentEvent.start_time}<br>
+                                📂 活動話數：共 ${totalEpisodes} 話
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    summaryEl.innerHTML = `
+                        <div class="chapter-summary-box" style="text-align: left; line-height: 1.6; font-size: 0.92rem; color: var(--text-primary); padding: 15px; background: rgba(232, 56, 117, 0.03); border-radius: 8px; border: 1px solid rgba(232, 56, 117, 0.08);">
+                            <span style="color: var(--accent-color); font-weight: 700; font-size: 1rem; display: block; margin-bottom: 8px;">🏆 活動劇情摘要：</span>
+                            <p style="color: var(--text-primary); margin: 0; font-size: 0.88rem; line-height: 1.7;">暫無本活動的摘要簡介。</p>
+                        </div>
+                    `;
+                }
+            } else {
+                let chName = story.chapter.match(/^(第\d+部\s*)?([^\s]+章|[^\s]+序章|[^\s]+幕間[^\s]*)/);
+                let cleanChKey = chName ? chName[2] : "其他章節";
+                if (story.chapter.includes("序章")) cleanChKey = "序章";
 
-            const summaries = this.chapterSummaries[this.currentPart] || {};
-            const chapterText = summaries[cleanChKey] || "暫無本章節的摘要簡介。";
+                const summaries = this.chapterSummaries[this.currentPart] || {};
+                const chapterText = summaries[cleanChKey] || "暫無本章節的摘要簡介。";
 
-            summaryEl.innerHTML = `
-                <div class="chapter-summary-box" style="text-align: left; line-height: 1.6; font-size: 0.92rem; color: #fff; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-                    <span style="color: #ffa94d; font-weight: 700; font-size: 1rem; display: block; margin-bottom: 8px;">📖 【${cleanChKey}】 劇情摘要：</span>
-                    <p style="color: rgba(255,255,255,0.9); margin: 0; font-size: 0.88rem; text-indent: 2em; line-height: 1.7;">${chapterText}</p>
-                </div>
-            `;
+                summaryEl.innerHTML = `
+                    <div class="chapter-summary-box" style="text-align: left; line-height: 1.6; font-size: 0.92rem; color: var(--text-primary); padding: 15px; background: rgba(232, 56, 117, 0.03); border-radius: 8px; border: 1px solid rgba(232, 56, 117, 0.08);">
+                        <span style="color: var(--accent-color); font-weight: 700; font-size: 1rem; display: block; margin-bottom: 8px;">📖 【${cleanChKey}】 劇情摘要：</span>
+                        <p style="color: var(--text-primary); margin: 0; font-size: 0.88rem; text-indent: 2em; line-height: 1.7;">${chapterText}</p>
+                    </div>
+                `;
+            }
         }
     },
 
@@ -792,9 +880,11 @@ const QuestMapModule = {
                 if (isNarrator) speakerClass = "role-narrator";
                 else if (isChoice) speakerClass = "role-choice";
                 
+                const realNameForBtn = (isNarrator || isChoice) ? "" : QuestMapModule.getCharaRealName(speaker);
+                
                 let avatarHtml = "";
                 if (!isNarrator && !isChoice) {
-                    const realName = QuestMapModule.getCharaRealName(speaker);
+                    const realName = realNameForBtn;
                     const avatarContent = QuestMapModule.getAvatarHtml(realName);
                     
                     avatarHtml = `
@@ -806,8 +896,7 @@ const QuestMapModule = {
                     `;
                 }
                 
-                const realNameForBtn = (isNarrator || isChoice) ? "" : QuestMapModule.getCharaRealName(speaker);
-                const speakerBtnHtml = (isNarrator || isChoice) ? "" : `<div class="game-speaker-btn" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realNameForBtn).replace(/"/g, '&quot;')})" style="cursor: pointer;"></div>`;
+                const speakerBtnHtml = "";
                 
                 html += `
                     <div class="game-dialogue-line ${speakerClass}">
@@ -816,7 +905,6 @@ const QuestMapModule = {
                             <div class="game-dialogue-speaker" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realNameForBtn).replace(/\"/g, '&quot;')})" style="cursor: pointer; display: inline-block;">${speaker}</div>
                             <div class="game-dialogue-text">${words}</div>
                         </div>
-                        ${speakerBtnHtml}
                     </div>
                 `;
             });
@@ -829,11 +917,11 @@ const QuestMapModule = {
             board.innerHTML = `
                 <div class="dialogue-error-box" style="padding: 15px; border-radius: 8px; background: rgba(230, 73, 73, 0.05); border: 1px dashed rgba(230, 73, 73, 0.2); text-align: left;">
                     <div style="color: #d63031; font-weight: 700; font-size: 0.88rem; margin-bottom: 6px;">⚠️ 台詞文本尚未下載</div>
-                    <div style="color: #fff; font-size: 0.82rem; line-height: 1.5;">
+                    <div style="color: var(--text-primary); font-size: 0.82rem; line-height: 1.5;">
                         本話的對白文本尚未下載到您的電腦中。<br>
                         請在本地專案根目錄中，執行命令下載全部對白：
                     </div>
-                    <code style="display: block; margin-top: 8px; background: rgba(0,0,0,0.2); padding: 8px; border-radius: 4px; color: #ff7675; font-family: Consolas, monospace; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.08);">
+                    <code style="display: block; margin-top: 8px; background: rgba(0,0,0,0.05); padding: 8px; border-radius: 4px; color: var(--accent-color); font-family: Consolas, monospace; font-size: 0.8rem; border: 1px solid rgba(94, 107, 125, 0.15);">
                         python download_stories_tw.py
                     </code>
                 </div>
@@ -889,7 +977,7 @@ const QuestMapModule = {
 
         let appListHtml = "";
         if (appearances.length === 0) {
-            appListHtml = `<div style="color: rgba(255,255,255,0.4); font-size: 0.85rem;">暫無登場話數統計數據。</div>`;
+            appListHtml = `<div style="color: var(--text-secondary); font-size: 0.85rem; font-style: italic;">暫無登場話數統計數據。</div>`;
         } else {
             appListHtml = appearances.map(storyId => {
                 const story = this.stories.find(s => s.id === storyId) || this.eventStories.find(s => s.story_id === storyId);
@@ -899,7 +987,7 @@ const QuestMapModule = {
                     label = `${cleanCh} ${story.title}`.trim();
                     if (label.length > 15) label = label.substring(0, 15) + "...";
                 }
-                return `<button class="chara-appear-btn" onclick="QuestMapModule.jumpToStory(${storyId}, 'game-chara-modal')" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 6px 10px; color: #fff; cursor: pointer; font-size: 0.82rem; transition: all 0.2s; display: inline-block;">${label}</button>`;
+                return `<button class="chara-appear-btn" onclick="QuestMapModule.jumpToStory(${storyId}, 'game-chara-modal')" style="background: rgba(232,56,117,0.07); border: 1px solid rgba(232,56,117,0.2); border-radius: 8px; padding: 6px 12px; color: var(--accent-color); cursor: pointer; font-size: 0.82rem; font-weight: 600; transition: all 0.2s; display: inline-block;">${label}</button>`;
             }).join('');
         }
 
@@ -917,18 +1005,36 @@ const QuestMapModule = {
         if (profile) {
             detailsHtml = `
                 <div style="flex: 1; min-width: 200px;">
-                    <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; color: rgba(255,255,255,0.85);">
-                        <tr><td style="padding: 4px 0; color: #4dfa7b;">公會：</td><td>${guild}</td><td style="padding: 4px 0; color: #4dfa7b;">種族：</td><td>${race}</td></tr>
-                        <tr><td style="padding: 4px 0; color: #4dfa7b;">年齡：</td><td>${age}歲</td><td style="padding: 4px 0; color: #4dfa7b;">生日：</td><td>${birth}</td></tr>
-                        <tr><td style="padding: 4px 0; color: #4dfa7b;">身高：</td><td>${height}cm</td><td style="padding: 4px 0; color: #4dfa7b;">體重：</td><td>${weight}kg</td></tr>
-                        <tr><td style="padding: 4px 0; color: #4dfa7b;">聲優：</td><td colspan="3" style="color: #ffa94d; font-weight: bold;">${cv}</td></tr>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; color: var(--text-primary);">
+                        <tr>
+                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600; width: 60px;">公會：</td>
+                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${guild}</td>
+                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600; width: 60px;">種族：</td>
+                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${race}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">年齡：</td>
+                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${age}歲</td>
+                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">生日：</td>
+                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${birth}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">身高：</td>
+                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${height}cm</td>
+                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">體重：</td>
+                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${weight}kg</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">聲優：</td>
+                            <td colspan="3" style="padding: 4px 0; color: var(--accent-color); font-weight: bold;">${cv}</td>
+                        </tr>
                     </table>
                 </div>
             `;
         } else {
             detailsHtml = `
                 <div style="flex: 1; min-width: 200px; display: flex; flex-direction: column; justify-content: center;">
-                    <div style="color: rgba(255,255,255,0.6); font-size: 0.9rem; font-style: italic; border: 1px dashed rgba(255,255,255,0.15); padding: 15px; border-radius: 8px; background: rgba(0,0,0,0.15);">
+                    <div style="color: var(--text-secondary); font-size: 0.9rem; font-style: italic; border: 1px dashed rgba(232, 56, 117, 0.2); padding: 15px; border-radius: 8px; background: rgba(232, 56, 117, 0.03);">
                         ℹ️ 此角色為劇中登場人物或 NPC，尚無設定集數據。
                     </div>
                 </div>
@@ -938,8 +1044,8 @@ const QuestMapModule = {
         let bioHtml = "";
         if (profile) {
             bioHtml = `
-                ${catchCopy ? `<div style="font-style: italic; color: #4dfa7b; font-size: 0.9rem; margin-bottom: 10px; text-align: left;">「${catchCopy}」</div>` : ''}
-                <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; line-height: 1.6; color: rgba(255,255,255,0.9); margin-bottom: 15px; text-align: left;">
+                ${catchCopy ? `<div style="font-style: italic; color: var(--accent-color); font-size: 0.9rem; margin-bottom: 10px; text-align: left;">「${catchCopy}」</div>` : ''}
+                <div style="background: rgba(94, 107, 125, 0.04); padding: 12px; border-radius: 8px; border: 1px solid rgba(232, 56, 117, 0.08); font-size: 0.85rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 15px; text-align: left;">
                     ${selfText}
                 </div>
             `;
@@ -947,22 +1053,22 @@ const QuestMapModule = {
 
         modalEl.innerHTML = `
             <div class="game-modal-content" style="max-height: 85vh; overflow-y: auto;">
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; margin-bottom: 15px;">
-                    <h3 style="margin: 0; color: #ffa94d; font-size: 1.25rem;">🔍 角色檔案：${realCharaName}</h3>
-                    <span class="game-modal-close-btn" onclick="document.getElementById('game-chara-modal').classList.remove('active')" style="cursor: pointer; font-size: 1.5rem; color: rgba(255,255,255,0.5);">&times;</span>
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(94, 107, 125, 0.1); padding-bottom: 12px; margin-bottom: 15px;">
+                    <h3 style="margin: 0; color: var(--accent-color); font-size: 1.25rem;">🔍 角色檔案：${realCharaName}</h3>
+                    <span class="game-modal-close-btn" onclick="document.getElementById('game-chara-modal').classList.remove('active')" style="cursor: pointer; font-size: 1.5rem; color: var(--text-secondary);">&times;</span>
                 </div>
                 
                 <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px;">
-                    <div style="width: 100px; height: 100px; border-radius: 12px; overflow: hidden; border: 2px solid rgba(255,255,255,0.1); background: #000; display: flex; align-items: center; justify-content: center;">
+                    <div style="width: 100px; height: 100px; border-radius: 12px; overflow: hidden; border: 2px solid rgba(232, 56, 117, 0.15); background: #ffffff; display: flex; align-items: center; justify-content: center;">
                         <img src="${avatarUrl}" style="width: 100%; height: 100%; object-fit: cover;" onerror="if(this.src.includes('31.webp')) { this.src=this.src.replace('31.webp', '11.webp'); } else { this.src='https://redive.estertion.win/icon/unit/000000.webp'; }">
                     </div>
                     ${detailsHtml}
                 </div>
-
+ 
                 ${bioHtml}
-
-                <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
-                    <h4 style="margin: 0 0 10px 0; color: #ffa94d; font-size: 0.95rem;">📖 登場話數 (點擊直接跳轉放映)：</h4>
+ 
+                <div style="border-top: 1px solid rgba(94, 107, 125, 0.1); padding-top: 15px;">
+                    <h4 style="margin: 0 0 10px 0; color: var(--text-primary); font-size: 0.95rem;">📖 登場話數 (點擊直接跳轉放映)：</h4>
                     <div style="display: flex; gap: 8px; flex-wrap: wrap; max-height: 150px; overflow-y: auto; padding: 5px;">
                         ${appListHtml}
                     </div>
