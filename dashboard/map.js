@@ -119,21 +119,21 @@ const QuestMapModule = {
             "第16章": "七冠史無前例地攜手共鬥，展開奪回索爾魔珠的最後決戰，將第二部的宿命帶向終焉的解答。"
         },
         3: {
-            "第1章": "來到全新的陌生世界，開始了不可思議的校園與日常生活，但未知的謎團依然存在。",
-            "第2章": "幕後黑手在暗中窺伺，黑白兩股對立勢力逐漸浮上檯面，虛無世界的世界觀展現。",
-            "第3章": "追尋失去的關鍵記憶與交錯的世界軌跡，為守護這份新日常而再度執劍。",
-            "第4章": "在全新的世界中，深夜的密會伴隨著突然的宣戰，【好朋友社】等公會再次被捲入動盪的漩渦。",
-            "第5章": "妖魔人與煉獄的公主現身，眾人召開討伐神祕強敵『六凶』的作戰會議，展開新世界的反擊。",
-            "第6章": "深入吉歐・格黑納的熱鬧宴會，探尋被遺漏的世界真相，同時遭遇了流浪的神祕三姊妹。",
-            "第7章": "火山燃燒，蠍獅少女帶來強烈威脅，華音的叛亂讓局勢更加複雜，考驗著眾人的應變實力。",
-            "第8章": "吉歐・提格尼亞的代表與各方勢力進行早餐會談，神祕的薇歐莉特與格蕾斯在此正式浮上檯面。",
-            "第9章": "傀儡的絲線在暗中垂落，粉碎的願望伴隨著靈魂的歸處，讓這場新世界的探索陷入更深的迷霧。",
-            "第10章": "冥府的代表者與死者們迎面而來，帶來大壞蛋大復活的混亂，眾人必須在生死邊緣展開防線。",
-            "第11章": "凱留與普蕾西亞在冰雪中展開新牽絆，巨鯨城近侍與潛藏的憤怒交織，新世界的衝突逐步升溫。",
-            "第12章": "在短暫的停戰與堇色悲哀後，眾人重整旗鼓，正式朝著攻略神祕『黑曜宮』的目標進發。",
-            "第13章": "大江戶的公主們齊聚一堂召開第二次公主會議，面對真實的告白與考驗，做出攸關未來的決定。",
-            "第14章": "尋找主人的下落，眾人登上龍之浮島，接受來自阿爾莎特的邀請，揭開更深層的世界核心。",
-            "第15章": "邪惡的公主騎士們與伏龍現身，伴隨著『嚮導幼君』的謎團，命運的齒輪再度加速運轉。"
+            "第1章": "🎮 <strong>遊戲世界（阿斯特萊亞）</strong>：主角祐樹在名為「幻變世界」的新世界中甦醒，進入了類似校園日常的陌生環境，並結識了普蕾西亞、安涅默涅等幻變少女。然而，在溫馨的學園生活背後，原本世界的記憶喪失與陌生的世界法則依然困擾著眾人，未知的威脅與迷茫感悄然滋生。<br><br>🏙️ <strong>現實世界（幕間）</strong>：在現實世界的舞台上，國際警察暨網絡監理組織「Warlock」正式採取行動。八斗金局長與情報特工菲絲密切監控著伺服器內部異常的意識流動。隨著大崩潰的餘波擴散，他們在現實中展開針對現實與虛擬交接點的緊急調查，試圖防範更深層的系統崩解危機。",
+            "第2章": "🎮 <strong>遊戲世界（阿斯特萊亞）</strong>：美食殿堂的夥伴們開始適應「FUN FUN農場」的日常生活，並在此進行勞作與探索。然而，黑白兩股對立的神祕勢力開始在暗中頻繁交鋒。虛無世界的部分殘酷法則逐漸顯現，預示著這個看似和平的新世界背後隱藏著吞噬一切的危機。<br><br>🏙️ <strong>現實世界（幕間）</strong>：八斗局長在監控中心發現系統出現了大規模的「虛無化」數據污染。特工菲絲潛入現實世界中的相關科研機構舊址，收集關於世界重置與意識滯留者的第一手檔案，並察覺到有第三方神秘勢力正在現實中同步干涉伺服器底層。",
+            "第3章": "🎮 <strong>遊戲世界（阿斯特萊亞）</strong>：眾人來到了充滿歡樂氛圍卻又處處透著詭異的「大夢想樂園」。在追尋失去的關鍵記憶的過程中，祐樹與同伴們的命運軌跡與這個世界的底層邏輯產生了交錯。為了守護眼前這份好不容易建立的新日常，眾人決定再次握緊武器迎戰。<br><br>🏙️ <strong>現實世界（幕間）</strong>：菲絲在現實世界中查獲了有關「大夢想樂園」在開發時期的秘密意識投射實驗報告。八斗局長推測，該伺服器區塊可能被用來封印或重塑某個關鍵的七冠意識。兩人開始將調查重點轉向伺服器開發的核心數據源。",
+            "第4章": "🎮 <strong>遊戲世界（阿斯特萊亞）</strong>：深夜的密會打破了短暫的寧靜，一場突如其來的宣戰將氣氛推向頂點。【好朋友社】等公會再次被捲入動盪的漩渦中。眾人踏上了前往「另一個背面世界」的道路，開始意識到這個世界的空間結構遠比想像中複雜。<br><br>🏙️ <strong>現實世界（幕間）</strong>：現實監控系統檢測到伺服器空間出現嚴重的「背面維度」重疊現象。八斗局長與菲絲在現實中追查那些意識陷入深度昏迷的玩家家屬，發現這些昏迷者的腦波正在以一種奇特的反向編碼與遊戲內的特定暗區同步。",
+            "第5章": "🎮 <strong>遊戲世界（阿斯特萊亞）</strong>：妖魔人與煉獄的公主正式現身，強大的敵對勢力「六凶」給眾人帶來了前所未有的壓迫感。面對如此強敵，美食殿堂與各方勢力緊急召開了聯合作戰會議，在新世界的版圖上吹響了反擊的號角。<br><br>🏙️ <strong>現實世界（幕間）</strong>：八斗局長確認了「六凶」的數據源自於前代系統被刪除的異常防衛模組。菲絲在現實中遭遇了不明人員的跟蹤與干擾，意識到現實中亦有組織在不擇手段地阻止她們修復伺服器，現實世界的暗流洶湧更甚虛擬。",
+            "第6章": "🎮 <strong>遊戲世界（阿斯特萊亞）</strong>：為了尋找被遺落的世界真相，眾人深入了「吉歐・格黑納」的繁華宴會，並在此遭遇了性格各異、流浪在新世界的神秘三姊妹。在繚繞的水霧與喧囂中，隱藏在宴會底下的秘密被一點點揭開。<br><br>🏙️ <strong>現實世界（幕間）</strong>：菲絲成功破解了三姊妹在現實中的真實身份檔案，發現她們是當初被困在阿斯特朗系統中的第一批內測玩家。八斗局長則在現實的警備局總部部署防線，防範虛擬世界中因吉歐・格黑納暴動而可能引發的現實網絡癱瘓。",
+            "第7章": "🎮 <strong>遊戲世界（阿斯特萊亞）</strong>：炙熱的火山爆發，蠍獅少女帶來了毀滅性的威脅。與此同時，華音公然發動叛亂，讓原本就混亂的局勢雪上加霜。美食殿堂與盟友們不得不在高溫與背叛的夾擊中，展現出極致的智慧與團結，共同抵禦這場雙重危機。<br><br>🏙️ <strong>現實世界（幕間）</strong>：現實中的伺服器物理機房出現了局部過熱的警報，對應著虛擬世界的火山爆發。八斗局長懷疑是有人在現實中對冷卻系統進行了破壞，隨即派遣特工菲絲前往機房現場。菲絲在現場與不明侵入者展開了緊張的遭遇戰。",
+            "第8章": "🎮 <strong>遊戲世界（阿斯特萊亞）</strong>：在吉歐・提格尼亞的早餐會談上，各方勢力的代表齊聚一堂。神秘的薇歐莉特與格蕾斯在此正式登台亮相，她們隱晦的意圖與強大的實力讓氣氛降至冰點。新一輪的博弈在看似平和的餐桌上拉開序幕。<br><br>🏙️ <strong>現實世界（幕間）</strong>：八斗與菲絲將調查焦點鎖定在名為「薇歐莉特」的現實控制權限上。他們發現這個權限級別極高，甚至超越了普通的GM權限。八斗局長在現實中嘗試通過行政手段凍結該帳號，卻遭到了來自更高層網絡監理團體的阻撓。",
+            "第9章": "🎮 <strong>遊戲世界（阿斯特萊亞）</strong>：傀儡的絲線在暗中操控著一切，昔日的願望被現實無情粉碎。伴隨著靈魂歸處的爭奪，這場在新世界中的探索陷入了更為深邃的迷霧中。同伴們的情感與信念在命運的撥弄下經受著前所未有的考驗。<br><br>🏙️ <strong>現實世界（幕間）</strong>：現實中，越來越多被困玩家的生命體徵出現波動。菲絲看著監控儀器上的數據，內心充滿焦慮。八斗局長一邊頂住來自社會輿論與上級的巨大壓力，一邊指導菲絲利用逆向工程鎖定操縱傀儡數據流的幕後IP位址。",
+            "第10章": "🎮 <strong>遊戲世界（阿斯特萊亞）</strong>：冥府的使者帶領著死者大軍迎面走來，帶來了「大壞蛋大復活」的混亂局面。生與死的邊界在此時變得無比模糊，眾人退無可退，在死亡陰影的籠罩下組建起最後防線，誓死守護身後的世界。<br><br>🏙️ <strong>現實世界（幕間）</strong>：警備局監控到伺服器內的廢棄數據庫（俗稱垃圾回收站）發生了嚴重的數據逆流，導致原本被封印的舊反派數據被重新啟用。八斗局長簽發緊急限制令，菲絲則在網絡底層全力構建防火牆，阻止這些有害數據洩漏到外部網絡。",
+            "第11章": "🎮 <strong>遊戲世界（阿斯特萊亞）</strong>：凱留與普蕾西亞在冰雪覆蓋的荒原中相互依偎，建立起溫馨而堅固的新牽絆。然而，巨鯨城的近侍與眾人潛藏的憤怒交織在一起，讓這片冰雪之地的衝突逐步升溫，新世界的決戰氣氛愈發濃厚。<br><br>🏙️ <strong>現實世界（幕間）</strong>：菲絲在現實中發現了一段隱藏的源碼，揭示了普蕾西亞與凱留兩者在意識底層的某種共鳴。八斗局長指出，這可能是解決目前世界重疊的關鍵鑰匙。兩人開始在現實中尋找與這段共鳴編碼相對應的硬件介面。",
+            "第12章": "🎮 <strong>遊戲世界（阿斯特萊亞）</strong>：短暫的停戰並未能消弭悲哀的色彩。在堇色的哀傷中，眾人整理好悲痛的情緒，重新燃起鬥志，集結所有可用的戰鬥力量，正式向著攻略神秘且危險的『黑曜宮』目標發起進軍。<br><br>🏙️ <strong>現實世界（幕間）</strong>：八斗局長在現實中鎖定了『黑曜宮』在伺服器硬碟中的具體扇區位置。為了防止在攻略過程中發生數據崩潰，菲絲親自前往備用控制台，手動進行數據鏡像備份，確保即使虛擬世界毀滅，同伴們的意識數據也能被安全保留。",
+            "第13章": "🎮 <strong>遊戲世界（阿斯特萊亞）</strong>：大江戶的公主們與各方領袖再次齊聚一堂，召開了決定新世界命運的第二次公主會議。面對真實身份的坦白與嚴酷的考驗，每個人都必須做出攸關自己與同伴未來的重大抉擇。<br><br>🏙️ <strong>現實世界（幕間）</strong>：在現實中，聯合國網絡安全委員會對警備局施加了最後通牒。八斗局長以自己的職位作擔保，爭取到了最後的寶貴時間。菲絲則利用這段時間，將公主會議產生的共識代碼注入系統引導區，試圖引導系統進行自我修正。",
+            "第14章": "🎮 <strong>遊戲世界（阿斯特萊亞）</strong>：為了尋找失蹤主人的下落，眾人登上了高聳的龍之浮島，並接受了來自管理人員阿爾莎特的邀請。隨著探索的深入，新世界的底層架構與被隱藏的真實核心在此處毫無保留地展現在眾人面前。<br><br>🏙️ <strong>現實世界（幕間）</strong>：菲絲與八斗終於突破了「龍之浮島」的防禦壁，窺探到了伺服器最核心的控制台介面。他們驚訝地發現，這個系統正在自主演化出一個全新的智能實體。局長下達指令，要求在不傷害玩家意識的前提下，與該實體建立對話通道。",
+            "第15章": "🎮 <strong>遊戲世界（阿斯特萊亞）</strong>：邪惡的公主騎士們與被喚醒的伏龍震撼現身。伴隨著籠罩在『嚮導幼君』身上的種種謎團，命運的齒輪開始以前所未有的速度狂亂旋轉，新世界的命運在此迎來了最關鍵的轉折點。<br><br>🏙️ <strong>現實世界（幕間）</strong>：現實世界與虛擬世界的物理隔離壁出現了破裂的徵兆，現實中的警備局大樓遭遇了嚴重的電磁脈衝襲擊。在斷電的混亂中，八斗局長與菲絲利用應急終端進行著最後的頑抗，誓要在世界徹底失控前將核心數據安全帶出。"
         }
     },
 
@@ -174,6 +174,15 @@ const QuestMapModule = {
             "嘉夜的聲音":       "嘉夜",
             "祈梨的聲音":       "祈梨",
             "矛依未的聲音":     "矛依未",
+            "涅雅":             "涅婭",
+            "安涅默涅":         "安涅默涅",
+            "普蕾西亞":         "普蕾西亞",
+            "八斗金局長":       "八斗神",
+            "八斗":             "八斗神",
+            "八斗神局長":       "八斗神",
+            "剎鬼‧八斗神":       "八斗神",
+            "傻":               "倭",
+            "菲絲雷斯":         "菲絲",
             // ===== 其他常見 NPC =====
             "吉塔的聲音":       "吉塔",
             "深月的聲音":       "深月",
@@ -187,7 +196,7 @@ const QuestMapModule = {
         };
         
         if (aliases[singleName]) return aliases[singleName];
-        
+
         // 移除常見括號限定語，例如 "貪吃佩可（夏日）" -> "貪吃佩可"
         let clean = singleName.replace(/（[^）]+）/g, "").replace(/\([^)]+\)/g, "").trim();
         if (aliases[clean]) return aliases[clean];
@@ -203,8 +212,8 @@ const QuestMapModule = {
         const unitId = this.speakerAvatars[realName];
         if (unitId) {
             const baseId = Math.floor(unitId / 100) * 100;
-            const avatarUrl = `https://redive.estertion.win/icon/unit/${baseId + 31}.webp`;
-            return `<img src="${avatarUrl}" style="width: 100%; height: 100%; object-fit: cover;" onerror="if(this.src.includes('31.webp')) { this.src=this.src.replace('31.webp', '11.webp'); } else { this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;npc-avatar-placeholder&quot;>${realName.substring(0, 2)}</div>'; }">`;
+            const avatarUrl = `icon/unit/${baseId + 31}.webp`;
+            return `<img src="${avatarUrl}" style="width: 100%; height: 100%; object-fit: cover;" onerror="QuestMapModule.handleAvatarError(this, '${realName.replace(/'/g, "\\'")}')">`;
         } else {
             return `<div class="npc-avatar-placeholder">${realName.substring(0, 2)}</div>`;
         }
@@ -226,7 +235,25 @@ const QuestMapModule = {
                         avatarsResult.forEach(row => {
                             this.speakerAvatars[row.unit_name] = row.unit_id;
                         });
-                        console.log(`[QuestMapModule] 預載入 ${Object.keys(this.speakerAvatars).length} 筆角色頭像映射`);
+                        
+                        // 手動補全第三部重要劇情 NPC 的 unit_id 映射
+                        this.speakerAvatars["涅婭"] = 123311;
+                        this.speakerAvatars["涅雅"] = 123311;
+                        this.speakerAvatars["安涅默涅"] = 129611;
+                        this.speakerAvatars["普蕾西亞"] = 126112;
+                        this.speakerAvatars["八斗神局長"] = 193631;
+                        this.speakerAvatars["八斗金局長"] = 193631;
+                        this.speakerAvatars["八斗"] = 193631;
+                        this.speakerAvatars["八斗神"] = 193631;
+                        this.speakerAvatars["剎鬼‧八斗神"] = 193631;
+                        this.speakerAvatars["菲絲雷斯"] = 193732;
+                        this.speakerAvatars["菲絲"] = 193732;
+                        this.speakerAvatars["媞雅"] = 193211;
+                        this.speakerAvatars["格魯尼"] = 195611;
+                        this.speakerAvatars["羅蘭"] = 195211;
+                        this.speakerAvatars["涅妃‧涅羅"] = 129711;
+
+                        console.log(`[QuestMapModule] 預載入 ${Object.keys(this.speakerAvatars).length} 筆角色頭像映射 (含手動NPC補全)`);
                     }
                 } catch (e) {
                     console.error("預載入角色頭像失敗:", e);
@@ -850,15 +877,15 @@ const QuestMapModule = {
                         renderedSet.add(realName);
 
                         const unitId = this.speakerAvatars[realName];
-                        let avatarUrl = "https://redive.estertion.win/icon/unit/000000.webp";
+                        let avatarUrl = "icon/unit/000000.webp";
                         if (unitId) {
                             const baseId = Math.floor(unitId / 100) * 100;
-                            avatarUrl = `https://redive.estertion.win/icon/unit/${baseId + 31}.webp`;
+                            avatarUrl = `icon/unit/${baseId + 31}.webp`;
                         }
                         
                         badgeHtmls.push(`
                             <div class="game-chara-avatar-badge" title="${realName}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})">
-                                <img src="${avatarUrl}" onerror="if(this.src.includes('31.webp')) { this.src=this.src.replace('31.webp', '11.webp'); } else { this.src='https://redive.estertion.win/icon/unit/000000.webp'; }">
+                                <img src="${avatarUrl}" onerror="QuestMapModule.handleAvatarError(this, '${realName.replace(/'/g, "\\'")}')">
                             </div>
                         `);
                     });
@@ -885,24 +912,34 @@ const QuestMapModule = {
                 let avatarHtml = "";
                 if (!isNarrator && !isChoice) {
                     const realName = realNameForBtn;
-                    const avatarContent = QuestMapModule.getAvatarHtml(realName);
+                    let avatarContent = "";
+                    
+                    if (item.unit_id) {
+                        const baseId = Math.floor(item.unit_id / 100) * 100;
+                        const avatarUrl = `icon/unit/${baseId + 31}.webp`;
+                        avatarContent = `<img src="${avatarUrl}" style="width: 100%; height: 100%; object-fit: cover;" onerror="QuestMapModule.handleAvatarError(this, '${realName.replace(/'/g, "\\'")}')">`;
+                    } else {
+                        avatarContent = QuestMapModule.getAvatarHtml(realName);
+                    }
                     
                     avatarHtml = `
                         <div class="game-chara-avatar-wrapper" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})" style="cursor: pointer;">
-                            <div class="game-chara-avatar">
-                                ${avatarContent}
-                            </div>
+                             <div class="game-chara-avatar">
+                                 ${avatarContent}
+                             </div>
                         </div>
                     `;
                 }
                 
-                const speakerBtnHtml = "";
+                const voiceBtn = item.voice ? `<span class="dialogue-voice-btn" onclick="event.stopPropagation(); QuestMapModule.playVoice('${item.voice}')" style="cursor: pointer; margin-left: 6px; font-size: 0.85rem; color: var(--accent-color); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">🔊</span>` : '';
                 
                 html += `
                     <div class="game-dialogue-line ${speakerClass}">
                         ${avatarHtml}
                         <div class="game-dialogue-content">
-                            <div class="game-dialogue-speaker" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realNameForBtn).replace(/\"/g, '&quot;')})" style="cursor: pointer; display: inline-block;">${speaker}</div>
+                            <div class="game-dialogue-speaker" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realNameForBtn).replace(/\"/g, '&quot;')})" style="cursor: pointer; display: inline-block;">
+                                ${speaker}${voiceBtn}
+                            </div>
                             <div class="game-dialogue-text">${words}</div>
                         </div>
                     </div>
@@ -926,6 +963,40 @@ const QuestMapModule = {
                     </code>
                 </div>
             `;
+        }
+    },
+
+    playVoice(voiceName) {
+        if (!voiceName) return;
+        const groupId = voiceName.substring(7, 14);
+        const voiceUrl = `https://prcn-sound.estertion.win/story_vo/${groupId}/${voiceName}.m4a`;
+        
+        if (this.currentAudio) {
+            this.currentAudio.pause();
+        }
+        
+        this.currentAudio = new Audio(voiceUrl);
+        this.currentAudio.play().catch(e => {
+            console.error("語音播放失敗:", e);
+        });
+    },
+
+    handleAvatarError(img, realName) {
+        if (img.src.includes('31.webp') && !img.src.includes('estertion')) {
+            img.src = img.src.replace('icon/unit/', 'https://redive.estertion.win/icon/unit/');
+        } else if (img.src.includes('31.webp') && img.src.includes('estertion')) {
+            img.src = img.src.replace('https://redive.estertion.win/', '').replace('31.webp', '11.webp');
+        } else if (img.src.includes('11.webp') && !img.src.includes('estertion')) {
+            img.src = img.src.replace('icon/unit/', 'https://redive.estertion.win/icon/unit/');
+        } else {
+            img.style.display = 'none';
+            if (img.parentNode) {
+                // 如果父節點是 avatar 容器，放入文字佔位符
+                const placeholder = document.createElement('div');
+                placeholder.className = 'npc-avatar-placeholder';
+                placeholder.innerText = realName ? realName.substring(0, 2) : '??';
+                img.parentNode.appendChild(placeholder);
+            }
         }
     },
 
@@ -955,11 +1026,11 @@ const QuestMapModule = {
         const appearances = (this.appearanceMap &&
             (this.appearanceMap[realCharaName] || this.appearanceMap[charaName])) || [];
         
-        let avatarUrl = "https://redive.estertion.win/icon/unit/000000.webp";
+        let avatarUrl = "icon/unit/000000.webp";
         const unitId = this.speakerAvatars[realCharaName];
         if (unitId) {
             const baseId = Math.floor(unitId / 100) * 100;
-            avatarUrl = `https://redive.estertion.win/icon/unit/${baseId + 31}.webp`;
+            avatarUrl = `icon/unit/${baseId + 31}.webp`;
         }
 
         let modalEl = document.getElementById('game-chara-modal');
@@ -1060,7 +1131,7 @@ const QuestMapModule = {
                 
                 <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px;">
                     <div style="width: 100px; height: 100px; border-radius: 12px; overflow: hidden; border: 2px solid rgba(232, 56, 117, 0.15); background: #ffffff; display: flex; align-items: center; justify-content: center;">
-                        <img src="${avatarUrl}" style="width: 100%; height: 100%; object-fit: cover;" onerror="if(this.src.includes('31.webp')) { this.src=this.src.replace('31.webp', '11.webp'); } else { this.src='https://redive.estertion.win/icon/unit/000000.webp'; }">
+                        <img src="${avatarUrl}" style="width: 100%; height: 100%; object-fit: cover;" onerror="QuestMapModule.handleAvatarError(this, '${realCharaName.replace(/'/g, "\\'")}')">
                     </div>
                     ${detailsHtml}
                 </div>
@@ -1188,10 +1259,10 @@ const QuestMapModule = {
                         const count = (this.appearanceMap[name] || []).length;
                         const realName = this.getCharaRealName(name);
                         const unitId = this.speakerAvatars[realName];
-                        let avatarUrl = "https://redive.estertion.win/icon/unit/000000.webp";
+                        let avatarUrl = "icon/unit/000000.webp";
                         if (unitId) {
                             const baseId = Math.floor(unitId / 100) * 100;
-                            avatarUrl = `https://redive.estertion.win/icon/unit/${baseId + 31}.webp`;
+                            avatarUrl = `icon/unit/${baseId + 31}.webp`;
                         }
                         
                         return `
@@ -1200,7 +1271,7 @@ const QuestMapModule = {
                                  onmouseout="this.style.transform='none'; this.style.borderColor='rgba(255,255,255,0.08)'; this.style.background='rgba(255,255,255,0.03)';"
                                  style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 15px 10px; text-align: center; cursor: pointer; transition: all 0.2s ease-in-out; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
                                 <div style="width: 70px; height: 70px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(255,255,255,0.1); background: #000; display: flex; align-items: center; justify-content: center;">
-                                    <img src="${avatarUrl}" style="width: 100%; height: 100%; object-fit: cover;" onerror="if(this.src.includes('31.webp')) { this.src=this.src.replace('31.webp', '11.webp'); } else { this.src='https://redive.estertion.win/icon/unit/000000.webp'; }">
+                                    <img src="${avatarUrl}" style="width: 100%; height: 100%; object-fit: cover;" onerror="QuestMapModule.handleAvatarError(this, '${realName.replace(/'/g, "\\'")}')">
                                 </div>
                                 <div style="font-weight: bold; font-size: 0.9rem; color: #fff; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; width: 100%;" title="${name}">${name}</div>
                                 <div style="font-size: 0.78rem; color: #ffa94d;">🎬 登場 ${count} 話</div>
@@ -1242,10 +1313,10 @@ const QuestMapModule = {
                 const count = (this.appearanceMap[name] || []).length;
                 const realName = this.getCharaRealName(name);
                 const unitId = this.speakerAvatars[realName];
-                let avatarUrl = "https://redive.estertion.win/icon/unit/000000.webp";
+                let avatarUrl = "icon/unit/000000.webp";
                 if (unitId) {
                     const baseId = Math.floor(unitId / 100) * 100;
-                    avatarUrl = `https://redive.estertion.win/icon/unit/${baseId + 31}.webp`;
+                    avatarUrl = `icon/unit/${baseId + 31}.webp`;
                 }
                 
                 return `
@@ -1254,7 +1325,7 @@ const QuestMapModule = {
                          onmouseout="this.style.transform='none'; this.style.borderColor='rgba(255,255,255,0.08)'; this.style.background='rgba(255,255,255,0.03)';"
                          style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 15px 10px; text-align: center; cursor: pointer; transition: all 0.2s ease-in-out; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
                         <div style="width: 70px; height: 70px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(255,255,255,0.1); background: #000; display: flex; align-items: center; justify-content: center;">
-                            <img src="${avatarUrl}" style="width: 100%; height: 100%; object-fit: cover;" onerror="if(this.src.includes('31.webp')) { this.src=this.src.replace('31.webp', '11.webp'); } else { this.src='https://redive.estertion.win/icon/unit/000000.webp'; }">
+                            <img src="${avatarUrl}" style="width: 100%; height: 100%; object-fit: cover;" onerror="QuestMapModule.handleAvatarError(this, '${realName.replace(/'/g, "\\'")}')">
                         </div>
                         <div style="font-weight: bold; font-size: 0.9rem; color: #fff; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; width: 100%;" title="${name}">${name}</div>
                         <div style="font-size: 0.78rem; color: #ffa94d;">🎬 登場 ${count} 話</div>
