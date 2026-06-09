@@ -22,6 +22,26 @@ window.PCRDatabase = {
     },
 
     /**
+     * 驗證資料庫結構完整性
+     */
+    verifyDatabase() {
+        if (!this.db) return false;
+        try {
+            // 測試查詢 story_detail 表是否存在且有資料
+            const res = this.runQuery("SELECT COUNT(*) as cnt FROM sqlite_master WHERE type='table' AND name='story_detail'");
+            if (res && res.length > 0 && res[0].cnt > 0) {
+                // 進一步檢查是否包含主線劇情資料
+                const rows = this.runQuery("SELECT COUNT(*) as cnt FROM story_detail");
+                return rows && rows.length > 0 && rows[0].cnt > 0;
+            }
+            return false;
+        } catch (e) {
+            console.error("[PCRDatabase] 驗證資料庫結構出錯:", e);
+            return false;
+        }
+    },
+
+    /**
      * 初始化資料庫
      * @param {Function} onProgress 進度回調 (message, percent)
      */
@@ -44,8 +64,15 @@ window.PCRDatabase = {
             if (cachedDB) {
                 if (onProgress) onProgress(`正在載入本地 ${this.currentRegion.toUpperCase()} 快取...`, 50);
                 this.db = new SQL.Database(new Uint8Array(cachedDB));
-                console.log(`[PCRDatabase] Loaded ${this.currentRegion} from IndexedDB`);
-                return this.db;
+                
+                // 驗證快取是否有效與完整
+                if (this.verifyDatabase()) {
+                    console.log(`[PCRDatabase] Loaded and verified ${this.currentRegion} from IndexedDB`);
+                    return this.db;
+                } else {
+                    console.warn(`[PCRDatabase] 快取資料庫無效或損壞，將強制重載...`);
+                    this.db = null;
+                }
             }
 
             // 3. 嘗試從本地目錄取得 (繞過 CORS)
@@ -62,9 +89,15 @@ window.PCRDatabase = {
 
             if (dbData) {
                 this.db = new SQL.Database(new Uint8Array(dbData));
-                await this.saveToIDB(dbKey, dbData);
-                console.log(`[PCRDatabase] Successfully initialized ${this.currentRegion} DB`);
-                return this.db;
+                if (this.verifyDatabase()) {
+                    await this.saveToIDB(dbKey, dbData);
+                    console.log(`[PCRDatabase] Successfully initialized and verified ${this.currentRegion} DB`);
+                    return this.db;
+                } else {
+                    // 【修正 Bug 6】驗證失敗時清除無效的 this.db，避免後續操作在無效資料庫上執行
+                    this.db = null;
+                    throw new Error("載入的資料庫格式有誤，找不到劇情資料表。");
+                }
             }
 
             throw new Error(`資料庫載入失敗。`);
@@ -74,6 +107,7 @@ window.PCRDatabase = {
             throw error;
         }
     },
+
 
     /**
      * 下載資料庫文件（帶進度回調）

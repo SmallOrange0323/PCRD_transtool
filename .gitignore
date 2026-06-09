@@ -21,3 +21,19 @@ translator/api_key.txt
 # 4. 忽略暫存測試目錄
 temp_repos/
 *.log
+
+# 5. 忽略大型資料庫檔案
+dashboard/*.db
+dashboard/*.db.bak
+
+# 6. 忽略下載的對白 JSON（改用 download_stories_tw.py 下載）
+dashboard/story/*.json
+
+# 7. 忽略 icon 資源
+dashboard/icon/
+
+# 8. 忽略 scratch 測試腳本（僅供開發除錯用）
+scratch/
+
+# 9. 忽略虛擬環境
+venv/

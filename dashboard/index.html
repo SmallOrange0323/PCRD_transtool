@@ -73,7 +73,7 @@
     </main>
 
     <!-- 角色詳情彈窗 -->
-    <div id="char-detail-modal" class="modal-overlay" style="display: none;" onclick="if(event.target === this) CharactersModule.closeDetail()">
+    <div id="char-detail-modal" class="modal-overlay" onclick="if(event.target === this) CharactersModule.closeDetail()">
         <div class="modal-content glass-card" onclick="event.stopPropagation()">
             <button class="modal-close" onclick="CharactersModule.closeDetail()">×</button>
             <div id="modal-body"></div>
@@ -81,12 +81,14 @@
     </div>
 
     <!-- 程式腳本 -->
-    <script src="db.js?v=4.0"></script>
-    <script src="characters.js?v=4.0"></script>
-    <script src="clan-battle.js?v=4.0"></script>
-    <script src="map.js?v=4.0"></script>
-    <script src="events.js?v=4.0"></script>
-    <script src="usage-stats.js?v=4.0"></script>
+    <script src="db.js?v=5.0"></script>
+    <script src="avatar-service.js?v=5.0"></script>
+    <script src="chapter-data.js?v=5.0"></script>
+    <script src="characters.js?v=5.0"></script>
+    <script src="clan-battle.js?v=5.0"></script>
+    <script src="map.js?v=5.0"></script>
+    <script src="events.js?v=5.0"></script>
+    <script src="usage-stats.js?v=5.0"></script>
 
     <script>
         console.log("Main script block in index.html starting...");

@@ -10,49 +10,44 @@ window.UsageStatsModule = {
         container.innerHTML = `
             <div class="stats-container">
                 <div class="stats-header glass-card">
-                    <h2 style="margin-bottom: 15px;">作業角色使用率統計</h2>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h2 style="margin: 0;">作業角色使用率統計</h2>
+                        <button class="action-btn secondary" style="padding: 4px 8px; font-size: 0.85em;" onclick="document.getElementById('advanced-sync-panel').style.display = document.getElementById('advanced-sync-panel').style.display === 'none' ? 'block' : 'none'">⚙️ 同步與進階設定</button>
+                    </div>
                     
-                    <!-- 全自動 API 對接區 -->
-                    <div class="api-fetch-section" style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1);">
-                        <label style="display:block; margin-bottom: 8px;">A. 全自動對接 API (aikurumi.cn)：</label>
-                        <div style="display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap;">
-                            <select id="api-server" class="modern-input">
+                    <!-- 進階同步與對接面板 (預設隱藏，保持介面極簡) -->
+                    <div id="advanced-sync-panel" class="advanced-panel" style="display: none; margin-bottom: 20px; padding: 15px; background: rgba(0,0,0,0.3); border: 1px dashed rgba(255,255,255,0.15); border-radius: 8px;">
+                        <h4 style="margin-top: 0; margin-bottom: 10px; color: var(--accent-color);">🔄 小胡桃戰隊戰作業同步與對接</h4>
+                        <div style="display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; align-items: center;">
+                            <select id="api-server" class="modern-input" style="height: 34px; padding: 0 10px;">
                                 <option value="tw">台服 (TW)</option>
                                 <option value="jp" selected>日服 (JP)</option>
                                 <option value="cn">陸服 (CN)</option>
                             </select>
-                            <input type="text" id="api-cb-id" class="modern-input" placeholder="期次 (例: 202604)" style="width: 150px;">
-                            <select id="api-stage" class="modern-input">
+                            <input type="text" id="api-cb-id" class="modern-input" placeholder="期次 (例: 202601)" style="width: 120px; height: 34px; padding: 0 10px;">
+                            <select id="api-stage" class="modern-input" style="height: 34px; padding: 0 10px;">
                                 <option value="1">1、2階段</option>
                                 <option value="2">3階段 (丙)</option>
                                 <option value="3">4階段 (丁)</option>
                                 <option value="4" selected>5階段 (戊)</option>
                             </select>
-                            <button class="action-btn" onclick="UsageStatsModule.fetchFromAPI()">自動抓取</button>
-                            <button class="action-btn" style="background:#6c5ce7; color:white;" onclick="UsageStatsModule.loadLocalData('merged_bulk', '')">🚀 載入跨月大數據 (25/12~26/04)</button>
-                            <button class="action-btn secondary" onclick="UsageStatsModule.loadLocalData('202604', 'jp')">載入 26/04 單月</button>
+                            <button class="action-btn" style="padding: 6px 12px;" onclick="UsageStatsModule.fetchFromAPI()">手動API抓取</button>
                         </div>
-                        <span id="api-status" style="font-size: 0.9em; color: #ff6b6b;"></span>
-                    </div>
-
-                    <!-- 手動輸入區 (降級備案) -->
-                    <div class="input-section" style="margin-bottom: 20px;">
-                        <label style="display:block; margin-bottom: 8px;">B. 手動備案 (若 API 失敗請在此貼上 JSON)：</label>
-                        <textarea id="stats-json-input" class="modern-textarea" placeholder="在此貼上 [ { ... }, { ... } ] 格式的 JSON 陣列" style="width: 100%; height: 100px; margin-bottom: 10px;"></textarea>
-                        <button class="action-btn secondary" onclick="UsageStatsModule.parseInput()">解析手動數據</button>
-                        <span id="parse-status" style="margin-left: 15px; font-size: 0.9em; color: var(--accent-color);"></span>
-                    </div>
-
-                    <!-- 控制面板 -->
-                    <div class="control-panel" id="stats-controls" style="display: none; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
-                        <div style="display: flex; gap: 20px; align-items: flex-end;">
-                            <div class="control-group" style="flex: 1;">
-                                <label style="display:block; margin-bottom: 8px;">2. 篩選月份：</label>
-                                <div id="month-checkboxes" style="display: flex; gap: 10px; flex-wrap: wrap;"></div>
-                            </div>
-                            <div class="control-group" style="flex: 2;">
-                                <label style="display:flex; justify-content: space-between; margin-bottom: 8px;">
-                                    <span>3. 最低傷害門檻：</span>
+                        <span id="api-status" style="font-size: 0.85em; color: #ff6b6b; display: block; margin-bottom: 10px;"></span>
+                        
+                        <!-- 🔮 騎士神級一鍵書籤安裝區 -->
+                        <div class="bookmarklet-section" style="padding: 10px; background: rgba(9, 132, 227, 0.15); border: 1px dashed #0984e3; border-radius: 6px;">
+                            <h5 style="color: #74b9ff; margin: 0 0 6px 0; font-size: 0.9em;">🔮 終極免 F12 一鍵對接書籤</h5>
+                            <p style="font-size: 0.8em; opacity: 0.85; margin: 0 0 8px 0; line-height: 1.35;">
+                                請將下方按鈕<strong>拖曳到您的瀏覽器書籤列</strong>。以後在小胡桃網頁點一下該書籤，即可 0 延遲完成繁中化同步！
+                            </p>
+                            <a href="javascript:(function(){let rawToken=sessionStorage.getItem('pcr_token')||localStorage.getItem('pcr_token');if(!rawToken){for(let i=0;i<sessionStorage.length;i++){let k=sessionStorage.key(i);let v=sessionStorage.getItem(k);if(v&&v.includes('%22d%22')&&v.includes('%22t%22')){rawToken=v;break;}}}if(!rawToken){alert('❌ 找不到憑證，請先點擊網頁上的「搜尋」按鈕或 BOSS 載入作業！');return;}let tokenObj=typeof rawToken==='string'?JSON.parse(rawToken):rawToken;fetch('http://127.0.0.1:54321/sync',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({d:tokenObj.d,l:tokenObj.l,t:tokenObj.t,server:'jp',clanBattleId:1074,stage:4})}).then(r=>r.json()).then(d=>{if(d.success){alert('🎉 【同步大成功】\n\n最新戰隊戰作業已完美繁中化匯入 PCRD Data Hub 系統！\n請回到 Data Hub 網頁按 F5 重新整理，再點點看載入大數據按鈕吧！');}else{alert('❌ 【同步失敗】'+d.error);}}).catch(e=>alert('❌ 連線失敗，請確保本地 Python 同步服務正在運行！'));})();" 
+                               class="action-btn" 
+                               style="background: #0984e3; color: white; padding: 4px 10px; display: inline-block; text-decoration: none; border-radius: 4px; font-size: 0.8em; font-weight: bold;"
+                               onclick="event.preventDefault(); alert('請直接用滑鼠按住此按鈕，將它拖曳到您的瀏覽器書籤列上！');">
+                               ➔ 拖曳我到書籤列：【一鍵同步小胡桃】
+                            </a>
+                        </div>
                                     <span id="dmg-val-display" style="color: var(--accent-color);">0 萬</span>
                                 </label>
                                 <input type="range" id="dmg-slider" min="0" max="10000" step="500" value="0" style="width: 100%;">
@@ -185,6 +180,11 @@ window.UsageStatsModule = {
         if (apiServer) {
             apiServer.value = window.PCRDatabase.currentRegion;
         }
+
+        // 【動線優化】網頁開啟時自動靜默載入本地大數據作業，實現開箱即用
+        setTimeout(() => {
+            this.loadLocalData('merged_bulk', '');
+        }, 50);
     },
 
     parseInput() {
@@ -231,22 +231,43 @@ window.UsageStatsModule = {
         const statusEl = document.getElementById('api-status');
         const filename = month === 'merged_bulk' ? 'gvg_data_merged_bulk.json' : `gvg_data_${month}_${server}.json`;
         
-        statusEl.innerText = `正在讀取本地預存檔案: ${filename}...`;
-        statusEl.style.color = "#aaa";
+        if (statusEl) {
+            statusEl.innerText = `正在讀取本地預存檔案: ${filename}...`;
+            statusEl.style.color = "#aaa";
+        }
         
         try {
             const response = await fetch(filename);
             if (!response.ok) throw new Error("找不到預存檔案，請確認檔案是否存在。");
             
             const data = await response.json();
-            document.getElementById('stats-json-input').value = JSON.stringify(data, null, 2);
-            this.parseInput();
             
-            statusEl.innerText = "✅ 本地預存數據載入成功！";
-            statusEl.style.color = "#4caf50";
+            // 直接在記憶體中處理與解析
+            this.rawData = data.data || data.list || data;
+            
+            if (!Array.isArray(this.rawData)) {
+                this.rawData = data; // 降級備用
+            }
+            
+            this.normalizeData();
+            
+            const controlsEl = document.getElementById('stats-controls');
+            if (controlsEl) {
+                controlsEl.style.display = 'block';
+            }
+            
+            this.initMonthCheckboxes();
+            this.updateStats();
+            
+            if (statusEl) {
+                statusEl.innerText = "✅ 本地預存數據載入成功！";
+                statusEl.style.color = "#4caf50";
+            }
         } catch (e) {
-            statusEl.innerText = "❌ 載入失敗: " + e.message;
-            statusEl.style.color = "#ff6b6b";
+            if (statusEl) {
+                statusEl.innerText = "❌ 載入失敗: " + e.message;
+                statusEl.style.color = "#ff6b6b";
+            }
         }
     },
 
@@ -306,9 +327,8 @@ window.UsageStatsModule = {
                 let bossId = item.bossId || item.bossNum || item.enemyNum || item.stage || 1; 
                 let damage = item.expectedDamage || item.damage || 0;
                 
-                // 提取角色
                 let characters = [];
-                let charList = item.charas || item.characters || item.units || [];
+                let charList = item.charaList || item.charas || item.characters || item.units || [];
                 
                 charList.forEach(c => {
                     if (c.prefabId) characters.push({ id: c.prefabId, name: c.unitName || '未知' });

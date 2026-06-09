@@ -4,7 +4,7 @@
     --bg-color: #fff5f7;
     --glass-bg: rgba(255, 255, 255, 0.85);
     --glass-border: rgba(232, 56, 117, 0.15);
-    --accent-gradient: linear-gradient(135deg, #e83875 0%, #3ca9e2 100%);
+    --accent-gradient: linear-gradient(135deg, #e83875 0%, #c4246a 100%);
     --accent-color: #e83875;
     --text-primary: #2d3540;
     --text-secondary: #5e6b7d;
@@ -847,9 +847,11 @@ body {
     padding: 30px;
     margin-bottom: 2rem;
     border-radius: 24px;
-    background: rgba(255, 255, 255, 0.01);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 32px rgba(94, 107, 125, 0.1);
 }
 
 .map-header {
@@ -890,9 +892,9 @@ body {
 }
 
 .part-btn:hover {
-    color: var(--text-primary);
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--accent-color);
+    background: rgba(232, 56, 117, 0.06);
+    border-color: rgba(232, 56, 117, 0.2);
 }
 
 .part-btn.active {
@@ -906,27 +908,28 @@ body {
 .map-layout {
     display: grid;
     grid-template-columns: 2.2fr 1fr;
-    gap: 30px;
-    height: 700px;
-    margin-bottom: 30px;
+    gap: 20px;
+    align-items: start;
+    margin-bottom: 0;
 }
 
 /* 左側電影放映區 */
 .map-visual-area {
     position: relative;
-    border-radius: 0;
-    overflow: visible;
-    background: transparent;
-    border: none;
-    height: 100%;
-    padding: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 24px rgba(94, 107, 125, 0.08);
+    padding: 20px;
 }
 
 .cinema-panel {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    height: 100%;
+    gap: 14px;
 }
 
 .cinema-screen {
@@ -972,7 +975,7 @@ body {
 .npc-avatar-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #e83875 0%, #3ca9e2 100%);
+    background: linear-gradient(135deg, #e83875 0%, #c4246a 100%);
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -986,7 +989,7 @@ body {
 }
 
 .cinema-meta::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(232, 56, 117, 0.18);
     border-radius: 10px;
 }
 
@@ -1026,11 +1029,13 @@ body {
 .map-control-panel {
     display: flex;
     flex-direction: column;
-    height: 100%;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 20px;
     border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 24px rgba(94, 107, 125, 0.08);
 }
 
 .panel-section-title {
@@ -1038,7 +1043,7 @@ body {
     font-weight: 700;
     color: var(--accent-color);
     margin-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(232, 56, 117, 0.15);
     padding-bottom: 10px;
     text-align: left;
 }
@@ -1047,6 +1052,7 @@ body {
     flex: 1;
     overflow-y: auto;
     padding-right: 5px;
+    max-height: 500px;
 }
 
 .story-list-scrollbar::-webkit-scrollbar {
@@ -1054,12 +1060,12 @@ body {
 }
 
 .story-list-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(232, 56, 117, 0.18);
     border-radius: 10px;
 }
 
 .story-list-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(232, 56, 117, 0.35);
 }
 
 /* 風琴選單項目樣式 */
@@ -1071,15 +1077,17 @@ body {
 
 .accordion-item {
     border-radius: 14px;
-    background: rgba(255, 255, 255, 0.01);
-    border: 1px solid rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(232, 56, 117, 0.1);
     overflow: hidden;
     transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(94, 107, 125, 0.05);
 }
 
 .accordion-item.active {
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(232, 56, 117, 0.25);
+    box-shadow: 0 4px 16px rgba(232, 56, 117, 0.08);
 }
 
 .accordion-header {
@@ -1093,7 +1101,7 @@ body {
 }
 
 .accordion-header:hover {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(232, 56, 117, 0.04);
 }
 
 .acc-header-title {
@@ -1108,15 +1116,16 @@ body {
 
 .acc-ch-name {
     font-weight: 700;
-    font-size: 0.95rem;
-    color: #fff;
+    font-size: 0.9rem;
+    color: var(--text-primary);
 }
 
 .acc-count {
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    background: rgba(255, 255, 255, 0.08);
-    padding: 2px 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    background: rgba(232, 56, 117, 0.08);
+    padding: 2px 10px;
     border-radius: 20px;
 }
 
@@ -1125,7 +1134,7 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(232, 56, 117, 0.025);
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -1141,7 +1150,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 10px 14px;
+    padding: 9px 14px;
     border-radius: 10px;
     cursor: pointer;
     border: 1px solid transparent;
@@ -1149,26 +1158,28 @@ body {
 }
 
 .story-item:hover {
-    background: rgba(255, 255, 255, 0.04);
-    transform: translateX(4px);
+    background: rgba(232, 56, 117, 0.06);
+    border-color: rgba(232, 56, 117, 0.12);
+    transform: translateX(3px);
 }
 
 .story-item.active {
-    background: rgba(255, 107, 157, 0.06);
-    border-color: rgba(255, 107, 157, 0.2);
+    background: rgba(232, 56, 117, 0.1);
+    border-color: rgba(232, 56, 117, 0.3);
 }
 
 .story-dot {
     width: 6px;
     height: 6px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(94, 107, 125, 0.25);
     border-radius: 50%;
+    flex-shrink: 0;
     transition: var(--transition);
 }
 
 .story-item.active .story-dot {
-    background: #ff6b9d;
-    box-shadow: 0 0 8px #ff6b9d;
+    background: var(--accent-color);
+    box-shadow: 0 0 6px rgba(232, 56, 117, 0.5);
     transform: scale(1.3);
 }
 
@@ -1182,14 +1193,15 @@ body {
 }
 
 .story-item-ch {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     color: var(--text-secondary);
+    font-weight: 500;
 }
 
 .story-item-title {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-primary);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1367,35 +1379,32 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    background: #ffffff;
-    border-radius: 12px;
-    border: 3px solid #6b9ac4;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 16px;
+    border: 1.5px solid rgba(232, 56, 117, 0.2);
+    box-shadow: 0 4px 20px rgba(94, 107, 125, 0.1);
     overflow: hidden;
-    color: #333333;
+    color: var(--text-primary);
 }
 
-/* 頂部藍色標題裝飾條 */
+/* 頂部標題裝飾條 */
 .game-dialogue-header {
-    background: linear-gradient(135deg, #4477aa 25%, #5588bb 25%, #5588bb 50%, #4477aa 50%, #4477aa 75%, #5588bb 75%, #5588bb 100%);
-    background-size: 20px 20px;
-    border-bottom: 2px solid #e2a03f;
-    padding: 10px;
+    background: linear-gradient(135deg, #e83875 0%, #c4246a 100%);
+    padding: 10px 20px;
     text-align: center;
     color: #ffffff;
     font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5), 0 0 10px rgba(255,255,255,0.2);
+    font-size: 0.95rem;
+    letter-spacing: 3px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.25);
     position: relative;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .game-dialogue-header::before,
 .game-dialogue-header::after {
     content: "✦";
-    color: #ffd700;
-    font-size: 1.2rem;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -1407,11 +1416,11 @@ body {
 .game-dialogue-board {
     flex: 1;
     overflow-y: auto;
-    padding: 15px;
-    background: #f7f9fa;
+    padding: 12px;
+    background: #fdf6f9;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 /* 每一行對白卡片 */
@@ -1498,13 +1507,13 @@ body {
 
 /* 說話者名字 */
 .game-dialogue-speaker {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 700;
-    color: #3b71a8;
+    color: var(--accent-color);
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
 }
 
 /* 說話者名字右邊的細細虛線 */
@@ -1512,7 +1521,7 @@ body {
     content: "";
     flex: 1;
     height: 1px;
-    border-bottom: 1px dotted #cbd7e6;
+    border-bottom: 1px dotted rgba(232, 56, 117, 0.25);
 }
 
 /* 對話內文氣泡 */
@@ -1526,50 +1535,16 @@ body {
 }
 
 /* 右側圓形 3D 藍色喇叭語音按鈕 */
-.game-speaker-btn {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #7eb9e6 0%, #3e7bb0 100%);
-    border: 3px solid #eed6aa;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.15), inset 0 2px 4px rgba(255,255,255,0.4), inset 0 -2px 4px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    flex-shrink: 0;
-    margin-left: 10px;
-    align-self: center;
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
-    position: relative;
-}
 
-.game-speaker-btn:hover {
-    transform: scale(1.05);
-    background: linear-gradient(135deg, #90c6f2 0%, #4686be 100%);
-}
-
-.game-speaker-btn:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 1px 2px rgba(255,255,255,0.2);
-}
-
-/* 喇叭聲波符號 (使用 Unicode 渲染) */
-.game-speaker-btn::before {
-    content: "🔊";
-    color: #ffffff;
-    font-size: 1.1rem;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-}
 
 /* 底部關閉與跳過按鈕控制區 */
 .game-dialogue-footer {
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 15px;
-    background: #ffffff;
-    border-top: 1px solid #e1e7ee;
+    padding: 12px;
+    background: rgba(255, 245, 247, 0.95);
+    border-top: 1px solid rgba(232, 56, 117, 0.1);
 }
 
 .game-footer-btn {
@@ -1584,47 +1559,49 @@ body {
     user-select: none;
 }
 
-/* 關閉按鈕：白底金色灰邊 */
+/* 關閉按鈕：白底淡粉灰邊 */
 .game-footer-btn.close {
-    background: #f7f9fa;
-    border: 3px solid #c2cbd6;
-    color: #5d6770;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1), inset 0 1px 2px #fff;
+    background: #ffffff;
+    border: 2px solid rgba(232, 56, 117, 0.2);
+    color: var(--text-secondary);
+    box-shadow: 0 2px 6px rgba(94, 107, 125, 0.08);
 }
 
 .game-footer-btn.close:hover {
-    background: #ffffff;
-    border-color: #aeb9c6;
-    color: #333333;
+    background: #fff5f7;
+    border-color: rgba(232, 56, 117, 0.4);
+    color: var(--accent-color);
 }
 
-/* 跳過按鈕：藍底白字 */
+/* 跳至底端按鈕：公主連結標準粉紅 */
 .game-footer-btn.skip {
-    background: linear-gradient(180deg, #53a3ec 0%, #2b7bc4 100%);
-    border: 3px solid #ffd780;
+    background: #e83875;
+    border: none;
     color: #ffffff;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-    box-shadow: 0 3px 6px rgba(43,123,196,0.3), inset 0 1px 2px rgba(255,255,255,0.3);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(232, 56, 117, 0.35);
 }
 
 .game-footer-btn.skip:hover {
-    background: linear-gradient(180deg, #66b0f5 0%, #3589d4 100%);
-    box-shadow: 0 4px 10px rgba(43,123,196,0.4);
+    background: #d42d67;
+    box-shadow: 0 6px 16px rgba(232, 56, 117, 0.5);
+    transform: translateY(-1px);
 }
 
 /* 旁白行特色樣式 */
 .game-dialogue-line.role-narrator {
     background: #fafbfc;
-    border-color: #dbe2eb;
+    border-color: rgba(94, 107, 125, 0.15);
 }
 
 .game-dialogue-line.role-narrator .game-dialogue-speaker {
-    color: #7b8896;
+    color: var(--text-secondary);
+    font-style: italic;
 }
 
 .game-dialogue-line.role-narrator .game-dialogue-text {
     font-style: italic;
-    color: #667280;
+    color: var(--text-secondary);
 }
 
 /* 選擇肢行特色樣式 (淡粉色置中，無頭像無喇叭，有邊框發光) */

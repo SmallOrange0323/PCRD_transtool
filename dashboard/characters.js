@@ -110,7 +110,7 @@ window.CharactersModule = {
     async showDetail(unitId) {
         const modal = document.getElementById('char-detail-modal');
         const body = document.getElementById('modal-body');
-        modal.style.display = 'flex';
+        modal.classList.add('active');
         body.innerHTML = '<div class="loading-mini">讀取角色詳情中...</div>';
 
         try {
@@ -168,9 +168,8 @@ window.CharactersModule = {
                         <div style="display: flex; align-items: center; gap: 15px;">
                             <h2 style="margin: 0;">${profile ? profile.unit_name : '角色詳情'}</h2>
                             <div class="level-input-group">
-                                <span style="font-size: 0.8rem; color: var(--text-secondary);">Lv.</span>
+                                <span>Lv.</span>
                                 <input type="number" id="detail-level" value="${maxLevel}" min="1" max="400" 
-                                       class="region-select" style="width: 70px; padding: 2px 8px; background-image: none;"
                                        oninput="CharactersModule.updateCalculatedStats(this.value)">
                             </div>
                         </div>
@@ -242,7 +241,7 @@ window.CharactersModule = {
         const loopEnd = pattern.loop_end;
 
         return `
-            <div class="pattern-container" style="display: flex; flex-wrap: wrap; gap: 10px; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 15px;">
+            <div class="pattern-container">
                 ${items.map(item => {
                     const isLoop = item.index >= loopStart && item.index <= loopEnd;
                     let icon = 'https://redive.estertion.win/icon/skill/1.png'; 
@@ -259,10 +258,10 @@ window.CharactersModule = {
                     }
 
                     return `
-                        <div class="pattern-item" style="text-align: center; width: 70px; padding: 8px 5px; border-radius: 10px; ${isLoop ? 'border: 2px solid var(--accent-color); background: rgba(255,107,157,0.1);' : 'border: 1px solid rgba(255,255,255,0.05);'}">
-                            <img src="${icon}" style="width: 40px; height: 40px; border-radius: 5px;" onerror="this.src='https://redive.estertion.win/icon/skill/1.png'">
-                            <div style="font-size: 0.6rem; margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: ${item.id > 1 ? '#ffa94d' : 'inherit'}">${name}</div>
-                            <div style="font-size: 0.5rem; color: var(--text-secondary);">${item.index}</div>
+                        <div class="pattern-item" style="${isLoop ? 'border: 2px solid var(--accent-color); background: rgba(255,107,157,0.1);' : 'border: 1px solid rgba(255,255,255,0.05);'}">
+                            <img src="${icon}" style="width: 40px; height: 40px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);" onerror="this.src='https://redive.estertion.win/icon/skill/1.png'">
+                            <div style="font-size: 0.7rem; margin-top: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: ${item.id > 1 ? '#ffa94d' : 'inherit'}">${name}</div>
+                            <div style="font-size: 0.6rem; color: var(--text-secondary); margin-top: 2px;">${item.index}</div>
                         </div>
                     `;
                 }).join('')}
@@ -303,6 +302,6 @@ window.CharactersModule = {
     },
 
     closeDetail() {
-        document.getElementById('char-detail-modal').style.display = 'none';
+        document.getElementById('char-detail-modal').classList.remove('active');
     }
 };
