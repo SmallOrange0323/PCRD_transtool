@@ -37,6 +37,9 @@ window.AvatarService = {
         "涅雅": 123311,
         "安涅默涅": 129611,
         "普蕾西亞": 126112,
+        "莉莉": 131301,
+        "可璃": 131401,
+        "可璃亞": 131401,
         "八斗神局長": 193631,
         "八斗金局長": 193631,
         "八斗": 193631,
@@ -110,7 +113,38 @@ window.AvatarService = {
         }
         // 最後失敗：顯示文字佔位符
         const safeName = this.escapeForJsString(cleanName); // 【修正 Bug 8】正確跳脫字串
-        onerrorChain += `this.style.display='none'; this.parentNode.innerHTML='<div class="npc-avatar-placeholder">${safeName.substring(0, 2)}</div>';`;
+        onerrorChain += `this.style.display='none'; this.parentNode.innerHTML='<div class=\\'npc-avatar-placeholder\\'>${safeName.substring(0, 2)}</div>';`;
+
+        return `<img src="${candidates[0]}" style="width: 100%; height: 100%; object-fit: cover;" onerror="${onerrorChain}">`;
+    },
+
+    // 取得最佳頭像 img 元素 HTML (根據 unit_id)
+    // 【修正】無效 ID 兼容：若 unitId 無效，則回退至名稱查找
+    getAvatarHtmlByUnitId(unitId, charaName, externalAvatars = {}) {
+        const cleanName = this.cleanName(charaName);
+        let finalUnitId = unitId;
+        if (!finalUnitId || finalUnitId < 100000) {
+            finalUnitId = this.getUnitId(cleanName, externalAvatars);
+        }
+
+        if (!finalUnitId || finalUnitId < 100000) {
+            return this.getFallbackHtml(cleanName);
+        }
+
+        const candidates = this.getUrlCandidates(finalUnitId);
+        if (candidates.length === 0) {
+            return this.getFallbackHtml(cleanName);
+        }
+
+        // 建立 onerror 鏈：依序嘗試下一個候選
+        let onerrorChain = "";
+        for (let i = 0; i < candidates.length - 1; i++) {
+            const nextUrl = this.escapeForJsString(candidates[i + 1]);
+            onerrorChain += `this.onerror=null; this.src='${nextUrl}'; `;
+        }
+        // 最後失敗：顯示文字佔位符
+        const safeName = this.escapeForJsString(cleanName);
+        onerrorChain += `this.style.display='none'; this.parentNode.innerHTML='<div class=\\'npc-avatar-placeholder\\'>${safeName.substring(0, 2)}</div>';`;
 
         return `<img src="${candidates[0]}" style="width: 100%; height: 100%; object-fit: cover;" onerror="${onerrorChain}">`;
     },

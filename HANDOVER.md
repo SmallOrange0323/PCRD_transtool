@@ -1,285 +1,160 @@
-# PCRD Data Hub - 劇情地圖模組 交接文件
+# PCRD Data Hub - 專案交接文件
 
-**版本**：v2.0 (重構後)
-**日期**：2026-06-09
-**模組名稱**：`QuestMapModule` / 劇情地圖 (主線 + 活動 + 登場角色)
-**原始碼路徑**：`dashboard/map.js`（重構版 ~1150 行）
-**負責模型**：opencode 工作階段 (2026-06-09)
+**最後更新**：2026-06-09
+**提交基準**：`c9b6913` (Phase 1 pre-backup) + 後續修正
 
 ---
 
-## 1. 本次重構摘要
+## 專案概況
 
-### 修正的 11 項問題
+修正 `chapters.json` 結構與 Part 3 主線/幕間劇情分類錯誤，重建正確的章節對應關係。
 
-| # | 問題 | 嚴重性 | 修正方式 |
-|---|------|--------|----------|
-| 1 | 章節分組正則匹配脆弱 | 🔴 高 | 改用 `groupId` + `ChapterDataService.getPartFromGroupId()` |
-| 2 | 資料欄位 `id`/`story_id` 不一致 | 🔴 高 | 統一為 `{ id, chapter, title, groupId, part, isEvent }` |
-| 3 | 頭像 URL 假設固定模式 | 🟡 中 | 抽離 `AvatarService`，支援多 CDN 降級 |
-| 4 | 競態條件防護不完整 | 🔴 高 | 新增 `safeRender()` 包裝器，統一 await |
-| 5 | 章節摘要查找鍵值不匹配 | 🔴 高 | 改用 `ChapterDataService.getSummary(part, groupId)` |
-| 6 | 活動 Logo URL 可能失效 | 🟡 中 | 加上 `onerror` 降級 + 預設圖示 |
-| 7 | 登場角色分頁搜尋/排序不同步 | 🟡 中 | 統一呼叫 `renderSpeakerTab()` |
-| 8 | Modal 重複建立 DOM 元素 | 🟡 中 | 單例模式複用 |
-| 9 | 對白載入無重試機制 | 🟢 低 | 新增「重新載入」按鈕 |
-| 10 | 硬編碼章節資料超 1000 行 | 🟡 中 | 外部化為 `data/chapters.json` |
-| 11 | speaker_appearance.json 不存在 | 🔴 高 | 撰寫生成腳本 |
-
-### 新檔案結構
-
-```
-dashboard/
-├── map.js                # 重構 (核心邏輯 ~1150 行)
-├── avatar-service.js     # 新增 — 統一頭像服務
-├── chapter-data.js       # 新增 — 章節資料載入器
-├── data/
-│   └── chapters.json     # 新增 — 章節標題/摘要（外部化）
-├── scripts/
-│   ├── generate_speaker_appearance.py  # 新增 — 生成登場統計
-│   └── export_chapter_template.py      # 新增 — 匯出章節維護模板
-├── story/
-│   ├── *.json            # 對白檔（不變）
-│   └── speaker_appearance.json  # 新增—自動生成
-├── index.html            # 微調—載入順序新增 avatar-service.js, chapter-data.js
-├── db.js                 # 不變
-├── style.css             # 不變
-└── ...
-```
+### 核心問題
+- 原 `chapters.json` 結構扁平、Part 3 群組 ID 錯誤（3001-3015 實為公會幕間，非主線）
+- 主線 Part 3 (2201-2215) 完全遺失
+- 摘要內容為模型幻覺，非真實劇情
+- Part 3 顯示邏輯混雜主線與公會劇情
 
 ---
 
-## 2. 核心架構
+## 變更摘要
 
-### 2.1 資料模型 `StoryEntry`
+### Phase 1：重建 chapters.json ✅
+**檔案**：`dashboard/scripts/rebuild_chapters.py` → `dashboard/data/chapters.json`
 
-```javascript
-// map.js 內部使用，統一格式
-{
-  id: number,           // story_id (PK)
-  chapter: string,      // 章節顯示名（如 "第1章"）
-  title: string,        // 話標題（官方大綱）
-  groupId: number,      // story_group_id（分組主鍵，核心欄位）
-  part: 1 | 2 | 3,      // 部別（由 ChapterDataService.getPartFromGroupId 衍生）
-  isEvent: boolean,     // 主線/活動區分
-  eventValue?: number,  // 活動 event_id（CDN Logo 用）
-}
-```
+| 部分 | 群組 ID 範圍 | 結構 | 筆數 | 備註 |
+|------|-------------|------|------|------|
+| Part 1 | 2000-2015 | `1.game_world` | 16 | 序章 + 第 1-15 章 |
+| Part 2 | 2101-2116 | `2.game_world` | 16 | 第 1-16 章 |
+| Part 3 主線 | 2201-2215 | `3.game_world` | 15 | 第 1-15 章，含手寫摘要 |
+| Part 3 幕間 | 3001-3017, 3022, 4001-4013 | `3.interlude` | 28 | 暫無摘要，待後續生成 |
 
-### 2.2 相依服務順序
-
-```
-index.html 載入順序：
-1. sql.js (CDN)
-2. db.js         → window.PCRDatabase
-3. avatar-service.js  → window.AvatarService
-4. chapter-data.js    → window.ChapterDataService
-5. characters.js
-6. clan-battle.js
-7. map.js        → window.QuestMapModule (相依 AvatarService, ChapterDataService)
-8. events.js
-9. usage-stats.js
-```
-
-### 2.3 章節分組新邏輯
-
-```javascript
-// 舊：用正則解析 title 欄位字串
-// 新：用 groupId 計算
-
-// ChapterDataService.getChapterKey(part, groupId, fallback)
-// 第一部 (part=1): groupId 2000=序章, 2001=第1章, 2002=第2章, ...
-// 第二部 (part=2): groupId 2007=第1章, 2008=第2章, ..., 3001=幕間 1
-// 第三部 (part=3): groupId 3001=第1章, 3002=第2章, ..., 4001=幕間 1
-```
+**關鍵修正**：
+- 巢狀結構：`{ "1": { "game_world": {...} }, "3": { "game_world": {...}, "interlude": {...} } }`
+- UTF-8 編碼（原 Big5 讀成 UTF-8 導致亂碼）
+- Part 2 對應：舊 2007-2022 → 新 2101-2116 依序對應
 
 ---
 
-## 3. 關鍵 API 一覽
+### Phase 2：chapter-data.js 重構 ✅
+**檔案**：`dashboard/chapter-data.js`
 
-### 3.1 `QuestMapModule` (map.js)
-
-| 公開方法 | 說明 | 參數 | 注意事項 |
-|---------|------|------|---------|
-| `render(skipAutoSelect)` | 完整渲染 | `bool` | 經由 `safeRender` 包裝，防競態 |
-| `switchPart(part)` | 切換 1/2/3 部 | `1\|2\|3` | 重置 activeStoryId + expandedChapter |
-| `switchTabType(type)` | 切換 main/event/speaker | `string` | 同上 |
-| `selectStory(storyId)` | 選擇話數 | `number` | 非同步，await updateSummaryContent |
-| `jumpToStory(storyId, modalId?)` | 外部跳轉 | `number, string?` | 自動判斷主線/活動/部別 |
-| `toggleChapter(index)` | 摺疊章節 | `number` | 收合前一個、展開新章節 |
-| `loadDialogue(storyId)` | 載入對白 | `number` | 有 `isLoadingDialogue` 鎖 |
-| `playVoice(voiceName)` | 播放語音 | `string` | 自動中斷前一個 |
-| `showCharaModal(name)` | 角色檔案彈窗 | `string` | 單例 Modal，複用 DOM |
-| `handleSpeakerSearch(value)` | 登場角色搜尋 | `string` | 即時重繪 speaker-grid |
-| `handleSpeakerSort(value)` | 登場角色排序 | `string` | 同上 |
-
-### 3.2 `AvatarService` (avatar-service.js)
-
-```javascript
-// 核心 API
-AvatarService.getUnitId(charaName, externalAvatars)  // 取得 unit_id
-AvatarService.getUrlCandidates(unitId)                // 取得頭像 URL 陣列（依優先序）
-AvatarService.getAvatarHtml(charaName, externalAvatars) // 取得 img HTML
-AvatarService.getFallbackHtml(charaName)              // 文字佔位符
-AvatarService.registerCustom(charaName, unitId)       // 運行時註冊 NPC
-
-// URL 嘗試順序：
-// 1. icon/unit/{base+31}.webp (本地大圖)
-// 2. CDN: https://redive.estertion.win/icon/unit/{base+31}.webp
-// 3. icon/unit/{base+11}.webp (本地小圖)
-// 4. CDN: {base+11}.webp
-// 全部失敗 → 文字佔位符
-```
-
-### 3.3 `ChapterDataService` (chapter-data.js)
-
-```javascript
-ChapterDataService.load()                    // 載入 data/chapters.json
-ChapterDataService.getChapterInfo(part, groupId) // { title, summary, key, order }
-ChapterDataService.getTitle(part, groupId)       // 章節標題
-ChapterDataService.getSummary(part, groupId)     // 章節摘要
-ChapterDataService.getOrder(part, groupId)       // 章節順序
-ChapterDataService.getAllChapters(part)          // 該部所有章節（排序後）
-ChapterDataService.getPartFromGroupId(groupId)   // 由 groupId 推斷部別
-ChapterDataService.getChapterKey(part, groupId, fallback) // 章節鍵名
-```
+| 方法 | 變更內容 |
+|------|----------|
+| `getChapterInfo` | Part 3 支援 `game_world` / `interlude` 巢狀查找 |
+| `getAllChapters` | Part 3 合併兩子物件並依 `order` 排序 |
+| `getPartFromGroupId` | 精確區間：2000-2015→1, 2101-2116→2, **2201-2215→3**, 3000+→3 |
+| `getChapterKey` | Part 3 回退邏輯：2201-2215→第N章, 3001-3022→幕間N, 4000+→幕間N |
 
 ---
 
-## 4. 維護操作指南
+### Phase 3：map.js 修正 ✅
+**檔案**：`dashboard/map.js`
 
-### 4.1 遊戲版本更新後
+| 位置 | 變更 |
+|------|------|
+| L138 | SQL 範圍：`story_id < 3000000` → `< 5000000`（納入 Part 3 幕間） |
+| L327 | 移除死代碼 `partTitles` |
+| L325-330 | 移除錯誤的 Part 3 「🏙️ 現實世界篇 / 🎮 遊戲世界」標籤邏輯 |
+| L194-197 | **新增**：Part 3 主線分頁隱藏 `group_id >= 3000` 幕間劇情 |
 
-```powershell
-# 1. 取得最新資料庫（DB 更新由外部工具負責）
-# 2. 更新章節中繼資料
-python dashboard/scripts/export_chapter_template.py
-REM → 編輯 data/chapters_template.json → 另存為 data/chapters.json
+---
 
-# 3. 下載新話數對白
-python download_stories_tw.py
+### Phase 4：download_stories_tw.py 擴充 ✅
+**檔案**：`download_stories_tw.py`
 
-# 4. 重新生成登場角色統計
-python dashboard/scripts/generate_speaker_appearance.py
+| 行號 | 變更 |
+|------|------|
+| L346 | 主線抓取 SQL：`story_id < 3000000` → `< 5000000` |
+| L345 | 註解更新：「第一部～第三部主線與所有幕間 ID (2000000 ~ 4999999)」 |
 
-# 5. 啟動驗證
+---
+
+### Phase 5：啟動腳本 ✅
+**檔案**：`start.bat` (新增)
+
+```bat
+@echo off
+chcp 65001 >nul
 python -m http.server 8080
-REM → 瀏覽器開啟 http://localhost:8080
 ```
+用途：一鍵啟動 HTTP 伺服器繞過 CORS。
 
-### 4.2 新增 NPC 頭像映射
+---
 
-編輯 `avatar-service.js` 中的 `customMap` 物件：
-```javascript
-customMap: {
-    "涅婭": 123311,
-    // 新增格式："顯示名稱": unit_id
-    // unit_id 取 MIN(unit_id) 且 < 200000
-}
-```
+## 資料結構對照
 
-或於運行時註冊（Console）：
-```javascript
-AvatarService.registerCustom("新角色名", 123456);
-```
-
-### 4.3 修正章節顯示資訊
-
-編輯 `data/chapters.json`，格式如下：
+### chapters.json 結構
 ```json
 {
-  "1": {
-    "2000": {
-      "title": "阿斯特萊亞大陸",
-      "summary": "描述主角祐樹...",
-      "key": "序章",
-      "order": 0
-    }
+  "1": { "game_world": { "2000": {...}, "2001": {...}, ... } },
+  "2": { "game_world": { "2101": {...}, "2102": {...}, ... } },
+  "3": {
+    "game_world": { "2201": {...}, ..., "2215": {...} },
+    "interlude": { "3001": {...}, ..., "4013": {...} }
   }
 }
 ```
-- `title`：地標標題（顯示在章節名旁）
-- `summary`：整章摘要（支援 HTML）
-- `key`：章節鍵名（如 "序章"、"第1章"、"幕間 1"）
-- `order`：顯示順序（小→大）
 
-### 4.4 除錯常用 Console 指令
+### 群組 ID ↔ 部別對照表
+| 群組 ID | 部別 | 類型 | 說明 |
+|---------|------|------|------|
+| 2000-2015 | 1 | 主線 | 序章 + 15 章 |
+| 2101-2116 | 2 | 主線 | 16 章 |
+| **2201-2215** | **3** | **主線** | **15 章（新增）** |
+| 3001-3022 | 3 | 幕間 | 公會劇情 |
+| 4001-4013 | 3 | 幕間 | 系統/特殊劇情 |
 
-```javascript
-// 檢查資料
-QuestMapModule.stories              // 所有主線劇情
-QuestMapModule.chapters             // 當前分組結果
-QuestMapModule.getStoryById(2001001) // 取得特定話數
+---
 
-// 檢查頭像
-AvatarService.getUnitId("可可蘿", QuestMapModule.speakerAvatars)
-AvatarService.getUrlCandidates(105913)
+## 已知限制 / 後續待辦
 
-// 手動渲染
-QuestMapModule.switchPart(2)
-QuestMapModule.switchTabType('event')
+1. **Part 3 幕間摘要為空** — 需從對話 JSON 生成或手寫
+2. **Part 3 幕間顯示** — 目前隱藏於主線分頁，未來需加入子分頁或獨立按鈕切換
+3. **group_id 9001-9012** — 存於 `story_id 9000000+`，未納入現有結構（屬未來資料）
+4. **4010 特殊故事** — 171 話，歸類於幕間，可能需獨立分類
 
-// 檢查章節資料
-ChapterDataService.getChapterInfo(1, 2001)
-ChapterDataService.getAllChapters(2)
+---
+
+## 驗證指令
+
+```bash
+# 1. 啟動伺服器
+python -m http.server 8080
+
+# 2. 瀏覽器開啟
+# http://localhost:8080/dashboard/
+
+# 3. 切換到「第三部：全新世界篇」
+# 應只看到「第 1 章」~「第 15 章」，無「幕間」項目
+
+# 4. 驗證 chapters.json 結構
+python -c "import json; d=json.load(open('dashboard/data/chapters.json','r',encoding='utf-8')); print('P1:',len(d['1']['game_world']),'P2:',len(d['2']['game_world']),'P3 GW:',len(d['3']['game_world']),'P3 IL:',len(d['3']['interlude']))"
+# 預期輸出: P1: 16 P2: 16 P3 GW: 15 P3 IL: 28
 ```
 
 ---
 
-## 5. 錯誤處理
+## 關鍵檔案清單
 
-| 情境 | 處理方式 |
-|------|----------|
-| 對白 JSON 不存在 | 顯示下載指引 + 「重新載入」按鈕 |
-| unit_data 表不存在 | 跳過頭像預載，console.warn |
-| 章節摘要未設定 | 顯示「暫無本章節的摘要簡介」 |
-| 活動日期解析失敗 | 顯示「【未知時間】」 |
-| 頭像載入失敗 | 自動降級 CDN → SD 圖 → 文字佔位符 |
-| 資料庫未初始化 | Promise 拋錯 → 載入覆蓋層顯示錯誤 |
-
----
-
-## 6. 已知限制
-
-1. **`file://` 協議不可用**：必須透過 HTTP Server（Live Server / `python -m http.server`）
-2. **第三部幕間雙線敘事**：UI 已用 🎮/🏙️ 圖示區分，但分組邏輯以 `groupId` 為準，部分幕間章節可能需人工調整 `chapters.json`
-3. **活動劇情無詳細摘要**：`data/chapters.json` 僅含主線摘要，活動摘要尚未整理
-4. **語音播放無重試**：`playVoice` 網路異常時僅 log error，無自動重試
-5. **speaker_appearance.json**：需手動執行 Python 腳本生成，非自動更新
-
----
-
-## 7. 檔案變更總表
-
-| 檔案 | 狀態 | 說明 |
+| 檔案 | 角色 | 狀態 |
 |------|------|------|
-| `map.js` | **重寫** | 全部邏輯重構，移除硬編碼 `chapterTitles`/`chapterSummaries`，改用服務層 |
-| `avatar-service.js` | **新增** | 頭像統一管理，CDN 降級鏈，NPC 映射 |
-| `chapter-data.js` | **新增** | 章節資料載入與查詢 |
-| `data/chapters.json` | **新增** | 章節外部資料（原 map.js 中 1000+ 行硬編碼） |
-| `scripts/generate_speaker_appearance.py` | **新增** | 登場統計生成工具 |
-| `scripts/export_chapter_template.py` | **新增** | 章節維護模板匯出工具 |
-| `index.html` | **修改** | 載入順序新增 avatar-service.js / chapter-data.js |
+| `dashboard/data/chapters.json` | 章節中繼資料核心 | ✅ 重建完成 |
+| `dashboard/chapter-data.js` | 章節查詢服務 | ✅ 重構完成 |
+| `dashboard/map.js` | 主線劇情 UI 模組 | ✅ 修正完成 |
+| `download_stories_tw.py` | 對白下載腳本 | ✅ 擴充完成 |
+| `dashboard/scripts/rebuild_chapters.py` | chapters.json 產生器 | ✅ 保留供未來更新 |
+| `dashboard/redive_tw.db` | 來源資料庫 | 不變 |
+| `start.bat` | 快速啟動腳本 | ✅ 新增 |
 
 ---
 
-## 8. 驗收檢查清單
+## 回滾參考
 
-- [ ] 首次載入：資料庫初始化正常、無紅字錯誤
-- [ ] 切換部別（1→2→3）：章節列表正確、順序正確
-- [ ] 第三部章節顯示 🎮 遊戲世界 / 🏙️ 現實世界 標記
-- [ ] 點選話數：官方大綱載入、對白載入、角色頭像顯示
-- [ ] 活動劇情分頁：年月分組正確、活動 Logo 顯示
-- [ ] 登場角色分頁：搜尋與排序即時生效
-- [ ] 角色彈窗：資料正確、登場話數可點擊跳轉
-- [ ] 連續快速切換分頁無競態錯誤
-- [ ] 缺少對白 JSON 時顯示友善錯誤與重新載入按鈕
+```bash
+# 回到 Phase 1 前狀態
+git reset --hard c9b6913
 
----
-
-## 9. 備註
-
-- 本文件撰寫於重構完成後，請下一位接手者優先閱讀此文件與 `map.js` 模組註解
-- 所有服務（AvatarService, ChapterDataService）均掛載於 `window` 下，與既有程式碼相容
-- 下載對白腳本 `download_stories_tw.py` 位於專案根目錄，非 `dashboard/scripts/` 下
-- 如有架構性變更（如引入前端框架），請同步更新本文件
+# 查看本次所有變更
+git diff c9b6913 HEAD
+```

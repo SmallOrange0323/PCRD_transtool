@@ -1733,5 +1733,132 @@ body {
     font-weight: 700;
 }
 
+/* 視圖切換按鈕樣式組 */
+.view-toggle-group {
+    display: inline-flex;
+    background: rgba(94, 107, 125, 0.08);
+    padding: 4px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    margin-left: 10px;
+}
+
+.view-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.view-btn:hover {
+    color: var(--accent-color);
+    background: rgba(232, 56, 117, 0.05);
+}
+
+.view-btn.active {
+    background: var(--accent-gradient);
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(232, 56, 117, 0.2);
+}
+
+/* 對照表表格樣式 - Premium 毛玻璃與漸變質感 */
+.char-table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(94, 107, 125, 0.08);
+    padding: 10px;
+    margin-top: 10px;
+    animation: fadeIn 0.4s ease;
+}
+
+.char-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.char-table th, .char-table td {
+    padding: 14px 20px;
+    vertical-align: middle;
+}
+
+.char-table th {
+    font-weight: 700;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--glass-border);
+    font-size: 0.95rem;
+    background: rgba(232, 56, 117, 0.02);
+}
+
+.char-table tr {
+    border-bottom: 1px solid rgba(232, 56, 117, 0.06);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.char-table tbody tr:hover {
+    background: rgba(232, 56, 117, 0.04);
+    transform: scale(1.002);
+}
+
+.char-table tbody tr:active {
+    transform: scale(0.998);
+}
+
+/* 頭像樣式 */
+.char-table-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1.5px solid var(--glass-border);
+    overflow: hidden;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.char-table-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 讓表格單元寬度自適應與微調 */
+.char-table td.cell-avatar {
+    width: 60px;
+}
+
+.char-table td.cell-id {
+    font-family: monospace;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.char-table td.cell-name {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.char-table td.cell-pos {
+    font-weight: 600;
+}
+
+.char-table td.cell-guild {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
 
 

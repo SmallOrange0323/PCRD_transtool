@@ -58,6 +58,8 @@ const QuestMapModule = {
             "帆稀的聲音": "帆稀", "嘉夜的聲音": "嘉夜", "祈梨的聲音": "祈梨",
             "矛依未的聲音": "矛依未", "涅雅": "涅婭",
             "安涅默涅": "安涅默涅", "普蕾西亞": "普蕾西亞",
+            "莉莉的聲音": "莉莉", "可璃的聲音": "可璃",
+            "可璃亞": "可璃", "可璃亞的聲音": "可璃",
             "八斗金局長": "八斗神", "八斗": "八斗神", "八斗神局長": "八斗神",
             "剎鬼‧八斗神": "八斗神", "傻": "倭",
             "菲絲雷斯": "菲絲", "吉塔的聲音": "吉塔", "深月的聲音": "深月",
@@ -135,7 +137,7 @@ const QuestMapModule = {
                 const sql = `
                     SELECT story_id, title, sub_title, story_group_id
                     FROM story_detail
-                    WHERE story_id >= 2000000 AND story_id < 3000000
+                    WHERE story_id >= 2000000 AND story_id < 5000000
                     ORDER BY story_id ASC
                 `;
                 const rawData = await window.PCRDatabase.runQuery(sql);
@@ -191,6 +193,10 @@ const QuestMapModule = {
         const filtered = this.stories.filter(s => s.part === this.currentPart);
 
         filtered.forEach(s => {
+            // Part 3 主線分頁：隱藏幕間劇情 (group_id >= 3000)
+            if (this.currentPart === 3 && this.activeTabType === 'main' && s.groupId >= 3000) {
+                return;
+            }
             const chKey = ChapterDataService.getChapterKey(this.currentPart, s.groupId, s.chapter);
             if (!this.chapters[chKey]) this.chapters[chKey] = [];
             this.chapters[chKey].push(s);
@@ -324,15 +330,6 @@ const QuestMapModule = {
 
                                 if (QuestMapModule.activeTabType === 'main') {
                                     let cleanChKey = chKey;
-                                    if (QuestMapModule.currentPart === 3) {
-                                        if (chKey.includes("幕間")) {
-                                            const chNum = chKey.replace("幕間", "").trim();
-                                            cleanChKey = `${chNum} (🏙️ 現實世界篇)`;
-                                        } else {
-                                            cleanChKey = `${chKey} (🎮 遊戲世界)`;
-                                        }
-                                    }
-                                    const partTitles = ChapterDataService.data?.[String(QuestMapModule.currentPart)] || {};
                                     const firstStory = childStories[0];
                                     const info = firstStory ? ChapterDataService.getChapterInfo(QuestMapModule.currentPart, firstStory.groupId) : null;
                                     chTitle = info?.title ? ` - ${info.title}` : "";
@@ -623,12 +620,27 @@ const QuestMapModule = {
                 }
             } else {
                 const chKey = ChapterDataService.getChapterKey(story.part, story.groupId, story.chapter);
-                const summaryText = ChapterDataService.getSummary(story.part, story.groupId) || "暫無本章節的摘要簡介。";
+                const info = ChapterDataService.getChapterInfo(story.part, story.groupId);
+                const summaryText = info ? info.summary : "暫無本章節的摘要簡介。";
+                const realWorldSummary = info ? info.real_world_summary : null;
+
+                let realWorldHtml = "";
+                if (realWorldSummary) {
+                    realWorldHtml = `
+                        <div class="real-world-summary-box" style="margin-top: 15px; padding: 12px; border-radius: 8px; background: rgba(9, 132, 227, 0.08); border: 1px solid rgba(9, 132, 227, 0.25); text-align: left; line-height: 1.6;">
+                            <div style="color: #0984e3; font-weight: 700; font-size: 0.9rem; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+                                <span>🌐</span> 現實線劇情摘要
+                            </div>
+                            <p style="margin: 0; color: var(--text-primary); font-size: 0.85rem; text-indent: 2em; line-height: 1.7;">${this.escapeHtml(realWorldSummary)}</p>
+                        </div>
+                    `;
+                }
 
                 summaryEl.innerHTML = `
                     <div class="chapter-summary-box" style="text-align: left; line-height: 1.6; font-size: 0.92rem; color: var(--text-primary); padding: 15px; background: rgba(232, 56, 117, 0.03); border-radius: 8px; border: 1px solid rgba(232, 56, 117, 0.08);">
                         <span style="color: var(--accent-color); font-weight: 700; font-size: 1rem; display: block; margin-bottom: 8px;">📖 【${chKey}】 劇情摘要：</span>
-                        <p style="color: var(--text-primary); margin: 0; font-size: 0.88rem; text-indent: 2em; line-height: 1.7;">${summaryText}</p>
+                        <p style="color: var(--text-primary); margin: 0; font-size: 0.88rem; text-indent: 2em; line-height: 1.7;">${this.escapeHtml(summaryText)}</p>
+                        ${realWorldHtml}
                     </div>
                 `;
             }
@@ -722,7 +734,7 @@ const QuestMapModule = {
                         renderedSet.add(realName);
                         badgeHtmls.push(`
                             <div class="game-chara-avatar-badge" title="${realName}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})">
-                                <img src="${AvatarService.getUrlCandidates(AvatarService.getUnitId(realName, QuestMapModule.speakerAvatars))[0] || 'icon/unit/000000.webp'}" onerror="this.src='${AvatarService.getUrlCandidates(AvatarService.getUnitId(realName, QuestMapModule.speakerAvatars))[2] || 'icon/unit/000000.webp'}'">
+                                ${AvatarService.getAvatarHtml(realName, this.speakerAvatars)}
                             </div>
                         `);
                     });
@@ -733,7 +745,8 @@ const QuestMapModule = {
             let html = "";
             dialogueList.forEach(item => {
                 const speaker = item.name || "旁白";
-                const words = (item.words || "").replace(/\{player\}/g, "祐樹");
+                const safeSpeaker = this.escapeHtml(speaker);
+                const words = this.escapeHtml(item.words || "").replace(/\{player\}/g, "祐樹").replace(/\n/g, "<br>");
 
                 let speakerClass = "";
                 let isNarrator = speaker === "旁白" || speaker === "【系統】" || speaker === "？？？";
@@ -750,8 +763,7 @@ const QuestMapModule = {
                     let avatarContent = "";
 
                     if (item.unit_id) {
-                        const candidates = AvatarService.getUrlCandidates(item.unit_id);
-                        avatarContent = `<img src="${candidates[0]}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='${candidates[1] || candidates[0]}'">`;
+                        avatarContent = AvatarService.getAvatarHtmlByUnitId(item.unit_id, realName, this.speakerAvatars);
                     } else {
                         avatarContent = AvatarService.getAvatarHtml(realName, this.speakerAvatars);
                     }
@@ -772,7 +784,7 @@ const QuestMapModule = {
                         ${avatarHtml}
                         <div class="game-dialogue-content">
                             <div class="game-dialogue-speaker" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realNameForBtn).replace(/\"/g, '&quot;')})" style="cursor: pointer; display: inline-block;">
-                                ${speaker}${voiceBtn}
+                                ${safeSpeaker}${voiceBtn}
                             </div>
                             <div class="game-dialogue-text">${words}</div>
                         </div>

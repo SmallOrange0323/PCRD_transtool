@@ -2,6 +2,7 @@ console.log("characters.js loaded");
 
 window.CharactersModule = {
     allCharacters: [],
+    viewMode: 'grid',
     
     async render() {
         const container = document.getElementById('characters-tab');
@@ -49,13 +50,17 @@ window.CharactersModule = {
                             <option value="pos-asc">角色站位 (前→後)</option>
                         </select>
                     </div>
-                    <div class="search-box">
+                    <div class="search-box" style="display: flex; align-items: center; gap: 10px;">
                         <input type="text" id="char-search" placeholder="搜尋角色名稱..." class="region-select" style="width: 250px; background-image: none; padding-right: 12px;">
+                        <div class="view-toggle-group">
+                            <button id="view-btn-grid" class="view-btn ${this.viewMode === 'grid' ? 'active' : ''}" title="卡片視圖">🎴</button>
+                            <button id="view-btn-list" class="view-btn ${this.viewMode === 'list' ? 'active' : ''}" title="列表視圖">📋</button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div id="char-grid" class="char-grid">
-                ${this.renderGrid(characters)}
+                ${this.viewMode === 'grid' ? this.renderGrid(characters) : this.renderTable(characters)}
             </div>
         `;
 
@@ -73,11 +78,32 @@ window.CharactersModule = {
             else if (sortBy === 'id-asc') filtered.sort((a, b) => a.unit_id - b.unit_id);
             else if (sortBy === 'pos-asc') filtered.sort((a, b) => (a.pos || 999) - (b.pos || 999));
 
-            document.getElementById('char-grid').innerHTML = this.renderGrid(filtered);
+            const displayContainer = document.getElementById('char-grid');
+            if (this.viewMode === 'grid') {
+                displayContainer.className = 'char-grid';
+                displayContainer.innerHTML = this.renderGrid(filtered);
+            } else {
+                displayContainer.className = 'char-table-container';
+                displayContainer.innerHTML = this.renderTable(filtered);
+            }
         };
 
         document.getElementById('char-search').addEventListener('input', updateView);
         document.getElementById('char-sort').addEventListener('change', updateView);
+
+        document.getElementById('view-btn-grid').addEventListener('click', () => {
+            this.viewMode = 'grid';
+            document.getElementById('view-btn-grid').classList.add('active');
+            document.getElementById('view-btn-list').classList.remove('active');
+            updateView();
+        });
+        document.getElementById('view-btn-list').addEventListener('click', () => {
+            this.viewMode = 'list';
+            document.getElementById('view-btn-grid').classList.remove('active');
+            document.getElementById('view-btn-list').classList.add('active');
+            updateView();
+        });
+
         updateView();
     },
 
@@ -96,6 +122,7 @@ window.CharactersModule = {
                     </div>
                     <div class="char-info">
                         <div class="char-name">${c.unit_name}</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 5px;">ID: ${c.unit_id}</div>
                         <div class="char-meta">
                             <span>站位: ${c.pos || '??'}</span>
                             <span>${c.race || ''}</span>
@@ -105,6 +132,47 @@ window.CharactersModule = {
                 </div>
             `;
         }).join('');
+    },
+
+    renderTable(characters) {
+        if (characters.length === 0) return '<div class="empty-msg">找不到符合條件的角色</div>';
+
+        return `
+            <table class="char-table">
+                <thead>
+                    <tr>
+                        <th style="width: 80px;">頭像</th>
+                        <th style="width: 120px;">Unit ID</th>
+                        <th>角色名稱</th>
+                        <th>站位</th>
+                        <th>種族</th>
+                        <th>公會</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${characters.map(c => {
+                        const baseId = Math.floor(c.unit_id / 100) * 100;
+                        const img31 = `https://redive.estertion.win/icon/unit/${baseId + 31}.webp`;
+                        const img11 = `https://redive.estertion.win/icon/unit/${baseId + 11}.webp`;
+
+                        return `
+                            <tr onclick="CharactersModule.showDetail(${c.unit_id})">
+                                <td class="cell-avatar">
+                                    <div class="char-table-avatar">
+                                        <img src="${img31}" onerror="this.src='${img11}'; this.onerror=function(){this.src='https://redive.estertion.win/icon/unit/000000.webp';}">
+                                    </div>
+                                </td>
+                                <td class="cell-id">${c.unit_id}</td>
+                                <td class="cell-name">${c.unit_name}</td>
+                                <td class="cell-pos">${c.pos || '??'}</td>
+                                <td>${c.race || ''}</td>
+                                <td class="cell-guild">${c.guild || '無所屬'}</td>
+                            </tr>
+                        `;
+                    }).join('')}
+                </tbody>
+            </table>
+        `;
     },
 
     async showDetail(unitId) {
@@ -166,7 +234,7 @@ window.CharactersModule = {
                     <img src="https://redive.estertion.win/icon/unit/${baseId + 31}.webp" class="detail-avatar" onerror="this.src='https://redive.estertion.win/icon/unit/${baseId + 11}.webp'">
                     <div class="detail-main-info">
                         <div style="display: flex; align-items: center; gap: 15px;">
-                            <h2 style="margin: 0;">${profile ? profile.unit_name : '角色詳情'}</h2>
+                            <h2 style="margin: 0;">${profile ? profile.unit_name : '角色詳情'} (ID: ${unitId})</h2>
                             <div class="level-input-group">
                                 <span>Lv.</span>
                                 <input type="number" id="detail-level" value="${maxLevel}" min="1" max="400" 

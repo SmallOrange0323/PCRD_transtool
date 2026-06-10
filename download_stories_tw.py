@@ -342,8 +342,8 @@ def get_all_story_ids():
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     
-    # 抓取第一部、第二部與第三部的主線 ID (2000000 ~ 2999999)
-    cursor.execute("SELECT story_id FROM story_detail WHERE story_id >= 2000000 AND story_id < 3000000 ORDER BY story_id ASC")
+    # 抓取第一部～第三部主線與所有幕間 ID (2000000 ~ 4999999)
+    cursor.execute("SELECT story_id FROM story_detail WHERE story_id >= 2000000 AND story_id < 5000000 ORDER BY story_id ASC")
     main_rows = cursor.fetchall()
     main_story_ids = [row[0] for row in main_rows]
     
