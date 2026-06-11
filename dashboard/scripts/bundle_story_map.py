@@ -40,6 +40,7 @@ def main():
         (os.path.join(dashboard_dir, "style.css"), "style.css"),
         (os.path.join(dashboard_dir, "db.js"), "db.js"),
         (os.path.join(dashboard_dir, "avatar-service.js"), "avatar-service.js"),
+        (os.path.join(dashboard_dir, "story-asset-service.js"), "story-asset-service.js"),
         (os.path.join(dashboard_dir, "chapter-data.js"), "chapter-data.js"),
         (os.path.join(dashboard_dir, "characters.js"), "characters.js"),
         (os.path.join(dashboard_dir, "map.js"), "map.js"),

@@ -232,10 +232,21 @@ def extract_story_dialogues(bytes_data):
                 current_unit_id = int(val)
         elif command_id == CommandId.VO and len(args) >= 1:
             current_voice = args[0]
+        elif command_id == CommandId.BACKGROUND and len(args) >= 1:
+            dialogues.append({
+                "type": "background",
+                "background": args[0]
+            })
+        elif command_id == CommandId.STILL and len(args) >= 1:
+            dialogues.append({
+                "type": "still",
+                "still": args[0]
+            })
         elif command_id == CommandId.PRINT and len(args) >= 2:
             speaker = args[0]
             words = clean_text(args[1])
             diag = {
+                "type": "dialogue",
                 "name": speaker,
                 "words": words
             }
@@ -377,14 +388,18 @@ import concurrent.futures
 def process_story(story_id, new_hash, truth_version, idx, total):
     output_path = os.path.join(OUTPUT_DIR, f"{story_id}.json")
     
-    # 智慧檢測是否為不帶 unit_id 的舊版檔案
+    # 智慧檢測是否為不帶 unit_id 的舊版檔案，或者是不包含 type 節點的檔案
     is_legacy = True
     if os.path.exists(output_path) and os.path.getsize(output_path) > 100:
         try:
             with open(output_path, "r", encoding="utf-8") as f:
                 data = json.load(f)
                 if isinstance(data, list) and len(data) > 0:
-                    if any("unit_id" in item for item in data) or any("無語音對白" in item.get("words", "") for item in data):
+                    has_unit_id = any("unit_id" in item for item in data)
+                    has_no_voice = any("無語音對白" in item.get("words", "") for item in data)
+                    has_type = any("type" in item for item in data)
+                    # 必須同時擁有 unit_id/無語音對白 且擁有 type 屬性，才判定為不需要更新的最新版
+                    if (has_unit_id or has_no_voice) and has_type:
                         is_legacy = False
         except Exception:
             pass
@@ -434,9 +449,11 @@ def main():
         story_ids = [2001001, 2001002, 2001003, 2001004, 2001005]
         print(f"[FALLBACK] 將預設下載 5 話測試劇情: {story_ids}")
 
+    # 為了測試與更新，我們只針對前幾話，或者全部跑 (異步併發)
+    # 本地只跑 2001001~2001005 以展示效果，也可以全部更新
     to_download = story_ids
 
-    print("\n[START] 開始從 So-net 官方 CDN 高速下載與還原 100% 繁中對白...")
+    print("\n[START] 開始從 So-net 官方 CDN 高速下載與還原 100% 繁中對白 (支援背景與 CG)...")
     print("====================================================")
     
     success = 0
@@ -460,7 +477,7 @@ def main():
             try:
                 res = future.result()
                 if res == "success":
-                    print(f"話數 {story_id} ... ✅ 下載並成功還原 100% 繁中對白 (含 Unit ID)！")
+                    print(f"話數 {story_id} ... ✅ 下載並成功還原 100% 繁中對白 (含 Unit ID, 背景, CG)！")
                     success += 1
                 elif res == "skip":
                     skip += 1
