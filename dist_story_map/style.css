@@ -863,7 +863,7 @@ body {
 }
 
 .map-header h2 {
-    font-size: 2.1rem;
+	font-size: 2.4rem;
     font-weight: 700;
     margin-bottom: 5px;
     background: var(--accent-gradient);
@@ -1025,7 +1025,7 @@ body {
 }
 
 .summary-text {
-    font-size: 0.9rem;
+	font-size: 1rem;
     line-height: 1.6;
     color: var(--text-secondary);
 }
@@ -1044,7 +1044,7 @@ body {
 }
 
 .panel-section-title {
-    font-size: 0.95rem;
+	font-size: 1.05rem;
     font-weight: 700;
     color: var(--accent-color);
     margin-bottom: 15px;
@@ -1057,7 +1057,7 @@ body {
     flex: 1;
     overflow-y: auto;
     padding-right: 5px;
-    max-height: 500px;
+	max-height: 700px;
 }
 
 .story-list-scrollbar::-webkit-scrollbar {
@@ -1120,8 +1120,8 @@ body {
 }
 
 .acc-ch-name {
-    font-weight: 700;
-    font-size: 0.9rem;
+	font-weight: 700;
+	font-size: 1rem;
     color: var(--text-primary);
 }
 
@@ -1156,13 +1156,13 @@ body {
     align-items: center;
     width: 100%;
     gap: 16px;
-    padding: 12px;
-    border-radius: 16px;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(232, 56, 117, 0.1);
-    box-shadow: 0 4px 12px rgba(94, 107, 125, 0.04);
-    margin-bottom: 8px;
+	padding: 16px 20px;
+	border-radius: 18px;
+	cursor: pointer;
+	background: rgba(255, 255, 255, 0.5);
+	border: 1px solid rgba(232, 56, 117, 0.1);
+	box-shadow: 0 4px 12px rgba(94, 107, 125, 0.04);
+	margin-bottom: 12px;
     box-sizing: border-box;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
@@ -1206,9 +1206,9 @@ body {
 
 /* 圖片容器 */
 .story-item-thumb {
-    width: 120px;
-    height: 67.5px; /* 16:9 ratio */
-    border-radius: 10px;
+	width: 160px;
+	height: 90px; /* 16:9 ratio */
+	border-radius: 12px;
     overflow: hidden;
     flex-shrink: 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -1238,13 +1238,13 @@ body {
 }
 
 .story-item-ch {
-    font-size: 0.85rem;
+	font-size: 0.95rem;
     color: var(--text-secondary);
     font-weight: 600;
 }
 
 .story-item-title {
-    font-size: 1.05rem;
+	font-size: 1.15rem;
     font-weight: 700;
     color: var(--text-primary);
     white-space: nowrap;
@@ -1257,8 +1257,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
+	width: 36px;
+	height: 36px;
     border-radius: 50%;
     background: rgba(212, 175, 55, 0.1);
     border: 1.5px solid rgba(212, 175, 55, 0.3);
@@ -1267,8 +1267,8 @@ body {
 }
 
 .story-item-arrow svg {
-    width: 16px;
-    height: 16px;
+	width: 20px;
+	height: 20px;
     fill: #D4AF37;
     transition: transform 0.3s ease;
 }
@@ -1583,7 +1583,7 @@ body {
 
 /* 說話者名字 */
 .game-dialogue-speaker {
-    font-size: 0.9rem;
+	font-size: 1rem;
     font-weight: 700;
     color: var(--accent-color);
     display: flex;
@@ -1602,7 +1602,7 @@ body {
 
 /* 對話內文氣泡 */
 .game-dialogue-text {
-    font-size: 0.95rem;
+	font-size: 1rem;
     line-height: 1.6;
     color: #444e59;
     word-break: break-all;

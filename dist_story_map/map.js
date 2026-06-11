@@ -45,57 +45,36 @@ const QuestMapModule = {
             .replace(/"/g, "\\\"");
     },
 
-    getStoryItemHtml(s, chDisplay, titleDisplay) {
-        let stillId = s.still_id;
-        let bgId = s.bg_id;
-        if (!stillId && !bgId) {
-            if (this.storyThumbnails && this.storyThumbnails[s.id]) {
-                const thumbData = this.storyThumbnails[s.id];
-                stillId = thumbData.still_id;
-                bgId = thumbData.bg_id;
-            }
-        }
-
-        let thumbUrl = 'https://redive.estertion.win/card/full/100431.webp'; // 預設的 CG
-        if (stillId) {
-            const stillIdStr = String(stillId);
-            const stillIdNum = Number(stillId);
-            if (stillIdStr.length === 9 || stillIdNum > 10000000) {
-                thumbUrl = `https://redive.estertion.win/card/story/${stillId}.webp`;
-            } else {
-                thumbUrl = `https://redive.estertion.win/card/full/${stillId}.webp`;
-            }
-        } else if (bgId) {
-            thumbUrl = `https://redive.estertion.win/bg/jpg/${bgId}.jpg`;
-        } else {
-            // Fallback 策略：如果完全沒有縮圖與背景
-            if (s.isEvent && s.eventValue) {
-                thumbUrl = `https://redive.estertion.win/event_still/banner_${s.eventValue}.webp`;
-            } else if (s.type === 'chara' && s.groupId) {
-                const baseId = Math.floor(s.groupId / 100) * 100 + 31;
-                thumbUrl = `https://redive.estertion.win/card/full/${baseId}.webp`;
-            }
-        }
-        
-        return `
-            <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}"
-                 id="story-item-${s.id}"
-                 onclick="QuestMapModule.selectStory(${s.id})">
-                <div class="story-item-thumb">
-                    <img src="${thumbUrl}" onerror="this.onerror=null; this.src='https://redive.estertion.win/card/full/100431.webp';" alt="thumbnail">
-                </div>
-                <div class="story-item-content">
-                    <div class="story-item-ch">${this.escapeHtml(chDisplay)}</div>
-                    <div class="story-item-title">${this.escapeHtml(titleDisplay)}</div>
-                </div>
-                <div class="story-item-arrow">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                    </svg>
-                </div>
-            </div>
-        `;
-    },
+ getStoryItemHtml(s, chDisplay, titleDisplay) {
+ let thumbHtml = '';
+ if (this.storyThumbnails && this.storyThumbnails[s.id]) {
+ const thumbData = this.storyThumbnails[s.id];
+ if (thumbData.still_id) {
+ thumbHtml = StoryAssetService.getStillHtml(thumbData.still_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
+ } else if (thumbData.bg_id) {
+ thumbHtml = StoryAssetService.getBackgroundHtml(thumbData.bg_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
+ }
+ }
+ if (!thumbHtml) {
+ thumbHtml = `<img class="story-thumb-img" src="https://redive.estertion.win/card/full/100431.webp" onerror="this.onerror=null; this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';" style="width:100%;height:100%;object-fit:cover;" alt="thumbnail">`;
+ }
+ return `
+ <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}" id="story-item-${s.id}" onclick="QuestMapModule.selectStory(${s.id})">
+ <div class="story-item-thumb">
+ ${thumbHtml}
+ </div>
+ <div class="story-item-content">
+ <div class="story-item-ch">${this.escapeHtml(chDisplay)}</div>
+ <div class="story-item-title">${this.escapeHtml(titleDisplay)}</div>
+ </div>
+ <div class="story-item-arrow">
+ <svg viewBox="0 0 24 24">
+ <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+ </svg>
+ </div>
+ </div>
+ `;
+ },
 
     getCharaRealName(name) {
         if (!name) return "";
@@ -486,17 +465,38 @@ const QuestMapModule = {
         this.safeRender(() => this._render());
     },
 
-    goBackToMenu() {
-        this.currentView = 'menu';
-        this.safeRender(() => this._render());
-    },
+ goBackToMenu() {
+ this.currentView = 'menu';
+ this._fadeTransition(() => this._render());
+ },
+
+ handleFloatingBack() {
+ this.goBackToMenu();
+ },
 
     enterCategory(type) {
         this.currentView = 'list';
         this.activeTabType = type;
         this.activeStoryId = null;
         this.expandedChapter = null;
-        this.safeRender(() => this._render());
+        this._fadeTransition(() => this._render());
+    },
+
+    /** 視圖切換時的 fade-out → fade-in 過渡動畫 */
+    _fadeTransition(renderFn) {
+        const tab = document.getElementById('map-tab');
+        if (!tab) { this.safeRender(renderFn); return; }
+        tab.style.transition = 'opacity 0.2s ease-out';
+        tab.style.opacity = '0';
+        setTimeout(() => {
+            this.safeRender(async () => {
+                await renderFn.call(this);
+                requestAnimationFrame(() => {
+                    tab.style.transition = 'opacity 0.3s ease-in';
+                    tab.style.opacity = '1';
+                });
+            });
+        }, 200);
     },
 
     changeMenuBg(type) {
@@ -571,9 +571,11 @@ const QuestMapModule = {
                 </div>
                 </div>
             </div>
-            `;
-            return;
-        }
+`;
+ const existingBackBtn = document.querySelector('.floating-back-btn');
+ if (existingBackBtn) existingBackBtn.remove();
+ return;
+ }
 
         if (this.activeTabType === 'speaker') {
             this.renderSpeakerTab(tab);
@@ -599,10 +601,11 @@ const QuestMapModule = {
 
         const safeChapterKeys = chapterKeys.map(k => this.escapeHtml(k));
 
-        tab.innerHTML = `
-        <div class="map-container">
-            <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
-                <button onclick="QuestMapModule.goBackToMenu()" class="back-to-menu-btn" style="
+ tab.innerHTML = `
+ <div class="floating-back-btn" onclick="QuestMapModule.handleFloatingBack()" style="position: fixed; top: 20px; left: 20px; z-index: 9998; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #2d6bcf, #1a4a9e); color: #fff; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; box-shadow: 0 4px 15px rgba(26, 74, 158, 0.5); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.15)'; this.style.boxShadow='0 6px 20px rgba(26, 74, 158, 0.7)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(26, 74, 158, 0.5)';">←</div>
+ <div class="map-container">
+ <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
+ <button onclick="QuestMapModule.goBackToMenu()" class="back-to-menu-btn" style="
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -847,7 +850,17 @@ const QuestMapModule = {
             currItem.classList.add('active');
             const childStories = this.chapters[chKey];
             const content = currItem.querySelector('.accordion-content');
-            if (content) content.style.maxHeight = 'none';
+            if (content) {
+                // 先設為 auto 量測實際高度，再用 transition 展開
+                content.style.maxHeight = 'none';
+                const scrollH = content.scrollHeight;
+                content.style.maxHeight = '0px';
+                requestAnimationFrame(() => {
+                    content.style.maxHeight = scrollH + 'px';
+                    // 動畫結束後切回 none 以適應動態內容
+                    setTimeout(() => { content.style.maxHeight = 'none'; }, 350);
+                });
+            }
             if (this.activeTabType === 'main') {
                 const icon = currItem.querySelector('.acc-folder-icon');
                 if (icon) icon.innerText = "📂";
@@ -986,7 +999,7 @@ const QuestMapModule = {
                                 ">
                                     <span style="color: var(--text-secondary); font-size: 0.8rem;">正在載入登場角色頭像...</span>
                                 </div>
-                                <div id="dialogue-board" class="game-dialogue-board" style="max-height: 360px; overflow-y: auto;">
+                                <div id="dialogue-board" class="game-dialogue-board" style="max-height: 60vh; overflow-y: auto;">
                                 </div>
                                 <div class="game-dialogue-footer" style="border-radius: 0 0 12px 12px;">
                                     <div class="game-footer-btn close" onclick="document.getElementById('dialogue-board').scrollTop = 0">⬆ 回到頂端</div>
@@ -1166,8 +1179,8 @@ const QuestMapModule = {
                         }
                         const stillUrlFallback = `https://redive.estertion.win/event_still/${stillId}.webp`;
                         html += `
-                            <div class="game-dialogue-still" style="margin: 15px 0; text-align: center; border-radius: 8px; overflow: hidden; border: 1.5px solid rgba(255,255,255,0.1); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-                                <img src="${stillUrl}" onerror="this.onerror=null; this.src='${stillUrlFallback}';" style="max-width: 100%; max-height: 240px; object-fit: contain; display: block; margin: 0 auto; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                            <div class="game-dialogue-still" style="margin: 15px 0; text-align: center; border-radius: 8px; overflow: hidden; border: 1.5px solid rgba(232,56,117,0.1); box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                                <img src="${stillUrl}" loading="lazy" onerror="this.onerror=function(){this.style.display='none';}; this.src='${stillUrlFallback}';" style="max-width: 100%; max-height: 240px; object-fit: contain; display: block; margin: 0 auto; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
                             </div>
                         `;
                     }
@@ -1300,6 +1313,15 @@ const QuestMapModule = {
                     modalEl.classList.remove('active');
                 }
             };
+            // 支援 Escape 鍵關閉
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    const m = document.getElementById('game-chara-modal');
+                    if (m && m.classList.contains('active')) {
+                        m.classList.remove('active');
+                    }
+                }
+            });
             document.body.appendChild(modalEl);
         }
         return modalEl;
@@ -1357,12 +1379,15 @@ const QuestMapModule = {
 
         const guild = profile ? (profile.guild || "未知") : "未知";
         const race = profile ? (profile.race || "未知") : "未知";
-        const age = profile ? (profile.age || "未知") : "未知";
-        const height = profile ? (profile.height || "未知") : "未知";
-        const weight = profile ? (profile.weight || "未知") : "未知";
+        const rawAge = profile ? (profile.age || "") : "";
+        const age = rawAge ? `${rawAge}歲` : "未知";
+        const rawHeight = profile ? (profile.height || "") : "";
+        const height = rawHeight ? `${rawHeight}cm` : "未知";
+        const rawWeight = profile ? (profile.weight || "") : "";
+        const weight = rawWeight ? `${rawWeight}kg` : "未知";
         const birth = (profile && profile.birth_month) ? `${profile.birth_month}月${profile.birth_day}日` : "未知";
         const cv = profile ? (profile.voice || "未知") : "未知";
-        const selfText = profile ? (profile.self_text || "暫無自我介紹。").replace(/\\n/g, '<br>') : "暫無自我介紹。";
+        const selfText = profile ? this.escapeHtml(profile.self_text || "暫無自我介紹。").replace(/\\n/g, '<br>') : "暫無自我介紹。";
         const catchCopy = profile ? (profile.catch_copy || "") : "";
 
         let detailsHtml = "";
@@ -1378,15 +1403,15 @@ const QuestMapModule = {
                         </tr>
                         <tr>
                             <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">年齡：</td>
-                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${age}歲</td>
+                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${age}</td>
                             <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">生日：</td>
                             <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${birth}</td>
                         </tr>
                         <tr>
                             <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">身高：</td>
-                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${height}cm</td>
+                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${height}</td>
                             <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">體重：</td>
-                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${weight}kg</td>
+                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${weight}</td>
                         </tr>
                         <tr>
                             <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">聲優：</td>
@@ -1419,7 +1444,8 @@ const QuestMapModule = {
             <div class="game-modal-content" style="max-height: 85vh; overflow-y: auto;">
                 <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(94, 107, 125, 0.1); padding-bottom: 12px; margin-bottom: 15px;">
                     <h3 style="margin: 0; color: var(--accent-color); font-size: 1.25rem;">🔍 角色檔案：${realCharaName}</h3>
-                    <span class="game-modal-close-btn" onclick="document.getElementById('game-chara-modal').remove()" style="cursor: pointer; font-size: 1.5rem; color: var(--text-secondary);">&times;</span>
+                    <span class="game-modal-close-btn" onclick="document.getElementById('game-chara-modal').classList.remove('active')" style="cursor: pointer; font-size: 1.5rem; color: var(--text-secondary); transition: transform 0.2s;"
+                           onmouseover="this.style.transform='rotate(90deg)'" onmouseout="this.style.transform='none'">&times;</span>
                 </div>
 
                 <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px;">
@@ -1453,15 +1479,27 @@ const QuestMapModule = {
         if (!story) return;
 
         const isEvent = story.isEvent;
+        const storyType = story.type; // 'main', 'chara', 'guild', 'tower'
         if (isEvent && this.activeTabType !== 'event') {
             this.activeTabType = 'event';
-        } else if (!isEvent && this.activeTabType !== 'main') {
-            this.activeTabType = 'main';
-            if (story.part) this.currentPart = story.part;
+        } else if (!isEvent) {
+            // 根據 story.type 正確導向對應的分頁
+            if (storyType && ['chara', 'guild', 'tower'].includes(storyType)) {
+                this.activeTabType = storyType;
+            } else {
+                this.activeTabType = 'main';
+                if (story.part) this.currentPart = story.part;
+            }
         }
 
         if (isEvent) {
             this.groupEventStories();
+        } else if (storyType === 'chara') {
+            this.groupCharaStories();
+        } else if (storyType === 'guild') {
+            this.groupGuildStories();
+        } else if (storyType === 'tower') {
+            this.groupTowerStories();
         } else {
             this.groupStories();
         }
@@ -1517,10 +1555,11 @@ const QuestMapModule = {
             }
         });
 
-        tab.innerHTML = `
-            <div class="map-container glass-card">
-                <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
-                    <button onclick="QuestMapModule.goBackToMenu()" class="back-to-menu-btn" style="
+ tab.innerHTML = `
+ <div class="floating-back-btn" onclick="QuestMapModule.handleFloatingBack()" style="position: fixed; top: 20px; left: 20px; z-index: 9998; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #2d6bcf, #1a4a9e); color: #fff; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; box-shadow: 0 4px 15px rgba(26, 74, 158, 0.5); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.15)'; this.style.boxShadow='0 6px 20px rgba(26, 74, 158, 0.7)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(26, 74, 158, 0.5)';">←</div>
+ <div class="map-container glass-card">
+ <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
+ <button onclick="QuestMapModule.goBackToMenu()" class="back-to-menu-btn" style="
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -1603,14 +1642,69 @@ const QuestMapModule = {
 
     handleSpeakerSearch(value) {
         this.speakerSearchQuery = value;
-        const tab = document.getElementById('map-tab');
-        if (tab) this.renderSpeakerTab(tab);
+        // 使用 debounce 防止每次按鍵都完整重建 DOM
+        clearTimeout(this._speakerSearchTimer);
+        this._speakerSearchTimer = setTimeout(() => {
+            this._updateSpeakerGrid();
+        }, 300);
     },
 
     handleSpeakerSort(value) {
         this.speakerSortOrder = value;
-        const tab = document.getElementById('map-tab');
-        if (tab) this.renderSpeakerTab(tab);
+        this._updateSpeakerGrid();
+    },
+
+    /** 只更新角色 grid 內容，不重建整個頁面（保留搜尋框焦點） */
+    _updateSpeakerGrid() {
+        const gridEl = document.querySelector('.speaker-grid');
+        if (!gridEl) {
+            // fallback: 如果找不到 grid，完整重建
+            const tab = document.getElementById('map-tab');
+            if (tab) this.renderSpeakerTab(tab);
+            return;
+        }
+        const searchVal = this.speakerSearchQuery || "";
+        const sortVal = this.speakerSortOrder || "appearances-desc";
+        let speakers = Object.keys(this.appearanceMap || {});
+        const nonRealSpeakers = ["旁白", "【系統】", "？？？", "店員", "店長", "選擇肢", "選擇"];
+        speakers = speakers.filter(name => !nonRealSpeakers.some(nr => name.trim().includes(nr)));
+        if (searchVal.trim()) {
+            const query = searchVal.trim().toLowerCase();
+            speakers = speakers.filter(name => name.toLowerCase().includes(query));
+        }
+        speakers.sort((a, b) => {
+            const countA = (this.appearanceMap[a] || []).length;
+            const countB = (this.appearanceMap[b] || []).length;
+            if (sortVal === 'appearances-desc') return countB - countA || a.localeCompare(b, 'zh-Hant-TW');
+            if (sortVal === 'appearances-asc') return countA - countB || a.localeCompare(b, 'zh-Hant-TW');
+            return a.localeCompare(b, 'zh-Hant-TW');
+        });
+        gridEl.innerHTML = speakers.map(name => {
+            const count = (this.appearanceMap[name] || []).length;
+            const realName = this.getCharaRealName(name);
+            const safeName = this.escapeHtml(name);
+            const safeRealName = this.escapeHtml(realName);
+            const unitId = AvatarService.getUnitId(realName, this.speakerAvatars);
+            let avatarHtml = "";
+            if (unitId) {
+                const candidates = AvatarService.getUrlCandidates(unitId);
+                avatarHtml = `<img src="${candidates[0]}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='${candidates[1] || candidates[0]}'">`;
+            } else {
+                avatarHtml = `<div class="npc-avatar-placeholder" style="font-size: 1.2rem; font-weight: bold; color: var(--primary-dark);">${safeRealName.substring(0, 2)}</div>`;
+            }
+            return `
+                <div class="speaker-card glass-card" onclick="QuestMapModule.showCharaModal(${JSON.stringify(name).replace(/"/g, '&quot;')})"
+                     style="background: rgba(255,255,255,0.03); border: 1px solid rgba(232,56,117,0.1); border-radius: 12px; padding: 15px 10px; text-align: center; cursor: pointer; transition: all 0.2s ease-in-out; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;"
+                     onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='rgba(232,56,117,0.25)'; this.style.background='rgba(232,56,117,0.04)';"
+                     onmouseout="this.style.transform='none'; this.style.borderColor='rgba(232,56,117,0.1)'; this.style.background='rgba(255,255,255,0.03)';">
+                    <div style="width: 70px; height: 70px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(232,56,117,0.15); background: rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center;">
+                        ${avatarHtml}
+                    </div>
+                    <div style="font-weight: bold; font-size: 0.9rem; color: var(--text-primary); text-overflow: ellipsis; white-space: nowrap; overflow: hidden; width: 100%;" title="${safeName}">${safeName}</div>
+                    <div style="font-size: 0.78rem; color: var(--accent-color);">🎬 登場 ${count} 話</div>
+                </div>
+            `;
+        }).join('') + (speakers.length === 0 ? `<div style="grid-column: 1/-1; text-align: center; color: var(--text-secondary); padding: 50px 0;">查無符合條件的登場角色 🔍</div>` : '');
     }
 };
 
