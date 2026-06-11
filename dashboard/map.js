@@ -24,6 +24,7 @@ const QuestMapModule = {
     speakerSortOrder: "appearances-desc",
     isRendering: false,
     isLoadingDialogue: false,
+    currentView: 'menu',
 
     escapeHtml(str) {
         if (!str) return "";
@@ -66,6 +67,8 @@ const QuestMapModule = {
             "克蕾琪塔的聲音": "克蕾琪塔", "蘭法的聲音": "蘭法", "美空的聲音": "美空",
             "涅比亞的聲音": "涅比亞", "古蕾婭的聲音": "古蕾婭", "安的聲音": "安",
             "莫妮卡的聲音": "莫妮卡",
+            "ジュ": "純", "シュ": "雪", "アオ": "碧", "カオ": "香織", "ユカ": "由加莉",
+            "コッ": "可可蘿", "コッコロ": "可可蘿", "ナレーション": "旁白", "ナレ": "旁白"
         };
         if (aliases[singleName]) return aliases[singleName];
         let clean = singleName.replace(/（[^）]+）/g, "").replace(/\([^)]+\)/g, "").trim();
@@ -134,26 +137,155 @@ const QuestMapModule = {
             }
 
             if (this.stories.length === 0) {
-                const sql = `
-                    SELECT story_id, title, sub_title, story_group_id
-                    FROM story_detail
-                    WHERE story_id >= 2000000 AND story_id < 5000000
-                    ORDER BY story_id ASC
-                `;
-                const rawData = await window.PCRDatabase.runQuery(sql);
-                this.stories = rawData.map(row => {
-                    const groupId = row.story_group_id;
-                    return {
+                const checkChara = await window.PCRDatabase.runQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='chara_story_detail'");
+                const isTW = !(checkChara && checkChara.length > 0);
+
+                if (isTW) {
+                    // 1. 台版主線劇情
+                    const sql = `
+                        SELECT story_id, title, sub_title, story_group_id
+                        FROM story_detail
+                        WHERE story_id >= 2000000 AND story_id < 3000000
+                        ORDER BY story_id ASC
+                    `;
+                    const rawData = await window.PCRDatabase.runQuery(sql);
+                    this.stories = rawData.map(row => {
+                        const groupId = row.story_group_id;
+                        return {
+                            id: row.story_id,
+                            chapter: row.title || "",
+                            title: row.sub_title || "",
+                            groupId: groupId,
+                            part: ChapterDataService.getPartFromGroupId(groupId),
+                            isEvent: false,
+                            type: 'main',
+                        };
+                    });
+
+                    // 2. 台版個人劇情
+                    const charaSql = `
+                        SELECT story_id, title, sub_title, story_group_id
+                        FROM story_detail
+                        WHERE story_id >= 1000000 AND story_id < 2000000
+                        ORDER BY story_id ASC
+                    `;
+                    const rawChara = await window.PCRDatabase.runQuery(charaSql);
+                    const charaStories = rawChara.map(row => ({
                         id: row.story_id,
-                        chapter: row.title || "",
+                        chapter: row.title || "個人劇情",
                         title: row.sub_title || "",
-                        groupId: groupId,
-                        part: ChapterDataService.getPartFromGroupId(groupId),
+                        groupId: row.story_group_id,
                         isEvent: false,
-                        type: 'main',
-                    };
-                });
-                console.log(`[QuestMapModule] 成功載入 ${this.stories.length} 筆主線劇情 (含部別標記)`);
+                        type: 'chara',
+                    }));
+                    this.stories = this.stories.concat(charaStories);
+
+                    // 3. 台版公會劇情
+                    const guildSql = `
+                        SELECT story_id, title, sub_title, story_group_id
+                        FROM story_detail
+                        WHERE story_id >= 3000000 AND story_id < 4000000
+                        ORDER BY story_id ASC
+                    `;
+                    const rawGuild = await window.PCRDatabase.runQuery(guildSql);
+                    const guildStories = rawGuild.map(row => ({
+                        id: row.story_id,
+                        chapter: row.title || "公會劇情",
+                        title: row.sub_title || "",
+                        groupId: row.story_group_id,
+                        isEvent: false,
+                        type: 'guild',
+                    }));
+                    this.stories = this.stories.concat(guildStories);
+
+                    // 4. 台版露娜塔/系統劇情
+                    const towerSql = `
+                        SELECT story_id, title, sub_title, story_group_id
+                        FROM story_detail
+                        WHERE story_id >= 4000000 AND story_id < 5000000
+                        ORDER BY story_id ASC
+                    `;
+                    const rawTower = await window.PCRDatabase.runQuery(towerSql);
+                    const towerStories = rawTower.map(row => ({
+                        id: row.story_id,
+                        chapter: row.title || "露娜塔/系統劇情",
+                        title: row.sub_title || "",
+                        groupId: row.story_group_id,
+                        isEvent: false,
+                        type: 'tower',
+                    }));
+                    this.stories = this.stories.concat(towerStories);
+
+                    console.log(`[QuestMapModule] 台版模式載入完畢：主線 ${rawData.length} 筆，個人 ${charaStories.length} 筆，公會 ${guildStories.length} 筆，其他 ${towerStories.length} 筆`);
+
+                } else {
+                    // 原日版模式
+                    const sql = `
+                        SELECT story_id, title, sub_title, story_group_id
+                        FROM story_detail
+                        WHERE story_id >= 2000000 AND story_id < 5000000
+                        ORDER BY story_id ASC
+                    `;
+                    const rawData = await window.PCRDatabase.runQuery(sql);
+                    this.stories = rawData.map(row => {
+                        const groupId = row.story_group_id;
+                        return {
+                            id: row.story_id,
+                            chapter: row.title || "",
+                            title: row.sub_title || "",
+                            groupId: groupId,
+                            part: ChapterDataService.getPartFromGroupId(groupId),
+                            isEvent: false,
+                            type: 'main',
+                        };
+                    });
+                    console.log(`[QuestMapModule] 日版模式載入：${this.stories.length} 筆主線`);
+
+                    // 1. 個人劇情 (Chara Story)
+                    try {
+                        const charaSql = "SELECT story_id, title, sub_title, story_group_id FROM chara_story_detail";
+                        const rawChara = await window.PCRDatabase.runQuery(charaSql);
+                        const charaStories = rawChara.map(row => ({
+                            id: row.story_id,
+                            chapter: row.title || "個人劇情",
+                            title: row.sub_title || "",
+                            groupId: row.story_group_id,
+                            isEvent: false,
+                            type: 'chara',
+                        }));
+                        this.stories = this.stories.concat(charaStories);
+                    } catch (e) { console.warn("日版個人劇情載入失敗:", e); }
+
+                    // 2. 公會劇情 (Guild Story)
+                    try {
+                        const guildSql = "SELECT story_id, title, sub_title, story_group_id FROM guild_story_detail";
+                        const rawGuild = await window.PCRDatabase.runQuery(guildSql);
+                        const guildStories = rawGuild.map(row => ({
+                            id: row.story_id,
+                            chapter: row.title || "公會劇情",
+                            title: row.sub_title || "",
+                            groupId: row.story_group_id,
+                            isEvent: false,
+                            type: 'guild',
+                        }));
+                        this.stories = this.stories.concat(guildStories);
+                    } catch (e) { console.warn("日版公會劇情載入失敗:", e); }
+
+                    // 3. 露娜塔/系統劇情 (Tower/System Story)
+                    try {
+                        const towerSql = "SELECT story_id, title, sub_title, story_group_id FROM tower_story_detail";
+                        const rawTower = await window.PCRDatabase.runQuery(towerSql);
+                        const towerStories = rawTower.map(row => ({
+                            id: row.story_id,
+                            chapter: row.title || "露娜塔/系統劇情",
+                            title: row.sub_title || "",
+                            groupId: row.story_group_id,
+                            isEvent: false,
+                            type: 'tower',
+                        }));
+                        this.stories = this.stories.concat(towerStories);
+                    } catch (e) { console.warn("日版露娜塔劇情載入失敗:", e); }
+                }
             }
 
             if (this.events.length === 0) {
@@ -181,59 +313,6 @@ const QuestMapModule = {
                     isEvent: true,
                 }));
                 console.log(`[QuestMapModule] 成功載入 ${this.eventStories.length} 筆活動話數`);
-            }
-
-            // 載入個人、公會與露娜塔劇情，以防止登場人物對白解析時出現 "ID: xxx" 的奇怪ID
-            try {
-                // 1. 個人劇情 (Chara Story)
-                const checkChara = await window.PCRDatabase.runQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='chara_story_detail'");
-                if (checkChara && checkChara.length > 0) {
-                    const charaSql = "SELECT story_id, title, sub_title, story_group_id FROM chara_story_detail";
-                    const rawChara = await window.PCRDatabase.runQuery(charaSql);
-                    const charaStories = rawChara.map(row => ({
-                        id: row.story_id,
-                        chapter: row.title || "個人劇情",
-                        title: row.sub_title || "",
-                        groupId: row.story_group_id,
-                        isEvent: false,
-                        type: 'chara',
-                    }));
-                    this.stories = this.stories.concat(charaStories);
-                }
-
-                // 2. 公會劇情 (Guild Story)
-                const checkGuild = await window.PCRDatabase.runQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='guild_story_detail'");
-                if (checkGuild && checkGuild.length > 0) {
-                    const guildSql = "SELECT story_id, title, sub_title, story_group_id FROM guild_story_detail";
-                    const rawGuild = await window.PCRDatabase.runQuery(guildSql);
-                    const guildStories = rawGuild.map(row => ({
-                        id: row.story_id,
-                        chapter: row.title || "公會劇情",
-                        title: row.sub_title || "",
-                        groupId: row.story_group_id,
-                        isEvent: false,
-                        type: 'guild',
-                    }));
-                    this.stories = this.stories.concat(guildStories);
-                }
-
-                // 3. 露娜塔/系統劇情 (Tower/System Story)
-                const checkTower = await window.PCRDatabase.runQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='tower_story_detail'");
-                if (checkTower && checkTower.length > 0) {
-                    const towerSql = "SELECT story_id, title, sub_title, story_group_id FROM tower_story_detail";
-                    const rawTower = await window.PCRDatabase.runQuery(towerSql);
-                    const towerStories = rawTower.map(row => ({
-                        id: row.story_id,
-                        chapter: row.title || "露娜塔/系統劇情",
-                        title: row.sub_title || "",
-                        groupId: row.story_group_id,
-                        isEvent: false,
-                        type: 'tower',
-                    }));
-                    this.stories = this.stories.concat(towerStories);
-                }
-            } catch (extraErr) {
-                console.warn("[QuestMapModule] 載入額外劇情對照標題失敗:", extraErr);
             }
 
             await ChapterDataService.load();
@@ -342,10 +421,81 @@ const QuestMapModule = {
         this.safeRender(() => this._render());
     },
 
+    goBackToMenu() {
+        this.currentView = 'menu';
+        this.safeRender(() => this._render());
+    },
+
+    enterCategory(type) {
+        this.currentView = 'list';
+        this.activeTabType = type;
+        this.activeStoryId = null;
+        this.expandedChapter = null;
+        this.safeRender(() => this._render());
+    },
+
+    changeMenuBg(type) {
+        const bgArea = document.getElementById('menu-visual-area');
+        if (!bgArea) return;
+        const bgs = {
+            'main': 'https://redive.estertion.win/card/full/105931.webp',
+            'chara': 'https://redive.estertion.win/card/full/100131.webp',
+            'guild': 'https://redive.estertion.win/card/full/105331.webp',
+            'extra': 'https://redive.estertion.win/card/full/105631.webp'
+        };
+        const url = bgs[type] || bgs['main'];
+        bgArea.style.backgroundImage = `url('${url}')`;
+    },
+
     async _render(skipAutoSelect = false) {
         await this.loadData();
 
         const tab = document.getElementById('map-tab');
+
+        if (this.currentView === 'menu') {
+            tab.innerHTML = `
+            <div class="menu-container">
+                <div class="menu-visual-area" id="menu-visual-area">
+                    <div class="menu-visual-overlay"></div>
+                    <div class="menu-visual-meta">
+                        <h2>📖 阿斯特萊亞劇情編年史</h2>
+                        <p class="subtitle">階層式章節導航，載入 So-net 官方繁中劇情大綱與對話文本</p>
+                    </div>
+                </div>
+                <div class="menu-cards-area">
+                    <div class="menu-card" onmouseenter="QuestMapModule.changeMenuBg('main')" onclick="QuestMapModule.enterCategory('main')">
+                        <div class="menu-card-inner">
+                            <div class="menu-card-icon">⚔️</div>
+                            <div class="menu-card-title">主要劇情</div>
+                            <div class="menu-card-desc">探索阿斯特萊亞世界的宏大冒險與主線篇章</div>
+                        </div>
+                    </div>
+                    <div class="menu-card" onmouseenter="QuestMapModule.changeMenuBg('chara')" onclick="QuestMapModule.enterCategory('chara')">
+                        <div class="menu-card-inner">
+                            <div class="menu-card-icon">👤</div>
+                            <div class="menu-card-title">角色劇情</div>
+                            <div class="menu-card-desc">羈絆與日常，與每位夥伴的專屬故事</div>
+                        </div>
+                    </div>
+                    <div class="menu-card" onmouseenter="QuestMapModule.changeMenuBg('guild')" onclick="QuestMapModule.enterCategory('guild')">
+                        <div class="menu-card-inner">
+                            <div class="menu-card-icon">👥</div>
+                            <div class="menu-card-title">公會劇情</div>
+                            <div class="menu-card-desc">公會成員間趣味橫生與溫馨的羈絆小品</div>
+                        </div>
+                    </div>
+                    <div class="menu-card" onmouseenter="QuestMapModule.changeMenuBg('extra')" onclick="QuestMapModule.enterCategory('tower')">
+                        <div class="menu-card-inner">
+                            <div class="menu-card-icon">🌙</div>
+                            <div class="menu-card-title">額外劇情</div>
+                            <div class="menu-card-desc">露娜之塔與各類冒險中發生的特殊篇章</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `;
+            return;
+        }
 
         if (this.activeTabType === 'speaker') {
             this.renderSpeakerTab(tab);
@@ -373,24 +523,39 @@ const QuestMapModule = {
 
         tab.innerHTML = `
         <div class="map-container">
+            <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 8px; font-size: 0.95rem;">
+                <span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;"><span style="font-size: 1.1rem;">🏠</span> 劇情大廳</span>
+                <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
+                <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">${
+                    this.activeTabType === 'main' ? '⚔️ 主要劇情' :
+                    this.activeTabType === 'event' ? '🏆 活動劇情' :
+                    this.activeTabType === 'guild' ? '👥 公會劇情' :
+                    this.activeTabType === 'chara' ? '👤 個人劇情' :
+                    this.activeTabType === 'tower' ? '🌙 額外劇情' : '👥 登場角色'
+                }</span>
+            </div>
             <div class="map-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                 <div>
-                    <h2>📖 阿斯特萊亞劇情編年史</h2>
-                    <p class="subtitle">階層式章節導航，載入 So-net 官方繁中劇情大綱與對話文本</p>
+                    <h2>📖 ${
+                        this.activeTabType === 'main' ? '主要劇情' :
+                        this.activeTabType === 'event' ? '活動劇情' :
+                        this.activeTabType === 'guild' ? '公會劇情' :
+                        this.activeTabType === 'chara' ? '個人劇情' :
+                        this.activeTabType === 'tower' ? '額外劇情' : '登場角色'
+                    }</h2>
+                    <p class="subtitle">載入 So-net 官方繁中劇情大綱與對話文本</p>
                 </div>
+                ${(this.activeTabType === 'main' || this.activeTabType === 'event') ? `
                 <div class="category-selector" style="display: flex; gap: 12px; flex-wrap: wrap;">
                     <button class="part-btn ${this.activeTabType === 'main' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('main')" style="font-size: 0.95rem; padding: 10px 24px;">⚔️ 主線劇情</button>
                     <button class="part-btn ${this.activeTabType === 'event' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('event')" style="font-size: 0.95rem; padding: 10px 24px;">🏆 活動劇情</button>
-                    <button class="part-btn ${this.activeTabType === 'guild' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('guild')" style="font-size: 0.95rem; padding: 10px 24px;">👥 公會劇情</button>
-                    <button class="part-btn ${this.activeTabType === 'chara' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('chara')" style="font-size: 0.95rem; padding: 10px 24px;">📖 個人劇情</button>
-                    <button class="part-btn ${this.activeTabType === 'tower' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('tower')" style="font-size: 0.95rem; padding: 10px 24px;">🌙 露娜塔/其他</button>
-                    <button class="part-btn ${this.activeTabType === 'speaker' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('speaker')" style="font-size: 0.95rem; padding: 10px 24px;">👥 登場角色</button>
                 </div>
+                ` : ''}
             </div>
 
             <div class="part-selector" style="display: ${this.activeTabType === 'main' ? 'flex' : 'none'}; margin-top: 15px;">
                 <button class="part-btn ${this.currentPart === 1 ? 'active' : ''}" onclick="QuestMapModule.switchPart(1)">第一部：霸瞳天星篇</button>
-                <button class="part-btn ${this.currentPart === 2 ? 'active' : ''}" onclick="QuestMapModule.switchPart(2)">第二部：厄莉絲與救贖篇</button>
+                <button class="part-btn ${this.currentPart === 2 ? 'active' : ''}" onclick="QuestMapModule.switchPart(2)">第二部：逆轉的命運與約定篇</button>
                 <button class="part-btn ${this.currentPart === 3 ? 'active' : ''}" onclick="QuestMapModule.switchPart(3)">第三部：全新世界篇</button>
             </div>
 
@@ -747,60 +912,23 @@ const QuestMapModule = {
                         </div>
 
                         <div class="dialogue-section">
-                            <div class="game-dialogue-panel" style="position: relative; overflow: hidden; background: #0a0e1a; min-height: 480px; border-radius: 12px; border: 1.5px solid rgba(232, 56, 117, 0.25);">
-                                
-                                <div id="cinema-viewport" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; pointer-events: none;">
-                                    <div id="cinema-bg-1" class="cinema-layer active" style="position: absolute; top:0; left:0; width:100%; height:100%; transition: opacity 0.8s ease-in-out; opacity: 0;"></div>
-                                    <div id="cinema-bg-2" class="cinema-layer" style="position: absolute; top:0; left:0; width:100%; height:100%; transition: opacity 0.8s ease-in-out; opacity: 0;"></div>
-                                    <div id="cinema-still-1" class="cinema-layer" style="position: absolute; top:0; left:0; width:100%; height:100%; transition: opacity 0.8s ease-in-out; opacity: 0; z-index: 2;"></div>
-                                    <div id="cinema-still-2" class="cinema-layer" style="position: absolute; top:0; left:0; width:100%; height:100%; transition: opacity 0.8s ease-in-out; opacity: 0; z-index: 2;"></div>
-                                    <div id="cinema-overlay" style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.35); z-index: 1;"></div>
-                                </div>
-
-                                <div class="game-dialogue-header" style="border-radius: 12px 12px 0 0; position: relative; z-index: 10; background: linear-gradient(135deg, rgba(232,56,117,0.85) 0%, rgba(196,36,106,0.85) 100%); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255, 255, 255, 0.1);">✦ 劇情全文 ✦</div>
-                                
+                            <div class="game-dialogue-panel">
+                                <div class="game-dialogue-header" style="border-radius: 12px 12px 0 0;">✦ 劇情全文 ✦</div>
                                 <div id="chara-badges-bar" class="game-chara-list-bar" style="
-                                    position: relative; z-index: 10;
-                                    background: rgba(10, 15, 30, 0.5);
-                                    backdrop-filter: blur(8px);
-                                    -webkit-backdrop-filter: blur(8px);
-                                    border-left: 1.5px solid rgba(255,255,255,0.05);
-                                    border-right: 1.5px solid rgba(255,255,255,0.05);
+                                    background: rgba(252,242,246,0.9);
+                                    border-left: 1.5px solid rgba(232,56,117,0.15);
+                                    border-right: 1.5px solid rgba(232,56,117,0.15);
                                     border-top: none;
-                                    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                                    border-bottom: 1px solid rgba(232,56,117,0.1);
                                 ">
-                                    <span style="color: rgba(255,255,255,0.7); font-size: 0.8rem;">正在載入登場角色頭像...</span>
+                                    <span style="color: var(--text-secondary); font-size: 0.8rem;">正在載入登場角色頭像...</span>
                                 </div>
-                                
-                                <div id="dialogue-board" class="game-dialogue-board" style="position: relative; z-index: 5; height: 380px; overflow-y: auto; background: transparent; padding: 15px;">
+                                <div id="dialogue-board" class="game-dialogue-board" style="max-height: 360px; overflow-y: auto;">
                                 </div>
-
-                                <div id="cinema-dialogue-box" class="cinema-dialogue-box-container" style="display: none; position: absolute; bottom: 70px; left: 2.5%; width: 95%; z-index: 20; transition: all 0.3s ease;">
+                                <div class="game-dialogue-footer" style="border-radius: 0 0 12px 12px;">
+                                    <div class="game-footer-btn close" onclick="document.getElementById('dialogue-board').scrollTop = 0">⬆ 回到頂端</div>
+                                    <div class="game-footer-btn skip" onclick="document.getElementById('dialogue-board').scrollTop = 99999">⬇ 跳至底端</div>
                                 </div>
-
-                                <div class="game-dialogue-footer" style="
-                                    position: relative; z-index: 10;
-                                    background: rgba(10, 15, 30, 0.6);
-                                    backdrop-filter: blur(8px);
-                                    -webkit-backdrop-filter: blur(8px);
-                                    border-top: 1px solid rgba(255, 255, 255, 0.08);
-                                    border-radius: 0 0 12px 12px;
-                                    display: flex;
-                                    justify-content: center;
-                                    flex-wrap: wrap;
-                                    gap: 10px;
-                                    padding: 10px;
-                                ">
-                                    <div class="game-footer-btn" id="btn-toggle-cinema" onclick="QuestMapModule.toggleCinemaMode()" style="background: var(--accent-gradient); color: #fff; cursor: pointer; user-select: none;">🎬 劇場播放</div>
-                                    
-                                    <div class="game-footer-btn close" id="btn-cinema-prev" onclick="QuestMapModule.stepCinema(-1)" style="display: none; min-width: 80px; cursor: pointer; user-select: none;">⬅ 上一句</div>
-                                    <div class="game-footer-btn close" id="btn-cinema-auto" onclick="QuestMapModule.toggleAutoplay()" style="display: none; min-width: 90px; cursor: pointer; user-select: none;">▶ 自動播放</div>
-                                    <div class="game-footer-btn skip" id="btn-cinema-next" onclick="QuestMapModule.stepCinema(1)" style="display: none; min-width: 80px; background: #e83875; color: #fff; cursor: pointer; user-select: none;">下一句 ➡</div>
-                                    
-                                    <div class="game-footer-btn close" id="btn-log-top" onclick="document.getElementById('dialogue-board').scrollTop = 0" style="min-width: 100px; cursor: pointer; user-select: none;">⬆ 回到頂端</div>
-                                    <div class="game-footer-btn skip" id="btn-log-bottom" onclick="document.getElementById('dialogue-board').scrollTop = 99999" style="min-width: 100px; cursor: pointer; user-select: none;">⬇ 跳至底端</div>
-                                </div>
-
                             </div>
                         </div>
 
@@ -919,36 +1047,6 @@ const QuestMapModule = {
                 return;
             }
 
-            // 重設與預處理對白資料
-            this.dialogueList = dialogueList;
-            this.cinemaIndex = 0;
-            this.isAutoplay = false;
-            this.currentBgId = null;
-            this.currentStillId = null;
-            if (this.autoplayTimer) {
-                clearTimeout(this.autoplayTimer);
-                this.autoplayTimer = null;
-            }
-
-            let currentBg = "10000"; // 預設背景
-            let currentStill = "";  // 預設無 CG
-            
-            // 預先計算每一句對話應對應的背景與 CG，並過濾出真正的對話行以供劇場模式使用
-            this.cinemaLines = [];
-            this.dialogueList.forEach((item, index) => {
-                if (item.type === 'background') {
-                    currentBg = item.background || "10000";
-                } else if (item.type === 'still') {
-                    currentStill = item.still === 'end' ? '' : (item.still || "");
-                } else if (item.type === 'dialogue') {
-                    item.currentBg = currentBg;
-                    item.currentStill = currentStill;
-                    item.originalIndex = index;
-                    this.cinemaLines.push(item);
-                }
-            });
-
-            // 載入頭像
             const speakerNames = [];
             dialogueList.forEach(item => {
                 if (item.name) {
@@ -982,7 +1080,7 @@ const QuestMapModule = {
                         if (renderedSet.has(realName)) return;
                         renderedSet.add(realName);
                         badgeHtmls.push(`
-                            <div class="game-chara-avatar-badge" title="${realName}" onclick="QuestMapModule.showCharaModal('${realName}')">
+                            <div class="game-chara-avatar-badge" title="${realName}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})">
                                 ${AvatarService.getAvatarHtml(realName, this.speakerAvatars)}
                             </div>
                         `);
@@ -991,134 +1089,110 @@ const QuestMapModule = {
                 }
             }
 
-            // 渲染 Log 模式對白板
             let html = "";
+            let firstBgUrl = "";
             dialogueList.forEach(item => {
-                if (item.type === 'background') {
-                    html += `
-                        <div class="game-dialogue-event bg-event" data-type="background" data-bg="${item.background}">
-                            🌅 場景切換 (ID: ${item.background})
-                        </div>
-                    `;
-                } else if (item.type === 'still') {
-                    const stillLabel = item.still === 'end' ? '🖼️ 收起 CG 插圖' : `🖼️ 顯示 CG 插圖 (ID: ${item.still})`;
-                    html += `
-                        <div class="game-dialogue-event still-event" data-type="still" data-still="${item.still}">
-                            ${stillLabel}
-                        </div>
-                    `;
-                } else {
-                    const speaker = item.name || "旁白";
-                    const safeSpeaker = this.escapeHtml(speaker);
-                    const words = this.escapeHtml(item.words || "").replace(/\{player\}/g, "祐樹").replace(/\n/g, "<br>");
-
-                    let speakerClass = "";
-                    let isNarrator = speaker === "旁白" || speaker === "【系統】" || speaker === "？？？";
-                    let isChoice = speaker.includes("【選擇肢】") || speaker.includes("【選擇】");
-
-                    if (isNarrator) speakerClass = "role-narrator";
-                    else if (isChoice) speakerClass = "role-choice";
-
-                    const themeClass = this.getSpeakerTheme(speaker);
-                    const realNameForBtn = (isNarrator || isChoice) ? "" : this.getCharaRealName(speaker);
-
-                    let avatarHtml = "";
-                    if (!isNarrator && !isChoice) {
-                        const realName = realNameForBtn;
-                        let avatarContent = "";
-
-                        if (item.unit_id) {
-                            avatarContent = AvatarService.getAvatarHtmlByUnitId(item.unit_id, realName, this.speakerAvatars);
-                        } else {
-                            avatarContent = AvatarService.getAvatarHtml(realName, this.speakerAvatars);
-                        }
-
-                        avatarHtml = `
-                            <div class="game-chara-avatar-wrapper" onclick="QuestMapModule.showCharaModal('${realName}')" style="cursor: pointer;">
-                                 <div class="game-chara-avatar">
-                                     ${avatarContent}
-                                 </div>
+                if (item.type === 'still') {
+                    const stillId = item.still_id || item.still;
+                    if (stillId) {
+                        const stillUrl = `https://redive.estertion.win/card/full/${stillId}.webp`;
+                        const stillUrlFallback = `https://redive.estertion.win/event_still/${stillId}.webp`;
+                        html += `
+                            <div class="game-dialogue-still" style="margin: 15px 0; text-align: center; border-radius: 8px; overflow: hidden; border: 1.5px solid rgba(255,255,255,0.1); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                                <img src="${stillUrl}" onerror="this.onerror=null; this.src='${stillUrlFallback}';" style="max-width: 100%; max-height: 240px; object-fit: contain; display: block; margin: 0 auto; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
                             </div>
                         `;
                     }
+                    return;
+                }
 
-                    const voiceBtn = item.voice ? `<span class="dialogue-voice-btn" onclick="event.stopPropagation(); QuestMapModule.playVoice('${item.voice}')" style="cursor: pointer; margin-left: 6px; font-size: 0.85rem; color: var(--accent-color); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">🔊</span>` : '';
-
-                    html += `
-                        <div class="game-dialogue-line ${speakerClass} ${themeClass}" data-bg="${item.currentBg}" data-still="${item.currentStill}">
-                            ${avatarHtml}
-                            <div class="game-dialogue-content">
-                                <div class="game-dialogue-speaker" onclick="QuestMapModule.showCharaModal('${realNameForBtn}')" style="cursor: pointer; display: inline-block;">
-                                    ${safeSpeaker}${voiceBtn}
-                                </div>
-                                <div class="game-dialogue-text">${words}</div>
+                if (item.type === 'background') {
+                    const bgId = item.background_id || item.background || item.bg_id || item.bg;
+                    if (bgId) {
+                        const bgUrl = `https://redive.estertion.win/bg/jpg/${bgId}.jpg`;
+                        if (!firstBgUrl) firstBgUrl = bgUrl;
+                        html += `
+                            <div class="game-dialogue-bg-change" data-bg="${bgUrl}" style="margin: 12px 0; padding: 8px 12px; font-size: 0.8rem; color: rgba(255,255,255,0.4); text-align: center; border-top: 1px dashed rgba(255,255,255,0.15); border-bottom: 1px dashed rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; gap: 6px;">
+                                🎬 場景切換：${bgId}
                             </div>
+                        `;
+                    }
+                    return;
+                }
+
+                const speaker = item.name || "旁白";
+                const safeSpeaker = this.escapeHtml(speaker);
+                const words = this.escapeHtml(item.words || "").replace(/\{player\}/g, "祐樹").replace(/\n/g, "<br>");
+
+                let speakerClass = "";
+                let isNarrator = speaker === "旁白" || speaker === "【系統】" || speaker === "？？？";
+                let isChoice = speaker.includes("【選擇肢】") || speaker.includes("【選擇】");
+
+                if (isNarrator) speakerClass = "role-narrator";
+                else if (isChoice) speakerClass = "role-choice";
+
+                const realNameForBtn = (isNarrator || isChoice) ? "" : this.getCharaRealName(speaker);
+
+                let avatarHtml = "";
+                if (!isNarrator && !isChoice) {
+                    const realName = realNameForBtn;
+                    let avatarContent = "";
+
+                    if (item.unit_id) {
+                        avatarContent = AvatarService.getAvatarHtmlByUnitId(item.unit_id, realName, this.speakerAvatars);
+                    } else {
+                        avatarContent = AvatarService.getAvatarHtml(realName, this.speakerAvatars);
+                    }
+
+                    avatarHtml = `
+                        <div class="game-chara-avatar-wrapper" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})" style="cursor: pointer;">
+                             <div class="game-chara-avatar">
+                                 ${avatarContent}
+                             </div>
                         </div>
                     `;
                 }
+
+                const voiceBtn = item.voice ? `<span class="dialogue-voice-btn" onclick="event.stopPropagation(); QuestMapModule.playVoice('${item.voice}')" style="cursor: pointer; margin-left: 6px; font-size: 0.85rem; color: var(--accent-color); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">🔊</span>` : '';
+
+                html += `
+                    <div class="game-dialogue-line ${speakerClass}">
+                        ${avatarHtml}
+                        <div class="game-dialogue-content">
+                            <div class="game-dialogue-speaker" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realNameForBtn).replace(/\"/g, '&quot;')})" style="cursor: pointer; display: inline-block;">
+                                ${safeSpeaker}${voiceBtn}
+                            </div>
+                            <div class="game-dialogue-text">${words}</div>
+                        </div>
+                    </div>
+                `;
             });
 
             board.innerHTML = html;
-            board.scrollTop = 0;
 
-            // 預設將第一張背景套用到畫面上
-            if (this.cinemaLines.length > 0 && this.cinemaLines[0].currentBg) {
-                this.changeCinemaBackground(this.cinemaLines[0].currentBg);
-            }
-
-            // 監聽滾動以切換背景與 CG (對照 Log 模式)
-            board.addEventListener('scroll', () => {
-                if (this.cinemaMode) return;
-                
-                const rect = board.getBoundingClientRect();
-                const centerY = rect.top + rect.height / 2;
-                
-                let closestElement = null;
-                let minDistance = Infinity;
-                
-                const lines = board.querySelectorAll('.game-dialogue-line, .game-dialogue-event');
-                lines.forEach(el => {
-                    const elRect = el.getBoundingClientRect();
-                    const elCenterY = elRect.top + elRect.height / 2;
-                    const dist = Math.abs(elCenterY - centerY);
-                    if (dist < minDistance) {
-                        minDistance = dist;
-                        closestElement = el;
-                    }
-                });
-                
-                if (closestElement) {
-                    let bgId = null;
-                    let stillId = null;
-                    
-                    if (closestElement.classList.contains('game-dialogue-line')) {
-                        bgId = closestElement.dataset.bg;
-                        stillId = closestElement.dataset.still;
-                    } else if (closestElement.dataset.type === 'background') {
-                        bgId = closestElement.dataset.bg;
-                    } else if (closestElement.dataset.type === 'still') {
-                        stillId = closestElement.dataset.still;
-                    }
-                    
-                    if (bgId) {
-                        this.changeCinemaBackground(bgId);
-                    }
-                    if (stillId !== null && stillId !== undefined) {
-                        this.changeCinemaStill(stillId);
-                    }
+            // 切換看板背景
+            const cinemaPanel = document.querySelector('.cinema-panel');
+            if (cinemaPanel) {
+                if (firstBgUrl) {
+                    cinemaPanel.style.backgroundImage = `url('${firstBgUrl}')`;
+                } else {
+                    cinemaPanel.style.backgroundImage = `url('https://redive.estertion.win/card/full/105931.webp')`;
                 }
-            });
+                cinemaPanel.style.backgroundSize = 'cover';
+                cinemaPanel.style.backgroundPosition = 'center';
+            }
+            board.scrollTop = 0;
 
         } catch (err) {
             console.error("加載台詞失敗:", err);
             board.innerHTML = `
-                <div class="dialogue-error-box" style="padding: 15px; border-radius: 8px; background: rgba(230, 73, 73, 0.05); border: 1px dashed rgba(230, 73, 73, 0.2); text-align: left; color: #fff;">
+                <div class="dialogue-error-box" style="padding: 15px; border-radius: 8px; background: rgba(230, 73, 73, 0.05); border: 1px dashed rgba(230, 73, 73, 0.2); text-align: left;">
                     <div style="color: #d63031; font-weight: 700; font-size: 0.88rem; margin-bottom: 6px;">⚠️ 台詞文本尚未下載</div>
-                    <div style="color: rgba(255,255,255,0.8); font-size: 0.82rem; line-height: 1.5;">
+                    <div style="color: var(--text-primary); font-size: 0.82rem; line-height: 1.5;">
                         本話的對白文本尚未下載到您的電腦中。<br>
                         請在本地專案根目錄中，執行命令下載全部對白：
                     </div>
-                    <code style="display: block; margin-top: 8px; background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; color: var(--accent-color); font-family: Consolas, monospace; font-size: 0.8rem; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <code style="display: block; margin-top: 8px; background: rgba(0,0,0,0.05); padding: 8px; border-radius: 4px; color: var(--accent-color); font-family: Consolas, monospace; font-size: 0.8rem; border: 1px solid rgba(94, 107, 125, 0.15);">
                         python download_stories_tw.py
                     </code>
                     <button onclick="QuestMapModule.loadDialogue(${storyId})" style="margin-top: 10px; padding: 8px 16px; background: var(--accent-color); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">🔄 重新載入</button>
@@ -1348,10 +1422,16 @@ const QuestMapModule = {
 
     renderSpeakerTab(tab) {
         const searchVal = this.speakerSearchQuery || "";
-        const safeSearchVal = this.escapeHtml(searchVal); // 【修正 Bug 4】編碼使用者輸入
+        const safeSearchVal = this.escapeHtml(searchVal);
         const sortVal = this.speakerSortOrder || "appearances-desc";
 
         let speakers = Object.keys(this.appearanceMap || {});
+        const nonRealSpeakers = ["旁白", "【系統】", "？？？", "店員", "店長", "選擇肢", "選擇"];
+        speakers = speakers.filter(name => {
+            const clean = name.trim();
+            return !nonRealSpeakers.some(nonReal => clean.includes(nonReal));
+        });
+
         if (searchVal.trim()) {
             const query = searchVal.trim().toLowerCase();
             speakers = speakers.filter(name => name.toLowerCase().includes(query));
@@ -1371,18 +1451,15 @@ const QuestMapModule = {
 
         tab.innerHTML = `
             <div class="map-container glass-card">
+                <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 8px; font-size: 0.95rem;">
+                    <span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;"><span style="font-size: 1.1rem;">🏠</span> 劇情大廳</span>
+                    <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
+                    <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">👥 登場角色</span>
+                </div>
                 <div class="map-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 15px; margin-bottom: 20px;">
                     <div>
                         <h2>👥 登場角色總覽</h2>
                         <p class="subtitle">統計所有登場人物的登場話數，點擊可直接查詢詳細資料與登場話數列表</p>
-                    </div>
-                    <div class="category-selector" style="display: flex; gap: 12px; flex-wrap: wrap;">
-                        <button class="part-btn ${this.activeTabType === 'main' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('main')" style="font-size: 0.95rem; padding: 10px 24px;">⚔️ 主線劇情</button>
-                        <button class="part-btn ${this.activeTabType === 'event' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('event')" style="font-size: 0.95rem; padding: 10px 24px;">🏆 活動劇情</button>
-                        <button class="part-btn ${this.activeTabType === 'guild' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('guild')" style="font-size: 0.95rem; padding: 10px 24px;">👥 公會劇情</button>
-                        <button class="part-btn ${this.activeTabType === 'chara' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('chara')" style="font-size: 0.95rem; padding: 10px 24px;">📖 個人劇情</button>
-                        <button class="part-btn ${this.activeTabType === 'tower' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('tower')" style="font-size: 0.95rem; padding: 10px 24px;">🌙 露娜塔/其他</button>
-                        <button class="part-btn ${this.activeTabType === 'speaker' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('speaker')" style="font-size: 0.95rem; padding: 10px 24px;">👥 登場角色</button>
                     </div>
                 </div>
 
@@ -1447,280 +1524,6 @@ const QuestMapModule = {
         this.speakerSortOrder = value;
         const tab = document.getElementById('map-tab');
         if (tab) this.renderSpeakerTab(tab);
-    },
-    
-    // ====================================================
-    // 🎬 劇院播放器擴充方法 (Antigravity Added)
-    // ====================================================
-    cinemaMode: false,
-    cinemaIndex: 0,
-    dialogueList: [],
-    cinemaLines: [],
-    isAutoplay: false,
-    autoplayTimer: null,
-    currentBgId: null,
-    currentStillId: null,
-
-    getSpeakerTheme(speaker) {
-        if (!speaker) return 'theme-blue';
-        const maleSpeakers = ["祐樹", "騎士君", "騎士", "主角", "歐爾森", "查理", "長老", "男性", "士兵", "村民", "旁白", "【系統】", "騎士君"];
-        const goldSpeakers = ["？？？", "霸瞳天星", "霸瞳", "迷之聲", "神明", "愛梅斯", "拉比林斯塔", "模索路晶", "似似花", "克莉絲提娜", "諾維姆", "尾狗刀"];
-        
-        if (maleSpeakers.some(m => speaker.includes(m))) {
-            return 'theme-blue';
-        }
-        if (goldSpeakers.some(g => speaker.includes(g))) {
-            return 'theme-gold';
-        }
-        return 'theme-pink';
-    },
-
-    toggleCinemaMode() {
-        const board = document.getElementById('dialogue-board');
-        const cinemaBox = document.getElementById('cinema-dialogue-box');
-        const btnToggle = document.getElementById('btn-toggle-cinema');
-        const btnPrev = document.getElementById('btn-cinema-prev');
-        const btnAuto = document.getElementById('btn-cinema-auto');
-        const btnNext = document.getElementById('btn-cinema-next');
-        const btnLogTop = document.getElementById('btn-log-top');
-        const btnLogBottom = document.getElementById('btn-log-bottom');
-        const badgesBar = document.getElementById('chara-badges-bar');
-        
-        if (!board || !cinemaBox || !btnToggle) return;
-        
-        this.cinemaMode = !this.cinemaMode;
-        
-        if (this.cinemaMode) {
-            board.style.display = 'none';
-            if (badgesBar) badgesBar.style.display = 'none';
-            cinemaBox.style.display = 'block';
-            btnToggle.innerText = '📖 對白 Log';
-            
-            if (btnPrev) btnPrev.style.display = 'block';
-            if (btnAuto) btnAuto.style.display = 'block';
-            if (btnNext) btnNext.style.display = 'block';
-            if (btnLogTop) btnLogTop.style.display = 'none';
-            if (btnLogBottom) btnLogBottom.style.display = 'none';
-            
-            this.playCurrentCinemaLine();
-        } else {
-            board.style.display = 'block';
-            if (badgesBar && badgesBar.innerHTML.trim() !== '') badgesBar.style.display = 'flex';
-            cinemaBox.style.display = 'none';
-            btnToggle.innerText = '🎬 劇場播放';
-            
-            if (btnPrev) btnPrev.style.display = 'none';
-            if (btnAuto) btnAuto.style.display = 'none';
-            if (btnNext) btnNext.style.display = 'none';
-            if (btnLogTop) btnLogTop.style.display = 'block';
-            if (btnLogBottom) btnLogBottom.style.display = 'block';
-            
-            if (this.isAutoplay) {
-                this.toggleAutoplay();
-            }
-        }
-    },
-
-    stepCinema(direction) {
-        if (!this.cinemaLines || this.cinemaLines.length === 0) return;
-        
-        let newIndex = this.cinemaIndex + direction;
-        if (newIndex < 0) {
-            newIndex = 0;
-        }
-        if (newIndex >= this.cinemaLines.length) {
-            newIndex = this.cinemaLines.length - 1;
-            if (this.isAutoplay) {
-                this.toggleAutoplay();
-            }
-            alert("本話劇情已播放完畢！");
-            return;
-        }
-        
-        this.cinemaIndex = newIndex;
-        this.playCurrentCinemaLine();
-    },
-
-    playCurrentCinemaLine() {
-        if (!this.cinemaLines || this.cinemaLines.length === 0) return;
-        
-        const item = this.cinemaLines[this.cinemaIndex];
-        const cinemaBox = document.getElementById('cinema-dialogue-box');
-        if (!cinemaBox) return;
-        
-        const speaker = item.name || "旁白";
-        const safeSpeaker = this.escapeHtml(speaker);
-        const words = this.escapeHtml(item.words || "").replace(/\{player\}/g, "祐樹").replace(/\n/g, "<br>");
-        
-        let speakerClass = "";
-        let isNarrator = speaker === "旁白" || speaker === "【系統】" || speaker === "？？？";
-        let isChoice = speaker.includes("【選擇肢】") || speaker.includes("【選擇】");
-        
-        if (isNarrator) speakerClass = "role-narrator";
-        else if (isChoice) speakerClass = "role-choice";
-        
-        const themeClass = this.getSpeakerTheme(speaker);
-        const realName = (isNarrator || isChoice) ? "" : this.getCharaRealName(speaker);
-        
-        let avatarHtml = "";
-        if (!isNarrator && !isChoice) {
-            let avatarContent = "";
-            if (item.unit_id) {
-                avatarContent = AvatarService.getAvatarHtmlByUnitId(item.unit_id, realName, this.speakerAvatars);
-            } else {
-                avatarContent = AvatarService.getAvatarHtml(realName, this.speakerAvatars);
-            }
-            
-            avatarHtml = `
-                <div class="game-chara-avatar-wrapper" onclick="QuestMapModule.showCharaModal('${realName}')" style="cursor: pointer;">
-                     <div class="game-chara-avatar" style="width: 65px; height: 65px;">
-                          ${avatarContent}
-                     </div>
-                </div>
-            `;
-        }
-        
-        const voiceBtn = item.voice ? `<span class="dialogue-voice-btn" onclick="event.stopPropagation(); QuestMapModule.playVoice('${item.voice}')" style="cursor: pointer; margin-left: 6px; font-size: 0.85rem; color: var(--accent-color); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">🔊</span>` : '';
-        
-        cinemaBox.innerHTML = `
-            <div class="game-dialogue-line ${speakerClass} ${themeClass}" style="background: rgba(25, 30, 50, 0.92); box-shadow: 0 8px 30px rgba(0,0,0,0.45); border-width: 2px; margin-bottom: 0;">
-                ${avatarHtml}
-                <div class="game-dialogue-content">
-                    <div class="game-dialogue-speaker" onclick="QuestMapModule.showCharaModal('${realName}')" style="cursor: pointer; display: inline-block;">
-                        ${safeSpeaker}${voiceBtn}
-                    </div>
-                    <div class="game-dialogue-text" style="font-size: 1rem; color: #fff; font-weight: 500;">${words}</div>
-                </div>
-            </div>
-        `;
-        
-        if (item.voice) {
-            this.playVoice(item.voice);
-        }
-        
-        if (item.currentBg) {
-            this.changeCinemaBackground(item.currentBg);
-        }
-        if (item.currentStill !== undefined) {
-            this.changeCinemaStill(item.currentStill);
-        }
-    },
-
-    changeCinemaBackground(bgId) {
-        if (this.currentBgId === bgId) return;
-        this.currentBgId = bgId;
-        
-        const bg1 = document.getElementById('cinema-bg-1');
-        const bg2 = document.getElementById('cinema-bg-2');
-        if (!bg1 || !bg2) return;
-        
-        const urls = StoryAssetService.getBackgroundUrls(bgId);
-        const activeLayer = bg1.classList.contains('active') ? bg1 : bg2;
-        const inactiveLayer = activeLayer === bg1 ? bg2 : bg1;
-        
-        let index = 0;
-        const loadImg = () => {
-            if (index >= urls.length) {
-                inactiveLayer.style.backgroundImage = 'none';
-                return;
-            }
-            const img = new Image();
-            img.onload = () => {
-                inactiveLayer.style.backgroundImage = `url('${urls[index]}')`;
-                activeLayer.classList.remove('active');
-                activeLayer.style.opacity = '0';
-                inactiveLayer.classList.add('active');
-                inactiveLayer.style.opacity = '1';
-            };
-            img.onerror = () => {
-                index++;
-                loadImg();
-            };
-            img.src = urls[index];
-        };
-        loadImg();
-    },
-
-    changeCinemaStill(stillId) {
-        if (this.currentStillId === stillId) return;
-        this.currentStillId = stillId;
-        
-        const still1 = document.getElementById('cinema-still-1');
-        const still2 = document.getElementById('cinema-still-2');
-        if (!still1 || !still2) return;
-        
-        const activeLayer = still1.classList.contains('active') ? still1 : still2;
-        const inactiveLayer = activeLayer === still1 ? still2 : still1;
-        
-        if (!stillId || stillId === 'end') {
-            activeLayer.classList.remove('active');
-            activeLayer.style.opacity = '0';
-            inactiveLayer.style.backgroundImage = 'none';
-            inactiveLayer.classList.remove('active');
-            inactiveLayer.style.opacity = '0';
-            return;
-        }
-        
-        const urls = StoryAssetService.getStillUrls(stillId);
-        let index = 0;
-        const loadImg = () => {
-            if (index >= urls.length) {
-                inactiveLayer.style.backgroundImage = 'none';
-                return;
-            }
-            const img = new Image();
-            img.onload = () => {
-                inactiveLayer.style.backgroundImage = `url('${urls[index]}')`;
-                activeLayer.classList.remove('active');
-                activeLayer.style.opacity = '0';
-                inactiveLayer.classList.add('active');
-                inactiveLayer.style.opacity = '1';
-            };
-            img.onerror = () => {
-                index++;
-                loadImg();
-            };
-            img.src = urls[index];
-        };
-        loadImg();
-    },
-
-    toggleAutoplay() {
-        const btnAuto = document.getElementById('btn-cinema-auto');
-        if (!btnAuto) return;
-        
-        this.isAutoplay = !this.isAutoplay;
-        
-        if (this.isAutoplay) {
-            btnAuto.innerText = '⏸ 暫停播放';
-            btnAuto.style.background = 'rgba(232, 56, 117, 0.2)';
-            
-            const runAutoplay = () => {
-                if (!this.isAutoplay) return;
-                
-                const item = this.cinemaLines[this.cinemaIndex];
-                const textLength = item && item.words ? item.words.length : 10;
-                const waitTime = Math.max(3000, textLength * 180 + 2000);
-                
-                this.autoplayTimer = setTimeout(() => {
-                    if (this.cinemaIndex < this.cinemaLines.length - 1) {
-                        this.stepCinema(1);
-                        runAutoplay();
-                    } else {
-                        this.toggleAutoplay();
-                        alert("本話劇情已播放完畢！");
-                    }
-                }, waitTime);
-            };
-            runAutoplay();
-        } else {
-            btnAuto.innerText = '▶ 自動播放';
-            btnAuto.style.background = '';
-            if (this.autoplayTimer) {
-                clearTimeout(this.autoplayTimer);
-                this.autoplayTimer = null;
-            }
-        }
     }
 };
 
