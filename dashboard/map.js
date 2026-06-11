@@ -25,6 +25,7 @@ const QuestMapModule = {
     isRendering: false,
     isLoadingDialogue: false,
     currentView: 'menu',
+    storyThumbnails: null,
 
     escapeHtml(str) {
         if (!str) return "";
@@ -42,6 +43,58 @@ const QuestMapModule = {
             .replace(/\\/g, "\\\\")
             .replace(/'/g, "\\'")
             .replace(/"/g, "\\\"");
+    },
+
+    getStoryItemHtml(s, chDisplay, titleDisplay) {
+        let stillId = s.still_id;
+        let bgId = s.bg_id;
+        if (!stillId && !bgId) {
+            if (this.storyThumbnails && this.storyThumbnails[s.id]) {
+                const thumbData = this.storyThumbnails[s.id];
+                stillId = thumbData.still_id;
+                bgId = thumbData.bg_id;
+            }
+        }
+
+        let thumbUrl = 'https://redive.estertion.win/card/full/100431.webp'; // 預設的 CG
+        if (stillId) {
+            const stillIdStr = String(stillId);
+            const stillIdNum = Number(stillId);
+            if (stillIdStr.length === 9 || stillIdNum > 10000000) {
+                thumbUrl = `https://redive.estertion.win/card/story/${stillId}.webp`;
+            } else {
+                thumbUrl = `https://redive.estertion.win/card/full/${stillId}.webp`;
+            }
+        } else if (bgId) {
+            thumbUrl = `https://redive.estertion.win/bg/jpg/${bgId}.jpg`;
+        } else {
+            // Fallback 策略：如果完全沒有縮圖與背景
+            if (s.isEvent && s.eventValue) {
+                thumbUrl = `https://redive.estertion.win/event_still/banner_${s.eventValue}.webp`;
+            } else if (s.type === 'chara' && s.groupId) {
+                const baseId = Math.floor(s.groupId / 100) * 100 + 31;
+                thumbUrl = `https://redive.estertion.win/card/full/${baseId}.webp`;
+            }
+        }
+        
+        return `
+            <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}"
+                 id="story-item-${s.id}"
+                 onclick="QuestMapModule.selectStory(${s.id})">
+                <div class="story-item-thumb">
+                    <img src="${thumbUrl}" onerror="this.onerror=null; this.src='https://redive.estertion.win/card/full/100431.webp';" alt="thumbnail">
+                </div>
+                <div class="story-item-content">
+                    <div class="story-item-ch">${this.escapeHtml(chDisplay)}</div>
+                    <div class="story-item-title">${this.escapeHtml(titleDisplay)}</div>
+                </div>
+                <div class="story-item-arrow">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                    </svg>
+                </div>
+            </div>
+        `;
     },
 
     getCharaRealName(name) {
@@ -121,6 +174,18 @@ const QuestMapModule = {
                     }
                 } catch (e) {
                     console.error("預載入角色頭像失敗:", e);
+                }
+            }
+
+            if (!this.storyThumbnails) {
+                try {
+                    const resp = await fetch('data/story_thumbnails.json');
+                    if (resp.ok) {
+                        this.storyThumbnails = await resp.json();
+                        console.log(`[QuestMapModule] 成功載入劇情縮圖快取 (${Object.keys(this.storyThumbnails).length} 筆)`);
+                    }
+                } catch (e) {
+                    console.error("無法加載劇情縮圖快取:", e);
                 }
             }
 
@@ -462,35 +527,48 @@ const QuestMapModule = {
                         <p class="subtitle">階層式章節導航，載入 So-net 官方繁中劇情大綱與對話文本</p>
                     </div>
                 </div>
-                <div class="menu-cards-area">
-                    <div class="menu-card" onmouseenter="QuestMapModule.changeMenuBg('main')" onclick="QuestMapModule.enterCategory('main')">
-                        <div class="menu-card-inner">
-                            <div class="menu-card-icon">⚔️</div>
-                            <div class="menu-card-title">主要劇情</div>
-                            <div class="menu-card-desc">探索阿斯特萊亞世界的宏大冒險與主線篇章</div>
+                <div class="menu-cards-area" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; flex: 1.5; align-content: center;">
+                    <!-- 主要劇情 (左右佈局，橫跨3列) -->
+                    <div class="menu-card" onmouseenter="QuestMapModule.changeMenuBg('main')" onclick="QuestMapModule.enterCategory('main')" style="grid-column: span 3; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 25px; padding: 20px 30px; min-height: 150px;">
+                        <div class="menu-card-inner" style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
+                            <div class="menu-card-title" style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary);">⚔️ 主要劇情</div>
+                            <div class="menu-card-desc" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">探索阿斯特萊亞世界的宏大冒險與主線篇章</div>
+                        </div>
+                        <div class="menu-card-sd-thumb" style="flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 404px; height: 126px; transition: transform 0.3s ease;">
+                            <img src="icon/main_story.png" style="width: 404px; height: 126px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block;" alt="main">
                         </div>
                     </div>
-                    <div class="menu-card" onmouseenter="QuestMapModule.changeMenuBg('chara')" onclick="QuestMapModule.enterCategory('chara')">
-                        <div class="menu-card-inner">
-                            <div class="menu-card-icon">👤</div>
-                            <div class="menu-card-title">角色劇情</div>
-                            <div class="menu-card-desc">羈絆與日常，與每位夥伴的專屬故事</div>
+                    <!-- 角色劇情 (上下佈局) -->
+                    <div class="menu-card" onmouseenter="QuestMapModule.changeMenuBg('chara')" onclick="QuestMapModule.enterCategory('chara')" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 15px; padding: 25px 20px; text-align: center; min-height: 320px;">
+                        <div class="menu-card-inner" style="width: 100%; display: flex; flex-direction: column; gap: 6px;">
+                            <div class="menu-card-title" style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary);">👤 角色劇情</div>
+                            <div class="menu-card-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">與每位夥伴的專屬故事</div>
+                        </div>
+                        <div class="menu-card-sd-thumb" style="flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 120px; height: 190px; transition: transform 0.3s ease; margin-top: auto;">
+                            <img src="icon/chara_story.png" style="width: 120px; height: 190px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block;" alt="chara">
                         </div>
                     </div>
-                    <div class="menu-card" onmouseenter="QuestMapModule.changeMenuBg('guild')" onclick="QuestMapModule.enterCategory('guild')">
-                        <div class="menu-card-inner">
-                            <div class="menu-card-icon">👥</div>
-                            <div class="menu-card-title">公會劇情</div>
-                            <div class="menu-card-desc">公會成員間趣味橫生與溫馨的羈絆小品</div>
+                    <!-- 公會劇情 (上下佈局) -->
+                    <div class="menu-card" onmouseenter="QuestMapModule.changeMenuBg('guild')" onclick="QuestMapModule.enterCategory('guild')" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 15px; padding: 25px 20px; text-align: center; min-height: 320px;">
+                        <div class="menu-card-inner" style="width: 100%; display: flex; flex-direction: column; gap: 6px;">
+                            <div class="menu-card-title" style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary);">👥 公會劇情</div>
+                            <div class="menu-card-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">公會成員間趣味溫馨的羈絆小品</div>
+                        </div>
+                        <div class="menu-card-sd-thumb" style="flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 120px; height: 190px; transition: transform 0.3s ease; margin-top: auto;">
+                            <img src="icon/guild_story.png" style="width: 120px; height: 190px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block;" alt="guild">
                         </div>
                     </div>
-                    <div class="menu-card" onmouseenter="QuestMapModule.changeMenuBg('extra')" onclick="QuestMapModule.enterCategory('tower')">
-                        <div class="menu-card-inner">
-                            <div class="menu-card-icon">🌙</div>
-                            <div class="menu-card-title">額外劇情</div>
-                            <div class="menu-card-desc">露娜之塔與各類冒險中發生的特殊篇章</div>
+                    <!-- 額外劇情 (上下佈局) -->
+                    <div class="menu-card" onmouseenter="QuestMapModule.changeMenuBg('extra')" onclick="QuestMapModule.enterCategory('tower')" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 15px; padding: 25px 20px; text-align: center; min-height: 320px;">
+                        <div class="menu-card-inner" style="width: 100%; display: flex; flex-direction: column; gap: 6px;">
+                            <div class="menu-card-title" style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary);">🌙 額外劇情</div>
+                            <div class="menu-card-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">特別冒險的特殊篇章</div>
+                        </div>
+                        <div class="menu-card-sd-thumb" style="flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 120px; height: 190px; transition: transform 0.3s ease; margin-top: auto;">
+                            <img src="icon/extra_story.png" style="width: 120px; height: 190px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block;" alt="extra">
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
             `;
@@ -523,7 +601,26 @@ const QuestMapModule = {
 
         tab.innerHTML = `
         <div class="map-container">
-            <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 8px; font-size: 0.95rem;">
+            <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
+                <button onclick="QuestMapModule.goBackToMenu()" class="back-to-menu-btn" style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    background: linear-gradient(135deg, #0984e3, #00cec9);
+                    color: #fff;
+                    border: none;
+                    cursor: pointer;
+                    box-shadow: 0 2px 6px rgba(9, 132, 227, 0.4);
+                    transition: transform 0.2s ease, box-shadow 0.2s ease;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    flex-shrink: 0;
+                " onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 4px 12px rgba(9, 132, 227, 0.6)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 6px rgba(9, 132, 227, 0.4)';">
+                    ←
+                </button>
                 <span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;"><span style="font-size: 1.1rem;">🏠</span> 劇情大廳</span>
                 <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
                 <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">${
@@ -618,17 +715,11 @@ const QuestMapModule = {
                                                 <div class="acc-count">${childStories.length} 話</div>
                                             </div>
                                             <div class="accordion-content" style="max-height: ${isExpanded ? 'none' : '0px'}">
-                                                ${childStories.map(s => `
-                                                    <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}"
-                                                         id="story-item-${s.id}"
-                                                         onclick="QuestMapModule.selectStory(${s.id})">
-                                                        <div class="story-dot"></div>
-                                                        <div class="story-item-content">
-                                                            <div class="story-item-ch">${this.escapeHtml(s.chapter.replace(/^(第\d+部\s*)?([^\s]+章\s*|[^\s]+序章\s*|[^\s]+幕間[^\s]*\s*)/, ''))}</div>
-                                                            <div class="story-item-title">${this.escapeHtml(s.title)}</div>
-                                                        </div>
-                                                    </div>
-                                                `).join('')}
+                                                ${childStories.map(s => {
+                                                    const chDisplay = s.chapter.replace(/^(第\d+部\s*)?([^\s]+章\s*|[^\s]+序章\s*|[^\s]+幕間[^\s]*\s*)/, '');
+                                                    const titleDisplay = s.title;
+                                                    return this.getStoryItemHtml(s, chDisplay, titleDisplay);
+                                                }).join('')}
                                             </div>
                                         </div>
                                     `;
@@ -651,17 +742,7 @@ const QuestMapModule = {
                                                     const cleanEventTitle = chKey.substring(chKey.indexOf('」') + 1).trim();
                                                     let displayChapterName = s.chapter.replace(cleanEventTitle, '').trim();
                                                     if (!displayChapterName) displayChapterName = s.chapter;
-                                                    return `
-                                                        <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}"
-                                                             id="story-item-${s.id}"
-                                                             onclick="QuestMapModule.selectStory(${s.id})">
-                                                            <div class="story-dot"></div>
-                                                            <div class="story-item-content">
-                                                                <div class="story-item-ch">${displayChapterName}</div>
-                                                                <div class="story-item-title">${s.title}</div>
-                                                            </div>
-                                                        </div>
-                                                    `;
+                                                    return this.getStoryItemHtml(s, displayChapterName, s.title);
                                                 }).join('')}
                                             </div>
                                         </div>
@@ -687,16 +768,7 @@ const QuestMapModule = {
                                                 <div class="acc-count">${childStories.length} 話</div>
                                             </div>
                                             <div class="accordion-content" style="max-height: ${isExpanded ? 'none' : '0px'}">
-                                                ${childStories.map(s => `
-                                                    <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}"
-                                                         id="story-item-${s.id}"
-                                                         onclick="QuestMapModule.selectStory(${s.id})">
-                                                        <div class="story-dot"></div>
-                                                        <div class="story-item-content">
-                                                            <div class="story-item-ch">${this.escapeHtml(s.title)}</div>
-                                                        </div>
-                                                    </div>
-                                                `).join('')}
+                                                ${childStories.map(s => this.getStoryItemHtml(s, "角色故事", s.title)).join('')}
                                             </div>
                                         </div>
                                     `;
@@ -712,16 +784,7 @@ const QuestMapModule = {
                                                 <div class="acc-count">${childStories.length} 話</div>
                                             </div>
                                             <div class="accordion-content" style="max-height: ${isExpanded ? 'none' : '0px'}">
-                                                ${childStories.map(s => `
-                                                    <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}"
-                                                         id="story-item-${s.id}"
-                                                         onclick="QuestMapModule.selectStory(${s.id})">
-                                                        <div class="story-dot"></div>
-                                                        <div class="story-item-content">
-                                                            <div class="story-item-ch">${this.escapeHtml(s.title)}</div>
-                                                        </div>
-                                                    </div>
-                                                `).join('')}
+                                                ${childStories.map(s => this.getStoryItemHtml(s, "特別故事", s.title)).join('')}
                                             </div>
                                         </div>
                                     `;
@@ -1094,8 +1157,13 @@ const QuestMapModule = {
             dialogueList.forEach(item => {
                 if (item.type === 'still') {
                     const stillId = item.still_id || item.still;
-                    if (stillId) {
-                        const stillUrl = `https://redive.estertion.win/card/full/${stillId}.webp`;
+                    if (stillId && String(stillId).trim().toLowerCase() !== 'end') {
+                        const stillIdStr = String(stillId);
+                        const stillIdNum = Number(stillId);
+                        let stillUrl = `https://redive.estertion.win/card/full/${stillId}.webp`;
+                        if (stillIdStr.length === 9 || stillIdNum > 10000000) {
+                            stillUrl = `https://redive.estertion.win/card/story/${stillId}.webp`;
+                        }
                         const stillUrlFallback = `https://redive.estertion.win/event_still/${stillId}.webp`;
                         html += `
                             <div class="game-dialogue-still" style="margin: 15px 0; text-align: center; border-radius: 8px; overflow: hidden; border: 1.5px solid rgba(255,255,255,0.1); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
@@ -1451,7 +1519,26 @@ const QuestMapModule = {
 
         tab.innerHTML = `
             <div class="map-container glass-card">
-                <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 8px; font-size: 0.95rem;">
+                <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
+                    <button onclick="QuestMapModule.goBackToMenu()" class="back-to-menu-btn" style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 50%;
+                        background: linear-gradient(135deg, #0984e3, #00cec9);
+                        color: #fff;
+                        border: none;
+                        cursor: pointer;
+                        box-shadow: 0 2px 6px rgba(9, 132, 227, 0.4);
+                        transition: transform 0.2s ease, box-shadow 0.2s ease;
+                        font-size: 1rem;
+                        font-weight: bold;
+                        flex-shrink: 0;
+                    " onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 4px 12px rgba(9, 132, 227, 0.6)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 6px rgba(9, 132, 227, 0.4)';">
+                        ←
+                    </button>
                     <span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;"><span style="font-size: 1.1rem;">🏠</span> 劇情大廳</span>
                     <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
                     <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">👥 登場角色</span>
