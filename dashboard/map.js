@@ -1134,11 +1134,12 @@ const QuestMapModule = {
                 if (last && 
                     last.type !== 'still' && 
                     last.type !== 'background' && 
-                    last.voice && 
-                    item.voice && 
-                    last.voice === item.voice && 
-                    last.name === item.name) {
+                    last.name === item.name && 
+                    (!item.voice || last.voice === item.voice)) {
                     last.words = (last.words || "") + "\n" + (item.words || "");
+                    if (!last.voice && item.voice) {
+                        last.voice = item.voice;
+                    }
                 } else {
                     dialogueList.push({ ...item });
                 }
