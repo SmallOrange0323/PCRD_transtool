@@ -1,0 +1,937 @@
+[
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}被一位素未謀面的女性叫住。"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "那個～",
+        "unit_id": 1211,
+        "voice": "vo_adv_1027003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "這是情書！",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "不介意的話請你看一下！",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n我思慕著你寫下了這封情書！",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "由我來……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "代您……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "讀那封信……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "當然是應該立即丟掉它了。",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "請撕掉毀掉丟掉扔掉燒掉它……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "唉呀……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這好像是……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "情書……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "的……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "樣子……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "呢……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "不能原諒不能原諒不能原諒不能原諒不能原諒不能原諒……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "竟敢對屬於我的{player}大人送秋波……！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這樣的東西……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這樣的髒東西",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "要立即處理！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n{player}大人，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我們一起去燒掉它吧。",
+        "unit_id": 102711
+    },
+    {
+        "type": "background",
+        "background": "500220"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "骯髒的垃圾……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "就要燒得一乾二淨連灰燼都不剩……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n最好是用火山的地獄業火……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "燃燒吧燃燒吧燃燒吧燃燒吧燃燒吧燃燒吧燃燒吧燃燒吧燃燒吧……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "垃圾就要像垃圾一樣……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "好好地處理掉……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "那麼……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "{player}大人……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我們出發吧。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "當然是去信中內容約好的地方",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "呢……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "將膽敢接近{player}大人的母狗，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n好好地懲罰一番……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "為了讓她……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "不再跟{player}大人扯上任何關係……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我會徹底地擊潰她……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘻嘻。",
+        "unit_id": 102711
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "……地圖上所標示的地點，",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n應該在洞窟",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "的附近……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "才對……？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "啊哈哈哈！",
+        "unit_id": 1211,
+        "voice": "vo_adv_1027003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "那傢伙真的來了耶？",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "他完全上鉤了呢！",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴１",
+        "words": "因為大姐太有魅力了呀。",
+        "unit_id": 811,
+        "voice": "vo_adv_1027003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴１",
+        "words": "\n",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴１",
+        "words": "真不愧是大姐！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "呵呵，",
+        "unit_id": 1211,
+        "voice": "vo_adv_1027003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "不用這樣大力稱讚我。",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "嗯？",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "多了個不相關的女人……",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "算了，無所謂啦。",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "小子們，",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "動手吧！",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴們",
+        "words": "是的！",
+        "unit_id": 1,
+        "voice": "vo_adv_1027003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴們",
+        "words": "大姐！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴１",
+        "words": "喂喂，",
+        "unit_id": 811,
+        "voice": "vo_adv_1027003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴１",
+        "words": "你們這些傢伙！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴１",
+        "words": "\n如果要命的話，",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴１",
+        "words": "快點把所有的錢交出來！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "搞什麼……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "你們是誰？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "有事情要找……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "那個女人。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴２",
+        "words": "妳還沒搞清楚狀況嗎？",
+        "unit_id": 911,
+        "voice": "vo_adv_1027003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴２",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴２",
+        "words": "總之把值錢的東西交出來！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴２",
+        "words": "\n如果妳不聽話，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴２",
+        "words": "我就來硬的——",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴２",
+        "words": "嗚！？",
+        "unit_id": 911,
+        "voice": "vo_adv_1027003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "你們很……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "礙事……",
+        "unit_id": 102711
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴們",
+        "words": "嗚哇哇哇！？",
+        "unit_id": 1,
+        "voice": "vo_adv_1027003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "騙、",
+        "unit_id": 1211,
+        "voice": "vo_adv_1027003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "騙人……！？",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "竟然全軍覆沒了……！？",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "難、",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "難不成妳是……",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "人稱「破壞者」的",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "惠理子！？",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "……那邊的女人，",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n我們終於可以兩個人……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "好好聊聊了呢……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘻嘻。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "噫、",
+        "unit_id": 1211,
+        "voice": "vo_adv_1027003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "噫！？",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "找、找、找、",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "找我有什麼事！？",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "妳竟敢對{player}大人送秋波……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "真是罪該萬死。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這位大人可不是其他女人能隨便接近的人……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "{player}大人是屬於我的……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n是只屬於我的……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "只屬於我……！！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n眼睛",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "耳朵",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "鼻子",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘴巴",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "毛髮",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "脖子",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "胸部",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "腰部",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "腹部",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "背部",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "手",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "腳都是……！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "妳、",
+        "unit_id": 1211,
+        "voice": "vo_adv_1027003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "妳在說什麼啦！",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "那封情書只是陷阱而已！",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n我對他這樣呆頭呆腦的傢伙沒興趣啦！",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "哎呀……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "是這樣嗎……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "妳、",
+        "unit_id": 1211,
+        "voice": "vo_adv_1027003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "妳總算明白了……？",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "太好了，",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "這樣就得救——",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "沒興趣……？",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "妳竟敢侮辱{player}大人……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "不可饒恕……！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "結果還是不行嗎！？",
+        "unit_id": 1211,
+        "voice": "vo_adv_1027003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "誰、",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "誰來救命呀──！！",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "逃跑……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "也是沒用的……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n接近{player}大人的女人……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n我不會讓她活著回去……！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027003_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "雖然就結果來說惠理子從流氓手中保護了自己，\n但是{player}心中恐怖的感覺變得更強烈，\n實在一點都無法放心。"
+    }
+]

@@ -1,0 +1,2264 @@
+[
+    {
+        "type": "background",
+        "background": "500587"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在秋乃的邀請下，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n{player}和胡桃來到蘭德索爾觀賞相當受歡迎的劇團的表演。"
+    },
+    {
+        "type": "dialogue",
+        "name": "廣播聲",
+        "words": "今天的公演",
+        "unit_id": 1,
+        "voice": "vo_adv_1213002_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "廣播聲",
+        "words": "已經結束了。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "廣播聲",
+        "words": "\n感謝各位",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "廣播聲",
+        "words": "來賓的光臨。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "觀眾１",
+        "words": "他們真的",
+        "unit_id": 6511,
+        "voice": "vo_adv_1213002_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "觀眾１",
+        "words": "好厲害哦！",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "觀眾２",
+        "words": "啊～～",
+        "unit_id": 413,
+        "voice": "vo_adv_1213002_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "觀眾２",
+        "words": "我實在是……",
+        "unit_id": 413
+    },
+    {
+        "type": "dialogue",
+        "name": "觀眾２",
+        "words": "太感動了～！",
+        "unit_id": 413
+    },
+    {
+        "type": "dialogue",
+        "name": "觀眾１",
+        "words": "我們一定還要",
+        "unit_id": 6511,
+        "voice": "vo_adv_1213002_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "觀眾１",
+        "words": "再來看哦！",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "…………",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "…………",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "…………好、",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "好厲害……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "好厲害、",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "好厲害、",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "真的太厲害了……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n我從頭到尾",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "都看得很投入！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "主角的演員，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "還有和他演對手戲的演員……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n為什麼他們的演技",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "會如此震懾人心呢……！？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "是的！",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "非常有趣！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "不過，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "要現在的我如果想表現出那麼厲害的演技……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n我覺得我的修練還不夠。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "這部戲，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n非常有參考價值……！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我也想要",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "像那樣……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "不對，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n我想要表現得",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "比他們更好，為大家帶來更多的快樂！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n我想讓每個觀眾",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "笑都露出笑容……！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我的這種想法",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "又變得更強烈了。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我們的戲劇還有很多不之處，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我希望能夠更努力去",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "補足……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "為了達成這個目的，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "練習還是少不了的。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我們絕對要",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "讓牧場的表演圓滿落幕。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "大家信任我，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "所以才交給我來負責的……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我想讓大家都享受這部戲……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我得做到萬無一失！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥。",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n……我現在",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "要回牧場了。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我想先把",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "自己辦得到的事",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "全都先做好……！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "……好！",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "謝謝你，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥。",
+        "unit_id": 121311
+    },
+    {
+        "type": "background",
+        "background": "501510"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "胡桃等人為了練習來到了牧場的舞台。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n她手上拿著劇本，馬上就開始練習了。"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "這裡要……",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "這樣！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "「我說，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "你真的是……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "起司的精靈嗎？」",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "「不過……",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "既然我能辦得到……！」",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "「我想要守護起司",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "和大家的夢想！」",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "……嗯……",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "感覺應該……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "不太對……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "位置要在這附近……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "「吶，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "美咲。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "為了大家……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n我們一起保護起司好嗎？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我希望我們能……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "守護大家的夢想！」",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "「既然有壞老鼠……」",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "……唔。",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "美咲來到這個位置後……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n我往這裡移動比較好……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "再走幾步後",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我去牽她的手……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n應該剛好",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "能來到這個位置。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "必須從頭",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "再確認一次……！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "再移動得順暢一點，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n然後和",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "老鼠展開舞蹈對決……！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "……不行。",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "這裡移動的時候很危……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "啊！？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n腳滑了！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥、",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n謝謝你",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "救了我……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "呀哇",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "啊……！？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥、",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥、",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥、",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "唔！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我、",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我沒事，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "可是，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "你、",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "你靠得",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "太近了……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n臉頰都要黏在一起了……！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "請你",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "放我下來……！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "對、",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "對不起……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n你明明救了我……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n我還",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "對你這麼兇……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "這不是",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "拒絕你的意思！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我沒有覺得你不好，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "只是很開心，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "但是有點被嚇到……！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n而且腦袋有點混亂，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "臉頰都發燙了……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "然後……",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "心跳得",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "好快……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n呃……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "不、",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "不行。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "請你忘了我說的話……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "啊，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "呃……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我臉紅不是因為發燒……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我沒事！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "你不需要在意……！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "不過……",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "剛剛在舞台邊緣突然沒站穩，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "可能真的有點累了。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "已經",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "傍晚了……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我再努力一下就回去，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "真的很謝謝你……",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "陪了我這麼久……♪",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "……咦？",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "你要去哪裡？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n手、",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "手……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "牽手我的臉又會發燙了……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "等、",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "等一下……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n哥哥……！",
+        "unit_id": 121311
+    },
+    {
+        "type": "background",
+        "background": "500998"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}牽著胡桃的手，\n來到了露天溫泉。"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "這裡是",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "溫泉哦……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "咦？",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥……？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "……哥哥？",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n怎麼走路",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "不太穩的樣子……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n呃，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "那個桶子……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "是做什麼的！？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "要我坐在這裡……？",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "咦？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "有裝熱水……！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "不、",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "不會很重嗎……？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "把腳放進去……",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "足浴……？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "疲勞的時候，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "讓身體保持溫暖比較好？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n話、話雖然",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "是這麼說……！",
+        "unit_id": 121311
+    },
+    {
+        "type": "still",
+        "still": "121300202"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "好……",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "謝謝你……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "呼……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "好暖和……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我沒有勉強自己哦。",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n我只是",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "做我需要做的事情……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "而已……",
+        "unit_id": 121311
+    },
+    {
+        "type": "still",
+        "still": "121300201"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "「保衛起司大作戰」",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "……\n除了想讓觀眾",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "能夠享受",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "這部戲以外……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "畢竟美咲是第一次登上舞台，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我絕對要讓它圓滿落幕。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "比如可能會發生",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "突然忘詞，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n或是走錯位置，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "這時候我都要隨時能支援她……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "……我也想",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "變得和哥哥一樣。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "你不是之前也幫助過我嗎？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "在我腦袋一片空白，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "完全想不起台詞的時候。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "就像那樣……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我也想要",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "幫助站在同一個舞台上的人。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "所以",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我必須",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "振作一點，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "這是",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我的想法。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "所以我要",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "更努力練習，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n做好萬全的準備，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "這樣一出問題",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "就能馬上應對。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "咦？",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "你為什麼……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "這麼說呢？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n……是因為到時候",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "就能自然做出反應嗎……？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "那個時候",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥就是",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "那樣的嗎……？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "因為一起練習了很久，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n不論是碰到困難，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "還是一帆風順的時候，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n都能知道",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "什麼時候該做什麼……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我沒問題",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "嗎？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我真的可以……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "享受它嗎……？",
+        "unit_id": 121311
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "still",
+        "still": "121300202"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "不過……",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "你說得對，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n我……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "希望我們的表演能給大家帶來快樂……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "除了觀眾，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "和牧場的大家以外，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n美咲，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "更重要的是……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我自己，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "也必須帶著快樂站上舞台……！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "這麼做，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "肯定是最能夠",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "讓觀眾露出笑容的方法……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我說的對不對？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "「明天就是……",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "和壞老鼠決戰的日子。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "美咲，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "妳會害怕嗎？」",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "「我們為了守護起司和大家的夢想做出了很多努力……",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n不過我們",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "真的能打贏嗎？」",
+        "unit_id": 121311
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "still",
+        "still": "121300201"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "…………哥哥，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "美咲的下一句台詞是……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "咦！？",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "這裡應該是",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "「我雖然也很擔心，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "不過總會有辦法的」",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n才對……！　",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "是不是念錯了……？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n那麼，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我就……",
+        "unit_id": 121311
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "still",
+        "still": "121300202"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "「謝謝妳，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "美咲♪",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "一個人",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "雖然會感到不安……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "但兩人一起就不用擔心了……！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "讓我們手牽手",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "一起去戰鬥吧！」",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "……呵呵呵！",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n這裡的台詞",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "完全不對哦♪",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "不過，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我辦到了！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "即使聽到了和劇本上不一樣的台詞，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n我也能用自己的台詞順利接下去……！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "能夠做到這種程度的話，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "肯定沒問題……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n只要放鬆心態站上舞台，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "就不必害怕失敗了♪",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "練習的時間所剩不多。",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n為了讓大家、",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "讓自己能樂在其中，我會好好努力。",
+        "unit_id": 121311
+    },
+    {
+        "type": "background",
+        "background": "500998"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "呼……",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥的足浴",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "真是厲害。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n身心都暖了起來……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n煩惱就像是",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "一口氣全都消失了一樣。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我現在能打起",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "一百二十分的精神了！",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥。",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "你明天",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "還能",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "來陪我練習嗎？",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "太好了！",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "……謝謝你♪",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "光是有哥哥陪在我身邊，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我就信心百倍，真是不可思議……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我為什麼能",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "這麼放心呢……？　",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "……要是",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥哪天碰到困難，",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "\n",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "希望我也有能力",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "伸出援手……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "為了這個目標，",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "我一定要讓",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "這次的表演圓滿落幕。",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "……你說對不對？",
+        "unit_id": 121311,
+        "voice": "vo_adv_1213002_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "哥哥……",
+        "unit_id": 121311
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "太陽逐漸西沉，胡桃在黃昏的天空下悄悄下定決心，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n和{player}一起跨出了步伐。"
+    }
+]

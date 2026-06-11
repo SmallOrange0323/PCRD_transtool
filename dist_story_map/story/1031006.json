@@ -1,0 +1,791 @@
+[
+    {
+        "type": "background",
+        "background": "500020"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}正悠閒地在蘭德索爾散步。"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "{player}！",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我、我找了你好久……大事不好了……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "世界會在今天毀滅。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "今天早上我父親的占卜出現了這個結果。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n說今天世界會毀滅……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我父親是傑出的靈媒，占卜的準確度很高。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "沒有錯吧，爸爸？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "嗯嗯……我以占星術為重點，分析宇宙本源的波動，",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031006_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n然後根據因果輪迴即業報的一貫法則，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n世界即將回歸靈魂搖籃的根源也就不證自明了……",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "總之，就是世界會在今天毀滅。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "今天是世界末日呀……",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031006_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n忍，小伙子，謝謝你們一路相伴啊。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "爸爸……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我才謝謝你把我養育到這麼大。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "唉……最後真想和可愛女孩開心地說說話……",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031006_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n忍、小伙子，聽我最後一個請求吧。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n你們幫忙一下，讓我可以和女孩子打情罵俏吧！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "比起那種事，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n{player}最好也去做想做的事情喔。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n因為今天是世界末日了。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "忍、忍？",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031006_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n不是呀，那可是我最後的請求耶……",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這麼說起來也是呢。就算突然聽到這種事……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n應該有很多想在最後一天做的事情吧。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "咦，沒有？真的嗎？",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這樣呀……不過，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n或許這樣比較像{player}的風格呢。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你說我想做的事情……嗎？",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "沒有，我也沒有什麼特別想做的事情……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "那就實現我最後的願望吧！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031006_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n我想和身材正點的妙齡女孩做那些事情和這些事情……！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你、",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你肚子餓了嗎？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這麼說起來我也是……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那我們先去吃飯吧。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n吃完飯再來想要做什麼事情。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "因為是最後的午餐了，我們去大飽口福吧。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "忍、忍────！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031006_017"
+    },
+    {
+        "type": "background",
+        "background": "500050"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我吃飽了。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "真的很好吃呢。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "呵呵，雖然狠下心點了有點貴的餐點，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n但今天是世界末日了，所以無所謂的。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……因為吃飽了，所以想休息一下？",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那我們去平原吧。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "忍！別管他了，聽聽我的願望────！！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031006_020"
+    },
+    {
+        "type": "background",
+        "background": "500130"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "有涼爽的微風，真的很舒服呢。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n感覺好像來野餐一樣。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我沒有野餐過……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "所以感覺很新鮮，很開心。",
+        "unit_id": 103111
+    },
+    {
+        "type": "background",
+        "background": "500131"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……你醒來了嗎？\n{player}你，剛剛睡著了唷。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "啊，怎麼會躺在我腿上嗎？不好意思，是我擅自這麼做的。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "因為我覺得你躺在我腿上應該比躺在平原上好睡……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n這樣做……不好嗎？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "太好了。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n{player}的睡臉很可愛呢。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "呵呵呵。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "太陽要下山了，今天一天也快結束了呢。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那個，趁這個難得的機會，要不要欣賞一下美麗的星空呢？",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n這是世界末日的夜晚，比起喧鬧的城鎮，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "待在安靜的地方，心情感覺比較平靜……",
+        "unit_id": 103111
+    },
+    {
+        "type": "background",
+        "background": "500212"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "哇──星星好漂亮喔。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那我們就在這裡眺望星空，等待世界毀滅吧。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "今天，那個……好像約會一樣呢。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我很開心喔。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "呵呵呵，世界末日也不全然是壞事呢。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不……不只是今天。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "認識{player}之後，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "每天都很快樂。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n最後的夜晚",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "可以和你一起度過……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我很開心。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "{player}……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n最後一天和我在一起，過得開心嗎？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……謝、謝謝。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "能聽你那樣說……我很高興。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不管世界末日何時到來都不要緊了，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我現在……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "就是這麼幸福。",
+        "unit_id": 103111
+    },
+    {
+        "type": "background",
+        "background": "500210"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……啊，天亮了呢。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "爸爸，你不是說世界會在昨天毀滅的嗎？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n因為宇宙本源所以因果會回到靈魂搖籃根源之類的……？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "……那、那是騙人的。",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031006_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "咦，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "騙人的！？到底怎麼回事！？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "我以為如果是世界末日，忍和小伙子，",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031006_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n都會幫忙實現我的願望。所以不小心就……",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n可是你們兩個人完全不理我說的話……",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "什麼不小心呀，爸爸！",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n你不惜撒謊，就是為了想和女孩子打情罵俏嗎？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "撒謊也該知道分寸的！",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n你害我拉著{player}，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n一整天到處繞來繞去啊！",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "一、",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "一整天，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "和{player}一起……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "――――――～～…",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "…",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "爸爸，我決定不要為了昨天的事情生氣了。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "嗯？為、為什麼……？",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031006_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "{player}，真抱歉。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031006_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "還、還有，請忘記……所、所有我昨天說過的話！",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}被忍父女任意擺布了一天。"
+    }
+]

@@ -1,0 +1,603 @@
+[
+    {
+        "type": "background",
+        "background": "510300"
+    },
+    {
+        "type": "background",
+        "background": "510300"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "走在車站前的{player}"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n感覺有人在叫他而停下了腳步。"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "喂，",
+        "unit_id": 1,
+        "voice": "vo_adv_9006004_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "我說你。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n等一下……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n我叫你站住！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "我從剛才就一直在叫你耶。",
+        "unit_id": 106031,
+        "voice": "vo_adv_9006004_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n你幹嘛假裝沒聽見呀！",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n你這個人",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "真的老是在發呆耶。",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "唉……",
+        "unit_id": 106031,
+        "voice": "vo_adv_9006004_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "算了。",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "你有空嗎？",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "有吧？",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "你有空的吧？",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "好吧。",
+        "unit_id": 106031,
+        "voice": "vo_adv_9006004_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n跟我來……",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "你那什麼眼神啊。",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "反正你跟我來就對了！",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "來，",
+        "unit_id": 106031,
+        "voice": "vo_adv_9006004_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "這個給你。",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "幹嘛，",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "我買的果汁你不敢收嗎？",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n快收下啦。",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "我光是拿著",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "手就很痠了。",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "那個……",
+        "unit_id": 106031,
+        "voice": "vo_adv_9006004_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "我記得是",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "今天吧。",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n我第一次遇見你的日子。",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "我也不是",
+        "unit_id": 106031,
+        "voice": "vo_adv_9006004_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "自己樂意記得這麼清楚的！",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "那是因為遇見了讓人覺得噁心的傢伙，",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "不得已記住的！",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "然後開始像跟蹤狂一樣糾纏著我……",
+        "unit_id": 106031,
+        "voice": "vo_adv_9006004_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n我完全沒想到連在阿斯特朗傳奇裡",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n都能遇到，",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "真的是……",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "不過……",
+        "unit_id": 106031,
+        "voice": "vo_adv_9006004_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "也不是完全沒有受到你的關照啦……",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "不是嗎？",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "之前我抱怨媽媽的那些話，",
+        "unit_id": 106031,
+        "voice": "vo_adv_9006004_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n雖然是你自己擅自偷聽的！",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "所以，",
+        "unit_id": 106031,
+        "voice": "vo_adv_9006004_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "那罐果汁，",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "該說是謝禮嗎……",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "對了，",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "還人情啦。",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "我把欠你的人情還了。",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "什麼？",
+        "unit_id": 106031,
+        "voice": "vo_adv_9006004_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "去家庭餐廳……",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "現在嗎？",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "不，",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "我沒有那麼多錢……",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "咦？",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "你要出錢？",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "又來這套？",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "你",
+        "unit_id": 106031,
+        "voice": "vo_adv_9006004_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "為什麼老是那麼想出錢呀？",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "你該不會是那種",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "喜歡貢獻金錢給別人的人吧？",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "這就有點令人傻眼了……",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "啥？",
+        "unit_id": 106031,
+        "voice": "vo_adv_9006004_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "什麼謝禮啊。",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n……因為很開心可以遇見我？",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "你在說什麼噁心的話啊……",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "不過，",
+        "unit_id": 106031,
+        "voice": "vo_adv_9006004_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "好吧……",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "既然你都把話說到這個份上了，",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n那就沒辦法了……我就奉陪吧。",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "……畢竟一個人吃飯",
+        "unit_id": 106031,
+        "voice": "vo_adv_9006004_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "很孤單的嘛……",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "我",
+        "unit_id": 106031,
+        "voice": "vo_adv_9006004_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "什麼都沒說啦！",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "我是因為看到你孤零零的樣子，不得已只好陪你的！",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "反正",
+        "unit_id": 106031,
+        "voice": "vo_adv_9006004_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "這下子我們就扯平了。",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "倒不如說，我可是特地騰出時間來的，",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n你反倒欠我人情了吧？",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "就是這樣，",
+        "unit_id": 106031,
+        "voice": "vo_adv_9006004_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "今後也要好好取悅我哦。",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "\n",
+        "unit_id": 106031
+    },
+    {
+        "type": "dialogue",
+        "name": "希留耶",
+        "words": "要是讓我感到無聊的話，我可饒不了你！",
+        "unit_id": 106031
+    }
+]

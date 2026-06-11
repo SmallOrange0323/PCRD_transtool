@@ -1,0 +1,722 @@
+[
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}在散步的途中，\n碰見了拿著大包小包東西的深月。"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "哎呀，你好。真巧呢。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n你也在購物嗎？",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "原來是在散步啊。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "就像你看到的",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "，我在採購很多不同的東西唷。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "最近來我這裡求醫的病人越來越多……",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "治療用的道具和消耗品無論買了多少都不夠用！",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "就連在這裡購物，",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n也是勉強擠出時間來的唷……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "不過，這份忙碌也是值得高興的呢。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "還可以順便用病人們測試新藥嘛……呵呵。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "當然，最後會讓他們健健康康走出去的唷？",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n所以病人才絡繹不絕地來我這裡。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "沒問題唷。我已經預想好失敗的情況了。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n就算狀況不對，只要用魔法分解掉藥的成分就不會露餡的。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "這次我試的藥呢，",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "有和預測一樣的效果唷！",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "……放心好了。我才不會做出害死病人的藥。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "所謂研發中的藥物，就算效果出眾也不會隨便拿來用的吧？",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n因為怕發生不好的事情嘛。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "不過誰都不去試新藥的話，醫療技術永遠也不會進步的。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "因此就輪到我這樣的密醫上場了。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "壞人或是做了不可告人的事的人，",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "總會要求一些普通的醫生做不到的事情哦。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我告訴那些人有這種藥，",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "就算他們知道了用藥風險，",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n也會主動提議要用這種藥的。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "然後交易就成立了。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我能測試藥物，",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n病人也能治好他的疾病或是傷口。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n這就是雙贏的結果。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "就這樣藉由累積的治療結果證實藥品的安全性之後，",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n我也會把製藥方法分享給其他醫生。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "要是我們能做出比現在更有效的藥品，",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "就算是用不了魔法的人，也會有輕鬆治癒疾病的一天。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "怎麼樣？我的工作挺重要的吧？",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "謝謝。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "等等，這算是什麼意思……？",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "……說笑而已。因為工作的關係，我已經習慣被當成怪人了。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "哦……剛剛你說的話我可不能當作沒聽見呢……？",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "假的假的。這也是在說笑。真是的，別再戲弄我了。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "……真的好久沒試過了。這樣子放鬆下來開心地談話。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "多虧你了呢。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "再小的幫助也好，如果能使更多人健康幸福地生活下去，",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "沒有什麼能比得上這份喜悅。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "所以才不知不覺地埋頭工作……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "不過……這麼忙的話實在是挺不過來。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "呼……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "憑自己還年輕，",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n以為這種程度的話還能撐得住……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "你在為我擔心嗎？ ",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我很高興哦。謝謝你。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "被問到有沒有事的話……",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "嗯，這個嘛……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我想應該不太好。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "對了。你能把肩膀借我嗎？",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n這樣一來就可以消除疲勞。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "……開玩笑的。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "……欸？ 真、真的把肩膀借我嗎？",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我只是說說而已……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "明明原來是想調戲一下他，讓他害羞，",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "怎麼反倒是我變得小鹿亂撞……太大意了……！",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "話說回來，你……",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n碰觸女孩子也未免太自然了吧？",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "給我害羞一點啊。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "你說你的擔心勝過了害羞？",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "欸……還真的在為我擔心呢。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "你遠比我想像中",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n更像個男子漢呢。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "那麼，我就不客氣了,",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n稍微借一下你的肩膀囉。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "最近真的太忙了……",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n別說睡覺了，就連歇一口氣的空閒也沒有……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "所以……一會兒就好……",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "呼……呼……",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_033"
+    },
+    {
+        "type": "background",
+        "background": "500031"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "……嗯嗯……",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "欸……？ 這裡是……",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "你……",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "是嗎……我不小心睡著了呢。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "你一直撐著我嗎？",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "明明叫醒我就行了……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "因為我看起來很累的樣子……？",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n是嗎……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "你果然很溫柔呢。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "多虧了你，我好好地休息了一下。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n頭腦也清醒了不少，看來又能挨上幾個通宵了呢。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "雖然說不上是謝禮，",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n你受傷或是生病的話就來這裡吧。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我馬上就能把你治好哦。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "相對地……",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051003_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n如果又發生什麼事的話，也要讓我像今天這樣依靠你哦？",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在深月比平常放鬆的氣氛中，\n{player}心想：「她總是能這樣的話就好了」。"
+    }
+]

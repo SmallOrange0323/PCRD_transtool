@@ -1,0 +1,752 @@
+[
+    {
+        "type": "background",
+        "background": "500140"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "某天，{player}和美冬為了訓練前往平原時，\n美冬自豪地遞出一張紙。"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "喂，你！",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n我拿到新的傭兵契約了喔！ 你看這張紙！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "是希望委託我護送載花的馬車去花店喔。",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "不知道為什麼報酬非常高！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "當然，身為徒弟的你也要幫忙喔！",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "……咦？ 契約書有不合理的條文？",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "是什麼是什麼……？",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "「如未能保護好商品，",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n則需以護衛者本人作為賠償。",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "不得拒絕。」……",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "上面這麼寫？",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "嗯，確實令人在意……",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "但是不用擔心。",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n我們已訓練多年，變得夠強大了。",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n才不會輕易輸給盜賊呢！",
+        "unit_id": 104811
+    },
+    {
+        "type": "background",
+        "background": "500320"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "美冬不顧擔心的{player}，時間來到運送當天。\n兩人在馬車上待命。"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "呼呼――。在馬車上的旅行",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n也很優雅，真不錯呢！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "……我知道啦。",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "工作，工作。",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "那個，對面好像有什麼正朝著這裡接近喔？ 是什麼呢……",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_008"
+    },
+    {
+        "type": "background",
+        "background": "500130"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "喔喔――。我們是很可怕很可怕的山賊――。",
+        "unit_id": 811,
+        "voice": "vo_adv_1048006_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "\n我們要搶走馬車上的花喔。沒有什麼可疑的地方喔――。",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "呵呵呵，已從事傭兵多年的我們是絕對不會輸的喔！",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "喝啊啊啊啊啊！",
+        "unit_id": 104811
+    },
+    {
+        "type": "background",
+        "background": "500130"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊２",
+        "words": "呃啊，被――幹――掉――了――。",
+        "unit_id": 911,
+        "voice": "vo_adv_1048006_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "我們輸了――。喂，趁還沒有受傷前快開溜吧――。",
+        "unit_id": 811,
+        "voice": "vo_adv_1048006_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "\n我可不會付你危險津貼喔――。",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "啊哈哈！ ",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "真是不中用的傢伙們呢！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n還沒好好較量一下就逃了！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "不，",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "是我們變得太強了喔……呵呵呵。",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n你似乎也擔心過頭了呢。",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "啊，我看到目的地的花店就在那裡喔！",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "咦……？ ",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "雖說是花店，",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n店員卻都是非常強壯的男性們呢……",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "算了，無所謂。",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "花店的各位！ ",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "我們順利的擊退山賊，",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n保護了花喔！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "花店？",
+        "words": "嘿嘿嘿，是嗎……喂，去確認裝貨台！",
+        "unit_id": 1,
+        "voice": "vo_adv_1048006_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "花店員工？",
+        "words": "啊――！ 老大……不是，店長，",
+        "unit_id": 1,
+        "voice": "vo_adv_1048006_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "花店員工？",
+        "words": "\n裝貨台是空的喔！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "花店？",
+        "words": "哎哎哎呀！ 怎麼回事！ 喂，那邊的大姐，",
+        "unit_id": 1,
+        "voice": "vo_adv_1048006_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "花店？",
+        "words": "\n妳看看馬車裡面！ 這不是空的嗎！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "這不可能啊！ 我們明明將山賊",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n全部擊退了……",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "花店？",
+        "words": "不，花一定是趁你們不注意的空檔被偷走的！",
+        "unit_id": 1,
+        "voice": "vo_adv_1048006_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "但我不相信，我明明應該……",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "有好好……保護的……",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "花店？",
+        "words": "欸嘿嘿。妳的聲音是不是變得越來越小啦。",
+        "unit_id": 1,
+        "voice": "vo_adv_1048006_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "花店？",
+        "words": "\n那麼，根據契約書，要將妳如何處置",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "花店？",
+        "words": "\n都是我們的自由。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "花店員工？",
+        "words": "大姐可是上等貨呢，用高價將她當作奴隸賣掉吧！",
+        "unit_id": 1,
+        "voice": "vo_adv_1048006_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "花店員工？",
+        "words": "\n畢竟契約書上是這麼寫的啊！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "沒辦法了……",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "對不起。",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n我似乎",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "不能再指導你這個徒弟了……",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "那個，你怎麼了？",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n一直在意地偷瞄馬車的車夫……",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "車夫",
+        "words": "啊……！？ ",
+        "unit_id": 1411,
+        "voice": "vo_adv_1048006_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "車夫",
+        "words": "糟、糟了……被發現了……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "……咦？ ",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "請、請等一下！ 那邊的車夫！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "車夫",
+        "words": "嗚哇！",
+        "unit_id": 1411,
+        "voice": "vo_adv_1048006_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "車夫",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "車夫",
+        "words": "等、等一下，不要動粗啊！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "車夫",
+        "words": "\n我會全盤托出的！ 好嗎！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "車夫",
+        "words": "我、我只是受雇於那些傢伙而已！",
+        "unit_id": 1411,
+        "voice": "vo_adv_1048006_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "車夫",
+        "words": "\n那些傢伙不是什麼開花店的，是盜賊團，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "車夫",
+        "words": "\n這輛馬車一開始就沒有裝什麼貨物！！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "笨、笨蛋，竟然自己招認，還說個不停！",
+        "unit_id": 811,
+        "voice": "vo_adv_1048006_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "\n",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "可惡，快逃！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "不是開花店的……",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "是盜賊團？",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "給、",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "給我站住啊啊啊！ 喝啊啊啊啊啊啊！",
+        "unit_id": 104811
+    },
+    {
+        "type": "background",
+        "background": "500130"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊們",
+        "words": "嗚哇啊啊啊啊！",
+        "unit_id": 1,
+        "voice": "vo_adv_1048006_037"
+    },
+    {
+        "type": "background",
+        "background": "500131"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "美冬他們將盜賊團一夥人一網打盡，\n並將那群傢伙直接交給了王宮騎士團。"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "……呼，",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "正如你所說……",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n似乎是個危險的任務呢。",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "那個，",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "你在生氣嗎？",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "也是啊，對不起，讓你擔心了。",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n差一點就不能再繼續指導你了呢。",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "我作為師父實在是不及格……",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "咦？ 不是這樣？",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "你只是單純的……擔心我嗎？",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "我、我、那個、不太習慣這種事……",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "因為一直以來，除了我自己以外，都沒人會擔心我……",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "那、那個……",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n謝、謝謝……",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "從現在開始，我會多聽你的話喔！",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "那個，總、總覺得我似乎變了很多呢……",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n該怎麼說呢，那個……",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "啊，不、不知道為什麼臉頰好燙啊――！",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048006_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "到底是為什麼呢！ ",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "啊哈哈！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}帶著微笑注視著\n邊說話邊往自己臉上拼命搧風的美冬。"
+    }
+]

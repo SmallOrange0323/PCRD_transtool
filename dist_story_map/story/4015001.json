@@ -1,0 +1,627 @@
+[
+    {
+        "type": "background",
+        "background": "502770"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "艾爾皮斯島的北部──"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "有個貫穿大地的大洞。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n{player}一行人正與"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n來自該大洞的魔物群展開戰鬥。"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "啊啊煩死了，",
+        "unit_id": 106011,
+        "voice": "vo_adv_4015001_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "一個接一個、沒完沒了的……！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n給我去死啊啊啊啊！！！",
+        "unit_id": 106011
+    },
+    {
+        "type": "background",
+        "background": "502770"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎喔喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "呼……",
+        "unit_id": 105811,
+        "voice": "vo_adv_4015001_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "看來剛才是最後一隻了。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "不愧是小凱留，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "表現很活躍呢♪",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……",
+        "unit_id": 106011,
+        "voice": "vo_adv_4015001_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "真是的，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "打都打不完。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這些怪物還會一直出現嗎？",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是的。",
+        "unit_id": 105911,
+        "voice": "vo_adv_4015001_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "而且，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "從這個大洞出現的",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n都是以龍為首的",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "強大魔物……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n還是謹慎一點為妙吧。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "雖然把第一波魔物都清理掉了，",
+        "unit_id": 106411,
+        "voice": "vo_adv_4015001_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "但看起來馬上又會出現下一波了呢。",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "天空中也能看到魔物的影子……",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "如果不在這裡阻止它們，",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "艾爾皮斯島就會被魔物淹沒了。",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "如果變成那樣，",
+        "unit_id": 105811,
+        "voice": "vo_adv_4015001_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "艾爾皮斯島",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "努力開發至今的成果",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "就會化為泡影了……",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "不，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "甚至連蘭德索爾都遲早會被魔物占領。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n必須在這裡阻止它們！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我知道，但……",
+        "unit_id": 106011,
+        "voice": "vo_adv_4015001_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "敵人實在是太多了。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n在那附近撿到的像是遺物的物品，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "要是能派上用場就好了。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n還有沒有其他掉落的東西呢……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "雖然小巧，",
+        "unit_id": 105911,
+        "voice": "vo_adv_4015001_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "但是很美麗的雕像呢。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n是從剛才的魔物身上掉下來的嗎？",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n不過有種不尋常的氣息──",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "哇，",
+        "unit_id": 105811,
+        "voice": "vo_adv_4015001_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "下一波魔物已經來了嗎！？",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "討厭，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "連休息的時間都沒有！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "放心，",
+        "unit_id": 106411,
+        "voice": "vo_adv_4015001_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "只有一隻而已！",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n我來打倒它，",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "大家對周圍保持警戒！",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "謝謝……",
+        "unit_id": 106411,
+        "voice": "vo_adv_4015001_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "等等，",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "咦？",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "這股力量是……！",
+        "unit_id": 106411
+    },
+    {
+        "type": "background",
+        "background": "502770"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎喔喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "幹得好，",
+        "unit_id": 106011,
+        "voice": "vo_adv_4015001_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "雪菲！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n秒殺了呢！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "嗯、",
+        "unit_id": 106411,
+        "voice": "vo_adv_4015001_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "嗯……",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "我自己也",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "嚇到了呢。",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n能感覺到{player}的力量",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n比平常還要強……",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "原來如此，",
+        "unit_id": 105911,
+        "voice": "vo_adv_4015001_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "確實……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "這座島的名字──",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "「艾爾皮斯」",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是神話中希望女神的名字。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n那尊雕像",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "或許就是仿照女神的模樣雕刻而成的。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "這個大洞可以說是",
+        "unit_id": 105911,
+        "voice": "vo_adv_4015001_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "充滿災厄的潘朵拉之盒。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "而",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "女神艾爾皮斯的雕像",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "或許就是在賜予",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "跟從大洞溢出的災厄戰鬥的我們\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "名為希望的加持吧。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "雖然聽不太懂，",
+        "unit_id": 106011,
+        "voice": "vo_adv_4015001_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但如果這樣的話，我就有幹勁了呢。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n只要打倒這些傢伙，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我們就能變得更強了呢！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "也是呢，",
+        "unit_id": 105811,
+        "voice": "vo_adv_4015001_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "感覺充滿了希望！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "借助女神大人的力量，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "守護這座島……",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "不，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "守護這個世界吧！",
+        "unit_id": 105811
+    }
+]

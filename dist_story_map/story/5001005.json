@@ -1,0 +1,836 @@
+[
+    {
+        "type": "background",
+        "background": "500330"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}一行人為了追擊從圖鑑裡冒出來的魔物，\n來到了伊麗莎白牧場附近的村子裡。"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "……呼嚕……呼嚕……",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001005_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "對不起哦{player}。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001005_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n讓你背著姊姊……",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我想魔物逃往的地方，恐怕就是在這一帶了……",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "好奇怪……每戶家的門窗都是關上的，感覺不到人的氣息。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001005_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n明明村子平時都是那麼熱鬧的……難道，魔物把村民們都……",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "喂、喂，是誰在那裡嗎？",
+        "unit_id": 1411,
+        "voice": "vo_adv_5001005_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "有聲音？從家裡傳來的？",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001005_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "那個，我們不是什麼可疑的人，能向你詢問一點事情嗎？",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "哦哦……",
+        "unit_id": 1411,
+        "voice": "vo_adv_5001005_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "記得妳是，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "在【伊莉莎白牧場】的……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "是的……",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001005_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "請問到底發生什麼事了？",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "這裡現在莫名的安靜，",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "其他人呢。",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "村裡的大伙們都在家裡躲起來了……，",
+        "unit_id": 1411,
+        "voice": "vo_adv_5001005_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n這裡明明有驅除魔物的結界在，居然會有魔物出現……真是麻煩大了。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "魔物無法被有效驅除……恐怕就是圖鑑裡的魔物了。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001005_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "況且它們又是異常的存在……",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "沒錯……導致村民極度不安的主要原因，",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001005_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n就是我……我必須負起責任才行。",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "當然……是我不小心解除的封印……",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001005_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "自己鬧出來的事情必須由自己來收拾才行。",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "{player}，拜託你了，",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001005_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "再幫幫我們。",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "你們還是趕緊逃跑比較好吧……不知道那些怪物什麼時候又會回來了……",
+        "unit_id": 1411,
+        "voice": "vo_adv_5001005_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "請你快回家避難吧。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001005_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "魔物就由我們來想辦法應付了。",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "不、不會吧……你、你們還是別太亂來吧？",
+        "unit_id": 1411,
+        "voice": "vo_adv_5001005_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "……到底是為什麼……魔物就在這裡，但也未免太安靜了……",
+        "unit_id": 103812,
+        "voice": "vo_adv_5001005_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103812
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "一點氣息和聲音都沒有……",
+        "unit_id": 103812
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "就連我的……獸人族感官也察覺不出氣息……",
+        "unit_id": 103812,
+        "voice": "vo_adv_5001005_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "要是現在被偷襲的話，",
+        "unit_id": 103812,
+        "voice": "vo_adv_5001005_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "肯定會被幹掉的……",
+        "unit_id": 103812
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103812
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "得想個辦法，",
+        "unit_id": 103812
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "至少也要保護好姊姊和{player}才行。",
+        "unit_id": 103812
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "會從哪裡過來呢？　",
+        "unit_id": 103812,
+        "voice": "vo_adv_5001005_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "會從哪裡……",
+        "unit_id": 103812
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "呼嚕……",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001005_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "啊！",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001005_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n小栞，上面！",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "上面！？呃！",
+        "unit_id": 103812,
+        "voice": "vo_adv_5001005_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物１",
+        "words": "──咕哦哦哦哦哦！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "是因為躲在屋頂上所以隱藏掉氣息了嗎……",
+        "unit_id": 103812,
+        "voice": "vo_adv_5001005_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103812
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "要是姊姊沒提醒我的話，現在可就……",
+        "unit_id": 103812
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "耶嘿嘿ー、",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001005_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "因為是小栞的危機呀！　",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "當然會醒來！",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "姊姊，謝謝妳了。",
+        "unit_id": 103812,
+        "voice": "vo_adv_5001005_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103812
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "先把書籤綁在箭矢上……我要上了！",
+        "unit_id": 103812
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物１",
+        "words": "──咕哦哦哦哦哦！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "好、",
+        "unit_id": 103812,
+        "voice": "vo_adv_5001005_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "好快！　",
+        "unit_id": 103812
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "這樣我沒辦法好好瞄準！",
+        "unit_id": 103812
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "姊姊、{player}！　",
+        "unit_id": 103812,
+        "voice": "vo_adv_5001005_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "快躲到建築物的陰影處去！",
+        "unit_id": 103812
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n待在這裡我們都會被幹掉的！",
+        "unit_id": 103812
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "啊！小栞！",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001005_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "魔物……還在屋頂上面嗎？",
+        "unit_id": 103812,
+        "voice": "vo_adv_5001005_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "(那隻魔物，會透過與我的視線和身體來判讀我的動作……",
+        "unit_id": 103812,
+        "voice": "vo_adv_5001005_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103812
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "再加上這個壓迫感……一旦鬆懈下來馬上就會沒命的――！)",
+        "unit_id": 103812
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "這樣啊……所以它能夠判讀小栞的動作……",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001005_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "嗯，我知道小栞想的是什麼了。",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "那一隻魔物大概是眼睛和耳朵都很敏銳呢！",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001005_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "該怎麼辦！這樣下去小栞可能會被擊倒的！",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "但是那個魔物對魔法免疫啊……",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001005_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "嗯嗯……這樣啊！真不愧是你！",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n這個作戰可以救到小栞！",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "好！在你背上睡了一覺，",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001005_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n精神也飽滿了！該加油了！",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "呵呵呵！剛才你看到了吧？",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001005_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n我和小栞是不需要言語溝通的！閃亮亮☆",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "那我們就上了喔？初音的全力！",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001005_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "（這樣下去持續消耗集中力，",
+        "unit_id": 103812,
+        "voice": "vo_adv_5001005_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n只會變得疲勞而中了它的計……該怎麼做才好――）",
+        "unit_id": 103812
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "小栞！把眼睛閉上！",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001005_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "姊姊……啊！",
+        "unit_id": 103812,
+        "voice": "vo_adv_5001005_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物１",
+        "words": "──咕哦哦哦哦哦！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "（是姊姊的魔法！原來如此，這樣就能將魔物的耳目給封住了！）",
+        "unit_id": 103812,
+        "voice": "vo_adv_5001005_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "（雖然攻擊無效，但這樣它就無法判讀小栞的動作了！",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001005_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "小栞！魔物要衝過來了哦！）",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物１",
+        "words": "──咕哦哦哦哦哦！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "這是姊姊為我創造出來的大好時機，絕不能浪費掉……！",
+        "unit_id": 103812,
+        "voice": "vo_adv_5001005_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物１",
+        "words": "──嘰哦哦哦哦哦！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "太好了──！封印成功了！",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001005_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "唔……這都是姊姊的功勞……",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001005_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n我感覺能聽見姊姊的聲音……",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "欸嘿嘿，我們的羈絆是最強的！",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001005_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "儘管如此還真是一隻厲害的魔物呢。",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我來看看圖鑑裡寫了些什麼……",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001005_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "欸……擁有優秀的視覺、聽覺和嗅覺……",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "鼻子也很靈呢……還、還真是有驚無險呢！啊哈哈哈……！",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001005_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "這樣一來只剩下最後一隻魔物……就是姊姊看到的席茲而已了……",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001005_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "到了最後我們也不能大意――",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "席茲",
+        "words": "──咕哦哦哦哦哦！",
+        "unit_id": 10111
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "啊！　",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001005_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "席茲！　",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "那眼神……",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "它的目標是圖鑑……！",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "小栞、{player}，",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001005_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "沒事吧！？",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "嗯。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001005_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "{player}也沒事……",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "不過，",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "這樣戰鬥下去的話會波及到村子的……",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "我們把席茲引誘到村外的地方再戰吧！",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001005_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "走了哦，兩位！",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "席茲怒吼著逼近三人。\n為了讓村子的傷害能夠降到最低，\n{player}一行人離開了村子。"
+    }
+]

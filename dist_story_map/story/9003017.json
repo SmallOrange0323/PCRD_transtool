@@ -1,0 +1,552 @@
+[
+    {
+        "type": "background",
+        "background": "500361"
+    },
+    {
+        "type": "dialogue",
+        "name": "ナレーション",
+        "words": "４周年を迎えた当日。\nペコリーヌたちに呼び出された{player}──"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "{player}くん、",
+        "unit_id": 105811,
+        "voice": "vo_adv_9003017_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "お待たせしましたっ！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nそれじゃあ、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "いきますよ？　",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "せーのっ！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "みんな",
+        "words": "４周年、",
+        "unit_id": 106411,
+        "voice": "vo_adv_9003017_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "みんな",
+        "words": "おめでとうございまーすっ！！",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "おや、",
+        "unit_id": 105911,
+        "voice": "vo_adv_9003017_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "主さまがポカンとされておりますが……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "ちょっとペコリーヌ、",
+        "unit_id": 106011,
+        "voice": "vo_adv_9003017_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "あんたちゃんと説明したの？",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n今日、",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "４周年の記念パーティーっをやるってこと。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "シェフィ",
+        "words": "この反応だと……",
+        "unit_id": 106411,
+        "voice": "vo_adv_9003017_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "シェフィ",
+        "words": "まだだったみたいね。",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "ああ～、",
+        "unit_id": 105811,
+        "voice": "vo_adv_9003017_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "あはは……",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "ごめんなさい。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nギリギリまで作業していたので、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "つい。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "それでは、",
+        "unit_id": 190811,
+        "voice": "vo_adv_9003017_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "私からご説明しますね。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "げっ。",
+        "unit_id": 106011,
+        "voice": "vo_adv_9003017_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "あんた、",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "どこからともなく出てくるのやめなさいよ！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "今回、",
+        "unit_id": 190811,
+        "voice": "vo_adv_9003017_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "あなたに各地を巡って集めてもらった封筒には\n活動記録のほかにもう一つ、",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "大事な物が入っていたんです。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "\n今日の４周年のお祝いに合わせた、",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "特別なプレゼントを作るための。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "ヒヨリ",
+        "words": "実はね、",
+        "unit_id": 100111,
+        "voice": "vo_adv_9003017_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "ヒヨリ",
+        "words": "騎士くんが訪問した先のみんなに\n協力してもらって、",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "ヒヨリ",
+        "words": "お気に入りの写真を入れてもらってたんだ！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "レイ",
+        "words": "というよりも、",
+        "unit_id": 100311,
+        "voice": "vo_adv_9003017_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "レイ",
+        "words": "そちらが本命だったと言えばいいのかな。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "レイ",
+        "words": "\n各地を巡ってもらったのも、",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "レイ",
+        "words": "そのためだったというわけさ。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "ユイ",
+        "words": "秘密にしててごめんね、",
+        "unit_id": 100211,
+        "voice": "vo_adv_9003017_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "ユイ",
+        "words": "騎士クン。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "ほらペコリーヌ、",
+        "unit_id": 106011,
+        "voice": "vo_adv_9003017_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "見せてやんなさいよ。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "はい！",
+        "unit_id": 105811,
+        "voice": "vo_adv_9003017_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nそれじゃあ、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "これを……",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "どうぞっ☆",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "えへへ☆　",
+        "unit_id": 105811,
+        "voice": "vo_adv_9003017_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "はい！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nあなたと過ごした４年間の思い出と、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nこれからの未来への想いを込めたカレンダーを作っちゃいました！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "そしたら、",
+        "unit_id": 105811,
+        "voice": "vo_adv_9003017_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "こんなに大ボリュームになっちゃったんですけど。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nやばいですね☆",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "カリンさまを始め、",
+        "unit_id": 105911,
+        "voice": "vo_adv_9003017_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "各ギルドのみなさまも\n主さまのためならと、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "喜んでお手伝いを引き受けてくださいました。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "シェフィ",
+        "words": "フェスも生放送もあったし、",
+        "unit_id": 106411,
+        "voice": "vo_adv_9003017_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "シェフィ",
+        "words": "スケジュールに間に合うか心配だったけど……",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "シェフィ",
+        "words": "\nユイさんたちもカレンダー作りを手伝ってくれたの。",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "シェフィ",
+        "words": "みんなの想いを込めて作ったから、",
+        "unit_id": 106411,
+        "voice": "vo_adv_9003017_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "シェフィ",
+        "words": "大切にしてくれるとうれしいわ。",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "この１年のことも、",
+        "unit_id": 105811,
+        "voice": "vo_adv_9003017_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "もちろんこれまでの４年間のことも。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nぜんぶぜんぶ、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "大切な……",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "忘れられない思い出です。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "もちろん、",
+        "unit_id": 105811,
+        "voice": "vo_adv_9003017_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "これからの１年も、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "その先の未来も！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nこれからもあなたと、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "数えきれないくらいたくさんの思い出を作って\nずっとずーっと、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "みんな一緒に楽しく食卓を囲んでいきましょう☆",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "なーんかおしまいっぽい雰囲気出してるけど、",
+        "unit_id": 106011,
+        "voice": "vo_adv_9003017_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\nまだ４周年の記念パーティーがあるんでしょ！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n早くしないと料理が冷めちゃうわよ？",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "そうですね！　",
+        "unit_id": 105811,
+        "voice": "vo_adv_9003017_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "料理はおいしく楽しく、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "ですよね！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nみんなで笑顔で食べるのが、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "一番ですから！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "それじゃあ、",
+        "unit_id": 105811,
+        "voice": "vo_adv_9003017_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "みなさん。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "準備はいいですか？",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nグラスを持っていきますよ～！　",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "せーのっ！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "みんな",
+        "words": "４周年、",
+        "unit_id": 1,
+        "voice": "vo_adv_9003017_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "みんな",
+        "words": "ありがとうございます！",
+        "unit_id": 1
+    }
+]

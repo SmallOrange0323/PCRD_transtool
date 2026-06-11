@@ -1,0 +1,999 @@
+[
+    {
+        "type": "background",
+        "background": "500130"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "有一天日和和{player}一起，\n出門去做擊退魔物的工作。"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這是最後一擊了！ 喝呀！",
+        "unit_id": 100111,
+        "voice": "vo_adv_1001008_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘰歐歐歐歐歐！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "騎士先生，辛苦了！",
+        "unit_id": 100111,
+        "voice": "vo_adv_1001008_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這樣一來今天的工作就結束了呢！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "多虧騎士先生的幫忙，",
+        "unit_id": 100111,
+        "voice": "vo_adv_1001008_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n沒兩下子就結束了呢。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "謝謝！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "既然這麼快就結束了，我們一起去吃飯吧！",
+        "unit_id": 100111,
+        "voice": "vo_adv_1001008_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "今天是我請客唷？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嗚哇！ 什、什麼什麼！？",
+        "unit_id": 100111,
+        "voice": "vo_adv_1001008_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "好刺眼呀！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這道光……！",
+        "unit_id": 100111,
+        "voice": "vo_adv_1001008_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "難道說，又來了嗎！？",
+        "unit_id": 100111
+    },
+    {
+        "type": "still",
+        "still": "100100801"
+    },
+    {
+        "type": "dialogue",
+        "name": "部長",
+        "words": "一，二，三，四！",
+        "unit_id": 1,
+        "voice": "vo_adv_1001008_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "部長",
+        "words": "\n嗯，很好。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "部長",
+        "words": "\n特別是春咲，保持這個狀況繼續加油！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "好的！ 謝謝部長！",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "部長",
+        "words": "很好。大家看上去還能繼續呢。",
+        "unit_id": 1,
+        "voice": "vo_adv_1001008_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "部長",
+        "words": "\n不過也有點累了，就先休息一會吧。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "好～的。 ",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "呼……",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n去外面稍微吹吹風吧。",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "……，咦？",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n在入口的那個人是……？",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "果然是學長！",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n嗨～，學長！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "你來看我練習呀！",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n我好高興呢！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "說笑的啦～！ 今天是怎麼了呢？",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這樣呀！？",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": " 那等社團活動結束後，",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n我來幫你帶路吧！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "在那之前你先在這裡等一下唷！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "吶吶，既然這麼難得，",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n就進來好好地看一看吧！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "社團的大家，都一定會歡迎你的！",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n如果能告訴我們一些感想的話就能當作參考呢！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "就是這樣，所以不用客氣唷。",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "來吧，進來吧進來吧！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "部長～！",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n我想讓學長來參觀我們社團活動，可以嗎？",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "部長",
+        "words": "嗯？ 是可以啦……但那個人是？",
+        "unit_id": 1,
+        "voice": "vo_adv_1001008_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "部長",
+        "words": "\n難道說，是春咲的男朋友嗎？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嗚……！",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n雖然你的確不是我男友，",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n但也不用這麼急著否定吧……",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "咦、咦咦！？",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n你說、說、說什麼鬼話呀！？",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我和學長才不是……！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "學長是我的……",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "咦，是什麼來著？",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n學長就是學長……欸……？",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "部長",
+        "words": "啊～，好啦好啦。",
+        "unit_id": 1,
+        "voice": "vo_adv_1001008_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "部長",
+        "words": "\n現在還不是――是這意思吧。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "咦？ 咦？",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "部長！ 為什麼在偷笑呢！？",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n我剛剛，說了些很奇怪的話嗎？",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "部長",
+        "words": "如果不明白的話，就算了吧。",
+        "unit_id": 1,
+        "voice": "vo_adv_1001008_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "部長",
+        "words": "\n總之參觀一事就隨妳們高興吧。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "太好了～。",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "那麼，重新開始練習吧！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n現在開始轉體一周！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "部長",
+        "words": "但是，那個還沒成功過吧？",
+        "unit_id": 1,
+        "voice": "vo_adv_1001008_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我總覺得今天會成功的！",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n而且，正式比賽之前不好好練成的話不行呀！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "部長",
+        "words": "原來如此，妳想讓他看看妳厲害的一面啊……",
+        "unit_id": 1,
+        "voice": "vo_adv_1001008_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "部長",
+        "words": "\n真沒辦法。那就奉陪妳吧。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "部長",
+        "words": "\n大家，準備一下！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "好～，要上了～！ 一、二！",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_030"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "background",
+        "background": "510101"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "唉呀～，真丟臉……",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n想不到會失敗了，而且還扭傷腳……",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "真抱歉，讓你揹著我。",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "那一招，明明覺得今天會成功的～。",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我想說難得學長過來觀戰，",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n所以想讓你看看我們厲害的技巧呢！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "如果是我的傷的話，請不用在意！",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "只是扭傷而已，並不是什麼太不了的傷。",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n這種程度的傷只要靜養幾天，很快就痊癒了！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "學長……你是為了我的傷能趕快康復，幫我加油打氣嗎？",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嘻嘻，是這樣呀。",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嗯！ 總覺得現在沒那麼痛了！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "咦～？ 我還沒辦法自己一個人走啊！",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "你再多幫我加油一下呀！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "哈哈哈，謝謝你！",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n因為學長的加油打氣，我現在更有精神了！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "那麼，換我為學長打氣了呢！",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "雖然不足以當作你背我回家的謝禮，",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "就讓我拿出啦啦隊部的本事，幫你打氣！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "加油努力全力以赴～學～長！",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "如何？ 有變得更有精神了嗎？",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這是因為……充滿了我對前輩的心意喔！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我也會為了回應學長的心意，",
+        "unit_id": 100132,
+        "voice": "vo_adv_1001008_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n盡早康復的！",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100132
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "要加油唷，學～長♪",
+        "unit_id": 100132
+    },
+    {
+        "type": "background",
+        "background": "500270"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "好的，辛苦了。",
+        "unit_id": 190011,
+        "voice": "vo_adv_1001008_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "日和的啦啦隊造型呀……",
+        "unit_id": 190011,
+        "voice": "vo_adv_1001008_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n看到了好東西呢。",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "那孩子，除了正在煩惱的人之外，也喜歡努力向前的人，",
+        "unit_id": 190011,
+        "voice": "vo_adv_1001008_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n似乎總是會想去幫助這樣的人呢。",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "如果是這樣的話，",
+        "unit_id": 190011,
+        "voice": "vo_adv_1001008_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n因為你總是一直在努力做什麼事情，",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n所以她不能放下你不管吧。",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "不過，你不能只是一味受人幫忙，",
+        "unit_id": 190011,
+        "voice": "vo_adv_1001008_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n也得好好照顧日和唷？",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "那就再見囉。拜～拜♪",
+        "unit_id": 190011
+    },
+    {
+        "type": "background",
+        "background": "500130"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "呼～",
+        "unit_id": 100111,
+        "voice": "vo_adv_1001008_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "咦？ 我又睡著了？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "騎士先生，也是剛剛才醒過來……",
+        "unit_id": 100111,
+        "voice": "vo_adv_1001008_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "兩人竟然都在這種地方睡著了，真的很危險呢。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n沒有魔物襲來真是太好了～。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "咦？ 到那時候，騎士先生會驟然清醒起身保護我……？",
+        "unit_id": 100111,
+        "voice": "vo_adv_1001008_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "但是，如果只有騎士先生的話會陷入苦戰唷？",
+        "unit_id": 100111,
+        "voice": "vo_adv_1001008_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "果然我還是要多加鍛鍊才行呢！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "啊，",
+        "unit_id": 100111,
+        "voice": "vo_adv_1001008_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "對了！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "不如，我為騎士先生打氣吧！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n在我的打氣之下鍛鍊的話，騎士先生說不定會更快變強呢！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "對對，就像在夢中那樣……",
+        "unit_id": 100111,
+        "voice": "vo_adv_1001008_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "咦，騎士先生也做了同一個夢嗎！？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "原來如此～，那麼就來做和夢中相同的行動吧！",
+        "unit_id": 100111,
+        "voice": "vo_adv_1001008_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我們互相為對方打氣吧！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n被人加油打氣的話會更有幹勁呢！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "還有……我也希望騎士先生可以背我呢？",
+        "unit_id": 100111,
+        "voice": "vo_adv_1001008_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n到回到城鎮為止就好了，可以嗎？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這、",
+        "unit_id": 100111,
+        "voice": "vo_adv_1001008_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這是因為！ 這也是鍛鍊身體的一環啊！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}就被隨便弄個理由，\n而背著日和回家。"
+    }
+]

@@ -49,6 +49,7 @@ def main():
         (os.path.join(dashboard_dir, "data", "extra_events.json"), "data/extra_events.json"),
         (os.path.join(dashboard_dir, "data", "npc_avatars.json"), "data/npc_avatars.json"),
         (os.path.join(dashboard_dir, "data", "real_name_mapping.json"), "data/real_name_mapping.json"),
+        (os.path.join(dashboard_dir, "data", "story_thumbnails.json"), "data/story_thumbnails.json"),
     ]
     
     # 複製核心文件

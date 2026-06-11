@@ -1,0 +1,696 @@
+[
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}和宮子一起造訪了某座洞窟。"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "嚼啊嚼～♪布丁好好吃來的～♪",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n嚼啊嚼……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "嗯嗯？",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "布、",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "布丁沒有了喲……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "喂，快交出布丁來的～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "……你沒有布丁嗎？",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "那我們回蘭德索爾吧～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "而且到底要在這個洞窟走到什麼時候來的？",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n你說或許可以找到宮子變成幽靈的線索，",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "但是卻完全到不了目的地來的……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "欸！",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n真的嗎？",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "你別開玩笑了喲──！！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "再堅持下去也是白費力氣來的──",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n我們趕快回去吃布丁吧～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n當作懲罰，布丁要由你請客喲──！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "……你連回去的路都不知道了？",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "那我們不就沒辦法從這裡出去了！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "接下來要找出口在哪？",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "才不要～！宮子不想再繼續走了喲～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "人家已經走累了來的～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "雖然宮子一直用飄的，沒走半步路來的，",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "但是人家還是累慘了喲～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "啊啊！還、還是布丁比較重要來的！",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "如果就這樣困在洞窟裡面，就沒辦法吃布丁了喲……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "要是吃不到布丁，宮子會死掉的──！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "啊，宮子早就死掉了來的～",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "可是吃不到布丁的話太難過了喲～",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "嗯嗯？",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n為什麼你從剛剛就一直東張西望來的？",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "……因為擔心魔物會不會在這裡出現？",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "嗯嗯……如果被魔物襲擊的話的確就糟糕了喲……",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "宮子已經不是活人了所以沒差，",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n但那樣你也會死掉的……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "嗯？",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "啊啊！但是如果你死掉了，我們兩個就都是幽靈來的！",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "那樣也是不錯喲～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n只有我們兩個是幽靈夥伴，所以宮子會一直陪你的～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "嗯哼～兩個人在一起，",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n感覺像夫婦來的～♪",
+        "unit_id": 100711
+    },
+    {
+        "type": "background",
+        "background": "500041"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "歡迎回家，親愛的老公～♪",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "要先吃飯呢～？還是先洗澡呢～？",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "好的！今天的晚餐是……布丁來的～",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "親愛的老公，快拿出布丁來～♪",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "嗯？布丁是老公要準備好喲～",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "這是理所當然來的～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n快點拿出來喲──！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "好的！那宮子先去洗澡喲～♪",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "老公你先準備好晚餐吧～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "哼哼哼～♪",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "宮子洗好澡了喲～♪",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "呼～真是舒爽來的～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "洗完澡宮子要吃布丁來的～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "嗯？為什麼你沒有準備好布丁來的？",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "快點拿出來喲──！",
+        "unit_id": 100711
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "嗯……？",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n等等……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "因為兩個人都是幽靈，所以是買不了布丁的！！",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "這樣好困擾～",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n宮子不能沒有布丁來的～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "你不能跟宮子一樣死掉的～！！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "嗚……",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "好痛來的～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n好像踢到東西了喲～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "啊！是宮子剛剛吃的布丁空盒來的。",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "……仔細看看，這裡掉了好多喲～",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "這麼說起來，宮子一邊走一邊一直吃著布丁來的……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "啊！",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "只要照著這些空盒走，就能走到出口了喲～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "太好了～都是宮子的功勞來的～",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n我們趕快回去吧～",
+        "unit_id": 100711
+    },
+    {
+        "type": "background",
+        "background": "500171"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "哇，順利出來了喲～",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n幸虧有宮子來的～咳咳♪",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "為了獎勵宮子的功勞，你要請人家吃布丁來的！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "嗯嗯？\n……今天累慘了所以你要回去了？",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "不～可～以～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n宮子的肚子餓扁了喲！快一起吃布丁來的～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "background",
+        "background": "500050"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "嚼啊嚼……",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007006_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n和你一起吃的布丁特別好吃來的～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "你還是不要變成幽靈比較好來的～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "宮子露出了天真無邪的笑容。"
+    }
+]

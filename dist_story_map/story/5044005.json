@@ -1,0 +1,2638 @@
+[
+    {
+        "type": "background",
+        "background": "501051"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}等人與振作起來的織女，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n正在進行作戰會議──"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "回到最根本的問題，",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n牛郎他",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "以前就是",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "會做那種事的人嗎？",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "在這之前的七夕，",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "他都不曾有過那樣的舉止。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n今年的他甚至讓我感覺就像是變了個人一樣。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "……啊，",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "該不會是因為那個吧？",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n那個黏著牛郎閣下的",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "奇怪星星對他做了什麼之類的！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "那顆星星上次還開口了，",
+        "unit_id": 113211,
+        "voice": "vo_adv_5044005_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "有可能喔。",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "星姬，",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "妳知道些什麼嗎？",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "星星會附身在人身上的傳說有",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "上千、",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "甚至上億個。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n由於沒有親眼見過，",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "我也無法輕易斷言。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "不過，",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "我知道各位為何會看見那顆星星。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n這大概",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "是由我的心願引起的。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "心願？",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "怎麼回事？",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "照理來說，",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "人們看不見",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "銀河上的星辰。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n但，",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "若是被我和牛郎選中的",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "「心願之使者」就有可能看見。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "我向各位許下了",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "想解決與牛郎之間的問題這個願望，",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n這份心願的力量也因此寄宿在了各位身上。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "啊～",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "那個大叔說的",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "「和星辰對話」",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "就是這個意思啊！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "那個傳說",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "算是說中了耶。",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "但是，",
+        "unit_id": 113211,
+        "voice": "vo_adv_5044005_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "為什麼我們是在七七香用魔法攻擊牛郎後",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "才看見那顆星星？",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "平時為了不被發現，",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "他恐怕使用了某種方法將自己隱藏起來。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n魔法攻擊",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "則使那個方法暫時失效了。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "嗯～",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "那再讓牛郎劈哩啪啦～",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "地觸電一次，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "會不會就能明白什麼了？",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "若對我的心上人施以非必要的攻擊，",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "我可不會坐視不管喔？",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "唔，",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "她的眼神是認真的……",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "是是，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "我知道了～",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "那麼",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "我們就老實地調查傳說，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "或是從書裡找資料吧。",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "那麼，",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "我就去找村子裡的人打聽看看",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "有什麼值得參考的傳說吧。",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "比起漫無目的的尋找，",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "這樣比較實際吧。",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "OK～",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "說的也是！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": " ",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "那麼，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "我們就分頭──",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "不，",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "我去打聽就好了。",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n你們就先去圖書館裡",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "找資料吧。",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "這個提議雖然很好，",
+        "unit_id": 113211,
+        "voice": "vo_adv_5044005_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "但把打聽的工作全部丟給流夏真的好嗎？",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "因為我",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "不太擅長",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "翻書找資料啊。",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "這是在拜託妳們代替我去喔。",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "什麼嘛什麼嘛，",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "竟然說出了這麼讓人開心的話～！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n被流夏姐這麼一說，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "我們就要全力以赴啦～☆",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "哼哼，",
+        "unit_id": 113211,
+        "voice": "vo_adv_5044005_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "找資料的事就交給我們吧。",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "我馬上就把那顆星星的祕密",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "找出來給妳看！",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "至於小哥，",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "你能和我一起去村子裡打聽嗎？",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n一個人做這件事",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "很累人呢。",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "幫大忙了，",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "謝謝你。",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "那麼，",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "我們出發了，",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "書那邊拜託妳們囉。",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "兩人",
+        "words": "收到！",
+        "unit_id": 1,
+        "voice": "vo_adv_5044005_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "嗯～",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "關於七夕的傳說",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "也太多了吧？",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "嗚、",
+        "unit_id": 113211,
+        "voice": "vo_adv_5044005_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "嗚唔唔……",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n每本書的文體都不一樣，",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "好難讀……",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "兩位，",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "不可以放棄。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n我們已經決定要向前邁進了！",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "……星姬，妳變得真可靠啊。",
+        "unit_id": 113211,
+        "voice": "vo_adv_5044005_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "作為妳的老師，",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "我可不能",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "這麼不爭氣！",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "哦哦～",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "杏奈美眉真可靠～！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "……那麼，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "就暫時交給妳了，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "我去休息～",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "喂七七香，",
+        "unit_id": 113211,
+        "voice": "vo_adv_5044005_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "妳在說什麼啊！",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n給我振作點～！",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "來，",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "這些是新的書。",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n書讀太久",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "也是會累的，",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "休息一下沒什麼不好嘛。",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "對對，",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "流夏姐說的沒錯～",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "讀書讀累的時候，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "就應該看一些不需要動腦的繪本之類的……",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "嗯？",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "啊！？",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": " 我說，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "杏奈美眉！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": " 是不是這個啊！？",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n這個「在大家心上惡作劇的粉紅星星」！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "什麼！？",
+        "unit_id": 113211,
+        "voice": "vo_adv_5044005_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "……",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "確實，",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "他和我們看到的星星很像！",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n星姬，",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "妳知道些什麼嗎？",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "玩弄他人感情的粉紅星星……",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "我想到了，",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "是花心星！",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "這件事一定是花心星做的！",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "那個",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "花心星",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "是什麼東西？",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "他是會附身在感到寂寞的人身上，",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "迷惑其心智的星星。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n這樣一來，",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "也能解釋牛郎為何會做出那些行為了。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "我還想說他",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "一下自稱「我」、一下自稱「本大爺」還真混亂啊～",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "原來如此！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "謎題已經全部解開了！！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "也就是說，花心星對牛郎的掌控較弱的時候就是牛郎自己在說話，",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n而現在幾乎都是花心星在說話對吧。",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "既然已經知道原因了，",
+        "unit_id": 113211,
+        "voice": "vo_adv_5044005_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "我們現在就馬上去找牛郎",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "做個了斷──",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "杏奈大人，",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "很遺憾，那是沒有用的。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n再怎麼說，",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "我們也只是",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "降臨在這片土地上的化身。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "被花心星附身的，",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "恐怕是位在銀河的牛郎。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n想解除花心星的控制，",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "就必須前往銀河。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "妳不是能夠",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "往返銀河嗎？",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n沒辦法把我們",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "也一起",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "帶過去嗎？",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "憑我一人的話，",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "只能讓自己轉移。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "無法保證",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "能否帶著各位一起去銀河……",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "看來該是",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "天才魔法少女出場的時刻了～！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "總而言之，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "只要能讓大家一起去銀河就好了吧？",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "反正離七夕還有一些時間，",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "就讓我來找到去銀河的方法吧！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "以我爺爺的",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "名義發誓！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "嗯──",
+        "unit_id": 113211,
+        "voice": "vo_adv_5044005_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "就算妳擅長開發新魔法，",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "但我們掌握的情報實在太少了。",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n還是想想別的方案比較好吧？",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "反正這裡有這麼多書可以參考，",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "大概沒問題啦。",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "我會在七夕之前找出方法的，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "就交給我吧☆",
+        "unit_id": 113311
+    },
+    {
+        "type": "background",
+        "background": "501050"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在七七香著手調查前往銀河的方法後過了數天，到了七夕前一天──"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "明天就是七夕了欸！",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "不妙了不妙了啦～！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "不，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "冷靜冷靜……",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "來背個質數冷靜一下……",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "嗯……",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "因為魔法還沒完成，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "要說不妙的話是挺不妙的。",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n不過，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "其中差不多九成的魔法構成",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "我都已經掌握了～",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n我真的有在做事喔。",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "相信我。",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "剩下那一成，",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "就是不知道魔法正確的啟動方法啊！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "要是能知道的話，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "我就有預感一定能成功……",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "該怎麼辦，七七香……",
+        "unit_id": 113211,
+        "voice": "vo_adv_5044005_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n這樣的話，",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "我們不就去不了銀河了嗎！",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "妳們兩個，",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "魔法研究得怎麼樣了？",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "明天就是七夕了。",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n想到越來越接近決戰的時刻，",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "我的內心就一陣激動……！",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "唔、",
+        "unit_id": 113211,
+        "voice": "vo_adv_5044005_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "唔姆，",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "這個嘛──",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "其實",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "我準備得很成功囉！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "今天晚上",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "可以試著使用看看嗎？",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "什麼嘛，",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "是這樣啊。",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "試過沒問題的話，",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "明天就終於",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "要決定勝負了呢。",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "是的。",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "戰鬥的儀式能順利進行我就放心了。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "那麼流夏大人，",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "我們就靜靜等待兩位完成準備吧。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "等一下，",
+        "unit_id": 113211,
+        "voice": "vo_adv_5044005_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "妳為什麼要說很成功啦！",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n魔法根本還沒完成吧！？",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "妳冷靜下來想想，",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "杏奈美眉。",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "已經完成九成了喔？",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "四捨五入一下",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "不就全部完成了嘛！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "妳都放出那種大話了，",
+        "unit_id": 113211,
+        "voice": "vo_adv_5044005_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "要是失敗了",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "該怎麼辦啦～！",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "……剩下那一成就靠即興發揮。",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n不對，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "事到如今只能放手一搏了。",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "因為我不想讓",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "流夏姐和小織女失望嘛！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "嗯，",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "有了你的幫助，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "七七香力量應該也能提升！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "請多指教囉～♪",
+        "unit_id": 113311
+    },
+    {
+        "type": "background",
+        "background": "500162"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "──準備完成、",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "囉。",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n只要啟動了魔法陣，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "應該就能成功前往銀河，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "所以就交給我吧！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "哦，",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "七七香要",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "一個人發動魔法嗎？",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "我還以為妳",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "是和杏奈一起呢。",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "畢竟這次的魔法不好操控嘛～",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n兩個人一起的話很容易搞砸，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "所以這次是七七香的個人秀時間喔☆",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "那麼，",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "可以麻煩你",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "強化我嗎？",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "好，",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "我要上了！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "……沒事的。",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "只要掌握了大概的構成，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n剩下那一成應該也不是什麼問題……！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "最強之杖，",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "星辰上升！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n閃亮星光，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "蓄──力！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "……",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "她在",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "做什麼啊？",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "七七香在進行魔法儀式的時候，",
+        "unit_id": 113211,
+        "voice": "vo_adv_5044005_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "差不多都會那樣。",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n據她本人的說法，",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "這樣才像是魔法少女的風格。",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "竟然完全不害羞，",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "甚至連姿勢都擺好了……",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "真不愧是杏奈大人的同伴，",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "很厲害呢。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "聯繫大地與宇宙的",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "閃耀之光啊，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "成為寄託心願與思念的",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "橋梁吧！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n以我星姬的引導者，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "七七香之名命令你！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "邁向宇宙的大門啊，",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "打開吧！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": " ",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "白銀星河",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "‧群星",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "之路！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "……結束了嗎？ ",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "什麼",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "也沒發生耶……",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "咦、",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "咦咦咦～？",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": " 奇怪了？",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n……該不會",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "是我搞錯了──",
+        "unit_id": 113311
+    },
+    {
+        "type": "background",
+        "background": "500162"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "什麼！？",
+        "unit_id": 113211,
+        "voice": "vo_adv_5044005_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "是光柱……！",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "這個……",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "不會錯的，",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "是和我一樣的力量！",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n竟然真的完成了轉移魔法……！",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "不妙啊……",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "真的",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "不妙啊……",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "連運氣都站在我這邊，",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n七七香果然真的",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "是個天才魔法少女……",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "不妙啊……",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "雖然感覺也是多虧了{player}你的強化就是了……",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "幹得漂亮，",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "七七香！",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "啊、",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "啊哈哈！ ",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "對、",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "對吧～！？",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "這樣大家就能一起去銀河了吧。",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "不過，",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "織女，",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "我們要怎麼把花心星",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "從牛郎身上扒下來？",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "光靠攻擊應該",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "很難成功。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "不過，",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "花心星很容易",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "感到寂寞。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n寂寞的感覺越強烈，",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "就越會想附身在那個讓他感到寂寞的人身上。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "唔姆，",
+        "unit_id": 113211,
+        "voice": "vo_adv_5044005_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "要讓他想附身在其他人身上啊。",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "問題是，",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "該怎麼誘導他……",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "……啊！",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n在下我有一個好方法是也！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": " ",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "如此如此",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "這般這般……",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "妳、",
+        "unit_id": 113211,
+        "voice": "vo_adv_5044005_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "妳是認真的嗎！？",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "不只是泳衣，",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "妳還要讓我們做更羞恥的事嗎！？",
+        "unit_id": 113211
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "我是能理解用這種方法",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "或許能成功啦……",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n但還真的是有點",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "讓人害羞呢……",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "沒問題的，",
+        "unit_id": 113311,
+        "voice": "vo_adv_5044005_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "越害羞就",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "越有說服力！",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "\n",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "這麼做一定",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "七七香",
+        "words": "能夠成功的唷～☆",
+        "unit_id": 113311
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "那麼，就這麼決定了呢。",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n時間是明天晚上，",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "請各位身著泳裝，",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "在這裡集合吧。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "嗯？",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": " 還得換上泳衣嗎？",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n我們只是要去銀河吧。",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "銀河",
+        "unit_id": 4811,
+        "voice": "vo_adv_5044005_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "對人類來說就和大海差不多。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "\n穿著普通的衣服會弄濕，",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "織女",
+        "words": "所以我認為穿泳衣會比較好。",
+        "unit_id": 4811
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "這樣啊，",
+        "unit_id": 113111,
+        "voice": "vo_adv_5044005_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "我明白了。",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "那麼，",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "明天就多多指教囉！",
+        "unit_id": 113111
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在七七香的努力下，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n準備萬全的{player}等人興致高昂，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n期待著將於銀河執行的作戰計畫。"
+    }
+]

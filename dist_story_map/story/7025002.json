@@ -1,0 +1,984 @@
+[
+    {
+        "type": "background",
+        "background": "500430"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "嘉夜、香織、{player}一行人"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n雖然途中受到魔物的襲擊，仍然順利朝塔上前進。"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "嘿～",
+        "unit_id": 101711,
+        "voice": "vo_adv_7025002_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "這樣就結束了～",
+        "unit_id": 101711
+    },
+    {
+        "type": "background",
+        "background": "500430"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "辛苦啦。",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "這邊也處理完了。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "啊哈～♪",
+        "unit_id": 101711,
+        "voice": "vo_adv_7025002_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "不愧是嘉夜，",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "動作真快呢～",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "因為出現的都是雜魚嘛。",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "但是，",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "往上爬之後",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "敵人的數量也越來越多了呢。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "雖然出現都是雜魚，",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "還真是有點累了呢。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "唉，",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "真是的，",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "早知道不只帶水跟食糧",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n也帶點甜食過來就好了。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "不錯呢！",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "真想一口氣咬下",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n加入大量的水果與鮮奶油的豪華可麗餅呢！",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "……不行了，",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "一去想像就更想吃了……",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "可以嗎？",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "……咦，",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "那個",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "是你隨從的那孩子",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n讓你帶上的吧？",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "那樣的東西",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "沒辦法收下啊。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "唔，",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "沒辦法，",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "回城鎮前就忍耐一下吧……",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "沒問題，",
+        "unit_id": 101711,
+        "voice": "vo_adv_7025002_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "甜點我有事前準備好帶過來了～",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "因為在身體累的時候會想吃點甜的東西呢～",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "真的假的！",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "謝謝妳啊香織！",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "感覺終於能了解",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "妳所說的保持愉快心情",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "的重要性了呢。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "那真是太好了～",
+        "unit_id": 101711,
+        "voice": "vo_adv_7025002_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "來吧，",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "不用客氣",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "儘管多吃一些吧～",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "這，",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "這像泥巴球的物體",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "究竟是什麼東西……",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "這不是泥巴球唷～？",
+        "unit_id": 101711,
+        "voice": "vo_adv_7025002_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "這是我故鄉的甜點，",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "開口笑呀～",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "跟這邊的甜甜圈類似的東西～",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "甜甜圈？",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "確實，",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "仔細看是有點相似呢。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "那麼",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "先嘗一個試試吧……",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "嗯，",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "這個還真好吃呢！",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "外皮酥脆的口感令人上癮，",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n砂糖的甜味對疲倦的身體也很棒呢。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "太好了～",
+        "unit_id": 101711,
+        "voice": "vo_adv_7025002_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "那麼",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "這個使用紅芋製作的烘焙甜點如何？",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "還有用黑糖做的甜點也很好吃唷～",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "儘管多吃一些吧～",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "故鄉的味道是世界第一的啊～♪",
+        "unit_id": 101711,
+        "voice": "vo_adv_7025002_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "等，",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "等等啊！",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "一次吃不了這麼多啊！",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n啊──",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "但是，",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "能了解到香織非常珍惜故鄉的了。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "咦？",
+        "unit_id": 101711,
+        "voice": "vo_adv_7025002_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "就是因為",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "珍惜故鄉，",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "才會那麼高興地給人推薦的吧？",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "沒錯～",
+        "unit_id": 101711,
+        "voice": "vo_adv_7025002_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "雖然現在有不能回去的原因，",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "但是珍惜故鄉的心情",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "一～",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "直都沒有變化的～",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "總有一天也邀請兩位到故鄉",
+        "unit_id": 101711,
+        "voice": "vo_adv_7025002_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "家人全家，",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "不對，",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "聚集全島民來",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "一起來招待兩位吧～",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "儘管大吃一頓，",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "一起唱歌跳舞到早上吧～♪",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "說起來",
+        "unit_id": 101711,
+        "voice": "vo_adv_7025002_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "嘉夜的故鄉是什麼樣的地方呢～？",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "……非常遺憾",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "我沒有什麼故鄉跟家人。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "啊……",
+        "unit_id": 101711,
+        "voice": "vo_adv_7025002_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "難道是有什麼",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "特殊的背景？",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "真對不起……",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "哈哈，",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "沒關係沒關係。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "我完全不在意的。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "沒錯，",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "跟有問題的世界比起來的話",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "沒有故鄉什麼的",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n並不是什麼大問題。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "但是",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "故鄉，",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "還有家人嗎……",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "雖然不會對自己的境遇感到悲觀，",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n但這兩樣都是跟我無緣的存在，",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "感覺有點令人羨慕啊。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "香織強大的實力，",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "以及她的溫柔",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "一定是源自於她的故鄉的吧。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "她的力量是為了保護他人而存在的……",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "跟我完全不同。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "也罷，",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "追求不存在的東西也不是辦法。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "……嗯～",
+        "unit_id": 101711,
+        "voice": "vo_adv_7025002_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "決定",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "了！",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "既然這樣，我",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "來成為嘉夜的家人吧～！",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "哈！？",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "為什麼會得出那結論啊！",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "就說我完全不在意的吧！",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "但是，",
+        "unit_id": 101711,
+        "voice": "vo_adv_7025002_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "原本是要一起開心起來的，",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n讓妳感到寂寞感的話",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "會很過不去的啊～",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "所以我要負起責任",
+        "unit_id": 101711,
+        "voice": "vo_adv_7025002_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "來成為嘉夜的姐姐唷～",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "原來如此我懂了快住手。",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "還有不太想讓香織來當姐姐。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "就算年紀比較大也不要。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "笨，",
+        "unit_id": 106511,
+        "voice": "vo_adv_7025002_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "笨蛋！",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "你來說這話會變成不同的意思的啊！",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在這之後，雖然嘉夜成功讓{player}和香織冷靜下來，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n但比跟魔物戰鬥還要感到更加疲倦了。"
+    }
+]

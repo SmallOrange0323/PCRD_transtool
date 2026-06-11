@@ -1,0 +1,868 @@
+[
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}被莫妮卡叫出來，\n來到了見面的地點。"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "你來了啊。",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n今天有事情要跟閣下商量一下。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "你知道一個禮拜之後有決鬥大賽嗎？",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "就是最近在宣傳頗盛大的那個活動。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "其實",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我想參加那場大賽。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n因為這也是一個幫我所屬的部隊──",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n純白之翼",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "宣揚名聲的大好機會。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "所以說呢，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n為了大賽我想要進行特訓。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n希望閣下可以幫個忙。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "雖然閣下作為特訓的對手，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "功夫還不夠到位……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "但是有閣下在身邊，感覺就會有股力量湧出來。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "而且閣下的著眼點也相當好。",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "如果有發現什麼不足的地方，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "希望你指點我一下……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "如何呢？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "閣下是說想要回報，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "是嗎？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "也好，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "這樣我就不會過意不去。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "那麼，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "閣下覺得這樣如何？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "如果因為閣下的幫忙獲勝的話，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n獎品對分如何？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "別、",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "別這麼沒自信！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n閣下的意見是非常寶貴的。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "而且……我也沒有其他可以拜託的人了。",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "請閣下",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "務必要助我一臂之力好嗎？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "是嗎，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "閣下願意接受啊！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "那麼，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我們立即開始特訓吧。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "在這裡的話會妨礙到其他人，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "先換個地方吧。",
+        "unit_id": 105311
+    },
+    {
+        "type": "background",
+        "background": "500140"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "在這裡的話，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "就可以恣意大展身手了。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "馬上開始特訓──",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "嗯？",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "怎麼了？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "在開始特訓之前有話要說……？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "你說我有個致命的弱點，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "是嗎！？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "是真的嗎？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "打一場就知道了……？",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "好啊，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "那就請出招吧！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "嗯，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "怎麼回事？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n閣下為什麼撿起長樹枝呢……",
+        "unit_id": 105311
+    },
+    {
+        "type": "still",
+        "still": "105300201"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "……唔啊！",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "這是做什麼？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n突然拿樹枝對著我……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "是在胡鬧嗎！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "哇！",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n住手！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "不、",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "不要用樹枝戳我啦！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "唔唔……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我的劍……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "打不到……！！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "喂，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "不要戳我的腰！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n癢、",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "很癢……！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "嘻嘻……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "太、太卑鄙了，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "拿這麼長的樹枝……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "嗯？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n對了，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "閣下所說的我的弱點就是這個呀！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "以我的手腳，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "如果和拿長武器的對手正面對峙，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n會非常的不利呢……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n就算左右移動也難以彌補身高的差距呀……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "嗯嗯嗯……",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n怎麼了嗎？",
+        "unit_id": 105311
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "閣下心中已有奇策……？",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "是、",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "是什麼樣的方法呢！？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "從空中……？",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "原來如此，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "正面左右都不行的話，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n從上方攻擊就行了，是吧。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "的確，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "這是出乎對手意料之外的攻擊。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "可沒有那麼好對付呢。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "而且",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "飛舞於空中的戰術，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n也可說是與純白之翼這個名稱",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "相當吻合的戰術……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "嗯，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "閣下果然厲害。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "但是，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "要從上方攻擊呀，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "相當困難呢。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "應該需要很多訓練吧……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "{player}……閣下願意陪我訓練嗎？",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "真、真的嗎！",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "太好了……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "那麼，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我們一起加油吧！",
+        "unit_id": 105311
+    },
+    {
+        "type": "background",
+        "background": "500142"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "喂{player}，怎麼可以休息呢！",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n我們才完成一半的訓練項目呢！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "真正的訓練現在才要開始呢！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "首先得鍛鍊腿腰……！",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053002_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "來吧，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "追加跑步10公里！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "莫妮卡的訓練長達數小時，\n{player}已經疲憊不堪了。"
+    }
+]

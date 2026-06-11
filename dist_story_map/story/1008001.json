@@ -1,0 +1,711 @@
+[
+    {
+        "type": "background",
+        "background": "500130"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}在城鎮的郊外散步時，\n突然聽到了慘叫聲。"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "呀啊～！",
+        "unit_id": 1,
+        "voice": "vo_adv_1008001_000"
+    },
+    {
+        "type": "background",
+        "background": "500170"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──呱歐歐歐歐歐",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "呀啊～！",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n怎、怎麼會這樣……！",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "這可是……大、大、大危機喔！？",
+        "unit_id": 100811
+    },
+    {
+        "type": "background",
+        "background": "500170"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘰歐歐歐歐歐",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "！",
+        "unit_id": 1614
+    },
+    {
+        "type": "still",
+        "still": "100800101"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "嗯？好像有點吵呢。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "發生了什麼事嗎？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "咦……魔物？危機？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "你在說什麼？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "我只是被映於鏡中的自己可愛的樣子給嚇到而已唷。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "來，仔細欣賞吧！看看我的臉龐！",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n美麗地無可比擬，可愛動人……！",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "就因為實在是太可愛了，",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n所以在沉迷於欣賞自己容貌的時候，",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n被魔物包圍這種小事，都沒察覺到呢。",
+        "unit_id": 100811
+    },
+    {
+        "type": "still",
+        "still": "100800102"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "但是你幫助了我呢。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "讓我獻上感謝之意吧。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "話說回來，能夠幫助這麼可愛的我，",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n你也很開心對吧？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "咦？你問我為什麼自己一個人待在這種地方？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "你對我很有興趣對吧？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "真拿你沒辦法，就特別告訴你吧。",
+        "unit_id": 100811
+    },
+    {
+        "type": "still",
+        "still": "100800101"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "一開始我是和人組隊，前來討伐魔物的。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n然而當我開始每隔五分鐘就照照鏡子，",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n似乎就這樣被同伴丟下了……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "不過，這也是沒有辦法的事情嘛。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n畢竟我是這麼地美麗呀！",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n照鏡子的時間會增加，也是理所當然的唷。",
+        "unit_id": 100811
+    },
+    {
+        "type": "still",
+        "still": "100800102"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "我說，你也這麼想沒錯吧？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "沒錯吧？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n我的美貌，是比任何事都重要的唷！",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "看來你也略懂審美，",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n就特別允許你，可以更靠近一點欣賞我的臉龐唷？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "不行啊……",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n竟然無法理解我的美貌，",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n真是個可憐的人呢。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "因為你實在是太可憐了，",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "就讓你多欣賞我，來磨練你的美感吧。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "來吧，隨你高興盡情地欣賞吧。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_017"
+    },
+    {
+        "type": "background",
+        "background": "500170"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──呱歐歐歐歐歐",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "魔物似乎又跑過來了呢。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n看來是被我的美貌給吸引過來的。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "唉唉，多麼罪孽深重的美貌呀……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "所以說呢，",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n你願意替我打倒魔物嗎？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "我呢，在欣賞映於鏡中的自己，",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n還有觀察自己的美貌就夠忙了呢。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──呱歐歐歐歐歐！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "咦、咦！？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n魔物似乎朝我這邊過來了說！？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "我說你呀！趕緊想想辦法呀！",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "唔哇！",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "等等！你在做什麼呀！？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n我可沒說過你可以碰我唷！",
+        "unit_id": 100811
+    },
+    {
+        "type": "background",
+        "background": "500130"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "呼……",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n看來總算是逃脫了呢。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "因為有你幫忙扛著我，",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n讓我毫無疲憊地輕鬆度過危機呢。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "說起來，如果是為了這麼可愛的我，",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n而想要全力以赴努力幹活的話，也是理所當然的呢。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "不過我是受到你幫助了呢。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "我就特別告訴你我的名字吧。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "我叫做雪。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n你的名字呢？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "{player}啊……",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "今後請多多指教囉。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n把我抱起來的這筆帳可是很高昂的唷。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "走吧，魔物可能會再追上來也說不定。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "趕緊回到城鎮比較──",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "啊、啊啊！？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n我的鏡子掉到地上破掉了！？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "都是你粗魯地扛著我跑的關係啦！",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "啊啊……怎麼會這樣！",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "不敢相信……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "不，你沒有必要道歉唷！",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "因為呀，你看看這個！",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n破裂鏡面的每塊碎片，都把我映照出來了唷！？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "有無數個我，都朝我這裡全神凝視……",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "啊啊，是多麼地美呀！",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "原來鏡子也有這樣的用法呢！",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008001_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n多虧了你，讓我有了新發現唷。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "真是感謝你！",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在那之後，\n雪持續注視著破掉的鏡子好一段時間。"
+    }
+]

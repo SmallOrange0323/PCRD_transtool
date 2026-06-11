@@ -1,0 +1,2445 @@
+[
+    {
+        "type": "background",
+        "background": "500080"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "這是在蘭德索爾統一模擬考後過了一段時間，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n某天，一如往常的課程結束後發生的事──"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "{player}……",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "可以跟你說句話嗎？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "沒有，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "今天不是。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n我又有事想找你商量。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "我想談談未來志願……",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "應該說，",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "是想談談關於",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "我的人生。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "明明是老師，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "卻跟還是學生的你談這種事或許很奇怪。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n但能傾聽我的煩惱的人",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "就只有你了……",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "可以嗎？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "呵呵，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "謝謝你。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "我要說的，",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "是關於我的力量的事……",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "在那之後反逆獸都沒有出現，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "所以愛與希望的力量……",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "那個、",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "也就是……",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "已經不再需要變成魔法少女",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "來戰鬥了吧……？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "也不是討厭，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "那個……",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "怎麼說呢……",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "因為，",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "是魔法「少女」喔？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "我，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "可是23歲的大人喔？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n那個……",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "我覺得年齡超過少女了。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "啊，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "但只是一點點哦？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "只超過一點點而已！",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "……哎呀，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "你那個眼神是怎麼回事？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "真是的！",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "似乎也得",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "幫你上一堂關於少女心的課程才行呢。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "總之，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "變成魔法少女來戰鬥",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "讓我覺得很害羞。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n擺出姿勢報上名字什麼的……",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "我已經不是那種年紀了。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "你為什麼會這麼想當魔法少女呢……？",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n是什麼原因讓你這麼執著……？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "你在之前交上來的",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "關於將來夢想的作文中也寫了吧？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "明明只需要寫兩張稿紙的，",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "就只有你寫了十張哦……",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "不過，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "我能理解你憧憬魔法少女的心情。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "小時候，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "除了愛情漫畫之外，",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n正義的變身女英雄與反派戰鬥的這種類型",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "我也常看。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "也常和朋友",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "一起玩角色扮演。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "我還拚命地記台詞、",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "在鏡子前練習擺招牌姿勢呢。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "為了能輪到演喜歡的女英雄，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "還稍微跟朋友吵架過。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "呵呵，",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "現在想起來都是美好的回憶呢～",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "可是，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "現在的話實在是太害羞了，做不到啦～",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "之前和反逆獸戰鬥，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "第一次變身時……",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "那個……",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "該說是一股勁嗎……",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "從體內湧上來的力量感覺很舒服，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n所以就有點太興奮了……",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "呀～嗯，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "光是想起來就覺得好丟臉～！",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "還有，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "即使在戰鬥結束後，",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n我也好幾次變身成了魔法少女的模樣，",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "但那只不過是外表而已。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "並非就是成為了為正義戰鬥的女英雄。",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n要連內心都變身了，",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "才能被稱為魔法少女喔？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "這是",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "戰鬥變身女英雄守則",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "十條中的第四條。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n你知道這件事嗎？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "是我以前讀過的漫畫中寫的♪",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "話雖這麼說……",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "身為老師，",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "因為必須抑制黑暗力量，",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n所以不能不順應魔法少女的力量……",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "……啊，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "對了！",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "乾脆",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "使用黑暗力量，",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n把所有事情都搞得一團亂吧……♪",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "只要把世上所有人",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "都變成黑暗學生，",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n就不必覺得害羞了吧……♪",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "……呵呵，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "沒有啦。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "我是開玩笑的，放心吧。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n只是試著說得好像真的想那麼做而已。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "我的身體沒有任何變化吧？",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n好好地看看",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "老師的身體。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "如何？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "不是黑暗力量的欲望對吧？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "真是的，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "不用那麼防備嘛。",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "來，",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "放輕鬆──",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "學生1",
+        "words": "伊緒──！",
+        "unit_id": 111,
+        "voice": "vo_adv_1190003_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "學生1",
+        "words": "\n反逆獸出現了，",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "學生1",
+        "words": "我們回不了家──！！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "咦咦！？",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "沒、",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "沒受傷吧？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "學生1",
+        "words": "嗯、",
+        "unit_id": 111,
+        "voice": "vo_adv_1190003_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "學生1",
+        "words": "嗯……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "學生1",
+        "words": "我急忙就跑回來學校了……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "學生1",
+        "words": "\n",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "學生1",
+        "words": "可是大家！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "我知道了……！",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n交給老師吧！",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "你在確定安全之前，",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "要乖乖地待在這裡哦？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "竟然又出現了……",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "戰鬥還沒結束嗎！？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "好！",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "我很擔心學生們！",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n得趕緊去救他們！",
+        "unit_id": 101811
+    },
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "反逆獸",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "學生2",
+        "words": "嗚哇啊啊～～～！？",
+        "unit_id": 1,
+        "voice": "vo_adv_1190003_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "學生3",
+        "words": "呀啊啊～～～！？",
+        "unit_id": 1,
+        "voice": "vo_adv_1190003_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "大家，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "沒事吧！？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "快點逃！",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "似乎還沒有釀成災害的樣子……",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "但其他的魔法少女……",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "還沒趕來嗎……！？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "對，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "你說的沒錯……",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "不過",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "你的意思是哪個人？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n是指我？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "還是",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "你要變成魔法少女……？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "反逆獸",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "真是的！",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "現在不是閒聊的時候吧！",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "變身戰鬥雖然很害羞，",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n但總之，",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "好像也只能上了……！",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "既然如此",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "我就豁出去了～！",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "…………哈啊啊啊啊啊～～～！！",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "嘿～～～～～！！",
+        "unit_id": 101811,
+        "voice": "vo_adv_1190003_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "不行～",
+        "unit_id": 101812,
+        "voice": "vo_adv_1190003_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "反逆獸。",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "不可以使壞呦？",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "呵呵呵♪",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "～～～～嗯！？",
+        "unit_id": 101812,
+        "voice": "vo_adv_1190003_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n為什麼黑暗力量會湧出來呢～～！？",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "是因為不想變成魔法少女",
+        "unit_id": 101812,
+        "voice": "vo_adv_1190003_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "的這種否定的欲望比較強烈的緣故嗎……",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "反逆獸",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "糟糕！",
+        "unit_id": 101812,
+        "voice": "vo_adv_1190003_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "它開始大鬧了！",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "雖然無法使用魔法少女的力量，",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "但只是要絆住它的話……！",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "我要全力使用黑暗老師力量囉！",
+        "unit_id": 101812,
+        "voice": "vo_adv_1190003_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "看招──！",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "反逆獸",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "沒有效……！？",
+        "unit_id": 101812,
+        "voice": "vo_adv_1190003_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "怎麼會，",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "為什麼！？",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "怎麼會有這種事……",
+        "unit_id": 101812,
+        "voice": "vo_adv_1190003_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "反逆獸",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "呀啊啊啊～～～！！",
+        "unit_id": 101812,
+        "voice": "vo_adv_1190003_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "我明明想守護學生們的，",
+        "unit_id": 101812,
+        "voice": "vo_adv_1190003_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "卻竟然連絆住它都做不到……！",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "我、",
+        "unit_id": 101812,
+        "voice": "vo_adv_1190003_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "我雖然知道，",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "但想變也變不成啊～！",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "因為……",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "很、",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "很害羞……",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "反逆獸",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "學生4",
+        "words": "呀～～～！",
+        "unit_id": 211,
+        "voice": "vo_adv_1190003_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "學生4",
+        "words": "不要過來～～～！！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "那孩子是！？",
+        "unit_id": 101812,
+        "voice": "vo_adv_1190003_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "我們學院的！？",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "你說的對……",
+        "unit_id": 101812,
+        "voice": "vo_adv_1190003_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "不能再繼續害羞了……！",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "我是",
+        "unit_id": 101812,
+        "voice": "vo_adv_1190003_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "老師……",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "最重要的",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "是學生。",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "如果我必須變身為魔法少女……",
+        "unit_id": 101812,
+        "voice": "vo_adv_1190003_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "如果即使是老師",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "也擁有力量能變身為魔法少女……！",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "如果即使是大人",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "也能變身為魔法少女！",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "那麼我該選擇的答案，",
+        "unit_id": 101812,
+        "voice": "vo_adv_1190003_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "就只有一個──",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "完全正確～！",
+        "unit_id": 101812,
+        "voice": "vo_adv_1190003_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "滿分一百分的回答呢！",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "對你來說是很簡單的題目吧！",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "好，",
+        "unit_id": 101812
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "要上囉！",
+        "unit_id": 101812
+    },
+    {
+        "type": "still",
+        "still": "119000301"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "好～",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "看老師這裡～！",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n秘藏的課程要開始囉～！",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "不聽老師話的壞學生，",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n老師要用愛的鞭策來處罰唷……",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "呵呵呵♪",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "學生4",
+        "words": "大姐姐，",
+        "unit_id": 211,
+        "voice": "vo_adv_1190003_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "學生4",
+        "words": "加油──！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "啊啊～～嗯！",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "不要目不轉睛地盯著我看～～！",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "果然還是好害羞～！",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n雖然已經變身成這副模樣很多次了，",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "但作為魔法少女變身果然還是～！",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "欸，",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "{player}……",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "可以問你一個問題嗎……？",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "這個，",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "是我自己想出來的姿勢，",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "會不會很奇怪？",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "其實",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "我偷偷地在家裡練習了……",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "如、",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "如何呢？",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "反逆獸",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "啊、",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "好！",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "等等再告訴我感想喔？",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "一定要喔？",
+        "unit_id": 119011
+    },
+    {
+        "type": "still",
+        "still": "119000302"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "……來吧，",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "反逆獸！",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "做好心裡準備了嗎！",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n不懂得反省的壞孩子，",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "老師要可要好好",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "教‧",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "訓‧",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "你♪",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "祕密課程的鐘聲，",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "在此響起──",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n愛的魔法指導♪",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "反逆獸",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "愛的三段活用是",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "Touch me♪",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "Answer me♪",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "Love me唷♪",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "考試會考，",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "所以不可以忘記～♪",
+        "unit_id": 119011
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "still",
+        "still": "119000301"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "討厭，",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "忍不住就太興奮了～！",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n因為我想起了",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "小時候玩的扮演遊戲……！",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "學生4",
+        "words": "大姐姐！",
+        "unit_id": 211,
+        "voice": "vo_adv_1190003_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "學生4",
+        "words": "謝謝妳！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "嗯，",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "沒有受傷吧？",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "太好了～",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "……不對，",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "這樣不行！",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n我到底在做什麼呀，",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "真是的！　",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "這種時候，",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "如果是漫畫，應該會說出適合魔法少女的台詞……",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "……沒錯！",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "就是十條守則中的",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "第八條！　",
+        "unit_id": 119011
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "still",
+        "still": "119000302"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "呵呵。",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "如果又發生了什麼事，",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "隨時都可以呼喚我哦。",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "因為教給學生無限的愛與未來的希望，",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "就是我的使命！",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "還有，",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "安全到家也是課程的一部分喔。",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "回家路上小心♪",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "學生4",
+        "words": "好──！",
+        "unit_id": 211,
+        "voice": "vo_adv_1190003_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "學生4",
+        "words": "再──見──！",
+        "unit_id": 211
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "呵呵，",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "謝謝你。",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "這樣就實現了",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "我小時候的一個夢想……",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "雖然很想這麼說……",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "現在的我，",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "有資格自稱為魔法少女嗎？",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "……因為，",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "我的體內",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "不是只有愛與希望的力量，",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "也寄宿著黑暗力量啊。",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "總覺得沒有能抬頭挺胸說出來的自信。",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "總有一天",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "當體內只有純粹的愛與希望的力量之時……",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "我想那時",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "我才是成為了真正的魔法少女吧。",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "所以現在",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "魔法少女之名我就暫且不用。",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "這是我的課題♪",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "不過放心吧。",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "我當然會繼續",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "與反逆獸戰鬥。",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n既然有戰鬥的能力，",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "就得遵守變身女英雄的守則！",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "而且，",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "明明到剛才都還覺得那麼害羞的……",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "但在變身戰鬥後，",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "心情似乎豁然開朗了！",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "……感覺非常舒服呢♪",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "啊～嗯！",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "黑暗力量果然還在～～！",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "真是的……",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "雖然不知道到底怎樣才能消除黑暗力量，",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n但我會以自己的方式努力試試的。",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "希望總有一天，",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "我能抬頭挺胸地自稱是魔法少女……",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "在那天來臨之前，",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "也希望",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "你能一直",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "在身旁守護著我。",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "這個是",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "老師只出給你的作業♪",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n不可以偷懶哦？",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "市民的聲音",
+        "words": "是、",
+        "unit_id": 1,
+        "voice": "vo_adv_1190003_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "市民的聲音",
+        "words": "是反逆獸──！！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "反逆獸",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "呃！？",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "又出現了？",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "呵呵呵……",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "是希望我幫它補習嗎。",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "對學習這麼有熱誠真是有心。",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "不過，",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "有點太調皮了唷。",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "我會給它",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "滿滿的",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "愛‧的‧",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "鞭‧",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "策♪",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "{player}你也跟我一起來吧！",
+        "unit_id": 119011,
+        "voice": "vo_adv_1190003_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "\n",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "黑暗伊緒",
+        "words": "絕對不能遲到喔♪",
+        "unit_id": 119011
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "伊緒將擁有愛與希望之力……以及黑暗力量的迷惘一掃而空。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n她一面繼續取締街上的風紀，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n並心中發誓，夢想著總有一天能變身為真正的魔法少女──"
+    }
+]

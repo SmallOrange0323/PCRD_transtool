@@ -1,0 +1,616 @@
+[
+    {
+        "type": "background",
+        "background": "500140"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}為了不再落入陷阱裡，\n開始接受禊的特訓。"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "啊，來了來了！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥，這邊這邊──！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥中招囉──！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥～你是不是忘記今天的目的了？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "今天特訓的目的是讓為了哥哥不再落入陷阱中喔？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥不可以因為還沒到集合時間就鬆懈了～",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "人在大意的時候，最容易落入陷阱了。",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "為了讓哥哥這個老實人，",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n不再輕易地被人惡整或落入陷阱裡，",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "今天禊要幫哥哥特訓一下！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "那我們就從這個果汁開始吧！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n兩個杯子一個量比較多、一個比較少，有一杯是超辣果汁呦！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "那麼～哥哥要喝哪一杯？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "{0}",
+        "words": "！！！"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "很辣嗎？很辣嗎？",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "真是太可惜了～♪",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "正確答案是～兩邊都是超辣果汁喔！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n不只超辣量還比較多，真的是錯得很徹底呢～♪",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "{0}",
+        "words": "！！！"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "很辣嗎？",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "呀哈哈哈！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n真是太可惜了～♪正確答案是量多的那邊……",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "才怪，兩邊都是超辣果汁～！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "接下來是這個繩索！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "切斷某一條繩索後，會掉下一個金屬臉盆呦！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "右邊？左邊？哥哥要選哪邊？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "……哥哥說不管切斷哪邊都會有臉盆掉下來？",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "才不會這樣，哥哥放心吧～",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "呀哈哈哈！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "真是太可惜了～！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "右邊是錯誤選擇～！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "雖然水盆砸到聲音很大，但不會痛喔～",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "對吧，其實沒有那麼痛吧？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "正確選擇～！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "右邊是錯誤選擇的金屬臉盆！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n左邊則會灑下超多的水～！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "欸嘿嘿～♪",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "那再接下來，則是陷阱地洞了～",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "右邊和左邊，哥哥要選哪邊……",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "呼呼呼呼……",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n哥哥居然全部的陷阱都中招了～♪",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "對於設下陷阱的人來說，惡整哥哥真的很有成就感呢～",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "……不過哥哥這樣真的讓人很擔心呢。",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥實在太老實了。",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n要稍微懷疑別人一下才行呀。",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哎呀，不過這也是哥哥的優點啦。",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "一定要把禊想成是一個「老是說謊的壞孩子─！」，",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n這樣才可以啊！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "欸！？哥、哥哥在說啥呀！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "才沒有這種事呢～",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "禊老是對哥哥惡作劇……",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "……因為禊很認真地教哥哥怎樣才不會被惡整？",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "那是因為哥哥實在太老實了，禊很擔心哥哥的關係……",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "因為、禊從來沒有被說過是一個好孩子……",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "所、所以有點害羞呢～欸嘿嘿～♪",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "今、今天的課就上到這裡！結束了！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥，我們回蘭德索爾吧！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "……啊！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥，不可以走那邊！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n那邊有洞呀！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n不可以走那邊，要走這邊才……",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "咦？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "禊有在這邊設下陷阱嗎……",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "這樣的話，那邊的路是……",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "咦？哎呀呀？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "禊、禊搞不清楚了───！！！？？？",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "讓人誤以為這邊有陷阱，其實是在另一邊……",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "不過其實那是偽裝，真正的陷阱在那邊……",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "然後相反的這邊……再給人出奇不意……",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "啊啊──！禊回不了家啦───！！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n怎麼辦，哥哥───！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "於是禊因為自己設下的惡作劇而進退不得、無計可施。"
+    }
+]

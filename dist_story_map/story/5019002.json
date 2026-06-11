@@ -1,0 +1,1364 @@
+[
+    {
+        "type": "background",
+        "background": "500042"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "遇上突如其來的降雨，{player}一行人\n在島民為他們準備的島上公會小屋裡，\n聽島民說到「雨神大人」一事。"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "明天的活動會因為下雨而中止是怎麼一回事！？",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "這樣太讓人難過了！",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "冷靜點，鈴奈。",
+        "unit_id": 110111,
+        "voice": "vo_adv_5019002_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "還沒確定會中止，",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "只是說有可能而已啦。",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "可是可是……",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "有可能、",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n說不定真的會中止對吧？",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "剛才村長先生看起來滿有幹勁的，",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019002_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "如果只是下點小雨應該不要緊吧？",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "是的，",
+        "unit_id": 1411,
+        "voice": "vo_adv_5019002_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "若只是下點小雨的程度是不會中止活動的。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n都特地邀請鈴奈小姐過來了，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "我們也希望",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "能夠舉辦活動……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "但是，",
+        "unit_id": 1411,
+        "voice": "vo_adv_5019002_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "考慮到萬一",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "讓鈴奈小姐",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "或是觀光客受傷的可能……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "你說的是沒錯……",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "可是……",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "你剛才",
+        "unit_id": 110111,
+        "voice": "vo_adv_5019002_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "說這是因為",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "雨神大人的關係，",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n那到底是指什麼？",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "這個……",
+        "unit_id": 1411,
+        "voice": "vo_adv_5019002_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "雨神大人是",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "自古以來掌管這座島上天氣的神明。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "正確來說是精靈，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "由於祂賜與這座島恩惠，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "大家都稱其為神明。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "每年一次，",
+        "unit_id": 1411,
+        "voice": "vo_adv_5019002_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "祂會在開春時受島民的祈禱儀式而甦醒，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n帶給我們溫暖舒適、果實纍纍的天氣。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "也就是說島上的生活",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "是多虧雨神大人才能維持下去。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "於是，",
+        "unit_id": 1411,
+        "voice": "vo_adv_5019002_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "見證成功後，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "在夏天結束之際，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n到隔年的儀式以前，祂會再度陷入沉眠。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "咦，",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019002_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "咦～？",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "今年",
+        "unit_id": 1411,
+        "voice": "vo_adv_5019002_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "雖然也如往常一般舉行了祈禱儀式，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n但自那之後，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "天氣不知道為什麼很不穩定，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "雨一直下個不停。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "這樣下去觀光客的人數也無法成長，",
+        "unit_id": 1411,
+        "voice": "vo_adv_5019002_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "島上會陷入危機。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "所以這次",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "想藉鈴奈小姐的力量，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "至少在海水浴場開幕活動時，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "能夠炒熱島上的氣氛……！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "原、",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "原來如此～？",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "當、",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "當然！",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "我當然聽懂了！",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "是啊～？",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019002_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n我也是！",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "　這根本小事一樁嘛～？",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "……才怪。",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n其實我",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "只聽懂了一半……",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "那也是騙人的。",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "其實",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "我根本有聽沒有懂……？",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "不過，",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "美咲妳聽懂了啊？",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "實在太聰明了呀！",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "討厭！",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019002_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "　我也沒聽懂啦！",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "不過，",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019002_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "也不是每天都一直在下雨吧？",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "只是要玩的話，趁著放晴時還是能夠渡假的。",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "如果是那樣就好了……",
+        "unit_id": 1411,
+        "voice": "vo_adv_5019002_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n可是，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "雨勢變得一天比一天還要更大――",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "正如各位所見。",
+        "unit_id": 1411,
+        "voice": "vo_adv_5019002_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n就像剛才一樣，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n毫無徵兆的",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "突然就下起雨來，然後又停，就這樣不斷反覆。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "要是像這樣一直下雨，",
+        "unit_id": 1411,
+        "voice": "vo_adv_5019002_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "明天別說是舉辦活動了，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "還可能因天氣不穩遭認定有危險，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "人們連靠近海邊都被禁止。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "欸……",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "你的意思……",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019002_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "就是說……",
+        "unit_id": 110111,
+        "voice": "vo_adv_5019002_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈等人",
+        "words": "不能到海邊玩了――！？",
+        "unit_id": 1,
+        "voice": "vo_adv_5019002_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "是的……",
+        "unit_id": 1411,
+        "voice": "vo_adv_5019002_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "不會吧～……",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019002_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "雖然村長說就算稍微有點風雨",
+        "unit_id": 1411,
+        "voice": "vo_adv_5019002_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "還是會舉辦活動，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "但以安全上的考量還是……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "啊，",
+        "unit_id": 1411,
+        "voice": "vo_adv_5019002_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "對不起！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "各位剛到這裡應該很疲倦了，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "還和你們聊這麼久。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "明天的活動，",
+        "unit_id": 1411,
+        "voice": "vo_adv_5019002_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "一定要讓它成功舉辦！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n因為島上的各位都很期待鈴奈小姐的到來！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "那麼",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "隨從",
+        "words": "我先告辭了！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "怎麼這樣……",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n竟然有可能無法舉辦活動～……",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "好不容易請大家陪著過來的……",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "是啊……",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019002_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "不過，",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "如果是天氣影響，那也無可奈何……",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "雖然我也很想看鈴奈努力的表演。",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019002_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "要是明年",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "能在其他地方舉辦就好了。",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "到時候",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019002_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "我也會去看妳的。",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "不過，",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "前提是要我有空。",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "為了讓妳",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019002_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "明年也能被選為某個海灘的形象代言人，",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "我會比之前更拚命支持妳！",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "美咲，",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "那樣子不行啦……！",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "為什麼？",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019002_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "我相信妳一定辦得到的。",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "我向妳保證！",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "不是那樣的。",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n人家是",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "想在這個夏天，在這座島上表演。",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "而且，",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "明年會發生什麼事，",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "根本沒人知道吧？",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "誰也不曉得",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "明天的活動會怎麼樣。",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "可是那也沒辦法。",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019002_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n對手是天氣啊，",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "又不是說我們想這樣那樣，",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "就能夠解決的事情吧？",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "像「沒辦法啊」這種理由，",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "怎麼可能接受啊！",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n人家",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "不會那麼輕易就放棄的！",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "鈴、",
+        "unit_id": 110111,
+        "voice": "vo_adv_5019002_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "鈴奈？",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "等、",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019002_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "等一下。",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "妳沒必要那麼生氣吧。",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n妳是怎麼了啊。",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "更何況，",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019002_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "今年暑假才剛開始啊。",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n雖然好不容易來到這裡，不能渡假很可惜，",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n但是為了不要浪費寶貴的暑假，",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "我們就早點回去蘭德索爾吧。",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "欸，",
+        "unit_id": 110111,
+        "voice": "vo_adv_5019002_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "好了好了。",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "妳們兩個，",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "都冷靜一下吧……？",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "美咲，",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "妳那種說法不太好。",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "為了舉辦這次的活動，",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "有很多人一起準備喔？",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "美咲妳也看到了吧？",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "　在海邊的活動舞台。",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "光是要架出那樣的舞台，",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "就超級辛苦的。",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n辦活動",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "可不是輕輕鬆鬆就能準備好的。",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "哼，",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019002_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "那種事我當然知道。",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n可不可以不要當我是小孩啊？",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "但是，",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019002_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "你也聽到剛才村民說的話了吧？",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n要讓我們操縱天氣甚至讓它不在下雨，",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n怎麼可能辦得到啊。",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "那是沒錯……",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "可是……",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "可是！",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "　明年不一定還有機會",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n像這樣和大家聚在一起啊！",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "竟然不懂人家到底有多麼期待，",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019002_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n美咲妳好過分！",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "什、",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019002_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "什麼！？",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "鈴、",
+        "unit_id": 110111,
+        "voice": "vo_adv_5019002_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "鈴奈！",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "鈴奈拋下了美咲與伊緒等人，\n從公會小屋跑了出去。"
+    }
+]

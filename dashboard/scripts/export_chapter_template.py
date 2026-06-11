@@ -12,8 +12,11 @@ PCRD Data Hub - 匯出章節維護模板
 """
 
 import os
+import sys
 import json
 import sqlite3
+
+sys.stdout.reconfigure(encoding='utf-8')
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB_PATH = os.path.join(BASE_DIR, "redive_tw.db")

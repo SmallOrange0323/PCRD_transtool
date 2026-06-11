@@ -1,0 +1,854 @@
+[
+    {
+        "type": "background",
+        "background": "500420"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}和日和"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n在入口仰望著露娜之塔。"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這裡就是露娜之塔啊……",
+        "unit_id": 100111,
+        "voice": "vo_adv_7023000_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "比我想的還大呢。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這裡有找回騎士先生記憶的提示吧。",
+        "unit_id": 100111,
+        "voice": "vo_adv_7023000_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "好，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我們就努力爬吧！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "呵呵呵──",
+        "unit_id": 100111,
+        "voice": "vo_adv_7023000_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "因為我聽說",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "優衣跟怜也有來過啊。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "而且我也",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "想要幫助騎士先生呢。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "那我們趕緊……",
+        "unit_id": 100111,
+        "voice": "vo_adv_7023000_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "哎呀？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n你有沒有聽到什麼聲音？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "……下！",
+        "voice": "vo_adv_7023000_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "請等一下！",
+        "unit_id": 100511,
+        "voice": "vo_adv_7023000_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "哈……",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "哈……",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "終於……",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "追上你們了……",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "咦？",
+        "unit_id": 100111,
+        "voice": "vo_adv_7023000_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n妳是【王宮騎士團】的茉莉……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "對吧？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n怎麼了？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "莫非",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "妳在調查某個案件？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "不是的！",
+        "unit_id": 100511,
+        "voice": "vo_adv_7023000_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n我是因為知道",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "你們要挑戰露娜之塔，",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "所以才追來的！",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "我希望",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "你們可以帶我一起去！",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "妳特地追過來……",
+        "unit_id": 100111,
+        "voice": "vo_adv_7023000_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "是有什麼原因嗎？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "我聽小智姐她們說，",
+        "unit_id": 100511,
+        "voice": "vo_adv_7023000_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "露娜之塔裡面",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "有取回",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n{player}記憶的",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "提示對吧？",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "那麼",
+        "unit_id": 100511,
+        "voice": "vo_adv_7023000_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "我身為英雄，當然要",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "協助你們攻略塔啦！",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "畢竟我平時也受",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "{player}不少照顧呢。",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我當然贊成啦！",
+        "unit_id": 100111,
+        "voice": "vo_adv_7023000_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "請",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "多多指教囉，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "茉莉！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "謝謝！",
+        "unit_id": 100511,
+        "voice": "vo_adv_7023000_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "我不會礙手礙腳的！",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "希望你們不要把我當小孩子！",
+        "unit_id": 100511,
+        "voice": "vo_adv_7023000_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "藉由每天的特訓，",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "我已經比上次見面時",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n還要強很多了！",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嗯嗯，",
+        "unit_id": 100111,
+        "voice": "vo_adv_7023000_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我也跟妳一起戰鬥過幾次，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n所以知道妳很可靠的。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "請多指教囉，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "茉莉。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "妳叫做",
+        "unit_id": 100511,
+        "voice": "vo_adv_7023000_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "日和吧。",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n雖然我們不是初次見面，",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n但卻是第一次",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "這樣好好交談呢。",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "對耶。",
+        "unit_id": 100111,
+        "voice": "vo_adv_7023000_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嘿嘿，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我一直",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "很想跟妳好好聊聊喔。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "咦咦？",
+        "unit_id": 100511,
+        "voice": "vo_adv_7023000_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "我、",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "我嗎？",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "除了戰場，",
+        "unit_id": 100111,
+        "voice": "vo_adv_7023000_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我也會在",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n蘭德索爾看到妳，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "所以有點在意。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "是【王宮騎士團】活動的時候嗎？",
+        "unit_id": 100511,
+        "voice": "vo_adv_7023000_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我看到妳的時候只有一個人，所以應該不是。",
+        "unit_id": 100111,
+        "voice": "vo_adv_7023000_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n是在獸人居住區那邊……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "妳家也在",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "那附近吧？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "咦，",
+        "unit_id": 100511,
+        "voice": "vo_adv_7023000_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "那個",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "我不是獸人……",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我有看到妳",
+        "unit_id": 100111,
+        "voice": "vo_adv_7023000_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "幫迷路的人帶路，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "還有幫忙",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "找遺失物品喔！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "咦？",
+        "unit_id": 100511,
+        "voice": "vo_adv_7023000_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "妳有看到喔？",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n我完全沒發現……",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "話說，",
+        "unit_id": 100511,
+        "voice": "vo_adv_7023000_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "我也有",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "在獸人居住區",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n看到過日和喔。",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "我記得",
+        "unit_id": 100511,
+        "voice": "vo_adv_7023000_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "妳跟一位長輩和小孩子在一起。",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n莫非……",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "妳跟我做了一樣的事情嗎？",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "妳說的沒錯。",
+        "unit_id": 100111,
+        "voice": "vo_adv_7023000_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "沒想到",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "有人會跟我做",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "一樣的事，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "所以能跟妳一起冒險我很開心喔。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "日和也跟我做了一樣的事。",
+        "unit_id": 100511,
+        "voice": "vo_adv_7023000_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "感覺備受鼓舞呢！",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "再次請妳多多關照喔，",
+        "unit_id": 100111,
+        "voice": "vo_adv_7023000_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "茉莉。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我們一起協助騎士先生找回記憶吧！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "我才要請妳多多關照！",
+        "unit_id": 100511,
+        "voice": "vo_adv_7023000_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "很",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "好，",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "那我們趕緊",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "衝吧！",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "喔──！",
+        "unit_id": 100111,
+        "voice": "vo_adv_7023000_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "就這樣，{player}和日和、茉莉"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n一起走向露娜之塔。"
+    }
+]

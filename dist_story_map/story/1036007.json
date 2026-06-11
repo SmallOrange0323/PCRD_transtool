@@ -1,0 +1,856 @@
+[
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "當{player}和鏡華一同在街上散步時……"
+    },
+    {
+        "type": "dialogue",
+        "name": "服務生",
+        "words": "喂喂！那邊的小哥！",
+        "unit_id": 411,
+        "voice": "vo_adv_1036007_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "服務生",
+        "words": "\n我們這裡，開了一家全新的餐廳，",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "服務生",
+        "words": "\n要不要來看看呀？",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "服務生",
+        "words": "瞧小哥你還長得挺帥的，",
+        "unit_id": 411,
+        "voice": "vo_adv_1036007_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "服務生",
+        "words": "\n現在來店裡的話，就給你一些「福利」唷～♪",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "{player}！\n不就是女孩子貼上來，",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "不要開心得像什麼一樣好嗎！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "還有妳！是怎麼一回事呀！",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "竟然無視了我的存在！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "服務生",
+        "words": "哦哦？小妹妹真可愛呢。",
+        "unit_id": 411,
+        "voice": "vo_adv_1036007_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "服務生",
+        "words": "\n",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "服務生",
+        "words": "才沒有無視妳呢。",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "服務生",
+        "words": "呃……要不妹妹妳也一塊來看看呢？",
+        "unit_id": 411,
+        "voice": "vo_adv_1036007_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "謝謝妳的好意！我肚子一點都不餓！",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "而且，我才不是這個人的妹妹！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "{player}，\n我要回去了。",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "再見！",
+        "unit_id": 103611
+    },
+    {
+        "type": "background",
+        "background": "500192"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "哎……",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "為什麼我……，",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n會變得那麼生氣呢？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "明明那個人，什麼壞事也都沒做……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "突然就掉頭回家了，還做了壞事。",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n下次遇見了的話，得跟他道歉才行……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "可是……那服務生好漂亮啊……",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n好像和那個人差不多年紀嗎……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……真好。",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "我、我到底在說些什麼呀！",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "時間也越來越晚了，得趕快睡覺才行……",
+        "unit_id": 103611
+    },
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……咦？這裡是哪？",
+        "unit_id": 1,
+        "voice": "vo_adv_1036007_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n我是準備要做什麼……？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "啊，這是媽媽寫給我的清單呀。",
+        "unit_id": 1,
+        "voice": "vo_adv_1036007_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n奇怪，有被拜託要去蘭德索爾買東西嗎？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "啊，{player}，",
+        "unit_id": 1,
+        "voice": "vo_adv_1036007_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "你好。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n{player}也是來買東西的嗎？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "{player}……？",
+        "unit_id": 1,
+        "voice": "vo_adv_1036007_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n你怎麼看起來變矮了一點呀？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n這樣看起來，好像跟我沒差多少啊？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "咦？這不是理所當然的？什麼意思？",
+        "unit_id": 1,
+        "voice": "vo_adv_1036007_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n話又說回來，總覺得視線的角度好像比平時還高了一些……？",
+        "unit_id": 1
+    },
+    {
+        "type": "still",
+        "still": "103600701"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "！！！",
+        "unit_id": 1,
+        "voice": "vo_adv_1036007_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "難、難不成！我……變成了大人了！？",
+        "unit_id": 1,
+        "voice": "vo_adv_1036007_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "怎麼回事，突然間就長大了……？",
+        "unit_id": 1,
+        "voice": "vo_adv_1036007_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n難道是昨天喝的牛奶的關係嗎？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n不不不，這哪有可能……？？？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "喂喂～這位小姊姊，",
+        "unit_id": 311,
+        "voice": "vo_adv_1036007_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n妳長得好正呢。",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n要不要和我去逛逛呀？",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "咦、咦咦！？",
+        "unit_id": 1,
+        "voice": "vo_adv_1036007_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n這、難不成是……搭訕嗎！？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "會和別人搭訕的，全都是變態，朋友都是這麼說的。",
+        "unit_id": 1,
+        "voice": "vo_adv_1036007_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n得回絕才行……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n可是，這人好可怕……",
+        "unit_id": 1
+    },
+    {
+        "type": "still",
+        "still": "103600702"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "咦，{player}？",
+        "unit_id": 1,
+        "voice": "vo_adv_1036007_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n要我躲在你的後面？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "你這傢伙，幹什麼啊？",
+        "unit_id": 311,
+        "voice": "vo_adv_1036007_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n現在是想要礙我的好事嗎？",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……咦！？",
+        "unit_id": 1,
+        "voice": "vo_adv_1036007_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n那個，{player}，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "你剛剛說什麼！？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "因為我是{player}的女朋友所以要保護我……！？",
+        "unit_id": 1,
+        "voice": "vo_adv_1036007_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "咦，咦咦咦咦咦──！？",
+        "unit_id": 1,
+        "voice": "vo_adv_1036007_029"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "background",
+        "background": "500190"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "女、女朋友什麼的，你在說什麼鬼話啊！？",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "我們之間，現在不但還不是那種關係，",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n而且年齡也相差很多，還連種族都不一樣。",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "不管是談戀愛還結婚什麼的，我也還搞不太懂，但是……我、我！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……嗯？咦？",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n這裡是？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "該、該不會……剛剛那是在作夢嗎……？",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "為、為什麼！我竟然會做那種丟臉的夢啊！？",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "得忘掉、得忘掉、得忘掉……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "嗚嗚～～",
+        "unit_id": 103611
+    },
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "幾天後――"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "竟然會和夢境裡一樣，",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n被媽媽拜託，得要來蘭德索爾買東西一趟……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "難不成，就連那個人也──",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "咦！？",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "你、你好。",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "還真的碰上了……",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n該、該怎麼辦？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n一想起了夢境裡的事，就心跳加速……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "喂！",
+        "unit_id": 311,
+        "voice": "vo_adv_1036007_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n那邊那個小妹妹！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "咦？被、被人給搭話了！？",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n就連這裡都和夢裡……難、難不成……！？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "啊，{player}！",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n又會護在我的面前？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "果、",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "果然",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "和夢裡面一樣──",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……咦？",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n那個……為什麼你要和對方道歉呢？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……你說因為我剛才撞到了那個人嗎？",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n咦咦！？我剛才撞到人家了嗎！？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "剛剛我有點恍神，竟然沒有注意到……",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n對、對不起。",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "嗯，沒關係喔。我並不在意。",
+        "unit_id": 311,
+        "voice": "vo_adv_1036007_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n反而有點擔心你有沒有受傷……",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "但看起來是沒什麼事，那就好。再見。",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "哈啊……明明還以為會和夢裡一樣的……",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……啊，咦！？",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "為什麼我覺得失望啊！？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "才沒有對那夢裡頭的事，有什麼特別的憧憬呢！",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n才、",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "才沒，對你有什麼……！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "秘、",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "祕密！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "就算是嘴巴爛掉了，",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "也絕對不和{player}說！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "才不紅呢！",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n我不會因為這點小事就心跳加速啊！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "真的",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036007_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "什麼事也沒有！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n{player}什麼都不用知道！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "鏡華雖然看起來有些許不悅，且就此撇過了臉。\n但那紅通通的雙頰，還維持了好一陣子。"
+    }
+]

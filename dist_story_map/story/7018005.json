@@ -1,0 +1,2977 @@
+[
+    {
+        "type": "background",
+        "background": "500430"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "忍透過儀式，順利從鈴莓體內揪出了惡靈。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n而在展開戰鬥後，{player}等人"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n最後終於擊退了附身在鈴莓身上的惡靈。"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡靈",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 14811
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "儀式成功了。",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這樣就驅邪完畢了。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n鈴莓，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這樣妳就再也不會",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "受到惡靈的折磨了。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "忍，",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "謝謝妳！",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這不是只靠我一個人的力量做到的事情。",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "如果沒有借助{player}的瑪那，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n應該就沒辦法把惡靈",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "揪出來了吧。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "……嘖，",
+        "unit_id": 2411,
+        "voice": "vo_adv_7018005_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "這個粗神經的小伙子。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n被奪走了那麼多的瑪那，居然還能活著……",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n要是本大爺有再多壓榨他一點就好了……",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "也要謝謝爸爸……",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "謝謝你",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "幫我。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "哼！",
+        "unit_id": 2411,
+        "voice": "vo_adv_7018005_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "要是這小伙子擺起架子，本大爺可是會很困擾啊！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n聽好了，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "是因為有本大爺在，這件事才能成功的！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "是的！",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "各位，",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "真的很謝謝你們。",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n真不知道該怎麼向你們道謝才好。",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "不過，",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我原本",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "是來幫你尋找記憶的線索……",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "請等一下，",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n剛才打倒的惡靈",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "好像掉了什麼東西。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "在閃閃發亮呢。",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "這難道……",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "就是你提到的",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "記憶之鑰嗎！？",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "光芒慢慢地變強烈了。",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n這究竟是……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "兩人",
+        "words": "呀！？",
+        "unit_id": 1,
+        "voice": "vo_adv_7018005_011"
+    },
+    {
+        "type": "background",
+        "background": "510101"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "日暮時分──"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n一名少女上氣不接下氣，在人煙稀少的住宅區奔跑著。"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "呼、",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "呼、",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "呼……！",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……不必回頭也能知道……！",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n那個惡靈",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "還跟在我後面……！",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n現在得趕快逃走才行……！　",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "啦啦啦～♪",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "因為有{player}來幫忙我買東西，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n今天好像能不做出任何冒失的事情就順利回去♪",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "兩人",
+        "words": "呀！？",
+        "unit_id": 1,
+        "voice": "vo_adv_7018005_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "痛痛痛……",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "居然在轉角撞到人了……",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "而且",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "購物袋裡的東西全都散了出來……！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "啊！？",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n比起這個，我問妳，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "妳沒事嗎！？",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "好鹹。",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這是",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "鹽嗎？",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "啊哇哇……！",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "剛才買的鹽袋子破掉了！？",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "而且為什麼",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "還偏偏掉在別人的頭上啊！？",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "對不起，",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我馬上幫妳拍掉……！！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "沒、",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "沒事……",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那個……",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n該說這反而",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "讓我得救了嗎……",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……太好了，",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "多虧了這包鹽，",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "惡靈的氣息消失了……",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "但現在",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "還不能掉以輕心……",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "比平常糟糕？",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "難道",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "她是你認識的人？",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n而且你說臉色很糟……",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "真的是這樣！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "而且還流了一身汗，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "妳沒事嗎……？",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "是的……",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n現在已經",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "沒事了……",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……就算對你隱瞞，",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "也會馬上就被拆穿呢。",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n其實是──",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "原來如此……",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n忍擁有",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "能看見幽靈的力量，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "並和那個骷髏頭……",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "不對，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "是你的父親一起",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "驅除惡靈……",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "但那個惡靈非常強大，",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "妳在暫且逃跑時",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n撞到了我，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "而因為",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "冒冒失失的我",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n把鹽連著整個購物袋倒在妳身上，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "惡靈就跑掉了，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "事情就是這樣吧！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那、",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那個……",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我的父親是骷髏頭……",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "還有我正受到惡靈的追趕……",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n妳願意相信",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我說的這些事情嗎？",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "咦？",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "雖然我的確聽不見",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "妳父親的聲音，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n也看不到惡靈的身影，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "但我知道妳現在很傷腦筋！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……這、",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這樣啊。",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "不過，",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "居然能把惡靈趕跑，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "原來鹽真的有淨化的力量啊……！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "但那個惡靈",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "應該又會來攻擊我吧。",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……我得在那之前",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "做好儀式的準備，",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "嚴陣以待。",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "今天",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "很謝謝你們兩位。",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我們先告辭了……",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "請等一下！",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "那個，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "有什麼事情",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "是我能幫忙的嗎！？",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "謝謝妳。",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "妳的好意",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我就心領了。",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "她走掉了……",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "忍的狀況",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "看起來還是不太好……",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n讓她就這樣回去，真的沒問題嗎……？",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "既然如此，",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我也跟你一起去！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n再走一點路就到宅邸了，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "把購物袋放好後就追上去吧！",
+        "unit_id": 102531
+    },
+    {
+        "type": "background",
+        "background": "510072"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "幽靈的力量會在晚上變得最強……",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "如果要攻擊我，",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "就只可能會挑這段時間……",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我得趕快展開結界……！　",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……爸爸，",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你別那麼擔心。",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我可以一個人",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "處理好的。",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "！？",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這股不祥的氣息……！",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "它來的時間比我預測得還要早……！",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n但我還沒有完成結界啊……！　",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不用看也能知道……！",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n它已經來到我身邊了……",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "會來不及……！　",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "輪到我們出馬了！",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n不枉費我們在和大小姐解釋過後",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n拿了一堆鹽來！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "雖然不知道它在哪裡……",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "總之我會來撒鹽的！！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "是",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "在這邊嗎！？",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "還是",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "在",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "那邊！？",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你們兩位……",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "為什麼會在這裡……",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不，",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不提這個，請你們快點逃走……！",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我不能給你們添麻煩──",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "妳說添麻煩，",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我一天到晚都在給人添麻煩喔！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n但是",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "沒關係！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "就當我們彼此彼此吧，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "忍！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "可是……！",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "只靠我們",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "是無法擊退惡靈的！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "所以說，忍，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "這件事就要拜託妳了！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n在那之前，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我們會保護忍的！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你說「現在就先交給那兩人吧」",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你說得對，",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "爸爸。",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我們趕快來完成結界吧……！",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "完成了……！",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "請你們兩位",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "到我背後來……！",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n然後直接閉上雙眼，",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "塞住耳朵，",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "保持不動……！",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我知道了！",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "爸爸，",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "要上囉……！",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "兩位，",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "已經可以張開眼睛了喔。",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "呃……",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "惡靈",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "怎麼了？",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我擊退",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "惡靈了。",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這樣",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "就不會再造成損害了。",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n這都是你們兩位的功勞。",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "太、",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "太好了……！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "一放心下來，突然就覺得好累……",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "哇",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "啊啊啊！？",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "鈴莓，",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "危險……！",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "兩人",
+        "words": "呀！？",
+        "unit_id": 1,
+        "voice": "vo_adv_7018005_057"
+    },
+    {
+        "type": "still",
+        "still": "701800501"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "痛痛痛……",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "呃，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "對不起……！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我真是的，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "居然把忍也捲了進來……！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我才要",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "跟妳對不起……",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我是想接住妳，",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "卻沒有足夠的力氣……",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n最後還是跌倒了……",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "沒這回事……！",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "歸根究柢，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "是因為我老是冒冒失失的──",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "要這麼說的話，",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n這都是因為我把你們捲進這件事──",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "兩人",
+        "words": "…………",
+        "unit_id": 1,
+        "voice": "vo_adv_7018005_062"
+    },
+    {
+        "type": "still",
+        "still": "701800502"
+    },
+    {
+        "type": "dialogue",
+        "name": "兩人",
+        "words": "呵呵！",
+        "unit_id": 1,
+        "voice": "vo_adv_7018005_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "那麼，",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我們算是彼此彼此呢！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "是的，",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "彼此彼此。",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "那個！",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "妳還沒有吃晚餐吧？",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "要是這樣不會造成妳的困擾，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "接下來要不要一起吃晚餐？",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n因為大小姐也很擔心，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "如果妳不介意的話……",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "可是…………",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不，",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "妳都特地邀請了我，",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那我就去叨擾了。",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我也想為鹽的事情道謝。",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "真的嗎！？",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "當然了，",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "請{player}也來吃晚餐吧！",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n我想大小姐一定也會很開心的♪",
+        "unit_id": 102531
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "既然都這麼決定了，就趕快──",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "啊……！",
+        "unit_id": 103131,
+        "voice": "vo_adv_7018005_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n鈴莓的頭髮",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "勾到我的鈕扣了……！",
+        "unit_id": 103131
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "呀！？",
+        "unit_id": 102531,
+        "voice": "vo_adv_7018005_071"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "background",
+        "background": "500430"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "奇怪……？",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "這裡是……？",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n我怎麼會",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "睡著了呢……？　",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "鈴莓，",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "妳醒來了嗎？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "有沒有什麼不舒服的地方……？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我沒事。",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n我只是",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "做了個很奇妙的夢……",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "妳說",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "夢嗎……？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……我們或許做了",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "同樣的夢啊。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n雖然我的記憶很模糊……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "這就是",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "記憶之鑰的力量……？",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "如果是這樣的話，",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "就代表有達到你的目的嗎？",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "這真是太好了……",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "嘿嘿，",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "讓你為我操心了♪",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "咦？",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "但",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "惡靈消失了，這表示……",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "從此就能不再當個冒失女僕了！！！！",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "啊……",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "鈴莓，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "關於這件事……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "呀啊啊！？",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我、",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我為什麼又摔倒了！？",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "應該已經不會再冒失了啊！？",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我也是剛剛才知道這件事的，",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n但那個惡靈",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "似乎一開始就棲息在這座塔。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "也就是說……",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "鈴莓的冒失",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "和惡靈是沒有關聯的。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……很抱歉，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "是我誤會了。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "怎、",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "怎麼這樣……！",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……那個，",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "還有一件事……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "其實惡靈一開始盯上的人",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "是{player}。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "咦！？",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "它盯上了這位嗎！？",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "但就在",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "它正要附身的那一瞬間，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "鈴莓在剛剛好的時機跌倒……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n讓它只能直接附身在鈴莓身上。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "惡靈好像是在記恨這件事，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "才會為非作歹。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "就像我之前說過的，",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這個人的運勢糟糕透頂。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n這應該是",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "因為那個惡靈會附身到他身上。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "但是",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "鈴莓的冒失",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "卻保護了這個人。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "陰與陽……",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不管是什麼事情，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "都有好的一面和壞的一面……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n所以說，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "就算鈴莓失敗了，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "也不會全都是壞事。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "也就是說，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我想說的",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "其實是…………",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "哇哇！？",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "忍！？",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "……呼，",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我沒有冒失，成功接住妳了。",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "嗚嗚……",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "真抱歉。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我似乎耗盡了瑪那，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "好像",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "已經來到極限了……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "忍！？",
+        "unit_id": 2411,
+        "voice": "vo_adv_7018005_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "妳沒事吧！？",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n喂，小伙子！！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "別愣在那邊，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "快去找出口！！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "也就是說……",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "這樣所有人",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "都能回家了呢！",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那個……",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "請各位先回去吧。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "先休息一下再走。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "請等一下！",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "能不能讓我",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "來負責這個任務呢！？",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我也",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "想為忍做些什麼！",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "當然了，",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "妳可能會擔心我會不會跌倒",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "而感到不安。",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "不過，",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "就算是超級沒用的冒失女孩，",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "認真起來時還是能拿出實力的！",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "不過……",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "前提是忍不介意我這麼做……",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "鈴莓……",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那就",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "拜託妳了。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "包在我身上♪",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n我平常就有在做各種家務，",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "算是很有力氣喔！",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "那就失禮了……",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "嘿",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "咻！",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那個……",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不會很重嗎……？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "完全不會！",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "妳比棉被還要輕喔♪",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "……啊哇！？",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "……嘿呦咻～！",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n呼～",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我認真起來時還是能拿出實力的！",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "呵呵……",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "謝謝妳，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "鈴莓。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "這是我要說的話喔。",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "妳願意肯定最真實的我……",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "這讓我覺得很開心。",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我接下來可能還是會經常冒冒失失的，",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "但就算跌倒了，我也不會因此受挫，",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "而是會樂觀地繼續努力！",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "……啊，",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "話雖如此，",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我不會讓大家太過順著我，",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n還是會朝著",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "改掉自己的冒失這個目標繼續前進！",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這很像鈴莓的作風呢。",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那個……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "如果妳不介意的話，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我可以再為妳占卜嗎？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "因為",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我也想幫助鈴莓。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不是以委託的形式，",
+        "unit_id": 103111,
+        "voice": "vo_adv_7018005_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "而是單純的",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "私下占卜……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "換句話說，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這是為了我的修行……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "妳覺得",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這樣如何呢？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "可以嗎！？",
+        "unit_id": 102511,
+        "voice": "vo_adv_7018005_110"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我才想拜託妳呢！",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "啊，",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "既然都要這麼做，",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "要不要試著一起來做菜呢！？",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在{player}的看顧下，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n鈴莓雖然差點跌倒好幾次，卻還是繼續背著忍，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n一邊開心地聊著以後的事情，一邊踏上歸途。"
+    }
+]

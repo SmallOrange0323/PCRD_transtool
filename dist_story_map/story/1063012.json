@@ -1,0 +1,2319 @@
+[
+    {
+        "type": "background",
+        "background": "500190"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}和亞里莎一起，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n來到了精靈之森。"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "……亞里莎。",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n妳來了啊。",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "讓妳久等了！",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "之前那時候",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "真的很謝謝妳。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n請妳再讓我",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "參加一次森林守衛的測驗！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "……嗯，",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n妳的眼神變得很不錯呢。",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "我同意妳參加。",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "妳看來……",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "已經",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "做好準備了呢。",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "是啊！",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……要看好喔，{player}。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我會努力的！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "嗯！",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "那麼……",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "出來吧！",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "我再次",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "說明規則。",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "我要測試妳，",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "看是妳先擊倒魔物……",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "或我確認妳已經無法戰鬥，",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "除此之外測驗都會繼續下去。",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "魔物身上施有加護。",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n只有使用",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "灌注了妳",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "堅強意志的箭……",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "才能夠射穿魔物。",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……好的！",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "那麼……",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "意志測驗，",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "再次開始！",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "喝！",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "接招！",
+        "unit_id": 106311
+    },
+    {
+        "type": "background",
+        "background": "500190"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……果然",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "沒有效果，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "光靠我現在的心態，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "是不行的。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我和{player}一起相處，",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "才第一次察覺到，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n我一直……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "都認為我必須變得",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "像蘿莎麗亞那樣才行，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我一直認為應該相信、",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "並且順從蘿莎麗亞的教誨。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "因為",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "又弱小又沒用的我，原本的樣子……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n是不會受到任何人認可的。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "對自己沒自信的我，",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "並不是想成為森林守衛……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "而是想成為蘿莎麗亞。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n我想成為充滿自信，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "又有勇氣，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "那麼帥氣的",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "蘿莎麗亞。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "唔！",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "但是……",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n現在已經不一樣了。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "吸……",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n吐……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "{player}",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "願意相信我，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "說了我只要符合自己的風格",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "就好，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n接受了",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "最真實的我……！　",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "雖然我還是不太有自信，",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "會害怕自己是不是",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "會失敗。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "但是，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我想相信！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n相信願意相信我的",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "{player}……！　",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我要",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "相信我自己！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "相信我可以不必追逐蘿莎麗亞的背影……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n而是以亞里莎原本的樣子……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "當上",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "森林守衛！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我不會",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "再失準了……！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n我的箭，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "會貫穿你！",
+        "unit_id": 106311
+    },
+    {
+        "type": "background",
+        "background": "500190"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎啊啊啊啊！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "這是……！",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "真是太棒了！",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……嗯！",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "謝謝你！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "background",
+        "background": "500190"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "呀",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "啊！？",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "怎麼會……！？",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n亞里莎那一擊，",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "應該含有足以打倒魔物的力量才對……",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "難道說，",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "魔物失控了嗎！？　",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "再這樣下去就不好了，",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "現在立刻暫停測驗……！",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……沒問題的！",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "亞里莎……！？　",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……我還",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "可以戰鬥！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n我會把",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "更加堅強的意志……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n灌注在這支箭裡，射出去的！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "這……！",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "太亂來了！",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "連你都……",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "……要是我覺得太危險，",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "就會立刻阻止喔！",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……謝謝你，{player}。",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "包在我身上吧！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我要灌注更加",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "堅強的意志……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我心中所擁有的，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "最強烈的意志！　",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "對森林守衛的熱情？",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n……不，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "不對。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "對蘿莎麗亞的憧憬？",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……不，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "這也不對。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "對我來說，",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "最重要的……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "現在，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "最重要的心意……！　",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "喝啊啊啊……！",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎啊！？　",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……從初次見面時就一直很溫柔。",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n當我遇到困難時會陪在我身邊。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "給了我最需要的話語。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "要是",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我沒有遇見{player}的話……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "就不會有現在的我了。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "願意相信我的人。",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "願意接受我的人。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "改變了……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我的世界的人。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我……",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我啊，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "{player}……！　",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……最喜歡",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "你了──！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "──將未來承載於這支箭上！",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_044"
+    },
+    {
+        "type": "background",
+        "background": "500190"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！？　",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "呀啊啊！？",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n這、",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "這股威力是……！？　",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……成功了。",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "成功了！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n{player}！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "……真是驚人。",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n遠遠超出了一般測驗時",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "所需的預估威力……",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "能抱有這麼堅強的意志，",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "真是太棒了。",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n妳要好好珍惜喔，",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "亞里莎。",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "那個……",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "太感謝妳了！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n我真的，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "要為很多事答謝……！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "別在意，",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "我是森林的使者。",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n有新的森林守衛誕生，",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "就是對我而言最好的報酬。",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "恭喜妳，",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "亞里莎。",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "雖然正式的認可還要等到之後……",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "但妳已經是",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "有資格當森林守衛的人了！",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……！",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "謝謝妳！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "那麼，",
+        "unit_id": 6511,
+        "voice": "vo_adv_1063012_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "我要回去報告這次的結果了。",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "\n",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "……之後就交給兩位年輕人，",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "森林的使者",
+        "words": "你們慢慢來吧。",
+        "unit_id": 6511
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "咦、",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "咦咦！？",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n……她、",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "她究竟在說什麼啊！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "啊哈哈！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "謝謝！",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……我說啊，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "{player}。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我們的約定……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "你還記得嗎？",
+        "unit_id": 106311
+    },
+    {
+        "type": "background",
+        "background": "500181"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "這邊這邊！",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "從這邊看下去……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "你看！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n可以一口氣",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "看見整座城鎮對吧？",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "耶嘿嘿，",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "這裡真的是我很喜歡的地方！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n能和{player}一起來這裡，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我超高興的！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……我真的，",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "很謝謝你喔。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n多虧有{player}，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我終於明白了蘿莎麗亞說的話是什麼意思了。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "蘿莎麗亞她一定是",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "想對我說",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "要我「相信自己」吧。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "都是因為你願意相信我……",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我才也",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "能夠相信我自己。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "呵呵。",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "總覺得",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "和{player}聊著天……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "就好平靜喔。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n直到剛才還在戰鬥這件事，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "感覺好不真實。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "不過話又說回來，",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "真是漫長的一天呢！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我還真是",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "有點累了。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "去參加森林守衛的測驗，",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "挑戰失敗……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n和{player}做了一樣的，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "奇妙的夢……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "最後",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "還射出了超強力的箭……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……咦？",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n那、",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "那時候……？",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "這麼說來，",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我在射出那支超強力的箭時……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "好像，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "不經意地講出了什麼……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我那時是在想什麼來著？",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我記得……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我是在想{player}。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n然後……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "喜歡……",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "哇啊！？",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n沒沒沒沒沒、",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "沒什麼啦，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "沒什麼！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "啊哈、",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "啊哈哈……！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "喜、",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "喜歡，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我說了喜歡嗎……！？",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n我",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "該不會……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "喜歡",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "{player}嗎……！？",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "確實",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我只要和他待在一起就很開心、",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "很高興……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "在等待下次見面時，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "總覺得很漫長……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "只要觸碰到他心就會怦怦地跳，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "卻想要再觸碰久一點……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "嗚、",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "嗚嗚……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "怎、",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "怎麼辦……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n我的心跳聲，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "超吵的……！　",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……我、",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我說啊，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "{player}。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我、",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我要說嗎？",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我要說出來嗎？",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "怎、",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "怎麼辦怎麼辦！？",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "　",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "那、",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "那個啊，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n這，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "呃……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n就是……！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……今！",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "今後也請",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "多多指教喔！",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……謝謝你！",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……唉。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……不行。",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "太難為情了，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我說不出口。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "但是……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "現在",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "先這樣就好了吧。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "多虧有{player}，",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我才能……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n不再只是模仿蘿莎麗亞，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "而是作為亞里莎",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "跨出了第一步。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "所以，",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "我要從這裡開始。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "為了能作為亞里莎，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "以我自己的風格……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "站在{player}的身邊。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "因為我喜歡他的這份心意，",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "已經無法再蒙混過去了。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "希望可以一點點，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "一點點，",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "慢慢接近他身邊。",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……像這樣。",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "\n",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "只是偷看他的側臉而已……",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "應該沒關係吧？　",
+        "unit_id": 106311
+    },
+    {
+        "type": "dialogue",
+        "name": "亞里莎",
+        "words": "……呵呵。",
+        "unit_id": 106311,
+        "voice": "vo_adv_1063012_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "之後，{player}與稍微變得成熟的亞里莎共度了時光，直到夜晚到來。"
+    }
+]

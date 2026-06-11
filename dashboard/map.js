@@ -45,57 +45,36 @@ const QuestMapModule = {
             .replace(/"/g, "\\\"");
     },
 
-    getStoryItemHtml(s, chDisplay, titleDisplay) {
-        let stillId = s.still_id;
-        let bgId = s.bg_id;
-        if (!stillId && !bgId) {
-            if (this.storyThumbnails && this.storyThumbnails[s.id]) {
-                const thumbData = this.storyThumbnails[s.id];
-                stillId = thumbData.still_id;
-                bgId = thumbData.bg_id;
-            }
-        }
-
-        let thumbUrl = 'https://redive.estertion.win/card/full/100431.webp'; // 預設的 CG
-        if (stillId) {
-            const stillIdStr = String(stillId);
-            const stillIdNum = Number(stillId);
-            if (stillIdStr.length === 9 || stillIdNum > 10000000) {
-                thumbUrl = `https://redive.estertion.win/card/story/${stillId}.webp`;
-            } else {
-                thumbUrl = `https://redive.estertion.win/card/full/${stillId}.webp`;
-            }
-        } else if (bgId) {
-            thumbUrl = `https://redive.estertion.win/bg/jpg/${bgId}.jpg`;
-        } else {
-            // Fallback 策略：如果完全沒有縮圖與背景
-            if (s.isEvent && s.eventValue) {
-                thumbUrl = `https://redive.estertion.win/event_still/banner_${s.eventValue}.webp`;
-            } else if (s.type === 'chara' && s.groupId) {
-                const baseId = Math.floor(s.groupId / 100) * 100 + 31;
-                thumbUrl = `https://redive.estertion.win/card/full/${baseId}.webp`;
-            }
-        }
-        
-        return `
-            <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}"
-                 id="story-item-${s.id}"
-                 onclick="QuestMapModule.selectStory(${s.id})">
-                <div class="story-item-thumb">
-                    <img src="${thumbUrl}" onerror="this.onerror=null; this.src='https://redive.estertion.win/card/full/100431.webp';" alt="thumbnail">
-                </div>
-                <div class="story-item-content">
-                    <div class="story-item-ch">${this.escapeHtml(chDisplay)}</div>
-                    <div class="story-item-title">${this.escapeHtml(titleDisplay)}</div>
-                </div>
-                <div class="story-item-arrow">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                    </svg>
-                </div>
-            </div>
-        `;
-    },
+ getStoryItemHtml(s, chDisplay, titleDisplay) {
+ let thumbHtml = '';
+ if (this.storyThumbnails && this.storyThumbnails[s.id]) {
+ const thumbData = this.storyThumbnails[s.id];
+ if (thumbData.still_id) {
+ thumbHtml = StoryAssetService.getStillHtml(thumbData.still_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
+ } else if (thumbData.bg_id) {
+ thumbHtml = StoryAssetService.getBackgroundHtml(thumbData.bg_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
+ }
+ }
+ if (!thumbHtml) {
+ thumbHtml = `<img class="story-thumb-img" src="https://redive.estertion.win/card/full/100431.webp" onerror="this.onerror=null; this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';" style="width:100%;height:100%;object-fit:cover;" alt="thumbnail">`;
+ }
+ return `
+ <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}" id="story-item-${s.id}" onclick="QuestMapModule.selectStory(${s.id})">
+ <div class="story-item-thumb">
+ ${thumbHtml}
+ </div>
+ <div class="story-item-content">
+ <div class="story-item-ch">${this.escapeHtml(chDisplay)}</div>
+ <div class="story-item-title">${this.escapeHtml(titleDisplay)}</div>
+ </div>
+ <div class="story-item-arrow">
+ <svg viewBox="0 0 24 24">
+ <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+ </svg>
+ </div>
+ </div>
+ `;
+ },
 
     getCharaRealName(name) {
         if (!name) return "";
@@ -486,10 +465,14 @@ const QuestMapModule = {
         this.safeRender(() => this._render());
     },
 
-    goBackToMenu() {
-        this.currentView = 'menu';
-        this.safeRender(() => this._render());
-    },
+ goBackToMenu() {
+ this.currentView = 'menu';
+ this.safeRender(() => this._render());
+ },
+
+ handleFloatingBack() {
+ this.goBackToMenu();
+ },
 
     enterCategory(type) {
         this.currentView = 'list';
@@ -571,9 +554,11 @@ const QuestMapModule = {
                 </div>
                 </div>
             </div>
-            `;
-            return;
-        }
+`;
+ const existingBackBtn = document.querySelector('.floating-back-btn');
+ if (existingBackBtn) existingBackBtn.remove();
+ return;
+ }
 
         if (this.activeTabType === 'speaker') {
             this.renderSpeakerTab(tab);
@@ -599,10 +584,11 @@ const QuestMapModule = {
 
         const safeChapterKeys = chapterKeys.map(k => this.escapeHtml(k));
 
-        tab.innerHTML = `
-        <div class="map-container">
-            <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
-                <button onclick="QuestMapModule.goBackToMenu()" class="back-to-menu-btn" style="
+ tab.innerHTML = `
+ <div class="floating-back-btn" onclick="QuestMapModule.handleFloatingBack()" style="position: fixed; top: 20px; left: 20px; z-index: 9998; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #2d6bcf, #1a4a9e); color: #fff; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; box-shadow: 0 4px 15px rgba(26, 74, 158, 0.5); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.15)'; this.style.boxShadow='0 6px 20px rgba(26, 74, 158, 0.7)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(26, 74, 158, 0.5)';">←</div>
+ <div class="map-container">
+ <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
+ <button onclick="QuestMapModule.goBackToMenu()" class="back-to-menu-btn" style="
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -1517,10 +1503,11 @@ const QuestMapModule = {
             }
         });
 
-        tab.innerHTML = `
-            <div class="map-container glass-card">
-                <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
-                    <button onclick="QuestMapModule.goBackToMenu()" class="back-to-menu-btn" style="
+ tab.innerHTML = `
+ <div class="floating-back-btn" onclick="QuestMapModule.handleFloatingBack()" style="position: fixed; top: 20px; left: 20px; z-index: 9998; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #2d6bcf, #1a4a9e); color: #fff; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; box-shadow: 0 4px 15px rgba(26, 74, 158, 0.5); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.15)'; this.style.boxShadow='0 6px 20px rgba(26, 74, 158, 0.7)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(26, 74, 158, 0.5)';">←</div>
+ <div class="map-container glass-card">
+ <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
+ <button onclick="QuestMapModule.goBackToMenu()" class="back-to-menu-btn" style="
                         display: flex;
                         align-items: center;
                         justify-content: center;

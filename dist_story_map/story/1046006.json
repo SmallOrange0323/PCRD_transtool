@@ -1,0 +1,1228 @@
+[
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}，\n在打倒惡徒「惡德伊商會」的珠希的鼓勵之下，\n成為收到小偷犯罪預告的那戶人家的保鑣。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "當真正抓到小偷時，發現居然是珠希。\n珠希說著一定有什麼搞錯了，\n但美少女義賊・幻影貓的真正身分被暴露在眾人面前。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "雖然珠希就這樣被王宮騎士團帶走，\n但王宮騎士團離開之後，\n不知為何掉下了「惡德伊商會」的名片。"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性１",
+        "words": "喂，你聽說幻影貓的事情了嗎？",
+        "unit_id": 311,
+        "voice": "vo_adv_1046006_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性１",
+        "words": "\n她到好人家中偷竊，",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性１",
+        "words": "\n被王宮騎士團抓住的傳聞……",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性２",
+        "words": "嗯嗯。",
+        "unit_id": 1011,
+        "voice": "vo_adv_1046006_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性２",
+        "words": "\n她居然從好人那裡偷錢，終於暴露身分了。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "我明明那麼相信幻影貓，",
+        "unit_id": 411,
+        "voice": "vo_adv_1046006_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n有種被背叛的心情……",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性１",
+        "words": "果然，沒有什麼義賊嘛。",
+        "unit_id": 311,
+        "voice": "vo_adv_1046006_003"
+    },
+    {
+        "type": "background",
+        "background": "500340"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在墮落的義賊・幻影貓的話題，\n傳遍整個城鎮的當晚――"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "……喵？ ",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "有聲音從單人牢房外傳來喵……",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "這個聲音是……！？",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n你為什麼會在這裡……",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "你說來跟我說話嗎……？",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "這樣啊……你居然為了跟我說話，",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n特地到拘留所來喵……",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "……{player}。",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "我可能已經無法再和你說話了……",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "所以我要為一直以來發生的所有事情道歉喵。",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "……對不起，一直以來瞞著你許多義賊的事喵。",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n而且，",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n還讓你參與了行動……",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "可能我最近太順利了，",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n所以太得意忘形了喵……",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "因為如此，我也沒有好好調查，",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n就到無辜的人家中偷竊了喵……",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "現在想起來，",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n那個時候你阻止我真是太好了喵。",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "說實話，我應該聽你的話慎重行事才對喵……",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "我真的很抱歉喵……",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n也許，他們會追溯過去的事，",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n你也會被追究責任也說不定喵。",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "但是，不用擔心喵。",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "無論如何，",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n我會為了不讓你之後被問罪而努力喵。",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "全部，",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "全─部都是我的錯……",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n即使在法庭上，我也會這麼作證的喵。",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "所以──",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "所以，在這次談話之後，",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n你……和我就是沒有關係的人喵。",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "一直以來受你照顧了喵。",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "重新回想的話，我總是受到你的幫助喵。",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "初次見面時也是……小貓不見的時候也是……",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n我當義賊的時候也是……",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "喂。",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n至今為止和你一起度過的時光，我很開心喵。",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "……謝謝你喵……",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "那麼，還有三秒，",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n你和我就是沒有關係的人喵。",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "三、二、",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "一……",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "喵嗚？",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n喵───！？",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "咳，",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "喵嗚！",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "發、發生什麼事了喵……！？",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "這是……拘留所的牆壁被……",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "難道，你是來救我的喵……？",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "嗅嗅……這個味道是火藥……？",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "難道你用炸彈炸毀牢房了喵……？",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "笨蛋笨蛋！",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n你為了讓我從拘留所逃走而炸毀牆壁……",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "搞不好你也有可能會變成逃犯的喵。",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "但還是覺得……太好了喵！？",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "……咦？",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n你叫我看後面……",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "啊──！ 這裡是！",
+        "unit_id": 104611
+    },
+    {
+        "type": "background",
+        "background": "500012"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "這裡是之前我曾經偷竊過的宅邸……",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "是惡德伊商會的宅邸喵！",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "這裡不是拘留所嗎喵……？",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "也就是說，那個騎士團是惡德伊的手下？",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "就算如此，惡德伊為什麼要做這種事……",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "你們，站住！",
+        "unit_id": 1,
+        "voice": "vo_adv_1046006_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "！？",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "你是……惡德伊！",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "惡德伊，為什麼你要這樣做喵。",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n想向我復仇的話，直接引誘我到這裡就好了喵。",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "呵呵呵，前陣子受你的照顧了呢，珠希。",
+        "unit_id": 911,
+        "voice": "vo_adv_1046006_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "\n你問我為什麼要這樣做……？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "\n因為就算殺了你，也無法完成我的復仇！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "完成復仇，喵……？",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "我的目的就是……",
+        "unit_id": 911,
+        "voice": "vo_adv_1046006_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "\n讓最近在社會上，受到吹捧的義賊・幻影貓的名聲",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "\n跌到谷底喔。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "我想著只要在意見箱內投入信件，她會不會就得意忘形，",
+        "unit_id": 911,
+        "voice": "vo_adv_1046006_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "\n到窮人的家中偷竊呢，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "果然如我所料。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "你到底是多奸詐狡猾的人啊喵……！",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "不過，幻影貓。",
+        "unit_id": 911,
+        "voice": "vo_adv_1046006_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "\n你會馬上得意忘形是事實。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "即使如此，你還是打算要繼續當義賊嗎？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "不知何時妳又會被像我這樣的人欺騙呢！",
+        "unit_id": 911,
+        "voice": "vo_adv_1046006_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "哈────哈哈哈！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "……的確，",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n前陣子的我也許不小心犯了錯喵。",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "……",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "但是，",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n今後的我和至今的我有不同之處喵。",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "……和至今的妳有不同之處嗎……？",
+        "unit_id": 911,
+        "voice": "vo_adv_1046006_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "那是什麼！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "那就是我的身邊有這傢伙喵！",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "的確，我是很任性，",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n有時可能沒有仔細思考就魯莽行事喵。",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "若只有我一個人的話，有時也許會犯錯……",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "但是……！",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "但是，若有這傢伙在我身邊的話……！",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "兩人的話就會不同喵！",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "而且，即使兩人都犯了錯，",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "也已經做好一起下地獄的覺悟喵！",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "可惡……妳這小鬼啊啊！",
+        "unit_id": 911,
+        "voice": "vo_adv_1046006_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "去死吧！！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "放心喵！",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "嘿、咻！",
+        "unit_id": 104611
+    },
+    {
+        "type": "background",
+        "background": "500012"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "可惡",
+        "unit_id": 911,
+        "voice": "vo_adv_1046006_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "\n你這小子不要妨礙我！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "喵，喵，",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "喵！",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n這個……如何喵？",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "呃……！？ 放、放開我！",
+        "unit_id": 911,
+        "voice": "vo_adv_1046006_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "就是現在喵！",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_054"
+    },
+    {
+        "type": "background",
+        "background": "500012"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "喀啊……！ ",
+        "unit_id": 911,
+        "voice": "vo_adv_1046006_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "這、這……不可能……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "做得好喵。",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n惡德伊好像昏過去了喵。",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "我們趁現在逃走吧喵！",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "啊……對了，既然如此……！",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "你稍等我一下喵！",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "…………嘿咻。",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "呼。",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "你看這個包袱喵。",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "喵哈哈，大收獲喵。",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n是惡德伊商會靠惡劣手段所存的錢喵。",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "將這些發送出去的話，不僅能讓惡德伊嚐到苦頭，",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n也能讓城鎮裡的大家開心喵！ ",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "所以，發送……",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "啊！",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "可以……",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "將這些發送出去嗎喵？ {player}？",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "……謝謝你喵。",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "那麼，我去囉喵！",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "來吧，大家！",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "你們盡情地將這些錢發出去吧喵！",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "貓咪們",
+        "words": "喵─！",
+        "unit_id": 1711
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "乖乖！",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "那麼，大家出發吧喵！",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "喵───！ 城鎮的大家喵！",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n這是幻影貓對造成大家困擾的賠禮喵──！",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "……這樣就可以了。",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "喵，喵，喵─！",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n也要到我前陣子搞錯而去偷竊，造成對方困擾的那戶人家",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "好好發送才行喵！",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "……喂。",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "雖然我很任性，輕率……",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n會犯錯……",
+        "unit_id": 104611
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "……今後也請多多指教喵！",
+        "unit_id": 104611,
+        "voice": "vo_adv_1046006_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}與笑著說話的珠希，\n為了將剩下的錢發送出去，\n一起奔馳在夜晚的城鎮中。"
+    }
+]

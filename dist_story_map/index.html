@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCR 劇情與角色導航站</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 樣式表 -->
+    <link rel="stylesheet" href="style.css?v=4.5">
+
+    <!-- 函式庫 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
+</head>
+<body>
+    <!-- 載入覆蓋層 -->
+    <div id="loading-overlay">
+        <div class="loader-container">
+            <h2 style="margin-bottom: 20px; text-align: center;">PCRD Story Map</h2>
+            <div class="loader-bar">
+                <div id="loader-progress" class="loader-progress"></div>
+            </div>
+            <div id="loader-text" class="loader-text">正在初始化引擎...</div>
+        </div>
+        <div id="cors-warning" style="display: none; margin-top: 30px; max-width: 400px; color: #ff6b6b; text-align: center; font-size: 0.85rem;">
+            ⚠️ 檢測到使用 file:// 開啟。由於瀏覽器 CORS 限制，資料庫下載可能會失敗。請使用 Live Server 或本地 HTTP 伺服器開啟。
+        </div>
+    </div>
+
+    <!-- 導航列 -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <span class="icon">🗺️</span> PCRD 劇情與角色導航站
+        </div>
+        <div class="nav-tabs">
+            <button id="tab-map-btn" class="tab-btn active" onclick="switchTab('map')">劇情地圖</button>
+            <button id="tab-characters-btn" class="tab-btn" onclick="switchTab('characters')">角色圖鑑</button>
+        </div>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <select id="region-selector" class="region-select" onchange="PCRDatabase.switchRegion(this.value)">
+                <option value="tw">台服 (TW)</option>
+                <option value="jp">日服 (JP)</option>
+            </select>
+        </div>
+    </nav>
+
+    <!-- 主內容區 -->
+    <main class="container">
+        <!-- 分頁 1: 劇情地圖 -->
+        <div id="map-tab" class="tab-content active"></div>
+
+        <!-- 分頁 2: 角色 -->
+        <div id="characters-tab" class="tab-content"></div>
+    </main>
+
+    <!-- 角色詳情彈窗 -->
+    <div id="char-detail-modal" class="modal-overlay" onclick="if(event.target === this) CharactersModule.closeDetail()">
+        <div class="modal-content glass-card" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="CharactersModule.closeDetail()">×</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- 程式腳本 -->
+    <script src="db.js?v=5.1.8"></script>
+    <script src="avatar-service.js?v=5.1.8"></script>
+    <script src="story-asset-service.js?v=5.1.8"></script>
+    <script src="chapter-data.js?v=5.1.8"></script>
+    <script src="characters.js?v=5.1.8"></script>
+    <script src="map.js?v=5.2.1"></script>
+
+    <script>
+        console.log("Main script block in story_map.html starting...");
+        // 檢查是否為本地檔案
+        if (window.location.protocol === 'file:') {
+            document.getElementById('cors-warning').style.display = 'block';
+        }
+
+        // 切換分頁
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById(tabId + '-tab').classList.add('active');
+            document.getElementById('tab-' + tabId + '-btn').classList.add('active');
+
+            // 如果分頁內容是空的，進行渲染
+            if (tabId === 'map' && document.getElementById('map-tab').innerHTML.trim() === '') {
+                QuestMapModule.render();
+            } else if (tabId === 'characters' && document.getElementById('characters-tab').innerHTML.trim() === '') {
+                CharactersModule.render();
+            }
+        }
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', async () => {
+            const progress = document.getElementById('loader-progress');
+            const text = document.getElementById('loader-text');
+            const regionSelector = document.getElementById('region-selector');
+
+            // 同步選擇器狀態
+            if (regionSelector) {
+                regionSelector.value = PCRDatabase.currentRegion;
+            }
+
+            try {
+                // 載入資料庫
+                await window.PCRDatabase.initDatabase((msg, pct) => {
+                    text.innerText = msg;
+                    progress.style.width = pct + '%';
+                });
+
+                // 移除載入遮罩
+                const overlay = document.getElementById('loading-overlay');
+                overlay.style.opacity = '0';
+                setTimeout(() => overlay.style.display = 'none', 500);
+
+                // 預設渲染劇情地圖
+                QuestMapModule.render();
+            } catch (err) {
+                text.innerText = '初始化失敗，請重新載入頁面';
+                text.style.color = '#ff6b6b';
+                console.error(err);
+            }
+        });
+    </script>
+</body>
+</html>

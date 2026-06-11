@@ -1,0 +1,4456 @@
+[
+    {
+        "type": "background",
+        "background": "500651"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "這是在{player}與涅妃‧涅羅一同"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n拯救了吉歐‧格黑納的村子之後，過了一陣子的事……"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "──騎士閣下呀，",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "此次",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "要再度受恁照拂了。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "恁帶領奴家等人",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "離開「吉歐‧格黑納」",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "前往「阿斯特朗」……",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n並承接大江戶之都的嚮導一事，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家深表感謝。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "哎呀～",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "終於來了呢！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n涅妃‧涅羅殿下",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "自從聽騎士閣下先生說了大江戶的事以來，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n就一直說總有一天想來觀光呢。",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "雖奴家",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "已由妹妹涅婭那",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "耳聞大江戶的傳聞，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n然再次聽聞騎士閣下",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "言及食堂與溫泉旅館之事，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n便期望",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "務必親自造訪一遭。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "雖然還不太了解這邊的世界……",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "但這裡看起來",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "是個符合涅妃‧涅羅殿下喜好的城鎮。",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n真是期待呢～",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "嗯……",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家的氣質",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "與東國有相通之處？",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "原來如此，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "過路女子的服裝飾品，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n與奴家的品味亦有相似之處……",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "呵呵。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "個中原由",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "究竟為何呢。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "實乃不可思議啊。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "……嗯～",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "其實，",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "我這次之所以會一起來，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "也跟那個有關係呢～",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "光就騎士閣下先生所說的，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "總～覺得",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n涅妃‧涅羅殿下似乎跟東國文化有什麼關係啊。",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "她跟我和其他吉歐‧格黑納的居民",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "說話方式完全不同，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n總～覺得",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "穿著",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "也很有東國的感覺。",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "作為隨從，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "我必須知道主人的事才行！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "就只是……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "作為一個隨從！　",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "哎，",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "米亞呀。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n若不想被丟下",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "便趕緊過來。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "啊，",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "請等等我，涅妃‧涅羅殿下～！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n帶著錢包的可是我喔～！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "呵呵呵……",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n如期望一般，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "此都城",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "甚合奴家心意。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n不論望向何處，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "其造型皆令人感到",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "愉悅暢快，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "極具風情。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "確實是很稀奇，但是",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "我",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "肚子餓了啦～",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n差不多該來吃午餐了吧～",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "……啊，",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "那邊的先生！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n你知道",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "這附近有什麼感覺不錯的餐廳嗎？",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "要是菜單上",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "有生蛋之類的，就太好了～",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "鎮上的居民",
+        "words": "嗯？",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "鎮上的居民",
+        "words": "\n那個的……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鎮上的居民",
+        "words": "話啊啊啊啊！？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "咦、",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "咦。",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "鎮上的居民",
+        "words": "搞什麼鬼啊，",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "鎮上的居民",
+        "words": "這些魔物是怎麼進來的！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鎮上的居民",
+        "words": "\n誰",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鎮上的居民",
+        "words": "去把【王宮騎士團】叫來啊！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "嗯。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n如此看來，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "似是招致了不必要之誤解。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n奴家記得涅婭",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "確曾說過，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "妖魔人於此",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "便如同異邦之人呢。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "有人通報的地方是這裡吧！",
+        "unit_id": 711,
+        "voice": "vo_adv_1297003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "\n是沒見過的",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "新種魔物嗎……",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "我會在魔物鬧事前解決掉的！",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "不，",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "比起異邦人，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "感覺是被當成闖入鎮上的魔物來處理了！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n這樣下去，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "別說觀光了，甚至會變成外交問題～！？",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "還請恁",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "稍待。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n此處便由奴家來調停吧。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "哦，",
+        "unit_id": 711,
+        "voice": "vo_adv_1297003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "竟然會說人話……",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "越來越危險了。",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "\n畢竟那樣的傢伙",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "往往也具有智慧啊！",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "掌握人語乃理所當然之事。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n咱們正是人類，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "此身裝扮──",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "僅為變裝罷了。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "妳說什麼？",
+        "unit_id": 711,
+        "voice": "vo_adv_1297003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "\n等等，",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "真的是變裝嗎？",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "因長久引頸期盼前來大江戶觀光，",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n當那機會來臨之際，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家便愚昧地認為應以合適的",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "盛裝前來拜訪。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "然無可否認",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "似是有些誤解之處……",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "就就就、",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "就是說啊～！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n雖然我的尾巴也做得非～常逼真，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "但其實是可拆卸的",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "人造物！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n啊！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "因為是用魔法連接的，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "所以現在拿不下來就是了～！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "這樣啊……",
+        "unit_id": 711,
+        "voice": "vo_adv_1297003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "如果是這樣，",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "抱歉打擾到妳們了。",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "\n因為這座城鎮",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "也會定期受到魔物危害，",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "\n所以勢必會變得敏感。",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "哪裡哪裡。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n以招致誤解之扮裝來訪，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "乃是咱們的過錯。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "打從心底向恁致歉。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "鎮上的居民",
+        "words": "嗯──",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "鎮上的居民",
+        "words": "\n雖然用字遣詞",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鎮上的居民",
+        "words": "也挺有",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鎮上的居民",
+        "words": "東國的味道啦",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鎮上的居民",
+        "words": "\n……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鎮上的居民",
+        "words": "可是啊……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "總之，",
+        "unit_id": 711,
+        "voice": "vo_adv_1297003_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "我了解狀況了。",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "\n……各位，",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "這些人只是變裝的人類。",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "\n她們並沒有危險，",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "都散了都散了！",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "鎮上的居民",
+        "words": "……既然，",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "鎮上的居民",
+        "words": "連被立了銅像的將軍大人都說沒有問題的話……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鎮上的居民",
+        "words": "\n抱歉造成騷動了啊，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鎮上的居民",
+        "words": "你們幾位。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "得救了～",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "騎士閣下先生、",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "涅妃‧涅羅殿下……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "雖說",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "稍稍有些牽強──",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "幸虧有騎士閣下斡旋，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "才得以脫困。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n此般文化差異，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "亦是異界之旅的醍醐味啊。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "然而──",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "米亞呀？",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家竟不知汝的尾巴",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "可卸下呢。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "待回國之際，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "定要讓奴家好好見識一番？",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "不不不！",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n應該說那個～",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "是一時脫口而出嗎！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "請、",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "請別對我職權騷擾啦～",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "此並非是「職權騷擾」。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n若汝有力量不如人之自覺，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "至少應習會如何巧言應對，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n此乃奴家交代之事。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "汝所擅之事",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "乃是記憶力、計算力，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "及攻擊以外的魔法。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n增進口才，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "便得以補足汝所擅之事，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "而那必將成為默涅與其他士兵所無有，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "汝之長處吧。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "嗚嗚，",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "我會妥善處理的……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家期待著呢。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "……",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "那麼，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "騎士閣下呀？",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n來找尋米亞",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "所盼望之食堂吧。",
+        "unit_id": 129711
+    },
+    {
+        "type": "background",
+        "background": "501880"
+    },
+    {
+        "type": "dialogue",
+        "name": "蕎麥麵店店員",
+        "words": "久等了～",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "蕎麥麵店店員",
+        "words": "\n三份",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "蕎麥麵店店員",
+        "words": "竹簍蕎麥麵、",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "蕎麥麵店店員",
+        "words": "天婦羅",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "蕎麥麵店店員",
+        "words": "拼盤，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "蕎麥麵店店員",
+        "words": "\n還有一顆生雞蛋！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "嗯，",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "實乃極佳之香氣。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "米亞呀？",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "感覺如何。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "嚼嚼……",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "嗯～",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "真好吃呢！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "尤其是",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "這個",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "叫做",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "竹簍蕎麥麵的食物，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n該說是",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "在吉歐‧格黑納",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "幾乎沒有的清爽感嗎！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "好想讓大家也吃吃看呢～",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "啊，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "對了，皇女殿下！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n能不能也在吉歐‧格黑納",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "做竹簍蕎麥麵呢？",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "嗯──",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "那應非容易之事。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "蕎麥乃不適高溫潮濕環境之作物，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n且吉歐‧格黑納",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "本就為不宜農耕的世界。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "當然，",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "若汝希望",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "一人培植蕎麥，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家不會阻止。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家僅會陪同。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "我、",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "我只是說說看而已啦～！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n農業之類的，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "我是絕對做不來的～！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "不不！",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "騎士閣下先生，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "你不知道嗎？",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "農業可是相當辛苦的喔～",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n因為那就像是建立一個魔物會聚集過來的飼料區一樣！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "此亦為",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "吉歐‧格黑納與阿斯特朗的不同之處呢。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "能如這般於大江戶享受便足矣。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "稍後奴家也嚐嚐蕎麥湯吧。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "蕎麥湯？",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "嘿～！",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n醬汁或脂肪這些，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "如果有剩的話通常會被丟棄，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n但在這邊的世界，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "已經進展到開發出後續可食用的飲食了呢～！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "如此精緻的天婦羅……",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "於料理技巧與鑽研上，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n似乎是此處的世界",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "更為深入呢。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n雖說若論以辛香料等烹調之料理，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "吉歐‧格黑納亦不落人後……",
+        "unit_id": 129711
+    },
+    {
+        "type": "background",
+        "background": "500651"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "……呼。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "不論何者皆美味非凡。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n不愧為【美食殿堂】的一員所推薦的",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "料理茶館。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "如此",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "令人更加期待後續導覽了。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "餐後消食要前往何處呢？",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "騎士閣下。",
+        "unit_id": 129711
+    },
+    {
+        "type": "background",
+        "background": "500670"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "呃～？",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n這裡……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "是什麼店呢？",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n排列著許多我沒有看過、",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "像小道具的東西。",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "玩、",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "玩具？",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n這些全部都是嗎？",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "而且，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "還都是些我不知道玩法的東西……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "哈哈哈，",
+        "unit_id": 1412,
+        "voice": "vo_adv_1297003_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "因為這全都是源自東國的東西呢。",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "\n客人們，",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "妳們是外地來的觀光客吧？",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "\n要是有想知道玩法的玩具就跟我說吧。",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "……嗯。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "涅妃‧涅羅殿下，",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "您在做什麼？",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n從剛剛開始就一直用木槌哐哐地敲打圓球。",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "此乃劍玉。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n便是如這般翻轉木槌的",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "同時，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "不讓球落下，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "持續朝上敲打之遊戲。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "哦，",
+        "unit_id": 1412,
+        "voice": "vo_adv_1297003_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "什麼嘛，",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "妳知道劍玉啊？",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "\n",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "而且還很拿手啊，",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "如果沒有相當程度的練習，是無法做到那樣的喔。",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "咦？",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "可是，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "我好像沒見過涅妃‧涅羅殿下",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n在玩這種遊戲的時候……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "……呵呵呵。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "儘管難為情──",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n然奴家從前",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "便總被說",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "於此類遊戲上有天賦。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "如果真的是第一次玩，",
+        "unit_id": 1412,
+        "voice": "vo_adv_1297003_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "那可就不得了啊……",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "\n",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "怎麼樣，",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "還有其他有興趣的東西嗎？",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "嗯……",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "哎呀。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n此物可是花牌？",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "什麼嘛，",
+        "unit_id": 1412,
+        "voice": "vo_adv_1297003_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "妳連花牌也知道？",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "\n",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "這下看來",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "似乎沒有大叔我來解說的機會了啊。",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "有好多描繪著漂亮圖畫的牌呢～",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n這是",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "什麼樣的遊戲？",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "我可能有點想試試看呢～",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "──呵呵。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n此遊戲會將汝所有錢財搜刮一空，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "甚至連臀上皆不留一毛。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "咦咦咦咦！？",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "這可不合常理，",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "蛇臀上可沒有毛呢。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "花牌乃單純",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "按規則",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "爭奪牌卡之遊戲。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n描繪於牌上的",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "為各季節之花、風景",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "與動物。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "……奴家斷然",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "不敢自稱了解呢。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n此些全是",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "僅有耳聞，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "卻未曾遊玩過。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "……",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "這麼說來，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "涅妃‧涅羅殿下",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n和小孩子玩的時候，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "都會玩些沒有人知道的遊戲呢。",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n我記得",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "好像有提過",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "丟沙包、",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "翻花繩之類的……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "仔細一看，",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "這間店裡也……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "雖然有些微的不同，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n但好像也有在賣像是丟沙包的遊戲道具。",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "難不成……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n她和東國",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "有什麼關係，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "並且在隱瞞著嗎……？　",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "…………",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "嗯～",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "雖然說似乎並不是有什麼虧心事，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n但總覺得，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "她露出了非常溫柔的眼神。",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n簡直，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "就像是在懷念什麼一樣……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "店長閣下。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n請替奴家",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "包下一副花牌。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "哦，",
+        "unit_id": 1412,
+        "voice": "vo_adv_1297003_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "多謝惠顧！",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "\n花牌的圖樣很漂亮，",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "果然很適合",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "\n作為大江戶的回憶吧。",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "……正如恁所言。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "啊，",
+        "unit_id": 1412,
+        "voice": "vo_adv_1297003_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "需要規則說明書嗎？",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "\n",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "但話說回來，",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "小姐的說話方式也很像是東國的藝妓，",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "\n既然這麼了解東國文化，",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "我就不用在這邊獻醜了吧。",
+        "unit_id": 1412
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "咦？",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n涅妃‧涅羅殿下的說話方式",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "跟藝妓這種種族很接近嗎？",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "藝妓並非種族，",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "乃職業也。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n正如",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "店長閣下所猜測──",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n奴家的說話方式",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "乃是習自",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "藝妓之風格。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "未曾。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "連一次都不曾……",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "正因如此，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n此次遊覽",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "亦令奴家發自心底期盼。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "嗯嗯～？",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n明明沒去過東國，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "說話方式卻與東國",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n特定職業的人相似……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "我越來越搞不懂了……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家說話風格的由來",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "乃無關緊要之事。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "好了，騎士閣下呀。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n請帶咱們",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "前往下一處景點吧。",
+        "unit_id": 129711
+    },
+    {
+        "type": "background",
+        "background": "500651"
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "來喔來喔，",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "走過路過請別錯過！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "\n順道來參加看看吧！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "\n令人熱血沸騰的大場面武打戲，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "現在正在募集參加者～！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "好像有點吵鬧，",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "是怎麼回事呢？",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n難道是要去討伐魔物之類的嗎？",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "十分有趣的街頭賣藝。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "然而，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "外行臨演所能扮演的角色",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "應有其限制。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "哈哈哈，",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "這話說的可真是嚴格啊。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "\n但正如您所說，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "要是讓客人演出武打場面，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "\n而因此受了傷的話可不行呢。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "不過，",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "我想這一定會成為旅途中的美好紀念。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "\n如何啊，小姐，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "不介意的話要不要參加看看？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "\n是要演出被壞蛋抓住的商人之女喔。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家素來",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "對街頭賣藝感興趣。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "雖遠不及專業伶人仍央求出演，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "著實厚顏至極，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n然若團長閣下允許，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家非常",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "樂意參與。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "咦，",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "這個人是怎麼回事……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "難不成是時代劇狂熱者之類的？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "\n平時就用這種說話方式的人，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "就算在大江戶也不多見啊。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "被壞蛋抓住的商人之女……",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "該怎麼說，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "我不太能想像呢。",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n如果是涅妃‧涅羅殿下，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "感覺就會普通地秒殺盜賊。",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "好了，米亞呀，",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "別說些不識趣之話，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "戲劇便作為戲劇享受即可。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n……",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "騎士閣下，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "很抱歉在恁導覽途中打斷……",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "感激不盡。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "那麼──",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "團長閣下？",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n扮相",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "便以奴家身上之衣著即可嗎？",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "也對呢，",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "畢竟有點東國的感覺，應該沒問題吧！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "\n我們這邊一打出暗號，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "妳就適當地",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "說些「救命──！」、",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "「不要──！」",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "\n這類感覺的台詞就沒問題了。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家清楚明白了。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n為了不予各位演出者帶來困擾，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家會全心全意演出。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "哈哈哈，",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "還請多指教了啊！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "\n",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "一定",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "要展現默契十足的演技，讓觀眾大吃一驚！",
+        "unit_id": 1
+    },
+    {
+        "type": "still",
+        "still": "129700301"
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "──呀哈哈哈哈！",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "\n就算是近山的銀次，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "被用人質要脅也動彈不得啊！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "真是卑鄙，",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "你們這群邪門歪道！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "\n速速",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "將那位小姐放了！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "好，",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "就在這時打出暗號……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "拜託妳囉，小姐！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "啊呀，",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "何等悲慘之結局。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n若奴家非富商之女，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "便不會落得此般情形……！",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "……啊？",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "咦？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "\n這個人在說什麼？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "\n是新型的",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "魔法詠唱嗎？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "笨蛋，",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "別忘了演出的角色啊……！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "\n這可是東國的傳統表達方式……！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "那我不可能會知道的吧……！",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "\n雖然打扮成這樣，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "但我其實是",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "\n在蘭德索爾土生土長的啊……！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "…………",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "哎呀，這可不行……",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "小姐，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "無須悲傷！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "\n我近山的銀次",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "必定會",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "收拾壞蛋！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "切莫衝動，銀次閣下。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n若恁有個萬一，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n奴家",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "可無顏面對……！",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "若奴家的家族",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "放棄財富，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "此事或可得以平息。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n請恁",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "切勿做出捨棄寶貴性命之舉……！",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "別說傻話了！",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "\n像這樣",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "正直生活的妳，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "\n沒必要",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "給這些垃圾們一文錢啊！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "觀看者",
+        "words": "哦哦，",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "觀看者",
+        "words": "那位小姐演得很好嘛！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "觀看者",
+        "words": "\n明明是臨時參加的，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "觀看者",
+        "words": "但卻像是真正的演員啊！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "好棒啊，",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "涅妃‧涅羅殿下～！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n您好亮眼啊～！！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "那個～？",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "當家花旦～！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "這樣說……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "沒錯嗎？",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "就是啊～",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_110"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n這樣開心的涅妃‧涅羅殿下",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "可不多見呢。",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n是不是因為旅行而感到很興奮呢……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "……問題在於",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_111"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "她是「在哪裡」知道「東國風」",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n的「戲劇」的。",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "吉歐‧格黑納",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "當然也不可能有這種活動……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "啊，神明啊……！",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_112"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n請保佑為奴家",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "這般卑微女子",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "捨命的勇夫豪傑吧……！",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "奴……",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_113"
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "奴、",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "奴家……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "勇……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "勇夫、",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "勇夫豪……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "咦……？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "\n隨、",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "隨便怎樣都好啦！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "壞蛋",
+        "words": "給我上～！",
+        "unit_id": 1
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "background",
+        "background": "500653"
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "哎呀～",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_114"
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "小姐還真是令人佩服啊！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "\n竟然能夠以那麼逼真的厲聲演出來炒熱氣氛呢！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "招客",
+        "words": "\n甚至都讓人想僱用妳為正式演員了！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "恁過獎了。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_115"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "然而，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家不久後",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "便得離開大江戶。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n奴家僅能",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "領受恁的心意了。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "不過……",
+        "unit_id": 1,
+        "voice": "vo_adv_1297003_116"
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "妳的語氣",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "和真正的藝妓不同，有些獨特啊。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "\n要是妳有心去學藝，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "務必要去拜訪看看",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "主角",
+        "words": "\n在東國的真正藝妓。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "感謝",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_117"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "恁的建言。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "有朝一日，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家亦想造訪東國之土……",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "呵呵呵……",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_118"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "倘若亦能令騎士閣下",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "感到滿意，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "便不枉奴家賣力演出了。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "亦稍稍出了些汗，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "是時候前往旅店了吧。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "…………",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_119"
+    },
+    {
+        "type": "background",
+        "background": "501892"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "哦。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_120"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n此處",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "便是騎士閣下經常光顧之溫泉旅館呀。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "洋溢著東國雅趣的格局與擺設，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "實在甚好。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "…………",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_121"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "米亞呀。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_122"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n為何汝",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "從方才便露出如此心事重重的神情？",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "那個……",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_123"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "就是……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n可、",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "可以請您不要生氣，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "然後聽我說嗎？",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "但說無妨。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_124"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n即便是汝打碎奴家所珍愛的茶具之時，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n奴家亦未曾喝斥過汝吧。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "唔咕，",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_125"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "那時真的非常抱歉……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n不過，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "那個，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "並不是那種事。",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n我之前",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "就一直有點在意某件事。",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "啊。",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_126"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "果然，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "騎士閣下先生也很在意嗎？",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "涅妃‧涅羅殿下",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "明明應該一直都在吉歐‧格黑納……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n但是對東國文化",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "未免也太過清楚了。",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "尤其是，",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_127"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "雖說和正式的有些不同，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n但是因為有點興趣而閱讀了書籍，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n所以使用東國語氣的用字遣詞……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "這",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "感覺不太能解釋呢～",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "我是這麼想的……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "是以？",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_128"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n汝便認為奴家與吉歐‧格黑納並無關聯，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n實則乃東國出身……",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "可是如此？",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "唔……",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_129"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "……只、",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "只有",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "一點……",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "對不起對不起！",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_130"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "請不要懲罰我～！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "──呵呵。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_131"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n還真是",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "坦率的僕從。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "此般程度，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家可不至於懲罰呢。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "此外──",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_132"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n對於汝之疑問，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "便答以「否」吧。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "……您不是東國出身的，",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_133"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "是嗎？",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "可是，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "那樣的話～",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "──呵呵。",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_134"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "古今中外，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "女性",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "乃是充斥祕密的存在。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "然而……",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_135"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "欠了騎士閣下諸多恩情。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n若恁期望，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家便不吝透露",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "隱瞞之事。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "咦～！",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_136"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n您不告訴我嗎？",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "理當如此吧？",
+        "unit_id": 129711,
+        "voice": "vo_adv_1297003_137"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n因汝之口舌",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "可謂輕言至極。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "才沒有這種事啦～！",
+        "unit_id": 51611,
+        "voice": "vo_adv_1297003_138"
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n騎士閣下先生，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "你聽完也要告訴我喔！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "\n",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "不然的話，",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "米亞",
+        "words": "我會悄悄偷聽的！",
+        "unit_id": 51611
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "儘管那之後米亞也仍在東國相關的話題上糾纏，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n但涅妃‧涅羅還是沒有揭露祕密……"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n最終一行人便分別前往房間就寢了。"
+    }
+]

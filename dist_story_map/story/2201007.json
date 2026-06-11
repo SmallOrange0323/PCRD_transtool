@@ -1,0 +1,3383 @@
+[
+    {
+        "type": "background",
+        "background": "501660"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物群",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "儘管出了點小意外，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n但{player}等人"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n最後仍成功擊退從空間的孔洞中掉出來的魔物。"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "好痛啊……",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n我頭上腫一個包啦。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "哎呀，",
+        "unit_id": 125812,
+        "voice": "vo_adv_2201007_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "那可不好了。",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "\n",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "璃亞，",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "麻煩妳幫忙看一下凱留小姐的狀況。",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "嗯、",
+        "unit_id": 126012,
+        "voice": "vo_adv_2201007_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "好。",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "對不起對不起！",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n【美食殿堂】的各位，",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "真的很抱歉把你們給捲進我的攻擊裡～！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "沒、",
+        "unit_id": 105812,
+        "voice": "vo_adv_2201007_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "沒關係啦。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n雖然狀況是有些千鈞一髮，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "但最後我有來得及防禦了呀☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "真是的，",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妳小心一點啊……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "先不論白癡佩可，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n如果是我被直接打到，鐵定會死的。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "克蘿茜小姐。",
+        "unit_id": 105913,
+        "voice": "vo_adv_2201007_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n您剛才似乎突然間失去了意識，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是發生什麼事了嗎？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "呃～",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "唔～",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n這該怎麼解釋才好呢……",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "類似",
+        "unit_id": 126112,
+        "voice": "vo_adv_2201007_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "肚子餓？",
+        "unit_id": 126112
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "\n之類的？",
+        "unit_id": 126112
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "啊♪",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n大概",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "就是那種感覺吧？",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "我",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "只要用光能量，就會變得像剛才那樣！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n可能是我在遇見各位之前，",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "也打敗了不少魔物，",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n才會因此進入休眠的。",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "平常",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "都要等回到城堡後，請公主殿下幫忙充電，我才能繼續動……",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "奇怪？",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n這麼說來，",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "剛才我為什麼有辦法重新啟動呀？",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "唔～嗯，",
+        "unit_id": 126012,
+        "voice": "vo_adv_2201007_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "印象中是……",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "\n",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "哥哥使用強化之力後，",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "\n克蘿茜小姐就恢復意識了，",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "好像是這樣吧？",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "咦？",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "原來是這樣嗎！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "謝謝你～！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "意思是說，",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "剛才解決了魔力用盡的問題嗎？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這傢伙的強化……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我不記得公主騎士的力量",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "有那種效果啊？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "公主……",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "騎士？",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "這點事情",
+        "unit_id": 105913,
+        "voice": "vo_adv_2201007_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "絲毫不足以為奇。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n畢竟主人",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "乃拯救過世界好幾次的英雄。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "原來如此。",
+        "unit_id": 125812,
+        "voice": "vo_adv_2201007_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "\n不愧是",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "兄長大人呢。",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "哇～♪",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "原來公主騎士先生",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "是很厲害的人呀！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "要是我又進入休眠，",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "希望可以再麻煩你幫忙充電！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "騎士先生♪",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "話說回來，",
+        "unit_id": 126012,
+        "voice": "vo_adv_2201007_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "克蘿茜小姐。",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "\n妳說「在遇見我們之前",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "也打敗了魔物」，代表……",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "\n之前魔物們也是像這樣",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "從天上掉下來嗎？",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "啊，",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "沒錯～！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "其實，",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "最近常常會有魔物從奇怪的洞穴裡跑出來。",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "雖然跟各位一樣",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "從天上掉下來的狀況比較少見啦！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "因為只靠我單打獨鬥很危險，",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n各位願意出手相助真～的是幫了大忙唷♪",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "你們都是很善良的人呢！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "嘿嘿，",
+        "unit_id": 105812,
+        "voice": "vo_adv_2201007_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "用不著那麼客氣！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n畢竟我們是朋友嘛☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "而且",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "要說的話，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n剛才那些魔物，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "原本就是我們世界裡的魔物。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "看到它們在別人的土地大鬧，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "總覺得挺過意不去的……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "那個……",
+        "unit_id": 125812,
+        "voice": "vo_adv_2201007_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "這樣的話，",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "\n花凜小姐所委託的內容，",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "\n現在應該算是達成其中一項了？",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "是指「調查消失魔物們的下落」這項委託吧。",
+        "unit_id": 105812,
+        "voice": "vo_adv_2201007_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "雖然目前已經清楚明白阿斯特賴亞大陸的",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n魔物們都跑到這裡來了……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但至少還是",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "得查出整個大陸的魔物們同時做出相同行動",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n的原因才行哪。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "畢竟我們來這趟可不是小孩子在跑腿呢。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "唔姆……",
+        "unit_id": 105913,
+        "voice": "vo_adv_2201007_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "雖然只是假設，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n但有沒有可能是某人操控著魔物，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "並設法使它們",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n徹底從我們的世界中消失……？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "唔……",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這說法可能行不太通啊？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n如果可以操控魔物，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那把它們通通扔進海裡不就好了。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "如此一來……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "果然是",
+        "unit_id": 105812,
+        "voice": "vo_adv_2201007_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "有人利用那些洞穴，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n故意把魔物送來這裡的吧？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n目的是想對克蘿茜的世界",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "造成損害。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "？",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "那個，",
+        "unit_id": 126012,
+        "voice": "vo_adv_2201007_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "話說回來……",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "有一件事……",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "我們和魔物們通過的",
+        "unit_id": 126012,
+        "voice": "vo_adv_2201007_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "\n那個像是空間的孔洞的東西，",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "關起來了呢……",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "３人",
+        "words": "…………",
+        "unit_id": 1,
+        "voice": "vo_adv_2201007_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "３人",
+        "words": "──咦咦！？",
+        "unit_id": 1,
+        "voice": "vo_adv_2201007_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "洞、",
+        "unit_id": 125812,
+        "voice": "vo_adv_2201007_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "洞口真的……",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "\n完全消失了，",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "一點痕跡也沒留下……！",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "怎麼這樣～！！",
+        "unit_id": 105812,
+        "voice": "vo_adv_2201007_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n那麼",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們要怎麼回去蘭德索爾啊！？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "各位，",
+        "unit_id": 105913,
+        "voice": "vo_adv_2201007_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "還請放心。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n為了因應這種事態，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n凱留小姐已有事先準備好返回用的魔法陣。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "啊，",
+        "unit_id": 126012,
+        "voice": "vo_adv_2201007_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "這麼說也是。",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "\n",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "那就安心了呢……♪",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "…………",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "凱留小姐？",
+        "unit_id": 105913,
+        "voice": "vo_adv_2201007_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不，",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那個……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我可能",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "要先說明一下。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n要使用返回魔法陣時，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "首先得將魔力傳送到設置地點……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "決定好座標後，",
+        "unit_id": 126012,
+        "voice": "vo_adv_2201007_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "傳送魔力……",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "\n感覺跟",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "通訊魔法有些相似呢。",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "是啊。",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n話是這麼說沒錯……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但似乎……",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "行不通啊。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我的魔力傳不過去……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "竟、",
+        "unit_id": 105913,
+        "voice": "vo_adv_2201007_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "竟有此事……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n莫非是因為距離太遠了？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "亦或是，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "魔法陣遭到破壞……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "雖然在好一陣子前，",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "魔法陣確實被【憤怒‧軍團】給破壞過。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但那時候，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "還可以隱約感應到魔法陣。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "可是這次，",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "卻連一點反應也沒有。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "更何況，這和距離應該沒有任何關係才是呀！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n我們以前也從大陸外圍的",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "艾爾皮斯島最邊境成功返回過……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "咦、",
+        "unit_id": 105812,
+        "voice": "vo_adv_2201007_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "咦咦咦……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "也就是說，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n我們真的被困在這裡回不去了嗎……？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "啊……",
+        "unit_id": 125812,
+        "voice": "vo_adv_2201007_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "對、",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "對了，",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "\n",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "我們只要在剛才那種洞再度出現時，",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "\n跳進去就可以了……",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我當然很想這樣做啦。",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n但那個洞開啟的時間，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "大概也只有一分鐘左右啊。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "況且我們也不曉得洞會開在哪裡……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "說得也是呢。",
+        "unit_id": 105812,
+        "voice": "vo_adv_2201007_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n畢竟這個世界，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "感覺起來應該也不小才是，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "如果能至少",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "先知道哪邊有洞會開啟……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "洞的位置。",
+        "unit_id": 126112,
+        "voice": "vo_adv_2201007_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "\n我知道喔？",
+        "unit_id": 126112
+    },
+    {
+        "type": "dialogue",
+        "name": "３人",
+        "words": "……咦？",
+        "unit_id": 1,
+        "voice": "vo_adv_2201007_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "妳、",
+        "unit_id": 126012,
+        "voice": "vo_adv_2201007_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "妳怎麼會知道呢？",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "\n普蕾西亞。",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "味道。",
+        "unit_id": 126112,
+        "voice": "vo_adv_2201007_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "\n還有，",
+        "unit_id": 126112
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "天空會轉轉轉。",
+        "unit_id": 126112
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "天空會……",
+        "unit_id": 125812,
+        "voice": "vo_adv_2201007_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "轉轉轉……？",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "儘管我們的眼睛",
+        "unit_id": 105913,
+        "voice": "vo_adv_2201007_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "看不見……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n但普蕾西亞小姐或許",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "能感應到魔力的流動？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "嗯。",
+        "unit_id": 126112,
+        "voice": "vo_adv_2201007_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "\n大概？",
+        "unit_id": 126112
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "哇，",
+        "unit_id": 126012,
+        "voice": "vo_adv_2201007_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "不愧是普蕾西亞。",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "\n果然是天才呢……♪",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "哼、",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "哼。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n那種東西，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我也看得到呀……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "嗯？",
+        "unit_id": 105812,
+        "voice": "vo_adv_2201007_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n所以小凱留",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "也能知道哪邊會出現洞嗎？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "當然知道好嗎！",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "下次一定會出現在那裡──",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "不對。",
+        "unit_id": 126112,
+        "voice": "vo_adv_2201007_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "\n",
+        "unit_id": 126112
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "是那邊。",
+        "unit_id": 126112
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "啊、",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "啊～嗯～噢～！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "看來我今天狀況有點不好呢～！？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……",
+        "unit_id": 105913,
+        "voice": "vo_adv_2201007_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "還請別在奇怪的事情上硬要和人爭輸贏，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "凱留小姐。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物群",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "哇！？",
+        "unit_id": 105811,
+        "voice": "vo_adv_2201007_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "又有魔物冒出來了！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "它們朝著這邊過來了……！",
+        "unit_id": 126013,
+        "voice": "vo_adv_2201007_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "糟了！",
+        "unit_id": 106011,
+        "voice": "vo_adv_2201007_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我剛才休息",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "所恢復的魔力也已經用光了！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "別擔心，",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "請交給我！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "我要上囉！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "──啊──",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "克蘿茜！？",
+        "unit_id": 105811,
+        "voice": "vo_adv_2201007_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "她又失去意識了……！",
+        "unit_id": 105911,
+        "voice": "vo_adv_2201007_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物群",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "莉莉。",
+        "unit_id": 126113,
+        "voice": "vo_adv_2201007_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "\n可璃亞。",
+        "unit_id": 126113
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "\n上吧。",
+        "unit_id": 126113
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞、莉莉",
+        "words": "「嗯！」\n「嗯、好……！」",
+        "unit_id": 1,
+        "voice": "vo_adv_2201007_074"
+    },
+    {
+        "type": "background",
+        "background": "501660"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "…………",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "……啊。",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n奇怪……？",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "呃？",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n欸？",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n剛才那些魔物呢……",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "已經、",
+        "unit_id": 126111,
+        "voice": "vo_adv_2201007_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "\n解決掉了。",
+        "unit_id": 126111
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "啊！",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n我真是的，",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "難不成又進入休眠了嗎！？",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n對不起～！！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我剛才",
+        "unit_id": 106011,
+        "voice": "vo_adv_2201007_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "也只是在旁邊看而已……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不好意思都讓",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你們幾個去戰鬥了。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "不要緊的♪",
+        "unit_id": 126011,
+        "voice": "vo_adv_2201007_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "\n反正魔物的數量",
+        "unit_id": 126011
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "也比剛才來得少。",
+        "unit_id": 126011
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "而且最重要的是，",
+        "unit_id": 125811,
+        "voice": "vo_adv_2201007_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "\n也是多虧有兄長大人，",
+        "unit_id": 125811
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "\n我們才能夠平安度過難關。",
+        "unit_id": 125811
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……",
+        "unit_id": 105913,
+        "voice": "vo_adv_2201007_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n只是，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "魔物們出現的那個空間的孔洞，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n果然還是立刻便關上了。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "不過，",
+        "unit_id": 105812,
+        "voice": "vo_adv_2201007_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "既然普蕾西亞有辦法感應到洞口什麼時候會打開，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n應該就還是能",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "設法回到蘭德索爾！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "嗯。",
+        "unit_id": 126112,
+        "voice": "vo_adv_2201007_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "\n交給我。",
+        "unit_id": 126112
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……之後在那個洞窟地底",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "也設下一個魔法陣吧。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n那樣一來，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "往返「吉歐‧提格尼亞」",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n應該也會變得輕鬆很多。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "凱留。",
+        "unit_id": 126112,
+        "voice": "vo_adv_2201007_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "\n好厲害。",
+        "unit_id": 126112
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "哼哼♪",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n畢竟我也是天才呀，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "當然厲害囉！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……話雖這麼說，",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但還是得先恢復魔力才行啊。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是的。",
+        "unit_id": 105913,
+        "voice": "vo_adv_2201007_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n畢竟也連續進行了幾場戰鬥，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n在下認為應該找個安全的地方",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "稍作休憩。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "說得也是！",
+        "unit_id": 105812,
+        "voice": "vo_adv_2201007_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "而且我的肚子也餓了……☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "嗯。",
+        "unit_id": 126112,
+        "voice": "vo_adv_2201007_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "\n餓扁了。",
+        "unit_id": 126112
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "啊，",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "既然如此！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n還請各位",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "一定一定要來我家♪",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "克蘿茜小姐",
+        "unit_id": 126012,
+        "voice": "vo_adv_2201007_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "的家……？",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "嗯！",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n不過與其稱呼為家，",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "應該說是我借住的城堡比較正確啦。",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "那地方距離這邊",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "也不需要走太遠！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "而且而且！",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n我也想把幫助了我的各位，",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n介紹給公主殿下認識呀～！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "公主殿下……",
+        "unit_id": 125812,
+        "voice": "vo_adv_2201007_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "哇～",
+        "unit_id": 105812,
+        "voice": "vo_adv_2201007_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "請務必讓我們過去打聲招呼！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人，",
+        "unit_id": 105913,
+        "voice": "vo_adv_2201007_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n您意下如何？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "太好了♪",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n那我立刻帶領各位",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n前往「帕菲之城」♪",
+        "unit_id": 126411
+    },
+    {
+        "type": "still",
+        "still": "220100701"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "這裡就是",
+        "unit_id": 125812,
+        "voice": "vo_adv_2201007_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "克蘿茜小姐世界的人所生活的……",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "像這樣靠近看，",
+        "unit_id": 126012,
+        "voice": "vo_adv_2201007_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "\n就覺得這座城堡",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "真的很大呢。",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "是啊。",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "雖然城堡和城鎮連在一起，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n但如果只看城堡本身的大小，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "搞不好比蘭德索爾王城還大呢。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "而更讓人感到",
+        "unit_id": 105913,
+        "voice": "vo_adv_2201007_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "不可思議的是，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n建造這座城堡所使用的材料，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "並非石頭或木材，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "看上去簡直……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "……",
+        "unit_id": 126012,
+        "voice": "vo_adv_2201007_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "就像是用餅乾、",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "巧克力，",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "還有布丁這類的甜點，",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "\n加以組合並固定而成的呢……",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可、普蕾西亞",
+        "words": "……流口水……",
+        "unit_id": 1,
+        "voice": "vo_adv_2201007_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我說妳們兩個。",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n可別去啃",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "別人家的城堡啊。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n我可不想要",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "來到異世界五秒鐘就引發外交問題。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "抗議。",
+        "unit_id": 126112,
+        "voice": "vo_adv_2201007_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "可是可是，",
+        "unit_id": 105812,
+        "voice": "vo_adv_2201007_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "小凱留～",
+        "unit_id": 105812
+    },
+    {
+        "type": "background",
+        "background": "501710"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "嗯？",
+        "unit_id": 193511,
+        "voice": "vo_adv_2201007_110"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n你們幾個哪裡來的，",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "是沒見過的臉孔哪。",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿、可璃亞、莉莉",
+        "words": "！？",
+        "unit_id": 1,
+        "voice": "vo_adv_2201007_111"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "啊！",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_112"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n沃爾加諾♪",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "守衛工作辛苦了～！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "什麼嘛，",
+        "unit_id": 193511,
+        "voice": "vo_adv_2201007_113"
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "原來是跟克蘿一起來的啊？",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "\n",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "妳巡邏也辛苦啦。",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "然後，",
+        "unit_id": 193511,
+        "voice": "vo_adv_2201007_114"
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "那邊的兩位，",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "\n看起來",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "好像是肚子餓了啊。",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "\n",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "唔～",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "有了。",
+        "unit_id": 193511,
+        "voice": "vo_adv_2201007_115"
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "那邊那棟長屋建築的右手邊數來第二戶，",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "\n因為之後預定要改建，",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "妳們可以把門的部分吃掉沒關係。",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "\n目前上面施加的魔法抹面",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "也已經解除了。",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "哇～",
+        "unit_id": 105812,
+        "voice": "vo_adv_2201007_116"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "好大的一塊餅乾！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我要開動了～☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "謝謝。",
+        "unit_id": 126112,
+        "voice": "vo_adv_2201007_117"
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "\n",
+        "unit_id": 126112
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "貓咪、",
+        "unit_id": 126112
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "先生？",
+        "unit_id": 126112
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "欸……",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_118"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n怎麼他們已經很自然地在交談了……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "方才似乎是稱他……",
+        "unit_id": 105913,
+        "voice": "vo_adv_2201007_119"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "沃爾加諾先生。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "那外貌感覺相當少見……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "那個……",
+        "unit_id": 125812,
+        "voice": "vo_adv_2201007_120"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "\n請問您是",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "獸人族嗎？",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "哈哈！",
+        "unit_id": 193511,
+        "voice": "vo_adv_2201007_121"
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "\n",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "可別把我跟野獸混為一談哪，小姑娘。",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "\n我叫沃爾加諾，",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "屬於一種叫做貓妖精",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "的種族。",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "貓妖精？",
+        "unit_id": 126012,
+        "voice": "vo_adv_2201007_122"
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "沒錯。",
+        "unit_id": 193511,
+        "voice": "vo_adv_2201007_123"
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "\n也就是說，",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "我是可愛到不行的妖精啦。",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妖精……？",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_124"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但以妖精而言，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "該怎麼說……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "挺大隻的啊。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "沒錯！",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_125"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "沃爾加諾很高大又很強喔！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "跑到城堡附近來的魔物，",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n全部都是靠他打倒的唷♪",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "哇～♪",
+        "unit_id": 126012,
+        "voice": "vo_adv_2201007_126"
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "\n沃爾加諾先生",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "好厲害呢♪",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "嘿！",
+        "unit_id": 193511,
+        "voice": "vo_adv_2201007_127"
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "\n你們這些人怎麼回事。",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "\n是打算一人一句把我誇到死嗎。",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "不過，",
+        "unit_id": 193511,
+        "voice": "vo_adv_2201007_128"
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "畢竟我可是身為這座城的守衛嘛？",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "\n",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "做好這點工作內容",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "可是理所～當然的～",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "哦，",
+        "unit_id": 193511,
+        "voice": "vo_adv_2201007_129"
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "小子。",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "\n你眼光還不錯嘛？",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "沒有錯，",
+        "unit_id": 193511,
+        "voice": "vo_adv_2201007_130"
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "這身毛皮可是本大爺最自豪的──",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "啊，",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_131"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "沃爾加諾！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n你耳朵上多長了一搓毛耶？",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "我幫你拔掉唷！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "（拔！）",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "呃啊啊啊啊啊！",
+        "unit_id": 193511,
+        "voice": "vo_adv_2201007_132"
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "笨蛋！",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "妳別用那身怪力幫我理毛啦啊啊啊！",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "\n連皮都會被妳拔掉的啊啊啊啊啊！！！！",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那傢伙毫無惡意地",
+        "unit_id": 106012,
+        "voice": "vo_adv_2201007_133"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "把毛連根拔起了啊……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可、普蕾西亞",
+        "words": "嚼嚼嚼嚼……♪",
+        "unit_id": 1,
+        "voice": "vo_adv_2201007_134"
+    },
+    {
+        "type": "dialogue",
+        "name": "老狗頭人",
+        "words": "兩位小姑娘，",
+        "unit_id": 9211,
+        "voice": "vo_adv_2201007_135"
+    },
+    {
+        "type": "dialogue",
+        "name": "老狗頭人",
+        "words": "妳們的吃相很豪爽哪。",
+        "unit_id": 9211
+    },
+    {
+        "type": "dialogue",
+        "name": "老狗頭人",
+        "words": "\n要不要也吃吃",
+        "unit_id": 9211
+    },
+    {
+        "type": "dialogue",
+        "name": "老狗頭人",
+        "words": "這邊的糖藝窗戶呢？",
+        "unit_id": 9211
+    },
+    {
+        "type": "dialogue",
+        "name": "女半身人",
+        "words": "我家的巧克力桌子",
+        "unit_id": 9311,
+        "voice": "vo_adv_2201007_136"
+    },
+    {
+        "type": "dialogue",
+        "name": "女半身人",
+        "words": "出現了裂痕。",
+        "unit_id": 9311
+    },
+    {
+        "type": "dialogue",
+        "name": "女半身人",
+        "words": "\n",
+        "unit_id": 9311
+    },
+    {
+        "type": "dialogue",
+        "name": "女半身人",
+        "words": "如果不介意的話，",
+        "unit_id": 9311
+    },
+    {
+        "type": "dialogue",
+        "name": "女半身人",
+        "words": "能不能請妳們",
+        "unit_id": 9311
+    },
+    {
+        "type": "dialogue",
+        "name": "女半身人",
+        "words": "順便幫忙處理掉呢？",
+        "unit_id": 9311
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "哇～",
+        "unit_id": 105812,
+        "voice": "vo_adv_2201007_137"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "謝謝你們",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "大家！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "謝謝。",
+        "unit_id": 126112,
+        "voice": "vo_adv_2201007_138"
+    },
+    {
+        "type": "dialogue",
+        "name": "普蕾西亞",
+        "words": "各位招待。",
+        "unit_id": 126112
+    },
+    {
+        "type": "dialogue",
+        "name": "男巨人族",
+        "words": "喔喔，",
+        "unit_id": 9411,
+        "voice": "vo_adv_2201007_139"
+    },
+    {
+        "type": "dialogue",
+        "name": "男巨人族",
+        "words": "這下就省去處理的麻煩啦！",
+        "unit_id": 9411
+    },
+    {
+        "type": "dialogue",
+        "name": "男巨人族",
+        "words": "\n那我去把",
+        "unit_id": 9411
+    },
+    {
+        "type": "dialogue",
+        "name": "男巨人族",
+        "words": "要換上的新門扉拿過來。",
+        "unit_id": 9411
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "這座城鎮感覺很有活力……",
+        "unit_id": 105913,
+        "voice": "vo_adv_2201007_140"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "只是從剛才開始，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在路上來往的人們，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n看上去其種族都盡不相同。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "有毛茸茸的人、",
+        "unit_id": 126012,
+        "voice": "vo_adv_2201007_141"
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "體型很小的人、",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "巨大的人……",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "\n",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "全都是在蘭德索爾",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "未曾見過的種族呢。",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "加上機械人族的克蘿茜小姐，",
+        "unit_id": 125812,
+        "voice": "vo_adv_2201007_142"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "還有貓妖精的沃爾加諾先生。",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "\n",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "在「吉歐‧提格尼亞」，",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "真的有著",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "\n各式各樣的種族呢……",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是的。",
+        "unit_id": 105913,
+        "voice": "vo_adv_2201007_143"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "並且，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "感覺都是些十分溫柔",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "又親切的好人。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "治安看起來也不錯，",
+        "unit_id": 126012,
+        "voice": "vo_adv_2201007_144"
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "\n食物感覺也都很好吃。",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "\n",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "「吉歐‧提格尼亞」",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "可璃亞",
+        "words": "似乎是個很棒的地方呢♪",
+        "unit_id": 126012
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "沒有錯～♪",
+        "unit_id": 126411,
+        "voice": "vo_adv_2201007_145"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n我相信這一定都得歸功於我的主人，",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "克蘿茜",
+        "words": "\n是位非常優秀的公主！",
+        "unit_id": 126411
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "簡直就像是",
+        "unit_id": 125812,
+        "voice": "vo_adv_2201007_146"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "體現了王道樂土這個概念呢。",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "莉莉",
+        "words": "\n不曉得對方究竟是什麼樣的人……",
+        "unit_id": 125812
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "嗯？",
+        "unit_id": 193511,
+        "voice": "vo_adv_2201007_147"
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "\n你們幾個",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "打算去見公主嗎？",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "\n",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "我也一起去吧，",
+        "unit_id": 193511
+    },
+    {
+        "type": "dialogue",
+        "name": "沃爾加諾",
+        "words": "反正現在正好到換班時間，我閒得很。",
+        "unit_id": 193511
+    }
+]

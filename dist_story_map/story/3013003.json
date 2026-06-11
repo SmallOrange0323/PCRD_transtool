@@ -1,0 +1,936 @@
+[
+    {
+        "type": "background",
+        "background": "500180"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}、美美、禊和鏡華四人，\n來到了鏡華居住的精靈之森附近遊玩。"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "哇～！這裡就是精靈之森啊～",
+        "unit_id": 102011,
+        "voice": "vo_adv_3013003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "嗯。雖說是精靈之森範圍也是很大的，",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n我住的是在更深處的地方。",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "真有趣呢～",
+        "unit_id": 102011,
+        "voice": "vo_adv_3013003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n因為美美很少離開蘭德索爾到外面去。",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "今天有點緊張呢～",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "你也是一臉好奇的樣子呢。",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "也是，你在蘭德索爾的街上也是這個樣子……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "話說回來禊真慢呢～",
+        "unit_id": 102011,
+        "voice": "vo_adv_3013003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "明明都已經過了約定時間～",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "真是的，禊老是遲到！",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n一定又是惡作劇被抓到，",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n在哪裡被人斥責了吧！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "雖然如此她也太慢了……",
+        "unit_id": 102011,
+        "voice": "vo_adv_3013003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "禊，說不定是出了什麼事了？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "比如說……遇到魔物襲擊之類的……",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "咦……？",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "應、應該不會有這種事……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──呱歐歐歐歐歐",
+        "unit_id": 1611,
+        "voice": "vo_adv_3013003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "美美・鏡華",
+        "words": "呀－－－－－－！！！？？？",
+        "unit_id": 1,
+        "voice": "vo_adv_3013003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "啊哈哈哈哈！",
+        "unit_id": 1611,
+        "voice": "vo_adv_3013003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "\n鏡華和美美都一臉驚訝的表情－！！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "\n好有趣～！！！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "這、這個聲音是禊！？",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "這個魔物……難道是布偶裝！？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "沒錯～！",
+        "unit_id": 100411,
+        "voice": "vo_adv_3013003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "啊～，真好玩－－！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "禊！妳不只遲到還惡作劇！？",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n為什麼總是做這種事啊！？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "因為很好玩！",
+        "unit_id": 100411,
+        "voice": "vo_adv_3013003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "嗚嗚……妳、妳又這樣……！",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "老是惡作劇的話，",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n有一天會出現真正的魔物的！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "怎麼可能嘛－－！",
+        "unit_id": 100411,
+        "voice": "vo_adv_3013003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "對吧，美美？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──呱歐歐歐歐歐！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊・鏡華",
+        "words": "咦？",
+        "unit_id": 1,
+        "voice": "vo_adv_3013003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "好、好厲－害！",
+        "unit_id": 100411,
+        "voice": "vo_adv_3013003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n美美的布偶裝像真的一樣！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "是在哪裡買的？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "居然連美美都惡作劇！",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n妳們給我適可而止！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "美美才沒有穿布偶裝呢～",
+        "unit_id": 102011,
+        "voice": "vo_adv_3013003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "對吧？哥哥。",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "禊・鏡華",
+        "words": "也、也就是說……",
+        "unit_id": 1,
+        "voice": "vo_adv_3013003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──呱歐歐歐歐歐",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊・鏡華",
+        "words": "本、本尊！！！！",
+        "voice": "vo_adv_3013003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "怎麼辦！？怎麼辦！？",
+        "unit_id": 100411,
+        "voice": "vo_adv_3013003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "總、總之，得快點逃跑！",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "禊、美美，這邊！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "好、",
+        "unit_id": 102011,
+        "voice": "vo_adv_3013003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "好可怕～！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "嗚哇～！！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "美美，現在不是哭的時候！",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n很危險呦！",
+        "unit_id": 103611
+    },
+    {
+        "type": "background",
+        "background": "500180"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "哥哥！",
+        "unit_id": 102011,
+        "voice": "vo_adv_3013003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "危險！",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "請快點逃走！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥也得快點逃走！",
+        "unit_id": 100411,
+        "voice": "vo_adv_3013003_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──呱歐歐歐歐歐！",
+        "unit_id": 1611
+    },
+    {
+        "type": "background",
+        "background": "500180"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥！不要緊吧！？",
+        "unit_id": 100411,
+        "voice": "vo_adv_3013003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "啊，流血了……！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "沒、沒事吧！？",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "一個人應戰實在太魯莽了！！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "哥哥",
+        "unit_id": 102011,
+        "voice": "vo_adv_3013003_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──呱歐歐歐歐歐！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "美美",
+        "unit_id": 102011,
+        "voice": "vo_adv_3013003_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "不逃走！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "美美！？",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "哥哥保護了美美……",
+        "unit_id": 102011,
+        "voice": "vo_adv_3013003_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "這次換美美保護哥哥！！！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "……對呀！",
+        "unit_id": 100411,
+        "voice": "vo_adv_3013003_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "禊也不會逃走的！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n要保護哥哥！！！",
+        "unit_id": 100411
+    },
+    {
+        "type": "still",
+        "still": "301300301"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "我、我也是！",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n三個人一起保護這個老實人吧！！！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──呱歐歐歐歐歐！",
+        "unit_id": 1611
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美・禊・鏡華",
+        "words": "我－－－－－－擋！！！",
+        "unit_id": 1,
+        "voice": "vo_adv_3013003_038"
+    },
+    {
+        "type": "still",
+        "still": "301300301"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘰歐歐歐歐歐",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "！",
+        "unit_id": 1611
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "background",
+        "background": "500180"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……贏、贏了？",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "太好了－！",
+        "unit_id": 100411,
+        "voice": "vo_adv_3013003_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n我們贏了呦！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥看到了嗎！？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "嚇、嚇死人了－！！！",
+        "unit_id": 102011,
+        "voice": "vo_adv_3013003_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "嗚嗚－－－－！！！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "好、好奇怪……",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n居然只靠我們就解決掉那樣的魔物……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "美美也是，好像比平常更能發揮力量？",
+        "unit_id": 102011,
+        "voice": "vo_adv_3013003_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "而且，動作好像也比較快……",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……是你用這把劍",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n提升了我們的力量嗎？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "居然有辦法做到這種事……",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "你到底是什麼人？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "這程度，已經超越可疑份子的境界了吧……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "不過因為多虧了哥哥，",
+        "unit_id": 102011,
+        "voice": "vo_adv_3013003_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n美美和大家才得救了！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "謝謝哥哥！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥好厲害！",
+        "unit_id": 100411,
+        "voice": "vo_adv_3013003_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "只要有哥哥在就能抵一百個人－！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥，以後也要和我們玩嘛！",
+        "unit_id": 100411,
+        "voice": "vo_adv_3013003_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "絕對會很有趣的！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "對啊～！",
+        "unit_id": 102011,
+        "voice": "vo_adv_3013003_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "美美想和哥哥聊一堆事～♪",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "禊、禊！美美！",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n我不是說不能輕易地就相信他嗎！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n這個人是……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "這個人……",
+        "unit_id": 102011,
+        "voice": "vo_adv_3013003_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "怎麼樣～？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "或、或許是個老實的救命恩人……",
+        "unit_id": 103611,
+        "voice": "vo_adv_3013003_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "吧？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "由三個小孩組成的超親密公會裡多了一位新成員，\n她們得到了一位大人的夥伴。"
+    }
+]

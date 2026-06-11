@@ -1,0 +1,701 @@
+[
+    {
+        "type": "background",
+        "background": "500050"
+    },
+    {
+        "type": "dialogue",
+        "name": "ナレーション",
+        "words": "12月25日、ついに迎えたクリスマス当日。"
+    },
+    {
+        "type": "dialogue",
+        "name": "ナレーション",
+        "words": "\nまだ人出も少ない早朝、クレジッタは一人最後の見回りに来ていた。"
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "……ついにこの日が来ましたわね。",
+        "unit_id": 128011,
+        "voice": "vo_adv_5132169_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "クレジッタさーん！　",
+        "unit_id": 127911,
+        "voice": "vo_adv_5132169_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "おはようございまーす！",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "へ、",
+        "unit_id": 128011,
+        "voice": "vo_adv_5132169_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "陛下！　",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "おはようございます！",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "\n",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "ですが、",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "まだパーティーにはだいぶ早いですが……",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "えへへ、",
+        "unit_id": 127911,
+        "voice": "vo_adv_5132169_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "実は",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "昨日色々ありまして……",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "なので",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "眠れずに",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "そのままここに来ちゃいました。",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "あ、",
+        "unit_id": 127911,
+        "voice": "vo_adv_5132169_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "{player}くんもちゃんと無事ですよ。",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "パーティーには絶対に間に合うと思います。",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "その色々がなんだか怖いですが、",
+        "unit_id": 128011,
+        "voice": "vo_adv_5132169_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "今は聞かないでおきますわ。",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "\n",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "……",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "あの、",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "つかぬことをお聞きしますが、",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "\n",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "本日のクリスマス、",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "不安はありませんか？",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "不安、",
+        "unit_id": 127911,
+        "voice": "vo_adv_5132169_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "ですか……",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "確かに、",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "今日",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "りっちゃんを止められなかったら",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nどうしよう、",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "と",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "思わなくもないです。",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "でも、",
+        "unit_id": 127911,
+        "voice": "vo_adv_5132169_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "クレジッタさんをはじめ",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "みなさんが、",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "わたしの理想のクリスマスを全部叶えてくれたじゃないですか！",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "おいしい料理をいっぱい作って、",
+        "unit_id": 127911,
+        "voice": "vo_adv_5132169_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "楽しいイベントを企画して、",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "カルミナのお二人も特別に参加してくれますし、",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nサレンさんも子どもたちをいっぱい連れてきてくれます。",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "考えただけで",
+        "unit_id": 127911,
+        "voice": "vo_adv_5132169_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "楽しみが爆発して、",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n不安なんか全部どこかに行っちゃいました☆",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "なるほど……",
+        "unit_id": 128011,
+        "voice": "vo_adv_5132169_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "委細承知いたしました。",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "\n",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "それではわたくしも、",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "全力で楽しませていただきますわ！",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "といっても……",
+        "unit_id": 128011,
+        "voice": "vo_adv_5132169_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "あまり、",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "クリスマスの楽しみ方には明るくないのです。",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "\n",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "いつもは商売に明け暮れていましたし。",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "\n",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "……",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "先日、",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "少年には少し教えてもらいましたけれど。",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "それは",
+        "unit_id": 127911,
+        "voice": "vo_adv_5132169_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "ちょっと意外ですね。",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "クレジッタさんみたいに",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "大人な女性は",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n素敵なクリスマスの過ごし方をご存じなのかと思ってました。",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "かくいうわたしも、",
+        "unit_id": 127911,
+        "voice": "vo_adv_5132169_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "一応王家の人間ですから、",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nみなさんの言うクリスマスの過ごし方は",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "よく知らなくて。",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "なので、",
+        "unit_id": 127911,
+        "voice": "vo_adv_5132169_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "みなさんのお話を聞くたびに、",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n楽しそうで、",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "うらやましくて、",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "あこがれてたんです。",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "だからきっと、",
+        "unit_id": 127911,
+        "voice": "vo_adv_5132169_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "これがわたしにとって",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "最初にして最高の\nクリスマスになります。",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "初心者同士、",
+        "unit_id": 127911,
+        "voice": "vo_adv_5132169_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "一緒に楽しみましょうね、",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "クレジッタさん☆",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "は、",
+        "unit_id": 128011,
+        "voice": "vo_adv_5132169_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "はい！　",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "もちろんです！　",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "このクレジッタ・キャッシュ、",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "\n全身全霊で楽しませていただきますわ！",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "秘書",
+        "words": "うれしいのは分かりますが、",
+        "unit_id": 6111,
+        "voice": "vo_adv_5132169_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "秘書",
+        "words": "早朝からあまりテンションを上げると",
+        "unit_id": 6111
+    },
+    {
+        "type": "dialogue",
+        "name": "秘書",
+        "words": "\n周りの迷惑になるのでお控えください。",
+        "unit_id": 6111
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "ふん、",
+        "unit_id": 128011,
+        "voice": "vo_adv_5132169_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "そういう貴女も楽しみで寝れなかったクチですわよね？",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "秘書",
+        "words": "楽しみなのは否定しませんが、",
+        "unit_id": 6111,
+        "voice": "vo_adv_5132169_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "秘書",
+        "words": "ワーカホリック気味の上司に",
+        "unit_id": 6111
+    },
+    {
+        "type": "dialogue",
+        "name": "秘書",
+        "words": "\n早朝から付き合うのですから",
+        "unit_id": 6111
+    },
+    {
+        "type": "dialogue",
+        "name": "秘書",
+        "words": "感謝してください。",
+        "unit_id": 6111
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "はいはい、",
+        "unit_id": 128011,
+        "voice": "vo_adv_5132169_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "ありがとうございますわ。",
+        "unit_id": 128011
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "あはは☆",
+        "unit_id": 127911,
+        "voice": "vo_adv_5132169_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "立ち話もなんですから、",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "どこかで朝ごはんを食べて、",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n一緒に会場を回りましょう！",
+        "unit_id": 127911
+    },
+    {
+        "type": "dialogue",
+        "name": "秘書",
+        "words": "いいですね。",
+        "unit_id": 6111,
+        "voice": "vo_adv_5132169_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "秘書",
+        "words": "ごちそうさまです、",
+        "unit_id": 6111
+    },
+    {
+        "type": "dialogue",
+        "name": "秘書",
+        "words": "クレジッタさま。",
+        "unit_id": 6111
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "……貴女、",
+        "unit_id": 128011,
+        "voice": "vo_adv_5132169_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "クレジッタ",
+        "words": "わたくしを財布だと思ってません？",
+        "unit_id": 128011
+    }
+]

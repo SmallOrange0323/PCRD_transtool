@@ -1,0 +1,1583 @@
+[
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "某天吉塔與{player}聽說到，\n有人想要委託騎空團工作，\n於是前往鬧區。"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "你好─！",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n聽說有工作想要委託我們……",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "哦哦，",
+        "unit_id": 311,
+        "voice": "vo_adv_1057007_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "你們就是騎空團啊！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n來的正好！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "這間店一直受到惡德伊商會的騷擾，",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n希望你們能幫忙保護這裡！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "惡德伊商會……",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "就是最近在蘭德索爾跨足各種事業的",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "那一間商會呀……",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "那些人打算從我手裡搶走這間店還有這塊土地！",
+        "unit_id": 311,
+        "voice": "vo_adv_1057007_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n所以就每天來騷擾……",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "害我都做不成生意了！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "好過份……",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "45我瞭解了。",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "交給我們吧！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "哦唷哦唷，",
+        "unit_id": 1,
+        "voice": "vo_adv_1057007_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "這是怎麼著？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n今天可一定要請你把這裡讓出來啊？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "是誰！？",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "我是惡德伊。",
+        "unit_id": 911,
+        "voice": "vo_adv_1057007_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "惡德伊商會的惡德伊。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "\n不好意思請問妳是……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "那位店長的熟人嗎？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "我叫吉塔。",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n是受到這個人委託，要保護這間店的騎空團！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "騎空團……",
+        "unit_id": 911,
+        "voice": "vo_adv_1057007_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "這樣啊，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "這邊也出招了呢……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "\n不過我們的想法似乎非常像呢。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "各位，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "該你們出場了！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "店長啊！",
+        "unit_id": 1011,
+        "voice": "vo_adv_1057007_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "\n你要是不老實點離開的話……",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "場面可就會難看了哦？",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "\n",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "那邊那兩個小鬼，",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "可沒辦法當我們的對手喔！？",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "咿……！",
+        "unit_id": 311,
+        "voice": "vo_adv_1057007_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "快、快幫幫我！\n這些傢伙，就是受惡德伊所託來收走我的店的公會。\n拜託了，幫我趕走他們！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "店長請你退下！",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n這裡就交給我們！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "不會再讓你們恣意妄為了！",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "由我們來當你們的對手！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "很有種不是嘛！",
+        "unit_id": 1011,
+        "voice": "vo_adv_1057007_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "\n",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "不過我們也是拿錢辦事！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "可不會手下留情，認命吧！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "\n你們幾個，",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "動手！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "部下們",
+        "words": "唔喔喔喔喔喔喔！",
+        "unit_id": 1,
+        "voice": "vo_adv_1057007_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "要來了！",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "準備好！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "部下１",
+        "words": "喔啦啊！",
+        "unit_id": 1,
+        "voice": "vo_adv_1057007_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "就是那裡！",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "噠啊！",
+        "unit_id": 105711
+    },
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "部下１",
+        "words": "唔喔啊！",
+        "unit_id": 1,
+        "voice": "vo_adv_1057007_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "對手不過就是兩個小鬼，搞什麼東西啊，蠢貨！",
+        "unit_id": 1011,
+        "voice": "vo_adv_1057007_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "\n這可不是遊戲！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "給我盡全力上！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "對方公會人很多，要小心！",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "嗯！謝謝！",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "不要讓戰鬥波及到店家，",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "慢慢遠離這裡吧！",
+        "unit_id": 105711
+    },
+    {
+        "type": "background",
+        "background": "500020"
+    },
+    {
+        "type": "dialogue",
+        "name": "部下２",
+        "words": "喔啦！",
+        "unit_id": 1,
+        "voice": "vo_adv_1057007_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "部下２",
+        "words": "差不多該給我去死了吧！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "唔……！",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "這傢伙！",
+        "unit_id": 105711
+    },
+    {
+        "type": "background",
+        "background": "500020"
+    },
+    {
+        "type": "dialogue",
+        "name": "部下２",
+        "words": "嘎啊！",
+        "unit_id": 1,
+        "voice": "vo_adv_1057007_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "呼、呼……",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "你沒事吧……？",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "太好了……",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "再稍微陪我努力一下……！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "對手只不過是兩個小鬼，到底什麼時候才能解決！",
+        "unit_id": 1011,
+        "voice": "vo_adv_1057007_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "\n既然這樣就由我來了結……",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "\n喂，就是妳！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "要不要和我一對一決鬥！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "決鬥……？",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "是啊沒錯。",
+        "unit_id": 1011,
+        "voice": "vo_adv_1057007_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "要是妳贏，我們再也不會對這間店出手。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "\n",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "不過要是妳輸了，",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "就把店交出來，然後解散騎空團！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "\n",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "惡德伊先生，",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "這樣沒問題吧？",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "唔姆……",
+        "unit_id": 911,
+        "voice": "vo_adv_1057007_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "就隨你高興吧。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "不過呢，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "請你可千萬不要輸掉了。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "這麼亂來的決鬥，",
+        "unit_id": 311,
+        "voice": "vo_adv_1057007_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "誰要接受呀！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n他們一定會耍什麼小手段的！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "……我瞭解了。",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "這場決鬥，我接受。",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "為什麼……！",
+        "unit_id": 311,
+        "voice": "vo_adv_1057007_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "繼續這樣下去，",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "不久就會輸給人數差距……",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n說不定會有陷阱，",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "這一點我當然知道。",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "不過這對我們來說，",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "也是有機會的……！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "就算勝算再怎麼低，",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n也一定得成功……！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "哈！",
+        "unit_id": 1011,
+        "voice": "vo_adv_1057007_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "看來妳也蠻瞭解什麼是分個輸贏嘛。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "\n",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "上前來吧！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "……我去去就回。",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "這個硬幣落地的聲音就是決鬥開始的信號。",
+        "unit_id": 1011,
+        "voice": "vo_adv_1057007_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "\n可以吧？",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "我知道了。",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "那我就扔了……",
+        "unit_id": 1011,
+        "voice": "vo_adv_1057007_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "當然是假的啦！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "呀",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "竟然用硬幣趁機偷襲……！？",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "得手啦！",
+        "unit_id": 1011,
+        "voice": "vo_adv_1057007_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "啊唔！",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "喔啦喔啦喔啦！",
+        "unit_id": 1011,
+        "voice": "vo_adv_1057007_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "爽快點投降吧！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "唔嗚，",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "還、",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "還沒結束……！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "什麼騎空團！",
+        "unit_id": 1011,
+        "voice": "vo_adv_1057007_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "明明連飛上天都辦不到！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "\n少得意忘形了！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "給我乖乖地在地上爬！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "沒有、",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "這一回事……！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "總有一天，",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "我們一定會飛上去！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n騁馳在這片天空！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "太天真了！",
+        "unit_id": 1011,
+        "voice": "vo_adv_1057007_050"
+    },
+    {
+        "type": "background",
+        "background": "500020"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "啊！劍被──！",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "用這招了結妳！！",
+        "unit_id": 1011,
+        "voice": "vo_adv_1057007_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "這就是我的極限……？",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "這樣就結束了嗎……？",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "抱歉……",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n一起在空中翱翔的約定，",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "無法實現了……",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "唔……！",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "沒有錯呢……",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "就像你所說的……！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n不可以放棄……！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n因為我們還有必須做的事情……！",
+        "unit_id": 105711
+    },
+    {
+        "type": "background",
+        "background": "500020"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "還沒有結束……！",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n這場勝負──！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "好刺眼……",
+        "unit_id": 1011,
+        "voice": "vo_adv_1057007_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "是障眼法嗎！",
+        "unit_id": 1011
+    },
+    {
+        "type": "still",
+        "still": "105700701"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "──這場勝負現在才開始！",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "這傢伙，",
+        "unit_id": 1011,
+        "voice": "vo_adv_1057007_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "什麼時候換了衣服……！？",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "你的聲音，",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "我聽到了……",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n支撐了快要倒下的我……！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "算了，",
+        "unit_id": 1011,
+        "voice": "vo_adv_1057007_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "用這招了結妳！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "我已經看穿了！",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "破！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "什麼！？",
+        "unit_id": 1011,
+        "voice": "vo_adv_1057007_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "剛才那招怎麼可能反擊……！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "\n",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "這傢伙的拳頭怎麼回事……",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "太快了！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "一口氣直接解決你！",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n奧義……「絕閃」！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "喝啊啊啊啊！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "公會長",
+        "words": "唔啊啊啊啊啊啊啊啊！！",
+        "unit_id": 1011,
+        "voice": "vo_adv_1057007_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "部下１＆部下２",
+        "words": "老……",
+        "unit_id": 1,
+        "voice": "vo_adv_1057007_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "部下１＆部下２",
+        "words": "老大啊啊啊！！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "呼啊啊啊……",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n……分出勝負了。",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "還想繼續嗎？",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n如果還想繼續打，",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "就由我來當你們的對手哦？",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "要是想就此結束，",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n就帶著倒在那邊的男人快點滾！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "部下１＆部下２",
+        "words": "噫噫噫噫！",
+        "unit_id": 1,
+        "voice": "vo_adv_1057007_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "部下１＆部下２",
+        "words": "老大你振作一點，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "部下１＆部下２",
+        "words": "老大！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "……還真有兩下子呢。",
+        "unit_id": 911,
+        "voice": "vo_adv_1057007_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡德伊",
+        "words": "給我記住了！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "……呼唔。",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "剛才真危險──",
+        "unit_id": 105711
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "background",
+        "background": "500020"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "──咦……？",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "我剛才做了什麼……？",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "對了，",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "那些人、",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "呢……",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "謝……",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "謝謝。",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n……我贏了、",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "對吧……？",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n我只記得我快要倒下，接下來的事情就不清楚了……",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "連語氣都變了……？",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "當時太過拼命而沒有意識到，",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n原來我變成那樣啊……",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "……我慢慢想起來了。",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "怎麼會那樣呢……？",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "如果能更加熟練使用那份力量，",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n之後一定能辦到更多事對吧？",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "……不過，",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "到底是怎麼辦到的呢……？",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "說不定，",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "是因為你的聲音傳了過來。",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "真是謝謝你。",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "那時候我感到非常振奮！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "或許是這樣吧……",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "不對，",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "一定是這樣的！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "總有一天我們一起前往空中旅行，",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "找出答案吧！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "吉塔小姐，",
+        "unit_id": 311,
+        "voice": "vo_adv_1057007_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "妳沒事吧！？",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "這一次真的非常感謝你們！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n我該怎麼道謝才好……！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "真的非常感謝你們！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "請別這樣說……",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "差點在決鬥中輸掉，",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "真是抱歉。",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "不過，",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "最後還是成功獲勝保護了這間店，",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "太好了呢！",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "跨越了今天這樣的危機……",
+        "unit_id": 105711,
+        "voice": "vo_adv_1057007_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n如果是和你一起，",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "感覺前往空中旅行的日子，",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "\n也不遠了……",
+        "unit_id": 105711
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "吉塔面露微笑，思考起自己沉睡中的潛力，\n以及未來的每一天。"
+    }
+]

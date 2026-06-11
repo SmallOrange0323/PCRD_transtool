@@ -1,0 +1,622 @@
+[
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}陪同美里赴王都舉行繪本朗讀會。"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "有{player}在真是幫了我大忙了呢。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "今天比起平常，帶了更多的繪本，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n要搬運實在是很費勁呢。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "謝謝你的幫忙。好棒好棒。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "我認為所謂的繪本，對孩子們來說，就像是教科書一樣。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "能開心地學習到各式各樣的事物對吧？",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "不只有村子裡的孩子，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n我希望也能讓王都的孩子們都能知道這些美妙的繪本，",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n所以休假時常常會來到這裡喔～",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "同行的父母們似乎也樂在其中，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "老師覺得非常高興呢──",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "啊！是美里老師──！",
+        "unit_id": 211,
+        "voice": "vo_adv_1015003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "哎呀？妳好呀～",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "妳好──！",
+        "unit_id": 211,
+        "voice": "vo_adv_1015003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n媽媽──！是美里老師──！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "好的好的聽見了不用那麼大聲喊叫。",
+        "unit_id": 411,
+        "voice": "vo_adv_1015003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "美里老師，妳好～",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "哎呀哎呀，妳好～",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "小女一直以來都承蒙關照了。",
+        "unit_id": 411,
+        "voice": "vo_adv_1015003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "真不好意思，是個吵鬧的孩子。",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "不會不會，才沒這種事呢。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "如果沒給妳添麻煩的話就好了……",
+        "unit_id": 411,
+        "voice": "vo_adv_1015003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "完全沒這回事。　",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n倒不如說，她一直都給了我滿滿的活力喔。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "就是說嘛──！",
+        "unit_id": 211,
+        "voice": "vo_adv_1015003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n我把活力都分給了大家喔！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "沒錯呢～",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "一直以來謝謝妳囉。真乖真乖。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "欸嘿嘿嘿～",
+        "unit_id": 211,
+        "voice": "vo_adv_1015003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "呵呵呵……",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "今天是外出購物嗎？",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "不是的，我們去了一趟醫院。",
+        "unit_id": 411,
+        "voice": "vo_adv_1015003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n因為這裡的醫院比村子裡的還要有規模。",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "哎呀哎呀，難不成是感冒了……",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "不是的喔～其實是──",
+        "unit_id": 411,
+        "voice": "vo_adv_1015003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "媽媽呀，有小寶寶了呦！",
+        "unit_id": 211,
+        "voice": "vo_adv_1015003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "哎呀哎呀哎呀！那還真是，非常恭喜呢。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "這孩子真是的……",
+        "unit_id": 411,
+        "voice": "vo_adv_1015003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "非常謝謝妳。",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "預產期是何時呢？",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "大概再三個月左右，還早呢。",
+        "unit_id": 411,
+        "voice": "vo_adv_1015003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "我要變成姊姊了──！",
+        "unit_id": 211,
+        "voice": "vo_adv_1015003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "哎呀哎呀，那麼，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n得成為一個可以當做榜樣的姊姊呢～",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "沒問題──！",
+        "unit_id": 211,
+        "voice": "vo_adv_1015003_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "這樣的話，也要敢吃紅蘿蔔喔～",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "嗚哇──！那個才不要──！",
+        "unit_id": 211,
+        "voice": "vo_adv_1015003_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "呵呵呵♪",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n小寶寶，真讓人期待呢～",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "嗯！",
+        "unit_id": 211,
+        "voice": "vo_adv_1015003_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "即將誕生的孩子，之後務必也得讓美里老師看顧呢。",
+        "unit_id": 411,
+        "voice": "vo_adv_1015003_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "這是當然的。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n我會負起責任好好照顧的唷。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "非常謝謝你。那麼，我們也差不多該……",
+        "unit_id": 411,
+        "voice": "vo_adv_1015003_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "老師，打擾你們約會真不好意思。",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "哎呀哎呀，才不是約會什麼的啦──",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "媽媽──約會是什麼──？",
+        "unit_id": 211,
+        "voice": "vo_adv_1015003_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "呵呵呵，對妳來說還太早了喔。",
+        "unit_id": 411,
+        "voice": "vo_adv_1015003_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n來，我們回家吧～",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "哎啊哎啊，走掉了。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "不好意思呢。不小心聊的入神了。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "話雖如此，有了小寶寶，真是可喜可賀呢。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "要為他朗讀怎樣的繪本好呢。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "呵呵呵，村子又要熱鬧起來了～",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "哎呀哎呀，說的也是……",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "小寶寶啊，是為了許多人的愛，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n而進到母親的肚子裡的呦。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "被眾人的祝福包圍之下誕生，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n接受了滿滿的愛養育而成，接著逐漸成長……",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "無論是人類或動物，大家都是母親生下來的喔～",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "當然{player}也是……",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "……是呢，真對不起。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "……因為失去了記憶，是不會知道的吧。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n也不明白的吧……",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "沒什麼喔……只是，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n只是突然想緊緊抱住你而已。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "不是的喔……",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n只是，突然想要擁抱你而已……",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "沒事的唷。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n因為有老師在你身邊啊～我會陪在你身邊的喔～",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "至少……至少對這孩子來說，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015003_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n要成為像他的母親般可靠的老師……",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "儘管無法理解美里擁抱的意義，\n{player}還是接受了這份柔和的溫暖。"
+    }
+]

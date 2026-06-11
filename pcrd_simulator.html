@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCRD 登場角色幸運模擬卡池</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #ff7597;
+            --accent-pink: #e83875;
+            --light-pink: #ffeef2;
+            --bg-gradient: linear-gradient(135deg, #ffeef2 0%, #ffd1dc 100%);
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --text-dark: #2c3e50;
+            --text-gray: #7f8c8d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', 'Noto Sans TC', sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-dark);
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            text-align: center;
+        }
+
+        header {
+            margin-bottom: 25px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: var(--accent-pink);
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(232, 56, 117, 0.15);
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* 抽卡主卡片 */
+        .gacha-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 30px 25px;
+            box-shadow: 0 15px 35px rgba(232, 56, 117, 0.12);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gacha-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-pink), var(--accent-pink));
+        }
+
+        /* 頭像框與動畫 */
+        .avatar-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .avatar-ring {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 8px 20px rgba(232, 56, 117, 0.18);
+            overflow: hidden;
+            background: var(--light-pink);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .avatar-placeholder {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent-pink);
+            letter-spacing: 1px;
+            user-select: none;
+        }
+
+        /* 載入中狀態動畫 */
+        .shimmering {
+            animation: pulse 0.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.96); opacity: 0.8; box-shadow: 0 0 10px rgba(232, 56, 117, 0.2); }
+            100% { transform: scale(1.04); opacity: 1; box-shadow: 0 0 25px rgba(232, 56, 117, 0.6); }
+        }
+
+        /* 角色資訊顯示 */
+        .chara-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-dark);
+            opacity: 1;
+            transition: opacity 0.2s;
+        }
+
+        .chara-meta {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            background: rgba(232, 56, 117, 0.08);
+            color: var(--accent-pink);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        /* 戰力指數區 */
+        .power-section {
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 15px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .power-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .power-val {
+            color: #ffa94d;
+            font-size: 1.1rem;
+            font-weight: 800;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .power-bar-bg {
+            width: 100%;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .power-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ffd43b, #ffa94d);
+            width: 0%;
+            border-radius: 10px;
+            transition: width 0.8s cubic-bezier(0.1, 0.8, 0.2, 1);
+        }
+
+        /* 角色幸運留言 */
+        .lucky-dialogue {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #4a5568;
+            font-style: italic;
+            position: relative;
+            padding: 0 15px;
+            margin-bottom: 25px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lucky-dialogue::before, .lucky-dialogue::after {
+            content: '"';
+            font-size: 2rem;
+            color: rgba(232, 56, 117, 0.25);
+            position: absolute;
+            font-family: 'Outfit', serif;
+        }
+
+        .lucky-dialogue::before { left: -5px; top: -15px; }
+        .lucky-dialogue::after { right: -5px; bottom: -25px; }
+
+        /* 幸運抽卡按鈕 */
+        .gacha-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #ff7597 0%, #e83875 100%);
+            border: none;
+            color: #fff;
+            padding: 14px 20px;
+            border-radius: 16px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(232, 56, 117, 0.3);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            outline: none;
+        }
+
+        .gacha-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(232, 56, 117, 0.45);
+        }
+
+        .gacha-btn:active {
+            transform: translateY(1px);
+        }
+
+        .gacha-btn:disabled {
+            background: #cbd5e0;
+            box-shadow: none;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* 懸浮裝飾圖案 */
+        .decor {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.15;
+            color: var(--accent-pink);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>⚔️ PCRD Card pool ⚔️</h1>
+        <p>今日運勢挑戰！抽選你的幸運陪伴角色</p>
+    </header>
+
+    <div class="gacha-card">
+        <div class="avatar-container">
+            <div id="chara-avatar-ring" class="avatar-ring">
+                <span id="chara-avatar" class="avatar-placeholder">❓</span>
+            </div>
+        </div>
+
+        <div id="chara-name" class="chara-name">點擊按鈕開始</div>
+        
+        <div class="chara-meta">
+            <span id="tag-guild" class="meta-tag">公會: --</span>
+            <span id="tag-race" class="meta-tag">種族: --</span>
+            <span id="tag-cv" class="meta-tag">CV: --</span>
+        </div>
+
+        <div class="power-section">
+            <div class="power-header">
+                <span>今日連結戰力：</span>
+                <span id="power-val" class="power-val">0</span>
+            </div>
+            <div class="power-bar-bg">
+                <div id="power-bar" class="power-bar-fill"></div>
+            </div>
+        </div>
+
+        <div id="chara-dialogue" class="lucky-dialogue">
+            美食殿堂的夥伴們，正在等候您的召喚喔！
+        </div>
+
+        <button id="draw-btn" class="gacha-btn" onclick="drawCharacter()">
+            ✨ 召喚今日幸運角色 ✨
+        </button>
+    </div>
+</div>
+
+<script>
+    // 角色陣容資料庫
+    const characters = [
+        {
+            name: "佩可莉姆",
+            guild: "美食殿堂",
+            race: "人類",
+            cv: "M·A·O",
+            dialogue: "肚子餓了就沒辦法戰鬥了喔！要不要一起來吃美味的飯糰呢？有我在，今天一定能元氣滿滿！",
+            avatar: "佩可"
+        },
+        {
+            name: "可可蘿",
+            guild: "美食殿堂",
+            race: "精靈",
+            cv: "伊藤美來",
+            dialogue: "敬愛的主人，今天也請讓可可蘿陪伴在您身邊，為您引路與照料一切。您是可可蘿永遠的驕傲。",
+            avatar: " coco "
+        },
+        {
+            name: "凱留",
+            guild: "美食殿堂",
+            race: "獸人",
+            cv: "立花理香",
+            dialogue: "哼、哼嗯！你這傢伙可別誤會了，我只是剛好有空才陪你的！今天要是遇到危險，我還是會用魔法罩你的啦！",
+            avatar: "凱留"
+        },
+        {
+            name: "謝菲",
+            guild: "美食殿堂",
+            race: "龍族",
+            cv: "諸星堇",
+            dialogue: "唔...冰淇淋...？啊，沒事！今天也要打起精神一起加油，我絕對不會拖大家後腿的！",
+            avatar: "謝菲"
+        },
+        {
+            name: "優衣",
+            guild: "破曉之星",
+            race: "人類",
+            cv: "種田梨沙",
+            dialogue: "那個...騎士君...！如果今天感到疲倦的話，隨時可以告訴我喔。我會用回復魔法為你加油打氣的！",
+            avatar: "優衣"
+        }
+    ];
+
+    function drawCharacter() {
+        const btn = document.getElementById('draw-btn');
+        const ring = document.getElementById('chara-avatar-ring');
+        const avatar = document.getElementById('chara-avatar');
+        const nameEl = document.getElementById('chara-name');
+        const guildEl = document.getElementById('tag-guild');
+        const raceEl = document.getElementById('tag-race');
+        const cvEl = document.getElementById('tag-cv');
+        const powerVal = document.getElementById('power-val');
+        const powerBar = document.getElementById('power-bar');
+        const dialogueEl = document.getElementById('chara-dialogue');
+
+        // 鎖定按鈕避免重複點擊
+        btn.disabled = true;
+        
+        // 啟動閃爍 shimmering 載入動畫
+        ring.classList.add('shimmering');
+        avatar.innerText = "🌀";
+        nameEl.innerText = "召喚中...";
+        guildEl.innerText = "公會: --";
+        raceEl.innerText = "種族: --";
+        cvEl.innerText = "CV: --";
+        dialogueEl.innerText = "正在呼喚角色穿越時空隧道...";
+        powerVal.innerText = "0";
+        powerBar.style.width = "0%";
+
+        // 模擬 1 秒鐘的召喚動畫
+        setTimeout(() => {
+            ring.classList.remove('shimmering');
+            
+            // 隨機抽選角色
+            const randomIndex = Math.floor(Math.random() * characters.length);
+            const chara = characters[randomIndex];
+
+            // 渲染角色資訊
+            avatar.innerText = chara.avatar;
+            nameEl.innerText = chara.name;
+            guildEl.innerText = `公會: ${chara.guild}`;
+            raceEl.innerText = `種族: ${chara.race}`;
+            cvEl.innerText = `CV: ${chara.cv}`;
+            dialogueEl.innerText = chara.dialogue;
+
+            // 隨機戰力指數 (100 - 99999)
+            const randomPower = Math.floor(Math.random() * (99999 - 100 + 1)) + 100;
+            powerVal.innerText = randomPower.toLocaleString();
+            
+            // 計算戰力長度佔比並反映在進度條上
+            const percentage = (randomPower / 99999) * 100;
+            powerBar.style.width = `${percentage}%`;
+
+            // 解鎖按鈕
+            btn.disabled = false;
+        }, 1000);
+    }
+</script>
+</body>
+</html>
