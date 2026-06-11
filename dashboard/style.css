@@ -702,7 +702,7 @@ body {
 .level-input-group input {
     background: transparent;
     border: none;
-    color: white;
+    color: var(--text-primary);
     font-size: 0.95rem;
     font-weight: 700;
     width: 50px;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PCR 台版數據導航站</title>
+    <title>PCR 劇情與角色導航站</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- 樣式表 -->
-    <link rel="stylesheet" href="style.css?v=4.0">
+    <link rel="stylesheet" href="style.css?v=4.1">
 
     <!-- 函式庫 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
@@ -20,7 +20,7 @@
     <!-- 載入覆蓋層 -->
     <div id="loading-overlay">
         <div class="loader-container">
-            <h2 style="margin-bottom: 20px; text-align: center;">PCRD Data Hub</h2>
+            <h2 style="margin-bottom: 20px; text-align: center;">PCRD Story Map</h2>
             <div class="loader-bar">
                 <div id="loader-progress" class="loader-progress"></div>
             </div>
@@ -34,42 +34,27 @@
     <!-- 導航列 -->
     <nav class="navbar">
         <div class="nav-logo">
-            <span class="icon">⚔️</span> PCRD Data Hub
+            <span class="icon">🗺️</span> PCRD 劇情與角色導航站
         </div>
         <div class="nav-tabs">
-            <button id="tab-cb-btn" class="tab-btn active" onclick="switchTab('clan-battle')">戰隊戰</button>
+            <button id="tab-map-btn" class="tab-btn active" onclick="switchTab('map')">劇情地圖</button>
             <button id="tab-characters-btn" class="tab-btn" onclick="switchTab('characters')">角色圖鑑</button>
-            <button id="tab-map-btn" class="tab-btn" onclick="switchTab('map')">劇情地圖</button>
-            <button id="tab-events-btn" class="tab-btn" onclick="switchTab('events')">活動日曆</button>
-            <button id="tab-stats-btn" class="tab-btn" onclick="switchTab('stats')">作業統計</button>
         </div>
         <div style="display: flex; align-items: center; gap: 15px;">
             <select id="region-selector" class="region-select" onchange="PCRDatabase.switchRegion(this.value)">
                 <option value="tw">台服 (TW)</option>
                 <option value="jp">日服 (JP)</option>
             </select>
-            <a href="../index.html" class="nav-back">
-                <span>←</span> 回到工具
-            </a>
         </div>
     </nav>
 
     <!-- 主內容區 -->
     <main class="container">
-        <!-- 分頁 1: 戰隊戰 -->
-        <div id="clan-battle-tab" class="tab-content active"></div>
+        <!-- 分頁 1: 劇情地圖 -->
+        <div id="map-tab" class="tab-content active"></div>
 
         <!-- 分頁 2: 角色 -->
         <div id="characters-tab" class="tab-content"></div>
-
-        <!-- 分頁 3: 劇情地圖 -->
-        <div id="map-tab" class="tab-content"></div>
-
-        <!-- 分頁 4: 活動 -->
-        <div id="events-tab" class="tab-content"></div>
-
-        <!-- 分頁 5: 作業統計 -->
-        <div id="stats-tab" class="tab-content"></div>
     </main>
 
     <!-- 角色詳情彈窗 -->
@@ -81,17 +66,14 @@
     </div>
 
     <!-- 程式腳本 -->
-    <script src="db.js?v=5.1.3"></script>
-    <script src="avatar-service.js?v=5.1.3"></script>
-    <script src="chapter-data.js?v=5.1.3"></script>
-    <script src="characters.js?v=5.1.3"></script>
-    <script src="clan-battle.js?v=5.1.3"></script>
-    <script src="map.js?v=5.1.3"></script>
-    <script src="events.js?v=5.1.3"></script>
-    <script src="usage-stats.js?v=5.1.3"></script>
+    <script src="db.js?v=5.1.7"></script>
+    <script src="avatar-service.js?v=5.1.7"></script>
+    <script src="chapter-data.js?v=5.1.7"></script>
+    <script src="characters.js?v=5.1.7"></script>
+    <script src="map.js?v=5.1.7"></script>
 
     <script>
-        console.log("Main script block in index.html starting...");
+        console.log("Main script block in story_map.html starting...");
         // 檢查是否為本地檔案
         if (window.location.protocol === 'file:') {
             document.getElementById('cors-warning').style.display = 'block';
@@ -103,22 +85,13 @@
             document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
             
             document.getElementById(tabId + '-tab').classList.add('active');
-            
-            let btnId = tabId;
-            if (tabId === 'clan-battle') btnId = 'cb';
-            document.getElementById('tab-' + btnId + '-btn').classList.add('active');
+            document.getElementById('tab-' + tabId + '-btn').classList.add('active');
 
             // 如果分頁內容是空的，進行渲染
-            if (tabId === 'clan-battle' && !ClanBattleModule.currentBattle) {
-                ClanBattleModule.render();
+            if (tabId === 'map' && document.getElementById('map-tab').innerHTML.trim() === '') {
+                QuestMapModule.render();
             } else if (tabId === 'characters' && document.getElementById('characters-tab').innerHTML.trim() === '') {
                 CharactersModule.render();
-            } else if (tabId === 'map' && document.getElementById('map-tab').innerHTML.trim() === '') {
-                QuestMapModule.render();
-            } else if (tabId === 'events' && document.getElementById('events-tab').innerHTML.includes('loading-mini')) {
-                EventsModule.render();
-            } else if (tabId === 'stats' && document.getElementById('stats-tab').innerHTML.trim() === '') {
-                UsageStatsModule.render();
             }
         }
 
@@ -145,11 +118,8 @@
                 overlay.style.opacity = '0';
                 setTimeout(() => overlay.style.display = 'none', 500);
 
-                // 預設渲染首頁
-                ClanBattleModule.render();
-                
-                // 預先載入活動資料
-                EventsModule.render();
+                // 預設渲染劇情地圖
+                QuestMapModule.render();
             } catch (err) {
                 text.innerText = '初始化失敗，請重新載入頁面';
                 text.style.color = '#ff6b6b';

@@ -84,9 +84,6 @@ window.ClanBattleModule = {
 
             <div id="boss-container" class="boss-grid">
                 ${this.bosses.map((boss, index) => {
-                    const primaryImg = `https://redive.estertion.win/icon/unit/${boss.unit_id}.webp`;
-                    const secondaryImg = `https://redive.estertion.win/icon/unit/${Math.floor(boss.unit_id / 100)}31.webp`;
-                    
                     const parts = [];
                     if (boss.n1) parts.push({ name: '本體', def: boss.def1, mdef: boss.mdef1 });
                     if (boss.n2) parts.push({ name: boss.n2.replace(boss.boss_name, '').trim() || '部位 1', def: boss.def2, mdef: boss.mdef2 });
@@ -98,9 +95,8 @@ window.ClanBattleModule = {
                             <!-- 左欄：頭像與基本資訊 -->
                             <div class="boss-left">
                                 <div class="boss-rank">BOSS ${index + 1}</div>
-                                <div class="boss-avatar">
-                                    <img src="${primaryImg}" 
-                                         onerror="if(!this.t2){this.t2=true;this.src='${secondaryImg}';}else if(!this.t3){this.t3=true;this.src=this.src.replace('31.webp','61.webp');}else{this.src='https://redive.estertion.win/icon/unit/000000.webp';}">
+                                <div class="boss-avatar" style="overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 0;">
+                                    ${window.AvatarService.getAvatarHtmlByUnitId(boss.unit_id, boss.boss_name)}
                                 </div>
                                 <div class="boss-name">${boss.boss_name}</div>
                                 ${boss.is_multi ? '<div class="multi-tag" style="position:relative; top:10px; right:0;">多目標</div>' : ''}

@@ -37,9 +37,9 @@ window.AvatarService = {
         "涅雅": 123311,
         "安涅默涅": 129611,
         "普蕾西亞": 126112,
-        "莉莉": 131301,
-        "可璃": 131401,
-        "可璃亞": 131401,
+        "莉莉": 125811,
+        "可璃": 126011,
+        "可璃亞": 126011,
         "八斗神局長": 193631,
         "八斗金局長": 193631,
         "八斗": 193631,
@@ -48,8 +48,8 @@ window.AvatarService = {
         "菲絲雷斯": 193732,
         "菲絲": 193732,
         "媞雅": 193211,
-        "格魯尼": 195611,
-        "羅蘭": 195211,
+        "格魯尼": 194311,
+        "羅蘭": 194211,
         "涅妃‧涅羅": 129711,
     },
 
@@ -80,14 +80,27 @@ window.AvatarService = {
         if (!unitId || unitId < 100000) return [];
         const baseId = Math.floor(unitId / 100) * 100;
         const candidates = [];
-        // 1. 本地：base+31 (Live2D/大圖)
+        
+        // 1. webp 格式 (優先)
+        // 本地：base+31 (Live2D/大圖)
         candidates.push(`${this.localBase}${baseId + 31}.webp`);
-        // 2. CDN：base+31
+        // CDN：base+31
         this.cdnBases.forEach(cdn => candidates.push(`${cdn}${baseId + 31}.webp`));
-        // 3. 本地：base+11 (SD/小圖)
+        // 本地：base+11 (SD/小圖)
         candidates.push(`${this.localBase}${baseId + 11}.webp`);
-        // 4. CDN：base+11
+        // CDN：base+11
         this.cdnBases.forEach(cdn => candidates.push(`${cdn}${baseId + 11}.webp`));
+
+        // 2. png 格式 (降級備用，特別是 NPC 資源)
+        // 本地：base+31 (Live2D/大圖)
+        candidates.push(`${this.localBase}${baseId + 31}.png`);
+        // CDN：base+31
+        this.cdnBases.forEach(cdn => candidates.push(`${cdn}${baseId + 31}.png`));
+        // 本地：base+11 (SD/小圖)
+        candidates.push(`${this.localBase}${baseId + 11}.png`);
+        // CDN：base+11
+        this.cdnBases.forEach(cdn => candidates.push(`${cdn}${baseId + 11}.png`));
+
         return candidates;
     },
 
@@ -96,30 +109,20 @@ window.AvatarService = {
         const cleanName = this.cleanName(charaName);
         const unitId = this.getUnitId(cleanName, externalAvatars);
 
-        if (!unitId) {
+        if (!unitId || unitId < 100000) {
             return this.getFallbackHtml(cleanName);
         }
 
-        const candidates = this.getUrlCandidates(unitId);
-        if (candidates.length === 0) {
-            return this.getFallbackHtml(cleanName);
-        }
+        const baseId = Math.floor(unitId / 100) * 100;
+        const mainId = (unitId < 190000) ? (baseId + 31) : unitId;
+        // 優先使用本地端的 .png 圖片
+        const src = `icon/unit/${mainId}.png`;
+        const safeName = this.escapeForJsString(cleanName);
 
-        // 建立 onerror 鏈：依序嘗試下一個候選
-        let onerrorChain = "";
-        for (let i = 0; i < candidates.length - 1; i++) {
-            const nextUrl = this.escapeForJsString(candidates[i + 1]); // 【修正 Bug 8】正確跳脫字串
-            onerrorChain += `this.onerror=null; this.src='${nextUrl}'; `;
-        }
-        // 最後失敗：顯示文字佔位符
-        const safeName = this.escapeForJsString(cleanName); // 【修正 Bug 8】正確跳脫字串
-        onerrorChain += `this.style.display='none'; this.parentNode.innerHTML='<div class=\\'npc-avatar-placeholder\\'>${safeName.substring(0, 2)}</div>';`;
-
-        return `<img src="${candidates[0]}" style="width: 100%; height: 100%; object-fit: cover;" onerror="${onerrorChain}">`;
+        return `<img src="${src}" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleError(this, '${safeName}', ${baseId}, ${unitId})">`;
     },
 
     // 取得最佳頭像 img 元素 HTML (根據 unit_id)
-    // 【修正】無效 ID 兼容：若 unitId 無效，則回退至名稱查找
     getAvatarHtmlByUnitId(unitId, charaName, externalAvatars = {}) {
         const cleanName = this.cleanName(charaName);
         let finalUnitId = unitId;
@@ -131,22 +134,46 @@ window.AvatarService = {
             return this.getFallbackHtml(cleanName);
         }
 
-        const candidates = this.getUrlCandidates(finalUnitId);
-        if (candidates.length === 0) {
-            return this.getFallbackHtml(cleanName);
-        }
-
-        // 建立 onerror 鏈：依序嘗試下一個候選
-        let onerrorChain = "";
-        for (let i = 0; i < candidates.length - 1; i++) {
-            const nextUrl = this.escapeForJsString(candidates[i + 1]);
-            onerrorChain += `this.onerror=null; this.src='${nextUrl}'; `;
-        }
-        // 最後失敗：顯示文字佔位符
+        const baseId = Math.floor(finalUnitId / 100) * 100;
+        const mainId = (finalUnitId < 190000) ? (baseId + 31) : finalUnitId;
+        // 優先使用本地端的 .png 圖片
+        const src = `icon/unit/${mainId}.png`;
         const safeName = this.escapeForJsString(cleanName);
-        onerrorChain += `this.style.display='none'; this.parentNode.innerHTML='<div class=\\'npc-avatar-placeholder\\'>${safeName.substring(0, 2)}</div>';`;
 
-        return `<img src="${candidates[0]}" style="width: 100%; height: 100%; object-fit: cover;" onerror="${onerrorChain}">`;
+        return `<img src="${src}" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleError(this, '${safeName}', ${baseId}, ${finalUnitId})">`;
+    },
+
+    // 靜態錯誤處理函式，用於逐步降級載入圖片或顯示文字佔位符
+    handleError(img, safeName, baseId, finalUnitId) {
+        if (!img.dataset.step) {
+            img.dataset.step = "1";
+        }
+        const step = parseInt(img.dataset.step);
+        const mainId = (finalUnitId < 190000) ? (baseId + 31) : finalUnitId;
+
+        if (step === 1) {
+            img.dataset.step = "2";
+            // 第一步：如果本地 png 失敗，嘗試 So-net 00500012 的 .png
+            img.src = `https://img-pc.so-net.tw/dl/Resources/00500012/Jpn/AssetBundles/Android/icon/unit/${mainId}.png`;
+            return;
+        }
+        if (step === 2) {
+            img.dataset.step = "3";
+            // 第二步：如果 So-net 00500012 失敗，嘗試 So-net 00500015 的 .png
+            img.src = `https://img-pc.so-net.tw/dl/Resources/00500015/Jpn/AssetBundles/Android/icon/unit/${mainId}.png`;
+            return;
+        }
+        if (step === 3) {
+            img.dataset.step = "4";
+            // 第三步：如果 So-net 皆失敗，嘗試 EsterTion 的 .webp (EsterTion 頭像最齊全的格式)
+            img.src = `https://redive.estertion.win/icon/unit/${mainId}.webp`;
+            return;
+        }
+        // 最後失敗：隱藏圖片並顯示文字佔位符
+        img.style.display = 'none';
+        if (img.parentNode) {
+            img.parentNode.innerHTML = `<div class="npc-avatar-placeholder">${safeName.substring(0, 2)}</div>`;
+        }
     },
 
     // 文字佔位符
@@ -173,4 +200,49 @@ window.AvatarService = {
     registerCustom(charaName, unitId) {
         this.customMap[charaName] = unitId;
     },
+
+    // 取得技能圖示 HTML
+    getSkillIconHtml(iconType) {
+        if (!iconType) {
+            return `<img src="https://redive.estertion.win/icon/unit/000000.png" style="width: 100%; height: 100%; object-fit: cover;">`;
+        }
+        // 優先使用本地端的 .png 圖片
+        const src = `icon/skill/${iconType}.png`;
+        return `<img src="${src}" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleSkillError(this, ${iconType})">`;
+    },
+
+    // 技能圖示錯誤處理
+    handleSkillError(img, iconType) {
+        if (!img.dataset.step) {
+            img.dataset.step = "1";
+        }
+        const step = parseInt(img.dataset.step);
+
+        if (step === 1) {
+            img.dataset.step = "2";
+            // 第一步：如果本地 png 失敗，嘗試 So-net 00500012 的 .png
+            img.src = `https://img-pc.so-net.tw/dl/Resources/00500012/Jpn/AssetBundles/Android/icon/skill/${iconType}.png`;
+            return;
+        }
+        if (step === 2) {
+            img.dataset.step = "3";
+            // 第二步：如果 So-net 00500012 失敗，嘗試 So-net 00500015 的 .png
+            img.src = `https://img-pc.so-net.tw/dl/Resources/00500015/Jpn/AssetBundles/Android/icon/skill/${iconType}.png`;
+            return;
+        }
+        if (step === 3) {
+            img.dataset.step = "4";
+            // 第三步：如果 So-net 都失敗，嘗試 EsterTion 的 .webp
+            img.src = `https://redive.estertion.win/icon/skill/${iconType}.webp`;
+            return;
+        }
+        if (step === 4) {
+            img.dataset.step = "5";
+            // 第四步：嘗試 EsterTion 的 .png
+            img.src = `https://redive.estertion.win/icon/skill/${iconType}.png`;
+            return;
+        }
+        // 最後失敗：顯示 000000 佔位符
+        img.src = 'https://redive.estertion.win/icon/unit/000000.png';
+    }
 };

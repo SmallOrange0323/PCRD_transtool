@@ -58,8 +58,8 @@ const QuestMapModule = {
             "帆稀的聲音": "帆稀", "嘉夜的聲音": "嘉夜", "祈梨的聲音": "祈梨",
             "矛依未的聲音": "矛依未", "涅雅": "涅婭",
             "安涅默涅": "安涅默涅", "普蕾西亞": "普蕾西亞",
-            "莉莉的聲音": "莉莉", "可璃的聲音": "可璃",
-            "可璃亞": "可璃", "可璃亞的聲音": "可璃",
+            "莉莉的聲音": "莉莉", "可璃的聲音": "可璃亞",
+            "可璃": "可璃亞", "可璃亞的聲音": "可璃亞",
             "八斗金局長": "八斗神", "八斗": "八斗神", "八斗神局長": "八斗神",
             "剎鬼‧八斗神": "八斗神", "傻": "倭",
             "菲絲雷斯": "菲絲", "吉塔的聲音": "吉塔", "深月的聲音": "深月",
@@ -150,6 +150,7 @@ const QuestMapModule = {
                         groupId: groupId,
                         part: ChapterDataService.getPartFromGroupId(groupId),
                         isEvent: false,
+                        type: 'main',
                     };
                 });
                 console.log(`[QuestMapModule] 成功載入 ${this.stories.length} 筆主線劇情 (含部別標記)`);
@@ -182,6 +183,59 @@ const QuestMapModule = {
                 console.log(`[QuestMapModule] 成功載入 ${this.eventStories.length} 筆活動話數`);
             }
 
+            // 載入個人、公會與露娜塔劇情，以防止登場人物對白解析時出現 "ID: xxx" 的奇怪ID
+            try {
+                // 1. 個人劇情 (Chara Story)
+                const checkChara = await window.PCRDatabase.runQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='chara_story_detail'");
+                if (checkChara && checkChara.length > 0) {
+                    const charaSql = "SELECT story_id, title, sub_title, story_group_id FROM chara_story_detail";
+                    const rawChara = await window.PCRDatabase.runQuery(charaSql);
+                    const charaStories = rawChara.map(row => ({
+                        id: row.story_id,
+                        chapter: row.title || "個人劇情",
+                        title: row.sub_title || "",
+                        groupId: row.story_group_id,
+                        isEvent: false,
+                        type: 'chara',
+                    }));
+                    this.stories = this.stories.concat(charaStories);
+                }
+
+                // 2. 公會劇情 (Guild Story)
+                const checkGuild = await window.PCRDatabase.runQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='guild_story_detail'");
+                if (checkGuild && checkGuild.length > 0) {
+                    const guildSql = "SELECT story_id, title, sub_title, story_group_id FROM guild_story_detail";
+                    const rawGuild = await window.PCRDatabase.runQuery(guildSql);
+                    const guildStories = rawGuild.map(row => ({
+                        id: row.story_id,
+                        chapter: row.title || "公會劇情",
+                        title: row.sub_title || "",
+                        groupId: row.story_group_id,
+                        isEvent: false,
+                        type: 'guild',
+                    }));
+                    this.stories = this.stories.concat(guildStories);
+                }
+
+                // 3. 露娜塔/系統劇情 (Tower/System Story)
+                const checkTower = await window.PCRDatabase.runQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='tower_story_detail'");
+                if (checkTower && checkTower.length > 0) {
+                    const towerSql = "SELECT story_id, title, sub_title, story_group_id FROM tower_story_detail";
+                    const rawTower = await window.PCRDatabase.runQuery(towerSql);
+                    const towerStories = rawTower.map(row => ({
+                        id: row.story_id,
+                        chapter: row.title || "露娜塔/系統劇情",
+                        title: row.sub_title || "",
+                        groupId: row.story_group_id,
+                        isEvent: false,
+                        type: 'tower',
+                    }));
+                    this.stories = this.stories.concat(towerStories);
+                }
+            } catch (extraErr) {
+                console.warn("[QuestMapModule] 載入額外劇情對照標題失敗:", extraErr);
+            }
+
             await ChapterDataService.load();
         } catch (err) {
             console.error("[QuestMapModule] 載入劇情數據失敗:", err);
@@ -190,7 +244,7 @@ const QuestMapModule = {
 
     groupStories() {
         this.chapters = {};
-        const filtered = this.stories.filter(s => s.part === this.currentPart);
+        const filtered = this.stories.filter(s => s.type === 'main' && s.part === this.currentPart);
 
         filtered.forEach(s => {
             // Part 3 主線分頁：隱藏幕間劇情 (group_id >= 3000)
@@ -241,6 +295,46 @@ const QuestMapModule = {
         });
     },
 
+    groupGuildStories() {
+        this.chapters = {};
+        const filtered = this.stories.filter(s => s.type === 'guild');
+        // 依 groupId (公會編號) 排序，讓公會順序固定
+        filtered.sort((a, b) => (a.groupId || 0) - (b.groupId || 0));
+        filtered.forEach(s => {
+            const chKey = s.chapter || "其他公會";
+            if (!this.chapters[chKey]) this.chapters[chKey] = [];
+            this.chapters[chKey].push(s);
+        });
+    },
+
+    groupCharaStories() {
+        this.chapters = {};
+        const filtered = this.stories.filter(s => s.type === 'chara');
+        // 依 groupId (角色 unit_id) 排序，並讓話數遞增
+        filtered.sort((a, b) => {
+            if (a.groupId !== b.groupId) {
+                return (a.groupId || 0) - (b.groupId || 0);
+            }
+            return a.id - b.id;
+        });
+        filtered.forEach(s => {
+            const chKey = s.chapter || "個人劇情";
+            if (!this.chapters[chKey]) this.chapters[chKey] = [];
+            this.chapters[chKey].push(s);
+        });
+    },
+
+    groupTowerStories() {
+        this.chapters = {};
+        const filtered = this.stories.filter(s => s.type === 'tower');
+        filtered.sort((a, b) => a.id - b.id);
+        filtered.forEach(s => {
+            const chKey = s.chapter || "露娜塔/系統劇情";
+            if (!this.chapters[chKey]) this.chapters[chKey] = [];
+            this.chapters[chKey].push(s);
+        });
+    },
+
     switchTabType(type) {
         this.activeTabType = type;
         this.activeStoryId = null;
@@ -260,6 +354,12 @@ const QuestMapModule = {
 
         if (this.activeTabType === 'event') {
             this.groupEventStories();
+        } else if (this.activeTabType === 'guild') {
+            this.groupGuildStories();
+        } else if (this.activeTabType === 'chara') {
+            this.groupCharaStories();
+        } else if (this.activeTabType === 'tower') {
+            this.groupTowerStories();
         } else {
             this.groupStories();
         }
@@ -278,9 +378,12 @@ const QuestMapModule = {
                     <h2>📖 阿斯特萊亞劇情編年史</h2>
                     <p class="subtitle">階層式章節導航，載入 So-net 官方繁中劇情大綱與對話文本</p>
                 </div>
-                <div class="category-selector" style="display: flex; gap: 12px;">
+                <div class="category-selector" style="display: flex; gap: 12px; flex-wrap: wrap;">
                     <button class="part-btn ${this.activeTabType === 'main' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('main')" style="font-size: 0.95rem; padding: 10px 24px;">⚔️ 主線劇情</button>
                     <button class="part-btn ${this.activeTabType === 'event' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('event')" style="font-size: 0.95rem; padding: 10px 24px;">🏆 活動劇情</button>
+                    <button class="part-btn ${this.activeTabType === 'guild' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('guild')" style="font-size: 0.95rem; padding: 10px 24px;">👥 公會劇情</button>
+                    <button class="part-btn ${this.activeTabType === 'chara' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('chara')" style="font-size: 0.95rem; padding: 10px 24px;">📖 個人劇情</button>
+                    <button class="part-btn ${this.activeTabType === 'tower' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('tower')" style="font-size: 0.95rem; padding: 10px 24px;">🌙 露娜塔/其他</button>
                     <button class="part-btn ${this.activeTabType === 'speaker' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('speaker')" style="font-size: 0.95rem; padding: 10px 24px;">👥 登場角色</button>
                 </div>
             </div>
@@ -316,7 +419,13 @@ const QuestMapModule = {
 
                 <div class="map-control-panel">
                     <div class="panel-section-title">
-                        📖 ${this.activeTabType === 'main' ? '主線劇情編年史目錄' : '歷年活動劇情目錄'}
+                        📖 ${
+                            this.activeTabType === 'main' ? '主線劇情編年史目錄' : 
+                            this.activeTabType === 'event' ? '歷年活動劇情目錄' :
+                            this.activeTabType === 'guild' ? '公會劇情目錄' :
+                            this.activeTabType === 'chara' ? '個人劇情目錄' :
+                            this.activeTabType === 'tower' ? '露娜塔/系統劇情目錄' : '目錄'
+                        }
                     </div>
                     <div class="story-list-scrollbar">
                         <div class="accordion-container">
@@ -358,7 +467,7 @@ const QuestMapModule = {
                                             </div>
                                         </div>
                                     `;
-                                } else {
+                                } else if (QuestMapModule.activeTabType === 'event') {
                                     const firstStory = childStories[0] || {};
                                     if (firstStory.eventValue) {
                                         chIcon = `<img src="https://redive.estertion.win/event_still/banner_${firstStory.eventValue}.webp" onerror="this.onerror=null; this.src='https://redive.estertion.win/icon/unit/000000.webp';" style="width: 32px; height: 32px; border-radius: 4px; object-fit: cover; border: 1px solid rgba(255,255,255,0.15);">`;
@@ -389,6 +498,65 @@ const QuestMapModule = {
                                                         </div>
                                                     `;
                                                 }).join('')}
+                                            </div>
+                                        </div>
+                                    `;
+                                } else if (QuestMapModule.activeTabType === 'chara') {
+                                    const realName = QuestMapModule.getCharaRealName(chKey);
+                                    let avatarHtml = "";
+                                    const unitId = AvatarService.getUnitId(realName, QuestMapModule.speakerAvatars);
+                                    if (unitId) {
+                                        avatarHtml = AvatarService.getAvatarHtml(realName, QuestMapModule.speakerAvatars);
+                                    } else {
+                                        avatarHtml = `<div class="npc-avatar-placeholder" style="font-size: 0.8rem; font-weight: bold; color: var(--primary-dark);">${this.escapeHtml(realName.substring(0, 2))}</div>`;
+                                    }
+                                    chIcon = `<div style="width: 30px; height: 30px; border-radius: 50%; overflow: hidden; border: 1.5px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.1); flex-shrink: 0;">${avatarHtml}</div>`;
+
+                                    return `
+                                        <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
+                                            <div class="accordion-header" onclick="QuestMapModule.toggleChapter(${chIndex})">
+                                                <div class="acc-header-title" style="display: flex; align-items: center;">
+                                                    <span class="acc-folder-icon" style="display: flex; align-items: center; justify-content: center;">${chIcon}</span>
+                                                    <span class="acc-ch-name" style="margin-left: 8px;">${chKey}</span>
+                                                </div>
+                                                <div class="acc-count">${childStories.length} 話</div>
+                                            </div>
+                                            <div class="accordion-content" style="max-height: ${isExpanded ? 'none' : '0px'}">
+                                                ${childStories.map(s => `
+                                                    <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}"
+                                                         id="story-item-${s.id}"
+                                                         onclick="QuestMapModule.selectStory(${s.id})">
+                                                        <div class="story-dot"></div>
+                                                        <div class="story-item-content">
+                                                            <div class="story-item-ch">${this.escapeHtml(s.title)}</div>
+                                                        </div>
+                                                    </div>
+                                                `).join('')}
+                                            </div>
+                                        </div>
+                                    `;
+                                } else {
+                                    chIcon = QuestMapModule.activeTabType === 'guild' ? "👥" : "🌙";
+                                    return `
+                                        <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
+                                            <div class="accordion-header" onclick="QuestMapModule.toggleChapter(${chIndex})">
+                                                <div class="acc-header-title">
+                                                    <span class="acc-folder-icon" style="display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">${chIcon}</span>
+                                                    <span class="acc-ch-name" style="margin-left: 8px;">${chKey}</span>
+                                                </div>
+                                                <div class="acc-count">${childStories.length} 話</div>
+                                            </div>
+                                            <div class="accordion-content" style="max-height: ${isExpanded ? 'none' : '0px'}">
+                                                ${childStories.map(s => `
+                                                    <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}"
+                                                         id="story-item-${s.id}"
+                                                         onclick="QuestMapModule.selectStory(${s.id})">
+                                                        <div class="story-dot"></div>
+                                                        <div class="story-item-content">
+                                                            <div class="story-item-ch">${this.escapeHtml(s.title)}</div>
+                                                        </div>
+                                                    </div>
+                                                `).join('')}
                                             </div>
                                         </div>
                                     `;
@@ -483,6 +651,12 @@ const QuestMapModule = {
         if (chTag && titleEl) {
             if (this.activeTabType === 'event') {
                 chTag.innerText = "活動";
+            } else if (this.activeTabType === 'guild') {
+                chTag.innerText = "公會";
+            } else if (this.activeTabType === 'chara') {
+                chTag.innerText = "個人";
+            } else if (this.activeTabType === 'tower') {
+                chTag.innerText = "其他";
             } else {
                 const match = story.chapter.match(/^(第\d+部\s*)?([^\s]+)/);
                 chTag.innerText = match ? match[2] : "主線";
@@ -530,8 +704,16 @@ const QuestMapModule = {
 
         if (this.activeSummaryTab === 'episode') {
             try {
-                const isEvent = story.isEvent;
-                const tableName = isEvent ? 'event_story_detail' : 'story_detail';
+                let tableName = 'story_detail';
+                if (story.isEvent) {
+                    tableName = 'event_story_detail';
+                } else if (story.type === 'guild') {
+                    tableName = 'guild_story_detail';
+                } else if (story.type === 'chara') {
+                    tableName = 'chara_story_detail';
+                } else if (story.type === 'tower') {
+                    tableName = 'tower_story_detail';
+                }
                 const sql = `SELECT sub_title FROM ${tableName} WHERE story_id = ${this.activeStoryId}`;
                 const result = await window.PCRDatabase.runQuery(sql);
                 let officialSummary = "";
@@ -829,21 +1011,7 @@ const QuestMapModule = {
     },
 
     handleAvatarError(img, realName) {
-        if (img.src.includes('31.webp') && !img.src.includes('estertion')) {
-            img.src = img.src.replace('icon/unit/', 'https://redive.estertion.win/icon/unit/');
-        } else if (img.src.includes('31.webp') && img.src.includes('estertion')) {
-            img.src = img.src.replace('https://redive.estertion.win/', '').replace('31.webp', '11.webp');
-        } else if (img.src.includes('11.webp') && !img.src.includes('estertion')) {
-            img.src = img.src.replace('icon/unit/', 'https://redive.estertion.win/icon/unit/');
-        } else {
-            img.style.display = 'none';
-            if (img.parentNode) {
-                const placeholder = document.createElement('div');
-                placeholder.className = 'npc-avatar-placeholder';
-                placeholder.innerText = realName ? realName.substring(0, 2) : '??';
-                img.parentNode.appendChild(placeholder);
-            }
-        }
+        // 方案 B 重構：已廢棄，由 AvatarService 統一接管
     },
 
     // Modal 單例管理
@@ -981,8 +1149,8 @@ const QuestMapModule = {
                 </div>
 
                 <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px;">
-                    <div style="width: 100px; height: 100px; border-radius: 12px; overflow: hidden; border: 2px solid rgba(232, 56, 117, 0.15); background: #ffffff; display: flex; align-items: center; justify-content: center;">
-                        <img src="${avatarUrl}" style="width: 100%; height: 100%; object-fit: cover;" onerror="QuestMapModule.handleAvatarError(this, '${realCharaName.replace(/'/g, "\\'")}')">
+                    <div style="width: 100px; height: 100px; border-radius: 12px; overflow: hidden; border: 2px solid rgba(232, 56, 117, 0.15); background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 0;">
+                        ${window.AvatarService.getAvatarHtml(realCharaName, this.speakerAvatars)}
                     </div>
                     ${detailsHtml}
                 </div>
@@ -1076,9 +1244,12 @@ const QuestMapModule = {
                         <h2>👥 登場角色總覽</h2>
                         <p class="subtitle">統計所有登場人物的登場話數，點擊可直接查詢詳細資料與登場話數列表</p>
                     </div>
-                    <div class="category-selector" style="display: flex; gap: 12px;">
+                    <div class="category-selector" style="display: flex; gap: 12px; flex-wrap: wrap;">
                         <button class="part-btn ${this.activeTabType === 'main' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('main')" style="font-size: 0.95rem; padding: 10px 24px;">⚔️ 主線劇情</button>
                         <button class="part-btn ${this.activeTabType === 'event' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('event')" style="font-size: 0.95rem; padding: 10px 24px;">🏆 活動劇情</button>
+                        <button class="part-btn ${this.activeTabType === 'guild' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('guild')" style="font-size: 0.95rem; padding: 10px 24px;">👥 公會劇情</button>
+                        <button class="part-btn ${this.activeTabType === 'chara' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('chara')" style="font-size: 0.95rem; padding: 10px 24px;">📖 個人劇情</button>
+                        <button class="part-btn ${this.activeTabType === 'tower' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('tower')" style="font-size: 0.95rem; padding: 10px 24px;">🌙 露娜塔/其他</button>
                         <button class="part-btn ${this.activeTabType === 'speaker' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('speaker')" style="font-size: 0.95rem; padding: 10px 24px;">👥 登場角色</button>
                     </div>
                 </div>

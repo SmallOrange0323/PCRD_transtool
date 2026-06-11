@@ -439,13 +439,9 @@ window.UsageStatsModule = {
         results.slice(0, 30).forEach((res, index) => { // 顯示前 30 名
             const rateStr = (res.rate * 100).toFixed(1) + '%';
             
-            // 處理頭像 URL
-            let imgUrl = `https://redive.estertion.win/icon/unit/${res.id}.webp`;
-            if (String(res.id).length === 6 && !String(res.id).endsWith('31')) {
-                // 如果是 6 碼且結尾不是 31，可能需要替換
-                imgUrl = `https://redive.estertion.win/icon/unit/${String(res.id).substring(0,4)}31.webp`;
-            }
-
+            // 處理頭像 HTML
+            const avatarHtml = window.AvatarService.getAvatarHtmlByUnitId(res.id, res.name);
+            
             // 處理 Boss 分佈條
             let maxBossCount = Math.max(...Object.values(res.byBoss));
             if(maxBossCount === 0) maxBossCount = 1; // 避免除以 0
@@ -467,8 +463,8 @@ window.UsageStatsModule = {
             html += `
                 <div class="stat-card">
                     <div style="font-weight:bold; width:20px; text-align:center; opacity:0.5;">${index + 1}</div>
-                    <div class="stat-avatar">
-                        <img src="${imgUrl}" onerror="this.src='https://redive.estertion.win/icon/unit/000000.webp'">
+                    <div class="stat-avatar" style="width: 50px; height: 50px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.2); overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 0;">
+                        ${avatarHtml}
                     </div>
                     <div class="stat-info">
                         <div class="stat-name">

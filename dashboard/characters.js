@@ -3,10 +3,24 @@ console.log("characters.js loaded");
 window.CharactersModule = {
     allCharacters: [],
     viewMode: 'grid',
+    realNameMap: null,
+    activeUnitId: null,
+    excludedUnitIds: new Set(JSON.parse(localStorage.getItem('excluded_unit_ids') || '[]')),
     
     async render() {
         const container = document.getElementById('characters-tab');
         container.innerHTML = '<div class="loading-mini">清洗角色數據中...</div>';
+
+        if (!this.realNameMap) {
+            try {
+                const resp = await fetch('data/real_name_mapping.json');
+                if (resp.ok) {
+                    this.realNameMap = await resp.json();
+                }
+            } catch (e) {
+                console.error("載入真名對照失敗:", e);
+            }
+        }
 
         try {
             // 放寬限制並簡化過濾，確保資料能正常顯示
@@ -23,6 +37,7 @@ window.CharactersModule = {
                     FROM unit_data 
                     WHERE unit_id < 200000 AND unit_id > 100000
                     AND unit_name NOT LIKE '%怪物%'
+                    AND unit_id IN (SELECT DISTINCT unit_id FROM unit_rarity)
                     GROUP BY unit_name
                 ) as t
                 JOIN unit_data as u ON u.unit_id = t.max_id
@@ -64,7 +79,7 @@ window.CharactersModule = {
             </div>
         `;
 
-        const updateView = () => {
+        this.updateView = () => {
             const term = document.getElementById('char-search').value.toLowerCase();
             const sortBy = document.getElementById('char-sort').value;
             
@@ -81,12 +96,15 @@ window.CharactersModule = {
             const displayContainer = document.getElementById('char-grid');
             if (this.viewMode === 'grid') {
                 displayContainer.className = 'char-grid';
-                displayContainer.innerHTML = this.renderGrid(filtered);
+                const gridFiltered = filtered.filter(c => !this.excludedUnitIds.has(c.unit_id));
+                displayContainer.innerHTML = this.renderGrid(gridFiltered);
             } else {
                 displayContainer.className = 'char-table-container';
                 displayContainer.innerHTML = this.renderTable(filtered);
             }
         };
+
+        const updateView = this.updateView;
 
         document.getElementById('char-search').addEventListener('input', updateView);
         document.getElementById('char-sort').addEventListener('change', updateView);
@@ -111,14 +129,12 @@ window.CharactersModule = {
         if (characters.length === 0) return '<div class="empty-msg">找不到符合條件的角色</div>';
         
         return characters.map(c => {
-            const baseId = Math.floor(c.unit_id / 100) * 100;
-            const img31 = `https://redive.estertion.win/icon/unit/${baseId + 31}.webp`;
-            const img11 = `https://redive.estertion.win/icon/unit/${baseId + 11}.webp`;
+            const avatarHtml = window.AvatarService.getAvatarHtmlByUnitId(c.unit_id, c.unit_name);
 
             return `
                 <div class="char-card glass-card" onclick="CharactersModule.showDetail(${c.unit_id})">
                     <div class="char-avatar">
-                        <img src="${img31}" onerror="this.src='${img11}'; this.onerror=function(){this.src='https://redive.estertion.win/icon/unit/000000.webp';}">
+                        ${avatarHtml}
                     </div>
                     <div class="char-info">
                         <div class="char-name">${c.unit_name}</div>
@@ -147,19 +163,19 @@ window.CharactersModule = {
                         <th>站位</th>
                         <th>種族</th>
                         <th>公會</th>
+                        <th style="width: 120px; text-align: center;">隱藏卡片 🚫</th>
                     </tr>
                 </thead>
                 <tbody>
                     ${characters.map(c => {
-                        const baseId = Math.floor(c.unit_id / 100) * 100;
-                        const img31 = `https://redive.estertion.win/icon/unit/${baseId + 31}.webp`;
-                        const img11 = `https://redive.estertion.win/icon/unit/${baseId + 11}.webp`;
+                        const avatarHtml = window.AvatarService.getAvatarHtmlByUnitId(c.unit_id, c.unit_name);
+                        const isExcluded = this.excludedUnitIds.has(c.unit_id);
 
                         return `
                             <tr onclick="CharactersModule.showDetail(${c.unit_id})">
                                 <td class="cell-avatar">
                                     <div class="char-table-avatar">
-                                        <img src="${img31}" onerror="this.src='${img11}'; this.onerror=function(){this.src='https://redive.estertion.win/icon/unit/000000.webp';}">
+                                        ${avatarHtml}
                                     </div>
                                 </td>
                                 <td class="cell-id">${c.unit_id}</td>
@@ -167,6 +183,9 @@ window.CharactersModule = {
                                 <td class="cell-pos">${c.pos || '??'}</td>
                                 <td>${c.race || ''}</td>
                                 <td class="cell-guild">${c.guild || '無所屬'}</td>
+                                <td style="text-align: center;" onclick="event.stopPropagation()">
+                                    <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer;" ${isExcluded ? 'checked' : ''} onchange="CharactersModule.toggleExclude(${c.unit_id}, event)">
+                                </td>
                             </tr>
                         `;
                     }).join('')}
@@ -176,6 +195,7 @@ window.CharactersModule = {
     },
 
     async showDetail(unitId) {
+        this.activeUnitId = unitId;
         const modal = document.getElementById('char-detail-modal');
         const body = document.getElementById('modal-body');
         modal.classList.add('active');
@@ -229,12 +249,43 @@ window.CharactersModule = {
             this.currentStats = stats;
             const maxLevel = window.PCRDatabase.currentRegion === 'jp' ? 305 : 280;
 
+            const gameName = profile ? profile.unit_name : '角色詳情';
+            
+            // 輔助函數：解析角色名字的括號後綴
+            const parseCharaName = (fullName) => {
+                const match = fullName.match(/^(.+?)([(\uff08].+?[)\uff09])$/);
+                if (match) {
+                    return { baseName: match[1].trim(), suffix: match[2].trim() };
+                }
+                return { baseName: fullName.trim(), suffix: "" };
+            };
+
+            const parsed = parseCharaName(gameName);
+            let realName = "";
+            if (this.realNameMap) {
+                const found = Object.entries(this.realNameMap).find(([real, game]) => game === parsed.baseName);
+                if (found) {
+                    realName = found[0] + parsed.suffix;
+                }
+            }
+
+            const toggleBtn = realName ? `
+                <button id="char-name-toggle-btn" class="part-btn" 
+                        style="font-size: 0.75rem; padding: 4px 10px; border-radius: 6px; background: rgba(232,56,117,0.1); border: 1px solid rgba(232,56,117,0.3); color: var(--accent-color); cursor: pointer; transition: all 0.2s;"
+                        onclick="CharactersModule.toggleNameDisplay('${gameName.replace(/'/g, "\\'")}', '${realName.replace(/'/g, "\\'")}')">
+                    🔍 顯示真名
+                </button>
+            ` : '';
+
             body.innerHTML = `
                 <div class="detail-header">
-                    <img src="https://redive.estertion.win/icon/unit/${baseId + 31}.webp" class="detail-avatar" onerror="this.src='https://redive.estertion.win/icon/unit/${baseId + 11}.webp'">
+                    <div class="detail-avatar" style="overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 0;">
+                        ${window.AvatarService.getAvatarHtmlByUnitId(unitId, gameName)}
+                    </div>
                     <div class="detail-main-info">
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <h2 style="margin: 0;">${profile ? profile.unit_name : '角色詳情'} (ID: ${unitId})</h2>
+                        <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                            <h2 style="margin: 0; display: flex; align-items: center; gap: 8px;">${gameName} <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: normal;">(ID: ${unitId})</span></h2>
+                            ${toggleBtn}
                             <div class="level-input-group">
                                 <span>Lv.</span>
                                 <input type="number" id="detail-level" value="${maxLevel}" min="1" max="400" 
@@ -262,8 +313,9 @@ window.CharactersModule = {
                         <h3>技能介紹</h3>
                         ${skills.map(s => `
                             <div class="skill-item">
-                                <img src="https://redive.estertion.win/icon/skill/${s.icon_type}.webp" class="skill-icon" 
-                                     onerror="this.src='https://redive.estertion.win/icon/skill/${s.icon_type}.png'; this.onerror=function(){this.src='https://redive.estertion.win/icon/unit/000000.webp';}">
+                                <div class="skill-icon" style="width: 50px; height: 50px; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    ${window.AvatarService.getSkillIconHtml(s.icon_type)}
+                                </div>
                                 <div class="skill-info">
                                     <div class="skill-label" style="font-size: 0.7rem; color: var(--accent-color); font-weight: bold;">${s.label}</div>
                                     <div class="skill-name">${s.name}</div>
@@ -312,14 +364,14 @@ window.CharactersModule = {
             <div class="pattern-container">
                 ${items.map(item => {
                     const isLoop = item.index >= loopStart && item.index <= loopEnd;
-                    let icon = 'https://redive.estertion.win/icon/skill/1.png'; 
+                    let iconHtml = window.AvatarService.getSkillIconHtml(1);
                     let name = '普通攻擊';
                     
                     if (item.id === 1001 && skillMap['1001']) {
-                        icon = `https://redive.estertion.win/icon/skill/${skillMap['1001'].icon_type}.webp`;
+                        iconHtml = window.AvatarService.getSkillIconHtml(skillMap['1001'].icon_type);
                         name = skillMap['1001'].name;
                     } else if (item.id === 1002 && skillMap['1002']) {
-                        icon = `https://redive.estertion.win/icon/skill/${skillMap['1002'].icon_type}.webp`;
+                        iconHtml = window.AvatarService.getSkillIconHtml(skillMap['1002'].icon_type);
                         name = skillMap['1002'].name;
                     } else if (item.id > 1) {
                         name = `技能 ${item.id}`;
@@ -327,7 +379,9 @@ window.CharactersModule = {
 
                     return `
                         <div class="pattern-item" style="${isLoop ? 'border: 2px solid var(--accent-color); background: rgba(255,107,157,0.1);' : 'border: 1px solid rgba(255,255,255,0.05);'}">
-                            <img src="${icon}" style="width: 40px; height: 40px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);" onerror="this.src='https://redive.estertion.win/icon/skill/1.png'">
+                            <div style="width: 40px; height: 40px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                                ${iconHtml}
+                            </div>
                             <div style="font-size: 0.7rem; margin-top: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: ${item.id > 1 ? '#ffa94d' : 'inherit'}">${name}</div>
                             <div style="font-size: 0.6rem; color: var(--text-secondary); margin-top: 2px;">${item.index}</div>
                         </div>
@@ -371,5 +425,33 @@ window.CharactersModule = {
 
     closeDetail() {
         document.getElementById('char-detail-modal').classList.remove('active');
+    },
+
+    toggleExclude(unitId, event) {
+        if (event) event.stopPropagation();
+        if (this.excludedUnitIds.has(unitId)) {
+            this.excludedUnitIds.delete(unitId);
+        } else {
+            this.excludedUnitIds.add(unitId);
+        }
+        localStorage.setItem('excluded_unit_ids', JSON.stringify([...this.excludedUnitIds]));
+        if (typeof this.updateView === 'function') {
+            this.updateView();
+        }
+    },
+
+    toggleNameDisplay(gameName, realName) {
+        const titleEl = document.querySelector('.detail-main-info h2');
+        const btn = document.getElementById('char-name-toggle-btn');
+        if (!titleEl || !btn) return;
+        
+        const isShowingReal = btn.innerText.includes('遊戲名');
+        if (isShowingReal) {
+            titleEl.innerHTML = `${gameName} <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: normal;">(ID: ${this.activeUnitId})</span>`;
+            btn.innerText = `🔍 顯示真名`;
+        } else {
+            titleEl.innerHTML = `${realName} <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: normal;">(ID: ${this.activeUnitId})</span>`;
+            btn.innerText = `🎮 顯示遊戲名`;
+        }
     }
 };

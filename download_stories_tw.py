@@ -342,19 +342,35 @@ def get_all_story_ids():
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     
-    # 抓取第一部～第三部主線與所有幕間 ID (2000000 ~ 4999999)
+    # 1. 角色個人劇情 (1000000 ~ 1999999)
+    cursor.execute("SELECT story_id FROM story_detail WHERE story_id >= 1000000 AND story_id < 2000000 ORDER BY story_id ASC")
+    chara_story_ids = [row[0] for row in cursor.fetchall()]
+
+    # 2. 主線與幕間 (2000000 ~ 4999999，已包含 3xxxxxx 公會與 4xxxxxx 系統劇情)
     cursor.execute("SELECT story_id FROM story_detail WHERE story_id >= 2000000 AND story_id < 5000000 ORDER BY story_id ASC")
-    main_rows = cursor.fetchall()
-    main_story_ids = [row[0] for row in main_rows]
+    main_story_ids = [row[0] for row in cursor.fetchall()]
+
+    # 3. 露娜塔劇情 (7xxxxxx) - 來自 tower_schedule 的 opening_story_id
+    cursor.execute("SELECT DISTINCT opening_story_id FROM tower_schedule WHERE opening_story_id > 0 ORDER BY opening_story_id ASC")
+    tower_story_ids = [row[0] for row in cursor.fetchall()]
     
-    # 抓取活動劇情 ID (5000000 ~ 5999999)
+    # 4. 活動劇情 ID (5000000 ~ 5999999)
     cursor.execute("SELECT story_id FROM event_story_detail ORDER BY story_id ASC")
-    event_rows = cursor.fetchall()
-    event_story_ids = [row[0] for row in event_rows]
+    event_story_ids = [row[0] for row in cursor.fetchall()]
     
     conn.close()
-    print(f"[INFO] 自資料庫讀取完畢：主線劇情 {len(main_story_ids)} 筆，活動劇情 {len(event_story_ids)} 筆。")
-    return main_story_ids + event_story_ids
+    
+    # 合併去重並排序
+    all_ids = sorted(list(set(chara_story_ids + main_story_ids + tower_story_ids + event_story_ids)))
+    
+    print(f"[INFO] 自資料庫讀取完畢：")
+    print(f"  ▶ 個人劇情: {len(chara_story_ids)} 筆")
+    print(f"  ▶ 主線/公會/系統劇情: {len(main_story_ids)} 筆")
+    print(f"  ▶ 露娜塔劇情: {len(tower_story_ids)} 筆")
+    print(f"  ▶ 活動劇情: {len(event_story_ids)} 筆")
+    print(f"  ▶ 合併去重總數: {len(all_ids)} 筆")
+    
+    return all_ids
 
 import concurrent.futures
 
@@ -397,13 +413,27 @@ def main():
     mapping = parse_manifest(manifest_lines)
 
     # 2. 獲取本地資料庫全部劇情列表 (主線 + 活動)
-    story_ids = get_all_story_ids()
+    db_story_ids = get_all_story_ids()
+    
+    # 3. 從 CDN Manifest 中補全所有在 CDN 上但資料庫中沒記載的新劇情 (例如 202504 之後的新活動劇情 9xxxxxx、旅行劇情 52xxxxx 等)
+    cdn_story_ids = []
+    for path in mapping.keys():
+        if "storydata_" in path:
+            try:
+                id_str = path.split("storydata_")[1].split(".")[0]
+                cdn_story_ids.append(int(id_str))
+            except:
+                pass
+                
+    # 合併去重
+    story_ids = sorted(list(set(db_story_ids + cdn_story_ids)))
+    print(f"[INFO] 經過 CDN Manifest 比對補全後，總下載話數：{len(story_ids)} 話（補齊了 {len(story_ids) - len(db_story_ids)} 話 CDN 獨佔劇情，包含 202504 後之新活動、旅行與回憶劇情）")
+
     if not story_ids:
-        print("[ERROR] 無法從本地 SQLite 資料庫讀取主線話數，請確認 redive_tw.db 是否已放置於 dashboard 目錄下")
+        print("[ERROR] 無法取得任何劇情 ID，請確認連線與資料庫")
         story_ids = [2001001, 2001002, 2001003, 2001004, 2001005]
         print(f"[FALLBACK] 將預設下載 5 話測試劇情: {story_ids}")
 
-    # 3. 下載全部主線話數
     to_download = story_ids
 
     print("\n[START] 開始從 So-net 官方 CDN 高速下載與還原 100% 繁中對白...")
