@@ -1115,13 +1115,34 @@ const QuestMapModule = {
             const response = await fetch(`story/${storyId}.json?v=${Date.now()}`);
             if (!response.ok) throw new Error("HTTP " + response.status);
 
-            const dialogueList = await response.json();
+            const rawDialogueList = await response.json();
 
-            if (!dialogueList || dialogueList.length === 0) {
+            if (!rawDialogueList || rawDialogueList.length === 0) {
                 board.innerHTML = `<div style="color: rgba(255,255,255,0.4); text-align: center; font-size: 0.9rem; padding: 20px;">本話無語音對白數據。</div>`;
                 this.isLoadingDialogue = false;
                 return;
             }
+
+            // 合併相同語音的連續對話行
+            const dialogueList = [];
+            rawDialogueList.forEach(item => {
+                if (item.type === 'still' || item.type === 'background') {
+                    dialogueList.push(item);
+                    return;
+                }
+                const last = dialogueList[dialogueList.length - 1];
+                if (last && 
+                    last.type !== 'still' && 
+                    last.type !== 'background' && 
+                    last.voice && 
+                    item.voice && 
+                    last.voice === item.voice && 
+                    last.name === item.name) {
+                    last.words = (last.words || "") + "\n" + (item.words || "");
+                } else {
+                    dialogueList.push({ ...item });
+                }
+            });
 
             const speakerNames = [];
             dialogueList.forEach(item => {
