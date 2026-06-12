@@ -37,3 +37,7 @@ scratch/
 
 # 9. 忽略虛擬環境
 venv/
+
+# 10. 忽略發行版中的龐大卡面原畫資料夾 (GitHub Pages 上將 Fallback 遠端 CDN)
+dist_story_map/card/
+

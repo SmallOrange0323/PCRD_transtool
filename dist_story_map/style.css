@@ -2088,5 +2088,91 @@ body {
     margin: 0 4px;
 }
 
+/* 角色卡片網格佈局 */
+.chara-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 16px;
+    padding: 16px 4px;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
 
+/* 角色大卡片 */
+.chara-card {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease;
+    background-size: cover;
+    background-position: center;
+}
 
+.chara-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(232, 56, 117, 0.25);
+    border-color: rgba(232, 56, 117, 0.4);
+}
+
+/* 角色卡片底部遮罩底座 */
+.chara-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 8px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0) 100%);
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.chara-card-name {
+    font-size: 1.05rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.chara-card-count {
+    font-size: 0.75rem;
+    opacity: 0.85;
+}
+
+/* 個人劇情返回與麵包屑 */
+.chara-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    border: 1px solid rgba(232, 56, 117, 0.1);
+    width: fit-content;
+}
+
+.chara-back-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.chara-back-btn:hover {
+    transform: translateX(-3px);
+}
