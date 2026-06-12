@@ -51,6 +51,9 @@ window.AvatarService = {
         "格魯尼": 194311,
         "羅蘭": 194211,
         "涅妃‧涅羅": 129711,
+        "魏雅": 195211,
+        "葛拉比亞": 193511,
+        "葛拉菲拉": 193511,
     },
 
     // 快取：charaName -> { unitId, url, triedCdnIndex }

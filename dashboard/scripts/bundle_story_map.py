@@ -10,6 +10,22 @@ if sys.platform.startswith('win'):
     except AttributeError:
         pass
 
+def safe_copy_tree(src, dst):
+    if not os.path.exists(dst):
+        os.makedirs(dst, exist_ok=True)
+    for item in os.listdir(src):
+        s = os.path.join(src, item)
+        d = os.path.join(dst, item)
+        if os.path.isdir(s):
+            safe_copy_tree(s, d)
+        else:
+            try:
+                if os.path.exists(d) and os.path.getsize(s) == os.path.getsize(d):
+                    continue
+                shutil.copy2(s, d)
+            except Exception:
+                pass
+
 def main():
     # 定位根目錄與路徑
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -21,14 +37,7 @@ def main():
     print(f"[Info] 專案根目錄: {project_root}")
     print(f"[Info] 輸出目標目錄: {dist_dir}")
     
-    # 清理舊的輸出目錄
-    if os.path.exists(dist_dir):
-        print("[Info] 清理舊的 dist_story_map/ 目錄...")
-        try:
-            shutil.rmtree(dist_dir)
-        except PermissionError:
-            print("[Warning] 無法完全刪除舊目錄（可能檔案被佔用），將直接進行覆寫覆蓋...")
-        
+    # 清理舊的輸出目錄 (非必要，由 safe_copy_tree 與覆寫完成)
     os.makedirs(dist_dir, exist_ok=True)
     os.makedirs(os.path.join(dist_dir, "data"), exist_ok=True)
     os.makedirs(os.path.join(dist_dir, "story"), exist_ok=True)
@@ -76,16 +85,14 @@ def main():
     else:
         print("[Warning] 找不到對白 JSON 資料夾 (story/)")
         
-    # 複製 icon/ 目錄下的所有本地素材 (包括已轉換的 png/webp)
+    # 複製 icon/ 目錄下的所有本地素材
     icon_src_dir = os.path.join(project_root, "dashboard", "icon")
     icon_dst_dir = os.path.join(dist_dir, "icon")
     if os.path.exists(icon_src_dir):
         print("[Copy] 開始複製本地 icon 目錄...")
         try:
-            if os.path.exists(icon_dst_dir):
-                shutil.rmtree(icon_dst_dir)
-            shutil.copytree(icon_src_dir, icon_dst_dir)
-            print("[Copy] 本地 icon 目錄複製成功！")
+            safe_copy_tree(icon_src_dir, icon_dst_dir)
+            print("[Copy] 本地 icon 目錄複製與同步成功！")
         except Exception as e:
             print(f"[Warning] 複製本地 icon 目錄失敗: {e}")
             
@@ -95,10 +102,8 @@ def main():
     if os.path.exists(card_src_dir):
         print("[Copy] 開始複製本地 card 目錄...")
         try:
-            if os.path.exists(card_dst_dir):
-                shutil.rmtree(card_dst_dir)
-            shutil.copytree(card_src_dir, card_dst_dir)
-            print("[Copy] 本地 card 目錄複製成功！")
+            safe_copy_tree(card_src_dir, card_dst_dir)
+            print("[Copy] 本地 card 目錄複製與同步成功！")
         except Exception as e:
             print(f"[Warning] 複製本地 card 目錄失敗: {e}")
             
