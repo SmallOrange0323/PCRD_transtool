@@ -1774,38 +1774,40 @@ body {
 .game-dialogue-line {
     display: flex;
     align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 14px;
-    padding: 8px 10px;
-    border-radius: 8px;
-    transition: background 0.15s;
+    gap: 15px;
+    background: #ffffff;
+    border: 1px solid #ccd8e8;
+    border-radius: 12px;
+    padding: 12px 15px;
+    box-shadow: 0 4px 10px rgba(100, 120, 150, 0.1);
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.game-dialogue-line:last-child {
-    margin-bottom: 0;
+.game-dialogue-line:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(100, 120, 150, 0.15);
 }
 
-/* 對話框中角色頭像容器 */
+/* 左側人物頭像容器 */
 .game-chara-avatar-wrapper {
+    position: relative;
     flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid rgba(255, 107, 157, 0.4);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s ease-in-out;
 }
 
 .game-chara-avatar-wrapper:hover {
-    transform: scale(1.1);
-    border-color: rgba(255, 107, 157, 0.8);
+    transform: scale(1.05);
 }
 
 .game-chara-avatar {
-    width: 100%;
-    height: 100%;
+    width: 75px;
+    height: 75px;
+    border-radius: 8px;
+    border: 3px solid #ccd8e8;
+    background: #ffffff;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.1), 0 2px 6px rgba(0,0,0,0.1);
     overflow: hidden;
 }
 
@@ -1814,6 +1816,37 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: top center;
+}
+
+/* 頭像右側的對話氣泡指引小指針 */
+.game-dialogue-line::before {
+    content: "";
+    position: absolute;
+    left: 92px; /* 剛好指向頭像右側 */
+    top: 30px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 12px solid #ccd8e8;
+    z-index: 1;
+}
+
+.game-dialogue-line::after {
+    content: "";
+    position: absolute;
+    left: 93px;
+    top: 30px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 12px solid #ffffff;
+    z-index: 2;
+}
+
+/* 旁白或特殊選擇肢的指引線隱藏 */
+.game-dialogue-line.role-narrator::before,
+.game-dialogue-line.role-narrator::after,
+.game-dialogue-line.role-choice::before,
+.game-dialogue-line.role-choice::after {
+    display: none;
 }
 
 /* 對話中間的文本內容區 */
