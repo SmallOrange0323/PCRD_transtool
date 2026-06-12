@@ -1109,7 +1109,7 @@ const QuestMapModule = {
                                 ">
                                     <span style="color: var(--text-secondary); font-size: 0.8rem;">正在載入登場角色頭像...</span>
                                 </div>
-                                <div id="dialogue-board" class="game-dialogue-board" style="max-height: 500px; overflow-y: auto;">
+                                <div id="dialogue-board" class="game-dialogue-board" style="max-height: 620px; overflow-y: auto;">
                                 </div>
                                 <div class="game-dialogue-footer" style="border-radius: 0 0 12px 12px;">
                                     <div class="game-footer-btn close" onclick="document.getElementById('dialogue-board').scrollTop = 0">⬆ 回到頂端</div>
