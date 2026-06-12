@@ -6,6 +6,9 @@
  * 相依：窗體 PCRDatabase, AvatarService, ChapterDataService
  */
 
+const AvatarService = window.AvatarService;
+const ChapterDataService = window.ChapterDataService;
+
 const QuestMapModule = {
     stories: [],
     events: [],
@@ -26,6 +29,7 @@ const QuestMapModule = {
     isLoadingDialogue: false,
     currentView: 'menu',
     storyThumbnails: null,
+    activeCharaName: null,
 
     escapeHtml(str) {
         if (!str) return "";
@@ -45,19 +49,25 @@ const QuestMapModule = {
             .replace(/"/g, "\\\"");
     },
 
- getStoryItemHtml(s, chDisplay, titleDisplay) {
- let thumbHtml = '';
- if (this.storyThumbnails && this.storyThumbnails[s.id]) {
- const thumbData = this.storyThumbnails[s.id];
- if (thumbData.still_id) {
- thumbHtml = StoryAssetService.getStillHtml(thumbData.still_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
- } else if (thumbData.bg_id) {
- thumbHtml = StoryAssetService.getBackgroundHtml(thumbData.bg_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
- }
- }
- if (!thumbHtml) {
- thumbHtml = `<img class="story-thumb-img" src="https://redive.estertion.win/card/full/100431.webp" onerror="this.onerror=null; this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';" style="width:100%;height:100%;object-fit:cover;" alt="thumbnail">`;
- }
+    getStoryItemHtml(s, chDisplay, titleDisplay) {
+        let thumbHtml = '';
+        if (this.storyThumbnails && this.storyThumbnails[s.id]) {
+            const thumbData = this.storyThumbnails[s.id];
+            if (thumbData.still_id) {
+                thumbHtml = StoryAssetService.getStillHtml(thumbData.still_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
+            } else if (s.type !== 'chara' && thumbData.bg_id) {
+                // 非個人故事時，若無 still 則顯示背景 (bg_id)
+                thumbHtml = StoryAssetService.getBackgroundHtml(thumbData.bg_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
+            }
+        }
+        if (!thumbHtml) {
+            if (s.type === 'chara' && s.groupId) {
+                const cardId = `${s.groupId}31`;
+                thumbHtml = `<img class="story-thumb-img" src="card/${cardId}.webp" onerror="if(this.src.indexOf('estertion')===-1){this.src='https://redive.estertion.win/card/full/${cardId}.webp';}else{this.src='https://redive.estertion.win/card/full/100431.webp';}" style="width:100%;height:100%;object-fit:cover;" alt="thumbnail">`;
+            } else {
+                thumbHtml = `<img class="story-thumb-img" src="https://redive.estertion.win/card/full/100431.webp" onerror="this.onerror=null; this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';" style="width:100%;height:100%;object-fit:cover;" alt="thumbnail">`;
+            }
+        }
  return `
  <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}" id="story-item-${s.id}" onclick="QuestMapModule.selectStory(${s.id})">
  <div class="story-item-thumb">
@@ -441,7 +451,27 @@ const QuestMapModule = {
             return a.id - b.id;
         });
         filtered.forEach(s => {
-            const chKey = s.chapter || "個人劇情";
+            // 從 s.chapter 提取角色名。例如 "日和 第1話" -> 提取 "日和"
+            let charaName = "其他角色";
+            if (s.chapter) {
+                const parts = s.chapter.split(/\s+第/);
+                if (parts[0]) {
+                    charaName = parts[0].trim();
+                }
+            }
+            s.charaName = charaName;
+
+            // 從 s.chapter 提取話數（如 "第1話"）
+            let episodeLabel = "";
+            if (s.chapter) {
+                const match = s.chapter.match(/第\d+話/);
+                if (match) {
+                    episodeLabel = match[0];
+                }
+            }
+            s.episodeLabel = episodeLabel;
+
+            const chKey = charaName;
             if (!this.chapters[chKey]) this.chapters[chKey] = [];
             this.chapters[chKey].push(s);
         });
@@ -479,6 +509,9 @@ const QuestMapModule = {
         this.activeTabType = type;
         this.activeStoryId = null;
         this.expandedChapter = null;
+        if (type === 'chara') {
+            this.activeCharaName = null;
+        }
         this._fadeTransition(() => this._render());
     },
 
@@ -569,7 +602,6 @@ const QuestMapModule = {
                         </div>
                     </div>
                 </div>
-                </div>
             </div>
 `;
  const existingBackBtn = document.querySelector('.floating-back-btn');
@@ -595,17 +627,181 @@ const QuestMapModule = {
         }
 
         const chapterKeys = Object.keys(this.chapters);
-        if ((!this.expandedChapter || !this.chapters[this.expandedChapter]) && chapterKeys.length > 0) {
+        if (this.activeTabType === 'chara' && this.activeCharaName) {
+            this.expandedChapter = this.activeCharaName;
+        } else if ((!this.expandedChapter || !this.chapters[this.expandedChapter]) && chapterKeys.length > 0) {
             this.expandedChapter = chapterKeys[0];
         }
 
-        const safeChapterKeys = chapterKeys.map(k => this.escapeHtml(k));
+        // 1. 如果是角色 Tab 且尚未選定角色，渲染角色卡片網格 (Grid)
+        if (this.activeTabType === 'chara' && !this.activeCharaName) {
+            let gridHtml = "";
+            chapterKeys.sort().forEach(chName => {
+                const stories = this.chapters[chName];
+                const firstStory = stories[0];
+                const groupId = firstStory ? firstStory.groupId : 1001;
+                // 3★卡面 ID
+                const cardId = `${groupId}31`;
+                const remoteCardUrl = `https://redive.estertion.win/card/full/${cardId}.webp`;
+                const localCardUrl = `card/${cardId}.webp`;
+                
+                gridHtml += `
+                    <div class="chara-card" style="background-image: url('${localCardUrl}'), url('${remoteCardUrl}')" onclick="QuestMapModule.selectChara('${this.escapeForAttr(chName)}')">
+                        <div class="chara-card-overlay">
+                            <div class="chara-card-name">${this.escapeHtml(chName)}</div>
+                            <div class="chara-card-count">${stories.length} 話</div>
+                        </div>
+                    </div>
+                `;
+            });
 
- tab.innerHTML = `
- <div class="floating-back-btn" onclick="QuestMapModule.handleFloatingBack()" style="position: fixed; top: 20px; left: 20px; z-index: 9998; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #2d6bcf, #1a4a9e); color: #fff; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; box-shadow: 0 4px 15px rgba(26, 74, 158, 0.5); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.15)'; this.style.boxShadow='0 6px 20px rgba(26, 74, 158, 0.7)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(26, 74, 158, 0.5)';">←</div>
+            tab.innerHTML = `
+                <div class="floating-back-btn" onclick="QuestMapModule.handleFloatingBack()" style="position: fixed; top: 20px; left: 20px; z-index: 9998; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #2d6bcf, #1a4a9e); color: #fff; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; box-shadow: 0 4px 15px rgba(26, 74, 158, 0.5); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.15)'; this.style.boxShadow='0 6px 20px rgba(26, 74, 158, 0.7)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(26, 74, 158, 0.5)';">←</div>
+                <div class="map-container">
+                    <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
+                        <button onclick="QuestMapModule.goBackToMenu()" class="back-to-menu-btn" style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 32px;
+                            height: 32px;
+                            border-radius: 50%;
+                            background: linear-gradient(135deg, #0984e3, #00cec9);
+                            color: #fff;
+                            border: none;
+                            cursor: pointer;
+                            box-shadow: 0 2px 6px rgba(9, 132, 227, 0.4);
+                            transition: transform 0.2s ease, box-shadow 0.2s ease;
+                            font-size: 1rem;
+                            font-weight: bold;
+                            flex-shrink: 0;
+                        " onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 4px 12px rgba(9, 132, 227, 0.6)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 6px rgba(9, 132, 227, 0.4)';">
+                            ←
+                        </button>
+                        <span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;"><span style="font-size: 1.1rem;">🏠</span> 劇情大廳</span>
+                        <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
+                        <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">👤 角色</span>
+                    </div>
+                    <div class="map-header">
+                        <div>
+                            <h2>📖 角色劇情目錄</h2>
+                            <p class="subtitle">選擇角色以瀏覽其個人絆劇情目錄與解鎖插畫</p>
+                        </div>
+                    </div>
+                    <div class="chara-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; margin-top: 20px;">
+                        ${gridHtml}
+                    </div>
+                </div>
+            `;
+            const existingBackBtn = document.querySelector('.floating-back-btn');
+            if (existingBackBtn) existingBackBtn.remove();
+            return;
+        }
+
+        // 2. 預先建構右側控制面板的 HTML 內容，完全避免巢狀 template literal 解析錯誤
+        let controlPanelHtml = "";
+        if (this.activeTabType === 'chara' && this.activeCharaName) {
+            controlPanelHtml = `
+                <div class="chara-breadcrumb" style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px; background: rgba(0,0,0,0.05); padding: 8px; border-radius: 4px;">
+                    <div class="chara-back-btn" onclick="QuestMapModule.clearActiveChara()" style="cursor: pointer; color: var(--accent-color); font-weight: bold; font-size: 0.85rem;">
+                        ⬅ 返回角色列表
+                    </div>
+                    <span style="color: rgba(0,0,0,0.25); font-size: 0.8rem;">/</span>
+                    <span style="font-size: 0.85rem; font-weight: bold; color: var(--text-primary);">${this.escapeHtml(this.activeCharaName)}</span>
+                </div>
+                <div class="accordion-content" style="max-height: none; display: block; padding-top: 8px;">
+                    ${(this.chapters[this.activeCharaName] || []).map(s => {
+                        const displayTitle = s.episodeLabel ? `${s.episodeLabel} ${s.title}` : s.title;
+                        return this.getStoryItemHtml(s, "個人故事", displayTitle);
+                    }).join('')}
+                </div>
+            `;
+        } else {
+            let accordionHtml = "";
+            chapterKeys.forEach((chKey, chIndex) => {
+                const isExpanded = this.expandedChapter === chKey;
+                const childStories = this.chapters[chKey] || [];
+                const safeId = `acc-item-${chIndex}`;
+
+                let chTitle = "";
+                let chIcon = isExpanded ? '📂' : '📁';
+
+                if (this.activeTabType === 'main') {
+                    let cleanChKey = chKey;
+                    const firstStory = childStories[0];
+                    const info = firstStory ? ChapterDataService.getChapterInfo(this.currentPart, firstStory.groupId) : null;
+                    chTitle = info?.title ? ` - ${info.title}` : "";
+
+                    accordionHtml += `
+                        <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
+                            <div class="accordion-header" onclick="QuestMapModule.toggleChapter(${chIndex})">
+                                <div class="acc-header-title">
+                                    <span class="acc-folder-icon" style="display: flex; align-items: center; justify-content: center;">${chIcon}</span>
+                                    <span class="acc-ch-name" style="margin-left: 8px;">${this.escapeHtml(cleanChKey)}${this.escapeHtml(chTitle)}</span>
+                                </div>
+                                <div class="acc-count">${childStories.length} 話</div>
+                            </div>
+                            <div class="accordion-content" style="max-height: ${isExpanded ? 'none' : '0px'}">
+                                ${childStories.map(s => {
+                                    const chDisplay = s.chapter.replace(/^(第\d+部\s*)?([^\s]+章\s*|[^\s]+序章\s*|[^\s]+幕間[^\s]*\s*)/, '');
+                                    const titleDisplay = s.title;
+                                    return this.getStoryItemHtml(s, chDisplay, titleDisplay);
+                                }).join('')}
+                            </div>
+                        </div>
+                    `;
+                } else if (this.activeTabType === 'event') {
+                    chIcon = "🏆";
+                    accordionHtml += `
+                        <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
+                            <div class="accordion-header" onclick="QuestMapModule.toggleChapter(${chIndex})">
+                                <div class="acc-header-title" style="display: flex; align-items: center;">
+                                    <span class="acc-folder-icon" style="display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">${chIcon}</span>
+                                    <span class="acc-ch-name" style="margin-left: 8px;">${this.escapeHtml(chKey)}</span>
+                                </div>
+                                <div class="acc-count">${childStories.length} 話</div>
+                            </div>
+                            <div class="accordion-content" style="max-height: ${isExpanded ? 'none' : '0px'}">
+                                ${childStories.map(s => {
+                                    const cleanEventTitle = chKey.substring(chKey.indexOf('」') + 1).trim();
+                                    let displayChapterName = s.chapter.replace(cleanEventTitle, '').trim();
+                                    if (!displayChapterName) displayChapterName = s.chapter;
+                                    return this.getStoryItemHtml(s, displayChapterName, s.title);
+                                }).join('')}
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    chIcon = this.activeTabType === 'guild' ? "👥" : "🌙";
+                    accordionHtml += `
+                        <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
+                            <div class="accordion-header" onclick="QuestMapModule.toggleChapter(${chIndex})">
+                                <div class="acc-header-title">
+                                    <span class="acc-folder-icon" style="display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">${chIcon}</span>
+                                    <span class="acc-ch-name" style="margin-left: 8px;">${this.escapeHtml(chKey)}</span>
+                                </div>
+                                <div class="acc-count">${childStories.length} 話</div>
+                            </div>
+                            <div class="accordion-content" style="max-height: ${isExpanded ? 'none' : '0px'}">
+                                ${childStories.map(s => this.getStoryItemHtml(s, "特別故事", s.title)).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+            controlPanelHtml = `
+                <div class="accordion-container">
+                    ${accordionHtml}
+                </div>
+            `;
+        }
+
+        const isCharaActive = (this.activeTabType === 'chara' && this.activeCharaName);
+        tab.innerHTML = `
+ <div class="floating-back-btn" onclick="${isCharaActive ? 'QuestMapModule.clearActiveChara()' : 'QuestMapModule.handleFloatingBack()'}" style="position: fixed; top: 20px; left: 20px; z-index: 9998; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #2d6bcf, #1a4a9e); color: #fff; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; box-shadow: 0 4px 15px rgba(26, 74, 158, 0.5); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.15)'; this.style.boxShadow='0 6px 20px rgba(26, 74, 158, 0.7)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(26, 74, 158, 0.5)';">←</div>
  <div class="map-container">
  <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
- <button onclick="QuestMapModule.goBackToMenu()" class="back-to-menu-btn" style="
+ <button onclick="${isCharaActive ? 'QuestMapModule.clearActiveChara()' : 'QuestMapModule.goBackToMenu()'}" class="back-to-menu-btn" style="
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -626,13 +822,19 @@ const QuestMapModule = {
                 </button>
                 <span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;"><span style="font-size: 1.1rem;">🏠</span> 劇情大廳</span>
                 <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
-                <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">${
-                    this.activeTabType === 'main' ? '⚔️ 主要' :
-                    this.activeTabType === 'event' ? '🏆 活動' :
-                    this.activeTabType === 'guild' ? '👥 公會' :
-                    this.activeTabType === 'chara' ? '👤 角色' :
-                    this.activeTabType === 'tower' ? '🌙 額外' : '👥 登場角色'
-                }</span>
+                ${isCharaActive ? `
+                    <span class="breadcrumb-item linkable" onclick="QuestMapModule.clearActiveChara()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;">👤 角色</span>
+                    <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
+                    <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">👤 ${this.escapeHtml(this.activeCharaName)}</span>
+                ` : `
+                    <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">${
+                        this.activeTabType === 'main' ? '⚔️ 主要' :
+                        this.activeTabType === 'event' ? '🏆 活動' :
+                        this.activeTabType === 'guild' ? '👥 公會' :
+                        this.activeTabType === 'chara' ? '👤 角色' :
+                        this.activeTabType === 'tower' ? '🌙 額外' : '👥 登場角色'
+                    }</span>
+                `}
             </div>
             <div class="map-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                 <div>
@@ -688,119 +890,19 @@ const QuestMapModule = {
                             this.activeTabType === 'main' ? '主線劇情編年史目錄' : 
                             this.activeTabType === 'event' ? '歷年活動劇情目錄' :
                             this.activeTabType === 'guild' ? '公會劇情目錄' :
-                            this.activeTabType === 'chara' ? '個人劇情目錄' :
+                            this.activeTabType === 'chara' ? `${this.activeCharaName} 的個人劇情目錄` :
                             this.activeTabType === 'tower' ? '露娜塔/系統劇情目錄' : '目錄'
                         }
                     </div>
                     <div class="story-list-scrollbar">
-                        <div class="accordion-container">
-                            ${chapterKeys.map((chKey, chIndex) => {
-                                const isExpanded = this.expandedChapter === chKey;
-                                const childStories = this.chapters[chKey];
-                                const safeId = `acc-item-${chIndex}`;
-
-                                let chTitle = "";
-                                let chIcon = isExpanded ? '📂' : '📁';
-
-                                if (QuestMapModule.activeTabType === 'main') {
-                                    let cleanChKey = chKey;
-                                    const firstStory = childStories[0];
-                                    const info = firstStory ? ChapterDataService.getChapterInfo(QuestMapModule.currentPart, firstStory.groupId) : null;
-                                    chTitle = info?.title ? ` - ${info.title}` : "";
-
-                                    return `
-                                        <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
-                                            <div class="accordion-header" onclick="QuestMapModule.toggleChapter(${chIndex})">
-                                                <div class="acc-header-title">
-                                                    <span class="acc-folder-icon" style="display: flex; align-items: center; justify-content: center;">${chIcon}</span>
-                                                    <span class="acc-ch-name" style="margin-left: 8px;">${cleanChKey}${chTitle}</span>
-                                                </div>
-                                                <div class="acc-count">${childStories.length} 話</div>
-                                            </div>
-                                            <div class="accordion-content" style="max-height: ${isExpanded ? 'none' : '0px'}">
-                                                ${childStories.map(s => {
-                                                    const chDisplay = s.chapter.replace(/^(第\d+部\s*)?([^\s]+章\s*|[^\s]+序章\s*|[^\s]+幕間[^\s]*\s*)/, '');
-                                                    const titleDisplay = s.title;
-                                                    return this.getStoryItemHtml(s, chDisplay, titleDisplay);
-                                                }).join('')}
-                                            </div>
-                                        </div>
-                                    `;
-                                } else if (QuestMapModule.activeTabType === 'event') {
-                                    const firstStory = childStories[0] || {};
-                                    if (firstStory.eventValue) {
-                                        chIcon = `<img src="https://redive.estertion.win/event_still/banner_${firstStory.eventValue}.webp" onerror="this.onerror=null; this.src='https://redive.estertion.win/icon/unit/000000.webp';" style="width: 32px; height: 32px; border-radius: 4px; object-fit: cover; border: 1px solid rgba(255,255,255,0.15);">`;
-                                    }
-                                    return `
-                                        <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
-                                            <div class="accordion-header" onclick="QuestMapModule.toggleChapter(${chIndex})">
-                                                <div class="acc-header-title">
-                                                    <span class="acc-folder-icon" style="display: flex; align-items: center; justify-content: center;">${chIcon}</span>
-                                                    <span class="acc-ch-name" style="margin-left: 8px;">${chKey}</span>
-                                                </div>
-                                                <div class="acc-count">${childStories.length} 話</div>
-                                            </div>
-                                            <div class="accordion-content" style="max-height: ${isExpanded ? 'none' : '0px'}">
-                                                ${childStories.map(s => {
-                                                    const cleanEventTitle = chKey.substring(chKey.indexOf('」') + 1).trim();
-                                                    let displayChapterName = s.chapter.replace(cleanEventTitle, '').trim();
-                                                    if (!displayChapterName) displayChapterName = s.chapter;
-                                                    return this.getStoryItemHtml(s, displayChapterName, s.title);
-                                                }).join('')}
-                                            </div>
-                                        </div>
-                                    `;
-                                } else if (QuestMapModule.activeTabType === 'chara') {
-                                    const realName = QuestMapModule.getCharaRealName(chKey);
-                                    let avatarHtml = "";
-                                    const unitId = AvatarService.getUnitId(realName, QuestMapModule.speakerAvatars);
-                                    if (unitId) {
-                                        avatarHtml = AvatarService.getAvatarHtml(realName, QuestMapModule.speakerAvatars);
-                                    } else {
-                                        avatarHtml = `<div class="npc-avatar-placeholder" style="font-size: 0.8rem; font-weight: bold; color: var(--primary-dark);">${this.escapeHtml(realName.substring(0, 2))}</div>`;
-                                    }
-                                    chIcon = `<div style="width: 30px; height: 30px; border-radius: 50%; overflow: hidden; border: 1.5px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.1); flex-shrink: 0;">${avatarHtml}</div>`;
-
-                                    return `
-                                        <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
-                                            <div class="accordion-header" onclick="QuestMapModule.toggleChapter(${chIndex})">
-                                                <div class="acc-header-title" style="display: flex; align-items: center;">
-                                                    <span class="acc-folder-icon" style="display: flex; align-items: center; justify-content: center;">${chIcon}</span>
-                                                    <span class="acc-ch-name" style="margin-left: 8px;">${chKey}</span>
-                                                </div>
-                                                <div class="acc-count">${childStories.length} 話</div>
-                                            </div>
-                                            <div class="accordion-content" style="max-height: ${isExpanded ? 'none' : '0px'}">
-                                                ${childStories.map(s => this.getStoryItemHtml(s, "角色故事", s.title)).join('')}
-                                            </div>
-                                        </div>
-                                    `;
-                                } else {
-                                    chIcon = QuestMapModule.activeTabType === 'guild' ? "👥" : "🌙";
-                                    return `
-                                        <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
-                                            <div class="accordion-header" onclick="QuestMapModule.toggleChapter(${chIndex})">
-                                                <div class="acc-header-title">
-                                                    <span class="acc-folder-icon" style="display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">${chIcon}</span>
-                                                    <span class="acc-ch-name" style="margin-left: 8px;">${chKey}</span>
-                                                </div>
-                                                <div class="acc-count">${childStories.length} 話</div>
-                                            </div>
-                                            <div class="accordion-content" style="max-height: ${isExpanded ? 'none' : '0px'}">
-                                                ${childStories.map(s => this.getStoryItemHtml(s, "特別故事", s.title)).join('')}
-                                            </div>
-                                        </div>
-                                    `;
-                                }
-                            }).join('')}
-                        </div>
+                        ${controlPanelHtml}
                     </div>
                 </div>
             </div>
         </div>
         `;
 
-        if (!skipAutoSelect && chapterKeys.length > 0 && this.expandedChapter && this.chapters[this.expandedChapter] && this.chapters[this.expandedChapter].length > 0) {
+        if (!skipAutoSelect && (this.activeTabType !== 'chara' || this.activeCharaName) && chapterKeys.length > 0 && this.expandedChapter && this.chapters[this.expandedChapter] && this.chapters[this.expandedChapter].length > 0) {
             setTimeout(() => {
                 this.selectStory(this.chapters[this.expandedChapter][0].id);
             }, 0);
@@ -814,6 +916,18 @@ const QuestMapModule = {
     switchPart(part) {
         this.currentPart = part;
         this.activeStoryId = null;
+        this.expandedChapter = null;
+        this.safeRender(() => this._render());
+    },
+
+    selectChara(charaName) {
+        this.activeCharaName = charaName;
+        this.expandedChapter = charaName;
+        this.safeRender(() => this._render());
+    },
+
+    clearActiveChara() {
+        this.activeCharaName = null;
         this.expandedChapter = null;
         this.safeRender(() => this._render());
     },
@@ -1136,12 +1250,29 @@ const QuestMapModule = {
                     last.type !== 'background' && 
                     last.name === item.name && 
                     (!item.voice || last.voice === item.voice)) {
-                    last.words = (last.words || "") + "\n" + (item.words || "");
+                    
+                    let lastWords = (last.words || "").trim();
+                    let currentWords = (item.words || "").trim();
+                    
+                    if (!currentWords) {
+                        return; // 如果下一行是空的，直接忽略
+                    }
+                    
+                    if (!lastWords) {
+                        last.words = currentWords;
+                    } else {
+                        last.words = lastWords + "\n" + currentWords;
+                    }
+                    
                     if (!last.voice && item.voice) {
                         last.voice = item.voice;
                     }
                 } else {
-                    dialogueList.push({ ...item });
+                    const cloned = { ...item };
+                    if (cloned.words) {
+                        cloned.words = cloned.words.trim();
+                    }
+                    dialogueList.push(cloned);
                 }
             });
 
@@ -1225,7 +1356,7 @@ const QuestMapModule = {
 
                 const speaker = item.name || "旁白";
                 const safeSpeaker = this.escapeHtml(speaker);
-                const words = this.escapeHtml(item.words || "").replace(/\{player\}/g, "祐樹").replace(/\n/g, "<br>");
+                const words = this.escapeHtml(item.words || "").replace(/\{player\}/g, "祐樹");
 
                 let speakerClass = "";
                 let isNarrator = speaker === "旁白" || speaker === "【系統】" || speaker === "？？？";
@@ -1730,6 +1861,6 @@ const QuestMapModule = {
     }
 };
 
-if (window.ChapterDataService && AvatarService) {
+if (window.ChapterDataService && window.AvatarService) {
     console.log("[QuestMapModule] 所有相依服務已就緒");
 }

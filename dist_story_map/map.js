@@ -55,7 +55,8 @@ const QuestMapModule = {
             const thumbData = this.storyThumbnails[s.id];
             if (thumbData.still_id) {
                 thumbHtml = StoryAssetService.getStillHtml(thumbData.still_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
-            } else if (thumbData.bg_id) {
+            } else if (s.type !== 'chara' && thumbData.bg_id) {
+                // 非個人故事時，若無 still 則顯示背景 (bg_id)
                 thumbHtml = StoryAssetService.getBackgroundHtml(thumbData.bg_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
             }
         }
