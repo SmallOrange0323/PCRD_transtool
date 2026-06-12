@@ -454,9 +454,14 @@ const QuestMapModule = {
             // 從 s.chapter 提取角色名。例如 "日和 第1話" -> 提取 "日和"
             let charaName = "其他角色";
             if (s.chapter) {
-                const parts = s.chapter.split(/\s+第/);
-                if (parts[0]) {
-                    charaName = parts[0].trim();
+                const match = s.chapter.match(/^(.*?)\s*第\d+話/);
+                if (match) {
+                    charaName = match[1].trim();
+                } else {
+                    const parts = s.chapter.split(/\s+第/);
+                    if (parts[0]) {
+                        charaName = parts[0].trim();
+                    }
                 }
             }
             s.charaName = charaName;

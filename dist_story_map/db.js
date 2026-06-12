@@ -51,6 +51,7 @@ window.PCRDatabase = {
         const dbKey = `pcr_db_${this.currentRegion}`;
         const remoteUrl = `https://wthee.xyz/db/redive_${this.currentRegion}.db`;
         const localPath = `./redive_${this.currentRegion}.db`;
+        const sizeKey = `pcr_db_size_${this.currentRegion}`;
 
         try {
             // 1. 初始化 SQL 引擎 (WebAssembly)
@@ -59,8 +60,43 @@ window.PCRDatabase = {
                 locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/${file}`
             });
 
+            // 獲取最新 size
+            let size = 0;
+            try {
+                const headRes = await fetch(localPath, { method: 'HEAD' });
+                if (headRes.ok) {
+                    const cl = headRes.headers.get('content-length');
+                    if (cl) size = parseInt(cl, 10);
+                }
+            } catch (e) {
+                console.warn(`[PCRDatabase] HEAD ${localPath} failed, trying ${remoteUrl}...`, e);
+            }
+            if (size <= 0) {
+                try {
+                    const headRes = await fetch(remoteUrl, { method: 'HEAD' });
+                    if (headRes.ok) {
+                        const cl = headRes.headers.get('content-length');
+                        if (cl) size = parseInt(cl, 10);
+                    }
+                } catch (e) {
+                    console.warn(`[PCRDatabase] HEAD ${remoteUrl} failed...`, e);
+                }
+            }
+
+            const cachedSize = localStorage.getItem(sizeKey);
+            let forceReload = false;
+            if (size > 0 && String(size) !== String(cachedSize)) {
+                console.log(`[PCRDatabase] Size mismatch for ${this.currentRegion} (current: ${size}, cached: ${cachedSize}). Force reload.`);
+                forceReload = true;
+                await this.removeFromIDB(dbKey);
+            }
+
             // 2. 嘗試從 IndexedDB 讀取 (快取隔離)
-            const cachedDB = await this.loadFromIDB(dbKey);
+            let cachedDB = null;
+            if (!forceReload) {
+                cachedDB = await this.loadFromIDB(dbKey);
+            }
+
             if (cachedDB) {
                 if (onProgress) onProgress(`正在載入本地 ${this.currentRegion.toUpperCase()} 快取...`, 50);
                 this.db = new SQL.Database(new Uint8Array(cachedDB));
@@ -91,6 +127,8 @@ window.PCRDatabase = {
                 this.db = new SQL.Database(new Uint8Array(dbData));
                 if (this.verifyDatabase()) {
                     await this.saveToIDB(dbKey, dbData);
+                    const finalSize = size > 0 ? size : dbData.byteLength;
+                    localStorage.setItem(sizeKey, finalSize);
                     console.log(`[PCRDatabase] Successfully initialized and verified ${this.currentRegion} DB`);
                     return this.db;
                 } else {
@@ -210,6 +248,21 @@ window.PCRDatabase = {
                 getRequest.onerror = () => resolve(null);
             };
             request.onerror = () => resolve(null);
+        });
+    },
+
+    async removeFromIDB(key) {
+        return new Promise((resolve) => {
+            const request = indexedDB.open('PCRD_DB_STORE', 1);
+            request.onsuccess = (e) => {
+                const db = e.target.result;
+                const transaction = db.transaction('files', 'readwrite');
+                const store = transaction.objectStore('files');
+                const deleteRequest = store.delete(key);
+                deleteRequest.onsuccess = () => resolve();
+                deleteRequest.onerror = () => resolve();
+            };
+            request.onerror = () => resolve();
         });
     }
 };
