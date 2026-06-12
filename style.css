@@ -1110,7 +1110,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    overflow-y: auto;
+    overflow: hidden;
     min-height: 0;
 }
 
