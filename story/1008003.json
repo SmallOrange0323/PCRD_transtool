@@ -1,0 +1,619 @@
+[
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}在散步時，\n聽到一個熟悉的聲音。"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "我說你呀，快住手啦～",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "搭訕男子",
+        "words": "喂喂，不是這樣的吧。",
+        "unit_id": 1111,
+        "voice": "vo_adv_1008003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "搭訕男子",
+        "words": "\n我可是看妳在等人搭訕，才向妳搭話的哦？",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "我才沒有引誘你這種人。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n你身上都是汗臭味，可不可以不要靠近我？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "搭訕男子",
+        "words": "裝作很討厭的樣子啊……",
+        "unit_id": 1111,
+        "voice": "vo_adv_1008003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "搭訕男子",
+        "words": "\n妳有那種興趣嗎？",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "搭訕男子",
+        "words": "\n好啊，我就陪妳玩到底囉。",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "我怎麼可能會有那種興趣啊……",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "啊啊，真是難纏的人……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "啊，{player}。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n你來的正好呢。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "搭訕男子",
+        "words": "你這傢伙是哪根蔥啊！",
+        "unit_id": 1111,
+        "voice": "vo_adv_1008003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "搭訕男子",
+        "words": "\n這個女孩子在和我說話！",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "搭訕男子",
+        "words": "\n你可不要礙事哦！",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "礙事的人是你唷。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n我和這個人還有事要做。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "那我們先走啦！",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "搭訕男子",
+        "words": "……什！？",
+        "unit_id": 1111,
+        "voice": "vo_adv_1008003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "搭訕男子",
+        "words": "\n難道他是妳男朋友嗎！？",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "搭訕男子",
+        "words": "\n",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "搭訕男子",
+        "words": "可惡，都有男人了還玩弄我的心嗎！？",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "我可不記得有玩弄你……",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n是你自己擅自誤會了吧。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "搭訕男子",
+        "words": "不能原諒！你們這兩個傢伙……",
+        "unit_id": 1111,
+        "voice": "vo_adv_1008003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "搭訕男子",
+        "words": "\n我要對你們施放兩手緊牽無法分開的魔法！",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "唔哇！",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "等等，你在做什麼！？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "搭訕男子",
+        "words": "哈哈，真是爽快！",
+        "unit_id": 1111,
+        "voice": "vo_adv_1008003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "搭訕男子",
+        "words": "\n",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "搭訕男子",
+        "words": "掰啦！",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "唉呀呀……",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n真的就這樣和你手牽手，無法鬆開了呢……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "唔～嗯……？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n不過，這個魔法非常弱呢。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "效果大概只會維持一天吧？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "明天早上大概就會解除了，",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n在那之前就只能忍耐了。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "對我而言是不太方便，",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "但是對你來說是個獎賞對吧？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "真是的～竟然害羞了，真可愛呢。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "我就知道你會這麼想唷。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "挺老實的呢。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "不過，只能用一隻手不太方便呢……",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "真令人困擾……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "啊，對了！",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n只要去公會小屋的話，那裡有很多書籍，",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n說不定能找到解除魔法的方法。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "你就和我一起去公會小屋一下──",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "咦？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n剛才臉頰被水滴……？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "哇！好大的雨！？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "公會小屋就在附近，快點過去吧！",
+        "unit_id": 100811
+    },
+    {
+        "type": "background",
+        "background": "500040"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "唔哇～全身都濕答答的呢？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n要是置之不理的話會感冒的……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n去換衣服吧？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "欸？要在不同房間換……？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "但是魔法讓我們的手分不開唷？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n就只能一起換衣服了。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "那我就先換了唷。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "嘿唷……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "討厭啦，內衣也濕透了……",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "哎喲～連這種地方都濕掉了……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "只能全部脫掉了呢。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "真是的，{player}你在慌張什麼？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "又沒有什麼好害羞的。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "畢竟都是男孩子嘛。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "咦？有什麼好驚訝的？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "我是男的唷。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n我沒有說過嗎？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "沒錯……在生物學上，我是男的唷。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "真正美麗的事物，是連性別也能超越的唷。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "{player}，你看。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n我的身體，真的很美對吧？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "你也很有興趣對吧？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "讓你直接看到我的肌膚，",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008003_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n是只有給{player}你的特別服務呢。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "來吧來吧，可以隨你喜歡盡量欣賞唷？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}因為太過震驚，連寒冷也拋諸腦後。"
+    }
+]

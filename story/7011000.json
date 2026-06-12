@@ -1,0 +1,782 @@
+[
+    {
+        "type": "background",
+        "background": "500420"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "高聳入雲的絕海巨塔——露娜之塔。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n為了尋找失去記憶的線索，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n{player}和流夏來到露娜之塔。"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "哦，",
+        "unit_id": 105611,
+        "voice": "vo_adv_7011000_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "這裡看起來也十分驚人呢。",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "看來是無法輕易解決了。",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "嗯？　",
+        "unit_id": 105611,
+        "voice": "vo_adv_7011000_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "不要露出那麼擔心的表情嘛。",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "別忘了你是為了什麼才把我叫來的？",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "打鬥是我的專長，",
+        "unit_id": 105611,
+        "voice": "vo_adv_7011000_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "更何況是為了你，",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "這把劍，",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "我會盡情地揮舞的，",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "你就放一百二十個心吧。",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "那麼，",
+        "unit_id": 105611,
+        "voice": "vo_adv_7011000_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "姑且不談這件事……",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "你也注意到了吧？",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "盯―――……",
+        "unit_id": 103011,
+        "voice": "vo_adv_7011000_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "那個孩子，",
+        "unit_id": 105611,
+        "voice": "vo_adv_7011000_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "從城鎮開始就一直跟在我們後面。",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "那是你的熟人嗎？",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "是嗎，",
+        "unit_id": 105611,
+        "voice": "vo_adv_7011000_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "你的人脈真廣呢，",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "小哥。",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "喂～",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "那邊的姑娘，",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "趕緊現身吧。",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "什麼！　",
+        "unit_id": 103011,
+        "voice": "vo_adv_7011000_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "我辛苦躲藏，",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "從城鎮沿途隱身尾隨，",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "居然輕而易舉地被識破了是也！",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "明明打扮得像是要去參加祭典一樣，",
+        "unit_id": 105611,
+        "voice": "vo_adv_7011000_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "妳到底在說什麼啊？",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "所以，",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "妳是何許人也？　",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "從各種層面來看，妳似乎也並非等閒之輩。",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "啊！　",
+        "unit_id": 103011,
+        "voice": "vo_adv_7011000_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "我是",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "那位將軍的侍從，\n",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "名為妮諾是也！",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "嘿，",
+        "unit_id": 105611,
+        "voice": "vo_adv_7011000_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "小哥，",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "原來你還是",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "將軍啊？",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "今天",
+        "unit_id": 103011,
+        "voice": "vo_adv_7011000_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "我聽聞將軍",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "和武士大師",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n要一起去攀登不可思議的高塔，",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "我",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "迫不",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "急待，",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "於是前來探訪是也！",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "拜託你們，",
+        "unit_id": 103011,
+        "voice": "vo_adv_7011000_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "請讓我",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "與兩位同行吧！",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n我想親眼見識",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "武士大師的劍術是也！",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "不是，",
+        "unit_id": 105611,
+        "voice": "vo_adv_7011000_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "那武士大師是怎麼回事啊。",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "我只是一介流浪者，",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "沒有妳說得那麼偉大。",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "妳太謙虛了！　",
+        "unit_id": 103011,
+        "voice": "vo_adv_7011000_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "懲治於海上作亂的魔物、",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "毀滅犯罪組織，",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "還有",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "解決了讓整個蘭德索爾",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "陷入恐懼之中的",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "妖刀事件。",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "妳的事蹟",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "可是多到數不完呢！",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "唉……",
+        "unit_id": 105611,
+        "voice": "vo_adv_7011000_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "我過去的所作所為，",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "似乎有點太引人矚目了呢。",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n麻煩反而自己找上門了。",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "那麼，",
+        "unit_id": 105611,
+        "voice": "vo_adv_7011000_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "小哥，",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "你打算怎麼做？",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n我是你的劍，",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "所以我會遵從你的決定唷。",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "將軍～！",
+        "unit_id": 103011,
+        "voice": "vo_adv_7011000_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n多謝憐憫，",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "感謝",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "感激",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "感動不已是也！",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "你是認真的？",
+        "unit_id": 105611,
+        "voice": "vo_adv_7011000_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "……算了，",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "就算拒絕，",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "應該也不會乖乖聽話吧。",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "將軍，",
+        "unit_id": 103011,
+        "voice": "vo_adv_7011000_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "既然你同意讓我隨行，",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n那麼我也將抱持著和武士大師",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "一同粉身碎骨的覺悟，",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n盡心盡力地侍奉你！",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "總而言之，",
+        "unit_id": 105611,
+        "voice": "vo_adv_7011000_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "那個",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "武士大師的叫法",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "就免了。",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "聽得我渾身不自在。",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "呣呣呣，",
+        "unit_id": 103011,
+        "voice": "vo_adv_7011000_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "那麼，",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "我該怎麼稱呼妳呢？",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "喂，",
+        "unit_id": 105611,
+        "voice": "vo_adv_7011000_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "你在胡說什麼啊！",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "喔～！　",
+        "unit_id": 103011,
+        "voice": "vo_adv_7011000_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "大姐頭！　",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "聽起來真不錯！",
+        "unit_id": 103011
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "你看看，",
+        "unit_id": 105611,
+        "voice": "vo_adv_7011000_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "都是你亂說話！",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "\n",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "真是的，",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "流夏",
+        "words": "你這令人傷腦筋的將軍大人啊。",
+        "unit_id": 105611
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "就這樣，在不可思議的關係下結伴同行的一行人，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n展開了一段奇妙旅程。"
+    }
+]

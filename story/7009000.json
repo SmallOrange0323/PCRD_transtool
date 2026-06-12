@@ -1,0 +1,668 @@
+[
+    {
+        "type": "background",
+        "background": "500420"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "高聳入雲的露娜之塔裏頭\n據說存在著{player}記憶的線索，\n而在塔前出現了一群人的身影。"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "這裡就是",
+        "unit_id": 101011,
+        "voice": "vo_adv_7009000_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "露娜之塔嗎。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "真是不得了的地方呢。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "那、",
+        "unit_id": 105211,
+        "voice": "vo_adv_7009000_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "那個……？",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "\n完全沒搞清楚狀況就被帶來這裡了，",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "\n這裡是哪裡呀？",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "這裡被稱作露娜之塔，",
+        "unit_id": 101011,
+        "voice": "vo_adv_7009000_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n有能將王子先生記憶",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "重新取回的線索喔。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "是這樣嗎？",
+        "unit_id": 105211,
+        "voice": "vo_adv_7009000_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "\n",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "那樣的話直接跟我說，",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "我就會一起來的嘛～！",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "人家沒有說嗎？",
+        "unit_id": 101011,
+        "voice": "vo_adv_7009000_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "才沒有說呢！",
+        "unit_id": 105211,
+        "voice": "vo_adv_7009000_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "\n",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "突然之間，",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "說要人家當真步真步王國的白馬",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "\n什麼的，",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "就把人家帶來了不是嗎？",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "真是抱歉呢。",
+        "unit_id": 101011,
+        "voice": "vo_adv_7009000_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "因為莉瑪",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "把理想中的",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "可愛白馬詮釋的太好了，",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "才會連說明",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "都忘記了吧。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "因為小鈴和小栞",
+        "unit_id": 105211,
+        "voice": "vo_adv_7009000_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "是從哞哞自衛隊過來的，",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "\n所以稍微知道關於真步的事……",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "不過見面還是第一次吧？",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "對呢。",
+        "unit_id": 101011,
+        "voice": "vo_adv_7009000_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n人家",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "雖然也有聽說過關於莉瑪的事，",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "不過這是第一次",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n直接",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "見到面呢。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "沒想到",
+        "unit_id": 105211,
+        "voice": "vo_adv_7009000_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "第一次見面就突然被當成馬了呢……",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "\n如果被當成魔物的話倒是已經習慣了……",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "魔物什麼的。",
+        "unit_id": 101011,
+        "voice": "vo_adv_7009000_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "對可愛的白馬，",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "怎麼能",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "說出這種話！",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "可、",
+        "unit_id": 105211,
+        "voice": "vo_adv_7009000_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "可愛？　",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "謝謝……",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "喂！",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "\n結果還是馬不是嗎！",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "哈……",
+        "unit_id": 101011,
+        "voice": "vo_adv_7009000_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "說真的……",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "莉瑪可是",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "理想中的白馬呀……",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n好可愛呢……",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "哇哇！",
+        "unit_id": 105211,
+        "voice": "vo_adv_7009000_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "\n不要用這麼陶醉的表情",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "摸人家啦！　",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "雖然很舒服就是了！",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "\n",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "等、",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "等等啊{player}！　",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "快讓她停下來～！",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "不要連你也一起摸上來啊～！",
+        "unit_id": 105211,
+        "voice": "vo_adv_7009000_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "\n",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "啊，",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "不過好舒服啊～！！",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "呵呵，",
+        "unit_id": 101011,
+        "voice": "vo_adv_7009000_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "王子先生",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "也對這身皮毛無法自拔呢。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "稍微有點忌妒了呢。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "怎麼了？　",
+        "unit_id": 101011,
+        "voice": "vo_adv_7009000_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "王子先生",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "也想討摸摸嗎？",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "想要的話",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "就過來這裡吧。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n摸摸～",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "為什麼你也一起被摸了啦～！？",
+        "unit_id": 105211,
+        "voice": "vo_adv_7009000_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "總、",
+        "unit_id": 105211,
+        "voice": "vo_adv_7009000_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "總之！",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "\n",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "這座塔裡",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "有取回{player}記憶的",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "\n線索對吧！？",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "似乎是這樣呢。",
+        "unit_id": 101011,
+        "voice": "vo_adv_7009000_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "那麼，",
+        "unit_id": 105211,
+        "voice": "vo_adv_7009000_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "我們三個一起爬上去吧！",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "\n",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "這樣也比較容易找到線索對吧！",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "\n",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "人家",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "莉瑪",
+        "words": "會很努力的呦♪",
+        "unit_id": 105211
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "真期待呢～",
+        "unit_id": 101011,
+        "voice": "vo_adv_7009000_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "王子先生",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "和白馬",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "以及",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "真步公主，",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "三人的冒險",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "開始囉開始囉～♪",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}們的奇遇旅程拉開了序幕。"
+    }
+]

@@ -1,0 +1,866 @@
+[
+    {
+        "type": "background",
+        "background": "500033"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]吉塔等人今天也來到跳蚤市場。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]\n然後，突然有人從某個攤位上叫了{player}的名字。"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]王子先生～",
+        "unit_id": 101011,
+        "voice": "vo_adv_5118062_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]\n這邊這邊～",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]王子先生！？",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118062_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]是的，",
+        "unit_id": 101011,
+        "voice": "vo_adv_5118062_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]他是真步真步王國的王子先生♪",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]王子先生也來了啊。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]\n而且……",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]還是跟這～麼可愛的女孩子一起。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]可、",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118062_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]可愛……？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]王子先生很受歡迎",
+        "unit_id": 101011,
+        "voice": "vo_adv_5118062_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]是很令人驕傲……",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]但是丟下人家，",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]跑去約會……",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]王子先生真是壞心眼呢。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]約……！？",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118062_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]不、",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]不是那樣的！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n我們只是同個騎空團的夥伴，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]並不是妳想的那樣……！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]呵呵，",
+        "unit_id": 101011,
+        "voice": "vo_adv_5118062_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]別那麼慌張啦～",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]\n人家只是開個小玩笑♪",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]在那之後──"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]\n吉塔和真步重新自我介紹。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]\n在互相了解對方後，吉塔詢問關於真步攤位的事。"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]話說，",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118062_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]真步的攤位都在賣些什麼呢？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]是賣玩偶和衣服喔～♪",
+        "unit_id": 101011,
+        "voice": "vo_adv_5118062_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]\n人家想說可以貼補【哞哞自衛隊】的預算。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]這全都是人家手工製的，",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]外面可～是買不到的唷～",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]全是妳手工製的？",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118062_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]好厲害，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]妳的手真靈巧！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]謝謝誇獎～♪",
+        "unit_id": 101011,
+        "voice": "vo_adv_5118062_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]有看上什麼",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]就別客氣盡量說，",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]吉塔小姐。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]想修改衣服也包在人家身上～",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]謝謝妳！",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118062_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]每件衣服都好可愛……",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]嗯～",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]給我穿會不會太可愛了點呢？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]才沒有",
+        "unit_id": 101011,
+        "voice": "vo_adv_5118062_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]那回事喔～",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]\n比方說……",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]這件輕飄飄又可愛的禮服，",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]妳穿會很好看喔～♪",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]哇哇，",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118062_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]好像公主一樣呢！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n這、",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]這件要給我穿……！？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]連你都這麼說！？",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118062_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]吉塔小姐，",
+        "unit_id": 101011,
+        "voice": "vo_adv_5118062_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]來試穿看看合不合身吧～♪",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]來～",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]乖乖別動喔～",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]啊、",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118062_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]啊哈哈……",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n真步，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]妳的眼神有點可怕耶……",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]嗯？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]……真步，",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118062_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n那個……",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]放在裡頭的",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]橘色玩偶，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n可以拿過來讓我仔細瞧一瞧嗎？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]啊，",
+        "unit_id": 101011,
+        "voice": "vo_adv_5118062_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]妳說這個嗎？",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]來，",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]請便，",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]妳慢慢看吧～",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]謝謝妳！",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118062_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]……嗯，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]它果然很不可思議呢。",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n讓人不禁就想盯著它看……",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]這孩子是蜥蜴先生喔。",
+        "unit_id": 101011,
+        "voice": "vo_adv_5118062_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]是蜥蜴啊！",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118062_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]……咦？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]它好像有翅膀……",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]是蜥蜴先生喔♪",
+        "unit_id": 101011,
+        "voice": "vo_adv_5118062_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]……還長了角耶？",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118062_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]因為是蜥蜴先生嘛～",
+        "unit_id": 101011,
+        "voice": "vo_adv_5118062_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]蜥蜴有長角嗎……？",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118062_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]哎呀，",
+        "unit_id": 101011,
+        "voice": "vo_adv_5118062_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]這是人家做的，人家說是就是喔？",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]這孩子是蜥蜴先生呀♪",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]這、",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118062_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]這麼說也是……",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]我知道了，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]它是蜥蜴！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]呵呵，",
+        "unit_id": 101011,
+        "voice": "vo_adv_5118062_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]對吧～",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]\n它可是",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]很可愛很可愛的",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]蜥蜴先生喔♪",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]嗯，",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118062_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]我決定了！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n真步，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]可以把它",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]賣給我嗎？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]當然",
+        "unit_id": 101011,
+        "voice": "vo_adv_5118062_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]可以呀～",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "[FFFFFFFF]妳可要好好珍惜它喔♪",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]謝謝！",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118062_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n我會好好珍惜的！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]嗯！",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118062_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]我非常中意它！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]就是那個，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]我覺得騎空團",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]也需要吉祥物。",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]有它在，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]天空之旅一定會變得更開心！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]吉塔這麼說著，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]將玩偶高高舉向天空。"
+    }
+]

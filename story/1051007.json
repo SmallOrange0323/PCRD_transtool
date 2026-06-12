@@ -1,0 +1,819 @@
+[
+    {
+        "type": "background",
+        "background": "500182"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}跟深月一起，來到了陰暗的森林。"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "是這邊喔。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n再往前走一點的話，就會看到目的地了。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "雖然只是香水的植物原料，但也需要一定的數量。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n你能跟我一起來這裡，真是幫了大忙。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "然後……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "在這個陰暗的森林裡兩人獨處……",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n周圍一個人也沒有，即使發生了什麼事都不會留下證據。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "你不覺得這種情況很棒嗎？",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "……說笑而已♪",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n我對你充滿感激，才不會做什麼奇怪的事啦。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "……我是不會主動呢。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我現在抹上了前幾天實驗做出來的，",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n讓費洛蒙倍增的魔法香水呢",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "魔法香水究竟有沒有好好發揮效用……",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n現在就用你對我的反應",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "來測試一下吧～♪",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "……吶。 你覺不覺得，今天的我跟平常有點不同？",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "……跟平常一樣？",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "哼，似乎是抹得不夠多呢。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "如果再多抹一點香水的話，說不定就會立即見效……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "嗯？什麼事也沒發生啊。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n除此之外……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──呱歐歐歐歐歐",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "從剛才開始就有好幾隻魔物朝這邊過來了。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "真是的，事情才剛要漸入佳境，",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "真希望牠們不要妨礙我……",
+        "unit_id": 105111
+    },
+    {
+        "type": "background",
+        "background": "500182"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘰歐歐歐歐歐",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "難道牠們不知道自己比對方弱小嗎？",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "魔物真是可憐的生物呢。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──呱歐歐歐歐歐！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "又跑出來了。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "真掃興。我沒召喚魔物啊……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──呱歐歐歐歐歐！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "……牠們竟然不感到厭煩，一隻接一隻地跑出來呢。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "而且……是我的錯覺嗎。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n無論哪隻，都是直直衝向我……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "魔物們竟然會沒察覺你的魅力，",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n真是沒眼光呢。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我沒有時間跟你們耗下去呢。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n再見了！",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "就算被魔物求愛也沒用呢。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我看上的是……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "是啊，現在是重要的時刻。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "妨礙我的……都給我消失吧！",
+        "unit_id": 105111
+    },
+    {
+        "type": "background",
+        "background": "500182"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘰歐歐歐歐歐",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "真的是，打斷別人說話真不識相呢。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "牠們是魔物所以拿牠們沒辦法，",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n但你就不能稍微注意一下我嗎？",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "所以……你覺得怎樣？",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n你也差不多該覺得我是一位有魅力的女生吧？",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "啊啊真是的！ ",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我不是指那種意思啦……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "真是很奇怪呢。明明應該到了香水發揮效用的時間了……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "……等等。剛才魔物的表情就好像是被虐狂一樣。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "牠們都露出了愉悅的表情呢……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我從來沒有聽說過這個森林裡的魔物，\n具有這種特性……",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "這個該不會是……！",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "雖然我做這個香水的過程中，",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n一時大意製成了會被魔物喜歡的香水……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "難道我不小心把那瓶失敗了的香水帶過來了？",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "兩瓶香水的香味都一樣害我沒注意呢……",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "難怪來這片森林的路上，會有那麼多魔物跑出來了。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "不過，這個看上去還是有它的作用的。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "看來好像得到了副產物了。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──呱歐歐歐歐歐！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "哎呦，竟然還有這麼多隻？",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "出現這麼多的話，感覺打起來會很費勁兒呢。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "哎呦……你會保護我嗎？",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n由你來保護我？",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "呵呵，謝謝你。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "不過你不用擔心我的。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "倒不如說這樣剛好可以讓我發洩一下壓力呢♪",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "那麼……我要上了！",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘰歐歐歐歐歐！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "這算什麼啊，這種慘叫聽上去一點都不有趣？",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n……給我卯起來叫啊！",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘰歐歐歐歐歐！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "好像稍微變得有趣了。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n就是這樣！",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘰歐歐歐歐歐！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "很好……！",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n給我照這樣繼續叫個一百次吧！",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘰歐歐歐歐歐！",
+        "unit_id": 1611
+    },
+    {
+        "type": "background",
+        "background": "500182"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "一隻不剩全都跑掉了呢……",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "竟然連那種程度的處罰都受不了，真沒用……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "……雖然我覺得自己有點做過頭了。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "不過這樣子，才能讓魔物們忘不了呢。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "這種從痛苦中萌生的……快感。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "所以你覺得怎樣了？",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n看到我剛才的姿態……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "你有沒有覺得蠢蠢欲動？",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "哎呦真可惜……你真是不好對付呢。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "不過，以後還是有很多機會呢……",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我是不會放棄的♪",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "真是的，你還真是固執呢。我還打算照這個樣子，",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "把人變成被虐狂的過程當成實驗呢……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "今天我就先放棄吧。",
+        "unit_id": 105111,
+        "voice": "vo_adv_1051007_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n那麼我們現在就重新出發去收集植物原料吧。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "這之後，在這片森林中與魔物戰鬥的人，\n有幾次遇上了一些帶著奇怪反應的魔物……"
+    }
+]

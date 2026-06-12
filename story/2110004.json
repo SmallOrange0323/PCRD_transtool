@@ -1,0 +1,2328 @@
+[
+    {
+        "type": "background",
+        "background": "501430"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}一行人\n來到獸人族之國後，過了兩天──"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "真步小姐，",
+        "unit_id": 105812,
+        "voice": "vo_adv_2110004_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "還有",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "【哞哞自衛隊】的各位！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n謝謝妳們的",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "照料與餐點！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "喂喂，",
+        "unit_id": 104311,
+        "voice": "vo_adv_2110004_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n妳們真要",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "回去蘭德索爾嗎？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "待在這裡",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "還比較安全吧。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "謝謝妳的關心啊。",
+        "unit_id": 106012,
+        "voice": "vo_adv_2110004_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不過既然對方，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "能夠使用空間跳躍，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n老實說，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我認為應該沒有哪個地方是安全的呢。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "沒錯。",
+        "unit_id": 105812,
+        "voice": "vo_adv_2110004_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "所以，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們得爭取時間。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "其實我也很想",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "再跟妳們好好聊聊，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n吃遍",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這裡的美食……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "嗯……",
+        "unit_id": 101011,
+        "voice": "vo_adv_2110004_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "要回去的人有",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "貪吃佩可小姐、",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "凱留小姐、",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "雪菲小姐，",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n以及【王宮騎士團】的各位，對吧？",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n至於王子先生和",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "可可蘿小姐……",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下等人",
+        "unit_id": 105913,
+        "voice": "vo_adv_2110004_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "暫時還會留在這裡受您們照顧。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "必須讓主人",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "好好靜養才行……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "這是在跟貪吃佩可",
+        "unit_id": 101411,
+        "voice": "vo_adv_2110004_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "還有大家討論過後的結論。",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "如果所有人一起行動，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "風險實在太高了。",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "雖說如果真要投入戰鬥，",
+        "unit_id": 106412,
+        "voice": "vo_adv_2110004_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "{player}應該也要",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "跟我們一起走才對。",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n就目前的狀況來看，",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "城鎮上",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "似乎並不見厄莉絲和魔物的身影……",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "是啊。",
+        "unit_id": 104311,
+        "voice": "vo_adv_2110004_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n透過通訊魔法",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "與【動物苑】的夥伴聯繫後可知，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n雖然事情造成不小的騷動，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "但那些人似乎沒有出面稱王的樣子。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "假如真有危險，",
+        "unit_id": 104711,
+        "voice": "vo_adv_2110004_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "我們會抵擋在前，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n為大家爭取逃跑的時間。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n只是究竟能發揮多少效用，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "這就不清楚了……",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "話說回來，",
+        "unit_id": 101711,
+        "voice": "vo_adv_2110004_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "大家身體狀況都還好嗎？",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "妳們應該還要再多躺著休息的……",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "嗯──老實說，",
+        "unit_id": 106012,
+        "voice": "vo_adv_2110004_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n我也很想再多休息幾天……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "身為蘭德索爾的公主，",
+        "unit_id": 105812,
+        "voice": "vo_adv_2110004_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n可不能老是丟著城鎮不管。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n我得盡快，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "趕回去才行。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "嗯。",
+        "unit_id": 106412,
+        "voice": "vo_adv_2110004_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n我也……",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "不能再這樣",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "待下去了。",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "贊恩他……",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "雪菲小姐……",
+        "unit_id": 105913,
+        "voice": "vo_adv_2110004_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "可可蘿小姐和{player}，",
+        "unit_id": 106412,
+        "voice": "vo_adv_2110004_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "請好好療傷吧。",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "畢竟接下來的情況，",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "看似會越來越險惡。",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我也不能",
+        "unit_id": 106012,
+        "voice": "vo_adv_2110004_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "放著這些傢伙們不管嘛。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……而且我也很掛心陛下的狀況……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "若是走穿越鄰近湖邊的大斷崖的那條路，",
+        "unit_id": 104711,
+        "voice": "vo_adv_2110004_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "便能大幅縮短路程。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n這就得靠",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "凱留的飛行魔法了。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "哼。",
+        "unit_id": 106012,
+        "voice": "vo_adv_2110004_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n我的魔法很粗暴，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妳們最好要有心理準備啊！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "【慈樂之音】的各位，",
+        "unit_id": 101011,
+        "voice": "vo_adv_2110004_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "妳們有何打算呢？",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "如果想暫時待在這裡，",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "好好休息也無妨喔……",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "嗯……",
+        "unit_id": 102913,
+        "voice": "vo_adv_2110004_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n雖說我們",
+        "unit_id": 102913
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "也很想跟大家",
+        "unit_id": 102913
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "一起行動……",
+        "unit_id": 102913
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "但我們，",
+        "unit_id": 104211,
+        "voice": "vo_adv_2110004_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "想針對製作人小姐她們被施加的洗腦魔法，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n去找出解除方法。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "我們認為，",
+        "unit_id": 105411,
+        "voice": "vo_adv_2110004_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "\n這對怜大人她們",
+        "unit_id": 105411
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "肯定會有幫助的！",
+        "unit_id": 105411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "說得也是。",
+        "unit_id": 105812,
+        "voice": "vo_adv_2110004_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n如果能解除克莉絲提娜小姐和似似花小姐的洗腦，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n她們肯定會願意",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "再次助我們一臂之力的。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "嗯！",
+        "unit_id": 102913,
+        "voice": "vo_adv_2110004_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n大家也是，",
+        "unit_id": 102913
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "要多加小心！",
+        "unit_id": 102913
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們所有人，",
+        "unit_id": 105812,
+        "voice": "vo_adv_2110004_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "一定還會再平安相聚的！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……大家都離開了呢。",
+        "unit_id": 105913,
+        "voice": "vo_adv_2110004_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "這樣做",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "真的好嗎……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "我說",
+        "unit_id": 101711,
+        "voice": "vo_adv_2110004_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "霞啊～",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "大家團結合作一起迎擊，",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "真的不可行嗎～？",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "如果可行的話，",
+        "unit_id": 101411,
+        "voice": "vo_adv_2110004_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "其實我也很想這麼做。",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "但是，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "敵人的真面目、力量和數量都還是未知數，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n很難擬定作戰計畫",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "……",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "更何況，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "那個……",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "？",
+        "unit_id": 104311,
+        "voice": "vo_adv_2110004_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n怎麼了嗎？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "臉色這麼難看。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "……",
+        "unit_id": 101411,
+        "voice": "vo_adv_2110004_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "我已經從怜她們和貪吃佩可她們那裡，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n詳細得知厄莉絲的事，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n以及",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "你們與",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "【憤怒‧軍團】的戰鬥。",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "如果我的猜想沒有錯的話，",
+        "unit_id": 101411,
+        "voice": "vo_adv_2110004_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "很可能……",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "有人向敵人通風報信。",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n在【美食殿堂】或",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "【破曉之星】當中的",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "某人。",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "咦──！？",
+        "unit_id": 101711,
+        "voice": "vo_adv_2110004_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "通、",
+        "unit_id": 101011,
+        "voice": "vo_adv_2110004_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "通風報信……？",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "咦，",
+        "unit_id": 104311,
+        "voice": "vo_adv_2110004_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "妳是說內奸嗎！？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "不、",
+        "unit_id": 105913,
+        "voice": "vo_adv_2110004_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "不",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "可能！",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n無論是在下等人，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "還是【破曉之星】她們",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n都是賭上性命一路戰鬥過來的。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "即便想靠著流通情報獲得利益，",
+        "unit_id": 105913,
+        "voice": "vo_adv_2110004_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n若是在戰鬥中喪命",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "不就血本無歸了嗎？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n說什麼向敵人通風報信，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下實在無法想像……！",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "嗯……",
+        "unit_id": 101411,
+        "voice": "vo_adv_2110004_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "抱歉、",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "抱歉，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "是我說明的不夠好。",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "說起來，",
+        "unit_id": 101411,
+        "voice": "vo_adv_2110004_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "我為何會說出這種話，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n主要是因為我對原本計畫要向【憤怒‧軍團】據點",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "發動奇襲，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n結果卻反遭到對方襲擊的這件事",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "感到耿耿於懷。",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "這件事……",
+        "unit_id": 105913,
+        "voice": "vo_adv_2110004_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "沒錯……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n拉比林斯達小姐若沒有向",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "真軌先生和諾維姆小姐",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n請求援軍的話，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "情況真的很危險。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "對，",
+        "unit_id": 101411,
+        "voice": "vo_adv_2110004_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "就是這件事。",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "【美食殿堂】和【破曉之星】的奇襲",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "完全曝了光，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n而妳們一無所知的埋伏卻大獲成功。",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "這也就是說……",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下等人當中的某人，",
+        "unit_id": 105913,
+        "voice": "vo_adv_2110004_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n把情報洩漏出去了，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是嗎……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……在下等人視為目標的索爾魔珠，",
+        "unit_id": 105913,
+        "voice": "vo_adv_2110004_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "被美空",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "搶先一步給奪走了……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "可、",
+        "unit_id": 105913,
+        "voice": "vo_adv_2110004_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "可是，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n在下還是，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "不敢相信……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n會有這樣的事……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "我把話先說在前頭，",
+        "unit_id": 101411,
+        "voice": "vo_adv_2110004_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "當事人也有可能，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n是在毫無自覺下把情報洩漏出去的。",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "例如使用類似通訊魔法的魔法",
+        "unit_id": 101411,
+        "voice": "vo_adv_2110004_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "來讀取想法，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n或是在其體內",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "埋藏可以收音的魔法道具之類的，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n雖然",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "或許是太樂觀的想法……",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "但這種可能性也是有的。",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "通風報信者……",
+        "unit_id": 101011,
+        "voice": "vo_adv_2110004_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "原來如此。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n所以",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "妳才沒有阻止堅持要返回蘭德索爾的",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "公主小姐她們。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "讓大家兵分二路，",
+        "unit_id": 101711,
+        "voice": "vo_adv_2110004_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n看哪邊的行動會曝光……",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "妳是想這麼做吧～？",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "我是想賭賭看。",
+        "unit_id": 101411,
+        "voice": "vo_adv_2110004_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "不過，就像貪吃佩可所說的，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "厄莉絲一旦展開行動，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n哪裡有誰、有多少人，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "全會被摸得一清二楚，毫無安全可言……",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "我、",
+        "unit_id": 104311,
+        "voice": "vo_adv_2110004_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "我說啊，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n妳不叫優衣她們",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "來為公主她們送行，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n難不成就是因為……",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "當然，",
+        "unit_id": 101411,
+        "voice": "vo_adv_2110004_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "這是因為通風報信者，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n很可能就是【破曉之星】當中的某人。",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n確定可以排除在外的，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "就只有諾維姆一個人而已。",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "暫時這樣吧。",
+        "unit_id": 101411,
+        "voice": "vo_adv_2110004_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "我們就先觀察看看……",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "敵人究竟會對哪一邊",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "採取行動。",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "……這樣啊。",
+        "unit_id": 104311,
+        "voice": "vo_adv_2110004_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "那麼這段期間，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n就先專注於{player}他們的治療囉。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "那麼，{player}？",
+        "unit_id": 101711,
+        "voice": "vo_adv_2110004_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "你要吃飯？",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n還是",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "要我呢～？",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "好～的♪",
+        "unit_id": 101711,
+        "voice": "vo_adv_2110004_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n我會準備很多",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "我們家鄉的全餐料理喔～！",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "差不多是時候",
+        "unit_id": 101011,
+        "voice": "vo_adv_2110004_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "除了粥品之外，",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n也該讓王子先生",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "嚐嚐",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "獸人族所精心烹調的料理了。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "是啊！",
+        "unit_id": 104311,
+        "voice": "vo_adv_2110004_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "雖然公主她們沒吃到什麼料理……",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "我們會使出渾身解數來款待你們的，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n讓你們完全不會想再回去吃蘭德索爾的飯菜！",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "好～的♪",
+        "unit_id": 101711,
+        "voice": "vo_adv_2110004_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n包在我身上～♪",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "咦咦！？",
+        "unit_id": 101411,
+        "voice": "vo_adv_2110004_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n所謂「要香織」的意思，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "是香織要……！？",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "我要用我的舞蹈，",
+        "unit_id": 101711,
+        "voice": "vo_adv_2110004_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "讓{player}恢復朝氣～！",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n我會很賣力地跳舞～！",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "啊，",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "還是說{player}也要一起來跳嗎～？",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "真是的。",
+        "unit_id": 104311,
+        "voice": "vo_adv_2110004_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n竟然叫受傷的人跳舞……",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "呵呵，",
+        "unit_id": 101011,
+        "voice": "vo_adv_2110004_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "就是說啊。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "希望王子先生能早日康復，",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "接著呢……",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "……就帶他一起去",
+        "unit_id": 101011,
+        "voice": "vo_adv_2110004_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "拜訪人家的父母親。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "這種機會可是",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "很難能可貴……",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "真步？",
+        "unit_id": 101711,
+        "voice": "vo_adv_2110004_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n妳怎麼啦～？",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "沒、",
+        "unit_id": 101011,
+        "voice": "vo_adv_2110004_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "沒",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "什麼事啦～",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n好了，",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "我們該進屋子裡去了。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "──真是的，",
+        "unit_id": 101411,
+        "voice": "vo_adv_2110004_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "這群人哪。",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "別說是世界危機了，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n明明知道了這個世界搞不好就是個機關密室……",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "她們還是這麼無憂無慮過頭，以至於反而可靠呢，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "真的是。",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "……嗯？",
+        "unit_id": 101411,
+        "voice": "vo_adv_2110004_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "騎士先生───！",
+        "unit_id": 100111,
+        "voice": "vo_adv_2110004_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "各位！",
+        "unit_id": 100311,
+        "voice": "vo_adv_2110004_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你們在這裡啊！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "怜小姐。",
+        "unit_id": 101011,
+        "voice": "vo_adv_2110004_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n日和小姐。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n怎麼了嗎？",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "優衣她……",
+        "unit_id": 100311,
+        "voice": "vo_adv_2110004_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你們有看到優衣嗎！？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "優衣小姐，",
+        "unit_id": 105913,
+        "voice": "vo_adv_2110004_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是嗎？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我、",
+        "unit_id": 100111,
+        "voice": "vo_adv_2110004_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我們只是稍微不注意，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n優衣她就不見蹤影了……！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "妳說什麼！？",
+        "unit_id": 104311,
+        "voice": "vo_adv_2110004_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "以她那種狀態，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "到底是去哪裡了！",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我不知道……",
+        "unit_id": 100311,
+        "voice": "vo_adv_2110004_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "該不會是",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "敵人利用空間跳躍，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n把她抓走了吧……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "空間跳躍！？",
+        "unit_id": 101711,
+        "voice": "vo_adv_2110004_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n抓走！？",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n這、",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "這下糟了～！！",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "等等。",
+        "unit_id": 101411,
+        "voice": "vo_adv_2110004_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "雖然還沒",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "看過現場……",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n不過，要是使用飛越空間的大型魔法，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n我們應該會注意到該魔力的流動，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "對吧，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "真步。",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "沒錯。",
+        "unit_id": 101011,
+        "voice": "vo_adv_2110004_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n宅邸四周，",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "都佈滿了可以知道",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "有無入侵者的",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "結界。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "就算對方能",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "蒙混過去，",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "若使用大型魔法，",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "我們也不可能毫無所覺。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "呃……",
+        "unit_id": 100111,
+        "voice": "vo_adv_2110004_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "霞，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n所以妳是說，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "優衣她……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "這是什麼意思……",
+        "unit_id": 104311,
+        "voice": "vo_adv_2110004_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "妳在說什麼啊。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n妳是想說優衣她，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "是自己一個人走出去的嗎！？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n喂，霞！",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "妳、",
+        "unit_id": 101411,
+        "voice": "vo_adv_2110004_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "妳冷靜點！",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n說不定她只是，",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n想到外面",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "呼吸一下新鮮空氣吧？",
+        "unit_id": 101411
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "總之，",
+        "unit_id": 100111,
+        "voice": "vo_adv_2110004_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "得趕緊找到優衣！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "以她目前的狀況，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "不能放她獨自一個人！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "各位，",
+        "unit_id": 100311,
+        "voice": "vo_adv_2110004_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不好意思，希望你們能幫幫我們！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "可以拜託你們，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "幫忙分頭去優衣嗎？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "大家",
+        "words": "嗯！",
+        "unit_id": 1,
+        "voice": "vo_adv_2110004_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "尾狗刀",
+        "words": "……",
+        "unit_id": 106211,
+        "voice": "vo_adv_2110004_084"
+    }
+]

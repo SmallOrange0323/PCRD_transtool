@@ -1,0 +1,751 @@
+[
+    {
+        "type": "background",
+        "background": "500601"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "惠理子與靜流抱著{player}，\n又再度展開女孩子間的熾烈戰爭。"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "來，",
+        "unit_id": 109011,
+        "voice": "vo_adv_5011005_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "{player}大人，",
+        "unit_id": 109011
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "把嘴打開……",
+        "unit_id": 109011
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "{player}",
+        "unit_id": 109111,
+        "voice": "vo_adv_5011005_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "覺得姐姐的料理比較好對吧？",
+        "unit_id": 109111
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "所以我就說，",
+        "unit_id": 101112,
+        "voice": "vo_adv_5011005_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "哥哥的肚子已經很飽了啦～！",
+        "unit_id": 101112
+    },
+    {
+        "type": "dialogue",
+        "name": "男性１",
+        "words": "啊啊，",
+        "unit_id": 311,
+        "voice": "vo_adv_5011005_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性１",
+        "words": "那個惠理子",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性１",
+        "words": "居然抱著男人還很陶醉的樣子……！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性２",
+        "words": "那那那那、",
+        "unit_id": 1011,
+        "voice": "vo_adv_5011005_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性２",
+        "words": "那怎麼可能啊……",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性２",
+        "words": "\n",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性２",
+        "words": "那是幻覺啦！　",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性２",
+        "words": "是我脆弱的心讓我看見了幻影～！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "話說，",
+        "unit_id": 1211,
+        "voice": "vo_adv_5011005_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "\n我是聽說今天可以吃到巧克力才來這裡的耶！",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "我聽說來這裡就會免費送巧克力啊！",
+        "unit_id": 411,
+        "voice": "vo_adv_5011005_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "\n",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "真是的，",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "也快點發巧克力給我們啊！",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性3",
+        "words": "我想也是啊……",
+        "unit_id": 1411,
+        "voice": "vo_adv_5011005_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性3",
+        "words": "像我這種人",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性3",
+        "words": "怎麼可能有\n可愛的女孩子會做巧克力給我吃……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性4",
+        "words": "你們好歹把料理的勝負分出來啊――！",
+        "unit_id": 1111,
+        "voice": "vo_adv_5011005_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性1、女性2",
+        "words": "就是啊就是啊！",
+        "unit_id": 1,
+        "voice": "vo_adv_5011005_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性2、女性1",
+        "words": "就是啊就是啊！",
+        "unit_id": 1,
+        "voice": "vo_adv_5011005_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可亞烏拉",
+        "words": "啾唔唔唔唔……",
+        "unit_id": 10911,
+        "voice": "vo_adv_5011005_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可亞烏拉",
+        "words": "啾唔唔唔唔……",
+        "unit_id": 10911
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "咦，",
+        "unit_id": 101112,
+        "voice": "vo_adv_5011005_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "小可！？　",
+        "unit_id": 101112
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "怎麼了嗎？",
+        "unit_id": 109111,
+        "voice": "vo_adv_5011005_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "真搞不懂！　",
+        "unit_id": 101112,
+        "voice": "vo_adv_5011005_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "牠突然變得很痛苦的樣子……",
+        "unit_id": 101112
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "總覺得有不好的預感……",
+        "unit_id": 109011,
+        "voice": "vo_adv_5011005_015"
+    },
+    {
+        "type": "background",
+        "background": "500601"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性1、2",
+        "words": "呀啊啊啊――――――！",
+        "unit_id": 1,
+        "voice": "vo_adv_5011005_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "真是的！　",
+        "unit_id": 101111,
+        "voice": "vo_adv_5011005_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "會場都亂七八糟了！",
+        "unit_id": 101111
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "小心別讓客人",
+        "unit_id": 109111,
+        "voice": "vo_adv_5011005_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "被魔物的攻擊打中了！",
+        "unit_id": 109111
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "在損害擴大之前控制場面吧！",
+        "unit_id": 109111,
+        "voice": "vo_adv_5011005_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "哥哥，",
+        "unit_id": 101111,
+        "voice": "vo_adv_5011005_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "麻煩你替我們強化了！",
+        "unit_id": 101111
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "好～",
+        "unit_id": 109111,
+        "voice": "vo_adv_5011005_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "姐姐要加油囉！",
+        "unit_id": 109111
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "{player}大人，",
+        "unit_id": 109011,
+        "voice": "vo_adv_5011005_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "請您好好看著。",
+        "unit_id": 109011
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "嘿～！　",
+        "unit_id": 109111,
+        "voice": "vo_adv_5011005_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "要上囉～！",
+        "unit_id": 109111
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "從我的面前消失吧。",
+        "unit_id": 109011,
+        "voice": "vo_adv_5011005_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "欸，",
+        "unit_id": 109111,
+        "voice": "vo_adv_5011005_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "為什麼妳要和我在相同的時機攻擊啊！？",
+        "unit_id": 109111
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "靜流才是，",
+        "unit_id": 109011,
+        "voice": "vo_adv_5011005_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "真是缺少禮讓的精神呢。",
+        "unit_id": 109011
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "真是的～妳們兩個",
+        "unit_id": 101111,
+        "voice": "vo_adv_5011005_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "別連這種時候都要吵架啦！",
+        "unit_id": 101111
+    },
+    {
+        "type": "dialogue",
+        "name": "可可亞烏拉",
+        "words": "啾唔唔唔……",
+        "unit_id": 10911,
+        "voice": "vo_adv_5011005_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "醜陋可愛",
+        "words": "――嘎哦哦哦哦哦！",
+        "unit_id": 11011
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "再說，",
+        "unit_id": 101111,
+        "voice": "vo_adv_5011005_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "那個身體黏黏稠稠的，",
+        "unit_id": 101111
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "\n攻擊完全沒有效果啊。",
+        "unit_id": 101111
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "唔……",
+        "unit_id": 109111,
+        "voice": "vo_adv_5011005_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "而且，",
+        "unit_id": 109111
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "似乎還漸漸變強的樣子……",
+        "unit_id": 109111
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "是啊，",
+        "unit_id": 109011,
+        "voice": "vo_adv_5011005_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "要是有一時的鬆懈就危險了呢。",
+        "unit_id": 109011
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "啊！",
+        "unit_id": 109011
+    },
+    {
+        "type": "dialogue",
+        "name": "醜陋可愛",
+        "words": "――咕哦哦哦哦哦！",
+        "unit_id": 11011
+    },
+    {
+        "type": "dialogue",
+        "name": "可可亞烏拉",
+        "words": "巧克～",
+        "unit_id": 10911,
+        "voice": "vo_adv_5011005_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可亞烏拉",
+        "words": "巧克～！",
+        "unit_id": 10911
+    },
+    {
+        "type": "background",
+        "background": "500601"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可亞烏拉",
+        "words": "啾唔唔唔！",
+        "unit_id": 10911,
+        "voice": "vo_adv_5011005_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "小可！？",
+        "unit_id": 101111,
+        "voice": "vo_adv_5011005_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可亞烏拉",
+        "words": "啾唔唔唔……",
+        "unit_id": 10911,
+        "voice": "vo_adv_5011005_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "怎麼會這樣……",
+        "unit_id": 101111,
+        "voice": "vo_adv_5011005_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "小可為了保護我們……",
+        "unit_id": 101111
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "為什麼……",
+        "unit_id": 101111
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "怎麼會這個樣子！",
+        "unit_id": 109011,
+        "voice": "vo_adv_5011005_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "不過，",
+        "unit_id": 109111,
+        "voice": "vo_adv_5011005_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "牠似乎只是昏過去而已。",
+        "unit_id": 109111
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "\n",
+        "unit_id": 109111
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "弟弟，",
+        "unit_id": 109111
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "你趕緊把這孩子藏到安全的地方去。",
+        "unit_id": 109111
+    },
+    {
+        "type": "dialogue",
+        "name": "醜陋可愛",
+        "words": "――嘎哦哦哦哦哦！",
+        "unit_id": 11011
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "那傢伙，",
+        "unit_id": 109011,
+        "voice": "vo_adv_5011005_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "似乎很執著那個小魔物呢……",
+        "unit_id": 109011
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "牠本來就是",
+        "unit_id": 109111,
+        "voice": "vo_adv_5011005_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "從那孩子的可可亞出現的吧？",
+        "unit_id": 109111
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "\n",
+        "unit_id": 109111
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "或許這之間有什麼關聯。",
+        "unit_id": 109111
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "哥哥被追上了！",
+        "unit_id": 101111,
+        "voice": "vo_adv_5011005_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "\n這次由我……",
+        "unit_id": 101111
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "由我來",
+        "unit_id": 101111
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "保護小可了！",
+        "unit_id": 101111
+    },
+    {
+        "type": "dialogue",
+        "name": "醜陋可愛",
+        "words": "――嘎哦哦哦哦哦！",
+        "unit_id": 11011
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "呀啊啊啊啊啊！",
+        "unit_id": 101111,
+        "voice": "vo_adv_5011005_042"
+    },
+    {
+        "type": "background",
+        "background": "500601"
+    },
+    {
+        "type": "still",
+        "still": "501100501"
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "咦，",
+        "unit_id": 101111,
+        "voice": "vo_adv_5011005_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "奇怪？　",
+        "unit_id": 101111
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "不會痛……",
+        "unit_id": 101111
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "哎呀，",
+        "unit_id": 109011,
+        "voice": "vo_adv_5011005_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "{player}大人保護了璃乃！",
+        "unit_id": 109011
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "哥哥！？　",
+        "unit_id": 101111,
+        "voice": "vo_adv_5011005_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "為什麼……",
+        "unit_id": 101111
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "就算是這樣……",
+        "unit_id": 101111,
+        "voice": "vo_adv_5011005_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "家人……",
+        "unit_id": 101111,
+        "voice": "vo_adv_5011005_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "{player}大人，",
+        "unit_id": 109011,
+        "voice": "vo_adv_5011005_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "後面！",
+        "unit_id": 109011
+    },
+    {
+        "type": "background",
+        "background": "500601"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "咦咦！？　",
+        "unit_id": 109111,
+        "voice": "vo_adv_5011005_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "那個魔物",
+        "unit_id": 109111
+    },
+    {
+        "type": "dialogue",
+        "name": "靜流",
+        "words": "從嘴裡吐出了液體！",
+        "unit_id": 109111
+    },
+    {
+        "type": "dialogue",
+        "name": "璃乃",
+        "words": "哥哥被抓走了！？",
+        "unit_id": 101111,
+        "voice": "vo_adv_5011005_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}被魔物抓去當成人質了。\n而靜流等人是否能擺脫這個困境呢？"
+    }
+]

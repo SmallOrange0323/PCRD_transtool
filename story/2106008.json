@@ -1,0 +1,2662 @@
+[
+    {
+        "type": "background",
+        "background": "500510"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}受到了【憤怒‧軍團】的猛烈攻擊（？）"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "而陷入絕境。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n就在此時，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "夥伴們趕到了{player}身邊。"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人！",
+        "unit_id": 105911,
+        "voice": "vo_adv_2106008_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "騎士先生！",
+        "unit_id": 100211,
+        "voice": "vo_adv_2106008_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "……啊……",
+        "unit_id": 118111,
+        "voice": "vo_adv_2106008_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "嘖……",
+        "unit_id": 191611,
+        "voice": "vo_adv_2106008_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "美空……",
+        "unit_id": 106411,
+        "voice": "vo_adv_2106008_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "搶先我們一步的人",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "果然是你們。",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "雪菲",
+        "unit_id": 192011,
+        "voice": "vo_adv_2106008_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "跟各位都在啊★",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n居然在這種地方碰見，",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "真巧呢♪",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "潛入{player}夢中的魔法……",
+        "unit_id": 105111,
+        "voice": "vo_adv_2106008_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "看來是",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "沒什麼問題呢。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n太好了──",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "這裡是",
+        "unit_id": 104511,
+        "voice": "vo_adv_2106008_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "虐待狂先生的",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "夢中……？",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "\n",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "也就是所謂的……",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "虐待狂空間～！？",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "嗯……",
+        "unit_id": 104511,
+        "voice": "vo_adv_2106008_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "\n",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "……不過看起來",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "還真是和平……",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "話說",
+        "unit_id": 109611,
+        "voice": "vo_adv_2106008_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "這裡是哪裡是也？",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "難得來到大江戶，",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "夢裡也要是大江戶才行！",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "大江戶！",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "大江戶！",
+        "unit_id": 109611
+    },
+    {
+        "type": "background",
+        "background": "500654"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "……！？",
+        "unit_id": 106411,
+        "voice": "vo_adv_2106008_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "咦！？",
+        "unit_id": 100211,
+        "voice": "vo_adv_2106008_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n周遭的景色",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "改變了……！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "哦～♪",
+        "unit_id": 105111,
+        "voice": "vo_adv_2106008_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "先入為主或強烈的想像，",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "會影響到這個空間嗎？",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n我的服裝",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "也從新衣變回平時的裝束……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "這是只有夢中才會產生的現象呢，",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "真是有趣♪",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "啊啊，",
+        "unit_id": 118111,
+        "voice": "vo_adv_2106008_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "真是……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n好吵鬧的一群人……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "騎士先生！",
+        "unit_id": 100211,
+        "voice": "vo_adv_2106008_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n沒事吧！？",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "虐待狂先生……",
+        "unit_id": 104511,
+        "voice": "vo_adv_2106008_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "\n好像被那個黑髮女人",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "給抓住了～！",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "大事不妙！",
+        "unit_id": 109611,
+        "voice": "vo_adv_2106008_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n趕快去營救是也！",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "……",
+        "unit_id": 105111,
+        "voice": "vo_adv_2106008_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "不過看上去只是在躺膝枕而已……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "總而言之，",
+        "unit_id": 100211,
+        "voice": "vo_adv_2106008_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "把騎士先生還來……！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "哈！",
+        "unit_id": 191611,
+        "voice": "vo_adv_2106008_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "你以為我們會回",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "「好的我知道了」嗎？",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n看我好好",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "教訓妳們一頓！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "敵人攻過來了！",
+        "unit_id": 106411,
+        "voice": "vo_adv_2106008_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n要怎麼做？",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "那麼……",
+        "unit_id": 105111,
+        "voice": "vo_adv_2106008_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "空花，",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "可以拜託妳嗎？",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "咦咦？",
+        "unit_id": 104511,
+        "voice": "vo_adv_2106008_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "\n真的可以嗎？",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "──喝啊！",
+        "unit_id": 191611,
+        "voice": "vo_adv_2106008_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "啊嗯♪",
+        "unit_id": 104511,
+        "voice": "vo_adv_2106008_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "──再來一鞭！",
+        "unit_id": 191611,
+        "voice": "vo_adv_2106008_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "呀啊嗯♪",
+        "unit_id": 104511,
+        "voice": "vo_adv_2106008_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "\n啊啊～",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "就算是在夢裡，空花會、",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "空花會～！！",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "嗚哇！？",
+        "unit_id": 191611,
+        "voice": "vo_adv_2106008_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n這傢伙是怎樣……",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "有夠噁……",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "嗯……",
+        "unit_id": 192011,
+        "voice": "vo_adv_2106008_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n那方面的興趣",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "對卡里莎而言或許還太早了呢──",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "有機可趁！",
+        "unit_id": 109611,
+        "voice": "vo_adv_2106008_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n忍法‧",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "飛塵之舞！",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n砰砰砰砰砰──",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "！？",
+        "unit_id": 191611,
+        "voice": "vo_adv_2106008_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n煙霧彈嗎！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "……咳、",
+        "unit_id": 118111,
+        "voice": "vo_adv_2106008_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "咳……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "{player}，現在就去救你！",
+        "unit_id": 106411,
+        "voice": "vo_adv_2106008_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "──「冰霜之路」！",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "啊……！",
+        "unit_id": 118111,
+        "voice": "vo_adv_2106008_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "{player}就",
+        "unit_id": 106411,
+        "voice": "vo_adv_2106008_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "還給我們了！",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "哇～",
+        "unit_id": 192011,
+        "voice": "vo_adv_2106008_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "雪菲好厲害呀，",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n居然能在冰上滑這麼快♪",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "換是我或蘭法姐，",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "搞不好會滑倒呢★",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "啊啊……",
+        "unit_id": 118111,
+        "voice": "vo_adv_2106008_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "虧我們打算、",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "和{player}",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "好好相處的說……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……蘭法小姐。",
+        "unit_id": 105911,
+        "voice": "vo_adv_2106008_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "方才，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下稍微拜見了您",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "哄睡主人的手法……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "雖然有些失禮──",
+        "unit_id": 105911,
+        "voice": "vo_adv_2106008_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "但在看到如此拙劣的手法後，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n在下實在無法將照顧主人的重責大任交給您！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "怎、",
+        "unit_id": 118111,
+        "voice": "vo_adv_2106008_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "怎麼這樣……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "好過分──！",
+        "unit_id": 192011,
+        "voice": "vo_adv_2106008_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n蘭法姐她",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "可是很努力的唷？",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "……啊──",
+        "unit_id": 191611,
+        "voice": "vo_adv_2106008_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "總覺得這群傢伙……",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n實在太沒危機意識，讓人拿不出幹勁……",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "總、",
+        "unit_id": 100211,
+        "voice": "vo_adv_2106008_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "總而言之！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "像之前我中招一樣，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n這次換我讓你們",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "離開騎士先生的夢境……！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "呵呵，",
+        "unit_id": 192011,
+        "voice": "vo_adv_2106008_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "那可不行★",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "得趁這個機會，",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n把騎士同學完全洗腦♪",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "不會讓妳",
+        "unit_id": 106411,
+        "voice": "vo_adv_2106008_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "稱心如意……！",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下要上了！",
+        "unit_id": 105911,
+        "voice": "vo_adv_2106008_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n主人，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "請給予在下力量……！",
+        "unit_id": 105911
+    },
+    {
+        "type": "background",
+        "background": "500654"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "可惡，",
+        "unit_id": 191611,
+        "voice": "vo_adv_2106008_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "竟敢對我為所欲為……",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "啊，",
+        "unit_id": 192011,
+        "voice": "vo_adv_2106008_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "卡里莎",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "變回來了呢──",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "……明明很可愛……",
+        "unit_id": 118111,
+        "voice": "vo_adv_2106008_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下仍舊如同",
+        "unit_id": 105911,
+        "voice": "vo_adv_2106008_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "涅比亞大人一般嬌小，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n沒有變化……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "可可蘿小姐……！",
+        "unit_id": 106411,
+        "voice": "vo_adv_2106008_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "哈，",
+        "unit_id": 191611,
+        "voice": "vo_adv_2106008_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n在這夢裡，",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "公主騎士的力量",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n似乎沒辦法好好發揮嘛。",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "也許是因為",
+        "unit_id": 192011,
+        "voice": "vo_adv_2106008_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "洗腦魔法開始生效了？",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "多虧了蘭法姐的努力呢★",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "是、",
+        "unit_id": 118111,
+        "voice": "vo_adv_2106008_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "是這樣嗎……？",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "將軍請好好休養！",
+        "unit_id": 109611,
+        "voice": "vo_adv_2106008_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "再來一次！",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "來人啊、",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "來人啊！",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n正義代官！！",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "正義代官",
+        "words": "嗚喔喔喔────！",
+        "unit_id": 1,
+        "voice": "vo_adv_2106008_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "嘖，",
+        "unit_id": 191611,
+        "voice": "vo_adv_2106008_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "又來了嗎！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "那我們就……",
+        "unit_id": 192011,
+        "voice": "vo_adv_2106008_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "蘭法姐，",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "加油、加油♪",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "好……！",
+        "unit_id": 118111,
+        "voice": "vo_adv_2106008_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n我會、",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "再努力",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "試試……！",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "♪～",
+        "unit_id": 118111,
+        "voice": "vo_adv_2106008_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "正義代官",
+        "words": "……！？",
+        "unit_id": 1,
+        "voice": "vo_adv_2106008_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "正義代官",
+        "words": "\n…………！！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "惡代官",
+        "words": "惡‧",
+        "unit_id": 11411,
+        "voice": "vo_adv_2106008_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "惡代官",
+        "words": "代‧",
+        "unit_id": 11411
+    },
+    {
+        "type": "dialogue",
+        "name": "惡代官",
+        "words": "官！",
+        "unit_id": 11411
+    },
+    {
+        "type": "dialogue",
+        "name": "惡代官",
+        "words": "\n嗚喔喔喔喔───！",
+        "unit_id": 11411
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "哇啊啊啊───！？",
+        "unit_id": 104511,
+        "voice": "vo_adv_2106008_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "啊啊！",
+        "unit_id": 109611,
+        "voice": "vo_adv_2106008_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n正義代官們",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "變回惡代官了是也！",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "那首歌……",
+        "unit_id": 105111,
+        "voice": "vo_adv_2106008_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "會對心靈造成影響嗎！？",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "嗚……！？",
+        "unit_id": 106411,
+        "voice": "vo_adv_2106008_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "雪菲小姐！？",
+        "unit_id": 105911,
+        "voice": "vo_adv_2106008_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "振作一點！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "……嗚……",
+        "unit_id": 106411,
+        "voice": "vo_adv_2106008_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n嗚嗚嗚……！！",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "媽媽──♪♪",
+        "unit_id": 106413,
+        "voice": "vo_adv_2106008_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "哇啊！？",
+        "unit_id": 105911,
+        "voice": "vo_adv_2106008_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "……？",
+        "unit_id": 106413,
+        "voice": "vo_adv_2106008_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106413
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "媽媽、",
+        "unit_id": 106413
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "好小──♪",
+        "unit_id": 106413
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n涅比──♪",
+        "unit_id": 106413
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "……",
+        "unit_id": 106413
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "啊呣♪",
+        "unit_id": 106413
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "啊啊，",
+        "unit_id": 105911,
+        "voice": "vo_adv_2106008_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "雪菲小姐！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n請不要、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "請不要吸吮在下的翅膀……！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "啊啊啊……！",
+        "unit_id": 100211,
+        "voice": "vo_adv_2106008_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n雪菲她又",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "變得像嬰兒一樣……！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "怎麼辦，",
+        "unit_id": 100211,
+        "voice": "vo_adv_2106008_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "再這樣下去……！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "各位！",
+        "unit_id": 105111,
+        "voice": "vo_adv_2106008_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n這裡就先暫時撤退吧！",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "深月？",
+        "unit_id": 100211,
+        "voice": "vo_adv_2106008_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "畢竟{player}也奪回來了……",
+        "unit_id": 105111,
+        "voice": "vo_adv_2106008_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "像這種不安定的空間，",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "沒人知道會發生什麼事。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "此地不宜久留！",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "雖然還想在",
+        "unit_id": 104511,
+        "voice": "vo_adv_2106008_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "虐待狂先生的裡面多待一會兒……",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "正是所謂三十六計",
+        "unit_id": 109611,
+        "voice": "vo_adv_2106008_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "走為上策",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "是也！",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n跟剛才一樣的",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "擠饅頭是也！",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "呀啊──♪",
+        "unit_id": 106413,
+        "voice": "vo_adv_2106008_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n擠饅頭──♪",
+        "unit_id": 106413
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "不會讓你們……",
+        "unit_id": 118111,
+        "voice": "vo_adv_2106008_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "這麼做的……！",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "嗚……！",
+        "unit_id": 105111,
+        "voice": "vo_adv_2106008_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "呀啊……！",
+        "unit_id": 106413,
+        "voice": "vo_adv_2106008_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "把他",
+        "unit_id": 118111,
+        "voice": "vo_adv_2106008_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "給……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "留下……！",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "哇啊──蘭法姐，",
+        "unit_id": 192011,
+        "voice": "vo_adv_2106008_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "好強的威力♪",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n這就是愛吧──",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "愛★",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "嘿！",
+        "unit_id": 191611,
+        "voice": "vo_adv_2106008_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n難得陰沉女拿出了幹勁嘛。",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "雖然不想碰那個噁心的紅毛被虐狂……",
+        "unit_id": 191611,
+        "voice": "vo_adv_2106008_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "助妳一臂之力吧。",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "喝啊！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "──呀啊嗯！",
+        "unit_id": 104511,
+        "voice": "vo_adv_2106008_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "啊嗚……！",
+        "unit_id": 100211,
+        "voice": "vo_adv_2106008_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "卡里莎～？",
+        "unit_id": 192011,
+        "voice": "vo_adv_2106008_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n你可不能把",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "騎士同學和優衣給殺掉喔？",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "啊？",
+        "unit_id": 191611,
+        "voice": "vo_adv_2106008_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "嘖，",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "麻煩死了……",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "不然妳想怎麼做？",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "好♪",
+        "unit_id": 192012,
+        "voice": "vo_adv_2106008_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n那我們就",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "再換個地方吧★",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "嘟嚕嚕嚕嚕嚕～♪",
+        "unit_id": 192012,
+        "voice": "vo_adv_2106008_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "啊！",
+        "unit_id": 109611,
+        "voice": "vo_adv_2106008_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n大江戶的城鎮",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "要被摧毀了是也！",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "不只這樣！",
+        "unit_id": 100211,
+        "voice": "vo_adv_2106008_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n景色",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "又開始改變了……！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "……！？",
+        "unit_id": 105111,
+        "voice": "vo_adv_2106008_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "情況好像",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "不太對勁……！",
+        "unit_id": 105111
+    },
+    {
+        "type": "background",
+        "background": "510350"
+    },
+    {
+        "type": "dialogue",
+        "name": "大家",
+        "words": "…………！？",
+        "unit_id": 1,
+        "voice": "vo_adv_2106008_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "咦、",
+        "unit_id": 100211,
+        "voice": "vo_adv_2106008_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "咦咦……！？",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "這裡",
+        "unit_id": 109611,
+        "voice": "vo_adv_2106008_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "是哪裡是也……！？",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "莫非這裡是",
+        "unit_id": 105911,
+        "voice": "vo_adv_2106008_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "現……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "囌！？",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "媽媽──！",
+        "unit_id": 106413,
+        "voice": "vo_adv_2106008_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n怕怕、",
+        "unit_id": 106413
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "怕怕……！！",
+        "unit_id": 106413
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "總覺得，",
+        "unit_id": 100211,
+        "voice": "vo_adv_2106008_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "這個地方……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "似曾相識……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "嗚！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n我、",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我的頭……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "好痛……！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "呼哇啊～！",
+        "unit_id": 104511,
+        "voice": "vo_adv_2106008_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "\n",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "沒、",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "沒體驗過的疼痛感……",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "\n",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "腦袋暈頭轉向",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "加上陣陣抽痛",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "還絞在一起的感覺～！",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "這、",
+        "unit_id": 105111,
+        "voice": "vo_adv_2106008_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "這個頭痛是……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "怎麼回事？",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "跟腦壓改變、",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "血管收縮無關……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "也不像是",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "有外傷……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "的樣子……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "嗯，",
+        "unit_id": 192011,
+        "voice": "vo_adv_2106008_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "如我所料♪",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "……記憶的修正作用",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "跟看到的景象產生矛盾……",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n認知錯亂了呢★",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "……呵呵。",
+        "unit_id": 192011,
+        "voice": "vo_adv_2106008_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n沒有嚮導小妖精的保護，",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "想必很難受吧……？",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "……美空",
+        "unit_id": 118111,
+        "voice": "vo_adv_2106008_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "……？",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "哎呀★",
+        "unit_id": 192011,
+        "voice": "vo_adv_2106008_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n蘭法姐和",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "卡里莎看起來都沒事呢？",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "不愧是",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "被那位大人選中的對象呢♪",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎・蘭法",
+        "words": "……？",
+        "unit_id": 1,
+        "voice": "vo_adv_2106008_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "好了好了，",
+        "unit_id": 192011,
+        "voice": "vo_adv_2106008_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "卡里莎～",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n我和蘭法姐",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "把優衣他們的動作變得遲緩了……",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "要瞄準一點唷～",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "……哈！",
+        "unit_id": 191611,
+        "voice": "vo_adv_2106008_110"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "至少會瞄得比你那種胡亂射擊準啦！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "♪～",
+        "unit_id": 118111,
+        "voice": "vo_adv_2106008_111"
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "啊、",
+        "unit_id": 104511,
+        "voice": "vo_adv_2106008_112"
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "啊、",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "啊！",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "\n",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "就算是空花",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "也快不行了～！",
+        "unit_id": 104511
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "這、",
+        "unit_id": 105111,
+        "voice": "vo_adv_2106008_113"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "這下",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "糟糕了……！",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "再這樣下去……！",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "嗚嗚、",
+        "unit_id": 106413,
+        "voice": "vo_adv_2106008_114"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "嗚哇啊啊……！",
+        "unit_id": 106413
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "嗚、",
+        "unit_id": 100211,
+        "voice": "vo_adv_2106008_115"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "啊啊啊啊……！！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "優衣小姐……！？",
+        "unit_id": 105911,
+        "voice": "vo_adv_2106008_116"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "您掩護了",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下等人……？",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "大家……",
+        "unit_id": 100211,
+        "voice": "vo_adv_2106008_117"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "快、",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "逃……！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "優、",
+        "unit_id": 109611,
+        "voice": "vo_adv_2106008_118"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "衣……？",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "雖、",
+        "unit_id": 100211,
+        "voice": "vo_adv_2106008_119"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "雖然",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "不清楚為什麼……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "既然那些人",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "不能殺我……",
+        "unit_id": 100211
+    },
+    {
+        "type": "background",
+        "background": "500050"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "竟然偏偏是",
+        "unit_id": 192011,
+        "voice": "vo_adv_2106008_120"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "「優衣」呀。",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n這又是一個",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "需要謹慎以對的人呢。",
+        "unit_id": 192011
+    },
+    {
+        "type": "background",
+        "background": "510350"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "那樣的話，",
+        "unit_id": 100211,
+        "voice": "vo_adv_2106008_121"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "就由我來……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "當大家的……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "擋箭牌……！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "優衣小姐！",
+        "unit_id": 105911,
+        "voice": "vo_adv_2106008_122"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n太亂來了……！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "優衣──！",
+        "unit_id": 106413,
+        "voice": "vo_adv_2106008_123"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "咳啊！",
+        "unit_id": 100211,
+        "voice": "vo_adv_2106008_124"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n嗚嗚……！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "啊。",
+        "unit_id": 192011,
+        "voice": "vo_adv_2106008_125"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n卡里莎，",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "打住、",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "打住～",
+        "unit_id": 192011
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "哼！",
+        "unit_id": 191611,
+        "voice": "vo_adv_2106008_126"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "我是不會住手的！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "粉紅毛可是",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "給我家的垃圾魔獸吃了不少苦頭呢！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "之前的帳",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "就在這裡一次算清！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "……快走！",
+        "unit_id": 100211,
+        "voice": "vo_adv_2106008_127"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "快逃，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "大家，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "騎士先生！！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "葛、",
+        "unit_id": 106413,
+        "voice": "vo_adv_2106008_128"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "格……！",
+        "unit_id": 106413
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "將軍……！",
+        "unit_id": 109611,
+        "voice": "vo_adv_2106008_129"
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "\n",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "妮諾",
+        "words": "……！？",
+        "unit_id": 109611
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "什……",
+        "unit_id": 118111,
+        "voice": "vo_adv_2106008_130"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "什麼？",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n這道光是……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "莫非……",
+        "unit_id": 105911,
+        "voice": "vo_adv_2106008_131"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "這是！？",
+        "unit_id": 105911
+    }
+]

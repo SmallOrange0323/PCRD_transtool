@@ -1,0 +1,825 @@
+[
+    {
+        "type": "background",
+        "background": "500430"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "宮子遠遠地走在前頭，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n{player}與千歌好不容易才跟上了。"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "太棒了呦！",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "輕輕鬆鬆來的！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "就照這個節奏繼續前進！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈",
+        "words": "──！"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "嗯嗯，",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "那個，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "差不多該……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "嗯，",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "是啊。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "宮子小姐！",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "請等一下！",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "已經要休息了嗎？",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n真的是拿你們沒辦法。",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "或者說還有布丁嗎！？",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "已經沒有布丁了……",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "那就趕快前進吧！",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n趕快結束，再給人家布丁～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "那個……",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "宮子小姐，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "妳從剛剛看起來就心情不太好……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "……沒有那種事。",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "宮子只要有布丁，心情一直都很好的呦。",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "不過現在已經沒有布丁就是了……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "是剛剛",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "和【惡魔偽王國軍】的大家說過話之後\n開始的吧？",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "就說那個話題已經結束了啦！",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "如果發生了什麼事，",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "能說說詳細經過嗎？",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "而且這孩子看起來也很在意……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈",
+        "words": "──！"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "最重要的是，",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "如果這件事我們能助上一臂之力，我們也希望幫上忙。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "……人家知道了。",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n既然你們都這麼說了，就告訴你們吧。",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "好的……",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "前陣子",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "是公會創建紀念日，",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n大家一起準備了豪華的布丁……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "那可是很豪華的布丁耶！",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "可是……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "可是……？",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "宮子只是先吃了布丁而已，",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n大家就突然生氣了！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n他們太奇怪了！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "這也太……",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "對、",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "對啊……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "再怎麼說這也是宮子小姐不對……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "真是的，",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "什麼嘛！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "你們也和大家說一樣的話！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "是、",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "是大家不對嗎？",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "沒錯呦！",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "你們果然瞭解呢！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "是、",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "是嗎？",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "再怎麼說也是",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "公會的大家比較可憐不是嗎？",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "反正那也是為了讓宮子吃掉才準備來的！",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "既然如此，還因為人家吃了而生氣，太奇怪了吧！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "他們會那樣生氣，",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "是因為根本不在乎宮子來的！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n人家最討厭那些薄情的人了！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "我覺得",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "不是這樣……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "那是紀念日對吧？",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "既然如此，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "什麼時候、",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "和誰一起吃應該很重要才是。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "大家一定是",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "想要一邊和宮子小姐一起",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "慶祝，\n一邊享用吧？",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "正因為她們很重視與宮子小姐之間的回憶，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "所以才會生氣……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "人家才不知道！",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "比起不能吃的回憶，",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "可以吃的布丁更重要來的！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "就算這樣！",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "……就算這樣，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "我還是覺得，是不重視與大家之間回憶的\n宮子小姐不對。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "人家知道了。",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "宮子小姐……",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "千歌也和大家一樣！",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "根本不在乎宮子！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n人家完──全明白了！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "宮子小姐！",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "人家不管了！",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "不進什麼千歌的公會了！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n就在這裡分道揚鑣來的！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "再見呦！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "哼！",
+        "unit_id": 100711,
+        "voice": "vo_adv_7016003_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "宮子小……",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "走掉了呢……",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "對不起，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "我說得太過份了……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈",
+        "words": "──！"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "抱歉……",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "我說得那麼大聲，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "還嚇到你……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "謝謝你這麼安慰我。",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n你很溫柔呢……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "可是，",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "我卻傷害了宮子小姐……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "如果",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "還能見到宮子小姐，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "我想要好好向她道歉。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "如果還能見到的話……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "……是啊。",
+        "unit_id": 104211,
+        "voice": "vo_adv_7016003_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "也不能總是這樣沮喪，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n繼續前進吧。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}與千歌幾乎沉默的繼續前行。"
+    }
+]

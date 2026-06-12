@@ -1,0 +1,1768 @@
+[
+    {
+        "type": "background",
+        "background": "501300"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "──然後，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在【憤怒‧軍團】據點所在的島嶼上。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n公會長贊恩獨自留守此地，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n持續與{player}一行人激戰。"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……還早得很……！",
+        "unit_id": 180611,
+        "voice": "vo_adv_2108010_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是的……！",
+        "unit_id": 180511,
+        "voice": "vo_adv_2108010_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "不斷進攻吧……！",
+        "unit_id": 180411,
+        "voice": "vo_adv_2108010_002"
+    },
+    {
+        "type": "background",
+        "background": "501300"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "……"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "……冷靜點，{player}。",
+        "unit_id": 106411,
+        "voice": "vo_adv_2108010_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n要是你為了保護她們而倒下，",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "導致強化解除的話……",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "到時候，",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "我們肯定會全滅的。",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "我也和你一樣，",
+        "unit_id": 106411,
+        "voice": "vo_adv_2108010_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "很想去幫助她們。",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "只是……",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "我們現在應該要蓄勢以待才對，",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n機會一定會到來的。",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……呼、",
+        "unit_id": 180411,
+        "voice": "vo_adv_2108010_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "呼……！",
+        "unit_id": 180411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "──呀啊啊啊！",
+        "unit_id": 180411,
+        "voice": "vo_adv_2108010_006"
+    },
+    {
+        "type": "background",
+        "background": "501300"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "……！",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "……真是難纏。",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "\n",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "她們的魔力與體力",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "照理說早就瀕臨極限了才對……",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "是由於她們擁有",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "強韌的意志嗎？",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "\n還是出自於那名少年，",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "公主騎士的力量呢？",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "\n",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "還有……",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "…………",
+        "unit_id": 106411,
+        "voice": "vo_adv_2108010_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "……那名，",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "少女……",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "剛才……",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "明明是打倒她的",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "大好良機。",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "\n",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "然而為何我",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "下手卻猶豫了？",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "\n若不拿下該拿的棋子，",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "可是必敗無疑的啊……",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "……她也是龍人族，",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "是嗎？",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "\n",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "莫非……",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "她與我所遺失的",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "過去記憶……",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "之間有什麼",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "關聯嗎……？　",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "！",
+        "unit_id": 180111,
+        "voice": "vo_adv_2108010_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 180111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "有空隙！",
+        "unit_id": 180111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "日和",
+        "unit_id": 180111,
+        "voice": "vo_adv_2108010_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "熾炎猛擊──！！",
+        "unit_id": 180111
+    },
+    {
+        "type": "background",
+        "background": "501300"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "……嗚！",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "現在，",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "不該想這些……！　",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "撕裂、",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "咬碎吧──！",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "！",
+        "unit_id": 180411,
+        "voice": "vo_adv_2108010_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 180411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "糟糕──",
+        "unit_id": 180411
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "「絕牙龍咬」──！！",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_021"
+    },
+    {
+        "type": "background",
+        "background": "501300"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "嗚、",
+        "unit_id": 180611,
+        "voice": "vo_adv_2108010_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "嗚嗚……",
+        "unit_id": 180611
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "唔……",
+        "unit_id": 180311,
+        "voice": "vo_adv_2108010_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "……呼……",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "……！",
+        "unit_id": 106411,
+        "voice": "vo_adv_2108010_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n他呼吸急促起來了……！？",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n而且……",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我、",
+        "unit_id": 180211,
+        "voice": "vo_adv_2108010_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我馬上……",
+        "unit_id": 180211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n施展恢復魔法……",
+        "unit_id": 180211
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "現在能行動的，",
+        "unit_id": 106411,
+        "voice": "vo_adv_2108010_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "只有我……",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "那麼，",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "只能進攻了！",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n我要替大家爭取時間重整旗鼓……！　",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "{player}！",
+        "unit_id": 106411,
+        "voice": "vo_adv_2108010_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n助我一臂之力！",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "絕對零度啊……！",
+        "unit_id": 106411,
+        "voice": "vo_adv_2108010_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "舞斬‧月下冰龍！！",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "喝啊啊！",
+        "unit_id": 106411,
+        "voice": "vo_adv_2108010_030"
+    },
+    {
+        "type": "background",
+        "background": "501300"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "嗚……！？",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "我回想不起來",
+        "unit_id": 106411,
+        "voice": "vo_adv_2108010_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "這個人究竟是誰──",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "說不定，",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "他跟「以前的我」相識。",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "但是，",
+        "unit_id": 106411,
+        "voice": "vo_adv_2108010_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "現在我必須……！　",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "凍結吧──！！",
+        "unit_id": 106411,
+        "voice": "vo_adv_2108010_034"
+    },
+    {
+        "type": "background",
+        "background": "501300"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "……！",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "還沒、",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "結束……！",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "──喔喔喔喔！！",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_037"
+    },
+    {
+        "type": "background",
+        "background": "501300"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "呀啊啊……！！",
+        "unit_id": 106411,
+        "voice": "vo_adv_2108010_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "雪菲──！！",
+        "unit_id": 180611,
+        "voice": "vo_adv_2108010_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "雪菲！",
+        "unit_id": 180411,
+        "voice": "vo_adv_2108010_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "雪菲小姐……！",
+        "unit_id": 180511,
+        "voice": "vo_adv_2108010_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "嗚……",
+        "unit_id": 106411,
+        "voice": "vo_adv_2108010_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "…………",
+        "unit_id": 106411,
+        "voice": "vo_adv_2108010_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "……！",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "雪……菲……？",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "我……",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "我在、",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "做什麼……",
+        "unit_id": 191712
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……他的動作",
+        "unit_id": 180311,
+        "voice": "vo_adv_2108010_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "停下來了？",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "趁現在……！",
+        "unit_id": 180311,
+        "voice": "vo_adv_2108010_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "──斬擊風暴！！",
+        "unit_id": 180311,
+        "voice": "vo_adv_2108010_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "……！",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_050"
+    },
+    {
+        "type": "background",
+        "background": "501300"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "【憤怒‧軍團】的贊恩！",
+        "unit_id": 180311,
+        "voice": "vo_adv_2108010_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你說你想要實現夥伴的願望──",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n也許你並非",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "殘酷無情的惡人……！",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "但是！",
+        "unit_id": 180311,
+        "voice": "vo_adv_2108010_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n你們居然要為此",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "傷害許許多多的人們……",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我們絕對不能坐視不理！",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "──榮耀暴風雨！！",
+        "unit_id": 180311,
+        "voice": "vo_adv_2108010_053"
+    },
+    {
+        "type": "background",
+        "background": "501300"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "嗚啊……！！",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "各位，",
+        "unit_id": 180411,
+        "voice": "vo_adv_2108010_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "繼續跟上吧！",
+        "unit_id": 180411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n我們不能浪費了",
+        "unit_id": 180411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "雪菲製造的機會……！",
+        "unit_id": 180411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "超",
+        "unit_id": 180411,
+        "voice": "vo_adv_2108010_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "超",
+        "unit_id": 180411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "超",
+        "unit_id": 180411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "超",
+        "unit_id": 180411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "超",
+        "unit_id": 180411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "火力全開！！",
+        "unit_id": 180411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n英勇公主突襲──！！！",
+        "unit_id": 180411
+    },
+    {
+        "type": "background",
+        "background": "501300"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "殘存的力量，",
+        "unit_id": 180511,
+        "voice": "vo_adv_2108010_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "全部灌注在這一擊！",
+        "unit_id": 180511
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 180511
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "風啊，",
+        "unit_id": 180511
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "匯聚於刀刃之上！",
+        "unit_id": 180511
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 180511
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "綠翠之絆風──！！",
+        "unit_id": 180511
+    },
+    {
+        "type": "background",
+        "background": "501300"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "日和熾炎猛擊！",
+        "unit_id": 180111,
+        "voice": "vo_adv_2108010_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n三連打啊啊啊啊！！",
+        "unit_id": 180111
+    },
+    {
+        "type": "background",
+        "background": "501300"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "光之精靈啊！",
+        "unit_id": 180211,
+        "voice": "vo_adv_2108010_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n颳起閃耀風暴吧！",
+        "unit_id": 180211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n神聖──狂颮！！",
+        "unit_id": 180211
+    },
+    {
+        "type": "background",
+        "background": "501300"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "看我用這招劃下休止符！",
+        "unit_id": 180611,
+        "voice": "vo_adv_2108010_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n格林終結……",
+        "unit_id": 180611
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "炸裂！！",
+        "unit_id": 180611
+    },
+    {
+        "type": "background",
+        "background": "501300"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "…………",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "嗚……！",
+        "unit_id": 191712,
+        "voice": "vo_adv_2108010_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……呼、",
+        "unit_id": 180511,
+        "voice": "vo_adv_2108010_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "呼……",
+        "unit_id": 180511
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "應、",
+        "unit_id": 180411,
+        "voice": "vo_adv_2108010_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "應該",
+        "unit_id": 180411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "打倒了吧？",
+        "unit_id": 180411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n這次總該……",
+        "unit_id": 180411
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "──喔、喔喔喔喔……！！",
+        "unit_id": 191711,
+        "voice": "vo_adv_2108010_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "蠻牙……",
+        "unit_id": 191711,
+        "voice": "vo_adv_2108010_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "龍咬！！",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "日和、優衣、怜",
+        "words": "！！！！",
+        "unit_id": 1,
+        "voice": "vo_adv_2108010_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "佩可、可可蘿、凱留",
+        "words": "！！！！",
+        "unit_id": 1,
+        "voice": "vo_adv_2108010_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "呼、",
+        "unit_id": 191711,
+        "voice": "vo_adv_2108010_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "呼……！！",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "……嗚、",
+        "unit_id": 100211,
+        "voice": "vo_adv_2108010_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "嗚嗚……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "還差一點……",
+        "unit_id": 100111,
+        "voice": "vo_adv_2108010_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "就只差那麼一點",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "而已了啊……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我們……",
+        "unit_id": 100311,
+        "voice": "vo_adv_2108010_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n也已經",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "沒有餘力了……！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "……妳們很有韌性，",
+        "unit_id": 191711,
+        "voice": "vo_adv_2108010_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "只是──",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "糟、",
+        "unit_id": 106011,
+        "voice": "vo_adv_2108010_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "糟糕……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "這樣就……",
+        "unit_id": 191711,
+        "voice": "vo_adv_2108010_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "\n結束、了……！",
+        "unit_id": 191711
+    },
+    {
+        "type": "still",
+        "still": "210801001"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "……！",
+        "unit_id": 191711,
+        "voice": "vo_adv_2108010_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "騎士",
+        "unit_id": 100211,
+        "voice": "vo_adv_2108010_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "先生……！？",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人，",
+        "unit_id": 105911,
+        "voice": "vo_adv_2108010_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "太危險了……！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n請您退下……！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不……！",
+        "unit_id": 100311,
+        "voice": "vo_adv_2108010_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n贊恩他也",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "解除了覺醒……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "體力所剩無幾了！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "畢竟我們",
+        "unit_id": 106011,
+        "voice": "vo_adv_2108010_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "發動了那麼多次猛攻……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n不如說，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "他現在還能站著才奇怪吧……！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "另一方面，",
+        "unit_id": 100311,
+        "voice": "vo_adv_2108010_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "{player}幾乎毫髮無傷。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "現在的話，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "也許能與對方一分高下……！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "騎士先生！",
+        "unit_id": 100111,
+        "voice": "vo_adv_2108010_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n加、",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "加油啊……！！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "既然這樣……",
+        "unit_id": 105811,
+        "voice": "vo_adv_2108010_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "就請你打敗他吧～！！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "……唔！",
+        "unit_id": 191711,
+        "voice": "vo_adv_2108010_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "騎士先生！",
+        "unit_id": 100211,
+        "voice": "vo_adv_2108010_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "不要輸啊……！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "加油啊，{player}……！",
+        "unit_id": 105811,
+        "voice": "vo_adv_2108010_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "──雖說是敵人，",
+        "unit_id": 191711,
+        "voice": "vo_adv_2108010_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "這氣勢依舊令人欽佩……",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "…………",
+        "unit_id": 191711,
+        "voice": "vo_adv_2108010_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "……少年，",
+        "unit_id": 191711,
+        "voice": "vo_adv_2108010_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "\n你是……",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "為何而戰？",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "……這樣嗎？",
+        "unit_id": 191711,
+        "voice": "vo_adv_2108010_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "\n毫無猶豫，",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "答得好。",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "……我也……",
+        "unit_id": 191711,
+        "voice": "vo_adv_2108010_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "\n曾經有過",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "需要守護的事物……",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "才對……",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "但是……",
+        "unit_id": 191711,
+        "voice": "vo_adv_2108010_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "那到底",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "是誰……？",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "\n我想不起來……",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "……而為了找回那些記憶，",
+        "unit_id": 191711,
+        "voice": "vo_adv_2108010_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "\n我也還不能",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "就此倒下……！",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "……！！",
+        "unit_id": 191711,
+        "voice": "vo_adv_2108010_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "我的身體",
+        "unit_id": 191711,
+        "voice": "vo_adv_2108010_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "動彈不得……？",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "\n難道是遭受公主她們",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "太多攻擊了嗎……！？　",
+        "unit_id": 191711
+    },
+    {
+        "type": "background",
+        "background": "501300"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "騎士先生",
+        "unit_id": 100111,
+        "voice": "vo_adv_2108010_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "他占上風了！？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "好厲害！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "可是──",
+        "unit_id": 100311,
+        "voice": "vo_adv_2108010_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "他為何要",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "把劍給丟了？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "難道是想直接撞倒對方嗎？",
+        "unit_id": 106011,
+        "voice": "vo_adv_2108010_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "好、",
+        "unit_id": 105811,
+        "voice": "vo_adv_2108010_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "好像不是那樣！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n他的確是占了上風沒錯……",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n啊！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "唔！",
+        "unit_id": 105911,
+        "voice": "vo_adv_2108010_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n主人，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "不行啊！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n那邊是",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "斷崖絕壁……！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你會掉進海裡的啊！\n{player}！？",
+        "unit_id": 105811,
+        "voice": "vo_adv_2108010_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "難不成，",
+        "unit_id": 100311,
+        "voice": "vo_adv_2108010_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "他想要同歸於盡！？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "不會吧！",
+        "unit_id": 100211,
+        "voice": "vo_adv_2108010_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "住手啊，{player}！",
+        "unit_id": 106011,
+        "voice": "vo_adv_2108010_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "嗚……！",
+        "unit_id": 191711,
+        "voice": "vo_adv_2108010_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "騎士先生！",
+        "unit_id": 100111,
+        "voice": "vo_adv_2108010_106"
+    },
+    {
+        "type": "background",
+        "background": "501300"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "騎士先生──！！",
+        "unit_id": 100211,
+        "voice": "vo_adv_2108010_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "…………"
+    },
+    {
+        "type": "still",
+        "still": "200099901"
+    }
+]

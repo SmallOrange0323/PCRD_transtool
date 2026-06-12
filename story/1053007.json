@@ -1,0 +1,864 @@
+[
+    {
+        "type": "background",
+        "background": "500050"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "莫妮卡和{player}一起去用餐。"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "{player}在哪裡呢？",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n雖然已經拜託他先佔座位了……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "可是人這麼多，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "怎麼找啊。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "吶，",
+        "unit_id": 411,
+        "voice": "vo_adv_1053007_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "沒關係啦？",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "\n",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "跟我們一起找點樂子吧～",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "嗯？",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "怎麼了……？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n怎麼這麼吵呢。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "害羞起來更可愛呢～",
+        "unit_id": 1211,
+        "voice": "vo_adv_1053007_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "\n",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "吶？",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "跟姐姐們一起玩吧～",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "怎麼回事，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "那些女人？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "居然在這種地方搭訕……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "話說回來，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "被搭訕的人居然是{player}呀！？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "妳們這些女人，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "慢著！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n這人，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "是和我約好來這裡吃飯的。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "把他帶走我會很傷腦筋！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "哎呀～",
+        "unit_id": 411,
+        "voice": "vo_adv_1053007_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "這小孩是誰呀？",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "小孩就一邊待著吧？",
+        "unit_id": 1211,
+        "voice": "vo_adv_1053007_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "\n",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "我們在談大人的事呢。",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "什！？",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我才不是小孩！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "{player}，別管她們了！",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "這些看起來像大人，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "內心其實是小孩的傢伙，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n你沒必要搭理！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "哎唷？",
+        "unit_id": 411,
+        "voice": "vo_adv_1053007_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "\n妳這是什麼意思？",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "妳這是在貶低我們嗎？",
+        "unit_id": 1211,
+        "voice": "vo_adv_1053007_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "\n不要以為妳是小孩，",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "我們就會原諒妳喔？",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "看來小孩子",
+        "unit_id": 411,
+        "voice": "vo_adv_1053007_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "無法理解我們這種魅力呢。",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我都說了，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我不是小孩！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "就憑妳長成這樣～",
+        "unit_id": 1211,
+        "voice": "vo_adv_1053007_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "\n",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "怎麼看都是小孩呀？",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "唔、",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "唔唔唔……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我可是傑出的大人！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n而且我和{player}……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "是戀、",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "戀人關係喔！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "噓──！",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n閣下閉嘴。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "嗯哼～",
+        "unit_id": 1211,
+        "voice": "vo_adv_1053007_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "是戀人？",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "\n真的嗎？",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "\n",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性２",
+        "words": "看起來有點假喔。",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "才、",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "才不是假的呢！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n我和{player}，正在交往喔！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "嘿～",
+        "unit_id": 411,
+        "voice": "vo_adv_1053007_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "\n這樣的話，",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "接個吻來看看呀？",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "接、接、接、接吻……嗎！？",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "對呀。",
+        "unit_id": 411,
+        "voice": "vo_adv_1053007_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "\n",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "如果是真正的戀人，",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "應該很簡單吧？",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "快呀，",
+        "unit_id": 411,
+        "voice": "vo_adv_1053007_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "怎麼了？",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性１",
+        "words": "\n快點接個吻來看看啊。",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "唔、",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "唔……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "怎麼辦……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "接、",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "接吻……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "這麼害羞的事情……！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "但是，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "如果不接吻的話就會被識破在撒謊。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "那樣的話，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我的名譽就……！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "為什麼閣下興致勃勃！？",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n這種事情我做不到……！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "但、",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "但是……也不能在這時臨陣退縮！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "不、",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "不行！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我不能道歉！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n雖然對不起閣下，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "就請做好心理準備吧！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "就這樣被當作小孩，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n有損我的名譽！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "{player}……要接、接、接、",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "接吻了！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "{player}，閉上眼睛……",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "聽好了，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "絕對不可以睜開眼睛喔？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "放、",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "放輕鬆……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n這個不是真心的接吻！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n這是為了保護我名譽……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "作為軍人使命的吻！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "男顧客１",
+        "words": "嗯？",
+        "unit_id": 311,
+        "voice": "vo_adv_1053007_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "男顧客１",
+        "words": "怎麼了怎麼了？",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男顧客１",
+        "words": "\n發生什麼事了？",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男顧客２",
+        "words": "好像是那邊的情侶要當眾接吻！",
+        "unit_id": 1111,
+        "voice": "vo_adv_1053007_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "男顧客１",
+        "words": "喔喔，不錯喔──！",
+        "unit_id": 311,
+        "voice": "vo_adv_1053007_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "男顧客１",
+        "words": "\n親下去親下去──！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "啊！？",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n什、",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "什麼時候",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "跑出了這麼多圍觀的觀眾……！？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "觀眾們",
+        "words": "快快，接──吻！",
+        "unit_id": 1,
+        "voice": "vo_adv_1053007_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "觀眾們",
+        "words": "\n接──吻！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "觀眾們",
+        "words": "接──吻！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "啊、",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "嗚……嗚嗚……！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "嗚啊啊啊啊！！",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053007_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "不准看～～～～！！！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}被害羞不已的莫妮卡打飛，\n化成了天上的星星……"
+    }
+]

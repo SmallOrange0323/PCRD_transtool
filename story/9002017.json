@@ -1,0 +1,918 @@
+[
+    {
+        "type": "background",
+        "background": "500360"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "來自公會管理協會委託的神祕書本配送任務，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n{player}最後的配送地點是"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n【美食殿堂】的公會小屋。"
+    },
+    {
+        "type": "still",
+        "still": "900201701"
+    },
+    {
+        "type": "dialogue",
+        "name": "大家",
+        "words": "歡迎回來──！！",
+        "unit_id": 1,
+        "voice": "vo_adv_9002017_000"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "漫長的旅程",
+        "unit_id": 105913,
+        "voice": "vo_adv_9002017_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "辛苦您了，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "啊哈哈，",
+        "unit_id": 106012,
+        "voice": "vo_adv_9002017_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "滿臉好像寫著不知道發生什麼事呢♪",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "拉比林斯達",
+        "words": "嗨，少年！",
+        "unit_id": 106811,
+        "voice": "vo_adv_9002017_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉比林斯達",
+        "words": "\n過得好嗎？",
+        "unit_id": 106811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "看你的樣子，",
+        "unit_id": 106412,
+        "voice": "vo_adv_9002017_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "途中似乎沒有偷看書本內容呢。",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "這種誠實的地方",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "我覺得很棒呢。",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "{player}，謝謝你",
+        "unit_id": 190811,
+        "voice": "vo_adv_9002017_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n完成這項委託！",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "{player}，\n可以把書借給我一下嗎？",
+        "unit_id": 105812,
+        "voice": "vo_adv_9002017_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "謝謝♪",
+        "unit_id": 105812,
+        "voice": "vo_adv_9002017_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那麼小可蘿、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "小凱留、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "小雪菲，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n麻煩妳們了！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "好的，",
+        "unit_id": 105913,
+        "voice": "vo_adv_9002017_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "請交給在下。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "兩位",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "請往這邊走──",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我想你在配送過程中應該就有聽到了，",
+        "unit_id": 105812,
+        "voice": "vo_adv_9002017_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "其實我們",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "與{player}相遇",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n已經要滿三年了呢……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "有點讓人難以相信。",
+        "unit_id": 105812,
+        "voice": "vo_adv_9002017_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "發生過太多事情了，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "在這短短幾年裡。",
+        "unit_id": 105812
+    },
+    {
+        "type": "still",
+        "still": "505600001"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你還記得嗎？",
+        "unit_id": 105812,
+        "voice": "vo_adv_9002017_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們去了海邊、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "與來自異世界的人\n有過交流、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "參加了公會競速賽、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "釣過魚……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "歷經了很多冒險，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "每次都",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "圍繞著超豐盛的餐桌呢！",
+        "unit_id": 105812
+    },
+    {
+        "type": "background",
+        "background": "500360"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "孕育了許許多多的回憶……",
+        "unit_id": 105812,
+        "voice": "vo_adv_9002017_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n不知道是誰開始覺得，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "如果能將這些回憶化為有形就好了……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "回過神來，",
+        "unit_id": 105812,
+        "voice": "vo_adv_9002017_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "大家的心情都是一樣的……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "嗯，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n抱歉，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你聽不懂我在說什麼吧！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "再過一下你就會明白了♪",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "久等了，",
+        "unit_id": 106012,
+        "voice": "vo_adv_9002017_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "已經完成了唷。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "正如可可蘿小姐之前所說……",
+        "unit_id": 106412,
+        "voice": "vo_adv_9002017_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n{player}啊，真的認識了非常多女生呢。",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "嚇了我一跳。",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "為了不要輸給其他公會的人，",
+        "unit_id": 105913,
+        "voice": "vo_adv_9002017_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n我們也盡了全力。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "花凜小姐，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "接下來",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "就拜託您了。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "好的，",
+        "unit_id": 190811,
+        "voice": "vo_adv_9002017_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "那我就借用一下囉！",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n{player}，奔波在公會間的配送委託",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n真是辛苦你了。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "這是",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "這次的報酬♪",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "沒錯。",
+        "unit_id": 190811,
+        "voice": "vo_adv_9002017_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n這就是將這三年間",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "{player}與大家一同創造的羈絆\n化為有形之物的",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "相簿。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "請翻看書本裡的內容，",
+        "unit_id": 105913,
+        "voice": "vo_adv_9002017_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "裡面充滿了",
+        "unit_id": 106412,
+        "voice": "vo_adv_9002017_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n大家對{player}的感謝之意唷。",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n當然，",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "也有我們的。",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這本相簿",
+        "unit_id": 105812,
+        "voice": "vo_adv_9002017_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "對我們來說，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "也是如同寶物一般的東西。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n一想到這本書是交到{player}手上，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n心裡就覺得一片溫暖！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "太讚了吧☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "拉比林斯達",
+        "words": "少年，",
+        "unit_id": 106811,
+        "voice": "vo_adv_9002017_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉比林斯達",
+        "words": "你擁有比任何人",
+        "unit_id": 106811
+    },
+    {
+        "type": "dialogue",
+        "name": "拉比林斯達",
+        "words": "都還要美好的心靈，",
+        "unit_id": 106811
+    },
+    {
+        "type": "dialogue",
+        "name": "拉比林斯達",
+        "words": "\n不會只顧自身，",
+        "unit_id": 106811
+    },
+    {
+        "type": "dialogue",
+        "name": "拉比林斯達",
+        "words": "以他人為優先。",
+        "unit_id": 106811
+    },
+    {
+        "type": "dialogue",
+        "name": "拉比林斯達",
+        "words": "在這樣一位少年覺得迷惘之時，",
+        "unit_id": 106811,
+        "voice": "vo_adv_9002017_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉比林斯達",
+        "words": "\n",
+        "unit_id": 106811
+    },
+    {
+        "type": "dialogue",
+        "name": "拉比林斯達",
+        "words": "理解你的人",
+        "unit_id": 106811
+    },
+    {
+        "type": "dialogue",
+        "name": "拉比林斯達",
+        "words": "一定會支援你的。",
+        "unit_id": 106811
+    },
+    {
+        "type": "dialogue",
+        "name": "拉比林斯達",
+        "words": "我也",
+        "unit_id": 106811,
+        "voice": "vo_adv_9002017_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉比林斯達",
+        "words": "打算成為其中一人♪",
+        "unit_id": 106811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "話說回來，",
+        "unit_id": 106012,
+        "voice": "vo_adv_9002017_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我想都沒想過",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n會跟你相處這麼久呢。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "算了，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不過那個……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這、",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這或許是還不壞的三年呢。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "呵呵……",
+        "unit_id": 105913,
+        "voice": "vo_adv_9002017_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "好了，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n之後要準備",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "慶祝的派對，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n這些話",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "就留在席上說吧。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "對啊！",
+        "unit_id": 105812,
+        "voice": "vo_adv_9002017_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "欸嘿嘿～",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "好期待派對♪",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……{player}。\n這三年對我們來說，",
+        "unit_id": 105812,
+        "voice": "vo_adv_9002017_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "是無可取代的時光。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "{player}與許多女生締結的羈絆，",
+        "unit_id": 105812,
+        "voice": "vo_adv_9002017_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n回過神來才發現，也成為了女生之間的羈絆……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這實在是令人非常開心、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "非常幸福……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "然後，",
+        "unit_id": 106012,
+        "voice": "vo_adv_9002017_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "今後也會繼續締結羈絆吧。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "說得不錯，",
+        "unit_id": 106412,
+        "voice": "vo_adv_9002017_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "凱留。",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "說的也是呢。",
+        "unit_id": 105913,
+        "voice": "vo_adv_9002017_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n迎接一個重要時刻，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "然後前往全新的未來，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "和主人一起……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "是的！",
+        "unit_id": 105812,
+        "voice": "vo_adv_9002017_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "滿懷著我們對迎來這一日的感謝，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n以及對今後未來的期待！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n{player}，真的是──",
+        "unit_id": 105812
+    },
+    {
+        "type": "still",
+        "still": "900201701"
+    },
+    {
+        "type": "dialogue",
+        "name": "大家",
+        "words": "三周年，",
+        "unit_id": 1,
+        "voice": "vo_adv_9002017_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "大家",
+        "words": "謝謝你！",
+        "unit_id": 1
+    },
+    {
+        "type": "still",
+        "still": "end"
+    }
+]

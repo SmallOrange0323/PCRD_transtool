@@ -1,0 +1,5537 @@
+[
+    {
+        "type": "background",
+        "background": "501162"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "……乘船隨浪搖晃一段時間後，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n{player}一行人抵達擁有很大港口的城鎮。"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "──到了♪",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "有很多船",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "停泊在港口呢。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "完全就是漁夫之鎮的景象。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "嗚噁……",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "好不蘇服……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "一直都在船上，虧我還能忍住……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n他們倒是一臉稀鬆平常的樣子……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "這也難怪。",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n不是漁夫的話，通常也會暈船的。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "那邊的小姑娘們應該比較特殊吧……",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "嗚咕……",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "大叔明明是漁夫，居然也暈船！",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "和正先生！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n謝謝你",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "載我們到這邊來♪",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "啊，",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你對交通工具的耐性也強得莫名呢……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人，",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "沒事吧……？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "不要硬撐，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "到那邊稍微休息一下吧。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……哦。",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n小兄弟跟小姑娘們也都要小心啊。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "特別是現在鎮上的人都很緊繃，",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n去鎮上閒逛時，要注意別被捲入麻煩了。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "咦？",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這是什麼意思──",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "啊，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "走掉了。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "算啦，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "在意小事也沒有意義！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n先來參觀城鎮吧♪",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不，",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我們現在沒有那樣的餘裕……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n是說，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妳還真嗨呢。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "因為",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "是漁夫們的城鎮耶！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n小凱留！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我想這邊的魚，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "一定也很美味！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n餐廳♪",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "哪裡有餐廳呢？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……有、",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "有夠亢奮的……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n但在食物的話題上，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "大概也不可能讓貪吃佩可冷靜下來。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……嗯。",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n不過，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "不知道為什麼，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n這座城鎮的氣氛",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "有些──",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "漁夫1",
+        "words": "…………",
+        "unit_id": 1411,
+        "voice": "vo_adv_5056002_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "漁夫2",
+        "words": "…………",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……有種不太好的感覺呢。",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n每個人都一臉陰沉，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "城鎮本身也很安靜。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……嗅嗅。",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這股氣味難道是，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "是烤魚的香氣……！？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "小凱留、小可蘿、{player}！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n對面好像有餐廳喔！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n有餐廳就有人潮，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們去那邊問問情報吧！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "光靠氣味就能知道地點，",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妳是狗嗎！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……啊，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "喂、",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "等一下！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n我們沒錢了，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "所以不能吃東西喔──！？",
+        "unit_id": 106012
+    },
+    {
+        "type": "background",
+        "background": "500050"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "打擾了──♪",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……門可羅雀呢。",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n這裡真的是餐廳嗎？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "外面有招牌，",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "應該是沒有錯。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "可是",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "明明快到午餐時間了，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n入座的客人卻這麼少，這是怎麼回事……？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "……歡迎光臨。",
+        "unit_id": 311,
+        "voice": "vo_adv_5056002_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "啊，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你是店員嗎？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n請問這間店",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "現在有在營業吧？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "等等，",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "貪吃佩可！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n妳真的打算用餐嗎！？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "錢要怎麼辦啦！？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "沒問題的，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "小凱留♪",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n其實我為了這個時候啊……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "鏘鏘～☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "什麼？",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "貪吃佩可小姐從懷裡拿出",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "一個小袋子……？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……呵呵呵。",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n這就是",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我最後的王牌！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n是我自己存的",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "吃飽飽私房錢☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "啊！？",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n有、",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "有這種東西的話，那妳早說啊！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "欸嘿嘿……",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "話雖如此，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "畢竟是緊急用的資金，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "真的就只有一點而已。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "不過沒問題！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "還是夠讓大家吃頓飯的！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "一起來享受原產地的新鮮滋味吧☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "……這位客人，",
+        "unit_id": 311,
+        "voice": "vo_adv_5056002_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "非常抱歉。",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n小店目前",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "無法出餐。",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "──咦咦咦咦咦咦咦咦……！？",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n為、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "為什麼！？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "嗯？",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "無法出餐的意思是──",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "……不，",
+        "unit_id": 311,
+        "voice": "vo_adv_5056002_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "是餐廳沒錯。",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n但很遺憾……",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n因為剛剛出餐給其他客人，",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "所以食材用完了。",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "可以提供飲料，",
+        "unit_id": 311,
+        "voice": "vo_adv_5056002_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "但無法提供料理。",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n這個小鎮只有這間餐廳，",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n若是客人想用餐，",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "麻煩請到其他鎮去。",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "沒有食材……？",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n在這種時段嗎？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "客人這麼少卻沒有材料，",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "是怎麼回事？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n你該不會是覺得待客很麻煩，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "所以說謊了吧？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "……",
+        "unit_id": 311,
+        "voice": "vo_adv_5056002_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "……非常抱歉，",
+        "unit_id": 311,
+        "voice": "vo_adv_5056002_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "恕我失禮了。",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "等等……",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "剛剛那個態度",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "是怎樣！？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "他要有認真做生意的意思嗎！？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "唔唔……",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "怎麼這樣……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我還以為難得有機會在原產地享用海鮮呢……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "沒錯，",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n不管是鎮內的氣氛還是店員，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "情況感覺都不對勁。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這麼說來，",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "和正大叔好像也說過吧？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n就是鎮上的人們也很緊繃什麼的──",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "──怎麼了？",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n從剛剛開始就一直很吵耶。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "──真是的，",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n連想靜靜喝口茶都沒辦法。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "──？",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "剛、",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "剛剛的聲音是……？",
+        "unit_id": 106012
+    },
+    {
+        "type": "still",
+        "still": "505600201"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "矛依未小姐、",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "似似花小姐……！",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n兩位為何",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "會在這種地方……？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "嗯……？",
+        "unit_id": 106113,
+        "voice": "vo_adv_5056002_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "哦，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "什麼嘛，是你們啊！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "沒想到居然能在這種地方遇到！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "……妳的警戒心不夠呢，",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "諾維姆。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n從這些人進店開始，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n光憑音量就可清楚分辨出是他們了吧。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "請、",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "請請請請請請等一下！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n矛依未，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "妳手上拿的難不成是……！？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "嗯？",
+        "unit_id": 106113,
+        "voice": "vo_adv_5056002_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "哦，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "這個啊？",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "這間店",
+        "unit_id": 106113,
+        "voice": "vo_adv_5056002_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "好像幾乎沒剩什麼料理食材。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n不過他說還有最後一隻魚可以提供，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我就點了。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n雖然待客態度很差勁，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "味道卻超棒的！",
+        "unit_id": 106113
+    },
+    {
+        "type": "background",
+        "background": "500050"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "啊嗚嗚嗚……",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n原來剛剛的香味是",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "矛依未正在享用的魚嗎……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這也沒辦法……",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "看到矛依未幸福的吃相，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n總覺得我空空的肚子",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "也被填滿了……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "怎麼啦？貪吃佩可，",
+        "unit_id": 106113,
+        "voice": "vo_adv_5056002_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n妳肚子餓了嗎？",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "這樣的話，",
+        "unit_id": 106113,
+        "voice": "vo_adv_5056002_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我分妳一半。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n雖然應該填不滿妳的胃，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "但總比沒有好吧？",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "矛、",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "矛依未……！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n真的可以嗎？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "嗯，",
+        "unit_id": 106113,
+        "voice": "vo_adv_5056002_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "畢竟妳都用那種眼神看著我了。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n讓妳在旁邊流口水我也吃得不自在啊……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "拿去。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "謝謝妳！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……嚼嚼……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "魚、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "魚的鮮味在口中迸開來……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n太讚了吧☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "哈哈，",
+        "unit_id": 106113,
+        "voice": "vo_adv_5056002_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "是嗎，這麼好吃啊！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n妳可以不用客氣，儘管感謝我唷！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "被餵食了耶……",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "被餵食了呢……",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……算了，",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "先別去管她們兩個。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n怎麼連妳都在這裡啊……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "似似花？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "……沒什麼特別的理由。",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "只是因為周遭沒有人煙，",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "又跟老友偶然相逢，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n便用較為穩定的本體外型",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "喝杯茶罷了。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "當然，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "這具身體只是分身，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "本體正潛伏在他處。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "嗯？",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n您說是偶然，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "所以兩位並非是一起行動的囉。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "是啊！",
+        "unit_id": 106113,
+        "voice": "vo_adv_5056002_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我跟似似花",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "只是偶然在這裏遇見的。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我聽說啊，",
+        "unit_id": 106113,
+        "voice": "vo_adv_5056002_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "在這個地方可以取得超級美味的魚，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "好像是叫……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "金槍鮪吧？",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我原本是來買那種魚的！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "咦，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "矛依未也是嗎？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "其實",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們也是呢！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "什麼啊，",
+        "unit_id": 106113,
+        "voice": "vo_adv_5056002_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "你們的目的跟我一樣嗎！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n嗯，畢竟根據傳聞，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "那似乎是種充滿營養的厲害魚類呢！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……這、",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這個人……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n知道那種金槍鮪一隻要多少錢嗎……？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "諾維姆的行動力每回都令人驚嘆。",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n但就這次，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "應該是無須擔心。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "畢竟",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "她想要的魚，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "是「無法取得」的。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……什麼？",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "似似花小姐？",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "您這是什麼意思……？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "你們也看到了吧？",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n這個小鎮……",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "大間鎮居民的樣子。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "……嗯，",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "沒錯。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n大間的居民",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "如今都已",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "喪失了活力。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "而原因很簡單……",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n因為這個城鎮的漁夫們",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "沒有去捕魚。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "咦？",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n明明是漁夫……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "卻沒去捕魚嗎？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "就是說啊！",
+        "unit_id": 106113,
+        "voice": "vo_adv_5056002_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "就算是四處拜託那些漁夫大叔，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n要他們「把船借我我自己去釣」，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n他們也只會不高興地吼我！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "不去捕魚的……",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "漁夫之鎮。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "原來如此，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "怪不得餐廳的食材也告罄了。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "嗯。",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "因此，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "這片海域能捕到的海鮮類價格似乎也水漲船高。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n畢竟對市場的供給已經中斷，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "這也難怪了。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n據說即便是小魚，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "交易價也是以幾千盧幣起跳。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "可是……",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這又是為什麼？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n不去捕魚，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "漁夫們不是也無法過活嗎……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "嗯，",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "那是當然的。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "但他們",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "即使想去捕魚也做不到。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "……你們",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "有聽說過突變這個詞嗎？",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "突變，",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n指的是生物的性質或形狀",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "毫無徵兆地產生變化的現象……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n是這樣嗎？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "……正確來說，",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "是跟遺傳基因跟染色體有關，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n促進生物進化的一種現象。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "不過大致上",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "那麼理解就行了。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "並非環境原因等要素影響，",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "生物突如其來的變質。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "這個現象現在",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "正給這座大間海帶來相當大的危害。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n鎮上的人……",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "似乎都稱牠為",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "「究極金槍鮪」吧。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿、凱留",
+        "words": "……！",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那、",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那不就是、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "和正先生說的──！？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "……原來如此，",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "你們已經遇到過元凶啦。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n在一無所知的時候就直搗事情的真相……",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "說起來",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "的確是挺有你們的風格。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "簡單來說，",
+        "unit_id": 106113,
+        "voice": "vo_adv_5056002_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "就是有隻超大的魚突然出現在海裡大鬧一番，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n讓大家都沒辦法正常捕魚了。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n……不過我也是",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "聽似似花說了才知道的。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "突變的個體，",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n以牠的出現為契機，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "附近海域的魔物們也變得十分凶暴。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "這是個足以動搖海洋生態的變化。",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n聽說有許多船因而沉沒，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "也造成了眾多犧牲者。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "這座鎮上的漁夫們",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "有大半也都成了海上亡魂。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n有、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "有那麼嚴重啊……？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "……我",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "並不清楚實際的受害狀況。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "不過，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "被比喻為大海戰士的漁夫們，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n不再出海的確是事實，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "怪物的威脅度可想而知。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "甚至能改變周遭生物性情的特異存在，",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "原因或許就在於",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "突然變異種身上的某種器官。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "身為研究者……",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "而且",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "擁有變異能力的人，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "我個人也對此很感興趣。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妳特地使用分身公然露面，",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n就是為了調查這個……？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "畢竟似似花就是個天生的研究者嘛──",
+        "unit_id": 106113,
+        "voice": "vo_adv_5056002_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "像我就會覺得，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "只要把牠打飛吃掉就好。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "不過，",
+        "unit_id": 106113,
+        "voice": "vo_adv_5056002_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "漁夫大叔們都怕得要死，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "根本沒辦法出海。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n看樣子真的只能放棄去捕金槍鮪的念頭了──",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "而且就算出海，",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "敵人可是海洋生物。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n即使是妳，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "一旦牠潛到海中深處，想必也束手無策。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "……你們也是。",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n我建議你們別拘泥於眼前的獎勵，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "硬是蠻幹。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可、凱留",
+        "words": "……驚。\n……驚。",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "……好了，",
+        "unit_id": 107011,
+        "voice": "vo_adv_5056002_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "\n既然喉嚨的乾渴已消，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "似似花",
+        "words": "我要回去觀察跟研究了。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我也回蘭德索爾吧──",
+        "unit_id": 106113,
+        "voice": "vo_adv_5056002_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "雖然沒有收穫，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "但能跟你們聊聊也很開心！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n再見啦！",
+        "unit_id": 106113
+    },
+    {
+        "type": "background",
+        "background": "501162"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "…………",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_110"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿、凱留",
+        "words": "…………",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_111"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……果然",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_112"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "還是放棄吧。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n風險似乎",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "比我們想像中還要大。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "是啊……",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_113"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n說不定危險程度，就跟超高難度的討伐魔物委託差不多呢。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "嗚嗚……",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_114"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "雖然一隻就值幾千萬盧幣……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "可要是沉到海裡，那就得不償失了。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n只能放棄豪華的新年，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "腳踏實地的賺錢了嗎……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "旅費也是，",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_115"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "只要在途中的城鎮",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "接些簡單的委託，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n也不是湊不出來。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "或許要花點時間，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "但應該能在新年前",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "回到蘭德索爾。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_116"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "喂，",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_117"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "貪吃佩可，妳有在聽嗎？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "該不會想說",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妳還沒放棄吧？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……咦？",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_118"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n啊，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "對不起。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n只是有點在意一件事──",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "因為有很多船沉了……",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_119"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n這座城鎮的漁夫們",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "才會沒再去捕魚嘛？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n那，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "救了我們的和正先生又是怎麼回事──？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "──喂喂，",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_120"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "你這傢伙！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "剛剛說了什麼啊！？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……！",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_121"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "有人在怒吼？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "似乎是在吵架！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_122"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "過去看看吧！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "喂！？",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_123"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "啊啊真是的……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我們也追上去！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的次男",
+        "words": "混帳，",
+        "unit_id": 811,
+        "voice": "vo_adv_5056002_124"
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的次男",
+        "words": "和──正──！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的次男",
+        "words": "\n有種再說一次！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "啊啊，",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_125"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "不管幾次我都會說的。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n這是我的問題，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "不需要你們來說三道四。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的三男",
+        "words": "這傢伙……",
+        "unit_id": 6311,
+        "voice": "vo_adv_5056002_126"
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的三男",
+        "words": "明明我們是好心在提醒你……！",
+        "unit_id": 6311
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "停──！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_127"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "到此為止！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n居然一群人聯合起來怒罵一個人，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n就算老天爺容許，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我肚子的聲音也不會允許的！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那、",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_128"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那是什麼理由啊……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的三男",
+        "words": "啊啊？",
+        "unit_id": 6311,
+        "voice": "vo_adv_5056002_129"
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的三男",
+        "words": "小姑娘",
+        "unit_id": 6311
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的三男",
+        "words": "妳們是誰啊？",
+        "unit_id": 6311
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的三男",
+        "words": "\n都是些生面孔嘛。",
+        "unit_id": 6311
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的次男",
+        "words": "我們現在在跟和正講話！",
+        "unit_id": 811,
+        "voice": "vo_adv_5056002_130"
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的次男",
+        "words": "\n外人不要插嘴！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "──好了，你們幾個。",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_131"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n不要挑釁無關的人。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "……喂，",
+        "unit_id": 911,
+        "voice": "vo_adv_5056002_132"
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "和正，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "\n別再做毫無意義的事了。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "\n要修理破損的船，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "那費用也是很可觀的吧？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_133"
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "只要把現在的船毫髮無傷地賣掉，",
+        "unit_id": 911,
+        "voice": "vo_adv_5056002_134"
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "還可以賣到不少錢。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "\n沒必要特意冒險",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "繼續捕魚。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "……已經夠了吧。",
+        "unit_id": 911,
+        "voice": "vo_adv_5056002_135"
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "\n所有人都放棄了，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "大間鎮也完了。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "\n即便你一個人想做點什麼，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "也無法改變任何事。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_136"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……你們幾個，",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_137"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "都覺得這樣就好了嗎？",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "……",
+        "unit_id": 911,
+        "voice": "vo_adv_5056002_138"
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "什麼？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "什麼都不做……",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_139"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "大間就會完蛋。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n到時候就無法再次出海捕魚了。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……我說小子們，",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_140"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "你們能服氣嗎？",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "……！",
+        "unit_id": 911,
+        "voice": "vo_adv_5056002_141"
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "不管我們",
+        "unit_id": 911,
+        "voice": "vo_adv_5056002_142"
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "服不服氣──",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "\n反正也沒有漁夫能勝過「那傢伙」。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "\n那就只能放棄了。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "……",
+        "unit_id": 911,
+        "voice": "vo_adv_5056002_143"
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "你們幾個，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的長男",
+        "words": "走吧。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的次男",
+        "words": "等、",
+        "unit_id": 811,
+        "voice": "vo_adv_5056002_144"
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的次男",
+        "words": "等等，",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的次男",
+        "words": "哥哥！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的三男",
+        "words": "和正，",
+        "unit_id": 6311,
+        "voice": "vo_adv_5056002_145"
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的三男",
+        "words": "你聽好！",
+        "unit_id": 6311
+    },
+    {
+        "type": "dialogue",
+        "name": "三兄弟的三男",
+        "words": "\n可別再出海了！",
+        "unit_id": 6311
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……這些人的品行真差。",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_146"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "他們也是漁夫嗎？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "好像是……",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_147"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n和正先生，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "您沒事吧？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……小姑娘們，",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_148"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n這很平常啊，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "不必在意。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "從事這種工作，",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_149"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "偶爾就是會跟同業的人起衝突。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "要、要要要要要要是在意這個，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "那那那那就",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "出不了海了。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你的腿明明就抖得超厲害的啊！",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_150"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "真是個耍不了帥的大叔……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "和正先生，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_151"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "剛剛那些人是……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_152"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "是這鎮上的漁夫，",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_153"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n不過……",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "他們似乎不打算繼續捕魚就是了。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_154"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……我們已經聽說",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_155"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "鎮上的事了。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n說那條大魚……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "究極金槍鮪弄沉了很多船。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n這個鎮上的漁夫們",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "也有很多人因此犧牲……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……這樣啊，",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_156"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "你們都知道了。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "那一切",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_157"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "都是真的。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n在大間已經沒辦法正常捕魚了，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n現在的大海",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "太過危險。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "雖然小姑娘們或許也是有什麼緣由，",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_158"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "但最好還是放棄吧。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n只要找一下，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "還是有其他賺錢的方法。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n你們年紀輕輕，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "不要無謂的浪費自己的生命。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "可是，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_159"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "和正先生呢？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n和正先生還是有出海",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "，去捕魚對吧？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那不是很危險嗎？",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_160"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n明明大家都停止捕魚了……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n為什麼和正先生",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "還要獨自繼續捕魚呢？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_161"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……只是因為無趣的原因。",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_162"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n是我在很久很久以前……",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "和某人的約定。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "約定……？",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_163"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "我有說過，",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_164"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "究極金槍鮪是會定期休眠的吧？",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n真要說的話，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "睡覺才是牠的主要活動。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n平常的大間海域，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "也沒有現在這麼不平靜。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "有許多漁夫",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_165"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "會為了競爭實力，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "而去挑戰捉捕金槍鮪。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n年初一則會舉行「新年拍賣」，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "漁夫們喝酒唱歌，大肆慶祝。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……我從以前就一直很喜歡這座城鎮那樣的氛圍。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "然而……",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_166"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "作為象徵威脅的大海之主，仍是潛伏在海裡。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n「那傢伙」",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "也曾在我們捕魚時甦醒過，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "那時的大間海域，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "也像現在一樣危險異常。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "有好幾艘",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_167"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "對自身技術很有自信的漁夫，船被弄沉，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n金槍鮪也變得凶暴，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "想要正常捕魚都做不到。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "每個人都委靡不振，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "被逼得只能停止捕魚──",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "可、",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_168"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "可是，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "大間鎮依然延續至今，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n那個時候",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是怎麼處理的?",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_169"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "有個漁夫挺身而出。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n他隻身應戰，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "不聽周遭眾人的勸戒。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n是個不知變通卻仍想守護大間漁業的……",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "大蠢蛋。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "──不、",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_170"
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "不可能的，師傅！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "\n怎麼可能正面迎戰那樣的怪物！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "\n都已經有好幾十艘船，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "被牠給弄沉了！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "哈哈哈！",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_171"
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "阿和，你怕了嗎？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "\n不管過了多久，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "你都是個沒用的漁夫呢。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "不過……",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_172"
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "要是大間就此完蛋，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "\n你想要成為一流漁夫的可能性，也就跟著消失了。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "\n身為師傅，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "我必須阻止這件事發生。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "等一下！",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_173"
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "\n你真的要去嗎！？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "就一個人！？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "就算不捕魚……",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_174"
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "不當漁夫也沒關係啊！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "\n師傅的命更重要！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "不是嗎！？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "……阿和，",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_175"
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "你覺得這樣也無所謂嗎？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "\n你不是總用閃閃發亮的眼神說",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "「我喜歡這片大海」、",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "\n「我總有一天要成為出色的漁夫」嗎？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "那、",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_176"
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "那是……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "我也不希望不能再去捕魚……",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_177"
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "雖然我不想……！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "\n但這也是沒辦法的事啊！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "有那種怪物，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "你要我怎麼辦！？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "笨蛋，",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_178"
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "怎能一開始就放棄。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "\n看這樣子，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "身為漁夫，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "你也還只是個半調子呢。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "你就在一旁發著抖看好吧，",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_179"
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "沒用的徒弟。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "\n我會保護大間，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "讓你的夢想",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "得到延續。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "所以，",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_180"
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "阿和──",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "等你哪一天成了優秀的漁夫，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "\n就繼承",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "我的心願吧。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "\n大間鎮，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "還有大間海域……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "就拜託你了。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "年輕時的和正",
+        "words": "師傅──！",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_181"
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "無論面對何種惡浪，",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_182"
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "何種怪物都不會屈服！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "\n挺身面對，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "跨越難關，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "然後釣起牠！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "師傅",
+        "words": "\n這就是大間漁夫的靈魂！",
+        "unit_id": 1
+    },
+    {
+        "type": "background",
+        "background": "501162"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_183"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_184"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "然後，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_185"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那位漁夫……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n和正先生的師傅，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "有平安歸來嗎？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……沒有。",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_186"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n他的船被那怪物擊沉，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "人被海浪吞噬了。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_187"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "大叔……",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_188"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "不過，",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_189"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "師傅也沒有白白犧牲。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n師傅擲出的魚叉，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "貫穿了那隻怪物的身體，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n暫時把牠趕跑了。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "究極金槍鮪為了治癒自己所受的傷，再次陷入沉睡。",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_190"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n大間鎮能有現在的樣子，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "都是師傅的功勞。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……嗯，",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_191"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "沒錯，小兄弟。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n那個怪物再次甦醒，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "在這個大間海域中現身，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n然後與當時相同，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "破壞著我們的大海。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "那個時候的我……",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_192"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "就只能瑟瑟發抖。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "正因如此，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "這次必須換我來做。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "我要繼續捕魚。",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_193"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "哪怕只有一位漁夫還在捕魚，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "大間鎮會繼續存在。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n不管別人怎麼說，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "我都要堅持昭示這一點。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "然後……我要跟師傅一樣",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_194"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "趕跑究極金槍鮪。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……全部，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "都必須由我來做……",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_195"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……小凱留、",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_196"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "小可蘿、{player}。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……是，",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_197"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下也有",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "跟貪吃佩可小姐同樣的想法。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……唉。",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_198"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "嗯……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妳想這麼做的話，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那就直接做吧。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n反正，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "也得想辦法處理公會缺錢的困境。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "欸嘿嘿♪",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_199"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我就知道大家會這麼說♪",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "和正先生！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_200"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n只要想辦法解決究極金槍鮪，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n就可以保護大間海域了吧？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……嗯？",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_201"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n這個嘛……",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "的確是這樣沒錯。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那麼，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_202"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "請讓我們也搭上和正先生的船♪",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n因為我們現在",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "身無分文！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n必須捕獲超大的獵物換錢才行！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "咦……",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_203"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "啊！？",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_204"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "不、",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "不不不等等！",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n你們幾個",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "該不會是打算釣起究極金槍鮪吧！？",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n要釣起那個怪物！？",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "沒錯♪",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_205"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n即使趕走牠，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "也會在幾年後再次甦醒吧？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "既然這樣，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "把牠抓起來應該是最好的辦法！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "普通的金槍鮪就可以賣幾千萬盧幣，",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_206"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "照那大小來看，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "應該能夠賣到更高的價格吧。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "總、",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_207"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "總之，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "風險雖高，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "卻會有相應的回報嘛。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我們並不是因為擔心大叔，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n單純覺得有那個價值而已。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……呵呵。",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_208"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n是的，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "凱留小姐。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下認為您說得對。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……不行……",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_209"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n你們",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "也目睹過究極金槍鮪了吧！",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n那就應該",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "親身體會過牠的可怕！",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "還好當時是我偶然經過，",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_210"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n但下次可就不保證能有這種好運了！",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n更何況你們還是沒捕過魚的門外漢……！",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……可是，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_211"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "和正先生一直後悔著",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "讓師傅獨自前去的事情吧？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n然而，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "您這次卻也打算自己一個人獨自想辦法解決嗎？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……！",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_212"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "正如和正先生所說，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_213"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我並不是漁夫。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n不過，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "想保護重要的場所，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "想保護重要的人們，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n我非常明白",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你的這份心情。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "獨自努力，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_214"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "獨自想方設法，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n可是，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "卻總難以如願……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "在我遇到這種危機時，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "【美食殿堂】的大家總會出手幫助我。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "欸嘿嘿，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_215"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "真是不可思議。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n明明問題本身並沒有得到解決，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "但光是夥伴跟自己在一起，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "就幸福得會湧現出力量！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "即便一個人辦不到，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_216"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "只要跟其他人一起，就一定能辦到！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n我們",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "會努力的！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n和正先生，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "請讓我們幫忙……！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……你們幾個……",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_217"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……真是的。",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_218"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "要是那時的我……",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "也能像你們一樣就好。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n這樣或許就不會讓師傅獨自去面對……",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "咦？",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_219"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "不……",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_220"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "沒什麼。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "只是自言自語。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……我醜話先說在前頭，",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_221"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n沒有經驗可是無法勝任漁夫的。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n更別說是",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "要釣上大魚，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "根本是遙不可及的夢想。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "嗚。",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_222"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這個嘛──",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_223"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……我的指導可是很嚴格的。",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_224"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n就算你們在中途抱怨，",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "我也不會讓你們下船的喔。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "咦？",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_225"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n這、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這句話的意思難道是……？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……我同意你們跟我一起去捕魚，",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_226"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "\n但要先從見習開始。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "這下你們沒意見了吧？",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "啊──",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_227"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n是、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "是的！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "哼……",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_228"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "真不坦率。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n既然別人幫你覺得很高興，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那就直接說出來啊。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n老在那邊逞強的話，是會吃虧的喔。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……呵呵，",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_229"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "的確是這樣呢。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "什、",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_230"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "什麼啦，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "可蘿仔。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n如果有什麼話想說，就直接說出來啊！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "和正先生！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_231"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "還請你多多指教！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "……呵，",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_232"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "氣勢倒是不錯。",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "趕快上船吧！",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_233"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "再慢吞吞的就要丟下你們囉！",
+        "unit_id": 6411
+    },
+    {
+        "type": "dialogue",
+        "name": "３人",
+        "words": "──是！\n──是！\n──好啦好啦。",
+        "unit_id": 1,
+        "voice": "vo_adv_5056002_234"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "得到和正的同意，{player}一行人搭上漁船。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n為了接受和正的漁夫指導，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n他們再次朝大海前進──"
+    },
+    {
+        "type": "background",
+        "background": "501193"
+    },
+    {
+        "type": "dialogue",
+        "name": "和正",
+        "words": "──噁噁噁噁噁噁噁噁……！！",
+        "unit_id": 6411,
+        "voice": "vo_adv_5056002_235"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "喂，",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_236"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "結果你馬上就暈船了啊！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "而且還比我們先暈！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n還敢裝出一副老手漁夫的樣子，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n剛剛的氣勢都跑去哪了！？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "和正先生，",
+        "unit_id": 105913,
+        "voice": "vo_adv_5056002_237"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "請喝水。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n主人也是，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "要是覺得不舒服，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n請務必告知在下。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下會替您拍背。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "小凱留，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5056002_238"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "快看！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n那個",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "難不成是鯨魚？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "吃進嘴裡會是什麼味道呢！？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這、",
+        "unit_id": 106012,
+        "voice": "vo_adv_5056002_239"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這艘船",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "真的沒問題嗎……？",
+        "unit_id": 106012
+    }
+]

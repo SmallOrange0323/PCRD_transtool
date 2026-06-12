@@ -1,0 +1,766 @@
+[
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "這是{player}在街上散步時發生的事。"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "站住！通緝犯！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n你就乖乖地束手就擒吧！",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "通緝犯",
+        "words": "笨蛋才會聽妳的話乖乖站住！",
+        "unit_id": 811,
+        "voice": "vo_adv_1009001_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "通緝犯",
+        "words": "很痛耶！你的眼晴長在哪裡啊！給我小心點！",
+        "unit_id": 811,
+        "voice": "vo_adv_1009001_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "那邊那位無名的普通人，你沒事吧？",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "我現在正在追捕那個通緝犯……",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "卻把你牽扯進來了，抱歉。",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "那傢伙的罪也是我的罪……",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "噢，不好意思……我應該先報上我的名字才對。",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "我神聖的名字……你聽好了！",
+        "unit_id": 100911
+    },
+    {
+        "type": "still",
+        "still": "100900101"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "──呵呵呵……哈哈哈……哈～哈哈哈！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "我的大名是那安妮羅潔‧馮‧修特帕魯！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n外號疾風之冥姬！",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "別稱「熾炎戰鬼煉獄血盟暗黑團」團長！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "既是暗黑騎士，亦是結束終焉之戰的舊世界英雄！",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "我們今天相遇也算是一種緣份。",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n這次就特別讓你的名字也烙印在我的靈魂中――",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "嗯嗯……？怎麼了，為什麼說些理所當然的話？",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "通緝犯逃走不是很正常的嗎……",
+        "unit_id": 100911
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "糟了！他什麼時候跑得那麼遠了……！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "得趕緊追上他才行！",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "對了！你也來幫我吧！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "如果你幫忙的話，我就把賞金分給你……意下如何？",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "這樣子啊，你願意幫我啊！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "那現在立刻去追捕他吧！",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "我會就這樣追趕在後，然後把通緝犯引誘到某個地方。",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "你則事先前往那個地方，埋伏著等待他出現吧。",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "這樣的話，我們便能把他們一網打盡了。",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "呵……這個作戰計劃真完美啊。",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "出發吧！為了我們的榮譽與獎金！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_015"
+    },
+    {
+        "type": "background",
+        "background": "500020"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "站住，通緝犯！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n我不會讓你逃走的！",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "通緝犯",
+        "words": "嘿，你追得到我的話就試試看啊！",
+        "unit_id": 811,
+        "voice": "vo_adv_1009001_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "糟了！如果他在那裡轉彎的話，就不能逼他跑向那裡了……！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "這樣的話……！看招！",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "通緝犯",
+        "words": "嗚哇！",
+        "unit_id": 811,
+        "voice": "vo_adv_1009001_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "通緝犯",
+        "words": "\n",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "通緝犯",
+        "words": "……哈哈哈，你在攻擊誰啊？",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "通緝犯",
+        "words": "\n根本打不中我！這樣我就能逃走啦！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "呵呵呵……成功誘導他跑去那裡了。",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "之後就是按照作戰計劃，在那裡埋伏……",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "糟了！我忘了告訴那個男生埋伏的位置了！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "這樣下去的話計畫會――！",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "通緝犯",
+        "words": "嗚啊！",
+        "unit_id": 811,
+        "voice": "vo_adv_1009001_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "通緝犯",
+        "words": "\n",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "通緝犯",
+        "words": "你、你這傢伙！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "通緝犯",
+        "words": "\n什麼時候先跑到這裡的！？",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "咦……？成功了……？",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n為什麼……",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "比起這種事，現在要先抓住那個通緝犯！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n你！絕對不要讓那傢伙逃走啊！",
+        "unit_id": 100911
+    },
+    {
+        "type": "background",
+        "background": "500091"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "……你做得很好呢。",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n幸虧有你，我輕易地抓到通緝犯了。",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "收下這些吧。",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n這是抓住那傢伙所得到的一半獎金。",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "但是……虧你還知道那個地方呢？",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n我應該沒有告訴你集合地點才對……",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "原來如此……不用我說明，你也能明白我的想法……",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "……呵呵。哈哈哈、哈哈哈！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "這樣啊，原來是這樣啊……！絕對沒有錯！",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "你一定是我前世的宿敵兼盟友！閃光的吉格魯特！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "沒想到你也轉世了啊！",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "我絕對沒有認錯人！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "你能夠馬上理解我的想法，這就是最好的證據！",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "我一直都沒注意到，真是抱歉……",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "但是，從今以後就不同了！",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n讓我們像前世一樣，把自己的名字傳遍全世界吧！",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "你就是閃光的吉格魯特！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n對吧，閃光的吉格魯特？",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "不對！你就是閃光的吉格魯特啊！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n對吧，閃光的吉格魯特……？",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "不、",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "不可能的……！",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n你就是閃光的吉格魯特！",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n對吧，閃光的吉格魯特……！？",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "喔喔，果然是這樣啊！！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "……你好像一副有難言之隱的表情，怎麼了呢？",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "這樣啊，你是因為突然相遇而感到不知所措吧。",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "你這份心情我也明白。我也很驚訝呢",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "。",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "但這是值得高興的事啊！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n因為我們能以這種方式跟前世的盟友再度相遇！",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "這也是一種緣份呢。吉格魯特啊！",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "我現在任命你成為「熾炎戰鬼煉獄血盟暗黑團」的副團長。",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "並賜予你跟前世一樣的暗黑騎士身份！",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "不用害羞啦「第二連隊長」。",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n這個職位只有你能勝任。交給你了！",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "不用這麼拘謹啦。你不是我的夥伴嗎。",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "那麼團員就有我跟吉格魯特兩個人……",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "我們一起攜手打倒「機關」，保護新世界吧。",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "那麼再見了。你沒有忘記我們的暗語吧？",
+        "unit_id": 100911,
+        "voice": "vo_adv_1009001_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "\n",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "修特帕魯",
+        "words": "「吾等乃飛舞於煉獄，一陣疾風！」",
+        "unit_id": 100911
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "自稱「疾風之冥姬」的修特帕魯，\n留下了不知名的暗語之後就離開了。"
+    }
+]

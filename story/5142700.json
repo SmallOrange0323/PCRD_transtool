@@ -1,0 +1,894 @@
+[
+    {
+        "type": "background",
+        "background": "500090"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "新兵訓練課程順利結束後的某一天。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n純找了惠理子和真琴收前來蘭德索爾王城。"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子、真琴",
+        "words": "魔物掃蕩任務？",
+        "unit_id": 1,
+        "voice": "vo_adv_5142700_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "是的。",
+        "unit_id": 104711,
+        "voice": "vo_adv_5142700_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "本期訓練兵們",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "留下了非凡的好成績。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n光憑現有的課程，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "甚至沒有辦法完全評斷他們的實力。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "所以，",
+        "unit_id": 104711,
+        "voice": "vo_adv_5142700_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "作為更進階的訓練課程，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n我要請你們參加魔物掃蕩任務。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "也就是說，",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "要像先前的遠征一樣與魔物戰鬥嗎。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n這次要前往哪裡呢？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "有個過去曾被當作街道使用，",
+        "unit_id": 104711,
+        "voice": "vo_adv_5142700_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n然而如今被魔物所占據，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "變得無法通行的地方。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "那裡似乎沒有強力的魔物，",
+        "unit_id": 104711,
+        "voice": "vo_adv_5142700_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "但是數量卻很多。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n不過",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "本期新兵以惠理子班和真琴班為首，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "都十分優秀。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n我想如果是他們",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "應該可以勝任掃蕩任務。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "所以就把我們找了過來，",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "是嗎。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "不過，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "雖然說魔物不強，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "但還是可能有個萬一吧？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "……是啊。",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "正因為是這樣的對手，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "應該會更容易大意輕敵吧。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "沒錯。",
+        "unit_id": 104711,
+        "voice": "vo_adv_5142700_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "因此我才想請妳們兩位也一同參加。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n如果是妳們，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "應該能夠順利領導",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "經驗不足的士兵們吧。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "原來如此，",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "所以才會把我們給找過來啊。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "那麼，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "得好好關照指導的學生到最後才行呢。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n惠理子妳呢？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "如果只是這點程度的工作，",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我沒有問題。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n那種單純只是數量多的烏合之眾，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n就由我來全部擊退吧。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "不，",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "那樣不行吧。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "戰鬥終究是新兵們的職責，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n我們只需要給出指令就好。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "應該是這樣子的吧？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "真麻煩呢……",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n由我們出手的話，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "明明就能快速取得確實的戰果。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "重要的是，",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "得讓新兵好好地累積實力啊。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n這條道路可是沒有捷徑的。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這我明白。",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "真是的，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "教官這個工作還真是不容易呢。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "那麼我重新說明一次……",
+        "unit_id": 104711,
+        "voice": "vo_adv_5142700_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n這次要拜託兩位的任務，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "是在掃蕩佔據街道的魔物時，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n指揮新兵部隊。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "雖然要請妳們統領比訓練課程時編組的班",
+        "unit_id": 104711,
+        "voice": "vo_adv_5142700_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "還要更大量的士兵，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n但如果是妳們，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "大家一定都會跟上來的。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "原來如此……",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我明白了。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n就由我指導的學生們",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "來把礙事的魔物",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n一隻不剩地趕盡殺絕吧。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "那麼，",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "我們兩個就接下任務了。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "一起努力來見證大家的成長吧，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "惠理子。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "真琴，",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "現在可沒有時間說這麼悠哉的話。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "為了能讓新兵們留下最好的成果，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n我們也要盡全力去指揮。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "喔、",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "喔……？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "不對，等等惠理子。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n妳剛才明明還在嫌麻煩，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "怎麼現在突然很有幹勁啊？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這是當然的。",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n妳也有聽到我們將負責指揮大量的新兵吧？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "也就是說，",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這是將我作為優秀教官的姿態……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "更進一步來說，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "是將我作為那位大人的伴侶",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "所應有的姿態，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n烙印在眾人眼中的絕佳機會。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我可不能隨便行事！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "那是什麼道理啊！",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "妳還是一如往常地脫離常識耶！",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "妳在說什麼呢。",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這對真琴來說也是一樣的吧？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "什麼……！？",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "不、",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "不是，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "我沒有啊？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n那、",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "那傢伙的伴侶什麼的，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "我才……",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "既然妳要盡全力支持我和那位大人之間的感情，",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n那麼這對妳來說，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "也是絕無僅有的機會。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "來，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我們走吧！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "原來是這個啊！",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "就說了",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "我沒有那個意思……",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "啊啊，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "妳好好聽我說話啦！",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "對了，",
+        "unit_id": 104711,
+        "voice": "vo_adv_5142700_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "我也有委託妳們的朋友，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n請她們作為幫手一起參加。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n希望妳們可以齊心協力來進行任務。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "啊啊，",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "那樣太好了。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n畢竟戰力是越多越好……",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "……嗯？",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "難道說這個，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "是妳以我們會答應為前提，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n而早就都談好了嗎！？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "呵，",
+        "unit_id": 104711,
+        "voice": "vo_adv_5142700_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "可以想成是我很期待妳們。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "畢竟妳們是優秀的教官呀。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "那麼，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "就拜託妳們了。",
+        "unit_id": 104711
+    }
+]

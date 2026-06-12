@@ -1,0 +1,895 @@
+[
+    {
+        "type": "background",
+        "background": "500430"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "魔物變得不敢靠近，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n惠理子和{player}十分安全地探索著塔裡。"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "大人。",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n您會不會累呢？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "若是您身體有異樣的話，",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n請不要客氣，要跟惠理子說哦。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "像是回復體力或強健體魄，",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "還是讓魔物痛苦到滿地打滾的藥，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n我都有準備了很多種喔。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這樣啊……",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "說的也是呢。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "從剛才起魔物就莫名的不見蹤影了……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "周遭也沒看到危險的東西。",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "……老實說，很掃興呢。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "明明和命中註定的人單獨在一起，",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n這樣下去什麼都不會發生。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "情況很嚴峻呢。",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n進行這種冒險的時候，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n要有一個契機才能讓感情有巨大進展的說……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "平安順利的冒險，",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "就沒有意義了。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "就是要有阻礙，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "才能加深愛意……！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "事到如今也沒辦法了。",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "沒事就自己製造點事吧……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘻嘻……",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "來，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "培育我們的愛吧……！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "……反正只有我們兩個，",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "有點刻意",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "也不要緊吧。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "……啊，",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "大人！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我、",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "突然一陣暈眩……！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "咦！？",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n大人……？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這樣下去",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我真的會跌倒……唔！　",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "…………",
+        "unit_id": 105511,
+        "voice": "vo_adv_7012002_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "……咦？",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "沒有……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "跌倒？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "剛才好像",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "有人撐住我了……？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n周遭沒有任何氣息……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這是怎麼回事……？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "不，",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "不管了。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "採取下個手段吧……！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘻嘻……",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這是特別為了和您獨處的時候，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n而準備好的藥……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "只要用了這個，",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "惠理子和您",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "就再也無法分開了……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "……這是我調製的",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "有黏著效果的藥……！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這樣一來我就會和您強制黏在一起，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n從物理上縮短我們的距離……！　",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "不好意思大人，",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我手滑了……唔！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "…………",
+        "unit_id": 105511,
+        "voice": "vo_adv_7012002_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "唔！？",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "躲開了！？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "……不對。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "大人……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "您的反射神經真厲害。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "沒想到那個情況下竟然能反應過來……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "有人拉您？",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這裡明明只有我和您啊……？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "……不過從剛才就一直不順利呢。",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n是因為我在耍手段的關係嗎……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "對了，",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "只要我陷入險境就行了。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這樣一來，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "大人一定會",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "英勇地拯救我的……！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘻嘻……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "既然決定了……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "……咦？",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "糟糕……！？",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我太專心想事情，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "不小心踩空了……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "唔！？　",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "危險～～～！",
+        "unit_id": 105511,
+        "voice": "vo_adv_7012002_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "！？",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "趕、",
+        "unit_id": 105511,
+        "voice": "vo_adv_7012002_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "趕上了～～～！",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "\n",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "請妳",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "別把手放開哦……！",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嗯、",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嗯……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "呼、",
+        "unit_id": 105511,
+        "voice": "vo_adv_7012002_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "呼……",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "妳、",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "妳沒事吧？",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "……是的。",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我沒事。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "在危急的時候出手相助，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "實在是太感激了……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "呼～……",
+        "unit_id": 105511,
+        "voice": "vo_adv_7012002_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "\n",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "幸好我一直在你們身邊……！",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "一直、",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "在身邊……？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "……啊。",
+        "unit_id": 105511,
+        "voice": "vo_adv_7012002_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "\n",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "不是，",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "那是因為，",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "嗯……",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "啊，",
+        "unit_id": 105511,
+        "voice": "vo_adv_7012002_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "前前前、前輩！？",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "\n",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "不、",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "不小心被看到了，",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "怎怎怎、",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "步未",
+        "words": "怎麼辦～～～！",
+        "unit_id": 105511
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "前輩？",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "她好像",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "一直跟著我們呢……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "妳是……",
+        "unit_id": 102711,
+        "voice": "vo_adv_7012002_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "什麼人？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "從一開始就跟著{player}他們的步未"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n就這樣子在兩人面前現身了。"
+    }
+]

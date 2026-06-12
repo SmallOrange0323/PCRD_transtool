@@ -1,0 +1,609 @@
+[
+    {
+        "type": "background",
+        "background": "500370"
+    },
+    {
+        "type": "dialogue",
+        "name": "ナレーション",
+        "words": "クリスマススイーツコンテストのあと……"
+    },
+    {
+        "type": "dialogue",
+        "name": "ナレーション",
+        "words": "\nこの日もミヤコと{player}は、"
+    },
+    {
+        "type": "dialogue",
+        "name": "ナレーション",
+        "words": "\nおばあさんのお店を訪れていた。"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "おばあちゃん～！",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\nミヤコにプリン作ってなの～！　",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "お腹ぺこぺこなの～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "おばあさん",
+        "words": "ごめんねミヤコちゃん。",
+        "unit_id": 7911,
+        "voice": "vo_adv_5080700_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "おばあさん",
+        "words": "\nおばあちゃん、",
+        "unit_id": 7911
+    },
+    {
+        "type": "dialogue",
+        "name": "おばあさん",
+        "words": "これから買い出しに行かなきゃいけなくて。",
+        "unit_id": 7911
+    },
+    {
+        "type": "dialogue",
+        "name": "おばあさん",
+        "words": "\n",
+        "unit_id": 7911
+    },
+    {
+        "type": "dialogue",
+        "name": "おばあさん",
+        "words": "帰ってきたら作ってあげるからね。",
+        "unit_id": 7911
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "う～……",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "わかったの。",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\n待ってるから早く帰ってくるの！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "おばあさん",
+        "words": "ふふ、",
+        "unit_id": 7911,
+        "voice": "vo_adv_5080700_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "おばあさん",
+        "words": "わかったわ。",
+        "unit_id": 7911
+    },
+    {
+        "type": "dialogue",
+        "name": "おばあさん",
+        "words": "\n",
+        "unit_id": 7911
+    },
+    {
+        "type": "dialogue",
+        "name": "おばあさん",
+        "words": "お利口にして待っててちょうだいね。",
+        "unit_id": 7911
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "……遅いの。",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "ミヤコが遅いって言ったら遅いの！",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "ミヤコお腹が空いて死にそうなの！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "お腹空いたの～！　",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "プリンが食べたいの～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "そうだ！　",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "オマエ、",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "ミヤコのためにプリンを作るの！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "材料はあるはずなの！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "下手くそなの！",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\nおばあちゃんはそんな風にやってなかったの！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "むぅ……",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "ミヤコのほうがうまくできる気がするの。",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "ちょっと貸すの！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "できたの！　",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "たくさん作ったの！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\nさすがミヤコなの！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "全部おいしくいただきますなの！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "…………しょっぱいの。",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\n砂糖と塩を間違っちゃったみたいなの。",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\nこんなのプリンじゃないの。",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "あっ！　",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "ミヤコより先に食べるなんて何考えてるの！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "何言ってるの？　",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "プリンが辛いわけないの。",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "そのプリンには",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "きれいな赤い粉を入れたからおいしいはずなの。",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "え～～っと……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "あ。",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "とうがらしって書いてあるの。",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "危ないところだったの。",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\nオマエが先に食べてくれて助かったの。",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "うぅ～～",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "プリン作りは難しいの！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\nおいしいプリンが食べられなくて",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "ボ～っとしてきたの……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "いつもオマエにプリンもらってるから、",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\nだんだんオマエの顔がプリンに見えてきたの……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "オマエ、",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "プリン……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "あっ！　",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "いいこと思いついたの！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\nさすがはミヤコなの！　",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "天才なの！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "ちょっと待ってるの！",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "──やったの！　",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "うまくいったの！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "ほらほら見てなの！　",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "オマエの顔をしたプリンなの。",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\nおもしろいの～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "オマエの顔、",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "プリンになってもマヌケなかんじなの。",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\nでも香りは悪くないの。",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "いただきますなの～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "もぐもぐ。",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "んむむ……？　",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "こ、",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "これは……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "びっくりなの！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\nこのプリン、",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "マヌケな顔してけっこーイケるの！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "そのへんにあった適当な材料で作ったのに、",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "過去最高の出来なの～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "もしかして",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "誰かの顔を真似っこすれば、",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\nおいしい究極のプリンができるの……？",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "わかったのっ！",
+        "unit_id": 100711,
+        "voice": "vo_adv_5080700_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\nこうなったら…………",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "ミヤコ",
+        "words": "みんなをプリンにしてやるの～～～っ！",
+        "unit_id": 100711
+    }
+]

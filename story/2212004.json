@@ -1,0 +1,3407 @@
+[
+    {
+        "type": "still",
+        "still": "221200401"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "──《阿斯特朗傳奇》。"
+    },
+    {
+        "type": "still",
+        "still": "221200402"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "西元2033年，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n因為革命性的完成度和代入感而風靡全球的VR遊戲。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n……然而……"
+    },
+    {
+        "type": "still",
+        "still": "221200403"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "開發者「七冠」們的野心和紛爭，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n引起超AI的叛亂，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "以及──"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "名為「米奈娃的禁錮」、"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n讓玩家無法登出的大混亂。"
+    },
+    {
+        "type": "background",
+        "background": "500783"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}一行"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在不知世界是「被創造出來」的，\n而是加深與夥伴的羈絆，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "要與篡奪蘭德索爾王位的七冠‧霸瞳皇帝，\n以及和米奈娃融合、成為世界管理者的角色‧厄莉絲一戰。"
+    },
+    {
+        "type": "still",
+        "still": "221200404"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "然後──"
+    },
+    {
+        "type": "background",
+        "background": "502500"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}一行在漫長的冒險最後，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n終於抵達旅程的終點──"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "消失玩家靈魂沉眠的\n吉歐‧尼布爾黑爾中樞，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "「黑曜宮」。"
+    },
+    {
+        "type": "background",
+        "background": "502470"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "但"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在那裡等著的是……"
+    },
+    {
+        "type": "background",
+        "background": "502470"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "忍、",
+        "unit_id": 180211,
+        "voice": "vo_adv_2212004_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "忍法……！？",
+        "unit_id": 180211
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "所以",
+        "unit_id": 180111,
+        "voice": "vo_adv_2212004_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這個人是──",
+        "unit_id": 180111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "忍者嗎！？",
+        "unit_id": 180111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不，",
+        "unit_id": 180311,
+        "voice": "vo_adv_2212004_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n普通忍者",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "根本不可能在這種地方。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n更何況",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "他似乎也不是吉歐‧尼布爾黑爾的居民啊。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……據說，",
+        "unit_id": 180311,
+        "voice": "vo_adv_2212004_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "在「現實」世界，",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n{player}和七冠們",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n被某個組織盯上了……",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "嗯，",
+        "unit_id": 194311,
+        "voice": "vo_adv_2212004_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n理所當然地對這邊的身分心裡有底啊。",
+        "unit_id": 194311
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "我先重新",
+        "unit_id": 194311,
+        "voice": "vo_adv_2212004_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "自我介紹。",
+        "unit_id": 194311
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n我是──",
+        "unit_id": 194311
+    },
+    {
+        "type": "background",
+        "background": "500371"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "──新公會",
+        "unit_id": 1211,
+        "voice": "vo_adv_2212004_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "【術士】的",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "格魯尼先生～？",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "\n任務成果的審核",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "結束囉～♪",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "嗨。",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n妳們幫我加快處理了啊，",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "真是幫了大忙。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "抱歉啊，一次帶了那麼多過來。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "不會不會，",
+        "unit_id": 1211,
+        "voice": "vo_adv_2212004_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "我們才是！",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "\n謝謝您解決了",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "許多困難的任務！",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "\n",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "不過，",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "真厲害啊……",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "討伐飛龍群，",
+        "unit_id": 1211,
+        "voice": "vo_adv_2212004_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "攻略海神城塞……",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "\n這些任務連冒險者老手組成的隊伍都會陷入苦戰，",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "\n您居然能獨自完美地解決！",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "Merci beaucoup.",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "過去累積的經驗就是要用在這時候。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "而且──",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "畢竟之後，",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "我還得對付比魔物更加棘手的傢伙呢。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "能找回手感真是太好了。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n畢竟我已經約半年沒有潛入了呢。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "咦？",
+        "unit_id": 1211,
+        "voice": "vo_adv_2212004_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "\n……那～個……？",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "哦，",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "我在自言自語啦。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "抱歉，快到我跟人約好的時間了，",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n所以我差不多該告辭囉。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "好的、",
+        "unit_id": 1211,
+        "voice": "vo_adv_2212004_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "任務辛苦了！",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "\n今後",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "公會櫃台小姐",
+        "words": "也還請您多多指教喔～！",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "…………",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "嗯──",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "是啊。",
+        "unit_id": 194312
+    },
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "…………",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "……格魯尼高級搜查官。",
+        "unit_id": 194211,
+        "voice": "vo_adv_2212004_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "嗨，",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "羅蘭。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "第一次的跑腿順利嗎？",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "……是。",
+        "unit_id": 194211,
+        "voice": "vo_adv_2212004_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "\n我按你說的，",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "\n大約收拾掉了50名",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "身為目標的山賊──",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "他們全都",
+        "unit_id": 194211,
+        "voice": "vo_adv_2212004_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "不是玩家……",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "吧？",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "\n揍起來的觸感",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "無論如何都……",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "NPC，",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "那當然是Non player character。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n為了能夠判別，",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "那個頭盔上有輸入特殊的代碼……",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "更正，",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "是施加了「魔法」吧？",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "為了讓還是新手的你，",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "不要引發「意外」。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "……這個角色本就是調整成不遜於你能力的改造版，",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "抱歉，時間有限，",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "你得早點適應才行。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "……好。",
+        "unit_id": 194211,
+        "voice": "vo_adv_2212004_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "\n……我會妥善處理的。",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "但是……",
+        "unit_id": 194211,
+        "voice": "vo_adv_2212004_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "這麼悠哉",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "真的好嗎？",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "\n在我們耽擱的這段期間，",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "\n在「那邊」本該已經登出的玩家們",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "又會──",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "──羅蘭，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n我懂你焦急的心情。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "！",
+        "unit_id": 194211,
+        "voice": "vo_adv_2212004_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "\n局長……",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "就如我在開會時說的，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n這次的任務",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "是很重要，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "但風險也很高。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n有可能會回不去，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "所以不能帶些粗心的湊數者過來。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "因此──",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n就像你在潛伏任務時，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "會事前仔細調查",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "當地的語言和風俗。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n我們也得",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "先從適應這個世界的法則開始。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "哦，",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "說到法則，羅蘭。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "不需要擔心時間不夠，",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n菲絲雷斯已經展開行動了，",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "更重要的是──",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "認知時間不同。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "禁錮前，",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "在「Ver１」的世界，「這邊」的１天也就是「那邊」的",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n８個小時左右，",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "但現在似乎已經加快了好幾倍。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n雖然比以草野優衣為核心的「Ver２」狀態還慢。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "是……",
+        "unit_id": 194211,
+        "voice": "vo_adv_2212004_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "\n但，",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "時間流速差這麼多，",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "腦子不會產生混亂嗎？",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "\n我可不曉得該用什麼方式，",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "鍛鍊頭蓋骨內側的耐久度。",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "這點程度不成問題。",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "生物這種東西，",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "可是相當柔軟且又頑強喔。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n靠著喪失記憶──",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "忘卻來保護自己的現象也時有所聞。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "啊，",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "當然？",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "若強迫保有",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "禁錮之後的一切記錄，也是有可能發狂的──",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "這次的任務",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "確實沒有明確的期限。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "只是，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "也不能一直把時間花在這上面。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n七冠裡有幾個人已經潛入了，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "且「那邊」也有問題。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "然而，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "曾是最強玩家的格魯尼也就算了，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n我跟羅蘭的熟練和",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "進步也不可或缺。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "為了讓這個任務成功──",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "……不對，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "現在不該稱作任務，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "而該稱為「冒險」吧。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n若真要入鄉隨俗的話。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "把進步",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "改稱為「等級提升」或許更適合。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "──局長，",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "升等順利嗎？",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "我是覺得用幾乎是初期等級的",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "初期裝備，",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n要獨自挑戰",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "索爾之塔",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "是極度魯莽的行為──",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "沒事，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "雖然一開始陷入苦戰……",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "還是順利抵達塔頂了。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n可以把在「那邊」鍛鍊出的運動反射、",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "身法",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "和動態視力",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n直接帶過來，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "就是這個遊戲的優點。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "而且武器等等，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "就直接在當地找就好。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "啊啊……",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "打開寶箱",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "倒是有些愉快呢。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "到底是誰，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "會周到地把武具放到迷宮的箱子裡呢？",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "這個世界的人們對這種事都不會感到疑惑，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n到底是接受了什麼認知修正呢……",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "呵呵。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "您能夠享受樂趣，真是太好了。",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "可是看您的反應，",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "升等以外的目的──",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n找到米奈娃這點，",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "似乎是以落空告終了。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "嗯，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "很遺憾，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "沒有可以找到她行蹤的線索……",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "既然如此，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n果然還是必須",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "先直接前往菲絲雷斯",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n報告中收納玩家",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "魂魄的設施。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "是，",
+        "unit_id": 194211,
+        "voice": "vo_adv_2212004_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "\n畢竟救出消失玩家是",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "最優先的任務──",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "最優先的冒險。",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "……沒錯。",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "恐怕",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "尤絲蒂亞娜前公主她們",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "也是基於相同的目的在行動……",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "但最好別認為能互相合作，羅蘭。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n畢竟她們",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "身後還有七冠們在操控著。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "……我知道，",
+        "unit_id": 194211,
+        "voice": "vo_adv_2212004_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "\n畢竟都因此被上當多次了。",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "特別是在「這邊」，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "她們會更加有利。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n即使外貌纖弱，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "也不曉得她們擁有什麼技能。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "而且──",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "就如格魯尼所說，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n更麻煩的是",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "要捉住公主她們",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "背後的人──七冠。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n即便要多花功夫，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "準備也絕對不可懈怠。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "受不了，",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "「長老」還真會做多餘的事情。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "明明等去「那邊」把事情處理完，",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "就可以坦然且心無牽掛地",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n享受",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "久違的《阿斯特朗傳奇》了。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "「長老」確實棘手。",
+        "unit_id": 194211,
+        "voice": "vo_adv_2212004_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "\n但若真要這麼說，",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "羅蘭",
+        "words": "我更難以原諒幻境龍后──",
+        "unit_id": 194211
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "──既然七冠他們互相陷害彼此，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "對我們來說求之不得。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n不用客氣，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "引他們露出破綻吧。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "都是",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "「為了正義」吧。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "那麼──",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "差不多該展開冒險了。",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "在過去的《阿斯特朗傳奇》無法踏入的",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n許多特殊區域──",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "實在是很吸引人。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "目標設施所在的場所，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "是廢棄檔案的世界……",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "吧。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n名字是叫什麼？",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "region名稱──",
+        "unit_id": 194312,
+        "voice": "vo_adv_2212004_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "「尼布爾黑爾」。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n名字好像是",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "出自古《詩體埃達》中的",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "格魯尼",
+        "words": "\n黑暗國度，有如冥府般的區域。",
+        "unit_id": 194312
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "儘管以黑曜宮最底層為目標，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n一行人卻因為格魯尼操控的\n轉移魔法陣被傳送到宮殿各處。"
+    },
+    {
+        "type": "background",
+        "background": "502450"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}、"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "薇歐莉特、"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "格蕾斯、"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "剎鬼\n走下長長的迴廊，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "最後抵達一個奇妙的地下空間。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n而等在那裡的是……"
+    },
+    {
+        "type": "background",
+        "background": "502450"
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "你是……！？",
+        "unit_id": 133111,
+        "voice": "vo_adv_2212004_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "……看來尤絲蒂亞娜公主沒在一起啊。",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n所以菲絲雷斯那傢伙",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "也不是白白被幹掉的吧。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "……哦。",
+        "unit_id": 135911,
+        "voice": "vo_adv_2212004_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "\n",
+        "unit_id": 135911
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "你看上去也是頗有地位的人，",
+        "unit_id": 135911
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "卻不知報上名號的禮儀嗎。",
+        "unit_id": 135911
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "啊，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "失禮了。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "我是【術士】的公會長，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "名叫八斗神。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n……按照「這邊」的規則，該這麼自我介紹，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "是吧。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "模索路晶的公主騎士啊，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "這是我們初次見面吧。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n在「那邊」，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "部下們",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "受你照顧了。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "公會長……",
+        "unit_id": 133011,
+        "voice": "vo_adv_2212004_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "\n",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "也就是說，這個人就是",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "騎士氏你們的敵人首領囉。",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "\n",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "穿鎧甲的男人也像是個怪物──",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "原來如此，",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "很有魄力。",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "感謝你的仁義，",
+        "unit_id": 135911,
+        "voice": "vo_adv_2212004_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "八斗神先生。",
+        "unit_id": 135911
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "\n我正是",
+        "unit_id": 135911
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "鬼的剎鬼，",
+        "unit_id": 135911
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "多指教啊。",
+        "unit_id": 135911
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "\n",
+        "unit_id": 135911
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "……然後──",
+        "unit_id": 135911
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "在這種偏僻的底層擋人路，",
+        "unit_id": 135911,
+        "voice": "vo_adv_2212004_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "究竟什麼意思啊？",
+        "unit_id": 135911
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "\n難不成非得立個",
+        "unit_id": 135911
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "「禁止進入」",
+        "unit_id": 135911
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "的牌子，",
+        "unit_id": 135911
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "\n你才知道這裡不能闖嗎？",
+        "unit_id": 135911
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "哎呀哎呀。",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "不用我多說，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "也應該明白吧……",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "也罷。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "格魯尼──",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "我的部下說，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n坐鎮於這前方的巨大結晶柱，正是司掌",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "吉歐‧尼布爾黑爾系統",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n的磐石。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "防護堅固，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "解放上似乎會有困難。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "……！",
+        "unit_id": 133011,
+        "voice": "vo_adv_2212004_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "……你這不是",
+        "unit_id": 135911,
+        "voice": "vo_adv_2212004_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "挺熟悉嗎……",
+        "unit_id": 135911
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "然後──",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "另一位部下，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "菲絲雷斯也向我報告，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n說那邊的公主",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "取得封印的「鑰匙」。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "因此……",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "請把它交給我吧，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "「黑曜宮之鑰」。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "……【術士】的、",
+        "unit_id": 133111,
+        "voice": "vo_adv_2212004_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "八斗神先生。",
+        "unit_id": 133111
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "\n您聽起來也跟",
+        "unit_id": 133111
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "騎士先生一樣，",
+        "unit_id": 133111
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "\n是從名為蘭德索爾的地方",
+        "unit_id": 133111
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "前來的",
+        "unit_id": 133111
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "來訪者──",
+        "unit_id": 133111
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "您的目的也跟",
+        "unit_id": 133111,
+        "voice": "vo_adv_2212004_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "騎士先生他們",
+        "unit_id": 133111
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "相同嗎？",
+        "unit_id": 133111
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "\n想要救出回不來的",
+        "unit_id": 133111
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "許多人的靈魂……",
+        "unit_id": 133111
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "當然。",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n不然",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "我也不會下到這種底層盡頭的地方了。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "……沒錯。",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n只要你們願意收手，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "我自是不吝於交涉。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "你們在「那邊」的以後，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "我也會盡可能提供便利。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "器物損壞、",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "妨礙公務執行等眾多犯罪，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "雖很難全都不予追究……",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "若不介意公設，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "我也可以介紹律師。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "……好吧。",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "雖然我的部下",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "似乎已經在跟",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "最棘手的【破曉之星】交戰，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n但我會馬上讓他們停手的。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "那邊的公主意下如何？",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "若是代表世界之人，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n就該避開無意義的紛爭吧。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "…………",
+        "unit_id": 133111,
+        "voice": "vo_adv_2212004_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "……嘖。",
+        "unit_id": 135911,
+        "voice": "vo_adv_2212004_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "八斗神氏──",
+        "unit_id": 133011,
+        "voice": "vo_adv_2212004_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "請稍等。",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "格蕾斯……？",
+        "unit_id": 133111,
+        "voice": "vo_adv_2212004_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "向你報告「鑰匙」之事的部下，",
+        "unit_id": 133011,
+        "voice": "vo_adv_2212004_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "\n就是潛入我們城堡、名為芙蕾雅的女性……",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "沒錯吧？",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "哦，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n她在「這邊」",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "好像是這樣自稱的吧。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "那我們",
+        "unit_id": 133011,
+        "voice": "vo_adv_2212004_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "要求你把人交出來。",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "\n芙蕾雅",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "暗殺我與公主，",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "散播虛假謊言導致內部紛爭，",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "\n並深深傷害了身為賓客的貪吃佩可公主等人。",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "她做到這種程度，",
+        "unit_id": 133011,
+        "voice": "vo_adv_2212004_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "很難完全不予追究。",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "\n",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "我們是不至於取她性命……",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "\n",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "但還是請她在久遠冰河",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "吃一陣子刨冰吧。",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "……嗯，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "雖然很自作主張，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "但部下的冒犯就等於是我的冒犯。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n若即便如此，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "妳們還是希望我把她交給妳們──",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "就拿那邊的少年",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "來換吧。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "要騎士先生……！？",
+        "unit_id": 133111,
+        "voice": "vo_adv_2212004_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "如果當作交換人質的話，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "是很合理的選擇吧。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n要說現場最有價值，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "自然是",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "那邊的公主們……",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "怎麼可能交給你啊。",
+        "unit_id": 133011,
+        "voice": "vo_adv_2212004_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "\n這根本是想用小蝦米釣到大鯨魚。",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "那當然是，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "你跟七冠們有密切的關聯。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "──抱歉，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "沒辦法再繼續讓步了。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "騎士氏……",
+        "unit_id": 133011,
+        "voice": "vo_adv_2212004_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "騎士先生……",
+        "unit_id": 133111,
+        "voice": "vo_adv_2212004_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "──等等，",
+        "unit_id": 135911,
+        "voice": "vo_adv_2212004_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "騎士公。",
+        "unit_id": 135911
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "……",
+        "unit_id": 135913,
+        "voice": "vo_adv_2212004_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "咦什麼咦。",
+        "unit_id": 135913,
+        "voice": "vo_adv_2212004_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "\n才剛見面的人說的話，",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "不要一股腦全信了啊。",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "\n既然他是芙蕾雅的老大，",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "就更不用說了。",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "哦，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "那麼，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "你們要我怎麼做才願意相信？",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n要邊喝茶邊談嗎？",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "哈！",
+        "unit_id": 135913,
+        "voice": "vo_adv_2212004_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "\n散發出像刀一樣銳利的殺氣，",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "還敢說要談。",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "\n壓根從一開始就是",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "「那種打算」吧──",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "…………",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "…………",
+        "unit_id": 135913,
+        "voice": "vo_adv_2212004_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "……公主，",
+        "unit_id": 133011,
+        "voice": "vo_adv_2212004_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "\n",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "最好稍微後退。",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "\n騎士氏也是。",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "咦──",
+        "unit_id": 133111,
+        "voice": "vo_adv_2212004_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼‧八斗神",
+        "words": "「──喝！」\n「──哼！」",
+        "unit_id": 1,
+        "voice": "vo_adv_2212004_103"
+    },
+    {
+        "type": "background",
+        "background": "502450"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "……！",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "真行。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "那雙纖細的手臂，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "竟有能與我部下比肩的蠻力──",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "實在驚人。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n我深刻體認到，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "不可局限於物理法則。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "嘖……",
+        "unit_id": 135913,
+        "voice": "vo_adv_2212004_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "現在不是稱讚的時候吧。",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "\n",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "你只有",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "表面像個硬漢嗎？",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "\n刀法是很強沒錯，",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "其他該不會全都不行？",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "唉。",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "那就，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "再來一招──",
+        "unit_id": 193611
+    },
+    {
+        "type": "background",
+        "background": "502450"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "──！！？",
+        "unit_id": 135913,
+        "voice": "vo_adv_2212004_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "……喂，",
+        "unit_id": 135913,
+        "voice": "vo_adv_2212004_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "\n跟剛剛完全不同啊。",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "\n你是放水了嗎？",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "沒有。",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_110"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "我只是",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "調整了動作。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "……調整？",
+        "unit_id": 133111,
+        "voice": "vo_adv_2212004_111"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "畢竟",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_112"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "變成「這具身體」，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "也才大概５天。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n一開始雖連魔力的存在都感受不到──",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "！",
+        "unit_id": 133011,
+        "voice": "vo_adv_2212004_113"
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "\n",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "危險，",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "騎士氏……！",
+        "unit_id": 133011
+    },
+    {
+        "type": "background",
+        "background": "502450"
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "謝禮先記帳。",
+        "unit_id": 133011,
+        "voice": "vo_adv_2212004_114"
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "\n",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "但是……",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "影刃──",
+        "unit_id": 135913,
+        "voice": "vo_adv_2212004_115"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "就像鎌鼬那樣嗎。",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "小時候，",
+        "unit_id": 193611,
+        "voice": "vo_adv_2212004_116"
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n我很憧憬",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "用木棒砍斷遠處的物品，",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "\n或是用手施展出氣功……",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "沒想到會用",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "八斗神",
+        "words": "這種方式實踐。",
+        "unit_id": 193611
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯‧剎鬼",
+        "words": "……唔！",
+        "unit_id": 1,
+        "voice": "vo_adv_2212004_117"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "每施展出一擊，",
+        "unit_id": 135913,
+        "voice": "vo_adv_2212004_118"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "精確度、威力和水準都會增加。",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "\n這傢伙……",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "──剎鬼，",
+        "unit_id": 133011,
+        "voice": "vo_adv_2212004_119"
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "\n我來幫妳。",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "別插手，",
+        "unit_id": 135913,
+        "voice": "vo_adv_2212004_120"
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "格蕾公。",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "\n",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "嗯，",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "剎鬼",
+        "words": "本來是想這麼說的──",
+        "unit_id": 135913
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "對方每一刻",
+        "unit_id": 133011,
+        "voice": "vo_adv_2212004_121"
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "都在提升實力。",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "\n而且完全看不到上限……",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "那麼，",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "\n速攻就是最穩妥的選擇。",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "騎士氏，",
+        "unit_id": 133011,
+        "voice": "vo_adv_2212004_122"
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "麻煩你。",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "\n為我們強化──",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "然後，",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "格蕾斯",
+        "words": "保護公主。",
+        "unit_id": 133011
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "格蕾斯，",
+        "unit_id": 133111,
+        "voice": "vo_adv_2212004_123"
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "別勉強自己……！",
+        "unit_id": 133111
+    }
+]

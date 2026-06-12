@@ -1,0 +1,632 @@
+[
+    {
+        "type": "background",
+        "background": "500430"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}一行人一邊擊退湧來的魔物群，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n順利地在露娜之塔中前進。"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "哈～～～！",
+        "unit_id": 103711,
+        "voice": "vo_adv_7021001_000"
+    },
+    {
+        "type": "background",
+        "background": "500430"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "又是只用一擊……",
+        "unit_id": 105111,
+        "voice": "vo_adv_7021001_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "還真厲害。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "小智實在太強了，",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "根本輪不到我出手。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "和在【王宮騎士團】的訓練中",
+        "unit_id": 103711,
+        "voice": "vo_adv_7021001_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "接受純的\n魔鬼鍛鍊相比，",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "這種程度根本不算什麼。",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "如果這樣能讓深月小姐",
+        "unit_id": 103711,
+        "voice": "vo_adv_7021001_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "得以專心尋找{player}記憶的線索",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "\n那麼就太好了。",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我從剛才開始就在觀察周圍，",
+        "unit_id": 105111,
+        "voice": "vo_adv_7021001_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n不過放眼望去",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "全都是些沒見過的草株呢。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "這蠻有採集的價值，倒是幫了我不少忙。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "真的耶，",
+        "unit_id": 103711,
+        "voice": "vo_adv_7021001_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "{player}手上的行李",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "\n越來越多了……",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "還好嗎？",
+        "unit_id": 103711,
+        "voice": "vo_adv_7021001_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "太重的話我也幫忙拿。",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "既然{player}都這麼說了那就好……",
+        "unit_id": 103711,
+        "voice": "vo_adv_7021001_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "話說回來，",
+        "unit_id": 103711,
+        "voice": "vo_adv_7021001_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "它們是某種罕見的藥草嗎？",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "\n比方說帶回蘭德索爾",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "能高價賣出之類的？",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "嗯？",
+        "unit_id": 105111,
+        "voice": "vo_adv_7021001_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "沒那種事啊。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "只不過是",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我沒見過而已，",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "搞不好",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n實際上只是沒有任何藥效的雜草呢。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "應該這麼說，",
+        "unit_id": 105111,
+        "voice": "vo_adv_7021001_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "它們十有八九",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "就只是雜草吧。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "普通草株",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "在特殊環境下交配，",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "僅有外觀產生了變化這樣。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "要把平凡無奇的雜草帶回去嗎？",
+        "unit_id": 103711,
+        "voice": "vo_adv_7021001_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "事情總有萬一嘛。",
+        "unit_id": 105111,
+        "voice": "vo_adv_7021001_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "畢竟之前",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "也碰過偶然調配出很厲害的藥品之類的事。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "厲害的藥品……",
+        "unit_id": 103711,
+        "voice": "vo_adv_7021001_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "如果發生了那種事，",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "應該會成為話題才對。",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "\n",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "既然我從未聽說過，",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "那果然就和地下社會……",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "\n",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "好，",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "試著套情報看看吧。",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "舉例來說",
+        "unit_id": 103711,
+        "voice": "vo_adv_7021001_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "做出了什麼藥品呢？",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "要說可能和小智有關的藥品，",
+        "unit_id": 105111,
+        "voice": "vo_adv_7021001_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "讓我想想……",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "治癒速度比市面上的療傷藥",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "高出數倍的藥品，",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "這種妳覺得如何？",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "居然有那麼厲害的藥品？",
+        "unit_id": 103711,
+        "voice": "vo_adv_7021001_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "\n",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "如果有的話",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "請務必連絡【王宮騎士團】……",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "如果賣得了那也不錯，",
+        "unit_id": 105111,
+        "voice": "vo_adv_7021001_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n不過材料過於貴重",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "而且也無法量產所以很有難度呢。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我的研究幾乎都是那種東西。",
+        "unit_id": 105111,
+        "voice": "vo_adv_7021001_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "效果頂多都只能擴及小範圍。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我說你啊，",
+        "unit_id": 105111,
+        "voice": "vo_adv_7021001_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "別用那種眼神看我。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n就算你",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "一直都在那小範圍中受影響也一樣。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "咦？",
+        "unit_id": 103711,
+        "voice": "vo_adv_7021001_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "{player}知道",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "\n深月小姐調配的藥品是嗎。",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "呃……",
+        "unit_id": 103711,
+        "voice": "vo_adv_7021001_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "\n這、",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "這意思是……",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "他說他知道，這就代表",
+        "unit_id": 103711,
+        "voice": "vo_adv_7021001_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "要是深月小姐被捕",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "\n那麼{player}也會因為掩飾罪行而一起被……",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "不，",
+        "unit_id": 103711,
+        "voice": "vo_adv_7021001_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "即使如此也不能對壞事視若無睹！",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "\n就這樣繼續調查下去，",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "有機會也得順便掌握證據！　",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "呵呵，",
+        "unit_id": 105111,
+        "voice": "vo_adv_7021001_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "真的很可愛呢。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n很有逗弄她的價值。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "沒什麼。",
+        "unit_id": 105111,
+        "voice": "vo_adv_7021001_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "別在意。",
+        "unit_id": 105111
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "智和深月兩人的思緒交互影響，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n{player}一行人朝塔的上方繼續前進。"
+    }
+]

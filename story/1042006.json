@@ -1,0 +1,698 @@
+[
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "千歌個人現場演唱會的日子終於來了。\n{player}為了激勵千歌而來到她身旁。"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "謝謝你，{player}。",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "你還幫忙舞台營運的工作，真是幫了個大忙……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "真是不好意思。明明是邀請你來看現場演唱會的，",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "還讓你幫了我很多……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "但是也多虧了你的幫忙，",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n現場演唱會好像能按照原訂行程開始了！",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "接下來就沒有什麼問題了！",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "{player}就去觀眾席的地方──",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "……看得出來嗎？",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "……你好厲害。",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "我沒有辦法對{player}隱藏事情呢。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "我……現在非常緊張。",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "一旦鬆懈的話，感覺雙腳就會使不上力……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "作為偶像，這是我第一次自己一個人站在舞台上……",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "而、而且我沒想到會有那麼多的觀眾聚集在此……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "親衛隊長",
+        "words": "千歌～！",
+        "unit_id": 1411,
+        "voice": "vo_adv_1042006_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "親衛隊員",
+        "words": "終於快要開始了呢！千歌的首次個人現場演唱會！",
+        "unit_id": 311,
+        "voice": "vo_adv_1042006_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "親衛隊員",
+        "words": "\n",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "親衛隊員",
+        "words": "呼～！我快等不及了！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "親衛隊長",
+        "words": "冷靜點！！你現在用掉太多體力的話，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1042006_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "親衛隊長",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "親衛隊長",
+        "words": "等等現場演唱會的途中你就會把力氣用盡喔！！！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "親衛隊員",
+        "words": "隊長才是，請冷靜下來啊！",
+        "unit_id": 311,
+        "voice": "vo_adv_1042006_011"
+    },
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "其實我，就算到了此時此刻，還是不擅長在大家面前唱歌！",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n不管怎麼唱，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "都沒有自信……！",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "至今為止的舞台演出，都是跟望或紡希一起上台，",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "所以才能勉強地撐過去……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "……在戰鬥的時候，",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n我經常是躲在別人身後，一邊被保護著一邊唱歌……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "對著人唱歌的經驗真的很少……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "面對面讓人聽我唱歌……我覺得很害怕。",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "說真的，即使只是被人聽見我的歌，我都很害羞……！",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "因為到目前為止，",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "我以唱喚士的身分唱歌，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n都是為了要保護別人啊……！",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "但這場現場演唱會並不是為了要保護人而唱歌！",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n也不是跟夥伴一起唱歌！",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "那個……",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "{player}你，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n知道答案的不是嗎？",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "……果然，如果是{player}的話，",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "肯定會察覺的呢。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "……雖然很害怕，但我還是想唱。",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "我希望能讓所有粉絲聽到我唱的歌。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "可是，這只是我的任性而已。",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "我喜歡唱歌的心情，",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n能好好地傳達給這麼多的人嗎……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n就是這樣讓我感到非常地不安。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "{player}……？怎、怎麼了……",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "為什麼突然唱起歌來……？",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "這個是……聲援歌嗎……？",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "為了我……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n只為了我一個人，而唱了這首歌……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "……{player}的心意，",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "已經確實地透過歌曲傳達過來了。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "說的也是呢。就算無法把我的心情傳達給所有人，",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n但只要有一個人感受到……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "就代表那首歌有意義了呢。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "既然如此，我最初的唯一一人……",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "……謝謝你，{player}。",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "我……已經沒事了。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "請你從觀眾席處欣賞我的演出吧。",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "……只要能看見{player}，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n我一定能不怯場地好好唱歌……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "所以……我也拜託{player}，",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "專注的看著我的表演吧！",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n直到最後……！",
+        "unit_id": 104211
+    },
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "……嗯。",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "所以第一首歌，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n我試著獻唱了慈樂之音歌曲的獨唱版本。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "……各位覺得如何呢？",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "親衛隊長",
+        "words": "最棒了～！！",
+        "unit_id": 1411,
+        "voice": "vo_adv_1042006_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "親衛隊員",
+        "words": "太讚了！！第一首歌就這麼讚，我、我……！",
+        "unit_id": 311,
+        "voice": "vo_adv_1042006_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "親衛隊員",
+        "words": "\n",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "親衛隊員",
+        "words": "嗚喔喔喔喔！直到最後我都會支持妳的，千歌！！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "……太好了。",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "第一首歌，有好好唱完……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "今天大家能來看我首次的個人現場演唱會，",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n真的非常謝謝你們！",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n接下來我將帶著感謝大家的心情……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "來演唱下一首歌曲。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "從舞台這裡，能清楚的地看到{player}的臉。",
+        "unit_id": 104211,
+        "voice": "vo_adv_1042006_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "……所以，我可以的……！",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "為了你，我會唱到最後……！",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "……這一天舉辦的千歌現場演唱會，至今仍在粉絲之間，\n以傳說級的個人現場演唱會之名流傳著。"
+    }
+]

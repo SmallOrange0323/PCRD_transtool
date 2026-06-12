@@ -1,0 +1,889 @@
+[
+    {
+        "type": "background",
+        "background": "501921"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "呼、",
+        "unit_id": 106011,
+        "voice": "vo_adv_4009002_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "呼……！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這、",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這些應該就是全部了吧……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n我已經不行了……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "拜託饒了我……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "請放心，",
+        "unit_id": 105911,
+        "voice": "vo_adv_4009002_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "凱留小姐。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n已經感受不到敵人的氣息了，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "看來已經度過危機了。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "大家，",
+        "unit_id": 105811,
+        "voice": "vo_adv_4009002_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "辛苦了。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "沒吃午餐又經歷這種戰鬥……",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n肚子已經餓扁了～",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "話說，",
+        "unit_id": 106011,
+        "voice": "vo_adv_4009002_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這裡究竟是怎麼回事？",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "剛剛那一大群魔物也是，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你們不覺得給人的感覺，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n明顯和以往的露娜之塔不同嗎？",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是的……",
+        "unit_id": 105911,
+        "voice": "vo_adv_4009002_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "這裡一定個特別的地方沒錯。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "只不過，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "硬是繼續探索，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n有可能又會遭到大量魔物襲擊……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "唔～",
+        "unit_id": 105811,
+        "voice": "vo_adv_4009002_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "總之先回去一趟吧。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你們看，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "打倒魔物之後，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "立方體又開始發光了。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "只要摸那個，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "應該就能回到原來的地方吧？",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "剛才閉鎖的零件，",
+        "unit_id": 105911,
+        "voice": "vo_adv_4009002_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n也隨著立方體再次啟動跟著開始運作了。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "不過，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "啟動條件究竟是什麼呢？",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "原理是怎樣之後再想就好了吧。",
+        "unit_id": 106011,
+        "voice": "vo_adv_4009002_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n要是繼續待在這裡，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "說不定又會遭到攻擊，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n只能先賭賭看，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "能不能用這個回去了。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那麼，",
+        "unit_id": 105811,
+        "voice": "vo_adv_4009002_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這次大家一起摸吧。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "不知道摸了會發生什麼事，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "大家要做好心理準備喔。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "要摸囉～？",
+        "unit_id": 105811,
+        "voice": "vo_adv_4009002_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n預備……",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "嘿～！",
+        "unit_id": 105811
+    },
+    {
+        "type": "background",
+        "background": "500430"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "這裡是……",
+        "unit_id": 105911,
+        "voice": "vo_adv_4009002_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "看來，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下們順利回來了。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n牆壁和地板",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "都是平常露娜之塔的樣子。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "真、",
+        "unit_id": 106011,
+        "voice": "vo_adv_4009002_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "真的嗎？",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "太好了～！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "剛剛出口被封閉，又被一大群魔物包圍，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n嚇得我魂都飛了……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "好，",
+        "unit_id": 105811,
+        "voice": "vo_adv_4009002_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那就繼續來吃午餐吧……",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "咦、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "啊～！？",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n便當都空了！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "可能是剛剛在另外一邊戰鬥的時候，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "被魔物吃光了……",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妳喔，",
+        "unit_id": 106011,
+        "voice": "vo_adv_4009002_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "真的是處變不驚耶……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那個方塊",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "好像又停止運作了。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "沒在發光，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "零件看起來也沒有要動的樣子。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "閉合得相當緊密，",
+        "unit_id": 105911,
+        "voice": "vo_adv_4009002_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "一點縫隙也沒有。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "已經沒辦法再前往那個空間了嗎？",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "嗯～",
+        "unit_id": 105811,
+        "voice": "vo_adv_4009002_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "不過，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "方塊本身沒有不見。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n說不定",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "只是單純沒能量了而已。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "之後再過來看，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "搞不好又恢復正常了。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "就算它恢復正常，",
+        "unit_id": 106011,
+        "voice": "vo_adv_4009002_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我也不想再來一次了……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n要是每次都得面對那麼多的魔物，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n有幾條命都不夠賠。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "但是，",
+        "unit_id": 105911,
+        "voice": "vo_adv_4009002_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "剛剛傳送過去的地方，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "給人一種奇妙的感覺。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n說不定能在那裡找到有關主人記憶的線索，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n在下們不能放棄探索。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "唔……",
+        "unit_id": 106011,
+        "voice": "vo_adv_4009002_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妳這樣一說，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "好吧，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "也不是沒有道理……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "下去要去那邊探索，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "得先做好我們將進入的場域，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n會比以往更危險的心理準備呢。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "再次挑戰之前，",
+        "unit_id": 105811,
+        "voice": "vo_adv_4009002_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "先做好準備的確很重要呢。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "為了讓我們不管面對什麼樣的魔物來襲，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "都能還以顏色。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們得先填飽肚子，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "再出發去探索♪",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "還有就是……",
+        "unit_id": 105911,
+        "voice": "vo_adv_4009002_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "今後",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "要是發現了類似的東西，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n也請不要輕易出手。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "畢竟露娜之塔",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "還有著許多不解之謎。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不用妳說我也知道。",
+        "unit_id": 106011,
+        "voice": "vo_adv_4009002_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "誰想要",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "一頭栽進魔物的巢穴裡啊。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我還滿常這樣的喔？",
+        "unit_id": 105811,
+        "voice": "vo_adv_4009002_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "因為是獲得大量料理食材的好機會♪",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "剛剛打倒的魔物，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "不知道現在還能不能回收素材……？",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不能，",
+        "unit_id": 106011,
+        "voice": "vo_adv_4009002_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "而且也不需要！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n拜託妳，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "可以不要滿腦子都是魔物料理嗎～！！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "貪吃佩可一行人，發現了潛藏露娜之塔其中的新謎團。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n為了尋找有關{player}記憶的線索，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n他們接下來也不畏懼未知的危險，繼續展開探索。"
+    }
+]

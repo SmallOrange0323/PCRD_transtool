@@ -1,0 +1,853 @@
+[
+    {
+        "type": "background",
+        "background": "500353"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "萬聖節當天，{player}受到咲戀拜託，\n正在準備萬聖節派對。\n此時，響起了呼喊{player}的聲音。"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥――！　",
+        "unit_id": 111211,
+        "voice": "vo_adv_5025002_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥――――！",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "根本不快樂啦──！",
+        "unit_id": 111211,
+        "voice": "vo_adv_5025002_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "不是啦──！　",
+        "unit_id": 111211,
+        "voice": "vo_adv_5025002_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "現在才不管什麼點心呢！",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "救命呀，哥哥！　",
+        "unit_id": 111211,
+        "voice": "vo_adv_5025002_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "美美和鏡華出事了！",
+        "unit_id": 111211
+    },
+    {
+        "type": "background",
+        "background": "500811"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在這同時――\n被關在宅邸的鏡華正拚命地拍著門。"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "禊！　",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "禊！　",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "為什麼打不開……",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "嗚嗚……",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "怎麼辦……",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "嗚嗚……",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "沒問題的吧……",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "禊她會去",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "找人過來吧……",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "孩子們的聲音",
+        "words": "啊哈哈……",
+        "unit_id": 1,
+        "voice": "vo_adv_5025002_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "孩子們的聲音",
+        "words": "啊哈哈……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "噫！　",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……嗚嗚……",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "明明是難得的萬聖節……",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "為什麼",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "會這樣……",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "我想回家──",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……在有人來救我之前，就先別亂動吧……",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "這樣的話……",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "鏡華！！",
+        "unit_id": 111311,
+        "voice": "vo_adv_5025002_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "――咕喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "background",
+        "background": "500811"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "呀――――――！！",
+        "unit_id": 111311,
+        "voice": "vo_adv_5025002_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "…………",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "美美她",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "明明應該也很害怕，",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "卻還是保護了我……",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "嗯……",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "這才沒什麼",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "好怕的。",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "這次",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "換我救美美了！",
+        "unit_id": 111111
+    },
+    {
+        "type": "background",
+        "background": "500532"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "然後啊，",
+        "unit_id": 111211,
+        "voice": "vo_adv_5025002_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "我一走出宅邸，門就咚地……",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "啊，",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥你看……",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "就是這裡。",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "幽靈宅邸。",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "對吧？　",
+        "unit_id": 111211,
+        "voice": "vo_adv_5025002_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "打不開吧？",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n都是禊",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "說要去幽靈宅邸的關係……",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "都是禊的錯……",
+        "unit_id": 111211,
+        "voice": "vo_adv_5025002_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "禊只是",
+        "unit_id": 111211,
+        "voice": "vo_adv_5025002_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "想要和大家開心地過萬聖節。",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "對不起啦……",
+        "unit_id": 111211,
+        "voice": "vo_adv_5025002_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "美美、",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "鏡華……",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "嗯……",
+        "unit_id": 111211,
+        "voice": "vo_adv_5025002_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "謝謝你，",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥。",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n不過該怎麼做――",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "禊？　",
+        "unit_id": 1,
+        "voice": "vo_adv_5025002_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "……禊！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "咦？　",
+        "unit_id": 111211,
+        "voice": "vo_adv_5025002_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "剛才的聲音……",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "是鏡華",
+        "unit_id": 111211
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "嗎？",
+        "unit_id": 111211
+    },
+    {
+        "type": "background",
+        "background": "500811"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "時間回到稍早，為了尋找美美而重新振作的鏡華，\n開始在宅邸內探索。"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "首先，",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "從這間房間開始……",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "啊！　",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "這、",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "這是、",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "什麼！",
+        "unit_id": 111111
+    },
+    {
+        "type": "background",
+        "background": "500536"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "這裡是，",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "墓地？",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "已經可以出來外面了嗎？　",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "可是，",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "好像不太對勁……",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "後面也還看得到進來的門……",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "――咕喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "唔！？　",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "魔、",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "魔物！？",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "――咕喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "就、",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "就算你喊那麼大聲，",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "也不可怕啦！",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "把美美……",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "還來！　",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "呀―――！",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "――嘎喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "消、",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "消失了……",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "難道說，",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "那個魔物也是幽靈？",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "禊講的那個都市傳說，",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "是說如果走進宅邸就會被變成幽靈……",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "該不會，",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "美美已經……",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "不行，",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "不可以！　",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "不能那樣想。",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "她一定、",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "一定沒事的。",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "全部……",
+        "unit_id": 1,
+        "voice": "vo_adv_5025002_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "都是禊的錯……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "又、",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "又是幽靈的聲音！？　",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "禊",
+        "unit_id": 1,
+        "voice": "vo_adv_5025002_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "只是想和大家開心地過萬聖節。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……不對，",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "這個聲音！　",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "對不起啦……",
+        "unit_id": 1,
+        "voice": "vo_adv_5025002_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "美美、",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "鏡華……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "禊？　",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "禊！",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "妳在那裡嗎！？　",
+        "unit_id": 111111,
+        "voice": "vo_adv_5025002_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "禊！",
+        "unit_id": 111111
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "咦？　",
+        "unit_id": 1,
+        "voice": "vo_adv_5025002_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "剛才的聲音……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "是鏡華",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "嗎？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "鏡華為了找出禊聲音的源頭而出聲向她搭話。"
+    }
+]

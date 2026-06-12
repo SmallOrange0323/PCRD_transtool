@@ -1,0 +1,653 @@
+[
+    {
+        "type": "background",
+        "background": "500193"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "鏡華、美美，還有{player}在\n等待禊的時候，在精靈之森裡玩了起來。"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "哈……哈啾",
+        "unit_id": 102011,
+        "voice": "vo_adv_5002000_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "美美，沒事吧？來，面紙。",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "謝謝鏡華。",
+        "unit_id": 102011,
+        "voice": "vo_adv_5002000_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "嗯，或許是昨天睡覺時露出肚子的關係吧？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "真是的，這樣不行唷～？要好好蓋緊棉被保暖才行。",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "啊～……吸……",
+        "unit_id": 102011,
+        "voice": "vo_adv_5002000_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "雖然氣溫上升了，可是晚上還是會冷的啊……",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "啊，還有回家之後也得好好洗手和漱口哦。",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "嘻嘻，鏡華好像媽媽哦♪",
+        "unit_id": 102011,
+        "voice": "vo_adv_5002000_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "那當然！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n因為這關係著全勤獎啊！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "你、你在開什麼玩笑呀！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n難道你喜歡這種玩笑嗎！？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "果然是變態可疑分子！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……美美，真的不能逞強唷？",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "不舒服的話要趕快回家！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "好~的",
+        "unit_id": 102011,
+        "voice": "vo_adv_5002000_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "。",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "鏡華~！鏡華~！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002000_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "嗯？啊，是禊──",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "鏡華~！幫幫忙啊～！事態緊急啊──",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002000_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "哇！這麼突然，發生什麼事！？",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "藏起來的考卷被媽媽發現了啦～！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002000_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n然後媽媽就很生氣──！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "還說，要是下次考試成績不好，",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002000_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n就要減少零用錢了！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "那……唸書不就行了嗎？",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "禊光看到教科書就想睡覺了嘛！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002000_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n而且寫些什麼也看不懂。",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "所以想請很會唸書的鏡華多教教我嘛～！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002000_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "不行哦。那種事得靠自己的力量才行啊！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "就算我現在教妳，得到好成績，那下次的考試怎麼辦呢？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "只有這次啦～！以後會好好自己唸書的～！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002000_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "拜託妳啦鏡華！不對，鏡華老師！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "老、",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "老師啊……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "既然這麼說那就沒辦法了！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "為了禊，我就當一次老師吧！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "哇，鏡華好厲害！",
+        "unit_id": 102011,
+        "voice": "vo_adv_5002000_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n禊唸書也加油哦～♪",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "好吧，那麼我就教妳「光的反射」吧！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "好～！拜託妳了！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002000_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "首先，光是直線前進的東西。",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n被鏡子反射的光稱為反射光，",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n射入鏡內的光稱為入射光！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "咦？咦？什麼是「入射光」？不是在說反射嗎？",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002000_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "要理解反射，",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n不理解入射光是不行的！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "呃，",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002000_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "還有分反射光和入射光嗎？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "光射中鏡子，還會分出反射的角度……？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "而且光的反射是切也切不斷的，",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n因為光的折射呢，是這樣……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "折，折射……？呃，什麼是折射……",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002000_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "（呵呵呵……我真的很像老師呢……好吧！）",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "那麼首先，請解開這個問題吧。",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "之後也要做這個問題和那個問題！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "咦，咦！？也不必一次出那麼多題吧……",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002000_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "這是什麼，完全看不懂啊！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n考試根本還沒考到這裡嘛──！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "雖然可能有點難，",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n有我來教妳所以沒關係的！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n當成預習的話，連下次的考試也――",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "就說根本不懂啊！算了！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002000_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "美美、哥哥，我們一起去玩吧！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "等，等一下！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n是禊自己要我教妳的吧！？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "雖然是這樣，我本來是很有幹勁的，",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002000_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n但是鏡華說的東西完全都聽不懂嘛！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n而且又光出些困難的問題！！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "我是為了禊才出那些問題的啊！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n為了讓妳不要再考壞啊！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "嗚咽～～～！妳們兩個不要吵架啦～！",
+        "unit_id": 102011,
+        "voice": "vo_adv_5002000_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n快和好啦～！嗚嗚……",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "就算妳這麼說……都是鏡華不好啊！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002000_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n又不是每個人都能像鏡華一樣！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "都是禊的錯吧！不管了，我要和禊絕交！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哼！好啊好啊！　",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002000_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n我才不管鏡華呢！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "啊，",
+        "unit_id": 102011,
+        "voice": "vo_adv_5002000_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "禊─！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "對不起，我現在要回家了！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002000_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n再見！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "美美下次見了！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "啊…嗚…美美不喜歡這樣啦……",
+        "unit_id": 102011,
+        "voice": "vo_adv_5002000_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "哥哥拜託你！讓她們兩個人和好吧！",
+        "unit_id": 102011
+    }
+]

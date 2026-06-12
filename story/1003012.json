@@ -1,0 +1,4394 @@
+[
+    {
+        "type": "background",
+        "background": "500200"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "——怜和{player}從蘭德索爾出發，展開了視察之旅。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n結束了溪谷村莊的調查與交涉，現在正與村民們交流著。"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……呼。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n這樣劈薪柴可以吧。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "真不好意思啊～！　",
+        "unit_id": 1511,
+        "voice": "vo_adv_1003012_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "竟然叫遠從王都而來的人",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "\n來幫我做這種事！",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "多虧有妳的幫助。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "剩下的也立刻幫妳……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "咦？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "已經沒有需要劈的木材了，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1003012_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "這樣可以了。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "謝謝妳啊！",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "是說",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "那麼多的木材",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "\n妳竟然能那麼快就解決……",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "妳真的很厲害。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……我全都弄完了？",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n記得是拿柴刀先將木頭……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "當成堅硬物體來砍，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n慢慢感受如何下手後，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "接著就開始默默的進行。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "而且",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "明明做了那麼多",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我卻幾乎感受不到疲累……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "真不可思議……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "彷彿不是自己的身體一般……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "這樣一比起來，這些男生",
+        "unit_id": 1511,
+        "voice": "vo_adv_1003012_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "還真丟臉……",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "多學學",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "這孩子吧？",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "大叔",
+        "words": "不不不，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1003012_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "大叔",
+        "words": "是這位大姊太厲害啦？",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "大叔",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "大叔",
+        "words": "即使妳說妳會用劍",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "大叔",
+        "words": "但妳這效率連劈柴的專家都無法匹敵。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "大叔",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "大叔",
+        "words": "這位老兄，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "大叔",
+        "words": "這大姊到底是什麼來頭？",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呵呵，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "聽你這樣說我很開心喔。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "為了能回應你的信任，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n我要拿出更多幹勁",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "幫忙村裡的人才行。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "女、",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "女女、",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "女友！？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那、",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那是什麼……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "啊，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "原來是字面上的意思，是指女性的朋友啊……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "真是的，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "別說奇怪的話啦。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "那麼",
+        "unit_id": 1511,
+        "voice": "vo_adv_1003012_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "就稍微休息一下吧。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "\n我來準備午餐，",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "你們也……",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "啊、",
+        "unit_id": 511,
+        "voice": "vo_adv_1003012_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "啊啊，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "怜大人！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n太好了，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "妳還在這裡啊！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "村長先生？",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n該不會是",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "剛剛會議上寫的資料",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "有任何不齊處？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "不，",
+        "unit_id": 511,
+        "voice": "vo_adv_1003012_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "我不是要說那件事，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "其實",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "有件事我想盡快和妳談談！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "發生了什麼事？",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "剛才附近洞窟裡的魔物",
+        "unit_id": 511,
+        "voice": "vo_adv_1003012_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "攻擊了村子！！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "不只踐踏了農田，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "連家畜也都犧牲了……！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "拜託妳了！　",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "能不能委託騎士團來討伐！？",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這是沒問題……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "但即使現在發出委託，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "也要好幾天騎士團才會到，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n最長還可能得花到一個禮拜。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "怎、",
+        "unit_id": 511,
+        "voice": "vo_adv_1003012_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "怎麼會！？",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n等一個禮拜的話，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "我們村就……！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……你。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我有個請求……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……謝謝。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "看來現在的我們之間",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "已經不需要言語了。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "村長先生，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我們現在就去",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "討伐洞窟裡的魔物。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n請告知居民們",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "在危險結束前不要外出。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "什麼！？　",
+        "unit_id": 511,
+        "voice": "vo_adv_1003012_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "但是",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "我怎麼能讓王都使者怜大人",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n來幫忙做這種事呢！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我不能放任任何威脅這村莊平靜的存在。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n除了使者的身份之外，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這是我作為一個人類",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "真正的心情。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "拜託你了。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "請讓我去。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "怜大人……",
+        "unit_id": 511,
+        "voice": "vo_adv_1003012_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "我知道了。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n那麼",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "我帶領妳去洞窟！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "謝謝。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那我們",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "一起去吧！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "……那就是魔物住的洞窟。",
+        "unit_id": 511,
+        "voice": "vo_adv_1003012_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "請不要逞強，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "情況一危急，請立刻逃跑。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是的。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "村長先生",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "也請小心。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……那麼",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "雖然想直接進去……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "但在那之前",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我有話想和你說。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "最近……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "對了，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "大概就在這次旅程開始時。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我的身體狀態",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "變得有點怪怪的。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "並不是身體不舒服。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "甚至可以說狀態極佳。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "剛剛劈柴的情形就是證據之一。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "離開王都前的我，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n是無法在那麼短的時間內劈好那麼大量的柴。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我也沒有做什麼特訓，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "所以力量和技巧都不太可能這麼迅速的成長。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "而且，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我想光靠力量和技巧應該也辦不到。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "但是",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那為什麼",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我突然能夠做到那種程度……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "心靈成長……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "的確。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n若心、技、體",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "完全具備以至於擁有那等力量，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這倒是有可能。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "非常努力……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "一直以來",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我一直想著",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "自己想做的事",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n還有自己應該做的事，一路努力過來……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……該不會",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "心靈的變化",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "會影響身體？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n或是",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不是變化",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "而是心靈的成長……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "也許是我心中",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "心、技、體都已經完備，所呈現出的結果。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "心靈的成長啊……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呵呵，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "如果是這樣的話",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n一定是你的功勞。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n只要你在身邊，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我好像就不會輸給任何敵人。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "咦！？　",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "等一下！？　",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我說的在我身邊不是這個意思！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "好近！　",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你的臉太近了！！　",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "總之先離開一下……！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "真是的……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n現在這狀況不行這樣……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不、",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不是只有現在！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "啊啊真是的，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我要冷靜一點啊……！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "深呼吸……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "深呼吸……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呼。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "總、",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "總之是冷靜下來了……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……剛剛鬧過頭了，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "閒話就到此為止。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我們進洞窟吧。",
+        "unit_id": 100311
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……真奇怪。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n明明進了洞窟",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "卻一點動靜都沒有。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "若魔物佔據這裡為地盤，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n反應應該會更……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "咦？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這是……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "魔物的屍體？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……已經斷氣一陣子了。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "魔物怎麼會在這種地方……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……而且身體上，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "還有很多刀痕。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n該不會",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "攻擊村裡的不是魔物……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你！　危險！！",
+        "unit_id": 100311
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "還真危險……",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "別躲了，出來吧！　",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這些襲擊村裡的犯人們！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "……真是的。",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n我聽到聲音出來查看……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "你們這些傢伙",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "找我們有什麼事？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "哦，",
+        "unit_id": 811,
+        "voice": "vo_adv_1003012_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "這不是個美人胚子嗎！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "\n",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "該不會",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "是要來找我們喝幾杯的？",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊２",
+        "words": "喔～！　",
+        "unit_id": 1111,
+        "voice": "vo_adv_1003012_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊２",
+        "words": "來吧來吧～～！！",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……你們是什麼人？",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "……都已經被妳看到了，",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "就沒什麼好隱藏的了。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n我們是以這裡為地盤的盜賊。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "而這個洞窟剛剛好，",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "就把魔物處理掉，當作我們的基地……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "討伐了魔物",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "竟然沒報酬也真沒意思？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n所以",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "我們才去和村民討些報酬啊。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "不過",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "那些傢伙還真是蠢啊～！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n我們都從村裡搶奪家畜之類的東西了，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n他們竟然還以為是魔物呢！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……投降吧。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "……什麼？",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n妳剛剛說了什麼啊，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "這位小姐姐。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我叫你們乖乖投降。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n再怎麼說，你們擊退了魔物這點是事實，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n若現在就投降，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "罪還能輕一點。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "罪刑？　",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "哈！　",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "妳說罪嗎！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "我就是",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "不爽這點啊！！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n我們不過是自由地",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "做自己想做的事罷了！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……你說自由？　",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "還真是笑掉我的大牙了。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n你們所做的事，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n只不過是在踐踏他人的努力和心情，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "純粹作惡罷了。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "若你們把這些稱為自由",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "然後自私地使用蠻力，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n那我也自由地使用力量吧……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "然後把你們所謂的自由",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "體無完膚地擊碎！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "哈！　",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "妳說得挺厲害的嘛！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n那我們也要使出全力囉！！　",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "喂，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "用那個！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "是！　",
+        "unit_id": 811,
+        "voice": "vo_adv_1003012_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "去吧！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "落石！？　",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "糟糕！　",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "喂，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "危險啊！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "被隔開了……！　",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這種東西！",
+        "unit_id": 100312
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "沒用的啦！",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n那東西可不是妳稍微出幾招就會壞掉的！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "可惡……！　",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "難道這是用來引我們的誘餌……",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n一開始就打算用這種方式引我們過來……！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "妳說得好！　",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "我們也不是一點準備都沒有喔！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "你們就準備死在這裡吧！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "沒事吧！？　",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "聽到就給我個回覆！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊２",
+        "words": "左顧右看倒是滿有膽量地！",
+        "unit_id": 1111,
+        "voice": "vo_adv_1003012_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呿！　",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "真礙事！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊２",
+        "words": "啊好危險！　",
+        "unit_id": 1111,
+        "voice": "vo_adv_1003012_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊２",
+        "words": "哈哈！　",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊２",
+        "words": "那我就好好陪妳玩！",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "做好覺悟吧！　",
+        "unit_id": 811,
+        "voice": "vo_adv_1003012_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "喝啊！",
+        "unit_id": 811
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "啊唔！　",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "竟然這麼卑鄙的事……！　",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "喝！",
+        "unit_id": 100312
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "妳瞄準哪啊？",
+        "unit_id": 811,
+        "voice": "vo_adv_1003012_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "\n",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "老大！　",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "看來我們幾個就足以對付她了！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你說什麼……！",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "妳以為光你們兩個",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "能做什麼？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "還以為自己是魔物的對手，看不起我們！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "我是不知道那小鬼有沒有比妳強啦，",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n但我想我同伴們大概三兩下就能收拾乾淨了吧！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "除了夾擊攻勢外，",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "他們想藉由隔開我們，分頭解決……",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "完全被他們算準了……",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "對手比想像中還高招。",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n一個不小心，",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我們兩人可能都不是光受傷就能了事的……",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "如果一時焦急跑去幫他，反而會被趁隙而入，",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "時間越拖下去他也會很危險……！　",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "才剛以為自己有些成長，就遇到這種事……",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "但是",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "怎麼可以放棄！　",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "喝！",
+        "unit_id": 100312
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "喝哈！　",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "聽好了，妳這傢伙！　",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "我可不會焦急，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n我會好好的",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "確實的給妳致命的一擊！　",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "喝！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "哦！　",
+        "unit_id": 811,
+        "voice": "vo_adv_1003012_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊１",
+        "words": "嘿！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊２",
+        "words": "呀啊！",
+        "unit_id": 1111,
+        "voice": "vo_adv_1003012_083"
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呃！　",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "可惡！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "嘿喝！",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_085"
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "唔！",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "喂喂，",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "這樣就不行啦？　",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "再陪我們玩玩吧！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n我還想照計畫繼續打呢！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "啊",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "哈……",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n現在",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "才要開始呢……！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……沒錯。",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "盜賊首領",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "有接受過高等的劍術訓練。",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n看到身為貴族子弟的我",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "使用王宮騎士流派的劍法，",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n能看穿我有固定模式",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是因為他原本就知道……",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "還能做戰鬥指揮",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "想必是前王宮騎士團團員，",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n而且恐怕職等在小隊長以上……",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是個麻煩的對手！　",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你們到底是什麼人……？",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n有著如此的身手，",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "為何還要藏身於此處？",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "最近這陣子，",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "王都那裡特別亂對吧？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "在風波結束前，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "我們就一直乖乖的待在這裡。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "等一回歸平靜，就會回去",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "然後再從那些有錢的傢伙手上大撈一筆。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……該不會是在濫用從王宮騎士團那裡學到的知識吧？",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "哦……",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "在這麼短的時間裡，妳竟然就發現了。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n為了獎勵妳",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "我就在這裡",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "奪走妳的性命吧！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "再這樣下去",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不要說去救他，",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我自己都有危險了……！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "拜託",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "他一定要沒事……！　",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你！　",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "若聽得到我的聲音",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "就回應我！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n找個方法集合吧！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n兩人合力",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "突破這個困境！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "真可惜啊。",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "即便妳叫得這麼拼命，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n但對方可是什麼都聽不到喔！　",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "妳就死心吧！",
+        "unit_id": 911
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呃啊啊！",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "一開始的氣勢都跑哪啦？",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "\n看起來妳連動都動不了啦……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "差不多該給妳致命的一擊了！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……為什麼",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "為什麼我會屈服呢……",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n明明接受了公主騎士的力量，",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "為什麼……",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……不，",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "原來如此啊。",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "太習慣借助他的力量，",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n不小心就",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "什麼都依賴他……",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我會覺得自己變強",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "可以說是錯覺吧……",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "明明我對自己無比的嚴格，",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "一直想讓自己變強……！　",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我不想在這種地方",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "輸給這種傢伙……！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n該怎麼辦……！　",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我到底該怎麼做……！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊3",
+        "words": "哈哈哈！　",
+        "unit_id": 1,
+        "voice": "vo_adv_1003012_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊3",
+        "words": "對手這麼弱很無聊耶！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊4",
+        "words": "喂！　",
+        "unit_id": 1,
+        "voice": "vo_adv_1003012_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊4",
+        "words": "光防禦的話，可是一輩子都贏不了的喔！？　",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊4",
+        "words": "哈哈哈哈！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "相信",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "自己……",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你還",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "仍相信著我努力奮戰著……",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那我怎麼能",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n因為無法相信自己而輸呢……！　",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "所以這次",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我也要相信。",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "至今的我",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "還有我現在擁有的力量……！　",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……我聽到囉。",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你說的話。",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "蛤？　",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_110"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "喂喂，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "妳怎麼看起來不太對勁啊？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "沒關係，",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_111"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我懂。",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n這種時候",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "他會對我說些什麼……",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "若你願意一直相信我，",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我就會繼續變強！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "即使不在身邊、",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_112"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "即使兩人中間有阻隔，",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n只要有你的信任，",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我就不會輸！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我現在就要在這裡，",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_113"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "向你證明這點！　",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "來囉！！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊２",
+        "words": "唔喔！　",
+        "unit_id": 1111,
+        "voice": "vo_adv_1003012_114"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊２",
+        "words": "這傢伙，",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊２",
+        "words": "動作突然變厲害了……！",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我感覺得到……",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_115"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你給我的力量",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "比以往都還要更強！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這麼一來",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是不會輸的！　",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "滾開！！",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_116"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "少裝模作樣了！",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_117"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "看招！　",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_118"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "斬擊暴風雨！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "喝啊啊啊！！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "攻擊",
+        "unit_id": 911,
+        "voice": "vo_adv_1003012_119"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "快到彷彿看不到……！？　",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊頭頭",
+        "words": "嗚啊啊啊啊！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊1・盜賊2",
+        "words": "嗚呀啊啊啊啊啊！！",
+        "unit_id": 1,
+        "voice": "vo_adv_1003012_120"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……這邊總算是解決了。",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_121"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n得快和他會合才行……！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這點程度",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_122"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "怎麼可能擋得住現在的我！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "喝啊啊啊！！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊3",
+        "words": "陷阱被破壞了！？",
+        "unit_id": 1,
+        "voice": "vo_adv_1003012_123"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊4",
+        "words": "騙人的吧！？　",
+        "unit_id": 1,
+        "voice": "vo_adv_1003012_124"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊4",
+        "words": "老大他們被擊敗了！？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_125"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "沒事吧！？",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你在說什麼。",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_126"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這不是全身都是傷嗎！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你很努力了呢……",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "再稍微忍耐一下。",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_127"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我很快就會把他們收拾乾淨。",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊3",
+        "words": "別小看我們了！　",
+        "unit_id": 1,
+        "voice": "vo_adv_1003012_128"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊3",
+        "words": "喂，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊3",
+        "words": "上吧！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊4",
+        "words": "哦！　",
+        "unit_id": 1,
+        "voice": "vo_adv_1003012_129"
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊4",
+        "words": "吃我這招！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "太慢了！　",
+        "unit_id": 100312,
+        "voice": "vo_adv_1003012_130"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我會讓你對傷了他",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "感到後悔！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "喝啊啊啊啊！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "盜賊3・盜賊4",
+        "words": "呀啊啊啊啊啊！！",
+        "unit_id": 1,
+        "voice": "vo_adv_1003012_131"
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……結束了。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_132"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "別動。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "雖然只能簡單弄弄",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "但讓我來幫你處理傷口吧。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我一直相信著",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_133"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你一定能承受得住。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "能夠相信現在的自己",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "然後戰鬥，真是太好了。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……這樣就好了。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_134"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "把那些傢伙抓回村子裡吧。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n幫我把他們綁起來。",
+        "unit_id": 100311
+    },
+    {
+        "type": "background",
+        "background": "500200"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "——雖然過程很辛苦，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_135"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "但平安回來真是太好了。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n立刻把那些傢伙",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "交給村長先生吧……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "怜大人，",
+        "unit_id": 511,
+        "voice": "vo_adv_1003012_136"
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "你們沒事吧！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "咦，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "這些人是……？",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "他們是襲擊村莊的真兇。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_137"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n故意裝成是魔物的作為，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n但其實對家畜和農田下手的",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是這群人。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "竟然",
+        "unit_id": 511,
+        "voice": "vo_adv_1003012_138"
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "是這些傢伙……",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "真的非常謝謝您！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n這麼一來村子也會恢復和平了！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那麼",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_139"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我們就往下個視察……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "請稍等！",
+        "unit_id": 511,
+        "voice": "vo_adv_1003012_140"
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n您為我們做這麼多",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "怎麼可能不向您道謝！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "至少也要讓我們",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "請您吃頓飯吧！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "既然村長先生都這麼說了……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_141"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你覺得如何呢？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我知道了。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_142"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n那我們就接受村長先生的好意吧。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呵呵，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_143"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n這部份還是像個孩子一般。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那麼村長先生，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_144"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我們就不客氣囉？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n然後",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "若能幫忙治療他的傷的話就太感謝了。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "那是當然！　",
+        "unit_id": 511,
+        "voice": "vo_adv_1003012_145"
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "啊啊，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "仔細一看，怜大人也受傷了……！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "嘿，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "各位！　",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "全村宴會開始囉！！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "那麼",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "先幫怜大人你們治療……",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "咦？　",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_146"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不用設宴啦，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n像一般吃個飯就很足夠了……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "這也包括妳幫忙劈柴的謝禮，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1003012_147"
+    },
+    {
+        "type": "dialogue",
+        "name": "阿姨",
+        "words": "\n把珍藏的起司拿出來吧！",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "大叔",
+        "words": "那我就準備",
+        "unit_id": 1411,
+        "voice": "vo_adv_1003012_148"
+    },
+    {
+        "type": "dialogue",
+        "name": "大叔",
+        "words": "我家自豪的熟成肉！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "大叔",
+        "words": "\n現在吃剛剛好！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "啊……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_149"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "怎麼變得那麼盛大……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "但是",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "也好。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "都到這裡了，就來享受一下吧。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "這次多虧了有怜大人，",
+        "unit_id": 511,
+        "voice": "vo_adv_1003012_150"
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "才讓我們恢復生活！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n這個大恩大德，我一生都不會忘！！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "一輩子……",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "不，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "我直到入土",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "都會敬重怜大人的！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_151"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那個……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n不用做到這樣……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "那麼",
+        "unit_id": 511,
+        "voice": "vo_adv_1003012_152"
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "各位！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n今天我們要辦怜大人的感謝宴，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "大家一起熱情款待吧！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村民1",
+        "words": "怜大人！",
+        "unit_id": 311,
+        "voice": "vo_adv_1003012_153"
+    },
+    {
+        "type": "dialogue",
+        "name": "村民1",
+        "words": "\n要不要吃肉呢！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這個嘛……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_154"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這個量我還真的……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "村民2",
+        "words": "啊，",
+        "unit_id": 411,
+        "voice": "vo_adv_1003012_155"
+    },
+    {
+        "type": "dialogue",
+        "name": "村民2",
+        "words": "還是怜大人喜歡吃水果？",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "村民2",
+        "words": "\n",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "村民2",
+        "words": "這邊有水果喔！",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那、",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_156"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那個……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "村民1",
+        "words": "怜大人！",
+        "unit_id": 311,
+        "voice": "vo_adv_1003012_157"
+    },
+    {
+        "type": "dialogue",
+        "name": "村民2",
+        "words": "怜大人！！",
+        "unit_id": 411,
+        "voice": "vo_adv_1003012_158"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "啊〜……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_159"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "對了！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n關於今天的報告",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我有話得和他說！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……對吧？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "看、",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_160"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "看吧！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n他也這麼說！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你那是什麼臉！",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_161"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n總之現在先配合我！　",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "所以說，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_162"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n非常抱歉，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "但我和他得暫時離席。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "大家請盡情享受宴會。",
+        "unit_id": 100311
+    },
+    {
+        "type": "background",
+        "background": "500201"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呼……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_163"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "總算解脫了。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "謝謝你配合我說那些話。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "多虧有你，我得救了。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "村裡的人實在是太高興了，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_164"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n讓我反而可以冷靜下來。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那股熱情我還真的有點應付不來。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "而且……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_165"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "經過這次的事，讓我思考了很多事。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n所謂的追求自由，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n有時",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "反而會出現像那群盜賊一樣愚蠢的人。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……說不定，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_166"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "父親眼中的我也和那群傢伙一樣，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n覺得我可能是在踐踏著他人的努力和想法。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "若是這樣的話，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我好像有點能理解父親的心情了。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "而且",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_167"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "今天救了村中的人，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "也是以父親的名義做的。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "要是當時",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "把追求自由當作第一順位，而拒絕了請託，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "現在這村子",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "應該會遭遇更可怕的事。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……雖然知道父親所說的話",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_168"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "和做的事都有其道理，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n但真的實際經歷後",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "真的覺得心情好複雜喔。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "視察結束後",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_169"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "要是我又為了自由，拒絕父親的話，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n說不定會忽視其他如這些村民一樣困擾的人",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "讓他們無法得救。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "但是，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_170"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這樣的話我……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那個嘛……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_171"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "說的也是。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n回到蘭德索爾，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我就和父親談談看。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n不只是自由這件事，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "還有我自己的路",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "為了能找出所有答案。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……我再去吹點風。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_172"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n你先回去吧。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……不只是自由，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_173"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "希望能擁有幫助人的力量",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "啊。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "嘴巴說說很簡單，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "但實際行動應該很難吧。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "但是，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "現在……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "遇到夥伴，並有所成長的我一定辦得到。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……接下來要",
+        "unit_id": 100311,
+        "voice": "vo_adv_1003012_174"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "更相信自己，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "做更多自己想做的事",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "對吧。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "——跨越了挑戰，大大成長的怜。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n得到了以往未曾擁有的自信，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n怜慢慢地開始改變。"
+    }
+]

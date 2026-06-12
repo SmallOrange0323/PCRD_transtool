@@ -1,0 +1,3783 @@
+[
+    {
+        "type": "background",
+        "background": "500952"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]在蘭德索爾的其中一間旅館房內──"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]\n吉塔和{player}因花凜請求協助而來到這裡。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]\n自稱碧卡拉的少女在他們的面前不吭一語，縮成一團。"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]妳真的是……",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n碧卡拉、",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]對吧？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]跟在跳蚤市場遇到時的形象",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]感覺不太一樣……",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]對、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]對對、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]對不起……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]嚇、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]嚇到大家了……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]可是，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]是真的……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n人、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家…………",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]真的是、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]碧卡拉……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]啊，",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]對喔。",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n說到容易改變形象這點我也一樣呢。",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]嗯嗯，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]這麼想就能讓人接受了！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]剛才嚇到很抱歉，",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]碧卡拉。",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]已經沒事了，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]請妳放心吧！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]這、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]這樣啊……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]呃……",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]轉換職業是什麼……？　",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]是蘭德索爾語……",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]嗎？",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]就算是這樣也接納得太快了……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]靠著大概的含意就能理解狀況也太能適應了吧……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]比起說明起來輕鬆，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]這樣反而更令人害怕……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]莫、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]莫非……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]這附近的居民都是用這種調調生活……？",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]難道說蘭德索爾是陽光的城鎮……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]陽德索爾嗎？　",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]你們",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]早就已經認識了啊。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]這樣事情就容易解釋了。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]這麼說來，",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]妳說發生了一些麻煩吧。",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n可以詳細說給我聽聽嗎？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]當然可以。",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]碧卡拉小姐，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]可以由我代為解釋嗎？",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]啊，",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]好的……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]不好意思，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]謝謝妳幫忙……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]那麼，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]我來簡單說明一下狀況。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]那正好發生在",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]今天跳蚤市場的活動結束時──",
+        "unit_id": 190811
+    },
+    {
+        "type": "background",
+        "background": "500035"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]我",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]和負責警備活動的公會人員，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]在活動現場進行",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]簡要的會報。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]在分享完情報，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]準備離開會場時……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n我看見",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]收拾完攤位的碧卡拉小姐……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]碧卡拉小姐，",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]妳辛苦了！",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]老鼠耳朵賣得還好嗎？",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]嗨，",
+        "unit_id": 125611,
+        "voice": "vo_adv_5118001_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]這不是花凜嗎！",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]託妳的福，老鼠耳朵賣光了！",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]銷售一空喔！",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n就算在不同國家，",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]大家仍有共識知道什麼是好東西呢♪",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]那太好了。",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]如果有任何煩惱，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]歡迎隨時來找我聊聊哦。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]雖說碧卡拉小姐是來自知名的鼠神宮，",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n不過東國和阿斯特賴亞大陸",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]募化活動的習慣應該有所不同……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]國家也交代說",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]要盡可能支援妳的活動。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]因此，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]請妳別跟我客氣。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n公會管理協會",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]隨時都很歡迎碧卡拉小姐喔。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125611,
+        "voice": "vo_adv_5118001_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]哈哈！",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]謝謝幫忙了！",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n畢竟我是第一次來這塊大陸！",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]有任何煩惱我會拜託妳的！",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]話說回來……",
+        "unit_id": 125611,
+        "voice": "vo_adv_5118001_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]這裡不愧是王都，好有活力呢！",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]有活力的地方，",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]就會聚集陽氣。",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]有陽氣的地方，",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]就會讓大家展顏歡笑！",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]所以我的腦中",
+        "unit_id": 125611,
+        "voice": "vo_adv_5118001_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]馬上就",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]靈光一閃囉！",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]對這裡的所有居民來說，",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]蘭德索爾是可以做夢的地方──",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]也就是所謂的",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]烏～托邦呢♪",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]烏～托邦……",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]呵呵，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]身為為了讓蘭德索爾變得開朗有朝氣而奮鬥的一員，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n聽到妳這麼說真令人高興！",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125611,
+        "voice": "vo_adv_5118001_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]哈哈！",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]花凜真是勤勞！",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n我想送上老鼠耳朵",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]給勤勞的妳……",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]只不過，",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n現在正好沒貨。",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]用能帶來滿滿吉利的握手",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]來代替吧！",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125611,
+        "voice": "vo_adv_5118001_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]來，",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]握住我的手吧！",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]在開朗有朝氣的蘭德索爾",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]和我握手！",
+        "unit_id": 125611
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]能跟碧卡拉小姐握手是我的榮幸。",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]那就",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]恕我失禮……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "[FFFFFFFF]",
+        "unit_id": 1,
+        "voice": "vo_adv_5118001_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "[FFFFFFFF]唔！！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]呀！？",
+        "unit_id": 1,
+        "voice": "vo_adv_5118001_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]咦？",
+        "unit_id": 1,
+        "voice": "vo_adv_5118001_029"
+    },
+    {
+        "type": "background",
+        "background": "500035"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]剛才的是……",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]鳥",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]對吧？",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]會朝人這邊飛來……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n還真是少見呢。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]…………啊……",
+        "unit_id": 1,
+        "voice": "vo_adv_5118001_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n啊、",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]啊……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n啊啊啊啊啊…………！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]碧卡拉小姐……？",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n妳怎麼了嗎？",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n難道是受傷……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]不見了………",
+        "unit_id": 1,
+        "voice": "vo_adv_5118001_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]咦？",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]老、",
+        "unit_id": 1,
+        "voice": "vo_adv_5118001_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]老老、",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]老鼠耳朵……！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家的老鼠耳朵……",
+        "unit_id": 125612,
+        "voice": "vo_adv_5118001_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125612
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]不見了啦……！",
+        "unit_id": 125612
+    },
+    {
+        "type": "background",
+        "background": "500952"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]……發生了這樣的事。",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]原來如此……",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n發生了那樣的事啊。",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]因此，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]我想請兩位",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]協助找回老鼠耳朵。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]你們願意幫這個忙嗎？",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]當然願意！",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]既然碧卡拉有困難，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]我不能放著不管！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]大、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]大家……！",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]對不起，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]給你們添麻煩了……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]不用在意啦！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n有困難的時候",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]就要互相幫助啊。",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]話說回來……",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n老鼠耳朵",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]果然具有",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]特別的力量呢。",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n真沒想到竟然會讓碧卡拉完全變了個人似的。",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]啊……",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]不……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]那並沒有什麼特別的力量……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔、花凜",
+        "words": "[FFFFFFFF]咦？",
+        "unit_id": 1,
+        "voice": "vo_adv_5118001_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]材、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]材料到處都有賣……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]而且備用的要做多少就有多少……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]甚至多到可以拿來賣……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]是、",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]是這樣的嗎？",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]呃，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]我還以為那是",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]什麼鼠神宮傳承的",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]魔導具呢……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]對、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]對對對不起……！",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]都怪人家擺出一副煞有其事的態度……！",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]不過，",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]這樣算解決問題了……",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]吧？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]我們",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]現在身上正好有帶著老鼠耳朵！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n有兩副應該就沒問題了吧！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]啊啊啊……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n對不起，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]不是這樣的……！",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]雖然搞得很複雜，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]但特別的部分是真的……！",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]那、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]那並非是",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]有什麼特別的力量……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]只不過，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]對人家來說那是很特別的老鼠耳朵……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]因為……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]那副老鼠耳朵…………",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n是人家踏上旅途開始就一直戴著……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n從鼠神宮帶過來的",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]最後一副老鼠耳朵……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]我記得",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]鼠神宮",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]是碧卡拉擔任神職的神殿……",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]說錯了，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]是神社吧。",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]啊，",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]是的……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]姑且",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]是這樣的……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]在、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]在踏上旅途前，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家備了相當多老鼠耳朵的庫存……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]可是，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]抵達阿斯特賴亞大陸時，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]就已經沒庫存……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]等發現的時候，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]只剩下人家戴在頭上的老鼠耳朵了……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]因此，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]現在販賣的是在當地籌備材料製作的老鼠耳朵……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n透過造訪的村落",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]或是城鎮的雜貨店……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]設法找來的……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]原來如此……",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]所以才說",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]那是最後的老鼠耳朵啊。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]比方說，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]現在在蘭德索爾的其他老鼠耳朵，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n都是阿斯特賴亞出產",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]的感覺吧？",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]那是從東國出發後，陪伴碧卡拉這一整路旅程的老鼠耳朵……",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]這樣的話，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]應該也有很多回憶吧。",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]畢竟是物品，",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家知道遲早會壞掉的……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]可是……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]以這種形式分開",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]實在是……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]不，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]是非常……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]還是…………",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]無法接受……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]啊……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n對、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]對不起，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家只顧說自己的……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]感謝各位聆聽，神明保佑……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]哪裡，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]也因此我才能知道碧卡拉的心情啊。",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]我才要",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]謝謝妳願意說出來！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]我說，",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]碧卡拉，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n可以再多跟我們聊聊嗎？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]有件事",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]我一直非常好奇……",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]聊、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]聊聊嗎……？",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]咦？",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]是好奇什麼事……？",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家只不過",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]是個陰沉角色……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]難不成……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]是勒索……？　",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]碧卡拉的形象不是徹頭徹尾改變了嗎？",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]除了因為老鼠耳朵不見",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]而心情變沮喪以外，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n我在想可能是不是還有其他理由呢？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]這、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]這樣啊……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n既然是這樣的話……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]你們聽了可能會覺得很無聊……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家…………",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n從小就真的很迷糊、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]笨拙、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]不起眼、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]陰沉",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]又膽小……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]根本一無是處……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]可、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]可是，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]某一天……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n小冬突然來到了",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家的身邊……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "冬麥斯",
+        "words": "[FFFFFFFF]……",
+        "unit_id": 9712
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]在鼠神宮有著",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]被小冬選上之人",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]需要肩負職責的傳統。",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]所以……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]既沒血統也沒才華的人家",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]才會當上鼠神宮之主……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家束手無策……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]憂鬱到不行…………",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]就在這時候，",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]老鼠耳朵……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n讓人家……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n變成了碧奇……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]老鼠耳朵嗎？",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]碧奇是",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家的理想模樣……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n人家一直在心裡妄想，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]明朗又閃閃發亮的理想自我……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]就是",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]碧奇……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]當被選為宮主的時候，",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]便想說必須想個辦法……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]像、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]像人家這樣的陰沉角色，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]根本無法讓人相信能帶來吉利……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]所以……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家就靠自己",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]讓自己堅信……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]只要戴上老鼠耳朵，",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家就會改變……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]只要戴上老鼠耳朵，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家就是碧奇……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]會變成理想中的自己……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]理想中的陽光角色……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]這樣！",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]變、",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]變成陽光角色……",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]這或許可說是",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]一種自我暗示吧……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n這麼推測，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]也能說明為何碧卡拉小姐會完全變了個人。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]因為堅信不已的心理作用",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]變弱了。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]若對老鼠耳朵有著越強烈的感情，",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]暗示的力量就越強烈……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]對於從鼠神宮踏上旅途，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]一路伴隨到蘭德索爾的老鼠耳朵，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n肯定有著",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]非常深厚的感情吧。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]就像是慣用的武器不見了呢……",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]我懂那種感覺",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]有多麼難受。",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]不僅狀況會變差，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]習慣新武器也會花上點時間。",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]咦？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]所以",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]難道說……",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n在習慣新的老鼠耳朵之前，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]碧卡拉會無法變成碧奇……",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n是",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]這樣嗎？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]……啊，",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]是的……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]應該是吧…………",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]對不起……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]這樣啊……",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]既然如此，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]就更該拿回來不可！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]咦……",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]……呵呵，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]果然",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]找你們商量是對的。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]這次的事",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]只能拜託可信任的人幫忙。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n這不是正式的委託，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]而且……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n雖然有些難以啟齒，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]但也沒有酬勞。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]碧卡拉小姐",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]才剛來到阿斯特賴亞大陸。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n現在就向公會管理協會",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]提出委託，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n有可能會影響到往後的活動……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家才剛到這裡，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]要是這樣的醜聞被踢爆……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]大家就不會相信鼠神宮能帶來吉利……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]啊……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]憂鬱又湧上心頭……！",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]既然如此，妳大可放心喔！",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n我們瞭解情況，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]也不需要酬勞！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]對吧，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]{player}？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]謝謝你們！",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n等事情順利解決，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]我會請兩位吃飯的。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]…………",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]請問……",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n為什麼",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]要幫人家做到這種程度……？",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]才剛認識你們不久啊……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]就像我剛才說的啊！",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]看到有困難的人，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]我無法放著不管嘛！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]我也一樣。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]嘴上說要支援碧卡拉小姐，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n當場卻什麼忙都幫不了，令我深感遺憾……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]而且……",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n碧卡拉小姐稱讚了蘭德索爾。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]讓人感覺非行動不可啊。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]…………！",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]好，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]那就必須立即擬定作戰呢！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]請問有什麼線索嗎？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n比如說那隻鳥往哪個方向飛走之類的。",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]啊，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]這部分的線索",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]碧卡拉小姐好像有頭緒喔。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "冬麥斯",
+        "words": "[FFFFFFFF]",
+        "unit_id": 9711
+    },
+    {
+        "type": "dialogue",
+        "name": "冬麥斯",
+        "words": "[FFFFFFFF]──！！",
+        "unit_id": 9711
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]啊，",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]那個，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]靠小冬的神力……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]可以掌握大概的地點……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]方位的話，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家姑且也行……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]稍稍、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]大概、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]略為可以啦……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]神力……",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]跟魔法不一樣嗎？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]我是第一次聽到，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]東國存在著很神奇的力量呢！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]能掌握地點真是厲害耶！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]咦……",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n啊，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]不敢當……？",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]照這種調調不斷推動事情的感覺……",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]啊……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]這樣啊……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]原來如此……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]這些人",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]全部",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]都是…………！　",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]相當陽光的陽光角色……！！　",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]我說，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]碧卡拉和冬麥斯，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n老鼠耳朵",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]現在在哪裡呢？",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]其、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]其其、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]其實……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n似乎",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]還在移動的樣子……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]可以肯定正不斷遠離蘭德索爾……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]我也很在意這一點。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n而且其他東西完全不看一眼，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]只奪走老鼠耳朵這點也是，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]要斷定是普通的鳥還嫌太早了。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]",
+        "unit_id": 190811,
+        "voice": "vo_adv_5118001_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]既然能進入城鎮，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]是魔物的可能性很低……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]不過現階段",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "[FFFFFFFF]情報還太少。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]無論如何，",
+        "unit_id": 105712,
+        "voice": "vo_adv_5118001_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]追捕時必須多加注意呢！",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]呃，",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "吉塔",
+        "words": "[FFFFFFFF]這樣一來，移動的手段……",
+        "unit_id": 105712
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]用、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]用這種速度安排行程嗎……？",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]陽光角色果然很有行動力……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]跟基本上都窩在房間角落的人家完全不同……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]呀！？",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]嗯咦？",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n咦？",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]啊……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]啊嗚……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]啊嗚……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]嗯嘿。",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118001_110"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]就這樣，為了拿回老鼠耳朵──"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]\n吉塔、碧卡拉、花凜以及{player}。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]\n在神奇的緣分牽引下，四人的旅程──從隔日正式啟程。"
+    }
+]
