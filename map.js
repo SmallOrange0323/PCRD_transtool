@@ -1565,14 +1565,31 @@ const QuestMapModule = {
     playVoice(voiceName) {
         if (!voiceName) return;
         const groupId = voiceName.substring(7, 14);
-        const voiceUrl = `https://prcn-sound.estertion.win/story_vo/${groupId}/${voiceName}.m4a`;
+
+        const cdnList = [
+            `https://prcn-sound.estertion.win/story_vo/${groupId}/${voiceName}.m4a`,
+            `https://redive.estertion.win/sound/story_vo/${groupId}/${voiceName}.m4a`
+        ];
 
         if (this.currentAudio) this.currentAudio.pause();
 
-        this.currentAudio = new Audio(voiceUrl);
-        this.currentAudio.play().catch(e => {
-            console.error("語音播放失敗:", e);
-        });
+        const tryPlay = (index) => {
+            if (index >= cdnList.length) {
+                console.warn('[QuestMapModule] 該劇情的語音檔在遠端鏡像站尚未同步更新。');
+                return;
+            }
+            const audio = new Audio(cdnList[index]);
+            audio.play().catch(err => {
+                if (err.name === 'NotAllowedError') {
+                    console.warn('[QuestMapModule] 語音播放被瀏覽器自動播放政策封鎖。');
+                    return;
+                }
+                tryPlay(index + 1);
+            });
+            this.currentAudio = audio;
+        };
+
+        tryPlay(0);
     },
 
     handleAvatarError(img, realName) {
