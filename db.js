@@ -1,4 +1,7 @@
 console.log("db.js loaded");
+if (localStorage.getItem('pcr_region') !== 'tw') {
+    localStorage.setItem('pcr_region', 'tw');
+}
 /**
  * PCR 數據導航站 - DB 引擎
  * 負責下載、快取與查詢 SQLite 資料庫
@@ -6,18 +9,13 @@ console.log("db.js loaded");
 
 window.PCRDatabase = {
     db: null,
-    currentRegion: localStorage.getItem('pcr_region') || 'tw',
+    currentRegion: 'tw',
 
     /**
-     * 切換區域
+     * 切換區域 (目前僅支援台服，強制定向為 tw)
      */
     async switchRegion(region) {
-        if (this.currentRegion === region) return;
-        
-        console.log(`[PCRDatabase] Switching to ${region}...`);
-        localStorage.setItem('pcr_region', region);
-        
-        // 物理隔離：直接重新整理頁面，確保所有 JS 變數與資料庫連接完全重置
+        localStorage.setItem('pcr_region', 'tw');
         location.reload();
     },
 
