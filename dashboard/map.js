@@ -1179,11 +1179,11 @@ const QuestMapModule = {
                                 ">
                                     <span style="color: var(--text-secondary); font-size: 0.8rem;">正在載入登場角色頭像...</span>
                                 </div>
-                                <div id="dialogue-board" class="game-dialogue-board" style="max-height: 620px; overflow-y: auto;">
+                                <div id="dialogue-board" class="game-dialogue-board">
                                 </div>
                                 <div class="game-dialogue-footer" style="border-radius: 0 0 12px 12px;">
-                                    <div class="game-footer-btn close" onclick="document.getElementById('dialogue-board').scrollTop = 0">⬆ 回到頂端</div>
-                                    <div class="game-footer-btn skip" onclick="document.getElementById('dialogue-board').scrollTop = 99999">⬇ 跳至底端</div>
+                                    <div class="game-footer-btn close" onclick="document.getElementById('cinema-summary').scrollTop = 0">⬆ 回到頂端</div>
+                                    <div class="game-footer-btn skip" onclick="document.getElementById('cinema-summary').scrollTop = 99999">⬇ 跳至底端</div>
                                 </div>
                             </div>
                         </div>
@@ -1565,14 +1565,31 @@ const QuestMapModule = {
     playVoice(voiceName) {
         if (!voiceName) return;
         const groupId = voiceName.substring(7, 14);
-        const voiceUrl = `https://prcn-sound.estertion.win/story_vo/${groupId}/${voiceName}.m4a`;
+
+        const cdnList = [
+            `https://prcn-sound.estertion.win/story_vo/${groupId}/${voiceName}.m4a`,
+            `https://redive.estertion.win/sound/story_vo/${groupId}/${voiceName}.m4a`
+        ];
 
         if (this.currentAudio) this.currentAudio.pause();
 
-        this.currentAudio = new Audio(voiceUrl);
-        this.currentAudio.play().catch(e => {
-            console.error("語音播放失敗:", e);
-        });
+        const tryPlay = (index) => {
+            if (index >= cdnList.length) {
+                console.warn('[QuestMapModule] 該劇情的語音檔在遠端鏡像站尚未同步更新。');
+                return;
+            }
+            const audio = new Audio(cdnList[index]);
+            audio.play().catch(err => {
+                if (err.name === 'NotAllowedError') {
+                    console.warn('[QuestMapModule] 語音播放被瀏覽器自動播放政策封鎖。');
+                    return;
+                }
+                tryPlay(index + 1);
+            });
+            this.currentAudio = audio;
+        };
+
+        tryPlay(0);
     },
 
     handleAvatarError(img, realName) {
@@ -1792,6 +1809,9 @@ const QuestMapModule = {
 
         if (targetChKey) {
             this.expandedChapter = targetChKey;
+            if (storyType === 'chara') {
+                this.activeCharaName = targetChKey;
+            }
         }
 
         this.safeRender(async () => {

@@ -1050,9 +1050,11 @@ body {
     display: grid;
     grid-template-columns: 2.2fr 1fr;
     gap: 20px;
-    align-items: start;
+    align-items: stretch;
     margin-bottom: 0;
-    max-height: 850px;
+    height: calc(100vh - 180px);
+    min-height: 550px;
+    max-height: 800px;
 }
 
 /* 左側電影放映區 */
@@ -1066,8 +1068,56 @@ body {
     border: 1px solid var(--glass-border);
     box-shadow: 0 8px 24px rgba(94, 107, 125, 0.08);
     padding: 20px;
-    max-height: 850px;
+    height: 100%;
+}
+
+.map-control-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(94, 107, 125, 0.08);
+}
+
+.panel-section-title {
+	font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(232, 56, 117, 0.15);
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.story-list-scrollbar {
+    flex: 1;
     overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* 替右側選單加入高科技微細自訂滾動條 */
+.story-list-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.story-list-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+}
+
+.story-list-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(94, 107, 125, 0.15);
+    border-radius: 10px;
+}
+
+.story-list-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 107, 157, 0.3);
 }
 
 .cinema-panel {
@@ -1111,7 +1161,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    overflow-y: auto;
+    overflow: hidden;
     min-height: 0;
 }
 
@@ -1171,49 +1221,6 @@ body {
 	font-size: 1rem;
     line-height: 1.6;
     color: var(--text-secondary);
-}
-
-/* 右側：雙層風琴式摺疊目錄 */
-.map-control-panel {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 20px;
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 8px 24px rgba(94, 107, 125, 0.08);
-}
-
-.panel-section-title {
-	font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--accent-color);
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(232, 56, 117, 0.15);
-    padding-bottom: 10px;
-    text-align: left;
-}
-
-.story-list-scrollbar {
-    flex: 1;
-    overflow-y: auto;
-    padding-right: 5px;
-	max-height: 700px;
-}
-
-.story-list-scrollbar::-webkit-scrollbar {
-    width: 6px;
-}
-
-.story-list-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(232, 56, 117, 0.18);
-    border-radius: 10px;
-}
-
-.story-list-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: rgba(232, 56, 117, 0.35);
 }
 
 /* 風琴選單項目樣式 */
@@ -1633,8 +1640,6 @@ body {
 
 /* 對白板的主體捲動區域 */
 .game-dialogue-board {
-    flex: 1;
-    overflow-y: auto;
     padding: 12px;
     background: #fdf6f9;
     display: flex;

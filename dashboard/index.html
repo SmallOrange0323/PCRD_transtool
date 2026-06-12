@@ -44,10 +44,17 @@
             <button id="tab-stats-btn" class="tab-btn" onclick="switchTab('stats')">作業統計</button>
         </div>
         <div style="display: flex; align-items: center; gap: 15px;">
-            <select id="region-selector" class="region-select" onchange="PCRDatabase.switchRegion(this.value)">
-                <option value="tw">台服 (TW)</option>
-                <option value="jp">日服 (JP)</option>
-            </select>
+            <span class="region-badge" style="
+                background: linear-gradient(135deg, rgba(232, 56, 117, 0.08) 0%, rgba(196, 36, 106, 0.08) 100%);
+                color: var(--accent-color);
+                border: 1px solid rgba(232, 56, 117, 0.2);
+                padding: 6px 16px;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                font-weight: 700;
+                letter-spacing: 0.5px;
+                box-shadow: 0 2px 6px rgba(232, 56, 117, 0.05);
+            ">台服 (TW)</span>
             <a href="../index.html" class="nav-back">
                 <span>←</span> 回到工具
             </a>
@@ -152,8 +159,25 @@
                 // 預先載入活動資料
                 EventsModule.render();
             } catch (err) {
-                text.innerText = '初始化失敗，請重新載入頁面';
-                text.style.color = '#ff6b6b';
+                text.innerHTML = `
+                    <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 10px;">
+                        <span style="color: #ff6b6b; font-weight: bold; font-size: 1.05rem;">資料庫載入失敗！可能是網路連線問題，或日服數據源暫時不可用。</span>
+                        <button onclick="localStorage.setItem('pcr_region', 'tw'); location.reload();" style="
+                            padding: 10px 24px;
+                            background: linear-gradient(135deg, #ff6b9d 0%, #e83875 100%);
+                            color: white;
+                            border: none;
+                            border-radius: 20px;
+                            font-weight: bold;
+                            cursor: pointer;
+                            box-shadow: 0 4px 12px rgba(232, 56, 117, 0.25);
+                            transition: all 0.2s ease;
+                            font-size: 0.9rem;
+                        " onmouseover="this.style.transform='translateY(-1px)'" onmouseout="this.style.transform='translateY(0)'">
+                            🔄 切換回台服 (TW) 重新載入
+                        </button>
+                    </div>
+                `;
                 console.error(err);
             }
         });
