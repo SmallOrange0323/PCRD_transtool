@@ -535,7 +535,7 @@ const QuestMapModule = {
                             <div class="menu-card-desc" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">可以在此處閱覽阿斯特萊亞大陸上發生的故事</div>
                         </div>
                         <div class="menu-card-sd-thumb" style="flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 404px; height: 126px; transition: transform 0.3s ease;">
-                            <img src="https://redive.estertion.win/card/story/300100101.webp" style="width: 404px; height: 126px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block; object-fit: cover;" alt="main">
+                            <img src="icon/main_story.png" style="width: 404px; height: 126px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block; object-fit: cover;" alt="main">
                         </div>
                     </div>
                     <!-- 角色劇情 (上下佈局) -->
@@ -545,7 +545,7 @@ const QuestMapModule = {
                             <div class="menu-card-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">提升羈絆Rank後會追加新的故事</div>
                         </div>
                         <div class="menu-card-sd-thumb" style="flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 120px; height: 190px; transition: transform 0.3s ease; margin-top: auto;">
-                            <img src="https://redive.estertion.win/card/story/200100201.webp" style="width: 120px; height: 190px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block; object-fit: cover;" alt="chara">
+                            <img src="icon/chara_story.png" style="width: 120px; height: 190px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block; object-fit: cover;" alt="chara">
                         </div>
                     </div>
                     <!-- 公會劇情 (上下佈局) -->
@@ -555,7 +555,7 @@ const QuestMapModule = {
                             <div class="menu-card-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">在這裡可以看到女孩們的日常故事</div>
                         </div>
                         <div class="menu-card-sd-thumb" style="flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 120px; height: 190px; transition: transform 0.3s ease; margin-top: auto;">
-                            <img src="https://redive.estertion.win/card/story/300700101.webp" style="width: 120px; height: 190px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block; object-fit: cover;" alt="guild">
+                            <img src="icon/guild_story.png" style="width: 120px; height: 190px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block; object-fit: cover;" alt="guild">
                         </div>
                     </div>
                     <!-- 額外劇情 (上下佈局) -->
@@ -565,7 +565,7 @@ const QuestMapModule = {
                             <div class="menu-card-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">可以回顧那些有點特別的故事</div>
                         </div>
                         <div class="menu-card-sd-thumb" style="flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 120px; height: 190px; transition: transform 0.3s ease; margin-top: auto;">
-                            <img src="https://redive.estertion.win/card/story/301300101.webp" style="width: 120px; height: 190px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block; object-fit: cover;" alt="extra">
+                            <img src="icon/extra_story.png" style="width: 120px; height: 190px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block; object-fit: cover;" alt="extra">
                         </div>
                     </div>
                 </div>
