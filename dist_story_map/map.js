@@ -1324,16 +1324,14 @@ const QuestMapModule = {
                 if (item.type === 'still') {
                     const stillId = item.still_id || item.still;
                     if (stillId && String(stillId).trim().toLowerCase() !== 'end') {
-                        const stillIdStr = String(stillId);
-                        const stillIdNum = Number(stillId);
-                        let stillUrl = `https://redive.estertion.win/card/full/${stillId}.webp`;
-                        if (stillIdStr.length === 9 || stillIdNum > 10000000) {
-                            stillUrl = `https://redive.estertion.win/card/story/${stillId}.webp`;
-                        }
-                        const stillUrlFallback = `https://redive.estertion.win/event_still/${stillId}.webp`;
+                        // 使用 StoryAssetService 取得帶有完整多 CDN 降級鏈的 CG img 標籤
+                        const stillImgHtml = StoryAssetService.getStillHtml(stillId, 'dialogue-still-img', '');
                         html += `
-                            <div class="game-dialogue-still" style="margin: 15px 0; text-align: center; border-radius: 8px; overflow: hidden; border: 1.5px solid rgba(232,56,117,0.1); box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-                                <img src="${stillUrl}" loading="lazy" onerror="this.onerror=function(){this.style.display='none';}; this.src='${stillUrlFallback}';" style="max-width: 100%; max-height: 240px; object-fit: contain; display: block; margin: 0 auto; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                            <div class="game-dialogue-still-wrap">
+                                <div class="game-dialogue-still-label">✨ 劇情插畫</div>
+                                <div class="game-dialogue-still">
+                                    ${stillImgHtml}
+                                </div>
                             </div>
                         `;
                     }
