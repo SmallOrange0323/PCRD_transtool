@@ -531,41 +531,41 @@ const QuestMapModule = {
                     <!-- 主要劇情 (左右佈局，橫跨3列) -->
                     <div class="menu-card" onmouseenter="QuestMapModule.changeMenuBg('main')" onclick="QuestMapModule.enterCategory('main')" style="grid-column: span 3; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 25px; padding: 20px 30px; min-height: 150px;">
                         <div class="menu-card-inner" style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
-                            <div class="menu-card-title" style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary);">⚔️ 主要劇情</div>
-                            <div class="menu-card-desc" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">探索阿斯特萊亞世界的宏大冒險與主線篇章</div>
+                            <div class="menu-card-title" style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary);">主要</div>
+                            <div class="menu-card-desc" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">可以在此處閱覽阿斯特萊亞大陸上發生的故事</div>
                         </div>
                         <div class="menu-card-sd-thumb" style="flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 404px; height: 126px; transition: transform 0.3s ease;">
-                            <img src="icon/main_story.png" style="width: 404px; height: 126px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block;" alt="main">
+                            <img src="https://redive.estertion.win/card/story/300100101.webp" style="width: 404px; height: 126px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block; object-fit: cover;" alt="main">
                         </div>
                     </div>
                     <!-- 角色劇情 (上下佈局) -->
                     <div class="menu-card" onmouseenter="QuestMapModule.changeMenuBg('chara')" onclick="QuestMapModule.enterCategory('chara')" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 15px; padding: 25px 20px; text-align: center; min-height: 320px;">
                         <div class="menu-card-inner" style="width: 100%; display: flex; flex-direction: column; gap: 6px;">
-                            <div class="menu-card-title" style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary);">👤 角色劇情</div>
-                            <div class="menu-card-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">與每位夥伴的專屬故事</div>
+                            <div class="menu-card-title" style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary);">角色</div>
+                            <div class="menu-card-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">提升羈絆Rank後會追加新的故事</div>
                         </div>
                         <div class="menu-card-sd-thumb" style="flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 120px; height: 190px; transition: transform 0.3s ease; margin-top: auto;">
-                            <img src="icon/chara_story.png" style="width: 120px; height: 190px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block;" alt="chara">
+                            <img src="https://redive.estertion.win/card/story/200100201.webp" style="width: 120px; height: 190px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block; object-fit: cover;" alt="chara">
                         </div>
                     </div>
                     <!-- 公會劇情 (上下佈局) -->
                     <div class="menu-card" onmouseenter="QuestMapModule.changeMenuBg('guild')" onclick="QuestMapModule.enterCategory('guild')" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 15px; padding: 25px 20px; text-align: center; min-height: 320px;">
                         <div class="menu-card-inner" style="width: 100%; display: flex; flex-direction: column; gap: 6px;">
-                            <div class="menu-card-title" style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary);">👥 公會劇情</div>
-                            <div class="menu-card-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">公會成員間趣味溫馨的羈絆小品</div>
+                            <div class="menu-card-title" style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary);">公會</div>
+                            <div class="menu-card-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">在這裡可以看到女孩們的日常故事</div>
                         </div>
                         <div class="menu-card-sd-thumb" style="flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 120px; height: 190px; transition: transform 0.3s ease; margin-top: auto;">
-                            <img src="icon/guild_story.png" style="width: 120px; height: 190px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block;" alt="guild">
+                            <img src="https://redive.estertion.win/card/story/300700101.webp" style="width: 120px; height: 190px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block; object-fit: cover;" alt="guild">
                         </div>
                     </div>
                     <!-- 額外劇情 (上下佈局) -->
                     <div class="menu-card" onmouseenter="QuestMapModule.changeMenuBg('extra')" onclick="QuestMapModule.enterCategory('tower')" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 15px; padding: 25px 20px; text-align: center; min-height: 320px;">
                         <div class="menu-card-inner" style="width: 100%; display: flex; flex-direction: column; gap: 6px;">
-                            <div class="menu-card-title" style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary);">🌙 額外劇情</div>
-                            <div class="menu-card-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">特別冒險的特殊篇章</div>
+                            <div class="menu-card-title" style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary);">額外</div>
+                            <div class="menu-card-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">可以回顧那些有點特別的故事</div>
                         </div>
                         <div class="menu-card-sd-thumb" style="flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 120px; height: 190px; transition: transform 0.3s ease; margin-top: auto;">
-                            <img src="icon/extra_story.png" style="width: 120px; height: 190px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block;" alt="extra">
+                            <img src="https://redive.estertion.win/card/story/301300101.webp" style="width: 120px; height: 190px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25); box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block; object-fit: cover;" alt="extra">
                         </div>
                     </div>
                 </div>
@@ -627,21 +627,21 @@ const QuestMapModule = {
                 <span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;"><span style="font-size: 1.1rem;">🏠</span> 劇情大廳</span>
                 <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
                 <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">${
-                    this.activeTabType === 'main' ? '⚔️ 主要劇情' :
-                    this.activeTabType === 'event' ? '🏆 活動劇情' :
-                    this.activeTabType === 'guild' ? '👥 公會劇情' :
-                    this.activeTabType === 'chara' ? '👤 個人劇情' :
-                    this.activeTabType === 'tower' ? '🌙 額外劇情' : '👥 登場角色'
+                    this.activeTabType === 'main' ? '⚔️ 主要' :
+                    this.activeTabType === 'event' ? '🏆 活動' :
+                    this.activeTabType === 'guild' ? '👥 公會' :
+                    this.activeTabType === 'chara' ? '👤 角色' :
+                    this.activeTabType === 'tower' ? '🌙 額外' : '👥 登場角色'
                 }</span>
             </div>
             <div class="map-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                 <div>
                     <h2>📖 ${
-                        this.activeTabType === 'main' ? '主要劇情' :
-                        this.activeTabType === 'event' ? '活動劇情' :
-                        this.activeTabType === 'guild' ? '公會劇情' :
-                        this.activeTabType === 'chara' ? '個人劇情' :
-                        this.activeTabType === 'tower' ? '額外劇情' : '登場角色'
+                        this.activeTabType === 'main' ? '主要' :
+                        this.activeTabType === 'event' ? '活動' :
+                        this.activeTabType === 'guild' ? '公會' :
+                        this.activeTabType === 'chara' ? '角色' :
+                        this.activeTabType === 'tower' ? '額外' : '登場角色'
                     }</h2>
                     <p class="subtitle">載入 So-net 官方繁中劇情大綱與對話文本</p>
                 </div>
