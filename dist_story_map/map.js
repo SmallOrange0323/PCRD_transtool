@@ -30,6 +30,62 @@ const QuestMapModule = {
     currentView: 'menu',
     storyThumbnails: null,
     activeCharaName: null,
+    charaSearchQuery: "",
+
+    normalizeString(str) {
+        if (!str) return "";
+        let val = str.toLowerCase();
+        // 繁簡/錯別字容錯轉換：菈/拉, 婭/亞, 莉/麗, 涅/霓, 雅/婭/亞
+        const map = {
+            '菈': '拉', '婭': '亞', '莉': '麗', '涅': '霓', '雅': '亞', '拉': '拉', '亞': '亞', '麗': '麗', '霓': '霓'
+        };
+        let res = "";
+        for (let char of val) {
+            res += map[char] || char;
+        }
+        return res;
+    },
+
+    handleCharaSearch(inputVal) {
+        this.charaSearchQuery = inputVal;
+        const gridEl = document.querySelector('.chara-grid');
+        if (!gridEl) return;
+
+        const normalizedQuery = this.normalizeString(inputVal).trim();
+        const chapterKeys = Object.keys(this.chapters).sort();
+
+        let gridHtml = "";
+        let count = 0;
+        chapterKeys.forEach(chName => {
+            const normalizedName = this.normalizeString(chName);
+            if (normalizedQuery && !normalizedName.includes(normalizedQuery)) {
+                return;
+            }
+
+            const stories = this.chapters[chName];
+            const firstStory = stories[0];
+            const groupId = firstStory ? firstStory.groupId : 1001;
+            const cardId = `${groupId}31`;
+            const remoteCardUrl = `https://redive.estertion.win/card/full/${cardId}.webp`;
+            const localCardUrl = `card/${cardId}.webp`;
+            
+            gridHtml += `
+                <div class="chara-card" style="background-image: url('${localCardUrl}'), url('${remoteCardUrl}')" onclick="QuestMapModule.selectChara('${this.escapeForAttr(chName)}')">
+                    <div class="chara-card-overlay">
+                        <div class="chara-card-name">${this.escapeHtml(chName)}</div>
+                        <div class="chara-card-count">${stories.length} 話</div>
+                    </div>
+                </div>
+            `;
+            count++;
+        });
+
+        if (count === 0) {
+            gridEl.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-secondary); font-size: 1.1rem;">查無此角色</div>`;
+        } else {
+            gridEl.innerHTML = gridHtml;
+        }
+    },
 
     escapeHtml(str) {
         if (!str) return "";
@@ -630,7 +686,15 @@ const QuestMapModule = {
         // 1. 如果是角色 Tab 且尚未選定角色，渲染角色卡片網格 (Grid)
         if (this.activeTabType === 'chara' && !this.activeCharaName) {
             let gridHtml = "";
+            const normalizedQuery = this.normalizeString(this.charaSearchQuery).trim();
+            let count = 0;
+
             chapterKeys.sort().forEach(chName => {
+                const normalizedName = this.normalizeString(chName);
+                if (normalizedQuery && !normalizedName.includes(normalizedQuery)) {
+                    return;
+                }
+
                 const stories = this.chapters[chName];
                 const firstStory = stories[0];
                 const groupId = firstStory ? firstStory.groupId : 1001;
@@ -647,7 +711,12 @@ const QuestMapModule = {
                         </div>
                     </div>
                 `;
+                count++;
             });
+
+            if (count === 0) {
+                gridHtml = `<div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-secondary); font-size: 1.1rem;">查無此角色</div>`;
+            }
 
             tab.innerHTML = `
                 <div class="floating-back-btn" onclick="QuestMapModule.handleFloatingBack()" style="position: fixed; top: 20px; left: 20px; z-index: 9998; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #2d6bcf, #1a4a9e); color: #fff; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; box-shadow: 0 4px 15px rgba(26, 74, 158, 0.5); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.15)'; this.style.boxShadow='0 6px 20px rgba(26, 74, 158, 0.7)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(26, 74, 158, 0.5)';">←</div>
@@ -676,10 +745,13 @@ const QuestMapModule = {
                         <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
                         <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">👤 角色</span>
                     </div>
-                    <div class="map-header">
+                    <div class="map-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                         <div>
                             <h2>📖 角色劇情目錄</h2>
                             <p class="subtitle">選擇角色以瀏覽其個人絆劇情目錄與解鎖插畫</p>
+                        </div>
+                        <div>
+                            <input type="text" id="chara-search-input" placeholder="搜尋角色名稱 (支援繁簡/容錯)..." class="region-select" style="width: 280px; background-image: none; padding-right: 12px;" value="${this.escapeHtml(this.charaSearchQuery)}" oninput="QuestMapModule.handleCharaSearch(this.value)">
                         </div>
                     </div>
                     <div class="chara-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; margin-top: 20px;">
