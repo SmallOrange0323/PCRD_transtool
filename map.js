@@ -246,6 +246,18 @@ const QuestMapModule = {
                 }
             }
 
+            if (!this.extraEvents) {
+                try {
+                    const resp = await fetch('data/extra_events.json');
+                    if (resp.ok) {
+                        this.extraEvents = await resp.json();
+                        console.log(`[QuestMapModule] 成功載入新形式活動 (${this.extraEvents.events.length} 個活動)`);
+                    }
+                } catch (e) {
+                    console.error("無法加載新形式活動:", e);
+                }
+            }
+
             if (this.stories.length === 0) {
                 const checkChara = await window.PCRDatabase.runQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='chara_story_detail'");
                 const isTW = !(checkChara && checkChara.length > 0);
@@ -405,7 +417,20 @@ const QuestMapModule = {
                     ORDER BY start_time DESC
                 `;
                 this.events = await window.PCRDatabase.runQuery(eventSql);
-                console.log(`[QuestMapModule] 成功載入 ${this.events.length} 筆活動主檔`);
+                
+                // 合併新形式活動主檔
+                if (this.extraEvents && this.extraEvents.events) {
+                    const extraEventsMapped = this.extraEvents.events.map(e => ({
+                        story_group_id: e.story_group_id,
+                        title: e.title,
+                        start_time: e.start_time || "新形式活動",
+                        thumbnail_id: e.thumbnail_id,
+                        value: e.value
+                    }));
+                    // 將新形式活動排在最前面 (最新)
+                    this.events = extraEventsMapped.concat(this.events);
+                }
+                console.log(`[QuestMapModule] 成功載入 ${this.events.length} 筆活動主檔 (含新形式活動)`);
             }
 
             if (this.eventStories.length === 0) {
@@ -422,7 +447,21 @@ const QuestMapModule = {
                     groupId: row.story_group_id,
                     isEvent: true,
                 }));
-                console.log(`[QuestMapModule] 成功載入 ${this.eventStories.length} 筆活動話數`);
+                
+                // 合併新形式活動故事
+                if (this.extraEvents && this.extraEvents.stories) {
+                    const extraStoriesMapped = this.extraEvents.stories.map(s => ({
+                        id: s.id,
+                        chapter: s.chapter || "",
+                        title: s.title || "",
+                        groupId: s.groupId,
+                        isEvent: true,
+                        still_id: s.still_id,
+                        bg_id: s.bg_id
+                    }));
+                    this.eventStories = this.eventStories.concat(extraStoriesMapped);
+                }
+                console.log(`[QuestMapModule] 成功載入 ${this.eventStories.length} 筆活動話數 (含新形式活動)`);
             }
 
             await ChapterDataService.load();
@@ -795,14 +834,28 @@ const QuestMapModule = {
                 if (this.activeTabType === 'main') {
                     let cleanChKey = chKey;
                     const firstStory = childStories[0];
-                    const info = firstStory ? ChapterDataService.getChapterInfo(this.currentPart, firstStory.groupId) : null;
+                    const groupId = firstStory ? firstStory.groupId : null;
+                    const info = firstStory ? ChapterDataService.getChapterInfo(this.currentPart, groupId) : null;
                     chTitle = info?.title ? ` - ${info.title}` : "";
+
+                    // 取得章節縮圖
+                    let chImgUrl = 'https://redive.estertion.win/card/full/100431.webp'; // 預設卡面
+                    if (groupId && this.storyThumbnails && this.storyThumbnails[groupId]) {
+                        const thumb = this.storyThumbnails[groupId];
+                        if (thumb.still_id) {
+                            chImgUrl = `https://redive.estertion.win/card/story/${thumb.still_id}.webp`;
+                        } else if (thumb.bg_id) {
+                            chImgUrl = `https://redive.estertion.win/bg/jpg/${thumb.bg_id}.jpg`;
+                        }
+                    }
 
                     accordionHtml += `
                         <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
-                            <div class="accordion-header" onclick="QuestMapModule.toggleChapter(${chIndex})">
+                            <div class="accordion-header chapter-card" onclick="QuestMapModule.toggleChapter(${chIndex})">
                                 <div class="acc-header-title">
-                                    <span class="acc-folder-icon" style="display: flex; align-items: center; justify-content: center;">${chIcon}</span>
+                                    <div class="chapter-card-thumb">
+                                        <img class="chapter-card-img" src="${chImgUrl}" onerror="this.onerror=null; this.src='https://redive.estertion.win/card/full/100431.webp';">
+                                    </div>
                                     <span class="acc-ch-name" style="margin-left: 8px;">${this.escapeHtml(cleanChKey)}${this.escapeHtml(chTitle)}</span>
                                 </div>
                                 <div class="acc-count">${childStories.length} 話</div>
