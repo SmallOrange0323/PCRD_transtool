@@ -1050,9 +1050,11 @@ body {
     display: grid;
     grid-template-columns: 2.2fr 1fr;
     gap: 20px;
-    align-items: start;
+    align-items: stretch;
     margin-bottom: 0;
-    max-height: 850px;
+    height: calc(100vh - 180px);
+    min-height: 550px;
+    max-height: 800px;
 }
 
 /* 左側電影放映區 */
@@ -1066,7 +1068,46 @@ body {
     border: 1px solid var(--glass-border);
     box-shadow: 0 8px 24px rgba(94, 107, 125, 0.08);
     padding: 20px;
-    max-height: 850px;
+    height: 100%;
+}
+
+.map-control-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(94, 107, 125, 0.08);
+}
+
+.story-list-scrollbar {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* 替右側選單加入高科技微細自訂滾動條 */
+.story-list-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.story-list-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+}
+
+.story-list-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(94, 107, 125, 0.15);
+    border-radius: 10px;
+}
+
+.story-list-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 107, 157, 0.3);
 }
 
 .cinema-panel {
@@ -1632,8 +1673,6 @@ body {
 
 /* 對白板的主體捲動區域 */
 .game-dialogue-board {
-    flex: 1;
-    overflow-y: auto;
     padding: 12px;
     background: #fdf6f9;
     display: flex;
