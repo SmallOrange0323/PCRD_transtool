@@ -1560,26 +1560,7 @@ body {
     position: relative;
 }
 
-.game-dialogue-still:has(.still-clickable)::after {
-    content: '🔍 點擊放大';
-    position: absolute;
-    bottom: 10px;
-    right: 12px;
-    background: rgba(0, 0, 0, 0.55);
-    color: #ffffff;
-    padding: 4px 12px;
-    border-radius: 8px;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    pointer-events: none;
-    opacity: 0.85;
-    transition: opacity 0.3s ease;
-}
 
-.game-dialogue-still:has(.still-clickable):hover::after {
-    opacity: 1;
-}
 
 .dialogue-still-img:hover {
     transform: scale(1.03);

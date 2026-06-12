@@ -1403,7 +1403,7 @@ const QuestMapModule = {
                 if (firstBgUrl) {
                     cinemaPanel.style.backgroundImage = `url('${firstBgUrl}')`;
                 } else {
-                    cinemaPanel.style.backgroundImage = `url('https://redive.estertion.win/card/full/105931.webp')`;
+                    cinemaPanel.style.backgroundImage = 'none';
                 }
                 cinemaPanel.style.backgroundSize = 'cover';
                 cinemaPanel.style.backgroundPosition = 'center';
