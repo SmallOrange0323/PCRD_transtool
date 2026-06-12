@@ -89,6 +89,19 @@ def main():
         except Exception as e:
             print(f"[Warning] 複製本地 icon 目錄失敗: {e}")
             
+    # 複製 card/ 目錄下的所有卡面大立繪
+    card_src_dir = os.path.join(dashboard_dir, "card")
+    card_dst_dir = os.path.join(dist_dir, "card")
+    if os.path.exists(card_src_dir):
+        print("[Copy] 開始複製本地 card 目錄...")
+        try:
+            if os.path.exists(card_dst_dir):
+                shutil.rmtree(card_dst_dir)
+            shutil.copytree(card_src_dir, card_dst_dir)
+            print("[Copy] 本地 card 目錄複製成功！")
+        except Exception as e:
+            print(f"[Warning] 複製本地 card 目錄失敗: {e}")
+            
     print("[Success] 打包部署封裝完成！")
     print(f"[Info] 您現在可以直接將 {dist_dir} 資料夾內容部署到 GitHub Pages、Vercel 或您的任何 Web 伺服器上。")
 
