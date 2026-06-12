@@ -553,13 +553,6 @@ const QuestMapModule = {
         if (this.currentView === 'menu') {
             tab.innerHTML = `
             <div class="menu-container">
-                <div class="menu-visual-area" id="menu-visual-area">
-                    <div class="menu-visual-overlay"></div>
-                    <div class="menu-visual-meta">
-                        <h2>📖 阿斯特萊亞劇情編年史</h2>
-                        <p class="subtitle">階層式章節導航，載入 So-net 官方繁中劇情大綱與對話文本</p>
-                    </div>
-                </div>
                 <div class="menu-cards-area" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; flex: 1.5; align-content: center;">
                     <!-- 主要劇情 (左右佈局，橫跨3列) -->
                     <div class="menu-card" onmouseenter="QuestMapModule.changeMenuBg('main')" onclick="QuestMapModule.enterCategory('main')" 
