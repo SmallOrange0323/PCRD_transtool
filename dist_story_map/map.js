@@ -859,8 +859,8 @@ const QuestMapModule = {
 
             <div class="map-layout" style="margin-top: 20px;">
                 <div class="map-visual-area">
-                    <div class="cinema-panel" style="height: 100%;">
-                        <div class="cinema-meta" style="height: 100%; display: flex; flex-direction: column;">
+                    <div class="cinema-panel">
+                        <div class="cinema-meta" style="display: flex; flex-direction: column;">
                             <div class="cinema-ch-row" style="display: flex; align-items: center; justify-content: space-between;">
                                 <div style="display: flex; align-items: center; gap: 10px;">
                                     <span id="cinema-ch-tag" class="ch-tag">第 1 章</span>
@@ -1109,7 +1109,7 @@ const QuestMapModule = {
                                 ">
                                     <span style="color: var(--text-secondary); font-size: 0.8rem;">正在載入登場角色頭像...</span>
                                 </div>
-                                <div id="dialogue-board" class="game-dialogue-board" style="max-height: 60vh; overflow-y: auto;">
+                                <div id="dialogue-board" class="game-dialogue-board" style="max-height: 500px; overflow-y: auto;">
                                 </div>
                                 <div class="game-dialogue-footer" style="border-radius: 0 0 12px 12px;">
                                     <div class="game-footer-btn close" onclick="document.getElementById('dialogue-board').scrollTop = 0">⬆ 回到頂端</div>
@@ -1320,12 +1320,11 @@ const QuestMapModule = {
                 if (item.type === 'still') {
                     const stillId = item.still_id || item.still;
                     if (stillId && String(stillId).trim().toLowerCase() !== 'end') {
-                        // 使用 StoryAssetService 取得帶有完整多 CDN 降級鏈的 CG img 標籤
-                        const stillImgHtml = StoryAssetService.getStillHtml(stillId, 'dialogue-still-img', '');
+                        const stillImgHtml = StoryAssetService.getStillHtml(stillId, 'dialogue-still-img still-clickable', '');
                         html += `
                             <div class="game-dialogue-still-wrap">
                                 <div class="game-dialogue-still-label">✨ 劇情插畫</div>
-                                <div class="game-dialogue-still">
+                                <div class="game-dialogue-still" onclick="QuestMapModule.openStillPopup(event)">
                                     ${stillImgHtml}
                                 </div>
                             </div>
@@ -1428,6 +1427,68 @@ const QuestMapModule = {
             `;
         } finally {
             this.isLoadingDialogue = false;
+        }
+    },
+
+    openStillPopup(event) {
+        const imgEl = event.target.closest('.game-dialogue-still').querySelector('img');
+        if (!imgEl || !imgEl.src) return;
+
+        let overlay = document.getElementById('still-popup-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.id = 'still-popup-overlay';
+            overlay.className = 'still-popup-overlay';
+            overlay.onclick = function(e) {
+                if (e.target === overlay) {
+                    QuestMapModule.closeStillPopup();
+                }
+            };
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'still-popup-close-btn';
+            closeBtn.innerHTML = '&times;';
+            closeBtn.onclick = function() {
+                QuestMapModule.closeStillPopup();
+            };
+            const popupImg = document.createElement('img');
+            popupImg.id = 'still-popup-img';
+            popupImg.onclick = function(e) { e.stopPropagation(); };
+            overlay.appendChild(popupImg);
+            overlay.appendChild(closeBtn);
+            document.body.appendChild(overlay);
+        }
+
+        const popupImg = document.getElementById('still-popup-img');
+        popupImg.src = imgEl.src;
+
+        if (imgEl.dataset.candidates) {
+            popupImg.dataset.candidates = imgEl.dataset.candidates;
+            popupImg.dataset.step = imgEl.dataset.step || "0";
+            popupImg.onerror = function() { StoryAssetService.handleImageError(this); };
+        } else {
+            popupImg.removeAttribute('data-candidates');
+            popupImg.removeAttribute('data-step');
+            popupImg.onerror = null;
+        }
+
+        requestAnimationFrame(() => {
+            overlay.classList.add('active');
+        });
+
+        this._stillPopupKeyHandler = (e) => {
+            if (e.key === 'Escape') this.closeStillPopup();
+        };
+        document.addEventListener('keydown', this._stillPopupKeyHandler);
+    },
+
+    closeStillPopup() {
+        const overlay = document.getElementById('still-popup-overlay');
+        if (overlay) {
+            overlay.classList.remove('active');
+        }
+        if (this._stillPopupKeyHandler) {
+            document.removeEventListener('keydown', this._stillPopupKeyHandler);
+            this._stillPopupKeyHandler = null;
         }
     },
 

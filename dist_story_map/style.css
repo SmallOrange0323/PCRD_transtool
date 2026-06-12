@@ -916,6 +916,7 @@ body {
     gap: 20px;
     align-items: start;
     margin-bottom: 0;
+    max-height: 700px;
 }
 
 /* 左側電影放映區 */
@@ -929,12 +930,17 @@ body {
     border: 1px solid var(--glass-border);
     box-shadow: 0 8px 24px rgba(94, 107, 125, 0.08);
     padding: 20px;
+    max-height: 700px;
+    overflow-y: auto;
 }
 
 .cinema-panel {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    height: 100%;
+    max-height: 700px;
+    overflow: hidden;
 }
 
 .cinema-screen {
@@ -970,6 +976,7 @@ body {
     flex-direction: column;
     gap: 15px;
     overflow-y: auto;
+    min-height: 0;
 }
 
 .cinema-meta::-webkit-scrollbar {
@@ -1544,8 +1551,101 @@ body {
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.dialogue-still-img.still-clickable {
+    cursor: zoom-in;
+}
+
+.game-dialogue-still:has(.still-clickable) {
+    cursor: zoom-in;
+    position: relative;
+}
+
+.game-dialogue-still:has(.still-clickable)::after {
+    content: '🔍 點擊放大';
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    pointer-events: none;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+.game-dialogue-still:has(.still-clickable):hover::after {
+    opacity: 1;
+}
+
 .dialogue-still-img:hover {
     transform: scale(1.03);
+}
+
+/* ===== CG 劇情插畫全螢幕放大 Overlay ===== */
+.still-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    cursor: zoom-out;
+}
+
+.still-popup-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.still-popup-overlay img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 16px 64px rgba(0, 0, 0, 0.6);
+    transform: scale(0.85);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.still-popup-overlay.active img {
+    transform: scale(1);
+}
+
+.still-popup-close-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100000;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.still-popup-close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
 }
 
 /* 當所有 CDN 都失敗、圖片降至 1px 透明 gif 時，自動隱藏整個插畫容器 */
