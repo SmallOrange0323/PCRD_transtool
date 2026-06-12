@@ -627,21 +627,21 @@ const QuestMapModule = {
                 <span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;"><span style="font-size: 1.1rem;">🏠</span> 劇情大廳</span>
                 <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
                 <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">${
-                    this.activeTabType === 'main' ? '⚔️ 主要劇情' :
-                    this.activeTabType === 'event' ? '🏆 活動劇情' :
-                    this.activeTabType === 'guild' ? '👥 公會劇情' :
-                    this.activeTabType === 'chara' ? '👤 個人劇情' :
-                    this.activeTabType === 'tower' ? '🌙 額外劇情' : '👥 登場角色'
+                    this.activeTabType === 'main' ? '⚔️ 主要' :
+                    this.activeTabType === 'event' ? '🏆 活動' :
+                    this.activeTabType === 'guild' ? '👥 公會' :
+                    this.activeTabType === 'chara' ? '👤 角色' :
+                    this.activeTabType === 'tower' ? '🌙 額外' : '👥 登場角色'
                 }</span>
             </div>
             <div class="map-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                 <div>
                     <h2>📖 ${
-                        this.activeTabType === 'main' ? '主要劇情' :
-                        this.activeTabType === 'event' ? '活動劇情' :
-                        this.activeTabType === 'guild' ? '公會劇情' :
-                        this.activeTabType === 'chara' ? '個人劇情' :
-                        this.activeTabType === 'tower' ? '額外劇情' : '登場角色'
+                        this.activeTabType === 'main' ? '主要' :
+                        this.activeTabType === 'event' ? '活動' :
+                        this.activeTabType === 'guild' ? '公會' :
+                        this.activeTabType === 'chara' ? '角色' :
+                        this.activeTabType === 'tower' ? '額外' : '登場角色'
                     }</h2>
                     <p class="subtitle">載入 So-net 官方繁中劇情大綱與對話文本</p>
                 </div>
