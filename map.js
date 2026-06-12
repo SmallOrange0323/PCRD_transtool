@@ -1809,6 +1809,9 @@ const QuestMapModule = {
 
         if (targetChKey) {
             this.expandedChapter = targetChKey;
+            if (storyType === 'chara') {
+                this.activeCharaName = targetChKey;
+            }
         }
 
         this.safeRender(async () => {
