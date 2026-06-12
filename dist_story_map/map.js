@@ -566,8 +566,8 @@ const QuestMapModule = {
                          style="grid-column: span 3; display: flex; flex-direction: row; align-items: center; justify-content: flex-start; min-height: 160px; background-image: url('https://redive.estertion.win/card/full/105861.webp'); background-size: cover; background-position: center 25%; position: relative; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: pointer;">
                         <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 45%, rgba(255,255,255,0) 80%); z-index: 1;"></div>
                         <div class="menu-card-inner" style="position: relative; z-index: 2; width: 60%; display: flex; flex-direction: column; gap: 8px; padding: 25px 35px;">
-                            <div class="menu-card-title" style="font-size: 1.6rem; font-weight: 800; color: var(--text-primary);">主要</div>
-                            <div class="menu-card-desc" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">可以在此處閱覽阿斯特萊亞大陸上發生的故事</div>
+                            <div class="menu-card-title" style="font-size: 2.8rem; font-weight: 800; color: var(--text-primary);">主要</div>
+                            <div class="menu-card-desc" style="font-size: 1.45rem; color: var(--text-secondary); line-height: 1.6;">可以在此處閱覽阿斯特萊亞大陸上發生的故事</div>
                         </div>
                     </div>
                     <!-- 角色劇情 (上下佈局) -->
@@ -575,8 +575,8 @@ const QuestMapModule = {
                          style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end; min-height: 320px; background-image: url('https://redive.estertion.win/card/full/100261.webp'); background-size: cover; background-position: center; position: relative; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: pointer;">
                         <div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0) 80%); z-index: 1;"></div>
                         <div class="menu-card-inner" style="position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; gap: 6px; padding: 20px 15px; text-align: center;">
-                            <div class="menu-card-title" style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary);">角色</div>
-                            <div class="menu-card-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">提升羈絆Rank後會追加新的故事</div>
+                            <div class="menu-card-title" style="font-size: 2.2rem; font-weight: 800; color: var(--text-primary);">角色</div>
+                            <div class="menu-card-desc" style="font-size: 1.25rem; color: var(--text-secondary); line-height: 1.5;">提升羈絆Rank後會追加新的故事</div>
                         </div>
                     </div>
                     <!-- 公會劇情 (上下佈局) -->
@@ -584,8 +584,8 @@ const QuestMapModule = {
                          style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end; min-height: 320px; background-image: url('https://redive.estertion.win/card/full/101761.webp'); background-size: cover; background-position: center; position: relative; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: pointer;">
                         <div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0) 80%); z-index: 1;"></div>
                         <div class="menu-card-inner" style="position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; gap: 6px; padding: 20px 15px; text-align: center;">
-                            <div class="menu-card-title" style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary);">公會</div>
-                            <div class="menu-card-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">在這裡可以看到女孩們的日常故事</div>
+                            <div class="menu-card-title" style="font-size: 2.2rem; font-weight: 800; color: var(--text-primary);">公會</div>
+                            <div class="menu-card-desc" style="font-size: 1.25rem; color: var(--text-secondary); line-height: 1.5;">在這裡可以看到女孩們的日常故事</div>
                         </div>
                     </div>
                     <!-- 額外劇情 (上下佈局) -->
@@ -593,8 +593,8 @@ const QuestMapModule = {
                          style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end; min-height: 320px; background-image: url('https://redive.estertion.win/card/full/104461.webp'); background-size: cover; background-position: center; position: relative; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: pointer;">
                         <div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0) 80%); z-index: 1;"></div>
                         <div class="menu-card-inner" style="position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; gap: 6px; padding: 20px 15px; text-align: center;">
-                            <div class="menu-card-title" style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary);">額外</div>
-                            <div class="menu-card-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">可以回顧那些有點特別的故事</div>
+                            <div class="menu-card-title" style="font-size: 2.2rem; font-weight: 800; color: var(--text-primary);">額外</div>
+                            <div class="menu-card-desc" style="font-size: 1.25rem; color: var(--text-secondary); line-height: 1.5;">可以回顧那些有點特別的故事</div>
                         </div>
                     </div>
                 </div>
