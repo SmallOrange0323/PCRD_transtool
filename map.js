@@ -1309,78 +1309,144 @@ const QuestMapModule = {
         const chaptersList = Object.keys(this.chapters);
 
         let html = `<div class="quick-directory-wrapper"><div class="quick-dir-scroll-container">`;
-        if (this.activeSummaryTab === 'episode') {
+        
+        if (this.activeSummaryTab === 'part' && this.activeTabType === 'main') {
+            for (let p = 1; p <= 3; p++) {
+                const isActivePart = this.currentPart === p;
+                html += `<button class="quick-dir-btn part-btn ${isActivePart ? 'active' : ''}" style="background: rgba(9, 132, 227, 0.06) !important; border-color: rgba(9, 132, 227, 0.2) !important; color: #0984e3 !important;" onclick="QuestMapModule.selectPartFromTab(${p})">第${p}部</button>`;
+            }
+        } else if (this.activeSummaryTab === 'chapter') {
+            chaptersList.forEach(chKey => {
+                const isActive = chKey === currentChapter;
+                const shortChName = chKey.replace(/^(第\d+部\s*)/, '');
+                html += `<button class="quick-dir-btn chapter-btn ${isActive ? 'active' : ''}" onclick="QuestMapModule.selectChapterFromTab('${this.escapeHtml(chKey)}')">${this.escapeHtml(shortChName)}</button>`;
+            });
+            if (chaptersList.length === 0) {
+                html += `<span style="font-size: 0.85rem; color: var(--text-secondary); padding: 8px;">暫無章節</span>`;
+            }
+        } else {
             childStories.forEach(s => {
                 const isActive = s.id === this.activeStoryId;
                 const shortTitle = s.title_short || s.title.split(' ')[0] || `第${s.episode}話`;
-                html += `<button class="quick-dir-btn episode-btn ${isActive ? 'active' : ''}" onclick="QuestMapModule.selectStory(${s.id})">${this.escapeHtml(shortTitle)}</button>`;
+                html += `<button class="quick-dir-btn episode-btn ${isActive ? 'active' : ''}" onclick="QuestMapModule.selectEpisodeFromTab(${s.id})">${this.escapeHtml(shortTitle)}</button>`;
             });
             if (childStories.length === 0) {
                 html += `<span style="font-size: 0.85rem; color: var(--text-secondary); padding: 8px;">此章節暫無話數</span>`;
             }
-        } else {
-            if (this.activeTabType === 'main') {
-                for (let p = 1; p <= 3; p++) {
-                    const isActivePart = this.currentPart === p;
-                    html += `<button class="quick-dir-btn part-btn ${isActivePart ? 'active' : ''}" style="background: rgba(9, 132, 227, 0.06) !important; border-color: rgba(9, 132, 227, 0.2) !important; color: #0984e3 !important;" onclick="QuestMapModule.switchPart(${p})">第${p}部</button>`;
-                }
-                html += `<span style="color: rgba(94, 107, 125, 0.2); margin: 0 4px; display: inline-block; align-self: center;">|</span>`;
-            }
-            chaptersList.forEach(chKey => {
-                const isActive = chKey === currentChapter;
-                const shortChName = chKey.replace(/^(第\d+部\s*)/, '');
-                html += `<button class="quick-dir-btn chapter-btn ${isActive ? 'active' : ''}" onclick="QuestMapModule.toggleChapterByQuickDir('${this.escapeHtml(chKey)}')">${this.escapeHtml(shortChName)}</button>`;
-            });
         }
+        
         html += `</div></div>`;
         return html;
     },
 
-    toggleChapterByQuickDir(chKey) {
-        this.expandedChapter = chKey;
-        this.activeSummaryTab = 'episode';
-        
-        const btnEp = document.getElementById('tab-summary-episode');
-        const btnCh = document.getElementById('tab-summary-chapter');
-        if (btnEp && btnCh) {
-            btnEp.classList.add('active');
-            btnEp.style.borderBottom = "2px solid var(--accent-color)";
-            btnEp.style.color = "var(--accent-color)";
-            btnCh.classList.remove('active');
-            btnCh.style.borderBottom = "2px solid transparent";
-            btnCh.style.color = "var(--text-secondary)";
-        }
+    async selectPartFromTab(part) {
+        this.currentPart = part;
+        this.activeStoryId = null;
+        this.expandedChapter = null;
+        this.activeSummaryTab = 'chapter'; // 點部自動跳章
 
-        const childStories = this.chapters[chKey] || [];
-        if (childStories.length > 0) {
-            this.selectStory(childStories[0].id);
+        await this.safeRender(() => this._render());
+
+        const chapterKeys = Object.keys(this.chapters);
+        if (chapterKeys.length > 0) {
+            const firstChapter = chapterKeys[0];
+            this.expandedChapter = firstChapter;
+            const childStories = this.chapters[firstChapter] || [];
+            if (childStories.length > 0) {
+                await this.selectStory(childStories[0].id);
+            } else {
+                this.updateSummaryTabsUI();
+                this.updateSummaryContent();
+            }
         } else {
+            this.updateSummaryTabsUI();
             this.updateSummaryContent();
         }
     },
 
+    async selectChapterFromTab(chKey) {
+        this.expandedChapter = chKey;
+        this.activeSummaryTab = 'episode'; // 點章自動跳話
+        
+        const childStories = this.chapters[chKey] || [];
+        if (childStories.length > 0) {
+            await this.selectStory(childStories[0].id);
+        } else {
+            this.updateSummaryTabsUI();
+            this.updateSummaryContent();
+        }
+    },
+
+    async selectEpisodeFromTab(storyId) {
+        // 維持在 episode 頁籤，只切換話數
+        await this.selectStory(storyId);
+    },
+
     switchSummaryTab(tabType) {
         this.activeSummaryTab = tabType;
-        const btnEp = document.getElementById('tab-summary-episode');
-        const btnCh = document.getElementById('tab-summary-chapter');
-        if (btnEp && btnCh) {
-            if (tabType === 'episode') {
-                btnEp.classList.add('active');
-                btnEp.style.borderBottom = "2px solid var(--accent-color)";
-                btnEp.style.color = "var(--accent-color)";
-                btnCh.classList.remove('active');
-                btnCh.style.borderBottom = "2px solid transparent";
-                btnCh.style.color = "var(--text-secondary)";
-            } else {
-                btnCh.classList.add('active');
-                btnCh.style.borderBottom = "2px solid var(--accent-color)";
-                btnCh.style.color = "var(--accent-color)";
-                btnEp.classList.remove('active');
-                btnEp.style.borderBottom = "2px solid transparent";
-                btnEp.style.color = "var(--text-secondary)";
-            }
-        }
+        this.updateSummaryTabsUI();
         this.updateSummaryContent();
+    },
+
+    updateSummaryTabsUI() {
+        const isMobile = window.innerWidth <= 768;
+        const tabsContainer = document.querySelector('.summary-tabs');
+        if (!tabsContainer) return;
+
+        if (!isMobile) {
+            // 桌機版回復原本的雙頁籤
+            tabsContainer.innerHTML = `
+                <button id="tab-summary-episode" class="summary-tab ${this.activeSummaryTab === 'episode' ? 'active' : ''}" onclick="QuestMapModule.switchSummaryTab('episode')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid ${this.activeSummaryTab === 'episode' ? 'var(--accent-color)' : 'transparent'}; color: ${this.activeSummaryTab === 'episode' ? 'var(--accent-color)' : 'var(--text-secondary)'}; cursor: pointer; font-weight: ${this.activeSummaryTab === 'episode' ? 'bold' : 'normal'}; font-size: 0.88rem;">📜 單話大綱</button>
+                <button id="tab-summary-chapter" class="summary-tab ${this.activeSummaryTab === 'chapter' ? 'active' : ''}" onclick="QuestMapModule.switchSummaryTab('chapter')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid ${this.activeSummaryTab === 'chapter' ? 'var(--accent-color)' : 'transparent'}; color: ${this.activeSummaryTab === 'chapter' ? 'var(--accent-color)' : 'var(--text-secondary)'}; cursor: pointer; font-weight: ${this.activeSummaryTab === 'chapter' ? 'bold' : 'normal'}; font-size: 0.88rem;">📖 整章摘要簡介</button>
+            `;
+            return;
+        }
+
+        // 行動端頁籤
+        const story = this.getStoryById(this.activeStoryId);
+        const hasPart = this.activeTabType === 'main';
+
+        let partText = "第1部";
+        if (story) {
+            partText = `第${story.part || this.currentPart || 1}部`;
+        } else if (this.currentPart) {
+            partText = `第${this.currentPart}部`;
+        }
+
+        let chapterText = "第1章";
+        if (this.expandedChapter) {
+            const match = this.expandedChapter.match(/第\d+章/);
+            chapterText = match ? match[0] : this.expandedChapter;
+        } else if (story && story.chapter) {
+            const match = story.chapter.match(/第\d+章/);
+            chapterText = match ? match[0] : story.chapter;
+        }
+
+        let episodeText = "第1話";
+        if (story) {
+            episodeText = `第${story.episode}話`;
+        }
+
+        if (this.activeSummaryTab === 'part' && !hasPart) {
+            this.activeSummaryTab = 'chapter';
+        }
+        if (!this.activeSummaryTab) {
+            this.activeSummaryTab = 'episode';
+        }
+
+        let tabsHtml = "";
+        if (hasPart) {
+            tabsHtml += `
+                <button id="tab-summary-part" class="summary-tab ${this.activeSummaryTab === 'part' ? 'active' : ''}" onclick="QuestMapModule.switchSummaryTab('part')" style="flex: 1; text-align: center; padding: 8px 6px; background: transparent; border: none; border-bottom: 2px solid ${this.activeSummaryTab === 'part' ? 'var(--accent-color)' : 'transparent'}; color: ${this.activeSummaryTab === 'part' ? 'var(--accent-color)' : 'var(--text-secondary)'}; cursor: pointer; font-weight: ${this.activeSummaryTab === 'part' ? 'bold' : 'normal'}; font-size: 0.85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${partText}</button>
+            `;
+        }
+        
+        tabsHtml += `
+            <button id="tab-summary-chapter" class="summary-tab ${this.activeSummaryTab === 'chapter' ? 'active' : ''}" onclick="QuestMapModule.switchSummaryTab('chapter')" style="flex: 1; text-align: center; padding: 8px 6px; background: transparent; border: none; border-bottom: 2px solid ${this.activeSummaryTab === 'chapter' ? 'var(--accent-color)' : 'transparent'}; color: ${this.activeSummaryTab === 'chapter' ? 'var(--accent-color)' : 'var(--text-secondary)'}; cursor: pointer; font-weight: ${this.activeSummaryTab === 'chapter' ? 'bold' : 'normal'}; font-size: 0.85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${chapterText}</button>
+            <button id="tab-summary-episode" class="summary-tab ${this.activeSummaryTab === 'episode' ? 'active' : ''}" onclick="QuestMapModule.switchSummaryTab('episode')" style="flex: 1; text-align: center; padding: 8px 6px; background: transparent; border: none; border-bottom: 2px solid ${this.activeSummaryTab === 'episode' ? 'var(--accent-color)' : 'transparent'}; color: ${this.activeSummaryTab === 'episode' ? 'var(--accent-color)' : 'var(--text-secondary)'}; cursor: pointer; font-weight: ${this.activeSummaryTab === 'episode' ? 'bold' : 'normal'}; font-size: 0.85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${episodeText}</button>
+        `;
+
+        tabsContainer.innerHTML = tabsHtml;
     },
 
     async updateSummaryContent() {
@@ -1469,12 +1535,7 @@ const QuestMapModule = {
 
                     </div>
                 `;
-                if (isMobile) {
-                    const btnEp = document.getElementById('tab-summary-episode');
-                    const btnCh = document.getElementById('tab-summary-chapter');
-                    if (btnEp) btnEp.innerText = this.expandedChapter || '當前章節';
-                    if (btnCh) btnCh.innerText = '📖 切換章節';
-                }
+                this.updateSummaryTabsUI();
             } catch (e) {
                 console.error(e);
                 summaryEl.innerHTML = `<div style="color: #ff6b6b;">無法載入官方大綱。</div>`;
