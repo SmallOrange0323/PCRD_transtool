@@ -2556,6 +2556,220 @@ body {
         width: 16px;
         height: 16px;
     }
+
+    /* ==========================================
+       📱 任務 2：劇情放映與台詞行動端適配
+       ========================================== */
+
+    /* --- 對話逐字台詞看板：頭像與氣泡由左右 row 改為上下 column 堆疊 --- */
+    .game-dialogue-line {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 10px 12px;
+    }
+
+    /* 隱藏桌面版的氣泡指引小指針（::before / ::after 箭頭） */
+    .game-dialogue-line::before,
+    .game-dialogue-line::after {
+        display: none !important;
+    }
+
+    /* 頭像容器改為水平行內排列：頭像縮小 + 名字在同一行 */
+    .game-chara-avatar-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .game-chara-avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 6px;
+        border-width: 2px;
+    }
+
+    /* 對話內容區取消左側內距，因已無箭頭指針 */
+    .game-dialogue-content {
+        padding-left: 0;
+    }
+
+    .game-dialogue-speaker {
+        font-size: 0.88rem;
+        margin-bottom: 3px;
+    }
+
+    .game-dialogue-text {
+        font-size: 0.92rem;
+        line-height: 1.65;
+        word-break: break-word;
+    }
+
+    /* 旁白行：維持伸縮但縮減留白 */
+    .game-dialogue-line.role-narrator {
+        padding: 10px 12px;
+    }
+
+    /* 選擇肢行：置中維持但縮減留白 */
+    .game-dialogue-line.role-choice {
+        padding: 12px;
+    }
+
+    /* --- 對白面板頂部登場角色頭像列 --- */
+    .game-chara-list-bar {
+        padding: 8px 10px;
+        gap: 8px;
+    }
+
+    .game-chara-avatar-badge {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* --- 對白面板底部控制按鈕（回到頂端 / 跳至底端）--- */
+    .game-dialogue-footer {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .game-footer-btn {
+        min-width: unset;
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 1rem;
+        border-radius: 14px;
+    }
+
+    /* --- 劇情放映主面板（cinema-panel）與左右佈局 --- */
+    .cinema-panel {
+        max-height: none;
+    }
+
+    /* cinema-meta 行動端取消固定高度限制 */
+    .cinema-meta {
+        max-height: none;
+    }
+
+    .cinema-ch-row {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .ch-tag {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+
+    /* 摘要標題列適配 */
+    .summary-label {
+        font-size: 0.82rem;
+    }
+
+    .summary-text {
+        font-size: 0.92rem;
+    }
+
+    /* --- 右側章節目錄控制面板 --- */
+    .map-control-panel {
+        height: auto;
+        max-height: 50vh;
+    }
+
+    .panel-section-title {
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+    }
+
+    /* 部別切換按鈕行動端適配 */
+    .part-selector {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .part-btn {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+        border-radius: 10px;
+    }
+
+    /* --- 沉浸式 CG 劇照/背景小螢幕適配 --- */
+    .game-dialogue-still-wrap {
+        margin: 12px 0;
+    }
+
+    .game-dialogue-still {
+        border-radius: 10px;
+        border-width: 1.5px;
+    }
+
+    .dialogue-still-img {
+        width: 100%;
+        max-height: 280px;
+        object-fit: contain;
+    }
+
+    /* CG 全螢幕放大覆蓋層按鈕加大便於觸控 */
+    .still-popup-close-btn {
+        width: 52px;
+        height: 52px;
+        top: 12px;
+        right: 12px;
+        font-size: 1.8rem;
+    }
+
+    /* --- 對白看板整體容器圓角與內距 --- */
+    .game-dialogue-panel {
+        border-radius: 12px;
+    }
+
+    .game-dialogue-header {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+        letter-spacing: 1.5px;
+    }
+
+    .game-dialogue-header::before,
+    .game-dialogue-header::after {
+        font-size: 0.75rem;
+    }
+
+    .game-dialogue-board {
+        padding: 8px;
+        gap: 8px;
+    }
+
+    /* 視圖切換按鈕組行動端適配 */
+    .view-toggle-group {
+        margin-left: 0;
+        margin-top: 6px;
+    }
+
+    .view-btn {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+
+    /* 摘要分頁按鈕 */
+    .summary-tab {
+        font-size: 0.78rem !important;
+        padding: 6px 10px !important;
+    }
+
+    /* 地圖容器行動端內距 */
+    .map-container {
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .map-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .map-header p.subtitle {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2582,6 +2796,181 @@ body {
         width: 32px;
         height: 32px;
         margin-left: 0;
+    }
+}
+
+/* ==========================================================================
+   📱 任務 3：登場角色、搜尋欄與彈窗 (Bottom Sheet) 行動端適配
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. 登場角色網格（Chara Grid）自適應 2~3 欄 */
+    .chara-grid {
+        grid-template-columns: repeat(auto-fill, minmax(95px, 1fr)) !important;
+        gap: 10px !important;
+        max-height: none !important;
+    }
+    
+    .chara-card {
+        border-radius: 12px !important;
+    }
+    
+    .chara-card-overlay {
+        padding: 8px 4px !important;
+    }
+    
+    .chara-card-name {
+        font-size: 0.85rem !important;
+    }
+    
+    .chara-card-count {
+        font-size: 0.65rem !important;
+    }
+
+    /* 角色圖鑑網格行動端自適應 */
+    .char-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)) !important;
+        gap: 12px !important;
+    }
+
+    .char-card {
+        padding: 10px !important;
+        border-radius: 14px !important;
+    }
+
+    .char-avatar {
+        width: 70px !important;
+        height: 70px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .char-name {
+        font-size: 0.9rem !important;
+    }
+
+    .char-guild {
+        font-size: 0.75rem !important;
+    }
+
+    /* 2. 角色詳情彈窗（Modal）轉換為 Bottom Sheet */
+    .modal-overlay {
+        align-items: flex-end !important;
+        justify-content: center !important;
+    }
+
+    .modal-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        border-radius: 24px 24px 0 0 !important;
+        margin: 0 !important;
+        padding: 30px 20px 40px !important;
+        max-height: 85vh !important;
+        transform: translateY(100%) scale(1) !important;
+        transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
+        box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .modal-overlay.active .modal-content {
+        transform: translateY(0) scale(1) !important;
+    }
+
+    /* 拖拽指示器（handlebar） */
+    .modal-content::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 10px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 40px !important;
+        height: 5px !important;
+        background-color: rgba(0, 0, 0, 0.15) !important;
+        border-radius: 3px !important;
+    }
+
+    .modal-close {
+        top: 15px !important;
+        right: 15px !important;
+        font-size: 2.2rem !important;
+        width: 44px !important;
+        height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        opacity: 0.8 !important;
+        z-index: 10 !important;
+    }
+
+    /* 角色詳情內部佈局適配 */
+    .detail-header {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 15px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .detail-avatar {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    .detail-main-info h2 {
+        font-size: 1.6rem !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)) !important;
+        gap: 10px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .stat-box {
+        padding: 8px 12px !important;
+    }
+
+    .stat-box .value {
+        font-size: 1rem !important;
+    }
+
+    /* 3. 搜尋欄與篩選器在小螢幕下提供置頂固定（Sticky）防止遮擋 */
+    .navbar {
+        position: relative !important; /* 手機端 navbar 不置頂，防雙重 sticky 遮擋螢幕 */
+    }
+
+    .gallery-header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 100 !important;
+        background: var(--glass-bg) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        padding: 12px 15px !important;
+        margin-bottom: 12px !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+        border: 1px solid var(--glass-border) !important;
+    }
+
+    .gallery-header > div {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+    }
+
+    .gallery-header > div > div {
+        justify-content: space-between !important;
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .search-box {
+        width: 100% !important;
+        justify-content: space-between !important;
+    }
+
+    #char-search {
+        flex-grow: 1 !important;
+        width: auto !important;
     }
 }
 
