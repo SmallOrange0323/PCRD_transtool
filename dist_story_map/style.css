@@ -1947,6 +1947,10 @@ body {
     transform: translateY(-1px);
 }
 
+.mobile-only-dir-btn {
+    display: none;
+}
+
 /* 旁白行特色樣式 */
 .game-dialogue-line.role-narrator {
     background: #fafbfc;
@@ -2710,17 +2714,33 @@ body {
 
     /* --- 對白面板底部控制按鈕（回到頂端 / 跳至底端）--- */
     .game-dialogue-footer {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        padding: 10px !important;
     }
 
     .game-footer-btn {
-        min-width: unset;
-        width: 100%;
-        padding: 14px 20px; /* 加大按鈕便於大拇指觸控 */
-        font-size: 1rem;
-        border-radius: 14px;
+        min-width: unset !important;
+        flex: 1 !important;
+        width: auto !important;
+        padding: 10px 14px !important;
+        font-size: 0.88rem !important;
+        border-radius: 12px !important;
+    }
+
+    /* --- 行動端目錄高亮與快速目錄按鈕 --- */
+    .mobile-only-dir-btn {
+        display: inline-block !important;
+    }
+
+    @keyframes panelHighlight {
+        0% { box-shadow: 0 0 0 rgba(232, 56, 117, 0); border-color: rgba(232, 56, 117, 0.15); }
+        50% { box-shadow: 0 0 20px rgba(232, 56, 117, 0.5); border-color: rgba(232, 56, 117, 0.7); }
+        100% { box-shadow: 0 0 0 rgba(232, 56, 117, 0); border-color: rgba(232, 56, 117, 0.15); }
+    }
+    .map-control-panel.highlight-panel {
+        animation: panelHighlight 1.5s ease-in-out !important;
     }
 
     /* --- 劇情放映主面板（cinema-panel）與左右佈局 --- */

@@ -1032,6 +1032,7 @@ const QuestMapModule = {
                                     <span id="cinema-ch-tag" class="ch-tag">第 1 章</span>
                                     <h3 id="cinema-title" style="margin: 0; color: var(--text-primary);">話標題</h3>
                                 </div>
+                                <button class="mobile-only-dir-btn" onclick="QuestMapModule.scrollToControlPanel()" style="padding: 6px 12px; background: rgba(232, 56, 117, 0.08); border: 1px solid rgba(232, 56, 117, 0.2); border-radius: 20px; color: var(--accent-color); font-weight: bold; cursor: pointer; font-size: 0.82rem; transition: all 0.2s;">📂 快速目錄</button>
                             </div>
                             <div class="summary-section" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 15px;">
                                 <div class="summary-tabs" style="display: flex; border-bottom: 2px solid rgba(94, 107, 125, 0.15); margin-bottom: 10px; gap: 8px;">
@@ -1185,6 +1186,51 @@ const QuestMapModule = {
             if (this.isDialogueExpanded) {
                 this.loadDialogue(storyId);
             }
+            this.updateNavigationButtons();
+        }
+    },
+
+    toPrevStory() {
+        const prevId = this.getPrevStoryId();
+        if (prevId) this.selectStory(prevId);
+    },
+
+    toNextStory() {
+        const nextId = this.getNextStoryId();
+        if (nextId) this.selectStory(nextId);
+    },
+
+    getPrevStoryId() {
+        const storyItems = Array.from(document.querySelectorAll('.story-item'));
+        const storyIds = storyItems.map(el => parseInt(el.id.replace('story-item-', ''), 10));
+        const index = storyIds.indexOf(this.activeStoryId);
+        return index > 0 ? storyIds[index - 1] : null;
+    },
+
+    getNextStoryId() {
+        const storyItems = Array.from(document.querySelectorAll('.story-item'));
+        const storyIds = storyItems.map(el => parseInt(el.id.replace('story-item-', ''), 10));
+        const index = storyIds.indexOf(this.activeStoryId);
+        return index !== -1 && index < storyIds.length - 1 ? storyIds[index + 1] : null;
+    },
+
+    updateNavigationButtons() {
+        const prevId = this.getPrevStoryId();
+        const nextId = this.getNextStoryId();
+        const btnPrev = document.getElementById('btn-prev-story');
+        const btnNext = document.getElementById('btn-next-story');
+        if (btnPrev) btnPrev.style.display = prevId ? 'block' : 'none';
+        if (btnNext) btnNext.style.display = nextId ? 'block' : 'none';
+    },
+
+    scrollToControlPanel() {
+        const panel = document.querySelector('.map-control-panel');
+        if (panel) {
+            panel.scrollIntoView({ behavior: 'smooth' });
+            panel.classList.add('highlight-panel');
+            setTimeout(() => {
+                panel.classList.remove('highlight-panel');
+            }, 1500);
         }
     },
 
@@ -1278,8 +1324,10 @@ const QuestMapModule = {
                                 <div id="dialogue-board" class="game-dialogue-board">
                                 </div>
                                 <div class="game-dialogue-footer" style="border-radius: 0 0 12px 12px;">
+                                    <div id="btn-prev-story" class="game-footer-btn close" style="display: none;" onclick="QuestMapModule.toPrevStory()">⬅ 上一話</div>
                                     <div class="game-footer-btn close" onclick="document.getElementById('cinema-summary').scrollTop = 0">⬆ 回到頂端</div>
                                     <div class="game-footer-btn skip" onclick="document.getElementById('cinema-summary').scrollTop = 99999">⬇ 跳至底端</div>
+                                    <div id="btn-next-story" class="game-footer-btn skip" style="display: none;" onclick="QuestMapModule.toNextStory()">➡️ 下一話</div>
                                 </div>
                             </div>
                         </div>
