@@ -838,15 +838,36 @@ const QuestMapModule = {
                     const info = firstStory ? ChapterDataService.getChapterInfo(this.currentPart, groupId) : null;
                     chTitle = info?.title ? ` - ${info.title}` : "";
 
-                    // 取得章節縮圖
+                    // 取得章節縮圖 (優先使用 groupId 對照，無則遍歷章節內故事尋找第一個有縮圖的故事)
                     let chImgUrl = 'https://redive.estertion.win/card/full/100431.webp'; // 預設卡面
+                    let foundStillId = null;
+                    let foundBgId = null;
+
                     if (groupId && this.storyThumbnails && this.storyThumbnails[groupId]) {
                         const thumb = this.storyThumbnails[groupId];
-                        if (thumb.still_id) {
-                            chImgUrl = `https://redive.estertion.win/card/story/${thumb.still_id}.webp`;
-                        } else if (thumb.bg_id) {
-                            chImgUrl = `https://redive.estertion.win/bg/jpg/${thumb.bg_id}.jpg`;
+                        foundStillId = thumb.still_id;
+                        foundBgId = thumb.bg_id;
+                    }
+
+                    if (!foundStillId && !foundBgId && this.storyThumbnails) {
+                        for (const s of childStories) {
+                            const thumb = this.storyThumbnails[s.id];
+                            if (thumb) {
+                                if (thumb.still_id) {
+                                    foundStillId = thumb.still_id;
+                                    break; // 優先使用劇照，找到立即停止
+                                }
+                                if (!foundBgId && thumb.bg_id) {
+                                    foundBgId = thumb.bg_id;
+                                }
+                            }
                         }
+                    }
+
+                    if (foundStillId) {
+                        chImgUrl = `https://redive.estertion.win/card/story/${foundStillId}.webp`;
+                    } else if (foundBgId) {
+                        chImgUrl = `https://redive.estertion.win/bg/jpg/${foundBgId}.jpg`;
                     }
 
                     accordionHtml += `
