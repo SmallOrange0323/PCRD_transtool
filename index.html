@@ -132,7 +132,8 @@
             } catch (err) {
                 text.innerHTML = `
                     <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 10px;">
-                        <span style="color: #ff6b6b; font-weight: bold; font-size: 1.05rem;">資料庫載入失敗！可能是網路連線問題，或日服數據源暫時不可用。</span>
+                        <span style="color: #ff6b6b; font-weight: bold; font-size: 1.05rem;">資料庫載入失敗！可能是網路連線問題。</span>
+                        <span style="color: #ffb8b8; font-size: 0.85rem; background: rgba(0,0,0,0.2); padding: 6px 12px; border-radius: 4px; font-family: monospace; max-width: 90%; word-break: break-all;">錯誤原因：${err.message || err}</span>
                         <button onclick="localStorage.setItem('pcr_region', 'tw'); location.reload();" style="
                             padding: 10px 24px;
                             background: linear-gradient(135deg, #ff6b9d 0%, #e83875 100%);

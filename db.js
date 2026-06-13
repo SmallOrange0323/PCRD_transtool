@@ -54,9 +54,20 @@ window.PCRDatabase = {
         try {
             // 1. 初始化 SQL 引擎 (WebAssembly)
             if (onProgress) onProgress('正在初始化 SQL 引擎...', 10);
-            const SQL = await initSqlJs({
+            
+            if (typeof initSqlJs === 'undefined') {
+                throw new Error("無法載入 SQL 引擎元件 (initSqlJs 未定義)。請嘗試按 Ctrl+F5 強制重新整理頁面。");
+            }
+
+            const sqlPromise = initSqlJs({
                 locateFile: file => `${file}`
             });
+
+            const timeoutPromise = new Promise((_, reject) => 
+                setTimeout(() => reject(new Error("初始化 SQL 引擎逾時 (10秒)。可能是網路連線不穩定，或是瀏覽器不支援 WebAssembly/WASM。")), 10000)
+            );
+
+            const SQL = await Promise.race([sqlPromise, timeoutPromise]);
 
             // 獲取最新 size
             let size = 0;
