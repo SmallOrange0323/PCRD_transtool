@@ -2492,3 +2492,96 @@ body {
 }
 
 /* opencode-ignore-test-comment */
+
+/* ====================================================
+   📱 行動端 (RWD) 響應式適配優化
+   ==================================================== */
+
+@media (max-width: 768px) {
+    /* 1. 大廳選單卡片 */
+    .menu-cards-area {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .menu-card {
+        padding: 20px 18px;
+        border-radius: 16px;
+        border-color: rgba(232, 56, 117, 0.15);
+        background: rgba(255, 255, 255, 0.7);
+    }
+    .menu-card-title {
+        font-size: 1.25rem;
+    }
+    .menu-card-desc {
+        font-size: 0.85rem;
+    }
+
+    /* 2. 麵包屑導航與大廳返回按鈕 */
+    .breadcrumb-container {
+        font-size: 0.8rem !important;
+        gap: 6px !important;
+        flex-wrap: wrap;
+        margin-bottom: 12px !important;
+    }
+    .breadcrumb-container .breadcrumb-item {
+        white-space: nowrap;
+    }
+    .floating-back-btn {
+        width: 36px !important;
+        height: 36px !important;
+        top: 12px !important;
+        left: 12px !important;
+        font-size: 1rem !important;
+        box-shadow: 0 2px 10px rgba(26, 74, 158, 0.4) !important;
+        border-width: 1.5px !important;
+    }
+
+    /* 3. 故事話數列表卡片 (768px 以下但大於 480px) */
+    .story-item {
+        padding: 12px 16px;
+        gap: 12px;
+    }
+    .story-item-thumb {
+        width: 120px;
+        height: 68px; /* 16:9 */
+    }
+    .story-item-title {
+        font-size: 1.05rem;
+    }
+    .story-item-arrow {
+        width: 30px;
+        height: 30px;
+    }
+    .story-item-arrow svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* 故事話數列表卡片 (480px 以下垂直堆疊) */
+    .story-item {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+        gap: 10px;
+        position: relative;
+    }
+    .story-item-thumb {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+    .story-item-content {
+        padding-right: 40px; /* 保留右側放箭頭的空間 */
+    }
+    .story-item-arrow {
+        position: absolute;
+        right: 12px;
+        bottom: 12px;
+        width: 32px;
+        height: 32px;
+        margin-left: 0;
+    }
+}
+
