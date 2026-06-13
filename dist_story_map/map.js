@@ -1382,6 +1382,14 @@ const QuestMapModule = {
         await this.selectStory(storyId);
     },
 
+    handleChapterTabClick() {
+        if (this.activeSummaryTab === 'episode') {
+            this.switchSummaryTab('chapter'); // 切換回選章
+        } else {
+            this.switchSummaryTab('episode'); // 切換回選話
+        }
+    },
+
     switchSummaryTab(tabType) {
         this.activeSummaryTab = tabType;
         this.updateSummaryTabsUI();
@@ -1422,11 +1430,6 @@ const QuestMapModule = {
             chapterText = match ? match[0] : story.chapter;
         }
 
-        let episodeText = "第1話";
-        if (story) {
-            episodeText = `第${story.episode}話`;
-        }
-
         if (this.activeSummaryTab === 'part' && !hasPart) {
             this.activeSummaryTab = 'chapter';
         }
@@ -1441,9 +1444,14 @@ const QuestMapModule = {
             `;
         }
         
+        const isChapterOrEpisodeActive = this.activeSummaryTab === 'chapter' || this.activeSummaryTab === 'episode';
+        let displayChName = chapterText;
+        if (this.activeSummaryTab === 'chapter') {
+            displayChName = `📖 選擇章節 (${chapterText})`;
+        }
+
         tabsHtml += `
-            <button id="tab-summary-chapter" class="summary-tab ${this.activeSummaryTab === 'chapter' ? 'active' : ''}" onclick="QuestMapModule.switchSummaryTab('chapter')" style="flex: 1; text-align: center; padding: 8px 6px; background: transparent; border: none; border-bottom: 2px solid ${this.activeSummaryTab === 'chapter' ? 'var(--accent-color)' : 'transparent'}; color: ${this.activeSummaryTab === 'chapter' ? 'var(--accent-color)' : 'var(--text-secondary)'}; cursor: pointer; font-weight: ${this.activeSummaryTab === 'chapter' ? 'bold' : 'normal'}; font-size: 0.85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${chapterText}</button>
-            <button id="tab-summary-episode" class="summary-tab ${this.activeSummaryTab === 'episode' ? 'active' : ''}" onclick="QuestMapModule.switchSummaryTab('episode')" style="flex: 1; text-align: center; padding: 8px 6px; background: transparent; border: none; border-bottom: 2px solid ${this.activeSummaryTab === 'episode' ? 'var(--accent-color)' : 'transparent'}; color: ${this.activeSummaryTab === 'episode' ? 'var(--accent-color)' : 'var(--text-secondary)'}; cursor: pointer; font-weight: ${this.activeSummaryTab === 'episode' ? 'bold' : 'normal'}; font-size: 0.85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${episodeText}</button>
+            <button id="tab-summary-chapter" class="summary-tab ${isChapterOrEpisodeActive ? 'active' : ''}" onclick="QuestMapModule.handleChapterTabClick()" style="flex: 1; text-align: center; padding: 8px 6px; background: transparent; border: none; border-bottom: 2px solid ${isChapterOrEpisodeActive ? 'var(--accent-color)' : 'transparent'}; color: ${isChapterOrEpisodeActive ? 'var(--accent-color)' : 'var(--text-secondary)'}; cursor: pointer; font-weight: ${isChapterOrEpisodeActive ? 'bold' : 'normal'}; font-size: 0.85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${displayChName}</button>
         `;
 
         tabsContainer.innerHTML = tabsHtml;
