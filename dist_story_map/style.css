@@ -2796,12 +2796,23 @@ body {
 
     .summary-text#cinema-summary {
         min-height: unset !important;
-        height: 52px !important;
-        overflow: hidden !important;
-        flex: none !important;
-        padding: 0 !important;
+        height: auto !important;
+        overflow: visible !important;
+        flex: 1 !important;
+    }
+
+    .quick-directory-wrapper {
+        width: 100% !important;
+        height: 48px !important;
         display: flex !important;
         align-items: center !important;
+        overflow: hidden !important;
+        background: rgba(232, 56, 117, 0.02) !important;
+        border: 1px solid rgba(232, 56, 117, 0.1) !important;
+        border-radius: 12px !important;
+        padding: 4px 8px !important;
+        box-sizing: border-box !important;
+        margin-bottom: 8px !important;
     }
 
     .quick-dir-scroll-container {

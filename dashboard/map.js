@@ -1281,7 +1281,7 @@ const QuestMapModule = {
         const childStories = this.chapters[currentChapter] || [];
         const chaptersList = Object.keys(this.chapters);
 
-        let html = `<div class="quick-dir-scroll-container">`;
+        let html = `<div class="quick-directory-wrapper"><div class="quick-dir-scroll-container">`;
         if (this.activeSummaryTab === 'episode') {
             childStories.forEach(s => {
                 const isActive = s.id === this.activeStoryId;
@@ -1298,7 +1298,7 @@ const QuestMapModule = {
                 html += `<button class="quick-dir-btn chapter-btn ${isActive ? 'active' : ''}" onclick="QuestMapModule.toggleChapterByQuickDir('${this.escapeHtml(chKey)}')">${this.escapeHtml(shortChName)}</button>`;
             });
         }
-        html += `</div>`;
+        html += `</div></div>`;
         return html;
     },
 
