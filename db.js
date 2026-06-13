@@ -218,9 +218,9 @@ window.PCRDatabase = {
 
     // --- IndexedDB 存取邏輯 ---
 
-    async saveToIDB(key, buffer) {
+    _openDB() {
         return new Promise((resolve, reject) => {
-            const request = indexedDB.open('PCRD_DB_STORE', 1);
+            const request = indexedDB.open('PCRD_DB_STORE', 2);
             request.onupgradeneeded = (e) => {
                 const db = e.target.result;
                 if (!db.objectStoreNames.contains('files')) {
@@ -229,49 +229,61 @@ window.PCRDatabase = {
             };
             request.onsuccess = (e) => {
                 const db = e.target.result;
+                if (!db.objectStoreNames.contains('files')) {
+                    reject(new Error("Object store 'files' not found in IndexedDB."));
+                    return;
+                }
+                resolve(db);
+            };
+            request.onerror = (e) => reject(request.error);
+        });
+    },
+
+    async saveToIDB(key, buffer) {
+        try {
+            const db = await this._openDB();
+            return new Promise((resolve, reject) => {
                 const transaction = db.transaction('files', 'readwrite');
                 const store = transaction.objectStore('files');
                 store.put(buffer, key);
                 transaction.oncomplete = () => resolve();
                 transaction.onerror = () => reject(transaction.error);
-            };
-            request.onerror = () => reject(request.error);
-        });
+            });
+        } catch (e) {
+            console.error("[PCRDatabase] saveToIDB 失敗:", e);
+            throw e;
+        }
     },
 
     async loadFromIDB(key) {
-        return new Promise((resolve) => {
-            const request = indexedDB.open('PCRD_DB_STORE', 1);
-            request.onupgradeneeded = (e) => {
-                const db = e.target.result;
-                if (!db.objectStoreNames.contains('files')) {
-                    db.createObjectStore('files');
-                }
-            };
-            request.onsuccess = (e) => {
-                const db = e.target.result;
+        try {
+            const db = await this._openDB();
+            return new Promise((resolve) => {
                 const transaction = db.transaction('files', 'readonly');
                 const store = transaction.objectStore('files');
                 const getRequest = store.get(key);
                 getRequest.onsuccess = () => resolve(getRequest.result);
                 getRequest.onerror = () => resolve(null);
-            };
-            request.onerror = () => resolve(null);
-        });
+            });
+        } catch (e) {
+            console.warn("[PCRDatabase] loadFromIDB 失敗:", e);
+            return null;
+        }
     },
 
     async removeFromIDB(key) {
-        return new Promise((resolve) => {
-            const request = indexedDB.open('PCRD_DB_STORE', 1);
-            request.onsuccess = (e) => {
-                const db = e.target.result;
+        try {
+            const db = await this._openDB();
+            return new Promise((resolve) => {
                 const transaction = db.transaction('files', 'readwrite');
                 const store = transaction.objectStore('files');
                 const deleteRequest = store.delete(key);
                 deleteRequest.onsuccess = () => resolve();
                 deleteRequest.onerror = () => resolve();
-            };
-            request.onerror = () => resolve();
-        });
+            });
+        } catch (e) {
+            console.warn("[PCRDatabase] removeFromIDB 失敗:", e);
+            return;
+        }
     }
 };
