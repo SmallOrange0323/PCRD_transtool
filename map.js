@@ -1081,7 +1081,24 @@ const QuestMapModule = {
         this.currentPart = part;
         this.activeStoryId = null;
         this.expandedChapter = null;
-        this.safeRender(() => this._render());
+
+        const isMobile = window.innerWidth <= 768;
+        const container = document.querySelector('.map-container');
+        const isReading = container && container.classList.contains('show-reader');
+
+        this.safeRender(() => this._render()).then(() => {
+            if (isMobile && isReading) {
+                const chapterKeys = Object.keys(this.chapters);
+                if (chapterKeys.length > 0) {
+                    const firstChapter = chapterKeys[0];
+                    this.expandedChapter = firstChapter;
+                    const childStories = this.chapters[firstChapter] || [];
+                    if (childStories.length > 0) {
+                        this.selectStory(childStories[0].id);
+                    }
+                }
+            }
+        });
     },
 
     selectChara(charaName) {
@@ -1302,6 +1319,13 @@ const QuestMapModule = {
                 html += `<span style="font-size: 0.85rem; color: var(--text-secondary); padding: 8px;">此章節暫無話數</span>`;
             }
         } else {
+            if (this.activeTabType === 'main') {
+                for (let p = 1; p <= 3; p++) {
+                    const isActivePart = this.currentPart === p;
+                    html += `<button class="quick-dir-btn part-btn ${isActivePart ? 'active' : ''}" style="background: rgba(9, 132, 227, 0.06) !important; border-color: rgba(9, 132, 227, 0.2) !important; color: #0984e3 !important;" onclick="QuestMapModule.switchPart(${p})">第${p}部</button>`;
+                }
+                html += `<span style="color: rgba(94, 107, 125, 0.2); margin: 0 4px; display: inline-block; align-self: center;">|</span>`;
+            }
             chaptersList.forEach(chKey => {
                 const isActive = chKey === currentChapter;
                 const shortChName = chKey.replace(/^(第\d+部\s*)/, '');
