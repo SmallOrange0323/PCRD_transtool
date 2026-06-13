@@ -2869,6 +2869,7 @@ body {
     }
 
     .part-selector, .category-selector {
+        display: flex !important;
         flex-direction: row !important;
         overflow-x: auto !important;
         white-space: nowrap !important;
