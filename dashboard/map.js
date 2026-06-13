@@ -783,7 +783,7 @@ const QuestMapModule = {
                 <div class="floating-back-btn" onclick="QuestMapModule.handleFloatingBack()" style="position: fixed; top: 20px; left: 20px; z-index: 9998; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #2d6bcf, #1a4a9e); color: #fff; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; box-shadow: 0 4px 15px rgba(26, 74, 158, 0.5); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.15)'; this.style.boxShadow='0 6px 20px rgba(26, 74, 158, 0.7)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(26, 74, 158, 0.5)';">←</div>
                 <div class="map-container">
                     <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
-                        <button onclick="QuestMapModule.goBackToMenu()" class="back-to-menu-btn" style="
+                        <button onclick="QuestMapModule.handleBackClick()" class="back-to-menu-btn" style="
                             display: flex;
                             align-items: center;
                             justify-content: center;
@@ -963,7 +963,7 @@ const QuestMapModule = {
  <div class="floating-back-btn" onclick="${isCharaActive ? 'QuestMapModule.clearActiveChara()' : 'QuestMapModule.handleFloatingBack()'}" style="position: fixed; top: 20px; left: 20px; z-index: 9998; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #2d6bcf, #1a4a9e); color: #fff; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; box-shadow: 0 4px 15px rgba(26, 74, 158, 0.5); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.15)'; this.style.boxShadow='0 6px 20px rgba(26, 74, 158, 0.7)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(26, 74, 158, 0.5)';">←</div>
  <div class="map-container">
  <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
- <button onclick="${isCharaActive ? 'QuestMapModule.clearActiveChara()' : 'QuestMapModule.goBackToMenu()'}" class="back-to-menu-btn" style="
+ <button onclick="QuestMapModule.handleBackClick()" class="back-to-menu-btn" style="
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -1271,6 +1271,60 @@ const QuestMapModule = {
         }
     },
 
+    getQuickDirectoryHtml() {
+        const isMobile = window.innerWidth <= 768;
+        if (!isMobile) {
+            return null;
+        }
+
+        const currentChapter = this.expandedChapter || "";
+        const childStories = this.chapters[currentChapter] || [];
+        const chaptersList = Object.keys(this.chapters);
+
+        let html = `<div class="quick-dir-scroll-container">`;
+        if (this.activeSummaryTab === 'episode') {
+            childStories.forEach(s => {
+                const isActive = s.id === this.activeStoryId;
+                const shortTitle = s.title_short || s.title.split(' ')[0] || `第${s.episode}話`;
+                html += `<button class="quick-dir-btn episode-btn ${isActive ? 'active' : ''}" onclick="QuestMapModule.selectStory(${s.id})">${this.escapeHtml(shortTitle)}</button>`;
+            });
+            if (childStories.length === 0) {
+                html += `<span style="font-size: 0.85rem; color: var(--text-secondary); padding: 8px;">此章節暫無話數</span>`;
+            }
+        } else {
+            chaptersList.forEach(chKey => {
+                const isActive = chKey === currentChapter;
+                const shortChName = chKey.replace(/^(第\d+部\s*)/, '');
+                html += `<button class="quick-dir-btn chapter-btn ${isActive ? 'active' : ''}" onclick="QuestMapModule.toggleChapterByQuickDir('${this.escapeHtml(chKey)}')">${this.escapeHtml(shortChName)}</button>`;
+            });
+        }
+        html += `</div>`;
+        return html;
+    },
+
+    toggleChapterByQuickDir(chKey) {
+        this.expandedChapter = chKey;
+        this.activeSummaryTab = 'episode';
+        
+        const btnEp = document.getElementById('tab-summary-episode');
+        const btnCh = document.getElementById('tab-summary-chapter');
+        if (btnEp && btnCh) {
+            btnEp.classList.add('active');
+            btnEp.style.borderBottom = "2px solid var(--accent-color)";
+            btnEp.style.color = "var(--accent-color)";
+            btnCh.classList.remove('active');
+            btnCh.style.borderBottom = "2px solid transparent";
+            btnCh.style.color = "var(--text-secondary)";
+        }
+
+        const childStories = this.chapters[chKey] || [];
+        if (childStories.length > 0) {
+            this.selectStory(childStories[0].id);
+        } else {
+            this.updateSummaryContent();
+        }
+    },
+
     switchSummaryTab(tabType) {
         this.activeSummaryTab = tabType;
         const btnEp = document.getElementById('tab-summary-episode');
@@ -1302,7 +1356,9 @@ const QuestMapModule = {
         const story = this.getStoryById(this.activeStoryId);
         if (!story) return;
 
-        if (this.activeSummaryTab === 'episode') {
+        const isMobile = window.innerWidth <= 768;
+
+        if (this.activeSummaryTab === 'episode' || isMobile) {
             try {
                 let tableName = 'story_detail';
                 if (story.isEvent) {
@@ -1320,9 +1376,12 @@ const QuestMapModule = {
                 if (result && result.length > 0 && result[0].sub_title) {
                     officialSummary = result[0].sub_title;
                 }
-                summaryEl.innerHTML = `
-                    <div style="display: flex; flex-direction: column; gap: 14px; text-align: left;">
-
+                const isMobile = window.innerWidth <= 768;
+                let topDirOrSummaryHtml = "";
+                if (isMobile) {
+                    topDirOrSummaryHtml = this.getQuickDirectoryHtml();
+                } else {
+                    topDirOrSummaryHtml = `
                         <div style="
                             background: linear-gradient(135deg, rgba(232,56,117,0.04) 0%, rgba(196,36,106,0.04) 100%);
                             border: 1px solid rgba(232,56,117,0.15);
@@ -1345,6 +1404,12 @@ const QuestMapModule = {
                             </div>
                             <p style="margin:0; color: var(--text-primary);">${this.escapeHtml(officialSummary) || "本話為重要主線劇情，美食殿堂的羈絆在此得到了進一步的昇華。"}</p>
                         </div>
+                    `;
+                }
+
+                summaryEl.innerHTML = `
+                    <div style="display: flex; flex-direction: column; gap: 14px; text-align: left;">
+                        ${topDirOrSummaryHtml}
 
                         <div class="dialogue-section">
                             <div class="game-dialogue-panel">
@@ -1371,6 +1436,12 @@ const QuestMapModule = {
 
                     </div>
                 `;
+                if (isMobile) {
+                    const btnEp = document.getElementById('tab-summary-episode');
+                    const btnCh = document.getElementById('tab-summary-chapter');
+                    if (btnEp) btnEp.innerText = this.expandedChapter || '當前章節';
+                    if (btnCh) btnCh.innerText = '📖 切換章節';
+                }
             } catch (e) {
                 console.error(e);
                 summaryEl.innerHTML = `<div style="color: #ff6b6b;">無法載入官方大綱。</div>`;
@@ -2038,7 +2109,7 @@ const QuestMapModule = {
  <div class="floating-back-btn" onclick="QuestMapModule.handleFloatingBack()" style="position: fixed; top: 20px; left: 20px; z-index: 9998; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #2d6bcf, #1a4a9e); color: #fff; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; box-shadow: 0 4px 15px rgba(26, 74, 158, 0.5); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.15)'; this.style.boxShadow='0 6px 20px rgba(26, 74, 158, 0.7)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(26, 74, 158, 0.5)';">←</div>
  <div class="map-container glass-card">
  <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
- <button onclick="QuestMapModule.goBackToMenu()" class="back-to-menu-btn" style="
+ <button onclick="QuestMapModule.handleBackClick()" class="back-to-menu-btn" style="
                         display: flex;
                         align-items: center;
                         justify-content: center;

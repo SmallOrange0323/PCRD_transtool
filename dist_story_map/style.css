@@ -2778,13 +2778,71 @@ body {
         padding: 3px 8px;
     }
 
-    /* 摘要標題列適配 */
-    .summary-label {
-        font-size: 0.82rem;
+    /* 摘要標題列與快捷滾動目錄適配 */
+    .summary-section {
+        margin-top: 8px !important;
+        margin-bottom: 4px !important;
+    }
+    
+    .summary-tabs {
+        margin-bottom: 4px !important;
+        border-bottom: 1px solid rgba(94, 107, 125, 0.1) !important;
+    }
+    
+    .summary-tab {
+        padding: 6px 12px !important;
+        font-size: 0.82rem !important;
     }
 
-    .summary-text {
-        font-size: 0.92rem;
+    .summary-text#cinema-summary {
+        min-height: unset !important;
+        height: 52px !important;
+        overflow: hidden !important;
+        flex: none !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .quick-dir-scroll-container {
+        display: flex !important;
+        gap: 8px !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        padding: 8px 4px !important;
+        width: 100% !important;
+        -ms-overflow-style: none !important;
+        scrollbar-width: none !important;
+    }
+    .quick-dir-scroll-container::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .quick-dir-btn {
+        padding: 6px 14px !important;
+        border-radius: 18px !important;
+        background: rgba(255, 255, 255, 0.75) !important;
+        border: 1px solid rgba(232, 56, 117, 0.15) !important;
+        color: var(--text-secondary) !important;
+        font-size: 0.8rem !important;
+        font-weight: 700 !important;
+        cursor: pointer !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        transition: all 0.2s ease !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02) !important;
+    }
+
+    .quick-dir-btn:hover {
+        color: var(--accent-color) !important;
+        background: rgba(232, 56, 117, 0.05) !important;
+    }
+
+    .quick-dir-btn.active {
+        background: var(--accent-gradient) !important;
+        color: #fff !important;
+        border-color: transparent !important;
+        box-shadow: 0 4px 10px rgba(255, 107, 157, 0.25) !important;
     }
 
     /* --- 右側章節目錄控制面板 --- */
