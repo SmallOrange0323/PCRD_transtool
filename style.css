@@ -964,9 +964,24 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 8px 12px !important;
+        gap: 0 !important;
+    }
+    .nav-logo {
+        font-size: 1.1rem !important;
+    }
+    .nav-tabs {
+        gap: 6px !important;
+    }
+    .nav-tabs .tab-btn {
+        padding: 6px 12px !important;
+        font-size: 0.85rem !important;
+    }
+    .region-badge {
+        display: none !important;
     }
     .battle-header {
         flex-direction: column;
@@ -2784,19 +2799,49 @@ body {
         padding-bottom: 8px;
     }
 
-    /* 部別切換按鈕與控制欄行動端適配：垂直堆疊且加大尺寸防誤觸 */
     .part-selector, .category-selector {
-        flex-direction: column !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
         width: 100% !important;
         gap: 8px !important;
+        padding-bottom: 6px !important;
     }
 
     .part-btn {
-        width: 100% !important;
-        padding: 12px 16px !important; /* 加大按鈕尺寸，利於單手觸摸 */
-        font-size: 0.95rem !important;
-        border-radius: 12px !important;
+        width: auto !important;
+        padding: 8px 14px !important;
+        font-size: 0.85rem !important;
+        border-radius: 10px !important;
         text-align: center !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* 行動端雙檢視模式切換 (目錄模式 vs 閱讀模式) */
+    .map-visual-area {
+        display: none !important;
+    }
+    .map-control-panel {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .map-container.show-reader .map-header {
+        display: none !important;
+    }
+    .map-container.show-reader .part-selector {
+        display: none !important;
+    }
+    .map-container.show-reader .map-control-panel {
+        display: none !important;
+    }
+    .map-container.show-reader .map-visual-area {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    .map-container.show-reader .mobile-only-dir-btn {
+        display: none !important;
     }
 
     /* --- 沉浸式 CG 劇照/背景小螢幕適配 --- */
