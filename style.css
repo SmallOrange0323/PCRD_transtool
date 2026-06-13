@@ -2561,7 +2561,31 @@ body {
        📱 任務 2：劇情放映與台詞行動端適配
        ========================================== */
 
-    /* --- 對話逐字台詞看板：頭像與氣泡由左右 row 改為上下 column 堆疊 --- */
+    /* --- 舊版對話看板台詞適配 --- */
+    .dialogue-line {
+        display: flex;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .dialogue-avatar {
+        width: 48px !important;
+        height: 48px !important;
+        border-radius: 8px !important;
+    }
+
+    .dialogue-bubble {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        padding: 12px 16px !important;
+        width: 100% !important;
+        border-radius: 12px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* --- 新版對話逐字台詞看板：頭像與氣泡由左右 row 改為上下 column 堆疊 --- */
     .game-dialogue-line {
         flex-direction: column;
         align-items: stretch;
@@ -2600,7 +2624,7 @@ body {
     }
 
     .game-dialogue-text {
-        font-size: 0.92rem;
+        font-size: 0.95rem; /* 微幅調大字體提升手機端可讀性 */
         line-height: 1.65;
         word-break: break-word;
     }
@@ -2636,7 +2660,7 @@ body {
     .game-footer-btn {
         min-width: unset;
         width: 100%;
-        padding: 12px 20px;
+        padding: 14px 20px; /* 加大按鈕便於大拇指觸控 */
         font-size: 1rem;
         border-radius: 14px;
     }
@@ -2682,16 +2706,19 @@ body {
         padding-bottom: 8px;
     }
 
-    /* 部別切換按鈕行動端適配 */
-    .part-selector {
-        gap: 8px;
-        flex-wrap: wrap;
+    /* 部別切換按鈕與控制欄行動端適配：垂直堆疊且加大尺寸防誤觸 */
+    .part-selector, .category-selector {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 8px !important;
     }
 
     .part-btn {
-        padding: 8px 14px;
-        font-size: 0.85rem;
-        border-radius: 10px;
+        width: 100% !important;
+        padding: 12px 16px !important; /* 加大按鈕尺寸，利於單手觸摸 */
+        font-size: 0.95rem !important;
+        border-radius: 12px !important;
+        text-align: center !important;
     }
 
     /* --- 沉浸式 CG 劇照/背景小螢幕適配 --- */
@@ -2705,9 +2732,10 @@ body {
     }
 
     .dialogue-still-img {
-        width: 100%;
-        max-height: 280px;
-        object-fit: contain;
+        width: 100% !important;
+        height: auto !important; /* 比例不失真 */
+        max-height: 320px !important;
+        object-fit: contain !important; /* 確保原圖完整呈現不失真 */
     }
 
     /* CG 全螢幕放大覆蓋層按鈕加大便於觸控 */
