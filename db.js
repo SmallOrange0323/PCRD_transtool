@@ -55,7 +55,7 @@ window.PCRDatabase = {
             // 1. 初始化 SQL 引擎 (WebAssembly)
             if (onProgress) onProgress('正在初始化 SQL 引擎...', 10);
             const SQL = await initSqlJs({
-                locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/${file}`
+                locateFile: file => `${file}`
             });
 
             // 獲取最新 size
