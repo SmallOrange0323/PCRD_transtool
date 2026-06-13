@@ -1271,6 +1271,16 @@ const QuestMapModule = {
         }
     },
 
+    scrollToTop() {
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            const cinemaSummary = document.getElementById('cinema-summary');
+            if (cinemaSummary) cinemaSummary.scrollTop = 0;
+        }
+    },
+
     getQuickDirectoryHtml() {
         const isMobile = window.innerWidth <= 768;
         if (!isMobile) {
@@ -1427,8 +1437,7 @@ const QuestMapModule = {
                                 </div>
                                 <div class="game-dialogue-footer" style="border-radius: 0 0 12px 12px;">
                                     <div id="btn-prev-story" class="game-footer-btn close" style="display: none;" onclick="QuestMapModule.toPrevStory()">⬅ 上一話</div>
-                                    <div class="game-footer-btn close" onclick="document.getElementById('cinema-summary').scrollTop = 0">⬆ 回到頂端</div>
-                                    <div class="game-footer-btn skip" onclick="document.getElementById('cinema-summary').scrollTop = 99999">⬇ 跳至底端</div>
+                                    <div class="game-footer-btn close" onclick="QuestMapModule.scrollToTop()">⬆ 回到頂端</div>
                                     <div id="btn-next-story" class="game-footer-btn skip" style="display: none;" onclick="QuestMapModule.toNextStory()">➡️ 下一話</div>
                                 </div>
                             </div>
