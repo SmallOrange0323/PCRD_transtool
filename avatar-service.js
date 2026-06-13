@@ -54,6 +54,7 @@ window.AvatarService = {
         "魏雅": 195211,
         "葛拉比亞": 193511,
         "葛拉菲拉": 193511,
+        "澄花": 198211,
     },
 
     // 快取：charaName -> { unitId, url, triedCdnIndex }
