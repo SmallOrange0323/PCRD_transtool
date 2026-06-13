@@ -1,0 +1,9 @@
+# OpenCode 忽略配置
+dist_story_map/
+node_modules/
+venv/
+.git/
+temp_repos/
+*.db
+*.pyc
+**/__pycache__/
