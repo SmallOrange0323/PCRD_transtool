@@ -622,9 +622,9 @@ const QuestMapModule = {
  this._fadeTransition(() => this._render());
  },
 
- handleFloatingBack() {
- this.goBackToMenu();
- },
+    handleFloatingBack() {
+        this.handleBackClick();
+    },
 
     enterCategory(type) {
         this.currentView = 'list';
@@ -1070,6 +1070,7 @@ const QuestMapModule = {
                 this.selectStory(this.chapters[this.expandedChapter][0].id);
             }, 0);
         }
+        this.updateReaderState();
     },
 
     async render(skipAutoSelect = false) {
@@ -1187,6 +1188,7 @@ const QuestMapModule = {
                 this.loadDialogue(storyId);
             }
             this.updateNavigationButtons();
+            this.updateReaderState();
         }
     },
 
@@ -1231,6 +1233,41 @@ const QuestMapModule = {
             setTimeout(() => {
                 panel.classList.remove('highlight-panel');
             }, 1500);
+        }
+    },
+
+    updateReaderState() {
+        const container = document.querySelector('.map-container');
+        if (container) {
+            if (this.activeStoryId && this.currentView !== 'menu') {
+                container.classList.add('show-reader');
+            } else {
+                container.classList.remove('show-reader');
+            }
+        }
+    },
+
+    exitReader() {
+        this.activeStoryId = null;
+        document.querySelectorAll('.story-item').forEach(el => el.classList.remove('active'));
+        this.updateReaderState();
+        const summaryEl = document.getElementById('cinema-summary');
+        if (summaryEl) {
+            summaryEl.innerHTML = '點擊上方章節清單，即刻載入大綱與對白文本。';
+        }
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    },
+
+    handleBackClick() {
+        const container = document.querySelector('.map-container');
+        if (container && container.classList.contains('show-reader')) {
+            this.exitReader();
+        } else {
+            if (this.activeTabType === 'chara' && this.activeCharaName) {
+                this.clearActiveChara();
+            } else {
+                this.goBackToMenu();
+            }
         }
     },
 
