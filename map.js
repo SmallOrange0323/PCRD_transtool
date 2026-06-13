@@ -420,17 +420,38 @@ const QuestMapModule = {
                 
                 // 合併新形式活動主檔
                 if (this.extraEvents && this.extraEvents.events) {
+                    const extraStartTimeMap = {
+                        10201: "2025/06/01 16:00:00",
+                        10202: "2025/07/01 16:00:00",
+                        10203: "2025/08/01 16:00:00",
+                        10204: "2025/09/01 16:00:00",
+                        10205: "2025/10/01 16:00:00",
+                        10206: "2025/11/01 16:00:00",
+                        10207: "2025/12/01 16:00:00",
+                        10208: "2026/01/01 16:00:00",
+                        10209: "2026/02/01 16:00:00",
+                        10210: "2026/03/01 16:00:00",
+                        10211: "2026/04/01 16:00:00",
+                        10212: "2026/05/01 16:00:00",
+                        10213: "2026/06/01 16:00:00"
+                    };
+
                     const extraEventsMapped = this.extraEvents.events.map(e => ({
                         story_group_id: e.story_group_id,
                         title: e.title,
-                        start_time: e.start_time || "新形式活動",
+                        start_time: extraStartTimeMap[e.story_group_id] || e.start_time || "2025/01/01 16:00:00",
                         thumbnail_id: e.thumbnail_id,
                         value: e.value
                     }));
-                    // 將新形式活動排在最前面 (最新)
+                    // 將新形式活動合併，並按時間倒序排序
                     this.events = extraEventsMapped.concat(this.events);
+                    this.events.sort((a, b) => {
+                        const timeA = new Date(a.start_time.replace(/-/g, '/')).getTime();
+                        const timeB = new Date(b.start_time.replace(/-/g, '/')).getTime();
+                        return timeB - timeA;
+                    });
                 }
-                console.log(`[QuestMapModule] 成功載入 ${this.events.length} 筆活動主檔 (含新形式活動)`);
+                console.log(`[QuestMapModule] 成功載入 ${this.events.length} 筆活動主檔 (含新形式活動並排序)`);
             }
 
             if (this.eventStories.length === 0) {
