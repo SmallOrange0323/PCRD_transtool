@@ -209,6 +209,10 @@ window.CharactersModule = {
                 SELECT * FROM unit_data WHERE unit_id = ?
             `, [unitId])[0];
 
+            const unitData = window.PCRDatabase.runQuery(`
+                SELECT search_area_width FROM unit_data WHERE unit_id = ?
+            `, [unitId])[0];
+
             // 2. 取得技能 ID
             const skillIds = window.PCRDatabase.runQuery(`
                 SELECT * FROM unit_skill_data WHERE unit_id = ?
@@ -237,6 +241,28 @@ window.CharactersModule = {
                             const fullSkill = { ...sInfo, label: s.label };
                             skills.push(fullSkill);
                             skillMap[s.key] = fullSkill;
+                        }
+                    }
+                }
+
+                // 載入所有 main_skill_X (1~10) 供動作循環對照
+                for (let i = 1; i <= 10; i++) {
+                    const skillId = skillIds[`main_skill_${i}`];
+                    if (skillId && !skillMap[String(1000 + i)]) {
+                        const sInfo = window.PCRDatabase.runQuery(`SELECT name, description, icon_type FROM skill_data WHERE skill_id = ?`, [skillId])[0];
+                        if (sInfo) {
+                            skillMap[String(1000 + i)] = sInfo;
+                        }
+                    }
+                }
+
+                // 載入所有 sp_skill_X (1~5) 供動作循環對照
+                for (let i = 1; i <= 5; i++) {
+                    const skillId = skillIds[`sp_skill_${i}`];
+                    if (skillId && !skillMap[String(2000 + i)]) {
+                        const sInfo = window.PCRDatabase.runQuery(`SELECT name, description, icon_type FROM skill_data WHERE skill_id = ?`, [skillId])[0];
+                        if (sInfo) {
+                            skillMap[String(2000 + i)] = sInfo;
                         }
                     }
                 }
@@ -293,7 +319,7 @@ window.CharactersModule = {
                             </div>
                         </div>
                         <div class="char-meta">
-                            <span>站位: ${stats ? stats.search_area_width : '??'}</span>
+                            <span>站位: ${unitData ? unitData.search_area_width : '??'}</span>
                             <span>${profile ? profile.race : ''}</span>
                             <span>${profile ? profile.guild : ''}</span>
                         </div>
@@ -353,7 +379,7 @@ window.CharactersModule = {
         const items = [];
         for (let i = 1; i <= 20; i++) {
             const act = pattern[`atk_pattern_${i}`];
-            if (!act) break;
+            if (act === undefined || act === null || act === 0) break;
             items.push({ id: act, index: i });
         }
 
@@ -364,17 +390,34 @@ window.CharactersModule = {
             <div class="pattern-container">
                 ${items.map(item => {
                     const isLoop = item.index >= loopStart && item.index <= loopEnd;
-                    let iconHtml = window.AvatarService.getSkillIconHtml(1);
-                    let name = '普通攻擊';
+                    let iconHtml = '';
+                    let name = '';
                     
-                    if (item.id === 1001 && skillMap['1001']) {
-                        iconHtml = window.AvatarService.getSkillIconHtml(skillMap['1001'].icon_type);
-                        name = skillMap['1001'].name;
-                    } else if (item.id === 1002 && skillMap['1002']) {
-                        iconHtml = window.AvatarService.getSkillIconHtml(skillMap['1002'].icon_type);
-                        name = skillMap['1002'].name;
-                    } else if (item.id > 1) {
-                        name = `技能 ${item.id}`;
+                    if (item.id === 1) {
+                        name = '普通攻擊';
+                        // 漂亮且具質感的單手劍 SVG 作為普通攻擊圖示
+                        iconHtml = `
+                            <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(73, 80, 87, 0.4), rgba(52, 58, 64, 0.6));">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="2" x2="22" y2="6"></line>
+                                    <path d="M7.5 20.5 2 22l1.5-5.5L17 3.5 20.5 7z"></path>
+                                </svg>
+                            </div>
+                        `;
+                    } else {
+                        const skillKey = String(item.id);
+                        if (skillMap[skillKey]) {
+                            iconHtml = window.AvatarService.getSkillIconHtml(skillMap[skillKey].icon_type);
+                            name = skillMap[skillKey].name;
+                        } else {
+                            name = `技能 ${item.id}`;
+                            // 預設的質感「技」字 SVG 圖示
+                            iconHtml = `
+                                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f08c00, #e67700);">
+                                    <span style="font-size: 0.95rem; color: #fff; font-weight: bold; font-family: sans-serif;">技</span>
+                                </div>
+                            `;
+                        }
                     }
 
                     return `
