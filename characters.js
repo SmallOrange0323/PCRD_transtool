@@ -410,13 +410,9 @@ window.CharactersModule = {
                             iconHtml = window.AvatarService.getSkillIconHtml(skillMap[skillKey].icon_type);
                             name = skillMap[skillKey].name;
                         } else {
+                            // 當在 skillMap 找不到時（例如 1003, 1004, 2001），先當作 icon_type 去嘗試載入（它會自動嘗試本地、So-net、最後去日版 EsterTion 下載！）
+                            iconHtml = window.AvatarService.getSkillIconHtml(item.id);
                             name = `技能 ${item.id}`;
-                            // 預設的質感「技」字 SVG 圖示
-                            iconHtml = `
-                                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f08c00, #e67700);">
-                                    <span style="font-size: 0.95rem; color: #fff; font-weight: bold; font-family: sans-serif;">技</span>
-                                </div>
-                            `;
                         }
                     }
 
