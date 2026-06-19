@@ -263,11 +263,12 @@ const QuestMapModule = {
                 const isTW = !(checkChara && checkChara.length > 0);
 
                 if (isTW) {
-                    // 1. 台版主線劇情
+                    // 1. 台版主線劇情 (包含第三部的支線/幕間劇情，其 story_id 在 3000000~4000000 且 story_group_id >= 3000)
                     const sql = `
                         SELECT story_id, title, sub_title, story_group_id
                         FROM story_detail
-                        WHERE story_id >= 2000000 AND story_id < 3000000
+                        WHERE (story_id >= 2000000 AND story_id < 3000000)
+                           OR (story_id >= 3000000 AND story_id < 4000000 AND story_group_id >= 3000 AND story_group_id < 4000)
                         ORDER BY story_id ASC
                     `;
                     const rawData = await window.PCRDatabase.runQuery(sql);
@@ -302,11 +303,12 @@ const QuestMapModule = {
                     }));
                     this.stories = this.stories.concat(charaStories);
 
-                    // 3. 台版公會劇情
+                    // 3. 台版公會劇情 (排除已歸類於第三部主線的支線)
                     const guildSql = `
                         SELECT story_id, title, sub_title, story_group_id
                         FROM story_detail
                         WHERE story_id >= 3000000 AND story_id < 4000000
+                          AND NOT (story_group_id >= 3000 AND story_group_id < 4000)
                         ORDER BY story_id ASC
                     `;
                     const rawGuild = await window.PCRDatabase.runQuery(guildSql);
