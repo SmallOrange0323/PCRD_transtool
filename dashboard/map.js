@@ -1680,7 +1680,7 @@ const QuestMapModule = {
             // 合併相同語音的連續對話行
             const dialogueList = [];
             rawDialogueList.forEach(item => {
-                if (item.type === 'still' || item.type === 'background') {
+                if (item.type === 'still' || item.type === 'background' || item.type === 'movie') {
                     dialogueList.push(item);
                     return;
                 }
@@ -1688,6 +1688,7 @@ const QuestMapModule = {
                 if (last && 
                     last.type !== 'still' && 
                     last.type !== 'background' && 
+                    last.type !== 'movie' && 
                     last.name === item.name && 
                     (!item.voice || last.voice === item.voice)) {
                     

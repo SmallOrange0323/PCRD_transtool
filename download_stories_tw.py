@@ -242,6 +242,11 @@ def extract_story_dialogues(bytes_data):
                 "type": "still",
                 "still": args[0]
             })
+        elif command_id in (CommandId.MOVIE, CommandId.MOVIE_STAY) and len(args) >= 1:
+            dialogues.append({
+                "type": "movie",
+                "movie_id": args[0]
+            })
         elif command_id == CommandId.PRINT and len(args) >= 2:
             speaker = args[0]
             words = clean_text(args[1])
