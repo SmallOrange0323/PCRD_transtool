@@ -551,9 +551,22 @@ const QuestMapModule = {
         // 依 groupId (公會編號) 排序，讓公會順序固定
         filtered.sort((a, b) => (a.groupId || 0) - (b.groupId || 0));
         filtered.forEach(s => {
-            const chKey = s.chapter || "其他公會";
-            if (!this.chapters[chKey]) this.chapters[chKey] = [];
-            this.chapters[chKey].push(s);
+            let guildName = "其他公會";
+            if (s.chapter) {
+                const match = s.chapter.match(/^(.*?)\s*第\d+話/);
+                if (match) {
+                    guildName = match[1].trim();
+                } else {
+                    const parts = s.chapter.split(/\s+第/);
+                    if (parts[0]) {
+                        guildName = parts[0].trim();
+                    } else {
+                        guildName = s.chapter;
+                    }
+                }
+            }
+            if (!this.chapters[guildName]) this.chapters[guildName] = [];
+            this.chapters[guildName].push(s);
         });
     },
 
@@ -945,7 +958,14 @@ const QuestMapModule = {
                                 <div class="acc-count">${childStories.length} 話</div>
                             </div>
                             <div class="accordion-content" style="max-height: ${isExpanded ? 'none' : '0px'}">
-                                ${childStories.map(s => this.getStoryItemHtml(s, "特別故事", s.title)).join('')}
+                                ${childStories.map(s => {
+                                    let displayChapterName = "特別故事";
+                                    if (this.activeTabType === 'guild' && s.chapter) {
+                                        const match = s.chapter.match(/第\d+話/);
+                                        if (match) displayChapterName = match[0];
+                                    }
+                                    return this.getStoryItemHtml(s, displayChapterName, s.title);
+                                }).join('')}
                             </div>
                         </div>
                     `;

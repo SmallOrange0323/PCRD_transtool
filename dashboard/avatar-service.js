@@ -246,7 +246,7 @@ window.AvatarService = {
             img.src = `https://redive.estertion.win/icon/skill/${iconType}.png`;
             return;
         }
-        // 最後失敗：顯示 000000 佔位符
-        img.src = 'https://redive.estertion.win/icon/unit/000000.png';
+        // 最後失敗：顯示 999999 佔位符（代表未知技能/裝備，這張圖在 EsterTion 上真實存在，是一張精美質感的問號圖案，比 000000 破圖好得多）
+        img.src = 'https://redive.estertion.win/icon/equipment/999999.webp';
     }
 };

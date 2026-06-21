@@ -54,6 +54,8 @@ def main():
         (os.path.join(dashboard_dir, "characters.js"), "characters.js"),
         (os.path.join(dashboard_dir, "map.js"), "map.js"),
         (os.path.join(dashboard_dir, "redive_tw.db"), "redive_tw.db"),
+        (os.path.join(dashboard_dir, "sql-wasm.js"), "sql-wasm.js"),
+        (os.path.join(dashboard_dir, "sql-wasm.wasm"), "sql-wasm.wasm"),
         (os.path.join(dashboard_dir, "data", "chapters.json"), "data/chapters.json"),
         (os.path.join(dashboard_dir, "data", "extra_events.json"), "data/extra_events.json"),
         (os.path.join(dashboard_dir, "data", "npc_avatars.json"), "data/npc_avatars.json"),

@@ -3195,3 +3195,68 @@ body {
     }
 }
 
+/* ==========================================
+   資料比對工具（Database Diff Tool）專屬樣式
+   ========================================== */
+
+.diff-container {
+    animation: fadeIn 0.4s ease-out;
+}
+
+.glass-select {
+    outline: none;
+    transition: var(--transition);
+}
+
+.glass-select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(232, 56, 117, 0.15);
+}
+
+.diff-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(232, 56, 117, 0.35);
+}
+
+.diff-btn:active {
+    transform: translateY(0);
+}
+
+.diff-btn:disabled {
+    background: #ccc !important;
+    background-image: none !important;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.diff-tab-btn {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 12px;
+    transition: var(--transition);
+    font-family: var(--font-main);
+}
+
+.diff-tab-btn:hover {
+    color: var(--accent-color);
+    background: rgba(232, 56, 117, 0.05);
+}
+
+.diff-tab-btn.active {
+    color: var(--accent-color);
+    background: rgba(232, 56, 117, 0.08);
+}
+
+.chara-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(232, 56, 117, 0.3) !important;
+    box-shadow: 0 12px 24px rgba(232, 56, 117, 0.1) !important;
+}
+
+

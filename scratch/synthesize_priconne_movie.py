@@ -85,20 +85,28 @@ def get_movie_hash_path(movie_id):
     k, v = row
     base_name = os.path.basename(k)
     sha1_filename = hashlib.sha1(base_name.encode('utf-8')).hexdigest()
-    full_path = os.path.join(M_DIR, sha1_filename)
+    
+    # 根據 k 的路徑決定快取子目錄，有些影片存在 m/t/ 下
+    if k.startswith("m/t/"):
+        full_path = os.path.join(M_DIR, "t", sha1_filename)
+    else:
+        full_path = os.path.join(M_DIR, sha1_filename)
     
     print(f"🎬 尋找到影片資源: {k}")
-    print(f"💾 本地快取哈希檔名: {sha1_filename}")
+    print(f"💾 本地快取實體路徑: {full_path}")
     return full_path
 
 def download_taiwan_subtitle(movie_id):
     """自 GitHub / jsDelivr 下載台版繁中 .vtt 字幕"""
+    import re
+    # 提取純數字部分以符合 GitHub 倉庫的命名，例如 story_521300301 轉成 521300301
+    clean_id = re.sub(r'\D', '', movie_id)
     vtt_path = os.path.join(TEMP_DIR, f"movie_{movie_id}.vtt")
     
     # 優先使用 jsDelivr CDN，速度極快且穩定，失敗時再 fallback 到 GitHub Raw
     urls = [
-        f"https://cdn.jsdelivr.net/gh/KiruyaMomochi/RediveData@master/subtitle/movie_{movie_id}.vtt",
-        f"https://raw.githubusercontent.com/KiruyaMomochi/RediveData/master/subtitle/movie_{movie_id}.vtt"
+        f"https://cdn.jsdelivr.net/gh/KiruyaMomochi/RediveData@master/subtitle/movie_{clean_id}.vtt",
+        f"https://raw.githubusercontent.com/KiruyaMomochi/RediveData/master/subtitle/movie_{clean_id}.vtt"
     ]
     
     headers = {'User-Agent': 'Mozilla/5.0'}
