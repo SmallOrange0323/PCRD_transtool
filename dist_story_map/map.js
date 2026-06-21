@@ -1790,6 +1790,36 @@ const QuestMapModule = {
                     }
                     return;
                 }
+ 
+                if (item.type === 'movie') {
+                    const movieId = item.movie_id || item.movie;
+                    if (movieId) {
+                        const cleanMovieId = String(movieId).replace('movie_', '');
+                        html += `
+                            <div class="game-dialogue-movie-wrap" style="
+                                margin: 20px 0;
+                                padding: 18px;
+                                background: rgba(232, 56, 117, 0.08);
+                                border: 1px solid rgba(232, 56, 117, 0.2);
+                                border-radius: 12px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 8px;
+                                text-align: center;
+                                box-shadow: inset 0 0 10px rgba(232, 56, 117, 0.05);
+                            ">
+                                <div style="font-size: 1.6rem; animation: pulse 2s infinite;">🎬</div>
+                                <div style="font-size: 0.95rem; font-weight: 700; color: var(--accent-color);">過場動畫銜接：movie_${cleanMovieId}</div>
+                                <div style="font-size: 0.8rem; color: var(--text-secondary); max-width: 450px; line-height: 1.4;">
+                                    此處為遊戲內嵌之劇情動畫。本網頁不直接提供影片播放，您可使用 Python 提取工具解碼本地 USM 影片或在 YouTube/Bilibili 搜尋該動畫 ID 觀看。
+                                </div>
+                            </div>
+                        `;
+                    }
+                    return;
+                }
 
                 const speaker = item.name || "旁白";
                 const safeSpeaker = this.escapeHtml(speaker);
