@@ -68,14 +68,15 @@ window.CharactersModule = {
                     <div class="search-box" style="display: flex; align-items: center; gap: 10px;">
                         <input type="text" id="char-search" placeholder="搜尋角色名稱..." class="region-select" style="width: 250px; background-image: none; padding-right: 12px;">
                         <div class="view-toggle-group">
-                            <button id="view-btn-grid" class="view-btn ${this.viewMode === 'grid' ? 'active' : ''}" title="卡片視圖">🎴</button>
-                            <button id="view-btn-list" class="view-btn ${this.viewMode === 'list' ? 'active' : ''}" title="列表視圖">📋</button>
+                            <button id="view-btn-grid" class="view-btn ${this.viewMode === 'grid' ? 'active' : ''}" title="卡片視圖">🎴 卡片</button>
+                            <button id="view-btn-list" class="view-btn ${this.viewMode === 'list' ? 'active' : ''}" title="列表視圖">📋 列表</button>
+                            <button id="view-btn-guild" class="view-btn ${this.viewMode === 'guild' ? 'active' : ''}" title="世界公會">🏰 公會</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div id="char-grid" class="char-grid">
-                ${this.viewMode === 'grid' ? this.renderGrid(characters) : this.renderTable(characters)}
+                ${this.viewMode === 'grid' ? this.renderGrid(characters) : (this.viewMode === 'list' ? this.renderTable(characters) : this.renderGuildView(characters))}
             </div>
         `;
 
@@ -98,9 +99,12 @@ window.CharactersModule = {
                 displayContainer.className = 'char-grid';
                 const gridFiltered = filtered.filter(c => !this.excludedUnitIds.has(c.unit_id));
                 displayContainer.innerHTML = this.renderGrid(gridFiltered);
-            } else {
+            } else if (this.viewMode === 'list') {
                 displayContainer.className = 'char-table-container';
                 displayContainer.innerHTML = this.renderTable(filtered);
+            } else {
+                displayContainer.className = 'char-guild-container';
+                displayContainer.innerHTML = this.renderGuildView(filtered);
             }
         };
 
@@ -113,12 +117,21 @@ window.CharactersModule = {
             this.viewMode = 'grid';
             document.getElementById('view-btn-grid').classList.add('active');
             document.getElementById('view-btn-list').classList.remove('active');
+            document.getElementById('view-btn-guild').classList.remove('active');
             updateView();
         });
         document.getElementById('view-btn-list').addEventListener('click', () => {
             this.viewMode = 'list';
             document.getElementById('view-btn-grid').classList.remove('active');
             document.getElementById('view-btn-list').classList.add('active');
+            document.getElementById('view-btn-guild').classList.remove('active');
+            updateView();
+        });
+        document.getElementById('view-btn-guild').addEventListener('click', () => {
+            this.viewMode = 'guild';
+            document.getElementById('view-btn-grid').classList.remove('active');
+            document.getElementById('view-btn-list').classList.remove('active');
+            document.getElementById('view-btn-guild').classList.add('active');
             updateView();
         });
 
@@ -492,5 +505,186 @@ window.CharactersModule = {
             titleEl.innerHTML = `${realName} <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: normal;">(ID: ${this.activeUnitId})</span>`;
             btn.innerText = `🎮 顯示遊戲名`;
         }
+    },
+
+    categorizeCharacters(characters) {
+        const worlds = {
+            'Astraea': { name: '阿斯特萊亞', desc: '阿斯特萊亞大陸，冒險的起點與主舞台', bg: 'linear-gradient(135deg, rgba(255, 107, 157, 0.08) 0%, rgba(255, 230, 235, 0.03) 100%)', guilds: {} },
+            'GeoTheogonia': { name: '吉歐‧提格尼亞', desc: '芭菲與糖果的和平地底世界', bg: 'linear-gradient(135deg, rgba(255, 192, 203, 0.08) 0%, rgba(255, 240, 245, 0.03) 100%)', guilds: {} },
+            'GeoGehenna': { name: '吉歐‧格黑納', desc: '弱肉強食的魔能與妖魔人煉獄世界', bg: 'linear-gradient(135deg, rgba(149, 117, 205, 0.08) 0%, rgba(237, 231, 246, 0.03) 100%)', guilds: {} },
+            'GeoNibelheim': { name: '吉歐‧尼布爾黑爾', desc: '永無天日的幽暗永夜共治世界', bg: 'linear-gradient(135deg, rgba(79, 195, 247, 0.08) 0%, rgba(225, 245, 254, 0.03) 100%)', guilds: {} },
+            'Other': { name: '其他世界', desc: '來自異世界的聯動旅行者與其他合作角色', bg: 'linear-gradient(135deg, rgba(77, 182, 172, 0.08) 0%, rgba(224, 242, 241, 0.03) 100%)', guilds: {} }
+        };
+
+        // 常規公會到世界的映射
+        const guildToWorld = {
+            '美食殿堂': 'Astraea',
+            '破曉之星': 'Astraea',
+            '小小甜心': 'Astraea',
+            '王宮騎士團': 'Astraea',
+            '惡魔偽王國軍': 'Astraea',
+            '純白之翼 蘭德索爾分部': 'Astraea',
+            '暮光流星群': 'Astraea',
+            '哞哞自衛隊': 'Astraea',
+            '拉比林斯': 'Astraea',
+            '森林守衛': 'Astraea',
+            '月光學院': 'Astraea',
+            '咲戀育幼院': 'Astraea',
+            '伊麗莎白牧場': 'Astraea',
+            '慈樂之音': 'Astraea',
+            '墨丘利財團': 'Astraea',
+            '龍族巢穴': 'Astraea',
+            '聖德蕾莎女子學院（好朋友社）': 'Astraea',
+            '里士滿工商會': 'Astraea',
+            '憤怒‧軍團': 'Astraea',
+            '蠻賊三姊妹': 'Astraea',
+            '阿爾克絲鍊金堂': 'Astraea',
+            '森林守衛、伊麗莎白牧場': 'Astraea',
+            '墨丘利財團、咲戀育幼院': 'Astraea',
+            
+            '吉歐‧提格尼亞': 'GeoTheogonia',
+            '幻變少女': 'GeoTheogonia',
+            
+            'new generations': 'Other'
+        };
+
+        // 手動指定角色到特定的世界/公會 (模糊匹配名字，去掉括號)
+        const charWorldOverrides = {
+            // 吉歐‧提格尼亞
+            '萊拉耶爾': { world: 'GeoTheogonia', guild: '吉歐‧提格尼亞' },
+            '庫露露': { world: 'GeoTheogonia', guild: '吉歐‧提格尼亞' },
+            '莉莉': { world: 'GeoTheogonia', guild: '幻變少女' },
+            '克羅榭': { world: 'GeoTheogonia', guild: '幻變少女' },
+            '普蕾希亞': { world: 'GeoTheogonia', guild: '幻變少女' },
+            '普蕾西亞': { world: 'GeoTheogonia', guild: '幻變少女' },
+            '可璃亞': { world: 'GeoTheogonia', guild: '幻變少女' },
+            
+            // 吉歐‧格黑納
+            '涅妃＝涅羅': { world: 'GeoGehenna', guild: '無公會' },
+            '涅妃': { world: 'GeoGehenna', guild: '無公會' },
+            '華音': { world: 'GeoGehenna', guild: '無公會' },
+            '鳳凰': { world: 'GeoGehenna', guild: '無公會' },
+            '阿剌克涅': { world: 'GeoGehenna', guild: '無公會' },
+            '拿娜': { world: 'GeoGehenna', guild: '無公會' },
+            
+            // 吉歐‧尼布爾黑爾
+            '薇歐莉特': { world: 'GeoNibelheim', guild: '無公會' },
+            '雪野': { world: 'GeoNibelheim', guild: '無公會' },
+            '剎鬼': { world: 'GeoNibelheim', guild: '無公會' },
+            '格蕾斯': { world: 'GeoNibelheim', guild: '無公會' },
+
+            // 阿斯特萊亞
+            '志那都': { world: 'Astraea', guild: '無公會' },
+            '埃拉': { world: 'Astraea', guild: '無公會' },
+
+            // 其他世界 (聯動)
+            '吉塔': { world: 'Other', guild: '碧藍幻想' },
+            '亞里莎': { world: 'Other', guild: '影之詩' },
+            '露娜': { world: 'Other', guild: '影之詩' },
+            '班比': { world: 'Other', guild: '巴哈姆特之怒' },
+            '梅杜莎': { world: 'Other', guild: '巴哈姆特之怒' },
+            '安': { world: 'Other', guild: '馬納歷亞魔法學院' },
+            '古蕾婭': { world: 'Other', guild: '馬納歷亞魔法學院' },
+            '露': { world: 'Other', guild: '馬納歷亞魔法學院' },
+            '雷姆': { world: 'Other', guild: 'Re:從零開始的異世界生活' },
+            '拉姆': { world: 'Other', guild: 'Re:從零開始的異世界生活' },
+            '愛蜜莉雅': { world: 'Other', guild: 'Re:從零開始的異世界生活' },
+            '艾姬多娜': { world: 'Other', guild: 'Re:從零開始的異世界生活' },
+            '拉芙塔莉雅': { world: 'Other', guild: '盾之勇者成名錄' },
+            '菲洛': { world: 'Other', guild: '盾之勇者成名錄' },
+            '櫻': { world: 'Other', guild: '佐賀偶像是傳奇' }
+        };
+
+        characters.forEach(c => {
+            let worldKey = 'Astraea';
+            let guildName = c.guild || '無公會';
+
+            // 去掉名字中括號的後綴（例如「萊拉耶爾（聖誕節）」 -> 「萊拉耶爾」）
+            const baseName = c.unit_name.replace(/[\uff08(\uff09)].*$/g, '').trim();
+
+            // 檢查手動指定
+            const override = charWorldOverrides[baseName] || charWorldOverrides[c.unit_name];
+            if (override) {
+                worldKey = override.world;
+                guildName = override.guild;
+            } else if (guildToWorld[c.guild]) {
+                worldKey = guildToWorld[c.guild];
+                guildName = c.guild;
+            } else {
+                if (c.guild === '？？？') {
+                    guildName = '無公會';
+                    worldKey = 'Astraea';
+                }
+            }
+
+            if (!worlds[worldKey].guilds[guildName]) {
+                worlds[worldKey].guilds[guildName] = [];
+            }
+            worlds[worldKey].guilds[guildName].push(c);
+        });
+
+        return worlds;
+    },
+
+    renderGuildView(characters) {
+        const worlds = this.categorizeCharacters(characters);
+        
+        let html = '<div class="worlds-wrapper" style="display: flex; flex-direction: column; gap: 20px; width: 100%;">';
+        
+        for (const [key, w] of Object.entries(worlds)) {
+            const guildCount = Object.keys(w.guilds).length;
+            const totalChars = Object.values(w.guilds).reduce((sum, list) => sum + list.length, 0);
+            if (totalChars === 0) continue;
+
+            html += `
+                <div class="world-card glass-card" style="background: ${w.bg}; border-radius: 20px; overflow: hidden; border: 1px solid var(--glass-border); box-shadow: var(--card-shadow); transition: all 0.3s ease;">
+                    <div class="world-header" onclick="const content = document.getElementById('world-content-${key}'); content.classList.toggle('collapsed'); this.classList.toggle('expanded')" 
+                         style="padding: 20px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; border-bottom: 1px solid rgba(255,255,255,0.03);">
+                        <div>
+                            <h3 style="margin: 0; font-size: 1.25rem; color: var(--accent-color); font-weight: 700; letter-spacing: 0.5px;">${w.name}</h3>
+                            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 5px; opacity: 0.85;">${w.desc}</div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <span style="font-size: 0.8rem; background: rgba(255, 255, 255, 0.05); padding: 5px 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); color: var(--text-primary); font-weight: 500;">
+                                ${guildCount} 個分組 / ${totalChars} 名成員
+                            </span>
+                            <span class="chevron" style="transition: transform 0.3s ease; font-size: 1rem; color: var(--text-secondary); display: inline-block;">▼</span>
+                        </div>
+                    </div>
+                    
+                    <div id="world-content-${key}" class="world-content" style="padding: 0 24px 24px; max-height: 5000px; transition: max-height 0.4s ease-in-out; overflow: hidden;">
+                        <div class="guilds-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-top: 20px;">
+                            ${Object.entries(w.guilds).map(([guildName, list]) => {
+                                return `
+                                    <div class="guild-box glass-card" style="padding: 16px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.015); display: flex; flex-direction: column; gap: 12px; transition: var(--transition);">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 10px;">
+                                            <h4 style="margin: 0; font-size: 0.95rem; color: var(--text-primary); font-weight: 600;">${guildName}</h4>
+                                            <span style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 500; background: rgba(255,255,255,0.05); padding: 2px 8px; border-radius: 8px;">${list.length} 人</span>
+                                        </div>
+                                        <div class="guild-members" style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                            ${list.map(c => {
+                                                const avatarHtml = window.AvatarService.getAvatarHtmlByUnitId(c.unit_id, c.unit_name);
+                                                return `
+                                                    <div class="member-avatar-wrapper" onclick="CharactersModule.showDetail(${c.unit_id})" 
+                                                         title="${c.unit_name} (ID: ${c.unit_id})" 
+                                                         style="cursor: pointer; transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative;">
+                                                        <div class="guild-member-avatar" style="width: 44px; height: 44px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+                                                            ${avatarHtml}
+                                                        </div>
+                                                    </div>
+                                                `;
+                                            }).join('')}
+                                        </div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        html += '</div>';
+        return html;
     }
 };

@@ -551,9 +551,22 @@ const QuestMapModule = {
         // 依 groupId (公會編號) 排序，讓公會順序固定
         filtered.sort((a, b) => (a.groupId || 0) - (b.groupId || 0));
         filtered.forEach(s => {
-            const chKey = s.chapter || "其他公會";
-            if (!this.chapters[chKey]) this.chapters[chKey] = [];
-            this.chapters[chKey].push(s);
+            let guildName = "其他公會";
+            if (s.chapter) {
+                const match = s.chapter.match(/^(.*?)\s*第\d+話/);
+                if (match) {
+                    guildName = match[1].trim();
+                } else {
+                    const parts = s.chapter.split(/\s+第/);
+                    if (parts[0]) {
+                        guildName = parts[0].trim();
+                    } else {
+                        guildName = s.chapter;
+                    }
+                }
+            }
+            if (!this.chapters[guildName]) this.chapters[guildName] = [];
+            this.chapters[guildName].push(s);
         });
     },
 
@@ -945,7 +958,14 @@ const QuestMapModule = {
                                 <div class="acc-count">${childStories.length} 話</div>
                             </div>
                             <div class="accordion-content" style="max-height: ${isExpanded ? 'none' : '0px'}">
-                                ${childStories.map(s => this.getStoryItemHtml(s, "特別故事", s.title)).join('')}
+                                ${childStories.map(s => {
+                                    let displayChapterName = "特別故事";
+                                    if (this.activeTabType === 'guild' && s.chapter) {
+                                        const match = s.chapter.match(/第\d+話/);
+                                        if (match) displayChapterName = match[0];
+                                    }
+                                    return this.getStoryItemHtml(s, displayChapterName, s.title);
+                                }).join('')}
                             </div>
                         </div>
                     `;
@@ -1660,7 +1680,7 @@ const QuestMapModule = {
             // 合併相同語音的連續對話行
             const dialogueList = [];
             rawDialogueList.forEach(item => {
-                if (item.type === 'still' || item.type === 'background') {
+                if (item.type === 'still' || item.type === 'background' || item.type === 'movie') {
                     dialogueList.push(item);
                     return;
                 }
@@ -1668,6 +1688,7 @@ const QuestMapModule = {
                 if (last && 
                     last.type !== 'still' && 
                     last.type !== 'background' && 
+                    last.type !== 'movie' && 
                     last.name === item.name && 
                     (!item.voice || last.voice === item.voice)) {
                     
@@ -1765,6 +1786,36 @@ const QuestMapModule = {
                         html += `
                             <div class="game-dialogue-bg-change" data-bg="${bgUrl}" style="margin: 12px 0; padding: 8px 12px; font-size: 0.8rem; color: rgba(255,255,255,0.4); text-align: center; border-top: 1px dashed rgba(255,255,255,0.15); border-bottom: 1px dashed rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; gap: 6px;">
                                 🎬 場景切換：${bgId}
+                            </div>
+                        `;
+                    }
+                    return;
+                }
+ 
+                if (item.type === 'movie') {
+                    const movieId = item.movie_id || item.movie;
+                    if (movieId) {
+                        const cleanMovieId = String(movieId).replace('movie_', '');
+                        html += `
+                            <div class="game-dialogue-movie-wrap" style="
+                                margin: 20px 0;
+                                padding: 18px;
+                                background: rgba(232, 56, 117, 0.08);
+                                border: 1px solid rgba(232, 56, 117, 0.2);
+                                border-radius: 12px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 8px;
+                                text-align: center;
+                                box-shadow: inset 0 0 10px rgba(232, 56, 117, 0.05);
+                            ">
+                                <div style="font-size: 1.6rem; animation: pulse 2s infinite;">🎬</div>
+                                <div style="font-size: 0.95rem; font-weight: 700; color: var(--accent-color);">過場動畫銜接：movie_${cleanMovieId}</div>
+                                <div style="font-size: 0.8rem; color: var(--text-secondary); max-width: 450px; line-height: 1.4;">
+                                    此處為遊戲內嵌之劇情動畫。本網頁不直接提供影片播放，您可使用 Python 提取工具解碼本地 USM 影片或在 YouTube/Bilibili 搜尋該動畫 ID 觀看。
+                                </div>
                             </div>
                         `;
                     }

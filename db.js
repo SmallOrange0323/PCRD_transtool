@@ -157,6 +157,83 @@ window.PCRDatabase = {
 
 
     /**
+     * 載入特定的資料庫（專供比對使用，不覆蓋主 db）
+     */
+    async loadSpecificDatabase(type, onProgress) {
+        const dbKey = `pcr_db_${type}`;
+        const localPath = `./redive_${type}.db`;
+        const sizeKey = `pcr_db_size_${type}`;
+
+        try {
+            if (onProgress) onProgress('正在初始化 SQL 引擎...', 10);
+            
+            if (typeof initSqlJs === 'undefined') {
+                throw new Error("無法載入 SQL 引擎元件 (initSqlJs 未定義)。");
+            }
+
+            const SQL = await initSqlJs({
+                locateFile: file => `${file}`
+            });
+
+            // 獲取檔案大小
+            let size = 0;
+            try {
+                const headRes = await fetch(localPath, { method: 'HEAD' });
+                if (headRes.ok) {
+                    const cl = headRes.headers.get('content-length');
+                    if (cl) size = parseInt(cl, 10);
+                }
+            } catch (e) {
+                console.warn(`[PCRDatabase] HEAD ${localPath} failed.`, e);
+            }
+
+            const cachedSize = localStorage.getItem(sizeKey);
+            let forceReload = false;
+            if (size > 0 && String(size) !== String(cachedSize)) {
+                console.log(`[PCRDatabase] Size mismatch for ${type}. Force reload.`);
+                forceReload = true;
+                await this.removeFromIDB(dbKey);
+            }
+
+            // 嘗試載入快取
+            let cachedDB = null;
+            if (!forceReload) {
+                cachedDB = await this.loadFromIDB(dbKey);
+            }
+
+            if (cachedDB) {
+                if (onProgress) onProgress(`正在載入本地 ${type.toUpperCase()} 快取...`, 50);
+                const specificDb = new SQL.Database(new Uint8Array(cachedDB));
+                console.log(`[PCRDatabase] Loaded specific DB: ${type} from IndexedDB`);
+                return specificDb;
+            }
+
+            // 下載檔案
+            if (onProgress) onProgress(`正在下載 ${type.toUpperCase()} 資料庫...`, 20);
+            const dbData = await this.downloadDB(localPath, (pct) => {
+                if (onProgress) onProgress(`正在下載 ${type.toUpperCase()} 資料庫... ${pct}%`, 20 + (pct * 0.7));
+            });
+
+            if (dbData) {
+                const specificDb = new SQL.Database(new Uint8Array(dbData));
+                await this.saveToIDB(dbKey, dbData);
+                const finalSize = size > 0 ? size : dbData.byteLength;
+                localStorage.setItem(sizeKey, finalSize);
+                console.log(`[PCRDatabase] Successfully loaded specific DB: ${type}`);
+                return specificDb;
+            }
+
+            throw new Error(`無法取得 ${type} 資料庫數據`);
+        } catch (error) {
+            console.error(`loadSpecificDatabase Error (${type}):`, error);
+            if (onProgress) onProgress(`載入 ${type} 失敗: ${error.message}`, 0);
+            throw error;
+        }
+    },
+
+
+
+    /**
      * 下載資料庫文件（帶進度回調）
      */
     async downloadDB(dbUrl, onProgress) {

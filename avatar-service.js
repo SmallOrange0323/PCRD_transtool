@@ -108,6 +108,13 @@ window.AvatarService = {
         return candidates;
     },
 
+    getAvatarUrl(unitId) {
+        if (!unitId) return 'https://redive.estertion.win/icon/unit/100001.webp';
+        const baseId = Math.floor(unitId / 100) * 100;
+        const mainId = (unitId < 190000) ? (baseId + 31) : unitId;
+        return `icon/unit/${mainId}.png`;
+    },
+
     // 公開 API：取得最佳頭像 img 元素 HTML
     getAvatarHtml(charaName, externalAvatars = {}) {
         const cleanName = this.cleanName(charaName);
