@@ -566,13 +566,12 @@ window.CharactersModule = {
             '鳳凰': { world: 'GeoGehenna', guild: '無公會' },
             '阿剌克涅': { world: 'GeoGehenna', guild: '無公會' },
             '拿娜': { world: 'GeoGehenna', guild: '無公會' },
-            '格蕾絲': { world: 'GeoGehenna', guild: '無公會' },
-            '葛蕾絲': { world: 'GeoGehenna', guild: '無公會' },
             
             // 吉歐‧尼布爾黑爾
             '薇歐莉特': { world: 'GeoNibelheim', guild: '無公會' },
             '雪野': { world: 'GeoNibelheim', guild: '無公會' },
             '剎鬼': { world: 'GeoNibelheim', guild: '無公會' },
+            '格蕾斯': { world: 'GeoNibelheim', guild: '無公會' },
 
             // 阿斯特萊亞
             '志那都': { world: 'Astraea', guild: '無公會' },
