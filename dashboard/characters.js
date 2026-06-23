@@ -566,16 +566,17 @@ window.CharactersModule = {
             '鳳凰': { world: 'GeoGehenna', guild: '無公會' },
             '阿剌克涅': { world: 'GeoGehenna', guild: '無公會' },
             '拿娜': { world: 'GeoGehenna', guild: '無公會' },
-            '櫻': { world: 'GeoGehenna', guild: '無公會' },
-            '埃拉': { world: 'GeoGehenna', guild: '無公會' },
             '格蕾絲': { world: 'GeoGehenna', guild: '無公會' },
             '葛蕾絲': { world: 'GeoGehenna', guild: '無公會' },
             
             // 吉歐‧尼布爾黑爾
             '薇歐莉特': { world: 'GeoNibelheim', guild: '無公會' },
-            '志那都': { world: 'GeoNibelheim', guild: '無公會' },
             '雪野': { world: 'GeoNibelheim', guild: '無公會' },
             '剎鬼': { world: 'GeoNibelheim', guild: '無公會' },
+
+            // 阿斯特萊亞
+            '志那都': { world: 'Astraea', guild: '無公會' },
+            '埃拉': { world: 'Astraea', guild: '無公會' },
 
             // 其他世界 (聯動)
             '吉塔': { world: 'Other', guild: '碧藍幻想' },
@@ -592,7 +593,7 @@ window.CharactersModule = {
             '艾姬多娜': { world: 'Other', guild: 'Re:從零開始的異世界生活' },
             '拉芙塔莉雅': { world: 'Other', guild: '盾之勇者成名錄' },
             '菲洛': { world: 'Other', guild: '盾之勇者成名錄' },
-            '美坂栞': { world: 'Other', guild: 'Kanon' }
+            '櫻': { world: 'Other', guild: '佐賀偶像是傳奇' }
         };
 
         characters.forEach(c => {
