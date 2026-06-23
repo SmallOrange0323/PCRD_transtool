@@ -1605,10 +1605,11 @@ const QuestMapModule = {
                 if (realWorldSummary) {
                     realWorldHtml = `
                         <div class="real-world-summary-box" style="margin-top: 15px; padding: 12px; border-radius: 8px; background: rgba(9, 132, 227, 0.08); border: 1px solid rgba(9, 132, 227, 0.25); text-align: left; line-height: 1.6;">
-                            <div style="color: #0984e3; font-weight: 700; font-size: 0.9rem; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
-                                <span>🌐</span> 現實線劇情摘要
+                            <div style="color: #0984e3; font-weight: 700; font-size: 0.9rem; margin-bottom: 6px; display: flex; align-items: center; justify-content: space-between; gap: 6px; flex-wrap: wrap;">
+                                <span style="display: flex; align-items: center; gap: 6px;">🌐 現實線劇情摘要</span>
+                                <span style="font-size: 0.72rem; color: #d63031; background: rgba(214, 48, 49, 0.1); border: 1px dashed #d63031; padding: 1px 6px; border-radius: 4px; font-weight: 700; display: inline-block;">⚠️ 待校對（可能存在 AI 幻覺）</span>
                             </div>
-                            <p style="margin: 0; color: var(--text-primary); font-size: 0.85rem; text-indent: 2em; line-height: 1.7;">${this.escapeHtml(realWorldSummary)}</p>
+                            <p style="margin: 0; color: var(--text-primary); font-size: 0.85rem; white-space: pre-wrap; line-height: 1.7;">${this.escapeHtml(realWorldSummary)}</p>
                         </div>
                     `;
                 }
@@ -1616,7 +1617,7 @@ const QuestMapModule = {
                 summaryEl.innerHTML = `
                     <div class="chapter-summary-box" style="text-align: left; line-height: 1.6; font-size: 0.92rem; color: var(--text-primary); padding: 15px; background: rgba(232, 56, 117, 0.03); border-radius: 8px; border: 1px solid rgba(232, 56, 117, 0.08);">
                         <span style="color: var(--accent-color); font-weight: 700; font-size: 1rem; display: block; margin-bottom: 8px;">📖 【${chKey}】 劇情摘要：</span>
-                        <p style="color: var(--text-primary); margin: 0; font-size: 0.88rem; text-indent: 2em; line-height: 1.7;">${this.escapeHtml(summaryText)}</p>
+                        <p style="color: var(--text-primary); margin: 0; font-size: 0.88rem; white-space: pre-wrap; line-height: 1.7;">${this.escapeHtml(summaryText)}</p>
                         ${realWorldHtml}
                     </div>
                 `;
