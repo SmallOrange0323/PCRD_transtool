@@ -3259,4 +3259,30 @@ body {
     box-shadow: 0 12px 24px rgba(232, 56, 117, 0.1) !important;
 }
 
+/* 世界與公會手風琴轉折樣式 */
+.world-content.collapsed {
+    max-height: 0 !important;
+    padding: 0 24px !important;
+    opacity: 0;
+    pointer-events: none;
+}
+.world-content {
+    max-height: 10000px;
+    opacity: 1;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease, opacity 0.3s ease;
+}
+.world-header.expanded .chevron {
+    transform: rotate(180deg) !important;
+}
+.member-avatar-wrapper:hover {
+    transform: scale(1.15);
+    z-index: 10;
+}
+.guild-box:hover {
+    border-color: rgba(232, 56, 117, 0.2) !important;
+    box-shadow: 0 8px 16px rgba(232, 56, 117, 0.05);
+    background: rgba(255, 255, 255, 0.03) !important;
+}
+
+
 
