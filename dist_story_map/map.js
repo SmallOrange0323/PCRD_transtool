@@ -48,10 +48,23 @@ const QuestMapModule = {
 
     handleCharaSearch(inputVal) {
         this.charaSearchQuery = inputVal;
-        const gridEl = document.querySelector('.chara-grid');
-        if (!gridEl) return;
+        // 使用 debounce 防止每次按鍵都完整重建 DOM 或頻繁操作
+        clearTimeout(this._charaSearchTimer);
+        this._charaSearchTimer = setTimeout(() => {
+            this._updateCharaGrid();
+        }, 300);
+    },
 
-        const normalizedQuery = this.normalizeString(inputVal).trim();
+    /** 只更新角色 grid 內容，不重建整個頁面，從而保留搜尋框焦點與游標 */
+    _updateCharaGrid() {
+        const gridEl = document.querySelector('.chara-grid');
+        if (!gridEl) {
+            // fallback: 如果找不到 grid，完整重建
+            this.safeRender(() => this._render());
+            return;
+        }
+
+        const normalizedQuery = this.normalizeString(this.charaSearchQuery).trim();
         const chapterKeys = Object.keys(this.chapters).sort();
 
         let gridHtml = "";
@@ -1598,8 +1611,8 @@ const QuestMapModule = {
             } else {
                 const chKey = ChapterDataService.getChapterKey(story.part, story.groupId, story.chapter);
                 const info = ChapterDataService.getChapterInfo(story.part, story.groupId);
-                const summaryText = info ? info.summary : "暫無本章節的摘要簡介。";
-                const realWorldSummary = info ? info.real_world_summary : null;
+                const summaryText = (info && info.summary) ? info.summary : "暫無本章節的摘要簡介。";
+                const realWorldSummary = (info && info.real_world_summary) ? info.real_world_summary : null;
 
                 let realWorldHtml = "";
                 if (realWorldSummary) {
