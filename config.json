@@ -5,12 +5,25 @@
       "models": {
         "deepseek-ai/deepseek-v4-flash": {
           "options": {}
+        },
+        "z-ai/glm-5.1": {
+          "options": {}
         }
       }
     },
     "opencode": {
       "models": {
         "deepseek-v4-flash-free": {
+          "options": {}
+        }
+      }
+    },
+    "ollama-cloud": {
+      "models": {
+        "glm-5.2": {
+          "options": {}
+        },
+        "glm-5.1": {
           "options": {}
         }
       }

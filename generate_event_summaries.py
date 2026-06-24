@@ -15,7 +15,7 @@ STORY_DIR = os.path.join(SCRIPT_DIR, "dashboard", "story")
 EVENT_SUMMARIES_JSON = os.path.join(SCRIPT_DIR, "dashboard", "data", "event_summaries.json")
 EXTRA_EVENTS_JSON = os.path.join(SCRIPT_DIR, "dashboard", "data", "extra_events.json")
 DB_PATH = os.path.join(SCRIPT_DIR, "dashboard", "redive_tw.db")
-NVIDIA_API_URL = "https://integrate.api.nvidia.com/v1/chat/completions"
+OLLAMA_API_URL = "http://127.0.0.1:11434/api/chat"
 LOG_FILE = os.path.join(SCRIPT_DIR, "scratch", "event_generation_progress.log")
 
 def write_log(msg):
@@ -34,10 +34,9 @@ def clean_text(text):
     text = re.sub(r'\[.*?\]', '', text)
     return text.strip()
 
-def get_event_dialogue_stream(story_ids):
+def get_event_dialogue_stream(story_ids, limit_lines=150, max_per_story=15):
     event_lines = []
     # 限制每個活動最多抓取前幾個重要話數以防 text 太長
-    # 通常一個活動 1 話到 8 話，我們走訪每一話，每話抽前 15 句對白
     for story_id in story_ids:
         filepath = os.path.join(STORY_DIR, f"{story_id}.json")
         if not os.path.exists(filepath):
@@ -47,13 +46,9 @@ def get_event_dialogue_stream(story_ids):
             with open(filepath, 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 
-            dialogues = []
-            if isinstance(data, dict) and "dialogue" in data:
-                dialogues = data["dialogue"]
-            elif isinstance(data, list):
-                dialogues = data
-                
-            count = 0
+            dialogues = data if isinstance(data, list) else data.get("dialogue", [])
+            
+            valid_dialogues = []
             for item in dialogues:
                 words = clean_text(item.get("words", ""))
                 if not words:
@@ -61,25 +56,32 @@ def get_event_dialogue_stream(story_ids):
                 speaker = item.get("name", item.get("speaker", "旁白")).strip()
                 if speaker in ["旁白", "店員", "店長", "街坊鄰居", "眾人"] and len(words) < 5:
                     continue
-                event_lines.append(f"{speaker}: {words}")
-                count += 1
-                if count >= 15:
-                    break
+                valid_dialogues.append(f"{speaker}: {words}")
+                
+            # 均勻抽取：當話數台詞很多時，抽取前半段與後半段（結尾），避免模型只看前言
+            n = len(valid_dialogues)
+            if n <= max_per_story:
+                event_lines.extend(valid_dialogues)
+            else:
+                half = max_per_story - 5
+                event_lines.extend(valid_dialogues[:half])
+                event_lines.extend(valid_dialogues[-5:])
         except Exception as e:
             write_log(f"  ❌ 讀取 {story_id} 對話失敗: {e}")
             
-    # 取全部收集到的對白之前 150 句，大約 3,000 字，足夠大模型了解背景
-    return "\n".join(event_lines[:150])
+    # 取全部收集到的對白之前 limit_lines 句，確保能覆蓋大型活動的前後篇
+    return "\n".join(event_lines[:limit_lines])
 
-def query_nvidia_llm(api_key, prompt_text, event_title):
+def query_ollama_llm(prompt_text, event_title, is_large=False):
+    word_limit = "不低於 300 字" if not is_large else "1000 至 1500 字（必須包含故事完整的前因、發展、高潮衝突與大結局）"
     payload = {
-        "model": "z-ai/glm-5.1",
+        "model": "gemma4:12b",
         "messages": [
             {
                 "role": "system",
                 "content": (
                     "你是一位熟知《公主連結 Re:Dive》繁中版劇情的編輯。\n"
-                    "請用繁體中文撰寫該活動劇情不低於 300 字的詳細劇情大綱介紹。\n"
+                    f"請用繁體中文撰寫該活動劇情{word_limit}的詳細劇情大綱介紹。\n"
                     "注意事項：\n"
                     "1. 專注於描述該活動的核心故事背景、登場的主要角色、發生的主要事件/危機，以及最終如何解決。\n"
                     "2. 嚴禁使用『起承轉合』、『第一部分：起』、『結構分析』、『編輯短評』等學術生硬字眼，請用自然故事敘述體，在交代完最後一個情節後直接結束，不要有結論或短評。\n"
@@ -91,33 +93,31 @@ def query_nvidia_llm(api_key, prompt_text, event_title):
                 "content": f"這是活動《{event_title}》的劇情對白節錄：\n\n{prompt_text}\n\n請撰寫其劇情大綱與介紹。"
             }
         ],
-        "temperature": 0.2
+        "options": {
+            "temperature": 0.2
+        },
+        "stream": False
     }
     
     req = urllib.request.Request(
-        NVIDIA_API_URL,
+        OLLAMA_API_URL,
         data=json.dumps(payload).encode('utf-8'),
         headers={
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {api_key}"
+            "Content-Type": "application/json"
         },
         method="POST"
     )
     
     try:
-        with urllib.request.urlopen(req, timeout=40) as response:
+        # 大型活動推理耗時長，將 timeout 調為 180 秒
+        with urllib.request.urlopen(req, timeout=180) as response:
             res_data = json.loads(response.read().decode('utf-8'))
-            return res_data["choices"][0]["message"]["content"].strip()
+            return res_data["message"]["content"].strip()
     except Exception as e:
-        write_log(f"  ❌ 呼叫 NVIDIA API 失敗: {e}")
+        write_log(f"  ❌ 呼叫 Ollama API 失敗: {e}")
         return None
 
 def main():
-    api_key = os.environ.get("NVIDIA_API_KEY")
-    if not api_key:
-        print("❌ 錯誤：找不到環境變數 NVIDIA_API_KEY，請先設定它。")
-        sys.exit(1)
-        
     write_log("🚀 開始執行活動劇情摘要 AI 生成器 ...")
     
     # 載入現有摘要以利斷點續傳
@@ -195,9 +195,42 @@ def main():
         except Exception as e:
             write_log(f"❌ 讀取 extra_events.json 失敗: {e}")
 
+    LARGE_EVENT_PAIRS = {
+        5035: 5036,
+        5058: 5059,
+        5084: 5085,
+        5110: 5111,
+        10201: 10202,
+        5136: 5137
+    }
+    STANDALONE_LARGE_EVENTS = {10213}
+    
+    # 針對大型活動前後篇，如果已存在的摘要字數過短（少於 800 字），則強制刪除以重新生成
+    for front, back in LARGE_EVENT_PAIRS.items():
+        sf, sb = str(front), str(back)
+        need_regen = False
+        if sf in existing_summaries and len(existing_summaries[sf]) < 800:
+            need_regen = True
+        if sb in existing_summaries and len(existing_summaries[sb]) < 800:
+            need_regen = True
+            
+        if need_regen:
+            write_log(f"  🧹 大型活動前後篇 {sf} 或 {sb} 的現有摘要不足 800 字，將強制刪除並重新生成。")
+            if sf in existing_summaries:
+                del existing_summaries[sf]
+            if sb in existing_summaries:
+                del existing_summaries[sb]
+
+    # 針對單篇大型活動
+    for gid in STANDALONE_LARGE_EVENTS:
+        sf = str(gid)
+        if sf in existing_summaries and len(existing_summaries[sf]) < 800:
+            write_log(f"  🧹 單篇大型活動 {sf} 的現有摘要不足 800 字，將強制刪除並重新生成。")
+            del existing_summaries[sf]
+
     print(f"找到 {len(events)} 個活動。")
     
-    # 為了測試，我們先過濾出「尚未生成」的活動
+    # 過濾出「尚未生成」的活動
     todo_gids = [gid for gid in events if str(gid) not in existing_summaries]
     print(f"待生成活動數: {len(todo_gids)}")
     
@@ -205,39 +238,69 @@ def main():
         print("🎉 所有活動摘要已生成完畢！")
         return
 
-    # 提供 limit，測試時先跑 2 個
-    # 如果使用者決定大量跑，可以移除此限制
-    limit = 2
+    # 提供 limit，改為一次跑全部以進行完整批次生成
+    limit = 999
     count = 0
+    
+    # 建立一個集合包含所有的後篇 ID，避免重複處理
+    back_ids_set = set(LARGE_EVENT_PAIRS.values())
     
     for gid in todo_gids:
         if count >= limit:
             print(f"\n💡 已達到單次測試上限 {limit} 個活動。如果測試正常，您可以再次執行以繼續生成。")
             break
             
+        # 如果是後篇 ID，則跳過，因為會在前篇合併處理時一起寫入
+        if gid in back_ids_set:
+            continue
+            
         evt_info = events[gid]
         title = evt_info["title"]
         sids = evt_info["story_ids"]
+        
+        is_large = (gid in LARGE_EVENT_PAIRS) or (gid in STANDALONE_LARGE_EVENTS)
+        back_gid = LARGE_EVENT_PAIRS.get(gid)
+        
+        if is_large and back_gid:
+            # 合併前篇與後篇的故事對白
+            if back_gid in events:
+                sids = sids + events[back_gid]["story_ids"]
+                title = f"{title} & {events[back_gid]['title']}"
         
         # 尋找本地是否有對白 json，若是完全沒有 json 則略過
         has_dialogue = any(os.path.exists(os.path.join(STORY_DIR, f"{sid}.json")) for sid in sids)
         if not has_dialogue:
             continue
             
-        write_log(f"\n🎬 正在為活動 【{title}】 (ID: {gid}) 提取對白並呼叫 GLM-5.1 生成摘要...")
-        dialogue_text = get_event_dialogue_stream(sids)
+        write_log(f"\n🎬 正在為活動 【{title}】 (ID: {gid}{f' + {back_gid}' if back_gid else ''}) 提取對白並呼叫 Gemma 4 12b 生成{'大型' if is_large else '一般'}摘要...")
+        
+        if is_large:
+            dialogue_text = get_event_dialogue_stream(sids, limit_lines=350, max_per_story=25)
+        else:
+            dialogue_text = get_event_dialogue_stream(sids)
         
         if not dialogue_text.strip():
             write_log("  ⚠️ 對話節錄為空，略過。")
             continue
             
-        summary = query_nvidia_llm(api_key, dialogue_text, title)
+        # 針對 5001 初音活動，特別加強提示與後處理，防範大模型對妹妹名字「小栞」的幻覺
+        custom_title = title
+        if str(gid) == "5001":
+            custom_title = f"{title}（注意：初音的妹妹是小栞，絕對不能寫成小凜）"
+            
+        summary = query_ollama_llm(dialogue_text, custom_title, is_large=is_large)
         if summary:
+            if str(gid) == "5001":
+                summary = summary.replace("小凜", "小栞").replace("伊莉絲白牧場", "伊麗莎白牧場")
+            
             existing_summaries[str(gid)] = summary
+            if is_large and back_gid:
+                existing_summaries[str(back_gid)] = summary
+                
             write_log(f"  ✅ 生成成功！字數: {len(summary)}")
             count += 1
             
-             # 即時寫入 JSON 防止中斷遺失
+            # 即時寫入 JSON 防止中斷遺失
             try:
                 with open(EVENT_SUMMARIES_JSON, 'w', encoding='utf-8') as f:
                     json.dump(existing_summaries, f, ensure_ascii=False, indent=4)
@@ -259,3 +322,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
