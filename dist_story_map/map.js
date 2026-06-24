@@ -13,6 +13,7 @@ const QuestMapModule = {
     stories: [],
     events: [],
     eventStories: [],
+    eventSummaries: null,
     chapters: {},
     currentPart: 1,
     activeTabType: 'main',
@@ -244,6 +245,19 @@ const QuestMapModule = {
                     }
                 } catch (e) {
                     console.error("無法加載劇情縮圖快取:", e);
+                }
+            if (!this.eventSummaries) {
+                try {
+                    const resp = await fetch('data/event_summaries.json');
+                    if (resp.ok) {
+                        this.eventSummaries = await resp.json();
+                        console.log(`[QuestMapModule] 成功載入活動劇情摘要 (${Object.keys(this.eventSummaries).length} 筆)`);
+                    } else {
+                        this.eventSummaries = {};
+                    }
+                } catch (e) {
+                    console.error("無法加載活動劇情摘要:", e);
+                    this.eventSummaries = {};
                 }
             }
 
@@ -1588,12 +1602,23 @@ const QuestMapModule = {
                     const date = new Date(currentEvent.start_time);
                     const timeLabel = isNaN(date.getFullYear()) ? "未知時間" : `${date.getFullYear()}年${date.getMonth() + 1}月`;
                     const totalEpisodes = this.eventStories.filter(s => s.groupId === currentEvent.story_group_id).length;
-                    summaryEl.innerHTML = `
-                        <div class="chapter-summary-box" style="text-align: left; line-height: 1.6; font-size: 0.92rem; color: var(--text-primary); padding: 15px; background: rgba(232, 56, 117, 0.03); border-radius: 8px; border: 1px solid rgba(232, 56, 117, 0.08);">
-                            <span style="color: var(--accent-color); font-weight: 700; font-size: 1rem; display: block; margin-bottom: 8px;">🏆 【${currentEvent.title}】 活動介紹：</span>
+                    const gidStr = String(currentEvent.story_group_id);
+                    const aiSummary = (this.eventSummaries && this.eventSummaries[gidStr]) ? this.eventSummaries[gidStr] : null;
+                    let descHtml = "";
+                    if (aiSummary) {
+                        descHtml = `<p style="color: var(--text-primary); margin: 0 0 10px 0; font-size: 0.88rem; white-space: pre-wrap; line-height: 1.7;">${this.escapeHtml(aiSummary)}</p>`;
+                    } else {
+                        descHtml = `
                             <p style="color: var(--text-primary); margin: 0 0 10px 0; font-size: 0.88rem; line-height: 1.7;">
                                 本劇情為 <strong>${timeLabel}</strong> 登場的期間限定角色活動劇情。講述了與該活動核心主角們展開的專屬冒險篇章。
                             </p>
+                        `;
+                    }
+
+                    summaryEl.innerHTML = `
+                        <div class="chapter-summary-box" style="text-align: left; line-height: 1.6; font-size: 0.92rem; color: var(--text-primary); padding: 15px; background: rgba(232, 56, 117, 0.03); border-radius: 8px; border: 1px solid rgba(232, 56, 117, 0.08);">
+                            <span style="color: var(--accent-color); font-weight: 700; font-size: 1rem; display: block; margin-bottom: 8px;">🏆 【${currentEvent.title}】 活動介紹：</span>
+                            ${descHtml}
                             <div style="font-size: 0.82rem; color: var(--text-secondary); border-top: 1px dashed rgba(232, 56, 117, 0.15); padding-top: 10px; margin-top: 10px;">
                                 📅 登場時間：${currentEvent.start_time}<br>
                                 📂 活動話數：共 ${totalEpisodes} 話

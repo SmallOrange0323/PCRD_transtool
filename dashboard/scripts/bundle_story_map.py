@@ -61,6 +61,7 @@ def main():
         (os.path.join(dashboard_dir, "data", "npc_avatars.json"), "data/npc_avatars.json"),
         (os.path.join(dashboard_dir, "data", "real_name_mapping.json"), "data/real_name_mapping.json"),
         (os.path.join(dashboard_dir, "data", "story_thumbnails.json"), "data/story_thumbnails.json"),
+        (os.path.join(dashboard_dir, "data", "event_summaries.json"), "data/event_summaries.json"),
     ]
     
     # 複製核心文件
@@ -70,6 +71,9 @@ def main():
             print(f"[Copy] {os.path.basename(src)} -> {dst_rel}")
             shutil.copy2(src, dst)
         else:
+            if "event_summaries.json" in src:
+                print(f"[Warn] 可選的活動摘要文件 {os.path.basename(src)} 未找到，跳過拷貝。")
+                continue
             print(f"[Error] 找不到核心文件: {src}", file=sys.stderr)
             sys.exit(1)
             
