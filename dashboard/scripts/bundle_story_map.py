@@ -112,6 +112,17 @@ def main():
             print("[Copy] 本地 card 目錄複製與同步成功！")
         except Exception as e:
             print(f"[Warning] 複製本地 card 目錄失敗: {e}")
+
+    # 複製 sound/ 目錄下的所有語音檔
+    sound_src_dir = os.path.join(dashboard_dir, "sound")
+    sound_dst_dir = os.path.join(dist_dir, "sound")
+    if os.path.exists(sound_src_dir):
+        print("[Copy] 開始複製本地 sound 語音目錄...")
+        try:
+            safe_copy_tree(sound_src_dir, sound_dst_dir)
+            print("[Copy] 本地 sound 語音目錄複製與同步成功！")
+        except Exception as e:
+            print(f"[Warning] 複製本地 sound 語音目錄失敗: {e}")
             
     print("[Success] 打包部署封裝完成！")
     print(f"[Info] 您現在可以直接將 {dist_dir} 資料夾內容部署到 GitHub Pages、Vercel 或您的任何 Web 伺服器上。")

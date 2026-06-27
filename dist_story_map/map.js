@@ -2010,6 +2010,7 @@ const QuestMapModule = {
         const groupId = voiceName.substring(7, 14);
 
         const cdnList = [
+            `sound/story_vo/${voiceName}.m4a`,
             `https://prcn-sound.estertion.win/story_vo/${groupId}/${voiceName}.m4a`,
             `https://redive.estertion.win/sound/story_vo/${groupId}/${voiceName}.m4a`
         ];
