@@ -1518,12 +1518,18 @@ const QuestMapModule = {
                 let tableName = 'story_detail';
                 if (story.isEvent) {
                     tableName = 'event_story_detail';
-                } else if (story.type === 'guild') {
-                    tableName = 'guild_story_detail';
-                } else if (story.type === 'chara') {
-                    tableName = 'chara_story_detail';
-                } else if (story.type === 'tower') {
-                    tableName = 'tower_story_detail';
+                } else {
+                    const checkChara = await window.PCRDatabase.runQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='chara_story_detail'");
+                    const isTW = !(checkChara && checkChara.length > 0);
+                    if (isTW) {
+                        tableName = 'story_detail';
+                    } else if (story.type === 'guild') {
+                        tableName = 'guild_story_detail';
+                    } else if (story.type === 'chara') {
+                        tableName = 'chara_story_detail';
+                    } else if (story.type === 'tower') {
+                        tableName = 'tower_story_detail';
+                    }
                 }
                 const sql = `SELECT sub_title FROM ${tableName} WHERE story_id = ${this.activeStoryId}`;
                 const result = await window.PCRDatabase.runQuery(sql);
