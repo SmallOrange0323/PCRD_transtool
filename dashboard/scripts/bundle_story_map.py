@@ -14,6 +14,8 @@ def safe_copy_tree(src, dst):
     if not os.path.exists(dst):
         os.makedirs(dst, exist_ok=True)
     for item in os.listdir(src):
+        if item.startswith("vo_btl"):
+            continue
         s = os.path.join(src, item)
         d = os.path.join(dst, item)
         if os.path.isdir(s):
