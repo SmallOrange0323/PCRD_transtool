@@ -64,12 +64,23 @@ def main():
         (os.path.join(dashboard_dir, "data", "event_summaries.json"), "data/event_summaries.json"),
     ]
     
+    import time
+    timestamp_v = f"v=5.3.0_{int(time.time())}"
+
     # 複製核心文件
     for src, dst_rel in core_files:
         dst = os.path.join(dist_dir, dst_rel)
         if os.path.exists(src):
             print(f"[Copy] {os.path.basename(src)} -> {dst_rel}")
-            shutil.copy2(src, dst)
+            if dst_rel == "index.html":
+                with open(src, 'r', encoding='utf-8') as f:
+                    html_content = f.read()
+                import re
+                html_content = re.sub(r'map\.js\?v=[^\s"\'><]+', f'map.js?{timestamp_v}', html_content)
+                with open(dst, 'w', encoding='utf-8') as f:
+                    f.write(html_content)
+            else:
+                shutil.copy2(src, dst)
         else:
             if "event_summaries.json" in src:
                 print(f"[Warn] 可選的活動摘要文件 {os.path.basename(src)} 未找到，跳過拷貝。")
