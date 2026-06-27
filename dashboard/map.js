@@ -246,6 +246,8 @@ const QuestMapModule = {
                 } catch (e) {
                     console.error("無法加載劇情縮圖快取:", e);
                 }
+            }
+
             if (!this.eventSummaries) {
                 try {
                     const resp = await fetch('data/event_summaries.json');
@@ -512,7 +514,6 @@ const QuestMapModule = {
                 }
                 console.log(`[QuestMapModule] 成功載入 ${this.eventStories.length} 筆活動話數 (含新形式活動)`);
             }
-
             await ChapterDataService.load();
         } catch (err) {
             console.error("[QuestMapModule] 載入劇情數據失敗:", err);
