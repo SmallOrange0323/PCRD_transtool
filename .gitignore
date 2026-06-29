@@ -43,10 +43,8 @@ dist_story_map/card/
 
 # 11. 忽略本地臨時下載的劇照與卡面大圖目錄
 dashboard/still/
-# 12. 忽略整個打包發佈目錄 (已由子倉庫自主管理)
-# dist_story_map/
+# 12. 忽略整個打包發佈目錄
+dist_story_map/
 
 
 downloaded_sounds/
-dashboard/sound/
-tools/

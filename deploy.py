@@ -41,9 +41,9 @@ def main():
         print("[Info] 沒有檢測到任何代碼或對白更新，無需上傳！")
         sys.exit(0)
         
-    # 4. 強制推送至遠端 gh-pages 分支
+    # 4. 推送至遠端 (如果是第一次，使用 -f 強制覆蓋舊分支以建立起點)
     print("[Deploy] 正在推送變更至 GitHub (gh-pages)...")
-    push_cmd = "git push -f origin gh-pages"
+    push_cmd = "git push -f origin gh-pages" if is_new_repo else "git push origin gh-pages"
     
     success, output = run_cmd(push_cmd, cwd=dist_dir)
     if success:

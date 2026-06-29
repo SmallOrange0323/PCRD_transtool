@@ -246,8 +246,6 @@ const QuestMapModule = {
                 } catch (e) {
                     console.error("無法加載劇情縮圖快取:", e);
                 }
-            }
-
             if (!this.eventSummaries) {
                 try {
                     const resp = await fetch('data/event_summaries.json');
@@ -514,6 +512,7 @@ const QuestMapModule = {
                 }
                 console.log(`[QuestMapModule] 成功載入 ${this.eventStories.length} 筆活動話數 (含新形式活動)`);
             }
+
             await ChapterDataService.load();
         } catch (err) {
             console.error("[QuestMapModule] 載入劇情數據失敗:", err);
@@ -1519,18 +1518,12 @@ const QuestMapModule = {
                 let tableName = 'story_detail';
                 if (story.isEvent) {
                     tableName = 'event_story_detail';
-                } else {
-                    const checkChara = await window.PCRDatabase.runQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='chara_story_detail'");
-                    const isTW = !(checkChara && checkChara.length > 0);
-                    if (isTW) {
-                        tableName = 'story_detail';
-                    } else if (story.type === 'guild') {
-                        tableName = 'guild_story_detail';
-                    } else if (story.type === 'chara') {
-                        tableName = 'chara_story_detail';
-                    } else if (story.type === 'tower') {
-                        tableName = 'tower_story_detail';
-                    }
+                } else if (story.type === 'guild') {
+                    tableName = 'guild_story_detail';
+                } else if (story.type === 'chara') {
+                    tableName = 'chara_story_detail';
+                } else if (story.type === 'tower') {
+                    tableName = 'tower_story_detail';
                 }
                 const sql = `SELECT sub_title FROM ${tableName} WHERE story_id = ${this.activeStoryId}`;
                 const result = await window.PCRDatabase.runQuery(sql);
@@ -2017,7 +2010,6 @@ const QuestMapModule = {
         const groupId = voiceName.substring(7, 14);
 
         const cdnList = [
-            `sound/story_vo/${voiceName}.m4a`,
             `https://prcn-sound.estertion.win/story_vo/${groupId}/${voiceName}.m4a`,
             `https://redive.estertion.win/sound/story_vo/${groupId}/${voiceName}.m4a`
         ];
