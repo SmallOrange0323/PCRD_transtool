@@ -65,3 +65,12 @@
 ## 四、 玩家社群 UI/UX 回饋與偏好
 * **拒絕冰冷表格**：玩家對於本工具的期望是「沉浸式遊戲體驗」，視覺上偏好半透明毛玻璃（Glassmorphism）、櫻花粉/粉橘色漸層、動態看板娘 CG 懸停切換、話數手風琴平滑過渡。
 * **台詞排版**：重視台詞呈現。應將同發言人的連續斷句、多行旁白以換行合併在同一氣泡中，降低閱讀破碎感。
+
+---
+
+## 五、 其他參考指南文件
+* 👤 [角色設定指南 (.agents/pcrd_characters.md)](file:///e:/OneDrive%20-%20%E5%AF%B0%E5%AE%87%E7%9F%A5%E8%AD%98%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/PCRD_tool/.agents/pcrd_characters.md)
+* 🎬 [主線劇情話數指南 (.agents/pcrd_story_line.md)](file:///e:/OneDrive%20-%20%E5%AF%B0%E5%AE%87%E7%9F%A5%E8%AD%98%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/PCRD_tool/.agents/pcrd_story_line.md)
+* 🌌 [世界觀與名詞定義 (.agents/pcrd_universe.md)](file:///e:/OneDrive%20-%20%E5%AF%B0%E5%AE%87%E7%9F%A5%E8%AD%98%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/PCRD_tool/.agents/pcrd_universe.md)
+* 📖 [官方用語集 (.agents/pcrd_glossary.md)](file:///e:/OneDrive%20-%20%E5%AF%B0%E5%AE%87%E7%9F%A5%E8%AD%98%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/PCRD_tool/.agents/pcrd_glossary.md)
+

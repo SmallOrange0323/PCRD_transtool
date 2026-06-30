@@ -99,9 +99,9 @@
 * **凱留**：【美食殿堂】成員。傲嬌貓娘。
 * **破曉之星**：優衣（草野優衣）、日和（春咲日和）、怜（士條憐）。
 
-### 3. 三大核心指南文件引用
-進行更深度的開發或需要更詳細的角色、劇情與設定清單時，請務必參閱以下三份由專案維護的完整指南：
+### 3. 四大核心指南文件引用
+進行更深度的開發或需要更詳細的角色、劇情與設定清單時，請務必參閱以下四份由專案維護的完整指南：
 * 👤 [角色設定指南 (.agents/pcrd_characters.md)](file:///.agents/pcrd_characters.md) — 收錄各個行會、角色背景與台版譯名。
 * 🎬 [主線劇情話數指南 (.agents/pcrd_story_line.md)](file:///.agents/pcrd_story_line.md) — 收錄第一部至第三部的章節大綱與話數分類邏輯。
 * 🌌 [世界觀與名詞定義 (.agents/pcrd_universe.md)](file:///.agents/pcrd_universe.md) — 收錄七冠權能、專有名詞與 So-net 官方譯名對照表。
-
+* 📖 [官方用語集 (.agents/pcrd_glossary.md)](file:///.agents/pcrd_glossary.md) — 收錄遊戲內用語集的官方中文定義與釋義。
