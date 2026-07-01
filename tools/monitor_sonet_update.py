@@ -69,25 +69,25 @@ def probe_new_version(current_ver):
             
     return latest_found
 
-def download_database(version, temp_bundle_dir, db_dest_path):
+def get_remote_db_hash(version):
     manifest_url = f"https://img-pc.so-net.tw/dl/Resources/{version}/Jpn/AssetBundles/Android/manifest/masterdata2_assetmanifest"
-    db_hash = None
-    
-    print(f"[INFO] Resolving database hash for {version}...")
     try:
         req = urllib.request.Request(manifest_url, headers=HEADER)
-        with urllib.request.urlopen(req, timeout=15) as res:
+        with urllib.request.urlopen(req, timeout=10) as res:
             content = res.read().decode('utf-8', errors='ignore')
             for line in content.splitlines():
                 if "masterdata_master.unity3d" in line:
-                    db_hash = line.split(',')[2]
-                    break
+                    return line.split(',')[2]
     except Exception as e:
-        print(f"❌ Failed to parse manifest: {e}")
-        return False
+        print(f"[WARN] Failed to get database hash from manifest: {e}")
+    return None
+
+def download_database(version, temp_bundle_dir, db_dest_path, db_hash=None):
+    if not db_hash:
+        db_hash = get_remote_db_hash(version)
         
     if not db_hash:
-        print("❌ Cannot find database hash in manifest.")
+        print("❌ Cannot resolve database hash. Exiting.")
         return False
         
     db_bundle_url = f"https://img-pc.so-net.tw/dl/pool/AssetBundles/{db_hash[:2]}/{db_hash}"
@@ -304,12 +304,18 @@ def main():
     force_run = "--force" in sys.argv
     history = load_history()
     last_ver = history.get("last_version", "00500015")
+    last_db_hash = history.get("last_db_hash", "")
     
     new_ver = probe_new_version(last_ver)
+    current_db_hash = get_remote_db_hash(new_ver)
     
-    if new_ver == last_ver and not force_run:
-        print("[SUCCESS] Version is up-to-date. Exiting.")
+    # Check if up-to-date (both version and db hash must match)
+    if new_ver == last_ver and current_db_hash == last_db_hash and not force_run:
+        print("[SUCCESS] Version and database hash are up-to-date. Exiting.")
         return
+        
+    if new_ver == last_ver and current_db_hash != last_db_hash:
+        print(f"🔥 Silent update detected on version {new_ver}! Hash changed from {last_db_hash[:8]}... to {current_db_hash[:8]}...")
         
     date_str = datetime.datetime.now().strftime("%Y%m%d")
     version_dir_name = f"{date_str}_{new_ver}"
@@ -325,7 +331,7 @@ def main():
         shutil.copy(GLOBAL_DB_PATH, old_db_path)
         
     # Download database to global path
-    success = download_database(new_ver, target_dir, GLOBAL_DB_PATH)
+    success = download_database(new_ver, target_dir, GLOBAL_DB_PATH, current_db_hash)
     if not success:
         print("❌ Cannot download database. Exiting.")
         if os.path.exists(old_db_path):
@@ -355,6 +361,8 @@ def main():
     if new_ver not in history["processed_versions"]:
         history["processed_versions"].append(new_ver)
     history["last_version"] = new_ver
+    if current_db_hash:
+        history["last_db_hash"] = current_db_hash
     save_history(history)
     
     print("\n🎉 So-net CDN Auto-update complete!")
