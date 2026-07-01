@@ -1869,7 +1869,10 @@ const QuestMapModule = {
 
                 const speaker = item.name || "旁白";
                 const safeSpeaker = this.escapeHtml(speaker);
-                const words = this.escapeHtml(item.words || "").replace(/\{player\}/g, "祐樹");
+                const words = this.escapeHtml(item.words || "")
+                    .replace(/\{player\}/g, "祐樹")
+                    .replace(/\\n/g, "<br>")
+                    .replace(/\n/g, "<br>");
 
                 let speakerClass = "";
                 let isNarrator = speaker === "旁白" || speaker === "【系統】" || speaker === "？？？";
@@ -1885,8 +1888,13 @@ const QuestMapModule = {
                     const realName = realNameForBtn;
                     let avatarContent = "";
 
-                    if (item.unit_id) {
-                        avatarContent = AvatarService.getAvatarHtmlByUnitId(item.unit_id, realName, this.speakerAvatars);
+                    let overrideUnitId = item.unit_id;
+                    if (realName === "貪吃佩可" && String(this.activeStoryId).startsWith("13830")) {
+                        overrideUnitId = 138331;
+                    }
+
+                    if (overrideUnitId) {
+                        avatarContent = AvatarService.getAvatarHtmlByUnitId(overrideUnitId, realName, this.speakerAvatars);
                     } else {
                         avatarContent = AvatarService.getAvatarHtml(realName, this.speakerAvatars);
                     }
