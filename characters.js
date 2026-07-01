@@ -811,7 +811,7 @@ window.CharactersModule = {
                                             color: ${d.name ? 'var(--text-primary)' : 'var(--text-secondary)'};
                                         ">
                                             ${d.name ? `<strong style="color: var(--accent-color); display: block; margin-bottom: 4px; font-size: 0.8rem;">${d.name}</strong>` : ''}
-                                            <div>${d.words.replace(/\n/g, '<br>')}</div>
+                                            <div>${d.words.replace(/\\n|\n/g, '<br>')}</div>
                                         </div>
                                     </div>
                                 `;
