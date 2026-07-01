@@ -1729,6 +1729,11 @@ const QuestMapModule = {
                     dialogueList.push(item);
                     return;
                 }
+                const cleanedWords = (item.words || "").replace(/\\n/g, "").replace(/\n/g, "").trim();
+                if (!cleanedWords) {
+                    return; // 忽略純空行或純 \n 的氣泡，消除大行距
+                }
+                
                 const last = dialogueList[dialogueList.length - 1];
                 if (last && 
                     last.type !== 'still' && 
@@ -1805,6 +1810,24 @@ const QuestMapModule = {
             }
 
             let html = "";
+            // 自動在劇情文本最開頭渲染這話的 CG 插畫 (與大卡片上的 CG 保持一致)
+            const currentStoryObj = this.stories.find(s => s.id == storyId);
+            if (currentStoryObj && (currentStoryObj.still_id || currentStoryObj.bg_id)) {
+                const hasStillInList = dialogueList.some(item => item.type === 'still');
+                if (!hasStillInList) {
+                    const topImgId = currentStoryObj.still_id || currentStoryObj.bg_id;
+                    const topStillImgHtml = StoryAssetService.getStillHtml(topImgId, 'dialogue-still-img still-clickable', '');
+                    html += `
+                        <div class="game-dialogue-still-wrap" style="margin-bottom: 20px;">
+                            <div class="game-dialogue-still-label">✨ 劇情插畫</div>
+                            <div class="game-dialogue-still" onclick="QuestMapModule.openStillPopup(event)">
+                                ${topStillImgHtml}
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+
             let firstBgUrl = "";
             dialogueList.forEach(item => {
                 if (item.type === 'still') {
@@ -1870,7 +1893,8 @@ const QuestMapModule = {
                 const speaker = item.name || "旁白";
                 const safeSpeaker = this.escapeHtml(speaker);
                 const words = this.escapeHtml(item.words || "")
-                    .replace(/\{player\}/g, "祐樹")
+                    .replace(/\{player\}/g, "佑樹")
+                    .replace(/\{0\}/g, "佑樹")
                     .replace(/\\n/g, "<br>")
                     .replace(/\n/g, "<br>");
 
