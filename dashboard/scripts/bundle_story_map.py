@@ -91,27 +91,20 @@ def main():
     else:
         print("[Warning] 找不到對白 JSON 資料夾 (story/)")
         
-    # 複製 icon/ 目錄下的所有本地素材
-    icon_src_dir = os.path.join(project_root, "dashboard", "icon")
-    icon_dst_dir = os.path.join(dist_dir, "icon")
-    if os.path.exists(icon_src_dir):
-        print("[Copy] 開始複製本地 icon 目錄...")
-        try:
-            safe_copy_tree(icon_src_dir, icon_dst_dir)
-            print("[Copy] 本地 icon 目錄複製與同步成功！")
-        except Exception as e:
-            print(f"[Warning] 複製本地 icon 目錄失敗: {e}")
-            
-    # 複製 card/ 目錄下的所有卡面大立繪
-    card_src_dir = os.path.join(dashboard_dir, "card")
-    card_dst_dir = os.path.join(dist_dir, "card")
-    if os.path.exists(card_src_dir):
-        print("[Copy] 開始複製本地 card 目錄...")
-        try:
-            safe_copy_tree(card_src_dir, card_dst_dir)
-            print("[Copy] 本地 card 目錄複製與同步成功！")
-        except Exception as e:
-            print(f"[Warning] 複製本地 card 目錄失敗: {e}")
+    # 僅複製阿斯特萊亞佩可的新增美術素材（避免遞迴掃描大量歷史小圖檔）
+    peco_icon_src = os.path.join(dashboard_dir, "icon", "unit", "unit_icon_138331.webp")
+    peco_icon_dst = os.path.join(dist_dir, "icon", "unit", "unit_icon_138331.webp")
+    if os.path.exists(peco_icon_src):
+        os.makedirs(os.path.dirname(peco_icon_dst), exist_ok=True)
+        shutil.copy2(peco_icon_src, peco_icon_dst)
+        print("[Copy] 複製阿斯特萊亞佩可頭像成功")
+ 
+    peco_card_src = os.path.join(dashboard_dir, "card", "full", "card_full_138331.webp")
+    peco_card_dst = os.path.join(dist_dir, "card", "full", "card_full_138331.webp")
+    if os.path.exists(peco_card_src):
+        os.makedirs(os.path.dirname(peco_card_dst), exist_ok=True)
+        shutil.copy2(peco_card_src, peco_card_dst)
+        print("[Copy] 複製阿斯特萊亞佩可立繪大圖成功")
             
     print("[Success] 打包部署封裝完成！")
     print(f"[Info] 您現在可以直接將 {dist_dir} 資料夾內容部署到 GitHub Pages、Vercel 或您的任何 Web 伺服器上。")
