@@ -1810,24 +1810,6 @@ const QuestMapModule = {
             }
 
             let html = "";
-            // 自動在劇情文本最開頭渲染這話的 CG 插畫 (與大卡片上的 CG 保持一致)
-            const currentStoryObj = this.stories.find(s => s.id == storyId);
-            if (currentStoryObj && (currentStoryObj.still_id || currentStoryObj.bg_id)) {
-                const hasStillInList = dialogueList.some(item => item.type === 'still');
-                if (!hasStillInList) {
-                    const topImgId = currentStoryObj.still_id || currentStoryObj.bg_id;
-                    const topStillImgHtml = StoryAssetService.getStillHtml(topImgId, 'dialogue-still-img still-clickable', '');
-                    html += `
-                        <div class="game-dialogue-still-wrap" style="margin-bottom: 20px;">
-                            <div class="game-dialogue-still-label">✨ 劇情插畫</div>
-                            <div class="game-dialogue-still" onclick="QuestMapModule.openStillPopup(event)">
-                                ${topStillImgHtml}
-                            </div>
-                        </div>
-                    `;
-                }
-            }
-
             let firstBgUrl = "";
             dialogueList.forEach(item => {
                 if (item.type === 'still') {
@@ -1946,6 +1928,24 @@ const QuestMapModule = {
                     </div>
                 `;
             });
+
+            // 如果該話擁有 CG 插畫且對白 JSON 內沒有 special still 節點，則自動在末端追加完結 CG 圖片
+            const currentStoryObj = this.stories.find(s => s.id == storyId);
+            if (currentStoryObj && (currentStoryObj.still_id || currentStoryObj.bg_id)) {
+                const hasStillInList = dialogueList.some(item => item.type === 'still');
+                if (!hasStillInList) {
+                    const bottomImgId = currentStoryObj.still_id || currentStoryObj.bg_id;
+                    const bottomStillImgHtml = StoryAssetService.getStillHtml(bottomImgId, 'dialogue-still-img still-clickable', '');
+                    html += `
+                        <div class="game-dialogue-still-wrap" style="margin-top: 20px; margin-bottom: 10px;">
+                            <div class="game-dialogue-still-label">✨ 劇情插畫</div>
+                            <div class="game-dialogue-still" onclick="QuestMapModule.openStillPopup(event)">
+                                ${bottomStillImgHtml}
+                            </div>
+                        </div>
+                    `;
+                }
+            }
 
             board.innerHTML = html;
 
