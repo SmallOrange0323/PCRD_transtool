@@ -1,0 +1,5 @@
+with open('download_stories_tw.py', 'r', encoding='utf-8') as f: content = f.read()  
+content = content.replace('array.append(str_.decode(\" "utf-8\, errors=\ignore\))', 'try:\n                array.append(str_.decode(\cp950\))\n            except UnicodeDecodeError:\n                array.append(str_.decode(\utf-8\, errors=\ignore\))')  
+content = content.replace('with open(output_path, \w\, encoding=\utf-8\) as f:', 'with open(output_path, \w\, encoding=\utf-8-sig\) as f:')  
+open('download_stories_tw.py', 'w', encoding='utf-8').write(content)  
+print('OK')  

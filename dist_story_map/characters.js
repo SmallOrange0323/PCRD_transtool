@@ -46,7 +46,20 @@ window.CharactersModule = {
             `);
 
             this.allCharacters = data;
-            this.renderLayout(container, data);
+            
+            // 動態注入最新的「貪吃佩可（阿斯特賴亞）」角色
+            if (!this.allCharacters.some(c => c.unit_id === 138301)) {
+                this.allCharacters.unshift({
+                    unit_id: 138301,
+                    unit_name: "貪吃佩可（阿斯特賴亞）",
+                    rarity: 3,
+                    pos: 155,
+                    race: "人類",
+                    guild: "美食殿堂"
+                });
+            }
+            
+            this.renderLayout(container, this.allCharacters);
         } catch (error) {
             console.error("Data Cleanup Error:", error);
             container.innerHTML = `<div class="error-box">數據清洗失敗: ${error.message}</div>`;
@@ -342,12 +355,13 @@ window.CharactersModule = {
                 <div class="detail-tabs" style="display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 1px solid var(--glass-border);">
                     <button id="modal-tab-stats" class="tab-btn active" onclick="CharactersModule.switchModalTab('stats')">核心數值與技能</button>
                     <button id="modal-tab-pattern" class="tab-btn" onclick="CharactersModule.switchModalTab('pattern')">動作循環</button>
+                    <button id="modal-tab-story" class="tab-btn" onclick="CharactersModule.switchModalTab('story')">個人劇情 (官方繁中)</button>
                 </div>
-
+ 
                 <div id="modal-content-stats">
                     <h3>核心數值 (計算結果)</h3>
                     <div id="stats-display-grid" class="stats-grid"></div>
-
+ 
                     <div class="skill-section">
                         <h3>技能介紹</h3>
                         ${skills.map(s => `
@@ -364,26 +378,37 @@ window.CharactersModule = {
                         `).join('')}
                     </div>
                 </div>
-
+ 
                 <div id="modal-content-pattern" style="display: none;">
                     <h3>動作循環模式</h3>
                     ${this.renderAttackPattern(attackPattern, skillMap)}
                 </div>
+
+                <div id="modal-content-story" style="display: none;">
+                    <!-- 個人劇情故事清單 -->
+                </div>
             `;
-
+ 
             this.updateCalculatedStats(maxLevel);
-
+ 
         } catch (error) {
             console.error(error);
             body.innerHTML = `<div class="error-box">詳情載入失敗: ${error.message}</div>`;
         }
     },
-
+ 
     switchModalTab(tab) {
         document.getElementById('modal-content-stats').style.display = tab === 'stats' ? 'block' : 'none';
         document.getElementById('modal-content-pattern').style.display = tab === 'pattern' ? 'block' : 'none';
+        document.getElementById('modal-content-story').style.display = tab === 'story' ? 'block' : 'none';
+        
         document.getElementById('modal-tab-stats').classList.toggle('active', tab === 'stats');
         document.getElementById('modal-tab-pattern').classList.toggle('active', tab === 'pattern');
+        document.getElementById('modal-tab-story').classList.toggle('active', tab === 'story');
+        
+        if (tab === 'story') {
+            this.renderStoryList();
+        }
     },
 
     renderAttackPattern(pattern, skillMap) {
@@ -686,5 +711,141 @@ window.CharactersModule = {
         
         html += '</div>';
         return html;
+    },
+
+    currentAudio: null,
+
+    async renderStoryList() {
+        const container = document.getElementById('modal-content-story');
+        if (!container) return;
+        
+        container.innerHTML = '<div class="loading-mini" style="text-align: center; padding: 20px;">載入劇情清單中...</div>';
+        
+        const unitId = this.activeUnitId;
+        // 取得前四位數作為個人劇情的字首，例如 105801 -> 1058%
+        const storyPrefix = String(unitId).substring(0, 4);
+        
+        try {
+            const stories = window.PCRDatabase.runQuery(`
+                SELECT story_id, title, sub_title 
+                FROM story_detail 
+                WHERE CAST(story_id AS TEXT) LIKE ? 
+                ORDER BY story_id ASC
+            `, [storyPrefix + "%"]);
+            
+            if (!stories || stories.length === 0) {
+                container.innerHTML = '<div class="empty-msg" style="text-align: center; padding: 20px; color: var(--text-secondary);">此角色暫無個人劇情數據</div>';
+                return;
+            }
+            
+            container.innerHTML = `
+                <div class="story-list" style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+                    ${stories.map(s => `
+                        <div class="story-item glass-card" style="border: 1px solid var(--glass-border); border-radius: 12px; overflow: hidden; transition: var(--transition);">
+                            <div class="story-header" onclick="CharactersModule.toggleStoryDialogue(${s.story_id})" 
+                                 style="padding: 15px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; background: rgba(255,255,255,0.015);">
+                                <div>
+                                    <h4 style="margin: 0; font-size: 0.95rem; color: var(--text-primary); font-weight: 600;">${s.title}</h4>
+                                    <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px;">${s.sub_title}</div>
+                                </div>
+                                <span class="chevron-${s.story_id}" style="transition: transform 0.3s ease; font-size: 0.85rem; color: var(--text-secondary);">▼</span>
+                            </div>
+                            <div id="story-dialogue-${s.story_id}" class="story-dialogue-content" style="display: none; padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.05); background: rgba(0,0,0,0.15);">
+                                <div class="loading-mini" style="text-align: center; padding: 10px; color: var(--text-secondary);">正在讀取原生繁中台詞與語音...</div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        } catch (e) {
+            console.error("載入劇情清單失敗:", e);
+            container.innerHTML = `<div class="error-box" style="color: #ff6b6b; padding: 15px; text-align: center;">無法讀取個人劇情: ${e.message}</div>`;
+        }
+    },
+
+    async toggleStoryDialogue(storyId) {
+        const contentDiv = document.getElementById(`story-dialogue-${storyId}`);
+        const chevron = document.querySelector(`.chevron-${storyId}`);
+        if (!contentDiv || !chevron) return;
+        
+        const isCollapsed = contentDiv.style.display === 'none';
+        if (isCollapsed) {
+            contentDiv.style.display = 'block';
+            chevron.style.transform = 'rotate(180deg)';
+            
+            // 載入對白
+            if (contentDiv.innerHTML.includes('正在讀取')) {
+                try {
+                    const resp = await fetch(`story/${storyId}.json?v=${Date.now()}`);
+                    if (!resp.ok) throw new Error("HTTP " + resp.status);
+                    
+                    const dialogues = await resp.json();
+                    if (!dialogues || dialogues.length === 0) {
+                        contentDiv.innerHTML = '<div style="color: var(--text-secondary); font-size: 0.85rem; text-align: center; padding: 10px;">此話無對白數據</div>';
+                        return;
+                    }
+                    
+                    contentDiv.innerHTML = `
+                        <div class="dialogue-flow" style="display: flex; flex-direction: column; gap: 12px; max-height: 400px; overflow-y: auto; padding-right: 5px;">
+                            ${dialogues.map(d => {
+                                const hasVoice = !!d.voice;
+                                const playBtn = hasVoice ? `
+                                    <button class="voice-play-btn" onclick="CharactersModule.playCharaVoice(${storyId}, '${d.voice}')"
+                                            style="border: none; background: var(--accent-color); color: white; border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; box-shadow: 0 2px 6px rgba(232,56,117,0.3); transition: all 0.2s; font-size: 0.7rem;">
+                                        ▶
+                                    </button>
+                                ` : '';
+                                
+                                return `
+                                    <div class="dialogue-row" style="display: flex; gap: 10px; align-items: flex-start; justify-content: ${d.name ? 'flex-start' : 'center'};">
+                                        ${playBtn}
+                                        <div class="dialogue-balloon" style="
+                                            background: ${d.name ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.015)'};
+                                            border: 1px solid ${d.name ? 'rgba(255,255,255,0.06)' : 'transparent'};
+                                            padding: 10px 14px;
+                                            border-radius: 12px;
+                                            max-width: 80%;
+                                            font-size: 0.85rem;
+                                            line-height: 1.5;
+                                            font-style: ${d.name ? 'normal' : 'italic'};
+                                            color: ${d.name ? 'var(--text-primary)' : 'var(--text-secondary)'};
+                                        ">
+                                            ${d.name ? `<strong style="color: var(--accent-color); display: block; margin-bottom: 4px; font-size: 0.8rem;">${d.name}</strong>` : ''}
+                                            <div>${d.words.replace(/\\n|\n/g, '<br>')}</div>
+                                        </div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    `;
+                } catch (err) {
+                    console.error("載入對白失敗:", err);
+                    contentDiv.innerHTML = `<div style="color: #ff6b6b; font-size: 0.82rem; text-align: center; padding: 10px;">尚未實裝或讀取官方對白失敗。</div>`;
+                }
+            }
+        } else {
+            contentDiv.style.display = 'none';
+            chevron.style.transform = 'rotate(0deg)';
+        }
+    },
+
+    playCharaVoice(storyId, voiceId) {
+        if (!voiceId) return;
+        if (this.currentAudio) {
+            this.currentAudio.pause();
+        }
+        
+        // 優先讀取本地，再 fallback 至 EsterTion 伺服器
+        const localUrl = `sound/story_vo/${voiceId}.m4a`;
+        const remoteUrl = `https://prcn-sound.estertion.win/story_vo/${storyId}/${voiceId}.m4a`;
+        
+        const audio = new Audio(localUrl);
+        audio.play().catch(err => {
+            console.warn("本地語音播放失敗，Fallback 至遠端鏡像伺服器...", err);
+            audio.src = remoteUrl;
+            audio.play().catch(e => console.error("遠端語音播放也失敗:", e));
+        });
+        
+        this.currentAudio = audio;
     }
 };
