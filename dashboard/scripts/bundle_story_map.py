@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import json
 import os
 import shutil
 import sys
@@ -91,20 +92,31 @@ def main():
     else:
         print("[Warning] 找不到對白 JSON 資料夾 (story/)")
         
-    # 僅複製阿斯特萊亞佩可的新增美術素材（避免遞迴掃描大量歷史小圖檔）
-    peco_icon_src = os.path.join(dashboard_dir, "icon", "unit", "unit_icon_138331.webp")
-    peco_icon_dst = os.path.join(dist_dir, "icon", "unit", "unit_icon_138331.webp")
-    if os.path.exists(peco_icon_src):
-        os.makedirs(os.path.dirname(peco_icon_dst), exist_ok=True)
-        shutil.copy2(peco_icon_src, peco_icon_dst)
-        print("[Copy] 複製阿斯特萊亞佩可頭像成功")
- 
-    peco_card_src = os.path.join(dashboard_dir, "card", "full", "card_full_138331.webp")
-    peco_card_dst = os.path.join(dist_dir, "card", "full", "card_full_138331.webp")
-    if os.path.exists(peco_card_src):
-        os.makedirs(os.path.dirname(peco_card_dst), exist_ok=True)
-        shutil.copy2(peco_card_src, peco_card_dst)
-        print("[Copy] 複製阿斯特萊亞佩可立繪大圖成功")
+    # 從 tracked_characters.json 動態讀取已追蹤角色，複製其頭像與立繪
+    tracked_path = os.path.join(dashboard_dir, "data", "tracked_characters.json")
+    if os.path.exists(tracked_path):
+        with open(tracked_path, 'r', encoding='utf-8') as f:
+            tracked = json.load(f)
+        for char in tracked.get("characters", []):
+            char_name = char.get("name", f"unit_{char['unit_id']}")
+            # 複製頭像
+            for icon_id in char.get("icon_ids", []):
+                src = os.path.join(dashboard_dir, "icon", "unit", f"unit_icon_{icon_id}.webp")
+                dst = os.path.join(dist_dir, "icon", "unit", f"unit_icon_{icon_id}.webp")
+                if os.path.exists(src):
+                    os.makedirs(os.path.dirname(dst), exist_ok=True)
+                    shutil.copy2(src, dst)
+                    print(f"[Copy] 複製 {char_name} 頭像 unit_icon_{icon_id}.webp 成功")
+            # 複製立繪大圖
+            for card_id in char.get("card_ids", []):
+                src = os.path.join(dashboard_dir, "card", "full", f"card_full_{card_id}.webp")
+                dst = os.path.join(dist_dir, "card", "full", f"card_full_{card_id}.webp")
+                if os.path.exists(src):
+                    os.makedirs(os.path.dirname(dst), exist_ok=True)
+                    shutil.copy2(src, dst)
+                    print(f"[Copy] 複製 {char_name} 立繪大圖 card_full_{card_id}.webp 成功")
+    else:
+        print("[Warn] 找不到 tracked_characters.json，跳過角色素材複製")
             
     print("[Success] 打包部署封裝完成！")
     print(f"[Info] 您現在可以直接將 {dist_dir} 資料夾內容部署到 GitHub Pages、Vercel 或您的任何 Web 伺服器上。")
