@@ -13,7 +13,7 @@ HEADER = {
 
 def get_truth_version():
     # 預設使用最新探測到的台服 TruthVersion
-    return "00500015"
+    return "00500025"
 
 def download_file(url, dest_path):
     os.makedirs(os.path.dirname(dest_path), exist_ok=True)

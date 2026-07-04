@@ -117,6 +117,19 @@ def main():
                     print(f"[Copy] 複製 {char_name} 立繪大圖 card_full_{card_id}.webp 成功")
     else:
         print("[Warn] 找不到 tracked_characters.json，跳過角色素材複製")
+
+    # 複製若菜冬日、栞冬日與新佩可的個人故事語音 M4A 至發布資料夾
+    sound_src_dir = os.path.join(dashboard_dir, "sound", "story_vo")
+    sound_dst_dir = os.path.join(dist_dir, "sound", "story_vo")
+    
+    if os.path.exists(sound_src_dir):
+        os.makedirs(sound_dst_dir, exist_ok=True)
+        copied_voices = 0
+        for item in os.listdir(sound_src_dir):
+            if item.endswith(".m4a") and ("13870" in item or "1388" in item or "1383" in item):
+                shutil.copy2(os.path.join(sound_src_dir, item), os.path.join(sound_dst_dir, item))
+                copied_voices += 1
+        print(f"[Copy] 成功複製了 {copied_voices} 個冬日與新佩可個人劇情語音 M4A 檔案")
             
     print("[Success] 打包部署封裝完成！")
     print(f"[Info] 您現在可以直接將 {dist_dir} 資料夾內容部署到 GitHub Pages、Vercel 或您的任何 Web 伺服器上。")
