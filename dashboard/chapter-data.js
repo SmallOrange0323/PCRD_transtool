@@ -7,19 +7,38 @@ console.log("chapter-data.js loaded");
 
 window.ChapterDataService = {
     data: null,
+    storySummaries: null,
     loaded: false,
 
     async load() {
         if (this.loaded) return this.data;
         try {
-            const resp = await fetch('data/chapters.json?v=' + Date.now());
+            console.log('[ChapterDataService] 開始載入資料檔...');
+            const [resp, respSum] = await Promise.all([
+                fetch('data/chapters.json?v=' + Date.now()),
+                fetch('data/main_story_chapter_summaries.json?v=' + Date.now()).catch(e => {
+                    console.error('[ChapterDataService] 載入單話摘要 fetch 失敗:', e);
+                    return null;
+                })
+            ]);
+
             if (!resp.ok) throw new Error('HTTP ' + resp.status);
             this.data = await resp.json();
+
+            if (respSum && respSum.ok) {
+                this.storySummaries = await respSum.json();
+                console.log(`[ChapterDataService] 成功載入單話摘要，共 ${Object.keys(this.storySummaries).length} 筆`);
+            } else {
+                console.warn('[ChapterDataService] 單話摘要載入失敗，respSum ok為 false 或未找到檔案。');
+                this.storySummaries = {};
+            }
+
             this.loaded = true;
-            console.log('[ChapterDataService] 成功載入章節資料', Object.keys(this.data).length, '部');
+            console.log('[ChapterDataService] 成功載入章節主資料');
         } catch (e) {
             console.error('[ChapterDataService] 載入失敗:', e);
             this.data = { 1: {}, 2: {}, 3: {} };
+            this.storySummaries = {};
             this.loaded = true;
         }
         return this.data;
@@ -62,7 +81,13 @@ window.ChapterDataService = {
 
     // 取得單話摘要
     getStorySummary(part, groupId, storyId) {
+        console.log(`[ChapterDataService] 正在尋找單話摘要, storyId: ${storyId}`);
+        if (this.storySummaries && this.storySummaries[String(storyId)]) {
+            console.log(`[ChapterDataService] 成功在 main_story_chapter_summaries.json 找到摘要: ${this.storySummaries[String(storyId)].substring(0, 20)}...`);
+            return this.storySummaries[String(storyId)];
+        }
         const storyInfo = this.getStoryInfo(part, groupId, storyId);
+        console.log(`[ChapterDataService] 未能在單話摘要檔中找到，回退使用 chapters.json 大綱: ${storyInfo?.summary ? storyInfo.summary.substring(0, 20) + '...' : '無'}`);
         return storyInfo?.summary || null;
     },
 
