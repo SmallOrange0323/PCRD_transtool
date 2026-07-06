@@ -1112,6 +1112,7 @@ const QuestMapModule = {
                             <div class="summary-section" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 15px;">
                                 <div class="summary-tabs" style="display: flex; border-bottom: 2px solid rgba(94, 107, 125, 0.15); margin-bottom: 10px; gap: 8px;">
                                     <button id="tab-summary-episode" class="summary-tab active" onclick="QuestMapModule.switchSummaryTab('episode')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid var(--accent-color); color: var(--accent-color); cursor: pointer; font-weight: bold; font-size: 0.88rem;">📜 單話大綱</button>
+                                    <button id="tab-summary-ai-summary" class="summary-tab" onclick="QuestMapModule.switchSummaryTab('ai-summary')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid transparent; color: var(--text-secondary); cursor: pointer; font-size: 0.88rem;">💡 單話摘要簡介</button>
                                     <button id="tab-summary-chapter" class="summary-tab" onclick="QuestMapModule.switchSummaryTab('chapter')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid transparent; color: var(--text-secondary); cursor: pointer; font-size: 0.88rem;">📖 整章摘要簡介</button>
                                 </div>
                                 <div id="cinema-summary" class="summary-text" style="flex: 1; overflow-y: auto; display: flex; flex-direction: column;">
@@ -1477,9 +1478,10 @@ const QuestMapModule = {
         if (!tabsContainer) return;
 
         if (!isMobile) {
-            // 桌機版回復原本的雙頁籤
+            // 桌機版回復原本的三頁籤
             tabsContainer.innerHTML = `
                 <button id="tab-summary-episode" class="summary-tab ${this.activeSummaryTab === 'episode' ? 'active' : ''}" onclick="QuestMapModule.switchSummaryTab('episode')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid ${this.activeSummaryTab === 'episode' ? 'var(--accent-color)' : 'transparent'}; color: ${this.activeSummaryTab === 'episode' ? 'var(--accent-color)' : 'var(--text-secondary)'}; cursor: pointer; font-weight: ${this.activeSummaryTab === 'episode' ? 'bold' : 'normal'}; font-size: 0.88rem;">📜 單話大綱</button>
+                <button id="tab-summary-ai-summary" class="summary-tab ${this.activeSummaryTab === 'ai-summary' ? 'active' : ''}" onclick="QuestMapModule.switchSummaryTab('ai-summary')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid ${this.activeSummaryTab === 'ai-summary' ? 'var(--accent-color)' : 'transparent'}; color: ${this.activeSummaryTab === 'ai-summary' ? 'var(--accent-color)' : 'var(--text-secondary)'}; cursor: pointer; font-weight: ${this.activeSummaryTab === 'ai-summary' ? 'bold' : 'normal'}; font-size: 0.88rem;">💡 單話摘要簡介</button>
                 <button id="tab-summary-chapter" class="summary-tab ${this.activeSummaryTab === 'chapter' ? 'active' : ''}" onclick="QuestMapModule.switchSummaryTab('chapter')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid ${this.activeSummaryTab === 'chapter' ? 'var(--accent-color)' : 'transparent'}; color: ${this.activeSummaryTab === 'chapter' ? 'var(--accent-color)' : 'var(--text-secondary)'}; cursor: pointer; font-weight: ${this.activeSummaryTab === 'chapter' ? 'bold' : 'normal'}; font-size: 0.88rem;">📖 整章摘要簡介</button>
             `;
             return;
@@ -1541,7 +1543,7 @@ const QuestMapModule = {
 
         const isMobile = window.innerWidth <= 768;
 
-        if (this.activeSummaryTab === 'episode' || isMobile) {
+        if (this.activeSummaryTab === 'episode' || (isMobile && this.activeSummaryTab !== 'ai-summary')) {
             try {
                 let tableName = 'story_detail';
                 if (story.isEvent) {
@@ -1628,6 +1630,26 @@ const QuestMapModule = {
             } catch (e) {
                 console.error(e);
                 summaryEl.innerHTML = `<div style="color: #ff6b6b;">無法載入官方大綱。</div>`;
+            }
+        } else if (this.activeSummaryTab === 'ai-summary') {
+            try {
+                // 取得單話摘要
+                const aiSummary = ChapterDataService.getStorySummary(story.part, story.groupId, story.id);
+                const displaySummary = aiSummary || "暫無本話的單話摘要簡介。";
+
+                summaryEl.innerHTML = `
+                    <div class="chapter-summary-box" style="text-align: left; line-height: 1.7; font-size: 0.92rem; color: var(--text-primary); padding: 18px; background: rgba(232, 56, 117, 0.03); border-radius: 12px; border: 1px solid rgba(232, 56, 117, 0.12); box-shadow: 0 4px 12px rgba(232, 56, 117, 0.02);">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                            <span style="background: var(--accent-gradient); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 3px 12px; border-radius: 20px; letter-spacing: 0.5px;">💡 單話摘要簡介</span>
+                            <span style="font-size: 0.8rem; color: var(--text-secondary);">ID: ${story.id}</span>
+                        </div>
+                        <p style="color: var(--text-primary); margin: 0; font-size: 0.9rem; white-space: pre-wrap; line-height: 1.8;">${this.escapeHtml(displaySummary)}</p>
+                    </div>
+                `;
+                this.updateSummaryTabsUI();
+            } catch (e) {
+                console.error(e);
+                summaryEl.innerHTML = `<div style="color: #ff6b6b;">無法載入單話摘要。</div>`;
             }
         } else {
             if (story.isEvent) {

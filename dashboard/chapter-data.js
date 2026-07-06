@@ -53,6 +53,19 @@ window.ChapterDataService = {
         return info?.summary || null;
     },
 
+    // 取得單話資訊
+    getStoryInfo(part, groupId, storyId) {
+        const info = this.getChapterInfo(part, groupId);
+        if (!info || !info.stories) return null;
+        return info.stories.find(s => String(s.story_id) === String(storyId)) || null;
+    },
+
+    // 取得單話摘要
+    getStorySummary(part, groupId, storyId) {
+        const storyInfo = this.getStoryInfo(part, groupId, storyId);
+        return storyInfo?.summary || null;
+    },
+
     // 取得章節顯示順序（用於排序）
     getOrder(part, groupId) {
         const info = this.getChapterInfo(part, groupId);
