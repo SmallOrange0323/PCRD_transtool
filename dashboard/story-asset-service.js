@@ -88,13 +88,24 @@ window.StoryAssetService = {
             candidates.push(`${this.localBase}still/story/${id}.webp`);
             candidates.push(`${this.localBase}still/story/${id}.png`);
 
+            const isNineDigit = id.length >= 9 || parseInt(id) > 10000000;
+
             // 2. EsterTion 鏡像 (.webp 與 .png)
-            candidates.push(`${this.estertionBase}still/story/${id}.webp`);
-            candidates.push(`${this.estertionBase}still/story/${id}.png`);
+            if (isNineDigit) {
+                candidates.push(`${this.estertionBase}card/story/${id}.webp`);
+                candidates.push(`${this.estertionBase}card/story/${id}.png`);
+            } else {
+                candidates.push(`${this.estertionBase}card/full/${id}.webp`);
+                candidates.push(`${this.estertionBase}card/full/${id}.png`);
+            }
 
             // 3. So-net CDN 鏡像 (.png)
             this.sonetCdnBases.forEach(cdn => {
-                candidates.push(`${cdn}still/story/${id}.png`);
+                if (isNineDigit) {
+                    candidates.push(`${cdn}card/story/${id}.png`);
+                } else {
+                    candidates.push(`${cdn}card/full/${id}.png`);
+                }
             });
         }
 
