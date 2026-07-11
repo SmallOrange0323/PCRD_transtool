@@ -13,7 +13,7 @@ os.makedirs(output_dir, exist_ok=True)
 
 urls_to_download = []
 
-for prefix in ['1387', '1388']:
+for prefix in ['1387', '1388', '1808', '1803']:
     for ch in range(1, 5): # 1 ~ 4 話
         story_id = f"{prefix}00{ch}" # 1387001, 1388001 等
         # 在 estertion 上，語音目錄是按這話的完整 story_id 分類的，例如 1387001 底下！

@@ -69,26 +69,39 @@ window.PCRDatabase = {
 
             const SQL = await Promise.race([sqlPromise, timeoutPromise]);
 
-            // 獲取最新 size
+            // 優先從 data/db_info.json 取得最新資料庫大小 (防 GitHub Pages HEAD 請求被拒之 Bug)
             let size = 0;
             try {
-                const headRes = await fetch(localPath, { method: 'HEAD' });
-                if (headRes.ok) {
-                    const cl = headRes.headers.get('content-length');
-                    if (cl) size = parseInt(cl, 10);
+                const infoRes = await fetch(`data/db_info.json?v=${Date.now()}`);
+                if (infoRes.ok) {
+                    const info = await infoRes.json();
+                    size = parseInt(info[`${this.currentRegion}_size`], 10) || 0;
+                    console.log(`[PCRDatabase] Retrieved DB size from db_info.json: ${size}`);
                 }
             } catch (e) {
-                console.warn(`[PCRDatabase] HEAD ${localPath} failed, trying ${remoteUrl}...`, e);
+                console.warn("[PCRDatabase] 讀取 db_info.json 失敗，改用 HEAD 備用機制:", e);
             }
+
             if (size <= 0) {
                 try {
-                    const headRes = await fetch(remoteUrl, { method: 'HEAD' });
+                    const headRes = await fetch(localPath, { method: 'HEAD' });
                     if (headRes.ok) {
                         const cl = headRes.headers.get('content-length');
                         if (cl) size = parseInt(cl, 10);
                     }
                 } catch (e) {
-                    console.warn(`[PCRDatabase] HEAD ${remoteUrl} failed...`, e);
+                    console.warn(`[PCRDatabase] HEAD ${localPath} failed, trying ${remoteUrl}...`, e);
+                }
+                if (size <= 0) {
+                    try {
+                        const headRes = await fetch(remoteUrl, { method: 'HEAD' });
+                        if (headRes.ok) {
+                            const cl = headRes.headers.get('content-length');
+                            if (cl) size = parseInt(cl, 10);
+                        }
+                    } catch (e) {
+                        console.warn(`[PCRDatabase] HEAD ${remoteUrl} failed...`, e);
+                    }
                 }
             }
 

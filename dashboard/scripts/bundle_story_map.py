@@ -78,6 +78,20 @@ def main():
                 continue
             print(f"[Error] 找不到核心文件: {src}", file=sys.stderr)
             sys.exit(1)
+
+    # 自動生成資料庫大小快取資訊檔，防止 GitHub Pages 不支援 HEAD 請求導致的本地 Cache 不更新 Bug
+    db_info = {}
+    for region in ['tw', 'jp']:
+        db_file = os.path.join(dashboard_dir, f"redive_{region}.db")
+        if os.path.exists(db_file):
+            db_info[f"{region}_size"] = os.path.getsize(db_file)
+        else:
+            db_info[f"{region}_size"] = 0
+            
+    db_info_dst = os.path.join(dist_dir, "data", "db_info.json")
+    with open(db_info_dst, 'w', encoding='utf-8') as f:
+        json.dump(db_info, f, ensure_ascii=False, indent=2)
+    print(f"[Info] 自動寫入資料庫大小資訊檔: {db_info_dst} -> {db_info}")
             
     # 複製 story/ 目錄下的所有對白 JSON
     story_src_dir = os.path.join(dashboard_dir, "story")

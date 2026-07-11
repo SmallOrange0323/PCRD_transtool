@@ -1147,6 +1147,15 @@ const QuestMapModule = {
             }, 0);
         }
         this.updateReaderState();
+
+        // 處理非同步暫存跳轉
+        if (this.pendingJumpStoryId) {
+            const tempId = this.pendingJumpStoryId;
+            this.pendingJumpStoryId = null;
+            setTimeout(() => {
+                this.jumpToStory(tempId);
+            }, 50);
+        }
     },
 
     async render(skipAutoSelect = false) {
@@ -2302,8 +2311,17 @@ const QuestMapModule = {
             if (modal) modal.classList.remove('active');
         }
 
+        // 如果 stories 尚未載入完畢，暫存此次跳轉，等待 _render 結束後自動重試
+        if (this.stories.length === 0) {
+            this.pendingJumpStoryId = storyId;
+            return;
+        }
+
         const story = this.getStoryById(storyId);
-        if (!story) return;
+        if (!story) {
+            console.warn('[QuestMapModule] 找不到對應的故事 ID:', storyId);
+            return;
+        }
 
         const isEvent = story.isEvent;
         const storyType = story.type; // 'main', 'chara', 'guild', 'tower'
