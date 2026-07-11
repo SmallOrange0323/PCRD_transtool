@@ -1,0 +1,25 @@
+{
+  "steps": [
+    {
+      "step": "reset",
+      "code": 0,
+      "out": "Unstaged changes after reset:\nM\tstory-asset-service.js"
+    },
+    {
+      "step": "add",
+      "code": 0
+    },
+    {
+      "step": "commit",
+      "code": 0,
+      "out": "[gh-pages f5fc2cca] fix: restore story-asset-service.js with correct isNineDigit still path mapping\n 1 file changed, 14 insertions(+), 3 deletions(-)"
+    },
+    {
+      "step": "push_gh_pages",
+      "code": 0,
+      "out": "",
+      "err": "To https://github.com/SmallOrange0323/PCRD_transtool.git\n   e1581108..f5fc2cca  gh-pages -> gh-pages"
+    }
+  ],
+  "status": "ok"
+}

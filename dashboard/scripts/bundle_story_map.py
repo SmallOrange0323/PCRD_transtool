@@ -116,6 +116,16 @@ def main():
                     os.makedirs(os.path.dirname(dst), exist_ok=True)
                     shutil.copy2(src, dst)
                     print(f"[Copy] 複製 {char_name} 立繪大圖 card_full_{card_id}.webp 成功")
+            # 複製劇情劇照 (Still)
+            char_prefix = StringPrefix = str(char["unit_id"])[:4]
+            still_src_dir = os.path.join(dashboard_dir, "still", "story")
+            still_dst_dir = os.path.join(dist_dir, "still", "story")
+            if os.path.exists(still_src_dir):
+                for item in os.listdir(still_src_dir):
+                    if item.startswith(char_prefix) and item.endswith(".webp"):
+                        os.makedirs(still_dst_dir, exist_ok=True)
+                        shutil.copy2(os.path.join(still_src_dir, item), os.path.join(still_dst_dir, item))
+                        print(f"[Copy] 複製 {char_name} 劇情劇照 {item} 成功")
     else:
         print("[Warn] 找不到 tracked_characters.json，跳過角色素材複製")
 

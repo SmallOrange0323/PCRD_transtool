@@ -748,7 +748,13 @@ window.CharactersModule = {
                                     <h4 style="margin: 0; font-size: 0.95rem; color: var(--text-primary); font-weight: 600;">${s.title}</h4>
                                     <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px;">${s.sub_title}</div>
                                 </div>
-                                <span class="chevron-${s.story_id}" style="transition: transform 0.3s ease; font-size: 0.85rem; color: var(--text-secondary);">▼</span>
+                                <div style="display: flex; align-items: center;">
+                                    <button class="play-story-btn active-hover-effect" onclick="event.stopPropagation(); CharactersModule.jumpToStoryPlayer(${s.story_id})" 
+                                            style="border: none; background: linear-gradient(135deg, var(--accent-color), #f75c8d); color: white; border-radius: 20px; padding: 6px 14px; font-size: 0.78rem; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(232,56,117,0.25); margin-right: 15px; transition: all 0.2s ease;">
+                                        🎬 觀看
+                                    </button>
+                                    <span class="chevron-${s.story_id}" style="transition: transform 0.3s ease; font-size: 0.85rem; color: var(--text-secondary);">▼</span>
+                                </div>
                             </div>
                             <div id="story-dialogue-${s.story_id}" class="story-dialogue-content" style="display: none; padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.05); background: rgba(0,0,0,0.15);">
                                 <div class="loading-mini" style="text-align: center; padding: 10px; color: var(--text-secondary);">正在讀取原生繁中台詞與語音...</div>
@@ -787,6 +793,25 @@ window.CharactersModule = {
                     
                     contentDiv.innerHTML = `
                         <div class="dialogue-flow" style="display: flex; flex-direction: column; gap: 12px; max-height: 400px; overflow-y: auto; padding-right: 5px;">
+                            <!-- 播放模式控制條 -->
+                            <div class="play-banner active-hover-effect" onclick="CharactersModule.jumpToStoryPlayer(${storyId})" style="
+                                background: linear-gradient(135deg, rgba(232, 56, 117, 0.15) 0%, rgba(247, 92, 141, 0.05) 100%);
+                                border: 1px dashed var(--accent-color);
+                                padding: 10px 15px;
+                                border-radius: 8px;
+                                margin-bottom: 8px;
+                                cursor: pointer;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                font-size: 0.82rem;
+                                color: var(--text-primary);
+                                font-weight: 500;
+                                transition: all 0.2s ease;
+                            ">
+                                <span>🎬 進入劇情放映模式 (觀看精美劇照與配音)</span>
+                                <span style="color: var(--accent-color); font-weight: bold;">觀看 ➔</span>
+                            </div>
                             ${dialogues.map(d => {
                                 const hasVoice = !!d.voice;
                                 const playBtn = hasVoice ? `
@@ -847,5 +872,20 @@ window.CharactersModule = {
         });
         
         this.currentAudio = audio;
+    },
+
+    jumpToStoryPlayer(storyId) {
+        // 1. 關閉角色詳細 modal
+        this.closeDetail();
+        
+        // 2. 切換大 tab 到劇情地圖
+        if (typeof window.switchTab === 'function') {
+            window.switchTab('map');
+        }
+        
+        // 3. 呼叫核心控制器載入放映
+        if (window.QuestMapModule && typeof window.QuestMapModule.jumpToStory === 'function') {
+            window.QuestMapModule.jumpToStory(storyId);
+        }
     }
 };
