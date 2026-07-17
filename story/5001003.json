@@ -1,0 +1,715 @@
+[
+    {
+        "type": "background",
+        "background": "500150"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "完成了當天工作的小栞，\n在牧場讀起了初音送給她的魔物圖鑑。"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "這本圖鑑……好厲害。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n讀起來令人無法自拔……",
+        "unit_id": 103811
+    },
+    {
+        "type": "still",
+        "still": "500100401"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "（這個書籤也好漂亮……也拿來用在其他書上吧。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "比起圖鑑，給小說用起來更合適吧，機會難得就把它帶在身上吧♪）",
+        "unit_id": 103811
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "……姊姊，原來是一直在煩惱禮物的事情啊。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "為了別人能煩惱成這個樣子……真像姊姊會做的事……",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "對了！必須準備書的回禮。……寫封信吧。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "欸，紙和筆在……",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "……姊姊，不知道會不會很高興。……咦？",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n圖鑑自己打開了……明明剛才是闔上的……難道是鈴嗎？",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "畢竟是本厲害的書，會忍不住想看吧。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n也把這件事寫進去吧……欸嘿嘿，要從何寫起呢。",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "嗯……？……是我的錯覺嗎，書的位置變了……？",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "……我覺得自己今天身體狀況還不錯啊……難道是累了？",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "隔天，由於快遞的工作而來訪伊麗莎白牧場的\n{player}，接受了小栞送信的委託。"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "{player}，想請你把這個送到姊姊手上。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "是的……希望姊姊收到後會很開心就好了。……",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "呵呵，你都這麼說了，",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n肯定沒問題吧。",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "謝謝。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n給姊姊的信，就麻煩你了。",
+        "unit_id": 103811
+    },
+    {
+        "type": "background",
+        "background": "500191"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "……呼嚕……呼嚕。",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "嗯……！哈，睡得真飽♪",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n精神飽滿！咦，已、已經到晚上了啊！",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "唔，一天就這麼睡過去了……",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "咦？這不是一件很幸福的事嗎……",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "對啊就是這樣！",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "　最近為了挑選小栞的禮物連午覺都沒睡！",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n偶爾這樣也不錯呢！",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "　",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "……嗯？",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "　咦？",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "{player}你在啊。",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "之前真是多虧了你才搞定了小栞的禮物呢！",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "啊，這是之前跟你借的錢！謝謝你借給我",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "！",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "所以、今天有什麼事嗎？",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "信？給我的嗎？是誰呢……啊！是小栞寫的！",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "謝謝你，{player}！",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "是什麼事呢、什麼事呢♪",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001003_018"
+    },
+    {
+        "type": "background",
+        "background": "500150"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "給姊姊，非常謝謝之前送給我的禮物。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n姊姊為了我煩惱了這麼久，",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我覺得自己真的很幸福。",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我能得到姊姊的讚美就是最開心的事了，",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n覺得自己有在努力真是太好了。",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "作為回禮我能想到的，",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n就只有給姊姊寫封信而已，",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "真不好意思。",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "下次，",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我們再一起出來走走喔。　",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "小栞。",
+        "unit_id": 103811
+    },
+    {
+        "type": "background",
+        "background": "500191"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "……嗚嗚、嗚嗚……嗚哇啊啊啊啊！小栞！",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "小栞、小栞她，很開心……太好了啊啊啊！",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "才不是，",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "才不是呢……！",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "只要小栞開心，",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "我就會開心、",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "就會很開心啊啊啊！",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "咽咽、咽咽……欸嘿嘿，對、對不起啊♪",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n哭了起來！小栞這傢伙，信寫得這麼好！",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "啊！對了！我必須給她回信！",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "難得小栞寫信給我！",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "真的嗎！？欸嘿嘿，你真是",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n為我們傳遞幸福的郵差先生呢♪",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "那麼我寫好之後再麻煩你喔！",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "今天非常謝謝你把信交給我。",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "和初音約定好，完成送信的{player}，\n便踏上了回程的路途。"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "好，要開始寫了！",
+        "unit_id": 101211,
+        "voice": "vo_adv_5001003_029"
+    },
+    {
+        "type": "background",
+        "background": "500151"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "隔天，{player}\n再次為了快遞的工作而造訪了【伊麗莎白牧場】。"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "{player}，辛苦你了。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n今天的快遞工作",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "到這裡就告一段落了吧。",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我嗎？今天我讀了姊姊送給我的圖鑑。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "裡頭所描繪的魔物每次動作都不一樣，看得我好入迷。",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "比平常一般書看的時間還要長上許多呢♪",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "{player}，\n現在這麼晚了回去蘭德索爾的話比較危險，\n不介意的話今天請你在這裡留宿一晚吧。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "今天難得除了我以外大家都出門去了，稍微有點寂寞了呢。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "所以，有你陪著，我很開心。",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "那麼你先進去客房吧。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n我也先去把圖鑑收好再過來。",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "……呼……啊唔，風開始冷起來了。",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "得趕緊把圖鑑收起來――",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "咦？　",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "怎、怎麼了！？　",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "圖鑑它──",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "自己打開了……？",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "　為什麼……！？",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物群",
+        "words": "──咕哦哦哦哦哦！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "魔物！？",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "　怎麼會──",
+        "unit_id": 103811
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物群",
+        "words": "──咕哦哦哦哦哦！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "姐姐──！",
+        "unit_id": 103811,
+        "voice": "vo_adv_5001003_040"
+    }
+]

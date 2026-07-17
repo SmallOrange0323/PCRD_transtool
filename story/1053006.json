@@ -1,0 +1,995 @@
+[
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "莫妮卡與{player}正準備去訓練時──"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "咦！",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "居然有魔物！？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n跑到城鎮裡來了嗎！？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "而且數量還不少啊……",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "必須得趕緊擊退──",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "小孩",
+        "words": "嗚哇啊啊啊啊！",
+        "unit_id": 111,
+        "voice": "vo_adv_1053006_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "小孩",
+        "words": "\n爸爸──媽媽──！！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "父親",
+        "words": "等等！",
+        "unit_id": 311,
+        "voice": "vo_adv_1053006_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "父親",
+        "words": "\n你要對我的小孩做什麼！？",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "小孩被魔物給抓走了呀！？",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "為什麼會這樣呢……？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "在我的眼皮底下，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "居然發生這樣的事情，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "實在太難堪了……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "必須得想辦法！",
+        "unit_id": 105311
+    },
+    {
+        "type": "background",
+        "background": "500132"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "等著吧。",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n我一定會……！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "{player}！？",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "你怎麼會",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "在這裡……？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "是嗎……",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n因為猜想到我會做什麼啊。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "閣下猜的沒錯，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n我的確打算要去魔物那裡，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n把孩子們帶回來。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我當然知道這很危險。",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n但是",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我的朋友好像也被抓了。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我不能置之不顧！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "向其他公會求助嗎……？",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "這我當然也知道。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "但是呢，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "如果要對付數量這麼多的魔物，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n相信其他公會",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "也不會輕率地答應吧。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "應該需要多個公會聯手……",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n但我沒有辦法等待公會之間完成協調了。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "就在我們等待的時候，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "孩子們正在受苦著呀！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "不管閣下說什麼，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我都要去！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "你、",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "你胡說什麼？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n當然不可以！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "這對閣下來說太危險了！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "嗯？",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "不僅僅只有閣下一起去……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "嗎？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我都說了，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "阻止我是沒用的！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n我一個人也可以……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "……嗯？",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n你是說……暫時先回去嗎？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "閣下，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "似乎有什麼妙計是嗎？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n說來聽聽吧。",
+        "unit_id": 105311
+    },
+    {
+        "type": "background",
+        "background": "500012"
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "我們正因孩子們被抓走而焦頭爛額的時候，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1053006_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "\n突然叫我們出來……是要幹什麼呀？",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "居民２",
+        "words": "喂，那孩子好像有話要說喔？",
+        "unit_id": 1011,
+        "voice": "vo_adv_1053006_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "各位，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "請聽我說！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n我現在要去救孩子們！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "需要大家的幫忙！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "如果交給公會處理，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n不知道會要",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "等到什麼時候……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "在這期間裡如果孩子們有個三長兩短就不好了！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "如果我們同心協力，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "一定會成功的！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "一起去救孩子們吧！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "居民２",
+        "words": "……對、",
+        "unit_id": 1011,
+        "voice": "vo_adv_1053006_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "居民２",
+        "words": "對呀。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "居民２",
+        "words": "\n",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "居民２",
+        "words": "她說的沒錯！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "好。",
+        "unit_id": 1411,
+        "voice": "vo_adv_1053006_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "就這麼辦！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "\n我們要自己",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "去把我們的孩子救回來！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "各位……",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "謝謝了！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n那麼，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我們走！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n開始進軍！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "居民們",
+        "words": "喔喔喔喔喔！！",
+        "unit_id": 1,
+        "voice": "vo_adv_1053006_028"
+    },
+    {
+        "type": "background",
+        "background": "500172"
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "喂──！",
+        "unit_id": 1411,
+        "voice": "vo_adv_1053006_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "\n孩子們在這邊！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "父親",
+        "words": "沒事吧！？",
+        "unit_id": 311,
+        "voice": "vo_adv_1053006_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "父親",
+        "words": "\n",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "父親",
+        "words": "我們馬上",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "父親",
+        "words": "會打倒魔物救你們出來喔！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "小孩",
+        "words": "爸爸！不是那樣的！聽我說！",
+        "unit_id": 111,
+        "voice": "vo_adv_1053006_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在拼命地訴說著什麼的孩子們背後，\n有著一個大洞，而從洞裡面傳出了悲痛的叫聲。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "居民們靠近一看，原來是魔物的小孩掉到洞中，\n正在發出悲切的叫聲。\n看牠那樣子，不像是有敵意。"
+    },
+    {
+        "type": "background",
+        "background": "500172"
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "喂、",
+        "unit_id": 1411,
+        "voice": "vo_adv_1053006_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "喂，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "是誰在這種地方挖洞的啊……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "居民２",
+        "words": "那、",
+        "unit_id": 1011,
+        "voice": "vo_adv_1053006_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "居民２",
+        "words": "那是，",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "居民２",
+        "words": "我原本打算要用來丟棄廢棄的材料……",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "居民２",
+        "words": "\n",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "居民２",
+        "words": "喂，",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "居民２",
+        "words": "先把牠拉上來看看吧！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "接著莫妮卡和居民們戰戰兢兢地把魔物的孩子拉上來後，\n魔物們也不再靠近，回到了森林的深處。"
+    },
+    {
+        "type": "background",
+        "background": "500172"
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "這樣就沒事了……",
+        "unit_id": 1411,
+        "voice": "vo_adv_1053006_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "嗎？",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我想……",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n那些魔物們，不是來襲擊城鎮的，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "而是為了來傳達這件事情的啊……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "父親",
+        "words": "哎呀──",
+        "unit_id": 311,
+        "voice": "vo_adv_1053006_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "父親",
+        "words": "幸好事情圓滿落幕了！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "父親",
+        "words": "謝謝！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "父親",
+        "words": "\n",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "父親",
+        "words": "多虧了妳提議讓大家一起來救助孩子們！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "沒、",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "沒有……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我其實",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "沒做什麼……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "孩子們",
+        "words": "姐姐，",
+        "unit_id": 111,
+        "voice": "vo_adv_1053006_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "孩子們",
+        "words": "謝謝妳聽了我們的話，",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "孩子們",
+        "words": "\n",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "孩子們",
+        "words": "救出了魔物的小孩！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "嗯、",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "嗯……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "這樣被不斷地感謝，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "真是有點不好意思呢。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "{player}，閣下也辛苦了。",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "事情得以圓滿解決也都是閣下的功勞啊。",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "拜託城鎮的人來幫忙，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "這是我想不到的做法。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我一個人的話……可能會想都沒想就直接殺進魔物巢穴吧。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "每次都讓閣下幫助我。",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n真的謝謝你。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "如果往後……閣下可以繼續在我的身邊，",
+        "unit_id": 105311,
+        "voice": "vo_adv_1053006_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n出言幫助我的話……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我會很開心的。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "看著微笑的莫妮卡，{player}也溫柔地笑了。"
+    }
+]

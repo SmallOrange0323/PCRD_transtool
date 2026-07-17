@@ -1,0 +1,1297 @@
+[
+    {
+        "type": "background",
+        "background": "500022"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]某天──"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]\n{player}和碧卡拉在蘭德索爾街上逛完後，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]\n找了張長椅坐下歇息。"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]今、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118070_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]今天也很謝謝你帶人家逛……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]多虧有你，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家感覺自己也總算開始弄明白蘭德索爾了……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]啊，",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118070_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]不，人家肯定還是會迷路啦，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]絕對會……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n剛才的意思是和之前比起來，更明白了這地方一點……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]那、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]那個，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]要是你覺得人家太得意忘形，我先道歉……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]當、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118070_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]當然有幫上我很多忙……！",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n真的是",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]各種大小事都受你關照……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n神明保佑……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "[FFFFFFFF]呀喝～～～～！！",
+        "unit_id": 1,
+        "voice": "vo_adv_5118070_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "[FFFFFFFF]\n風吹得好舒服喔～～！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]喝完冰涼透頂的麥酒後來乘涼！",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n最適合體溫升高的身體啦！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n這樣搭配起來太棒了～♪",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]嗯～？",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]哎呀～",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]這不是{player}嗎～！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n好巧喔～",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]啊哈哈哈～♪",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]原、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118070_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]原來那位好心情的大姐姐是你認識的人呀……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]果然，",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]你八成跟全蘭德索爾的人都是朋友吧……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]奇怪惹～？",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n欸欸，我說你啊，",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]怎～麼又跟我沒看過的女孩子在一起呀～！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n還真的是大意不得耶～",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]真是的！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]欸……",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]那邊的女生！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n妳叫什麼名字？",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]啊……",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118070_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n人家叫做",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]碧卡拉……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]碧卡拉……",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]嗯",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]，",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]碧卡拉對吧！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]我記住了！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n然後，",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]大姐姐我呀～？",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]叫做優花梨！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n請多指教囉～",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]呵呵呵♪",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]請、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118070_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]請多指教……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]別說好心情，這根本心情嗨翻天了吧……",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118070_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n{player}先生的朋友圈到底是怎麼一回事呀……？",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]大家對像我這樣的人也都很親切……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]都沒有什麼警戒心嗎……？　",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]對了……",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]啊～",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]碧卡拉！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n我要告訴妳一個好情報！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n……妳要多多留心{player}喔～？",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]呃、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118070_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]嗯？",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]啊哈哈哈哈，",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]不是因為他是什麼危險的人啦？",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n他真的……",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]是個好孩子！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]這點是不會錯的！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n大姐姐我掛保證！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]啊，",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]提到掛保證～",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]要注意可不能隨便當別人的保證人喔？",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n碰到金錢方面的事時，可要謹慎小心！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]否則下場可是會很慘的！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n明白了嗎～？",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]要好～～好遵守大姐姐說的話喔？",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]呃、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118070_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]好……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]啊，",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118070_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]這位大姐姐在金錢方面還是有警戒心的……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]還有啊，",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]呃……",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]怪了？",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n我剛才在聊什麼？",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]噢～",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]對啦！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]我說你啊，",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]真有一手哪～",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n很會喔～♪",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]所以說，",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]碧卡拉！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n就是這種地方啦，",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]就是他的這一點！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n妳要當心他這一點啊～！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]咦咦……",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118070_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n剛剛不是才在稱讚他的嗎……？　",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]他不是很溫柔嗎？",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]還很貼心對吧？",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]所以啊……",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]就會害人不小心變成廢柴啦～～～！！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118070_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]人家是不清楚會不會害人變成廢柴……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]但他確實",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]常常幫助人家……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]就是說呀～？",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n都是因為他啦，",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]害我都快變成廢柴了～！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]因為太仰賴他的好意，",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]導致我變得懶懶散散……",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]真的很慘呢～！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]呃……？",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118070_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n這段對話",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]該不會要永遠持續下去……？　",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]我跟妳說喔，",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]碧卡拉！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n別看大姐姐我這樣，",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]我可是個聖騎士呢！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n可不是普通的騎士喔？",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]是",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]聖、",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]騎、",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]士！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]聖騎士",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]可謂正直清廉！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n必須和懶散扯不上關係才可以呀！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]明明是那樣……",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]我卻因為這孩子而……",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]欸！",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]只會在意小細節的男人是不會受歡迎的喔！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n就算是前聖騎士，",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]聖騎士還是聖騎士呀～！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]來，",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]跟我一起唸！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]預備～！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]聖、",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]騎、",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]士",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]聖聖、",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118070_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]聖、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]騎、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]士……？",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]呵呵～",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]很好！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n碧卡拉是聽話的好孩子呢～",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]嗯嗯♪",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]那～麼～",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]碧卡拉這樣的乖寶寶……",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]大姐姐我要送妳這個！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]鏘鏘～！",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]這是傳說之劍，",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]斯可……",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]不對，",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]斯考夫……",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]蘇喵……",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]也不對……",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]不行，",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]我得稍～微認真一下……",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]咳哼。",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]斯考夫諾恩！",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]啊哈哈，",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]我成功說對啦～♪",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]對優秀大姐姐來說這點事根本小菜一碟啦～！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n事情就是這樣，",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]碧卡拉，",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]這給妳～！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]咦咦？",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118070_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n真、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]真的可以嗎……？",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]當然可以，",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]別客氣～！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n這是我去買麥酒時，",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]正好抽中的活動獎品而已啦！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]話說這根本挑錯東西當獎品了吧？",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]這種活動怎麼想都該送下酒菜才對吧～？",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]那麼，",
+        "unit_id": 103412,
+        "voice": "vo_adv_5118070_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]大姐姐我要回去了！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n畢竟我還得回家再喝一波呀～啊哈哈！",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "[FFFFFFFF]\n你們倆回去路上也要小心喔～♪",
+        "unit_id": 103412
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]走掉了……",
+        "unit_id": 125614,
+        "voice": "vo_adv_5118070_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]\n",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]總、",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "碧卡拉",
+        "words": "[FFFFFFFF]總覺得是很不得了的人呀……",
+        "unit_id": 125614
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]之後──"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]\n碧卡拉遇見了沒有喝麥酒狀態下的優花梨，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]\n因為其過大的反差而大吃一驚。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]而因為兩人再會時，碧卡拉戴著老鼠耳朵，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]\n導致優花梨也被其過大的反差給嚇了一大跳──"
+    }
+]

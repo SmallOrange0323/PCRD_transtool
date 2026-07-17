@@ -1,0 +1,864 @@
+[
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}陪秋乃購物。"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "這趟購物真棒呢！",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032008_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n這都要多虧你為我帶路到店裡呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我雖然有聽說店舖在這附近，",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032008_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n但是我獨自一人怎麼走都到不了……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "你知道這間店真是太好啦。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "喏，",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032008_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "你看看我剛買的首飾吧？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n閃閃發亮，非常美麗呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "就像是首飾本身在發著光一樣……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "哎、哎呀？",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032008_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n真的在發光……？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n這道光，我之前好像也有看過？",
+        "unit_id": 103211
+    },
+    {
+        "type": "background",
+        "background": "510220"
+    },
+    {
+        "type": "dialogue",
+        "name": "男學生",
+        "words": "我說，上課真無聊呢……",
+        "unit_id": 1,
+        "voice": "vo_adv_1032008_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "男學生",
+        "words": "\n不能趕快結束嗎。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "男學生",
+        "words": "咦？喂，你的手機在響喔。",
+        "unit_id": 1,
+        "voice": "vo_adv_1032008_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "老師",
+        "words": "喂，上課時間",
+        "unit_id": 1,
+        "voice": "vo_adv_1032008_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "老師",
+        "words": "\n給我把手機電源關掉！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "老師",
+        "words": "如果你有要緊的事，就到教室外面講。",
+        "unit_id": 1,
+        "voice": "vo_adv_1032008_007"
+    },
+    {
+        "type": "background",
+        "background": "510210"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "哎呀。",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n早安，今天天氣真好呢。",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "咦，你正在上課嗎？",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n這樣啊。我可以自由地選擇學分課程，",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n所以今天沒有課喔。",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "比起那個，{player}大人。",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n就是……如果你方便，",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n接下來能陪我一會嗎？",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "可以的話，",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我想直接跟{player}大人見個面呢。",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "咦，你問我現在在哪裡？",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n其實……我已經",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n在{player}大人附近了喔！",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "男學生",
+        "words": "什、什麼！？",
+        "unit_id": 1,
+        "voice": "vo_adv_1032008_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "男學生",
+        "words": "\n有直升機要降落在屋頂耶！？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "女學生",
+        "words": "咦！為什麼！？",
+        "unit_id": 1,
+        "voice": "vo_adv_1032008_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "女學生",
+        "words": "\n是什麼演習嗎！？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "男學生",
+        "words": "總之去看看吧！",
+        "unit_id": 1,
+        "voice": "vo_adv_1032008_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "男學生",
+        "words": "\n感覺比無聊的課還要有趣多了！",
+        "unit_id": 1
+    },
+    {
+        "type": "still",
+        "still": "103200801"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "喔～呵呵呵！",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n驚動到各位真是抱歉。",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n本小姐是藤堂秋乃，今後請多關照。",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我有件事想要詢問一下，",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n請問{player}大人在哪裡呢？",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "老師",
+        "words": "什麼？",
+        "unit_id": 1,
+        "voice": "vo_adv_1032008_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "老師",
+        "words": "\n原來這場騷動是因為{player}啊！？",
+        "unit_id": 1
+    },
+    {
+        "type": "background",
+        "background": "510180"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "找不到呢……",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "但不論你躲在哪裡，我都會把你找出來的。",
+        "unit_id": 103231
+    },
+    {
+        "type": "background",
+        "background": "510180"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "就算你逃到天涯海角，我也會緊追不捨……",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我已經查出，你直到剛才都在學校裡面囉。",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "{player}大人，還不肯出來嗎？",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "…………",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "這樣啊，如果你不自己出來的話，",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我也自有一套方法喔。",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我要祭出懸賞金囉！",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n找到{player}大人的人，我就致贈一筆錢！",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "男學生",
+        "words": "真的假的！",
+        "unit_id": 1,
+        "voice": "vo_adv_1032008_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "男學生",
+        "words": "\n喂喂――！他在這裡――！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "哎呀，原來你在這麼近的地方呢。",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "咦，你問我有什麼事？",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "這麼說來，我還沒有",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n把要事傳達給你呢。",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "其實，我希望你務必能夠向我介紹庶民生活的地方啊。",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n昨晚一想到可以請你為我介紹，",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n就讓我期待得坐立不安，",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "所以今天就跑來學校囉。",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "……你說你還有課，所以沒辦法？",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "既然如此，沒有課就可以了吧？",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "校長",
+        "words": "怎麼了，怎麼了？",
+        "unit_id": 1,
+        "voice": "vo_adv_1032008_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "校長",
+        "words": "\n怎麼這麼吵啊！？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "哎呀，剛剛好呢。",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n您就是校長吧。",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n可以請您把今天的課取消嗎？",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "校長",
+        "words": "不、不……就算妳說這種荒唐的事情……",
+        "unit_id": 1,
+        "voice": "vo_adv_1032008_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "你",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "知道你在跟誰抱怨嗎？",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我可是藤堂秋乃哦？",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n只要我聯絡熟人，",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "就可以利用藤堂家的力量，將區區一兩間學校……",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "校長",
+        "words": "噫！我、我知道了！",
+        "unit_id": 1,
+        "voice": "vo_adv_1032008_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "校長",
+        "words": "\n今天的課就上到這裡！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "獲得許可了呢，這樣一來就算外出也沒關係啦。",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n那麼，我們馬上出發吧！",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "來吧，請抓住我的手，要走囉。",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "哎呀，你已經在想著要去哪裡了呢。",
+        "unit_id": 103231,
+        "voice": "vo_adv_1032008_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "明明直到剛才都還在拒絕我，現在倒是很積極嘛。",
+        "unit_id": 103231
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我真開心。我們一起好好玩吧！",
+        "unit_id": 103231
+    },
+    {
+        "type": "background",
+        "background": "500270"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "好的，辛苦了～",
+        "unit_id": 190011,
+        "voice": "vo_adv_1032008_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "話說，那孩子做事還真是不得了。",
+        "unit_id": 190011,
+        "voice": "vo_adv_1032008_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "只要下定決心，就會勇往直前呢，",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n或者該說是唯我獨尊的感覺？",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "不過，秋乃本身也不是壞孩子，",
+        "unit_id": 190011,
+        "voice": "vo_adv_1032008_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n而且透過和你接觸，",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n她好像也一點一點地學會庶民的標準了呢。",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "直到她能確實掌握世間的常識為止，",
+        "unit_id": 190011,
+        "voice": "vo_adv_1032008_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n你就再稍微照顧她也不錯啊？",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "這樣的話，她可能會成為滿可愛的女孩呢。",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "不過因為是你，就算我不說，",
+        "unit_id": 190011,
+        "voice": "vo_adv_1032008_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n你應該也會這麼做吧。",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "那麼，這次就先聊到這裡。",
+        "unit_id": 190011,
+        "voice": "vo_adv_1032008_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n再見囉～♪",
+        "unit_id": 190011
+    },
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "呼……",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032008_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我好像睡著了呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我做了不可思議的夢喔。",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032008_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我夢到為了請教庶民的事情，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n而前去迎接{player}大人……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "是啊，沒錯。",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032008_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n搭乘像飛空艇一樣，搭乘會飛在空中的交通工具――",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "{player}大人該不會也跟我做了相同的夢吧？",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032008_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "真是不可思議呢……？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "可是，真是個好夢呢！",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032008_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n讓{player}大人為我介紹城鎮，似乎會很開心呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "有啦！不只是在夢裡，也請你實際為我做介紹吧！",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032008_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n一定會很有趣的！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "如果這麼說定了，",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032008_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n那我明天就搭乘飛空艇去你家接你囉！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "呵呵……真可說是重現夢裡的情境呢！",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032008_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "秋乃這麼說著，露出了開心的微笑。"
+    }
+]

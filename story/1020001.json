@@ -1,0 +1,636 @@
+[
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}在街上\n發現了一位到處徘徊不安的女孩子。"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "嗚……嗚……",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "嗚哇哇哇！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n禊――！鏡華――！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n妳們在哪―――――！？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "嗚……",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "哥哥，你是誰？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n你是來幫忙美美的嗎？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "美美不小心和朋友走散了……",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n現在不知道該往哪裡走才好啦……",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "……哥哥問我會合地點在哪？",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "那個，美美有地圖喔！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "但是美美、已經不知道自己現在在哪裡了……",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "這是地圖……",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n哥哥知道地點在哪嗎？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "……好、好像很難找。",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n果然連看地圖也搞不清楚方向嗎？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "咦？失……去……記憶？",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n原來哥哥是看不太懂字呀。",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "唔～哥哥好可憐……",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "對了！",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "下次，美美來教哥哥讀書！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "……咦？大概知道這個地點是哪裡了？",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "告訴美美告訴美美～！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "……只要朝著這條路直走，就能到達會合地點了嗎？",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "哇～這樣的話其實很簡單呢～",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n即使是美美自己走，也不會走錯路了！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "謝謝你，哥哥！",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "拜拜～！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "直走，直走――",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "直走，直走――",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "啊！花小姐好～漂亮！蟲先生也在～。",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "啊！美美得去鏡華她們那邊不可了……",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "直走直走……",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "咦？往哪邊啊？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "咦？哥哥也要陪美美一起去嗎？",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "謝謝你～！",
+        "unit_id": 102011
+    },
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "是往這邊走嗎～還是往那邊走呢～",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_015"
+    },
+    {
+        "type": "background",
+        "background": "500020"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "嗚哇！",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n美美又迷路了啦～！",
+        "unit_id": 102011
+    },
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "啊，哥哥！",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "你願意陪美美一起去嗎？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "啊，等等～！哥哥別先走呀～！",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "哥哥，為了不讓我們走散，我們手牽著手走吧～♪",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "欸嘿嘿，真開心呢♪",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n花小姐與蟲先生，還有哥哥也是――",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n大家――都是好――朋友～♪",
+        "unit_id": 102011
+    },
+    {
+        "type": "background",
+        "background": "500130"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "禊是九歲，鏡華是八歲。",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n她們兩人都非常的厲害――",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "啊，美美是十歲喲～♪",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "――呱歐歐歐歐歐歐",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "魔、",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "魔物！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "怎麼辦……美美……",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n只用單手是拿不起劍的……",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "不要！",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "因為哥哥的手很溫暖，",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n又很大，讓美美很安心……",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "所以美美才不要放開手呢！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "哇哇！哥哥要背美美嗎？",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "哇――！哥哥跑好快！跑好快喔！",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "我們離魔物越來越遠了～！",
+        "unit_id": 102011
+    },
+    {
+        "type": "background",
+        "background": "500140"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "太好了，我們似乎逃脫了呦！",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "哥哥真厲害！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "謝謝你，哥哥！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "啊，這裡就是會合地點嗎？",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "太好了～到了呢～",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n嚕啦啦、嚕啦啦～♪",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "只要在這裡等的話，美美應該就能見到鏡華",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "和禊了吧～",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "謝謝哥哥！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "吶，哥哥，要再和美美一起玩呦！",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "我們來打勾勾約定吧――！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "打勾勾約好了呦～♪",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020001_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "於是{player}\n笑著與美美打勾勾，\n約好會再一起玩耍。"
+    }
+]

@@ -1,0 +1,969 @@
+[
+    {
+        "type": "background",
+        "background": "500430"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "一邊打倒不斷逼近的敵人，\n一邊登上高塔的{player}一行人。\n但是，越往上面前進魔物就越來越難對付。"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "呼……",
+        "unit_id": 102811,
+        "voice": "vo_adv_7006002_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "一直照這步調，",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "後面似乎會變得辛苦。",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "秋乃，",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "要不要先休戰一下呢？",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "呼、",
+        "unit_id": 103211,
+        "voice": "vo_adv_7006002_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "呼、",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "啊、",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "什麼？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n已經要認輸了嗎……？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "是要休息一下的意思啦。",
+        "unit_id": 102811,
+        "voice": "vo_adv_7006002_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "我們的目標，",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n是要找到{player}的記憶線索。",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "要達成目標，",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "『登塔』是必要條件。",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "然而，",
+        "unit_id": 102811,
+        "voice": "vo_adv_7006002_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "『登塔』的",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "最大障礙就是魔物。",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n在這之後，",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "如果出現了更強大的魔物，",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "保持最佳的狀態",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n繼續前進，",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "對雙方都有利",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "也會更有效率吧？",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "……竟然",
+        "unit_id": 103211,
+        "voice": "vo_adv_7006002_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "咲戀都",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n這麼說的話，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "那我們就休息一下吧。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "那麼，休息30分鐘唷。",
+        "unit_id": 102811,
+        "voice": "vo_adv_7006002_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "先一個人站崗，",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "10分鐘後換班。",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "兩位，",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "這樣的規劃如何呢？",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我也沒有異議。",
+        "unit_id": 103211,
+        "voice": "vo_adv_7006002_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "那就成交唷。",
+        "unit_id": 102811,
+        "voice": "vo_adv_7006002_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n我先去站崗，",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "你們兩位先休息吧。",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "……真是的，",
+        "unit_id": 103211,
+        "voice": "vo_adv_7006002_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "真比不上",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "咲戀的這點呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "……需要休息的，",
+        "unit_id": 103211,
+        "voice": "vo_adv_7006002_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "其實不是咲戀",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "而是我。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "但是，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "考慮到魔物的強度，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "咲戀也需要保持在萬無一失的狀態。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "邊為對手著想，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "並採取對雙方有利的手段……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我還真是比不上她呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "但是，",
+        "unit_id": 103211,
+        "voice": "vo_adv_7006002_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我不會輸的！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "休息完之後，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我絕對會重占上風！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "……",
+        "unit_id": 103211,
+        "voice": "vo_adv_7006002_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "其實，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n並不是能跟其他人說的事情……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我",
+        "unit_id": 103211,
+        "voice": "vo_adv_7006002_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "從出生以來一直",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "是以紫藤家千金的身分被養育長大。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "但是，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我想要成為的",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "不是『千金』。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "而是比誰都強，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "然後讓人值得驕傲的",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "紫藤家族的成員。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "劍術及馬術等，",
+        "unit_id": 103211,
+        "voice": "vo_adv_7006002_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我學習各種事物，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n努力不懈",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "持續追求卓越。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "但也是因為這樣",
+        "unit_id": 103211,
+        "voice": "vo_adv_7006002_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "變的比周遭的人突出，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "一個人獨處的時間",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "也變多了……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "但是這時，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "咲戀出現在",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我的面前。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我們同樣都是千金小姐，",
+        "unit_id": 103211,
+        "voice": "vo_adv_7006002_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n她跟我一樣，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "也是追求卓越的人。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n正因為如此",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我想要贏……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "不，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "是不得不贏！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "……其實，",
+        "unit_id": 103211,
+        "voice": "vo_adv_7006002_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "挑戰她",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n還有其他的理由，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "但這個我就保密了唷♪",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "{player}！\n請看著吧！",
+        "unit_id": 103211,
+        "voice": "vo_adv_7006002_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n總有一天，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我會超過咲戀的！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "欸！？　",
+        "unit_id": 103211,
+        "voice": "vo_adv_7006002_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "那、",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "那個……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "頭、",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "被摸頭了……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "這、",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "這個時候",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我要怎麼辦呢……！？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "沒、",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "沒有啦，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我不是討厭唷！？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "……只是",
+        "unit_id": 103211,
+        "voice": "vo_adv_7006002_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "有點害羞而已，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "但像這樣自己的努力被讚賞，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我很開心呢……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "{player}……\n剛剛，雖然我說了不想輸給咲戀的理由……",
+        "unit_id": 103211,
+        "voice": "vo_adv_7006002_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "……但最近，",
+        "unit_id": 103211,
+        "voice": "vo_adv_7006002_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "還有其他理由",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "讓我不想輸給她。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "秋乃，",
+        "unit_id": 102811,
+        "voice": "vo_adv_7006002_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "差不多該換班站哨了唷。",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "……啊、",
+        "unit_id": 103211,
+        "voice": "vo_adv_7006002_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "對對對、",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "對呢！！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n那、",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "就這樣，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我要",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "先去站哨了唷，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n兩位",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "好好休息呢！！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "……秋乃，",
+        "unit_id": 102811,
+        "voice": "vo_adv_7006002_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "臉好紅喔。",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n好像很慌張呢。",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "……{player}。\n……老實告訴我。",
+        "unit_id": 102811,
+        "voice": "vo_adv_7006002_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n你對秋乃做了什麼事？",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "原來如此，",
+        "unit_id": 102811,
+        "voice": "vo_adv_7006002_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "什麼都沒做、",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "是嗎。",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "……那個，",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "剛好有這個機會就來教教你吧。",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "……{player}說的",
+        "unit_id": 102811,
+        "voice": "vo_adv_7006002_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n『什麼都沒做』，",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "一點都靠不住！",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "快點，",
+        "unit_id": 102811,
+        "voice": "vo_adv_7006002_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "說吧！",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n你對秋乃做了什麼事！！",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "到{player}去站崗為止，\n咲戀的盤問持續進行了好一陣子。"
+    }
+]

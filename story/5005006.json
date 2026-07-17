@@ -1,0 +1,932 @@
+[
+    {
+        "type": "background",
+        "background": "500280"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "【墨丘利財團】的四人都到齊了。\n包含{player}在內的五人談起情報：\n這座島整體是一個叫做島鯨的魔物。"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "原來如此……",
+        "unit_id": 103211,
+        "voice": "vo_adv_5005006_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "如果珠希你們說的話是真的，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n從海上呼喚這座島的話，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n應該能和島鯨說話呢……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "先商量看看……",
+        "unit_id": 103211,
+        "voice": "vo_adv_5005006_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "如果這樣還是不行的話",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "就要使用武力囉！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n然後，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "讓牠把我們送回現實世界唷！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "嗯，",
+        "unit_id": 103411,
+        "voice": "vo_adv_5005006_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "得回去現實才行呢！",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "對，",
+        "unit_id": 108011,
+        "voice": "vo_adv_5005006_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "無論如何都得回去才行！",
+        "unit_id": 108011
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "不可以喵！",
+        "unit_id": 107911,
+        "voice": "vo_adv_5005006_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 107911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "我們，",
+        "unit_id": 107911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "不能再逃避現實了喵！",
+        "unit_id": 107911
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "來吧，",
+        "unit_id": 103211,
+        "voice": "vo_adv_5005006_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "全部的人坐上木筏，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "往海上出發囉！",
+        "unit_id": 103211
+    },
+    {
+        "type": "background",
+        "background": "500520"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "喔，",
+        "unit_id": 103411,
+        "voice": "vo_adv_5005006_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "雖然衝勁十足的嘗試出海了……",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "不過一直待著的島，",
+        "unit_id": 103411,
+        "voice": "vo_adv_5005006_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "像這樣從外面看也沒有臉啊……",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "\n真的是魔物嗎？",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "沒錯喵！",
+        "unit_id": 107911,
+        "voice": "vo_adv_5005006_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "那是島鯨喵！",
+        "unit_id": 107911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n筆記本裡是這麼寫的喵！",
+        "unit_id": 107911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "喂────！",
+        "unit_id": 107911,
+        "voice": "vo_adv_5005006_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "你這傢伙────！",
+        "unit_id": 107911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "島鯨────！",
+        "unit_id": 107911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n快點把我們，",
+        "unit_id": 107911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "從這座島放出去喵────！",
+        "unit_id": 107911
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "好奇怪呢，",
+        "unit_id": 108011,
+        "voice": "vo_adv_5005006_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "沒有反應……",
+        "unit_id": 108011
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "珠希、",
+        "unit_id": 103211,
+        "voice": "vo_adv_5005006_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "美冬……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "該不會，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n妳們",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "之前看到的東西也是幻想？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n那筆記本真的存在嗎……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "應、",
+        "unit_id": 107911,
+        "voice": "vo_adv_5005006_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "應該不是幻想喵……",
+        "unit_id": 107911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n真的可以和島鯨對話才對喵……",
+        "unit_id": 107911
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "我知道了！",
+        "unit_id": 108011,
+        "voice": "vo_adv_5005006_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "怎麼了，",
+        "unit_id": 103411,
+        "voice": "vo_adv_5005006_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "美冬？",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "那傢伙，可是很貪心呢！",
+        "unit_id": 108011,
+        "voice": "vo_adv_5005006_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n不能用一副要吵架的樣子搭話，",
+        "unit_id": 108011
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n說些牠可能有興趣的事情就好了！",
+        "unit_id": 108011
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "原來如此，",
+        "unit_id": 103211,
+        "voice": "vo_adv_5005006_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "那麼我來試試看吧！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "島鯨大人──！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我有筆好生意想和您談談──！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "咦？",
+        "unit_id": 103411,
+        "voice": "vo_adv_5005006_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "總覺得，",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "是不是傳來了隆隆聲……",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "地震？",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "啊？",
+        "unit_id": 108011,
+        "voice": "vo_adv_5005006_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "大家，快看那個！",
+        "unit_id": 108011
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "島正在往上浮！",
+        "unit_id": 108011
+    },
+    {
+        "type": "still",
+        "still": "500500601"
+    },
+    {
+        "type": "dialogue",
+        "name": "島鯨",
+        "words": "──喔喔喔喔喔喔！",
+        "unit_id": 10411,
+        "voice": "vo_adv_5005006_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "欸！？",
+        "unit_id": 103411,
+        "voice": "vo_adv_5005006_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "島浮上海面，然後出現了臉──！？",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "那座島，",
+        "unit_id": 108011,
+        "voice": "vo_adv_5005006_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "真的是魔物呢……！",
+        "unit_id": 108011
+    },
+    {
+        "type": "dialogue",
+        "name": "島鯨",
+        "words": "人類啊……",
+        "unit_id": 10411,
+        "voice": "vo_adv_5005006_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "島鯨",
+        "words": "妳指的生意，",
+        "unit_id": 10411
+    },
+    {
+        "type": "dialogue",
+        "name": "島鯨",
+        "words": "是什麼……？",
+        "unit_id": 10411
+    },
+    {
+        "type": "dialogue",
+        "name": "島鯨",
+        "words": "\n難道又是，",
+        "unit_id": 10411
+    },
+    {
+        "type": "dialogue",
+        "name": "島鯨",
+        "words": "要像之前的人類一樣，",
+        "unit_id": 10411
+    },
+    {
+        "type": "dialogue",
+        "name": "島鯨",
+        "words": "\n希望藉由宣傳這座島的存在",
+        "unit_id": 10411
+    },
+    {
+        "type": "dialogue",
+        "name": "島鯨",
+        "words": "要我放過你們嗎……？",
+        "unit_id": 10411
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "不，",
+        "unit_id": 103211,
+        "voice": "vo_adv_5005006_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "不是喔。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n你，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "要多少錢才願意和我們締結契約呢？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "島鯨",
+        "words": "契約……？",
+        "unit_id": 10411,
+        "voice": "vo_adv_5005006_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "你，",
+        "unit_id": 103211,
+        "voice": "vo_adv_5005006_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "想要聚集人類的欲望對吧？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "那麼，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "要不要和我們【墨丘利財團】聯手，\n一起做生意？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "會幫你大大宣傳唷？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "名稱就叫做，",
+        "unit_id": 103211,
+        "voice": "vo_adv_5005006_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "「提供僅限一週夢幻般生活的服務」！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我想開始一個",
+        "unit_id": 103211,
+        "voice": "vo_adv_5005006_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "僅限一週讓島鯨幫忙實現客人的欲望，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n然後在快死掉之前",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "強制帶回去的服務！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "這個服務，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "一定會很有商機唷！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "秋乃",
+        "unit_id": 103411,
+        "voice": "vo_adv_5005006_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "真是想了些驚人亂來的點子……",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "不過如果是這樣的話，的確效率也很好呢……",
+        "unit_id": 108011,
+        "voice": "vo_adv_5005006_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n問題是，",
+        "unit_id": 108011
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "島鯨會不會接受這個提案……",
+        "unit_id": 108011
+    },
+    {
+        "type": "dialogue",
+        "name": "島鯨",
+        "words": "別……",
+        "unit_id": 10411,
+        "voice": "vo_adv_5005006_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "島鯨",
+        "words": "別胡說八道了……！",
+        "unit_id": 10411,
+        "voice": "vo_adv_5005006_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "島鯨",
+        "words": "\n這種提案像是變成你們人類的道具一樣，",
+        "unit_id": 10411
+    },
+    {
+        "type": "dialogue",
+        "name": "島鯨",
+        "words": "\n你們覺得我會同意嗎啊啊啊啊！",
+        "unit_id": 10411
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "生氣了嗎！？",
+        "unit_id": 103211,
+        "voice": "vo_adv_5005006_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "不過，",
+        "unit_id": 103411,
+        "voice": "vo_adv_5005006_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "也是啦，",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "畢竟是魔物……",
+        "unit_id": 103411
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "background",
+        "background": "500520"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "咦？",
+        "unit_id": 103411,
+        "voice": "vo_adv_5005006_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "怎麼了？",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "\n往下沉的島鯨，",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "\n好像同時有什麼從背後噴了出來……",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "啊好痛！",
+        "unit_id": 107911,
+        "voice": "vo_adv_5005006_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "小小硬硬的……",
+        "unit_id": 107911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "\n",
+        "unit_id": 107911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "這個是……",
+        "unit_id": 107911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "貓幣喵！",
+        "unit_id": 107911
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "這個錢幣是真實存在的呢……",
+        "unit_id": 108011,
+        "voice": "vo_adv_5005006_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 108011
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "該不會是，",
+        "unit_id": 108011
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n以前漂到這座島上的海盜的寶藏也說不定！",
+        "unit_id": 108011
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "總覺得，意外地發了大財！",
+        "unit_id": 103411,
+        "voice": "vo_adv_5005006_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "\n",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "不過，",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "比起那個問題是……",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "這下子，",
+        "unit_id": 108011,
+        "voice": "vo_adv_5005006_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "是不是真的可以回去蘭德索爾的這件事吧……",
+        "unit_id": 108011
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "就是呢……",
+        "unit_id": 103411,
+        "voice": "vo_adv_5005006_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "呼啊……",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "優花梨",
+        "words": "\n一想到就突然變得想睡……",
+        "unit_id": 103411
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "呼啊……",
+        "unit_id": 108011,
+        "voice": "vo_adv_5005006_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "雖然這種睡意，已經經驗過好幾次……",
+        "unit_id": 108011
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n但這次，",
+        "unit_id": 108011
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "應該是為了要逃離這座島才出現的睡意……",
+        "unit_id": 108011
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "沒問題吧喵……",
+        "unit_id": 107911,
+        "voice": "vo_adv_5005006_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "這次，可以好好的……",
+        "unit_id": 107911
+    },
+    {
+        "type": "dialogue",
+        "name": "珠希",
+        "words": "回去了吧喵……？",
+        "unit_id": 107911
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "那麼……",
+        "unit_id": 103211,
+        "voice": "vo_adv_5005006_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "以防萬一把手牽起來吧。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我們……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n【墨丘利財團】，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "要一直",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "在一起唷……",
+        "unit_id": 103211
+    }
+]

@@ -1,0 +1,894 @@
+[
+    {
+        "type": "background",
+        "background": "500090"
+    },
+    {
+        "type": "dialogue",
+        "name": "ナレーション",
+        "words": "新兵たちの訓練課程が無事終わった、ある日のこと。"
+    },
+    {
+        "type": "dialogue",
+        "name": "ナレーション",
+        "words": "\nエリコとマコトはジュンに呼ばれ、ランドソル王城を訪れていた。"
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ・マコト",
+        "words": "魔物の掃討任務？",
+        "unit_id": 1,
+        "voice": "vo_adv_5142700_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "ああ。",
+        "unit_id": 104711,
+        "voice": "vo_adv_5142700_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "今期の訓練兵たちは、",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "類いまれな好成績を残してくれた。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "\n既存の課程だけでは、",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "実力を評価しきれないほどにね。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "そこで、",
+        "unit_id": 104711,
+        "voice": "vo_adv_5142700_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "さらなるステップアップを目指す訓練課程として、",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "\n魔物の掃討任務に参加してもらうことになったんだ。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "つまり、",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "前の遠征のように魔物と戦うのでしょうか。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "\n今回はどちらへ？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "かつて街道として使われていたが、",
+        "unit_id": 104711,
+        "voice": "vo_adv_5142700_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "\n今は魔物がすみつき",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "通れなくなっている場所があってね。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "強力な魔物はいないようだけれど、",
+        "unit_id": 104711,
+        "voice": "vo_adv_5142700_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "いかんせん数が多い。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "\nでも",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "エリコ班やマコト班を筆頭に、",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "今期の新兵は実に優秀だ。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "\n彼らになら",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "掃討任務を任せられると思う。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "それでお呼びがかかった、",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "ってことか。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "しかし、",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "強くはないっつっても",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "万が一はあるんじゃないか？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "……そうですね。",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "そういった相手にこそ、",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "油断や慢心も生じやすいでしょうし。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "もちろん。",
+        "unit_id": 104711,
+        "voice": "vo_adv_5142700_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "だから二人にも参加してもらいたい。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "\n君たちなら、",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "経験不足な兵たちを",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "うまく導いてくれるだろう。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "なるほど、",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "それで呼ばれたわけか。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "なら、",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "教え子の面倒は最後まで見てやらないとな。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "\nエリコはどうだ？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "その程度の仕事であれば、",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "構いませんわ。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "\n数が集まっただけの烏合の衆など、",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "\n私が全員蹴散らして差し上げましょう。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "いや、",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "ダメだろそれじゃ。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "あくまで戦うのは新兵たちの役目で、",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "\nあたしたちは指示を飛ばすだけ。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "そんなとこだろ？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "面倒ですわね……",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "\n私たちが手を下せば、",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "確実な戦果が手早く得られますのに。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "大事なのは、",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "新兵がしっかり実力をつけることだよ。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "\nその道のりに近道なんてないんだ。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "わかっています。",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "まったく、",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "教官というのは一筋縄ではいかない仕事ですわね。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "では改めて……",
+        "unit_id": 104711,
+        "voice": "vo_adv_5142700_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "\n今回二人には、",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "街道を占拠する魔物の掃討にあたって、",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "\n新兵たちの部隊を指揮する役目を任せよう。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "訓練課程での班編成より",
+        "unit_id": 104711,
+        "voice": "vo_adv_5142700_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "大人数の兵士をまとめるわけだけど、",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "\n君たちになら",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "みんなついてきてくれるはずだよ。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "なるほど……",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "わかりました。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "\n私の教え子たちが、",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "邪魔くさい魔物たちを",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "\n一匹残らず駆逐してみせましょう。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "そんじゃ、",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "二人で引き受けるってことで。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "みんなの成長を見届けるつもりで頑張ろうぜ、",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "エリコ。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "マコトさん、",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "ぬるいことを言っている暇はありません。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "新兵たちが最高の結果を残せるよう、",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "\n私たちも全力で指揮にあたるのです。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "お、",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "おう……？　",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "いや待てエリコ。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "\n面倒そうだったのに、",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "なんかいきなり乗り気になってないか？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "当然ですわ。",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "\n大勢の新兵たちを指揮することになると聞いたでしょう？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "つまりそれは、",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "優秀な教官である私の姿……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "ひいては、",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "あのおかたの伴侶に相応しい姿を",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "大勢の目に焼き付ける",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "\n絶好の機会だということ。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "手を抜くわけにはまいりません！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "どんな理屈だ！",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "相変わらずぶっ飛んでるなおまえ！",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "何を言っているのです。",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "マコトさんにとっても同じことでしょう？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "んなっ……！？　",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "い、",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "いや、",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "あたしは別に？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "\nあ、",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "あいつの伴侶とかそういうのは、",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "その……",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "私とあのおかたの仲を全力で応援するのなら、",
+        "unit_id": 102711,
+        "voice": "vo_adv_5142700_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "\nあなたにとっても",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "またとないチャンスです。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "さあ",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "エリコ",
+        "words": "行きましょう！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "そっちかよ！　",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "だから",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "あたしはそういうつもりじゃ……",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "ああ",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "もう話を聞けって！",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "そうそう、",
+        "unit_id": 104711,
+        "voice": "vo_adv_5142700_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "助っ人として参加してもらえるよう、",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "\n君たちの友人にも依頼してあるんだ。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "\n協力して任務を進めてほしい。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "ああ、",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "そりゃ助かるぜ。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "\n戦力が多いに越したことはないし……",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "……ん？　",
+        "unit_id": 104311,
+        "voice": "vo_adv_5142700_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "まさかそれって、",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "こっちが引き受けるの前提で",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "マコト",
+        "words": "\nとっくに話を進めてたってことか！？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "ふっ、",
+        "unit_id": 104711,
+        "voice": "vo_adv_5142700_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "期待していたと言ってくれ。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "君たちは優秀な教官だからね。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "\n",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "それじゃ、",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "ジュン",
+        "words": "よろしく頼んだよ。",
+        "unit_id": 104711
+    }
+]

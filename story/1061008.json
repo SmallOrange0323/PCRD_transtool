@@ -1,0 +1,2232 @@
+[
+    {
+        "type": "background",
+        "background": "500840"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "順利脫離暈船狀態的矛依未和{player}，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n有很長一段期間都在前往艾爾皮斯島的船上度過──"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "喔喔～！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "那就是艾爾皮斯島嗎！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n欸，{player}！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "你快看那個！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "有夠大的啊～！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "這樣的地方，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "會有那傢伙在確實也不意外了呢……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "呃！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "原來都到了這一步，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n我竟然還沒跟你解釋過嗎！？",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "是嗎是嗎……",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我說的那傢伙是蛇的魔星獸",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "「瑟潘堤嘶」。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "牠照理說不會再次於阿斯特朗中現身。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "但由於牠也跟這個世界一起",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "被「再構築」，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "所以我……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我必須得去打倒那傢伙才行。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "雖然我想你應該會完全聽不懂，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n但那傢伙原本只存在於正式開服前的阿斯特朗裡。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "在β測試版時……",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我還有辦法在阿斯特朗中自由使用力量，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n便曾經獨自和那傢伙對決。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "牠可是",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "強得不得了啊……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "費盡一番功夫打倒牠後，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我試著調查牠的身軀，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n隨後便看見一把巨劍插在上面。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "你心裡有底啦？",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "沒錯，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "就是天樓霸斷劍。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n後來我得到允許可以繼續帶著它，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "這傢伙便自那時開始就成了我的搭檔。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "只不過因為當時的我",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "得花很大心力才能打倒瑟潘堤嘶，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n結果那傢伙最後就被冷凍了。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "由於尚須進行調整，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "實裝一事就先暫緩，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "記得好像是這麼說的……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我還真沒想到留存下來的資料竟然會復活。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "簡單來說就是，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "原本以為打倒的魔物復活了。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "而且照理說",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "原本要把牠調得更弱的，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n但因為沒有調整就被放置著，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "結果直接以原本的資料再構築了。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "如果放著不去處理那傢伙，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "整個世界都會變得很不妙。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n若牠在目前的",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "阿斯特朗中開始大鬧，就糟了。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "這部分",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "就交給身為好人的你處理吧！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n首先，我想一個人去和牠打看看。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "就麻煩你在一旁",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "見證這一切吧。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "……如果打我輸了，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "再請大家來幫忙。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我就是為此",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "才會叫你一起來的！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "像這種不應該出現於目前的世界、",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n屬於過往的存在，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "就讓我來處理。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "畢竟我希望",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "大家都可以活在當下，放眼未來。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "所以──",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎喔喔喔喔喔！！！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "剛才的聲音……！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "不會錯的，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "是那傢伙的聲音！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "男",
+        "words": "是魔物……",
+        "unit_id": 1411,
+        "voice": "vo_adv_1061008_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "男",
+        "words": "可惡！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男",
+        "words": "明明只差一點就抵達島嶼了！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "大叔！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "那傢伙目前",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "還在離海邊有點距離的地方！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "所以快趁現在",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "載我們去島上吧！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "男",
+        "words": "喔、",
+        "unit_id": 1411,
+        "voice": "vo_adv_1061008_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "男",
+        "words": "好！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男",
+        "words": "我明白了！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我們上，{player}！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n待會戰鬥時你離遠點，否則會受傷喔！",
+        "unit_id": 106113
+    },
+    {
+        "type": "background",
+        "background": "500285"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "大叔，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "謝謝你啦！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n接下來",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我們會自己過去！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n在我們回來前，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "你千萬不能跑到船外面喔！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "男",
+        "words": "……如果你們沒回來，我該怎麼辦啊！",
+        "unit_id": 1411,
+        "voice": "vo_adv_1061008_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "就算是死，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我也會至少讓{player}成功回來的！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "到時候",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "他就拜託你了！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "男",
+        "words": "好，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1061008_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "男",
+        "words": "交給我吧！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男",
+        "words": "\n……你們要小心啊！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "嗯！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "謝啦！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n好，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "出發吧！",
+        "unit_id": 106113
+    },
+    {
+        "type": "background",
+        "background": "500220"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "火速趕往魔物聲音所在方向，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n{player}和矛依未最後終於在"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n火山山麓看見了該魔物的身影。"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎喔喔喔喔喔！！！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "真的在……！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "牠還是老樣子很巨大啊！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n真叫人懷念！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "{player}，聽好了！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n就算你再怎麼想幫我，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "也絕對別靠近！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "只會被捲進戰鬥中送掉小命而已！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "你找到距離還算勉強安全的位置後，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "記得要再往後退三步左右！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "答應我要做到！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "交給我吧！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n……雖然對上那傢伙，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n就算小心也不知道能不能活著回去哪……！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "顯現吧！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "天樓霸斷劍！！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎喔喔喔喔喔！！！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "竟對殺氣有反應啊！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "不過呢！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n我也早就清楚你會這樣行動了！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "吃我這招啊啊啊啊啊！！！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_033"
+    },
+    {
+        "type": "background",
+        "background": "500220"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "如何！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎喔喔喔喔喔！！！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "嘖，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "明明武器就比那時候還強了……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "結果即使有傷到牠，也無法造成太大的傷害嗎……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "如果牠和這裡曾是遊戲時一樣，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n有著持續回血能力",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "和高到像是做壞的魔法抗性的話，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n總之就只能用天樓霸斷劍拼命砍了……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "真是的，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "竟然隨意就封印住別人的能力……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "要這麼做的話，就好好負起責任啊……！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "你也這麼想對吧！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "喝啊啊啊啊！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_038"
+    },
+    {
+        "type": "background",
+        "background": "500220"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎喔喔喔喔喔！！！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "看是我先用盡力氣，還是你先被打倒，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "就來拚體力吧！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n喝啊！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "看招！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "吃我這擊吧！！",
+        "unit_id": 106113
+    },
+    {
+        "type": "background",
+        "background": "500220"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎喔喔喔喔喔！！！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "還沒完呢！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n天！",
+        "unit_id": 106113
+    },
+    {
+        "type": "background",
+        "background": "500220"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "樓！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_041"
+    },
+    {
+        "type": "background",
+        "background": "500220"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "霸！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_042"
+    },
+    {
+        "type": "background",
+        "background": "500220"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "斷！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "嘶嘶……",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "不妙──！！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "嚇啊啊啊啊啊！！！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "呃啊啊啊啊啊啊！！！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "唔呃、",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "咳咳……！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "……你沒事吧，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "{player}！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "你幫我強化了嗎……！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "不過要當心！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n空氣就是這傢伙的武器！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "隨便靠近的話，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "小心身體會被擊個粉碎！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "可惡，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "牠已經開始恢復了嗎……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "你這傢伙，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "以前就有這麼強來著……？",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "那傢伙會變得比較積極進行攻擊，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n是因為這也算是牠的防禦手段。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "這代表，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "那傢伙也覺得自己所處狀況不妙對吧……！　",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "就算你因為再構築變強了，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我也不會輸的！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "唔喔喔喔喔喔！！！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "嘶嘶……",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "連續出招！？",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "開什麼玩笑……！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n我這邊",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "也可以連續出招啦！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "看我的──！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "嚇啊啊啊啊啊！！！",
+        "unit_id": 1614
+    },
+    {
+        "type": "background",
+        "background": "500220"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "唔哇啊啊啊啊！！！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "……咳呃！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "可、",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "可惡……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "你這傢伙……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "相當厲害嘛……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "唔！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "就算有公主騎士強化，結果還是這樣嗎……",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "混蛋，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "這傢伙果然強到不行啊……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "如果能使用能力閃開……",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "不對……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "只要在牠攻擊前，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "就先進行攻擊……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "但這對目前只是普通人類的我來說，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "恐怕辦不到吧……？",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n對只有能力是唯一優點的「矛依未」來說，恐怕……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "明明有性能很高的軟體，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "但硬體卻沒什麼，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "記得是這樣說的吧……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "哈哈，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "確實很合我的狀況啊……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "不過！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我可是沒辦法",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "輸給你的……！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n就算力量不夠，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "為了和搭檔、",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "還有和大家的未來……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "要贏！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "嘶嘶……",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "不會讓你",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "出招的……！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "喂",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "，{player}！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n給我力量！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "不……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "快把力量都交出來啊啊啊！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我聽到了……",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "是我夥伴的聲音！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "吃我這招────！！！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "嚇啊啊啊啊啊！！！",
+        "unit_id": 1614
+    },
+    {
+        "type": "background",
+        "background": "500220"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "嘖，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "勉強抵消攻擊就是極限了嗎……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "嗯？",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "天樓霸斷劍……",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "在閃閃發光啊！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n喂，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "你怎麼啦！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "唔哇！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "原來……",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "你原本其實是這種模樣嗎。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n這就是、",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "天光的……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "是嗎！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "原來是這樣啊！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "嘿嘿，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "看來你也很期待",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "和我一起邁向的未來吧……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "既然如此！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "就和我一起",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "拯救世界吧！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "天樓霸斷劍────！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎喔喔喔喔喔！！！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "這威力與剛才為止截然不同……！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n……那就再賞牠一記吧！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "吃我的",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "最後一擊啦────！！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎喔喔喔喔喔！！！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "……",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "掰掰。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n等到確實經過調整後，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我再來陪你玩吧。",
+        "unit_id": 106113
+    },
+    {
+        "type": "background",
+        "background": "500220"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我……",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我不行了……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "全身都好痛……",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n我已經漣一步都走不動了……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "麻煩你……",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "帶我到在海邊的",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "大叔他們那裡……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n我想",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "他們應該很擔心才是……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}揹著用盡自己所有力量的矛依未，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n爬下了山並回到海邊。"
+    },
+    {
+        "type": "background",
+        "background": "500840"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "隔天，在從艾爾皮斯島航行回本土陸地的船上，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n矛依未正獨自一人望著大海。"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "唉……",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "有真的再次把牠打倒嗎……？",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "欸，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "這應該是",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "現實沒錯吧，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "天樓霸斷劍……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "……",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "「獲得此劍之人啊。",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n當統御繁星者迷惘時，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "霸斷天樓，拯救世界吧。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "當兇駭災厄從天而降時，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "霸斷天光，統御世界吧」……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "什麼啊，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "原來你聽到啦。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "剛才的是天樓霸斷劍的系統說明文……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我第一次拿起它時，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "腦海中就浮現了這段話。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "怎麼說，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "有眼無珠……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "這成語應該對吧。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n告訴我可以留著這把劍的傢伙，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n可能覺得這東西不過只是一個遊戲中的裝備而已。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "但實際上，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "這搞不好是這世界的神……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n米奈娃想要託付給某人的東西也說不定，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我不禁有了這想法。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n她希望給予能拯救世界的英雄……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "這把劍，讓其得以斬斷",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "不同於阿斯特朗，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n且在天空另一邊的行星──",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "地球所降下之災厄。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "天樓霸斷劍",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "這東西，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n原本肯定不該由我得到。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "適合拿這傢伙的人，",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n是擁有不輸給這把劍的光輝，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "能大方地在太陽底下過活的耀眼傢伙。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "就是像{player}你們這樣的傢伙。",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我和尾狗刀不是你們那一邊的人。",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "因為我們是生活在沒有光輝……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "太陽照射不到，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "有如不存在星星的夜空般的地方！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "{player}……",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "……或許確實是如此呢。",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n你剛才",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "說出了一句相當不錯的話喔！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "說得也是……",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "那些在看不見星星的夜空下生活的人們，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n大概會不曉得該往哪裡去才好呢……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "……天樓霸斷劍！",
+        "unit_id": 106113,
+        "voice": "vo_adv_1061008_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "你可還要繼續為我閃耀光輝啊！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n就算是在一片漆黑的夜裡，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "你也要比星星更加光亮喔！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "矛依未帶著珍惜的神情，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n靜靜地看著散發出比以往更加強烈光芒的天樓霸斷劍。"
+    }
+]

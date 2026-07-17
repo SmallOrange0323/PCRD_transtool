@@ -1,0 +1,4211 @@
+[
+    {
+        "type": "background",
+        "background": "500890"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "避開與魔物間的戰鬥，{player}及祈梨奔跑在巷弄之中。"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "如果目的是要報仇，",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n那據點應該會最先被當成目標。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "得快點才行……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "啊啊！",
+        "unit_id": 911,
+        "voice": "vo_adv_1066012_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "找到了！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "在這裡！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "小哥也在一起啊，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "太好了……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "你們……",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "都沒事吧！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "現在的情況到底是怎麼回事？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "被我們擊潰的幫派餘孽",
+        "unit_id": 811,
+        "voice": "vo_adv_1066012_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "\n在集結之後攻了過來！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "\n",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "因為這樣，",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "他們就放了魔物進我們的地盤裡。",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這件事我已經知道了啦！",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "嘉夜夜和其他人怎麼樣了？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "嘉夜小姐召集了能行動的夥伴，",
+        "unit_id": 911,
+        "voice": "vo_adv_1066012_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "到對方那裡去火拼了。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "不過，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "對方畢竟只是一群烏合之眾，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "應該會很迅速地解決完就回來了吧？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "而我們",
+        "unit_id": 811,
+        "voice": "vo_adv_1066012_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "則是四下奔走，去找還留在地盤中的人……",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "\n可是也因為這樣，所以據點的人手不足啊。",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "啊……",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "拉格！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "拉格怎麼樣了？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "那當然是和老大……",
+        "unit_id": 911,
+        "voice": "vo_adv_1066012_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "啊，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "糟糕了，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "老大現在……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "牠或許在據點裡面。",
+        "unit_id": 811,
+        "voice": "vo_adv_1066012_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "\n",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "怎麼辦？",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "我們過去找嗎？",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "不，",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "你們去找看看有沒有來不及逃走的小鬼，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n據點就由我們……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "可惡！",
+        "unit_id": 911,
+        "voice": "vo_adv_1066012_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "是魔物！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "竟然連這種地方……",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "唔，",
+        "unit_id": 811,
+        "voice": "vo_adv_1066012_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "怎麼辦？",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "要由我們來阻止牠嗎……",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這裡由我們來阻擋！",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n你們",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "如果發現一般民眾，就帶到據點去！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n畢竟那裡為了防備火拼，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "比其他房子更加",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "堅固。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "祈梨為了保護手下的幫派成員，於是挺身面對魔物。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n然而她的雙腳正微微顫抖著。"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "以魔物來說，也太有組織性了吧。",
+        "unit_id": 911,
+        "voice": "vo_adv_1066012_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "不久之前我們有收到目擊了可疑傢伙的報告，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "\n大概是有人在操縱它們。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "啥？",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n這種事我可沒聽說過啊！？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "抱歉啦。",
+        "unit_id": 811,
+        "voice": "vo_adv_1066012_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "\n",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "總之",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "只要打倒操縱它們的傢伙，應該就會解決了！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我我我、",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我知道了。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n好好好好、",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "好了，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "你們快走吧！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "喔！",
+        "unit_id": 911,
+        "voice": "vo_adv_1066012_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "……嘿嘿。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這種時候還在嘻嘻笑什麼啊！",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "真是噁心！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "不，",
+        "unit_id": 811,
+        "voice": "vo_adv_1066012_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "就是覺得……",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "\n",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "那個祈梨",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "有好好做著幹部該做的事呢。",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "啥──？",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "你在說什麼啊！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我一直",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "都是值得依靠的大幹部啊！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "好了，",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "別說無關緊要的事了，快點！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "祈梨……",
+        "unit_id": 911,
+        "voice": "vo_adv_1066012_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "不，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "代理老大！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "怎、",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "怎麼了嗎？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這麼突然……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "祝妳武運昌隆。",
+        "unit_id": 811,
+        "voice": "vo_adv_1066012_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "嘿、",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "嘿嘿……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "受到信賴了耶！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "小哥，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "要上囉！",
+        "unit_id": 106611
+    },
+    {
+        "type": "background",
+        "background": "500780"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "祈梨與{player}為了趕走魔物開始移動。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n在這段期間，周遭因魔物造所成的損害仍逐漸擴大。"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "唔，",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這實在是太慘了啊。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "不知道地盤上的人是不是都順利逃走了……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "那一側傳來戰鬥的聲音……",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n【王宮騎士團】的傢伙們也在工作啊。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "既然如此，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我們就去做我們的工作吧！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "可不能輸給",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這些嘍囉們啊！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在{player}和祈梨的配合下，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n輕鬆地擊敗了好幾隻魔物。"
+    },
+    {
+        "type": "background",
+        "background": "500780"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "就這點程度嗎？",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n呵呵……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "哈哈哈哈哈！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "由代理老大祈梨大人我來處理，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "就輕輕鬆鬆呢！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "雖然是用來清場的小嘍囉，",
+        "unit_id": 1,
+        "voice": "vo_adv_1066012_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n但太輕易被打倒的話我可是會很困擾呢。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "什、",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "什麼人？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "沒什麼，",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "就只是個被雇用的人而已。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n啊，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "你們不必報上名號，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n只要知道妳是龍人族就足夠了。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "哼哼──",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "操縱這些魔物的就是你吧！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這麼隨便地就出現在我們面前，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "你是笨蛋嗎？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "原來如此，",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "看來和我所調查的一樣智商低下啊。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n毫無準備就登場的那一方，要更為愚蠢呢。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n就像是你們這樣，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "懂嗎？",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物群",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "什麼，",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "還有這麼多嗎！？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "不過，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這些嘍囉",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "不管有幾隻……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "所以我不是說了嗎？",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n這些是用來清場的。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "巨大魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "怎、",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "怎麼搞的……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這傢伙……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n幾乎有建築物那麼大耶……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "本來是用於野外作戰的，",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "要在鎮上使用的話需要足夠的空間。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n而這些嘍囉就是為此用來清場的。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我、",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我才不會",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "因為這種東西",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "就嚇到……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "巨大魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "呀啊啊啊！",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這這這、",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這種的打不贏啦……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "什麼啊……",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n因為委託人叫我把手上最強的魔獸帶來，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n所以我才準備的，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "結果甚至用不上嗎？",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "算了，",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "就像我所說的，我是受雇人，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "跟你們無冤無仇。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n如果",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "想要我留你們一條小命也無妨。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "壞、",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "壞人說出這種好話的時候，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "通常都是背後有所圖謀。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n你的目的是什麼？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "不愧是蘭德索爾最大幫派，",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "龍骨家族的幹部大人。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "沒什麼，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "小事一件。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "那邊的龍人族，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "成為我的棋子吧。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n作為我的",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "魔物。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "什麼──！？",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n你在開什麼玩笑！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "為了要把虎崽子給引出來，我可是加了很多費用呢。",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n光是要把這傢伙偷偷帶進來，就花了不少錢啊。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "既然如此，",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "至少要帶個土產回去才行呢。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n如果我手上的魔物裡有龍的話，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "我也可以提高身價。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "反正",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "只要跟客戶說我摧毀了據點、目標下落不明，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n就也不用支付違約金了。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n如何？",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "跟性命比起來，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "代價很便宜對吧？",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "哼！",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我怎麼可能會同意啊！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我可不是那麼廉價的龍！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "這樣啊。",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n那就算了，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "去死吧。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "巨大魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "background",
+        "background": "500780"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "嗚呃！",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "咳咳……",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這、",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這個狀況還挺糟糕的呢……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "既然如此，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "除了覺醒之外別無生路了。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "所以",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "小哥你就退後……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "咦？",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "為……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "為什麼要把我抱起來！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n放開我！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "現在不應該是帥氣戰鬥的時刻嗎────！",
+        "unit_id": 106611
+    },
+    {
+        "type": "background",
+        "background": "500890"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}抱著祈梨，進入了狹窄的巷弄裡。"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我好不容易才鼓起了勇氣啊！",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n現在應該是支持我的時候吧！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "雖然祈梨大聲嚷嚷著，但{player}"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n想起了來自帆稀的「請託」後續。"
+    },
+    {
+        "type": "background",
+        "background": "501330"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "如果",
+        "unit_id": 106711,
+        "voice": "vo_adv_1066012_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "祈梨她想要進行覺醒，",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "希望你阻止她♪",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "因為如果讓祈梨就這樣覺醒，",
+        "unit_id": 106711,
+        "voice": "vo_adv_1066012_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "她會壞掉的。",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "嗯",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "嗯，",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "當然不是開玩笑的喔。",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "你知道我當初邀請祈梨的原因",
+        "unit_id": 106711,
+        "voice": "vo_adv_1066012_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "是什麼嗎？",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "或許你不相信，但……",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "單純地說，",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "是因為才能呢。",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "她身為龍的因子壓倒性地強大。",
+        "unit_id": 106711,
+        "voice": "vo_adv_1066012_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "和用了藥，",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "才好不容易能維持覺醒的我們不同，",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n甚至到了什麼都不做也會洩漏而出的程度。",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "不過",
+        "unit_id": 106711,
+        "voice": "vo_adv_1066012_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "祈梨的身體，",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "承受不了那股力量。",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "一個不小心，",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "她就會因為自身力量的反作用力而不復存在。",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "你或許會想說，",
+        "unit_id": 106711,
+        "voice": "vo_adv_1066012_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "可以使用公主騎士的力量來強化她……",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n但這樣一來，",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "龍的力量也會一起增強。",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "我有全力模擬過一次，",
+        "unit_id": 106711,
+        "voice": "vo_adv_1066012_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "那時……",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "整個蘭德索爾都灰飛煙滅了☆",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "看來",
+        "unit_id": 106711,
+        "voice": "vo_adv_1066012_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "沒有「龍之卵」果然是不行的呢。",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n完全無法穩定啊。",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "所以，",
+        "unit_id": 106711,
+        "voice": "vo_adv_1066012_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "我才打算慢慢花時間",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "來鍛鍊祈梨，",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n讓她不會輸給龍的力量。",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "你明白",
+        "unit_id": 106711,
+        "voice": "vo_adv_1066012_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "不能讓她覺醒的原因了嗎？",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "啊，",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "這件事當然",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "要對祈梨保密喔。",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "因為，",
+        "unit_id": 106711,
+        "voice": "vo_adv_1066012_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "她一定會得意忘形的呢♪",
+        "unit_id": 106711
+    },
+    {
+        "type": "background",
+        "background": "500890"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "你在說什麼啊！",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這樣下去，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這一帶",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "全部都會被破壞掉的！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "啊？",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "在公會小屋的老大祕密房間找找看有什麼東西……？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "那的確也是不錯的方法，可是……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "喂，",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "你在做什麼！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "不要把我抱起來啦────！",
+        "unit_id": 106611
+    },
+    {
+        "type": "background",
+        "background": "500040"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "穿過巷弄後，手下們出來迎接抵達據點的兩人。"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "沒事吧！",
+        "unit_id": 911,
+        "voice": "vo_adv_1066012_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "這下我就放心了……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "我們",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "也一路保護了來不及逃走的人……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "麻煩你們了啊，",
+        "unit_id": 611,
+        "voice": "vo_adv_1066012_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "小祈梨……",
+        "unit_id": 611
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "嗚……",
+        "unit_id": 111,
+        "voice": "vo_adv_1066012_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "好可怕……",
+        "unit_id": 211,
+        "voice": "vo_adv_1066012_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "你們",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "沒事吧！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "話說回來，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "小鬼們和婆婆都來不及逃跑嗎？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "剛剛發出了很巨的聲響啊，",
+        "unit_id": 811,
+        "voice": "vo_adv_1066012_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "是你們搞定了嗎？",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "不，",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "還沒有……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "接下來我們要用老大的祕密道具進行反擊……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這是什麼意思！",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "小哥，等等啊！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "啊？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "蘭德索爾會灰飛煙滅？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "你在說什麼啊！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "小哥────！",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_079"
+    },
+    {
+        "type": "background",
+        "background": "500890"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}出了公會小屋後，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n魔物使再次出現在眼前。"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "哼嗯……",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "雖然龍好像不在，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "不過沒關係……",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n你這傢伙腦袋似乎動得挺快的呢。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n沒錯，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "逃進這種狹窄的地方，我可是會非常困擾。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物群",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "但無所謂，",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "清場的嘍囉就是為此存在的。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n只要像這樣把空間清出來，這裡就會是我們的場域了。",
+        "unit_id": 8111
+    },
+    {
+        "type": "background",
+        "background": "500780"
+    },
+    {
+        "type": "dialogue",
+        "name": "巨大魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "好了，",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "我們就繼續吧。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n如果看到破敗不堪的你，她應該也會改變主意。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n就讓你來好好發揮用處吧。",
+        "unit_id": 8111
+    },
+    {
+        "type": "background",
+        "background": "500040"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "另一方面，祈梨等人這時候正在據點中，不知道該如何是好。"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "啊～真是的！",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "小哥一個人根本就不行啊……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "到底",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "該怎麼做才好……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "嗚嗚……",
+        "unit_id": 111,
+        "voice": "vo_adv_1066012_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "討厭……",
+        "unit_id": 211,
+        "voice": "vo_adv_1066012_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "沒事的，",
+        "unit_id": 611,
+        "voice": "vo_adv_1066012_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "家族成員們都在這裡呢……",
+        "unit_id": 611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "沒錯……",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我得振作起來才行……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "你們！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "把這裡的人都帶到地下室去！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n那裡應該比待在地上來得安全！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "好、",
+        "unit_id": 911,
+        "voice": "vo_adv_1066012_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "好",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓1",
+        "words": "的！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "那祈梨妳呢？",
+        "unit_id": 811,
+        "voice": "vo_adv_1066012_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "\n該不會",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "是要去追小哥嗎……",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "雖然很不甘心，",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "但是這樣子出去只會被幹掉而已。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "就按照之前說的，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我去老大的祕密房間，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n找看看有沒有什麼能當作武器的東西！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "我知道了。",
+        "unit_id": 811,
+        "voice": "vo_adv_1066012_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "流氓2",
+        "words": "\n這裡就交給我吧。",
+        "unit_id": 811
+    },
+    {
+        "type": "background",
+        "background": "501320"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "如果有什麼道具就好了，",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n像是那個龍的魔杖之類的……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格",
+        "words": "嘎喔！",
+        "unit_id": 50211,
+        "voice": "vo_adv_1066012_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "呀啊啊！",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "呃，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "拉格！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n你在這種地方啊！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "你也趕快到地下……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格",
+        "words": "嘎喔嘎喔！",
+        "unit_id": 50211,
+        "voice": "vo_adv_1066012_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "難道說",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "你也想要戰鬥嗎？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "…",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "…我知道了，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "跟我來吧。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n要在小哥被幹掉之前，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "找出好東西來！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格",
+        "words": "嘎喔！",
+        "unit_id": 50211,
+        "voice": "vo_adv_1066012_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "怎麼了？",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "喂，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "不要拉著我啊！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n現在可不是玩的時候……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "咦？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "筆記？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "是嘉夜夜的筆跡。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "「我去火拼，拜託妳看家。",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這裡就交給妳守護了」",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "嗎，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "很像嘉夜夜會做的事呢。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "好！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我又有鬥志了！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "加油吧！",
+        "unit_id": 106611
+    },
+    {
+        "type": "background",
+        "background": "501330"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "說是這麼說，",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "但東西比我想得還要少呢……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "虧她還是老大，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "不是該放一些",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這種危急時刻用的道具嗎？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "真是的，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "在重要時候就派不上用場！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格",
+        "words": "嘎喔！",
+        "unit_id": 50211,
+        "voice": "vo_adv_1066012_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "話說回來……",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我想起第一次來這裡時的事情了。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "一開始很害怕，什麼都無法相信，但……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "在不知不覺間，",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這裡變成了我的歸宿……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "而且",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我為了守護這裡，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "沒有逃跑還這麼地拼命，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n真是不可思議啊。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "嘉夜夜、小哥、",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "手下們、小鬼們，還有地盤上的人們，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n大家願意接納我，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "也是因為有這個地方。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "而且，",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "如果這裡不在了……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n那老大不就沒有可以回來的地方了嗎……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "沒錯……",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n守護這裡，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "守護我自己的歸宿，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "就是我想做的，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "也是我該做的事……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格",
+        "words": "…………",
+        "unit_id": 50211,
+        "voice": "vo_adv_1066012_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "呀啊啊！？",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "是、",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "是地震嗎？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格",
+        "words": "嘎喔！",
+        "unit_id": 50211,
+        "voice": "vo_adv_1066012_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "不對……",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_110"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這是……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "巨大魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 3
+    },
+    {
+        "type": "background",
+        "background": "500780"
+    },
+    {
+        "type": "background",
+        "background": "500780"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}傷痕累累的身體"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n被甩到了據點的大門上。"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "好了，",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_111"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "清場也已經完成了，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "這下子就將軍了吧？",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n龍人族！",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "妳聽得到吧？",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n趕快給我出來！",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "不然的話……",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "小哥！？",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_112"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "小哥！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "哼嗯，",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_113"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "還真是讓人落淚啊。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n那麼首先，就折掉一條腿……",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "等等！",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_114"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "……我現在就出去。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我的工作",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_115"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "是守護這個地方。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n嘉夜夜也交付給我了，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "所以我不能逃走……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "守護的範圍",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_116"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "當然也包括了小哥。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "要說我不害怕，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "那是騙人的……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "但是比起逃跑或丟下不管，",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_117"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這樣子要好多了！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "來、",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "來來……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "來吧，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "你這個三流的！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "還真是青澀啊。",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_118"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n不過，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "看妳受挫的樣子也是挺有趣的呢。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n好，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "上吧！",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "巨大魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "background",
+        "background": "500780"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "你的大動作",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_119"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "已經被我看穿了！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "真是煩人。",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_120"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n妳說要守護是吧。",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "既然這樣……",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "就連妳的夥伴一起燒成焦炭吧！",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n火焰噴射！",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "巨大魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "background",
+        "background": "500780"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "什麼！",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_121"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "拉格！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格",
+        "words": "嘎喔？",
+        "unit_id": 50211,
+        "voice": "vo_adv_1066012_122"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我不會",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_123"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "讓你得逞的啊啊啊！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "巨大魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "什麼！？",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_124"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "怎麼回事？",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n把火焰熄滅了……",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "不，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "是吸收了嗎！？",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n那個樣子是怎麼回事！",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格",
+        "words": "嘎喔！",
+        "unit_id": 50211,
+        "voice": "vo_adv_1066012_125"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "小哥！",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_126"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "你沒事吧！？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "呼……",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_127"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "呼……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n身體好燙……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "但比起這個……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n力量不停地湧現出來！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "可惡！",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_128"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "這個怪物！",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n解決她！",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "巨大魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "現在的話！",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_129"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "不管是什麼樣的敵人！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n我都不會輸的！！！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "巨大魔物",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "怎麼、",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_130"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "會……",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "我最強的戰力……",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n足以毀滅小規模騎士團的魔物，",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n竟然僅僅一擊就……",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "呵……",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_131"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "呵呵呵呵……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "哈～哈哈哈哈～！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n這就是",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "完全覺醒的力量！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n感覺真的是棒透了啊！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "只要有這股力量……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "哈啾。",
+        "unit_id": 106611
+    },
+    {
+        "type": "background",
+        "background": "500780"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "欸……？",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_132"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "剛剛好像",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "有什麼東西……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "嗯？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "剛才掉下去的難道是……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我的",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "角嗎？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "咦？",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_133"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "力量",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "也耗盡了……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "唔呀",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "啊啊……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "這樣啊～",
+        "unit_id": 50211,
+        "voice": "vo_adv_1066012_134"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "祈梨找到了呢，",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "\n自己的「龍之卵」。",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}抱住了昏厥的祈梨，而在他的身後，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n傳來了熟悉的聲音。"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "真正的「龍之卵」",
+        "unit_id": 50211,
+        "voice": "vo_adv_1066012_135"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "是每個龍人族",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "各自所擁有的可能性。",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "\n換句話說，",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "就是成為覺醒關鍵的",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "自身核心部分",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "吧？",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "\n因為有正確地理解到這點，",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "所以祈梨才能在不失控的情況下收場。",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "結果雖然很好，",
+        "unit_id": 50211,
+        "voice": "vo_adv_1066012_136"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "但還真是驚險呢～",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "\n在我的計畫中，",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "是預計先與嘉夜他們會合，",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "\n然後再迅速解決掉敵人的。",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "沒想到",
+        "unit_id": 50211,
+        "voice": "vo_adv_1066012_137"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "祈梨竟然這麼堅持於守護這個地方呢～",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "\n雖然當下非常危險……",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "但既然她成功覺醒了，",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "就算了吧。",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "祈梨覺醒的關鍵，",
+        "unit_id": 50211,
+        "voice": "vo_adv_1066012_138"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "就是自身的歸宿",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "呢。",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "\n呵呵，",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "在那之中也包含了我，",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "這讓人有點開心啊～",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "啊，",
+        "unit_id": 50211,
+        "voice": "vo_adv_1066012_139"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "現在的我？",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "\n嗯，",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "當然是本人囉。",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "雖然是處在有點遙遠的地方就是了。",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "\n不過，",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "希望你能向祈梨保密呢～",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "因為，",
+        "unit_id": 50211,
+        "voice": "vo_adv_1066012_140"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格？",
+        "words": "這樣比較有趣不是嗎？",
+        "unit_id": 50211
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格",
+        "words": "嘎喔！",
+        "unit_id": 50211,
+        "voice": "vo_adv_1066012_141"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "可惡、",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_142"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "可惡可惡可惡……",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n那個怪物……",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n我要獲得更強的魔物來進行",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "復仇……",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "你就是通報中提到的魔物使吧！",
+        "unit_id": 711,
+        "voice": "vo_adv_1066012_143"
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "\n不許反抗！",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "什麼，",
+        "unit_id": 8111,
+        "voice": "vo_adv_1066012_144"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "是【王宮騎士團】？",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "\n動作太快了……",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "你們這些傢伙！",
+        "unit_id": 8111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物使",
+        "words": "是預謀好的吧──！",
+        "unit_id": 8111
+    },
+    {
+        "type": "background",
+        "background": "500780"
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "逮捕！",
+        "unit_id": 711,
+        "voice": "vo_adv_1066012_145"
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "\n嗯？",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "你們好像是……",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "那個孩子怎麼了？",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "\n該不會",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "是被捲入而受傷了……",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "只是睡著了……",
+        "unit_id": 711,
+        "voice": "vo_adv_1066012_146"
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "這樣啊，",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "那我就放心了。",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "\n對了，",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "等安頓下來之後，",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "如果有任何關於本次事件的情報，",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "\n就向【王宮騎士團】報告吧，",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "再見了！",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "嗚呀……",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_147"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "輕輕鬆鬆啦………",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n唔嘿嘿嘿嘿……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "就這樣，祈梨和{player}最為漫長的一天"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n平安地落幕了……"
+    },
+    {
+        "type": "background",
+        "background": "501320"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "那之後過了幾天。"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "哎呀～",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_148"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "真的是。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我可是大顯身手了呢，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "對吧小哥？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "真想讓嘉夜夜也見識一下。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "那個魔物使",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_149"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "也順利交到【王宮騎士團】",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n手上了，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "餘孽們應該也無法作亂了吧。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "不過呢，",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_150"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "身為代理老大",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這都是理所當然的工作啊！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n哈～哈哈哈！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "話說回來，",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_151"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "在那之後我就無法覺醒了……",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "角",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "好像也重新長出來了，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這是怎麼回事呢？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "啥……",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_152"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "要腳踏實地鍛鍊自己？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "咦～",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "明明覺醒的話只要一擊就解決了，這樣不是很奇怪嗎？",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "算了，也沒關係啦。",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_153"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n這樣老大回來的時候，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "就可以嚇她一跳了啊！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "拉格",
+        "words": "嘎喔！",
+        "unit_id": 50211,
+        "voice": "vo_adv_1066012_154"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "她到底會露出怎麼樣愚蠢的吃驚表情呢，",
+        "unit_id": 106611,
+        "voice": "vo_adv_1066012_155"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n我現在就開始期待了啊，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "拉格。",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n哈～哈哈哈～！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "看著這樣的祈梨，{player}忍不住想起了"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n「無知便是福」這句話。"
+    }
+]

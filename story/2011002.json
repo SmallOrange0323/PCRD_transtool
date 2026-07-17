@@ -1,0 +1,946 @@
+[
+    {
+        "type": "background",
+        "background": "500093"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "同一時間。為了救出被囚禁的貪吃佩可，\n{player}和可可蘿朝著『王宮』的內部，頭也不回的前進。"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "請您退下，",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n嘿！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "你、",
+        "unit_id": 711,
+        "voice": "vo_adv_2011002_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "你們是？",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "\n入侵者……",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "唔，嘎呀啊！？",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "呼……",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "【拉比林斯】的大家",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "所採取的誘餌作戰奏效了，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n『王宮』內部",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "的守備變得相當地薄弱了呢。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "即使如此還是配置著最低限度人員的樣子，",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "雖然仍不得鬆懈……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "但如果只是這種程度，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "只靠在下也能夠應付。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "咕、",
+        "unit_id": 711,
+        "voice": "vo_adv_2011002_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "咕嗚……",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "\n你們、",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "究竟是誰？",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "來『王宮』！　",
+        "unit_id": 711,
+        "voice": "vo_adv_2011002_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "想要和整個國家作對嗎？",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "愚蠢之徒！",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "\n你們這種傢伙的下場一定",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "會很悲慘……",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士",
+        "words": "呃嘎呀！？",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "安靜一點。",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n若鬧出了騷動，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "導致警備的人們一擁而上可就傷腦筋了。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "就讓此人和剛才擊倒的",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "其他警備人員一樣，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n用布塞住嘴巴……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n總之，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "讓他先坐在這裡吧。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "每一位維持警備的",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "【王宮騎士團】團員，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "不曉得為何",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "都戴著遮掩住顏面的頭盔。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "從遠處看起來，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "大概只會被人當成是在偷懶打盹而已。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "儘管只能稍微爭取到一些時間……",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "他們",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "不過就是貫徹自己的勤務而已，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "奪走他們性命的話",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "實在會過意不去呢。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "呵呵。",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n得到了主人的肯定，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下便安心了許多。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "只要和主人同心的話，",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n在下便能夠",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "毫無迷惘地向前邁進。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是的。",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n您說得沒錯，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "如今是",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "分秒必爭、十萬火急的事態……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "一秒也好，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "得盡速將貪吃佩可小姐給順利救出來才行。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "要想東想西的話，",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "留到事後也不遲。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "請牽好在下的手，",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n在這前方有階梯，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "順著往下",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "就是『王宮』",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "惡名昭彰的地下監獄……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "以事前所獲得的情報來看，",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n那裡",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "應該就是貪吃佩可小姐被囚禁的場所了。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "此為願意伸出援手協助在下等人的，",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n那位似似花小姐",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "所提供的情報，著實是幫了大忙。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "若非如此，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "就可能得在這『王宮』內部",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "來回奔波了呢。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "『王宮』的地下監獄",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "似乎主要是用來收容政治犯，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是警備相當嚴峻，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "幾乎脫逃無望",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "的牢房……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "聽說是這樣子的。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "就算能夠抵達監獄，",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n要將貪吃佩可小姐從牢房中救出，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "又得耗費一番工夫。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "總之如果有守衛坐鎮，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "就將對方擊倒再奪走鑰匙，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "雖然是這樣子盤算的。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "但如果沒有守衛，",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "或",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "面臨無法成功取得鑰匙的情況……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "就請主人以您的能力，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "將在下",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "的力量強化至極限。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "儘管有些亂來，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "但也只能靠蠻力破壞牢房了。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "雖然在下也認為這是場勝算不高的賭注，",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n卻也沒有其他更好的計畫了。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "不管如何，",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "還是得盡早抵達牢房……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "哇呀！？",
+        "unit_id": 105911
+    },
+    {
+        "type": "still",
+        "still": "201100201"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "……。",
+        "unit_id": 104711,
+        "voice": "vo_adv_2011002_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "請您提高警覺，",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n往下層的樓梯前方，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n有位看起來很強的人守著。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……看來那位，",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "就是抵達牢房前的",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "最後一道難關了呢。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……咦？",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "呃，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "那是主人認識的人嗎？",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "您的人脈真的很廣呢，",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n不過，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "這是再好也不過了。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "如果是主人您的朋友，",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n在說明過事情的來龍去脈後，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "或許能免於一戰。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "……是誰在那？",
+        "unit_id": 104711,
+        "voice": "vo_adv_2011002_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……咦？",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "明明都已經竭盡所能",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "不動聲色的進行移動了，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n在這種距離卻仍被察覺到了！　",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是位相當敏銳的人呢。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "怎麼辦呢？",
+        "unit_id": 105911,
+        "voice": "vo_adv_2011002_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n如果是主人的朋友的話，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n是否該坦然地",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "面對面試著說服對方……？",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "是入侵者嗎？",
+        "unit_id": 104711,
+        "voice": "vo_adv_2011002_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n沒辦法了，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "雖然守衛並非我的本業。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "還是得遵從命令，",
+        "unit_id": 104711,
+        "voice": "vo_adv_2011002_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "將所有接近這個地下監獄的人就地解決。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n希望你別怨恨我呢，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "畢竟這是我的職責。",
+        "unit_id": 104711
+    },
+    {
+        "type": "still",
+        "still": "end"
+    }
+]

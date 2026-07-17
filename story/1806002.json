@@ -1,0 +1,4679 @@
+[
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}跟凱留來到了街上買東西。"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "接下來要買的東西是在……",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "啊，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "好像是那間店呢。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我們走吧。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "所以說你來多少次都沒用的。",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "我跟你已經無話可說了，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "回去。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "…………咦？",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "還、",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "還請你通融通融！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n絕對不會讓你吃虧的！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "拜託了，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "師傅！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "總覺得我們來的時機點不是很妙啊。",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "哈，",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "看情況不妙就搬出弟子的名義了嗎。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n像你這樣的人既不是我的弟子，也跟我沒關係。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n你會妨礙我做生意。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "不要再來了。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "唔、",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "唔唔……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "…………",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "唉呀，",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "是客人嗎？",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "讓妳見到這麼難堪的一幕真是抱歉。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "是在找什麼東西嗎？",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "呃，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那個……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "看到那樣的事之後不太好開口呢。",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "我會給妳優惠的，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "妳就說說要買什麼吧。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那麼，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "請給我那邊的蔬菜……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "謝謝惠顧。",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "我都各送妳多一點了喔。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "謝、",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "謝謝……",
+        "unit_id": 106012
+    },
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "雖然很感謝老闆多給了點商品，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但是總覺得看到了不愉快的一幕呢。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不知道是發生什麼事了。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "唉～～",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "呃，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "說人人就……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "嗯？",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "你是在對我說話嗎？",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "喂！",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你這種隨便搭話的習慣可不可以改一改啊！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "要是又被捲進麻煩事裡面要怎麼辦啦！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "就像這位小姐說的一樣。",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n雖然很感謝你的關心，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n不過還是不要管我會比較好。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "唉～",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n我是非常想放著不管啦，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但是這傢伙一旦搭了話，就非得問到底才行呢。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你就跟我們說說看如何？",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "雖然不知道我們能不能解決就是。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "不，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "光是你們願意聽我說，我就非常高興了。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "因為我最近，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "老是在吃閉門羹呢。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "居然被拒絕到這種地步，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你到底是做了什麼事啊？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "就在不久之前，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我不知為何獲得的前陛下的賞識，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n因而得到了許多好處。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "咦？",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "陛下？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n我想應該是不會有這樣的事才對……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "與其說是前陛下，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n應該說是當時有權有勢的貴族們",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "會比較正確吧。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "總之，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我因此得意忘形，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "對同夥的商人們",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "擺出了傲慢的態度。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "說了「我可是陛下的御用商人喔」",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "這種話。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "得意忘形的我",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "憑藉著借來的權力，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "對於一路教導我做生意的師傅，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n我硬是搶走了他的販賣通路，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "還做了很多忘恩負義的事。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "之後，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "現在的陛下回歸，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n那些手腳不乾淨的貴族",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "也就全都……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "嗯。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我本來就一股腦兒專注於商業，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "也做不好新的工作。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "本來打算想辦法找到新的客戶，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "結果就是你們看到的那樣。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "唉，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "真是自作自受呢。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "儘管笑我吧。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這種事……",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我是",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "有點笑不太出來啦。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "因為我也，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那個，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "一言難盡……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "……？",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "總之，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "跟你們說完後心情也稍微舒暢多了。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "謝謝。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "那麼，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我就先告辭……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "…………",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "什、",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "什麼啊。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我可是什麼都沒說吧。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不過，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "如果你想這樣做的話，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "說不定也不錯呢。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "給我等一下！",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不要自己心滿意足了就走掉啊！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "咦？",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "怎、",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "怎麼了嗎？",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這種話本來不應該是由我來說的……",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但是你啊，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "有好好反省了對吧？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "是啊，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "這是當然的。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我也不想再做那樣的事了。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n這次要老老實實地，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "為了人們來好好做生意。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "不過前提是，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我還有機會做生意就是了……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那就再一次，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "去找把你趕走的商人……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "還是該說師傅？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "去見他吧。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "不，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "可是……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你剛剛，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "跟他談了生意的事對吧。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "在這之前你有好好道歉了嗎？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "這、",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "這個嘛……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "反正肯定是沒怎麼道歉就在談生意的事情對吧。",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "……正如妳所言，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "沒錯。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "首先先去好好道歉吧。",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n再來",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "就只能盡全力展現誠意了。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "雖然不知道有沒有幫助，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不過我也會跟你一起去的。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "咦？",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "為什麼小姑娘妳要做到這種地步……？",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我也跟你一樣……",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不對，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "因為我做了比你還要更過分的事。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但是我，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "因為一群心胸寬廣的傢伙，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n託他們的福，好不容易才獲得了機會。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你也是，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那個，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "要是能夠得到機會就好了，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我想……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "雖然可能是我多管閒事，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但是我，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "就是被那樣的多管閒事所拯救的。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "小姑娘……",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "謝謝。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "嗯，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "這次我會試著好好道歉的。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那麼，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我、",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我我我們就走吧。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "……？",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "為什麼小姑娘妳這麼緊張啊？",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "吵、",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "吵死了！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n因為這不是我平常會做的事情所以很不習慣啦！",
+        "unit_id": 106012
+    },
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你、",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你好～",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "嗯？",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "妳不是剛剛的客人嗎。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "是漏買了什麼東西……",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "我說，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "為什麼你也在。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "呃，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "那個……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這、",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這個人說他無論如何都想跟你道歉。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n不知道你能不能聽他說呢……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "還把無關的人拖下水，",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "你到底是多厚顏無恥。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n跟以前一樣毫無改變。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我、",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我不是被拜託的！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不如說是我……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "反正肯定是以錢相逼的吧。",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "沒想到你手上居然還有那種錢啊。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "不、",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "不是的！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "這位小姐真的只是出於好意才……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "就算我這樣說，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "你也不會相信吧。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "啊──真是的！",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "為什麼會變成這樣啦！?",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你說得還真簡單。",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不過，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我的確是什麼都沒有傳達到呢。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我知道了，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我做就是。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那個啊，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "真的是我自己多管閒事，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n也沒有收什麼錢！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n所以請你聽聽看他要說什麼！！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "唔……",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "既然妳都說到這個分上了，我就聽聽吧。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n雖然應該也是浪費時間。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "事情我已經從這傢伙口中聽說了，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n也知道你不想再見到他。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n但是，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "請你再給他一次機會。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "好了，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "接下來就看你自己的努力了。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "謝謝妳，小姑娘。",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "那麼，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "啊，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "那個……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "照理來說，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "應該謝罪的時候我也沒有好好道歉，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n就顧著談生意，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "真的非常抱歉。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "如你所知，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我這個人，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "除了做生意就沒有任何長處了。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n所以我認為只有靠經商才能夠回報了。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "就連現在，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我也想不出像這樣子道歉之外，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "還有什麼是我可以做的。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我已經",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "沒有任何東西可以拿得出來了。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "唉……",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "真是個令人傻眼的傢伙。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "真的呢，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "真是令人傻眼到都無言了。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "咦？",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "小、",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "小姑娘妳不是站在他那邊的嗎？",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我是站在他這邊的啦，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "大概。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但是，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這傢伙實在是錯得一塌糊塗到讓人傻眼。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "錯、",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "錯得一塌糊塗？",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你說你什麼都沒有？",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你不是有健康的身體嗎。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n打白工或是體力活什麼的，都去做不就好了。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "說、",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "說得對！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "這的確是我也能辦得到的！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "如何，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "你願意再僱用我一次嗎？",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n不管是搬貨、",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "還是跑腿，我什麼都做！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "別說傻話了，",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "怎麼可能做那種事。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "說得也是呢。",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n如果被其他人發現你跟我這個討厭的傢伙扯上關係……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "搬貨或跑腿這種事情，",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "可不是該讓一個獨當一面的商人做的事。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……咦？",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "你是發自內心想重新開始一事，",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "我姑且是了解了。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "就算假設",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "我原諒你好了，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "其他的商人也不會接受吧。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n這裡可沒有你的容身處。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "怎麼這樣……",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "所以說，",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "你要憑藉著",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "你所有的能耐，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n來解決這個市場的問題。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n這樣子，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "才像是個商人的謝罪方式。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "這是要給我機會的意思嗎！",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "不過，",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "對你來說應該很難吧。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "如果不克服這種程度的難題，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "大家也不會接受吧。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那麼，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "是要做什麼呢？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "最近街道的勢力分布又有了變化。",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "從那之後就有些危險的傢伙在晃來晃去的，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "請你想辦法處理那些人吧。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這是商人該做的事嗎？",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "去拜託【王宮騎士團】的話……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "危險的傢伙",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "有多少就會來多少吧。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "所以說，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "不從根本解決問題的話，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "大家也不會認可的。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "…………",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我說你，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "在那一邊一言不發的，沒有想到什麼解決方法嗎？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "怎麼可能想得到呢。",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "他可是只會用錢來解決事情的傢伙。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "多虧這種凡事用錢解決的習慣，",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "在此前陛下的時代，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n也拿了不少好處。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "但是這次可不會這麼順利，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "要放棄的話就趁現在吧。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我、",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我做！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "不、",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "不不不不做到這種程度的事，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n我也沒有臉面對大家！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "說得好，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "雖然想這樣誇你啦，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但是你的腳不是在狂抖嗎……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "沒、",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "沒問題。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我已經得到機會了。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "謝謝妳，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "小姑娘。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "妳幫了我一個大忙。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "有幫到你就好……",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我是很想這樣告一段落啦，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但是看你這個樣子，也不可能放著不管吧。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "而且，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "如果是因為勢力分布產生的變化，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那我應該也有責任吧……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "小姑娘……？",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "什麼事都沒有！",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "好了，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我們去那些危險傢伙的所在處吧！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "咦！？",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "小姑娘妳要去！？",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "為、",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "為了小姑娘好，妳就不要去了吧！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "沒問題的。",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不如說這才是我擅長的部分呢。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我馬上就輕輕鬆鬆把他們解決掉，你就等著吧。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "那、",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "那個，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我想這樣大概沒有辦法解決問題……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不要在那邊囉嗦了！",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "好了，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "要走囉！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "是、",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "是的！！",
+        "unit_id": 1411
+    },
+    {
+        "type": "background",
+        "background": "500890"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "走吧！",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "要迅速解決喔！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "所、",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "所以就說這樣一定沒辦法解決問題的啊。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "都來到這裡了，你還在那邊碎碎念！？",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_110"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "也差不多該下定決心了吧！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "不、",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_111"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "不是那樣子的。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "就是，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "該怎麼說呢。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n從師傅的說法聽起來，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我想應該是還沒有發生實際上的損害。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n也就是說，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "如果我們先出手的話……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "啊～",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_112"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "原來是這麼麻煩的課題啊。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我想就是因為如此才有去做的價值。",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_113"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不過，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_114"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你有幹勁是很好啦。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "總之我們就去看看問題源頭的廬山真面目吧。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不然事情也不會有進展。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "…………",
+        "unit_id": 911,
+        "voice": "vo_adv_1806002_115"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我好像看到了一臉壞樣的傢伙啊。",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_116"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "是、",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_117"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "是啊。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "雖然很恐怖，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "總之先試著收集情報。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n要做生意，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "情報是最重要的，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "嗚哇！？",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "喂你！",
+        "unit_id": 811,
+        "voice": "vo_adv_1806002_118"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "呆站在這裡幹什麼啊！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "擋路擋路！！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "噫！？",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_119"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "對、",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "對不起！！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "等一下！",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_120"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "是你自己撞過來的吧！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "吵死了！",
+        "unit_id": 811,
+        "voice": "vo_adv_1806002_121"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "我才沒有空管妳啊！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "很吵啊，",
+        "unit_id": 911,
+        "voice": "vo_adv_1806002_122"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "是在做什麼。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "可、",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_123"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "可怕的人增加了……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你不要在那邊發抖啊。",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_124"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n我們又沒做什麼壞事，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "抬頭挺胸就好。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "老大！",
+        "unit_id": 811,
+        "voice": "vo_adv_1806002_125"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "我今天也拿來了喔！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "是偷來的嗎……？",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_126"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你給我等一下！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n你到底偷了什麼東西！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "讓我看看！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "不要搶啊！",
+        "unit_id": 811,
+        "voice": "vo_adv_1806002_127"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "這是我們的東西！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "這是……",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_128"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "剩、",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_129"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "剩飯……？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "你這傢伙！",
+        "unit_id": 911,
+        "voice": "vo_adv_1806002_130"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "又去撿剩飯回來了嗎！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "\n我不是說了，今天一定要去收保護費的嗎！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "但是老大！",
+        "unit_id": 811,
+        "voice": "vo_adv_1806002_131"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "\n我今天找到了形狀完好的剩飯喔！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "你高興地說什麼",
+        "unit_id": 911,
+        "voice": "vo_adv_1806002_132"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "「我找到了」啊蠢蛋──！！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "哦，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "但是看起來好像真的很好吃啊！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "幹得好！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "嘿嘿，",
+        "unit_id": 811,
+        "voice": "vo_adv_1806002_133"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "謝謝老大！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那個，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_134"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "難道說，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "有危險的傢伙在晃來晃去",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "是在……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "你們在嘰嘰咕咕說些什麼！",
+        "unit_id": 811,
+        "voice": "vo_adv_1806002_135"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "\n飯可是不會讓給你們的啊！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "才不需要！",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_136"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "比起這個，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我剛剛好像聽到了保護費這個字眼……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "什、",
+        "unit_id": 911,
+        "voice": "vo_adv_1806002_137"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "什麼啊。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "我們可還沒有收過喔！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "說起來，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "這件事跟你們有什麼關係啊！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "市場的人說，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_138"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "有危險的傢伙在晃來晃去，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n要我們想想辦法呢。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "老、",
+        "unit_id": 811,
+        "voice": "vo_adv_1806002_139"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "老大……",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "不要慌慌張張的。",
+        "unit_id": 911,
+        "voice": "vo_adv_1806002_140"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "我們又還沒做什麼壞事。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你剛是說「還沒」呢。",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_141"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "吵死了！",
+        "unit_id": 911,
+        "voice": "vo_adv_1806002_142"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "我可不想一輩子撿剩飯啊！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "既然這樣就去找份正經的工作啊！",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_143"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "我們找過了啊！",
+        "unit_id": 811,
+        "voice": "vo_adv_1806002_144"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "但是城鎮被毀得亂七八糟後，",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "\n大家都自顧不暇了。",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "根本沒有地方要僱用我們。",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "所以說，",
+        "unit_id": 911,
+        "voice": "vo_adv_1806002_145"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "我們就只能做壞事了吧。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不過，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_146"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你們還沒有做對吧？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "是、",
+        "unit_id": 911,
+        "voice": "vo_adv_1806002_147"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "是啊。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "看這些剩飯就知道了，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "\n不管是哪裡都很慘啊……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這樣啊……",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_148"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我說，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你啊，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "可以聽一下我的想法嗎？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我嗎？",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_149"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "好、",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "好的。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……這樣子的話",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_150"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "怎麼樣？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "能行嗎？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "這個不好辦呢……",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_151"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "但是我做。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n不做到這樣，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "師傅也不會接受的。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "太好了，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_152"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n那我就可以安心地…………",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "把他們解決掉了呢。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞們",
+        "words": "什麼！？",
+        "unit_id": 1,
+        "voice": "vo_adv_1806002_153"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "什、",
+        "unit_id": 911,
+        "voice": "vo_adv_1806002_154"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "什麼啊！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "\n還想說你們在講什麼悄悄話，結果突然就說出這麼可怕的發言！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "就是就是！",
+        "unit_id": 811,
+        "voice": "vo_adv_1806002_155"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "\n我們都還沒有做任何壞事吧！！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "反正你們遲早會做的吧！",
+        "unit_id": 106011,
+        "voice": "vo_adv_1806002_156"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "所以我要在這裡收拾你們！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "到底是在所以什麼啦！！",
+        "unit_id": 811,
+        "voice": "vo_adv_1806002_157"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "怕什麼怕啊！",
+        "unit_id": 911,
+        "voice": "vo_adv_1806002_158"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "這樣一個小姑娘是能做什麼！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "在這裡退縮的話，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "收保護費就真的是白日夢了！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "要上囉！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "為了我們的夢想！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "還真是渺小的夢想呢。",
+        "unit_id": 106011,
+        "voice": "vo_adv_1806002_159"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不過算了，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n你們就用全力打過來吧！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這可是關乎到你們的生計喔！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "老大，",
+        "unit_id": 811,
+        "voice": "vo_adv_1806002_160"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "對不起……",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "我就到這裡、",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "了……",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "別、",
+        "unit_id": 911,
+        "voice": "vo_adv_1806002_161"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "別在意。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "接下來就交給我、",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "想辦法、",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "吧……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "呼……",
+        "unit_id": 106011,
+        "voice": "vo_adv_1806002_162"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "呼……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "雖然說我有手下留情了，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但是還真麻煩呢。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "手、",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_163"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "手下留情？",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "妳說剛剛那樣？",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我說過了吧，",
+        "unit_id": 106011,
+        "voice": "vo_adv_1806002_164"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這才是我擅長的部分。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那麼，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這兩個傢伙怎麼樣？",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "派得上用場嗎？",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "是的，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_165"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "非常夠了。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "如果可以的話，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "倒是很希望妳可以來幫忙……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我就幫到這裡了。",
+        "unit_id": 106011,
+        "voice": "vo_adv_1806002_166"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "剩下的，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "就要看你作為商人的手腕了。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "妳說得對。",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_167"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n妳都幫了這麼多的忙了，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我不加油可不行。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我一定會做給妳看的。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "就交給你囉。",
+        "unit_id": 106011,
+        "voice": "vo_adv_1806002_168"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那麼，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我們走吧。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "好了，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你們要躺到什麼時候啊，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "快點起來！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "要介紹工作給你們了。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞們",
+        "words": "咦？",
+        "unit_id": 1,
+        "voice": "vo_adv_1806002_169"
+    },
+    {
+        "type": "background",
+        "background": "500031"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "喔喔，",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_170"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "回來了啊。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n如何，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "問題解決得怎……",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "我說，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "怎麼又增加了奇怪的人。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞們",
+        "words": "…………",
+        "unit_id": 1,
+        "voice": "vo_adv_1806002_171"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "細節的部分就算了啦。",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_172"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "總之",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這樣可以解決問題嘛。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "我說",
+        "unit_id": 811,
+        "voice": "vo_adv_1806002_173"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "小姑娘，",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "妳說要介紹工作給我們，",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "\n難道是這個老爺爺要僱用我們嗎？",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "你、",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_174"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "你在胡說些什麼……",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "先讓我們把話說完。",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_175"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不過，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "要負責說的人不是我就是了。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "這兩個人",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_176"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "就是最近在找剩飯的人，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "你說看起來很危險的傢伙",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "應該不只是他們而已吧？",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n我想還有更多的人才對。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "唔、",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_177"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "唔嗯。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "所以說，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_178"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "作為之後的防衛對策，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我想僱用他們，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n讓他們擔任市場的警衛。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "他們的實力跟骨氣我可以掛保證。",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_179"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n雖然他們外表這樣，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但是他們到目前都還沒有真的去做壞事，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n這點良心還是有的。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "這些是沒關係，",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_180"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "但是僱用費要由誰來出？",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "誠如你所知，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_181"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我手上",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "並沒有可以僱用他們的錢。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "所以，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我希望向師傅貸款資金。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "哼，",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_182"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "又在自顧自地說什麼要求。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我知道。",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_183"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n但是，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "除此之外",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "就沒有其他方法可以從根本來解決問題了。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "而且，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_184"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "光是擔任這個市場的護衛稱不上是商業投資，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n這點我也知道。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "所以我想招募他們、",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "像他們這樣的人，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n來成立商隊的護衛公會。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "唉……",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_185"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "雖然我說這裡沒有你的容身處，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n沒想到你會打算做一個新的容身處。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "受不了，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "真是個精明的徒弟啊。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "師、",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_186"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "師傅！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "你、",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "你剛剛說徒弟……！！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "徒弟給人添了麻煩，師傅可得監督你善後才行呢。",
+        "unit_id": 511,
+        "voice": "vo_adv_1806002_187"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "就去試試看吧。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "是你的話，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "我想，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人１",
+        "words": "應該能辦得到。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "非常感謝你！！",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_188"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "太好了，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_189"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你們有工作可以做了呢。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "真的嗎！？",
+        "unit_id": 811,
+        "voice": "vo_adv_1806002_190"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "這樣我們就不用再去撈剩飯了吧！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "是啊，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_191"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但是",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "如果你們想做什麼壞事的話，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n我可是會馬上來收拾你們的，給我記好了。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "哈，",
+        "unit_id": 911,
+        "voice": "vo_adv_1806002_192"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "如果有工作可做我們才不會做那種事。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "雖然有點搞不清楚狀況，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "但是謝謝妳啦，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "小姑娘。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "要謝的話，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_193"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "就去謝那兩個人吧。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "是這兩個人",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "給了你們新的棲身之處。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n那我們就先走了。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "請等一下！",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_194"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "得要給些謝禮才行……",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你連錢都沒有還能給什麼謝禮。",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_195"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那種東西就不必了，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你這次可要好好做啊。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "搞砸了會被我收拾掉的人，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "也包括你在內喔。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "……！",
+        "unit_id": 1411,
+        "voice": "vo_adv_1806002_196"
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "真的是",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "非常感謝！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我、",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "商人２",
+        "words": "我一定會洗心革面的！！",
+        "unit_id": 1411
+    },
+    {
+        "type": "background",
+        "background": "500011"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "唉～",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_197"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "果然人就不該做自己不習慣的事呢。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "真是太累了。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "還真的是呢。",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_198"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不過，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "偶爾做些像你會做的事也不壞呢。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我說偶爾喔，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "偶爾。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "而且……",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_199"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "雖然我剛剛說得一副義正嚴詞的樣子，",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_200"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但是我也得好好地",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "回報你們才行呢……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "啊──",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_201"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "啊──！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你不用說！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n你會說些什麼我都知道。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n但是，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這是我必須去思考的事情。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "而你……",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_202"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "有好好地看著我就好了。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "沒、",
+        "unit_id": 106012,
+        "voice": "vo_adv_1806002_203"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "沒事啦！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "好了，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我們回去吧！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "雙頰微紅的凱留，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n朝向自己所該回去的地方，快步向前邁出了。"
+    }
+]

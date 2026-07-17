@@ -1,0 +1,632 @@
+[
+    {
+        "type": "background",
+        "background": "500401"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "真步和香織，還有{player}\n在伊莉亞帶領下前往密林。"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "呼……喝……走得越深，",
+        "unit_id": 101011,
+        "voice": "vo_adv_5003003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n越覺得這個地方很潮濕呢……",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "……因為陽光大部分都被遮住了，",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "\n這種衣服貼在身上的感覺真難受啊……",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "我倒不覺得熱。讓我想起故鄉了！",
+        "unit_id": 101711,
+        "voice": "vo_adv_5003003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "香織習慣了嘛。",
+        "unit_id": 101011,
+        "voice": "vo_adv_5003003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "人家也很討厭這種地面鬆軟腳下不踏實的感覺呢～……",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "同，同感……！這種水氣過多的空氣也是，",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "\n全都很不舒服的感覺啊……！",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "而且樹木長得比以前更茂密了。",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "一定是因為溫暖，所以很快就成長了吧",
+        "unit_id": 101711,
+        "voice": "vo_adv_5003003_006"
+    },
+    {
+        "type": "still",
+        "still": "500300301"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "呀呀呀呀呀呀呀！？",
+        "unit_id": 101011,
+        "voice": "vo_adv_5003003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "怎、怎麼了！？怎麼回事！？",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "蟲、蟲蟲……蟲跑到衣服裡了！",
+        "unit_id": 101011,
+        "voice": "vo_adv_5003003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "蟲？哇哇哇……什麼時候有這麼多蟲的……！",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "\n",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "喂喂",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "別來煩我！　",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "可惡……可惡……呃揮走了還是一直靠過來！",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "呀啊！王、王子先生，不能碰那種地方啦！",
+        "unit_id": 101011,
+        "voice": "vo_adv_5003003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n那種事要先進入下一階段才行啦！",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "啊痛痛痛！是說趕跑蟲子沒問題，",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "\n但你手也打到妾身了啦蠢傢伙！",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "大家太誇張了吧。不亂動的話根本不會靠過來的。",
+        "unit_id": 101711,
+        "voice": "vo_adv_5003003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "啊，那邊長了好多『像苦瓜的東西』啊！",
+        "unit_id": 101711,
+        "voice": "vo_adv_5003003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "我去採採就來！",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "咿咿咿……救命啊！人家最怕蟲了啦～！",
+        "unit_id": 101011,
+        "voice": "vo_adv_5003003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "可惡……竟然想要吸妾身的血……！",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "\n無禮至極不知死活的蟲子！",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "妳們兩個人隨便亂動只會被蟲子攻擊啦，",
+        "unit_id": 101711,
+        "voice": "vo_adv_5003003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "輕鬆點就好了──",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "別說傻話了！",
+        "unit_id": 101011,
+        "voice": "vo_adv_5003003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n伊、伊莉亞，拜託幫人家把背上的蟲子抓下來啦──！",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "交、",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "交給我就好了！",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "看招！",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "哇哈哈哈哈！怎麼樣！",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "\n只要妾身一出手……",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "啊，伊莉亞，妳的頭上有蟲子呀！",
+        "unit_id": 101011,
+        "voice": "vo_adv_5003003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "嗯……",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "唔哇！？",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "快、快走開啊！",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "可惡……要是妾身恢復全力的話，什麼蟲子全都一掃而空啦！",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "大家，",
+        "unit_id": 101711,
+        "voice": "vo_adv_5003003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n再多等我一下下，",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "我要採多一點帶回去。",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "真、真悠閒啊，香織……",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_026"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "background",
+        "background": "500401"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "嘿咻、",
+        "unit_id": 101711,
+        "voice": "vo_adv_5003003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "嘿咻……",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "呼……",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "有這些應該很夠了吧！",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "久等啦──。",
+        "unit_id": 101711,
+        "voice": "vo_adv_5003003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "快走吧！趕快離開這種鬼地方吧！",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "啊啊，等一下！",
+        "unit_id": 101011,
+        "voice": "vo_adv_5003003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "別丟下人家走掉啦─！",
+        "unit_id": 101011
+    },
+    {
+        "type": "background",
+        "background": "500130"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "哈……哈……可惡，真慘啊……",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "再，再也不會去那種地方了！",
+        "unit_id": 101011,
+        "voice": "vo_adv_5003003_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "不管發生什麼事，一輩子都不去！",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "大家辛苦囉。",
+        "unit_id": 101711,
+        "voice": "vo_adv_5003003_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "那……接下來是什麼東西？",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "下一個是『烏龍麵擀麵棍』……",
+        "unit_id": 101011,
+        "voice": "vo_adv_5003003_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "嗯……那個不是街上就有在賣了嗎？",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "蘭德索爾並沒有那麼盛行做烏龍麵啦……",
+        "unit_id": 101011,
+        "voice": "vo_adv_5003003_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "嗯……確實，妾身也是，",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "\n從出生到現在，沒吃過烏龍麵呢。",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "\n",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "這麼說來，似乎很難找耶。",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "啊……果然是這樣……真懊惱呢。",
+        "unit_id": 101011,
+        "voice": "vo_adv_5003003_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "伊莉亞，這樣的話，妳想得到有什麼能夠代替的東西嗎？",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "\n又長、又硬……看起來很厲害的東西。",
+        "unit_id": 101011
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "又長又硬……",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "呵呵……",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "我倒也不是沒有頭緒哦！",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "哦哦？伊莉亞，那在哪裡？",
+        "unit_id": 101711,
+        "voice": "vo_adv_5003003_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "妾身拿陽光沒轍，所以曾在某個洞窟休息過，",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "\n那個洞窟裡有無數魔物的屍骸！",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "真步",
+        "words": "魔物的屍骸？怎麼好像很恐怖呢。",
+        "unit_id": 101011,
+        "voice": "vo_adv_5003003_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "嗯，那個洞窟似乎已經變成飽經戰鬥的魔物們，",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "\n迎接自己最後結局的地方了，",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "\n其中當然也有長著角的魔物囉。",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "那支角啊，不僅尖銳又很堅硬！",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "\n",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "妾身覺得它應該能夠代替擀麵棍才對。",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "的確是好主意！",
+        "unit_id": 101711,
+        "voice": "vo_adv_5003003_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "香織",
+        "words": "\n而且，既然是屍骸，好像也不會太辛苦嘛！",
+        "unit_id": 101711
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "這麼說的話，就出發吧！",
+        "unit_id": 104412,
+        "voice": "vo_adv_5003003_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊莉亞",
+        "words": "\n來，跟著妾身！洞窟就在離這裡很近的地方！",
+        "unit_id": 104412
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "放棄『烏龍麵擀麵棍』，改為尋找『魔物之角』的一行人，\n踏入了原為魔物墓場的洞窟。"
+    }
+]

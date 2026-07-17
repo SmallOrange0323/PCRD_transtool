@@ -1,0 +1,474 @@
+[
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}在蘭德索爾散步時，\n遇見了被骷髏頭魔物襲擊的少女。"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "……住手，你適可而止。",
+        "unit_id": 103112,
+        "voice": "vo_adv_1031001_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏頭",
+        "words": "我忍不住了！嘎――――！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031001_001"
+    },
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏頭",
+        "words": "好痛―――！這傢伙竟然突然砍過來，",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031001_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏頭",
+        "words": "\n到底想怎樣啊！？",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "請問……這個骷髏頭對你做過什麼嗎？",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031001_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "……因為我被這個魔物攻擊，所以你來幫我？",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031001_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "被你這麼一說，看起來好像是那麼一回事呢。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "讓你擔心真是抱歉。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031001_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "其實這個骷髏頭不是魔物。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "他是我的父親。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031001_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "雖然他因為一些因素變成了骷髏頭的樣子，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031001_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "但靈魂毫無疑問地是我的父親。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "那個，爸爸你也向人家道歉一下。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031001_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "妳在說什麼，忍！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031001_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n是這個小伙子搞不清楚狀況，突然向我砍過來的耶！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n要道歉的應該是他吧！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……爸爸。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031001_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "我、我很抱歉……",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031001_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "所以說呢，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031001_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這個骷髏頭不會去危害其他人的。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "請你不用擔心。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "哼，算了。",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031001_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n先別管那個，剛剛的女孩去哪裡了……",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n啊，在那裡！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "那邊那位小姐──！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031001_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n妳好可愛唷──！！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n和我一起去吃個飯吧──！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "天啊──！這骷髏頭是怎麼回事啊！",
+        "unit_id": 411,
+        "voice": "vo_adv_1031001_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n好噁心！",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n走開啦！！！",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "雖然不會危害其他人……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031001_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "但是卻會騷擾其他人呢。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……爸爸。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031001_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "幹嘛，忍？",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031001_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n現在氣氛正好，不要來吵我……",
+        "unit_id": 2411
+    },
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "好痛！快、快住手，忍！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031001_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n住……住手啊！快點停下來！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n好痛啊！痛死了！我會死掉的！！！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "喂，小伙子！你不要光是在那裡看，幫幫我啊！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031001_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "小、小伙子！你真是沒血沒淚啊！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031001_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n雖然我這骷髏頭也是沒血沒淚……",
+        "unit_id": 2411
+    },
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "呃啊！喂！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031001_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n忍、忍，快住手！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n小、小伙子！你要幹嘛啊，哇咧！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "小伙子……竟然這麼囂張……",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031001_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n我饒不了你！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "我咬",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031001_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "！！！！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "啊……你被咬了呢……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031001_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "還好嗎？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "哇哈哈！知道我的厲害了吧！！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031001_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "真抱歉。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031001_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n前面有間診所，我們一起去吧。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那個，你叫什麼名字？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "{player}啊。\n我叫忍。\n走路有困難嗎？扶著我的肩膀吧。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031001_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "忍、忍！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031001_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n不准妳和那種小伙子這麼親密地走在一起！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n我不會放任這種事不管的！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "爸爸……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031001_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你適可而止。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "咿！忍好恐怖！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031001_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "這就是{player}和父親是骷髏頭的奇妙少女・忍的邂逅。"
+    }
+]

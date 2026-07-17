@@ -1,0 +1,2622 @@
+[
+    {
+        "type": "background",
+        "background": "500020"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "──{player}等人，\n前往索爾之塔進行人質交換的不久之前。"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "嗯嗯～♪",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n你們好像很傷腦筋喔～？",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你們是……",
+        "unit_id": 105811,
+        "voice": "vo_adv_2114005_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "呿。",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "嗯……",
+        "unit_id": 118111,
+        "voice": "vo_adv_2114005_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "你、",
+        "unit_id": 118111,
+        "voice": "vo_adv_2114005_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "你好……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "那個、",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "今天",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "的天氣真好呢……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "喂！",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n現在不是悠悠哉哉聊天氣的時候吧妳這蠢蛋！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "真是的～",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n現在不是饒舌吐槽的時候吧～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "小卡里莎～？",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "唔啊啊！",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n別黏著我──！！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "是卡里莎跟蘭法小姐以及……",
+        "unit_id": 100111,
+        "voice": "vo_adv_2114005_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "誰？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n旁邊那位",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "是……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "初次見面吧？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是【憤怒‧軍團】的",
+        "unit_id": 100311,
+        "voice": "vo_adv_2114005_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "相關人士嗎……？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "呵呵～",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n並不是～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "初次見面喔～♪",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "哎唷好煩喔，",
+        "unit_id": 106011,
+        "voice": "vo_adv_2114005_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "明明就沒時間了。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n沒辦法，我簡單說明一下……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "呃、",
+        "unit_id": 100111,
+        "voice": "vo_adv_2114005_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "那麼……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n所以說，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這位姐姐原本，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n是卡里莎養的史萊姆……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……而現在換卡里莎變成寵物了。",
+        "unit_id": 100311,
+        "voice": "vo_adv_2114005_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "沒錯沒錯♪",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "大概就是這種感覺吧～？",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "吼唷！",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n我就說了才不是那樣！！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "可惡！",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n回去了！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "我要回去了！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n我竟然會有一點點想要跟這些傢伙",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "聯手的想法，真是大錯特錯！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "你、",
+        "unit_id": 118111,
+        "voice": "vo_adv_2114005_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "你冷靜點，",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "卡里莎……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……所以",
+        "unit_id": 105911,
+        "voice": "vo_adv_2114005_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "總而言之……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "蘭法小姐您們三位，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n要幫助我們對抗彌勒和贊恩先生",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "嗎……？",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "唔，",
+        "unit_id": 118111,
+        "voice": "vo_adv_2114005_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "嗯……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "我沒聽說",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "他們抓了人質就是～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "不過，",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "總比各自前往要好吧～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "是啊☆",
+        "unit_id": 105811,
+        "voice": "vo_adv_2114005_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n我們正巧",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "也因為人手不足而傷腦筋喔～！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "有太多闇影在到處作亂……！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "那個，",
+        "unit_id": 118111,
+        "voice": "vo_adv_2114005_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "關於那些闇影天使……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "呢。",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "先前，",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "我曾經",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "用歌聲讓她們消失……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "但現在，",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "好像辦不到了……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "唉，",
+        "unit_id": 106011,
+        "voice": "vo_adv_2114005_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "畢竟敵方也不是笨蛋。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n應該已經找到辦法應對妳的歌聲了吧。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "……美空……",
+        "unit_id": 118111,
+        "voice": "vo_adv_2114005_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "不過不過！",
+        "unit_id": 100111,
+        "voice": "vo_adv_2114005_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n有你們的幫助",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "感覺好極了！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這麼一來城鎮跟菲歐",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "或許都有救了──",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……等一下，",
+        "unit_id": 100311,
+        "voice": "vo_adv_2114005_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "日和。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "慎重起見，我先問一句，",
+        "unit_id": 100311,
+        "voice": "vo_adv_2114005_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你們【憤怒‧軍團】……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n有什麼證據能證明這不是想要加害我們的陷阱？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "啊？",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "哪可能有啊。",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n你們只要乖乖聽我的話就對了。",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "什麼──？",
+        "unit_id": 106011,
+        "voice": "vo_adv_2114005_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "明明是你們先提出要合作的，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n好歹也該畢恭畢敬地說一句：",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "「請與我們合作，凱留大人～！」",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "才對吧！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "小、",
+        "unit_id": 105811,
+        "voice": "vo_adv_2114005_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "小凱留，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那有點太超過了……",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "哎呀～小卡里莎～",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n哪有可能用命令的就讓對方突然相信你啦～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n畢竟你之前跟他們打得很火熱嘛～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "啊～可惡，",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "麻煩死了！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n那不然妳說該怎麼辦嘛！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n難道還有什麼",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "可以防止背叛的方便魔法嗎！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "啊！？",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "不過，",
+        "unit_id": 118111,
+        "voice": "vo_adv_2114005_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "那個……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "還、",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "還是應該……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "好好",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "溝通才對。",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "至少……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "把卡里莎",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "想做的事，",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "說出來……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "嘖……",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "妳這臭陰沉女，",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "竟然說出這種不像溝通障礙人會說的話……",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我記得蘭法小姐的目的",
+        "unit_id": 105811,
+        "voice": "vo_adv_2114005_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n是想要跟美空重修舊好。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我也想聽聽",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "卡里莎的目的是什麼。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "是啊，",
+        "unit_id": 106011,
+        "voice": "vo_adv_2114005_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "還請務必說給我們聽聽。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n先前一向囂張跋扈的你，如今卻想要尋求合作，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n這究竟是吹什麼風啊～？",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "那、",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "那是因為……",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "我又不是因為",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "喜歡才來找你們的……",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "♪",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和、怜",
+        "words": "……？",
+        "unit_id": 1,
+        "voice": "vo_adv_2114005_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……哼。",
+        "unit_id": 106011,
+        "voice": "vo_adv_2114005_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你這個臭矮子",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "還能有什麼目的啊？",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n不外乎就是想要宰了彌勒那傢伙",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "之類的吧。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "別、",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "別擺出一副看透我的表情，妳這垃圾貓！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n彌勒那混蛋當然得宰啊！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "還有就是……！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "就是……",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "我還要",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "痛揍",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "贊恩那傢伙",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "一頓！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "對，",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "沒錯！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "不那麼做難消我心頭之恨！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "那個臭混蛋……！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "都給我聽好了！",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n那傢伙由我來收拾！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n你們誰都不許出手知道了嗎！？",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "卡、",
+        "unit_id": 118111,
+        "voice": "vo_adv_2114005_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "卡里莎……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "……總之",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "就是這麼一回事～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n希望小佩可你們",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "也能理解小卡里莎的這份執著。",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "可是……",
+        "unit_id": 100311,
+        "voice": "vo_adv_2114005_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "欸～？",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "可以吧～？",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "要是小卡里莎想要調皮搗蛋～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "我會幫你們",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "管教他的～♪",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……是啊。",
+        "unit_id": 105811,
+        "voice": "vo_adv_2114005_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "雖然有點像是事後論，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n但如果他們有敵意，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "剛才大可以偷襲我們。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我也覺得",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "目前可以相信他們。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嗯……",
+        "unit_id": 100111,
+        "voice": "vo_adv_2114005_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n妳、",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "妳覺得呢？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "怜……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……既然{player}他們覺得可以，",
+        "unit_id": 100311,
+        "voice": "vo_adv_2114005_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那我也沒有意見。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n但願他們是真心",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "想要助我們一臂之力。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "呿！",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "對啦對啦，",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "我們是真心",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "的啦。",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "真是個小屁孩。",
+        "unit_id": 106011,
+        "voice": "vo_adv_2114005_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我都懶得懷疑他了……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "太好了……",
+        "unit_id": 118111,
+        "voice": "vo_adv_2114005_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n看來",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "溝通",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "成功了……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "我本來還在想，要是小卡里莎繼續耍任性，",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n我就要把他再變成公主型態的說～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "……感覺好像有點可惜呢。",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和、怜",
+        "words": "公主型態！？",
+        "unit_id": 1,
+        "voice": "vo_adv_2114005_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "妳白癡啊──！？",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n這可是在大街上啊！？",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "呵呵～",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "那就留待之後再來玩吧──",
+        "unit_id": 123311
+    },
+    {
+        "type": "background",
+        "background": "500520"
+    },
+    {
+        "type": "dialogue",
+        "name": "闇影們",
+        "words": "…………",
+        "unit_id": 1,
+        "voice": "vo_adv_2114005_059"
+    },
+    {
+        "type": "background",
+        "background": "500020"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "城裡又有",
+        "unit_id": 105911,
+        "voice": "vo_adv_2114005_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "闇影闖入了……！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "不能放任她們作亂！",
+        "unit_id": 105811,
+        "voice": "vo_adv_2114005_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n走吧，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "小凱留！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……妳說得對。",
+        "unit_id": 106011,
+        "voice": "vo_adv_2114005_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "雖然很想親手宰了彌勒那傢伙……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n這件事，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "就交給你們了。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不好意思，",
+        "unit_id": 100311,
+        "voice": "vo_adv_2114005_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那城鎮的護衛就先麻煩妳們了……！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我們一定會救出菲歐，",
+        "unit_id": 100111,
+        "voice": "vo_adv_2114005_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n然後趕回來助陣的！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們也會",
+        "unit_id": 105811,
+        "voice": "vo_adv_2114005_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "去跟純小姐她們會合，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "一同拯救城裡的百姓！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n妳們就儘管",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "把塔一舉征服下來吧！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "──時序回到現在。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n索爾之塔裡，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}等人與【憤怒‧軍團】聯手，\n"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "向彌勒他們發起挑戰。"
+    },
+    {
+        "type": "background",
+        "background": "500270"
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "化敵為友",
+        "unit_id": 192611,
+        "voice": "vo_adv_2114005_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "是吧。",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "那就讓我見識一下這種",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "奇妙的同盟關係有幾分能耐吧。",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "那麼，",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n按照作戰計畫，",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "這傢伙由我來設法牽制～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n你們負責去救",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "那個小愛梅斯吧～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "好！",
+        "unit_id": 100311,
+        "voice": "vo_adv_2114005_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n感激不盡……！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "首先要讓那隻魔物停止活動！",
+        "unit_id": 100111,
+        "voice": "vo_adv_2114005_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n騎士先生、",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "可可蘿！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "小、",
+        "unit_id": 118111,
+        "voice": "vo_adv_2114005_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "小心喔……！",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "那個結晶……",
+        "unit_id": 118111,
+        "voice": "vo_adv_2114005_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n怎麼給我一種",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "討厭的感覺。",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "是詛咒的",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "魔力集合體……？　",
+        "unit_id": 118111
+    },
+    {
+        "type": "background",
+        "background": "500270"
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "──哎呀。",
+        "unit_id": 192611,
+        "voice": "vo_adv_2114005_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "是伸縮自如的",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "史萊姆拳嗎。",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n閃避起來也挺辛苦的呢。",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "嗯～",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n其實我也",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "很不想碰到你呢～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "──史萊姆小姐。",
+        "unit_id": 192611,
+        "voice": "vo_adv_2114005_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n我實在很想知道",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "妳究竟是何來歷。",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "想必不單純只是個",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "「從那邊過來的玩家」吧？",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "啊～？",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "真討厭～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "……",
+        "unit_id": 192611,
+        "voice": "vo_adv_2114005_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "你這傢伙～",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "實在相當令人火大呢～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "雖然小贊恩那種熟齡肌肉男",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "完全不合我的口味～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n不過呢～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n好歹也是同公會一員～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "雖然我沒有像小卡里莎那麼氣～",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n但看到他被那樣惡搞，還是會不爽的吧～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "不肯說出妳的來歷是嗎。",
+        "unit_id": 192611,
+        "voice": "vo_adv_2114005_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "那真是太遺憾了──",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "話說回來，",
+        "unit_id": 192611,
+        "voice": "vo_adv_2114005_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "贊恩先生那邊不要緊嗎？",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n讓那位少年單獨對付他",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "顯然太吃力了吧。",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "…………",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "贊恩！",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "唔唔唔……",
+        "unit_id": 191713,
+        "voice": "vo_adv_2114005_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "你這傢伙！",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n你這傢伙──！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "你總是、",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "總是……！",
+        "unit_id": 191611
+    },
+    {
+        "type": "background",
+        "background": "500250"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "……拿寵物來出氣，",
+        "unit_id": 191711,
+        "voice": "vo_adv_2114005_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "並非好事呢。",
+        "unit_id": 191711
+    },
+    {
+        "type": "background",
+        "background": "501040"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "感謝你的提議。",
+        "unit_id": 191711,
+        "voice": "vo_adv_2114005_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "\n但還是讓我",
+        "unit_id": 191711
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "獨自留下來吧。",
+        "unit_id": 191711
+    },
+    {
+        "type": "background",
+        "background": "500270"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "啊啊……",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "可惡……",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "可惡……！！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "你這個裝酷混蛋！",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n老愛對別人說教！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n老是擺出一副高高在上的姿態！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "偏偏到最後，",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "你自己卻成了敵人的傀儡！？",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "開玩笑也該有個限度吧，",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "可惡！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n你這個蠢蛋……！！",
+        "unit_id": 191611
+    },
+    {
+        "type": "background",
+        "background": "500270"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "…………",
+        "unit_id": 191611,
+        "voice": "vo_adv_2114005_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "卡里莎……！",
+        "unit_id": 118111,
+        "voice": "vo_adv_2114005_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n振作點……！",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "……好乖好乖。",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n你很努力了呢～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "你就如你之前說的，",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "痛揍小贊恩一頓了呢～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n雖然個頭嬌小，",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "但真是個男子漢喔～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "涅婭……？",
+        "unit_id": 118111,
+        "voice": "vo_adv_2114005_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "那麼姐姐我",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "也得做自己該做的事了。",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "畢竟",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "我們約好了嘛～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "哇！？",
+        "unit_id": 100111,
+        "voice": "vo_adv_2114005_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n涅婭小姐的史萊姆",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "四分五裂了……！？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "並非四分五裂。",
+        "unit_id": 100311,
+        "voice": "vo_adv_2114005_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n這簡直",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "就像是霧化了……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "即便你躲得過拳頭～",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n化成水霧一般應該就沒轍了吧～？",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n彌勒。",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "接觸到霧似乎沒有危害……",
+        "unit_id": 192611,
+        "voice": "vo_adv_2114005_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "然而。",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n原來如此。",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "打算用封印技",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "來封住我的封印技是嗎。",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "封印技……",
+        "unit_id": 105911,
+        "voice": "vo_adv_2114005_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "這些霧氣嗎？",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "總之呢～",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n就是當霧化被解除的瞬間，",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "我的凝膠會把他固定住。",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "類似同歸於盡的概念吧～？",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "這招確實",
+        "unit_id": 192611,
+        "voice": "vo_adv_2114005_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "有點棘手啊。",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "不過這點程度的妨礙，",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "只要用所向披靡的暴力將其擊潰就行了吧。",
+        "unit_id": 192611
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "嘎喔喔喔喔！！！",
+        "unit_id": 191713,
+        "voice": "vo_adv_2114005_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "嗯～",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n你說小贊恩啊～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "哎呀～",
+        "unit_id": 123311,
+        "voice": "vo_adv_2114005_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "我也覺得自己好像有點太多管閒事了。",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n況且我還得照顧小卡里莎。",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "\n",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "所以應該讓「那孩子」",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅婭",
+        "words": "來對付小贊恩才是～",
+        "unit_id": 123311
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "「那孩子」……？",
+        "unit_id": 192611,
+        "voice": "vo_adv_2114005_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "……？",
+        "unit_id": 118111,
+        "voice": "vo_adv_2114005_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n有腳步聲",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "從下方接近……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n有人",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "正在登上塔……？",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "咦？",
+        "unit_id": 100111,
+        "voice": "vo_adv_2114005_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n除了我們之外，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "還有人登上索爾之塔？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "！",
+        "unit_id": 100311,
+        "voice": "vo_adv_2114005_110"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n那是……！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "太好了……！",
+        "unit_id": 105911,
+        "voice": "vo_adv_2114005_111"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n雪菲小姐，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "您平安無事啊……！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "{player}……",
+        "unit_id": 106411,
+        "voice": "vo_adv_2114005_112"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n可可蘿小姐……",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "還有大家……",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "抱歉",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "讓你們擔心了。",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "還有……",
+        "unit_id": 106411,
+        "voice": "vo_adv_2114005_113"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "哥哥。",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "咕、",
+        "unit_id": 191713,
+        "voice": "vo_adv_2114005_114"
+    },
+    {
+        "type": "dialogue",
+        "name": "贊恩",
+        "words": "唔唔唔唔……",
+        "unit_id": 191713
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "為了我所愛的大家，",
+        "unit_id": 106411,
+        "voice": "vo_adv_2114005_115"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "為了我的家人，",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "我要……",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "我要……！！",
+        "unit_id": 106411,
+        "voice": "vo_adv_2114005_116"
+    }
+]

@@ -1,0 +1,2958 @@
+[
+    {
+        "type": "background",
+        "background": "500361"
+    },
+    {
+        "type": "dialogue",
+        "name": "ナレーション",
+        "words": "とある日の、いつもの朝。"
+    },
+    {
+        "type": "dialogue",
+        "name": "ナレーション",
+        "words": "\n【美食殿】のギルドハウスから、賑やかな声が響いていた。"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "ちょっとペコリーヌ～",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n朝ごはんまだなの？　",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "お腹空いたんだけどー",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "もう少し待っててくださいねキャルちゃん。",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "今朝はいつもより手の込んだ朝ごはんを作ってみようと思ってるんです☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "なんでもいいけど早くしてよね～",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n朝ごはん食べないと",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "一日の始まりって気がしないのよ。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "ペコリーヌさま。",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\nわたくしにお手伝いできることは",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "ございますか？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "ありがとうございます、",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "コッコロちゃん♪",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "じゃあ、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "ソース作りをお任せしてもいいですか？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nそこに材料はそろえてあるので、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "全部まぜちゃってください☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "分かりました、",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "お任せくださいまし。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "わぁっ、",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "{player}くんも手伝ってくれるんですか？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "ありがとうございます……☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "えっと、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "でも",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "他の準備は大体終わっちゃってるんですよね……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "では主さま、",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "わたくしと一緒に",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "ソース作りをいたしましょう。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\n器に入れた材料を",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "かきまぜていただけますか？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "…………",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "えへへ、",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "朝から一緒にお料理なんて、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n楽しい一日になりそうですね☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "はい。",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "みんなで作った朝食はきっと、",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\n格別の味に違いありません。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "……………………わよ。",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "？　",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "何か仰いましたか、",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "キャルさま？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "朝ごはんなら、",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "もう少しだけお待ちくださいね。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\n間もなく──",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "あたしも手伝うって言ったの！",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\nこれじゃあたしだけただ飯喰らいのごく潰しじゃない！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "いいえ、",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "キャルちゃんはただ飯喰らいのごく潰しなんかじゃありません！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "作ったごはんをおいしく食べてくれるだけで、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "わたしはとってもうれしいです……☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "その通りでございます。",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\nキャルさまが",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "わたくしたちのごはんで",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\nお腹いっぱいになっていただけるだけで、",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "感無量でございます……♪",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "やめなさいよ！",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\nあたしを甘やかすのをやめなさいよーっ！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "──おはようございます、",
+        "unit_id": 190811,
+        "voice": "vo_adv_5058000_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "【美食殿】の皆さん。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "ふふ、",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "朝から賑やかですね。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "げっ……",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "あっ！　",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "カリンさんもいかがですか？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n昨日討伐した魔物の姿焼きなんですけど。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "手の込んだ朝ごはんって",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "魔物料理だったの！？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\nあんたは朝から魔物の姿焼きを食べろと言ってるの！？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "えっと……",
+        "unit_id": 190811,
+        "voice": "vo_adv_5058000_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "ご一緒したいところではあるのですが……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "\nすみません、",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "業務中なので",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "遠慮させていただきますね。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "……ちゃっかり逃げたわね。",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\nていうか仕事の依頼？　",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "まーた面倒ごとじゃないでしょうね？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "ご安心ください。",
+        "unit_id": 190811,
+        "voice": "vo_adv_5058000_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "\n未開地の調査とかではなく、",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "通常の魔物討伐ですから。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "普段、",
+        "unit_id": 190811,
+        "voice": "vo_adv_5058000_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "滅多に姿を現さない魔物が",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "\nランドソルの近郊で目撃されたみたいで……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "もしよろしければ、",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "皆さんに討伐をお願いできたらと思いまして。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "近郊で、",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "となりますと",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "【王宮騎士団（NIGHTMARE）】の方々の\nお仕事ではないのですか？　",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "どうしてわたくしたちに……？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "そうよそうよ！",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n普通の魔物討伐なんて",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "【王宮騎士団（NIGHTMARE）】の連中に\n任せておきなさいよ！　",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "あいつらそれが仕事でしょ！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "もちろんそれでもよかったのですが、",
+        "unit_id": 190811,
+        "voice": "vo_adv_5058000_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "\n【美食殿】の皆さんにお願いしに来たのは、",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "ちゃんと理由があるんです。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "その、",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "出現した魔物なのですが……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "うーわ、",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "ヤな予感。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "──大変な珍味なんだとか。",
+        "unit_id": 190811,
+        "voice": "vo_adv_5058000_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "やります！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "だと思ったわ！",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\nちょっと待ちなさいよペコリーヌ！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n勝手に決めるんじゃないわよ！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "キャルちゃん。",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nわたしたち【美食殿】の目的を忘れちゃったんですか？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "大変な珍味と言われてしまっては、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "断る理由なんてありませんよ♪",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "あんたになくてもあたしにはあるの！",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "あたしは今日一日、",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "何もせずのんびり過ごそうと思ってたんだから！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "コロ助、",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "あんたも何とか言いなさい！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\nあたしたちの一日がこいつの食欲に潰されようとしてるわよ！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "…………",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "コロ助？",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\nどうしたのよ、",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "俯いて……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "コッコロちゃん？",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nお腹空いちゃいました？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "ふふ……",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "ふふふ……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "も、",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "申し訳ありません主さま……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "つい、",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "笑みがこぼれてしまいました。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "お、",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "おやめくださいませ主さま……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "ふふっ。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\nわたくし、",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "止まらなくなってしまいます……！",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "なんだか楽しくて……",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "あたたかい思いが",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "胸にこみあげてきて……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\nこんなに幸せでいいのかと……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "ほらほらキャルちゃん！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nコッコロちゃんもこんなに乗り気ですよ☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "分かったわよ！",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n行けばいいんでしょ行けば！　",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "どうせいつものことよね！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "ふふ。",
+        "unit_id": 190811,
+        "voice": "vo_adv_5058000_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "では、",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "報酬の方をご用意してお待ちしていますね。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "皆さん、",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "カリン",
+        "words": "お気をつけて。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "任せてください！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "それじゃあキャルちゃん、コッコロちゃん、{player}くん！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n珍味を求めて",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "出発ですよっ、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "おー☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "おー、",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "でございます。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "……",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "おー",
+        "unit_id": 106012
+    },
+    {
+        "type": "background",
+        "background": "500140"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "珍味、",
+        "unit_id": 105811,
+        "voice": "vo_adv_5058000_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "珍味～♪",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "ふふっ。",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\nこうして美食を目指して旅に出るのも、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "何回目でしょうか……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "さぁ～？　",
+        "unit_id": 106011,
+        "voice": "vo_adv_5058000_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "あたしは数えるのをやめたわ。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n数えきれないほど……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "得体の知れないものを食べさせられてきたから……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "食べさせられてきた、",
+        "unit_id": 105811,
+        "voice": "vo_adv_5058000_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "なんて言っちゃだめですよキャルちゃん！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "お食事はいつだって",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "食材になってくれた生き物たちに感謝しながら、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n自らの意志でお口に運ぶものなんです♪",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "あたし結構嫌がってなかった？",
+        "unit_id": 106011,
+        "voice": "vo_adv_5058000_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\nねぇ、",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "あたしあんたみたいにウキウキしながら魔物食べてた！？",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "もちろんです☆",
+        "unit_id": 105811,
+        "voice": "vo_adv_5058000_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "いつだってキャルちゃんは",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "100点スマイルで食べてましたよ♪",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "断言しやがったわねこのアホリーヌ！",
+        "unit_id": 106011,
+        "voice": "vo_adv_5058000_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "あの、",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "お二人とも……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "仲がよろしいのはいいことなのですが、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "魔物に気づかれてしまったようでございますよ。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──グオオオオオッ！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "カリンさんの言っていた魔物とは違うみたいですね……",
+        "unit_id": 105811,
+        "voice": "vo_adv_5058000_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "街の近くにいるのは危ないですし、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "とりあえず追い払いましょう♪",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "はいはい。",
+        "unit_id": 106011,
+        "voice": "vo_adv_5058000_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "だったら手っ取り早くやるわよ！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "喰らいなさい！",
+        "unit_id": 106011
+    },
+    {
+        "type": "background",
+        "background": "500140"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──グオオオオオッ！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "まだ戦うつもりのようです……！",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "主さま、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "ここはわたくしが！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "ええーいっ！",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_059"
+    },
+    {
+        "type": "background",
+        "background": "500140"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──ギャオオオオオッ！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "おおーっ、",
+        "unit_id": 105811,
+        "voice": "vo_adv_5058000_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "すごいですコッコロちゃん！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n一発で決めちゃいました……",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "わたしの出番がありませんでしたね♪",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "へぇ、",
+        "unit_id": 106011,
+        "voice": "vo_adv_5058000_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "やるじゃないコロ助。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n今の魔法、",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "いつもとは違う感じだったわね。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "はい……",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "今日は少々、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "調子がよいみたいで……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "気のせいでしょうか……",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "攻撃しようとしたとき、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\nわたくしの力が、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "勝手に膨れ上がったような……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "これならきっと",
+        "unit_id": 106011,
+        "voice": "vo_adv_5058000_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "依頼の魔物も楽勝ねー！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\nどこからでも来いってのよ！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "あっ、",
+        "unit_id": 105811,
+        "voice": "vo_adv_5058000_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "キャルちゃん、後ろ！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──グオオオオオッ！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "うひぃっ！？",
+        "unit_id": 106011,
+        "voice": "vo_adv_5058000_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\nちょっ、",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "いきなり現れるんじゃないわよ",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "ぶっ殺すわよ！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "カリンさんに依頼された大変な珍味の魔物、",
+        "unit_id": 105811,
+        "voice": "vo_adv_5058000_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "発見です！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n今度はわたしも役に立ちますよっ☆",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "とりゃあああっ！",
+        "unit_id": 105811
+    },
+    {
+        "type": "background",
+        "background": "500140"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──ギャオオオオオッ！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "そっちに行きましたよ、",
+        "unit_id": 105811,
+        "voice": "vo_adv_5058000_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "キャルちゃんっ！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "分かってるっての！",
+        "unit_id": 106011,
+        "voice": "vo_adv_5058000_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "ほら、",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "大人しく丸焼きになっちゃいなさい！",
+        "unit_id": 106011
+    },
+    {
+        "type": "background",
+        "background": "500140"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "ってこら！　",
+        "unit_id": 106011,
+        "voice": "vo_adv_5058000_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "逃げ回るんじゃないわよ！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\nあっ……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "しまった、",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "{player}の方に……！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──グオオオオオッ！",
+        "unit_id": 1611
+    },
+    {
+        "type": "background",
+        "background": "500140"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "あっ、",
+        "unit_id": 105811,
+        "voice": "vo_adv_5058000_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "だめです！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nその魔物、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "かなり力が強くて……！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──グオオオオオッ！",
+        "unit_id": 1611
+    },
+    {
+        "type": "background",
+        "background": "500140"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "主さまっ！？",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "お待ちください、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "今お助けします！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "主さまから──",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "離れてくださいっ！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "精霊よ、",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "魔を祓う力を──！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "え……っ？　",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "黒い精霊",
+        "words": "…………"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "いつもと違う、",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "精霊……？　",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "でも今は、",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "主さまをお守りしなくては！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "やぁぁぁーーーーーっ！",
+        "unit_id": 105911
+    },
+    {
+        "type": "background",
+        "background": "500140"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──ギャオオオオオッ！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "おおー、",
+        "unit_id": 105811,
+        "voice": "vo_adv_5058000_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "コッコロちゃん、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "やばいですね☆",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "って、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "ひゃあっ！？　",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "本当にやばいですっ！？",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "な、",
+        "unit_id": 106011,
+        "voice": "vo_adv_5058000_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "何よこの威力！？",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\nコロ助、",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "やり過ぎ、",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "やり過ぎよ……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "いったぁ～！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "っ！？",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "す、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "すみません、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "ペコリーヌさま、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "キャルさま！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\nわたくし、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "なぜか力があふれてしまって……！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "本当にわたくし、",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "何と言っていいか……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "は……",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "はい。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "ご無事でしたか？　",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "主さま。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "申し訳ありません、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "力加減を間違えてしまって……！",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "大丈夫ですよコッコロちゃん、",
+        "unit_id": 105811,
+        "voice": "vo_adv_5058000_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "全然問題ありません！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n魔物も無事討伐できましたし！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "……またわたし、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "あまり活躍できませんでしたけど。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "そうそう。",
+        "unit_id": 106011,
+        "voice": "vo_adv_5058000_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "あたしたちがこの程度でどうにかなるわけないでしょ。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "それにしても",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "今日はコロ助大活躍ねー",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\nほとんど一人でやっちゃったじゃない。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "いえ、",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "そんなことはありません。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "ペコリーヌさまやキャルさま、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "主さまがいなければ、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\nわたくしは",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "きっと何もできませんでした。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "でも",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "なんだったのでしょう、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "あの黒い精霊は……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\n",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "今まで使役してきた精霊とは",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "気配の違う、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "強力な力を感じました……",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "あ……",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "いいえ、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "なんでもございません。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\n主さま、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "心配してくださって",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "ありがとうございます。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "まぁまぁ、",
+        "unit_id": 105811,
+        "voice": "vo_adv_5058000_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "お話はあとです！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nさっそくみんなでごはんの準備をしましょう！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "珍味、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "珍味～♪",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "ええー？　",
+        "unit_id": 106011,
+        "voice": "vo_adv_5058000_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "ここで食べるわけ？",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n帰ってからでいいんじゃないの？",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "何を言ってるんですかキャルちゃん！",
+        "unit_id": 105811,
+        "voice": "vo_adv_5058000_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n珍味が目の前にあるんですよ！？",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "あんたが我慢できるわけないわよね。",
+        "unit_id": 106011,
+        "voice": "vo_adv_5058000_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "はいはい、",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "分かってるわよ。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "十分理解してるわよ……",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "まったく。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "あ、",
+        "unit_id": 105811,
+        "voice": "vo_adv_5058000_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "コッコロちゃんたちは",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "座っててくださいね♪",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nわたし、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "あまり戦いで役に立てなかったので、",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "料理の方で",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "挽回させてください♪",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "……ふふっ。",
+        "unit_id": 105911,
+        "voice": "vo_adv_5058000_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\nでは主さま、",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "出来上がりを",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "一緒に待つといたしましょう。",
+        "unit_id": 105911
+    },
+    {
+        "type": "background",
+        "background": "500142"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "よ～しっ、",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "できました～♪",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "あとはお皿に盛って、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "と……☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "どうぞ、",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "これは{player}くんの分です♪",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nお肉のとっても柔らかい部分ですよ～♪",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "はい、",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "キャルちゃん♪",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n何かよく分からないですけど、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "とにかくおいしそうな部位です！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "なんでよく分からない部位を渡すのよ！？",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "そしてこれはわたしの分～♪",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nそれでは皆さん、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "おいしくいただきましょう☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "……おや？",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "待ちなさいこらペコリーヌ。",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\nコロ助の分の料理はどうしたのよ。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "……へ？　",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "あっ、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "あれっ！？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "ごめんなさいコッコロちゃん！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nわたしってば",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "うっかりしちゃってました♪",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "間が抜けてるわねー",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "ま、",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "どうせ珍味が早く食べたくてボーっとしてたんでしょ。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "ほらコロ助、",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "あたしの分を先に食べなさい。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "頑張ったご褒美よ！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "ありがとうございます、",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "キャルさま。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\nですがその部位は",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "ペコリーヌさまが",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "キャルさまのために選んだもの。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\nキャルさまがお召し上がりになってください。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "…………",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_104"
+    },
+    {
+        "type": "still",
+        "still": "505800001"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "本当にごめんなさいっ、",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "コッコロちゃんっ！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nわたしとしたことが、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "コッコロちゃんの分を忘れちゃうなんて～っ！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nすみません、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "申し訳ありません、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "土下座しますのでなにとぞ～っ！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "ペ、",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "ペコリーヌさま、",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "おやめください……！",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "わたくしは平気ですので……！",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "いいえだめです！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n忘れられるのは、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "とっても悲しくて、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "つらいことなんです……！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\nそんな気持ちを味わわせてしまうなんて、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "わたし、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "わたし……！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "……ペコリーヌ……",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "……え？",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "主さまの言う通りでございます。",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_110"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\nペコリーヌさまが",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "わたくしのことを忘れるわけがありません。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\nだからわたくし、",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "何も悲しくも、",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "つらくもないのですよ……♪",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "コッコロちゃん……",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_111"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "ありがとうございます……！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "は",
+        "unit_id": 106012,
+        "voice": "vo_adv_5058000_112"
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "いはい、",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "食事ができてるのに",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "いつまでも話し込んでんじゃないわよ。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "珍味が待ってるわよ。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "冷めちゃう前に、",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "キャル",
+        "words": "さっさと食べちゃいましょ。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "はいっ、",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_113"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "待っててくださいねコッコロちゃん！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n今大盛りで持ってきますから☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "あ、",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_114"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "あの、",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "ほどほどで大丈夫ですので……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "いいえ！　",
+        "unit_id": 105812,
+        "voice": "vo_adv_5058000_115"
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "い～",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "っぱい食べてくださいね！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "ペコリーヌ",
+        "words": "でないとわたしの気が済みませんから！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "……ふふっ。",
+        "unit_id": 105913,
+        "voice": "vo_adv_5058000_116"
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "\n主さま、",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "コッコロ",
+        "words": "一緒に食べるのを手伝ってくださいましね。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "ナレーション",
+        "words": "楽しい食卓を囲む【美食殿】のメンバーたち。"
+    },
+    {
+        "type": "dialogue",
+        "name": "ナレーション",
+        "words": "\nいつの間にか当たり前の日常となった光景が、そこには広がっていた。"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    }
+]

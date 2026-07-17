@@ -1,0 +1,926 @@
+[
+    {
+        "type": "background",
+        "background": "500160"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我們趕快去把可蘿仔救出來吧 ！",
+        "unit_id": 107811,
+        "voice": "vo_adv_5004004_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n只要還沒死，可能還是能夠讓她恢復意識的，",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n我來用探測魔法",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "找找可蘿仔的位置！",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "啊，",
+        "unit_id": 107712,
+        "voice": "vo_adv_5004004_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "或許沒有這個必要。",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "如{player}所述，",
+        "unit_id": 107712,
+        "voice": "vo_adv_5004004_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n魔物想把他們拖往的地方……",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n說不定是在海底，",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "有一座不可思議的遺跡之類的。",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "雖然只是我的推測，",
+        "unit_id": 107712,
+        "voice": "vo_adv_5004004_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n可可蘿很有可能是被囚禁在那裡了。",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "當然我並不十分確定，",
+        "unit_id": 107712,
+        "voice": "vo_adv_5004004_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n還需要以探測魔法之類的方式",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "來掌握正確資訊。",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我也能使用一定程度的魔法，請讓我助你們一臂之力。",
+        "unit_id": 107712,
+        "voice": "vo_adv_5004004_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "畢竟可可蘿是",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "在【咲戀育幼院】一起生活，",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n非常重要的家人之一。",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我很想幫忙。",
+        "unit_id": 107712,
+        "voice": "vo_adv_5004004_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "一定要幫到。",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n不能讓這麼好的孩子",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "遭受如此的劫難。",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "當然，我們的心情也是一樣的。",
+        "unit_id": 107511,
+        "voice": "vo_adv_5004004_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n我們就同心協力",
+        "unit_id": 107511
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "，一起把小可蘿救出來吧。",
+        "unit_id": 107511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "當然！",
+        "unit_id": 107811,
+        "voice": "vo_adv_5004004_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "　",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "真是的，",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "本以為是一個和平安穩的假期啊！",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n居然會變成這樣，",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "命運之神的心眼也太壞了吧！",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不過在這裡唉聲嘆氣也於事無補！",
+        "unit_id": 107811,
+        "voice": "vo_adv_5004004_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n我們一起努力",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "把可蘿仔安然地救出來",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "再把魔物給痛扁一頓，圓滿得把事情解決，",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "全部了結後再把它當個笑話吧！",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "沒錯。",
+        "unit_id": 107511,
+        "voice": "vo_adv_5004004_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "{player}，",
+        "unit_id": 107511
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n你能再用往常的那種力量",
+        "unit_id": 107511
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "強化我們嗎？",
+        "unit_id": 107511
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "雖然我現在沒有「皇家裝備」了，",
+        "unit_id": 107511,
+        "voice": "vo_adv_5004004_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n所以處於相當脆弱的狀態，",
+        "unit_id": 107511
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "可能會給你們扯後腿。",
+        "unit_id": 107511
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "但我不會忘記自己已掌握的技術。",
+        "unit_id": 107511,
+        "voice": "vo_adv_5004004_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n只要有了{player}的強化，",
+        "unit_id": 107511
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n要擊退一些小嘍囉之類的小事還是沒問題的。",
+        "unit_id": 107511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "回答的好！",
+        "unit_id": 107811,
+        "voice": "vo_adv_5004004_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "　",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妳是叫鈴莓對吧……",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "運用妳的探測魔法，",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n找出可蘿仔的確切位置吧！",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n我會對全員",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "施展能自在地在",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "水中活動的魔法！",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "目的地是海底的謎之遺跡，所以這魔法是必要的對吧？",
+        "unit_id": 107811,
+        "voice": "vo_adv_5004004_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n不過我的魔力所剩無幾了所以無法持續很久，",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n目標是速戰速決哦！",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "是！",
+        "unit_id": 107712,
+        "voice": "vo_adv_5004004_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "　以防萬一，",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n我帶上了海之家備用的潛水氧氣瓶！",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n只要使用收納魔法，",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "就能做到一定程度的壓縮保存，便於攜帶了！",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "哦哦，",
+        "unit_id": 107811,
+        "voice": "vo_adv_5004004_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妳也能使用收納魔法嗎？",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "啊啊，就是在第一天小凱留所使用的那招對嗎。",
+        "unit_id": 107511,
+        "voice": "vo_adv_5004004_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n從一個空無一物的地方，",
+        "unit_id": 107511
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "突然生出了泳圈和飲料之類東西的那招……？",
+        "unit_id": 107511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那可是相當高難度的魔法呢。",
+        "unit_id": 107811,
+        "voice": "vo_adv_5004004_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "哼哼，",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "看不出妳也是一位",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "相當優秀的魔法師呢？",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "不敢當不敢當！",
+        "unit_id": 107712,
+        "voice": "vo_adv_5004004_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "　我並不會使用什麼難度很高的魔法，",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "只是在處理家事上",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "使用收納魔法的話非常方便就記起來了！",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n這是女僕必備的專業！",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "雖然比起身為魔法師，或是其他身分，",
+        "unit_id": 107712,
+        "voice": "vo_adv_5004004_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "服侍大小姐的女僕才是我的本業！",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "鈴莓～！",
+        "unit_id": 102811,
+        "voice": "vo_adv_5004004_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "噫呀！？",
+        "unit_id": 107712,
+        "voice": "vo_adv_5004004_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "　哦哦哦，大小姐～！",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n怎麼說您您就到呢？",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "大小姐您怎麼會在這裡？",
+        "unit_id": 107712,
+        "voice": "vo_adv_5004004_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n是不是我忘記帶什麼東西……",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n您幫我送過來了？",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "不是！",
+        "unit_id": 102811,
+        "voice": "vo_adv_5004004_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n我看見",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "刊登瑪爾傑海岸發生異變的報導，",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n非常擔心妳",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "就趕了過來啊！",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "因為可能會很危險，",
+        "unit_id": 102811,
+        "voice": "vo_adv_5004004_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n所以我沒把綾音和胡桃",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "一起帶來就是了。",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "這是非常正確的判斷，大小姐！",
+        "unit_id": 107712,
+        "voice": "vo_adv_5004004_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "其實，",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "我們現在正處於相當危險的緊急情況當中～！",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "如此如此這般這般……我們為了救出可可蘿小姐，",
+        "unit_id": 107712,
+        "voice": "vo_adv_5004004_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n準備出發前往海底的遺跡了。",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n大小姐，",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "您打算如何呢？",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "嗯～……雖然我也很想與你們同行，",
+        "unit_id": 102811,
+        "voice": "vo_adv_5004004_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n但我也得準備好，萬一發生什麼事，得聯絡軍隊或警察請他們出動。",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "而且，",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "我曾是【王宮騎士團（NIGHTMARE）】的成員，多少還是有些人脈。",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "我要請他們派遣增援過來，",
+        "unit_id": 102811,
+        "voice": "vo_adv_5004004_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n徹底防止任何人靠近瑪爾傑海岸一帶。",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n才不至於",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "發生二度傷害。",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "那邊搞定後我會前去跟上你們，",
+        "unit_id": 102811,
+        "voice": "vo_adv_5004004_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n也會視情況趕去支援的……",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n所以任何情況都別客氣，",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "馬上用通訊魔法聯絡我。",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "快去吧！",
+        "unit_id": 102811,
+        "voice": "vo_adv_5004004_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n現在情況分秒必爭，",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "你們要趕緊行動了！",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "是的，大小姐！",
+        "unit_id": 107712,
+        "voice": "vo_adv_5004004_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "\n唔唔～",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "果然在緊急時刻就是這麼靠得住♪",
+        "unit_id": 107712
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "啊哈哈……",
+        "unit_id": 102811,
+        "voice": "vo_adv_5004004_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "我只是努力想成為，",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n能讓妳",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "覺得值得服侍的",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "主人罷了。",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "好了，閒聊就到此為止了！",
+        "unit_id": 107811,
+        "voice": "vo_adv_5004004_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n趕緊準備好，",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "迅速展開行動吧？",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我會給全員裹上一層空氣皮膜，",
+        "unit_id": 107811,
+        "voice": "vo_adv_5004004_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n利用風之魔法產生推進力，",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這樣就能在水中高速移動了！",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我覺得用不了多久就能到達海底遺跡，",
+        "unit_id": 107811,
+        "voice": "vo_adv_5004004_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n也就是",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "敵人的所在地！",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "可能會即刻進入戰鬥，",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "各位可要繃緊神經喲！",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我們馬上就去救妳了～可蘿仔！",
+        "unit_id": 107811,
+        "voice": "vo_adv_5004004_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 107811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妳可千萬要平安無事啊……！",
+        "unit_id": 107811
+    }
+]

@@ -1,0 +1,617 @@
+[
+    {
+        "type": "background",
+        "background": "500110"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}收到了惠理子的信。"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子的信",
+        "words": "「今天是我的生日，",
+        "unit_id": 1,
+        "voice": "vo_adv_1027005_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子的信",
+        "words": "我非常想見您一面。」",
+        "unit_id": 1
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "啊，",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "{player}大人。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n您是來見我嗎？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "謝謝您，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我好開心……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "――呱歐歐歐歐歐！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "呀啊！",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "有魔物！",
+        "unit_id": 102711
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "{player}大人！",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "您為了保護我，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "受傷了……！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "竟敢傷害{player}大人……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "你作好覺悟了吧？",
+        "unit_id": 102711
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "――嘰歐歐歐歐歐！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我已經收拾了魔物。",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "因為我的關係，真的非常抱歉。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n居然讓{player}大人您受傷了…",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "糟糕！",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "您流血了……！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我現在就替您治療！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "請不要動！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘻嘻……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "{player}大人的血……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "……治療？",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "沒錯，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "當然是治療了。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我沒有做什麼多餘的事呢。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "生日？",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "……啊，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "沒錯，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "是這樣呢。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "是指我的生日這件事呢。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "――呱歐歐歐歐歐！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘖……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "又是魔物……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "明明一隻就已經足夠了……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這個「散發誘引魔物香氣的藥」，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n藥效有點太強了呢。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "算了，",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "無所謂。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "{player}大人的血液也已經採集到了，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n我們快點收拾牠吧……",
+        "unit_id": 102711
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "――嘰歐歐歐歐歐！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "一切都在我的意料之內……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "哎呀？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "{player}大人……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "您看來一臉疑問呢，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘻嘻……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "其實……",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "為了採集{player}大人的血液，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n我稍微演了一場戲呢。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "生日什麼的其實是騙您的呢。",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n我的生日是7月30日。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "剛才的魔物，",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "也是我吸引來的。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "對不起。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n這一切都是為了我們的將來……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘻嘻……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我的血液和",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "{player}大人的血液……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n只要將這些作為鍊金術的材料，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "就可以創造出我們的孩子！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "{player}大人的血液，",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我確實的",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "收下了。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n這就是最棒的生日禮物。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "下次見面的時候，",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "孩子也會一起來看您。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n請您先想好他的名字呢……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘻嘻……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "――呱歐歐歐歐歐！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "呀啊！",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "啊！",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "{player}大人的血液被……！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "你這可惡的臭蟲――――！！！",
+        "unit_id": 102711
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "――嘰歐歐歐歐歐！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "……………………{player}大人。",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "因為明天",
+        "unit_id": 102711,
+        "voice": "vo_adv_1027005_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "是我的生日……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "這一次，{player}當然看穿了惠理子的謊言。"
+    }
+]

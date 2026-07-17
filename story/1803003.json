@@ -1,0 +1,2400 @@
+[
+    {
+        "type": "background",
+        "background": "500540"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "怜為了前往祖父的技法書中記載的"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "古老流派修練場，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n與{player}一同向著與王都相隔遙遠的雪山而去。"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "根據技法書的記載，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n這座山上應該有個修練場……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "但如此險要之地，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n我實在不認為古今以來",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "曾有人居住在這裡。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你還好吧？",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "會不會覺得冷？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "姑且是有",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "施了點聊以慰藉的防寒魔法。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "嗯，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我也沒事。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n山間的天氣變化莫測，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n我們邊留意彼此的情況邊上山吧。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "嗯？",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那是……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n人嗎……？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "你好。",
+        "unit_id": 311,
+        "voice": "vo_adv_1803003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "請問你們今天",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "是打算登山嗎？",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是的，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我們想去位於山頂的修練場。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "修練場……",
+        "unit_id": 311,
+        "voice": "vo_adv_1803003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "是嗎？",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "我記得曾有傳說提到過那樣的場所。",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "但是，",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "現在山頂上沒有任何人居住喔。",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "怎麼會……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這是準確的情報嗎？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "是的。",
+        "unit_id": 311,
+        "voice": "vo_adv_1803003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "我就住在山腳下的村莊，",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n以管理這座山為生，",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n我已經確認過山頂確實沒人居住了。",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "那裡不是人人都能輕易往來的地方。",
+        "unit_id": 311,
+        "voice": "vo_adv_1803003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "雖然的確",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "留有建築物的痕跡，",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "但如果你們是來尋找什麼人的話，",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n前往山頂恐怕也是白費工夫。",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這樣",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "啊……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "就算你說的是事實，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n我也想親眼確認看看。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我們還是要登頂看看。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "我知道了。",
+        "unit_id": 311,
+        "voice": "vo_adv_1803003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "那我就先下山了，",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n請你們多加小心。",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "謝謝你。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……我們繼續前進吧。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……呼、",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呼。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "空氣",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "越來越稀薄了……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "能在這種地方",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "修練的劍士，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n絕對",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是位",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "身手不凡之輩……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這裡",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "就是山頂啊……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n連座建築物",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "都沒有呢。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這是……",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "柱子的殘骸。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "原來",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "真的曾經有人居住啊……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "哈哈，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這可真是大老遠的",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "白跑了一趟呢……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "下起暴風雪就不妙了。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我們快下山吧。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "光是確認了事實，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "就不算",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "毫無所獲──",
+        "unit_id": 100311
+    },
+    {
+        "type": "background",
+        "background": "500543"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "──汝",
+        "unit_id": 712,
+        "voice": "vo_adv_1803003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "是渴望探求劍術巔峰之輩嗎？",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "！？",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是誰！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "──汝是",
+        "unit_id": 712,
+        "voice": "vo_adv_1803003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "渴望探求劍術巔峰之輩嗎？",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這個騎士",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是從哪冒出來的！？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n而且，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "天氣突然惡化了！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我們是見到幻覺了嗎……！？　",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "回答吾等的問題。",
+        "unit_id": 711,
+        "voice": "vo_adv_1803003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "還有一個人！？",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不只一個人！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n我們已經被包圍了嗎──！　",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……我",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "想探求劍術的巔峰。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n我正是",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "為此而來。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "是嗎……",
+        "unit_id": 711,
+        "voice": "vo_adv_1803003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "很遺憾，",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "此地興旺的流派早已沒落。",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "\n汝所追求的強大",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "已經不復存在了。",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "修練場腐朽不堪，",
+        "unit_id": 711,
+        "voice": "vo_adv_1803003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "登峰造極的劍技",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "也已消逝雪中。",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "\n老老實實地下山去吧。",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "此等建言也是為了汝，",
+        "unit_id": 712,
+        "voice": "vo_adv_1803003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "若汝等還想保住一命……",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "苟且保住的命我才不稀罕！",
+        "unit_id": 100312,
+        "voice": "vo_adv_1803003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n我從",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "踏入這座山的那一刻起，",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "就已經下定決心了！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "……那麼，與吾等一戰吧。",
+        "unit_id": 712,
+        "voice": "vo_adv_1803003_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "\n就讓吾等",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "來見識汝的決心。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "擊敗吾等之時，",
+        "unit_id": 711,
+        "voice": "vo_adv_1803003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "\n汝的劍術",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "必會臻至更高的境界。",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "接招吧──！",
+        "unit_id": 711,
+        "voice": "vo_adv_1803003_031"
+    },
+    {
+        "type": "background",
+        "background": "500543"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "唔！",
+        "unit_id": 100312,
+        "voice": "vo_adv_1803003_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "好快！",
+        "unit_id": 100312,
+        "voice": "vo_adv_1803003_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "而且好沉重！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不會錯的，這絕對是來自劍的攻擊！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我還以為是魔物之類的在搞鬼，",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "看來不是啊……！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "總而言之，",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "現在也只能全力應戰了！　",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "喝啊！",
+        "unit_id": 100312,
+        "voice": "vo_adv_1803003_034"
+    },
+    {
+        "type": "background",
+        "background": "500543"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "……汝只有這點力量嗎？",
+        "unit_id": 711,
+        "voice": "vo_adv_1803003_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你說什麼！？",
+        "unit_id": 100312,
+        "voice": "vo_adv_1803003_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "接下來輪到吾等進攻了……",
+        "unit_id": 711,
+        "voice": "vo_adv_1803003_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "看招！",
+        "unit_id": 711
+    },
+    {
+        "type": "background",
+        "background": "500543"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "嗚啊啊啊！",
+        "unit_id": 100312,
+        "voice": "vo_adv_1803003_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "好強……！！",
+        "unit_id": 100312,
+        "voice": "vo_adv_1803003_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "別說是防禦了，",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n我連看清攻擊都用盡了全力！",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n而且，他們明顯很習慣",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "在這種惡劣的環境下戰鬥……",
+        "unit_id": 100312
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那麼！　",
+        "unit_id": 100312
+    },
+    {
+        "type": "background",
+        "background": "500271"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？ ",
+        "words": "……\n……",
+        "unit_id": 1,
+        "voice": "vo_adv_1803003_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "……全新的鑰匙。",
+        "unit_id": 1,
+        "voice": "vo_adv_1803003_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n自萬象之塔頂端，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "至天之盡頭而去。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "寧靜而深沉地。",
+        "unit_id": 1,
+        "voice": "vo_adv_1803003_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n朝向已解放的心靈深處。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n詠唱吧──",
+        "unit_id": 1
+    },
+    {
+        "type": "background",
+        "background": "500543"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "{player}！",
+        "unit_id": 100312,
+        "voice": "vo_adv_1803003_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "讓我變身！",
+        "unit_id": 100312
+    },
+    {
+        "type": "background",
+        "background": "500543"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "──喝啊啊啊！",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "嗯？",
+        "unit_id": 712,
+        "voice": "vo_adv_1803003_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "……原來如此。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "\n汝的那副姿態，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "體現了與吾等以劍相搏的覺悟與力量啊……",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "\n居然能在山頂行動如此靈敏，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "有意思！",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "這下吾等也",
+        "unit_id": 711,
+        "voice": "vo_adv_1803003_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "不得不拿出真本事應戰了。",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "\n一口氣上吧！",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "喔！",
+        "unit_id": 711,
+        "voice": "vo_adv_1803003_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "喝啊啊啊啊！",
+        "unit_id": 711
+    },
+    {
+        "type": "background",
+        "background": "500543"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "什麼！？",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "唔，",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "躲不開所有攻擊……！",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "竟然和公主型態的我一樣……",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不，",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是比我還快……！？",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n我還是第一次碰到如此強勁的對手……！　",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "照這樣下去……！　",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "汝動搖了啊！",
+        "unit_id": 712,
+        "voice": "vo_adv_1803003_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "得手了！",
+        "unit_id": 712
+    },
+    {
+        "type": "background",
+        "background": "500543"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "嗚哇啊啊啊啊！",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "唔……",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呼、",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呼、",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呼……",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……嗯。",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我還能再戰。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "但是……",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "怎麼了？",
+        "unit_id": 712,
+        "voice": "vo_adv_1803003_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "\n莫非",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "是想說自己以一敵三，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "因而無法得勝？",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "汝所追求的劍之道上，",
+        "unit_id": 711,
+        "voice": "vo_adv_1803003_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "\n可是理所當然的存在著",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "比吾等更為強勁的敵人喔？",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "汝為何如此渴求強大？",
+        "unit_id": 1,
+        "voice": "vo_adv_1803003_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "\n是什麼驅使汝變得強大？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "\n戰勝吾等後，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "汝又將如何？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我……",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我追求強大的原因是……",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……他倒下的情景，",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "至今仍歷歷在目。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "還有",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我戰敗時也是……",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "從與他相遇，",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "和他一天天的相處過後，",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n我就不斷期許著。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "為了能永遠守護這段，",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "與他共度的安穩時光，",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我希望自己能變得更強。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "然而我的力量不足。",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "無論再怎麼磨鍊劍技、",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n再怎麼鍛鍊身體，",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "公主型態的力量",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "都還是有所欠缺……",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……我一直不斷",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "在尋找欠缺之物。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "而如今，",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我終於明白了。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……是啊，",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "沒錯。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "就是他的心意。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是他總是給予我的，",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這既溫暖、",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "又充滿信賴的",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "親愛之情。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那正是",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我的力量來源。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "但光是那樣還不夠。",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這份力量，",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是我和他的，",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我們兩個人的心念之力。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "所以，",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我也為他獻上我的心意吧。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "獻上我一直隱藏在內心深處的",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這份情感……",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這樣一來……",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我們將",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "無人能敵──！　",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "為了……",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "與所愛之人攜手共度未來，",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我想變得更強！",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我再也！！",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不想再次失去他了！！",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "喔喔……！",
+        "unit_id": 712,
+        "voice": "vo_adv_1803003_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "這就是",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "汝所持之劍的真實樣貌嗎！",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "沒錯！",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這是我與他的",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "羈絆之劍！",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "就讓吾等見識見識",
+        "unit_id": 711,
+        "voice": "vo_adv_1803003_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "那份強大吧！",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "吾等也會以全力一擊回應汝！",
+        "unit_id": 711,
+        "voice": "vo_adv_1803003_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士們",
+        "words": "唔喔喔喔喔喔！！",
+        "unit_id": 1,
+        "voice": "vo_adv_1803003_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "接招吧！",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這就是我們的",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "心念之力！",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "風之劍啊……",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "掃平橫阻於前的所有敵人吧！",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "榮耀暴風雨！！！！",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士們",
+        "words": "咕啊啊啊啊啊！！",
+        "unit_id": 1,
+        "voice": "vo_adv_1803003_079"
+    },
+    {
+        "type": "background",
+        "background": "500543"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呼、",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呼……",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "怎麼樣！",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "沒想到",
+        "unit_id": 712,
+        "voice": "vo_adv_1803003_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "竟有如此實力……",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "這真是不得不承認了啊……",
+        "unit_id": 711,
+        "voice": "vo_adv_1803003_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "汝的劍技",
+        "unit_id": 1,
+        "voice": "vo_adv_1803003_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "吾等確實領教了。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "\n汝終有一天",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "能臻至劍道的最高境界吧。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……真不可思議。",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我的身體比之前戰鬥時",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "都更靈巧。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n這就是公主型態",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "真正的力量嗎……？　",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "……沒錯。",
+        "unit_id": 712,
+        "voice": "vo_adv_1803003_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "讓汝的劍技",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "臻於完備的關鍵，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "正是心念。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "\n唯有意念之力，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "才是汝揮動必勝之劍的泉源。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "汝可別忘了。",
+        "unit_id": 711,
+        "voice": "vo_adv_1803003_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "汝揮舞劍、",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "展現力量的意義。",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "\n不具情感的力量、",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "無所寄託的劍技，",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士2",
+        "words": "可抓不住勝機。",
+        "unit_id": 711
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "那份心念，",
+        "unit_id": 1,
+        "voice": "vo_adv_1803003_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "必定能為汝的戰鬥，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士3",
+        "words": "\n招來勝利之風。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士1",
+        "words": "永別了……",
+        "unit_id": 712,
+        "voice": "vo_adv_1803003_088"
+    },
+    {
+        "type": "background",
+        "background": "500540"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "消失了……！？",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "他們究竟是……",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……比起這個，",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我們快下山吧。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "現在是變身狀態的我，",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "可以背著你回山腳下。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "天氣不知何時會再度變得惡劣，",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "要是又被襲擊",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "就不好脫身了。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "得一邊留意著氣壓變化一邊前進……",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "走吧。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "山間的氣候可是反覆無常的。",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n這種晴朗的天氣",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "或許不會持續太久。",
+        "unit_id": 180311
+    },
+    {
+        "type": "background",
+        "background": "500042"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……話說回來，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "他們真的好強啊。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我從沒遇過",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "如此強大的劍士呢。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……那些騎士肯定是",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "沉睡在山中的劍士之魂吧……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我想是那些追求劍術巔峰之人的心念，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n仍留在那座山上……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我也是。",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "多虧了與他們的戰鬥，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n我才能引出",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "比之前都更為強大的公主型態之力。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "為了……",
+        "unit_id": 180311,
+        "voice": "vo_adv_1803003_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "與所愛之人攜手共度未來，",
+        "unit_id": 180311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我想變得更強！",
+        "unit_id": 180311
+    },
+    {
+        "type": "background",
+        "background": "500042"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……所愛之人",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "啊。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……或許，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "坦率的說出來比較好？　",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "沒、",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "沒什麼啦！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "雖然那其中也包含了你……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "啊啊，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那個，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "啊啊，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我不是那個意思……！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "雖然說是「愛」，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "但還不是那種愛喔！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……「還不是」！？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我、",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我到底在說什麼啊！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "對",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "了，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "信裡也常這樣寫吧？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n就像「致親愛的你」那種開頭詞。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是那種愛啦，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "親愛的愛！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n明白了嗎！？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……謝謝了，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "沉睡在雪山的騎士們。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我一定會用與你們戰鬥後得到的力量，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "將所愛之人",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "守護到底。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "無論何時，",
+        "unit_id": 100311,
+        "voice": "vo_adv_1803003_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "無論何地……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "怜學會了把比以往更強大的心念之力"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "化作力量，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n為了和{player}繼續並肩作戰，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n她立下決心，今後也將繼續揮舞手中之劍。"
+    }
+]

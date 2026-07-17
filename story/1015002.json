@@ -1,0 +1,706 @@
+[
+    {
+        "type": "background",
+        "background": "500190"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "因為快遞工作而來到精靈之森的{player}，\n與正要外出的美里相遇了。"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "哎呀哎呀，這不是{player}嗎。\n你好呀～",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "今天怎麼了呢～？",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "那真是辛苦了。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "呵呵，好好的完成了工作，很了不起呢。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "老師接下來要準備幼稚園的活動唷。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "難得遇見你，卻輪到我要工作了呢。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "哎呀哎呀，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "你要幫我嗎？真開心～",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "{player}",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "真的很溫柔呢。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "那麼既然機會難得，就恭敬不如從命吧。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_004"
+    },
+    {
+        "type": "background",
+        "background": "500180"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "嗯，就在這附近開始吧。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "因為本月份生日的孩子並不多，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n因此數量不需要那麼多呢～",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "嗯？",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "哎呀哎呀，",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "真對不起哦。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "什麼都沒有跟你說明呢。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "這是每個月慣例的活動，為了當月份生日的孩子們，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n大家會盛大的慶祝喔。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "然後呢，一開始會給那些孩子們戴上用花朵做成的花冠。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "表示「今天你們是主角喔～」的意思♪",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "今天正是為了蒐集那些花而來的♪",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "一個人的話有點辛苦，",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "{player}能來真是幫大忙了。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "那麼就開始吧。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n我想應該有藍色的花朵，能幫我蒐集來嗎？",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "那是本月份的誕生花喔。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n先收集一定份量後，再一起做成花冠吧。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "收集花朵開始囉開始囉～♪",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "啊，沒錯喔，就是那種花。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "非常漂亮對吧──",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "摘花的時候，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n要好好的道謝喔～",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "花兒們，謝謝你們。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n我們會做成漂亮的花冠的喔～",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "呵呵呵，沒錯沒錯。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n花兒們也正在說不客氣呢。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "呵呵呵，花兒們一定也會高興的。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n要好好地感謝大自然才行呢──",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "來，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "繼續收集花朵吧。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "呼，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "蒐集了好～多呢。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "這全都多虧了{player}哦，",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "謝謝你。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "生日一年只有一次，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n我想讓它成為會留在回憶中的特別日子。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "這麼一來，似乎能做出讓大家開心的美麗花冠了喔。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n趕快來製作吧。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "沒錯沒錯，做得很好喔。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "然後讓花莖部分朝上～",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "哎呀哎呀，這樣的話稍微有點繞的太鬆了喔。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "像這樣子，快速捲起來，再握緊……沒錯～呵呵呵。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "領悟得很快呢～",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n這樣一來或許馬上就會追過老師了……",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "啊，對了。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "機會難得，也告訴老師你的生日──",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "哎呀哎呀，這樣子啊。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "那麼生日的那個月，必須好好慶祝呢。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "老師會幹勁十足地做蛋糕喔。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n呵呵呵，現在就開始期待了呢。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "啊，那裡穿出的部分要顛倒唷～",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "最後在那裡把花莖插進去……",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "完成了～鼓掌鼓掌～",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "哎呀哎呀，明明是第一次卻很擅長呢──",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n照這狀態繼續製作吧。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "……不過在這之前，來。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "謝謝你的幫忙～",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n這個花冠是禮物喔。呵呵，相當適合呢。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "……哎呀？哎呀哎呀～",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_034"
+    },
+    {
+        "type": "still",
+        "still": "101500201"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "……這個，是要給老師的嗎？",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "哎呀哎呀，明明我也是作為謝禮送給你的，卻又收到回禮了。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "呵呵呵……真是非常的高興呢。適合嗎？",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "哎呀哎呀，被說可愛什麼的，真害羞呢。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n都是託了花冠的福。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "哎呀哎呀，真是能言善道的孩子啊～",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n從哪裡學來的呢。　",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "看起來漂亮，也都是託了花冠的福唷。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "那麼，我就充滿感謝的收下了。",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "當做寶物吧……",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "呵呵……孩子們也常像這樣，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n以回禮的名義，送給我各種東西呢。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "雖然對我來說，那些孩子們的笑容就已經是最棒的回禮了，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n儘管如此，無論到幾歲，能收到實質的禮物，都還是會很高興呢。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "因為禮物能讓人感到如此幸福，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n所以孩子們才這麼期待生日來臨吧。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "……呵呵呵，那麼接著，",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n也來製作給孩子們的花冠吧。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "你真是個純粹又坦率的好孩子呢……",
+        "unit_id": 101511,
+        "voice": "vo_adv_1015002_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "美里",
+        "words": "\n正因如此，總覺得不能放著你不管。",
+        "unit_id": 101511
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "時間安穩的流逝著，\n枝葉間灑落的陽光將兩人包覆於其中。"
+    }
+]

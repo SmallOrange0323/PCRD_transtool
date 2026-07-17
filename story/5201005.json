@@ -1,0 +1,872 @@
+[
+    {
+        "type": "background",
+        "background": "502510"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "七冠們從過去的記憶中被召喚出來，並招致破壞。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n就在發生此現象時，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}與菲歐"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n看見了身為「愛梅斯」原型的少女的過去。"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "我的名字是",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "幸雨澄花。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "\n──是「愛梅斯」",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "這個角色的原型玩家。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "……嗯。",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "我是",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "參與《阿斯特朗傳奇》開發過程的",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "其中一名實驗品。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "\n你是透過我的身體",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "看見那個過去的。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "幸雨澄花……",
+        "unit_id": 134011,
+        "voice": "vo_adv_5201005_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "妳說妳是愛梅斯的",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "原型……",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "\n",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "原來在這個世界流傳的「女神愛梅斯」",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "是個玩家嗎！？",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "女神……",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "是嗎？",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "\n但我沒做什麼足以讓大家",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "那樣稱呼我的事呢。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "就連現在，",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "我也在對你們的世界",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "造成麻煩。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "麻煩……",
+        "unit_id": 134011,
+        "voice": "vo_adv_5201005_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "難道說，",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "\n",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "像是那個什麼測試的霸瞳皇帝，",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "還有在各地作亂的七冠，",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "\n",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "現在發生的這些現象",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "都是妳……",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "原因都出在澄花妳身上嗎……？",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "……沒錯。",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "\n「愛梅斯」這副身體裡留存的資料",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "被人盯上了。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "身體裡留存的資料？",
+        "unit_id": 134011,
+        "voice": "vo_adv_5201005_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "就是你們至今一直看著的──",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "我的記憶。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "我的記憶中充滿了《阿斯特朗傳奇》",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "\n開發過程中的重要情報。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "\n對方似乎是想要那些情報。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "我原本",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "在很久以前就凍結帳號，",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "\n維持這樣一直沒有醒來……",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "本該是這樣的。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "\n但好像有某個人",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "重新啟動了我的帳號。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "從再構築前就存在的",
+        "unit_id": 134011,
+        "voice": "vo_adv_5201005_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "「愛梅斯」重新啟動了，",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "\n",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "原來如此，",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "現在發生在這個世界的是……！",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "真那先生……",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "霸瞳皇帝出現，",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "與NPC消失。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "\n",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "現在發生的這個現象",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "叫做「過去版本覆蓋」。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "因為有人想將我……",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "將「愛梅斯」的資料強行提取出來，",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "\n所以過去版本的《阿斯特朗傳奇》",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "\n正打算覆蓋現行的版本。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "原來如此……",
+        "unit_id": 134011,
+        "voice": "vo_adv_5201005_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "我的這副模樣",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "也是來自過去……",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "我引導晶小姐、",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "似似花小姐",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "和克莉絲小姐，",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "\n去抵擋從過去現身的七冠，",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "\n但這樣無法徹底解決問題。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "因此……",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "我有事情想拜託",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "活在「現在」的你們。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "拜託我們？",
+        "unit_id": 134011,
+        "voice": "vo_adv_5201005_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "請把我──",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "消除掉。",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "在我的記憶",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "全被奪走之前。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "在過去──",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "將現在覆蓋之前。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "消除",
+        "unit_id": 134011,
+        "voice": "vo_adv_5201005_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "是指……",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "把妳消滅掉",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "的",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "意思……？",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "是的，",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "沒有時間了。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "\n如果再繼續被提取記憶，",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "這個世界整體都會受到影響。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "\n",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "我不希望……",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "這種事發生。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "澄花，等一下，",
+        "unit_id": 134011,
+        "voice": "vo_adv_5201005_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "妳是登入遊戲的玩家對吧？",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "\n那只要登出不就好了嗎！",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "\n",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "然後，",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "妳再把身上戴的mimi……",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "……我已經",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "辦不到",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "這件事了。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "──！",
+        "unit_id": 134011,
+        "voice": "vo_adv_5201005_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "既然這樣，",
+        "unit_id": 134011,
+        "voice": "vo_adv_5201005_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "就更不能這麼做了不是嗎……？",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "我原本",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "就是應該已經消失的存在。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "\n我現在待在這裡，",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "本身就是個錯誤。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "拜託你們，",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "{player}、",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "菲歐。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "\n我想",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "守護這個世界。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "所以，",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "請把我……！",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "…………",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "你果然",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "很溫柔呢……",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "畢竟是為晶小姐帶來光明的孩子。",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "不過──",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "！？",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "唔……",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "啊……！",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "那個，",
+        "unit_id": 134011,
+        "voice": "vo_adv_5201005_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "妳怎麼了！？",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "\n這是怎麼回事……",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "地震……！？",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "不",
+        "unit_id": 52711,
+        "voice": "vo_adv_5201005_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "對……！",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "澄花",
+        "words": "\n這是──",
+        "unit_id": 52711
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "記憶",
+        "unit_id": 134011,
+        "voice": "vo_adv_5201005_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "菲歐",
+        "words": "又──",
+        "unit_id": 134011
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "從「愛梅斯」身上發出了光芒。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n{player}與菲歐再次"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n被邀請到她的記憶中──"
+    }
+]

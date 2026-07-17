@@ -1,0 +1,668 @@
+[
+    {
+        "type": "background",
+        "background": "500430"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}一行人一面打倒魔物，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n一面在露娜之塔裡前進。"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "真不愧是純閣下。",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "完全不把魔物的數量當一回事。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我們根本沒有出手的機會！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "據說",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "就連團員們也是萬中選一的戰士。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n那麼多的猛將會齊聚一堂，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n應該全都是因為純閣下實力堅強。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "【王宮騎士團】果然",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n是我們公會應該追求的理想！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "純閣下，",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "可以請妳教導我",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n身為上位者的心得嗎！？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "呃……",
+        "unit_id": 104711,
+        "voice": "vo_adv_7019001_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "我本人",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "真的沒什麼大不了的。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n畢竟我主要的任務是門衛。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "我身邊的人都很優秀，",
+        "unit_id": 104711,
+        "voice": "vo_adv_7019001_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n所以我都把大小事交給他們。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "換句話說，",
+        "unit_id": 104711,
+        "voice": "vo_adv_7019001_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "我這團長只是空有其名。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n雖然很慚愧就是。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n那樣的我",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "唯一能說的是……",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "莫妮卡很努力，",
+        "unit_id": 104711,
+        "voice": "vo_adv_7019001_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "而且很懂事。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n等妳長大後，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "肯定會成為出色的領袖。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "………………嗯？",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "等我長大？",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "難不成她是",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "把我當成小孩子了……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "不不！",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "那肯定是語病！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "純閣下",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "應該是希望我",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n變得更加成熟！　",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "唔！？",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n又出現了群聚的魔物嗎！？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "兩位請離遠一點。",
+        "unit_id": 104711,
+        "voice": "vo_adv_7019001_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "喝啊啊！！",
+        "unit_id": 104711,
+        "voice": "vo_adv_7019001_013"
+    },
+    {
+        "type": "background",
+        "background": "500430"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "喔喔！",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "真是精采的劍術！！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "喔，",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "這邊也有啊。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "那我也來表現一下！！",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "看招！！",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_016"
+    },
+    {
+        "type": "background",
+        "background": "500430"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "只要知道我能戰鬥，",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n純閣下也不會再把我當成小孩了！　",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "好，",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "閣下就在這裡等著。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我現在去助純閣下一臂之力──",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "呼……",
+        "unit_id": 104711,
+        "voice": "vo_adv_7019001_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n這樣就結束了嗎。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "唔喔！？",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n妳是獨自解決掉這堆魔物的嗎！？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "真、",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "真不愧是純閣下。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "為了",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "能獲得更多的戰果，",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "我也得向妳看齊才行……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "不，",
+        "unit_id": 104711,
+        "voice": "vo_adv_7019001_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "沒有那個必要。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n妳的表現已經超出我的期待了。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "真、",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "真的嗎！？",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "不過……",
+        "unit_id": 104711,
+        "voice": "vo_adv_7019001_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "危險的事情希望妳能交給我。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n如果我沒辦法，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "希望妳改依靠少年。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "畢竟妳發生什麼意外的話，",
+        "unit_id": 104711,
+        "voice": "vo_adv_7019001_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n我會對妳父母很過意不去。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "父、",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "父母…………",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "絕對不會有錯了……",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n她確實是把我當成小孩子……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "不過，",
+        "unit_id": 104711,
+        "voice": "vo_adv_7019001_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "妳很了不起呢。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n明明還是小孩子，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "居然敢挺身對抗比自己還高大的魔物。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n那個勇氣",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "值得尊敬。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "那麼，",
+        "unit_id": 104711,
+        "voice": "vo_adv_7019001_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "在進入下一層之前，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "由我先去偵察一下。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n你們先在這裡等我。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "…………",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "不……",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "如果是平時的話，我已經回嘴了。",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n但一想到對象是崇拜已久的純閣下……",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "唉…………",
+        "unit_id": 105311,
+        "voice": "vo_adv_7019001_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "莫妮卡",
+        "words": "\n想氣也氣不起來…………",
+        "unit_id": 105311
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "面對尊敬的純，莫妮卡心中滿是複雜。"
+    }
+]

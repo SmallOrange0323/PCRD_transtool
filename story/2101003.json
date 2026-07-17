@@ -1,0 +1,1754 @@
+[
+    {
+        "type": "background",
+        "background": "500361"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "一名謎之少女突如其來地從天而降，\n而就在{player}接住了她的瞬間，一股劇烈的頭痛也同時襲來，\n最後他便失去了意識……"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "……之後，又過了三天。"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "……原來是這樣，",
+        "unit_id": 100111,
+        "voice": "vo_adv_2101003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "竟然還發生了那種事情呀。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n可可蘿妳也真是辛苦了呢……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "不，",
+        "unit_id": 105913,
+        "voice": "vo_adv_2101003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下之事不足掛齒……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "比起這件事，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "為何主人的意識仍然無法恢復之事，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n至今，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "還是無法找出原因。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "不論是肉體上的傷亦或是異常，",
+        "unit_id": 105913,
+        "voice": "vo_adv_2101003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "皆並未發現。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n替主人進行診察的醫生大人是以",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n『或許就只是精神上的疲勞所造成的。』",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "來解釋……",
+        "unit_id": 105913
+    },
+    {
+        "type": "still",
+        "still": "210100301"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……優衣小姐。",
+        "unit_id": 105913,
+        "voice": "vo_adv_2101003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n優衣小姐，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是一位在使用恢復魔法上遠比在下更為優秀的人物。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n能否麻煩您",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "替主人還有那一位",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "看看呢？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "當然沒問題唷，可可蘿！",
+        "unit_id": 100211,
+        "voice": "vo_adv_2101003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n我會盡我所能努力試試看的。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "光之精靈唷――……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……這孩子便是可可蘿妳所說的，",
+        "unit_id": 100311,
+        "voice": "vo_adv_2101003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n那位『從天而降的少女』嗎？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "她究竟是什麼人呢？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……在下",
+        "unit_id": 105913,
+        "voice": "vo_adv_2101003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "也是第一次見到她。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人他",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "與女性的交友關係相當相～當的廣泛，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n因此或許是過去的舊識也說不定……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "等他們兩個人醒來以後，",
+        "unit_id": 100111,
+        "voice": "vo_adv_2101003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我們再和他們問問看吧！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "優衣，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "結果怎樣？",
+        "unit_id": 100111
+    },
+    {
+        "type": "background",
+        "background": "500361"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "嗯……",
+        "unit_id": 100211,
+        "voice": "vo_adv_2101003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我也試著從頭到尾看過一次了，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "但是沒找到有受傷，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "或者是被什麼魔法影響了的痕跡，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n當然我也沒有發現到有什麼詛咒之類的影響。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "總而言之，",
+        "unit_id": 100211,
+        "voice": "vo_adv_2101003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我先盡可能的對他施放恢復魔法試試看唷。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "如果這樣子就能夠讓他醒過來那就好了……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "嘎哈哈♪",
+        "unit_id": 190911,
+        "voice": "vo_adv_2101003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n太天真啦太天真～☆",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n妳那樣做會順利成功才有鬼！",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "咦！？",
+        "unit_id": 100211,
+        "voice": "vo_adv_2101003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n妳是……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "妖精小姐？",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "向【破曉之星】的各位介紹……涅比亞大人。",
+        "unit_id": 105913,
+        "voice": "vo_adv_2101003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "這位大人是，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "住在【美食殿堂】公會小屋裡頭的",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n嚮導小妖精大人。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "哦～",
+        "unit_id": 100111,
+        "voice": "vo_adv_2101003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "真可愛耶～！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "真好～",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "能和這樣的妖精小姐一起生活，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "一定會很開心的吧……♪",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "呵呵～♪",
+        "unit_id": 190911,
+        "voice": "vo_adv_2101003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n謝謝妳！",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "那邊那個獸人族的妹妹，",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "現在妳在我心中的好感度急速上升囉♪",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "涅比亞。",
+        "unit_id": 100311,
+        "voice": "vo_adv_2101003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "剛剛妳說",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "『會順利成功才有鬼』了對吧……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n那麼妳",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "對於他為何始終無法甦醒的原因，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "有任何的頭緒嗎？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "咦？　",
+        "unit_id": 190911,
+        "voice": "vo_adv_2101003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "那種事，我怎麼可能會知道啊。",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n如果我真的知道，早就告訴可可蘿了嘛。",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "……可是啊。",
+        "unit_id": 190911,
+        "voice": "vo_adv_2101003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n若真要說有什麼可能可以讓他醒過來的方法……",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "我可是知道一個唷。",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "涅比亞，",
+        "unit_id": 100111,
+        "voice": "vo_adv_2101003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "妳是說真的嗎！？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那個方法是什麼？",
+        "unit_id": 100311,
+        "voice": "vo_adv_2101003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "呵呵！",
+        "unit_id": 190911,
+        "voice": "vo_adv_2101003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n那就是……",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "親",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "親",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "唷♪",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "咦！？　",
+        "unit_id": 100211,
+        "voice": "vo_adv_2101003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "親、",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "親、親、",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "親親……！？",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "沒錯！　",
+        "unit_id": 190911,
+        "voice": "vo_adv_2101003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "如果被個可愛的女孩子啾了一下，",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n那麼{player}他就會因為心跳突然加速然後就醒過來了嘛！",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "就是這麼一回事唷！",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……您又來了。",
+        "unit_id": 105913,
+        "voice": "vo_adv_2101003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n涅比亞大人的好奇心，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "大多都使人有些困擾呢……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "怎樣啦，",
+        "unit_id": 190911,
+        "voice": "vo_adv_2101003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "妳們不試試看怎麼會知道不行！？",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "不是和凱留那時候一樣親額頭，",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "這次要好好給我",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "親嘴唷！",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "還以為妳會說出些什麼，",
+        "unit_id": 100311,
+        "voice": "vo_adv_2101003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "竟然是親嘴……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n那、",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那種方法，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "再怎麼想我都不認為會有什麼效果……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "說、",
+        "unit_id": 100211,
+        "voice": "vo_adv_2101003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "說的也是呢，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "不行的嘛！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "明明騎士先生都失去意識了，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我們還這樣擅自就去親他……！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "可、",
+        "unit_id": 100111,
+        "voice": "vo_adv_2101003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "可是可是……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "就像涅比亞說得一樣，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這種事不試試看怎麼會知道、",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嘛……？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "嗯、",
+        "unit_id": 100311,
+        "voice": "vo_adv_2101003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是啊……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這該怎麼說，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n這是治療的一環……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是就如同人工呼吸一般的行為。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "只要想著是為了救人一命……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那麼、",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "怎麼說、",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "嗯、",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "也就……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "咦、",
+        "unit_id": 100211,
+        "voice": "vo_adv_2101003_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "咦……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "咦咦咦！？",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n難不成",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "怜和日和都覺得",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "只要當做是治療就OK嗎……！？",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "那、",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "那我該怎麼辦呀～！？　",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "親～親♪",
+        "unit_id": 190911,
+        "voice": "vo_adv_2101003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n親～親♪",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "來吧來吧，",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "誰要先上？",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "請、",
+        "unit_id": 105913,
+        "voice": "vo_adv_2101003_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "請您稍等一下，涅比亞大人。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n該不會，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人……？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "騎士先生！",
+        "unit_id": 100211,
+        "voice": "vo_adv_2101003_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "太好了，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "你醒過來了呢……♪",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "真的呢！",
+        "unit_id": 100111,
+        "voice": "vo_adv_2101003_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "沒事吧？　",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "感覺怎樣？　",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "有哪裡會痛嗎？　",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "肚子餓了嗎？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……難不成，",
+        "unit_id": 100311,
+        "voice": "vo_adv_2101003_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是我們幾個實在太吵了所以才吵醒他了嗎？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不過就算是如此，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你能醒過來實在太好了。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下也是，",
+        "unit_id": 105913,
+        "voice": "vo_adv_2101003_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "終於能夠放下心中一塊大石了。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "還在想",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "若您的意識依舊無法恢復的話，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "那真該如何是好……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "太好了呢！　",
+        "unit_id": 100111,
+        "voice": "vo_adv_2101003_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "可可蘿！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "說不定騎士先生他，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "真的就只是最近累過頭了而已唷！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那場與霸瞳皇帝的激戰也大約過了一個月……",
+        "unit_id": 100311,
+        "voice": "vo_adv_2101003_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n{player}",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "他似乎在撤除廢棄磚瓦的志工上也是相當勤奮的嘛。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n接下來請好好地休息一陣子吧。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "騎士先生，",
+        "unit_id": 100211,
+        "voice": "vo_adv_2101003_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "你肚子餓了吧？",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n我做些好消化的東西給你吃吧，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "你有什麼想吃的嗎？",
+        "unit_id": 100211
+    },
+    {
+        "type": "background",
+        "background": "500361"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "噁……！",
+        "unit_id": 190911,
+        "voice": "vo_adv_2101003_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n口水流的滿身都是……！",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "吼，",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "你在幹嘛啦{player}～！",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "欸、",
+        "unit_id": 100211,
+        "voice": "vo_adv_2101003_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "欸……！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n騎士先生的這個樣子……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n該不會",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "是……！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "啊啊！",
+        "unit_id": 100311,
+        "voice": "vo_adv_2101003_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n就像當初那樣，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "變回了當時因為喪失記憶而導致自我薄弱的模樣……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "或許可以說是變得更加幼化了也說不定……！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人……",
+        "unit_id": 105913,
+        "voice": "vo_adv_2101003_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n難道，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "因為何種的衝擊",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "導致精神產生了退化……？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "怎麼會……！",
+        "unit_id": 100111,
+        "voice": "vo_adv_2101003_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "那該怎麼辦呀……！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "總而言之，",
+        "unit_id": 190911,
+        "voice": "vo_adv_2101003_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "別再讓他靠近我了啊！",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "如果再被塞到嘴裡一次，",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "可不是鬧著玩的呀……！",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "……嗯？",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "……",
+        "unit_id": 106414,
+        "voice": "vo_adv_2101003_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 106414
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "……",
+        "unit_id": 106414
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "咦？　",
+        "unit_id": 100211,
+        "voice": "vo_adv_2101003_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "這孩子，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "好像也醒過來了耶……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "那個……",
+        "unit_id": 100111,
+        "voice": "vo_adv_2101003_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "對了，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "妳叫什麼名字呢？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n我叫日和唷！　",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "請多指教囉！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "……？",
+        "unit_id": 106414,
+        "voice": "vo_adv_2101003_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "……嗯？　",
+        "unit_id": 100111,
+        "voice": "vo_adv_2101003_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "是聽不懂我說的話嗎？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我說名字唷。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "妳",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "的",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "名～",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "字～！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "雪……、",
+        "unit_id": 106414,
+        "voice": "vo_adv_2101003_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "芙……",
+        "unit_id": 106414
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是因為才剛甦醒過來嗎……",
+        "unit_id": 105913,
+        "voice": "vo_adv_2101003_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "說話似乎還不太正常的樣子呢。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……不對，",
+        "unit_id": 100311,
+        "voice": "vo_adv_2101003_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這孩子也一樣，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n似乎有哪裡不太對勁……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "……噠。",
+        "unit_id": 106414,
+        "voice": "vo_adv_2101003_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n啊嗚啊～",
+        "unit_id": 106414
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "幹、幹什麼呀妳？　",
+        "unit_id": 190911,
+        "voice": "vo_adv_2101003_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "為什麼要那樣盯著我看……",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "……啊！",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "啊啊！？",
+        "unit_id": 100211,
+        "voice": "vo_adv_2101003_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n那個女孩子，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "一把抓住了涅比亞……！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "然後就往嘴巴裡塞了～！？",
+        "unit_id": 100111,
+        "voice": "vo_adv_2101003_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "我說妳們這些傢伙！　",
+        "unit_id": 190911,
+        "voice": "vo_adv_2101003_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "別愣在那邊看趕快來救人啦！",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n快點救我呀～！　",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "……",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "啊……",
+        "unit_id": 190911
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "呀呀哈♪",
+        "unit_id": 106414,
+        "voice": "vo_adv_2101003_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "呃……",
+        "unit_id": 105913,
+        "voice": "vo_adv_2101003_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "總而言之，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "先將現在的狀況整理一下……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "不管是騎士先生，",
+        "unit_id": 100211,
+        "voice": "vo_adv_2101003_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "還是這個女孩子，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "他們兩個人……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "在精神上，",
+        "unit_id": 100311,
+        "voice": "vo_adv_2101003_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "似乎都和嬰兒無異……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "的模樣呢。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "……怎、",
+        "unit_id": 100111,
+        "voice": "vo_adv_2101003_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……怎、",
+        "unit_id": 100311,
+        "voice": "vo_adv_2101003_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "……怎、",
+        "unit_id": 100211,
+        "voice": "vo_adv_2101003_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣等人",
+        "words": "怎麼辦！？",
+        "unit_id": 1,
+        "voice": "vo_adv_2101003_065"
+    }
+]

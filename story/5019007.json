@@ -1,0 +1,943 @@
+[
+    {
+        "type": "background",
+        "background": "500680"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "聚集了鈴奈等人的祈禱之力，晴神大人終於平安甦醒。\n海灘變得晴空萬里，雨神大人也恢復了原本的模樣。"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "…………",
+        "unit_id": 11711,
+        "voice": "vo_adv_5019007_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "難道他就是……？",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019007_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "晴吉吉吉吉～～！！",
+        "unit_id": 11611,
+        "voice": "vo_adv_5019007_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "晴吉",
+        "words": "唔！",
+        "unit_id": 11711,
+        "voice": "vo_adv_5019007_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "晴吉",
+        "words": "\n早安！",
+        "unit_id": 11711
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "晴吉、",
+        "unit_id": 11611,
+        "voice": "vo_adv_5019007_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "晴吉！",
+        "unit_id": 11611
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "\n我好想見你啊～！",
+        "unit_id": 11611
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "太好了！",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019007_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "喚醒晴吉了呢！",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "哎呀，",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019007_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "只要交給我們，",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "很快就沒事了啦！",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "各位，",
+        "unit_id": 110111,
+        "voice": "vo_adv_5019007_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "你們辛苦了。",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "今天我要幫你們畫特大的鼓勵小花！",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "晴吉",
+        "words": "你們那樣吵吵鬧鬧的在做什麼？",
+        "unit_id": 11711,
+        "voice": "vo_adv_5019007_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "晴吉",
+        "words": "\n我的頭還有點昏昏沉沉的……",
+        "unit_id": 11711
+    },
+    {
+        "type": "dialogue",
+        "name": "晴吉",
+        "words": "\n感覺這次",
+        "unit_id": 11711
+    },
+    {
+        "type": "dialogue",
+        "name": "晴吉",
+        "words": "好像有點睡過頭了呢？",
+        "unit_id": 11711
+    },
+    {
+        "type": "dialogue",
+        "name": "晴吉",
+        "words": "而且，",
+        "unit_id": 11711,
+        "voice": "vo_adv_5019007_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "晴吉",
+        "words": "你說的晴吉",
+        "unit_id": 11711
+    },
+    {
+        "type": "dialogue",
+        "name": "晴吉",
+        "words": "是什麼？",
+        "unit_id": 11711
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "呵呵呵，",
+        "unit_id": 11611,
+        "voice": "vo_adv_5019007_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "\n那是鈴奈為我們",
+        "unit_id": 11611
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "想的暱稱！",
+        "unit_id": 11611
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "\n鈴奈她呀，",
+        "unit_id": 11611
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "是我新結交的",
+        "unit_id": 11611
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "人類朋友。",
+        "unit_id": 11611
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "她說是朋友的話，",
+        "unit_id": 11611,
+        "voice": "vo_adv_5019007_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "有個暱稱會比較好。",
+        "unit_id": 11611
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "\n所以說，",
+        "unit_id": 11611
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "我叫雨吉！",
+        "unit_id": 11611
+    },
+    {
+        "type": "dialogue",
+        "name": "晴吉",
+        "words": "咦！",
+        "unit_id": 11711,
+        "voice": "vo_adv_5019007_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "晴吉",
+        "words": "\n妳就是鈴奈？",
+        "unit_id": 11711
+    },
+    {
+        "type": "dialogue",
+        "name": "晴吉",
+        "words": "\n以一個人類來說，",
+        "unit_id": 11711
+    },
+    {
+        "type": "dialogue",
+        "name": "晴吉",
+        "words": "妳還蠻有品味的嘛！",
+        "unit_id": 11711
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "哈哈哈，",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019007_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "還好啦！",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "那個……",
+        "unit_id": 511,
+        "voice": "vo_adv_5019007_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "雨神大人……",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "不對，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "是雨吉，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "還有晴吉，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "這次的事",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "實在很抱歉！",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "晴吉",
+        "words": "……？",
+        "unit_id": 11711,
+        "voice": "vo_adv_5019007_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "因為晴吉之前在沉眠，",
+        "unit_id": 110111,
+        "voice": "vo_adv_5019007_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n看來你不知道",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "之前只有雨吉先甦醒了呢。",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "無論如何，",
+        "unit_id": 511,
+        "voice": "vo_adv_5019007_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "我們已經體會到",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "自己有多麼自私了。",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "像這樣的事情，",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "不會再讓它發生第二次……",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "\n",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "懇請您們",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "村長",
+        "words": "原諒……",
+        "unit_id": 511
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "已經沒關係了，",
+        "unit_id": 11611,
+        "voice": "vo_adv_5019007_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "我不生氣了。",
+        "unit_id": 11611
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "\n不僅見到了晴吉，",
+        "unit_id": 11611
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "而且也結交了新朋友。",
+        "unit_id": 11611
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "\n對吧，",
+        "unit_id": 11611
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "鈴奈？",
+        "unit_id": 11611
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "對呀！",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019007_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "那麼，",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "就和我們一起玩吧！",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "嗯！",
+        "unit_id": 11611,
+        "voice": "vo_adv_5019007_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "　天氣一事，",
+        "unit_id": 11611
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "就交給我們。",
+        "unit_id": 11611
+    },
+    {
+        "type": "dialogue",
+        "name": "雨吉",
+        "words": "\n對吧！",
+        "unit_id": 11611
+    },
+    {
+        "type": "dialogue",
+        "name": "晴吉",
+        "words": "我是不知道發生了什麼事，",
+        "unit_id": 11711,
+        "voice": "vo_adv_5019007_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "晴吉",
+        "words": "不過沒問題喔！",
+        "unit_id": 11711
+    },
+    {
+        "type": "dialogue",
+        "name": "晴吉",
+        "words": "\n請多指教，",
+        "unit_id": 11711
+    },
+    {
+        "type": "dialogue",
+        "name": "晴吉",
+        "words": "鈴奈！",
+        "unit_id": 11711
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "那就馬上來――",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019007_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "等一下！",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019007_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "接下來，",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "妳要到舞台上表演啊？",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "……啊！",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019007_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "　對耶！",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n人家還有工作沒做完！",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "是啊，",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019007_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "我們是來這裡幫妳加油的，",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n要好好表現喔！",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "好！",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019007_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "唔，嗚哇哇！",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019007_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n為什麼拉住我的手啦！？",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "呀啊？",
+        "unit_id": 110111,
+        "voice": "vo_adv_5019007_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "　連、",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "連我也是？",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "好了，好了！",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019007_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "要一起上台喔！",
+        "unit_id": 110011
+    },
+    {
+        "type": "still",
+        "still": "501900701"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "你好你好！",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019007_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n讓大家久等了！",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "各位，",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019007_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "你們沒事吧？",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n雖然剛才的表演有點浮誇，",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "但大家玩得開心嗎～？",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "女觀光客",
+        "words": "呀！",
+        "unit_id": 1212,
+        "voice": "vo_adv_5019007_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "女觀光客",
+        "words": "　鈴奈！",
+        "unit_id": 1212
+    },
+    {
+        "type": "dialogue",
+        "name": "男觀光客",
+        "words": "雖然嚇了一跳，",
+        "unit_id": 312,
+        "voice": "vo_adv_5019007_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "男觀光客",
+        "words": "但很開心喔！",
+        "unit_id": 312
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "太好了～！",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019007_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "已經沒下雨了，",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n請大家不要顧慮，好好享受喔！",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "這就是",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019007_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "鈴奈她",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "一直看著的風景……？",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "實在太壯觀了……",
+        "unit_id": 110111,
+        "voice": "vo_adv_5019007_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n和講台上看到的完全不一樣……",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "男觀光客",
+        "words": "站在旁邊的人是誰啊？",
+        "unit_id": 312,
+        "voice": "vo_adv_5019007_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "男觀光客",
+        "words": "\n",
+        "unit_id": 312
+    },
+    {
+        "type": "dialogue",
+        "name": "男觀光客",
+        "words": "那個姐姐",
+        "unit_id": 312
+    },
+    {
+        "type": "dialogue",
+        "name": "男觀光客",
+        "words": "超性感的！",
+        "unit_id": 312
+    },
+    {
+        "type": "dialogue",
+        "name": "女觀光客",
+        "words": "另一位女孩子，",
+        "unit_id": 1212,
+        "voice": "vo_adv_5019007_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "女觀光客",
+        "words": "既漂亮又可愛！",
+        "unit_id": 1212
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "那邊的！",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019007_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "　我都聽見了！",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n真是沒禮貌呢！",
+        "unit_id": 110211
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "今天多虧了大家，",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019007_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n人家才會站在這裡。",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "所以今天我想",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019007_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "和大家一起站上台。",
+        "unit_id": 110011
+    },
+    {
+        "type": "still",
+        "still": "501900702"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "鈴奈～！",
+        "unit_id": 110211,
+        "voice": "vo_adv_5019007_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "馬上就創造了",
+        "unit_id": 110111,
+        "voice": "vo_adv_5019007_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "一個很棒的回憶呢。",
+        "unit_id": 110111
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "人家已經想玩想得不得了！",
+        "unit_id": 110011,
+        "voice": "vo_adv_5019007_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "所以說，",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "夏天要開始了，請多指教！",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "要開始了喔――！",
+        "unit_id": 110011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈等人",
+        "words": "預備……！",
+        "unit_id": 1,
+        "voice": "vo_adv_5019007_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "就這樣，伴隨著鈴奈、伊緒、美咲的海水浴場開幕宣言，\n島上開始了熱鬧的夏天。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "2隻精靈坐在掛在天空中的彩虹，\n一直笑容滿面的守護著，\n沙灘上開心遊玩的人類。"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    }
+]

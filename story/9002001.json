@@ -1,0 +1,636 @@
+[
+    {
+        "type": "background",
+        "background": "500040"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}收到了公會管理協會的消息，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n與花凜見了面。"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "你好，{player}。",
+        "unit_id": 190811,
+        "voice": "vo_adv_9002001_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "謝謝你特地",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "跑這一趟！",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "其實，",
+        "unit_id": 190811,
+        "voice": "vo_adv_9002001_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "今天是有一件任務\n想委託給{player}……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "你能夠幫忙嗎？",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "太好了，",
+        "unit_id": 190811,
+        "voice": "vo_adv_9002001_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "我就覺得你會這麼說！",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n那麼就直接進入正題……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "請收下這個。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "是的，",
+        "unit_id": 190811,
+        "voice": "vo_adv_9002001_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "希望能委託你配送這本書。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n如果你能前往每一個委託人那裡",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "依序配送，那就太好了。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "不過，",
+        "unit_id": 190811,
+        "voice": "vo_adv_9002001_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "請不要在途中詢問別人這是什麼書，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n也請不要翻開來看……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "因為這將會成為一本非常寶貴的書♪",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "這邊會準備非常棒的報酬，",
+        "unit_id": 190811,
+        "voice": "vo_adv_9002001_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "請好好加油！",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "第一個配送地點是這裡。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n那麼",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "就拜託你了。",
+        "unit_id": 190811
+    },
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}從花凜手中接過那本書，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n出發前往配送地點──"
+    },
+    {
+        "type": "background",
+        "background": "500040"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "怜、",
+        "unit_id": 100211,
+        "voice": "vo_adv_9002001_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "日和。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n妳們說騎士先生會來，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "時間差不多了吧？",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "對呢。",
+        "unit_id": 100311,
+        "voice": "vo_adv_9002001_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n用通訊魔法詢問花凜後的感覺來說，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我想差不多了唷。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "欸嘿嘿，",
+        "unit_id": 100111,
+        "voice": "vo_adv_9002001_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我們還是首發選手，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "真令人期待呢～♪",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呵呵，",
+        "unit_id": 100311,
+        "voice": "vo_adv_9002001_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "說人人到",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呢。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "騎士先生！",
+        "unit_id": 100111,
+        "voice": "vo_adv_9002001_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "歡迎光臨～！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "騎士先生，",
+        "unit_id": 100211,
+        "voice": "vo_adv_9002001_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我們一直在等你耶……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "不對！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n今、",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "今天有什麼事嗎……？",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "哇，",
+        "unit_id": 100211,
+        "voice": "vo_adv_9002001_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "就是這個吧……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "謝謝你送書本來，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "騎士先生。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "怜，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "那麼……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "優衣，",
+        "unit_id": 100111,
+        "voice": "vo_adv_9002001_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我也過去囉～♪",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嘿嘿，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "真期待呢！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呵呵，",
+        "unit_id": 100311,
+        "voice": "vo_adv_9002001_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n兩個人都很興奮呢。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "話說回來，",
+        "unit_id": 100311,
+        "voice": "vo_adv_9002001_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n和你在蘭德索爾展開冒險，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n也過得很長一段時間了──",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "好像就快要滿三年了……",
+        "unit_id": 100311,
+        "voice": "vo_adv_9002001_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "時間過得可真快呢。",
+        "unit_id": 100311
+    },
+    {
+        "type": "still",
+        "still": "300700101"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "回想起來，",
+        "unit_id": 100311,
+        "voice": "vo_adv_9002001_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "和你一起經歷了很多事情……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n有過開心的事、",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "難受的事……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "唔，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "也有過讓人害羞的事情。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這些都是美好的回憶唷。",
+        "unit_id": 100311
+    },
+    {
+        "type": "background",
+        "background": "500040"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "今後",
+        "unit_id": 100311,
+        "voice": "vo_adv_9002001_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "如果還能與你一起創造各種回憶，我會很開心的。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "久等了～♪",
+        "unit_id": 100111,
+        "voice": "vo_adv_9002001_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "騎士先生，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這個！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "書本，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "等很久了吧♪",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n小心不要弄丟囉！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "下一個配送地點",
+        "unit_id": 100211,
+        "voice": "vo_adv_9002001_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "請前往這裡。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n我想這會是有點花時間的委託，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "加油呢。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "這份工作結束時",
+        "unit_id": 100211,
+        "voice": "vo_adv_9002001_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "再見吧。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "一路順風，騎士先生──",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "３人",
+        "words": "路上小心！",
+        "unit_id": 1,
+        "voice": "vo_adv_9002001_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "來自公會管理協會委託的神祕書本配送任務。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n在【破曉之星】三人的目送下，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n{player}開始了不可思議的旅程。"
+    }
+]

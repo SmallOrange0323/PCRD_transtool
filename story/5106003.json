@@ -1,0 +1,2778 @@
+[
+    {
+        "type": "background",
+        "background": "500036"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}一行人，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n為了在聖誕樹上裝上天線，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n來到了鬧區。"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "……這裡就是蘭德索爾的城鎮嗎？",
+        "unit_id": 8911,
+        "voice": "vo_adv_5106003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "艾米妳一定",
+        "unit_id": 5511,
+        "voice": "vo_adv_5106003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "也會喜歡這座城鎮的！",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "對了，",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "這裡有一間我很推薦的甜點店──",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "妳這樣東張西望的，",
+        "unit_id": 8911,
+        "voice": "vo_adv_5106003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "小心又迷路了。",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "來，",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "牽著我的手……",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "嘿嘿……",
+        "unit_id": 5511,
+        "voice": "vo_adv_5106003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "艾米，",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "謝謝妳！",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "不過，我現在",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "很～偶爾才會迷路一次哦！",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "完全沒有什麼好驕傲的吧。",
+        "unit_id": 8911,
+        "voice": "vo_adv_5106003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "不說這個了，",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "拉菲喜歡的那間店在哪裡？",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n我也想去看看。",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "茜里……",
+        "unit_id": 102212,
+        "voice": "vo_adv_5106003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "她們兩個",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "不是在吵架嗎？",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "比賽的事情怎麼樣了？",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "她們一定是感情很好的吵架、",
+        "unit_id": 100611,
+        "voice": "vo_adv_5106003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "感情很好的比賽吧！",
+        "unit_id": 100611
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "各位！",
+        "unit_id": 5511,
+        "voice": "vo_adv_5106003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n就是那邊那棵樹！",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "純小姐也在呢！",
+        "unit_id": 100611,
+        "voice": "vo_adv_5106003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n",
+        "unit_id": 100611
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "奇怪？",
+        "unit_id": 100611
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "她身邊的士兵，",
+        "unit_id": 100611
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "我好像在哪裡看過……",
+        "unit_id": 100611
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "事情就是這樣，",
+        "unit_id": 104711,
+        "voice": "vo_adv_5106003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "就像對待其他市民一樣，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n萬一她們有什麼困難，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "希望你可以幫助她們。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "明白了！",
+        "unit_id": 712,
+        "voice": "vo_adv_5106003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "\n我們之前",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "也受到過她們的關照。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "\n我會協助她們的。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "該不會……",
+        "unit_id": 102212,
+        "voice": "vo_adv_5106003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "你是那時候的隊長嗎？",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "雙胞胎少女們，",
+        "unit_id": 712,
+        "voice": "vo_adv_5106003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "\n好久不見。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "那、",
+        "unit_id": 5511,
+        "voice": "vo_adv_5106003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "那個。",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n之前因為我的關係，",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "給大家添麻煩了……",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "對不起……",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "把臉抬起來吧。",
+        "unit_id": 712,
+        "voice": "vo_adv_5106003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "我們已經充分",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "感受到妳的歉意了。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "\n現在，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "妳就是個我們該守護的百姓，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "讓我們來幫妳吧。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "依里，",
+        "unit_id": 104711,
+        "voice": "vo_adv_5106003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "關於接近聖誕樹裝飾的事，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n我已經請相關單位批准了。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "純小姐，",
+        "unit_id": 100611,
+        "voice": "vo_adv_5106003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "謝謝妳♪",
+        "unit_id": 100611
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "拉菲，",
+        "unit_id": 102212,
+        "voice": "vo_adv_5106003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "妳本來是打算裝飾這棵樹的嗎？",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "……這種高度，",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "難怪純小姐會阻止妳。",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "我也找過其他樹呀。",
+        "unit_id": 5511,
+        "voice": "vo_adv_5106003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "可是，",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "符合天線波長的樹，",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n就只有這一棵了。",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "……的確是這樣。",
+        "unit_id": 8911,
+        "voice": "vo_adv_5106003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "我剛剛查了一下，",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "這棵樹是最合適的。",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "那我們",
+        "unit_id": 8911,
+        "voice": "vo_adv_5106003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "就快點裝上天線吧。",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "……天使之箭！",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "她剛才",
+        "unit_id": 102212,
+        "voice": "vo_adv_5106003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "用的是魔法吧。",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "……她們說的天線，",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n莫非是指樹頂端的",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "那個裝飾？",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "哇～♪",
+        "unit_id": 100611,
+        "voice": "vo_adv_5106003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n感覺變成一棵會保佑情侶的樹了呢！",
+        "unit_id": 100611
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "艾米，",
+        "unit_id": 5511,
+        "voice": "vo_adv_5106003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "謝謝妳！",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "我的魔法能力還不到家，",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "妳幫了大忙！",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "……即便是這樣，",
+        "unit_id": 8911,
+        "voice": "vo_adv_5106003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "拉菲也準確鎖定了正確的目標。",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n對妳來說，這是很大的進步了。",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "咦！？",
+        "unit_id": 5511,
+        "voice": "vo_adv_5106003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "嘿嘿……！",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n因為我每天",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "都很努力地在修行呀！",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n當然，",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "和艾米相比還差得遠呢！",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "那當然了。",
+        "unit_id": 8911,
+        "voice": "vo_adv_5106003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "我可是一名優秀的天使。",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "拉菲果然",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "沒有我不行呢。",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "兩個人總是黏在一起，",
+        "unit_id": 102212,
+        "voice": "vo_adv_5106003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "妳們",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "感情真的很好呢。",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n連我和茜里",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "都不到這種程度呢。",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "…",
+        "unit_id": 8911,
+        "voice": "vo_adv_5106003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "………",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "哇～",
+        "unit_id": 100611,
+        "voice": "vo_adv_5106003_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "艾米的臉頰",
+        "unit_id": 100611
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "紅通通的～♪",
+        "unit_id": 100611
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n",
+        "unit_id": 100611
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "妳害羞啦～？",
+        "unit_id": 100611
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "請、",
+        "unit_id": 8911,
+        "voice": "vo_adv_5106003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "請妳不要碰我……！",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n別跟我裝熟！",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "趁這個機會，我就直說了吧！",
+        "unit_id": 8911,
+        "voice": "vo_adv_5106003_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "我是很感謝妳們阻止了拉菲的失控的。",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "但是……",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "我還是覺得天使的考試，",
+        "unit_id": 8911,
+        "voice": "vo_adv_5106003_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n不應該有非天使的人來參與！",
+        "unit_id": 8911
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "但是手冊裡好像沒有寫禁止吧……",
+        "unit_id": 5511,
+        "voice": "vo_adv_5106003_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "我看看，",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "是在哪一頁呢……",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "天使之箭。",
+        "unit_id": 8911,
+        "voice": "vo_adv_5106003_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "啊！？",
+        "unit_id": 5511,
+        "voice": "vo_adv_5106003_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "我的手冊消失了！",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "艾米，",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "快還給我！",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "普通人不可以參與嗎？",
+        "unit_id": 100611,
+        "voice": "vo_adv_5106003_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n",
+        "unit_id": 100611
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "那麼，拉菲，",
+        "unit_id": 100611
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n妳再把茜里我們變成天使的模樣吧！",
+        "unit_id": 100611
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "然後呀……",
+        "unit_id": 100611,
+        "voice": "vo_adv_5106003_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n希望造型",
+        "unit_id": 100611
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "可以改成",
+        "unit_id": 100611
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "像那間店展示的衣服那樣♪",
+        "unit_id": 100611
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "……咦！？",
+        "unit_id": 102212,
+        "voice": "vo_adv_5106003_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n改成那種輕飄飄的服裝……！？",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "等、",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "等一下──",
+        "unit_id": 102212
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "這點要求，",
+        "unit_id": 5511,
+        "voice": "vo_adv_5106003_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "小事一樁！",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n天使",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "之箭～！",
+        "unit_id": 5511
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "哇──！？",
+        "unit_id": 1,
+        "voice": "vo_adv_5106003_040"
+    },
+    {
+        "type": "background",
+        "background": "500036"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "怎麼辦……！",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106003_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n身體又要跟茜里互換了…………",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "沒有啊？",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "哇～♪",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106003_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n茜里",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "一直想穿看看聖誕裝呢～！",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n天使的翅膀也",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "很棒喔♪",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "……等、",
+        "unit_id": 8912,
+        "voice": "vo_adv_5106003_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "等一下……！",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n連我都變成聖誕裝了喔！？",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "難得過一次聖誕節嘛！",
+        "unit_id": 5512,
+        "voice": "vo_adv_5106003_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n我覺得這樣",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "會感覺比較幸福呀！",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n艾米也跟我",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "穿一樣的呢♪",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "……一樣的。",
+        "unit_id": 8912,
+        "voice": "vo_adv_5106003_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "我、",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "我又不是那種會因為這點小事就興奮的人……",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n但以保暖",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "這一點來看，",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "算是還不錯吧。",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "哥哥，",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106003_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "怎麼樣？",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n茜里我們……",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "可不可愛呀？",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "你可以靠近一點看哦♪",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "……先不論外觀怎麼樣，",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106003_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "衣服重現得很完美，",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "讓我有點吃驚呢。",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "拉菲，",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "魔法沒有失敗真是太棒了！",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "嗯哼！",
+        "unit_id": 5512,
+        "voice": "vo_adv_5106003_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "之前說好了，下次見面時，",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n我一定會讓兩位見識到",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "有所改變的我嘛──",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "唔哇啊啊啊！？",
+        "unit_id": 1,
+        "voice": "vo_adv_5106003_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "３人",
+        "words": "……咦？",
+        "unit_id": 1,
+        "voice": "vo_adv_5106003_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "我、",
+        "unit_id": 124212,
+        "voice": "vo_adv_5106003_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "我的頭盔不見了！？",
+        "unit_id": 124212
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n",
+        "unit_id": 124212
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "而且，我的衣服是不是也變了！？",
+        "unit_id": 124212
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "妳們看……！",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106003_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n那個人該不會是……",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "莫非是……！？",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "拜、",
+        "unit_id": 712,
+        "voice": "vo_adv_5106003_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "拜託妳了……！",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "\n請把團長變回原本的模樣……！",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "我來變回去！",
+        "unit_id": 5512,
+        "voice": "vo_adv_5106003_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "唔～",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "唔～！",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "……啊。",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "好像得過一段時間",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "才能變回去……",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "妳不能放棄啊！",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106003_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n再試一次吧！",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "嘿！",
+        "unit_id": 5512,
+        "voice": "vo_adv_5106003_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "我變！",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "看招！！",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "………對不起，",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "好像變不回去。",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "……抱、",
+        "unit_id": 124212,
+        "voice": "vo_adv_5106003_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "抱歉。",
+        "unit_id": 124212
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n我突然想起來還有一點事情要辦，",
+        "unit_id": 124212
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "先告辭了。",
+        "unit_id": 124212
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "團、",
+        "unit_id": 712,
+        "voice": "vo_adv_5106003_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "團長肯定是打算",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "回去換衣服再過來！",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "\n我們會想辦法處理好這件事的，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "別擔心！",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "王宮騎士隊長",
+        "words": "\n告辭！！",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "全員",
+        "words": "…………",
+        "unit_id": 1,
+        "voice": "vo_adv_5106003_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "怎麼辦……",
+        "unit_id": 5512,
+        "voice": "vo_adv_5106003_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "搞不好",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "會因為魔法的關係，害她連衣服都換不了……",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "……我說啊？",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106003_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n「有所改變的我」去哪裡了？",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "嗚嗚",
+        "unit_id": 5512,
+        "voice": "vo_adv_5106003_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "……",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "我的好夥伴",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "弓箭……",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n這孩子也在說對不起……",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "不過，",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106003_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "茜里好吃驚！",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n原來純小姐是個大美人呀……！",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n哥哥，你本來就知道嗎！？",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "咦！？",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106003_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "你早就知道了嗎！？",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n為什麼！？",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "從什麼時候開始的！？",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n……很久之前嗎！？",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "這、",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106003_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "這樣啊……",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n居然連真面目都看過了，",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n你",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "和純小姐",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "果然",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "關係特別好呢……",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "…………",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106003_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "哈囉～？",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106003_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "姊姊～？",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "……唉，",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "真拿妳沒辦法。",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "那個……！",
+        "unit_id": 5512,
+        "voice": "vo_adv_5106003_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n不管怎樣，這兩個人不是無關聯的人，",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "而是優秀的天使！",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "所以她們也沒有被禁止協助考試，",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "對吧？",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "……隨便妳。",
+        "unit_id": 8912,
+        "voice": "vo_adv_5106003_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "就算妳再哭著來找我，",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "我也絕對不會幫妳的。",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "那麼，",
+        "unit_id": 8912,
+        "voice": "vo_adv_5106003_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "我會專注在自己的考試上。",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "男性１",
+        "words": "唉……",
+        "unit_id": 414,
+        "voice": "vo_adv_5106003_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "這位先生，",
+        "unit_id": 8912,
+        "voice": "vo_adv_5106003_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "你想送孩子玩具，",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n但卻沒有錢買吧。",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "既然如此──",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "男性１",
+        "words": "哇哇！？",
+        "unit_id": 414,
+        "voice": "vo_adv_5106003_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性１",
+        "words": "這道光是怎麼回事……！？",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "男性１",
+        "words": "……我女兒很想要的那個娃娃？",
+        "unit_id": 414,
+        "voice": "vo_adv_5106003_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "這是上天賜予的禮物。",
+        "unit_id": 8912,
+        "voice": "vo_adv_5106003_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n請收下吧。",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "男性１",
+        "words": "上天賜予的禮物……",
+        "unit_id": 414,
+        "voice": "vo_adv_5106003_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性１",
+        "words": "\n",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "男性１",
+        "words": "啊啊……",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "男性１",
+        "words": "太感謝了！",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "男性１",
+        "words": "\n這樣我就不用讓女兒失望了！",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "啊！",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106003_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n樹上的天線發光了！",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "難道",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106003_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "是因為收集到幸福點數了？",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "沒錯。",
+        "unit_id": 8912,
+        "voice": "vo_adv_5106003_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "我暫時領先了一步。",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "那麼",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "我們看看拉菲的本事吧。",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "咦！？",
+        "unit_id": 5512,
+        "voice": "vo_adv_5106003_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "我的本事！？",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "呃，",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "唔……",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "那邊那位先生！",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "男性２",
+        "words": "……嗯？",
+        "unit_id": 311,
+        "voice": "vo_adv_5106003_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性２",
+        "words": "有什麼事嗎？",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "我是",
+        "unit_id": 5512,
+        "voice": "vo_adv_5106003_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "為了讓大家變得超級無敵幸福",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "而降臨的天使……",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n名字叫做",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "拉菲！",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "你是不是有什麼煩惱呀？",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "不介意的話，我可以聽你──",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "男性２",
+        "words": "啊，",
+        "unit_id": 311,
+        "voice": "vo_adv_5106003_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性２",
+        "words": "不了……",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "男性２",
+        "words": "我不需要……",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "……走掉了。",
+        "unit_id": 5512,
+        "voice": "vo_adv_5106003_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "他為什麼會說",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "「不需要」呢？",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "嗯。",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106003_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "會這樣也不奇怪……",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n我",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "第一次聽拉菲說自己是天使的時候，",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "也覺得有點可疑的……",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "太過分了！",
+        "unit_id": 5512,
+        "voice": "vo_adv_5106003_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n我可是貨真價實的天使呀～！",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "我、",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106003_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "我知道啦。",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "妳等一下，",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "我想想看有沒有什麼好方法……",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "哇～！",
+        "unit_id": 5512,
+        "voice": "vo_adv_5106003_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "真不愧是依里！",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n就靠妳了！！",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "…………",
+        "unit_id": 8912,
+        "voice": "vo_adv_5106003_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "「唉～",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106003_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "為什麼我最喜歡的姊姊不來依靠我呢～」",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "……",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "妳是不是正在這麼想呀？",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "妳、",
+        "unit_id": 8912,
+        "voice": "vo_adv_5106003_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "妳沒頭沒腦的說什麼呀。",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "……我才沒有那麼想呢。",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "茜里完全理解妳的心情哦～",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106003_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "因為",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "茜里也最喜歡姊姊了！",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "…………",
+        "unit_id": 8912,
+        "voice": "vo_adv_5106003_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "啊，",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106003_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "妳終於願意看茜里了呀！",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "那個，",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "茜里想請艾米幫我一個忙──",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "也就是說，",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106003_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n我覺得心智年齡跟妳",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "差不多的小孩子",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "會更願意聽妳說話。",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "原來如此！",
+        "unit_id": 5512,
+        "voice": "vo_adv_5106003_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "我也比較喜歡跟小朋友說話呢！",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "而且，",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "一提到聖誕節",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "就會想到禮物！",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "如果能實現他們的願望的話，",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "他們應該會很高興的！",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "那我們馬上",
+        "unit_id": 5512,
+        "voice": "vo_adv_5106003_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "去找想要變幸福的小孩子吧！",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "等、",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106003_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "等一下啦……！",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n得先跟茜里她們說一聲才行呀……！",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "啊！",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106003_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "這樣正好♪",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "姊姊",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106003_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "妳就協助拉菲吧！",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "茜里",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "要跟艾米一起分頭行動！",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "為什麼！？",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106003_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "因為",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106003_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "她們兩個在比賽呀，",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "分開行動會比較好吧？",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "所以，",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "我們就分成「姊姊組」和",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "「妹妹組」",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "吧♪",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "都已經決定好了啊……",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106003_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "那麼，",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "{player}，",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n不好意思，",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "你就跟茜里一起──",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "哥哥，",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106003_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "拜託你了。",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n你可以陪在姊姊身邊嗎？",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "不然茜里",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "會很擔心……",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "咦？",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106003_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "咦咦！？",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106003_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n茜里！",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "妳別丟下我一個人啦……！",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "姊姊～",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106003_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "拉菲",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106003_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "還有",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "哥哥都陪著姊姊的呀♪",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "茜里，",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106003_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "這是妳預謀好的吧……！",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "才不是呢～",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106003_110"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "茜里只是推了妳一把～",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "如果待在一起，",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n或許就能增進情誼到",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "可以和哥哥互稱「朋友」的程度喔！",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "總而言之，勇往直前吧♪",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "拉菲。",
+        "unit_id": 8912,
+        "voice": "vo_adv_5106003_111"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n妳可不要給依里他們添麻煩了。",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "還有，",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "輸了就得吃青椒喔。",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "她們走掉了……",
+        "unit_id": 5512,
+        "voice": "vo_adv_5106003_112"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "怎麼會變成這樣……",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106003_113"
+    },
+    {
+        "type": "dialogue",
+        "name": "兩人",
+        "words": "唉…………",
+        "unit_id": 1,
+        "voice": "vo_adv_5106003_114"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "目送踩著輕快步伐離去的「妹妹組」，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n留在原地的「姊姊組」沉重地嘆了口氣。"
+    }
+]

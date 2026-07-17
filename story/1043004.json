@@ -1,0 +1,874 @@
+[
+    {
+        "type": "background",
+        "background": "500050"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "啊～我搞不懂啦啊啊！",
+        "unit_id": 104311,
+        "voice": "vo_adv_1043004_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n真是一個頭兩個大！",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "為什麼要我算帳簿啦，",
+        "unit_id": 104311,
+        "voice": "vo_adv_1043004_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n我怎麼可能會這種有點難的計算！",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n媽媽不要把麻煩的工作全丟給我啦啊啊！？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "……嗯哦？",
+        "unit_id": 104311,
+        "voice": "vo_adv_1043004_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n哦哦，{player}！",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "你好啊☆",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "你這傢伙，怎～麼又跑過來吃飯了啊？",
+        "unit_id": 104311,
+        "voice": "vo_adv_1043004_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "算了，反正食材費用，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n你之前也都一起付清了，所以沒關係。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "先別說這個。",
+        "unit_id": 104311,
+        "voice": "vo_adv_1043004_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n你啊，出現得正好呢！",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "過來這裡吧♪",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "{player}，你擅長計算嗎？",
+        "unit_id": 104311,
+        "voice": "vo_adv_1043004_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "那個啊～",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n我被拜託處理居酒屋的收支計算啦。",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "不過，我就跟外表一樣只是個粗人哦？",
+        "unit_id": 104311,
+        "voice": "vo_adv_1043004_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n不太擅長動腦啦～！",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "只要做一些細項的計算啊～",
+        "unit_id": 104311,
+        "voice": "vo_adv_1043004_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n我就會全身奇癢難耐想要跳起來大叫！",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "要我處理這種不能有半點差錯的帳簿，怎麼可能辦得到啦～！",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "所以說啊，{player}！",
+        "unit_id": 104311,
+        "voice": "vo_adv_1043004_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n就當作是幫我，可不可以替我算帳？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "不行？",
+        "unit_id": 104311,
+        "voice": "vo_adv_1043004_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n啊～話說你喪失之前的記憶了呢？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n加法乘法之類的，都不會了對吧？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "啊～沒關係，我自己加油吧。",
+        "unit_id": 104311,
+        "voice": "vo_adv_1043004_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n畢竟店裡的財務也不能隨便交給其他人處理呢，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "不過還是好麻煩！",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "噫！？",
+        "unit_id": 104311,
+        "voice": "vo_adv_1043004_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "怎、怎麼了？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n{player}，是不是有什麼在發光？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "不，是在店的裡面，",
+        "unit_id": 104311,
+        "voice": "vo_adv_1043004_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n我們的周圍全都閃閃發光……！？",
+        "unit_id": 104311
+    },
+    {
+        "type": "background",
+        "background": "510220"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "……呼哇？",
+        "unit_id": 104331,
+        "voice": "vo_adv_1043004_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "咦，我是不是又睡著了啊？",
+        "unit_id": 104331,
+        "voice": "vo_adv_1043004_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n總～覺得好像恍神了一下……",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "糟糕，明明第五堂課有數學小考的！",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "{player}，你有念書嗎？",
+        "unit_id": 104331,
+        "voice": "vo_adv_1043004_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n我啊，其實完全忘記有小考了呢？",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n糟糕了啦，小考要是不及格就要課後輔導對吧？",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "原本打算在午休的時候讀多少算多少的，",
+        "unit_id": 104331,
+        "voice": "vo_adv_1043004_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n我竟然恍神打瞌睡了！",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "話說我連考試範圍都不知道，完蛋啦～！",
+        "unit_id": 104331,
+        "voice": "vo_adv_1043004_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "已經不行了！",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "你說「認為辦不到就辦不到，認為辦得到就能成功！」，",
+        "unit_id": 104331,
+        "voice": "vo_adv_1043004_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n這算什麼，精神喊話嗎？",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "你這傢伙，打算用這句話鼓勵我嗎？",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "……不過這樣也行啦。",
+        "unit_id": 104331,
+        "voice": "vo_adv_1043004_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n的確就像{player}說的一樣。",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "一開始就放棄就分出勝負了哦，不管是吵架還是考試都一樣。",
+        "unit_id": 104331,
+        "voice": "vo_adv_1043004_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n你說對吧？",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "喂，不要突然發出這麼大的聲音！",
+        "unit_id": 104331,
+        "voice": "vo_adv_1043004_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "班上所有人都以為發生什麼事，朝這邊看呢？",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n不要這樣啦～我不想要引人注目！",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "{player}也沒有準備小考嗎？",
+        "unit_id": 104331,
+        "voice": "vo_adv_1043004_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "這樣啊……這樣的話，",
+        "unit_id": 104331,
+        "voice": "vo_adv_1043004_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n我們就只能一起接受課後輔導了呢？",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "節哀順變～♪",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "哦唷。",
+        "unit_id": 104331,
+        "voice": "vo_adv_1043004_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "現在不是和{player}說閒話的時候了哦，",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n得快點念書……",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "啊啊，可是好麻煩！",
+        "unit_id": 104331,
+        "voice": "vo_adv_1043004_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n話說肚子餓也沒辦法動腦，得先吃飯才行，吃飯！",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "嗯？",
+        "unit_id": 104331,
+        "voice": "vo_adv_1043004_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n{player}每天都吃便當不是嗎？",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n今天忘記帶了？",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "還是一樣少一根筋……",
+        "unit_id": 104331,
+        "voice": "vo_adv_1043004_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n要是你不介意的話，我可以把便當稍微分你一點哦♪",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "給你，吃吧，不要客氣。",
+        "unit_id": 104331,
+        "voice": "vo_adv_1043004_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n反正也都是店裡剩下的飯菜，快吃快吃♪",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "咦？",
+        "unit_id": 104331,
+        "voice": "vo_adv_1043004_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n喂喂，{player}……",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n我們是什麼時候變得這麼要好的？",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "奇怪？",
+        "unit_id": 104331,
+        "voice": "vo_adv_1043004_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n怎麼回事，感覺真奇怪。",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104331
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "嗯嗯，我～還沒睡醒嗎？",
+        "unit_id": 104331
+    },
+    {
+        "type": "background",
+        "background": "500270"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "好的，結束～♪",
+        "unit_id": 190011,
+        "voice": "vo_adv_1043004_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n如何呢，你做了個好「夢」嗎？",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "對不起呢。",
+        "unit_id": 190011,
+        "voice": "vo_adv_1043004_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n再這麼下去，",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n會讓你感到和原本的「記憶」有太大的落差……",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "所以我就強制結束了。",
+        "unit_id": 190011,
+        "voice": "vo_adv_1043004_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "真琴的直覺非常準，她也注意到了什麼。",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "本來你和真琴之間……",
+        "unit_id": 190011,
+        "voice": "vo_adv_1043004_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n似乎有很多的隔閡，",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n表面上沒有辦法讓關係變得那麼好。",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "不要取回原本的「記憶」，",
+        "unit_id": 190011,
+        "voice": "vo_adv_1043004_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n說不定這樣對真琴來說比較幸福。",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "不過就算對現在的你說這些，",
+        "unit_id": 190011,
+        "voice": "vo_adv_1043004_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n你也不會懂吧？",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "總而言之。",
+        "unit_id": 190011,
+        "voice": "vo_adv_1043004_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n之後你會藉由做各式各樣的「夢」，",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n讓心靈獲得修補。",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "要是不做任何準備就回復你所有的記憶，",
+        "unit_id": 190011,
+        "voice": "vo_adv_1043004_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n誤差太多會讓你的腦袋轉不過來的。",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "之後會階段性地，透過你和許多女孩子之間的「回憶」……",
+        "unit_id": 190011,
+        "voice": "vo_adv_1043004_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n透過「夢境」來修補你的心靈。",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "不可以一直做「夢」哦，",
+        "unit_id": 190011,
+        "voice": "vo_adv_1043004_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n還是得面對「現實」才行……",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n對任何人來說，那都是最自然的事情。",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "哦唷，不能談太久呢……",
+        "unit_id": 190011,
+        "voice": "vo_adv_1043004_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "這次就聊到這裡，",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "掰掰♪",
+        "unit_id": 190011
+    },
+    {
+        "type": "background",
+        "background": "500050"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "……嗯啊。",
+        "unit_id": 104311,
+        "voice": "vo_adv_1043004_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n咦，我睡著了？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n{player}，現在幾點了！？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "哇，已經是晚上了嘛！",
+        "unit_id": 104311,
+        "voice": "vo_adv_1043004_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "得開店了，客人都在等了！",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n糟糕了啦，帳簿都還沒有處理好！",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "算了，不管什麼事都得一件一件來。",
+        "unit_id": 104311,
+        "voice": "vo_adv_1043004_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n……{player}也是，",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "不介意的話吃個飯吧～？",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n算帳太麻煩了，免費請你吃剩下的啦♪",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "嗯嗯？",
+        "unit_id": 104311,
+        "voice": "vo_adv_1043004_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "\n",
+        "unit_id": 104311
+    },
+    {
+        "type": "dialogue",
+        "name": "真琴",
+        "words": "不用客氣啦，我和你都什麼交情了……{player}♪",
+        "unit_id": 104311
+    }
+]

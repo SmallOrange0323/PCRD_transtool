@@ -1,0 +1,915 @@
+[
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "雖然和鏡華約好了要一塊出去玩，\n但{player}卻完全遲到了。"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "啊！",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036004_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "{player}也太晚到了吧。",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "快點過來！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "真是的。都已經是個大人了，竟然還會遲到。",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036004_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "請你好好反省……嗯？咦？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "{player}……這道光是……？",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036004_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "不覺得",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036004_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "這道光好像越來越亮了嗎──！？\n{player}――！？",
+        "unit_id": 103611
+    },
+    {
+        "type": "background",
+        "background": "510090"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "真是的……",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n為什麼，你會累積了這麼多還沒有寫完的作業呢？",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "真受不了你……就是因為一直拖延，",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n才會變成這個慘況喔。",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "該不會，你忘記了今天是什麼日子了嗎？",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "明明約好，",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n要跟{player}一起出去玩的……",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "如果還有這麼多的作業，",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "不就沒辦法出門了嗎！",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "哎……總之，現在就算再怎麼生氣，",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n作業也不會因此消失的。",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "再怎麼說，今天一整天還長的呢。",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "趕緊把作業寫一寫，然後再一起出門玩吧！",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "我會在旁邊盯著你，所以請你還加油一點！",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "還好嗎？",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n作業，寫得完嗎？",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……你是說認真的嗎？",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "我怎麼可能看得懂高中生的作業呀！",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "真是的。說話前請還稍微用大腦想想。",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "你究竟在說什麼，真是的。",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "作業就是要自己寫，才有意義呀。",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "不可以這麼狡猾唷！",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "但……也是呢。",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "雖然我沒辦法幫忙你寫作業，但除此之外的話……",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "為了讓你能更專心寫作業，其他小事就交給我吧。",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "總而言之，這個嘛……",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "啊，我去倒些喝的來給你吧。",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n杯子就先借一下囉。",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "久等了，",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n我把水端來囉。",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "還有什麼事是要我幫你做的嗎？",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "在你把作業寫完以前，想要我幫你做什麼都可以喔。",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "你說，幫你整理一下房間嗎？",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n的確。房間如果很髒亂的話，",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n就很難集中精神了呢。",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "我明白了。",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n整理這件事，就交給我吧。",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "竟、竟然要別人摸自己的頭……，",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "{player}還真是孩子氣呢……",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "可、可是……如果這是都為了要集中精神的話，",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n那也沒有理由拒絕呢。",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "摸摸……",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "念書，請加油一點哦。",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "怎麼樣？",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n這樣子有比較能夠集中精神了嗎？",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "嗯。看起來還挺順利的呢。",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n太好了。",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n如果，還有其他什麼想要我替你做的……",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "啊……不、不要誤會了喔！",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "才不是為了你，",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n而幫忙做這些事的喔！",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "是因為你不趕快寫完作業，我也沒辦法出去玩！",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "真的就只是因為這個理由才……",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "所以說，如果你有閒工夫道謝的話，",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n還不如趕快把習題給我寫一寫！",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n到現在你還剩一半哦！",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "真是的……",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "{player}，",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "若沒有我在身邊",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "就什麼都做不到了呢。",
+        "unit_id": 103631
+    },
+    {
+        "type": "background",
+        "background": "510091"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "呼……看來，作業都寫完了的樣子呢。",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n辛苦了。",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "但、",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "但是……",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n太陽都已經下山了，",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "再不回去的話……",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n結果到了最後什麼也沒有玩到……",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "真是的，",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "{player}\n這全都是{player}的錯喔！",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "還有什麼事嗎……？",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n……你說為了要補償我和賠罪，下次休假時，",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n會空下來給我嗎……？",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "你真的能，一整天都陪在我身邊嗎？",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "如果又像今天一樣，我可是會很生氣的喔。",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "不過，整整的一天嗎……？",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "如果是這樣，那我就原諒你吧。",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "嘻嘻。",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n下次的休假，我可會好好期待的唷。",
+        "unit_id": 103631
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "那麼就再見囉，{player}。",
+        "unit_id": 103631,
+        "voice": "vo_adv_1036004_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n下一次，再一起玩吧。",
+        "unit_id": 103631
+    },
+    {
+        "type": "background",
+        "background": "500270"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "哎……竟然讓位小學生來替你擔心作業的問題……",
+        "unit_id": 190011,
+        "voice": "vo_adv_1036004_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "到底有多丟人啊～真是的！",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "啊！剛剛的情景，",
+        "unit_id": 190011,
+        "voice": "vo_adv_1036004_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n是我依照你和鏡華的「記憶碎片」創造出來的「夢」唷。",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "怎樣？很令人懷念嗎？",
+        "unit_id": 190011,
+        "voice": "vo_adv_1036004_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "──看來你還是一點頭緒都沒有呢～",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "如果你收集到更多的「記憶碎片」，",
+        "unit_id": 190011,
+        "voice": "vo_adv_1036004_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "我就會再讓你做「夢」的。",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "你和許多女孩在一起的「夢」做得越多……",
+        "unit_id": 190011,
+        "voice": "vo_adv_1036004_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "就可以更接近世界的真實面貌。",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "加油一點囉♪",
+        "unit_id": 190011
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "那麼，下次見囉～ ♪",
+        "unit_id": 190011,
+        "voice": "vo_adv_1036004_045"
+    },
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "唔……咦？這裡是……？",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036004_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "沒有錯……",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036004_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n我是和你會合之後，",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n突然就被一道奇妙的光芒包圍……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "{player}？你沒事嗎？",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036004_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n我的話……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n總記得做了一場奇怪的夢……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……{player}也一樣，",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036004_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n做了在陌生房間裡面念書的夢嗎？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……好像和我做的夢，是一樣的呢。",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036004_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n竟然也有這種不可思議的事情呢……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "難道我就這樣站著站到睡著了嗎？",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036004_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "不對，",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036004_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "才不是講這些的時候呢。",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "{player}，",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "又是為了什麼才會遲到啊！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "真受不了……就和夢境裡一模一樣呢。",
+        "unit_id": 103611,
+        "voice": "vo_adv_1036004_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n你這個人，若沒有我跟著就什麼都做不到了呢。",
+        "unit_id": 103611
+    }
+]

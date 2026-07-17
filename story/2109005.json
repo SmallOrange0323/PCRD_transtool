@@ -1,0 +1,2686 @@
+[
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "趁{player}等人不在時，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n贊恩之外的其餘【憤怒‧軍團】成員襲擊了蘭德索爾。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n但在千鈞一髮之際，意外的援軍出現了……！"
+    },
+    {
+        "type": "background",
+        "background": "500351"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "咦咦？",
+        "unit_id": 102811,
+        "voice": "vo_adv_2109005_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "\n你、",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "咲戀",
+        "words": "你是！？",
+        "unit_id": 102811
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "我名叫真軌！",
+        "unit_id": 191011,
+        "voice": "vo_adv_2109005_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "\n是偉大的變貌大妃──",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "似似花大人的公主騎士！",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "公主騎士",
+        "unit_id": 102511,
+        "voice": "vo_adv_2109005_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴莓",
+        "words": "好像是……",
+        "unit_id": 102511
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "和哥哥",
+        "unit_id": 102111,
+        "voice": "vo_adv_2109005_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "胡桃",
+        "words": "一樣的稱呼嗎……？",
+        "unit_id": 102111
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "咦？",
+        "unit_id": 103611,
+        "voice": "vo_adv_2109005_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n一樣？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n那麼這位叔叔也是",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "變態可疑分子嗎？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "不、",
+        "unit_id": 191011,
+        "voice": "vo_adv_2109005_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "不對！",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "\n",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "我是──！",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "呿！",
+        "unit_id": 191611,
+        "voice": "vo_adv_2109005_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n小丑蘿莉老太婆底下的跟屁蟲老頭！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n你又要來妨礙我嗎？",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "……",
+        "unit_id": 191011,
+        "voice": "vo_adv_2109005_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "我再問一次，",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "【憤怒‧軍團】的少年。",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "\n吾主遭人綁架，",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "是你們做的好事吧？",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "……哈。",
+        "unit_id": 191611,
+        "voice": "vo_adv_2109005_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "對啦，就是我們。",
+        "unit_id": 191611,
+        "voice": "vo_adv_2109005_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n變貌大妃那個老太婆，",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n好像徹底中了我們的甜點腦笨蛋女的計了耶。",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "之前跟我講話還那麼囂張！",
+        "unit_id": 191611,
+        "voice": "vo_adv_2109005_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "七冠也沒什麼",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "了不起嘛！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n哼！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "……似似花大人",
+        "unit_id": 191011,
+        "voice": "vo_adv_2109005_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "現在怎麼樣了？",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "嘖，",
+        "unit_id": 191611,
+        "voice": "vo_adv_2109005_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "誰要告訴你啊！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "我已經決定等到把剩下的七冠都抓起來實現願望後，",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n我就要扒下那個小丑蘿莉老太婆的超厚臉皮，",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "然後宰了她啦！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物群",
+        "words": "──咕喔喔喔喔喔！"
+    },
+    {
+        "type": "dialogue",
+        "name": "３人",
+        "words": "呀啊啊！",
+        "unit_id": 1,
+        "voice": "vo_adv_2109005_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "……原來如此。",
+        "unit_id": 191011,
+        "voice": "vo_adv_2109005_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "\n",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "也就是說吾主",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "還活著嗎？",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "\n既然如此──！",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "「煌輝創正」！",
+        "unit_id": 191011,
+        "voice": "vo_adv_2109005_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物群",
+        "words": "──嘎喔喔喔喔喔！"
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "【憤怒‧軍團】的少年！",
+        "unit_id": 191011,
+        "voice": "vo_adv_2109005_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "\n我要做的事只有一件，",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "就算把你抓起來嚴懲也要問出吾主的下落！",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "可惡！",
+        "unit_id": 191611,
+        "voice": "vo_adv_2109005_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "退下，",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "阿諾爾德！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "伊諾利斯！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "\n如果被迫產生Bug，",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "卡里莎",
+        "words": "「即時再生」就沒有意義了──！",
+        "unit_id": 191611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物群",
+        "words": "──嘎喔喔喔喔喔！"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "太好了♪",
+        "unit_id": 100411,
+        "voice": "vo_adv_2109005_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n魔物們逃走了喔──！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "可是為什麼",
+        "unit_id": 102011,
+        "voice": "vo_adv_2109005_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "叔叔你會來救我們呢？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "唔……",
+        "unit_id": 191011,
+        "voice": "vo_adv_2109005_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "\n",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "我都說了",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "我不是叔叔……",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "不久前，",
+        "unit_id": 191011,
+        "voice": "vo_adv_2109005_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "迷宮女王──",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "拉比林斯達，",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "\n她用通訊魔法提供了消息給我啊。",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "拉比林斯達小姐？",
+        "unit_id": 103611,
+        "voice": "vo_adv_2109005_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "那位可麗餅店老闆？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "基於她本身",
+        "unit_id": 191011,
+        "voice": "vo_adv_2109005_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "也是被盯上的立場，",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "\n她想避免親自露面。",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "\n",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "於是她派出幫手",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "真軌",
+        "words": "到各地幫忙，除了我之外還有很多人。",
+        "unit_id": 191011
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "幫手？",
+        "unit_id": 102311,
+        "voice": "vo_adv_2109005_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「所以",
+        "unit_id": 2111,
+        "voice": "vo_adv_2109005_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "還有誰啊──？」",
+        "unit_id": 2111
+    },
+    {
+        "type": "background",
+        "background": "500790"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "龍之終結拳！",
+        "unit_id": 106511,
+        "voice": "vo_adv_2109005_026"
+    },
+    {
+        "type": "background",
+        "background": "500790"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "用這招打敗你！",
+        "unit_id": 106611,
+        "voice": "vo_adv_2109005_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n龍之咆嘯！！",
+        "unit_id": 106611
+    },
+    {
+        "type": "background",
+        "background": "500790"
+    },
+    {
+        "type": "dialogue",
+        "name": "阿澤爾德",
+        "words": "──唔……！",
+        "unit_id": 191911,
+        "voice": "vo_adv_2109005_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "嘉夜、",
+        "unit_id": 103711,
+        "voice": "vo_adv_2109005_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "祈梨！？",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "\n還有……！",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "呵呵。",
+        "unit_id": 106711,
+        "voice": "vo_adv_2109005_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n就讓我們來管一下閒事吧～",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "【王宮騎士團】的小姐♪",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "【龍族巢穴】的公會長……",
+        "unit_id": 104711,
+        "voice": "vo_adv_2109005_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n妳叫帆稀，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "是吧？",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n妳剛才說",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "想給迷宮女王做個人情……",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "對♪",
+        "unit_id": 106711,
+        "voice": "vo_adv_2109005_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n可以放心地相信我們喔～",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "在和【憤怒‧軍團】戰鬥時，",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "不會從你們背後偷襲的♪",
+        "unit_id": 106711
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "有了帆稀她們幫忙，",
+        "unit_id": 100511,
+        "voice": "vo_adv_2109005_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "我們就如虎添翼了！",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "一起守護正義吧～！！",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "正義？",
+        "unit_id": 106611,
+        "voice": "vo_adv_2109005_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "茉莉妳",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "還是老樣子天真單蠢！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n我們可是幫派成員喔，",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "對正義那種東西完～全沒興趣！",
+        "unit_id": 106611
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "對啊，",
+        "unit_id": 106511,
+        "voice": "vo_adv_2109005_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "因為老大命令，我們才只好照辦……",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "嗯……",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "平常我是會這樣說啦。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "嘿！",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "不過，喂，豬大叔！",
+        "unit_id": 106511,
+        "voice": "vo_adv_2109005_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "和我打一場吧！",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "自從之前看你參加大胃王對決的時候起",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "就一直很想找你單挑了。",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "\n你超強的對吧！？",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "阿澤爾德",
+        "words": "這就是傳說中的，",
+        "unit_id": 191911,
+        "voice": "vo_adv_2109005_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "阿澤爾德",
+        "words": "欺",
+        "unit_id": 191911
+    },
+    {
+        "type": "dialogue",
+        "name": "阿澤爾德",
+        "words": "負",
+        "unit_id": 191911
+    },
+    {
+        "type": "dialogue",
+        "name": "阿澤爾德",
+        "words": "中",
+        "unit_id": 191911
+    },
+    {
+        "type": "dialogue",
+        "name": "阿澤爾德",
+        "words": "年",
+        "unit_id": 191911
+    },
+    {
+        "type": "dialogue",
+        "name": "阿澤爾德",
+        "words": "大叔……",
+        "unit_id": 191911
+    },
+    {
+        "type": "dialogue",
+        "name": "阿澤爾德",
+        "words": "嗎？",
+        "unit_id": 191911
+    },
+    {
+        "type": "dialogue",
+        "name": "阿澤爾德",
+        "words": "\n",
+        "unit_id": 191911
+    },
+    {
+        "type": "dialogue",
+        "name": "阿澤爾德",
+        "words": "如果能及時分析誓約女君的能力，",
+        "unit_id": 191911
+    },
+    {
+        "type": "dialogue",
+        "name": "阿澤爾德",
+        "words": "\n本來會更輕鬆的吧……",
+        "unit_id": 191911
+    },
+    {
+        "type": "dialogue",
+        "name": "阿澤爾德",
+        "words": "哎呀哎呀。",
+        "unit_id": 191911
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "所以說……",
+        "unit_id": 106511,
+        "voice": "vo_adv_2109005_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "打架的時間到了，",
+        "unit_id": 106511
+    },
+    {
+        "type": "dialogue",
+        "name": "嘉夜",
+        "words": "喝啊！",
+        "unit_id": 106511
+    },
+    {
+        "type": "background",
+        "background": "500584"
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "──打架的時間到了，",
+        "unit_id": 190711,
+        "voice": "vo_adv_2109005_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "喝啊！",
+        "unit_id": 190711
+    },
+    {
+        "type": "background",
+        "background": "500584"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "……",
+        "unit_id": 118111,
+        "voice": "vo_adv_2109005_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "！",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "你是……",
+        "unit_id": 118111,
+        "voice": "vo_adv_2109005_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n跳躍王的……",
+        "unit_id": 118111
+    },
+    {
+        "type": "still",
+        "still": "210900501"
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "哈哈哈哈！！",
+        "unit_id": 190711,
+        "voice": "vo_adv_2109005_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "\n找到妳啦，",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "【憤怒‧軍團】的臭婆娘！",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "\n就跟拉比林斯達那老太……",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "大姐說的一模一樣！",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "除了拉基拉基兄，",
+        "unit_id": 190711,
+        "voice": "vo_adv_2109005_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "\n你們這些傢伙好像連克莉絲提娜大嬸都被抓走了對吧！",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "\n絕對不放過你們！",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "這一次",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "我真的要揍扁你們所有人！",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "那個人……",
+        "unit_id": 102912,
+        "voice": "vo_adv_2109005_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n認識克莉絲提娜小姐嗎？",
+        "unit_id": 102912
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "話說……",
+        "unit_id": 105412,
+        "voice": "vo_adv_2109005_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "你",
+        "unit_id": 105412
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "為什麼半裸著上身呀！？",
+        "unit_id": 105412
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "\n難道你是變態嗎！？",
+        "unit_id": 105412
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "\n拜託你穿好裝備！",
+        "unit_id": 105412
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "什麼！？",
+        "unit_id": 190711,
+        "voice": "vo_adv_2109005_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "\n有趣的女人，妳又罵我是半裸的變態啊。",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "\n這次我真的會揍妳一頓！",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "啥？",
+        "unit_id": 105412,
+        "voice": "vo_adv_2109005_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "\n又罵你？這次？你在說什麼呀！？",
+        "unit_id": 105412
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "\n我是第一次跟你這種沒品味的人說話喔！",
+        "unit_id": 105412
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "嗯？",
+        "unit_id": 190711,
+        "voice": "vo_adv_2109005_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "\n是這樣嗎？",
+        "unit_id": 190711
+    },
+    {
+        "type": "still",
+        "still": "210900502"
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "……呃，",
+        "unit_id": 105412,
+        "voice": "vo_adv_2109005_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "現在不是說那種事的時候！",
+        "unit_id": 105412
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "\n你認識",
+        "unit_id": 105412
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "克莉絲提娜小姐對吧！？",
+        "unit_id": 105412
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "這麼一來，",
+        "unit_id": 102912,
+        "voice": "vo_adv_2109005_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "我們要不要來舞台PK……",
+        "unit_id": 102912
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n",
+        "unit_id": 102912
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "不是，",
+        "unit_id": 102912
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "我是說來一起奮鬥吧！？",
+        "unit_id": 102912
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "啥啊！？",
+        "unit_id": 190711,
+        "voice": "vo_adv_2109005_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "至少",
+        "unit_id": 104212,
+        "voice": "vo_adv_2109005_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "我們想帶回重視的人的心是一樣的。",
+        "unit_id": 104212
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104212
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "一起戰鬥吧！",
+        "unit_id": 104212
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "…………",
+        "unit_id": 118111,
+        "voice": "vo_adv_2109005_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "……感覺",
+        "unit_id": 118111,
+        "voice": "vo_adv_2109005_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "變成",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "要打起來的局面了。",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "我應該……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "已經引起",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "相當大的騷動了吧……？　",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "……既然如此……",
+        "unit_id": 118111,
+        "voice": "vo_adv_2109005_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！！",
+        "unit_id": 191812
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "啊！",
+        "unit_id": 105412,
+        "voice": "vo_adv_2109005_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "\n那個人",
+        "unit_id": 105412
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "是不是想逃！？",
+        "unit_id": 105412
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "……是的。",
+        "unit_id": 118111,
+        "voice": "vo_adv_2109005_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n畢竟我的目的……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n不是",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "傷害你們……",
+        "unit_id": 118111
+    },
+    {
+        "type": "background",
+        "background": "500584"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "可惡，",
+        "unit_id": 190711,
+        "voice": "vo_adv_2109005_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "有魔物礙事，沒辦法去逮住她！！",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "豈能讓妳逃掉啊！？",
+        "unit_id": 190711,
+        "voice": "vo_adv_2109005_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "\n",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "費了這麼大勁才終於找到",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "能救老兄的線索……！！",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "──",
+        "unit_id": 190711,
+        "voice": "vo_adv_2109005_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "──混蛋啊啊啊啊！！",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "\n我哪能忍受",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "這種事發生啊！！",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "絕對不讓妳逃走！！",
+        "unit_id": 190711,
+        "voice": "vo_adv_2109005_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "混帳──！！",
+        "unit_id": 190711
+    },
+    {
+        "type": "background",
+        "background": "500584"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "──咦……！？",
+        "unit_id": 118111,
+        "voice": "vo_adv_2109005_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "什、",
+        "unit_id": 102912,
+        "voice": "vo_adv_2109005_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "什麼！？",
+        "unit_id": 102912
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n舞台周圍被",
+        "unit_id": 102912
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "像火牆的東西圍住了……",
+        "unit_id": 102912
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "這是……",
+        "unit_id": 104212,
+        "voice": "vo_adv_2109005_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "結界！？",
+        "unit_id": 104212
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "似乎是那個半裸的人放出結界，",
+        "unit_id": 105412,
+        "voice": "vo_adv_2109005_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "\n堵住了蘭法的退路……",
+        "unit_id": 105412
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "啊啊！？",
+        "unit_id": 190711,
+        "voice": "vo_adv_2109005_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "\n這是啥鬼，",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "是本大爺幹的嗎！？",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "\n搞不懂啊……",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "哈！",
+        "unit_id": 190711,
+        "voice": "vo_adv_2109005_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "雖然搞不懂，",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "但來得正好啊！！",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "\n一定是想救老兄的心，",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "喚醒了本大爺隱藏的力量啦！！",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "有、",
+        "unit_id": 105412,
+        "voice": "vo_adv_2109005_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "有這麼剛好的事嗎？",
+        "unit_id": 105412
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "該不會……",
+        "unit_id": 118111,
+        "voice": "vo_adv_2109005_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "這是",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "跳躍王的",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "公主騎士的力量……？",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "而且……",
+        "unit_id": 118111,
+        "voice": "vo_adv_2109005_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "照這個局勢，",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "又要……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "變得像跟【龍族巢穴】對峙時一樣了……",
+        "unit_id": 118111
+    },
+    {
+        "type": "still",
+        "still": "210900502"
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "來，",
+        "unit_id": 190711,
+        "voice": "vo_adv_2109005_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "妳逃不掉了！",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "\n",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "快點死心，把老兄還有大嬸還來啊啊啊！！",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "……真是……",
+        "unit_id": 118111,
+        "voice": "vo_adv_2109005_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "太吵了，",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "這個人……",
+        "unit_id": 118111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "──♪",
+        "unit_id": 118111,
+        "voice": "vo_adv_2109005_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 191812
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "唔……！",
+        "unit_id": 104212,
+        "voice": "vo_adv_2109005_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n好驚人的魔力……！",
+        "unit_id": 104212
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "哪位蘭法小姐，",
+        "unit_id": 102912,
+        "voice": "vo_adv_2109005_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "是不是比剛才更生氣了！？",
+        "unit_id": 102912
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "哈！",
+        "unit_id": 190711,
+        "voice": "vo_adv_2109005_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "\n終於想幹架了嗎！",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "\n這樣打起來才有意思嘛！",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "喂！",
+        "unit_id": 190711,
+        "voice": "vo_adv_2109005_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "妳們是【慈樂之音】來著！？",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "大吾",
+        "words": "\n妳們也要認命拚一場啊！",
+        "unit_id": 190711
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "……嗯！",
+        "unit_id": 102912,
+        "voice": "vo_adv_2109005_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n要上囉，千歌！",
+        "unit_id": 102912
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "紡希！",
+        "unit_id": 102912
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "好。",
+        "unit_id": 104212,
+        "voice": "vo_adv_2109005_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n她濫用了歌聲的力量，",
+        "unit_id": 104212
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "我們不能放任她胡來！",
+        "unit_id": 104212
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "我們公會能唱能跳又能戰鬥，",
+        "unit_id": 105412,
+        "voice": "vo_adv_2109005_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "現在正是展現我們的氣魄的時候～！",
+        "unit_id": 105412
+    },
+    {
+        "type": "background",
+        "background": "500080"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "同一時間，在月光學院──"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "真是好險……",
+        "unit_id": 101811,
+        "voice": "vo_adv_2109005_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "謝謝妳的幫忙！",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n多虧妳，所有學生都逃走了……！",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "不用客氣！",
+        "unit_id": 106113,
+        "voice": "vo_adv_2109005_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n沒人受傷就好，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n況且妳是我搭檔讀的那間學校的老師啊！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "咦？",
+        "unit_id": 101811,
+        "voice": "vo_adv_2109005_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n我的班上",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "有妳的搭檔……？",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "啊，",
+        "unit_id": 106113,
+        "voice": "vo_adv_2109005_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "妳並不是他的班導。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n不過他是椿丘的",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "學生會長……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "嘟嚕嚕嚕～♪",
+        "unit_id": 192012,
+        "voice": "vo_adv_2109005_085"
+    },
+    {
+        "type": "background",
+        "background": "500080"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "喔！",
+        "unit_id": 106113,
+        "voice": "vo_adv_2109005_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n好危險──！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "喂，我說妳啊──！",
+        "unit_id": 106113,
+        "voice": "vo_adv_2109005_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n不要在別人講到一半時攻擊啦！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "吼唷。",
+        "unit_id": 192012,
+        "voice": "vo_adv_2109005_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n我都難得來上學了，",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "別丟下我不管嘛～",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "……先不管那個了……",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "嗯──",
+        "unit_id": 192012,
+        "voice": "vo_adv_2109005_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n妳是",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "園上矛依未──",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "對吧？",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "突然出現嚇了我一大跳，",
+        "unit_id": 192012,
+        "voice": "vo_adv_2109005_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n不過妳在這裡妨礙我們",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "真的好嗎？",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "再說啊，",
+        "unit_id": 192012,
+        "voice": "vo_adv_2109005_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n妳不是應該去找",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "妳的搭檔尾狗刀詠斗嗎？",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "……我一直在",
+        "unit_id": 106113,
+        "voice": "vo_adv_2109005_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "找尾狗刀。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n自從世界變成這樣後",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我還真的是一直在找他呢。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "不過現在，",
+        "unit_id": 106113,
+        "voice": "vo_adv_2109005_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "有拉比林斯達在幫我。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n所以我也要",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "幫拉比林斯達的忙。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "更何況！",
+        "unit_id": 106113,
+        "voice": "vo_adv_2109005_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "聽說你們抓走了似似花等人，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n還在城裡惹了很多麻煩！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n也就是說……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "你們是壞人吧！？",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "是的★",
+        "unit_id": 192012,
+        "voice": "vo_adv_2109005_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n我們【憤怒‧軍團】",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n是非常、",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "非──常壞的公會喔♪",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "是吧！",
+        "unit_id": 106113,
+        "voice": "vo_adv_2109005_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n那",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我就不留情地解決妳！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n我可是",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "比妳們更壞更壞的人啊！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "原來如此，原來如此──",
+        "unit_id": 192012,
+        "voice": "vo_adv_2109005_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n為了不讓別人變成跟自己一樣可憐的孩子──",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n妳是這樣想的吧？",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "……我不管妳知道些什麼事，",
+        "unit_id": 106113,
+        "voice": "vo_adv_2109005_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n但我一點也不覺得",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "自己可憐。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "被WISDOM",
+        "unit_id": 106113,
+        "voice": "vo_adv_2109005_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "抓去實驗的時候的確很慘。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "不過……",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "正因為我是這樣的命，",
+        "unit_id": 106113,
+        "voice": "vo_adv_2109005_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n我才能遇見尾狗刀和{player}他們。",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我可不許任何人說",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我這樣是可憐喔！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "……是嗎──",
+        "unit_id": 192012,
+        "voice": "vo_adv_2109005_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "呀啊！？",
+        "unit_id": 101811,
+        "voice": "vo_adv_2109005_102"
+    },
+    {
+        "type": "background",
+        "background": "500080"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "唔！？",
+        "unit_id": 106113,
+        "voice": "vo_adv_2109005_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "嗯──",
+        "unit_id": 192012,
+        "voice": "vo_adv_2109005_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "該怎麼說呢？",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "看來我沒辦法",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "跟矛依未當朋友呢。",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n真可惜。★",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "不如說……",
+        "unit_id": 192012,
+        "voice": "vo_adv_2109005_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "嗯♪",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n我感覺莫名地火大呢★",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "這種感覺",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "就叫做",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "同類相斥嗎？",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "誰跟妳同類？",
+        "unit_id": 106113,
+        "voice": "vo_adv_2109005_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n我才要拒絕跟妳",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "當朋友！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "……美空……？　",
+        "unit_id": 101811,
+        "voice": "vo_adv_2109005_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "小伊緒──！",
+        "unit_id": 101611,
+        "voice": "vo_adv_2109005_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n妳沒事吧──！？",
+        "unit_id": 101611
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "全班同學都逃走囉！",
+        "unit_id": 105011,
+        "voice": "vo_adv_2109005_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n伊緒！",
+        "unit_id": 105011
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "謝謝妳們！",
+        "unit_id": 101811,
+        "voice": "vo_adv_2109005_110"
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "不對……",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "\n妳們也",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "必須去避難不是嗎！",
+        "unit_id": 101811
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "是沒錯啦！",
+        "unit_id": 101611,
+        "voice": "vo_adv_2109005_111"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n",
+        "unit_id": 101611
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "可是我們要好～好地",
+        "unit_id": 101611
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "跟美空說句「妳這樣不乖！」才行！",
+        "unit_id": 101611
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "對呀！",
+        "unit_id": 105011,
+        "voice": "vo_adv_2109005_112"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n這次",
+        "unit_id": 105011
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "換我們教教她何謂成熟的淑女的舉止！",
+        "unit_id": 105011
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "呵呵♪",
+        "unit_id": 192012,
+        "voice": "vo_adv_2109005_113"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n鈴奈和美咲",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "都是搗蛋鬼呢★",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "我覺得妳們",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "還是乖乖聽老師的話比較好喔。",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "唔……！",
+        "unit_id": 101611,
+        "voice": "vo_adv_2109005_114"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n可是可是，",
+        "unit_id": 101611
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n我們一直一直",
+        "unit_id": 101611
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "都受到小伊緒的幫助……！",
+        "unit_id": 101611
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "這次換我們",
+        "unit_id": 105011,
+        "voice": "vo_adv_2109005_115"
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "來幫伊緒了！",
+        "unit_id": 105011
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "\n",
+        "unit_id": 105011
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "學生總有一天",
+        "unit_id": 105011
+    },
+    {
+        "type": "dialogue",
+        "name": "美咲",
+        "words": "會超越老師的！",
+        "unit_id": 105011
+    },
+    {
+        "type": "dialogue",
+        "name": "伊緒",
+        "words": "妳們兩個……！",
+        "unit_id": 101811,
+        "voice": "vo_adv_2109005_116"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "哼哼！",
+        "unit_id": 106113,
+        "voice": "vo_adv_2109005_117"
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n妳們都是好人哪！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "\n好！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "我會解決壞人，",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "矛依未",
+        "words": "保護妳們的！",
+        "unit_id": 106113
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "……嗯──",
+        "unit_id": 192012,
+        "voice": "vo_adv_2109005_118"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n我不認為不聽話的小孩算得上好孩子。",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "算了，",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "這就叫做認知不同……",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "那",
+        "unit_id": 192012,
+        "voice": "vo_adv_2109005_119"
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n我就把大～家都轟成蜂窩，",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "美空",
+        "words": "\n打到妳們肯乖乖聽話為止吧★",
+        "unit_id": 192012
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "不會讓妳再繼續",
+        "unit_id": 101611,
+        "voice": "vo_adv_2109005_120"
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "破壞我們的學校了！",
+        "unit_id": 101611
+    },
+    {
+        "type": "dialogue",
+        "name": "鈴奈",
+        "words": "\n美空！",
+        "unit_id": 101611
+    }
+]

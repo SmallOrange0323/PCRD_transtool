@@ -1,0 +1,708 @@
+[
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "有一天，{player}被禊叫了出來。"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥，我們再去探險吧～！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "……欸？",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n上次探險遇到了很多危險的事情？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "沒問題的！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "之後不可能再發生跑進魔物巢穴這種事了，",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n絕對不會的啦！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "而且這一次我們有目的地呦！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥你看，這個地圖！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "這是禊在爸爸的房間裡找到的～",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "這一定是藏寶地圖！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥你看，這裡有一個「？」的記號吧？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n這裡一定藏著很棒的寶物！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "所以呢，",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n和哥哥一起去尋寶探險，",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "我們出發囉～！",
+        "unit_id": 100411
+    },
+    {
+        "type": "background",
+        "background": "500240"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥，「？」記號的位置，",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n好像是指洞窟的深處呢！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "爸爸有來過這裡嗎？",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "既然有記號的話，他一定有來過吧？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "太棒了──！這裡是爸爸也來探險過的洞窟～！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n呀哈哈哈──！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "你看你看，哥哥！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n距離「？」記號的地方，已經不遠了！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "我們趕快前進吧～！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "那個……",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "「？」記號的位置，應該在這附近吧？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "嗚嗚？好像沒有東西耶？",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "這個該不會只是普通的地圖吧？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥，怎麼了？",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n有什麼東西嗎？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "啊，是有「X」記號的石頭！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "這個石頭被埋在牆壁裡？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "「X」記號讓人聯想到寶物呢！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "這個石頭說不定是隱藏門的按鈕呢！？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n快拿下來看看！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥也終於體會到這種感受了吧！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "等我們找到寶物後，就兩個人平分呦！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "欸，這樣多無聊呀！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "就算哥哥說不行，禊也要拿下來！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "那禊要拿下來囉～",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "嘿呀！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "啊，輕易地就拿下來了！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "……不過沒有發生什麼事情耶？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "咦？",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "這、這是什麼聲音？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n地面好像也在震動……？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哇！哇！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n洞窟開始崩塌了！？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "這個「X」記號不是寶物的意思，",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n而是不能碰觸的意思嗎？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "失敗了失敗了……",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "嗯嗯，哥哥說的對。",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "不過……我們已經走到洞窟深處，",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n用跑的也不知道來不來得及？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "啊！哥哥，你看那個！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n那邊有軌道車耶！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "而且好像還能動。",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "這麼一來在洞窟完全崩塌前，",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n我們應該來得及逃走吧？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "快點快點，哥哥也坐上來！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n兩個人一起逃出去吧！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "呀哈哈哈！好快好快～！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n坐上軌道車感覺好像在探險，超開心的～！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "欸？現在不是該開心的時候？",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥你不要說這種話，和禊一起享受嘛！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "很難得才能坐到軌道車，",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n不享受一下就太可惜了！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "呀哈哈哈～！！",
+        "unit_id": 100411
+    },
+    {
+        "type": "background",
+        "background": "500141"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "啊啊～好開心呀～！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "而且也安全地從洞窟裡逃出來了，",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n今天的探險也是超成功！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "嗯？話說回來，什麼寶物都沒有呢～",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "探險那有不危險的！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "它有標示「Ｘ」，已經算非常貼心了。",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "嗯～結果這份到底是什麼地圖呢？",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "去「？」記號的地方後，還發現了軌道車…",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "…",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "咦？……這麼說來這張地圖，",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "其實是告訴我們如何找到軌道車嗎？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "說不定這個是爸爸替禊製作的",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n探險用地圖！？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "啊，在軌道車裡還有地圖耶！",
+        "unit_id": 100411,
+        "voice": "vo_adv_1004006_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥，下一次我們換去這邊看看吧！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "和全身無力的{player}相比，\n禊可是幹勁十足……"
+    }
+]

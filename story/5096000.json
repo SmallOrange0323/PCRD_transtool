@@ -1,0 +1,2237 @@
+[
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "那一天，{player}受到【破曉之星】的三人邀請，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n去協助她們處理委託。"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "騎士先生！",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "謝謝你今天來幫忙！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "多虧了你，處理起來非常輕鬆呢～！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "非常輕鬆……",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "日和？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "如果是我的錯覺，那很抱歉，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n但也發生了相當驚險的場面吧？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "……有、",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "有嗎……？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "優衣。",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n幫日和回想起當時的狀況吧。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我想想，",
+        "unit_id": 100213,
+        "voice": "vo_adv_5096000_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "當時",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "走在前面的日和，",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n中了藤蔓陷阱",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "差點摔跤，",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "然後……",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嗚哇啊啊啊～！",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "對不起──！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我沒有忘記，所以饒了我吧～",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "怜──！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n其實",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "非常非常辛苦的──！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "真是的……",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不過，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "脫離危機的過程",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "的確很輕鬆。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "因為有騎士先生",
+        "unit_id": 100213,
+        "voice": "vo_adv_5096000_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "強化日和，",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n我和怜",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "只要對周圍保持警戒",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "就行了。",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "對呀對呀！",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n從那之後",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "就一口氣",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "轟轟烈烈地",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "扭轉戰況了！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "狀態萬全時的我們可不會輸。",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "就是說呀！",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n只要結局好",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "就一切都好……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "可以",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這麼說吧？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "日和。",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "如果他不在場，情況就危險了。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "別認為事情總是會像那樣順利。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "懂了嗎？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這樣嗎……",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嗯。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我會小心的！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "因為今天",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "有騎士先生同行，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n我總覺得很開心……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嘿嘿。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "意思是說妳當時開心過頭了是吧。",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那就沒辦法了。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我也不會再多說什麼了。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "真的嗎？",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "好耶～！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "咦，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "那麼，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "怜妳也……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "因為我也",
+        "unit_id": 100213,
+        "voice": "vo_adv_5096000_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "沒發現陷阱，",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我們當時似乎都一樣",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "開心過頭了呢。",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "騎士先生也是嗎？",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "原來大家都是這樣……！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嘿嘿！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "果然",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "很開心吧！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是啊。",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "能夠再次像這樣冒險真好。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n下次",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我會在接到看起來不會遇到陷阱的委託時邀請你的。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "怜！？",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "妳果然在生氣～！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "呵呵呵。",
+        "unit_id": 100213,
+        "voice": "vo_adv_5096000_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "怜，",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n別捉弄日和了。",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "嗯，",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "就到此為止吧。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那麼，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我們向管理協會報告完畢後，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n去吃午餐吧。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "真是的～！",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "怜好壞心眼～！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "騎士先生，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "你也說說她啊──！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}與前往管理協會報告委託結果的日和一行人，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n在鬧區愉快地用了餐──"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "謝謝招待！",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "下次請再度光臨。",
+        "unit_id": 1,
+        "voice": "vo_adv_5096000_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "對了，客人，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "請收下這張抽獎券。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n只要交給那位男性，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "就可以抽獎一次。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "──要不要抽獎呢～？",
+        "unit_id": 1011,
+        "voice": "vo_adv_5096000_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n只要有抽獎券，",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "任何人都有機會！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n只要轉動這台抽獎機就可以了～！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "謝謝。",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我們拿去用了。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "抽獎內容是什麼呢？",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "抽中頭獎",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "會送盤子之類的嗎？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "之前剛好打破了",
+        "unit_id": 100213,
+        "voice": "vo_adv_5096000_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "一個盤子，",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "希望能抽中呢。",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "不好意思～！",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n剛剛",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我在餐廳領到了抽獎券，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n請問這是抽什麼的？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "目前這裡正在進行的是，",
+        "unit_id": 1011,
+        "voice": "vo_adv_5096000_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n在南島舉辦的",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "「沙灘遊戲大賽」招待券抽獎！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "日和一行人",
+        "words": "沙灘遊戲大賽？",
+        "unit_id": 1,
+        "voice": "vo_adv_5096000_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "是的！",
+        "unit_id": 1011,
+        "voice": "vo_adv_5096000_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "比賽將由四人為一組的小隊，",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n挑戰在沙灘上舉行的各種遊戲！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "中獎的人都可以",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "參加大賽！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "這場大賽固定於每年夏天舉辦，",
+        "unit_id": 1011,
+        "voice": "vo_adv_5096000_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "主辦單位將會",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "請參加者們到南島旅行，",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n於比賽期間，住在島上的度假村裡！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "即使在大賽中沒拿下好成績，",
+        "unit_id": 1011,
+        "voice": "vo_adv_5096000_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "直到回去之前，",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n都可以在島上享受度假樂趣喔！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "除了玩遊戲，",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "還附帶度假嗎！？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "那個，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "請問遊戲內容",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "是什麼呢？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "由於每年的內容不同，",
+        "unit_id": 1011,
+        "voice": "vo_adv_5096000_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n我也不清楚今年",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "會玩什麼遊戲，不過……",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "以前辦過",
+        "unit_id": 1011,
+        "voice": "vo_adv_5096000_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "沙灘棒球全壘打比賽、",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "沙灘足球賽……",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "另外，",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n還舉行過在炎熱沙灘上互相鬥智的",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "沙灘益智問答挑戰等等。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "內容聽起來很有挑戰價值呢。",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "如何呢，",
+        "unit_id": 1011,
+        "voice": "vo_adv_5096000_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n各位有興趣抽獎嗎？",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "有有有──！",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我有興趣──！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "大家一起玩遊戲感覺也滿有意思的……",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "旅行嗎？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "偶爾好好地放鬆一下也不壞。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "大家一起去南島旅行……",
+        "unit_id": 100213,
+        "voice": "vo_adv_5096000_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "真不錯。",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "那麼請派一位代表，",
+        "unit_id": 1011,
+        "voice": "vo_adv_5096000_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "轉動這台抽獎機。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n請注意，",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "機會只有一次。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "只有一次……",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這個",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "由我來轉真的沒關係嗎？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我",
+        "unit_id": 100213,
+        "voice": "vo_adv_5096000_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "對這種事情",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "沒什麼自信……",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "拜託妳了，",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "日和。",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這種事是看運氣的。",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "即使沒中獎也不怪妳。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "大家……",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我明白了！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "包在我身上！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "日和我",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "要抽獎囉──！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嘿──！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣、怜",
+        "words": "……",
+        "unit_id": 1,
+        "voice": "vo_adv_5096000_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "……喔、",
+        "unit_id": 1011,
+        "voice": "vo_adv_5096000_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "喔喔？",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "喔喔喔喔喔〜！！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "日和一行人",
+        "words": "喔？",
+        "unit_id": 1,
+        "voice": "vo_adv_5096000_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "恭喜妳〜！！",
+        "unit_id": 1011,
+        "voice": "vo_adv_5096000_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n抽中了招待券～！！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "……",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "真的嗎？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "…",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "…好耶──！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n我做到了，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "怜！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "優衣！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "騎士先生！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "妳好厲害，日和！",
+        "unit_id": 100213,
+        "voice": "vo_adv_5096000_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "太棒了太棒了！",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "真是的，",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "真了不起……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "日和在這種重要的時候",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "果然表現很好。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "你在說什麼呀──！",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "騎士先生也要和我們一起去喔？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "那麼，",
+        "unit_id": 1011,
+        "voice": "vo_adv_5096000_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "要請各位辦理報名手續，",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n首先請在這張報名表上",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "填寫各位的小隊名稱及成員名字。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "小隊名稱叫……",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嗯……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "破曉",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "小隊",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "就用這個！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "幾位是破曉小隊呀。",
+        "unit_id": 1011,
+        "voice": "vo_adv_5096000_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "那接下來，",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n請你們在報名表上",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "寫下所愛之物。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "所愛之物……",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "怎麼",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "要寫這個呢？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "本大賽",
+        "unit_id": 1011,
+        "voice": "vo_adv_5096000_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "為了讓各位參賽者發自內心彼此競爭，",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "會準備與參賽者所愛相關的物品",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "作為冠軍獎品。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這樣啊！",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n那只要",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "寫我們喜歡的東西就行了吧！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我想想，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "那就寫……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣、怜",
+        "words": "…………",
+        "unit_id": 1,
+        "voice": "vo_adv_5096000_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "對啊，",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "突然被問到也不知道要寫什麼。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嗯～",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我們大家都喜歡的東西是什麼呢……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "因為不是喜歡的東西",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "而是所愛之物，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n應該有點差異吧？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "所愛之物……",
+        "unit_id": 100213,
+        "voice": "vo_adv_5096000_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣、怜",
+        "words": "…………",
+        "unit_id": 1,
+        "voice": "vo_adv_5096000_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "沒、",
+        "unit_id": 100213,
+        "voice": "vo_adv_5096000_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "沒什麼！",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "對、",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "對啊。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "別在意。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "妳們",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "如果想到了什麼",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "就寫下來吧！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "什麼也想不出來。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "呃，",
+        "unit_id": 100213,
+        "voice": "vo_adv_5096000_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "那個……",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "也有人就沒填寫就交出報名表的，",
+        "unit_id": 1011,
+        "voice": "vo_adv_5096000_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "請放心。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n請在搭乘開往島嶼的船班之前，",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "將答案告訴經理就好。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "我的說明就到此為止，",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "請問有什麼問題要問嗎？",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我沒有問題～！",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "優衣和怜呢？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我也沒什麼要問的。",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "雖然必須在",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "上船前想好想要的東西就是了。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "對呀，",
+        "unit_id": 100213,
+        "voice": "vo_adv_5096000_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "除了這一點，",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我也沒有問題。",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "謝謝各位。",
+        "unit_id": 1011,
+        "voice": "vo_adv_5096000_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "那麼，這是",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "介紹手冊與參加券。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "\n當天請別忘了攜帶。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "好的，",
+        "unit_id": 100213,
+        "voice": "vo_adv_5096000_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "謝謝。",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "……我由衷地祝各位",
+        "unit_id": 1011,
+        "voice": "vo_adv_5096000_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性工作人員",
+        "words": "活動順利。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "南島嗎……",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "好期待喔！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "有什麼東西要帶的嗎？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "剛剛拿到的介紹手冊上",
+        "unit_id": 100213,
+        "voice": "vo_adv_5096000_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "有寫嗎……",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n像食物等等",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "主辦方好像都會準備。",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n不需要特別帶什麼東西……",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "啊！",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "優衣？",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "怎麼了嗎？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "……那個。",
+        "unit_id": 100213,
+        "voice": "vo_adv_5096000_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我有一件事",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "想拜託妳們兩個……",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "什麼什麼？",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "要拜託我們什麼事？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "呃……",
+        "unit_id": 100213,
+        "voice": "vo_adv_5096000_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "嘀嘀咕咕……",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "怜、日和",
+        "words": "！",
+        "unit_id": 1,
+        "voice": "vo_adv_5096000_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "對喔！",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "說得對！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這樣的話，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我也想去買呢！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我也是。",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "手上現有的是",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "很久以前買的，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那個，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n如果妳們能幫忙挑選、",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我會很感謝的……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "騎士先生！？",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "其實……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嗚哇",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "哇！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不好意思！",
+        "unit_id": 100311,
+        "voice": "vo_adv_5096000_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n其實",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我們是突然想起有急事！",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "沒、",
+        "unit_id": 100213,
+        "voice": "vo_adv_5096000_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "沒錯！",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n騎士先生，",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "今天",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "謝謝你過來！",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "下、",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "下次見！",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "哇哇！",
+        "unit_id": 100111,
+        "voice": "vo_adv_5096000_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "別推我啦，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "怜、",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "優衣！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "騎士先生～！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "別忘了",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "帶泳衣喔──！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "日和一行人與{player}分開之後，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n按捺著急躁的心情，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n三人一起出去購物。"
+    }
+]

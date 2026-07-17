@@ -1,0 +1,825 @@
+[
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "這是{player}與秋乃\n一起外出時所發生的事――"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "{player}大人。",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我想視察庶民的食物，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "所以接下來要不要去那間咖啡廳",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n品嚐一下的蛋糕呢？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "找到囉，就是那傢伙啦！",
+        "unit_id": 911,
+        "voice": "vo_adv_1032005_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "\n喂，拿出繩子來！給我就這樣綁走！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "什麼！怎麼了！？",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "你們是何方神聖！？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "手下",
+        "words": "囉唆！",
+        "unit_id": 811,
+        "voice": "vo_adv_1032005_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "手下",
+        "words": "\n好了，妳就乖乖地被抓吧！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "呀！？",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_004"
+    },
+    {
+        "type": "background",
+        "background": "500340"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "沒想到這麼輕易就被抓走……",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n事發突然，讓我一時太大意了。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "……你也一起被抓了呢。",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n唉，你也不是很有力氣，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n被抓也是沒辦法的事呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "喂，我說妳！",
+        "unit_id": 911,
+        "voice": "vo_adv_1032005_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "\n妳是紫藤的女兒沒錯吧？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "\n嘿嘿嘿，我們可以獲得大筆的贖金啦。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "原來如此，你們是這個目的啊。",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n你們想要錢啊？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "是啊，沒錯！",
+        "unit_id": 911,
+        "voice": "vo_adv_1032005_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "\n只要有錢，什麼事情都能做到！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "\n如果是拿女兒的命來換，不管多少錢都會付吧。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "如果是這種事的話，",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n你們沒有必要去勞煩父親大人。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n要錢的話，我付給你們就好啦。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "妳是說被綁架的本人，要自己付錢嗎？",
+        "unit_id": 911,
+        "voice": "vo_adv_1032005_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我自己也有錢啊。",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n如果用錢就能買到自身安全的話，不管多少錢本小姐都會付的。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "不愧是有錢人，付錢也很爽快呢。",
+        "unit_id": 911,
+        "voice": "vo_adv_1032005_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "\n那麼，協議成立啦。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "\n妳就準備夠讓我們所有人一生能遊山玩水度日的金額吧。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我知道了。",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我手頭上的金額應該不夠，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n所以必須回家去拿錢，這樣可以嗎？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "啊，可以啊。我就放開妳。",
+        "unit_id": 911,
+        "voice": "vo_adv_1032005_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "\n看吧，我這就把繩子切斷。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "……呼。終於能自由活動啦。",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n可以也將他也解放嗎？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "哎呀，那可不行。",
+        "unit_id": 911,
+        "voice": "vo_adv_1032005_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "這傢伙可是人質，因為怕妳說不定只是假裝要付錢，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "\n然後逃跑或是去找救援呢。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "手下",
+        "words": "妳只要稍微輕舉妄動，",
+        "unit_id": 811,
+        "voice": "vo_adv_1032005_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "手下",
+        "words": "\n這傢伙就不會平安無事喔。",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我可沒辦法只讓他一個人留在這麼危險的地方呢。",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n要解放的話，就必須一起，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n否則本小姐就不付錢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "妳被綁架，還敢給我開條件！",
+        "unit_id": 911,
+        "voice": "vo_adv_1032005_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "\n看來妳是欠人告訴妳自己的立場吧！？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "馬上就要使用暴力，讓人懷疑你的品行呢。",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n就算你那樣拿著武器，我也不會害怕――",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "囉唆，給我閉嘴！",
+        "unit_id": 911,
+        "voice": "vo_adv_1032005_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "\n妳如果不了解自己的立場，我就來好好教妳啊！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "呀！",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "？",
+        "unit_id": 103211
+    },
+    {
+        "type": "background",
+        "background": "500340"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "{player}大人！？",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "啊！糟、",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "糟糕……！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n你為了要保護我……！？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "哼，裝腔作勢的傢伙。",
+        "unit_id": 911,
+        "voice": "vo_adv_1032005_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "不過，這樣你們就知道了吧？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "\n如果違抗我們的話――",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "……給我住口。",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "唔……妳、妳說什麼？",
+        "unit_id": 911,
+        "voice": "vo_adv_1032005_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "你們竟敢這麼做呢……",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我原本想著用錢就能解決，才會乖乖配合，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n但你們傷害本小姐的騎士，我可絕不能原諒！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "喂、喂，別動！",
+        "unit_id": 911,
+        "voice": "vo_adv_1032005_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "\n會有什麼下場我可不管！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "那可是本小姐的台詞啊！",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_030"
+    },
+    {
+        "type": "background",
+        "background": "500340"
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "嗚哇啊啊啊！",
+        "unit_id": 911,
+        "voice": "vo_adv_1032005_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "無賴",
+        "words": "！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "手下",
+        "words": "老、老大！？",
+        "unit_id": 811,
+        "voice": "vo_adv_1032005_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "手下",
+        "words": "\n這、這傢伙明明是個大小姐，竟然這麼強啊！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "你們也都是同罪！",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n做好覺悟吧！　",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "哈啊！",
+        "unit_id": 103211
+    },
+    {
+        "type": "background",
+        "background": "500340"
+    },
+    {
+        "type": "dialogue",
+        "name": "手下",
+        "words": "呀啊啊啊！",
+        "unit_id": 811,
+        "voice": "vo_adv_1032005_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "手下",
+        "words": "\n對不起～！救命啊～！！",
+        "unit_id": 811
+    },
+    {
+        "type": "background",
+        "background": "500011"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "{player}大人！你清醒過來了嗎？",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我已經把那些人交給王宮騎士團了。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "你受傷的地方還好嗎？",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n好像只流了一點血呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "……傷勢不嚴重，真是太好了。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "就算如此……",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n被你看到我難堪的一面了呢……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "因為你被傷害，害我忍不住……",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n只想著要保護你，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "結果就不自覺的跟他們對抗了呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "讓你看見如此粗暴的我，",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n是否幻滅了呢？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我嗎？",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "呵呵，被你這樣說還真是高興呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "{player}大人……",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "被你道謝，覺得蠻新鮮的呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "因為一直以來，都是我在依賴你，",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我有幫上忙的話，真是太好了呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "……咦？",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n你覺得……我這麼強的話就不需要騎士了嗎？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "這你就不懂了。",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n騎士所需要的，可不是只是武力而已。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "還有日常生活上的照顧，隨時貼心地在身旁支援，",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "最重要的，是擁有「強大的心靈」啊。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "馬上就過來保護我的你，",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n確實是非常出色的騎士啊。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "總有一天，",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我一定會雇用你，讓你做為我的騎士！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "儘管如此，今天已經很累了呢。",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我們差不多回去了吧。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "哎呀？你還有什麼在意的事情嗎？",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我剛剛說你是「我的騎士」的事……？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "那、那個是……！",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032005_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n那只是我的語病啦！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "就這樣，經歷過綁架未遂的事件後，\n兩人之間的距離又稍微拉近了……"
+    }
+]

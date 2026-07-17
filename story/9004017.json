@@ -1,0 +1,649 @@
+[
+    {
+        "type": "background",
+        "background": "500361"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "迎來4周年的當天。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n{player}被貪吃佩可等人叫了出來──"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "{player}，讓你久等了！",
+        "unit_id": 105812,
+        "voice": "vo_adv_9004017_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那麼，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "要上囉？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "預備──！",
+        "unit_id": 105812
+    },
+    {
+        "type": "still",
+        "still": "900201701"
+    },
+    {
+        "type": "dialogue",
+        "name": "大家",
+        "words": "4周年",
+        "unit_id": 1,
+        "voice": "vo_adv_9004017_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "大家",
+        "words": "快樂──！！",
+        "unit_id": 1
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "哎呀，",
+        "unit_id": 105913,
+        "voice": "vo_adv_9004017_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人愣住了呢……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "等等，貪吃佩可，",
+        "unit_id": 106012,
+        "voice": "vo_adv_9004017_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妳有好好說明過嗎？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "關於今天要舉辦4周年紀念派對的事情。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "看這個反應……",
+        "unit_id": 106412,
+        "voice": "vo_adv_9004017_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "似乎是沒有呢。",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "啊啊～",
+        "unit_id": 105812,
+        "voice": "vo_adv_9004017_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "啊哈哈……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "對不起。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "因為忙到最後一刻，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "所以忘了。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "那就",
+        "unit_id": 118511,
+        "voice": "vo_adv_9004017_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "由我來說明吧。",
+        "unit_id": 118511
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "呃。",
+        "unit_id": 106012,
+        "voice": "vo_adv_9004017_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妳不要忽然",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "從意想不到的地方冒出來好不好！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "這一次",
+        "unit_id": 118511,
+        "voice": "vo_adv_9004017_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "請你去各地收集齊全的信封裡，",
+        "unit_id": 118511
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n除了有活動紀錄外，",
+        "unit_id": 118511
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "還裝有另一樣重要的東西。",
+        "unit_id": 118511
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n",
+        "unit_id": 118511
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "那就是用來製作",
+        "unit_id": 118511
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "慶祝今天4周年特別禮物的東西。",
+        "unit_id": 118511
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "其實呢，",
+        "unit_id": 100111,
+        "voice": "vo_adv_9004017_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "騎士先生拜訪過的每一個人\n都有幫忙，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "大家在裡面放了自己最喜愛的照片！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "倒不如說，",
+        "unit_id": 100311,
+        "voice": "vo_adv_9004017_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "照片才是最重要的。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "讓你在各地跑來跑去的，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "主要也是為了大家的照片呢。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "抱歉",
+        "unit_id": 100213,
+        "voice": "vo_adv_9004017_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "瞞著你，",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "騎士先生。",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "來，貪吃佩可，",
+        "unit_id": 106012,
+        "voice": "vo_adv_9004017_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "讓那傢伙見識一下吧。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "好！",
+        "unit_id": 105812,
+        "voice": "vo_adv_9004017_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n那麼，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "請看……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這個☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "欸嘿嘿☆",
+        "unit_id": 105812,
+        "voice": "vo_adv_9004017_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "沒錯！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們做了這個日曆，裡面充滿這四年和你一起走來的回憶，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n也滿懷著我們對未來的情感！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "結果",
+        "unit_id": 105812,
+        "voice": "vo_adv_9004017_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "日曆的內容就變得這麼滿了。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "太讚了吧☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "只要是為了主人，",
+        "unit_id": 105913,
+        "voice": "vo_adv_9004017_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "花凜小姐和",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n各個公會的所有成員",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "都非常樂意幫忙。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "因為有慶典和現場直播要忙，",
+        "unit_id": 106412,
+        "voice": "vo_adv_9004017_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n本來還擔心能不能趕上……",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "幸好有優衣小姐等人幫我們製作日曆。",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "這是滿懷大家的情感才做好的，",
+        "unit_id": 106412,
+        "voice": "vo_adv_9004017_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "如果你能珍惜，",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "我們會很高興的。",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這一年來發生的事情，",
+        "unit_id": 105812,
+        "voice": "vo_adv_9004017_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "以及這四年來的點點滴滴。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n全部全部，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "都是重要……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "而難以忘懷的回憶。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "當然，",
+        "unit_id": 105812,
+        "voice": "vo_adv_9004017_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "也包含接下來的一年，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "還有許久之後的將來！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n從今以後，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們也要繼續和你一起創造數不清的美好回憶，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "大家也要一直一～直",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "和樂融融地圍在一起吃飯哦☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "雖然這氣氛搞得像是要結束了一樣，",
+        "unit_id": 106012,
+        "voice": "vo_adv_9004017_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "但還有紀念4周年的派對哦！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "再不趕快的話，料理就要冷掉囉？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "沒錯！",
+        "unit_id": 105812,
+        "voice": "vo_adv_9004017_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "吃東西就是要開開心心，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "對吧！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "大家一起展露笑顏、一起用餐，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這是最棒的！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那麼，大家。",
+        "unit_id": 105812,
+        "voice": "vo_adv_9004017_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "準備好了嗎？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n請大家高舉杯子～！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "預備──！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "大家",
+        "words": "4周年",
+        "unit_id": 1,
+        "voice": "vo_adv_9004017_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "大家",
+        "words": "快樂！",
+        "unit_id": 1
+    }
+]

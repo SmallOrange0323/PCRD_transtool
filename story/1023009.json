@@ -1,0 +1,1563 @@
+[
+    {
+        "type": "background",
+        "background": "500440"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "──打算上山採集藥草的{player}。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n身旁有著前來幫忙的綾音。"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "前往吧噗吉，",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "前往任何地方～♪",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "哼～哼哼～哼哼～♪",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "啊！",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n那裡長了個顏色很漂亮的蘑菇！",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "我猜絕對會很好吃！",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「不，",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "那個絕對是毒蘑菇吧！」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "是喔。",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "那麼，",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "那顆樹的果實應該就能吃了吧。",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "我說哥哥，",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "讓我騎肩膀！",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n我也會記得幫哥哥摘你那份的♪",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "哇～",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "騎在哥哥的肩膀上～♪",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「真是的……",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "小子真是太寵綾音了。」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "沒關係啦，噗吉。",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n因為我會乖乖幫忙啊。",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "我看看，",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "從這附近就……",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "啊，",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "剛剛飛過的小鳥好可愛～♪",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「喂喂，",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "別東張西望，認真找啊。",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n還有，",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "雖說不多但這裡也會有魔物出現，",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n要仔細觀察周圍喔。」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "……討厭，",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "噗吉今天一直在說教！",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "只要認真做就行了吧。",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "……我只是好久沒有三個人一起外出，",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n不小心太興奮了而已呀……",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "哼～",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n討厭，",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "我不管噗吉了啦。",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「看那表情，她是在鬧彆扭吧？",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n不過",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "我也有點說過頭了……」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「呃……綾音，",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "那個、",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "就是……",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "啊！？」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「綾音，",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "危險！」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "咦……！？",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「唔哦哦哦哦哦！！」",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_014"
+    },
+    {
+        "type": "background",
+        "background": "500440"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "……噗吉！？",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「──綾、",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "綾音～～！」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "噗吉……！",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "噗吉……",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "掉下懸崖了……",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "討、",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "討厭！",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "別過來……！！",
+        "unit_id": 102312
+    },
+    {
+        "type": "background",
+        "background": "500440"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "啊……",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "謝謝你，",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "哥哥！",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "你……",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "你說現在先快逃……",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "可是，",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "噗吉他……",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "啊……",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "呀！？\n哥、",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "哥哥等一下！",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "……噗吉！",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "噗吉～～！！",
+        "unit_id": 102312
+    },
+    {
+        "type": "background",
+        "background": "500172"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "──逃離魔物的兩人，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n即使在懸崖下方的森林，也找不到噗吉，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n不知不覺間便來到了夜晚。"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "噗吉你在哪～！",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "快回答我啊，噗吉～～！！",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "捉迷藏結束囉，噗吉～！！",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n你快出來啦～！！",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "噗吉！！",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "噗吉～～！！！！",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "找不到……",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n懸崖下方……",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "和樹叢中明明都找過了……",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "噗吉他",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "一定是",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "討厭我了……",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n所以才不出來……",
+        "unit_id": 102312
+    },
+    {
+        "type": "background",
+        "background": "500440"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「喂喂，",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "別東張西望，認真找啊。",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n還有，",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "雖說不多但這裡也會有魔物出現，",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n要仔細觀察周圍喔。」",
+        "unit_id": 2111
+    },
+    {
+        "type": "background",
+        "background": "500172"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "噗吉",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n總是很關心我……",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "可是我",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "卻都只顧著考慮自己的事情……",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "……可是，",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "我已經不知道該找哪裡才好了。",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "我不可能",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "找得到噗吉了……",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "家人……",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "我",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "和噗吉是家人……",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "我們是家人……",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "我們總是在一起……！",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "……你說的對，",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "哥哥。",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n身為噗吉的家人，",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "我會找得到噗吉！",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "我要",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "更努力去找！",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "所以拜託哥哥！",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n請你也來幫忙找！",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "我是噗吉的家人，",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n所以更應該要認真去找到噗吉……",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "我……",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "我要加油！　",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "噗吉～～～！！",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "噗吉！！",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "噗吉～～！！！！",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "……不可以放棄。",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n我要一直找下去。",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "因為我",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "是噗吉的家人！　",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "……噗吉～！",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "快回答我～～！！",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "「………音～！」",
+        "unit_id": 1,
+        "voice": "vo_adv_1023009_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "……！？",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n剛才",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "聽到噗吉的聲音了！",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "嗯！",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "在這裡，",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "哥哥！！",
+        "unit_id": 102312
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「哦，",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "看到你們兩人了！",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n真是的，",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "太晚來找我了吧～！」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "…………",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「總之先讓我下去吧～！",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n待在樹上，",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "我很擔心不曉得何時會被鳥給叼走啊～！」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "……………………",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「……咦？",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n妳有聽到嗎，綾音～？",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n快點讓我下去……」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "噗吉～～！！！！",
+        "unit_id": 102312,
+        "voice": "vo_adv_1023009_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「哦、",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "哦哦，",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "喂，綾音！？",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n妳、",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "妳不需要這麼急著爬上來啊！！",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n會很危險……",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "哦哇啊！？」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "噗吉！！！",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「哦呼唔唔唔！",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n妳、",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "妳別得抱這麼緊啊！",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n棉花！",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "棉花要爆出來了啦！！」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "噗吉",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "你平安無事呢！",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "太好了……",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "太好了……",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「綾、",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "綾音……",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "妳在哭嗎？」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "因為……",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "因為，我還以為",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "再也見不到你了……",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「綾音……",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "妳這個傻瓜。",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n我們可是家人啊，",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "怎麼可能會分開。」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「無論何時",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "我都會待在綾音身邊……",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n那就是家人的羈絆！」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "家人的……",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "羈絆……",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「而且，",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "要是放任綾音不管，",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "感覺妳就會跑去給人添麻煩。",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n我會一直在身旁監視妳的，",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "放心吧！」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "噗吉……",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n噗吉～～！！",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「危、",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "危險！！",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n妳搖那麼大力的話，",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "會從樹上掉下去啦！」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "咦……",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "呀啊啊啊！！",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "咦，",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "奇怪？",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "不會痛……？",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "是哥哥",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "接住我了呢！",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「哦，小子！",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n總覺得",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "好像給你添了不少麻煩！",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n感謝你啦！」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "哥哥！",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n我有",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "好好找到噗吉了！",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "身為家人，我有……",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "咦？",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "我……",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n被摸頭了……",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "哥哥……",
+        "unit_id": 102311,
+        "voice": "vo_adv_1023009_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "\n",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "綾音 ",
+        "words": "嗚哇啊啊～～！！",
+        "unit_id": 102311
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "「綾、",
+        "unit_id": 2111,
+        "voice": "vo_adv_1023009_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "綾、",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "綾音！！",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n別把我和小子一起抱得這麼緊！！",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "\n",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "被妳抱那麼用力，",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "棉花要爆出來了！",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "噗吉",
+        "words": "全部都要爆出來了啦！！」",
+        "unit_id": 2111
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "──綾音等人的聲音"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n響遍了整座寧靜的森林。"
+    }
+]

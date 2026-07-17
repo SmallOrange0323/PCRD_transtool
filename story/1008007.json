@@ -1,0 +1,970 @@
+[
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "某一天，\n{player}和雪一起外出時……"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "{player}，接下來要去哪裡呢？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "……咦？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n那個人，是怎麼回事？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "筆直地朝我們走過來了呢……？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "使者",
+        "words": "不好意思打擾您了。",
+        "unit_id": 1011,
+        "voice": "vo_adv_1008007_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "使者",
+        "words": "\n請問您是雪大人嗎？",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "咦？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "嗯，",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "我是雪沒錯呀？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "使者",
+        "words": "在下的主人，聽說了您的傳聞……",
+        "unit_id": 1011,
+        "voice": "vo_adv_1008007_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "使者",
+        "words": "\n據說您是非常美麗的女性。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "使者",
+        "words": "\n",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "使者",
+        "words": "主人說希望迎娶您為妻。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "咦～妻子啊……",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n該怎麼辦才好呢？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "使者",
+        "words": "請您務必答應。",
+        "unit_id": 1011,
+        "voice": "vo_adv_1008007_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "使者",
+        "words": "\n在下的主人，是這一帶有頭有臉的貴族。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "使者",
+        "words": "\n",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "使者",
+        "words": "不會給您帶來任何不便的。",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "嗯哼，貴族呀……",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "但還是算了吧。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n我還不打算結婚。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "使者",
+        "words": "是這樣啊……",
+        "unit_id": 1011,
+        "voice": "vo_adv_1008007_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "使者",
+        "words": "\n──",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "使者",
+        "words": "那麼，盡全力也要將您帶走！",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "欸！？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n唔哇～！你在做什麼！？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "{player}，救救我～！",
+        "unit_id": 100811
+    },
+    {
+        "type": "background",
+        "background": "500040"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "哦哦……妳就是雪啊。",
+        "unit_id": 911,
+        "voice": "vo_adv_1008007_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n就像傳聞一樣──不，是比傳聞中更美的美女不是嘛。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n來吧，發誓成為我的妻子吧。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "所以我不是說不要了嗎？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "我可沒有想和你結婚的念頭。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "妳有什麼不滿嗎？",
+        "unit_id": 911,
+        "voice": "vo_adv_1008007_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "只要成為我的妻子，不管甚麼東西都可以買給妳，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n還能盡情享受奢華的生活喔？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "重點不是在那個地方啦……",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "使者",
+        "words": "慢、慢著！無禮之徒！",
+        "unit_id": 1011,
+        "voice": "vo_adv_1008007_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "使者",
+        "words": "\n你把這裡當作什麼地方了！？",
+        "unit_id": 1011
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "怎麼了，吵吵嚷嚷的！",
+        "unit_id": 911,
+        "voice": "vo_adv_1008007_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "你是誰！？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "你來救我了嗎！？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "是妳的朋友嗎？是想要來帶妳回去的吧。",
+        "unit_id": 911,
+        "voice": "vo_adv_1008007_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "抱歉了，我已經決定要讓雪成為我的妻子了。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n你老老實實地放棄，打道回府吧。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "所以說，我不想當你的妻子……",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "而且，我可是男的唷？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "……哈哈哈！我還以為妳想說什麼！",
+        "unit_id": 911,
+        "voice": "vo_adv_1008007_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n再怎麼不想結婚，也要說個像樣一點的謊言吧。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "那種謊言怎麼可能騙得了我？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "欸……我明明就沒有說謊……",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "你還是快打道回府吧。",
+        "unit_id": 911,
+        "voice": "vo_adv_1008007_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n要是你再繼續接近，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n我就把你當作非法入侵者直接砍殺了喔？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "怎、怎麼可以！？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "我沒有問題的，你還是回去比較好唷……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "我不想看到{player}被砍傷啊……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "這樣啊……這就是你的回答啊。",
+        "unit_id": 911,
+        "voice": "vo_adv_1008007_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "那麼，就在這裡死吧！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "{player}！\n危險啊！！",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_024"
+    },
+    {
+        "type": "background",
+        "background": "500040"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "──啊唔！",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "什！？",
+        "unit_id": 911,
+        "voice": "vo_adv_1008007_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n怎麼會……竟然保護那個男人！？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "妳為什麼，要做出這種事……？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "因為……我們是戀人！",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "我們……是戀人……",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "沒有錯吧？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "你看這個人，他也承認了。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "呵呵呵，果然……{player}，",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "我早就知道你也是這麼想的唷。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "我們是認真在交往的！",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "所以，你就放棄要我當你的妻子吧。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "哼，戀人算什麼！",
+        "unit_id": 911,
+        "voice": "vo_adv_1008007_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "我決定好要雪成為我的人了！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "這樣也不行嗎……",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n那就沒有辦法了呢。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n就只能給你看我真正性別的證據了吧。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "還要繼續騙我說妳是男的嗎？",
+        "unit_id": 911,
+        "voice": "vo_adv_1008007_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n我不可能相信那種話的。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "那你就來摸摸看啊。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "妳、",
+        "unit_id": 911,
+        "voice": "vo_adv_1008007_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "妳說……摸摸看！？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "不，那是……可是……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "喂，那邊的女僕！",
+        "unit_id": 911,
+        "voice": "vo_adv_1008007_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n妳去摸看看！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "女僕",
+        "words": "欸？要、要我……去摸嗎？",
+        "unit_id": 411,
+        "voice": "vo_adv_1008007_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "廢話少說，快點去摸看看！",
+        "unit_id": 911,
+        "voice": "vo_adv_1008007_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "女僕",
+        "words": "我、我了解了。",
+        "unit_id": 411,
+        "voice": "vo_adv_1008007_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "女僕",
+        "words": "\n",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女僕",
+        "words": "……那麼，就容我失禮了。",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女僕",
+        "words": "……！？呀、呀啊！",
+        "unit_id": 411,
+        "voice": "vo_adv_1008007_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "女僕",
+        "words": "\n",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女僕",
+        "words": "這、這位貴賓是男人！",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "什麼！",
+        "unit_id": 911,
+        "voice": "vo_adv_1008007_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n妳說真的是男的嗎！？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "懂了嗎？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n我是男人唷。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "可、可是，他不也是男的嗎！",
+        "unit_id": 911,
+        "voice": "vo_adv_1008007_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "你剛才還說你們是一對戀人喔！？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "沒錯！",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n我們是超越性別關係的戀人唷！",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "我們就是如此地相愛！",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "就算這樣，你還想要我當你的妻子嗎？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "呣呣……就、就算你是男的……",
+        "unit_id": 911,
+        "voice": "vo_adv_1008007_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "……不，不行！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n一知道你是男的，我就不想要你當我的妻子了！？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "這代表你的愛就只有那種程度而已呀。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "如果要和我交往，",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n就得是即便知道我是男的還能繼續愛著我的人。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "這樣啊……",
+        "unit_id": 911,
+        "voice": "vo_adv_1008007_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n看來我，配不上你呢。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貴族",
+        "words": "\n我就放棄你吧……",
+        "unit_id": 911
+    },
+    {
+        "type": "background",
+        "background": "500011"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "呵呵，太順利了呢。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n你假裝我的戀人裝得不錯唷。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "知道我是男的竟然就馬上放棄，",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n真是失禮對吧？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "和性別無關，我明明就這麼可愛呢。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "如果是你，就算我是男的也沒關係對吧？",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "竟然臉紅了，真可愛呢。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "好了，快點回去吧。",
+        "unit_id": 100811,
+        "voice": "vo_adv_1008007_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "時間已經非常晚了呢。",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "不知道是戲弄{player}很有趣，\n還是因為{player}幫助了自己很高興，\n雪的心情看起來比平常還要好。"
+    }
+]

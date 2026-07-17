@@ -1,0 +1,787 @@
+[
+    {
+        "type": "background",
+        "background": "502250"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "格羅哥團潰敗的消息傳遍了整個吉歐‧格黑納，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n讓許多人感到震驚……"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在那之後過了幾天。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n{player}來到了曾經是格羅哥團"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n據點的地方。"
+    },
+    {
+        "type": "background",
+        "background": "502392"
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "啊，",
+        "unit_id": 130112,
+        "voice": "vo_adv_5156700_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "{player}先生你好啊！",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "\n",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "那個，",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "找我們有什麼事嗎？",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "倭姊姊她出門去了，",
+        "unit_id": 130112,
+        "voice": "vo_adv_5156700_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "而布武機她……",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "啥？",
+        "unit_id": 130212,
+        "voice": "vo_adv_5156700_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "跟你無法談啦。",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "\n我說大叔啊，",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "你一直重複同樣的台詞很好玩嗎？",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "\n",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "詞彙量跟雜碎一樣，",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "只會照表操課，",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "你這個社會的小齒輪♪",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "從剛剛就一直，",
+        "unit_id": 130112,
+        "voice": "vo_adv_5156700_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "好像在用通訊魔法跟誰對話的樣子。",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "\n",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "目前手邊有空的只有我一個人……",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "非常感謝你的關心。",
+        "unit_id": 130112,
+        "voice": "vo_adv_5156700_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "\n雖然蠻賊貪鯊號還在維護中，",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "\n但是有這個暫時據點，",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "目前還算過得去。",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "好了",
+        "unit_id": 130212,
+        "voice": "vo_adv_5156700_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "結束啦～♪",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "\n",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "下次說點更有趣的話題吧，",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "雜碎大叔♡",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "\n",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "掰掰～♪",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "啊，",
+        "unit_id": 130212,
+        "voice": "vo_adv_5156700_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "是雜碎哥哥～♡",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "\n",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "今天你那張沒出息的臉",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "看起來也很有精神哦～♪",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "布武機真是的，",
+        "unit_id": 130112,
+        "voice": "vo_adv_5156700_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "他是專程過來關心我們的說……",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "\n",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "是說妳，",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "剛剛在跟誰說話啊？",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "我也不是很清楚，",
+        "unit_id": 130212,
+        "voice": "vo_adv_5156700_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "好像是借我們錢的人？",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "\n",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "扯啥還錢計畫什麼的很煩人，",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "所以我就掛斷了──",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "咦咦！？",
+        "unit_id": 130112,
+        "voice": "vo_adv_5156700_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "\n布武機，",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "那個是跟我們貸款有關的事啊！",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "\n",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "得好好地討論，",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "然後認真償還！",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "那就那就──",
+        "unit_id": 130212,
+        "voice": "vo_adv_5156700_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "笨菜姊妳去隨便找個村莊襲擊",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "\n然後搶個10億盧幣過來♡",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "\n這樣就能把貸款還清了♡",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "輕輕鬆鬆～♪",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "不、",
+        "unit_id": 130112,
+        "voice": "vo_adv_5156700_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "不可以啦，",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "這麼過分的事……",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "\n而且做這種危險的事，",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "如果把蠻賊貪鯊號",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "\n弄壞了，",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "這次會真的無法修理哦？",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "啥──？",
+        "unit_id": 130212,
+        "voice": "vo_adv_5156700_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "那是怎樣？",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "\n妳對我這完美的償還計畫有意見嗎？",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "也不是這樣……",
+        "unit_id": 130112,
+        "voice": "vo_adv_5156700_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "\n例如說認真工作，",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "一步步償還之類的……",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "真是的，",
+        "unit_id": 130012,
+        "voice": "vo_adv_5156700_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "在說什麼沒出息的話啊。",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "\n慢吞吞地工作來償還，",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "根本不是我們的風格吧？",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "啊，",
+        "unit_id": 130212,
+        "voice": "vo_adv_5156700_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "倭姊歡迎回來～♪",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "\n妳去哪了？",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "我去附近的聚落探了一下情勢。",
+        "unit_id": 130012,
+        "voice": "vo_adv_5156700_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "\n然後啊，",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "看到了這張傳單。",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "聽說在吉歐‧格黑納這裡，",
+        "unit_id": 130012,
+        "voice": "vo_adv_5156700_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "\n喜歡戰車的同好們原本就會到處聚在一起，",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "\n用自製的戰車來戰鬥。",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "但是在這之中，",
+        "unit_id": 130012,
+        "voice": "vo_adv_5156700_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "格羅哥團的勢力壓倒性的強大。",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "\n",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "所以長年以來，",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "其他人都無法抬頭。",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "格羅哥團，",
+        "unit_id": 130212,
+        "voice": "vo_adv_5156700_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "已經被我們給擊潰了不是嗎？",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "沒錯，",
+        "unit_id": 130012,
+        "voice": "vo_adv_5156700_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "就是這樣。",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "\n",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "雖然我們並沒有這個意思，",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "\n",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "但就結果來說在格羅哥團獨大的環境中開了一個缺口……",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "也因為這樣，",
+        "unit_id": 130012,
+        "voice": "vo_adv_5156700_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "戰車戰鬥大會久違地重新舉辦了。",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "\n聽說在各地沉寂很久的傢伙們都會來參加。",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "嗚哇，",
+        "unit_id": 130212,
+        "voice": "vo_adv_5156700_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "這有獎金的嗎？",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "\n是正式的大會耶！",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "是吧？",
+        "unit_id": 130012,
+        "voice": "vo_adv_5156700_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "出場費加上高名次的獎金。",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "\n",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "能把貸款全部還完還有剩呢。",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "雖然它有一些規則什麼的，",
+        "unit_id": 130012,
+        "voice": "vo_adv_5156700_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "\n需要從頭組裝一台新的戰車……",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "如果不需要擔心家會壞掉的話，",
+        "unit_id": 130112,
+        "voice": "vo_adv_5156700_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "或許這樣反而更好。",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "\n",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "倭姊姊，",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "若菜",
+        "words": "我們也出場參賽吧。",
+        "unit_id": 130112
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "哈，",
+        "unit_id": 130012,
+        "voice": "vo_adv_5156700_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "那當然。",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "\n布武機，",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "倭",
+        "words": "妳也可以吧？",
+        "unit_id": 130012
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "交給我交給我～♪",
+        "unit_id": 130212,
+        "voice": "vo_adv_5156700_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "\n用我們的最強戰車，",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "布武機",
+        "words": "來把那群雜碎們打飛吧～♡",
+        "unit_id": 130212
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "強者雲集，火光與煙硝籠罩的戰場。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n現在在此，又有一群新的挑戰者們發起了挑戰……"
+    }
+]

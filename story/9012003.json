@@ -1,0 +1,823 @@
+[
+    {
+        "type": "background",
+        "background": "500215"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在距離蘭德索爾有段距離的小山丘上──"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "數道流星，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "拖著長長的尾巴劃過夜空。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n【破曉之星】的三人，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n與{player}正抬頭看著。"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "欸，",
+        "unit_id": 100111,
+        "voice": "vo_adv_9012003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "快看快看！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "又有一顆！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "啊，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這裡也有！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "呃，",
+        "unit_id": 100111,
+        "voice": "vo_adv_9012003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "許願許願……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "…",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "…啊，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "哇哇！？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "日和！？",
+        "unit_id": 100213,
+        "voice": "vo_adv_9012003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n妳還好嗎？",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "抱、",
+        "unit_id": 100111,
+        "voice": "vo_adv_9012003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "抱歉，優衣！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我光顧著往上看",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "結果絆倒了。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呵呵，",
+        "unit_id": 100311,
+        "voice": "vo_adv_9012003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "冷靜一點，日和。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這麼晚了，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "要是不小心受傷可就不好了。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "而且，妳看。",
+        "unit_id": 100311,
+        "voice": "vo_adv_9012003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "還有很多顆流星。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n看來應該不用著急呢。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "欸欸，",
+        "unit_id": 100111,
+        "voice": "vo_adv_9012003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n妳們兩個",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "許了什麼願望？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這個嘛……",
+        "unit_id": 100311,
+        "voice": "vo_adv_9012003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我的願望。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是想要",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "變得更強。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "為了好好守護",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "必須守護的夥伴。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我是，",
+        "unit_id": 100213,
+        "voice": "vo_adv_9012003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "那個……",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "希望，",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "能夠一起",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "冒險。",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "啊，",
+        "unit_id": 100213,
+        "voice": "vo_adv_9012003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "那個，",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "嗯，",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "這個願望，",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "說不定其實不太好。",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "但我希望，",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "不只是我。",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "而是大家──",
+        "unit_id": 100213,
+        "voice": "vo_adv_9012003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "都能夠",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "開心地冒險。",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "……這樣的願望，",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "沒問題",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "嗎……？",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嗯！",
+        "unit_id": 100111,
+        "voice": "vo_adv_9012003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我覺得很棒！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n完全沒有問題！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "因為……",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我啊。",
+        "unit_id": 100111,
+        "voice": "vo_adv_9012003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "也跟優衣，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "還有怜一樣哦！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "想要能夠幫助大家、",
+        "unit_id": 100111,
+        "voice": "vo_adv_9012003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "跟大家一起冒險，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "也希望能一直一直──",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "跟騎士先生你們在一起♪",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嘿嘿。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "為此，",
+        "unit_id": 100111,
+        "voice": "vo_adv_9012003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我想要",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "幫助更～多人呢！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "咦，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這樣",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "好像不是願望，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "而是目標！？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "呵呵，",
+        "unit_id": 100311,
+        "voice": "vo_adv_9012003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不過這樣也不錯吧？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n比起只是等待",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "願望實現。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "倒不如以願望的形式，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "再一次確立自己的目標與決心。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我想這一定，",
+        "unit_id": 100311,
+        "voice": "vo_adv_9012003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "能成為實現願望的助力。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "……嗯，",
+        "unit_id": 100111,
+        "voice": "vo_adv_9012003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "是啊。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "說得也是呢。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我想，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "只要全心全意想著，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "就一定能實現！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是啊，",
+        "unit_id": 100311,
+        "voice": "vo_adv_9012003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "一定可以。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "你也是這麼想的吧？",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "呵呵……",
+        "unit_id": 100213,
+        "voice": "vo_adv_9012003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n總覺得",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "很懷念呢。",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n就像是【破曉之星】",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "剛組成的時候一樣。",
+        "unit_id": 100213
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "確實。",
+        "unit_id": 100311,
+        "voice": "vo_adv_9012003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "在那之後，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "雖然發生了很多事情……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "但是希望從今以後，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "也能一直在一起冒險。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嗯！",
+        "unit_id": 100111,
+        "voice": "vo_adv_9012003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "啊，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "又有流星了！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "好耀眼──",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "而且有兩顆！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "那麼，",
+        "unit_id": 100311,
+        "voice": "vo_adv_9012003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "就來試著追加願望吧。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……希望還能與「那兩人」，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "再次相會。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "以及──",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "希望兩人的願望，",
+        "unit_id": 100111,
+        "voice": "vo_adv_9012003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "能夠實現！",
+        "unit_id": 100111
+    }
+]

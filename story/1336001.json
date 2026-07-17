@@ -1,0 +1,3265 @@
+[
+    {
+        "type": "background",
+        "background": "500020"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}打工結束回程的路上──"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "喂喂～！",
+        "unit_id": 1,
+        "voice": "vo_adv_1336001_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "你們等等，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "不可以這樣！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n跑步的時候不要東張西望──",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "快點快點──！",
+        "unit_id": 1,
+        "voice": "vo_adv_1336001_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "來這邊啦──！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n……哇！？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "嗚嗚，",
+        "unit_id": 111,
+        "voice": "vo_adv_1336001_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "對不起……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "等等，",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "咦？",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n哥哥……？",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "哇！",
+        "unit_id": 111,
+        "voice": "vo_adv_1336001_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "果然是哥哥你！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n你怎麼會在這裡啊？",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "我們的話，",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "正在幫忙帶路喔！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "那要說的話……",
+        "unit_id": 1,
+        "voice": "vo_adv_1336001_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "分明是「在被當小孩顧」",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "才對～吧～！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "真是的！",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "說了別亂跑為什麼還是亂跑啊！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "到時候挨罵的，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "可是負責顧小孩的我耶！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "哼哼！",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "好久不見了呢，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "{player}。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n看你的表情",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "一臉就是很訝異我會出現在這裡。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜希亞娜",
+        "words": "嘶啊啊──！",
+        "unit_id": 18912
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "啊哈♪",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n梅杜希亞娜",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "也在對你說",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "好久不見呢！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "沒錯喔。",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "……雖然很想這麼回答，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "其實今天是在顧孩子。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "我現在搬進咲戀育幼院裡住了，",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n相對我得幫忙照顧孩子們，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這是我和咲戀說好的。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n姊姊也說過",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這種約好的事",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "就要確實做到才行。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "欸欸～",
+        "unit_id": 211,
+        "voice": "vo_adv_1336001_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "梅杜莎，",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "快點繼續走吧～？",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "你想想，",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "就算要付房租，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "我身上也沒有這個世界的錢……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "所以說",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "我就照顧這些小孩子",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "作為回報！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "反正涅妃‧涅羅",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "也叫我待在這邊嘛。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "就是這麼一回事，",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "你們幾個，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "都聽清楚了吧？",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n要給我安分一點喔。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "好～",
+        "unit_id": 211,
+        "voice": "vo_adv_1336001_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "可是梅杜莎，",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n我們是來幫忙買東西的，",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "千萬別忘了喔？",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "對啊對啊。",
+        "unit_id": 111,
+        "voice": "vo_adv_1336001_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "妳還不熟悉店家在哪裡，",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n鈴莓姐姐特地交代過",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "讓我們帶路的嘛。",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "很、",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "很囉嗦耶！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n這邊的世界我就是還不熟嘛，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "有什麼辦法！？",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "哎唷～",
+        "unit_id": 211,
+        "voice": "vo_adv_1336001_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "梅杜莎，",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "別那麼生氣啦。",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "等明天，",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "我們會幫忙找妳姊姊的！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "嗯嗯！",
+        "unit_id": 111,
+        "voice": "vo_adv_1336001_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "這附近一帶",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "我們可是很熟的喔。",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n很清楚哪些地方可以藏人。",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "到時候一起去吧！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "…………",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "……嗯。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n啊，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "既然是這樣的話……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "陪你們去",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "也不是不行。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "……{player}，",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "你也一起來。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "反正你也是閒著對吧？",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "「不過」",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "什麼啦！？",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "你當然要來幫我呀！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "就是這樣，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "明天見！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "啊，",
+        "unit_id": 111,
+        "voice": "vo_adv_1336001_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "梅杜莎妳等一下啦～！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n要買東西的店",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "不是在那個方向呀～！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "隔天──"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "哼哼♪",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n乖乖來了呢，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "{player}。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n挺有心的嘛。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "快看快看！",
+        "unit_id": 111,
+        "voice": "vo_adv_1336001_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "哥哥，",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "梅杜莎。",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "我們",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "做了找姊姊地圖喔！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "梅杜莎的姊姊們可能會待的地方，",
+        "unit_id": 211,
+        "voice": "vo_adv_1336001_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n我們都標記出來了！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "你們……",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n在我不知道的時候",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "還做了這種……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "……哼、",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "哼。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "那麼……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "有標記的方全跑一趟",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "就行了是吧？",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "嗯，",
+        "unit_id": 211,
+        "voice": "vo_adv_1336001_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "就是這樣！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "所以趕快出發吧！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "好、",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "好！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "……嘿嘿。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "能找到姊姊們的話",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "那就太好了呢。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n梅杜希亞娜──！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜希亞娜",
+        "words": "嘶啊啊～！",
+        "unit_id": 18912
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "就這樣，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "照著孩子們製作的地圖，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n一行人開始尋找梅杜莎的姊姊。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "然而這一路上──"
+    },
+    {
+        "type": "background",
+        "background": "500170"
+    },
+    {
+        "type": "dialogue",
+        "name": "流浪貓",
+        "words": "呼嘶───！！",
+        "unit_id": 1711
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "哇啊！？",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_029"
+    },
+    {
+        "type": "background",
+        "background": "500140"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "呀啊啊啊！？",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_030"
+    },
+    {
+        "type": "background",
+        "background": "501030"
+    },
+    {
+        "type": "dialogue",
+        "name": "鮪魚",
+        "words": "嘩啦嘩啦嘩啦嘩啦！！",
+        "unit_id": 14312
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "嗚咿咿咿咿咿～～～！？",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_031"
+    },
+    {
+        "type": "background",
+        "background": "500390"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "呼……",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "哈……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這、",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這點程度不算什麼……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "梅杜莎",
+        "unit_id": 111,
+        "voice": "vo_adv_1336001_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "還真是嚇得不輕耶……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "嗯……",
+        "unit_id": 211,
+        "voice": "vo_adv_1336001_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "比起野貓和魔物，",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n梅杜莎的叫聲更嚇我一跳……",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "唔唔唔",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "唔……！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "你們幾個……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "我都聽見了喔……！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "唉……",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "結果到哪裡都沒有找到姊姊……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n明明都這麼努力了……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜希亞娜",
+        "words": "嘶啊啊……",
+        "unit_id": 18912
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "梅杜希亞娜……",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這是在鼓勵我嗎？",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "……呵呵，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "謝謝。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "真的",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "是個好孩子呢……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "男性的聲音",
+        "words": "妳！",
+        "unit_id": 1,
+        "voice": "vo_adv_1336001_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性的聲音",
+        "words": "那邊的那位小姐！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "嗯……？",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "太好了……",
+        "unit_id": 2511,
+        "voice": "vo_adv_1336001_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "終於找到妳了！",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "\n我一直在找妳啊！",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "新年那時候的表演",
+        "unit_id": 2511,
+        "voice": "vo_adv_1336001_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "我全都看了。",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "\n",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "我說啊，",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "那真的是太棒了！",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "……誰啊，",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "你？",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n姊姊們告訴過我，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "別和奇怪的人扯上關係。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "……所以？",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "找我有什麼事？",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "哈哈哈，",
+        "unit_id": 2511,
+        "voice": "vo_adv_1336001_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "真傷腦筋啊。",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "我不是什麼奇怪的人。",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "\n別看我這樣，",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "我其實是個商會的會長。",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "\n經營的是",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "古今中外奇珍異寶的買賣。",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "我就直說了吧。",
+        "unit_id": 2511,
+        "voice": "vo_adv_1336001_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "\n妳帶在身邊的那條蛇……",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "不曉得能不能讓我買下來？",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "買下梅杜希亞娜……！？",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "你在胡說什麼啊，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "為什麼要──",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "因為牠的表演實在太棒了。",
+        "unit_id": 2511,
+        "voice": "vo_adv_1336001_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "\n",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "當牠變成大蛇展露身手，",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "居民們簡直熱情到不行！",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "\n",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "讓這條蛇去表演雜耍",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "肯定能夠大賺一筆！",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "什──！",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "你說什麼！？",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n要梅杜希亞娜",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "去表演雜耍！？",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "沒錯！",
+        "unit_id": 2511,
+        "voice": "vo_adv_1336001_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "我也會負責教牠賣藝的招數。",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "\n",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "招數嘛……",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "我想想，",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "應該是越危險的越好。",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "\n跳火圈……",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "不，",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "關進水槽裡也不錯。",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "開……",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "開什麼玩笑！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n梅杜希亞娜是我重要的眷屬！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n像你這種人……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "連一塊鱗片也別想得到！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "像這種傢伙──",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "解決掉他，",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "梅杜希亞娜！！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜希亞娜",
+        "words": "嘶啊啊啊啊啊！",
+        "unit_id": 18911
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "為、",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "為什麼要阻止我！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "放開我！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "如果是在吉歐‧格黑納，",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這種過分的人",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "被整個吞掉都是應該的！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "噫、",
+        "unit_id": 2511,
+        "voice": "vo_adv_1336001_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "噫",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "可疑男子",
+        "words": "噫噫！",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "啊！",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "給我站住，",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "別跑～！！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "真是的──",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "為什麼要阻止我啊！？",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n看你做的好事，",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "被他跑掉了啊！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "嗚……！",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "可是……",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "可",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "是！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "快看，",
+        "unit_id": 1,
+        "voice": "vo_adv_1336001_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "那隻怪物……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "好像想襲擊人啊……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "居民２",
+        "words": "好可怕……",
+        "unit_id": 1,
+        "voice": "vo_adv_1336001_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "居民２",
+        "words": "不會突然失控吧……？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "嗚，",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "唔唔唔……",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "不要……！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n別用那種眼神",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "看梅杜希亞娜……",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "……",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "梅杜希亞娜。",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n已經沒事了。",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "變回小小的樣子吧。",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜希亞娜",
+        "words": "嘶啊啊……！",
+        "unit_id": 18912
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "很好……",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "乖孩子。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "梅杜莎……",
+        "unit_id": 211,
+        "voice": "vo_adv_1336001_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "抱歉嚇到大家了。",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n{player}也是……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "要是你沒阻止，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "我一定會造成嚴重的後果。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這裡",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "和吉歐‧格黑納是不一樣的呢。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "就算遇到不開心的事，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "也不能立刻",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "就出手打鬥……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "………我回去了。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "啊，",
+        "unit_id": 111,
+        "voice": "vo_adv_1336001_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "梅杜莎……！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "怎麼辦呀，",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "哥哥……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n放著不管的話，",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "梅杜莎會不會回去原本的世界……？",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "梅杜莎……",
+        "unit_id": 211,
+        "voice": "vo_adv_1336001_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n我不希望她就這麼",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "變得討厭蘭德索爾……",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n該怎麼辦才好……？",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "……還有什麼事？",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "你也可以回去了。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n反正孩子們做的這張地圖上的地點，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "已經全部去過了──",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "咦……？",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "等一下，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這個標記是怎麼回事……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "剛剛明明還沒有的啊。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "應該說……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "不管怎麼看都是剛補畫上去的。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這是",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "什麼地方？",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "！",
+        "unit_id": 211,
+        "voice": "vo_adv_1336001_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "哥哥，",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "這個地方……！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "嗯，",
+        "unit_id": 111,
+        "voice": "vo_adv_1336001_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "的確如果是這個地方……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n或許可以讓她喜歡上蘭德索爾！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "孩子們",
+        "words": "出發！",
+        "unit_id": 1,
+        "voice": "vo_adv_1336001_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "什、",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "什麼啦。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "每個人都這樣。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "結果也沒告訴我到底是哪裡……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "……",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "真拿你們沒辦法。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n就稍微",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "陪你們走一下吧。",
+        "unit_id": 133612
+    },
+    {
+        "type": "background",
+        "background": "500510"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "哇啊……！",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n這些全部",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "都是花……！？",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "好棒，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "太棒了！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這、",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這裡……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "可以走進去嗎？",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "真的可以？",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這、",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這樣啊……！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "那麼……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "嘿嘿……♪",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n哇啊，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "好香的味道。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "腳下也很鬆軟的呢。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "你們看！",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這朵小花！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n我在吉歐‧格黑納完全沒有見過！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "而且，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這隻紅紅的生物是──？",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "瓢蟲？",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n哼嗯……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "看起來",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "挺可愛的嘛……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "……呵呵♪",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n欸，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "再多告訴我一點！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "接著告訴我那邊的花的名字！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "……呵呵呵。",
+        "unit_id": 211,
+        "voice": "vo_adv_1336001_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "梅杜莎",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "看起來很開心呢。",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "嗯，",
+        "unit_id": 111,
+        "voice": "vo_adv_1336001_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "真是太好了。",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "話說回來……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "原來梅杜莎那邊的世界",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "很少見到花朵啊。",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "既然是這樣……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "嘿嘿！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "就這麼辦……！",
+        "unit_id": 111
+    },
+    {
+        "type": "background",
+        "background": "500511"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "呼～！",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "好開心！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "你們也真是的！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "既然有這麼漂亮的地方，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "就應該早點告訴我呀！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "哼哼♪",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "蘭德索爾也是個好地方呢！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "剛剛本來還覺得不開心……",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這下舒服多了。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "那些孩子們",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "挺懂事的嘛。",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "……咦？",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "那些孩子們",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "跑哪裡去了？",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "女孩子的聲音",
+        "words": "呀啊啊啊！",
+        "unit_id": 1,
+        "voice": "vo_adv_1336001_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "女孩子的聲音",
+        "words": "救救我～～！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "！",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "剛剛的聲音，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "在那邊──",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "從山崖邊傳來的！？",
+        "unit_id": 133612
+    },
+    {
+        "type": "background",
+        "background": "500214"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "嗚、",
+        "unit_id": 111,
+        "voice": "vo_adv_1336001_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "嗚嗚嗚……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "不行，",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "會掉下去……！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "咕、",
+        "unit_id": 211,
+        "voice": "vo_adv_1336001_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "嗚……！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "手，",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "絕對不可以放開……！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n好好抓緊我的手……",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "怎麼會！",
+        "unit_id": 133612,
+        "voice": "vo_adv_1336001_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "那些孩子，",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這樣會從山崖上掉下去的！",
+        "unit_id": 133612
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "唔、",
+        "unit_id": 211,
+        "voice": "vo_adv_1336001_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "嗯……",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "哥哥，",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "幫幫忙……！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n再這樣……",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "連我都會",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "一起掉下去──！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "──啊！？",
+        "unit_id": 211,
+        "voice": "vo_adv_1336001_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "孩子們",
+        "words": "哇啊啊啊啊啊啊！！",
+        "unit_id": 1,
+        "voice": "vo_adv_1336001_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "嘶啊啊啊啊啊！！",
+        "unit_id": 3
+    },
+    {
+        "type": "dialogue",
+        "name": "孩子們",
+        "words": "！？",
+        "unit_id": 1,
+        "voice": "vo_adv_1336001_091"
+    },
+    {
+        "type": "background",
+        "background": "500521"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "咦、",
+        "unit_id": 111,
+        "voice": "vo_adv_1336001_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "咦……？",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "什麼事也沒有……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n而且，",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "我們在空中飛……？",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "沒有受傷吧？",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "梅、",
+        "unit_id": 211,
+        "voice": "vo_adv_1336001_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "梅杜莎！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n所以，",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "這是──",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜希亞娜",
+        "words": "嘶啊啊～！",
+        "unit_id": 18911
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "沒錯，",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "你們就在梅杜希亞娜身上。",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這孩子",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "可是能飛的喔！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "哼哼♪",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "順便也載你一程了。",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n感謝我吧！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "梅杜莎，",
+        "unit_id": 111,
+        "voice": "vo_adv_1336001_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "哥哥……！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n嗚、",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "嗚哇啊啊啊啊啊！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "嚇死我了啦──！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "真是的，",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "不要哭啦！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "做這麼危險的事，",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "到底是在想什麼啊！？",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "那、",
+        "unit_id": 211,
+        "voice": "vo_adv_1336001_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "那是因為……",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "開在山崖上的",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "這朵花很漂亮……",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n我想摘下來",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "送給梅杜莎和梅杜希亞娜……",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這、",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這朵花……",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這是",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "為了我們……？",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "真、",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "真是……",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "你們兩個笨孩子！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n咲戀沒有教過你們別做危險的事嗎！？",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "對不起……",
+        "unit_id": 111,
+        "voice": "vo_adv_1336001_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n可是，",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "我不希望梅杜莎妳們，",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n變得討厭蘭德索爾……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "……！",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "真",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "是……",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "笨蛋！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "真的是笨孩子！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "只是因為我一個火大差點動手而已……",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "就做出這種事……！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "但是，",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "那個……",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "謝謝了。",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "居、",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "居然能想到要給我上貢，",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n以你們幾個小不點來說挺有心嘛！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "而且……",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "這個景色",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "感覺不錯呢。",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n看在這個景色的份上，",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "我就不繼續罵了。",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "等回去──",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "再讓咲戀好好唸你們。",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "──就是這樣。",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "如果換成姊姊，",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "她就會這樣說吧，",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "大概。",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "你、",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "你在那邊偷笑什麼啦？",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n感覺真令人不爽！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "給我停下來喔，",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "別做出那種表情！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "對了，",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "難得的機會，再讓你們飛高一點吧。",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "我要把你們嚇得",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "沒辦法偷笑！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "咦、",
+        "unit_id": 211,
+        "voice": "vo_adv_1336001_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "咦咦咦……！？",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n梅杜莎，",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "連我們也有份喔～！？",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "呵呵！",
+        "unit_id": 133611,
+        "voice": "vo_adv_1336001_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "放心吧，",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "我會放慢速度的。",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "\n",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "好了──",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "看你的囉，",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜莎",
+        "words": "梅杜希亞娜！",
+        "unit_id": 133611
+    },
+    {
+        "type": "dialogue",
+        "name": "梅杜希亞娜",
+        "words": "嘶啊啊～～～！",
+        "unit_id": 18911
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "不顧{player}和小孩子們的叫聲，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n梅杜莎操縱著梅杜希亞娜，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n開心地飛在蘭德索爾的天上。"
+    }
+]

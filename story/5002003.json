@@ -1,0 +1,818 @@
+[
+    {
+        "type": "background",
+        "background": "500130"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "探險當天，禊和{player}\n提早來到街道上等待鏡華和美美。"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "唔──，好尷尬哦～",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n鏡華來了的話，要用什麼樣的表情和她說話才好啊──",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "那很難啦～！哥哥不會懂的啦──！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "那怎麼行呢──！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n如果禊都不說話，真的會變得一片沉默唷！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……久等了。",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哇！嚇我一跳！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "啊，是鏡華。那個，那個……早，早安！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "嗯、",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "嗯……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "早安。",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n{player}，",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "你也早安。",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華・禊",
+        "words": "……",
+        "unit_id": 1,
+        "voice": "vo_adv_5002003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "決、",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "決定好要去哪裡探險了嗎！？\n{player}！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "對，對啊哥哥！吶吶，到底要去哪呢？",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "咦？美美還沒來嗎？",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n她會遲到還真稀奇呢……難，難道是迷路了嗎！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哎呀！如果是這樣就糟了！得去接她才行！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "總，總之先去美美的家走一趟吧！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n畢竟也可能是睡過頭了！",
+        "unit_id": 103611
+    },
+    {
+        "type": "background",
+        "background": "500020"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "美美！美美！在的話回句話吧！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "咳咳……在～。",
+        "unit_id": 102011,
+        "voice": "vo_adv_5002003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "美美！怎、怎麼了嗎？",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "啊，大家啊～、咿嘻嘻～……美美發燒了呢……",
+        "unit_id": 102011,
+        "voice": "vo_adv_5002003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "咦！？妳、妳沒事吧？",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "嗯，沒事……咳咳！",
+        "unit_id": 102011,
+        "voice": "vo_adv_5002003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n哎唷……大家對不起，美美今天沒辦法出門了～",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "沒關係沒關係，好好休息吧。",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n對不起呢，擅自跑來打擾？",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "怎麼會。美美看到大家，精神就好了一點呢～♪",
+        "unit_id": 102011,
+        "voice": "vo_adv_5002003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n鏡華和禊看起來已經和好了，真是太好了～♪",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "唔！那、那個嘛……",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "那美美要回被窩裡囉？",
+        "unit_id": 102011,
+        "voice": "vo_adv_5002003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "大家再見呢……",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華・禊",
+        "words": "……",
+        "unit_id": 1,
+        "voice": "vo_adv_5002003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "……美美好像很不舒服呢……",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "嗯……因為是在我們面前所以硬撐著，好像很吃力的樣子。",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "……嗚哇！要是我們有治療疾病的能力就好了！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "畢竟我也不會打敗病菌的魔法……啊，對了！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "先前曾經在教科書上看到過，",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n有一種對嚴重發燒很有效的藥草！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n還寫著只要喝下之後，很快就會退燒，恢復精神！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "那是什麼－！也就是說只要喝下那種藥草，",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n美美就能恢復精神了！？",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "我讀到的教科書上是那麼寫的沒錯！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "那我們今天就到那裡去探險吧！去找藥草！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "咦！？可是有藥草的地方也會有魔物之類――",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥也準備 OK 了嗎？",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "很好，為了美美！禊探險隊，出發！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "啊，等一下禊！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_032"
+    },
+    {
+        "type": "background",
+        "background": "500213"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "藥草似乎就生長在穿過這座山之處。",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n因為魔物也棲息在那裡，所以要慎重―",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "禊先走了喔！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "禊真是的，又自己跑了！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥和鏡華走得太慢了嘛！我等不及了啦！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "唉……果然還是很尷尬……",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n這樣子到底能不能和好呢……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "禊，步調稍微放慢點！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n這樣下去的話會走散唷！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "我，我知道了啦……！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "果然鏡華她，",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "還在生我的氣……",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "比平常都還要可怕……",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "（走得這麼快……果然是不想和我在一起……）",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "真是的！哥哥振作點啦！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n禊替你加油，趕快過來哦！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "和那個人的距離漸漸拉開了……",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "真是的，都是禊越走越遠的關係啦……！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "可是，我想要快點讓美美恢復健康嘛！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n所以不走快點怎麼行――！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物１",
+        "words": "──咕喔喔喔喔",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物１",
+        "words": "！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哇──！什麼東西啊──！？",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "魔、魔物？禊！很危險快過來這裡──！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物２",
+        "words": "──咕喔喔喔喔",
+        "unit_id": 1612
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物２",
+        "words": "！",
+        "unit_id": 1612
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "還、還有一隻！？怎麼會……！　",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "那個人還沒……",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n別、別過來啊──！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "鏡華！？好，好吧，禊也豁出去了！呀啊！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_048"
+    },
+    {
+        "type": "background",
+        "background": "500213"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物１",
+        "words": "──咕喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "咿嗚！也、也不必叫那麼大聲吧！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "這裡就和禊聯手對付了！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "慢著、禊……！隨便動來動去！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n魔法會打不中的！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "可是，它們一下接一下地攻擊過來嘛！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "到底要攻擊哪一邊，好好決定吧",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "就算妳這麼說……啊！？",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物２",
+        "words": "──咕喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "background",
+        "background": "500213"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "啊嗚！痛……",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "禊！這裡先退下！我來想辦法！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "可是，一個人實在……啊，哥哥！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "謝、謝謝你！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n就這樣吸引魔物吧！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n我也……就是現在！嘿──噫！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物２",
+        "words": "──嘎喔喔喔喔喔",
+        "unit_id": 1612
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物２",
+        "words": "！",
+        "unit_id": 1612
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "成功了！接下來另一隻也處理掉吧！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物１",
+        "words": "──咕喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "……咦？逃走了？……怎，怎麼樣！　",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n惹上鏡華和哥哥就是這樣啦！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "禊，妳都受傷了，不能亂動哦！",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n來，我幫妳包紮，讓我看看傷口吧！",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "痛痛！嗚嗚，對不起……",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "真是的……每次都衝著跑出去才會這樣……",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "……那個……嗯……",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "好了，這樣就沒問題了。　",
+        "unit_id": 103611,
+        "voice": "vo_adv_5002003_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "鏡華",
+        "words": "\n藥草的話，應該走進前面的迷宮就有了吧。",
+        "unit_id": 103611
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "……嗯，嗯！嘿嘿嘿……好！",
+        "unit_id": 100411,
+        "voice": "vo_adv_5002003_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n我們走吧鏡華、哥哥！目標藥草，Let's GO！",
+        "unit_id": 100411
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "三個人為了取得藥草，\n朝著迷宮走了進去。"
+    }
+]

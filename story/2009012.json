@@ -1,0 +1,881 @@
+[
+    {
+        "type": "background",
+        "background": "500055"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在那之後……"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "【王宮騎士團】的救援也及時趕到，\n順利地將身分不明的魔物給消滅了。\n而在確保了安全無慮後，【慈樂之音】的演唱會也重新開始了。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "儘管發生了魔物襲擊這種重大的問題……\n演唱會依舊還是盛況空前，\n而【慈樂之音】的巡演，也按照當初的預定繼續舉行下去了。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}在那之後，\n打聽到了可可蘿被送往的診療所在何處。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "而可可蘿雖有接受了千歌的治療，\n但不知為何可可蘿卻始終無法恢復意識，\n一直保持著昏睡狀態直到至今…… "
+    },
+    {
+        "type": "still",
+        "still": "200901201"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "…………",
+        "unit_id": 105912,
+        "voice": "vo_adv_2009012_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "啊啊，",
+        "unit_id": 104211,
+        "voice": "vo_adv_2009012_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "竟如此可憐……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n非常抱歉，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "這都是我的過失。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n是我無法防範好敵人的攻擊，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "甚至還無法提供有效的治療……",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "不，",
+        "unit_id": 102911,
+        "voice": "vo_adv_2009012_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "我覺得千歌妳已經盡最大的努力了……",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n不要太過於責怪自己了。",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "明明就乖乖撤離就好了，",
+        "unit_id": 102911,
+        "voice": "vo_adv_2009012_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n卻還說出要打倒魔物這種話的我責任更大唷。",
+        "unit_id": 102911
+    },
+    {
+        "type": "background",
+        "background": "500055"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "這事情不是誰的錯啦，",
+        "unit_id": 105411,
+        "voice": "vo_adv_2009012_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "我覺得……",
+        "unit_id": 105411
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "\n就只是運氣不好了一點。",
+        "unit_id": 105411
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "到底是在搞什麼鬼呀，",
+        "unit_id": 105411,
+        "voice": "vo_adv_2009012_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "那隻魔物？",
+        "unit_id": 105411
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "\n",
+        "unit_id": 105411
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "真的是，",
+        "unit_id": 105411
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "讓人氣到說不出話來了！",
+        "unit_id": 105411
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "……嗯？",
+        "unit_id": 105411,
+        "voice": "vo_adv_2009012_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "\n怎麼了，騎士先生？",
+        "unit_id": 105411
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "\n",
+        "unit_id": 105411
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "你好像想說些什麼呢？",
+        "unit_id": 105411
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "為什麼，{player}你得要道歉啊……？",
+        "unit_id": 104211,
+        "voice": "vo_adv_2009012_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "你明明就沒有任何的過錯不是嗎？",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "關於這件事。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "對啊，{player}。",
+        "unit_id": 102911,
+        "voice": "vo_adv_2009012_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "話說回來，",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "就算被道歉了也於事無補嘛……",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "既然事情都發生了也沒有辦法，",
+        "unit_id": 102911,
+        "voice": "vo_adv_2009012_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "必須轉個念來想想今後該要怎麼辦呢。",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "世界各地，都還有粉絲在等著我們。",
+        "unit_id": 102911,
+        "voice": "vo_adv_2009012_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "哭喪著臉，",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "停下腳步的這些事是絕對不行的……",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "畢竟我們可是偶像呀。",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "……呵呵。",
+        "unit_id": 104211,
+        "voice": "vo_adv_2009012_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "可沒有做出什麼值得讓你道謝的事呢，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "我們幾個。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "嗯嗯。",
+        "unit_id": 102911,
+        "voice": "vo_adv_2009012_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n只是對那把演唱會搞得一團亂的魔物很不爽，然後鬧了一場而已。",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "但一想到竟然會像這樣出現了傷者的這件事，",
+        "unit_id": 102911,
+        "voice": "vo_adv_2009012_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n當初就該冷靜點，是不是選擇其他的手段反而更好的感覺……",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "但現在才這樣講，",
+        "unit_id": 102911,
+        "voice": "vo_adv_2009012_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "也都為時已晚了呢……",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "總而言之……",
+        "unit_id": 102911,
+        "voice": "vo_adv_2009012_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "她叫做可可蘿對吧，",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "這孩子的治療費就由【慈樂之音】負責吧。",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "畢竟她也是看了我們表演的",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "一名客人嘛。",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "雖然不能當成什麼賠罪，",
+        "unit_id": 102911,
+        "voice": "vo_adv_2009012_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "也稱不上能有什麼慰藉的意思。",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "但偶像可是不論何時，",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "都得誠心誠意對待每一位粉絲的嘛。",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "還請你，",
+        "unit_id": 102911,
+        "voice": "vo_adv_2009012_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "雖然也不能說是慰撫金……",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "但希望你能收下醫藥費呢。",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n不論是要去請個有名望的醫生，",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n還是要做些什麼，我們都會盡全力幫忙的。",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "你也不要太消沉了呢，{player}。",
+        "unit_id": 102911,
+        "voice": "vo_adv_2009012_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "沒事的，",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "這孩子一定馬上就會醒過來的唷。",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "製作人",
+        "words": "你們！",
+        "unit_id": 1,
+        "voice": "vo_adv_2009012_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "製作人",
+        "words": "\n在這種地方打混摸魚幹些什麼！？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "噫！",
+        "unit_id": 104211,
+        "voice": "vo_adv_2009012_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "製作人小姐！？",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "『噫！』這打招呼還真失敬呢，",
+        "unit_id": 107111,
+        "voice": "vo_adv_2009012_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "我可不是魔物唷？",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "算了，",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "我早就習慣被人畏懼了嘛！",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n啊哈哈哈☆",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "……妳們幾個，",
+        "unit_id": 107111,
+        "voice": "vo_adv_2009012_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "趕緊給我到國營機場的『傳送之廳』去。",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n先移動到下次演唱會的舉辦地，",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "然後今天就先好好的休息。",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "移動和住宿的之類手續，",
+        "unit_id": 107111,
+        "voice": "vo_adv_2009012_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n已經先前往當地的經紀人會替妳們都辦好。",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "好啦，",
+        "unit_id": 107111,
+        "voice": "vo_adv_2009012_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "走了走了！",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "這個受傷的傢伙就交給我吧……",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "畢竟還算是認識的，",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "我會妥善處理的。",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "好、好的！",
+        "unit_id": 102911,
+        "voice": "vo_adv_2009012_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "\n",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "望",
+        "words": "那麼就麻煩妳了唷，製作人？",
+        "unit_id": 102911
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "那麼先失陪了……",
+        "unit_id": 104211,
+        "voice": "vo_adv_2009012_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n那個、{player}，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "我們會再和你連絡。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "\n",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "待巡演結束我們回來後，",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "千歌",
+        "words": "會再來探病的。",
+        "unit_id": 104211
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "但是在那之前，",
+        "unit_id": 105411,
+        "voice": "vo_adv_2009012_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "\n",
+        "unit_id": 105411
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "這位叫可可蘿的她已經醒過來了就再好不過了……",
+        "unit_id": 105411
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "\n",
+        "unit_id": 105411
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "那麼再見，",
+        "unit_id": 105411
+    },
+    {
+        "type": "dialogue",
+        "name": "紡希",
+        "words": "有緣就會在哪裡再相遇的吧。",
+        "unit_id": 105411
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "……嗯。",
+        "unit_id": 107111,
+        "voice": "vo_adv_2009012_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "你認識那幾個孩子嗎？{player}？",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "那可是現在當紅的高人氣偶像團體",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "【慈樂之音】唷？",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "呵呵。",
+        "unit_id": 107111,
+        "voice": "vo_adv_2009012_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "怎麼，一副傻樣……",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "就算我是個大美人，",
+        "unit_id": 107111,
+        "voice": "vo_adv_2009012_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n也不該這樣死命盯著人家看唷。",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n還真是不懂禮儀呀，",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "最近的年輕人。",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "呵呵。",
+        "unit_id": 107111,
+        "voice": "vo_adv_2009012_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "不過嘛，你會如此驚訝也無可厚非嘛。",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "畢竟就連我自己也不敢置信了呀……",
+        "unit_id": 107111,
+        "voice": "vo_adv_2009012_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n這個天下無雙女中豪傑的克莉絲提娜，",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "竟然淪落到來當上了個什麼偶像的製作人呢？",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "但正因如此，",
+        "unit_id": 107111,
+        "voice": "vo_adv_2009012_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "人生才有趣呀！",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "啊哈哈哈……☆",
+        "unit_id": 107111
+    }
+]

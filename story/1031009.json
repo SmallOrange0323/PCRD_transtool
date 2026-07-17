@@ -1,0 +1,2584 @@
+[
+    {
+        "type": "background",
+        "background": "500890"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "這一天，{player}為了處理附身在自己身上的幽靈，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n前去拜訪忍。"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "──是的，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我很了解你們的心情。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "然而，也要請你們體諒，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n幽靈的存在",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "多少是會對一般人造成影響的。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "──謝謝你們。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你們能夠理解，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "幫了我一個大忙。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那麼，再會囉。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "呼……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你現在覺得怎麼樣？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "{player}。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "是的，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "因為附身在你身上的幽靈們",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "已經離開，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n所以應當會改善許多。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "只是",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "並非所有的幽靈都已離去，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "如果有感到任何異樣，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "請馬上告訴我。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "抱歉，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "雖然有不少幽靈被說服，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n但不是所有的幽靈都已離去……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不過，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "後續我已經有擬好對策，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "所以，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "請不用擔心。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "喂，忍。",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "妳這樣有點太拖拖拉拉了吧？",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n乾脆由我一次把它們全都驅除──",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不行這樣，爸爸。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不能對沒有明顯惡意的幽靈做這種事。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "只要好好溝通，它們就會明白，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不要這麼粗暴。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "雖然妳這麼說，",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "但如果幽靈全是好東西的話，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n哪還需要我們靈媒師啊──",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "唔！",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "妳看，",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "不是什麼好東西的幽靈開始鬧事了吧？",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n忍，妳打算怎麼做？",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我的使命",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "是守護好這個人。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不管遇到什麼，這都不會改變。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "抱歉，{player}。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n請你再多待一會兒。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我會馬上請",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這無禮之徒離開！",
+        "unit_id": 103111
+    },
+    {
+        "type": "background",
+        "background": "500891"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "──辛苦了。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n鬧事的幽靈已經除掉，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你可以放心了。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不過，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你原本就是容易聚集幽靈的體質，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "再加上這陣子突然變得更容易吸引它們過來，千萬不可大意。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "所以，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "之後我也會定期為你做處理的。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "當然很辛苦！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n怎麼可以讓忍為你這小伙子冒險，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n浪費寶貴的時間呢！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "抱歉……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "請不用理會我父親所說的話。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這是我自願做的事。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "老實說，我是想一直陪在你身邊守護著你，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "但這實在有困難……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "那、",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "那還用說嗎！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "要、",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "要是隨時都跟這小伙子在一起，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n忍就會，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "忍就會……",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "啊啊啊啊啊啊！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……到底是在想像些什麼啊？",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我父親失態了。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那麼，我們下次再見。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "回去路上請小心。",
+        "unit_id": 103111
+    },
+    {
+        "type": "background",
+        "background": "500011"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "……忍，",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "我不是故意要說難聽話，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n但妳最好不要幫那小伙子幫過了頭。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "妳待在他身邊是為了處理幽靈的問題。",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n問題若解決了，見面的次數自然也會減少。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n妳要知道妳與小伙子之間是這種關係喔。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……嗯，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我知道。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我想守護那個人，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n就只是這樣而已。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "妳知道就好。",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "那小伙子",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "實在令人可恨。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "後來，到了約定之日，{player}卻沒有出現，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n就這樣失蹤了。"
+    },
+    {
+        "type": "background",
+        "background": "500171"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "唉，",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "煩死人了……",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "如果是我喜歡的大姐姐那就算了，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n竟然要我去找那小伙子，真讓人提不起勁……",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "乾脆拜託【王宮騎士團】，",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n或是那小伙子認識的姐姐們去找吧。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不行。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "如果是一般的失蹤還可以這樣做，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "但這肯定是幽靈幹的好事。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n只有我們有辦法找出他來。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "這我知道啦，",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "真是的。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "不過，忍，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n我想妳應該也知道，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "這傢伙似乎會很棘手喔？",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "嗯，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "對方留下了這麼強烈的靈氣痕跡，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "很可能是頗有實力的惡靈。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不過，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "就算是惡靈，我也一定會救他出來的。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "請等我，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "{player}！",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "……就是這裡了。",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "從這深處傳來一股強大的靈氣。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n忍，這傢伙是個十分強大的幽靈喔。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "是啊……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "但我們不能",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "在這邊退縮。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "走吧，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "爸爸。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "到{player}身邊去！",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "哎呀，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "歡迎光臨。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "你們比我原先所想的還要早到呢。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……咦？",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "妳、",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "妳是……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "惡靈？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "跟我所想像的有點不太一樣……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "妳看，",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "小伙子他人就在那裡。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "若已死透了，那就太幸運了……",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n呿，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "只是睡著而已嗎？",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "真掃興。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n話說回來，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "這名老太婆應該就是動手的人了。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "討厭，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "說什麼惡靈、老太婆的，",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "實在很沒禮貌。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "我是多管閒事的幽靈阿姨！",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "多管閒事的幽靈阿姨！？",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "沒錯。",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "我愛管閒事到廢寢忘食的地步，",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "結果因為管太多閒事而死去。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "不過，就算現在死了，我還是一樣愛管別人的閒事。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "哇啊……",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "想不到竟然來個更加棘手的傢伙。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "所以說，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "帶走那個人，也是因為妳的多管閒事？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "沒錯。",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "因為那小子持續受到靈氣的影響，",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n已經到身心俱疲的地步了吧？",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "所以，我強行帶走他，遠離其他的幽靈們，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "並且讓他像這樣睡上一覺，好好休息。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "而他現在正在睡夢中，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n大啖炸蝦、蝦肉燒賣",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "和蝦仁炒飯等美食呢。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "雖說這份偏食嚴重的菜單很令人在意，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n不過，他如果只是在睡覺，那就太好了。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "只是妳沒經過他本人的同意就這麼做，這有點……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "妳在說什麼啊？",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "我這麼做也是為了妳喔。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "咦？",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "哪怕是再怎麼厲害的靈媒師，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "要應付那麼多的幽靈，",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n妳的身體也會吃不消吧。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "所以說，讓這小子好好休息，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "同時也能讓妳好好休息啊。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這、",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這樣啊……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那個，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "真謝謝妳……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "用不著感謝她。",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "這傢伙根本不管會不會造成別人的困擾，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n只是個愛找麻煩的老太婆。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "她所謂的好心好意，其實比惡靈還來得差勁。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "再跟她繼續耗下去也不會有好事。",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n快點帶走小伙子回去吧。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "嗯……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那個，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "還是很謝謝妳的關照。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我並不覺得守護他是件苦差事，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "所以後續由我們來處理就行了。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "哎呀，討厭，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "妳這孩子在說什麼啊？",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "這小子還得再睡上三年呢。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……咦？",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "就是這樣，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "妳也在這裡住下來吧！",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "遠離世俗，守在重要的人身邊，安穩地過日子。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "這不是件很棒的事嗎！",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "少得寸進尺了，老太婆！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n我們沒理由要配合妳愛管閒事的消遣！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……多管閒事的阿姨，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我知道妳沒有惡意，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "也很感謝妳如此關心我。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不過，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "對於超過限度的蠻橫行為，我實在無法坐視不管。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "既然妳卯盡全力在管閒事，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那我也會卯盡全力來對付妳！",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "呵呵，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "這就是所謂的年輕氣盛啊。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "阿姨我並不討厭喔。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "然而，",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "阿姨也不是吃飽撐著沒事才愛管閒事的喔。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "既然我們各有無法讓步的東西，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "那就只能靠戰鬥來一決勝負了！",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n接招吧！",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "阿──姨──波──！",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "啊……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "嗯……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "真厲害，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我覺得好睏……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "唔……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "哦，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "受到阿姨波這足以讓魔物瞬間入睡的一擊，",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n竟然還有辦法站著，",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "妳的精神力可真驚人。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "不過，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "妳又能撐到什麼時候呢？",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "休想得逞！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "喝啊──！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "啊，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "你這礙事的骷髏頭。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "那就先讓你睡著吧！",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "波──！",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "哈哈哈！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "像妳這種貨色的術式，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "我輕輕鬆鬆就可以擋下！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "哦，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "雖然個性有點差，但實力的確不容小覷呢。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "如果我說",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "能讓你做個",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "你喜歡的美夢呢？",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "什、",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "什麼！？",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "難道說妳有辦法讓我在睡夢中，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n和金髮巨乳的大姐姐做那種事還有這種事嗎？",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "那當然。",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "有我阿姨出馬，這根本易如反掌。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "好了，",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "你說說看，你想做什麼樣的夢呢？",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "咦、",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "咦咦，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "真的假的？",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "嗯、",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "那個，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "我想想啊……",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "波──！",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "糟……",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "咿，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "出、",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "出現了……",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n強壯結實又高大威猛，還穿著兜襠布的肌肉男出現了！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "住、",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "住手，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "別碰我……",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "別抱住我！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "別把我丟進神轎！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n啊啊──！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "啊啊啊──！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "爸、",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "爸……！",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "你的心術太過不正了。",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "讓你做個惡夢稍微反省一下吧。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "好了，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "能仰賴的骷髏頭已經變成那副德性，",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "妳沒有勝算了。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "假如妳肯乖乖入睡，",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "我會讓妳做個好夢的。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "對了，",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "不如讓妳做個與這小子一起度過恩愛假期的夢如何？",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不必妳……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "費心。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我、",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "已經……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "唔……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "發過誓了……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我會、",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "守護{player}的……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "所以……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "絕不能輸……！",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n一定會",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "幫助他……！",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "妳是說",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "妳打算要解除這小子的術式，",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n只讓他一個人逃走嗎？",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "如果妳被擊倒了，這又有什麼意義！",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我無所謂……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "只要能守護這個人，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我就",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "心滿意足了……！",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "愚蠢至極……",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "那就讓我瞧瞧吧，",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n妳的思念究竟有何能耐！",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "{player}，我一定、",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "會幫助你的……！",
+        "unit_id": 103111
+    },
+    {
+        "type": "background",
+        "background": "500172"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……咦，{player}？",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "忍──！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "太好了，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "害我擔心死了──！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "哎呀，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "公主被喚醒了呢。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "怎麼不乾脆睡到接受王子一吻再醒來呢。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "咦，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這到底是什麼情況……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "妳一陷入沉眠，相對的，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "這小子就清醒過來了。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我、",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我的……？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "這小子一醒過來，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "就想要守護倒下的妳。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "所以，",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "阿姨我只好再施展一次術式。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n想不到，他卻一點也不覺得睏，",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "根本完全不為所動。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "阿姨我已經管了上百年的閒事了，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "能夠破除我的多管閒事，你們可是頭一遭喔。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "這就是所謂",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "愛的力量吧……",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "是我輸了。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "妳、",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "妳說什麼愛……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我只是",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "想守護他而已，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那個……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "妳還年輕嘛。",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "那麼，阿姨要瀟灑地退場囉。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "啊，對了──",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "妳所說的「守護」的確很了不起，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "不過，妳不妨試著多依賴這小子一點吧？",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "只要你們兩人同心合力，",
+        "unit_id": 1511,
+        "voice": "vo_adv_1031009_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "似乎就可以不用我多管閒事了。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "\n",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "多管閒事的阿姨",
+        "words": "那麼，你們好好努力吧。",
+        "unit_id": 1511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "唔！",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "阿、",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "阿姨！",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "她走掉了……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "沒、",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "沒",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "什麼……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那個，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "謝謝你。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你又幫了我一次。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "啊……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031009_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我、",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "也會",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "一直守護著你的，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "一定……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "咳咳，",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "竟然把我晾在一邊，兩人就這樣對望著……",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n根本就是把我排除在外嘛！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "忍──！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "爸爸也會努力的喔──！",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "不過，",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031009_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "像那個老太婆那般強大的幽靈，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n一般是不會突然現身的。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n小伙子到底是在哪裡被盯上的？　",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "忍他們雖然度過了重大危機，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n但事情卻沒有完全解決，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n空留遺恨在降臨的暗夜裡。"
+    }
+]

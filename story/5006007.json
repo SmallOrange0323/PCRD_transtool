@@ -1,0 +1,848 @@
+[
+    {
+        "type": "background",
+        "background": "500050"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在一切塵埃落定後。\n【王宮騎士團（NIGHTMARE）】一行人，\n為了慶功而去了餐廳吃飯。"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "謝謝，{player}。",
+        "unit_id": 103711,
+        "voice": "vo_adv_5006007_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "\n……",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "但你為什麼好像理所當然一樣坐在這裡呀，",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "今天可是\n屬於【王宮騎士團（NIGHTMARE）】的慶功宴喔？",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "啊哈哈，",
+        "unit_id": 100511,
+        "voice": "vo_adv_5006007_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "因為{player}也大顯身手了呀。",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n多虧{player}強化了我們的能力，",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n才能戰勝那麼恐怖的魔物呀♪",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "咦……",
+        "unit_id": 103711,
+        "voice": "vo_adv_5006007_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "\n這麼說來，",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "穿著的確有這間店制服的風格呢？",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "\n",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "很適合喲～",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "看起來比平常有男人味呢♪",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "哇啊，",
+        "unit_id": 100511,
+        "voice": "vo_adv_5006007_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "真開心！",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "不過{player}也是和我們一起戰鬥的好夥伴，",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n別再送菜了，跟我們一起大吃大喝吧。♪",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "唉呀唉呀，",
+        "unit_id": 104711,
+        "voice": "vo_adv_5006007_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "各位……",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n{player}少年可是在工作中呢，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n不能一直吵他喲。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "嘻嘻。",
+        "unit_id": 104711,
+        "voice": "vo_adv_5006007_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "少年，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "等打工結束後來找我們吧。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n你還在發育期所以要多吃些喲，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n為了感謝你的幫忙，飯錢我會幫你出的。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "總而言之。",
+        "unit_id": 104711,
+        "voice": "vo_adv_5006007_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n各位，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "這次真是辛苦了。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "多虧大家的付出，事情才得以圓滿解決，",
+        "unit_id": 104711,
+        "voice": "vo_adv_5006007_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n讓小鎮恢復和平。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n今後也一起努力，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "團結一心……",
+        "unit_id": 104711
+    },
+    {
+        "type": "still",
+        "still": "500600701"
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "乾杯！　",
+        "unit_id": 107111,
+        "voice": "vo_adv_5006007_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "團長你的話又長又無聊呢！　",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "太悶了啦！　",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "而且，",
+        "unit_id": 107111,
+        "voice": "vo_adv_5006007_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "淨說些已經結束的事也沒什麼意思吧？",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n那些話就留到老了之後回味，",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "像我們這樣的年輕人，",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "應該談談光輝的未來啦！",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "啊哈哈。",
+        "unit_id": 103711,
+        "voice": "vo_adv_5006007_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "\n你也不是年輕人的年齡了吧，",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "克莉絲阿姨♪",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "殺了你喔♪",
+        "unit_id": 107111,
+        "voice": "vo_adv_5006007_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "但那態度真令人愉快呢，",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "給我再多帶點敵意！",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "才沒有敵意咧。",
+        "unit_id": 103711,
+        "voice": "vo_adv_5006007_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "\n",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "這次的事件，",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "甚至讓我對你改觀了……",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "雖然一直把你當成吃裡扒外的傢伙一樣警戒著，",
+        "unit_id": 103711,
+        "voice": "vo_adv_5006007_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "智",
+        "words": "\n但你其實也是熱愛正義的【王宮騎士團（NIGHTMARE）】的夥伴呢。",
+        "unit_id": 103711
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "怎麼說呢？",
+        "unit_id": 107111,
+        "voice": "vo_adv_5006007_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n被當作乖孩子很令人困擾呢，",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "害我很難惡作劇耶！",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "在苦悶的世界中，",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "應該要過得更盡興！",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "你們也應該更",
+        "unit_id": 107111,
+        "voice": "vo_adv_5006007_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "隨心所欲做自己想做的事。",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n光說些正義的事也不好喔，",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n若不知道惡，也很難分清真正的正義。",
+        "unit_id": 107111
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "真是意味深長的發言呢……",
+        "unit_id": 100511,
+        "voice": "vo_adv_5006007_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "不愧是",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "有年紀的人呢。",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "你們",
+        "unit_id": 107111,
+        "voice": "vo_adv_5006007_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "現在還能邊說邊笑。",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n到時候就會親身感受到，",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n你們這些無心的言論有多傷人。",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "啊啊，",
+        "unit_id": 107111,
+        "voice": "vo_adv_5006007_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "老化真是個悲劇呢，",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "命運真討厭。",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n我是不是也隨著年齡變得圓融了呢，",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "克莉絲提娜",
+        "words": "\n這次一直做出不像自己的行為。",
+        "unit_id": 107111
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "嗯。",
+        "unit_id": 104711,
+        "voice": "vo_adv_5006007_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "克莉絲，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "謝謝……",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n會想到把敵人逼到居住區，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n也是為了抹去我不好的傳聞吧？",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "在獸人族的面前，",
+        "unit_id": 104711,
+        "voice": "vo_adv_5006007_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "為我宣傳一直造成麻煩的不是我，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n而是魔物。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n多虧你的宣傳，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "也解開了部分誤會。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "當然，",
+        "unit_id": 104711,
+        "voice": "vo_adv_5006007_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "事情沒那麼簡單。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n因為『王宮』長年迫害獸人族，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n獸人們內心的怨恨很深。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "但是我們就拿出毅力，",
+        "unit_id": 104711,
+        "voice": "vo_adv_5006007_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "花時間慢慢化解吧。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n只要持續釋出誠意，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "定會有人了解的。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "沒錯喲。",
+        "unit_id": 100511,
+        "voice": "vo_adv_5006007_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n至少我自己就是",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "最喜歡純……",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "跟【王宮騎士團（NIGHTMARE）】的大家了。",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "而且。",
+        "unit_id": 100511,
+        "voice": "vo_adv_5006007_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n在那場騷動之中，",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "純還救了獸人族的母女對吧？",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n那些人，",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "十分感謝的說。",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "當大家在說『王宮』的壞話時，",
+        "unit_id": 100511,
+        "voice": "vo_adv_5006007_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n他們就會幫忙解釋喲。",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "女孩也完全變成純的粉絲了呢，",
+        "unit_id": 100511,
+        "voice": "vo_adv_5006007_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n常常問我關於你的事。",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "而我也很開心",
+        "unit_id": 100511,
+        "voice": "vo_adv_5006007_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "能跟他們談論你的事！",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "\n",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "茉莉",
+        "words": "談論自己最愛的英雄們的事……☆",
+        "unit_id": 100511
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "嘻嘻。",
+        "unit_id": 104711,
+        "voice": "vo_adv_5006007_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "真感謝呢。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n像這樣，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "一點一滴的改變也不錯呢……",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "所有的一切。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n雖然很難",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "又需要時間，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "但希望始終不會消逝。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "總有一天，",
+        "unit_id": 104711,
+        "voice": "vo_adv_5006007_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n可以迎來所有人都能笑著當好朋友的和平時代。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n不，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "為了實現這個理想，必須繼續努力。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "就像克莉絲",
+        "unit_id": 104711,
+        "voice": "vo_adv_5006007_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "剛剛說的一樣……",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n我們大家一起，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "來談談那光輝的未來吧。",
+        "unit_id": 104711
+    }
+]

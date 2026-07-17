@@ -1,0 +1,2634 @@
+[
+    {
+        "type": "background",
+        "background": "500090"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}和貪吃佩可抓住了飛離的梅莉莎雙腳，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n終於和她在蘭德索爾王城展開對峙。"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你沒事吧，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5213010_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "{player}！？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "……嘖。",
+        "unit_id": 20011,
+        "voice": "vo_adv_5213010_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n腳都快要斷掉了。",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n超火大的。",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "先別說那個，",
+        "unit_id": 20011,
+        "voice": "vo_adv_5213010_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "重點是為什麼妳在外面啊！？",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "妳是用了什麼「鑽漏洞招數」嗎！？",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "我把礙事的傢伙全部關進牢房了！",
+        "unit_id": 20011,
+        "voice": "vo_adv_5213010_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "想救妳的人應該",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "一個都不剩了才對，",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "而且連妳也是……",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "早就沒有戰鬥的力氣了吧！？",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那妳還真是算錯了呢……",
+        "unit_id": 105812,
+        "voice": "vo_adv_5213010_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n因為，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我還有",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "很多──",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "重要的夥伴啊！",
+        "unit_id": 105812
+    },
+    {
+        "type": "background",
+        "background": "500340"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "──\n──小姐……",
+        "unit_id": 1,
+        "voice": "vo_adv_5213010_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "……佩可小姐……",
+        "unit_id": 1,
+        "voice": "vo_adv_5213010_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……嘿",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "咻。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……！",
+        "unit_id": 105813,
+        "voice": "vo_adv_5213010_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n小可蘿！？",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是，",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "貪吃佩可小姐。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "幸好您沒事……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "但還請您",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "稍安",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "勿躁。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n如果被戒備的蜜蜂們",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "發現就糟糕了。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "啊啊，",
+        "unit_id": 105813,
+        "voice": "vo_adv_5213010_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "小可蘿，",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "小可蘿！",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "難道妳是",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "來救我的嗎……？",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "呵呵。",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "之前也發生過",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "類似的狀況呢。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n這是「救出貪吃佩可小姐大作戰",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": " PART ２」",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "但是……",
+        "unit_id": 105813,
+        "voice": "vo_adv_5213010_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "妳是怎麼辦到的？",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n妳沒有",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "吃到",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那個毒素嗎？",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是的。",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下那時，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "還未開始享用料理。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n畢竟當時麥克風也由在下代為保管，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n在下本來打算要幫忙端菜服務各位。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "但是，",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在各位享用了有毒料理之時──",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n只有在下一個人，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "什麼都辦不到……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "…",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "…是克蕾琪塔小姐，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n將無能為力的在下藏了起來。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "當克蕾琪塔小姐引起會場注目時，",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n在下",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "就從那個地方逃離了。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下心裡想著，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "一定要將各位救出來……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "魔蜂群",
+        "words": "嗡……",
+        "unit_id": 3
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "沒有時間聊天了。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n請先思考該如何逃離此處。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "否則我們很快就會被",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "把風的魔物注意到……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……",
+        "unit_id": 105813,
+        "voice": "vo_adv_5213010_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……抱歉，",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "小可蘿。",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n雖然妳救了我，",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "但是我現在……",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "……陛下。",
+        "unit_id": 118011,
+        "voice": "vo_adv_5213010_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "\n您是不是也差不多該站起來了呢？",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "克蕾琪塔",
+        "unit_id": 105813,
+        "voice": "vo_adv_5213010_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "小姐……？",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n妳在隔壁的牢房……？",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "是的……",
+        "unit_id": 118011,
+        "voice": "vo_adv_5213010_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "我一直昏迷到剛才……",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "\n是可可蘿小姐的挖掘聲",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "才讓我醒了過來。",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "……關於這次的事件，",
+        "unit_id": 118011,
+        "voice": "vo_adv_5213010_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "我不會再為了自己的過錯而懊悔了。",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "\n",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "這並不是在自暴自棄。",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "\n",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "是因為無論再怎麼哀嘆自己的錯誤，",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "也無法回到過去了。",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "既然如此",
+        "unit_id": 118011,
+        "voice": "vo_adv_5213010_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "現在能做的事情，",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "\n就是開拓未來……",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "就只是",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "這樣而已。",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "將這個國家的未來託付給陛下，",
+        "unit_id": 118011,
+        "voice": "vo_adv_5213010_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "將自己當成誘餌！",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "\n",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "就只是這樣而已！！",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "哦──呵呵呵！",
+        "unit_id": 118011,
+        "voice": "vo_adv_5213010_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "\n這裡有想被我克蕾琪塔‧凱許驅逐的害蟲嗎！？",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "\n",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "我會把你們做成醃醬菜，",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "拿去當魔物的飼料喔。",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "克蕾琪塔",
+        "words": "給我認命吧～！！",
+        "unit_id": 118011
+    },
+    {
+        "type": "dialogue",
+        "name": "魔蜂群",
+        "words": "……！？",
+        "unit_id": 3
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "克蕾琪塔小姐……！！",
+        "unit_id": 105813,
+        "voice": "vo_adv_5213010_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "我們不能浪費了克蕾琪塔小姐的決心……！",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "首先要快點逃離這邊。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n在下馬上就準備好能夠休息的地方……！",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……",
+        "unit_id": 105813,
+        "voice": "vo_adv_5213010_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我知道了。",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "小可蘿。",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "但是不需要能夠休息的地方喔。",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……貪吃佩可小姐……？",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我給大家添了這麼多麻煩，",
+        "unit_id": 105813,
+        "voice": "vo_adv_5213010_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "可不能就這樣繼續休息下去……！",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "但是……",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "凱留小姐的魔法已經失效，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n您看起來",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "也很憔悴的樣子。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n還是先吃點東西……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……",
+        "unit_id": 105813,
+        "voice": "vo_adv_5213010_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那只是我在撒嬌而已。",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "沒事的，",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我能夠戰鬥！！",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "拜託了，",
+        "unit_id": 105813,
+        "voice": "vo_adv_5213010_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "小可蘿……！",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n讓我也",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "盡一點力吧！！",
+        "unit_id": 105813
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……唔。",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……在下",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "沒有權力",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "阻止貪吃佩可小姐。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "但是……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "請至少",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "帶著這個。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "這是在下避開「獄蜂」耳目",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "拿過來的。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n「皇家裝備」。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……要將它交給現在的貪吃佩可小姐，",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n也許是件殘忍的事情……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "但是，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下感覺必須要交給您才行。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "因為您是……",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n蘭德索爾的公主。",
+        "unit_id": 105913
+    },
+    {
+        "type": "background",
+        "background": "502791"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "──就這樣，",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下讓貪吃佩可小姐逃走之後，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n接著",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "就來到這邊了。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "凱留小姐、",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "雪菲小姐。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n很抱歉，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "讓兩位有這麼難受的回憶。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妳在說什麼啊！",
+        "unit_id": 106012,
+        "voice": "vo_adv_5213010_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n妳真的做得太好了啦，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "可蘿仔好樣的～～！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "是啊，",
+        "unit_id": 106412,
+        "voice": "vo_adv_5213010_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "真不愧是可可蘿小姐！",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n真的非～常可靠呢！",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……",
+        "unit_id": 106012,
+        "voice": "vo_adv_5213010_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "好了，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "就由妳來吧。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n我因為中毒，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "手都使不上力了……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……那麼！",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下要緊～～～緊地！",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "抱上去了！",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲、凱留",
+        "words": "「「抱緊～～～！」」",
+        "unit_id": 106412,
+        "voice": "vo_adv_5213010_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "萊拉耶爾",
+        "words": "可可蘿。",
+        "unit_id": 138111,
+        "voice": "vo_adv_5213010_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "萊拉耶爾",
+        "words": "\n妳救出",
+        "unit_id": 138111
+    },
+    {
+        "type": "dialogue",
+        "name": "萊拉耶爾",
+        "words": "貪吃佩可公主了呢。",
+        "unit_id": 138111
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "萊拉耶爾小姐……",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "以及兩位也在。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "這模樣真是神聖……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "那就是……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "就是",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "「特級境地」的覺醒呢。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "……咦？",
+        "unit_id": 138011,
+        "voice": "vo_adv_5213010_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "\n為何",
+        "unit_id": 138011
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "可可蘿小姐會知道……？",
+        "unit_id": 138011
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是。",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "其實當各位",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在尋找傳說中的食材時，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下與主人……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "──原來如此。",
+        "unit_id": 129711,
+        "voice": "vo_adv_5213010_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "來龍去脈，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "奴家已知悉。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……呼，",
+        "unit_id": 106012,
+        "voice": "vo_adv_5213010_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "雖然我還搞不太清楚，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n但只要吃到各個世界的",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "「傳說料理」，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "就能消除毒素了吧！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "那麼，",
+        "unit_id": 106012,
+        "voice": "vo_adv_5213010_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "事不宜遲，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "快點開始烹飪吧！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "反正這裡的廚具也都一應俱全嘛！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "但是，",
+        "unit_id": 133111,
+        "voice": "vo_adv_5213010_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "關於援助貪吃佩可公主一事……",
+        "unit_id": 133111
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "\n",
+        "unit_id": 133111
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "「獄蜂」",
+        "unit_id": 133111
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "是真的很強大。",
+        "unit_id": 133111
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "\n要是掉以輕心，",
+        "unit_id": 133111
+    },
+    {
+        "type": "dialogue",
+        "name": "薇歐莉特",
+        "words": "恐怕會丟掉性命的。",
+        "unit_id": 133111
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……那傢伙沒問題的。",
+        "unit_id": 106012,
+        "voice": "vo_adv_5213010_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n我沒有什麼根據，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n但我相信她。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "是的……",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "住在這個國家的人",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "大家都知道。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n貪吃佩可小姐毫無疑問",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "已經拯救過這個國家無數次。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "而且最重要的是。",
+        "unit_id": 105913,
+        "voice": "vo_adv_5213010_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "大家都清楚她深愛著這個國家。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "是啊，",
+        "unit_id": 106412,
+        "voice": "vo_adv_5213010_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "而且……",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n貪吃佩可小姐不是獨自一人。",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "只要那個人在身旁，",
+        "unit_id": 106412,
+        "voice": "vo_adv_5213010_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "就比誰都還要可靠。",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "……她身邊有{player}在。",
+        "unit_id": 106412
+    },
+    {
+        "type": "dialogue",
+        "name": "萊拉耶爾",
+        "words": "優秀的騎士或從者……",
+        "unit_id": 126511,
+        "voice": "vo_adv_5213010_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "萊拉耶爾",
+        "words": "不。",
+        "unit_id": 126511
+    },
+    {
+        "type": "dialogue",
+        "name": "萊拉耶爾",
+        "words": "\n是夥伴間的羈絆呢。",
+        "unit_id": 126511
+    },
+    {
+        "type": "dialogue",
+        "name": "萊拉耶爾",
+        "words": "我明白了……",
+        "unit_id": 126511,
+        "voice": "vo_adv_5213010_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "萊拉耶爾",
+        "words": "\n我們要為了國民，",
+        "unit_id": 126511
+    },
+    {
+        "type": "dialogue",
+        "name": "萊拉耶爾",
+        "words": "在這邊烹調料理！",
+        "unit_id": 126511
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "呵呵。",
+        "unit_id": 129711,
+        "voice": "vo_adv_5213010_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n「公主小餐館」於因緣際會下",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "再次開張呢。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "\n",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "既然如此，凱留閣下，",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "「主持人」就",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅妃‧涅羅",
+        "words": "有勞恁了。",
+        "unit_id": 129711
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "為什麼！？",
+        "unit_id": 106012,
+        "voice": "vo_adv_5213010_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n……是說可蘿仔，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不要把麥克風遞給我～！！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "啊～",
+        "unit_id": 106012,
+        "voice": "vo_adv_5213010_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "真是的，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "事到如今要我當就當啦！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n「使用傳說食材的至高料理」！！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "開始烹飪──！！",
+        "unit_id": 106012
+    },
+    {
+        "type": "background",
+        "background": "500090"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "──這樣啊，",
+        "unit_id": 20011,
+        "voice": "vo_adv_5213010_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "還有一位夥伴在啊。",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n可可蘿……",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "我記得",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "她是操縱精靈的精靈族之村繼承者吧……",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "那傢伙不錯啊，",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "真想抓來當我的奴隸。",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "是說啊。",
+        "unit_id": 20011,
+        "voice": "vo_adv_5213010_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "妳好不容易從監牢逃出來，",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n趕快逃走不就好了嗎？",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我不會再逃走了！",
+        "unit_id": 105811,
+        "voice": "vo_adv_5213010_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我已經，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "下定決心了！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "……所以說！！",
+        "unit_id": 20011,
+        "voice": "vo_adv_5213010_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n我就是不爽妳這一點！！",
+        "unit_id": 20011
+    },
+    {
+        "type": "background",
+        "background": "500090"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……唔！",
+        "unit_id": 105811,
+        "voice": "vo_adv_5213010_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "啊哈哈！",
+        "unit_id": 20011,
+        "voice": "vo_adv_5213010_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "妳也帶了個不錯的肉盾啊！！",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "但是",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "跟哈尼哈尼比起來持久力還差得遠了！！",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "喝啊！",
+        "unit_id": 20011,
+        "voice": "vo_adv_5213010_071"
+    },
+    {
+        "type": "background",
+        "background": "500090"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "不是說了我會好好",
+        "unit_id": 20011,
+        "voice": "vo_adv_5213010_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "替妳治理這個國家的嗎？",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "以女王的身分，",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "利用「恐懼」的力量",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "來治理。",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "……呵呵，",
+        "unit_id": 20011,
+        "voice": "vo_adv_5213010_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "你們根本什麼都不懂吧？",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……不懂什麼？",
+        "unit_id": 105811,
+        "voice": "vo_adv_5213010_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "……我話先說在前頭，",
+        "unit_id": 20011,
+        "voice": "vo_adv_5213010_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n當奴隸過活可是很輕鬆的喔。",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "你們【美食殿堂】啊，",
+        "unit_id": 20011,
+        "voice": "vo_adv_5213010_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n可以自由自在地",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "找到自己想做的事情而活下去。",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "但是，",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "也有人覺得那樣的生活方式才可怕。",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "這個世界上，",
+        "unit_id": 20011,
+        "voice": "vo_adv_5213010_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "有些人即使被恐懼所束縛，",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n只要能被賦予職責，",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "就反而能感到安心。",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "……那種人的想法，",
+        "unit_id": 20011,
+        "voice": "vo_adv_5213010_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n你們一定沒辦法理解吧？",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "…………\n……蛤？",
+        "unit_id": 20011,
+        "voice": "vo_adv_5213010_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "我聽不懂你在說什麼。",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我一直覺得",
+        "unit_id": 105811,
+        "voice": "vo_adv_5213010_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "妳是個不可思議的人。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "既擁有力量，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "又具備身為女王的自負。",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "既然如此，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "妳究竟在恐懼著什麼呢……",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "…………",
+        "unit_id": 20011,
+        "voice": "vo_adv_5213010_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n……嗚嗚。",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "啊啊啊……！",
+        "unit_id": 20011,
+        "voice": "vo_adv_5213010_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "唔……",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "唔嗚……",
+        "unit_id": 20011
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "妳把蜂蜜……！？",
+        "unit_id": 105811,
+        "voice": "vo_adv_5213010_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n快住手──",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "呀啊啊！！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "呀哈哈。\n",
+        "unit_id": 20013,
+        "voice": "vo_adv_5213010_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "呀哈哈哈哈！",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "蛤？",
+        "unit_id": 20013,
+        "voice": "vo_adv_5213010_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "那是什麼？",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "……話說，",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "貪吃佩可。",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n妳為什麼會帶著皇家裝備啊？",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "老實說那是我的心結呢～",
+        "unit_id": 20013,
+        "voice": "vo_adv_5213010_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n我缺的",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "就只剩下那個了嘛。",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n所以……把那個給我吧！！",
+        "unit_id": 20013
+    },
+    {
+        "type": "background",
+        "background": "500090"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5213010_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n請還給我！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "啊哈哈！",
+        "unit_id": 20013,
+        "voice": "vo_adv_5213010_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "妳連握緊它的力氣都沒有了嘛！",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "話說這個，",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "妳也已經不需要了吧？",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n妳沒辦法使用",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "這股力量吧？",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "……對了。",
+        "unit_id": 20013,
+        "voice": "vo_adv_5213010_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "就讓這傢伙……",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "讓「暴食」來決定吧。",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n決定誰才是最適合這個國家的領導人，",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "如何？",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……！？",
+        "unit_id": 105812,
+        "voice": "vo_adv_5213010_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "這個只有被選上的人才能用吧？",
+        "unit_id": 20013,
+        "voice": "vo_adv_5213010_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "如果我能使用的話",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "就算是這個國家的女王了吧？",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "梅莉莎小姐！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5213010_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n請住手……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "嗚嗚！？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "……我說「暴食」啊。",
+        "unit_id": 20013,
+        "voice": "vo_adv_5213010_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "你因為這個只會講漂亮話的公主，",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n最近都吃不飽對吧？",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "哎～",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "真是可憐……",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "可以喔，",
+        "unit_id": 20013,
+        "voice": "vo_adv_5213010_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "解放你的食慾吧☆",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "我允許你這麼做，",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "徹底地",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "吃個精光吧♪",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "來，",
+        "unit_id": 20013,
+        "voice": "vo_adv_5213010_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "你期待已久的用餐時間到囉！",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "來",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "吧……",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "「暴食」！！",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "嗚嗚！",
+        "unit_id": 20013,
+        "voice": "vo_adv_5213010_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n啊啊",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "啊啊啊……",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "！！",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "啊哈哈……！！",
+        "unit_id": 20013,
+        "voice": "vo_adv_5213010_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n這真是不得了，",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "力量漸漸被吸走了……！",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "不愧是",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "暴食，",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "是想將我",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "吞食殆盡嗎！？",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "可以喔，",
+        "unit_id": 20013,
+        "voice": "vo_adv_5213010_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "我會讓你更加滿足的……！",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "\n",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "直到你吃飽為止，",
+        "unit_id": 20013
+    },
+    {
+        "type": "dialogue",
+        "name": "梅莉莎",
+        "words": "好好享用吧～！！",
+        "unit_id": 20013
+    },
+    {
+        "type": "background",
+        "background": "502810"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……！？",
+        "unit_id": 105812,
+        "voice": "vo_adv_5213010_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n這股瘴氣……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n力量，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "滿溢出來了……？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "是暴食奪走的，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5213010_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "梅莉莎小姐的力量……！？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "不行！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n繼續給它力量的話，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "劍會失控的……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "唔……！！？",
+        "unit_id": 105812,
+        "voice": "vo_adv_5213010_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "大氣震動，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n四周被令人毛骨悚然的猛毒瘴氣所籠罩。"
+    }
+]

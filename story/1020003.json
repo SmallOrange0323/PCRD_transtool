@@ -1,0 +1,575 @@
+[
+    {
+        "type": "background",
+        "background": "500020"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "美美與{player}為了尋找小貓的飼主而外出了。"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "吶，哥哥！",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "如果我們能在今天內找到貓咪先生的飼主就好了呢！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "小貓",
+        "words": "喵～♪",
+        "unit_id": 1711
+    },
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "請問～",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n有沒有人認識這隻小貓的飼主呢～？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "有沒有人認識這隻貓咪先生呢～？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "嗚……",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n今天也沒找到飼主呢。",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n哥哥，怎麼辦……？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "小貓",
+        "words": "喵～",
+        "unit_id": 1711
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "尋人啟事？",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "對呀！這樣的話，就可以讓",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n更多的人看到了！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "美美會做許多尋人啟事的！",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "說、說的也是！",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "為了貓咪先生",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n我們也不能放棄，對吧？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "哥哥和貓咪先生，",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n我們一起加油吧！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "小貓",
+        "words": "喵～！",
+        "unit_id": 1711
+    },
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "嗚……",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n果然還是找不到～",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "對不起，貓咪先生……",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n美美本來想替你找到飼主的……",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "吶，哥哥，",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n如果就這樣一直找不到飼主，",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n貓咪先生也會很寂寞吧？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "因為美美如果見不到媽媽、爸爸和哥哥的話，",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n一定會非常難過的。",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "嗚、嗚嗚……",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "嗚哇！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n貓咪先生，對不起～！",
+        "unit_id": 102011
+    },
+    {
+        "type": "still",
+        "still": "102000301"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "――哇，哇哇！？",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n哥、哥哥，怎麼了？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n為什麼突然讓美美騎在肩膀上……",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "嗚哇！好～厲害！好～高！",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "美美變得",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "比大人還要高大了～！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "欸嘿嘿～謝謝你，哥哥♪",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n騎在肩膀上很開心呢！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "美美不會再哭了！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "小貓",
+        "words": "喵～♪",
+        "unit_id": 1711
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "貓咪先生也覺得在高處很開心～",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n這樣的話，你就不會感到寂寞了吧？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "雖然今天沒有找到飼主……",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "小丘比！",
+        "unit_id": 411,
+        "voice": "vo_adv_1020003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "……咦？",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "總算找到你了，小丘比！",
+        "unit_id": 411,
+        "voice": "vo_adv_1020003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n我真的好擔心呀！",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "小貓",
+        "words": "喵～♪",
+        "unit_id": 1711
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "啊～！",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n難道說，妳是這隻貓咪的飼主嗎？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "是的。",
+        "unit_id": 411,
+        "voice": "vo_adv_1020003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n我來廣場後，看到妳騎在他的肩膀上……",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n於是我就發現妳懷裡抱著的貓是我家的小丘比。",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "原來如此！",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "哥哥為了讓大家能看到貓咪先生，",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n才讓美美騎在肩膀上的啊～",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "小貓",
+        "words": "喵～♪",
+        "unit_id": 1711
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "能夠找到小丘比真是太好了。",
+        "unit_id": 411,
+        "voice": "vo_adv_1020003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n真的非常感謝你們。",
+        "unit_id": 411
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "background",
+        "background": "500011"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "能找到貓咪先生的飼主真是太好了呢～",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "可是……",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n這樣就不能再和貓咪先生在一起了呢……",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "嗚嗚……",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "雖然有點寂寞……",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "不過，因為哥哥在美美身邊，所以沒關係喔！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "吶吶，哥哥！",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "回家時，也能讓美美騎在肩膀上嗎？",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "哥哥願意嗎！",
+        "unit_id": 102011,
+        "voice": "vo_adv_1020003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "太好了～！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n哥哥，從今以後也要一直",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "\n",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "美美",
+        "words": "和美美在一起呦！",
+        "unit_id": 102011
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "於是讓貓咪回到飼主家的美美，\n笑容滿面地回家了。"
+    }
+]

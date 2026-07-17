@@ -1,0 +1,1241 @@
+[
+    {
+        "type": "background",
+        "background": "500040"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]{player}等人順利除靈完畢，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n[FFFFFFFF]聽到消息的海灘度假村老闆也來了。"
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]各位！",
+        "unit_id": 2511,
+        "voice": "vo_adv_5124007_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]我聽說了！",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "\n",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]你們終於",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]成功祛除了惡靈……！",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]是的。",
+        "unit_id": 127111,
+        "voice": "vo_adv_5124007_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]我們也在度假村內繞了幾圈，",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]到處都沒有殘留任何靈氣。",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]我想應該是完全祛除了。",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]太好了……",
+        "unit_id": 2511,
+        "voice": "vo_adv_5124007_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "\n",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]我聽說事情好像很棘手，",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "\n[FFFFFFFF]所以很擔心各位呢。",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]像是空花小姐和骷髏老爸",
+        "unit_id": 2511,
+        "voice": "vo_adv_5124007_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]被幽靈襲擊差點身亡……",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "\n",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]或是在海邊被抓住腳",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]差點溺水……",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "\n",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]還有在外圍的洞窟",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]碰到強烈的靈異現象……！",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]嘻嘻嘻……",
+        "unit_id": 127011,
+        "voice": "vo_adv_5124007_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "\n[FFFFFFFF]但那些",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]全部",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]都是空花",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]和骷髏老爸做的好事……",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]就、",
+        "unit_id": 127111,
+        "voice": "vo_adv_5124007_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]就隱瞞真相吧……",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]全部說出來的話，",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]會害老闆變得很混亂的……",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]雖、",
+        "unit_id": 127111,
+        "voice": "vo_adv_5124007_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]雖說發生了很多事是事實，",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]但這樣一來海灘度假村",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]就不會再出現惡靈了，",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]請放心吧。",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]啊啊，",
+        "unit_id": 2511,
+        "voice": "vo_adv_5124007_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]謝謝你們！",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]各位靈能力者。",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "\n[FFFFFFFF]我該怎麼答謝你們才好……！",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "\n",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]這份恩情，",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]光只有酬金可不夠！",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]對了……！",
+        "unit_id": 2511,
+        "voice": "vo_adv_5124007_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]你們願意的話，",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]要不要在這個夏天，",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "\n[FFFFFFFF]隨意使用這座度假村呢？",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "\n",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]我想向你們表達最大的謝意！",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]來打工的你也是。",
+        "unit_id": 2511,
+        "voice": "vo_adv_5124007_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "\n[FFFFFFFF]從今天開始",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]你不再是工讀生，",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "[FFFFFFFF]而是以客人的身分",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "老闆",
+        "words": "\n[FFFFFFFF]來好好享受這座度假村吧！",
+        "unit_id": 2511
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]這、",
+        "unit_id": 127111,
+        "voice": "vo_adv_5124007_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]這怎麼行。",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]我也不知道要怎麼在度假村度假……",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]我就不必了。",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "[FFFFFFFF]度假村！？",
+        "unit_id": 2414,
+        "voice": "vo_adv_5124007_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "[FFFFFFFF]連住好幾天！？",
+        "unit_id": 2414
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n[FFFFFFFF]讓泳裝美女成為後宮的機會，",
+        "unit_id": 2414
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "[FFFFFFFF]再次來臨！！",
+        "unit_id": 2414
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]……唉。",
+        "unit_id": 127111,
+        "voice": "vo_adv_5124007_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]真的很抱歉……",
+        "unit_id": 127111,
+        "voice": "vo_adv_5124007_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]我父親似乎不打算退讓，",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]所以請讓我接受您的好意……",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]各位要不要",
+        "unit_id": 127111,
+        "voice": "vo_adv_5124007_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]也一起住下來呢？",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]只有我的話，",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]可能會攔不住我父親……",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]……再加上，",
+        "unit_id": 127111,
+        "voice": "vo_adv_5124007_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]難得有這個機會。",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]我想和跟我一起除靈的各位，",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]一同度過這個夏天。",
+        "unit_id": 127111
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]忍",
+        "unit_id": 126911,
+        "voice": "vo_adv_5124007_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]……",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]嗯，",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]好啊。",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]雖然我",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]不太了解，",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]度假村",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]是什麼樣",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]的設施……",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n[FFFFFFFF]但要是妳",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]不介意的話……",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]那、",
+        "unit_id": 127011,
+        "voice": "vo_adv_5124007_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]那麼",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]空花也……♪",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "\n[FFFFFFFF]嘻嘻嘻……",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]一想到能在盛夏的海灘度假村",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]和虐待狂先生一起度過，",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "\n",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]就覺得",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]心跳加速，",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]整個人",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]頭暈目眩……♪",
+        "unit_id": 127011
+    },
+    {
+        "type": "background",
+        "background": "501030"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]呵呵呵……♪",
+        "unit_id": 127112,
+        "voice": "vo_adv_5124007_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]這邊喔，{player}。",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]小心不要跌倒囉。",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]呃、",
+        "unit_id": 127112,
+        "voice": "vo_adv_5124007_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]啊，",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]呀……！？",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]……！",
+        "unit_id": 127112,
+        "voice": "vo_adv_5124007_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]對不起。",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]我忍不住",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]一直看著你……",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]腳就",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]陷進",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]沙子裡了。",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]……呵呵。",
+        "unit_id": 127112,
+        "voice": "vo_adv_5124007_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]重來一次，",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]我們走吧，{player}……♪",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "[FFFFFFFF]忍──！",
+        "unit_id": 2414,
+        "voice": "vo_adv_5124007_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "[FFFFFFFF]站住站住站住──！",
+        "unit_id": 2414
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n[FFFFFFFF]我可不同意你跟那種男人在海邊玩！",
+        "unit_id": 2414
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "[FFFFFFFF]我絕對不允許！！",
+        "unit_id": 2414
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]嘻嘻嘻～♪",
+        "unit_id": 127011,
+        "voice": "vo_adv_5124007_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]空花和虐待狂先生的夏天終於開始了～♪",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "\n",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]在熱到快讓人融化的陽光下，",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]虐待狂先生緊盯著\n滿身是汗的空花……",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]流口水～♪",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]唉……",
+        "unit_id": 127112,
+        "voice": "vo_adv_5124007_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]爸爸和空花，",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]你們都稍微降個溫、冷靜一點……",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "兩人",
+        "words": "[FFFFFFFF]咿～！？",
+        "unit_id": 1,
+        "voice": "vo_adv_5124007_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "[FFFFFFFF]小、",
+        "unit_id": 2414,
+        "voice": "vo_adv_5124007_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "[FFFFFFFF]小伙子你做什麼！？",
+        "unit_id": 2414
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]虐待狂先生，",
+        "unit_id": 127011,
+        "voice": "vo_adv_5124007_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]竟然用水刑這種瘋狂的玩法～！？",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "\n",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]不過不過，",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]冰冰涼涼的好舒服～♪",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]真是的……",
+        "unit_id": 127112,
+        "voice": "vo_adv_5124007_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]看來在度假村度假的這段期間會很吵鬧呢，",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]蘭法……",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]奇怪？",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]…………",
+        "unit_id": 126911,
+        "voice": "vo_adv_5124007_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]蘭法……",
+        "unit_id": 127112,
+        "voice": "vo_adv_5124007_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]在那麼遠的地方……？",
+        "unit_id": 127112
+    },
+    {
+        "type": "background",
+        "background": "501030"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "[FFFFFFFF]喝啊啊啊～！",
+        "unit_id": 2414,
+        "voice": "vo_adv_5124007_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "[FFFFFFFF]小伙子，",
+        "unit_id": 2414
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "[FFFFFFFF]給我差不多一點！",
+        "unit_id": 2414
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n[FFFFFFFF]我要讓你沉到海底，變得再也無法和忍說話！",
+        "unit_id": 2414
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]啊……",
+        "unit_id": 127112,
+        "voice": "vo_adv_5124007_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]爸爸真是的，",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]好像又要引起什麼騷動了。",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]差不多該去管管他了。",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]蘭法要不要也過去？",
+        "unit_id": 127112,
+        "voice": "vo_adv_5124007_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]一起來玩吧。",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]嗯，",
+        "unit_id": 126911,
+        "voice": "vo_adv_5124007_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]好啊……",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]也",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]對。",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n[FFFFFFFF]和忍",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]還有{player}一起的話……",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n[FFFFFFFF]讓人感覺、",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]有點期待……",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "兩人",
+        "words": "[FFFFFFFF]呀！？",
+        "unit_id": 1,
+        "voice": "vo_adv_5124007_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]呵呵呵……",
+        "unit_id": 127112,
+        "voice": "vo_adv_5124007_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]你潑過來了呢。",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]你想要這樣的話，",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]我也是不會放水的喔？",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]呵呵……",
+        "unit_id": 126911,
+        "voice": "vo_adv_5124007_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]那麼",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]我也……",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "\n[FFFFFFFF]來讓你",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]變得、",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]全身溼答答的……",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]好嗎？",
+        "unit_id": 126911
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]嘻嘻嘻……♪",
+        "unit_id": 127011,
+        "voice": "vo_adv_5124007_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "\n[FFFFFFFF]空、",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]空花也打算有時候欺負虐待狂先生……",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "\n",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]直到他",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "空花",
+        "words": "[FFFFFFFF]處罰空花為止，這樣就是整套流程……♪",
+        "unit_id": 127011
+    },
+    {
+        "type": "dialogue",
+        "name": "３人",
+        "words": "[FFFFFFFF]嘿♪",
+        "unit_id": 1,
+        "voice": "vo_adv_5124007_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]晴朗的太陽照耀著除靈後的海邊，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n[FFFFFFFF]忍、蘭法、空花三人，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n[FFFFFFFF]和{player}一起潑水嬉戲。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "[FFFFFFFF]他們的夏天，現在才剛開始。"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "[FFFFFFFF]嘿嘿嘿……",
+        "unit_id": 2414,
+        "voice": "vo_adv_5124007_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n[FFFFFFFF]果然是雙美腿……",
+        "unit_id": 2414
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n[FFFFFFFF]再一次就好……",
+        "unit_id": 2414
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "[FFFFFFFF]好想一起玩耍～♪",
+        "unit_id": 2414
+    },
+    {
+        "type": "dialogue",
+        "name": "蘭法",
+        "words": "[FFFFFFFF]呀！？",
+        "unit_id": 126911,
+        "voice": "vo_adv_5124007_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "[FFFFFFFF]唉呀，",
+        "unit_id": 2414,
+        "voice": "vo_adv_5124007_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "[FFFFFFFF]抱歉抱歉～",
+        "unit_id": 2414
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n[FFFFFFFF]我剛才所做的，",
+        "unit_id": 2414
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "[FFFFFFFF]只是不小心順著靈魂出竅時的習慣……",
+        "unit_id": 2414
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]爸爸……",
+        "unit_id": 127112,
+        "voice": "vo_adv_5124007_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n[FFFFFFFF]我再幫你",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "[FFFFFFFF]除靈一次吧……？",
+        "unit_id": 127112
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "[FFFFFFFF]咿～～～～～！！",
+        "unit_id": 2414,
+        "voice": "vo_adv_5124007_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n[FFFFFFFF]忍好恐怖～～～！！",
+        "unit_id": 2414
+    }
+]

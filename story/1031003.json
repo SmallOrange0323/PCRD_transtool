@@ -1,0 +1,538 @@
+[
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}在蘭德索爾散步時，\n遇到了忍。"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "啊，{player}，你好。正在散步嗎？",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n這麼好的天氣，真是很適合散步呢。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……你問我在做什麼嗎？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我在這裡幫人占卜。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我是個占卜師，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n常常在這條路上",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "幫別人看運勢。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "咦，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你不知道什麼是占卜？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "真是奇特的人呢。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "所謂的占卜……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "應該可以說是，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n用各種方法查看運勢或未來，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n然後提供建議給有煩惱的人……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "實在有點難以說明。俗話說百聞不如一見，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "{player}願意的話，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n讓我實際為你占卜看看吧？",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "好的。那",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "請你坐在這裡。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我主要使用自己的第六感，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n和這個水晶骷髏頭來占卜。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那麼我要開始占卜了…………",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "你的運氣非常差。未來只有痛苦等著你。",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n你會被火燒、被水淋、財產燒毀、和親近的人分離，",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n孤獨一人悲慘地死去吧。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "如果不想變成那樣，",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n就現在立刻從我眼前消失。",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n趕快滾吧，這臭小子！！",
+        "unit_id": 2411
+    },
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "爸爸，你適可而止。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "咿！忍好恐怖！！",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "真抱歉。剛剛那是我父親胡說八道，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n不是占卜。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n希望你不要在意。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我父親以前是傑出的靈媒，也擅長占卜。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n原本占卜的準確率非常地高……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "但不論占卜結果如何，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n他對男性只說不好的內容，對女性只說好的內容，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "所以他並不適合當占卜師。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那麼請讓我重新為你占卜一次。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "…………",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你真是個……不可思議的人呢。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我看到了以往從未看過的運氣。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你的過去被深厚的黑闇給籠罩，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n無法窺見你是在何種星辰下",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "一路走來……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "而你的未來似乎還有許多苦難阻擋在眼前。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n可能會有很多煩惱和痛苦。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n或許你會為了無可避免的災禍",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "而日日悲嘆不已。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……啊，真抱歉。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我擅自為你占卜，",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n卻說了這樣的結果……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "今後如果你遇到了煩惱的事，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n歡迎來找我商量。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "有時候占卜或許也能幫上一些忙。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "另外……{player}，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我也看到了你在過去和未來共通的運勢。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那就是桃花劫之相。而且是超乎尋常的程度。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你和眾多女性之間有深厚的緣分，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n並且似乎強烈地影響你的根源世界。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "…………",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……那個，我想這不太好呢。",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n和女性的往來應該保持適度的分寸就好。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "{player}你呀，那個……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我想你很容易被誤會。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "該怎麼說呢……個性溫柔過頭是不好的。",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "太過於溫柔的話，",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n或許會有人因此而誤解……",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "也就是說……這個占卜的結果……這個……那個……",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "嗯？忍，妳怎麼了？",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031003_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n妳的臉紅通通的，發燒了嗎？",
+        "unit_id": 2411
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "沒、",
+        "unit_id": 103111,
+        "voice": "vo_adv_1031003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "沒事！",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "{player}，那個，我先走了。再見！",
+        "unit_id": 103111
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "忍、忍～？",
+        "unit_id": 2411,
+        "voice": "vo_adv_1031003_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "比起{player}本人，\n反倒是忍因占卜結果而有了心情的起伏。"
+    }
+]

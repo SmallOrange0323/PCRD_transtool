@@ -1,0 +1,2285 @@
+[
+    {
+        "type": "background",
+        "background": "500390"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "涅比亞在蘭德索爾的城鎮中到處逃竄。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n除了有愛梅斯、帆稀、{player}在追趕著她外，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n再加上──"
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "喂，",
+        "unit_id": 312,
+        "voice": "vo_adv_5150003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "妳聽說了嗎！？",
+        "unit_id": 312
+    },
+    {
+        "type": "dialogue",
+        "name": "居民１",
+        "words": "\n有小妖精在城鎮裡到處飛耶！",
+        "unit_id": 312
+    },
+    {
+        "type": "dialogue",
+        "name": "居民２",
+        "words": "不是說抓到她的話，",
+        "unit_id": 1212,
+        "voice": "vo_adv_5150003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "居民２",
+        "words": "王宮會賜予獎賞嗎？",
+        "unit_id": 1212
+    },
+    {
+        "type": "dialogue",
+        "name": "居民２",
+        "words": "\n聽說是",
+        "unit_id": 1212
+    },
+    {
+        "type": "dialogue",
+        "name": "居民２",
+        "words": "「招待享用王宮晚餐☆」哦！",
+        "unit_id": 1212
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "我",
+        "unit_id": 5312,
+        "voice": "vo_adv_5150003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "剛才有看到妖精哦～！",
+        "unit_id": 5312
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "好～",
+        "unit_id": 5412,
+        "voice": "vo_adv_5150003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "我們這就呼朋引伴一起去抓她吧！",
+        "unit_id": 5412
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n得先準備好",
+        "unit_id": 5412
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "捕蟲網才行！",
+        "unit_id": 5412
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "呵呵，",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "變得好像是在舉辦團體活動呢～",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "受不了……",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "貪吃佩可竟然把騷動鬧得更大。",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "這樣不是舉國都在慶祝狂歡嗎？",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "王宮晚餐啊～",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "真是有貪吃佩可的作風，",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "又聰明的好方法呢。",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "這樣子不光是公會，",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "又能請城鎮居民他們幫忙，",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n況且",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "還能讓這個狀況變得很有趣～",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "能增加人手，我非常歡迎。",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "畢竟可以減少涅比亞逃脫的退路。",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "不過，",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "要抓住她的可是我們哦。",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n不能搶在任何人前面先唸她個幾句",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "就讓我無法氣消啊！",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "愛梅斯，",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "原來妳也會那樣子發飆啊～♪",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "咦？",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "啊……",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "讓妳見笑了。",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "我不小心就",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "情緒化起來了……",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "我覺得表現出情緒起伏比較好哦～♪",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "對吧，",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "你也是這麼認為的吧～？",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "哦，",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "是這樣嗎？",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "……不過，",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "事到如今我也沒辦法改變已經扭曲的個性了。",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "假如你硬是想看的話，",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "下次我就在夢中",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "只讓你一個人看吧。",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "好心機哦～",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "說得我好像平時很聒噪一樣呢。",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "該不會",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "你還隱約記得",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "我在夢裡對你嘮叨的模樣？",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "……我就多加注意一下吧。",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "這不重要，",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "現在要緊的是涅比亞啊。",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n我們得快點抓到她才行。",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "帆稀，",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "那孩子現在在哪裡？",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "我看看哦～",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "她人在鬧區。",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n不過，",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "竟然會在這麼空曠的地方……",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n奇怪？",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "而且只有這裡景觀沒改變耶～",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "這很明顯是在引誘我們。",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "她肯定弄了一堆惡作劇，",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "準備就緒了吧。",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "畢竟靠龍眼沒辦法連她設了什麼機關也看清啊～",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n啊，",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "她笑得好開心哦。",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n看來她也知道我們在看她呢～",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "看來她對自己的惡作劇很有信心吧。",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "如果單純這樣和她玩起你追我跑，",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n也只是飛蛾撲火，",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "落入她設計好的惡作劇之中嗎……",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "……既然如此。",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "妳要用什麼方法呢？",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "帆稀──",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "我想請妳去找一個人。",
+        "unit_id": 131711
+    },
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "找到了！",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n這次妳休想逃，",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "涅比亞！",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "菲歐，妳可終於來了啊。",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n妳讓我等太久啦。",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "害我無聊到設了一堆機關♪",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "就照事前討論的，",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "我們三個一口氣上～！",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "好的！",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "哼哼！",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "這就是所謂的",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "夏日妖精撲火！",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "這裡就用亂流──",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "──嘿",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "咻。",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "真的猜中了呢。",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "什麼？",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n避開亂流了！？",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "還沒結束呢！",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "接著是──",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "用風拖住我們之後，",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "再從上面倒水下來對吧？",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "真遺憾，",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "我們不會上鉤的～",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "妳說什麼……！？",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "那",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "{player}又怎樣呢？",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "你那麼笨拙，",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "無法躲過我的拿手絕活吧！",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "騙人！？",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "我拿手絕活的掉落陷阱被！？",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "什麼？",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "這到底是怎麼搞的？",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n我準備的惡作劇",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "竟然被接連被躲開了！",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "妳終於發現了。",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "……菲歐……！",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n這是怎麼回事？",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "簡直就像是能看透我在想什麼一樣！",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "很遺憾，",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "不管是我或帆稀，",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n都無法猜到妳在想什麼鬼主意。",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "因此啊～",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "我們請來了專家提供協助。",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n是惡作劇的專家喔～♪",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "妳說……",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "惡作劇的……",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "專家？",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "嘿嘿♪",
+        "unit_id": 1,
+        "voice": "vo_adv_5150003_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "欸～欸～哥哥，",
+        "unit_id": 122811,
+        "voice": "vo_adv_5150003_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "鬼抓人已經結束了嗎～？",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "禊……！",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "禊，",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "妳的話還會在哪裡設惡作劇陷阱呢～？",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "禊想想哦～！",
+        "unit_id": 122811,
+        "voice": "vo_adv_5150003_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "比方說讓那棟房子噴出超～多的水，",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n還有把那邊的樓梯弄成滑梯應該很好玩吧～！",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "……驚！",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "看來是",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "賓果了。",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "「驚」這種反應原來是會說出口的呢～",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "不過話說回來，",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "我真的沒想到禊竟然",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "有辦法將涅比亞想出來的惡作劇",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n預演得如此吻合……",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "讓我有點擔心這孩子的未來了。",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "這下妳就無計可施了吧。",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n這場鬧劇般的活動該結束了。",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "……禊，",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "真是預料之外的強敵呢。",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n小孩子的思維",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "簡直不容小覷。",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "帆稀姐姐！",
+        "unit_id": 122811,
+        "voice": "vo_adv_5150003_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n答應要給我的獎勵呢～？",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "我還記得哦～",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n我的公會有許多很有趣的東西，",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n到時候會給妳幾個",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "比較氣派的吧～♪",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "……妳想給小孩子什麼東西啦？",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哇～好耶～♪",
+        "unit_id": 122811,
+        "voice": "vo_adv_5150003_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "是這樣哦……",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n小孩子的思維",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "啊……",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "呵呵♪",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "我說禊～",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n我這裡",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "可是有比她的獎勵",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "還要有趣好～幾倍的東西哦～",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "咦？",
+        "unit_id": 122811,
+        "voice": "vo_adv_5150003_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "真的嗎！？",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "……糟了！",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "來，",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "妳快看看這個♪",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n這可以隨意改變城鎮的模樣，",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "還能盡情做一堆洞穴陷阱哦♪",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "盡情做一堆洞穴陷阱！？",
+        "unit_id": 122811,
+        "voice": "vo_adv_5150003_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "……來跟我",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "一起玩吧？",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "嗯、",
+        "unit_id": 122811,
+        "voice": "vo_adv_5150003_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "嗯……",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "咦！？",
+        "unit_id": 122811,
+        "voice": "vo_adv_5150003_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "可、",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "可是，",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥……",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "我說你，",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "你快設法留住禊！",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n要是涅比亞和那個惡作劇天才聯手起來，",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n將會為蘭德索爾寫下一段惡夢般的歷史啊！",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "如果變得到處都是洞穴陷阱，",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "感覺會無法安心走在路上呢～",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "妳可以不用管",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "他們說的話哦。",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "來，禊，",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "妳快看看天空。",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n是不是出現漂亮的彩虹了？",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "就連這種事都能自由自在地辦到哦♪",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "好厲害～！",
+        "unit_id": 122811,
+        "voice": "vo_adv_5150003_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "點心……",
+        "unit_id": 122811,
+        "voice": "vo_adv_5150003_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "嗯……",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "有點弱啊！",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n你的誘惑有點弱啊！",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "開始有種競標大會的感覺了呢～",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n是禊的競標大會啊～",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "禊，",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "我們一起在妳家",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "蓋座游泳池吧？",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "游泳池！？",
+        "unit_id": 122811,
+        "voice": "vo_adv_5150003_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n真的嗎！？",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "啊～",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "這招很有效呢～",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n有座家庭游泳池",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "可是小孩子的憧憬呢。",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "禊，",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "妳答應過要幫我們，",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "對吧？",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n毀約的壞孩子",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "可是會被處罰的哦。",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "──被這位",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "好～可怕的大姐姐罰！",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "……噫！",
+        "unit_id": 122811,
+        "voice": "vo_adv_5150003_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "…………",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "帆稀，",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "妳幹嘛悶不吭聲地看著我呢？",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n……難道說",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "妳覺得很受傷？",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "是……",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "是我錯了。",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n所以說，",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "可以請妳也別靠向涅比亞那邊嗎……？",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "啊哈哈♪",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n菲歐妳這樣不行啦。",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n那樣劍拔弩張的，",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "可是無法掌握人心的唷。",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "唔……！",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "沒辦法啊，",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "我很久沒這樣了啊！",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "如果是一直待在他身旁的那時候，",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "我就能表現得更自然了……！　",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "你……",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "哎呀，怎麼啦？",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "禊的心已經靠向我囉。",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "你們又能辦到什麼事呢？",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "有辦法拿出比這個環境系統",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "還要厲害的東西嗎？",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥……？",
+        "unit_id": 122811,
+        "voice": "vo_adv_5150003_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "咦……",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "你、",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "你該不會……！",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "好緊張……！",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "等等，為什麼後半句會是那樣啊！？",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n你看看你都讓我聽了什麼告白內容！？",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥、",
+        "unit_id": 122811,
+        "voice": "vo_adv_5150003_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥……！",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哥哥～～～～～！",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "完全打中了她的芳心！？",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "呵呵♪",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "真是罪孽深重的男孩子啊～",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "啊～不管了啦！",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "\n涅比亞，",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "認命吧！",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "這次一定──",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "──真～遺憾♪",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "\n你們給我太多時間了♪",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "奇怪……？",
+        "unit_id": 131811,
+        "voice": "vo_adv_5150003_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "\n感覺",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "帆稀",
+        "words": "氣溫變低了……",
+        "unit_id": 131811
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "有東西",
+        "unit_id": 122811,
+        "voice": "vo_adv_5150003_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "開始飄下來了耶……",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "\n",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "哇，",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "好冰！",
+        "unit_id": 122811
+    },
+    {
+        "type": "dialogue",
+        "name": "禊",
+        "words": "這是……",
+        "unit_id": 122811
+    },
+    {
+        "type": "background",
+        "background": "501490"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "雪～～～！？",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "全員",
+        "words": "好冷～！",
+        "unit_id": 1,
+        "voice": "vo_adv_5150003_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "套句妳常說的，",
+        "unit_id": 190912,
+        "voice": "vo_adv_5150003_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "好的，",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "涅比亞",
+        "words": "辛苦了～♪",
+        "unit_id": 190912
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "涅、",
+        "unit_id": 131711,
+        "voice": "vo_adv_5150003_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "愛梅斯",
+        "words": "涅比亞～～～～～！",
+        "unit_id": 131711
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "愛梅斯等人再度讓涅比亞溜走了。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n不合時節的雪在下了一陣子之後，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n立即又融化在夏季的陽光底下。"
+    },
+    {
+        "type": "background",
+        "background": "501070"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "外面……",
+        "unit_id": 105812,
+        "voice": "vo_adv_5150003_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "傳來好快樂的聲音呢……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "所有國民",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "都樂在其中的",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "歡笑聲……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "陛下，",
+        "unit_id": 104711,
+        "voice": "vo_adv_5150003_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "懇請您忍耐。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n城鎮混亂的情況",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "依然無法預測。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n我現在",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "也打算去看看情況……",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這我知道啦～",
+        "unit_id": 105812,
+        "voice": "vo_adv_5150003_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "咦？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "純小姐……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "妳要去看",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "城鎮的情況嗎？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "……咦？",
+        "unit_id": 104711,
+        "voice": "vo_adv_5150003_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "啊，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "是的。",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n身為團長，",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "我必須在前線指揮現場值勤的團員──",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "──鎧甲。",
+        "unit_id": 105812,
+        "voice": "vo_adv_5150003_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n可以請妳脫下鎧甲嗎？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "……為、",
+        "unit_id": 104711,
+        "voice": "vo_adv_5150003_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "為什麼？",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "因為我非常好奇。",
+        "unit_id": 105812,
+        "voice": "vo_adv_5150003_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "不，",
+        "unit_id": 104711,
+        "voice": "vo_adv_5150003_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "我並沒有像陛下所想的",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "那樣……",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "…",
+        "unit_id": 105812,
+        "voice": "vo_adv_5150003_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "…恕我失禮了☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "等……",
+        "unit_id": 104711,
+        "voice": "vo_adv_5150003_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "陛下……！",
+        "unit_id": 104711
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "那、",
+        "unit_id": 113611,
+        "voice": "vo_adv_5150003_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "那個……",
+        "unit_id": 113611
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "請、",
+        "unit_id": 113611
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "請您",
+        "unit_id": 113611
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "別一直看……！",
+        "unit_id": 113611
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "……真狡猾……",
+        "unit_id": 105812,
+        "voice": "vo_adv_5150003_110"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "不、",
+        "unit_id": 113611,
+        "voice": "vo_adv_5150003_111"
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "不是的，",
+        "unit_id": 113611
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "那個……",
+        "unit_id": 113611
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "我不是要去玩……",
+        "unit_id": 113611
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n只是預防萬一才會穿著……！",
+        "unit_id": 113611
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "\n",
+        "unit_id": 113611
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "您應該很清楚吧？",
+        "unit_id": 113611
+    },
+    {
+        "type": "dialogue",
+        "name": "純",
+        "words": "畢竟我不會在人前脫下鎧甲……",
+        "unit_id": 113611
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我、",
+        "unit_id": 105812,
+        "voice": "vo_adv_5150003_112"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我也要玩啦～～～～～～～！",
+        "unit_id": 105812
+    }
+]

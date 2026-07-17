@@ -1,0 +1,2067 @@
+[
+    {
+        "type": "background",
+        "background": "500371"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "這天──{player}等人"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n收到公會管理協會的緊急召集，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n來到職員所在之處。"
+    },
+    {
+        "type": "dialogue",
+        "name": "職員",
+        "words": "謝謝",
+        "unit_id": 1,
+        "voice": "vo_adv_1810003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "職員",
+        "words": "各位撥冗前來。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "職員",
+        "words": "\n其實……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "職員",
+        "words": "「未知的巨大生物",
+        "unit_id": 1,
+        "voice": "vo_adv_1810003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "職員",
+        "words": "正從加托羅斯山上往山下移動」，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "職員",
+        "words": "\n我們之前收到這樣的通報，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "職員",
+        "words": "並派了數人前去處理……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "職員",
+        "words": "然而",
+        "unit_id": 1,
+        "voice": "vo_adv_1810003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "職員",
+        "words": "討伐以失敗告終。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "職員",
+        "words": "\n由於損傷太過慘重，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "職員",
+        "words": "\n在那之後，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "職員",
+        "words": "沒有人願意承攬這個委託……",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "職員",
+        "words": "但是，",
+        "unit_id": 1,
+        "voice": "vo_adv_1810003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "職員",
+        "words": "根據花凜小姐所言，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "職員",
+        "words": "如果是各位的話，",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "職員",
+        "words": "\n說不定會願意接下委託──",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "加托羅斯山……",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "未知的巨大生物……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "……安。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "是巨靈呢。",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n明明至今為止都沒有感受到它要離開山的氣息……",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我記得在山腳下",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "有一些",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "村落……？",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "如果巨靈下山的話……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "那些村落抵擋不了多久的。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "現在馬上準備出發吧。",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "……要是",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "貪吃佩可她們也在的話就好了。",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "是啊。",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "但是貪吃佩可她們",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "和露一起去離島了……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "就算用通訊魔法聯繫上她們，",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n也沒有時間等她們回來了呢……",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "……沒辦法了，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "就我們自己去吧！",
+        "unit_id": 109211
+    },
+    {
+        "type": "background",
+        "background": "500213"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭、安",
+        "words": "……咦！？",
+        "unit_id": 1,
+        "voice": "vo_adv_1810003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "…………",
+        "unit_id": 11212
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我說，",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "安……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n那和我們所知的巨靈",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "有點不一樣耶……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "顏色不同……",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "若是只有",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "顏色不一樣就好了，但是……",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "……！",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n有其他的巨靈",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "從反方向來了……！",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "亞種巨靈",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 11212
+    },
+    {
+        "type": "dialogue",
+        "name": "巨靈",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 11211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭、安",
+        "words": "……唔！",
+        "unit_id": 1,
+        "voice": "vo_adv_1810003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞種巨靈",
+        "words": "──嘎滋！",
+        "unit_id": 11212
+    },
+    {
+        "type": "dialogue",
+        "name": "亞種巨靈",
+        "words": "咕嚕！！",
+        "unit_id": 11212
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "巨靈在",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "襲擊巨靈……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "最後還把對方的魔石碎片吃下去了！",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "不同的不只是外觀，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n它比起其他巨靈",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "更殘暴，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "能力也更強！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "肯定是",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "因為搶來的魔石力量……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "那個巨靈，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "一直持續在「進化」……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "我們必須在這邊阻止它……",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "兩",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "位！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "我先尋找它的弱點，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "麻煩掩護我！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "嗯……！",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "喝啊啊啊！！",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_020"
+    },
+    {
+        "type": "background",
+        "background": "500213"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞種巨靈",
+        "words": "……唔！",
+        "unit_id": 11212
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "安！",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "懲處之焰！！",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_022"
+    },
+    {
+        "type": "background",
+        "background": "500213"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞種巨靈",
+        "words": "…………",
+        "unit_id": 11212
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "騙人……",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n我的火焰和",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "安的炎魔法同時攻擊也無效……！？",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "那個人和古蕾婭的物理攻擊也無法造成傷害。",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "所有屬性的上級魔法、",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "混合屬性的複合魔法，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n竟然也都行不通……",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "安……",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "那個巨靈",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "完全盯上我們了。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n再繼續激怒它的話，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "事情會變得很不妙。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我們先撤退，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "然後想想作戰策略吧。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "……如果是老師的話絕對會說要這麼做呢。",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "但是我想在巨靈下山前做個了斷！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n拜託了，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "讓我再試試看！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "…………",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "……接下來",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "要怎麼做？",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "……！",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "一",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "起",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "全力攻擊！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n然後也要麻煩你！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "請把力量借給我！！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "亞種巨靈",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 11212
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "要來了！",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "狂龍滅殺！",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "震懾突擊！",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_032"
+    },
+    {
+        "type": "background",
+        "background": "500213"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞種巨靈",
+        "words": "──嘎喔喔喔喔喔！",
+        "unit_id": 11212
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "造成傷害了……！",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "反覆照這個模式攻擊的話肯定──",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "亞種巨靈",
+        "words": "──！",
+        "unit_id": 11212
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "！？",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n安！！",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "咦！？",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞種巨靈",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 11212
+    },
+    {
+        "type": "dialogue",
+        "name": "安、古蕾婭",
+        "words": "呀啊啊啊！！",
+        "unit_id": 1,
+        "voice": "vo_adv_1810003_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "「──抱歉，",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "古蕾婭……",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "都是我的錯……！」",
+        "unit_id": 109211
+    },
+    {
+        "type": "background",
+        "background": "500950"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "……嗯。",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "這裡是……？",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "山中小屋？",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "為什麼……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "唔！",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "那個巨靈的事情怎麼樣了！？",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n安呢！？",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "……",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "這樣啊。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n巨靈",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "現在也正在朝山下前進……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "然後安……",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n沒有等我，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "就一個人回去戰鬥了。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "……那個，",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "抱歉。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n你也是受安之託",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "才留在這裡的對吧？",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我的周圍放著",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "這麼多魔導具……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "這些",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "也是安準備的，對吧？",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "光是看到這些就知道",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "她有多擔心我。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "……那個。",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我睡著的時候有聽到，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n安用",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "快要哭了的聲音說著",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "「都是我的錯」。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我保護安只是一瞬間的反射動作……",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "倒不如說，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "能夠守護安，我感到很自豪……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "但是，",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "安不喜歡這樣呢。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "所以",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "她才丟下我自己離開了……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "……",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "安雖然",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "看起來只是個普通的女孩子，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n但她其實不只是很有才華的魔法師，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "還是一國的公主。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n肯定是因為很有把握",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "她才會一個人行動。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "所以我應該要待在這裡，",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n等待安的歸來才好，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "對不對……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "…………",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "啊，",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我才想說怎麼有個很香的味道。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n你幫我",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "煮了粥？",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "謝謝……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "你會的魔法？",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "…………",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "呵呵。",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "……也是呢。",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "現在的我",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "也許很需要這個魔法。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n所以……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我開動了。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "……",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "多謝款待。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n那個，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "非常好吃喔。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "然後──",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "總覺得",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我現在好想把想說的話，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n全部告訴安……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n肯定是",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "多虧了你的魔法喔♪",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "你可以",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "陪我一起來嗎？",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "……嗯。",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n那麼，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "準備好了",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "就走吧！",
+        "unit_id": 109411
+    },
+    {
+        "type": "background",
+        "background": "500213"
+    },
+    {
+        "type": "dialogue",
+        "name": "亞種巨靈",
+        "words": "…………",
+        "unit_id": 11212
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "那個巨靈",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "是為了尋找魔力而移動著。",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "以這個移動速度，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "晚上就會抵達山下的村子，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "這麼一來……",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "可不能讓村民因此遇難。",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n我得做些什麼才行……！　",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "安！",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "咦！？",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "古蕾婭！？",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n妳為什麼在這裡！？",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "已經可以下床走動了嗎！？",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "……嗯。",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n多虧安",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "放了那麼多的慰問禮物陪伴我啊。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "安……",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我有話想跟妳說。",
+        "unit_id": 109411
+    },
+    {
+        "type": "still",
+        "still": "181000301"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "……唔！",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "不要想著得自己一個人戰鬥。",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "讓我在安的身邊",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "和妳一起戰鬥吧。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n我這次不會成為妳的累贅的。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "咦！？",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "古蕾婭才不是我的累贅呢！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n絕對不是！！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "我才是每次都受到古蕾婭的幫助！",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n這次也是",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "我害的……",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "不是喔，",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "並不是安害的。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "所以……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "被安丟下，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "讓我感到有點寂寞。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "但是呢，",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我很清楚安不讓我跟來的原因。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n正是因為很清楚，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我才會追過來。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我也是",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "不希望安受傷。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "但如果安受了傷，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "比起離遠遠的，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我更想待在妳身邊。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "當然，",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我並不是覺得我能夠守護安喔。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "如果會妨礙到安，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我也知道我還是退到一邊比較好。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "但是，",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "想待在安身邊的心情，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我是沒有辦法放棄的……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "所以，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "也帶我一起走吧！",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "…………古蕾婭。",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_076"
+    },
+    {
+        "type": "background",
+        "background": "500213"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "…………",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "那",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "個。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n就算安不願意，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我還是會硬跟著妳去的……！",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭、安",
+        "words": "哇啊！？\n古蕾婭！",
+        "unit_id": 1,
+        "voice": "vo_adv_1810003_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "古蕾婭，",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "妳怎麼了！？",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n我總覺得好像被告白了一樣，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "心臟跳得好快！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "…………",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我被這個人",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "施加魔法了。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n所以才能提起勇氣，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "說出平時沒法說出口的話……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "魔法？",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "魔法……",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "呵",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "呵！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n這樣啊，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "你也會使用魔法了呢！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "總覺得我也是，",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n變得想要向古蕾婭坦率地傳達想法了呢。",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "很抱歉把妳留在那裡。",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n只要想到",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "古蕾婭可能又會挺身保護我，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n我就感到很害怕。",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "雖然還是很害怕，",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "不過比起害怕，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "古蕾婭現在在這裡更讓我鬆了一口氣……",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "古蕾婭，",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "要打倒那個巨靈，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "我一個人是辦不到的。",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n所以……",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "可以陪我到最後嗎？",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "安……",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "當然可以喔！",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭、安",
+        "words": "呵呵♪",
+        "unit_id": 1,
+        "voice": "vo_adv_1810003_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "既然都這麼決定了，",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "我馬上有事情要拜託兩位！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "妳想到",
+        "unit_id": 109411,
+        "voice": "vo_adv_1810003_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "作戰計畫了，對吧。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "嗯！",
+        "unit_id": 109211,
+        "voice": "vo_adv_1810003_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n關於打倒那個巨靈的方法，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "可以聽我說嗎？",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}等人就這樣，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n開始了打倒巨靈的作戰會議。"
+    }
+]

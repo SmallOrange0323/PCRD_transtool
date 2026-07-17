@@ -1,0 +1,971 @@
+[
+    {
+        "type": "background",
+        "background": "500020"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "今天美冬也找了{player}出去。\n但是，約定的地點並非平日訓練時去的平原，\n而是蘭德索爾的郊區。"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "謝謝你來呢。",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n今天我會去戰場喔。",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "你當然也會跟我一起去吧？",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "是名為特賣會的戰場喔！",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "其實，今天商店將會舉辦",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n情侶限定的特賣會喔。",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "所以，可以嗎？",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n只要今天和我假裝是情侶就好，",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "拜託你！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "果然，這才是我的好徒弟！ ",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "那麼，我們走吧！",
+        "unit_id": 104811
+    },
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "開始營業前，商店門口已經排著隊伍。\n在開店的同時，店員出來並開始演說。"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "嗯――非常感謝各位今天蒞臨本店。",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n針對蒞臨本店的情侶，",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n在此宣布一項特賣以外的好康情報。",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "今天將會舉辦一場情侶限定的遊戲，",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n並提供驚人的寶物作為獎品贈送給優勝者！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "雖然會收取報名費，但還是請各位踴躍參加！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "什麼！？ 驚人的寶物……",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "就算支付報名費，也一定能值回票價的！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "當然要參加啊！ 沒問題吧？",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "來了！ ",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "這――裡，我們也要參加！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "已受理你們的報名！ 那麼開始吧！",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n情侶限定企劃！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n測試兩人間的羈絆，情侶☆熱戀度檢―――測！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "今天所有的參賽者，",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n總共需要接受3個關卡的考驗！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n首先是第1關！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "為了今天，店長不顧員工反對，",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n改裝店內打造出的",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "○×泥池猜――――謎！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "聽完謎題後，請跑向你認為是正確答案的那扇門！",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n答對的話，就能前往下個關卡！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "答錯的話，則會讓你滿身是泥！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "問題！ 這間商店所販賣的戰斧定價為",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n1000盧幣。是○還是×！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "沒錯喔！ ",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "快跑！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "不對！ ",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "好了好了，跟著我！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "笨蛋情侶（男）",
+        "words": "是○×猜謎――。",
+        "unit_id": 1111,
+        "voice": "vo_adv_1048005_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "笨蛋情侶（男）",
+        "words": "\n小美―――，該怎麼辦――？",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "笨蛋情侶（女）",
+        "words": "嗯――，選小吉喜歡的那一個就好了――。",
+        "unit_id": 1211,
+        "voice": "vo_adv_1048005_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "笨蛋情侶（男）",
+        "words": "但是啊――我真正想飛撲過去的是……",
+        "unit_id": 1111,
+        "voice": "vo_adv_1048005_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "笨蛋情侶（男）",
+        "words": "\n",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "笨蛋情侶（男）",
+        "words": "小美的胸口――――嘛！",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "笨蛋情侶（女）",
+        "words": "討――厭！ 小吉好色―――！",
+        "unit_id": 1211,
+        "voice": "vo_adv_1048005_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "閃開閃開―――――！",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "笨蛋情侶",
+        "words": "嗚呀啊啊啊啊啊！",
+        "unit_id": 1,
+        "voice": "vo_adv_1048005_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "哎呀，藍色頭髮的女性情侶組",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n撞飛笨蛋情侶，以驚人的氣勢衝了進去！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "沒錯，正確答案就是……○！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "哼哼！ 商品售價是我",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n最拿手的部分！我每天都會確認呢！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "那麼，經過剛剛的猜謎，目前參賽者只剩下一半囉――！",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "接下來是第2關！ 團團轉迷宮！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "這又是店長強行將店內改裝而成的大迷宮！",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n最先到達終點的1組將獲得最後關卡的挑戰權！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "那麼，預備……開始！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "嗯――，一開始路就分成左右兩條呢……",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "考慮到效率，我不想一開始就出錯啊……",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "也是呢……不，等一下，我發現了！ 最大效率！",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "不對，根據我的直覺，真正的道路是……！",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "笨蛋情侶（男）",
+        "words": "討厭――，雖然剛剛被藍色頭髮的女生打擾，",
+        "unit_id": 1111,
+        "voice": "vo_adv_1048005_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "笨蛋情侶（男）",
+        "words": "\n但若是迷宮的話就能兩人獨處了，真好呢，小美！",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "笨蛋情侶（女）",
+        "words": "原來如此，小吉好聰明――！",
+        "unit_id": 1211,
+        "voice": "vo_adv_1048005_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "笨蛋情侶（男）",
+        "words": "我們兩個人乾脆就迷路吧？ ",
+        "unit_id": 1111,
+        "voice": "vo_adv_1048005_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "笨蛋情侶（男）",
+        "words": "在這愛的……迷宮裡！",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "笨蛋情侶（女）",
+        "words": "討厭――，",
+        "unit_id": 1211,
+        "voice": "vo_adv_1048005_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "笨蛋情侶（女）",
+        "words": "小吉好死相――！",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "擋路，真擋路―――！",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "笨蛋情侶（男）",
+        "words": "嗚哇――――！ 剛剛那個藍色頭髮的女生撞破牆壁",
+        "unit_id": 1111,
+        "voice": "vo_adv_1048005_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "笨蛋情侶（男）",
+        "words": "\n直衝過來了―――――！",
+        "unit_id": 1111
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "朝著可能是出口的方向前進，就能發揮最大效率喔！",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "喔喔喔，使用有點犯規的技巧，一口氣到達終――――點！",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "但這樣也算過關！ 獲得最後關卡挑戰權的是藍頭髮女孩，",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n就是你們這對情侶！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "那還用說！ 來吧，",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "我們會得到驚人寶物獎的！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "最後要請妳挑戰的是！",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n握手並猜出哪一個才是男朋友的遊戲！！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "……咦！？",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "男朋友將會進到箱子裡，只從裡面伸出手。",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n同樣的，若能從包含我們工作人員在內的5隻手當中",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n順利選出男朋友的手並握住，就算獲勝！！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "箱子設置",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "開――――――始！！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "在我面前伸出手的5個箱子……",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "在這之中",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n只有一隻是你的手……",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "……對啊……",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "回想起來，我還真沒握過你的手呢……",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "嘿，煩惱中的女孩！ 停下了動作――――！",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n妳是否其實沒有握過男朋友的手呢！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n兩人之間是否根本沒有愛呢！ 束手無策了嗎――――！！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "……{player}。",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "我找到了哦。",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "答案是",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "這隻手！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "這就是我最重要的……男朋友喔！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "完全正―――――確！",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n獲勝的是藍色頭髮女孩這對情侶――――！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "……呵呵呵。你一臉『為什麼妳會知道』般",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n不可思議的表情呢。",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "……是因為我注意到了，那隻手。",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "你的手……傷痕累累。",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "一定是平常和我訓練的時候弄傷的吧？",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "那些傷是我造成的吧。",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "對不起，今後我應該會更……",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "好好地照顧自己的徒弟。",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "哎呀，兩人互相凝視……氣氛不錯呢！",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "來吧，言歸正傳，接下來要揭曉驚人的寶物獎品！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "我等很久了！ 來吧，是什麼！？",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "獎品就是",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "這――――個！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "這是……什麼？ ",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "便宜的嬰兒床……？",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "不，雖然這是便宜的東西，但若是你們兩人有了孩子，",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n不就成了驚人的寶物嗎？",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "所以也就是希望你們能快點生孩子……",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "是很風雅別緻的獎品喔！",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "\n是說，情侶大賽的話，送這種東西也不錯吧！ 啊哈哈！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "這、這種……",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "我竟為了這種東西而支付報名費……",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "哎呀，這位客人妳怎麼了？",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "你這傢伙―――――！ 如果是這種獎品的話，",
+        "unit_id": 104811,
+        "voice": "vo_adv_1048005_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n就退我報名費―――――！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "美冬",
+        "words": "\n負責人給我出―――――――來！",
+        "unit_id": 104811
+    },
+    {
+        "type": "dialogue",
+        "name": "店員",
+        "words": "噫噫噫――――！ 負責人現在外出不在―――！",
+        "unit_id": 311,
+        "voice": "vo_adv_1048005_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "美冬生氣的到處追著店員跑。\n但是，在{player}的手中\n還殘留著和美冬握手時的餘溫……"
+    }
+]

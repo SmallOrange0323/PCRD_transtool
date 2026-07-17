@@ -1,0 +1,2148 @@
+[
+    {
+        "type": "background",
+        "background": "500214"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}一行人前往山頂想要尋找巨靈的蹤跡，\n但是越靠近山頂，安的魔法探測能力卻漸漸失效。"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "嗯～",
+        "unit_id": 109211,
+        "voice": "vo_adv_5013003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "不行。",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n只能隱約察覺一點氣息……",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "安小姐，",
+        "unit_id": 105913,
+        "voice": "vo_adv_5013003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "您應該是累了吧？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "可能是巨靈的數量太多了。",
+        "unit_id": 109211,
+        "voice": "vo_adv_5013003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "「就是他了」！　",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "我根本無法像這樣鎖定目標……",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "天色已晚……",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n不然我們先回去蘭德索爾吧？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n如果不趕在天黑之前下山，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "很可能會遭遇山難。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "蘭德索爾……",
+        "unit_id": 109311,
+        "voice": "vo_adv_5013003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "\n",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "那是",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "你們居住的城市嗎？",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "沒錯！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "裡頭建有城堡，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "是一座規模龐大的城市唷！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "城堡！？　",
+        "unit_id": 109311,
+        "voice": "vo_adv_5013003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "露",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "想去參觀！",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那麼，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們今天就在蘭德索爾吃晚餐吧！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "太好了～！",
+        "unit_id": 109311,
+        "voice": "vo_adv_5013003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "\n今天晚上也要大吃特吃～！",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我知道一家不錯的餐廳，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們去那裡吃吧！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "欸，",
+        "unit_id": 109211,
+        "voice": "vo_adv_5013003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "古蕾婭。",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n貪吃佩可所說的晚餐，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "果然……",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "是那個吧？",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "嗯，",
+        "unit_id": 109411,
+        "voice": "vo_adv_5013003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "肯定是那樣沒錯。",
+        "unit_id": 109411
+    },
+    {
+        "type": "background",
+        "background": "500050"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這間餐廳會將客人帶來的食材做成美味的料理！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "今天我們帶來很多珍稀食材，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "不知道店家會端出什麼料理呢？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "真是令人期待！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "好了，",
+        "unit_id": 411,
+        "voice": "vo_adv_5013003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "讓各位久等了！",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "……外表看起來很普通。",
+        "unit_id": 106012,
+        "voice": "vo_adv_5013003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "就只有外表而已……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "哈哈！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "啊哈哈哈哈哈……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "嗯〜！　",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "看起來好好吃〜☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那個黏糊糊的魔物，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "居然能用來熬煮這麼香噴噴的高湯！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n果然不管是什麼，都得經過料理，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "實際吃吃看才能知道是什麼味道！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我開動了～☆　",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "嗯、",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "嗯……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "湯的味道好濃郁啊！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "沙拉裡面也加入了切碎的脆皮觸手，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "真是太棒了！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "……",
+        "unit_id": 109411,
+        "voice": "vo_adv_5013003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "的確很好吃。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "嗯！",
+        "unit_id": 109211,
+        "voice": "vo_adv_5013003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "我可以每天都吃這個～！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "為什麼有辦法若無其事地吃下去啊，",
+        "unit_id": 106012,
+        "voice": "vo_adv_5013003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你們這些人……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我想要",
+        "unit_id": 106012,
+        "voice": "vo_adv_5013003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "吃普通一點的食物啊……",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "啊姆，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "嗯咕。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "討、",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "討厭～！　",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "為什麼味道嘗起來這麼正常～！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "嗚哇～",
+        "unit_id": 109311,
+        "voice": "vo_adv_5013003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "\n魔物好好吃啊。",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "\n",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "果然",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "應該吃吃看……",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "流口水。",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "……露。",
+        "unit_id": 109411,
+        "voice": "vo_adv_5013003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "我說過不可以吃小眼球。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "知、",
+        "unit_id": 109311,
+        "voice": "vo_adv_5013003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "知道啦！",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "\n",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "剛剛",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "只是在開玩笑而已！",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "真的是……",
+        "unit_id": 109411,
+        "voice": "vo_adv_5013003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "哎呀～！　",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "從主菜到甜點都很美味，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n這美食全餐真是太棒了！　",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "滿足滿足☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "既然",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "晚餐已經吃飽了，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "大家明天",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "繼續前往山中搜索吧！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "嗯。",
+        "unit_id": 109211,
+        "voice": "vo_adv_5013003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "大家，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "謝謝你們！",
+        "unit_id": 109211
+    },
+    {
+        "type": "background",
+        "background": "500351"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "阿囉哈！　",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "安，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "古蕾婭，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "露！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n昨晚睡得還好嗎？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "嗯！　",
+        "unit_id": 109211,
+        "voice": "vo_adv_5013003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "床軟綿綿的！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "我的魔力也完全恢復了！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "……不過，",
+        "unit_id": 109211,
+        "voice": "vo_adv_5013003_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "魔力探測能力還是老樣子。",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "嗯……",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "那個，",
+        "unit_id": 190811,
+        "voice": "vo_adv_5013003_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "不好意思～。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "請問可以打擾一下嗎？",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "花凜小姐！　",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "早安☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "請問，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "發生了什麼事嗎？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "是的，",
+        "unit_id": 190811,
+        "voice": "vo_adv_5013003_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "我是來通知你們關於加托羅斯山的消息。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "聽說",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "那裡有未知的魔物現身。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "你說的該不會是",
+        "unit_id": 106012,
+        "voice": "vo_adv_5013003_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "巨人魔物？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "是的，",
+        "unit_id": 190811,
+        "voice": "vo_adv_5013003_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "沒錯……",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "看來你們已經知道了。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "事實上昨天，",
+        "unit_id": 105913,
+        "voice": "vo_adv_5013003_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "我們為了公會活動",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n前往那座山進行搜索。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n在那個時候，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "看到了巨人魔物……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "也就是所謂的巨靈。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "原來是這樣啊。",
+        "unit_id": 190811,
+        "voice": "vo_adv_5013003_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n那麼，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "【公會管理協會】已經正式提出委託，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n你們是否願意接下",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "繼續調查以及討伐魔物的任務呢？",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "交給我們吧！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "啊啊但是，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "其實我們遇到了一個問題……",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "請問。",
+        "unit_id": 106012,
+        "voice": "vo_adv_5013003_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "【公會管理協會】",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "有沒有魔力探測機之類的設備？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n如果有那種設備，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "就能大幅提昇搜索效率。",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "魔力探測機的話，",
+        "unit_id": 190811,
+        "voice": "vo_adv_5013003_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "我們可以為你們準備。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "不過，",
+        "unit_id": 190811,
+        "voice": "vo_adv_5013003_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "現在剛好出借給別的公會，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "可能要隔幾天後才能轉交給你們。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這樣啊～",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n那麼，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "搜索作業只能先暫停了。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "等到可以轉交時，",
+        "unit_id": 190811,
+        "voice": "vo_adv_5013003_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "我會盡快通知你們。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "\n那麼，",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "花凜",
+        "words": "我先走一步。",
+        "unit_id": 190811
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "嗯，",
+        "unit_id": 105913,
+        "voice": "vo_adv_5013003_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "無法馬上借到嗎……",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n這段期間，",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "該做什麼才好呢？",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "哇！　",
+        "unit_id": 109311,
+        "voice": "vo_adv_5013003_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "好像很好玩的樣子！",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "\n露，",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "想要吃更多……",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "\n……",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "了解更多新事物！",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這樣未免太懶散了……",
+        "unit_id": 106012,
+        "voice": "vo_adv_5013003_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "機會難得，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不如帶安他們到處逛逛吧？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那麼，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "在借到魔力探測機之前，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n我們帶安他們參觀蘭德索爾吧！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "……這樣、",
+        "unit_id": 109411,
+        "voice": "vo_adv_5013003_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "真的可以嗎？",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "既然貪吃佩可他們都這麼說了，",
+        "unit_id": 109211,
+        "voice": "vo_adv_5013003_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n那就這麼辦吧！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "當然古蕾婭也要一起去唷！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "既然如此，",
+        "unit_id": 106012,
+        "voice": "vo_adv_5013003_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "先去逛鬧區吧？",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n我一定要",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "向你們介紹魔物之外的其他料理。",
+        "unit_id": 106012
+    },
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "嘿～！　",
+        "unit_id": 109211,
+        "voice": "vo_adv_5013003_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "哼嗯～！　",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "原來如此～！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "安，",
+        "unit_id": 109411,
+        "voice": "vo_adv_5013003_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "走路要看前方。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "啊哈！　",
+        "unit_id": 109211,
+        "voice": "vo_adv_5013003_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "抱歉抱歉！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n不過，果然完全不一樣呢～！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "你看！　",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "我從來沒看過這種點心！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "也沒吃過呢！　",
+        "unit_id": 109311,
+        "voice": "vo_adv_5013003_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "啊嗯！　",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "啊嗯！",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "\n",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "露！　",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "好吃到停不下……",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "\n",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "咳咳咳咳！？",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不要吃到噎到啊！",
+        "unit_id": 106012,
+        "voice": "vo_adv_5013003_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "這個給妳，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "喝點水吧！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "咕嚕、",
+        "unit_id": 109311,
+        "voice": "vo_adv_5013003_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "咕嚕……",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "咳咳、",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "咳咳……",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "得、",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "得救了。",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "\n剛剛",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "差點噎死……",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "不過，",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "我還吃得下！",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我不是說過一次不要吃太大口嗎！",
+        "unit_id": 106012,
+        "voice": "vo_adv_5013003_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n你還想再來一次嗎！？　",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "要吃慢一點，仔細品嘗味道啊！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "……對不起。",
+        "unit_id": 109411,
+        "voice": "vo_adv_5013003_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n露她",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "沒有惡意。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n害妳生氣了……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "吧。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "小凱留乍看之下好像很容易生氣，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n事實上她的個性很溫柔，很會照顧人喔！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "剛剛也是如此，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "她只是在擔心露而已！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "吵、",
+        "unit_id": 106012,
+        "voice": "vo_adv_5013003_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "吵死了！　",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不准說我溫柔！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n我都聽得到喔！　",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "況且，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妳講話的聲音也太大聲了！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "原來是這樣……",
+        "unit_id": 109411,
+        "voice": "vo_adv_5013003_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "對不起，誤會妳了，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "凱留。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不對，",
+        "unit_id": 106012,
+        "voice": "vo_adv_5013003_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妳這樣才是真正誤會了！　",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "一點都不溫柔！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "露的事情也是，",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我只是剛好看到而已！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "唔唔……",
+        "unit_id": 109311,
+        "voice": "vo_adv_5013003_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "好難受～",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "露！　",
+        "unit_id": 106012,
+        "voice": "vo_adv_5013003_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "妳又噎到了！！",
+        "unit_id": 106012
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "啊哈哈，",
+        "unit_id": 109211,
+        "voice": "vo_adv_5013003_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "把露交給凱留就能安心了。",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "啊，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "貪吃佩可，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "那間店是什麼店？",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "是雜貨店。",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "聽說那間店在女生之間很受歡迎喔。",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "原來是這樣啊，",
+        "unit_id": 109211,
+        "voice": "vo_adv_5013003_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "我們去看看吧！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "一定能找到適合古蕾婭的東西！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "不對，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "古蕾婭的話，不管跟什麼都很搭！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "……唔，",
+        "unit_id": 109411,
+        "voice": "vo_adv_5013003_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "安真是的。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "……古蕾婭小姐，",
+        "unit_id": 105913,
+        "voice": "vo_adv_5013003_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "您好像很高興。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "咦？",
+        "unit_id": 109411,
+        "voice": "vo_adv_5013003_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "您看著安小姐的表情，",
+        "unit_id": 105913,
+        "voice": "vo_adv_5013003_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "看起來非常幸福。",
+        "unit_id": 105913
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "從、",
+        "unit_id": 109411,
+        "voice": "vo_adv_5013003_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "從我的表情可以看出來嗎……？",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "真丟臉呢……",
+        "unit_id": 109411
+    },
+    {
+        "type": "background",
+        "background": "500032"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "啊～好開心喔！",
+        "unit_id": 109211,
+        "voice": "vo_adv_5013003_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n參觀了蘭德索爾的好多地方～！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "不管是販賣的商品還是景色，",
+        "unit_id": 109411,
+        "voice": "vo_adv_5013003_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "都和密斯塔爾西亞不太相同……",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n感覺很新奇呢。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "露",
+        "unit_id": 109311,
+        "voice": "vo_adv_5013003_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "深～深愛上",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "蘭德索爾了！",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "呵呵，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "能讓妳們",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n覺得蘭德索爾是個好地方，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我也覺得很高興！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "明天我們再去更多地方玩吧！",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "難得來到這裡，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "請盡情在蘭德索爾觀光遊玩吧☆",
+        "unit_id": 105812
+    },
+    {
+        "type": "background",
+        "background": "500360"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "幾天後――"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "好！　",
+        "unit_id": 109211,
+        "voice": "vo_adv_5013003_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "已經借到魔力探測機了，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "身體狀況也很好！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "出發打倒巨靈吧！",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "嗯。",
+        "unit_id": 109411,
+        "voice": "vo_adv_5013003_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "為了完成通往密斯塔爾西亞的轉移魔法，",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "古蕾婭",
+        "words": "\n我們必須將魔石的碎片收集齊全。",
+        "unit_id": 109411
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "不過……",
+        "unit_id": 109311,
+        "voice": "vo_adv_5013003_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "回到密斯塔爾西亞以後，",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "又得重新面對功課了吧？",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "\n",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "露就……",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "露就",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "乾脆留在這裡……！！",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "嗯～",
+        "unit_id": 109211,
+        "voice": "vo_adv_5013003_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "蘭德索爾確實很好玩……",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "\n",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "不過一直留在這裡的話，",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "安",
+        "words": "就再也見不到學院的朋友們喔？",
+        "unit_id": 109211
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "啊！？　",
+        "unit_id": 109311,
+        "voice": "vo_adv_5013003_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "那、",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "那樣好寂寞啊～！！",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "\n",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "露會加油的，",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "露要收集",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "露",
+        "words": "一堆魔石！！",
+        "unit_id": 109311
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "大家，",
+        "unit_id": 105812,
+        "voice": "vo_adv_5013003_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "準備好了嗎？",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "走吧，",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "出發去尋找巨靈吧！",
+        "unit_id": 105812
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}一行人為了打倒巨靈收集魔石，\n再次前往加托羅斯山。"
+    }
+]

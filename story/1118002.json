@@ -1,0 +1,2223 @@
+[
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "從大江戶町回到蘭德索爾的"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n貪吃佩可和{player}兩人"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "過著悠哉的新年，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n前往神殿品嘗新年傳統的甜酒和年糕紅豆湯。"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "香油錢帶了、",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "求籤的錢也帶了。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "肚子也餓得差不多了，",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "做好萬全準備啦。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "{player}也準備好了嗎？",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那想必你也餓得差不多了吧！",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我也不能輸給你！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "一路跑到神殿的話，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "肚子應該會很餓吧！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "怎麼樣，",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "要不要來比賽誰先跑到……",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "來比賽誰先跑到神殿吧！",
+        "unit_id": 111,
+        "voice": "vo_adv_1118002_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "等一下～",
+        "unit_id": 211,
+        "voice": "vo_adv_1118002_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "不要丟下我嘛～",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n我們一起去啦，",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "哥哥～！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "好了好了，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1118002_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "比起分頭去",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "，兩個人一起去",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n說不定更好喔？",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "叔叔建議你們相親相愛地一起行動～",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "看吧～",
+        "unit_id": 211,
+        "voice": "vo_adv_1118002_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "大人都這麼說了～",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n我們一起去嘛～",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "呿，",
+        "unit_id": 111,
+        "voice": "vo_adv_1118002_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "知道了啦。",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "但是，妳不要扯我後腿喔！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "嗯，",
+        "unit_id": 211,
+        "voice": "vo_adv_1118002_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "我知道了～！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那兩個孩子也是為了吃年糕紅豆湯，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n才打算賽跑餓肚子嗎？",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "哦，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1118002_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "小姐你們也要去神殿參拜嗎？",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "是啊！",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你也是嗎？",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "不，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1118002_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "我是在神殿旁擺攤的工作人員。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n現在為了招攬客人，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "正在舉辦一個小型的活動。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "在指定的地點擲骰子，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1118002_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "按照擲出的步數",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n前往下個地點。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "簡單來說，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "就是雙六遊戲啦。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n怎麼樣啊？",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "小姐你們要不要也來參加？",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "聽起來很有趣呢！",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我想試試看！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "那這張地圖就送給妳啦。",
+        "unit_id": 1411,
+        "voice": "vo_adv_1118002_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "快來擲骰子吧！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "謝謝。",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那麼，",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "嘿～！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "哦，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1118002_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "骰出了6！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "真是好兆頭啊！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n小心慢走啊！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "兩人行動會更好對吧？",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那麼{player}，\n我們一起走吧！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "這個嘛，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1118002_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "要看妳們骰到的地點就是了。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n不過，兩人行動絕對會更有趣。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "啊，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "還有，到了神殿後，",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "別忘了去攤位買東西喔！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "放心吧，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們本來就打算要一路吃下去了。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n那麼，",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們出發啦。",
+        "unit_id": 111811
+    },
+    {
+        "type": "background",
+        "background": "500130"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "第一個關卡是這裡啊。",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "咦？",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那裡好像有題目。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "真的像雙六一樣，很有趣呢！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我看看～",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "來回對擊十次板羽球……",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "很簡單耶！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "球太快了我接不到啦～",
+        "unit_id": 211,
+        "voice": "vo_adv_1118002_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "啊，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "是剛剛那兩個孩子。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "妳好好接啦！",
+        "unit_id": 111,
+        "voice": "vo_adv_1118002_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n這樣下去我們就沒辦法前進了！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "但是～",
+        "unit_id": 211,
+        "voice": "vo_adv_1118002_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "好了好了，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你們要相親相愛才行呀。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "難得參加這麼開心的活動嘛。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "…………",
+        "unit_id": 111,
+        "voice": "vo_adv_1118002_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "姐姐，",
+        "unit_id": 211,
+        "voice": "vo_adv_1118002_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "妳是誰？",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "只是個剛好路過的大姐姐。",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "妳不太會打板羽球嗎？",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "嗯。",
+        "unit_id": 211,
+        "voice": "vo_adv_1118002_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "哥哥很會打，",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n但我打得不太好……",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那來和大姐姐一起練習吧。",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "大姐姐也不太會打呢。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "嗯！",
+        "unit_id": 211,
+        "voice": "vo_adv_1118002_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "哥哥的對手就拜託",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n{player}囉。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "不、",
+        "unit_id": 111,
+        "voice": "vo_adv_1118002_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "不是，",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "那個……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "怎麼了嗎？",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "那個啊……",
+        "unit_id": 211,
+        "voice": "vo_adv_1118002_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n哥哥他",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "不擅長和陌生人交流。",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "才、",
+        "unit_id": 111,
+        "voice": "vo_adv_1118002_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "才不是……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "那個……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "怎麼說……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n不是我妹妹打得不好，",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "可能……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "是我",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "打得太用力了……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "而已……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "比起和其他人練習，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你比較想和妹妹一起嗎？",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "…………",
+        "unit_id": 111,
+        "voice": "vo_adv_1118002_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "嗯。",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那就這麼做吧！",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n兄妹兩人一起和樂融融地練習",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "一定比較有趣呢。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你能控制力道，",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "讓妹妹打到球吧？",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "…………嗯。",
+        "unit_id": 111,
+        "voice": "vo_adv_1118002_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那這次就放輕力道試試看吧。",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "別擔心，",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你們一定能辦到的。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "拜託你了，",
+        "unit_id": 211,
+        "voice": "vo_adv_1118002_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "哥哥。",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "……我會加油的。",
+        "unit_id": 111,
+        "voice": "vo_adv_1118002_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "八～",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "九～",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "十！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n好棒好棒！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你們成功了耶！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "謝謝！",
+        "unit_id": 211,
+        "voice": "vo_adv_1118002_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "但我",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "失敗了很多次。",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n對不起，",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "哥哥。",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "我也有不小心把球打到很奇怪的地方啦……",
+        "unit_id": 111,
+        "voice": "vo_adv_1118002_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "對不起。",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "嗯嗯，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "勇於認錯很了不起呢。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "不過現在應該",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "和對方道謝才對唷，",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你們兩個都很努力了嘛！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "謝謝你，",
+        "unit_id": 211,
+        "voice": "vo_adv_1118002_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "哥哥！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "我也是，",
+        "unit_id": 111,
+        "voice": "vo_adv_1118002_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "那個，",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "謝謝妳。",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "還有大姐姐們也是……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "謝謝。",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "嗯，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "不客氣！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "啊，",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你們現在可以擲骰子囉！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "……妳骰吧。",
+        "unit_id": 111,
+        "voice": "vo_adv_1118002_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "畢竟……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "妳剛剛骰出了6。",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "謝謝哥哥！",
+        "unit_id": 211,
+        "voice": "vo_adv_1118002_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "那我要骰囉！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "嘿～！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "好厲害！",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "又是6耶！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "……這傢伙的",
+        "unit_id": 111,
+        "voice": "vo_adv_1118002_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "運氣很好。",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "擅長運動的哥哥、",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "和運氣很好的妹妹。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "看來你們接下來也能",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "一路暢行無阻呢。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n真讓人羨慕☆",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "謝謝妳！",
+        "unit_id": 211,
+        "voice": "vo_adv_1118002_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "大姐姐！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "……謝謝。",
+        "unit_id": 111,
+        "voice": "vo_adv_1118002_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "\n大姐姐你們也是，",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "要加油喔。",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那麼，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們也快點把題目完成吧！",
+        "unit_id": 111811
+    },
+    {
+        "type": "background",
+        "background": "500560"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "哎呀～",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "沒想到我們會在板羽球那關",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n卡這麼久。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "{player}不需要道歉啦。",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "是我不太會控制力道……",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這麼一想，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "剛才那個哥哥，",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n很了解自己的妹妹呢。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我也要更加努力",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "了解你才行。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "目標是",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "要比那對兄妹感情更好唷☆",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "啊啊，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "不是不是！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n我不是那個意思啦！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我想和你在另一種形式上……",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那個……",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n感情變得更好……",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你當哥哥嗎！？",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "雖然你",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "應該會成為一個",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n既溫柔又帥氣的哥哥……",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "不過，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "要是你能以另一種形式",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "對我好的話……",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "開玩笑的！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你現在就已經對我非常好啦！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "啊！",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "看到最後一個關卡了！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們快到終點了！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "美味的年糕紅豆湯在等著我們呢！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "喂，",
+        "unit_id": 911,
+        "voice": "vo_adv_1118002_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "你快去問啦。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "蛤～",
+        "unit_id": 811,
+        "voice": "vo_adv_1118002_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "怎麼又是我去問！？",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "\n剛剛也是我吧～",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "我去的話會嚇到人啊……",
+        "unit_id": 911,
+        "voice": "vo_adv_1118002_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "我也一樣啊……",
+        "unit_id": 811,
+        "voice": "vo_adv_1118002_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "兩人",
+        "words": "唉～～",
+        "unit_id": 1,
+        "voice": "vo_adv_1118002_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "呃……",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "在令人欣喜的地點",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "出現了各種意義上看起來很困擾的人呢。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "哇哇！！",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n你的這種毫不猶豫就開口搭話的積極個性",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "真是太棒了☆",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "怎麼，",
+        "unit_id": 811,
+        "voice": "vo_adv_1118002_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "小哥。",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "\n找我們有事嗎？",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "別管我們啦……",
+        "unit_id": 911,
+        "voice": "vo_adv_1118002_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "\n反正我們這種人……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "難得的新年，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "為什麼要這麼沮喪呢？",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "神殿就快到囉。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "去把煩心事掃除一空吧！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "就算想去也去不了啊……",
+        "unit_id": 911,
+        "voice": "vo_adv_1118002_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這是為什麼……？",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "唔嗯唔嗯，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "原來你們也有參加雙六活動啊。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "然後，",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "為了完成題目，正在尋找抽到大吉的人。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "大家一看到我們就都被嚇跑了……",
+        "unit_id": 911,
+        "voice": "vo_adv_1118002_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "我們果然根本",
+        "unit_id": 811,
+        "voice": "vo_adv_1118002_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "\n不該參加這種活動……",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "才沒這種事呢。",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "所有人都能夠享受新年啊。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "而且，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "乖乖遵守活動規則的你們，",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "肯定都是好人！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "……是、",
+        "unit_id": 911,
+        "voice": "vo_adv_1118002_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "是嗎……？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們也會幫忙的，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "一起來找抽到大吉的人吧！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "有沒有抽到大吉，",
+        "unit_id": 311,
+        "voice": "vo_adv_1118002_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "是嗎……？",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "我們兩個剛好都抽到大吉喔！",
+        "unit_id": 411,
+        "voice": "vo_adv_1118002_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "來來，",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "妳看看！",
+        "unit_id": 411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "哦～",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "真的耶！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "好厲害喔！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n這樣一來，",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你們就完成題目啦！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "好強，",
+        "unit_id": 911,
+        "voice": "vo_adv_1118002_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "竟然這麼快就找到了……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "多虧了小姐你們，我們終於能通關了！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "咦？",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "不過，",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "既然有兩個人抽到大吉，",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那我們",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n也算通關了吧……？",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "算吧？",
+        "unit_id": 811,
+        "voice": "vo_adv_1118002_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "\n",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "而且，",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "丟下幫助我們的人也有點說不過去。",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "\n好了，",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "一起通關吧！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "那麼，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "就一起通關吧！",
+        "unit_id": 111811
+    },
+    {
+        "type": "background",
+        "background": "500550"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "終於到了☆",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "大姐姐，我們等妳很久囉～",
+        "unit_id": 211,
+        "voice": "vo_adv_1118002_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "哇哇，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們最後還是沒追上你們呢。",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n在那之後，",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你們兩個有好好相處嗎？",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "嗯！",
+        "unit_id": 211,
+        "voice": "vo_adv_1118002_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "哥哥很努力問了陌生人",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "\n有沒有抽到大吉能幫我們過唷。",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "不能老是",
+        "unit_id": 111,
+        "voice": "vo_adv_1118002_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "依靠妹妹啊……",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "好了不起喔～",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n真是帥氣的哥哥☆",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "怎麼，",
+        "unit_id": 911,
+        "voice": "vo_adv_1118002_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "小姐你們還幫了我們以外的人嗎？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們沒有刻意要幫助別人啦……",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n這樣也算幫助別人嗎？",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "喂～！",
+        "unit_id": 811,
+        "voice": "vo_adv_1118002_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞2",
+        "words": "這裡好像在發給所有活動參加者的免費年糕湯耶！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "年糕湯！？",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我們快去吧，{player}！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "啊，",
+        "unit_id": 911,
+        "voice": "vo_adv_1118002_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "他們走掉了。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "我們也去吧。",
+        "unit_id": 111,
+        "voice": "vo_adv_1118002_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "嗯！",
+        "unit_id": 211,
+        "voice": "vo_adv_1118002_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "叔叔也一起走吧！",
+        "unit_id": 211
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "好、",
+        "unit_id": 911,
+        "voice": "vo_adv_1118002_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "地痞1",
+        "words": "好啊。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "你們再不快點來，",
+        "unit_id": 111811,
+        "voice": "vo_adv_1118002_110"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "我要全部吃光光囉～！",
+        "unit_id": 111811
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "在這之後，貪吃佩可等人在一眾雙六參加者的幸福笑容中，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n津津有味地品嘗著新年美食。"
+    }
+]

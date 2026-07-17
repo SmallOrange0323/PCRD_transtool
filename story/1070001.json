@@ -1,0 +1,823 @@
+[
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "某天{player}接下運送鸚鵡的工作，\n準備從蘭德索爾出發。"
+    },
+    {
+        "type": "dialogue",
+        "name": "鸚鵡",
+        "words": "麻煩你啦！　",
+        "unit_id": 1,
+        "voice": "vo_adv_1070001_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "鸚鵡",
+        "words": "麻煩你啦！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "那麼，",
+        "unit_id": 1411,
+        "voice": "vo_adv_1070001_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "麻煩你了。",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "\n",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "店長",
+        "words": "小心點啊！",
+        "unit_id": 1411
+    },
+    {
+        "type": "dialogue",
+        "name": "鸚鵡",
+        "words": "小心點啊！　",
+        "unit_id": 1,
+        "voice": "vo_adv_1070001_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "鸚鵡",
+        "words": "小心點啊！",
+        "unit_id": 1
+    },
+    {
+        "type": "background",
+        "background": "500330"
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "啊！　",
+        "unit_id": 111,
+        "voice": "vo_adv_1070001_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "是鸚鵡！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "\n這該不會是大哥哥你",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "從城鎮裡送過來的？",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "我就知道！　",
+        "unit_id": 111,
+        "voice": "vo_adv_1070001_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "這裡這裡！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "\n",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "我來替你帶路！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "鸚鵡",
+        "words": "麻煩你啦！　",
+        "unit_id": 1,
+        "voice": "vo_adv_1070001_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "鸚鵡",
+        "words": "麻煩你啦！",
+        "unit_id": 1
+    },
+    {
+        "type": "background",
+        "background": "500170"
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "我之前有聽姐姐說過。",
+        "unit_id": 111,
+        "voice": "vo_adv_1070001_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "\n她說在城鎮的店裡買了鸚鵡。",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "到了！　",
+        "unit_id": 111,
+        "voice": "vo_adv_1070001_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "這深處裡有個洞窟，",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "姐姐的家就在那裡！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "\n這裡有點暗，",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "但別擔心。",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "跟著我來！",
+        "unit_id": 111
+    },
+    {
+        "type": "background",
+        "background": "500250"
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "姐姐～！　",
+        "unit_id": 111,
+        "voice": "vo_adv_1070001_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "大哥哥",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "把鸚鵡送過來了！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "哎呀，真的呢。",
+        "unit_id": 1211,
+        "voice": "vo_adv_1070001_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "你把他給帶來了啊。",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "誒嘿嘿～！　",
+        "unit_id": 111,
+        "voice": "vo_adv_1070001_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "那我要走囉！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "少年",
+        "words": "\n幫我和老闆問個好！",
+        "unit_id": 111
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "……歡迎你，",
+        "unit_id": 1211,
+        "voice": "vo_adv_1070001_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "甦醒的公主騎士。",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "主人在等你。",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n我帶你去見她。",
+        "unit_id": 1211
+    },
+    {
+        "type": "background",
+        "background": "500341"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "客人來了，",
+        "unit_id": 1211,
+        "voice": "vo_adv_1070001_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "主人。",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "\n我把{player}先生帶來了。",
+        "unit_id": 1211
+    },
+    {
+        "type": "still",
+        "still": "107000101"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "這裡是",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "我的研究設施。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "歡迎你的到來。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "鸚鵡",
+        "words": "……有勞妳了。",
+        "unit_id": 1,
+        "voice": "vo_adv_1070001_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "鸚鵡",
+        "words": "妳回入口繼續看守吧。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "遵命。",
+        "unit_id": 1211,
+        "voice": "vo_adv_1070001_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "主人。",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "女性",
+        "words": "小的前去執行任務。",
+        "unit_id": 1211
+    },
+    {
+        "type": "dialogue",
+        "name": "鸚鵡",
+        "words": "那麼，",
+        "unit_id": 1,
+        "voice": "vo_adv_1070001_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "鸚鵡",
+        "words": "我也差不多要回去本體了。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鸚鵡",
+        "words": "\n這趟長途之旅",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "鸚鵡",
+        "words": "辛苦你了。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "那隻鸚鵡是我創造出來的虛假之物。",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n剛才的光芒",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "就是將那鸚鵡變成魔力收回進我體內了。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "我們又見面了。{player}。",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "……莫非你",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "失去記憶了……？",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "我現在開始替你診斷。",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n讓我稍微碰觸你一會。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "可以吧？",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "……原來如此。",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "這就等同於只有容器甦醒了呢。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "連行為記憶等等也都喪失……",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "能活著近乎是奇蹟了。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "嗯……",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "大致的情況我明白了。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "健康狀態沒有問題。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "自我介紹晚了。",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "我是……",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "比其他一般的人",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "\n還稍微親切的姐姐。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "？？？",
+        "words": "可以吧？",
+        "unit_id": 107011
+    },
+    {
+        "type": "still",
+        "still": "107000102"
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "對。",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "我是姐姐。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "這麼坦率，很好。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "要是透露出太多我的情報會過於危險，",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "\n現在不報上名號才是明智之舉吧。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "其實",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "有關於這次的委託，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "\n是有熟人拜託我，希望我能照顧你。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "那雖然是我創造的虛假之物，",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "但做得太完美了，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "\n結果變得不聽從我這裡的命令。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "這次湊巧請熟人替我回收那東西，",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "\n於是想機會正好，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "就委託你送過來了。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "嗯，",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "就是這樣。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "我從今天開始",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "會教你這個世界的常識。",
+        "unit_id": 107011
+    },
+    {
+        "type": "background",
+        "background": "500341"
+    },
+    {
+        "type": "still",
+        "still": "end"
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "……那全都是謊言喔。",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "但現在的你不會注意到吧。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "真正的虛假之物們正在大陸各地進行監視，",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "我知道你的出現，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "並利用委託企圖與你接觸。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "我雖然躲避真那與晶的耳目，",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "暗中監視你的動向，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "但卻無法掌握你的言行舉止像個幼兒般的理由。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "看來你是在那場戰鬥中",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "承受了過重的傷害呢……",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "失去的一般常識等等，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "我也來替你補足吧。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "促使你成長，",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "應該能讓你",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "再次與真那對峙。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "\n……",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "就讓我利用你",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "作為打倒他的墊腳石吧。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "而且，",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "看著過去的我",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "絕對無法變身取代的你，",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "\n會重生成怎麼樣的人類……",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "讓我的樂趣也增加了。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "今後也",
+        "unit_id": 107011,
+        "voice": "vo_adv_1070001_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "姊姊",
+        "words": "請多指教了。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "對著如此微笑說道的似似花，{player}開朗地點頭回應。"
+    }
+]

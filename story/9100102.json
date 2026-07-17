@@ -1,0 +1,624 @@
+[
+    {
+        "type": "background",
+        "background": "501630"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}與夥伴們，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n為了阻止「終炎巨神」而入侵其體內。"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "小凱留！",
+        "unit_id": 105811,
+        "voice": "vo_adv_9100102_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n索爾魔珠的所在地點呢！？",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "總之，",
+        "unit_id": 106011,
+        "voice": "vo_adv_9100102_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我鎖定了四個地方！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "不過小心點，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "附近都有擁有驚人魔力的守護者！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "那恐怕是",
+        "unit_id": 105911,
+        "voice": "vo_adv_9100102_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "彌勒再生出的魔物們吧。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "雖然會很不容易……",
+        "unit_id": 106411,
+        "voice": "vo_adv_9100102_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "但我們必須解決那些傢伙",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n回收索爾魔珠才行……！",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "打倒BOSS，",
+        "unit_id": 100311,
+        "voice": "vo_adv_9100102_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "收集索爾魔珠……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "是嗎。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "……呵呵。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "啊哈哈哈。",
+        "unit_id": 100111,
+        "voice": "vo_adv_9100102_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n感覺真懷念呢，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "怜、",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "優衣！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "是啊。",
+        "unit_id": 100211,
+        "voice": "vo_adv_9100102_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n雖然是在這種時候……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "但感覺這就是",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "《阿斯特朗傳奇》呢。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "──真是的，",
+        "unit_id": 192613,
+        "voice": "vo_adv_9100102_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "受不了。",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n都這種時候了還帶著玩樂的心態。",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "彌勒……！",
+        "unit_id": 106411,
+        "voice": "vo_adv_9100102_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "他透過魔法將幻影送過來的嗎……！",
+        "unit_id": 100311,
+        "voice": "vo_adv_9100102_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "日安。",
+        "unit_id": 192613,
+        "voice": "vo_adv_9100102_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "不對──",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "就我來說，",
+        "unit_id": 192613,
+        "voice": "vo_adv_9100102_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "我可不記得有邀請過你們。",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "真是的……",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n你們若能直接被燃燒殆盡，",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "就能省去麻煩了。",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "這是我們要說的才對，",
+        "unit_id": 100111,
+        "voice": "vo_adv_9100102_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "我們可不記得",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n有允許你燒毀世界！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "就是啊！",
+        "unit_id": 106011,
+        "voice": "vo_adv_9100102_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n這次絕對要狠狠教訓你！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n給我覺悟吧！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "哦哦，",
+        "unit_id": 192613,
+        "voice": "vo_adv_9100102_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "野貓們的威嚇",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n真可怕。",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "但是──",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "我早已掌握了你們送進",
+        "unit_id": 192613,
+        "voice": "vo_adv_9100102_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "巨神內部的戰力。",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n的確你們人數看起來是不少……",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n但與在外頭奮鬥的七冠們相比，",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "簡直是微不足道。",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "因此，",
+        "unit_id": 192613,
+        "voice": "vo_adv_9100102_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "我就斷言吧。",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "你們無法奪回任何一顆索爾魔珠，",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n而且會遭到強化再生的魔物打倒。",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "這種事，",
+        "unit_id": 105811,
+        "voice": "vo_adv_9100102_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "不試試看還不知道結果！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "嗯！",
+        "unit_id": 100211,
+        "voice": "vo_adv_9100102_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n我們的羈絆是",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "絕對不會輸的！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "呵呵……",
+        "unit_id": 192613,
+        "voice": "vo_adv_9100102_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "好啊。",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n我就坐在特等席上，",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "慢慢欣賞你們的靈魂",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "\n閃耀的樣子，",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "彌勒",
+        "words": "以及被粉碎消逝的時刻吧。",
+        "unit_id": 192613
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "哼！",
+        "unit_id": 106011,
+        "voice": "vo_adv_9100102_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n你等著瞧吧！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人。",
+        "unit_id": 105911,
+        "voice": "vo_adv_9100102_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n為了奪回索爾魔珠，",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n看樣子",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "果然需要打倒",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在巨神內部中的魔物守護者。",
+        "unit_id": 105911
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "目前已知所在之處的",
+        "unit_id": 106011,
+        "voice": "vo_adv_9100102_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "只有四隻。",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "我想還會出現其他的魔物，",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "凱留",
+        "words": "\n要做好長期戰的心理準備！",
+        "unit_id": 106011
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "我們要從哪裡開始挑戰，",
+        "unit_id": 106411,
+        "voice": "vo_adv_9100102_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "這交由你判斷。",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "但是，",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "如果遇到實在無法打倒的敵人，",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "\n",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "雪菲",
+        "words": "先去對付其他敵人也是個辦法。",
+        "unit_id": 106411
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "好～！",
+        "unit_id": 105811,
+        "voice": "vo_adv_9100102_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "\n我們絕對要奪回索爾魔珠，",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "貪吃佩可",
+        "words": "並且解決掉彌勒！",
+        "unit_id": 105811
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "以及……",
+        "unit_id": 100211,
+        "voice": "vo_adv_9100102_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "阻止厄莉絲吧！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n騎士先生！",
+        "unit_id": 100211
+    }
+]

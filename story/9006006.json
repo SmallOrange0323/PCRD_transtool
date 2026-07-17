@@ -1,0 +1,656 @@
+[
+    {
+        "type": "background",
+        "background": "510270"
+    },
+    {
+        "type": "background",
+        "background": "510270"
+    },
+    {
+        "type": "dialogue",
+        "name": "mimi",
+        "words": "今天是和優衣在阿斯特朗傳奇相遇的日子。",
+        "unit_id": 3
+    },
+    {
+        "type": "background",
+        "background": "510220"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "放學後，{player}留在教室裡，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n他的mimi收到了這樣的訊息。"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "好……",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "是今天",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "沒有錯吧？",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "嗯，",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "沒問題……",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "從早上到現在我已經確認過很多次了。",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "雖然",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "真琴要我",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "把這個當作一個契機……",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n但",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "要自己主動搭話好難啊……",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "哇啊啊！？",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n{player}？",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "那個……",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我的mimi收到了通知……",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "啊，",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "這樣啊……",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "你也有收到呀。",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n說得也是，",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "系統統一發送的嘛。",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "自從在阿斯特朗傳奇裡遇見你到現在，",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n已經過了那麼長時間了呀……",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我們明明早就認識了呢。",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "有種",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "不可思議的",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "感覺～",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "啊，",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "你不用道歉啦！",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n這一點我們都一樣……",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "在這麼多玩家裡，",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n我們真的是碰巧遇見的。",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n沒認出來是很正常的。",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "不過，",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "或許也是因為這樣。",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n我總覺得",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "這就像是命運一樣……",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n啊，",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我在說什麼呢！",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "對不起，",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "說了奇怪的話！",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "這、",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "這個話題可以不用接下去了啦……",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n不過，",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "如果我沒有玩阿斯特朗傳奇的話，",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n或許就沒有機會",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "可以這樣好好聊天了呢。",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "託這個遊戲的福，",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "和你……",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "當、",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "當然還有其他人",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "都變得更加親近了呢。",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "從這個意義上來說，",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "也許今天是我們的紀念日……",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "也得好好感謝",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "阿斯特朗傳奇才行呢。",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "那個，",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "所以……",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n這麼一個難得的紀念日，",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "如果你願意的話……",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "等一下",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "要不要找個地方慶祝一下呀？",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "如果你有想去的地方的話，",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "去那裡就好了……",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "咦，",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "你願意嗎……？",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n地點也是",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "挑我喜歡的地方就好……？",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "那……",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "那我知道",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "一間好吃的咖啡廳！",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我再把地點告訴你，",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我們先回家一趟再會合……",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "咦咦咦！？",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "現、",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "現在就去嗎……",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "可是，",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "那樣的話，",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n學校的人都會看到我們一起回家哦？",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n你不介意嗎？",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "不會，",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我不介意。",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "一點都不介意！",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "那我們",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "一起走吧！",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "只要和你在一起，",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我就能得到勇氣，",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n無論是在這裡",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "還是阿斯特朗傳奇裡……",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "和你在一起，",
+        "unit_id": 100231,
+        "voice": "vo_adv_9006006_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我就什麼都不怕。",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n所以，",
+        "unit_id": 100231
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "以後也多多關照囉。",
+        "unit_id": 100231
+    }
+]

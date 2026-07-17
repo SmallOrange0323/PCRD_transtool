@@ -1,0 +1,866 @@
+[
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "ナレーション",
+        "words": "晶のことが気になっているノウェムは、"
+    },
+    {
+        "type": "dialogue",
+        "name": "ナレーション",
+        "words": "\n同じ七冠である変貌大妃に、どんな人物か尋ねてみることにした。"
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "なぁ、",
+        "unit_id": 106114,
+        "voice": "vo_adv_5111605_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "ネネカ。",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "\n晶って、",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "ネネカから見て",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "どんなヤツなんだ？",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "\n七冠だから、",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "すごい優秀っていうのは分かるけどさ。",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "その通りです、",
+        "unit_id": 107011,
+        "voice": "vo_adv_5111605_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "無能では七冠は務まりません。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\n彼女も類まれなる才能と、",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "それを磨き続ける忍耐力を備えています。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "へー、",
+        "unit_id": 106114,
+        "voice": "vo_adv_5111605_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "やっぱりすごいヤツなのか！",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "\nじゃあ、",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "敵になる前は",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "尊敬したり、",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "信頼したりしてたのか？",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "いいえ、",
+        "unit_id": 107011,
+        "voice": "vo_adv_5111605_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "まったく、",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "これっぽっちも。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "信用できない七冠ランキングを作ったら、",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\n間違いなく彼女がトップだと思います。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "……へー",
+        "unit_id": 106114,
+        "voice": "vo_adv_5111605_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "なにか言いたそうですね？",
+        "unit_id": 107011,
+        "voice": "vo_adv_5111605_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "いや、",
+        "unit_id": 106114,
+        "voice": "vo_adv_5111605_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "別に。",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "\n",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "で、",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "どの辺が信用できないんだ？　",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "能力的には問題ないんだろ？",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "\n詳しく教えてくれ！",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "周囲の人間との連携に問題があります。",
+        "unit_id": 107011,
+        "voice": "vo_adv_5111605_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\n例えば",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "作業の進捗を確認しても",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "「普通」としか言いません。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "協力会社との交渉の手ごたえを確認しても",
+        "unit_id": 107011,
+        "voice": "vo_adv_5111605_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "「普通」、",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\nクレーム対応の結果を確認しても",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "「普通」、",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "出前を頼むとき、",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "メニューを確認しても",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "「普通」……",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "とにかく秘密主義で、",
+        "unit_id": 107011,
+        "voice": "vo_adv_5111605_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "自分のことを話さない。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "にもかかわらず、",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "生み出す結果は常に「最高」。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "いろいろと怪しくて、",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "信用するなど不可能ですね。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "秘密主義っていうか、",
+        "unit_id": 106114,
+        "voice": "vo_adv_5111605_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "適当に返事してるだけの気もするけど……",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "\n",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "ま",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "ぁ、",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "ネネカが苦労してるのはよく分かった！",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "\nちなみに、",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "あとどれくらいそんな感じの話があるんだ？",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "そうですね、",
+        "unit_id": 107011,
+        "voice": "vo_adv_5111605_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "少し待ってください。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "テキストファイルに",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "彼女から受けた仕打ちを",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\nまとめてあったはずなのですが……",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "そ、",
+        "unit_id": 106114,
+        "voice": "vo_adv_5111605_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "そんなものまであるのか！？",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "\nいくらなんでも根に持ちすぎだろ！？",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "ならば貴方も、",
+        "unit_id": 107011,
+        "voice": "vo_adv_5111605_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "晶と同じオフィスで働いてみてください。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "彼女の思い付きに付き合わされて、",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "何度も寝袋で眠ることになれば、",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\n私の気持ちがよく理解できるはずです。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "うっ、",
+        "unit_id": 106114,
+        "voice": "vo_adv_5111605_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "それはイヤかも……",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "\n",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "でも、",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "結局そこまでして付き合ったってことは、",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "\n仲がいいってことにならないか？",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "……なぜか、",
+        "unit_id": 107011,
+        "voice": "vo_adv_5111605_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "他のメンバーが作業に行き詰まっていると、",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\nどこからか嗅ぎつけてヘルプにやってきますからね。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "私も、",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "助けられたことがないわけではありません。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "仲がいいと感じたことはありませんが、",
+        "unit_id": 107011,
+        "voice": "vo_adv_5111605_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "借りを作ったままにしておくのも",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "気分が悪かったので。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "お互い、",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "最低限の義理立ては果たしていた……",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "というだけの話です。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "おお！　",
+        "unit_id": 106114,
+        "voice": "vo_adv_5111605_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "なんか、",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "かっこいい関係だな！",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "\n恨み言をまとめるくらいなら、",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "そういう思い出をまとめた方が",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "\n腹も立たなくていいんじゃないか？",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "……既に、",
+        "unit_id": 107011,
+        "voice": "vo_adv_5111605_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "私と彼女は敵同士です。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "今さら過去を懐かしんだとしても、",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "状況は変わりません。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "そうだな……",
+        "unit_id": 106114,
+        "voice": "vo_adv_5111605_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "悪かったよ。",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "\n",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "なんか、",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "うれしそうに話してたから、",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "つい。",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "もうこの話はやめにしましょう。",
+        "unit_id": 107011,
+        "voice": "vo_adv_5111605_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\n晶は七冠で最も謎が多く、",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "信用ならない……",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\n",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "とても怪しい女だと覚えてもらえれば結構です。",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "そうか、",
+        "unit_id": 106114,
+        "voice": "vo_adv_5111605_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "分かったぞ！",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "\n",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "でもやっぱり、",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "怪しさならネネカだって……",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "あっ。",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "……先ほどから何か言いたそうではありましたが、",
+        "unit_id": 107011,
+        "voice": "vo_adv_5111605_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\nどうやら",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "私に思うところがあるようですね？",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "\n一対一で",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "変貌大妃",
+        "words": "話し合う場でも設けましょうか？",
+        "unit_id": 107011
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "えっ！？　",
+        "unit_id": 106114,
+        "voice": "vo_adv_5111605_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "あ～、",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "それは～……！",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "\nしまった！　",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "オクトーと待ち合わせしてたんだった！",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "\n待たせると悪いから",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "もう行くぞ！　",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ノウェム",
+        "words": "じゃあな～！",
+        "unit_id": 106114
+    },
+    {
+        "type": "dialogue",
+        "name": "ナレーション",
+        "words": "これ以上変貌大妃に追及されてはたまらないと、"
+    },
+    {
+        "type": "dialogue",
+        "name": "ナレーション",
+        "words": "\nノウェムは大慌てで走り去ったのだった。"
+    }
+]

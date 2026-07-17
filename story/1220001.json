@@ -1,0 +1,2507 @@
+[
+    {
+        "type": "background",
+        "background": "500390"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}接到忍的請求，希望他能協助完成某個委託，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n因此來到了約定的見面地點。"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "啊，",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "{player}，",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你好。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我正在等你呢。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "唔，",
+        "unit_id": 712,
+        "voice": "vo_adv_1220001_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "你就是騎士大人……",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "應該沒有錯吧。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "失禮了。",
+        "unit_id": 712,
+        "voice": "vo_adv_1220001_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "我們正長期追查某批海盜的下落。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n為了將他們逮捕，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "希望能借助忍大人",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "以及",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "騎士大人的力量。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "畢竟我們所追跡的敵人……",
+        "unit_id": 712,
+        "voice": "vo_adv_1220001_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n可是",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "一艘",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "幽靈船呢。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "發現行蹤後，",
+        "unit_id": 712,
+        "voice": "vo_adv_1220001_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "其又會很快地在不知不覺間消失。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n過往我們曾有",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "多次能成功將其逮捕的機會。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "然而，",
+        "unit_id": 712,
+        "voice": "vo_adv_1220001_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "往往稍不注意，他們就會突然無影無蹤……",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n無論是幽靈船，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "還是抓到的海盜們，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "全部都不留痕跡地徹底消失了。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "因此這次才決定要來找我。",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n希望我能幫忙",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "逮捕住幽靈船。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "然後，占卜結果顯示，",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n這次的委託",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "找你來幫忙會比較好。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "哼！",
+        "unit_id": 2413,
+        "voice": "vo_adv_1220001_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "像這種正經八百騎士團的委託，",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n老實講我打死也不想接。",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "更何況還有小伙子在，更不想接了！",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "如果這是",
+        "unit_id": 2413,
+        "voice": "vo_adv_1220001_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "在豪華郵輪裡被漂亮姐姐們給包圍的歡樂假期，",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n那我就百分百贊成了。",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "……但忍她卻",
+        "unit_id": 2413,
+        "voice": "vo_adv_1220001_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "無論如何都想接下這個委託，",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n怎麼講也講不聽。",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "那麼，",
+        "unit_id": 712,
+        "voice": "vo_adv_1220001_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "騎士大人。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "請容我再次進行確認，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n您願意接下這個委託，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "沒錯吧？",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "感謝您的協助。",
+        "unit_id": 712,
+        "voice": "vo_adv_1220001_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n那麼，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "還請兩位登上",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "我們的船吧。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n船就停靠在附近的港口。",
+        "unit_id": 712
+    },
+    {
+        "type": "background",
+        "background": "500840"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……占卜結果出來了。",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n只要照這樣往北北西方向航行，",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n應該就能找到目標船隻。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "只不過，",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "目前能感應到的存在仍很模糊，",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n因此目標離我們應有相當遠的距離。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "了解。",
+        "unit_id": 712,
+        "voice": "vo_adv_1220001_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n……喂，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "傳令下去。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n照目前方向航行，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "並警戒周圍狀況，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "維持現在船速前進！",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團團員們",
+        "words": "遵命！！！",
+        "unit_id": 1,
+        "voice": "vo_adv_1220001_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "沒錯沒錯！",
+        "unit_id": 2413,
+        "voice": "vo_adv_1220001_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "小子們，努力幹活啊！",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "爸爸，",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你也真是的。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這樣很失禮呀。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "哈哈哈，",
+        "unit_id": 712,
+        "voice": "vo_adv_1220001_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "您的父親真是開朗風趣呢。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "那麼，",
+        "unit_id": 712,
+        "voice": "vo_adv_1220001_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "我們稍後也將會輪班看哨。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n兩位不如就稍作休息吧。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n儘管本船稱不上寬敞舒適，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "但仍有為兩位準備好房間。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "感謝你",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "設想地如此周到。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "{player}，\n我們就順著對方的好意，",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "去休息一下吧。",
+        "unit_id": 122012
+    },
+    {
+        "type": "background",
+        "background": "500952"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "呼啊……",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "啊，",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不好意思。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我為了這次委託，準備到天亮，",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "有些睡眠不足。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "既然有可能進入長期奮戰，",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n或許還是稍微補眠會比較好呢。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你要不要也一起來睡呢？",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n這床",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "十分鬆軟，躺起來很舒服喔。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那、",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那個……",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "{player}？",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "小伙子，給我慢著！",
+        "unit_id": 2413,
+        "voice": "vo_adv_1220001_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n你怎麼",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "就這樣準備跟忍睡同一張床！？",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n喂，",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "不要露出一副困惑的表情！",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那個，",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我剛才的意思是……",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我們一起睡上下床舖，",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "上層的空床",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "給你睡這樣……",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "但若你不介意……",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "一起睡在",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "同一張床上也是可以的……",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "嗚。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "也是可以的……",
+        "unit_id": 2413,
+        "voice": "vo_adv_1220001_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "才怪啊，忍！",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n喂，小伙子！",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "你要是膽敢爬上忍的床，",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n我就不由分說立刻宰了你！",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "聽懂的話，",
+        "unit_id": 2413,
+        "voice": "vo_adv_1220001_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "就趕緊給我到上層去！",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n然後隨便你高興怎麼睡！",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "啊…………",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "……不、",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "沒什麼。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "什麼事也沒有。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "晚安。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "早安。",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "睡得還好嗎？",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "呃、",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "呃，",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這個……",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "由於我後來頭腦變得有些清醒，",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n便沒有睡，在用占卜算幽靈船的位置。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "現在結果正好要出來了……",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這、",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這是！",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "呀啊啊啊啊！？",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "怎、",
+        "unit_id": 2413,
+        "voice": "vo_adv_1220001_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "怎麼回事！？",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "甲板上",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "似乎出了什麼事。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "{player}，我們去看看吧。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n我有些在意外頭的情況。",
+        "unit_id": 122012
+    },
+    {
+        "type": "background",
+        "background": "500841"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "哈～哈哈哈哈！",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n這些傢伙又追了過來，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "還真學不乖啊。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n不管來幾次都是沒有用的，到現在還不明白這點嗎？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "喂，",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "大夥們！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "準備好了沒！？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "該去把那些傢伙的船",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "和錢！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "徹徹底底全搶過來啦！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的海盜們",
+        "words": "喔喔────────！！！",
+        "unit_id": 1,
+        "voice": "vo_adv_1220001_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "請讓開！！",
+        "unit_id": 122011,
+        "voice": "vo_adv_1220001_042"
+    },
+    {
+        "type": "background",
+        "background": "500841"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的海盜們",
+        "words": "呃啊啊啊啊──！",
+        "unit_id": 1,
+        "voice": "vo_adv_1220001_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "啊啊？",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "竟然有沒見過的年輕人在啊。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "唔……",
+        "unit_id": 122011,
+        "voice": "vo_adv_1220001_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這個感覺……",
+        "unit_id": 122011
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 122011
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你就是……",
+        "unit_id": 122011
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "幽靈船的船長吧。",
+        "unit_id": 122011
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "哦。",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "如果我說是，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "妳又打算怎麼辦？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我們是來",
+        "unit_id": 122011,
+        "voice": "vo_adv_1220001_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "帶領各位的旅途走向終點的。",
+        "unit_id": 122011
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "妳說要讓我們的旅途",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "邁向終點……？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "喂喂喂，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "妳可真會說笑啊。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "那麼，",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "還請妳務必試試看啊，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "小姑娘！",
+        "unit_id": 911
+    },
+    {
+        "type": "background",
+        "background": "500841"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "唔……！",
+        "unit_id": 122011,
+        "voice": "vo_adv_1220001_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "那個，",
+        "unit_id": 122011
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "請聽我們說──",
+        "unit_id": 122011
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "沒什麼好說的！",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n我們就是要照著自己的意思來，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "畢竟我們可是海盜啊！",
+        "unit_id": 911
+    },
+    {
+        "type": "background",
+        "background": "500841"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "怎麼？",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "光是接招就已經很吃力啦？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "那就",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "看我直接把妳給打回去！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這是{player}的力量……！",
+        "unit_id": 122011,
+        "voice": "vo_adv_1220001_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 122011
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這樣一來就能……！",
+        "unit_id": 122011
+    },
+    {
+        "type": "background",
+        "background": "500841"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "什……！？",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "這力量是怎麼回事……？",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "唔……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "我不可能",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "會在比力氣時輸掉啊……！",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "對不起，",
+        "unit_id": 122011,
+        "voice": "vo_adv_1220001_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我必須請你稍微安分點……！",
+        "unit_id": 122011
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n喝呀────！！",
+        "unit_id": 122011
+    },
+    {
+        "type": "background",
+        "background": "500841"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "咕啊啊啊啊啊啊──────！！",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的海盜",
+        "words": "老大竟被打敗了！？",
+        "unit_id": 811,
+        "voice": "vo_adv_1220001_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的海盜",
+        "words": "\n",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的海盜",
+        "words": "唔……",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的海盜",
+        "words": "好吧，",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的海盜",
+        "words": "我們投降！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的海盜",
+        "words": "你們也快把武器扔了！",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "已經沒有反抗",
+        "unit_id": 712,
+        "voice": "vo_adv_1220001_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "的意思了嗎。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n很好，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "大家聽好！",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "去把那些海盜們抓起來！",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "看來",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "似乎已經全員到齊了呢。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "嘖，",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "反正做這些事也是完全沒用的……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "「沒用」的意思是？",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "畢竟我們可是幽靈船的海盜……",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n所有人都已經是幽靈了。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "海盜生活可是很愉快的。",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "自由自在地在海上過活。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n搜刮一堆金銀財寶後，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "再一口氣揮霍掉，可是我們最大樂趣。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "尤其是",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "到常去的酒館把錢花光，感覺真的很棒。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "但是，",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "大概是從我們的船被叫做幽靈船的那時候開始吧……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n等到我們察覺，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "就已經無法登上陸地了。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n只要一靠近港口，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "就會像受詛咒般，有暴風雨或大浪來攪局。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "之前",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "我們被這群軍隊抓住時，也是同樣的狀況。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n原本還以為終於可以踏上陸地，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n從這惱人的詛咒中解放了。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "只不過，",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "等我再次張開眼睛，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "卻發現自己正躺在這甲板上睡。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "我們在不知不覺中，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "又回到了這裡。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "這樣的生活也不曉得持續了幾年，",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n我老早就已經懶得算了。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "或許是搜刮來的寶物裡有東西被詛咒了，",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "實際的原因我不知道。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n但",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "我們的旅途",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "一直都無法走到終點。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "即使我們早已想結束這趟旅途了。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "所以，",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "他們才會找我過來。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "啊……？",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我是來替在場各位的……",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "漫長旅程劃下休止符的。",
+        "unit_id": 122012
+    },
+    {
+        "type": "background",
+        "background": "500842"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "謝謝你，",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "{player}。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n勞煩你幫忙準備儀式了。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我接到的委託內容是，",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "搜索幽靈船。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "以及──",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "讓徘徊在世的幽靈們",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "獲得解脫。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "是的，",
+        "unit_id": 712,
+        "voice": "vo_adv_1220001_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "十分感謝",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "忍大人以及騎士大人的協助。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n這樣一來，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "我們也終於……",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "可以從這工作中解放了。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "雖然原本以為能靠談話和平地解決，",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "但最後受情勢所迫，",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不得不戰鬥。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不過這似乎反而符合了",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "海盜們勝者為王的規矩呢。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "就結果而言，",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "也成功讓他們老實地聽話了。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "在水盆裡倒入聖水，",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "並點燃淨身之火……",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n星星",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "也來到了正確的位置。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "這樣就一切準備就緒了。",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n{player}，請",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "替我強化。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "引導萬物的繁星啊，",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "胸懷靜謐安詳的生命之母，大海啊。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n請赦免徬徨之徒的罪，",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "賜予他們的靈魂",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "安寧吧──",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "這是……",
+        "unit_id": 712,
+        "voice": "vo_adv_1220001_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "海盜們開始發光，",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "並緩緩往天上飛去……",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "啊啊，",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "感覺一直在胸中的",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "那顆大石頭終於消失了……",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我已經將侵蝕著各位以及幽靈船的穢物加以淨化。",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "如此一來，",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你們應該不會再被這艘船所束縛了。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "我們的旅途……",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "終於來到終點了嗎。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n不過，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "能夠葬身在海上，",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "以海盜而言也算是理想的結果了。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "小姑娘，",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "剛才抱歉啦。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "然後，謝謝妳。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "我連手下們的份也一起向妳致謝。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "若可以真想好好給個回禮，",
+        "unit_id": 911,
+        "voice": "vo_adv_1220001_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "但似乎也沒剩什麼時間讓我那樣做了。",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "\n",
+        "unit_id": 911
+    },
+    {
+        "type": "dialogue",
+        "name": "幽靈船的船長",
+        "words": "……永別了。",
+        "unit_id": 911
+    },
+    {
+        "type": "background",
+        "background": "500842"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "他們",
+        "unit_id": 712,
+        "voice": "vo_adv_1220001_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "離開了呢。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n不過……",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "如此一來，我們也算是一了夙願。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "那麼，",
+        "unit_id": 712,
+        "voice": "vo_adv_1220001_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "接下來也麻煩您了。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n您拜託我們準備的東西，則在船的後方。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我明白了。",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "得趁星辰的位置尚未改變前，",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n好好將大家送走才行。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "噢，",
+        "unit_id": 712,
+        "voice": "vo_adv_1220001_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "對了。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n還未向您說明關於我們的事呢。",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "該怎麼說……",
+        "unit_id": 712
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "被幽靈船所束縛住的，",
+        "unit_id": 714,
+        "voice": "vo_adv_1220001_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "並不只有他們。",
+        "unit_id": 714
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n隨著長期追捕那些海盜，",
+        "unit_id": 714
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n我們也跟著被詛咒給束縛住，",
+        "unit_id": 714
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "因而無法成佛。",
+        "unit_id": 714
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "不過現在……",
+        "unit_id": 714,
+        "voice": "vo_adv_1220001_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "我們也總算是可以完成工作了。",
+        "unit_id": 714
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n這次真的十分感謝",
+        "unit_id": 714
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "忍大人",
+        "unit_id": 714
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "以及騎士大人的幫助。",
+        "unit_id": 714
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "哎呀，",
+        "unit_id": 714,
+        "voice": "vo_adv_1220001_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "現在可沒時間繼續聊下去呢。",
+        "unit_id": 714
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n我們也差不多該離開了。",
+        "unit_id": 714
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "\n──兩位也",
+        "unit_id": 714
+    },
+    {
+        "type": "dialogue",
+        "name": "騎士團員",
+        "words": "還請多多保重。",
+        "unit_id": 714
+    },
+    {
+        "type": "background",
+        "background": "500845"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "成功解開幽靈船詛咒的{player}等人，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n隨後坐上事先準備好的小船，朝陸地前進──"
+    },
+    {
+        "type": "background",
+        "background": "501182"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "聽好了，",
+        "unit_id": 2413,
+        "voice": "vo_adv_1220001_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "小伙子。",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "你現在是特別獲得忍同意，",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n才有幸坐上她事先準備的船。",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n可要奮力揮灑汗水，不眠不休地拚命划船啊！",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "若要這樣說，爸爸不也是一樣嗎。",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n別光只是對{player}做些不合理的要求呀。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "不過，",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "確實感覺分攤一下工作會比較好呢。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n感覺霧也變得相當濃了……",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我會以占卜來領路，",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "可以麻煩你照著我指示的方向前進嗎？",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "若你累了，",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我可以接手划船的工作。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "喂，",
+        "unit_id": 2413,
+        "voice": "vo_adv_1220001_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "你不會真的讓她這樣做的對吧，",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "小伙子。",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n讓柔弱少女負責拿船槳，",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n自己在一邊涼快，",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "這種事老天可不會──",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "爸爸，",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "你真是的。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "划船這點小事，",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我也是辦得到的好嗎。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "{player}，請把船槳給我一下。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "啊啊啊啊！",
+        "unit_id": 2413,
+        "voice": "vo_adv_1220001_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "妳不用划船啦！",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "那可是這傢伙的工作！",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "\n喂，",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "小伙子你明白吧！",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "骷髏老爸",
+        "words": "絕對不能把船槳給她！",
+        "unit_id": 2413
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "真是的，",
+        "unit_id": 122012,
+        "voice": "vo_adv_1220001_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "爸爸你就是太過溺愛小孩了。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "可以別理會爸爸說的話沒關係。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "\n",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "我也會幫忙的。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "請把船槳",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "忍",
+        "words": "給我。",
+        "unit_id": 122012
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "看著和平時一樣囉嗦的骷髏老爸，和難得反抗他的忍。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n{player}不曉得該聽哪邊的，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n只能苦惱萬分地默默拿著船槳。"
+    }
+]

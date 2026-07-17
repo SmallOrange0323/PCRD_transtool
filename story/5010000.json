@@ -1,0 +1,719 @@
+[
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "年關將近的某天……\n走在蘭德索爾市區的{player}，\n和【破曉之星】的成員們在街角相遇了。"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "啊～！",
+        "unit_id": 100111,
+        "voice": "vo_adv_5010000_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "　是騎士先生——！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "　",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "好久不見——！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n你過得好嗎？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "　",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "啊，佩可小姐她們也好嗎？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n今天你一個人出來嗎？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "冷靜下來，日和。",
+        "unit_id": 100311,
+        "voice": "vo_adv_5010000_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n就算妳這樣子問，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "也沒辦法一次回答完唷。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "看到你……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這麼有精神真是太好了。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "你好，騎士先生。",
+        "unit_id": 100211,
+        "voice": "vo_adv_5010000_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "那個……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "好久不見。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "看起來很有精神呢。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "騎士先生也來買東西？",
+        "unit_id": 100111,
+        "voice": "vo_adv_5010000_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "　",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "除夕就快到了呢。",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "嗯！",
+        "unit_id": 100111,
+        "voice": "vo_adv_5010000_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "　因為在蘭德索爾",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "年底年初有營業的店會變少，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n所以各種東西",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "都預先多買了一些！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "因為是店休期間要吃的量，",
+        "unit_id": 100211,
+        "voice": "vo_adv_5010000_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "就買了很多呢。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "也得裝飾公會小屋的門口呢。",
+        "unit_id": 100311,
+        "voice": "vo_adv_5010000_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "今天就是要把這些東西",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "一次買完。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "怜她們幫忙裝飾，",
+        "unit_id": 100211,
+        "voice": "vo_adv_5010000_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我則負責幫大家做御節料理。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "不是祭典喔……",
+        "unit_id": 100211,
+        "voice": "vo_adv_5010000_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "這樣啊。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n騎士先生因為喪失記憶",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "所以連新年的事……",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "都不記得了啊……",
+        "unit_id": 100311,
+        "voice": "vo_adv_5010000_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "抱歉。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "一興奮就沒注意……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "……",
+        "unit_id": 100111,
+        "voice": "vo_adv_5010000_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "那麼對騎士先生來說，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "就是第一次過新年了呢！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "那個啊，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "一年就快要結束了唷！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "接下來就會再開始新的一年唷。",
+        "unit_id": 100211,
+        "voice": "vo_adv_5010000_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "即使一年結束了，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "這個世界也不會終結，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "請放心吧。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "在年底的時候，",
+        "unit_id": 100311,
+        "voice": "vo_adv_5010000_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "為了除去那一年的髒污，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "會打掃各式各樣的地方……",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "一年最後的一天，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "也就是在除夕的時候會去參拜神殿。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "聽說打掃乾淨迎接新年的話，",
+        "unit_id": 100111,
+        "voice": "vo_adv_5010000_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "就會發生",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "好事！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n其他",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "也有像是吃蕎麥麵啊，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "吃年糕啊，",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "吃栗金團之類的～！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "呵呵。",
+        "unit_id": 100211,
+        "voice": "vo_adv_5010000_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "日和總是",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "想著吃的呢。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "這也是沒辦法啊。",
+        "unit_id": 100311,
+        "voice": "vo_adv_5010000_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我也很期待優衣的御節料理和攤販的食物呢。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "其它的",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "還有像是大人給小孩，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "叫做紅包的東西呢。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "在新年的時候，",
+        "unit_id": 100211,
+        "voice": "vo_adv_5010000_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "對著希望下一年也能平安健康的孩子們，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "\n",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "傾注這樣的心意，",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "給他們一些錢。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "那就是紅包唷。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "意思是，",
+        "unit_id": 100111,
+        "voice": "vo_adv_5010000_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "要給我們嗎？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "我們和他的年紀差距，",
+        "unit_id": 100311,
+        "voice": "vo_adv_5010000_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "應該沒有大到能收紅包的程度。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "如果他想給紅包的話，",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "不是正好有一個對象嗎。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "你是說，",
+        "unit_id": 100211,
+        "voice": "vo_adv_5010000_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "給可可蘿？",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "這樣啊。",
+        "unit_id": 100211,
+        "voice": "vo_adv_5010000_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "可可蘿一定會很開心呢！",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "？",
+        "unit_id": 100111,
+        "voice": "vo_adv_5010000_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "　",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "不然這樣，不然這樣！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "除夕當天",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "要不要和我們一起出來？",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "除夕……",
+        "unit_id": 100311,
+        "voice": "vo_adv_5010000_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "原來如此。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "\n確實如果有你在的話就比較放心呢。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "怜",
+        "words": "請務必一起來啊。",
+        "unit_id": 100311
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "如果有騎士先生在，",
+        "unit_id": 100211,
+        "voice": "vo_adv_5010000_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "優衣",
+        "words": "我們也比較安心呢。",
+        "unit_id": 100211
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "欸嘿嘿，",
+        "unit_id": 100111,
+        "voice": "vo_adv_5010000_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "是祕密唷——！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "　來了就知道！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "\n",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "那這個地圖給你！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "　除夕的時候要來這裡唷！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "日和",
+        "words": "　約好囉！",
+        "unit_id": 100111
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "被日和這麼說的{player}，\n收下了目的地的地圖，約好了要在除夕那天一起出來。"
+    }
+]

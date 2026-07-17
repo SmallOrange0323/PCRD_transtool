@@ -1,0 +1,3784 @@
+[
+    {
+        "type": "background",
+        "background": "500180"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}一行人從森神口中得知了隕石的真相。"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n為了避開隕石墜落的命運，他們想出了對策──"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n用剩下的兩個願望，來將隕石破壞掉。"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "妳說要用願望的力量來破壞隕石……",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n是要許願說「請把隕石摧毀掉」嗎？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "如果能夠那樣子解決的話就好辦了。",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "然而至今都沒有人提出這點，",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n就代表直接這樣子許願應該也沒有效果。",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "沒錯吧？",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "祈梨的情況也是，",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n她許的願望是",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "「想要壓歲錢」。",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "可是那個願望的本意卻被曲解，",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n實際上",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "變成了「壓碎岩」。",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n想必",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "如果是太籠統的願望，",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "例如「我想成為有錢人」",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "這種……",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "是啊。",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "八成無法實現吧。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "雖然無法實現「希望考試從世上消失」，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n但可以實現「想要學習用的參考書」這種願望。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "原來如此。",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n依這次的情況來看，",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "重點在於要如何破壞隕石是嗎……",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n比如說用大砲",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "或是魔法之類的，",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "得提出具體的手段才行是吧？",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "要是不這麼做，",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "就會有那種想要詛咒別人的傢伙出現。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "儂的願望",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "應該用在療癒他人，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "幫助那些",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n陷入不幸、煩惱或者痛苦的人。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "……呃，",
+        "unit_id": 128311,
+        "voice": "vo_adv_5134003_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我該從哪裡開始吐槽好？",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "雖然是結果論，",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "但確實會讓人從苦難中解放呢……",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "總而言之，",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "基本的規則也弄清楚了，",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "我們來想想要許什麼願望吧。",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "森神大人既然擁有能召來隕石的強大力量，",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n那只要請她再弄一個強大的東西過來，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "不就有辦法解決了嗎？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "等一下等一下，",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "先別著急。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "以儂現在的力量，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "不太能實現剩下的願望……",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "為了將隕石召喚過來，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "儂有點太勉強自己了。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "這樣啊……",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "那如果想取回力量，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "該怎麼做才好？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "多吃點飯就能恢復了嗎？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "不，",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "需要信仰的儀式……",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "不、",
+        "unit_id": 128311,
+        "voice": "vo_adv_5134003_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "不會是",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "要叫我們獻上活祭品吧……！？",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我一點也不好吃，",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "拜託選其他人啦！！",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "儂才不會做那種事！",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n儂所需要的是",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "信仰之力。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "儀式之力。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "為了和人們",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "一同開心地共度新年，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "必須進行莊嚴的準備。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "所以說，",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "能幫儂召集人手嗎？",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "只要取回信仰之力，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "儂保證必定會實現你們的願望。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "那個……",
+        "unit_id": 103813,
+        "voice": "vo_adv_5134003_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "請問",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "這是什麼聚會……？",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "雖然有聽你們說明……",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "但",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我還是有點無法理解。",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我和美里吃完午餐，在回程路上",
+        "unit_id": 124711,
+        "voice": "vo_adv_5134003_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "被你們叫住，所以就來看看了……",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "但老實說，",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "這個狀況一時之間讓人很難相信呢。",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "不，",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "那個，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "這些人沒問題嗎？",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n感覺似乎跟莊嚴的儀式和信仰八竿子打不著……",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘻嘻嘻……",
+        "unit_id": 102711,
+        "voice": "vo_adv_5134003_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "請別擔心。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這是為了拯救這位大人的儀式，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n我當然明白……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "還包含這個小東西是一切的元凶這件事。",
+        "unit_id": 102711,
+        "voice": "vo_adv_5134003_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n至於該怎麼讓妳負起責任……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這點我還在思考中就是了。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘻嘻……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘻嘻嘻。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "……不，",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "那個。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n儂已經在反省了，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "可以拜託妳把那根斧頭收起來嗎？",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "那麼，",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "大家都已經見過面，也更認識彼此了。",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "森神大人，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "可以告訴我們儀式該做些什麼嗎？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "嗯，",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "就讓儂來說明吧。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n能讓儂恢復力量的",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "新年儀式……",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "就是這個！！",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "這是……",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "玩具？",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "毽球板、",
+        "unit_id": 128311,
+        "voice": "vo_adv_5134003_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "歌牌、",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "雙六棋……",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "全部都是跟新年有關的遊戲呢。",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "難不成，",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "所謂的儀式就是要玩這些玩具嗎？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "沒錯！",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n透過新年遊戲",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "感受新年到來的喜悅，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "加深信徒間的情感，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "並重拾對儂的信仰之心。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "這正是",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "森神流的新年儀式！",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "絕對不是因為都沒有人陪儂玩，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n才用神明的權限把這個變成義務喔？",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "感覺是個很有趣的儀式，太好了～♪",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "我本來還以為會是什麼更困難的事呢。",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "不管哪個都是有輸贏的遊戲呢，",
+        "unit_id": 128311,
+        "voice": "vo_adv_5134003_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這下得認真起來才行了。",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "畢竟要是輸了就不好玩了嘛！",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "這麼有幹勁很好！",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n因為不管哪個遊戲都需要相當的體力，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n你們就分組盡情遊玩，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "提高信仰心吧！",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "哼哼，",
+        "unit_id": 128311,
+        "voice": "vo_adv_5134003_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我們是毽球板對決啊。",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這遊戲對年輕、運動神經又好的人比較有利耶，",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "妳沒問題嗎？",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "哎呀～",
+        "unit_id": 124711,
+        "voice": "vo_adv_5134003_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "真是謝謝",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "妳的關心呢♪",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n……",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我會讓妳今後再也無法笑著玩毽球板的。",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "要炒熱氣氛是沒關係，",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "但不可以吵架喔！？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "要和平地",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "認真決勝負！",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "先給妳來一發",
+        "unit_id": 128311,
+        "voice": "vo_adv_5134003_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "下馬威吧……",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "喝啊！！",
+        "unit_id": 128311
+    },
+    {
+        "type": "background",
+        "background": "500180"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "呀！？",
+        "unit_id": 124711,
+        "voice": "vo_adv_5134003_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n多麼強力又快速的發球啊……？",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "不愧是龍人族，",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "正面硬碰硬完全沒有勝算呢。",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "哼哼，",
+        "unit_id": 128311,
+        "voice": "vo_adv_5134003_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "知道祈梨大人的厲害了吧？",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "妳現在就投降認輸，換別人上場也沒關係喔？",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我拒絕，",
+        "unit_id": 124711,
+        "voice": "vo_adv_5134003_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我也要使出我的殺手鐧了！",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "靠這瓶我為了抗老而研究出的祕藥……",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "咕",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "嚕、",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "咕嚕……！",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "喝啊啊啊啊啊啊啊啊～！！",
+        "unit_id": 124711,
+        "voice": "vo_adv_5134003_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "用、",
+        "unit_id": 128311,
+        "voice": "vo_adv_5134003_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "用祕藥也太犯規了吧！？",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n妳身上湧出的那股氣場，很明顯超出人類的範疇了吧！？",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "那個，",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我現在道歉還來得及嗎……",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "如此一來，",
+        "unit_id": 124711,
+        "voice": "vo_adv_5134003_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我的肌力和肌膚的光滑度應該都提升到超越常人的程度了。",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "究竟效果如何，",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "就用妳來檢驗吧……！",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "接招吧，",
+        "unit_id": 124711,
+        "voice": "vo_adv_5134003_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "血薔薇突襲！！",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "噫",
+        "unit_id": 128311,
+        "voice": "vo_adv_5134003_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "！？",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n……",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "奇怪，",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "什麼都沒飛過來？",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "是怎麼了？",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "……",
+        "unit_id": 124711,
+        "voice": "vo_adv_5134003_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "這個祕藥",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "確實強化了肌力……",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n但是我忘記了",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "要增強關節的承受度……",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "難不成",
+        "unit_id": 128311,
+        "voice": "vo_adv_5134003_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "妳弄傷了自己的肩膀還是腰嗎？",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "如果要棄權的話，",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "就是我的勝利囉！",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "現在只要稍微動一下",
+        "unit_id": 124711,
+        "voice": "vo_adv_5134003_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "都痛得不得了……！",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我的包包裡面有貼布，",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "誰可以幫我拿一下～！",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "因為這樣，",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "我讓深月醫生去樹陰下休息了！",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "森神大人，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "已經完成一項遊戲了，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "有感覺到力量恢復嗎？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "雖然只有一點點，",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "但儂確實有感受到力量恢復了。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "你們就照這個樣子",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "繼續玩下去吧！",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "再來輪到我和霞了是吧。",
+        "unit_id": 102711,
+        "voice": "vo_adv_5134003_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我們要玩的",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "是歌牌啊……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我不會手下留情的喔……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘻嘻。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "我倒希望",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "妳能參加比較不需要活動身體，",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n並且和平一點的遊戲呢。",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "因為我聽過不少關於妳的事蹟……",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘻嘻……",
+        "unit_id": 102711,
+        "voice": "vo_adv_5134003_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "不需要那麼堤防我也沒關係喔。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n我對霞很感興趣，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "所以一直想找機會好好跟妳聊聊呢。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "咦，",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "是這樣嗎？",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n沒想到惠理子小姐是那樣想的，",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "讓我有些意外呢……",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "不介意邊玩邊聊的話，",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "就儘管問我這位偵探吧。",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "那麼，",
+        "unit_id": 102711,
+        "voice": "vo_adv_5134003_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我就不客氣了。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我看妳",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "似乎和那位大人相當要好。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n我想問你們平常在一起時，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "都在做些什麼事情呢。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "好，",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "我們還是別閒聊，集中精神玩遊戲吧！",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n有誰可以來幫我們唱牌嗎？",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "請快點開始！！",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "那麼",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "就交給小初音來吧！",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "森神大人，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "詠唱牌是這個沒錯吧？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "嗯！",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n那是儂非常中意的一副歌牌，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "它特別的地方",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "在於能夠讀取參加者的回憶，並顯現在字牌和詠唱牌上。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "目的是希望透過一邊遊玩一邊回憶過去，",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "幫助參加者訂定新年的目標。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "儂用儂的力量在上面加了一點工。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "也就是說",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "這次小霞和惠理子的回憶",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n會化成歌牌對吧。",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "總覺得很有趣，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "小初音也要拿出幹勁來認真唱牌囉～☆",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "等一下，",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "我有不好的預感……",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "那麼",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "第一張！",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "迷霧，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "理論，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "真實！",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n魔法緞帶……",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "喝啊啊啊！！",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "小霞搶牌的氣勢好驚人！？",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "那麼用力的話，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "會不小心傷到惠理子喔？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這點程度不成問題……",
+        "unit_id": 102711,
+        "voice": "vo_adv_5134003_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘻嘻。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "來吧，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "下一張我可不會搶輸妳喔……？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "那麼",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "我要唱第二張囉～☆",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "我竟然剪下您身體的一部分！！",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n如此違反道德……",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "哼！！",
+        "unit_id": 102711,
+        "voice": "vo_adv_5134003_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞、初音",
+        "words": "……咦咦。",
+        "unit_id": 1,
+        "voice": "vo_adv_5134003_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "那個。",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n剛才字牌的所在之處，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "開了一個大洞耶。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "我不小心沒控制好力道呢……",
+        "unit_id": 102711,
+        "voice": "vo_adv_5134003_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嘻嘻嘻♪",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "字牌本身都消失得無影無蹤了，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "這次就當不算數吧。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "這場遊戲結束之後，",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "儂的歌牌究竟會變成怎樣。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "這代表妳們兩人",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "都是非常認真地在玩遊戲呢！",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "不過還是希望兩位可以善待道具喔。",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "那麼我要重新開始繼續唱囉～",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "用愛的力量逮捕犯人☆",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n──迷霧纏……",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "喝啊啊啊！！",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "就算我們注定會相結合，",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "但是在結婚前！",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n我還沒有心理準備……",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "…………",
+        "unit_id": 102711,
+        "voice": "vo_adv_5134003_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "……還是放棄妳的歌牌吧。",
+        "unit_id": 128311,
+        "voice": "vo_adv_5134003_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "是。",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "那麼比賽的結果是，",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "小霞23張，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "惠理子０張……",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "小霞的勝利～☆",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "霞、惠理子",
+        "words": "呼……",
+        "unit_id": 1,
+        "voice": "vo_adv_5134003_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "那個，",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "妳們兩位？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n是不是有點累過頭了？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n雖然確實是一場讓半數的歌牌都消失的激戰沒錯。",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "話說，",
+        "unit_id": 128311,
+        "voice": "vo_adv_5134003_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "斧頭女真的有想要認真玩嗎！？",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n每次都把字牌變為塵埃，",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "一張都沒有搶到耶！",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "和那位大人一起度過的時光，",
+        "unit_id": 102711,
+        "voice": "vo_adv_5134003_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "是只屬於我的東西。",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "然而卻像這樣",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "被人當成玩具擺弄，讓我忍不住就……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "我的各種祕密差點就曝光了啊。",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "這個",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "是設計失誤吧？",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "那個，",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "該怎麼說呢，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "對不起。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "不過，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "多虧了妳們超乎期待的認真對決，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n儂只差一步",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "就能取回原本的力量了！",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "那麼",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "最後是我、",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "小栞、",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "還有你，我們三個人玩雙六棋！",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "總覺得好久",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "沒有玩這種遊戲了～",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我們",
+        "unit_id": 103813,
+        "voice": "vo_adv_5134003_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "小時候雖然有玩過，",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n但現在",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "兩個人都已經搬出去住了呢。",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "難得有這個機會，",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "我們就盡情享受吧！",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "森神大人，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "這個上面應該沒什麼特別的機關吧？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "當然有囉！",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "雙六棋的各個格子上，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "都有儂精心想出來的事件。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "棋子移動到事件格後，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "就必須照著上面所寫的指示行動！",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "總覺得",
+        "unit_id": 103813,
+        "voice": "vo_adv_5134003_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "很有趣……♪",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n我會試著以第一名為目標",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "努力的。",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "嗯，",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "這是認真對決，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "所以我是不會放水的喔～？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "那麼首先",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "就由小初音開始吧！",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "丟出骰子……",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "四！",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n一、",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "二、",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "三、",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "四……",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "是什麼是什麼……？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "與右邊的人肩靠肩，十指相扣……",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "咦咦！？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n我的右邊是……！",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "是你",
+        "unit_id": 103813,
+        "voice": "vo_adv_5134003_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "呢……",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n也就是說……",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "不行不行，",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "這麼害羞的事我絕對……",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "呀啊！？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n手、",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "手為什麼擅自……",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "如何，",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "儂為了讓信徒們透過儀式加深彼此的感情，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "設計了大量的恩愛事件格唷！",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "順帶一提，為了防止作弊，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "儂在上頭附加了強制執行的效果。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我現在",
+        "unit_id": 128311,
+        "voice": "vo_adv_5134003_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "只想像得到變成修羅場的未來耶～？",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "才走第一步，我就已經羞到快要被煮熟了～！",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "你為什麼看起來毫不介意的樣子！？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n不會覺得反感嗎？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "啊，",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "嗯，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "這樣啊……",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "欸嘿嘿♪",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n那我可以再稍微，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "就是……",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "握緊一點嗎？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "只要握著你的手，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "不知道為什麼就會覺得很放心……",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "接下來換我了呢。",
+        "unit_id": 103813,
+        "voice": "vo_adv_5134003_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我丟出的骰子……",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "是六……",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "和左邊的人",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "臉頰碰臉頰……！？",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "嗚嗚，",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "左邊是……",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "是我。",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "奇怪？",
+        "unit_id": 103813,
+        "voice": "vo_adv_5134003_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n霞",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "應該不是負責玩雙六棋的吧？",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "為什麼會在這裡……",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "我這邊明明因為歌牌，歷經了讓人胃穿孔般的慘痛事件，",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "可是栞你們卻好像玩得很開心……！",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "如此享受的、",
+        "unit_id": 102711,
+        "voice": "vo_adv_5134003_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "更正，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "如此極其困難的雙六棋，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n應該由我來負責才對！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "我也",
+        "unit_id": 124711,
+        "voice": "vo_adv_5134003_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "無法默默地在一旁看下去……！",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "這裡面八成",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "有結婚事件格吧……",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "對吧！？",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "大家都充滿了幹勁呢～！",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n很棒喔～",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "信仰心越集越多了～！",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n乾脆就全部人都參加吧！",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "去吧，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "龍人族的小姑娘也是！",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "啊，",
+        "unit_id": 128311,
+        "voice": "vo_adv_5134003_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我就算了。",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "因為要是踩到奇怪的格子，",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "好像會被其他參加者圍毆。",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "尤其是斧頭女，",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "感覺就絕對不會放過我。",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "太好了，",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "躺大腿格！",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n對象是……",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "深月小姐……！？",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "真是失禮呢，",
+        "unit_id": 124711,
+        "voice": "vo_adv_5134003_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "妳對於躺在我的腿上有什麼不滿嗎！？",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "輪到我……",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "太棒了，",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "是結婚格！",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n相愛的兩人",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "互相交換戒指……！",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "那個，",
+        "unit_id": 103813,
+        "voice": "vo_adv_5134003_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "可是。",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n結婚對象",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "是惠理子小姐。",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "呃。",
+        "unit_id": 124711,
+        "voice": "vo_adv_5134003_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "就算再怎麼樣找不到對象，",
+        "unit_id": 102711,
+        "voice": "vo_adv_5134003_110"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n把公會的夥伴一起拖下水是怎麼回事……？",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "事、",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_111"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "事情好像變得很不得了了……！？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "下一個輪到我耶……",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "嗯，",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_112"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "上面寫著，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "和你一起喝飲料呢！",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "總覺得好像在約會一樣……",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "欸嘿嘿♪",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "３人",
+        "words": "太不公平了！！",
+        "unit_id": 1,
+        "voice": "vo_adv_5134003_113"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "哈～哈哈哈，",
+        "unit_id": 128311,
+        "voice": "vo_adv_5134003_114"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "真是做工精良的雙六棋啊。",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "會讓心懷不軌的傢伙通通遭天譴。",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "只、",
+        "unit_id": 103813,
+        "voice": "vo_adv_5134003_115"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "只不過是剛好罷了，",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "畢竟雙六棋全靠運氣……",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "啊。",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n我",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "好像得幫你掏耳朵才行呢。",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "可以把頭",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "靠在我的腿上嗎……？",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "３人",
+        "words": "這根本是作弊吧！！\n這根本是作弊啦！！\n這根本是作弊！！",
+        "unit_id": 1,
+        "voice": "vo_adv_5134003_116"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "一、",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_117"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "二、",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "三……",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "抵達終點～！",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n耶～",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "小初音是第三名～☆",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "恭喜妳，",
+        "unit_id": 103813,
+        "voice": "vo_adv_5134003_118"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "姊姊。",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "話說你從中途急起直追，變成了第一名，",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "真的讓我很吃驚呢。",
+        "unit_id": 103813
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "真是的。",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_119"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "都怪助手先生早早就抵達終點的關係，",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "讓剩下的參加者都陷入了不妙的窘境……",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "嗚",
+        "unit_id": 102711,
+        "voice": "vo_adv_5134003_120"
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "……！",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n這次",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "要向往右數第二個人的耳朵吹氣啊，",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "\n",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "因為您已經到達終點了，所以……",
+        "unit_id": 102711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "變成我了呢。",
+        "unit_id": 124711,
+        "voice": "vo_adv_5134003_121"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "\n好，",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "那麼惠理子，",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "請吧。",
+        "unit_id": 124711
+    },
+    {
+        "type": "dialogue",
+        "name": "惠理子",
+        "words": "……呼──",
+        "unit_id": 102711,
+        "voice": "vo_adv_5134003_122"
+    },
+    {
+        "type": "dialogue",
+        "name": "深月",
+        "words": "……真是謝謝妳。",
+        "unit_id": 124711,
+        "voice": "vo_adv_5134003_123"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "差不多可以放過她們了吧？",
+        "unit_id": 128311,
+        "voice": "vo_adv_5134003_124"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n大家的眼神都變成死魚眼了，",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "說得委婉一點，",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "這裡已經化作地獄了喔？",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "說、",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_125"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "說得也是。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "信仰也已經收集夠了，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "應該沒問題吧。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "大家辛苦了。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "３人",
+        "words": "唉……",
+        "unit_id": 1,
+        "voice": "vo_adv_5134003_126"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "這樣子",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_127"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "儀式就結束了嗎？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n森神大人，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "感覺沒什麼變化耶。",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "儀式還差最後一個步驟。",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_128"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n開心享受完新年遊戲之後，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "要對著祠堂拍一次手，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "彎腰45度角行禮，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "便完成了。",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "雖然細節有些不同，",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_129"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "但和一般的參拜方式很像呢。",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "初音，",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "我們快點把儀式完成吧。",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "嗯！",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_130"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "那麼大家一起",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "面對祠堂……",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "……這樣就可以了嗎？",
+        "unit_id": 128411,
+        "voice": "vo_adv_5134003_131"
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "\n那個，",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "森神大人？",
+        "unit_id": 128411
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "來了來了來了來了～！！",
+        "unit_id": 5413,
+        "voice": "vo_adv_5134003_132"
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n好久沒有",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "這種感覺了，",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "全身上下都充滿活力～！！",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "\n嗚哦哦哦",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "森神",
+        "words": "哦哦哦～！！",
+        "unit_id": 5413
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "嗚哇！？",
+        "unit_id": 128511,
+        "voice": "vo_adv_5134003_133"
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "\n森神大人的身體",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "霞",
+        "words": "發出了光芒……！",
+        "unit_id": 128511
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "難不成這就是取回力量後，",
+        "unit_id": 128311,
+        "voice": "vo_adv_5134003_134"
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "變回原有姿態時常有的橋段嗎！？",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "我之前一直對妳冷嘲熱諷，",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "就算妳變得比我高大，",
+        "unit_id": 128311
+    },
+    {
+        "type": "dialogue",
+        "name": "祈梨",
+        "words": "\n應該也不會來報復我吧……？",
+        "unit_id": 128311
+    }
+]

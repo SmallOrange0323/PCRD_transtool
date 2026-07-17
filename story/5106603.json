@@ -1,0 +1,596 @@
+[
+    {
+        "type": "background",
+        "background": "500036"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}、依里及茜里在拉菲和艾米的帶領下，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n走在充滿聖誕氛圍的蘭德索爾街道上。"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "總覺得人山人海的呢。",
+        "unit_id": 8912,
+        "voice": "vo_adv_5106603_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n是怎麼回事呢？",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "那個是……",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106603_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "雪？",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n怎麼了嗎？",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "唉……",
+        "unit_id": 100811,
+        "voice": "vo_adv_5106603_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "真是",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "受不了……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "男子",
+        "words": "看不清楚啊……",
+        "unit_id": 111,
+        "voice": "vo_adv_5106603_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "女子",
+        "words": "我想看看裝飾起來的聖誕樹……",
+        "unit_id": 5411,
+        "voice": "vo_adv_5106603_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "不好意思，",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106603_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "請問發生什麼事了嗎？",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "有個人",
+        "unit_id": 4911,
+        "voice": "vo_adv_5106603_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "一直站在店前面不動……",
+        "unit_id": 4911
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n其他客人都看不見櫥窗了。",
+        "unit_id": 4911
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "\n難得碰到聖誕節的旺季，真傷腦筋啊……",
+        "unit_id": 4911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "她是你們認識的人嗎？",
+        "unit_id": 8912,
+        "voice": "vo_adv_5106603_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "她到底",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "在做什麼呀？",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "這也是",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106603_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "我猜的啦……",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n她會不會是在看自己在櫥窗上的倒影呀？",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "妳、",
+        "unit_id": 8912,
+        "voice": "vo_adv_5106603_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "妳在說什麼呀。",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n怎麼可能有這種人……",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "啊，",
+        "unit_id": 100811,
+        "voice": "vo_adv_5106603_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "我是多麼的可愛呀……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n在聖誕節",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "也這麼美……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n美到怎麼看都看不膩呀……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "……還真的有這種人啊。",
+        "unit_id": 8912,
+        "voice": "vo_adv_5106603_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "不，",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106603_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "只是雪特別奇怪而已……",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "她還是老樣子啊。",
+        "unit_id": 5512,
+        "voice": "vo_adv_5106603_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n如果有什麼東西",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "可以吸引她的注意就好了。",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "唔……",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106603_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "說到可以吸引雪的東西……",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "哥哥，",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "你有沒有什麼想法呀？",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "嗯嗯……",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106603_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "是呀，",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "看來只有那個了。",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "拉菲，",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "拜託妳了！",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "好！",
+        "unit_id": 5512,
+        "voice": "vo_adv_5106603_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "天使之箭！",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "雪～！",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106603_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n世界上最可愛的人",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "在這裡哦～！",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "什麼？",
+        "unit_id": 100811,
+        "voice": "vo_adv_5106603_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "妳說「最可愛」？",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "怎麼可能有人比我更可愛……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "\n",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "啊啊……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "怎麼會這樣！",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "怎、",
+        "unit_id": 8912,
+        "voice": "vo_adv_5106603_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "怎麼會……",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "那個人……",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "\n",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "她是迷上魔法變出來的鏡子裡的自己嗎？",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "來～",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106603_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "拉菲。",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "\n就這樣慢慢移動鏡子～♪",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "啊啊，",
+        "unit_id": 100811,
+        "voice": "vo_adv_5106603_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "等一下！",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "更美麗",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "動人的我！",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "真的",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106603_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "很抱歉。",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n我們會把她帶到不擋路的地方的。",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "喔，",
+        "unit_id": 4911,
+        "voice": "vo_adv_5106603_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "好……",
+        "unit_id": 4911
+    },
+    {
+        "type": "dialogue",
+        "name": "男性",
+        "words": "謝謝啊！",
+        "unit_id": 4911
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "人類",
+        "unit_id": 8912,
+        "voice": "vo_adv_5106603_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "艾米",
+        "words": "還真是深奧啊……",
+        "unit_id": 8912
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "妳最好不要想得太複雜……",
+        "unit_id": 124112,
+        "voice": "vo_adv_5106603_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "依里",
+        "words": "\n尤其是關於雪的事……",
+        "unit_id": 124112
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "這件事就告一段落了！",
+        "unit_id": 5512,
+        "voice": "vo_adv_5106603_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "\n",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "街上的人",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "和雪",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "拉菲",
+        "words": "都笑容滿面的！",
+        "unit_id": 5512
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "告一段落了呢，",
+        "unit_id": 124012,
+        "voice": "vo_adv_5106603_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "茜里",
+        "words": "哥哥♪",
+        "unit_id": 124012
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "啊啊……",
+        "unit_id": 100811,
+        "voice": "vo_adv_5106603_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "雪",
+        "words": "我真是太美了……",
+        "unit_id": 100811
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "就這樣，{player}一行人\n又再次盡到天使的職責。"
+    }
+]

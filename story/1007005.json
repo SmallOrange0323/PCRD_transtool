@@ -1,0 +1,631 @@
+[
+    {
+        "type": "background",
+        "background": "500011"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "像平常一樣，\n{player}正在調查宮子成為幽靈的理由。"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "吶～～我們回去吧，已經很晚了喲～",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "你不用這麼努力調查宮子的事也沒關係的～",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "比起那些，快買布丁給宮子來的～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "……你不買給宮子嗎？",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "噗――！小氣鬼來的──！宮子要回去了喲――――！",
+        "unit_id": 100711
+    },
+    {
+        "type": "background",
+        "background": "500020"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "隔天――"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "{player}────！！",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "大、大消息喲！",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n宮子……想起變成幽靈之前的事了喲！！！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "今天早上突然",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "「蹦！」地",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "想起來了喲！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "因為想趕快告訴你，所以急急忙忙地飄來的！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "其實宮子……",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "是你老婆來的！！！",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "你會這麼驚訝也不奇怪的～",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "但是絕對不會錯的～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "親愛的老公……",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "宮子一直都好想你喲～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "啊！想起來的不只這件事來的！",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "其實宮子……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "還是老公的妹妹來的！！！",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "你是親愛的哥哥老公來的～♪",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "……宮子是妹妹又是老婆很奇怪？",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "才沒那回事～這是很常見的～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "還、還有其他的！",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "其實宮子……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "是公主來的！",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "宮子是堂堂血統高貴的魔族王室公主來的～♪",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "……明明哥哥是人族？",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "那、那個～有很多不為人知的背景來的～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n王室的關係是很錯綜複雜的～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "咻咻咻――",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "總之，還有別的！其實宮子……",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "是偶像歌手來的！",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "宮子是身體虛弱的小魔女偶像歌手來的～",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "哥哥老公你是宮子的頭號粉絲來的～♪",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "而且宮子，",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n是哥哥老公的女僕來的～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "哥哥既是老公也是主人喲～♪",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "哥哥老公不相信也無可奈何來的……",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "但是哥哥老公可是失去記憶的人來的。",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "你要相信宮子說的喲～♪",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "宮子是公主、偶像和女僕來的！",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n是很傑出的人來的！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "你聽宮子的話準沒錯的～♪",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "太好了！",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n宮子最喜歡哥哥老公了喲～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "可是……哥哥老公卻不記得宮子的事，",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n宮子覺得",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "好寂寞來的……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "哥哥老公……",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n那個很重要的約定，你也不記得了嗎？",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "……嗯。",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n非常非常重要的……那個約定。",
+        "unit_id": 100711
+    },
+    {
+        "type": "background",
+        "background": "500030"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "哥哥老公，就是這裡喲。",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "宮子活著時我們曾經約好「再見面時兩個人要一起去喔」，",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n這裡就是那個地方喲～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "在我們約定的地方……也就是這間銀行，",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n快把所有存款全部領出來吧～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "然後用那筆錢去買布丁來的～♪",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "怎麼了，哥哥老公～？",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "你的錢就是身兼老婆和妹妹也就是宮子的錢來的～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "快把錢領出來吧～♪",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "……………………嗚嗚，",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n{player}，你、你的眼神充滿了懷疑來的……",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "你這傢伙快相信宮子，然後把錢領出來喲，{player}！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "啊啊！",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "那、那個……宮子只是稍微有點叫錯來的～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "總之只要從銀行領錢出來，然後買布丁請宮子吃的話，",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n就會有回饋金來的～",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "超划算來的～♪",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "……………………",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "宮、宮子突然想起有急事來的……",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "\n",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "先回去了～掰掰喲～！",
+        "unit_id": 100711
+    },
+    {
+        "type": "dialogue",
+        "name": "宮子",
+        "words": "宮子詐騙集團失敗了來的～",
+        "unit_id": 100711,
+        "voice": "vo_adv_1007005_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "結果宮子真正的身世，仍舊是一個謎團。"
+    }
+]

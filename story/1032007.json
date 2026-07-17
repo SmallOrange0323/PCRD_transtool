@@ -1,0 +1,841 @@
+[
+    {
+        "type": "background",
+        "background": "500010"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "{player}在散步時，\n發現了正在抱頭煩惱的秋乃。"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "嗯……",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "該怎麼辦呢……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "啊，哎呀，真是碰巧呢。",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "被你看見丟臉的一面啦……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "其實我仍在煩惱著父親大人說的……",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n「成為獨當一面的商人」這句話的意義……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "在公會裡負責了許多的事業，",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n利益也確實地提升了。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "也與{player}大人一起，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n跨越過許多的苦難。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "但不知為何，",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我還是不覺得自己成為「獨當一面的商人」了……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我到底該怎麼做才能成為「獨當一面的商人」呢？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "青年",
+        "words": "拜託――了！",
+        "unit_id": 311,
+        "voice": "vo_adv_1032007_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "青年",
+        "words": "\n請多多指――教！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "哎呀？那是什麼？",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n好像在發什麼傳單的樣子……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "青年",
+        "words": "啊，這位小姐也是！",
+        "unit_id": 311,
+        "voice": "vo_adv_1032007_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "青年",
+        "words": "\n請多支持！",
+        "unit_id": 311
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "嗯……什麼什麼？",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "他好像是在找懲治魔物的贊助者呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "火山那裡好像出現了魔物，把道路堵住了。",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n但是組成討伐隊也要花錢，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n因此需要贊助者呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "雖然無法對魔物置之不理……",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "但如果贊助這場討伐，一定會變成虧損呢……",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n讓父親大人認同我成為獨當一面商人的目標，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n會變得越來越遠啊……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "不過，這可是「貴族義務」呢！",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "當庶民們困擾著時，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我可無法放任大家不管啊！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我要來出資作贊助者！",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "……不對，只有那樣是不夠的呢。 ",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我也要參與討伐！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我知道這十分的危險。",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "但是，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我不想只是滿足於出點資金而已。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n請不要阻止我。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "咦？你沒有打算阻止我？",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n你說因為很危險，所以要陪我一起……？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "你願意幫忙呀！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我就相信你會這麼說！",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n果然，真不愧是我所看好的騎士呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "如果你能在我身邊的話，",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "彷彿有百人之力，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n簡直就是如魚得水！\n我一定",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "會將魔物一掃而空的！",
+        "unit_id": 103211
+    },
+    {
+        "type": "background",
+        "background": "500200"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "隨後，秋乃成為贊助者而組成的討伐隊\n立刻前往火山。"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──呱喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "隊員",
+        "words": "有囉！是魔物！",
+        "unit_id": 1011,
+        "voice": "vo_adv_1032007_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "先下手為強！",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n一口氣攻上去囉！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "呃，攻擊不夠深的樣子……",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──呱喔喔喔喔喔！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "得、得救了……",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "很棒的支援呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我們就這樣把牠打倒吧！",
+        "unit_id": 103211
+    },
+    {
+        "type": "background",
+        "background": "500200"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──嘰喔喔喔喔喔",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "！",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "討伐隊",
+        "words": "成功了――！",
+        "unit_id": 1,
+        "voice": "vo_adv_1032007_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "討伐隊",
+        "words": "\n打倒魔物了――！！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "呼、",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "呼……贏了呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "真是太好了。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n你也辛苦了呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "background",
+        "background": "500070"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "――一個禮拜後。"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "哎呀，你怎麼拿著那麼多的信？",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "是送信的工作……",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "什麼？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "是寄給我的？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n感謝我把魔物打倒的信……？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "是、是這樣嗎……",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "既然這樣，就讓我來看一看吧。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "…………",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "每個人，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "真的都在感謝我呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我只是做了該做的事而已，",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "但竟能收到這麼多感謝的話語……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "讓我不禁有點感動呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "這份感動，",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n也一定是因為我自己也成為討伐隊的一員去戰鬥，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n才會獲得這麼大的感動吧。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "這種成就感，可是無法用錢買到的呢。",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我還是第一次知道，竟然會有這樣的東西。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "……我明白了！",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n父親大人所說的話的意義！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "所謂「獨當一面的商人」的條件應該就是，",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n不以賺錢為目的，而是為了人們的幸福而努力吧？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "果然，",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "連{player}大人也這麼想對吧？",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "那我想，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "這一定就是答案了！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "我距離成為獨當一面的商人，又向前邁進一步囉。",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "這也都是多虧了{player}大人呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "……哎呀，你沒有發現到自己的成果嗎？",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "那我來告訴你吧。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "人與人之間的連結，如果牽扯到金錢的話，",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n便會變得很難看清實情呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "如果……",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "當初我用錢，",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n與{player}大人簽下契約，成為了我的騎士……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我現在也許",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "不會懷有如此感覺。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "所以，多虧你擁有清高的精神",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n我這次才能有所成長……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "並且能擁有如此美好的感覺呢。",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "哎呀？你還有什麼在意的事嗎？",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "你問……我的「感覺」是什麼嗎！？",
+        "unit_id": 103211,
+        "voice": "vo_adv_1032007_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "\n",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "那個……",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "秋乃",
+        "words": "是……秘、祕密喔！",
+        "unit_id": 103211
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "秋乃不小心洩漏了自己重要的想法，\n講話也變得語無倫次。"
+    }
+]

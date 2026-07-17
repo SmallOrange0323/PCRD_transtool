@@ -1,0 +1,2510 @@
+[
+    {
+        "type": "background",
+        "background": "500080"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "遊俠集訓第一天──"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "早安。",
+        "unit_id": 1,
+        "voice": "vo_adv_5116001_000"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n馬上就要開始上課了。",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人，",
+        "unit_id": 125312,
+        "voice": "vo_adv_5116001_001"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "早安。",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n昨晚睡得好嗎？",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "集訓所有提供租制服租借，",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_002"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我們就換了衣服。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我是以使用弓箭為主，",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_003"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n所以選擇了這件符合我需求的服裝。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下",
+        "unit_id": 125312,
+        "voice": "vo_adv_5116001_004"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "經常使用藥草等東西，",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n所以選擇這件身上能多帶一些東西的服裝。",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "聽說",
+        "unit_id": 125312,
+        "voice": "vo_adv_5116001_005"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "遊俠有不同的類型，",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n所以有各式各樣的制服。",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "這是個深奧的世界，",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "甚至會讓人不禁陷入迷惘。",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "不過，",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_006"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "像這樣穿上制服，",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n有種集訓終於要開始的感覺，",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "會讓人鼓起幹勁。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "……嗯，",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_007"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "看來大家都到齊了。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "我現在要說明集訓課程。",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_008"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "在場的人都是來考取遊俠資格的，",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_009"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n不過在這之前，",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "我先從何謂遊俠開始說明吧。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "一般而言，",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_010"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "靠狩獵維持生計的人，稱為獵人。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n他們的目的是狩獵，",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "必要時，也會負責討伐魔物，",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n防止牠們危害到人類。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "相對的，",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_011"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "遊俠",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "是以保護自然環境與居住於該處的動植物生態系──",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n包含魔物在內的",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "所有環境為目的來進行活動。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "他們會逮捕非法的盜獵者",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_012"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "並為了守護動物和魔物進行保護活動，",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n要是判斷有必要的話，",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "有時也會討伐危險的魔物。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "不過",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "這是最後的手段。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "在自然與人類間，",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_013"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "為了不偏向任何一方，設法取得平衡。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n因此，",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "需要有能夠應對任何場面的能力。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "──這就是遊俠。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "所以，",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_014"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "第一天就像這樣態度鬆懈的傢伙──",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生1",
+        "words": "嗯啊",
+        "unit_id": 811,
+        "voice": "vo_adv_5116001_015"
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生1",
+        "words": "！？",
+        "unit_id": 811
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生2",
+        "words": "喂、",
+        "unit_id": 6311,
+        "voice": "vo_adv_5116001_016"
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生2",
+        "words": "喂……",
+        "unit_id": 6311
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生2",
+        "words": "打中人的粉筆碎成粉末了耶。",
+        "unit_id": 6311
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生2",
+        "words": "\n",
+        "unit_id": 6311
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生2",
+        "words": "多麼驚人的威力……",
+        "unit_id": 6311
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生2",
+        "words": "呃啊",
+        "unit_id": 6311
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生2",
+        "words": "啊！",
+        "unit_id": 6311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "廢話連篇的你也一樣，",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_017"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "上完課後追加訓練。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n我會徹底改正你們劣根性。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生2",
+        "words": "眼睛，",
+        "unit_id": 6311,
+        "voice": "vo_adv_5116001_018"
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生2",
+        "words": "我的眼睛！！",
+        "unit_id": 6311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "聽好了，",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_019"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "這個集訓會保障你們的食衣住，",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n是為了",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "要讓你們專注於學習上。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "在場的人",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_020"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "都必須要",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n迅速地",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "盡快成為能派上用場的人才。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "我們可不是為了讓你們吃閒飯，",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_021"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n才像這樣把人聚集起來。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "那麼，",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_022"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "從已經聽懂的人開始，",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "過來領取教科書。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "你們在這個時間將要學習狩獵的相關法令、",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_023"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n魔物與鳥獸的生態系和判別方法，",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "以及如何操作狩獵用具。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "教科書都拿到了嗎？",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_024"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "──那邊最前排的學生。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "是、",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_025"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "是的。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "是指我……",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "嗎？",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "這",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_026"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "邊放著的所有陷阱中，",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n請妳試著以目前蘭德索爾允許使用的",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n和未允許使用的來分類吧。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "啊，",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_027"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "在教科書第──",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "啊，",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_028"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "沒關係……",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我分類好了。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "這是",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_029"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "分成利用繩索來捕捉獵物的套索陷阱類，",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n以及能關住獵物的陷阱籠",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "和圍欄陷阱類……",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "對吧？",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "另外，",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_030"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "沒有安全裝置的陷阱應該是不能使用的，",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n我先把它們分到這邊了……",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "嗯……",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_031"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "答對了。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "妳將作為陷阱題所準備的用具",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_032"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "也正確分類出來了呢。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "妳曾經",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "有用陷阱狩獵的經驗嗎？",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "不，",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_033"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "與其說是狩獵，應該說是牧場守衛……",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "吧。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "以前剛好製作過幾次這樣的陷阱。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "好了，",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_034"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "妳回座吧。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "總之，",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_035"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "雖然簡單來說都是陷阱，",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n但是也有現在不允許使用的用具。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "首先，",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_036"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "我要你們把這些知識牢牢地記在腦裡。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "那麼，",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "翻開教科書。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "栞小姐，",
+        "unit_id": 125312,
+        "voice": "vo_adv_5116001_037"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "您的表現太精彩了。",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "坦白說，",
+        "unit_id": 125312,
+        "voice": "vo_adv_5116001_038"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下還分辨不出來",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n到底哪個是哪個。",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "不，",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_039"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我只是碰巧知道剛才的問題……",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "何況，",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我是來這裡學習自己不懂的事情。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "……所以，",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_040"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n這個陷阱的種類與各自的效果──",
+        "unit_id": 3311
+    },
+    {
+        "type": "background",
+        "background": "501680"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "哈哈哈，",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_041"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "你們在上午耗了不少腦力吧？",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n現在開始是活動身體的時間。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "下午是要到原野進行實踐課程，",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_042"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "學習各種技術，",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n以及訓練遊俠動物等等。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "光聽課是學不會的。",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_043"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "總之，",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "就是要反覆實踐。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物的幻影",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生3",
+        "words": "唔哇！？",
+        "unit_id": 1,
+        "voice": "vo_adv_5116001_044"
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生3",
+        "words": "魔、",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生3",
+        "words": "魔物！？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "哈哈哈，",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_045"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "你們不必那麼慌張。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "那是用幻影魔法製作的冒牌貨。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "今天就用這個魔法，",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_046"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "來學習魔物的種類和身體特徵，",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "以及生態。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "啊，",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "特別是弱點與要害。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "雖然這些知識常被認為只能用在狩獵與討伐上──",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_047"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "不過其實，",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "也有助於保護魔物。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "要治療人類，",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_048"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "也必須了解身體構造吧？",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "兩者是一樣的。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "知道要害與弱點，",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_049"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "就能預測對方的行動。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n也可以在受傷或生病時，來應對處理。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "是否有危險、",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "讓對方安分下來的方法──",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "要知道的事情多得很。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "雖然也有人認為要順其自然，",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_050"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "不過作為遊俠，",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "有時也會治療魔物的疾病和傷勢。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "好，",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_051"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "那麼首先，",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "從森林常見的魔物開始──",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "最後將繃帶綁好……",
+        "unit_id": 125312,
+        "voice": "vo_adv_5116001_052"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "好。",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "這樣如何呢？",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物的幻影",
+        "words": "咕喔喔喔喔喔♪",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "喔，",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_053"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "妳包紮得相當好。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n看來似乎很熟練呢。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在主人失去記憶的時候，",
+        "unit_id": 125312,
+        "voice": "vo_adv_5116001_054"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n在下常常處理跌倒擦傷的傷口。",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n這點事情",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下已經習慣了。",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物的幻影",
+        "words": "嘎喔喔喔喔喔……？",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人，",
+        "unit_id": 125312,
+        "voice": "vo_adv_5116001_055"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "那個，",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "您的繃帶用得稍微有點多……",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "不對，",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "不如說這個綁法",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "看上去似乎有些藝術感……？",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "的確，",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_056"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "雖然這不是想綁就模仿得來的包紮方法……",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "但應急處置不需要藝術感吧……",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "使用醫療用具可不能浪費。",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_057"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "……嗯，",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "從頭再試一次吧！",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "好，",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_058"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "接下來是觀察實際出現於原野的魔物。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n大家分成小組來行動。",
+        "unit_id": 414
+    },
+    {
+        "type": "background",
+        "background": "500170"
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生4",
+        "words": "教、",
+        "unit_id": 1,
+        "voice": "vo_adv_5116001_059"
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生4",
+        "words": "教官……！",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生4",
+        "words": "\n那隻魔物",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生4",
+        "words": "不會察覺到我們嗎……？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "沒事的沒事的。",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_060"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "只要我們不刺激對方，就不會有問題。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "我們安靜地觀察吧。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "安靜地",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_061"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "觀察……？",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "可是，",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "就算我們沒有刺激對方，",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "那隻魔物也──",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "──咕喔喔喔喔喔！",
+        "unit_id": 1614
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生4",
+        "words": "噫噫噫噫噫！？",
+        "unit_id": 1,
+        "voice": "vo_adv_5116001_062"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "────唔。",
+        "unit_id": 125411,
+        "voice": "vo_adv_5116001_063"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "栞，",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_064"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "不要攻擊！",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "魔物",
+        "words": "咕喔喔喔喔喔……",
+        "unit_id": 1611
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生4",
+        "words": "魔物正在後退……？",
+        "unit_id": 1,
+        "voice": "vo_adv_5116001_065"
+    },
+    {
+        "type": "dialogue",
+        "name": "集訓學生4",
+        "words": "\n對方明明要朝我們襲擊而來……？",
+        "unit_id": 1
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "那是威嚇行動。",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_066"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "對方應該是",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "裝作要衝過來吧。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n我本來認為安靜地看著不要緊，",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "但似乎是刺激到對方了。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n再繼續待在這裡的話不安全。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "全員慢慢後退。",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_067"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n要注意周圍有沒有其他魔物。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "……",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_068"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "……好的。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "……放棄的速度，",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_069"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "以及正確的判斷力。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "她作為一名獵人，兩者都具備相當的資質。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "可是，",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_070"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "她的課題與其說是這些，倒不如說是……",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "教官先生，",
+        "unit_id": 125312,
+        "voice": "vo_adv_5116001_071"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "請問怎麼了嗎？",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "沒事，",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_072"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "沒什麼。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n好了，",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "我們回到集訓所的訓練場吧。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "大家辛苦了……",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_073"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "雖然我很想這麼說。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "但是",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "有參加遊俠動物訓練課程的人，",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n還要再努力一下。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "那邊的{player}是要參觀吧？",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_074"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "如果你不會打擾大家，",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "可以自由參觀。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "今天為了知道各自的熟練度，",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_075"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n會要求大家進行簡單的實際操作。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "從栞開始吧。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "好、",
+        "unit_id": 125412,
+        "voice": "vo_adv_5116001_076"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "好的。",
+        "unit_id": 125412
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "那麼，",
+        "unit_id": 125412
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我要開始了……",
+        "unit_id": 125412
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "──",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_077"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "喵特，",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "坐下。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "喵特",
+        "words": "嘎嚕！",
+        "unit_id": 2312
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "伸手，",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_078"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "然後趴下。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "喵特",
+        "words": "咕嚕嚕。",
+        "unit_id": 2312
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "呵呵，",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_079"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "你做得很好……♪",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "喵特",
+        "words": "咕嚕咕嚕咕嚕……♪",
+        "unit_id": 2312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "栞小姐，",
+        "unit_id": 125312,
+        "voice": "vo_adv_5116001_080"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "您的表現太精彩了。",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "嗯，",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_081"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "基本指示沒有問題。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "\n",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "這樣的話，要馬上進入下一個階段也不是問題。",
+        "unit_id": 414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "是。",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_082"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "謝謝您的誇獎。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "好，",
+        "unit_id": 414,
+        "voice": "vo_adv_5116001_083"
+    },
+    {
+        "type": "dialogue",
+        "name": "獸人教官",
+        "words": "那麼下一位。",
+        "unit_id": 414
+    },
+    {
+        "type": "background",
+        "background": "500952"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "就這樣，一行人在結束第一天的課程後，"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "\n聚在集訓所的房間裡。"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "和傳聞一樣，",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_084"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "是非常辛苦的集訓呢。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "幸好沒有受傷……",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "嗯……",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_085"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "先不提有狩獵經驗的我與",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n有基礎知識的可可蘿，",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "你突然參加這樣的課程可能會感到吃力吧……",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "不、",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_086"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "不過，",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我跟可可蘿會在你遇到困難",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n或是聽不懂的時候協助你的！",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "所以，",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_087"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "那個……",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我們一起加油吧！",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "嗯。",
+        "unit_id": 125312,
+        "voice": "vo_adv_5116001_088"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "我們要一起通過……",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n為此，",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "我們才會像這樣在晚上聚在一起，",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "舉行讀書會。",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "我們也希望在協助主人學習的同時，",
+        "unit_id": 125312,
+        "voice": "vo_adv_5116001_089"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n能進一步",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "提升自己的實力。",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "是啊。",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_090"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "今天是在教藥草學與陷阱分類，",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n只要先預習這部分的內容……",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "咳。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "咳、",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_091"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "咳咳……",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "對不起。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "栞小姐，",
+        "unit_id": 125312,
+        "voice": "vo_adv_5116001_092"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "您沒事吧？",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "嗯，",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_093"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "沒事。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我不要緊……",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "不過，",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "可能是房間的灰塵有點多。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我從剛才開始",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_094"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "就有點",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "咳嗽……",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "咳。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "稍微開個窗讓房間的空氣流通吧。",
+        "unit_id": 125312,
+        "voice": "vo_adv_5116001_095"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "這段時間，",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下幫您泡杯有益喉嚨的花草茶。",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "謝謝妳，",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_096"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "可可蘿。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "不用，",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_097"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我不要緊。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "而且邀請{player}",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "參加這個集訓的人",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "是我。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "再說，我……",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_098"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "想要和大家一起通過。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "為此，我會努力加油，",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "協助你的。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "所以，",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_099"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "請不要那麼擔心我。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n別看我這樣，",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "我",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "已經稍微變得強壯一點了。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "在下泡好茶了。",
+        "unit_id": 125312,
+        "voice": "vo_adv_5116001_100"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n還順便端來一些茶點。",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "謝謝妳，",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_101"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "可可蘿。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "那麼，{player}，",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_102"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "接著進入下一頁吧。",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "\n",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "這次是關於狩獵的基本手法……",
+        "unit_id": 125414
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "………………",
+        "unit_id": 125414,
+        "voice": "vo_adv_5116001_103"
+    },
+    {
+        "type": "dialogue",
+        "name": "栞",
+        "words": "咳。",
+        "unit_id": 125414
+    },
+    {
+        "type": "background",
+        "background": "500080"
+    },
+    {
+        "type": "dialogue",
+        "name": "旁白",
+        "words": "隔天早上──"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "那麼，",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_104"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "開始今天的課程。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "……唔，",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_105"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "昨天坐在這裡的學生呢？",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "那是",
+        "unit_id": 125312,
+        "voice": "vo_adv_5116001_106"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "指栞小姐嗎？",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "栞……",
+        "unit_id": 3311,
+        "voice": "vo_adv_5116001_107"
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "對，",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "好像是這個名字吧。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "精靈族教官",
+        "words": "\n將昨天出的問題順利解開的傢伙。",
+        "unit_id": 3311
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "對不起，",
+        "unit_id": 125312,
+        "voice": "vo_adv_5116001_108"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "主人。",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "還有教官先生。",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n今天早上有點慌忙，",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "\n還沒有告訴兩位。",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "栞小姐──",
+        "unit_id": 125312,
+        "voice": "vo_adv_5116001_109"
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "今天，",
+        "unit_id": 125312
+    },
+    {
+        "type": "dialogue",
+        "name": "可可蘿",
+        "words": "因為身體不適請假一天。",
+        "unit_id": 125312
+    }
+]

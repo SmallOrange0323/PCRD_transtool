@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCR 劇情與角色導航站</title>
+    <meta name="description" content="公主連結 Re:Dive 劇情編年史 — 完整主線、角色、公會、活動劇情對話文本與角色圖鑑導航">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 樣式表 -->
+    <link rel="stylesheet" href="style.css?v=5.0">
+
+    <!-- 函式庫 -->
+    <script src="sql-wasm.js"></script>
+</head>
+<body>
+    <!-- 載入覆蓋層 -->
+    <div id="loading-overlay">
+        <div class="loader-container">
+            <h2 style="margin-bottom: 20px; text-align: center;">PCRD Story Map</h2>
+            <div class="loader-bar">
+                <div id="loader-progress" class="loader-progress"></div>
+            </div>
+            <div id="loader-text" class="loader-text">正在初始化引擎...</div>
+        </div>
+        <div id="cors-warning" style="display: none; margin-top: 30px; max-width: 400px; color: #ff6b6b; text-align: center; font-size: 0.85rem;">
+            ⚠️ 檢測到使用 file:// 開啟。由於瀏覽器 CORS 限制，資料庫下載可能會失敗。請使用 Live Server 或本地 HTTP 伺服器開啟。
+        </div>
+    </div>
+
+    <!-- 導航列 -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <span class="icon">🗺️</span> PCRD 劇情與角色導航站
+        </div>
+        <div class="nav-tabs">
+            <button id="tab-map-btn" class="tab-btn active" onclick="switchTab('map')">劇情地圖</button>
+            <button id="tab-characters-btn" class="tab-btn" onclick="switchTab('characters')">角色圖鑑</button>
+        </div>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <span class="region-badge" style="
+                background: linear-gradient(135deg, rgba(232, 56, 117, 0.08) 0%, rgba(196, 36, 106, 0.08) 100%);
+                color: var(--accent-color);
+                border: 1px solid rgba(232, 56, 117, 0.2);
+                padding: 6px 16px;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                font-weight: 700;
+                letter-spacing: 0.5px;
+                box-shadow: 0 2px 6px rgba(232, 56, 117, 0.05);
+            ">台服 (TW)</span>
+        </div>
+    </nav>
+
+    <!-- 主內容區 -->
+    <main class="container">
+        <!-- 分頁 1: 劇情地圖 -->
+        <div id="map-tab" class="tab-content active"></div>
+
+        <!-- 分頁 2: 角色 -->
+        <div id="characters-tab" class="tab-content"></div>
+    </main>
+
+    <!-- 角色詳情彈窗 -->
+    <div id="char-detail-modal" class="modal-overlay" onclick="if(event.target === this) CharactersModule.closeDetail()">
+        <div class="modal-content glass-card" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="CharactersModule.closeDetail()">×</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- 程式腳本 -->
+    <script>
+// === db.js INLINED ===
+console.log("db.js loaded");
+if (localStorage.getItem('pcr_region') !== 'tw') {
+    localStorage.setItem('pcr_region', 'tw');
+}
+/**
+ * PCR 數據導航站 - DB 引擎
+ * 負責下載、快取與查詢 SQLite 資料庫
+ */
+
+window.PCRDatabase = {
+    db: null,
+    currentRegion: 'tw',
+
+    /**
+     * 切換區域 (目前僅支援台服，強制定向為 tw)
+     */
+    async switchRegion(region) {
+        localStorage.setItem('pcr_region', 'tw');
+        location.reload();
+    },
+
+    /**
+     * 驗證資料庫結構完整性
+     */
+    verifyDatabase() {
+        if (!this.db) return false;
+        try {
+            // 測試查詢 story_detail 表是否存在且有資料
+            const res = this.runQuery("SELECT COUNT(*) as cnt FROM sqlite_master WHERE type='table' AND name='story_detail'");
+            if (res && res.length > 0 && res[0].cnt > 0) {
+                // 進一步檢查是否包含主線劇情資料
+                const rows = this.runQuery("SELECT COUNT(*) as cnt FROM story_detail");
+                return rows && rows.length > 0 && rows[0].cnt > 0;
+            }
+            return false;
+        } catch (e) {
+            console.error("[PCRDatabase] 驗證資料庫結構出錯:", e);
+            return false;
+        }
+    },
+
+    /**
+     * 初始化資料庫
+     * @param {Function} onProgress 進度回調 (message, percent)
+     */
+    async initDatabase(onProgress) {
+        if (this.db) return this.db;
+
+        const dbKey = `pcr_db_${this.currentRegion}`;
+        const remoteUrl = `https://wthee.xyz/db/redive_${this.currentRegion}.db`;
+        const localPath = `./redive_${this.currentRegion}.db`;
+        const sizeKey = `pcr_db_size_${this.currentRegion}`;
+
+        try {
+            // 1. 初始化 SQL 引擎 (WebAssembly)
+            if (onProgress) onProgress('正在初始化 SQL 引擎...', 10);
+            
+            if (typeof initSqlJs === 'undefined') {
+                throw new Error("無法載入 SQL 引擎元件 (initSqlJs 未定義)。請嘗試按 Ctrl+F5 強制重新整理頁面。");
+            }
+
+            const sqlPromise = initSqlJs({
+                locateFile: file => `${file}`
+            });
+
+            const timeoutPromise = new Promise((_, reject) => 
+                setTimeout(() => reject(new Error("初始化 SQL 引擎逾時 (10秒)。可能是網路連線不穩定，或是瀏覽器不支援 WebAssembly/WASM。")), 10000)
+            );
+
+            const SQL = await Promise.race([sqlPromise, timeoutPromise]);
+
+            // 從 data/db_info.json 一次性取得 size 與 db_version（合併為單一請求）
+            let size = 0;
+            let latestVersion = "";
+            try {
+                const infoRes = await fetch(`data/db_info.json?v=${Date.now()}`);
+                if (infoRes.ok) {
+                    const info = await infoRes.json();
+                    size = parseInt(info[`${this.currentRegion}_size`], 10) || 0;
+                    latestVersion = info.db_version || "";
+                    console.log(`[PCRDatabase] db_info: size=${size}, version=${latestVersion}`);
+                }
+            } catch (e) {
+                console.warn("[PCRDatabase] 讀取 db_info.json 失敗，改用 HEAD 備用機制:", e);
+            }
+
+            // 若 db_info 無法取得 size，降級使用 HEAD 請求
+            if (size <= 0) {
+                try {
+                    const headRes = await fetch(localPath, { method: 'HEAD' });
+                    if (headRes.ok) {
+                        const cl = headRes.headers.get('content-length');
+                        if (cl) size = parseInt(cl, 10);
+                    }
+                } catch (e) {
+                    console.warn(`[PCRDatabase] HEAD ${localPath} failed...`, e);
+                }
+            }
+
+            // --- [快取失效判斷] 比對版本號或 size 決定是否強制重新下載 ---
+            const cachedVersionKey = `${sizeKey}_version`;
+            const cachedVersion = localStorage.getItem(cachedVersionKey);
+            const cachedSize = localStorage.getItem(sizeKey);
+            let forceReload = false;
+
+            if (latestVersion && String(latestVersion) !== String(cachedVersion)) {
+                console.log(`[PCRDatabase] 版本變更 (伺服器: ${latestVersion}, 本地: ${cachedVersion})，強制重新下載。`);
+                forceReload = true;
+                await this.removeFromIDB(dbKey);
+                // 立刻寫入新版本，防止下載失敗時造成下次開頁面又觸發無限清空循環
+                localStorage.setItem(cachedVersionKey, latestVersion);
+            } else if (!latestVersion && size > 0 && String(size) !== String(cachedSize)) {
+                // 回退機制：無法取得 version 時，比對 size
+                console.log(`[PCRDatabase] Size mismatch (current: ${size}, cached: ${cachedSize})，強制重新下載。`);
+                forceReload = true;
+                await this.removeFromIDB(dbKey);
+            }
+
+
+            // 2. 嘗試從 IndexedDB 讀取 (快取隔離)
+            let cachedDB = null;
+            if (!forceReload) {
+                cachedDB = await this.loadFromIDB(dbKey);
+            }
+
+            if (cachedDB) {
+                if (onProgress) onProgress(`正在載入本地 ${this.currentRegion.toUpperCase()} 快取...`, 50);
+                this.db = new SQL.Database(new Uint8Array(cachedDB));
+                
+                // 驗證快取是否有效與完整
+                if (this.verifyDatabase()) {
+                    console.log(`[PCRDatabase] Loaded and verified ${this.currentRegion} from IndexedDB`);
+                    return this.db;
+                } else {
+                    console.warn(`[PCRDatabase] 快取資料庫無效或損壞，將強制重載...`);
+                    this.db = null;
+                }
+            }
+
+            // 3. 嘗試從本地目錄取得 (繞過 CORS)
+            if (onProgress) onProgress(`正在檢查本地 ${this.currentRegion.toUpperCase()} 檔案...`, 20);
+            let dbData = await this.downloadDB(localPath).catch(() => null);
+
+            // 4. 嘗試從遠端下載
+            if (!dbData) {
+                if (onProgress) onProgress(`正在下載遠端 ${this.currentRegion.toUpperCase()} 資料庫 (約 20MB)...`, 30);
+                dbData = await this.downloadDB(remoteUrl, (pct) => {
+                    if (onProgress) onProgress(`正在下載資料庫... ${pct}%`, 30 + (pct * 0.6));
+                });
+            }
+
+            if (dbData) {
+                this.db = new SQL.Database(new Uint8Array(dbData));
+                if (this.verifyDatabase()) {
+                    await this.saveToIDB(dbKey, dbData);
+                    const finalSize = size > 0 ? size : dbData.byteLength;
+                    localStorage.setItem(sizeKey, finalSize);
+                    if (latestVersion) {
+                        localStorage.setItem(`${sizeKey}_version`, latestVersion);
+                    }
+                    console.log(`[PCRDatabase] Successfully initialized and verified ${this.currentRegion} DB`);
+                    return this.db;
+                } else {
+                    // 【修正 Bug 6】驗證失敗時清除無效的 this.db，避免後續操作在無效資料庫上執行
+                    this.db = null;
+                    throw new Error("載入的資料庫格式有誤，找不到劇情資料表。");
+                }
+            }
+
+            throw new Error(`資料庫載入失敗。`);
+        } catch (error) {
+            console.error('Database Init Error:', error);
+            if (onProgress) onProgress(`載入失敗: ${error.message}`, 0);
+            throw error;
+        }
+    },
+
+
+    /**
+     * 載入特定的資料庫（專供比對使用，不覆蓋主 db）
+     */
+    async loadSpecificDatabase(type, onProgress) {
+        const dbKey = `pcr_db_${type}`;
+        const localPath = `./redive_${type}.db`;
+        const sizeKey = `pcr_db_size_${type}`;
+
+        try {
+            if (onProgress) onProgress('正在初始化 SQL 引擎...', 10);
+            
+            if (typeof initSqlJs === 'undefined') {
+                throw new Error("無法載入 SQL 引擎元件 (initSqlJs 未定義)。");
+            }
+
+            const SQL = await initSqlJs({
+                locateFile: file => `${file}`
+            });
+
+            // 獲取檔案大小
+            let size = 0;
+            try {
+                const headRes = await fetch(localPath, { method: 'HEAD' });
+                if (headRes.ok) {
+                    const cl = headRes.headers.get('content-length');
+                    if (cl) size = parseInt(cl, 10);
+                }
+            } catch (e) {
+                console.warn(`[PCRDatabase] HEAD ${localPath} failed.`, e);
+            }
+
+            const cachedSize = localStorage.getItem(sizeKey);
+            let forceReload = false;
+            if (size > 0 && String(size) !== String(cachedSize)) {
+                console.log(`[PCRDatabase] Size mismatch for ${type}. Force reload.`);
+                forceReload = true;
+                await this.removeFromIDB(dbKey);
+            }
+
+            // 嘗試載入快取
+            let cachedDB = null;
+            if (!forceReload) {
+                cachedDB = await this.loadFromIDB(dbKey);
+            }
+
+            if (cachedDB) {
+                if (onProgress) onProgress(`正在載入本地 ${type.toUpperCase()} 快取...`, 50);
+                const specificDb = new SQL.Database(new Uint8Array(cachedDB));
+                console.log(`[PCRDatabase] Loaded specific DB: ${type} from IndexedDB`);
+                return specificDb;
+            }
+
+            // 下載檔案
+            if (onProgress) onProgress(`正在下載 ${type.toUpperCase()} 資料庫...`, 20);
+            const dbData = await this.downloadDB(localPath, (pct) => {
+                if (onProgress) onProgress(`正在下載 ${type.toUpperCase()} 資料庫... ${pct}%`, 20 + (pct * 0.7));
+            });
+
+            if (dbData) {
+                const specificDb = new SQL.Database(new Uint8Array(dbData));
+                await this.saveToIDB(dbKey, dbData);
+                const finalSize = size > 0 ? size : dbData.byteLength;
+                localStorage.setItem(sizeKey, finalSize);
+                console.log(`[PCRDatabase] Successfully loaded specific DB: ${type}`);
+                return specificDb;
+            }
+
+            throw new Error(`無法取得 ${type} 資料庫數據`);
+        } catch (error) {
+            console.error(`loadSpecificDatabase Error (${type}):`, error);
+            if (onProgress) onProgress(`載入 ${type} 失敗: ${error.message}`, 0);
+            throw error;
+        }
+    },
+
+
+
+    /**
+     * 下載資料庫文件（帶進度回調）
+     */
+    async downloadDB(dbUrl, onProgress) {
+        try {
+            console.log(`正在嘗試從 ${dbUrl} 取得資料庫...`);
+            const response = await fetch(dbUrl);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+            const contentLength = response.headers.get('content-length');
+            const total = parseInt(contentLength, 10);
+            let loaded = 0;
+
+            const reader = response.body.getReader();
+            const chunks = [];
+
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+                chunks.push(value);
+                loaded += value.length;
+                if (total && onProgress) {
+                    onProgress(Math.round((loaded / total) * 100));
+                }
+            }
+
+            const allChunks = new Uint8Array(loaded);
+            let position = 0;
+            for (const chunk of chunks) {
+                allChunks.set(chunk, position);
+                position += chunk.length;
+            }
+            console.log(`成功從 ${dbUrl} 載入資料庫`);
+            return allChunks.buffer;
+        } catch (e) {
+            console.warn(`從 ${dbUrl} 下載失敗:`, e);
+            throw e;
+        }
+    },
+
+    /**
+     * 執行 SQL 查詢並回傳物件陣列
+     */
+    runQuery(sql, params = []) {
+        if (!this.db) throw new Error('資料庫尚未初始化');
+        try {
+            const stmt = this.db.prepare(sql);
+            stmt.bind(params);
+            const results = [];
+            while (stmt.step()) {
+                results.push(stmt.getAsObject());
+            }
+            stmt.free();
+            return results;
+        } catch (e) {
+            console.error('Query Error:', e, sql);
+            return [];
+        }
+    },
+
+    // --- IndexedDB 存取邏輯 ---
+
+    _openDB() {
+        return new Promise((resolve, reject) => {
+            const request = indexedDB.open('PCRD_DB_STORE', 2);
+            request.onupgradeneeded = (e) => {
+                const db = e.target.result;
+                if (!db.objectStoreNames.contains('files')) {
+                    db.createObjectStore('files');
+                }
+            };
+            request.onsuccess = (e) => {
+                const db = e.target.result;
+                if (!db.objectStoreNames.contains('files')) {
+                    reject(new Error("Object store 'files' not found in IndexedDB."));
+                    return;
+                }
+                resolve(db);
+            };
+            request.onerror = (e) => reject(request.error);
+        });
+    },
+
+    async saveToIDB(key, buffer) {
+        try {
+            const db = await this._openDB();
+            return new Promise((resolve, reject) => {
+                const transaction = db.transaction('files', 'readwrite');
+                const store = transaction.objectStore('files');
+                store.put(buffer, key);
+                transaction.oncomplete = () => resolve();
+                transaction.onerror = () => reject(transaction.error);
+            });
+        } catch (e) {
+            console.error("[PCRDatabase] saveToIDB 失敗:", e);
+            throw e;
+        }
+    },
+
+    async loadFromIDB(key) {
+        try {
+            const db = await this._openDB();
+            return new Promise((resolve) => {
+                const transaction = db.transaction('files', 'readonly');
+                const store = transaction.objectStore('files');
+                const getRequest = store.get(key);
+                getRequest.onsuccess = () => resolve(getRequest.result);
+                getRequest.onerror = () => resolve(null);
+            });
+        } catch (e) {
+            console.warn("[PCRDatabase] loadFromIDB 失敗:", e);
+            return null;
+        }
+    },
+
+    async removeFromIDB(key) {
+        try {
+            const db = await this._openDB();
+            return new Promise((resolve) => {
+                const transaction = db.transaction('files', 'readwrite');
+                const store = transaction.objectStore('files');
+                const deleteRequest = store.delete(key);
+                deleteRequest.onsuccess = () => resolve();
+                deleteRequest.onerror = () => resolve();
+            });
+        } catch (e) {
+            console.warn("[PCRDatabase] removeFromIDB 失敗:", e);
+            return;
+        }
+    }
+};
+
+// === END db.js ===
+</script>
+    <script src="avatar-service.js?v=5.2.2"></script>
+    <script src="story-asset-service.js?v=5.2.1"></script>
+    <script>
+// === chapter-data.js INLINED ===
+console.log("chapter-data.js loaded");
+/**
+ * PCRD Data Hub - 章節資料服務
+ * 載入並提供章節標題、摘要、順序等中繼資料
+ * 資料來源：dashboard/data/chapters.json
+ */
+
+window.ChapterDataService = {
+    data: null,
+    storySummaries: null,
+    loaded: false,
+
+    async load() {
+        if (this.loaded) return this.data;
+        try {
+            console.log('[ChapterDataService] 開始載入資料檔...');
+            const [resp, respSum] = await Promise.all([
+                fetch('data/chapters.json?v=' + Date.now()),
+                fetch('data/main_story_chapter_summaries.json?v=' + Date.now()).catch(e => {
+                    console.error('[ChapterDataService] 載入單話摘要 fetch 失敗:', e);
+                    return null;
+                })
+            ]);
+
+            if (!resp.ok) throw new Error('HTTP ' + resp.status);
+            this.data = await resp.json();
+
+            if (respSum && respSum.ok) {
+                this.storySummaries = await respSum.json();
+                console.log(`[ChapterDataService] 成功載入單話摘要，共 ${Object.keys(this.storySummaries).length} 筆`);
+            } else {
+                console.warn('[ChapterDataService] 單話摘要載入失敗，respSum ok為 false 或未找到檔案。');
+                this.storySummaries = {};
+            }
+
+            this.loaded = true;
+            console.log('[ChapterDataService] 成功載入章節主資料');
+        } catch (e) {
+            console.error('[ChapterDataService] 載入失敗:', e);
+            this.data = { 1: {}, 2: {}, 3: {} };
+            this.storySummaries = {};
+            this.loaded = true;
+        }
+        return this.data;
+    },
+
+    // 取得章節資訊
+    // part: 1|2|3, groupId: story_group_id (如 2001, 2007, 2201, 3001)
+    getChapterInfo(part, groupId) {
+        if (!this.data) return null;
+        const partData = this.data[String(part)] || {};
+        const gid = String(groupId);
+        // 不分部別，均自 game_world 與 interlude 中尋找對應的群組資料
+        return partData.game_world?.[gid] || partData.interlude?.[gid] || partData[gid] || null;
+    },
+
+    // 取得章節標題
+    getChapterTitle(part, groupId) {
+        const info = this.getChapterInfo(part, groupId);
+        return info ? info.title : "";
+    },
+
+    // 取得章節標題
+    getTitle(part, groupId) {
+        const info = this.getChapterInfo(part, groupId);
+        return info?.title || null;
+    },
+
+    // 取得章節摘要
+    getSummary(part, groupId) {
+        const info = this.getChapterInfo(part, groupId);
+        return info?.summary || null;
+    },
+
+    // 取得單話資訊
+    getStoryInfo(part, groupId, storyId) {
+        const info = this.getChapterInfo(part, groupId);
+        if (!info || !info.stories) return null;
+        return info.stories.find(s => String(s.story_id) === String(storyId)) || null;
+    },
+
+    // 取得單話摘要
+    getStorySummary(part, groupId, storyId) {
+        console.log(`[ChapterDataService] 正在尋找單話摘要, storyId: ${storyId}`);
+        if (this.storySummaries && this.storySummaries[String(storyId)]) {
+            console.log(`[ChapterDataService] 成功在 main_story_chapter_summaries.json 找到摘要: ${this.storySummaries[String(storyId)].substring(0, 20)}...`);
+            return this.storySummaries[String(storyId)];
+        }
+        const storyInfo = this.getStoryInfo(part, groupId, storyId);
+        console.log(`[ChapterDataService] 未能在單話摘要檔中找到，回退使用 chapters.json 大綱: ${storyInfo?.summary ? storyInfo.summary.substring(0, 20) + '...' : '無'}`);
+        return storyInfo?.summary || null;
+    },
+
+    // 取得章節顯示順序（用於排序）
+    getOrder(part, groupId) {
+        const info = this.getChapterInfo(part, groupId);
+        return info?.order ?? 999;
+    },
+
+    // 取得所有章節
+    getAllChapters(part) {
+        if (!this.data) return [];
+        const partData = this.data[String(part)] || {};
+        let entries = [];
+        
+        // 提取 game_world 與 interlude 下的項目
+        const gw = Object.entries(partData.game_world || {}).map(([gid, info]) => ({ groupId: parseInt(gid), ...info }));
+        const il = Object.entries(partData.interlude || {}).map(([gid, info]) => ({ groupId: parseInt(gid), ...info }));
+        
+        // 如果外層有直接定義的 flat 資料，也一併提取作為相容性支援
+        const flat = Object.entries(partData)
+            .filter(([k]) => k !== 'game_world' && k !== 'interlude')
+            .map(([gid, info]) => ({ groupId: parseInt(gid), ...info }));
+
+        entries = [...gw, ...il, ...flat];
+        return entries.sort((a, b) => a.order - b.order);
+    },
+
+    // 由 groupId 推斷部別
+    // 2000-2015 → Part 1, 2101-2116 → Part 2, 2201-2230 → Part 3, 3000+ → Part 3
+    getPartFromGroupId(groupId) {
+        if (groupId >= 2201 && groupId <= 2230) return 3;
+        if (groupId >= 2101 && groupId <= 2116) return 2;
+        if (groupId >= 3000) return 3;
+        if (groupId >= 2000 && groupId <= 2015) return 1;
+        return 1;
+    },
+
+    // 由 groupId 取得章節鍵名（用於 chapters 物件的 key）
+    getChapterKey(part, groupId, fallbackTitle) {
+        const info = this.getChapterInfo(part, groupId);
+        if (info?.key) return info.key;
+
+        // 回退：依規則生成
+        if (part === 1) {
+            if (groupId === 2000) return "序章";
+            return `第${groupId - 2000}章`;
+        }
+        if (part === 2) {
+            return `第${groupId - 2100}章`;
+        }
+        if (part === 3) {
+            if (groupId >= 2201 && groupId <= 2230) return `第${groupId - 2200}章`;
+            if (groupId >= 3001 && groupId <= 3022) return `幕間 ${groupId - 3000}`;
+            if (groupId >= 4000) return `幕間 ${groupId - 4000}`;
+            return fallbackTitle || `群組 ${groupId}`;
+        }
+        return fallbackTitle || `群組 ${groupId}`;
+    },
+};
+// === END chapter-data.js ===
+</script>
+    <script src="characters.js?v=5.2.0"></script>
+    <script src="map.js?v=5.3.1"></script>
+
+    <script>
+        console.log("Main script block in story_map.html starting...");
+        // 檢查是否為本地檔案
+        if (window.location.protocol === 'file:') {
+            document.getElementById('cors-warning').style.display = 'block';
+        }
+
+        // 切換分頁
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById(tabId + '-tab').classList.add('active');
+            document.getElementById('tab-' + tabId + '-btn').classList.add('active');
+
+            // 如果分頁內容是空的，進行渲染
+            if (tabId === 'map' && document.getElementById('map-tab').innerHTML.trim() === '') {
+                QuestMapModule.render();
+            } else if (tabId === 'characters' && document.getElementById('characters-tab').innerHTML.trim() === '') {
+                CharactersModule.render();
+            }
+        }
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', async () => {
+            const progress = document.getElementById('loader-progress');
+            const text = document.getElementById('loader-text');
+            const regionSelector = document.getElementById('region-selector');
+
+            // 同步選擇器狀態
+            if (regionSelector) {
+                regionSelector.value = PCRDatabase.currentRegion;
+            }
+
+            try {
+                // 載入資料庫
+                await window.PCRDatabase.initDatabase((msg, pct) => {
+                    text.innerText = msg;
+                    progress.style.width = pct + '%';
+                });
+
+                // 移除載入遮罩
+                const overlay = document.getElementById('loading-overlay');
+                overlay.style.opacity = '0';
+                setTimeout(() => overlay.style.display = 'none', 500);
+
+                // 預設渲染劇情地圖
+                QuestMapModule.render();
+            } catch (err) {
+                text.innerHTML = `
+                    <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 10px;">
+                        <span style="color: #ff6b6b; font-weight: bold; font-size: 1.05rem;">資料庫載入失敗！可能是網路連線問題。</span>
+                        <span style="color: #ffb8b8; font-size: 0.85rem; background: rgba(0,0,0,0.2); padding: 6px 12px; border-radius: 4px; font-family: monospace; max-width: 90%; word-break: break-all;">錯誤原因：${err.message || err}</span>
+                        <button onclick="localStorage.setItem('pcr_region', 'tw'); location.reload();" style="
+                            padding: 10px 24px;
+                            background: linear-gradient(135deg, #ff6b9d 0%, #e83875 100%);
+                            color: white;
+                            border: none;
+                            border-radius: 20px;
+                            font-weight: bold;
+                            cursor: pointer;
+                            box-shadow: 0 4px 12px rgba(232, 56, 117, 0.25);
+                            transition: all 0.2s ease;
+                            font-size: 0.9rem;
+                        " onmouseover="this.style.transform='translateY(-1px)'" onmouseout="this.style.transform='translateY(0)'">
+                            🔄 切換回台服 (TW) 重新載入
+                        </button>
+                    </div>
+                `;
+                console.error(err);
+            }
+        });
+    </script>
+</body>
+</html>
