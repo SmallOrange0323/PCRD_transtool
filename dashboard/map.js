@@ -228,6 +228,19 @@ const QuestMapModule = {
                             Object.entries(AvatarService.customMap).forEach(([name, id]) => {
                                 this.speakerAvatars[name] = id;
                             });
+                            // 動態載入並合併 npc_avatars.json 映射
+                            try {
+                                const npcResp = await fetch('data/npc_avatars.json');
+                                if (npcResp.ok) {
+                                    const npcMap = await npcResp.json();
+                                    Object.entries(npcMap).forEach(([name, id]) => {
+                                        this.speakerAvatars[name] = id;
+                                    });
+                                    console.log("[QuestMapModule] 成功載入並合併 npc_avatars.json");
+                                }
+                            } catch (npcErr) {
+                                console.warn("[QuestMapModule] 載入 npc_avatars.json 失敗:", npcErr);
+                            }
                             console.log(`[QuestMapModule] 預載入 ${Object.keys(this.speakerAvatars).length} 筆角色頭像映射 (含手動NPC補全)`);
                         }
                     }
