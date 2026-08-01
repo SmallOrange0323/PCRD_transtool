@@ -58,6 +58,19 @@ window.CharactersModule = {
                     guild: "美食殿堂"
                 });
             }
+
+            // The newest unit can arrive on the CDN before the bundled SQLite DB
+            // has been refreshed.  Keep the character gallery usable in that gap.
+            if (!this.allCharacters.some(c => c.unit_id === 138901)) {
+                this.allCharacters.unshift({
+                    unit_id: 138901,
+                    unit_name: "格蕾斯（兔女郎）",
+                    rarity: 3,
+                    pos: 155,
+                    race: "人類",
+                    guild: "不明"
+                });
+            }
             
             this.renderLayout(container, this.allCharacters);
         } catch (error) {
