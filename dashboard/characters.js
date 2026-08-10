@@ -71,6 +71,29 @@ window.CharactersModule = {
                     guild: "不明"
                 });
             }
+
+            // These costume units are preloaded on the CDN before their
+            // records arrive in the bundled database.
+            if (!this.allCharacters.some(c => c.unit_id === 139001)) {
+                this.allCharacters.unshift({
+                    unit_id: 139001,
+                    unit_name: "\u93e1\u83ef\uff08\u54e5\u5fb7\uff09",
+                    rarity: 3,
+                    pos: null,
+                    race: "\u7cbe\u9748\u65cf",
+                    guild: "\u5c0f\u5c0f\u751c\u5fc3"
+                });
+            }
+            if (!this.allCharacters.some(c => c.unit_id === 139101)) {
+                this.allCharacters.unshift({
+                    unit_id: 139101,
+                    unit_name: "\u51f1\u7559\uff08\u9738\u77b3\u5929\u661f\uff09",
+                    rarity: 3,
+                    pos: null,
+                    race: "\u7378\u4eba\u65cf",
+                    guild: "\u7f8e\u98df\u6bbf\u5802"
+                });
+            }
             
             this.renderLayout(container, this.allCharacters);
         } catch (error) {
