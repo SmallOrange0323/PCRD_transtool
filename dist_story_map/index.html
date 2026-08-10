@@ -74,85 +74,107 @@
     </div>
 
     <!-- 程式腳本 -->
-    <script src="db.js?v=5.2.0"></script>
-    <script src="avatar-service.js?v=5.2.2"></script>
-    <script src="story-asset-service.js?v=5.2.1"></script>
-    <script src="chapter-data.js?v=5.2.2"></script>
-    <script src="characters.js?v=5.2.0"></script>
-    <script src="map.js?v=5.3.1"></script>
-
     <script>
-        console.log("Main script block in story_map.html starting...");
-        // 檢查是否為本地檔案
-        if (window.location.protocol === 'file:') {
-            document.getElementById('cors-warning').style.display = 'block';
-        }
+// === db.js INLINED ===
+console.log("db.js loaded");
+if (localStorage.getItem('pcr_region') !== 'tw') {
+    localStorage.setItem('pcr_region', 'tw');
+}
+/**
+ * PCR 數據導航站 - DB 引擎
+ * 負責下載、快取與查詢 SQLite 資料庫
+ */
 
-        // 切換分頁
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+window.PCRDatabase = {
+    db: null,
+    currentRegion: 'tw',
+
+    /**
+     * 切換區域 (目前僅支援台服，強制定向為 tw)
+     */
+    async switchRegion(region) {
+        localStorage.setItem('pcr_region', 'tw');
+        location.reload();
+    },
+
+    /**
+     * 驗證資料庫結構完整性
+     */
+    verifyDatabase() {
+        if (!this.db) return false;
+        try {
+            // 測試查詢 story_detail 表是否存在且有資料
+            const res = this.runQuery("SELECT COUNT(*) as cnt FROM sqlite_master WHERE type='table' AND name='story_detail'");
+            if (res && res.length > 0 && res[0].cnt > 0) {
+                // 進一步檢查是否包含主線劇情資料
+                const rows = this.runQuery("SELECT COUNT(*) as cnt FROM story_detail");
+                return rows && rows.length > 0 && rows[0].cnt > 0;
+            }
+            return false;
+        } catch (e) {
+            console.error("[PCRDatabase] 驗證資料庫結構出錯:", e);
+            return false;
+        }
+    },
+
+    /**
+     * 初始化資料庫
+     * @param {Function} onProgress 進度回調 (message, percent)
+     */
+    async initDatabase(onProgress) {
+        if (this.db) return this.db;
+
+        const dbKey = `pcr_db_${this.currentRegion}`;
+        const remoteUrl = `https://wthee.xyz/db/redive_${this.currentRegion}.db`;
+        const localPath = `./redive_${this.currentRegion}.db`;
+        const sizeKey = `pcr_db_size_${this.currentRegion}`;
+
+        try {
+            // 1. 初始化 SQL 引擎 (WebAssembly)
+            if (onProgress) onProgress('正在初始化 SQL 引擎...', 10);
             
-            document.getElementById(tabId + '-tab').classList.add('active');
-            document.getElementById('tab-' + tabId + '-btn').classList.add('active');
-
-            // 如果分頁內容是空的，進行渲染
-            if (tabId === 'map' && document.getElementById('map-tab').innerHTML.trim() === '') {
-                QuestMapModule.render();
-            } else if (tabId === 'characters' && document.getElementById('characters-tab').innerHTML.trim() === '') {
-                CharactersModule.render();
-            }
-        }
-
-        // 初始化
-        document.addEventListener('DOMContentLoaded', async () => {
-            const progress = document.getElementById('loader-progress');
-            const text = document.getElementById('loader-text');
-            const regionSelector = document.getElementById('region-selector');
-
-            // 同步選擇器狀態
-            if (regionSelector) {
-                regionSelector.value = PCRDatabase.currentRegion;
+            if (typeof initSqlJs === 'undefined') {
+                throw new Error("無法載入 SQL 引擎元件 (initSqlJs 未定義)。請嘗試按 Ctrl+F5 強制重新整理頁面。");
             }
 
+            const sqlPromise = initSqlJs({
+                locateFile: file => `${file}`
+            });
+
+            const timeoutPromise = new Promise((_, reject) => 
+                setTimeout(() => reject(new Error("初始化 SQL 引擎逾時 (10秒)。可能是網路連線不穩定，或是瀏覽器不支援 WebAssembly/WASM。")), 10000)
+            );
+
+            const SQL = await Promise.race([sqlPromise, timeoutPromise]);
+
+            // 從 data/db_info.json 一次性取得 size 與 db_version（合併為單一請求）
+            let size = 0;
+            let latestVersion = "";
             try {
-                // 載入資料庫
-                await window.PCRDatabase.initDatabase((msg, pct) => {
-                    text.innerText = msg;
-                    progress.style.width = pct + '%';
-                });
-
-                // 移除載入遮罩
-                const overlay = document.getElementById('loading-overlay');
-                overlay.style.opacity = '0';
-                setTimeout(() => overlay.style.display = 'none', 500);
-
-                // 預設渲染劇情地圖
-                QuestMapModule.render();
-            } catch (err) {
-                text.innerHTML = `
-                    <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 10px;">
-                        <span style="color: #ff6b6b; font-weight: bold; font-size: 1.05rem;">資料庫載入失敗！可能是網路連線問題。</span>
-                        <span style="color: #ffb8b8; font-size: 0.85rem; background: rgba(0,0,0,0.2); padding: 6px 12px; border-radius: 4px; font-family: monospace; max-width: 90%; word-break: break-all;">錯誤原因：${err.message || err}</span>
-                        <button onclick="localStorage.setItem('pcr_region', 'tw'); location.reload();" style="
-                            padding: 10px 24px;
-                            background: linear-gradient(135deg, #ff6b9d 0%, #e83875 100%);
-                            color: white;
-                            border: none;
-                            border-radius: 20px;
-                            font-weight: bold;
-                            cursor: pointer;
-                            box-shadow: 0 4px 12px rgba(232, 56, 117, 0.25);
-                            transition: all 0.2s ease;
-                            font-size: 0.9rem;
-                        " onmouseover="this.style.transform='translateY(-1px)'" onmouseout="this.style.transform='translateY(0)'">
-                            🔄 切換回台服 (TW) 重新載入
-                        </button>
-                    </div>
-                `;
-                console.error(err);
+                const infoRes = await fetch(`data/db_info.json?v=${Date.now()}`);
+                if (infoRes.ok) {
+                    const info = await infoRes.json();
+                    size = parseInt(info[`${this.currentRegion}_size`], 10) || 0;
+                    latestVersion = info.db_version || "";
+                    console.log(`[PCRDatabase] db_info: size=${size}, version=${latestVersion}`);
+                }
+            } catch (e) {
+                console.warn("[PCRDatabase] 讀取 db_info.json 失敗，改用 HEAD 備用機制:", e);
             }
-        });
-    </script>
-</body>
-</html>
+
+            // 若 db_info 無法取得 size，降級使用 HEAD 請求
+            if (size <= 0) {
+                try {
+                    const headRes = await fetch(localPath, { method: 'HEAD' });
+                    if (headRes.ok) {
+                        const cl = headRes.headers.get('content-length');
+                        if (cl) size = parseInt(cl, 10);
+                    }
+                } catch (e) {
+                    console.warn(`[PCRDatabase] HEAD ${localPath} failed...`, e);
+                }
+            }
+
+            // --- [快取失效判斷] 比對版本號或 size 決定是否強制重新下載 ---
+            const cachedVersionKey = `${sizeKey}_version`;
+        

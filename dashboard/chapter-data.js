@@ -117,9 +117,9 @@ window.ChapterDataService = {
     },
 
     // 由 groupId 推斷部別
-    // 2000-2015 → Part 1, 2101-2116 → Part 2, 2201-2215 → Part 3, 3000+ → Part 3
+    // 2000-2015 → Part 1, 2101-2116 → Part 2, 2201-2230 → Part 3, 3000+ → Part 3
     getPartFromGroupId(groupId) {
-        if (groupId >= 2201 && groupId <= 2215) return 3;
+        if (groupId >= 2201 && groupId <= 2230) return 3;
         if (groupId >= 2101 && groupId <= 2116) return 2;
         if (groupId >= 3000) return 3;
         if (groupId >= 2000 && groupId <= 2015) return 1;
@@ -140,7 +140,7 @@ window.ChapterDataService = {
             return `第${groupId - 2100}章`;
         }
         if (part === 3) {
-            if (groupId >= 2201 && groupId <= 2215) return `第${groupId - 2200}章`;
+            if (groupId >= 2201 && groupId <= 2230) return `第${groupId - 2200}章`;
             if (groupId >= 3001 && groupId <= 3022) return `幕間 ${groupId - 3000}`;
             if (groupId >= 4000) return `幕間 ${groupId - 4000}`;
             return fallbackTitle || `群組 ${groupId}`;

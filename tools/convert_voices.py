@@ -8,7 +8,7 @@ import shutil
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOOLS_DIR = os.path.join(BASE_DIR, "tools")
 SOUNDS_DIR = os.path.join(BASE_DIR, "downloaded_sounds")
 OUTPUT_DIR = os.path.join(BASE_DIR, "dashboard", "sound", "story_vo")
@@ -66,7 +66,7 @@ def ensure_tools():
                 os.remove(zip_path)
             print("[Tools] ffmpeg 準備完成！")
 
-def convert_sounds():
+def convert_sounds(prefix_filter=None):
     if not os.path.exists(SOUNDS_DIR):
         print(f"[Error] 找不到聲音資料夾：{SOUNDS_DIR}")
         return
@@ -76,6 +76,10 @@ def convert_sounds():
     # 同時收集 acb 與 awb 檔案
     all_files = os.listdir(SOUNDS_DIR)
     sound_files = [f for f in all_files if f.lower().endswith('.awb') or f.lower().endswith('.acb')]
+    
+    # 過濾首碼
+    if prefix_filter:
+        sound_files = [f for f in sound_files if prefix_filter.lower() in f.lower()]
     
     # 優先處理解壓 AWB，如果同名檔既有 acb 又有 awb，優先跑 awb
     file_map = {}
@@ -133,6 +137,11 @@ def convert_sounds():
     print("\n[Success] 所有語音檔案已成功解包並轉碼為 .m4a！")
 
 if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="PCRD 語音轉檔自動化工具")
+    parser.add_argument("--prefix", help="過濾封包首碼，例如 v_t_vo_adv_2216")
+    args = parser.parse_args()
+
     print("=== PCRD 語音轉檔自動化工具 ===")
     ensure_tools()
-    convert_sounds()
+    convert_sounds(prefix_filter=args.prefix)

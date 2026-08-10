@@ -69,19 +69,22 @@ window.PCRDatabase = {
 
             const SQL = await Promise.race([sqlPromise, timeoutPromise]);
 
-            // 優先從 data/db_info.json 取得最新資料庫大小 (防 GitHub Pages HEAD 請求被拒之 Bug)
+            // 從 data/db_info.json 一次性取得 size 與 db_version（合併為單一請求）
             let size = 0;
+            let latestVersion = "";
             try {
                 const infoRes = await fetch(`data/db_info.json?v=${Date.now()}`);
                 if (infoRes.ok) {
                     const info = await infoRes.json();
                     size = parseInt(info[`${this.currentRegion}_size`], 10) || 0;
-                    console.log(`[PCRDatabase] Retrieved DB size from db_info.json: ${size}`);
+                    latestVersion = info.db_version || "";
+                    console.log(`[PCRDatabase] db_info: size=${size}, version=${latestVersion}`);
                 }
             } catch (e) {
                 console.warn("[PCRDatabase] 讀取 db_info.json 失敗，改用 HEAD 備用機制:", e);
             }
 
+            // 若 db_info 無法取得 size，降級使用 HEAD 請求
             if (size <= 0) {
                 try {
                     const headRes = await fetch(localPath, { method: 'HEAD' });
@@ -90,28 +93,29 @@ window.PCRDatabase = {
                         if (cl) size = parseInt(cl, 10);
                     }
                 } catch (e) {
-                    console.warn(`[PCRDatabase] HEAD ${localPath} failed, trying ${remoteUrl}...`, e);
-                }
-                if (size <= 0) {
-                    try {
-                        const headRes = await fetch(remoteUrl, { method: 'HEAD' });
-                        if (headRes.ok) {
-                            const cl = headRes.headers.get('content-length');
-                            if (cl) size = parseInt(cl, 10);
-                        }
-                    } catch (e) {
-                        console.warn(`[PCRDatabase] HEAD ${remoteUrl} failed...`, e);
-                    }
+                    console.warn(`[PCRDatabase] HEAD ${localPath} failed...`, e);
                 }
             }
 
+            // --- [快取失效判斷] 比對版本號或 size 決定是否強制重新下載 ---
+            const cachedVersionKey = `${sizeKey}_version`;
+            const cachedVersion = localStorage.getItem(cachedVersionKey);
             const cachedSize = localStorage.getItem(sizeKey);
             let forceReload = false;
-            if (size > 0 && String(size) !== String(cachedSize)) {
-                console.log(`[PCRDatabase] Size mismatch for ${this.currentRegion} (current: ${size}, cached: ${cachedSize}). Force reload.`);
+
+            if (latestVersion && String(latestVersion) !== String(cachedVersion)) {
+                console.log(`[PCRDatabase] 版本變更 (伺服器: ${latestVersion}, 本地: ${cachedVersion})，強制重新下載。`);
+                forceReload = true;
+                await this.removeFromIDB(dbKey);
+                // 立刻寫入新版本，防止下載失敗時造成下次開頁面又觸發無限清空循環
+                localStorage.setItem(cachedVersionKey, latestVersion);
+            } else if (!latestVersion && size > 0 && String(size) !== String(cachedSize)) {
+                // 回退機制：無法取得 version 時，比對 size
+                console.log(`[PCRDatabase] Size mismatch (current: ${size}, cached: ${cachedSize})，強制重新下載。`);
                 forceReload = true;
                 await this.removeFromIDB(dbKey);
             }
+
 
             // 2. 嘗試從 IndexedDB 讀取 (快取隔離)
             let cachedDB = null;
@@ -151,6 +155,9 @@ window.PCRDatabase = {
                     await this.saveToIDB(dbKey, dbData);
                     const finalSize = size > 0 ? size : dbData.byteLength;
                     localStorage.setItem(sizeKey, finalSize);
+                    if (latestVersion) {
+                        localStorage.setItem(`${sizeKey}_version`, latestVersion);
+                    }
                     console.log(`[PCRDatabase] Successfully initialized and verified ${this.currentRegion} DB`);
                     return this.db;
                 } else {

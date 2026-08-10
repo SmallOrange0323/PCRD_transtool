@@ -1,0 +1,25 @@
+{
+  "steps": [
+    {
+      "step": "reset",
+      "code": 0,
+      "out": "Unstaged changes after reset:\nM\tdata/db_info.json\nM\ticon/unit/unit_icon_138731.webp\nM\ticon/unit/unit_icon_138831.webp\nM\tredive_tw.db\nM\tstory/1387002.json\nM\tstory/1387003.json\nM\tstory/1387004.json\nM\tstory/1388001.json\nM\tstory/1388002.json\nM\tstory/1388003.json\nM\tstory/1388004.json"
+    },
+    {
+      "step": "add",
+      "code": 0
+    },
+    {
+      "step": "commit",
+      "code": 0,
+      "out": "[gh-pages 2c993d5] deploy: update DB and assets for 138801 Winter Shiori\n 11 files changed, 12527 insertions(+), 15662 deletions(-)"
+    },
+    {
+      "step": "push_gh_pages",
+      "code": 0,
+      "out": "",
+      "err": "To https://github.com/SmallOrange0323/PCRD_transtool.git\n   dc2bf73..2c993d5  gh-pages -> gh-pages"
+    }
+  ],
+  "status": "ok"
+}

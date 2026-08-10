@@ -24,10 +24,10 @@ p1_titles = get_group_titles(conn, p1_gids)
 p2_gids = list(range(2101, 2117))
 p2_titles = get_group_titles(conn, p2_gids)
 
-# Part 3 game_world: 2201-2215
-p3_gw_gids = list(range(2201, 2216))
+# Part 3 game_world: 2201-2216
+p3_gw_gids = list(range(2201, 2217))
 p3_gw_titles = get_group_titles(conn, p3_gw_gids)
-p3_gw_titles[2215] = [t for t in p3_gw_titles.get(2215, [])]
+p3_gw_titles[2216] = [t for t in p3_gw_titles.get(2216, [])]
 
 # Part 3 interlude: 3001-3022, 4001-4013
 p3_il_gids = [3001,3002,3003,3004,3005,3006,3007,3008,3009,3010,3011,3012,3013,3014,3015,3016,3017,3022] + [4001,4002,4003,4006,4007,4008,4009,4010,4011,4013]
@@ -135,6 +135,7 @@ part3_titles = {
     2213: "第二次公主會議",
     2214: "龍之浮島",
     2215: "幻境的下午茶時間",
+    2216: "破滅的孵化與交涉",
 }
 
 part3_summaries = {
@@ -153,6 +154,7 @@ part3_summaries = {
     2213: "各方領袖再次齊聚一堂，召開了決定新世界命運的第二次公主會議。每個人都必須做出攸關自己與同伴未來的重大抉擇。",
     2214: "眾人登上了高聳的龍之浮島。隨著探索的深入，新世界的底層架構與被隱藏的真實核心在此處毫無保留地展現在眾人面前。",
     2215: "邪惡的公主騎士們與被喚醒的伏龍震撼現身。命運的齒輪開始以前所未有的速度狂亂旋轉，新世界的命運在此迎來了最關鍵的轉折點。",
+    2216: "雪菲與美食殿堂的成員們展開特訓，同時面對術士、格魯尼、羅蘭與芙蕾雅等人的威脅與交涉，劇情的衝突與試煉持續擴大。",
 }
 
 interlude_titles = {
@@ -214,7 +216,7 @@ for idx, gid in enumerate(range(2101, 2117)):
         "order": ch_num,
     }
 
-for idx, gid in enumerate(range(2201, 2216)):
+for idx, gid in enumerate(range(2201, 2217)):
     ch_num = idx + 1
     new_data["3"]["game_world"][str(gid)] = {
         "title": part3_titles.get(gid, f"第{ch_num}章"),

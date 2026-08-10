@@ -5,7 +5,11 @@ import sqlite3
 import re
 import sys
 
-sys.stdout.reconfigure(encoding='utf-8')
+try:
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+except Exception:
+    pass
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "redive_tw.db")

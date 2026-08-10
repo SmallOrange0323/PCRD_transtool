@@ -44,6 +44,8 @@ window.StoryAssetService = {
         const candidates = [];
 
         // 1. 本地候選路徑 (.webp 與 .png)
+        candidates.push(`${this.localBase}still/bg/bg_${id}.webp`);
+        candidates.push(`${this.localBase}still/bg/bg_${id}.png`);
         candidates.push(`${this.localBase}bg/story/${id}.webp`);
         candidates.push(`${this.localBase}bg/story/${id}.png`);
 

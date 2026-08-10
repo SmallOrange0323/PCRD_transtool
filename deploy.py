@@ -31,9 +31,18 @@ def main():
         run_cmd("git remote add origin https://github.com/SmallOrange0323/PCRD_transtool.git", cwd=dist_dir)
         run_cmd("git checkout -b gh-pages", cwd=dist_dir)
         
-    # 3. 增量提交
+    # 3. 寫入 .gitignore 確保排除大目錄
+    gitignore_path = os.path.join(dist_dir, ".gitignore")
+    try:
+        with open(gitignore_path, "w", encoding="utf-8") as f:
+            f.write("sound/\ncard/\n")
+        print("[Deploy] 成功寫入 .gitignore")
+    except Exception as e:
+        print(f"[Warning] 無法寫入 .gitignore: {e}")
+
+    # 4. 增量提交
     print("[Deploy] 正在掃描並追蹤變更檔案 (git add)...")
-    run_cmd("git add -A -f", cwd=dist_dir)
+    run_cmd("git add -A", cwd=dist_dir)
     
     print("[Deploy] 正在建立提交 (git commit)...")
     success, msg = run_cmd('git commit -m "deploy: update story map web"', cwd=dist_dir)

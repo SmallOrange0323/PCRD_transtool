@@ -74,3 +74,20 @@
 * 🌌 [世界觀與名詞定義 (docs/pcrd_universe.md)](file:///e:/OneDrive%20-%20%E5%AF%B0%E5%AE%87%E7%9F%A5%E8%AD%98%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/PCRD_tool/docs/pcrd_universe.md)
 * 📖 [官方用語集 (docs/pcrd_glossary.md)](file:///e:/OneDrive%20-%20%E5%AF%B0%E5%AE%87%E7%9F%A5%E8%AD%98%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/PCRD_tool/docs/pcrd_glossary.md)
 
+---
+
+## 六、 多媒體素材下載指令
+
+本專案支援實體多媒體資源下載。在解密對白文字後，可執行以下指令將官方實體資源直接整合至網頁系統中：
+
+1. **下載指定劇情話數的所有語音音檔 (M4A)**：
+   ```bash
+   python tools/pcrd_fetch.py fetch-story-voices --story-id [story_id]
+   ```
+   * *功能*：解析該話 JSON 劇本中的所有語音 ID，自動連線鏡像大語音池下載 `.m4a` 檔案至 `dashboard/sound/[story_id]/` 目錄中。
+
+2. **下載指定劇情話數的所有 CG 插畫與背景圖 (WebP)**：
+   ```bash
+   python tools/pcrd_fetch.py fetch-story-images --story-id [story_id]
+   ```
+   * *功能*：自動下載官方 CDN 明文 `bg2_assetmanifest` 與 `unit2_assetmanifest`，匹配該話在引導 Bundle 中定義的所有背景 ID 與 CG ID，再從 CDN pool 下載對應 `.unity3d` 文件並使用 UnityPy 解碼導出無損 WebP 大圖至 `dashboard/still/bg/` 與 `dashboard/still/scenario/` 目錄中。

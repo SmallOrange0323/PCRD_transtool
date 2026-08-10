@@ -131,7 +131,11 @@ const QuestMapModule = {
             }
         }
         if (!thumbHtml) {
-            if (s.type === 'chara' && s.groupId) {
+            if (s.still_id) {
+                thumbHtml = StoryAssetService.getStillHtml(s.still_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
+            } else if (s.bg_id) {
+                thumbHtml = StoryAssetService.getBackgroundHtml(s.bg_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
+            } else if (s.type === 'chara' && s.groupId) {
                 const cardId = `${s.groupId}31`;
                 thumbHtml = `<img class="story-thumb-img" src="card/${cardId}.webp" onerror="if(this.src.indexOf('estertion')===-1){this.src='https://redive.estertion.win/card/full/${cardId}.webp';}else{this.src='https://redive.estertion.win/card/full/100431.webp';}" style="width:100%;height:100%;object-fit:cover;" alt="thumbnail">`;
             } else {
@@ -228,6 +232,22 @@ const QuestMapModule = {
                             Object.entries(AvatarService.customMap).forEach(([name, id]) => {
                                 this.speakerAvatars[name] = id;
                             });
+                            // 動態載入並合併 npc_avatars.json 映射
+                            try {
+                                const npcResp = await fetch('data/npc_avatars.json');
+                                if (npcResp.ok) {
+                                    const npcMap = await npcResp.json();
+                                    Object.entries(npcMap).forEach(([name, id]) => {
+                                        this.speakerAvatars[name] = id;
+                                    });
+                                    // Grace uses "飛白" as her name in the real-world scene.
+                                    this.speakerAvatars["格蕾斯"] = 138901;
+                                    this.speakerAvatars["飛白"] = 138901;
+                                    console.log("[QuestMapModule] 成功載入並合併 npc_avatars.json");
+                                }
+                            } catch (npcErr) {
+                                console.warn("[QuestMapModule] 載入 npc_avatars.json 失敗:", npcErr);
+                            }
                             console.log(`[QuestMapModule] 預載入 ${Object.keys(this.speakerAvatars).length} 筆角色頭像映射 (含手動NPC補全)`);
                         }
                     }
@@ -280,6 +300,39 @@ const QuestMapModule = {
                     const resp = await fetch('data/extra_events.json');
                     if (resp.ok) {
                         this.extraEvents = await resp.json();
+                        // Event 10215 launched after the database snapshot. Keep its
+                        // local navigation available until upstream detail rows arrive.
+                        const villaEvent = this.extraEvents.events?.find(e => e.story_group_id === 10215);
+                        if (villaEvent) {
+                            villaEvent.title = 'VILLAINESS\n避開吧！鏡華的變疑分子毀滅結局';
+                            villaEvent.start_time = '2026/08/01 16:00:00';
+                        }
+                        const villaStoryIds = [5215000, 5215001, 5215002, 5215003, 5215004, 5215005, 5215006, 5215007];
+                        const villaLabels = ['序章', '第 1 話', '第 2 話', '第 3 話', '第 4 話', '第 5 話', '第 6 話', '終幕'];
+                        const villaBackgrounds = ['502430', '501820', '500182', '502440', '510170', '510125', '500030', '500340'];
+                        // Not every episode references its still in the dialogue
+                        // commands. Use the prologue CG as the event fallback, with
+                        // the dedicated stills for episodes 5 and 7 where available.
+                        const villaStills = ['521500101', '521500101', '521500101', '521500101', '521500101', '521500501', '521500101', '521500701'];
+                        villaStoryIds.forEach((id, index) => {
+                            if (this.storyThumbnails) {
+                                this.storyThumbnails[id] = {
+                                    still_id: villaStills[index],
+                                    bg_id: villaBackgrounds[index]
+                                };
+                            }
+                        });
+                        if (villaEvent && !this.extraEvents.stories?.some(s => s.groupId === 10215)) {
+                            this.extraEvents.stories.push(...villaStoryIds.map((id, index) => ({
+                                id,
+                                chapter: villaLabels[index],
+                                title: index === 0 ? 'VILLAINESS' : villaLabels[index],
+                                groupId: 10215,
+                                isEvent: true,
+                                still_id: villaStills[index],
+                                bg_id: villaBackgrounds[index]
+                            })));
+                        }
                         console.log(`[QuestMapModule] 成功載入新形式活動 (${this.extraEvents.events.length} 個活動)`);
                     }
                 } catch (e) {
@@ -490,7 +543,8 @@ const QuestMapModule = {
                         10211: "2026/04/01 16:00:00",
                         10212: "2026/05/01 16:00:00",
                         10213: "2026/06/01 16:00:00",
-                        10214: "2026/07/01 16:00:00"
+                        10214: "2026/07/01 16:00:00",
+                        10215: "2026/08/01 16:00:00"
                     };
 
                     const extraEventsMapped = this.extraEvents.events.map(e => ({
@@ -595,6 +649,8 @@ const QuestMapModule = {
                     groupId: s.groupId,
                     isEvent: true,
                     eventValue: evt.value,
+                    still_id: s.still_id,
+                    bg_id: s.bg_id,
                 }));
             }
         });
@@ -1988,12 +2044,13 @@ const QuestMapModule = {
             });
 
             // 如果該話擁有 CG 插畫且對白 JSON 內沒有 special still 節點，則自動在末端追加完結 CG 圖片
-            const currentStoryObj = this.stories.find(s => s.id == storyId);
+            const currentStoryObj = this.getStoryById(storyId);
             if (currentStoryObj && (currentStoryObj.still_id || currentStoryObj.bg_id)) {
                 const hasStillInList = dialogueList.some(item => item.type === 'still');
                 if (!hasStillInList) {
-                    const bottomImgId = currentStoryObj.still_id || currentStoryObj.bg_id;
-                    const bottomStillImgHtml = StoryAssetService.getStillHtml(bottomImgId, 'dialogue-still-img still-clickable', '');
+                    const bottomStillImgHtml = currentStoryObj.still_id
+                        ? StoryAssetService.getStillHtml(currentStoryObj.still_id, 'dialogue-still-img still-clickable', '')
+                        : StoryAssetService.getBackgroundHtml(currentStoryObj.bg_id, 'dialogue-still-img still-clickable', '');
                     html += `
                         <div class="game-dialogue-still-wrap" style="margin-top: 20px; margin-bottom: 10px;">
                             <div class="game-dialogue-still-label">✨ 劇情插畫</div>

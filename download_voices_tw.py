@@ -12,8 +12,18 @@ HEADER = {
 }
 
 def get_truth_version():
-    # 預設使用最新探測到的台服 TruthVersion
-    return "00500025"
+    # 動態獲取最新台版 TruthVersion
+    url = "https://wthee.xyz/pcr/api/v1/db/info/v2"
+    payload = json.dumps({"regionCode": "tw"}).encode('utf-8')
+    req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"}, method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=10) as response:
+            res_data = json.loads(response.read().decode('utf-8'))
+            if res_data.get("status") == 0 and "data" in res_data:
+                return res_data["data"]["truthVersion"]
+    except:
+        pass
+    return "00500030"
 
 def download_file(url, dest_path):
     os.makedirs(os.path.dirname(dest_path), exist_ok=True)
@@ -103,10 +113,10 @@ def main():
             print("❌ 輸入無效。")
             return
         
-        # 匹配檔名中含有 group_id 的項目，例如 vo_1001 或 vo_5031
-        to_download = [e for e in sound_entries if f"vo_{group_id}" in e['filename'].lower()]
+        # 匹配檔名中含有 group_id 的項目，例如 vo_adv_2216002 或 vo_5031
+        to_download = [e for e in sound_entries if str(group_id) in e['filename'].lower()]
         if not to_download:
-            print(f"⚠️ 在 manifest 中找不到包含 'vo_{group_id}' 的語音檔案。")
+            print(f"⚠️ 在 manifest 中找不到包含 '{group_id}' 的語音檔案。")
             return
         print(f"🔍 找到匹配的語音檔案共 {len(to_download)} 個。")
     else:

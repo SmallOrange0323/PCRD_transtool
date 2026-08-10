@@ -1,0 +1,4 @@
+{
+  "status": "error",
+  "stderr": "Traceback (most recent call last):\n  File \"G:\\OneDrive - �Ȧt���Ѭ�ުѥ��������q\\PCRD_tool\\dashboard\\scripts\\bundle_story_map.py\", line 261, in <module>\n    print(f\"[Info] �z�{�b�i�H�����N {dist_dir} ��Ƨ����e���p�� GitHub Pages�BVercel �αz������ Web ���A���W�C\")\n    ^^^^^^\n  File \"G:\\OneDrive - �Ȧt���Ѭ�ުѥ��������q\\PCRD_tool\\dashboard\\scripts\\bundle_story_map.py\", line 109, in main\n    try:\n    ^^^^^\n  File \"C:\\Users\\m8203\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\shutil.py\", line 460, in copy2\n    _winapi.CopyFile2(src_, dst_, flags)\nPermissionError: [WinError 32] �{�ǵL�k�s���ɮסA�]���ɮץ��ѥt�@�ӵ{�ǨϥΡC\n"
+}

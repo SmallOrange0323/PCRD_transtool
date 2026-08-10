@@ -76,8 +76,26 @@ python tools/pcrd_deploy.py monitor --timeout 300 --output tools/monitor_report.
 
 - **GitHub API**：未認證請求限速 60 次/小時，monitor 每 10 秒一次，不會超出限制
 
+## Pre-Deployment Verification (發布前三道防禦自檢)
+
+在執行 `push-pages` 發布前，AI **必須**嚴格完成以下三道防禦性自檢：
+
+1. **靜態語法檢查 (Linter Check)**：
+   * 若修改了 `db.js` 或 `chapter-data.js` 等核心 JS 代碼，發布前必須強制在本地執行：
+     ```bash
+     node --check dashboard/db.js
+     node --check dashboard/chapter-data.js
+     ```
+   * 確保完全無 JS 語法解析錯誤。
+2. **打包檔案映射自檢 (Bundle Mapping Check)**：
+   * 執行 `bundle` 後，必須確認新加入的素材（頭像、劇照、語音、背景）已出現在 `dist_story_map/` 對應目錄中。
+   * 檢查 `dist_story_map/data/db_info.json` 內容是否正確生成且版本號已更新。
+3. **快取破壞內嵌機制 (Cache-Busting Inline Integration)**：
+   * 為了克服 GitHub Pages CDN 極度頑固的舊 JS 快取問題，任何對 `db.js` 或 `chapter-data.js` 的修改，**必須強制執行 inline 腳本**，將這兩個核心 JS 的實體內容直接內嵌 (inline) 到 `dist_story_map/index.html` 中發布。
+
 ## Common Mistakes
 
 1. **index.lock 殘留**：前次中斷的 Git 進程會留下鎖定檔，`push-pages` 已自動處理，但若仍失敗請手動確認 `dist_story_map/.git/` 下無 lock 檔。
-2. **音訊目錄被誤追蹤**：`dist_story_map/.gitignore` 已設定忽略 `sound/`，若音訊誤入 staging 會導致 `git add` 卡死數分鐘，需執行 `git rm -r --cached sound` 解除追蹤。
+2. **音訊目錄被誤追蹤**：`dist_story_map/.gitignore` 已設定忽略 `sound/`，若音訊誤入 staging 會導致 `git add` 卡死數分鐘，需執行 `git rm -r --cached sound` 解微追蹤。
 3. **瀏覽器強快取**：GitHub Pages 成功部署後，使用者仍需按 Ctrl+F5 強制刷新才能看到最新版，純刷新 F5 可能仍顯示舊版。
+4. **JS 語法錯誤上線**：未經驗證直接提交修改後的 `db.js`，導致線上網頁開啟時直接出現 JavaScript 引擎語法解析崩潰。必須強制執行 Pre-Deployment Linter。

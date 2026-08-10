@@ -1,0 +1,25 @@
+{
+  "steps": [
+    {
+      "step": "reset",
+      "code": 0,
+      "out": "Unstaged changes after reset:\nM\tcharacters.js\nM\tdata/chapters.json\nM\tdata/db_info.json\nM\tdata/extra_events.json\nM\tdata/story_thumbnails.json\nM\ticon/unit/195212.png\nM\ticon/unit/195212.webp\nM\ticon/unit/195213.png\nM\ticon/unit/195213.webp\nM\ticon/unit/195214.png\nM\ticon/unit/195214.webp\nM\ticon/unit/195611.png\nM\ticon/unit/195611.webp\nM\tmap.js\nM\tredive_tw.db\nM\tstory-asset-service.js"
+    },
+    {
+      "step": "add",
+      "code": 0
+    },
+    {
+      "step": "commit",
+      "code": 0,
+      "out": "[gh-pages 0b18ebc] deploy: VILLAINESS event and Grace Bunny\n 61 files changed, 26161 insertions(+), 2759 deletions(-)\n create mode 100644 icon/unit/195211.png\n create mode 100644 icon/unit/195211.webp\n create mode 100644 icon/unit/195511.png\n create mode 100644 icon/unit/195511.webp\n create mode 100644 icon/unit/195512.png\n create mode 100644 icon/unit/195512.webp\n create mode 100644 icon/unit/195612.png\n create mode 100644 icon/unit/195612.webp\n create mode 100644 icon/unit/unit_icon_138911.webp\n create mode 100644 icon/unit/unit_icon_138931.webp\n create mode 100644 still/bg/bg_500010.webp\n create mode 100644 still/bg/bg_500182.webp\n create mode 100644 still/bg/bg_500194.webp\n create mode 100644 still/bg/bg_500195.webp\n create mode 100644 still/bg/bg_500340.webp\n create mode 100644 still/bg/bg_500890.webp\n create mode 100644 still/bg/bg_501582.webp\n create mode 100644 still/bg/bg_501583.webp\n create mode 100644 still/bg/bg_501820.webp\n create mode 100644 still/bg/bg_502400.webp\n create mode 100644 still/bg/bg_502430.webp\n create mode 100644 still/bg/bg_502440.webp\n create mode 100644 still/bg/bg_502790.webp\n create mode 100644 still/bg/bg_502830.webp\n create mode 100644 still/bg/bg_510122.webp\n create mode 100644 still/bg/bg_510125.webp\n create mode 100644 still/bg/bg_510170.webp\n create mode 100644 still/story/521500101.webp\n create mode 100644 still/story/521500501.webp\n create mode 100644 still/story/521500502.webp\n create mode 100644 still/story/521500701.webp\n create mode 100644 still/story/521500702.webp\n create mode 100644 still/story/521500703.webp\n create mode 100644 story/1389001.json\n create mode 100644 story/1389002.json\n create mode 100644 story/1389003.json\n create mode 100644 story/1389004.json\n create mode 100644 story/5215000.json\n create mode 100644 story/5215001.json\n create mode 100644 story/5215002.json\n create mode 100644 story/5215003.json\n create mode 100644 story/5215004.json\n create mode 100644 story/5215005.json\n create mode 100644 story/5215006.json\n create mode 100644 story/5215007.json"
+    },
+    {
+      "step": "push_gh_pages",
+      "code": 0,
+      "out": "",
+      "err": "To https://github.com/SmallOrange0323/PCRD_transtool.git\n   2c993d5..0b18ebc  gh-pages -> gh-pages"
+    }
+  ],
+  "status": "ok"
+}

@@ -3,7 +3,7 @@
     {
       "step": "reset",
       "code": 0,
-      "out": "Unstaged changes after reset:\nM\tstory-asset-service.js"
+      "out": "Unstaged changes after reset:\nM\tdata/db_info.json\nM\tdata/event_summaries.json\nM\tdata/story_thumbnails.json\nM\tstory/speaker_appearance.json"
     },
     {
       "step": "add",
@@ -12,13 +12,13 @@
     {
       "step": "commit",
       "code": 0,
-      "out": "[gh-pages f5fc2cca] fix: restore story-asset-service.js with correct isNineDigit still path mapping\n 1 file changed, 14 insertions(+), 3 deletions(-)"
+      "out": "[gh-pages 17c538a] deploy: VILLAINESS metadata and indexes\n 4 files changed, 2341 insertions(+), 2192 deletions(-)"
     },
     {
       "step": "push_gh_pages",
       "code": 0,
       "out": "",
-      "err": "To https://github.com/SmallOrange0323/PCRD_transtool.git\n   e1581108..f5fc2cca  gh-pages -> gh-pages"
+      "err": "To https://github.com/SmallOrange0323/PCRD_transtool.git\n   0b18ebc..17c538a  gh-pages -> gh-pages"
     }
   ],
   "status": "ok"
