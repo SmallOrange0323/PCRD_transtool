@@ -25,13 +25,15 @@ window.PCRDatabase = {
     verifyDatabase() {
         if (!this.db) return false;
         try {
-            const res = this.runQuery("SELECT COUNT(*) as cnt FROM sqlite_master WHERE type='table'");
-            return res && res.length > 0 && res[0].cnt > 10;
-        } catch (e) {
-            console.error("[PCRDatabase] 驗證資料庫結構出錯:", e);
+            // 測試查詢 story_detail 表是否存在且有資料
+            const res = this.runQuery("SELECT COUNT(*) as cnt FROM sqlite_master WHERE type='table' AND name='story_detail'");
+            if (res && res.length > 0 && res[0].cnt > 0) {
+                // 進一步檢查是否包含主線劇情資料
+                const rows = this.runQuery("SELECT COUNT(*) as cnt FROM story_detail");
+                return rows && rows.length > 0 && rows[0].cnt > 0;
+            }
             return false;
-        }
-    } catch (e) {
+        } catch (e) {
             console.error("[PCRDatabase] 驗證資料庫結構出錯:", e);
             return false;
         }

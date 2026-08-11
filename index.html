@@ -103,13 +103,15 @@ window.PCRDatabase = {
     verifyDatabase() {
         if (!this.db) return false;
         try {
-            const res = this.runQuery("SELECT COUNT(*) as cnt FROM sqlite_master WHERE type='table'");
-            return res && res.length > 0 && res[0].cnt > 10;
-        } catch (e) {
-            console.error("[PCRDatabase] 驗證資料庫結構出錯:", e);
+            // 測試查詢 story_detail 表是否存在且有資料
+            const res = this.runQuery("SELECT COUNT(*) as cnt FROM sqlite_master WHERE type='table' AND name='story_detail'");
+            if (res && res.length > 0 && res[0].cnt > 0) {
+                // 進一步檢查是否包含主線劇情資料
+                const rows = this.runQuery("SELECT COUNT(*) as cnt FROM story_detail");
+                return rows && rows.length > 0 && rows[0].cnt > 0;
+            }
             return false;
-        }
-    } catch (e) {
+        } catch (e) {
             console.error("[PCRDatabase] 驗證資料庫結構出錯:", e);
             return false;
         }
@@ -463,7 +465,7 @@ window.PCRDatabase = {
 
 // === END db.js ===
 </script>
-    <script src="avatar-service.js?v=5.2.2"></script>
+    <script src="avatar-service.js?v=5.2.3"></script>
     <script src="story-asset-service.js?v=5.2.1"></script>
     <script>
 // === chapter-data.js INLINED ===
@@ -619,7 +621,7 @@ window.ChapterDataService = {
 };
 // === END chapter-data.js ===
 </script>
-    <script src="characters.js?v=5.2.0"></script>
+    <script src="characters.js?v=5.2.1"></script>
     <script src="map.js?v=5.3.1"></script>
 
     <script>
