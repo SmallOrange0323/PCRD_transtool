@@ -165,7 +165,7 @@ window.AvatarService = {
         if (step === 1) {
             img.dataset.step = "2";
             // 第一步：如果本地 png 失敗，嘗試 So-net 00500012 的 .png
-            img.src = `https://img-pc.so-net.tw/dl/Resources/00500012/Jpn/AssetBundles/Android/icon/unit/${mainId}.png`;
+            img.src = `icon/unit/${mainId}.webp`;
             return;
         }
         if (step === 2) {
