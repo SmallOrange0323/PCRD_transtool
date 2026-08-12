@@ -176,23 +176,21 @@ window.CharactersModule = {
             try {
                 data = window.PCRDatabase.runQuery(`
                     SELECT 
-                        t.max_id as unit_id,
+                        u.unit_id,
                         u.unit_name,
                         u.rarity,
                         u.search_area_width as pos,
                         p.race,
                         p.guild
-                    FROM (
-                        SELECT MAX(unit_id) as max_id, unit_name 
-                        FROM unit_data 
-                        WHERE unit_id < 180000 AND unit_id > 100000
-                        AND unit_name NOT LIKE '%怪物%'
-                        AND unit_id IN (SELECT DISTINCT unit_id FROM unit_rarity)
-                        GROUP BY unit_name
-                    ) as t
-                    JOIN unit_data as u ON u.unit_id = t.max_id
+                    FROM unit_data as u
                     LEFT JOIN unit_profile as p ON u.unit_id = p.unit_id
-                    ORDER BY unit_id DESC
+                    WHERE u.unit_id IN (
+                        SELECT (unit_id / 100) * 100 + 1
+                        FROM unit_rarity
+                        WHERE unit_id >= 100000 AND unit_id < 180000
+                    )
+                    AND u.unit_name NOT LIKE '%怪物%'
+                    ORDER BY u.unit_id DESC
                 `);
             } catch (e) {
                 console.warn("[CharactersModule] 混淆資料庫使用相容角色清單:", e);
