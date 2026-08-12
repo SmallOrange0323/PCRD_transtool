@@ -280,10 +280,11 @@ window.CharactersModule = {
         if (!characters || characters.length === 0) return '<div class="no-data">尚無角色資料</div>';
         return characters.map(c => {
             const iconId = c.unit_id;
+            const avatarUrl = window.AvatarService ? window.AvatarService.getAvatarUrl(iconId) : `https://redive.estertion.win/icon/unit/${iconId + 30}.webp`;
             return `
                 <div class="char-card glass-card" onclick="CharactersModule.openDetail(${c.unit_id})">
                     <div class="char-icon-wrapper">
-                        <img src="https://redive.estertion.win/icon/unit/${iconId + 30}.webp" 
+                        <img src="${avatarUrl}" 
                              onerror="this.onerror=null; this.src='https://redive.estertion.win/icon/unit/${iconId}.webp';" 
                              alt="${c.unit_name}" class="char-icon">
                         <span class="char-rarity">${'★'.repeat(c.rarity || 3)}</span>
@@ -310,9 +311,11 @@ window.CharactersModule = {
                     </tr>
                 </thead>
                 <tbody>
-                    ${characters.map(c => `
+                    ${characters.map(c => {
+                        const avatarUrl = window.AvatarService ? window.AvatarService.getAvatarUrl(c.unit_id) : `https://redive.estertion.win/icon/unit/${c.unit_id + 30}.webp`;
+                        return `
                         <tr onclick="CharactersModule.openDetail(${c.unit_id})">
-                            <td><img src="https://redive.estertion.win/icon/unit/${c.unit_id + 30}.webp" onerror="this.src='https://redive.estertion.win/icon/unit/${c.unit_id}.webp'" style="width: 40px; height: 40px; border-radius: 8px;"></td>
+                            <td><img src="${avatarUrl}" onerror="this.src='https://redive.estertion.win/icon/unit/${c.unit_id}.webp'" style="width: 40px; height: 40px; border-radius: 8px;"></td>
                             <td>${c.unit_id}</td>
                             <td><strong>${c.unit_name}</strong></td>
                             <td><span class="badge" style="background: rgba(255,117,140,0.2); color: #ff758c; padding: 2px 6px; border-radius: 4px;">${c.element || '水屬性'}</span></td>
@@ -320,7 +323,8 @@ window.CharactersModule = {
                             <td>${c.race || '-'}</td>
                             <td>${c.pos || '-'}</td>
                         </tr>
-                    `).join('')}
+                    `;
+                    }).join('')}
                 </tbody>
             </table>
         `;
@@ -347,55 +351,64 @@ window.CharactersModule = {
     openDetail(unitId) {
         const char = this.allCharacters.find(c => c.unit_id === unitId);
         if (!char) return;
-        const body = document.getElementById('modal-body');
         
-        const cardImg = `https://redive.estertion.win/card/full/${unitId + 30}.webp`;
-        
+        const modalEl = document.getElementById('char-detail-modal') || document.getElementById('detail-modal');
+        if (!modalEl) return;
+
+        let body = document.getElementById('modal-body');
+        if (!body) {
+            body = modalEl.querySelector('.modal-content') || modalEl;
+        }
+
+        const cardImg = window.AvatarService ? window.AvatarService.getCardUrl(unitId) : `https://redive.estertion.win/card/full/${unitId + 30}.webp`;
+        const iconFallback = window.AvatarService ? window.AvatarService.getAvatarUrl(unitId) : `https://redive.estertion.win/icon/unit/${unitId + 30}.webp`;
+
         body.innerHTML = `
-            <div style="text-align: center; color: #fff;">
+            <div style="text-align: center; color: #fff; padding: 10px;">
                 <div style="position: relative; margin-bottom: 15px;">
                     <img src="${cardImg}" 
-                         onerror="this.onerror=null; this.src='https://redive.estertion.win/icon/unit/${unitId + 30}.webp';" 
-                         style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
-                    <span style="position: absolute; bottom: 10px; right: 15px; background: rgba(0,0,0,0.7); color: #ffd700; padding: 4px 12px; border-radius: 20px; font-weight: bold; backdrop-filter: blur(4px);">
+                         onerror="this.onerror=null; this.src='${iconFallback}';" 
+                         style="max-width: 100%; max-height: 380px; object-fit: contain; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
+                    <span style="position: absolute; bottom: 10px; right: 15px; background: rgba(0,0,0,0.75); color: #ffd700; padding: 4px 12px; border-radius: 20px; font-weight: bold; backdrop-filter: blur(6px);">
                         ★3 戰鬥登場
                     </span>
                 </div>
                 <h2 style="color: #ff758c; margin-bottom: 5px;">${char.unit_name}</h2>
                 <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
                     <span class="badge" style="background: rgba(255,215,0,0.2); color: #ffd700; padding: 3px 10px; border-radius: 12px; border: 1px solid rgba(255,215,0,0.4);">ID: ${char.unit_id}</span>
-                    <span class="badge" style="background: rgba(100,200,255,0.2); color: #64c8ff; padding: 3px 10px; border-radius: 12px; border: 1px solid rgba(100,200,255,0.4);">${char.element || '水屬性'}</span>
+                    <span class="badge" style="background: rgba(100,200,255,0.2); color: #64c8ff; padding: 3px 10px; border-radius: 12px; border: 1px solid rgba(100,200,255,0.4);">${char.element || '魔法類型'}</span>
                     <span class="badge" style="background: rgba(255,100,200,0.2); color: #ff64c8; padding: 3px 10px; border-radius: 12px; border: 1px solid rgba(255,100,200,0.4);">站位: ${char.pos || '後排'}</span>
                     <span class="badge" style="background: rgba(200,100,255,0.2); color: #c864ff; padding: 3px 10px; border-radius: 12px; border: 1px solid rgba(200,100,255,0.4);">公會: ${char.guild || '無'}</span>
                 </div>
-                <p style="text-align: left; background: rgba(255,255,255,0.05); padding: 12px; border-radius: 8px; line-height: 1.6;">${char.description || '後排魔法輸出角色，具備優秀的魔法攻擊與區域輔助機制。'}</p>
+                <p style="text-align: left; background: rgba(255,255,255,0.08); padding: 12px; border-radius: 8px; line-height: 1.6;">${char.description || '前排/中排/後排戰鬥角色，具備獨特戰術支援機制。'}</p>
                 
                 ${char.ub ? `
-                    <div style="text-align: left; margin-top: 15px; background: rgba(255,117,140,0.1); border-left: 4px solid #ff758c; padding: 10px 15px; border-radius: 0 8px 8px 0;">
+                    <div style="text-align: left; margin-top: 15px; background: rgba(255,117,140,0.15); border-left: 4px solid #ff758c; padding: 10px 15px; border-radius: 0 8px 8px 0;">
                         <h4 style="margin: 0 0 5px 0; color: #ff758c;">💥 必殺技 (UB)</h4>
-                        <p style="margin: 0; font-size: 0.95em;">${char.ub}</p>
+                        <p style="margin: 0; font-size: 0.95em; line-height: 1.5;">${char.ub}</p>
                     </div>
                 ` : ''}
                 
                 ${char.skill1 ? `
-                    <div style="text-align: left; margin-top: 10px; background: rgba(100,200,255,0.1); border-left: 4px solid #64c8ff; padding: 10px 15px; border-radius: 0 8px 8px 0;">
+                    <div style="text-align: left; margin-top: 10px; background: rgba(100,200,255,0.15); border-left: 4px solid #64c8ff; padding: 10px 15px; border-radius: 0 8px 8px 0;">
                         <h4 style="margin: 0 0 5px 0; color: #64c8ff;">🔮 技能 1</h4>
-                        <p style="margin: 0; font-size: 0.95em;">${char.skill1}</p>
+                        <p style="margin: 0; font-size: 0.95em; line-height: 1.5;">${char.skill1}</p>
                     </div>
                 ` : ''}
 
                 ${char.skill2 ? `
-                    <div style="text-align: left; margin-top: 10px; background: rgba(200,100,255,0.1); border-left: 4px solid #c864ff; padding: 10px 15px; border-radius: 0 8px 8px 0;">
+                    <div style="text-align: left; margin-top: 10px; background: rgba(200,100,255,0.15); border-left: 4px solid #c864ff; padding: 10px 15px; border-radius: 0 8px 8px 0;">
                         <h4 style="margin: 0 0 5px 0; color: #c864ff;">✨ 技能 2</h4>
-                        <p style="margin: 0; font-size: 0.95em;">${char.skill2}</p>
+                        <p style="margin: 0; font-size: 0.95em; line-height: 1.5;">${char.skill2}</p>
                     </div>
                 ` : ''}
             </div>
         `;
-        document.getElementById('detail-modal').style.display = 'flex';
+        modalEl.style.display = 'flex';
     },
 
     closeDetail() {
-        document.getElementById('detail-modal').style.display = 'none';
+        const modalEl = document.getElementById('char-detail-modal') || document.getElementById('detail-modal');
+        if (modalEl) modalEl.style.display = 'none';
     }
 };
