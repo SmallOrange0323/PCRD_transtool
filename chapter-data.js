@@ -119,7 +119,6 @@ window.ChapterDataService = {
     // 由 groupId 推斷部別
     // 2000-2015 → Part 1, 2101-2116 → Part 2, 2201-2230 → Part 3, 3000+ → Part 3
     getPartFromGroupId(groupId) {
-        if (groupId === 2216 || groupId === 2116) return 2;
         if (groupId >= 2201 && groupId <= 2230) return 3;
         if (groupId >= 2101 && groupId <= 2116) return 2;
         if (groupId >= 3000) return 3;
