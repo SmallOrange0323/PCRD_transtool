@@ -115,6 +115,13 @@ window.AvatarService = {
         return `icon/unit/${mainId}.png`;
     },
 
+    getCardUrl(unitId) {
+        if (!unitId) return 'https://redive.estertion.win/card/full/100131.webp';
+        const baseId = Math.floor(unitId / 100) * 100;
+        const mainId = (unitId < 190000) ? (baseId + 31) : unitId;
+        return `https://redive.estertion.win/card/full/${mainId}.webp`;
+    },
+
     // 公開 API：取得最佳頭像 img 元素 HTML
     getAvatarHtml(charaName, externalAvatars = {}) {
         const cleanName = this.cleanName(charaName);
@@ -165,7 +172,7 @@ window.AvatarService = {
         if (step === 1) {
             img.dataset.step = "2";
             // 第一步：如果本地 png 失敗，嘗試 So-net 00500012 的 .png
-            img.src = `icon/unit/${mainId}.webp`;
+            img.src = `https://img-pc.so-net.tw/dl/Resources/00500012/Jpn/AssetBundles/Android/icon/unit/${mainId}.png`;
             return;
         }
         if (step === 2) {
