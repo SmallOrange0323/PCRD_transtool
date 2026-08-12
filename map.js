@@ -142,13 +142,18 @@ const QuestMapModule = {
                 thumbHtml = `<img class="story-thumb-img" src="https://redive.estertion.win/card/full/100431.webp" onerror="this.onerror=null; this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';" style="width:100%;height:100%;object-fit:cover;" alt="thumbnail">`;
             }
         }
+        let badgeHtml = '';
+        if (s.id >= 2216096 && s.id <= 2216099) {
+            badgeHtml = '<span style="background: linear-gradient(135deg, #ff4757, #ff6b81); color:#fff; font-size:0.72rem; font-weight:bold; padding:2px 8px; border-radius:10px; margin-left:6px; box-shadow:0 2px 8px rgba(255,71,87,0.5); display:inline-block; vertical-align:middle;">✨ NEW 幕間</span>';
+        }
+
  return `
  <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}" id="story-item-${s.id}" onclick="QuestMapModule.selectStory(${s.id})">
  <div class="story-item-thumb">
  ${thumbHtml}
  </div>
  <div class="story-item-content">
- <div class="story-item-ch">${this.escapeHtml(chDisplay)}</div>
+ <div class="story-item-ch" style="display:flex; align-items:center; flex-wrap:wrap; gap:4px;">${this.escapeHtml(chDisplay)} ${badgeHtml}</div>
  <div class="story-item-title">${this.escapeHtml(titleDisplay)}</div>
  </div>
  <div class="story-item-arrow">
