@@ -1,5 +1,9 @@
 [
   {
+    "type": "background",
+    "bg_id": "500950"
+  },
+  {
     "name": "旁白",
     "words": "在變疑分子事件結束後，過了幾天──",
     "voice": null
@@ -575,6 +579,10 @@
     "voice": "vo_adv_1390001_022"
   },
   {
+    "type": "background",
+    "bg_id": "501680"
+  },
+  {
     "name": "美美",
     "words": "美美我們，",
     "voice": "vo_adv_1390001_023"
@@ -1040,6 +1048,10 @@
     "voice": null
   },
   {
+    "type": "background",
+    "bg_id": "501681"
+  },
+  {
     "name": "禊",
     "words": "我們也是時候",
     "voice": "vo_adv_1390001_048"
@@ -1390,6 +1402,11 @@
     "voice": "vo_adv_1390001_063"
   },
   {
+    "type": "still",
+    "still": "139000101",
+    "still_id": "139000101"
+  },
+  {
     "name": "鏡華",
     "words": "咦？",
     "voice": "vo_adv_1390001_064"
@@ -1423,6 +1440,11 @@
     "name": "格蕾斯",
     "words": "喔喔……",
     "voice": "vo_adv_1390001_065"
+  },
+  {
+    "type": "still",
+    "still": "139000102",
+    "still_id": "139000102"
   },
   {
     "name": "鏡華",
@@ -1488,6 +1510,11 @@
     "name": "璐璐伊",
     "words": "\\n好像怪怪的耶！",
     "voice": null
+  },
+  {
+    "type": "still",
+    "still": "139000103",
+    "still_id": "139000103"
   },
   {
     "name": "鏡華",
@@ -1598,5 +1625,9 @@
     "name": "旁白",
     "words": "響徹了整座森林。",
     "voice": null
+  },
+  {
+    "type": "still",
+    "still": "end"
   }
 ]
