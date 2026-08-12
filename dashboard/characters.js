@@ -185,7 +185,7 @@ window.CharactersModule = {
                     FROM (
                         SELECT MAX(unit_id) as max_id, unit_name 
                         FROM unit_data 
-                        WHERE unit_id < 200000 AND unit_id > 100000
+                        WHERE unit_id < 180000 AND unit_id > 100000
                         AND unit_name NOT LIKE '%怪物%'
                         AND unit_id IN (SELECT DISTINCT unit_id FROM unit_rarity)
                         GROUP BY unit_name
@@ -202,6 +202,8 @@ window.CharactersModule = {
                 data = [...this.fallbackCharacters];
             }
 
+            // 確保按登場時間 (unit_id DESC) 排序
+            data.sort((a, b) => b.unit_id - a.unit_id);
             this.allCharacters = data;
 
             this.renderLayout(container, this.allCharacters);
