@@ -360,8 +360,12 @@ window.CharactersModule = {
             body = modalEl.querySelector('.modal-content') || modalEl;
         }
 
-        const cardImg = window.AvatarService ? window.AvatarService.getCardUrl(unitId) : `https://redive.estertion.win/card/full/${unitId + 30}.webp`;
-        const iconFallback = window.AvatarService ? window.AvatarService.getAvatarUrl(unitId) : `https://redive.estertion.win/icon/unit/${unitId + 30}.webp`;
+        const cardImg = (window.AvatarService && typeof window.AvatarService.getCardUrl === 'function') 
+            ? window.AvatarService.getCardUrl(unitId) 
+            : `https://redive.estertion.win/card/full/${unitId + 30}.webp`;
+        const iconFallback = (window.AvatarService && typeof window.AvatarService.getAvatarUrl === 'function') 
+            ? window.AvatarService.getAvatarUrl(unitId) 
+            : `https://redive.estertion.win/icon/unit/${unitId + 30}.webp`;
 
         body.innerHTML = `
             <div style="text-align: center; color: #fff; padding: 10px;">
