@@ -212,21 +212,26 @@ def cmd_verify(args):
     errors = []
     warnings = []
 
-    # 1. 靜態語法檢查 (使用 Node 引擎對本地 source JS 做 Linter)
-    for js_file in ["db.js", "chapter-data.js", "map.js"]:
-        js_path = os.path.join(DASHBOARD_DIR, js_file)
-        if os.path.exists(js_path):
-            result = subprocess.run(
-                ["node", "--check", js_path],
-                capture_output=True,
-                text=True
-            )
-            if result.returncode != 0:
-                errors.append(f"JS 語法錯誤 ({js_file}):\n{result.stderr.strip()}")
-            else:
-                print(f"  [Linter] {js_file} 語法檢查: ✅ 通過")
+    # 1. JS 語法驗證 (Node.js)
+    js_files = [os.path.join(DASHBOARD_DIR, f) for f in ["db.js", "chapter-data.js", "characters.js"]]
+    for jf in js_files:
+        if os.path.exists(jf):
+            try:
+                result = subprocess.run(
+                    ["node", "--check", jf],
+                    capture_output=True,
+                    text=True
+                )
+                if result.returncode != 0:
+                    errors.append(f"JS 語法錯誤 ({os.path.basename(jf)}): {result.stderr.strip()}")
+                else:
+                    print(f"  [Linter] {os.path.basename(jf)} 語法檢查: ✅ 通過")
+            except FileNotFoundError:
+                print(f"  [Linter] node 未安裝或未包含於 PATH 中，跳過 {os.path.basename(jf)} 靜態語法檢查")
+            except Exception as e:
+                warnings.append(f"Linter 檢查 {os.path.basename(jf)} 時出錯: {e}")
         else:
-            warnings.append(f"未找到原始腳本: {js_file}")
+            warnings.append(f"未找到原始腳本: {os.path.basename(jf)}")
 
     # 2. 檢查內嵌版 index.html 是否有被正確生成
     index_html = os.path.join(DIST_DIR, "index.html")
@@ -346,17 +351,30 @@ def cmd_push_pages(args):
         _write_output(args.output, results)
         sys.exit(1)
 
-    # Step 6: 同步 master 分支（前端源碼）
-    print("  📤 同步前端源碼到 master 分支...")
-    src_files = ["dashboard/characters.js", "dashboard/style.css", "dashboard/map.js"]
-    existing = [f for f in src_files if os.path.exists(os.path.join(BASE_DIR, f))]
-    if existing:
-        _clear_git_lock(os.path.join(BASE_DIR, ".git"))
-        _run_git(["add"] + existing, cwd=BASE_DIR)
-        code, out, err = _run_git(["commit", "-m", f"sync: {message}"], cwd=BASE_DIR)
-        if code == 0:
-            _run_git(["push", "origin", "HEAD:master"], cwd=BASE_DIR)
-            print("    ✅ master 分支已同步")
+    # Step 6: 同步 master 分支（前端源碼、工具鏈與文件）
+    print("  📤 同步程式源碼與工具鏈到 master 分支...")
+    _clear_git_lock(os.path.join(BASE_DIR, ".git"))
+    
+    # 加入核心源碼與設定檔
+    src_patterns = [
+        "dashboard/*.html", "dashboard/*.js", "dashboard/*.css",
+        "dashboard/data/*.json", "tools/*.py", "docs/*.md",
+        "index.html", "index.js", "unit_names.json", ".agents/",
+        "dashboard/scripts/*.py"
+    ]
+    for pattern in src_patterns:
+        _run_git(["add", pattern], cwd=BASE_DIR)
+        
+    code, out, err = _run_git(["commit", "-m", f"sync: {message}"], cwd=BASE_DIR)
+    if code == 0:
+        push_code, push_out, push_err = _run_git(["push", "origin", "HEAD:master"], cwd=BASE_DIR)
+        if push_code == 0:
+            print("    ✅ master 分支已成功推送到 GitHub！")
+        else:
+            print(f"    ❌ push 到 master 失敗: {push_err or push_out}", file=sys.stderr)
+    else:
+        if "nothing to commit" in (out + err):
+            print("    ℹ️ master 分支源碼無變更")
         else:
             print(f"    ℹ️ {out or err}")
 

@@ -12,25 +12,105 @@ const CHARACTER_POSITIONS = {
 };
 
 const NICKNAME_MAP = {
-    "水豬妹": "普蕾西亞（夏日）", "泳豬": "普蕾西亞（夏日）", "水璃亞": "可璃亞（夏日）", "學碧": "可璃亞（學園）", "狼栞": "栞（遊俠）",
-    "公黑": "凱留（公主）", "黑貓": "凱留（公主）", "黑猫": "凱留（公主）",
-    "水莉莉": "莉莉（夏日）", "聖克": "克莉絲提娜（聖誕）", "圣克": "克莉絲提娜（聖誕）",
-    "白貓": "凱留（公主）", "白猫": "凱留（公主）", "堇": "薇歐莉特", 
-    "紫羅蘭": "薇歐莉特", "紫罗兰": "薇歐莉特", "月月": "真琴", 
-    "小梅": "梅杜莎", "美杜莎": "梅杜莎", "病嬌": "惠理子（指揮官）", "惠理子": "惠理子（指揮官）",
-    "真琴（指揮官）": "真琴（指揮官）", "月月（指揮官）": "真琴（指揮官）",
-    "克": "克莉絲提娜", "始源克": "克莉絲提娜（始源）",
-    "蘭法龍": "蘭法", "兰法龙": "蘭法", "蘭法": "蘭法", "兰法": "蘭法",
-    "多娜": "艾姬多娜（夏日）", "水厄": "艾姬多娜（夏日）", "艾姬多娜(夏)": "艾姬多娜（夏日）",
-    "聖姐": "愛梅斯", "天姐": "愛梅斯", "愛梅斯": "愛梅斯",
-    "水優妮": "優妮（夏日）", "白菲": "雪菲", "切嚕": "琪愛兒", "流夏": "流夏"
+    "511": "矛依未",
+    "α花": "似似花",
+    "アドベンチャー后狱三家": "甜心",
+    "伊莉亚": "伊莉亞",
+    "似似花": "似似花",
+    "偶像": "望",
+    "充电宝": "咲戀",
+    "克": "克",
+    "兔格": "格蕾斯",
+    "公优衣": "優衣",
+    "公吃": "佩可",
+    "公怜": "怜",
+    "公日和": "日和",
+    "公黑": "公主黑貓",
+    "切噜": "切嚕",
+    "千歌": "千歌",
+    "卯月": "卯月",
+    "厄里斯": "厄莉絲",
+    "圣伊": "伊莉亞",
+    "圣克": "聖克",
+    "圣莱": "大公主",
+    "圣诞望": "聖誕望",
+    "堇": "堇",
+    "多娜": "多娜",
+    "大和": "倭",
+    "妹弓": "妹弓",
+    "始源克": "克",
+    "始源晶": "晶",
+    "学碧": "碧",
+    "富婆": "富婆",
+    "小梅": "小梅",
+    "工菜": "碧",
+    "布丁": "布丁",
+    "彩羽": "彩羽",
+    "春剑": "怜",
+    "春吃": "佩可",
+    "春猫": "新黑",
+    "春田": "優衣",
+    "春黑": "新黑",
+    "暴击弓": "爆弓",
+    "栞": "栞",
+    "格蕾斯": "格蕾斯",
+    "毛衣": "矛依未",
+    "水优妮": "優妮",
+    "水剑": "怜",
+    "水千": "千歌",
+    "水厄": "厄莉絲",
+    "水扇": "泳裝妮諾",
+    "水狐": "泳裝真步",
+    "水猪": "豬妹",
+    "水猪妹": "豬妹",
+    "水猫剑": "泳裝珠希",
+    "水璃亚": "可璃亞",
+    "水妈": "泳可",
+    "水媽": "泳可",
+    "水电": "咲戀",
+    "水病": "病嬌",
+    "水紫": "堇",
+    "水莉莉": "莉莉",
+    "水酒鬼": "酒鬼",
+    "水驴": "霞",
+    "涅妃": "涅妃",
+    "熊锤": "熊錘",
+    "爱梅斯": "愛梅斯",
+    "狱三家": "甜心",
+    "狼栞": "遊俠栞",
+    "猫二力": "咖啡莫妮卡",
+    "生菜": "碧",
+    "病娇": "病嬌",
+    "白猫": "公主黑貓",
+    "白菜": "碧",
+    "白菲": "公主雪菲",
+    "真龙雪菲": "真龍雪菲",
+    "紫罗兰": "堇",
+    "艾拉": "埃拉",
+    "若菜": "若菜",
+    "菲欧": "菲歐",
+    "蜘蛛女": "阿剌克涅",
+    "蝶妈": "公可",
+    "诞丁": "聖誕布丁",
+    "铃铛": "胡桃",
+    "雪女": "雪野",
+    "雪菲": "雪菲",
+    "霸瞳": "霸瞳黑貓",
+    "风剑": "怜",
+    "风灵萝茜": "機娘",
+    "香菜": "碧",
+    "鬼面佛心": "涅妃",
+    "黑猫": "黑貓",
+    "龙拳": "嘉夜",
+    "妈": "可羅",
+    "媽": "可羅"
 };
 
 const S2T_STR_S = "队战业开场预设点击关连打后转换个别角色说明总凱留帆希萝茜薇欧莉特萨拉亚里伦蒂娜始源琴堇普蕾西亚夏若菜栞游侠菲娅凤凰涅妃星界咏装圣学园陆王实装诅咒灵风万圣华镜妮卡似花矛依里备注兰忍伤害阶段自动全对应輸出手动簡單容易優化調整補充貓羅龍員击伤敌标护辅团联结协属设置参数据资库确认显示选项测试创建删码统系划计丽莉尔诺玛泽时间爱优怜恋丝儿纯铃绫静绪阳纺启叶猫龙华圣";
 const S2T_STR_T = "隊戰業開場預設點擊關連打後轉換個別角色說明總凱留帆希蘿茜薇歐莉特薩拉亞里倫蒂娜始源琴堇普蕾西亞夏若菜栞遊俠菲婭鳳凰涅妃星界泳裝聖學園陸王實裝詛咒靈風萬聖華鏡妮卡似花矛依里備註蘭忍傷害階段自動全對應輸出手動簡單容易優化調整補充貓羅龍員擊傷敵標護輔團聯結協屬設置參數據資庫確認顯示選項測試創建刪碼系統劃計麗莉爾諾瑪澤時間愛優憐戀絲兒純鈴綾靜緒陽紡啟葉貓龍華聖";
 const S2T_MAP = {};
 for(let i=0; i<S2T_STR_S.length; i++) { S2T_MAP[S2T_STR_S[i]] = S2T_STR_T[i]; }
-const COMMON_S2T = { "发": "發", "门": "門", "无": "無", "报": "報", "记": "記", "时": "時", "间": "間", "轴": "軸", "对": "對", "态": "態", "备": "備" };
+const COMMON_S2T = { "发": "發", "门": "門", "无": "無", "报": "報", "记": "記", "时": "時", "间": "間", "轴": "軸", "对": "對", "态": "態", "备": "備", "妈": "媽" };
 Object.assign(S2T_MAP, COMMON_S2T);
 
 function s2t(str) {
@@ -39,6 +119,14 @@ function s2t(str) {
     // 全形數字轉半形
     res = res.replace(/[０-９]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0));
     return res;
+}
+
+// 自動為 NICKNAME_MAP 補齊繁體 Key，確保繁簡兩種寫法都能被長詞優先匹配
+for (const key of Object.keys(NICKNAME_MAP)) {
+    const tKey = s2t(key);
+    if (!NICKNAME_MAP[tKey]) {
+        NICKNAME_MAP[tKey] = NICKNAME_MAP[key];
+    }
 }
 
 function getPosition(name) {
@@ -51,9 +139,8 @@ function getPosition(name) {
 function processConversion() {
     const sourceText = document.getElementById('sourceText');
     const resultPreview = document.getElementById('resultPreview');
-    const hiddenResult = document.getElementById('hiddenResult');
     const smartSort = document.getElementById('smartSort').checked;
-    if (!sourceText.value.trim()) { resultPreview.innerText = ""; return; }
+    if (!sourceText.value.trim()) { resultPreview.value = ""; return; }
     
     const lines = sourceText.value.split('\n');
     
@@ -158,8 +245,7 @@ function processConversion() {
         }
     });
 
-    resultPreview.innerText = output.join('\n');
-    hiddenResult.value = output.join('\n');
+    resultPreview.value = output.join('\n');
 }
 
 // --- UI 控制函式 ---
@@ -174,7 +260,7 @@ window.openTab = function(tabId) {
 };
 
 window.copyResult = function() {
-    const text = document.getElementById('hiddenResult').value;
+    const text = document.getElementById('resultPreview').value;
     navigator.clipboard.writeText(text).then(() => alert("已複製結果"));
 };
 
@@ -188,10 +274,19 @@ window.runPreCleanup = function() {
     const src = document.getElementById('preSource');
     const res = document.getElementById('preResult');
     let rawText = src.value.trim();
-    if(!rawText) { res.innerText = ""; return; }
+    if(!rawText) { res.value = ""; return; }
     
     // 1. 預處理：符號與繁簡轉換
     let text = s2t(rawText);
+    
+    // 依長度由大到小排序替換使用者自訂的 A ➔ B 名稱 (避免短詞破壞長詞)
+    const sortedNicknameKeys = Object.keys(NICKNAME_MAP).sort((a, b) => b.length - a.length);
+    for (const rawKey of sortedNicknameKeys) {
+        if (text.includes(rawKey)) {
+            const targetVal = NICKNAME_MAP[rawKey];
+            text = text.split(rawKey).join(targetVal);
+        }
+    }
     
     // 優先標準化箭頭與分隔符 (避免 -> 被拆解成 X >)
     text = text.replace(/⇒|->|>/g, ' → ')
@@ -308,18 +403,18 @@ window.runPreCleanup = function() {
         return res;
     });
 
-    res.innerText = beautifulLines.join('\n');
+    res.value = beautifulLines.join('\n');
 };
 
 window.copyPreToMain = function() {
-    const txt = document.getElementById('preResult').innerText;
+    const txt = document.getElementById('preResult').value;
     document.getElementById('sourceText').value = txt;
     processConversion();
     openTab('converter');
 };
 
 window.copyDiscordAnsi = function() {
-    const text = document.getElementById('preResult').innerText.trim();
+    const text = document.getElementById('preResult').value.trim();
     if (!text) { alert("沒有可整理的結果，請先點擊一鍵整理！"); return; }
 
     const lines = text.split('\n');
@@ -376,7 +471,7 @@ window.copyDiscordAnsi = function() {
 
 window.clearPre = function() {
     document.getElementById('preSource').value = "";
-    document.getElementById('preResult').innerText = "";
+    document.getElementById('preResult').value = "";
 };
 
 document.addEventListener('DOMContentLoaded', () => {

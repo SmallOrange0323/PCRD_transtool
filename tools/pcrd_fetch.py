@@ -15,6 +15,7 @@ import argparse
 import base64
 import json
 import os
+import re
 import sqlite3
 import sys
 import time
@@ -382,7 +383,42 @@ def _parse_bundle_dialogues(bundle_data):
             commands = _deserialize_story_raw(script)
             current_voice = None
             for idx, args in commands:
-                if idx == 12 and args:
+                # The scenario format interleaves dialogue with presentation
+                # commands.  Keeping these commands in the exported JSON is
+                # essential: otherwise the reader has no place to show a
+                # background change, a CG, or a movie transition.
+                still_match = None
+                if idx != 6:
+                    for arg in args:
+                        still_match = re.search(r'(?:storydata_)?still[_-]?(\d+)', str(arg), re.I)
+                        if still_match:
+                            break
+
+                if still_match:
+                    dialogues.append({"type": "still", "still": still_match.group(1), "still_id": still_match.group(1)})
+                elif idx == 49 and args:
+                    still_val = str(args[0])
+                    if still_val.lower() == "end":
+                        dialogues.append({"type": "still", "still": "end"})
+                    else:
+                        m_sid = re.search(r'(\d+)', still_val)
+                        sid = m_sid.group(1) if m_sid else still_val
+                        dialogues.append({"type": "still", "still": sid, "still_id": sid})
+                elif idx == 5 and args:
+                    dialogues.append({"type": "background", "bg_id": str(args[0])})
+                elif idx == 46 and args:
+                    # So-net's recent main-story bundles use command 46 for
+                    # movie transitions (for example 221600601).  The ID is
+                    # also used by the matching storydata_still bundle when a
+                    # static preview is available.
+                    movie_id = str(args[0])
+                    dialogues.append({"type": "movie", "movie_id": movie_id})
+                    preview_path = os.path.join(
+                        DASHBOARD_DIR, "still", "story", f"{movie_id}.webp"
+                    )
+                    if os.path.exists(preview_path):
+                        dialogues.append({"type": "still", "still": movie_id, "still_id": movie_id})
+                elif idx == 12 and args:
                     current_voice = args[0]
                 elif idx == 6 and len(args) >= 2:
                     speaker = SPEAKER_MAP.get(args[0], args[0])
@@ -1268,7 +1304,11 @@ def cmd_fetch_story_images(args):
                     commands = _deserialize_story_raw(script)
                     for cmd_idx, args_list in commands:
                         if cmd_idx == 5 and args_list:
-                            bg_ids.add(args_list[0])
+                            bg_ids.add(str(args_list[0]))
+                        # Main-story movie transitions use the same numeric
+                        # resource ID for their optional still preview.
+                        if cmd_idx == 46 and args_list:
+                            still_ids.add(str(args_list[0]))
                         for arg in args_list:
                             arg_str = str(arg)
                             if "still" in arg_str.lower():
@@ -1316,6 +1356,18 @@ def cmd_fetch_story_images(args):
                         still_hashes[m_still.group(1)] = parts[2]
 
     # 5. 下載並導出背景
+    # Scenario still previews live in storydata2_assetmanifest rather than
+    # unit2_assetmanifest.  Include both sources so movie/CG IDs are not
+    # mistakenly reported as missing.
+    if os.path.exists(manifest_path):
+        with open(manifest_path, "r", encoding="utf-8", errors="ignore") as f:
+            for line in f:
+                parts = line.strip().split(",")
+                if len(parts) >= 3:
+                    m_still = re.search(r'storydata_still_(\d+)', parts[0])
+                    if m_still:
+                        still_hashes[m_still.group(1)] = parts[2]
+
     for bg_id in sorted(list(bg_ids)):
         bg_hash = bg_hashes.get(bg_id) or bg_hashes.get(f"bg_{bg_id}")
         if not bg_hash:
@@ -1432,9 +1484,12 @@ def cmd_fetch_story_images(args):
         # still_ids 裡面可能含有 "still_10050024" 等
         if still_ids:
             # 取得純數字部分
-            for s_id in still_ids:
+            # Prefer a successfully extracted image.  A movie command can
+            # reference an ID with no matching still bundle (for example a
+            # pure video ending), which must never become the card thumbnail.
+            for s_id in sorted(still_ids):
                 num = "".join(filter(str.isdigit, s_id))
-                if num:
+                if num and os.path.exists(os.path.join(still_dir, f"{num}.webp")):
                     final_still = num
                     break
         if bg_ids:

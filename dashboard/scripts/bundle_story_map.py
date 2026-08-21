@@ -3,6 +3,7 @@ import json
 import os
 import shutil
 import sys
+import time
 
 # 確保輸出編碼為 utf-8 以免 Windows 終端崩潰
 if sys.platform.startswith('win'):
@@ -70,7 +71,7 @@ def main():
     for src, dst_rel in core_files:
         dst = os.path.join(dist_dir, dst_rel)
         if os.path.exists(src):
-            if os.path.exists(dst) and os.path.getsize(src) == os.path.getsize(dst):
+            if os.path.exists(dst) and os.path.getsize(src) == os.path.getsize(dst) and os.path.basename(src) != 'redive_tw.db':
                 print(f"[Skip] {os.path.basename(src)} -> {dst_rel} (大小相同)")
             else:
                 print(f"[Copy] {os.path.basename(src)} -> {dst_rel}")
@@ -300,10 +301,22 @@ def main():
             lambda m: f'<script>\n// === chapter-data.js INLINED ===\n{chapter_data_js_code}\n// === END chapter-data.js ===\n</script>',
             html_content
         )
+        # 替換 characters.js 與 avatar-service.js 動態版號以破壞瀏覽器 Cache
+        v_ts = int(time.time())
+        html_content = re.sub(
+            r'<script src="characters\.js(?:\?v=[^"]*)?"></script>',
+            f'<script src="characters.js?v={v_ts}"></script>',
+            html_content
+        )
+        html_content = re.sub(
+            r'<script src="avatar-service\.js(?:\?v=[^"]*)?"></script>',
+            f'<script src="avatar-service.js?v={v_ts}"></script>',
+            html_content
+        )
 
         with open(index_html_path, 'w', encoding='utf-8') as f:
             f.write(html_content)
-        print(f"[Success] 內嵌完成！最終 index.html 大小: {os.path.getsize(index_html_path)} bytes")
+        print(f"[Success] 內嵌與動態 Cache-Busting 完成！最終 index.html 大小: {os.path.getsize(index_html_path)} bytes")
     else:
         print("[Error] 內嵌失敗，找不到必要的 HTML 或 JS 檔案", file=sys.stderr)
         sys.exit(1)
