@@ -115,6 +115,13 @@ window.AvatarService = {
         return `icon/unit/${mainId}.png`;
     },
 
+    getCardUrl(unitId) {
+        if (!unitId) return 'https://redive.estertion.win/card/full/100131.webp';
+        const baseId = Math.floor(unitId / 100) * 100;
+        const mainId = (unitId < 190000) ? (baseId + 31) : unitId;
+        return `https://redive.estertion.win/card/full/${mainId}.webp`;
+    },
+
     // 公開 API：取得最佳頭像 img 元素 HTML
     getAvatarHtml(charaName, externalAvatars = {}) {
         const cleanName = this.cleanName(charaName);

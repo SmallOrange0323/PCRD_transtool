@@ -3,7 +3,7 @@
     {
       "step": "reset",
       "code": 0,
-      "out": "Unstaged changes after reset:\nM\tdata/db_info.json\nM\tdata/event_summaries.json\nM\tdata/story_thumbnails.json\nM\tstory/speaker_appearance.json"
+      "out": "Unstaged changes after reset:\nM\tdata/db_info.json\nM\tindex.html\nM\tstory/1139001.json\nM\tstory/1139002.json\nM\tstory/1139003.json\nM\tstory/1139004.json\nM\tstory/1390001.json\nM\tstory/1390002.json\nM\tstory/1390003.json\nM\tstory/1390004.json\nM\tstory/5215000.json\nM\tstory/5215001.json\nM\tstory/5215002.json\nM\tstory/5215003.json\nM\tstory/5215004.json\nM\tstory/5215005.json\nM\tstory/5215006.json\nM\tstory/5215007.json"
     },
     {
       "step": "add",
@@ -12,13 +12,13 @@
     {
       "step": "commit",
       "code": 0,
-      "out": "[gh-pages 17c538a] deploy: VILLAINESS metadata and indexes\n 4 files changed, 2341 insertions(+), 2192 deletions(-)"
+      "out": "[gh-pages c9e8761] fix: sync VILLAINESS event 5215000~5215007 scenario timings and CGs\n 18 files changed, 21895 insertions(+), 27358 deletions(-)"
     },
     {
       "step": "push_gh_pages",
       "code": 0,
       "out": "",
-      "err": "To https://github.com/SmallOrange0323/PCRD_transtool.git\n   0b18ebc..17c538a  gh-pages -> gh-pages"
+      "err": "To https://github.com/SmallOrange0323/PCRD_transtool.git\n   2b66c21..c9e8761  gh-pages -> gh-pages"
     }
   ],
   "status": "ok"
