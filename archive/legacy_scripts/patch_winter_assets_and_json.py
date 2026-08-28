@@ -1,8 +1,15 @@
 # -*- coding: utf-8 -*-
+import sys
+
+print(
+    "[LEGACY ARCHIVE ONLY] This historical one-off script is disabled. "
+    "Use the current Story Map fetch/maintenance workflow instead."
+)
+sys.exit(1)
+
 import json
 import os
 import shutil
-import sys
 
 sys.stdout.reconfigure(encoding='utf-8')
 

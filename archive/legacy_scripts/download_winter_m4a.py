@@ -1,7 +1,14 @@
 # -*- coding: utf-8 -*-
+import sys
+
+print(
+    "[LEGACY ARCHIVE ONLY] This historical one-off script is disabled. "
+    "Use the current Story Map fetch/maintenance workflow instead."
+)
+sys.exit(1)
+
 import urllib.request
 import os
-import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 sys.stdout.reconfigure(encoding='utf-8')
