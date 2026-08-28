@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
+import os
 import sqlite3
 import sys
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-conn = sqlite3.connect('dashboard/redive_jp.db')
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+db_path = os.path.join(REPO_ROOT, "dashboard", "redive_jp.db")
+
+conn = sqlite3.connect(db_path)
 cur = conn.cursor()
 
 print("=== 正在查詢日版資料庫中的新形式活動資料 ===")
