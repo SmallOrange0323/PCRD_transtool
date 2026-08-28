@@ -363,7 +363,7 @@ window.CharactersModule = {
                             </div>
                         </div>
                         <div class="char-meta">
-                            <span>站位: ${unitData ? unitData.search_area_width : '??'}</span>
+                            <span>站位: ${(unitData && unitData.search_area_width) || (profile && profile.pos) || '??'}</span>
                             <span>${profile ? profile.race : ''}</span>
                             <span>${profile ? profile.guild : ''}</span>
                         </div>
@@ -375,14 +375,21 @@ window.CharactersModule = {
                     <button id="modal-tab-pattern" class="tab-btn" onclick="CharactersModule.switchModalTab('pattern')">動作循環</button>
                     <button id="modal-tab-story" class="tab-btn" onclick="CharactersModule.switchModalTab('story')">個人劇情 (官方繁中)</button>
                 </div>
- 
+
                 <div id="modal-content-stats">
-                    <h3>核心數值 (計算結果)</h3>
-                    <div id="stats-display-grid" class="stats-grid"></div>
- 
+                    ${stats ? `
+                        <h3>核心數值 (計算結果)</h3>
+                        <div id="stats-display-grid" class="stats-grid"></div>
+                    ` : `
+                        <div class="glass-card" style="padding: 20px; text-align: center; border-radius: 12px; margin-bottom: 20px; border: 1px dashed rgba(255,255,255,0.15);">
+                            <div style="color: var(--accent-color); font-weight: 600; margin-bottom: 6px;">🎮 官方 CDN 先行預載角色</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">官方尚未開放此角色的戰鬥數據表，請點擊上方「個人劇情」標籤頁搶先閱讀 1～4 話完整繁中劇情與專屬 CG！</div>
+                        </div>
+                    `}
+
                     <div class="skill-section">
                         <h3>技能介紹</h3>
-                        ${skills.map(s => `
+                        ${skills.length > 0 ? skills.map(s => `
                             <div class="skill-item">
                                 <div class="skill-icon" style="width: 50px; height: 50px; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                     ${window.AvatarService.getSkillIconHtml(s.icon_type)}
@@ -393,7 +400,7 @@ window.CharactersModule = {
                                     <div class="skill-desc">${s.description.replace(/\\n/g, '<br>')}</div>
                                 </div>
                             </div>
-                        `).join('')}
+                        `).join('') : '<div style="color: var(--text-secondary); font-size: 0.85rem; padding: 10px 0;">暫無技能數據</div>'}
                     </div>
                 </div>
  
