@@ -4,16 +4,12 @@
 PCRD Story Map Pipeline - Update Orchestrator (統一增量更新協調器)
 負責協調完整的 CDN 增量同步、決定性打包、全量驗證與發布。
 
-執行架構：
-  probe TruthVersion / Upstream DB
-      ↓
-  incremental sync (DB, missing story JSON, tracked assets)
-      ↓
-  deterministic bundle (SHA-256 content comparison, cache-busting)
-      ↓
-  single-source validation gate (full JSON parse, schema check, dist verification)
-      ↓ (only if --deploy)
-  deploy to gh-pages
+Story Map Update Pipeline v1 核心能力：
+  1. DB sync (TruthVersion 探測、SQLite 增量下載與版本狀態持久化)
+  2. Tracked character story JSON sync (逐角色增量補齊缺失好感度劇本)
+  3. Deterministic bundle & Cache-Busting (SHA-256 內容比對、體積控制)
+  4. Single-source validation gate (9000+ 篇劇本與 dist 集合全量深度自檢)
+  5. Optional GitHub Pages deploy (只推送 dist_story_map 至 gh-pages)
 
 Exit Codes:
   0 = success
@@ -37,11 +33,43 @@ from pipeline.bundle import bundle_story_map
 from pipeline.validate import validate_story_map
 from pipeline.deploy import run_deploy
 
+def save_truth_version_state(new_version: str) -> bool:
+    """
+    以原子替換方式更新版本狀態 (P0-2 核心實作)
+    """
+    if not new_version:
+        return False
+    ver_dir = DASHBOARD_DIR / "versions"
+    ver_dir.mkdir(parents=True, exist_ok=True)
+    ver_file = ver_dir / "version_history.json"
+    tmp_file = ver_dir / "version_history.json.tmp"
+    
+    current_data = {}
+    if ver_file.exists():
+        try:
+            with open(ver_file, "r", encoding="utf-8") as f:
+                current_data = json.load(f)
+        except Exception:
+            pass
+
+    current_data["truth_version"] = new_version
+    current_data["last_version"] = new_version
+
+    try:
+        with open(tmp_file, "w", encoding="utf-8") as f:
+            json.dump(current_data, f, ensure_ascii=False, indent=2)
+        tmp_file.replace(ver_file)
+        print(f"  [State] 已原子更新本地 TruthVersion 狀態: {new_version}")
+        return True
+    except Exception as e:
+        print(f"  [WARN] 寫入版本狀態失敗: {e}", file=sys.stderr)
+        return False
+
 def check_and_sync_upstream(dry_run: bool = False) -> bool:
     """
-    探測並執行增量資料同步 (P0-1 核心實作)
+    探測並執行增量資料同步 (P0-1 與 P0-2 核心實作)
     """
-    print("\n[步驟 1/3] 探測 So-net CDN 與執行增量資料同步...")
+    print("\n[步驟 1/3] 探測 So-net CDN 與執行增量資料同步 (Pipeline v1 Scope)...")
     
     try:
         from pipeline.fetch import get_truth_version, update_db, fetch_stories
@@ -75,26 +103,32 @@ def check_and_sync_upstream(dry_run: bool = False) -> bool:
     if need_db_update:
         print(f"  [Sync] 檢測到 CDN 有新版本或本地 DB 缺失 (線上: {remote_tv}, 本地: {local_tv})")
         if dry_run:
-            print("  [DRY-RUN] 預計執行: 下載新版台版資料庫 redive_tw.db")
+            print("  [DRY-RUN] 預計執行: 下載新版台版資料庫 redive_tw.db 並更新 version state")
         else:
             print("  [Sync] 正在下載並解密最新台版 SQLite 資料庫...")
             class MockArgs:
                 force = False
                 source = "sonet"
                 output = "tools/db_update_report.json"
-            update_db(MockArgs())
+            try:
+                update_db(MockArgs())
+                if remote_tv:
+                    save_truth_version_state(remote_tv)
+            except Exception as e:
+                print(f"❌ [ERROR] 下載資料庫失敗: {e}", file=sys.stderr)
+                return False
     else:
         print("  [Sync] 本地資料庫與 CDN 版號一致，無需重新下載資料庫。")
 
-    # 3. 掃描本地缺失的已追蹤角色/活動對白
+    # 3. 掃描本地缺失的已追蹤角色對白 (P0-1 核心：按 unit_id 呼叫 downloader)
     db_path = DASHBOARD_DIR / "redive_tw.db"
-    missing_tracked_stories = []
+    missing_unit_ids = []
+    total_missing_stories = 0
     if db_path.exists():
         try:
             conn = sqlite3.connect(str(db_path))
             cur = conn.cursor()
             
-            # 從 tracked_characters 找出已追蹤角色的劇情 ID
             tracked_path = DASHBOARD_DIR / "data" / "tracked_characters.json"
             if tracked_path.exists():
                 with open(tracked_path, "r", encoding="utf-8") as f:
@@ -103,26 +137,34 @@ def check_and_sync_upstream(dry_run: bool = False) -> bool:
                     uid = char.get("unit_id")
                     if uid:
                         cur.execute("SELECT story_id FROM story_detail WHERE story_group_id = ?", (uid,))
-                        for row in cur.fetchall():
-                            sid = row[0]
-                            if not (DASHBOARD_DIR / "story" / f"{sid}.json").exists():
-                                missing_tracked_stories.append(sid)
+                        char_story_ids = [row[0] for row in cur.fetchall()]
+                        char_missing = [sid for sid in char_story_ids if not (DASHBOARD_DIR / "story" / f"{sid}.json").exists()]
+                        if char_missing:
+                            missing_unit_ids.append((uid, char.get("name", str(uid)), len(char_missing)))
+                            total_missing_stories += len(char_missing)
             conn.close()
         except Exception as e:
             print(f"  [WARN] 掃描缺失劇情時發生異常: {e}")
 
-    if missing_tracked_stories:
-        print(f"  [Sync] 發現 {len(missing_tracked_stories)} 篇追蹤角色劇情尚未下載本機對白: {missing_tracked_stories[:5]}...")
+    if missing_unit_ids:
+        print(f"  [Sync] 發現 {len(missing_unit_ids)} 位追蹤角色尚有 {total_missing_stories} 篇對白未下載:")
+        for uid, name, count in missing_unit_ids:
+            print(f"    - {name} (Unit {uid}): 缺失 {count} 篇")
+            
         if dry_run:
-            print(f"  [DRY-RUN] 預計執行: 增量下載並解密 {len(missing_tracked_stories)} 篇對白 JSON")
+            print(f"  [DRY-RUN] 預計執行: 依序為 {len(missing_unit_ids)} 位角色增量抓取對白 JSON")
         else:
-            print(f"  [Sync] 正在增量下載並解密缺失劇情對白...")
-            class FetchArgs:
-                unit_id = None
-                all = False
-                output = "tools/story_fetch_report.json"
-            # 增量抓取
-            fetch_stories(FetchArgs())
+            print(f"  [Sync] 正在依序下載缺失角色對白...")
+            for uid, name, _ in missing_unit_ids:
+                class SingleUnitFetchArgs:
+                    def __init__(self, unit_id):
+                        self.unit_id = unit_id
+                        self.all = False
+                        self.output = "tools/story_fetch_report.json"
+                try:
+                    fetch_stories(SingleUnitFetchArgs(uid))
+                except Exception as e:
+                    print(f"  [WARN] 下載角色 {name} (Unit {uid}) 劇情失敗: {e}")
     else:
         print("  [Sync] 所有追蹤角色之對白劇本已全數就緒。")
 
@@ -130,11 +172,11 @@ def check_and_sync_upstream(dry_run: bool = False) -> bool:
 
 def run_pipeline_update(dry_run: bool = False, auto_deploy: bool = False, message: str = None) -> int:
     """
-    執行一鍵更新管線
+    執行一鍵更新管線 (Pipeline v1)
     :return: exit code (0=成功, 1=執行或驗證失敗, 2=環境或依賴缺失)
     """
     print("=" * 60)
-    print("🚀 PCRD 劇情地圖 (Story Map) 自動化增量更新管線啟動")
+    print("🚀 PCRD 劇情地圖 (Story Map) 自動化增量更新管線 (Pipeline v1) 啟動")
     print(f"模式: {'[DRY-RUN 零副作用模擬]' if dry_run else ('[增量同步 + 決定性封裝 + 發布]' if auto_deploy else '[增量同步 + 決定性封裝 + 驗證]')}")
     print("=" * 60)
 
@@ -178,13 +220,13 @@ def run_pipeline_update(dry_run: bool = False, auto_deploy: bool = False, messag
                 return 1
 
     print("\n" + "=" * 60)
-    print("🎉 PCRD Story Map 管線執行完畢！所有核心檢查均已通過。")
+    print("🎉 PCRD Story Map 管線 (Pipeline v1) 執行完畢！所有核心檢查均已通過。")
     print("=" * 60)
     return 0
 
 def main():
     parser = argparse.ArgumentParser(
-        description="PCRD Story Map 一鍵自動化更新管線",
+        description="PCRD Story Map 一鍵自動化更新管線 (Pipeline v1)",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 常用範例:
