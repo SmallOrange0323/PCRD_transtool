@@ -744,16 +744,22 @@ window.CharactersModule = {
         const storyPrefix = String(unitId).substring(0, 4);
         
         try {
-            const stories = window.PCRDatabase.runQuery(`
+            let stories = window.PCRDatabase.runQuery(`
                 SELECT story_id, title, sub_title 
                 FROM story_detail 
                 WHERE CAST(story_id AS TEXT) LIKE ? 
                 ORDER BY story_id ASC
             `, [storyPrefix + "%"]);
             
+            // 若資料庫尚未收錄新角色個人劇情，自動從本地對白目錄構建 1~4 話
             if (!stories || stories.length === 0) {
-                container.innerHTML = '<div class="empty-msg" style="text-align: center; padding: 20px; color: var(--text-secondary);">此角色暫無個人劇情數據</div>';
-                return;
+                const charObj = this.allCharacters.find(c => c.unit_id === unitId);
+                const charName = charObj ? charObj.unit_name : "角色";
+                stories = [1, 2, 3, 4].map(ep => ({
+                    story_id: parseInt(`${storyPrefix}00${ep}`),
+                    title: `${charName} 第${ep}話`,
+                    sub_title: `第 ${ep} 話`
+                }));
             }
             
             container.innerHTML = `
