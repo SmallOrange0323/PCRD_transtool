@@ -6,7 +6,7 @@ PCRD Story Map Pipeline - Update Orchestrator (統一增量更新協調器)
 
 Story Map Update Pipeline v1 核心能力：
   1. DB sync (TruthVersion 探測、SQLite 增量下載與版本狀態持久化)
-  2. Tracked character story JSON sync (使用 canonical 邏輯逐角色補齊缺失好感度劇本)
+  2. Tracked character story JSON sync (強一致性：逐角色補齊並驗證下載結果)
   3. Deterministic bundle & Cache-Busting (SHA-256 內容比對、體積控制)
   4. Single-source validation gate (9000+ 篇劇本與 dist 集合全量深度自檢)
   5. Optional GitHub Pages deploy (只推送 dist_story_map 至 gh-pages)
@@ -66,7 +66,7 @@ def save_truth_version_state(new_version: str) -> bool:
 
 def check_and_sync_upstream(dry_run: bool = False) -> bool:
     """
-    探測並執行增量資料同步
+    探測並執行增量資料同步 (具備強一致性下載結果驗證)
     """
     print("\n[步驟 1/3] 探測 So-net CDN 與執行增量資料同步 (Pipeline v1 Scope)...")
     
@@ -138,7 +138,6 @@ def check_and_sync_upstream(dry_run: bool = False) -> bool:
             for char in tracked_data.get("characters", []):
                 uid = char.get("unit_id")
                 if uid:
-                    # 使用 canonical logic 取得標準話數列表
                     char_story_ids = get_story_ids_for_unit(uid)
                     char_missing = [sid for sid in char_story_ids if not (DASHBOARD_DIR / "story" / f"{sid}.json").exists()]
                     if char_missing:
@@ -156,7 +155,8 @@ def check_and_sync_upstream(dry_run: bool = False) -> bool:
             print(f"  [DRY-RUN] 預計執行: 依序為 {len(missing_unit_ids)} 位角色增量抓取對白 JSON (調用 fetch_stories with non-None unit_id)")
         else:
             print(f"  [Sync] 正在依序下載缺失角色對白...")
-            for uid, name, _ in missing_unit_ids:
+            sync_incomplete = []
+            for uid, name, expected_sids in missing_unit_ids:
                 class SingleUnitFetchArgs:
                     def __init__(self, unit_id):
                         self.unit_id = unit_id
@@ -165,7 +165,19 @@ def check_and_sync_upstream(dry_run: bool = False) -> bool:
                 try:
                     fetch_stories(SingleUnitFetchArgs(uid))
                 except Exception as e:
-                    print(f"  [WARN] 下載角色 {name} (Unit {uid}) 劇情失敗: {e}")
+                    print(f"  ❌ [ERROR] 下載角色 {name} (Unit {uid}) 劇情時拋出異常: {e}", file=sys.stderr)
+
+                # 下載後重新驗證檔案存在性 (強一致性判定)
+                current_missing = [sid for sid in expected_sids if not (DASHBOARD_DIR / "story" / f"{sid}.json").exists()]
+                if current_missing:
+                    print(f"  ❌ [ERROR] 角色 {name} (Unit {uid}) 劇情同步未完成，仍缺失話數: {current_missing}", file=sys.stderr)
+                    sync_incomplete.append((name, uid, current_missing))
+                else:
+                    print(f"  ✅ 角色 {name} (Unit {uid}) 劇情對白已全數同步完成。")
+
+            if sync_incomplete:
+                print(f"❌ [ERROR] 增量劇情同步未完全成功 (共 {len(sync_incomplete)} 位角色存在缺失對白)，終止管線！", file=sys.stderr)
+                return False
     else:
         print("  [Sync] 所有追蹤角色之對白劇本已全數就緒。")
 
@@ -238,7 +250,7 @@ def main():
     )
     parser.add_argument("--dry-run", action="store_true", help="模擬運行（零副作用）：不下載、不寫入檔案、不提交 Git")
     parser.add_argument("--deploy", action="store_true", help="驗證通過後自動推送到 GitHub Pages")
-    parser.add_argument("-m", "--message", type=str, default=None, help="發布時的 Git Commit 訊息")
+    parser.add_argument("-m", "--message", type=str, default=None, help="發布時的 Git Commit訊息")
     args = parser.parse_args()
 
     exit_code = run_pipeline_update(
