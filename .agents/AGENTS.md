@@ -1,6 +1,14 @@
 # 公主連結 Re:Dive — 專案開發長期記憶與背景指南 (AGENTS.md)
 
-本文件是針對本專案（`PCRD_tool`）開發時，AI 必須嚴格遵守的「公主連結 Re:Dive」世界觀、術語與社群語境指南。**所有名詞、術語均以台灣代理商（So-net）的繁體中文官方翻譯為唯一基準**，以確保開發與溝通認知完全對齊。
+本文件定義 AI 在維護與開發本專案（`PCRD_transtool`）時必須遵守的長期記憶與世界觀準則。
+
+> [!IMPORTANT]
+> **專案唯一核心定位 (Core Focus)**：
+> 1. **主要生產專案 (Primary Production Project)**：**「公主連結劇情地圖（Story Map）」**。
+> 2. **核心維護流程 (Primary Maintenance Workflow)**：**CDN ➡️ Story Map 資料管線（`pipeline/` 與 `update_story_map.py`）**。
+> 3. **實驗性模組 (Experiments)**：`experiments/translator/` 日翻中即時翻譯器等獨立實驗。
+> 4. **歷史廢棄規劃 (Legacy / Deprecated)**：舊版曾規劃之競技場查隊、公會戰 BOSS 數據導航、新聞公告監控等，已全數標記為 Legacy，AI 嚴禁將其視為當前維護目標。
+> 5. **官方術語基準**：所有名詞、術語均以**台灣代理商（So-net）的繁體中文官方翻譯為唯一基準**。
 
 ---
 
