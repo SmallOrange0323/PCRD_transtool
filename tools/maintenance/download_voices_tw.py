@@ -1,3 +1,10 @@
+"""
+Raw So-net CriWare voice-pack maintenance downloader.
+
+Used by tools/pcrd_fetch.py as the official-CDN fallback path
+before tools/convert_voices.py converts packs for Story Map use.
+"""
+
 import os
 import sys
 import json
@@ -6,7 +13,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 HEADER = {
     'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 10; Pixel 3 XL Build/QQ3A.200805.001)'
 }

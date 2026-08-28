@@ -1624,7 +1624,8 @@ def cmd_sync_episode(args):
         # 參數帶入 --group {story_id}，例如 2216002
         import subprocess
         print(f"    📥 正在下載語音封包 vo_{story_id}...")
-        cmd_dl = [sys.executable, "download_voices_tw.py", "--group", str(story_id)]
+        voice_dl_script = os.path.join(BASE_DIR, "tools", "maintenance", "download_voices_tw.py")
+        cmd_dl = [sys.executable, voice_dl_script, "--group", str(story_id)]
         subprocess.run(cmd_dl, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         
         # 2. 呼叫 convert_voices.py 解碼剛下載的封包
