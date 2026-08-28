@@ -387,9 +387,13 @@ const QuestMapModule = {
                     // 由於台服資料庫 (redive_tw.db) 有時尚未上架新角色的個人故事章節 (如冬日栞)，
                     // 我們在此自動為已下載故事對話的新角色補全 4 話的個人故事目錄，確保網頁必定能順利讀取！
                     const pendingNewCharas = [
-                        { unitId: 138301, name: "貪吃佩可（阿斯特萊亞）", prefix: "13830" },
-                        { unitId: 138701, name: "若菜（冬日）", prefix: "13870" },
-                        { unitId: 138801, name: "栞（冬日）", prefix: "13880" }
+                        { unitId: 138301, name: "貪吃佩可（阿斯特萊亞）", prefix: "138300" },
+                        { unitId: 138701, name: "若菜（冬日）", prefix: "138700" },
+                        { unitId: 138801, name: "栞（冬日）", prefix: "138800" },
+                        { unitId: 139101, name: "凱留（霸瞳天星）", prefix: "139100" },
+                        { unitId: 139201, name: "美穗", prefix: "139200" },
+                        { unitId: 139301, name: "真穗", prefix: "139300" },
+                        { unitId: 139401, name: "艾麗卡", prefix: "139400" }
                     ];
 
                     pendingNewCharas.forEach(ch => {
@@ -398,7 +402,7 @@ const QuestMapModule = {
                         if (!exists) {
                             for (let i = 1; i <= 4; i++) {
                                 charaStories.push({
-                                    id: parseInt(`${ch.prefix}0${i}`),
+                                    id: parseInt(`${ch.prefix}${i}`),
                                     chapter: `${ch.name} 第${i}話`,
                                     title: `第 ${i} 話`,
                                     groupId: checkGroupId,
