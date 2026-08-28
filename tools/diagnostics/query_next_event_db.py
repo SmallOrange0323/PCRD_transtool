@@ -7,11 +7,8 @@ sys.stdout.reconfigure(encoding='utf-8')
 
 print("=== 正在查詢最新台版資料庫中的新形式活動資料 ===")
 
-# 我們在本地剛剛更新的 redive_tw.db 中查詢
-db_path = 'dashboard/redive_tw.db'
-if not os.path.exists(db_path):
-    # 也檢查專案根目錄下
-    db_path = 'redive_tw.db'
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+db_path = os.path.join(REPO_ROOT, "dashboard", "redive_tw.db")
 
 print(f"使用的資料庫路徑: {db_path}")
 
