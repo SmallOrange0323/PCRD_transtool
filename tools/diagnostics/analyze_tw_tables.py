@@ -5,7 +5,10 @@ import sys
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-conn = sqlite3.connect('redive_tw.db')
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+db_path = os.path.join(REPO_ROOT, "dashboard", "redive_tw.db")
+
+conn = sqlite3.connect(db_path)
 cur = conn.cursor()
 
 # 取得包含 story 的所有表名
