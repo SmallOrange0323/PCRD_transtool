@@ -9,7 +9,8 @@ from .fetch import (
     fetch_story_voices,
     fetch_story_images,
     sync_episode,
-    get_truth_version
+    get_truth_version,
+    get_story_ids_for_unit
 )
 from .bundle import bundle_story_map
 from .deploy import run_deploy
@@ -25,6 +26,7 @@ __all__ = [
     'fetch_story_images',
     'sync_episode',
     'get_truth_version',
+    'get_story_ids_for_unit',
     'bundle_story_map',
     'run_deploy',
     'validate_story_map',

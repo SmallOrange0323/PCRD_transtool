@@ -6,7 +6,7 @@ PCRD Story Map Pipeline - Update Orchestrator (統一增量更新協調器)
 
 Story Map Update Pipeline v1 核心能力：
   1. DB sync (TruthVersion 探測、SQLite 增量下載與版本狀態持久化)
-  2. Tracked character story JSON sync (逐角色增量補齊缺失好感度劇本)
+  2. Tracked character story JSON sync (使用 canonical 邏輯逐角色補齊缺失好感度劇本)
   3. Deterministic bundle & Cache-Busting (SHA-256 內容比對、體積控制)
   4. Single-source validation gate (9000+ 篇劇本與 dist 集合全量深度自檢)
   5. Optional GitHub Pages deploy (只推送 dist_story_map 至 gh-pages)
@@ -21,7 +21,6 @@ import os
 import sys
 import json
 import argparse
-import sqlite3
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -35,7 +34,7 @@ from pipeline.deploy import run_deploy
 
 def save_truth_version_state(new_version: str) -> bool:
     """
-    以原子替換方式更新版本狀態 (P0-2 核心實作)
+    以原子替換方式更新版本狀態
     """
     if not new_version:
         return False
@@ -67,12 +66,17 @@ def save_truth_version_state(new_version: str) -> bool:
 
 def check_and_sync_upstream(dry_run: bool = False) -> bool:
     """
-    探測並執行增量資料同步 (P0-1 與 P0-2 核心實作)
+    探測並執行增量資料同步
     """
     print("\n[步驟 1/3] 探測 So-net CDN 與執行增量資料同步 (Pipeline v1 Scope)...")
     
     try:
-        from pipeline.fetch import get_truth_version, update_db, fetch_stories
+        from pipeline.fetch import (
+            get_truth_version,
+            update_db,
+            fetch_stories,
+            get_story_ids_for_unit
+        )
     except ImportError as e:
         print(f"❌ [ERROR] 無法載入 fetch 模組: {e}", file=sys.stderr)
         return False
@@ -113,46 +117,43 @@ def check_and_sync_upstream(dry_run: bool = False) -> bool:
             try:
                 update_db(MockArgs())
                 if remote_tv:
-                    save_truth_version_state(remote_tv)
+                    saved = save_truth_version_state(remote_tv)
+                    if not saved:
+                        print(f"  [WARN] 本地 TruthVersion 狀態持久化寫入失敗，下次執行可能重複探測", file=sys.stderr)
             except Exception as e:
                 print(f"❌ [ERROR] 下載資料庫失敗: {e}", file=sys.stderr)
                 return False
     else:
         print("  [Sync] 本地資料庫與 CDN 版號一致，無需重新下載資料庫。")
 
-    # 3. 掃描本地缺失的已追蹤角色對白 (P0-1 核心：按 unit_id 呼叫 downloader)
-    db_path = DASHBOARD_DIR / "redive_tw.db"
+    # 3. 掃描本地缺失的已追蹤角色對白 (使用 legacy canonical get_story_ids_for_unit)
     missing_unit_ids = []
     total_missing_stories = 0
-    if db_path.exists():
+    tracked_path = DASHBOARD_DIR / "data" / "tracked_characters.json"
+    
+    if tracked_path.exists():
         try:
-            conn = sqlite3.connect(str(db_path))
-            cur = conn.cursor()
-            
-            tracked_path = DASHBOARD_DIR / "data" / "tracked_characters.json"
-            if tracked_path.exists():
-                with open(tracked_path, "r", encoding="utf-8") as f:
-                    tracked_data = json.load(f)
-                for char in tracked_data.get("characters", []):
-                    uid = char.get("unit_id")
-                    if uid:
-                        cur.execute("SELECT story_id FROM story_detail WHERE story_group_id = ?", (uid,))
-                        char_story_ids = [row[0] for row in cur.fetchall()]
-                        char_missing = [sid for sid in char_story_ids if not (DASHBOARD_DIR / "story" / f"{sid}.json").exists()]
-                        if char_missing:
-                            missing_unit_ids.append((uid, char.get("name", str(uid)), len(char_missing)))
-                            total_missing_stories += len(char_missing)
-            conn.close()
+            with open(tracked_path, "r", encoding="utf-8") as f:
+                tracked_data = json.load(f)
+            for char in tracked_data.get("characters", []):
+                uid = char.get("unit_id")
+                if uid:
+                    # 使用 canonical logic 取得標準話數列表
+                    char_story_ids = get_story_ids_for_unit(uid)
+                    char_missing = [sid for sid in char_story_ids if not (DASHBOARD_DIR / "story" / f"{sid}.json").exists()]
+                    if char_missing:
+                        missing_unit_ids.append((uid, char.get("name", str(uid)), char_missing))
+                        total_missing_stories += len(char_missing)
         except Exception as e:
             print(f"  [WARN] 掃描缺失劇情時發生異常: {e}")
 
     if missing_unit_ids:
         print(f"  [Sync] 發現 {len(missing_unit_ids)} 位追蹤角色尚有 {total_missing_stories} 篇對白未下載:")
-        for uid, name, count in missing_unit_ids:
-            print(f"    - {name} (Unit {uid}): 缺失 {count} 篇")
+        for uid, name, missing_sids in missing_unit_ids:
+            print(f"    - {name} (Unit {uid}): 缺失 {len(missing_sids)} 篇 (IDs: {missing_sids})")
             
         if dry_run:
-            print(f"  [DRY-RUN] 預計執行: 依序為 {len(missing_unit_ids)} 位角色增量抓取對白 JSON")
+            print(f"  [DRY-RUN] 預計執行: 依序為 {len(missing_unit_ids)} 位角色增量抓取對白 JSON (調用 fetch_stories with non-None unit_id)")
         else:
             print(f"  [Sync] 正在依序下載缺失角色對白...")
             for uid, name, _ in missing_unit_ids:
