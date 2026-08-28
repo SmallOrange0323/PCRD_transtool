@@ -1,3 +1,10 @@
+"""
+Legacy bulk Story CDN recovery / maintenance utility.
+
+Not the normal Story Map update entry point.
+Use update_story_map.py for routine updates.
+"""
+
 import os
 import sys
 import json
@@ -19,8 +26,8 @@ elif hasattr(UnityPy.helpers, 'ArchiveStorageManager'):
 # 強制使用 UTF-8 輸出，避免 Windows 終端機編碼問題
 sys.stdout.reconfigure(encoding='utf-8')
 
-# 使用與專案目錄對齊的相對路徑
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# 使用與專案目錄對齊的相對路徑 (tools/maintenance/ -> repo_root)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DB_PATH = os.path.join(BASE_DIR, "dashboard", "redive_tw.db")
 OUTPUT_DIR = os.path.join(BASE_DIR, "dashboard", "story")
 
