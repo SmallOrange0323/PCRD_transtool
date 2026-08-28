@@ -1,6 +1,13 @@
 # -*- coding: utf-8 -*-
-import urllib.request
 import sys
+
+print(
+    "[LEGACY ARCHIVE ONLY] This historical investigation script is disabled. "
+    "Use current diagnostics/fetch tooling instead."
+)
+sys.exit(1)
+
+import urllib.request
 
 sys.stdout.reconfigure(encoding='utf-8')
 

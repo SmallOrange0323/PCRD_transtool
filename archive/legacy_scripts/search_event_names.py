@@ -1,6 +1,13 @@
 # -*- coding: utf-8 -*-
-import sqlite3
 import sys
+
+print(
+    "[LEGACY ARCHIVE ONLY] This historical investigation script is disabled. "
+    "Use current diagnostics/fetch tooling instead."
+)
+sys.exit(1)
+
+import sqlite3
 
 sys.stdout.reconfigure(encoding='utf-8')
 
