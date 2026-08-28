@@ -49,6 +49,10 @@ window.CharactersModule = {
             
             // 動態注入最新的角色（防止 SQLite 快取時間差）
             const extraUnits = [
+                { unit_id: 139401, unit_name: "艾麗卡", rarity: 3, pos: 220, race: "精靈", guild: "黑森峰女學園" },
+                { unit_id: 139301, unit_name: "真穗", rarity: 3, pos: 580, race: "獸人族", guild: "黑森峰女學園" },
+                { unit_id: 139201, unit_name: "美穗", rarity: 3, pos: 310, race: "人類", guild: "大洗女子學園" },
+                { unit_id: 139101, unit_name: "凱留（霸瞳天星）", rarity: 3, pos: 760, race: "獸人族", guild: "美食殿堂" },
                 { unit_id: 181201, unit_name: "雪菲（公主）", rarity: 3, pos: 368, race: "龍人族", guild: "美食殿堂" },
                 { unit_id: 181101, unit_name: "靜流＆璃乃", rarity: 3, pos: 283, race: "人類", guild: "拉比林斯" },
                 { unit_id: 181001, unit_name: "安＆古蕾婭", rarity: 3, pos: 755, race: "龍人族", guild: "無所屬" },
