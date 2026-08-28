@@ -49,10 +49,6 @@ window.CharactersModule = {
             
             // 動態注入最新的角色（防止 SQLite 快取時間差）
             const extraUnits = [
-                { unit_id: 139401, unit_name: "艾麗卡", rarity: 3, pos: null, race: "??", guild: "??" },
-                { unit_id: 139301, unit_name: "真穗", rarity: 3, pos: null, race: "??", guild: "??" },
-                { unit_id: 139201, unit_name: "美穗", rarity: 3, pos: null, race: "??", guild: "??" },
-                { unit_id: 139101, unit_name: "凱留（霸瞳天星）", rarity: 3, pos: 760, race: "獸人族", guild: "美食殿堂" },
                 { unit_id: 181201, unit_name: "雪菲（公主）", rarity: 3, pos: 368, race: "龍人族", guild: "美食殿堂" },
                 { unit_id: 181101, unit_name: "靜流＆璃乃", rarity: 3, pos: 283, race: "人類", guild: "拉比林斯" },
                 { unit_id: 181001, unit_name: "安＆古蕾婭", rarity: 3, pos: 755, race: "龍人族", guild: "無所屬" },
@@ -363,7 +359,7 @@ window.CharactersModule = {
                             </div>
                         </div>
                         <div class="char-meta">
-                            <span>站位: ${(unitData && unitData.search_area_width) || (profile && profile.pos) || '??'}</span>
+                            <span>站位: ${unitData ? unitData.search_area_width : '??'}</span>
                             <span>${profile ? profile.race : ''}</span>
                             <span>${profile ? profile.guild : ''}</span>
                         </div>
@@ -375,21 +371,14 @@ window.CharactersModule = {
                     <button id="modal-tab-pattern" class="tab-btn" onclick="CharactersModule.switchModalTab('pattern')">動作循環</button>
                     <button id="modal-tab-story" class="tab-btn" onclick="CharactersModule.switchModalTab('story')">個人劇情 (官方繁中)</button>
                 </div>
-
+ 
                 <div id="modal-content-stats">
-                    ${stats ? `
-                        <h3>核心數值 (計算結果)</h3>
-                        <div id="stats-display-grid" class="stats-grid"></div>
-                    ` : `
-                        <div class="glass-card" style="padding: 20px; text-align: center; border-radius: 12px; margin-bottom: 20px; border: 1px dashed rgba(255,255,255,0.15);">
-                            <div style="color: var(--accent-color); font-weight: 600; margin-bottom: 6px;">🎮 官方 CDN 先行預載角色</div>
-                            <div style="font-size: 0.85rem; color: var(--text-secondary);">官方尚未開放此角色的戰鬥數據表，請點擊上方「個人劇情」標籤頁搶先閱讀 1～4 話完整繁中劇情與專屬 CG！</div>
-                        </div>
-                    `}
-
+                    <h3>核心數值 (計算結果)</h3>
+                    <div id="stats-display-grid" class="stats-grid"></div>
+ 
                     <div class="skill-section">
                         <h3>技能介紹</h3>
-                        ${skills.length > 0 ? skills.map(s => `
+                        ${skills.map(s => `
                             <div class="skill-item">
                                 <div class="skill-icon" style="width: 50px; height: 50px; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                     ${window.AvatarService.getSkillIconHtml(s.icon_type)}
@@ -400,7 +389,7 @@ window.CharactersModule = {
                                     <div class="skill-desc">${s.description.replace(/\\n/g, '<br>')}</div>
                                 </div>
                             </div>
-                        `).join('') : '<div style="color: var(--text-secondary); font-size: 0.85rem; padding: 10px 0;">暫無技能數據</div>'}
+                        `).join('')}
                     </div>
                 </div>
  
@@ -751,22 +740,16 @@ window.CharactersModule = {
         const storyPrefix = String(unitId).substring(0, 4);
         
         try {
-            let stories = window.PCRDatabase.runQuery(`
+            const stories = window.PCRDatabase.runQuery(`
                 SELECT story_id, title, sub_title 
                 FROM story_detail 
                 WHERE CAST(story_id AS TEXT) LIKE ? 
                 ORDER BY story_id ASC
             `, [storyPrefix + "%"]);
             
-            // 若資料庫尚未收錄新角色個人劇情，自動從本地對白目錄構建 1~4 話
             if (!stories || stories.length === 0) {
-                const charObj = this.allCharacters.find(c => c.unit_id === unitId);
-                const charName = charObj ? charObj.unit_name : "角色";
-                stories = [1, 2, 3, 4].map(ep => ({
-                    story_id: parseInt(`${storyPrefix}00${ep}`),
-                    title: `${charName} 第${ep}話`,
-                    sub_title: `第 ${ep} 話`
-                }));
+                container.innerHTML = '<div class="empty-msg" style="text-align: center; padding: 20px; color: var(--text-secondary);">此角色暫無個人劇情數據</div>';
+                return;
             }
             
             container.innerHTML = `
