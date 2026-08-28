@@ -23,11 +23,18 @@ try:
         cmd_fetch_story_images as fetch_story_images,
         cmd_sync_episode as sync_episode,
         _get_sonet_ver as get_truth_version,
+        _get_story_ids_from_db,
         main as pcrd_fetch_main
     )
 except ImportError as e:
     print(f"[ERROR] 無法載入 tools/pcrd_fetch.py: {e}", file=sys.stderr)
     sys.exit(1)
+
+def get_story_ids_for_unit(unit_id: int) -> list[int]:
+    """
+    取得指定角色的標準劇情話數 ID 列表 (使用 legacy canonical 規則，包含 7/8 位相容與 fallback)。
+    """
+    return _get_story_ids_from_db(unit_id)
 
 def run_fetch_cli():
     """CLI 入口"""
