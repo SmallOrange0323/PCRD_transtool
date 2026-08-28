@@ -1,6 +1,13 @@
 # -*- coding: utf-8 -*-
-import sqlite3
 import sys
+
+print(
+    "[LEGACY ARCHIVE ONLY] This legacy table-listing script is disabled. "
+    "Use tools/diagnostics/list_tw_tables.py instead."
+)
+sys.exit(1)
+
+import sqlite3
 
 sys.stdout.reconfigure(encoding='utf-8')
 
