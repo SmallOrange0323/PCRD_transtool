@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+"""
+[Network Diagnostic / Probe-only]
+探測 So-net 台服 CDN 目前實裝的最高 Manifest 版本號。
+"""
 import urllib.request
 import sys
 

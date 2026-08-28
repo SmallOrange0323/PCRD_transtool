@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+"""
+[Network Diagnostic / Probe-only]
+探針檢測阿斯特萊亞佩可劇照 CG (still_id: 91002) 圖片資源。
+"""
 import urllib.request
 import sys
 

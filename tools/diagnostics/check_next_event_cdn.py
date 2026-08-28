@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+"""
+[Network Diagnostic / Probe-only]
+探針檢測 So-net 台服 CDN 上下個月新形式活動 (ID: 10215) 資源。
+"""
 import urllib.request
 import sys
 
