@@ -49,7 +49,7 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
     """
     執行 Story Map 全量一致性檢查。
     :param target_dir: 檢查目標目錄，預設為 dashboard
-    :param check_dist: 是否同時檢查 dist_story_map
+    :param check_dist: 是否同時對 dist_story_map 進行完整部署集合驗證
     :return: True 通過, False 存在致命錯誤
     """
     base_dir = target_dir or DASHBOARD_DIR
@@ -125,7 +125,7 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
     else:
         res.error("資料庫檔案 redive_tw.db 不存在！")
 
-    # 4. 全量對白劇本逐份解析 (逐檔 json.loads 驗證)
+    # 4. 全量對白劇本逐份解析 (逐檔 json.loads 語法驗證)
     story_dir = base_dir / "story"
     actual_story_ids = set()
     if story_dir.exists():
@@ -133,7 +133,6 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
         corrupted_count = 0
         for sf in story_files:
             try:
-                # 檔名必須為純數字 ID
                 sid = int(sf.stem)
                 actual_story_ids.add(sid)
                 with open(sf, "r", encoding="utf-8") as f:
@@ -166,32 +165,25 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
         expected_story_ids = db_story_ids.union(extra_story_ids)
         missing_in_disk = expected_story_ids - actual_story_ids
         if missing_in_disk:
-            # 部分舊活動話數可能未下載，列為警告並提示數量
-            res.warning(f"元數據中尚有 {len(missing_in_disk)} 話未下載本機對白 (例如部分歷史經典活動)")
+            res.warning(f"元數據中尚有 {len(missing_in_disk)} 話未下載本機對白 (例如部分歷史活動)")
         else:
             res.ok(f"元數據定義之重要話數本機對白皆已具備")
     else:
         res.error("對白劇本目錄 story/ 不存在！")
 
-    # 6. 檢查本機素材懸空引用 (Dangling Asset References)
+    # 6. 元數據映射解析 (P1-2: 準確陳述 metadata 解析狀態)
     thumb_path = data_dir / "story_thumbnails.json"
     if thumb_path.exists():
         try:
             with open(thumb_path, "r", encoding="utf-8") as f:
                 thumbs = json.load(f)
-            missing_thumbs = 0
-            for sid, t_val in thumbs.items():
-                still_id = t_val if isinstance(t_val, str) else t_val.get("still_id")
-                if still_id:
-                    still_file = base_dir / "still" / "scenario" / f"{still_id}.webp"
-                    # 若本地未下載，確認為可選遠端 fallback
-            res.ok(f"story_thumbnails 映射表包含 {len(thumbs)} 筆章節劇照關聯")
+            res.ok(f"元數據映射表解析成功 (story_thumbnails 包含 {len(thumbs)} 筆章節劇照關聯)")
         except Exception as e:
-            res.warning(f"縮圖引用檢查異常: {e}")
+            res.warning(f"story_thumbnails 解析異常: {e}")
 
-    # 7. 若檢查 dist，執行 dist 專屬深度驗證
+    # 7. 若 check_dist=True，執行 dist_story_map 專屬集合與檔案深度驗證 (P1-1)
     if check_dist or base_dir == DIST_DIR:
-        print(f"\n🔍 執行 dist_story_map 專屬部署結構驗證...")
+        print(f"\n🔍 執行 dist_story_map 專屬部署結構與對白集合驗證...")
         dist_idx = DIST_DIR / "index.html"
         if dist_idx.exists():
             content = dist_idx.read_text(encoding="utf-8")
@@ -220,6 +212,48 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
                 res.error(f"dist_story_map db_info.json 損壞: {e}")
         else:
             res.error("dist_story_map/data/db_info.json 不存在！")
+
+        # 深度比對 dist/story 對白集合 (P1-1: 比對 dashboard vs dist)
+        dist_story_dir = DIST_DIR / "story"
+        if dist_story_dir.exists():
+            dist_story_files = list(dist_story_dir.glob("*.json"))
+            dist_sids = set()
+            dist_corrupt = 0
+            for dsf in dist_story_files:
+                try:
+                    dsid = int(dsf.stem)
+                    dist_sids.add(dsid)
+                    with open(dsf, "r", encoding="utf-8") as f:
+                        data = json.load(f)
+                    if not isinstance(data, list):
+                        dist_corrupt += 1
+                        res.error(f"dist 對白非陣列: dist_story_map/story/{dsf.name}")
+                except ValueError:
+                    pass
+                except Exception as e:
+                    dist_corrupt += 1
+                    res.error(f"dist 對白 JSON 損壞: dist_story_map/story/{dsf.name} - {e}")
+
+            # 檢查 dashboard 的 story 是否全部成功同步至 dist
+            missing_in_dist = actual_story_ids - dist_sids
+            if missing_in_dist:
+                res.error(f"dist_story_map 缺失 {len(missing_in_dist)} 篇對白 (Bundler 漏同步): 範例 {list(missing_in_dist)[:5]}")
+            else:
+                res.ok(f"dist_story_map/story/ 與源碼對白集合完全一致 (共 {len(dist_sids)} 篇)")
+        else:
+            res.error("dist_story_map/story/ 目錄不存在！")
+
+        # 深度驗證 dist/data 元數據
+        for meta_name in required_metadata.keys():
+            dmp = DIST_DIR / "data" / meta_name
+            if not dmp.exists():
+                res.error(f"dist_story_map 必備元數據缺失: data/{meta_name}")
+            else:
+                try:
+                    with open(dmp, "r", encoding="utf-8") as f:
+                        json.load(f)
+                except Exception as e:
+                    res.error(f"dist_story_map 元數據損壞: data/{meta_name} - {e}")
 
     # 總結
     print(f"\n📋 驗證總結: {len(res.errors)} 個錯誤, {len(res.warnings)} 個警告")

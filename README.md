@@ -6,7 +6,7 @@
 
 本專案的核心產品為 **「公主連結劇情地圖（PCRD Story Map）」** —— 一個高沉浸感、全話數涵蓋、支援官方繁體中文全對白檢索、專屬 CG 劇照、場景背景與語音播放的 Web 應用系統。
 
-專案包含完整的 **CDN ➡️ Story Map 自動化資料管線**，可定期同步台服 So-net 遊戲 CDN，自動下載並解密最新主線章節、活動劇情、角色好感度劇本與多媒體素材。
+專案具備 **Story Map Update Pipeline v1**，提供從 So-net CDN 進行資料庫版號探測、SQLite 資料庫更新、追蹤角色好感度劇本增量補齊、決定性打包與全量深度驗證的標準化流程。
 
 ---
 
@@ -30,32 +30,40 @@ python tools/local_server.py
 
 ---
 
-## 🔄 資料更新管線 (Pipeline)
+## 🔄 資料更新管線 (Pipeline v1)
 
-當遊戲有新版本或新劇情上線時，可透過單一指令完成全自動更新：
+當遊戲有新版本或新角色好感度劇本上線時，可透過單一指令執行管線：
 
 ```bash
-# 一鍵全自動更新：探測 CDN ➡️ 下載解密 ➡️ 封裝 ➡️ 驗證 ➡️ 發布
+# 本地增量同步 ➡️ 決定性打包 ➡️ 全量驗證門禁 (預設不發布)
 python update_story_map.py
 ```
 
+### Pipeline v1 支援範疇
+* ✅ **CDN TruthVersion 探測與狀態持久化**：自動比對線上與本地版本。
+* ✅ **台版 SQLite 資料庫同步**：自動下載並解密最新 `redive_tw.db`。
+* ✅ **追蹤角色劇情增量下載**：自動掃描 `tracked_characters.json` 中尚未就緒的角色好感度話數並下載解密。
+* ✅ **決定性前端封裝 (Deterministic Bundle)**：基於 SHA-256 Content 比對與 Cache-Busting。
+* ✅ **全量深度驗證門禁**：逐份 parse 全量 9000+ 篇對白 JSON 與 dist 一致性自檢。
+* ✅ **可選 GitHub Pages 部署**：`python update_story_map.py --deploy` 僅推送 `dist_story_map` 至 `gh-pages`。
+
 ### 常用管線指令
-* **僅檢查更新 / 模擬運行 (Dry-run)**：
+* **模擬運行 (零副作用)**：
   ```bash
   python update_story_map.py --dry-run
-  ```
-* **下載指定活動/主線之語音與 CG 素材**：
-  ```bash
-  python -m pipeline.fetch fetch-story-voices --story-id <STORY_ID>
-  python -m pipeline.fetch fetch-story-images --story-id <STORY_ID>
-  ```
-* **手動執行 Story Map 封裝與 Cache-Busting**：
-  ```bash
-  python -m pipeline.bundle
   ```
 * **手動執行全量資料一致性自檢**：
   ```bash
   python -m pipeline.validate
+  ```
+* **手動執行 Story Map 封裝**：
+  ```bash
+  python -m pipeline.bundle
+  ```
+* **下載特定話數之語音與 CG 素材 (手動工具)**：
+  ```bash
+  python -m pipeline.fetch fetch-story-voices --story-id <STORY_ID>
+  python -m pipeline.fetch fetch-story-images --story-id <STORY_ID>
   ```
 
 ---
@@ -69,13 +77,13 @@ PCRD_transtool/
 │   ├── map.js, characters.js   # 業務邏輯控制器
 │   ├── data/                   # 章節與活動元數據 JSON
 │   └── story/                  # 官方解密對白 JSON (9000+ 篇)
-├── dist_story_map/             # 🚀 GitHub Pages 獨立發布目錄
-├── pipeline/                   # ⭐ CDN ➡️ Story Map 資料管線模組
+├── dist_story_map/             # 🚀 GitHub Pages 獨立發布目錄 (具備獨立 .git)
+├── pipeline/                   # ⭐ Story Map Update Pipeline v1 核心模組
 │   ├── fetch.py                # CDN 資源探測與下載解密
-│   ├── bundle.py               # 前端打包、內嵌與 Cache-Busting
-│   ├── deploy.py               # 部署與 GitHub Pages 推送
-│   ├── validate.py             # 資料完整性與三道綠燈自檢
-│   └── update.py               # 單一更新協調器
+│   ├── bundle.py               # 決定性前端打包與 Cache-Busting
+│   ├── deploy.py               # 部署發布 (只推送 dist 至 gh-pages)
+│   ├── validate.py             # 全量資料一致性自檢門禁
+│   └── update.py               # 統一增量更新協調器
 ├── update_story_map.py         # 🌟 根目錄一鍵更新快捷指令
 ├── tools/                      # 🛠️ 維護與診斷工具集
 ├── experiments/                # 🧪 歷史/獨立實驗專案 (如 AI 翻譯器)
