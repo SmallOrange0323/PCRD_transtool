@@ -1,4 +1,14 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+"""
+[LEGACY ARCHIVE ONLY]
+Do not use for production deployment.
+Use update_story_map.py / pipeline.deploy instead.
+
+此腳本為舊版手動部署發布工具，已被正式資料管線 (pipeline/deploy.py) 取代。
+保留此檔案僅供歷史回溯追查。
+"""
+
 import os
 import subprocess
 import sys
@@ -11,6 +21,15 @@ def run_cmd(cmd, cwd=None):
         return False, f"Error: {e.stderr}\nOutput: {e.stdout}"
 
 def main():
+    print(
+        "[LEGACY ARCHIVE] This historical deploy script is disabled. "
+        "Use update_story_map.py / pipeline.deploy instead."
+    )
+    sys.exit(1)
+
+    # ==============================================================================
+    # 歷史實作保留於下方供參考查閱 (Unreachable)
+    # ==============================================================================
     script_dir = os.path.dirname(os.path.abspath(__file__))
     dist_dir = os.path.join(script_dir, "dist_story_map")
     git_dir = os.path.join(dist_dir, ".git")
