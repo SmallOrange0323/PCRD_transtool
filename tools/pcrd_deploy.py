@@ -207,93 +207,18 @@ def cmd_bundle(args):
 
 
 def cmd_verify(args):
-    """執行代碼與資源完整性自檢。"""
-    print("🛡️  開始發布前自動化防禦自檢...")
-    errors = []
-    warnings = []
-
-    # 1. JS 語法驗證 (Node.js)
-    js_files = [os.path.join(DASHBOARD_DIR, f) for f in ["db.js", "chapter-data.js", "characters.js"]]
-    for jf in js_files:
-        if os.path.exists(jf):
-            try:
-                result = subprocess.run(
-                    ["node", "--check", jf],
-                    capture_output=True,
-                    text=True
-                )
-                if result.returncode != 0:
-                    errors.append(f"JS 語法錯誤 ({os.path.basename(jf)}): {result.stderr.strip()}")
-                else:
-                    print(f"  [Linter] {os.path.basename(jf)} 語法檢查: ✅ 通過")
-            except FileNotFoundError:
-                print(f"  [Linter] node 未安裝或未包含於 PATH 中，跳過 {os.path.basename(jf)} 靜態語法檢查")
-            except Exception as e:
-                warnings.append(f"Linter 檢查 {os.path.basename(jf)} 時出錯: {e}")
-        else:
-            warnings.append(f"未找到原始腳本: {os.path.basename(jf)}")
-
-    # 2. 檢查內嵌版 index.html 是否有被正確生成
-    index_html = os.path.join(DIST_DIR, "index.html")
-    if os.path.exists(index_html):
-        # 簡單讀取確認是否包含 inline 標記
-        with open(index_html, 'r', encoding='utf-8') as f:
-            html = f.read()
-        if "db.js INLINED" not in html or "chapter-data.js INLINED" not in html:
-            errors.append("index.html 中缺少核心 JS (db.js 或 chapter-data.js) 的內嵌標記，CDN 快取破壞失效！")
-        else:
-            print("  [Inline] index.html 內嵌核心 JS: ✅ 通過")
-    else:
-        errors.append("未找到 dist_story_map/index.html，請先執行 bundle。")
-
-    # 3. 資源存在性與破圖自檢 (檢查最新的 5 個 story json 是否在 dist)
-    chapters_json_path = os.path.join(DIST_DIR, "data", "chapters.json")
-    if os.path.exists(chapters_json_path):
-        try:
-            with open(chapters_json_path, 'r', encoding='utf-8') as f:
-                ch_data = json.load(f)
-            # 遍歷 Part 3 提取 story_id
-            part3_gw = ch_data.get("3", {}).get("game_world", {})
-            latest_sids = []
-            for ch_key in sorted(part3_gw.keys(), reverse=True)[:2]:
-                for ep in part3_gw[ch_key].get("episodes", []):
-                    latest_sids.append(ep.get("story_id"))
-            
-            # 檢查 dist 故事對白 JSON
-            missing_jsons = []
-            for sid in latest_sids:
-                if sid:
-                    path = os.path.join(DIST_DIR, "story", f"{sid}.json")
-                    if not os.path.exists(path):
-                        missing_jsons.append(f"{sid}.json")
-            if missing_jsons:
-                errors.append(f"缺少最新劇本 JSON 檔案 (會造成線上載入失敗): {', '.join(missing_jsons)}")
-            else:
-                print("  [Assets] 最新主線話數對白 JSON 存在性: ✅ 通過")
-        except Exception as e:
-            warnings.append(f"讀取 chapters.json 資源自檢失敗: {e}")
-
-    # 4. 輸出檢驗報告
+    """執行代碼與資源完整性自檢 (委派至 pipeline.validate 單一驗證門禁)。"""
+    from pipeline.validate import validate_story_map
+    success = validate_story_map(check_dist=True)
     report_data = {
-        "status": "fail" if errors else "ok",
-        "errors": errors,
-        "warnings": warnings,
+        "status": "ok" if success else "fail",
+        "errors": [] if success else ["驗證門禁未通過"],
+        "warnings": [],
         "time": time.strftime("%Y-%m-%d %H:%M:%S")
     }
     _write_output(args.output, report_data)
-
-    if errors:
-        print("\n❌ 自檢失敗！請修正以下錯誤後再嘗試部署：", file=sys.stderr)
-        for err in errors:
-            print(f"  - {err}", file=sys.stderr)
+    if not success:
         sys.exit(1)
-    
-    if warnings:
-        print("\n⚠️ 警報（非致命）：")
-        for warn in warnings:
-            print(f"  - {warn}")
-            
-    print("\n✅ 三道防禦自檢全部通過！")
 
 
 def cmd_push_pages(args):
