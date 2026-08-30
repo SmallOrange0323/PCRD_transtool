@@ -2092,7 +2092,7 @@ const QuestMapModule = {
                         請在本地專案根目錄中，執行命令下載全部對白：
                     </div>
                     <code style="display: block; margin-top: 8px; background: rgba(0,0,0,0.05); padding: 8px; border-radius: 4px; color: var(--accent-color); font-family: Consolas, monospace; font-size: 0.8rem; border: 1px solid rgba(94, 107, 125, 0.15);">
-                        python download_stories_tw.py
+                        python tools/maintenance/download_stories_tw.py
                     </code>
                     <button onclick="QuestMapModule.loadDialogue(${storyId})" style="margin-top: 10px; padding: 8px 16px; background: var(--accent-color); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">🔄 重新載入</button>
                 </div>
