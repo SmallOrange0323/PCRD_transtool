@@ -2199,30 +2199,9 @@ const QuestMapModule = {
         // 方案 B 重構：已廢棄，由 AvatarService 統一接管
     },
 
-    // Modal 單例管理
+    // Modal 單例管理 (向下相容與委託)
     getCharaModal() {
-        let modalEl = document.getElementById('game-chara-modal');
-        if (!modalEl) {
-            modalEl = document.createElement('div');
-            modalEl.id = 'game-chara-modal';
-            modalEl.className = 'game-modal-overlay';
-            modalEl.onclick = function(event) {
-                if (event.target === modalEl) {
-                    modalEl.classList.remove('active');
-                }
-            };
-            // 支援 Escape 鍵關閉
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    const m = document.getElementById('game-chara-modal');
-                    if (m && m.classList.contains('active')) {
-                        m.classList.remove('active');
-                    }
-                }
-            });
-            document.body.appendChild(modalEl);
-        }
-        return modalEl;
+        return window.CharaModalView ? window.CharaModalView.getCharaModal() : null;
     },
 
     async showCharaModal(charaName) {
@@ -2250,121 +2229,22 @@ const QuestMapModule = {
         const appearances = (this.appearanceMap &&
             (this.appearanceMap[realCharaName] || this.appearanceMap[charaName])) || [];
 
-        let avatarUrl = "icon/unit/000000.webp";
-        const unitId = AvatarService.getUnitId(realCharaName, this.speakerAvatars);
-        if (unitId) {
-            const candidates = AvatarService.getUrlCandidates(unitId);
-            avatarUrl = candidates[0] || avatarUrl;
-        }
-
-        const modalEl = this.getCharaModal();
-
-        let appListHtml = "";
-        if (appearances.length === 0) {
-            appListHtml = `<div style="color: var(--text-secondary); font-size: 0.85rem; font-style: italic;">暫無登場話數統計數據。</div>`;
-        } else {
-            appListHtml = appearances.map(storyId => {
+        window.CharaModalView.renderModal({
+            realCharaName,
+            profile,
+            appearances,
+            speakerAvatars: this.speakerAvatars,
+            avatarService: window.AvatarService,
+            resolveStoryLabel: (storyId) => {
                 const story = this.getStoryById(storyId);
-                let label = `ID: ${storyId}`;
-                if (story) {
-                    const cleanCh = story.chapter.replace(/^(第\d+部\s*)?([^\s]+章\s*|[^\s]+序章\s*|[^\s]+幕間[^\s]*\s*)/, '');
-                    label = `${cleanCh} ${story.title}`.trim();
-                    if (label.length > 15) label = label.substring(0, 15) + "...";
-                }
-                return `<button class="chara-appear-btn" onclick="QuestMapModule.jumpToStory(${storyId}, 'game-chara-modal')" style="background: rgba(232,56,117,0.07); border: 1px solid rgba(232,56,117,0.2); border-radius: 8px; padding: 6px 12px; color: var(--accent-color); cursor: pointer; font-size: 0.82rem; font-weight: 600; transition: all 0.2s; display: inline-block;">${label}</button>`;
-            }).join('');
-        }
-
-        const guild = profile ? (profile.guild || "未知") : "未知";
-        const race = profile ? (profile.race || "未知") : "未知";
-        const rawAge = profile ? (profile.age || "") : "";
-        const age = rawAge ? `${rawAge}歲` : "未知";
-        const rawHeight = profile ? (profile.height || "") : "";
-        const height = rawHeight ? `${rawHeight}cm` : "未知";
-        const rawWeight = profile ? (profile.weight || "") : "";
-        const weight = rawWeight ? `${rawWeight}kg` : "未知";
-        const birth = (profile && profile.birth_month) ? `${profile.birth_month}月${profile.birth_day}日` : "未知";
-        const cv = profile ? (profile.voice || "未知") : "未知";
-        const selfText = profile ? this.escapeHtml(profile.self_text || "暫無自我介紹。").replace(/\\n/g, '<br>') : "暫無自我介紹。";
-        const catchCopy = profile ? (profile.catch_copy || "") : "";
-
-        let detailsHtml = "";
-        if (profile) {
-            detailsHtml = `
-                <div style="flex: 1; min-width: 200px;">
-                    <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; color: var(--text-primary);">
-                        <tr>
-                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600; width: 60px;">公會：</td>
-                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${guild}</td>
-                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600; width: 60px;">種族：</td>
-                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${race}</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">年齡：</td>
-                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${age}</td>
-                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">生日：</td>
-                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${birth}</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">身高：</td>
-                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${height}</td>
-                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">體重：</td>
-                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${weight}</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">聲優：</td>
-                            <td colspan="3" style="padding: 4px 0; color: var(--accent-color); font-weight: bold;">${cv}</td>
-                        </tr>
-                    </table>
-                </div>
-            `;
-        } else {
-            detailsHtml = `
-                <div style="flex: 1; min-width: 200px; display: flex; flex-direction: column; justify-content: center;">
-                    <div style="color: var(--text-secondary); font-size: 0.9rem; font-style: italic; border: 1px dashed rgba(232, 56, 117, 0.2); padding: 15px; border-radius: 8px; background: rgba(232, 56, 117, 0.03);">
-                        ℹ️ 此角色為劇中登場人物或 NPC，尚無設定集數據。
-                    </div>
-                </div>
-            `;
-        }
-
-        let bioHtml = "";
-        if (profile) {
-            bioHtml = `
-                ${catchCopy ? `<div style="font-style: italic; color: var(--accent-color); font-size: 0.9rem; margin-bottom: 10px; text-align: left;">「${catchCopy}」</div>` : ''}
-                <div style="background: rgba(94, 107, 125, 0.04); padding: 12px; border-radius: 8px; border: 1px solid rgba(232, 56, 117, 0.08); font-size: 0.85rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 15px; text-align: left;">
-                    ${selfText}
-                </div>
-            `;
-        }
-
-        modalEl.innerHTML = `
-            <div class="game-modal-content" style="max-height: 85vh; overflow-y: auto;">
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(94, 107, 125, 0.1); padding-bottom: 12px; margin-bottom: 15px;">
-                    <h3 style="margin: 0; color: var(--accent-color); font-size: 1.25rem;">🔍 角色檔案：${realCharaName}</h3>
-                    <span class="game-modal-close-btn" onclick="document.getElementById('game-chara-modal').classList.remove('active')" style="cursor: pointer; font-size: 1.5rem; color: var(--text-secondary); transition: transform 0.2s;"
-                           onmouseover="this.style.transform='rotate(90deg)'" onmouseout="this.style.transform='none'">&times;</span>
-                </div>
-
-                <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px;">
-                    <div style="width: 100px; height: 100px; border-radius: 12px; overflow: hidden; border: 2px solid rgba(232, 56, 117, 0.15); background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 0;">
-                        ${window.AvatarService.getAvatarHtml(realCharaName, this.speakerAvatars)}
-                    </div>
-                    ${detailsHtml}
-                </div>
-
-                ${bioHtml}
-
-                <div style="border-top: 1px solid rgba(94, 107, 125, 0.1); padding-top: 15px;">
-                    <h4 style="margin: 0 0 10px 0; color: var(--text-primary); font-size: 0.95rem;">📖 登場話數 (點擊直接跳轉放映)：</h4>
-                    <div style="display: flex; gap: 8px; flex-wrap: wrap; max-height: 150px; overflow-y: auto; padding: 5px;">
-                        ${appListHtml}
-                    </div>
-                </div>
-            </div>
-        `;
-
-        modalEl.classList.add('active');
+                if (!story) return `ID: ${storyId}`;
+                const cleanCh = story.chapter.replace(/^(第\d+部\s*)?([^\s]+章\s*|[^\s]+序章\s*|[^\s]+幕間[^\s]*\s*)/, '');
+                let label = `${cleanCh} ${story.title}`.trim();
+                if (label.length > 15) label = label.substring(0, 15) + "...";
+                return label;
+            },
+            escapeHtml: (str) => this.escapeHtml(str)
+        });
     },
 
     jumpToStory(storyId, closeModalId) {
@@ -2482,6 +2362,6 @@ const QuestMapModule = {
     }
 };
 
-if (window.ChapterDataService && window.AvatarService && window.SpeakerView) {
+if (window.ChapterDataService && window.AvatarService && window.SpeakerView && window.CharaModalView) {
     console.log("[QuestMapModule] 所有相依服務已就緒");
 }
