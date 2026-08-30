@@ -128,6 +128,7 @@ def bundle_story_map(dry_run: bool = False) -> bool:
         ("chara-modal.js", "chara-modal.js"),
         ("dialogue-normalizer.js", "dialogue-normalizer.js"),
         ("media-service.js", "media-service.js"),
+        ("dialogue-view.js", "dialogue-view.js"),
         ("map.js", "map.js"),
         ("sql-wasm.js", "sql-wasm.js"),
         ("sql-wasm.wasm", "sql-wasm.wasm"),
@@ -246,6 +247,7 @@ def bundle_story_map(dry_run: bool = False) -> bool:
     modal_js_path = DASHBOARD_DIR / "chara-modal.js"
     norm_js_path = DASHBOARD_DIR / "dialogue-normalizer.js"
     media_js_path = DASHBOARD_DIR / "media-service.js"
+    dialogue_js_path = DASHBOARD_DIR / "dialogue-view.js"
     map_js_path = DASHBOARD_DIR / "map.js"
 
     if html_src.exists() and db_js_path.exists() and ch_js_path.exists():
@@ -274,6 +276,7 @@ def bundle_story_map(dry_run: bool = False) -> bool:
         modal_hash = calc_sha256(modal_js_path)[:8]
         norm_hash = calc_sha256(norm_js_path)[:8]
         media_hash = calc_sha256(media_js_path)[:8]
+        dialogue_hash = calc_sha256(dialogue_js_path)[:8]
         map_hash = calc_sha256(map_js_path)[:8]
 
         html_content = re.sub(
@@ -304,6 +307,11 @@ def bundle_story_map(dry_run: bool = False) -> bool:
         html_content = re.sub(
             r'<script src="media-service\.js(?:\?v=[^"]*)?"></script>',
             f'<script src="media-service.js?v={media_hash}"></script>',
+            html_content
+        )
+        html_content = re.sub(
+            r'<script src="dialogue-view\.js(?:\?v=[^"]*)?"></script>',
+            f'<script src="dialogue-view.js?v={dialogue_hash}"></script>',
             html_content
         )
         html_content = re.sub(

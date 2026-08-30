@@ -1823,11 +1823,7 @@ const QuestMapModule = {
         if (this.isLoadingDialogue) return;
         this.isLoadingDialogue = true;
 
-        board.innerHTML = `
-            <div style="text-align: center; color: rgba(255,255,255,0.5); padding: 40px 0; font-size: 0.9rem;">
-                <span class="loading-spinner" style="display: inline-block; animation: spin 1s linear infinite; margin-right: 5px;">🔄</span> 正在載入本地官方繁中對白，請稍候...
-            </div>
-        `;
+        window.DialogueView.renderLoading(board);
 
         try {
             const response = await fetch(`story/${storyId}.json?v=${Date.now()}`);
@@ -1836,7 +1832,7 @@ const QuestMapModule = {
             const rawDialogueList = await response.json();
 
             if (!rawDialogueList || rawDialogueList.length === 0) {
-                board.innerHTML = `<div style="color: rgba(255,255,255,0.4); text-align: center; font-size: 0.9rem; padding: 20px;">本話無語音對白數據。</div>`;
+                window.DialogueView.renderEmpty(board);
                 this.isLoadingDialogue = false;
                 return;
             }
@@ -1847,203 +1843,25 @@ const QuestMapModule = {
             await this.loadDialogueAvatars(speakerNames);
 
             const badgesBar = document.getElementById('chara-badges-bar');
-            if (badgesBar) {
-                const validSpeakers = speakerNames.filter(n => n !== "旁白" && n !== "【系統】" && !n.includes("【選擇肢】") && !n.includes("【選擇】") && n !== "？？？");
-                const playableSpeakers = validSpeakers.filter(name => {
-                    const realName = this.getCharaRealName(name);
-                    return !!this.speakerAvatars[realName];
-                });
-
-                if (playableSpeakers.length === 0) {
-                    badgesBar.style.display = "none";
-                } else {
-                    badgesBar.style.display = "flex";
-                    const renderedSet = new Set();
-                    const badgeHtmls = [];
-
-                    playableSpeakers.forEach(name => {
-                        const realName = this.getCharaRealName(name);
-                        if (renderedSet.has(realName)) return;
-                        renderedSet.add(realName);
-                        badgeHtmls.push(`
-                            <div class="game-chara-avatar-badge" title="${realName}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})">
-                                ${AvatarService.getAvatarHtml(realName, this.speakerAvatars)}
-                            </div>
-                        `);
-                    });
-                    badgesBar.innerHTML = badgeHtmls.join('');
-                }
-            }
-
-            let html = "";
-            let firstBgUrl = "";
-            dialogueList.forEach(item => {
-                if (item.type === 'still') {
-                    const stillId = item.still_id || item.still;
-                    if (stillId && String(stillId).trim().toLowerCase() !== 'end') {
-                        const stillImgHtml = StoryAssetService.getStillHtml(stillId, 'dialogue-still-img still-clickable', '');
-                        html += `
-                            <div class="game-dialogue-still-wrap">
-                                <div class="game-dialogue-still-label">✨ 劇情插畫</div>
-                                <div class="game-dialogue-still" onclick="QuestMapModule.openStillPopup(event)">
-                                    ${stillImgHtml}
-                                </div>
-                            </div>
-                        `;
-                    }
-                    return;
-                }
-
-                if (item.type === 'background') {
-                    const bgId = item.background_id || item.background || item.bg_id || item.bg;
-                    if (bgId) {
-                        const bgUrl = `https://redive.estertion.win/bg/jpg/${bgId}.jpg`;
-                        if (!firstBgUrl) firstBgUrl = bgUrl;
-                        html += `
-                            <div class="game-dialogue-bg-change" data-bg="${bgUrl}" style="margin: 12px 0; padding: 8px 12px; font-size: 0.8rem; color: rgba(255,255,255,0.4); text-align: center; border-top: 1px dashed rgba(255,255,255,0.15); border-bottom: 1px dashed rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; gap: 6px;">
-                                🎬 場景切換：${bgId}
-                            </div>
-                        `;
-                    }
-                    return;
-                }
- 
-                if (item.type === 'movie') {
-                    const movieId = item.movie_id || item.movie;
-                    if (movieId) {
-                        const cleanMovieId = String(movieId).replace('movie_', '');
-                        html += `
-                            <div class="game-dialogue-movie-wrap" style="
-                                margin: 20px 0;
-                                padding: 18px;
-                                background: rgba(232, 56, 117, 0.08);
-                                border: 1px solid rgba(232, 56, 117, 0.2);
-                                border-radius: 12px;
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                                justify-content: center;
-                                gap: 8px;
-                                text-align: center;
-                                box-shadow: inset 0 0 10px rgba(232, 56, 117, 0.05);
-                            ">
-                                <div style="font-size: 1.6rem; animation: pulse 2s infinite;">🎬</div>
-                                <div style="font-size: 0.95rem; font-weight: 700; color: var(--accent-color);">過場動畫銜接：movie_${cleanMovieId}</div>
-                                <div style="font-size: 0.8rem; color: var(--text-secondary); max-width: 450px; line-height: 1.4;">
-                                    此處為遊戲內嵌之劇情動畫。本網頁不直接提供影片播放，您可使用 Python 提取工具解碼本地 USM 影片或在 YouTube/Bilibili 搜尋該動畫 ID 觀看。
-                                </div>
-                            </div>
-                        `;
-                    }
-                    return;
-                }
-
-                const speaker = item.name || "旁白";
-                const safeSpeaker = this.escapeHtml(speaker);
-                const words = this.escapeHtml(item.words || "")
-                    .replace(/\{player\}/g, "佑樹")
-                    .replace(/\{0\}/g, "佑樹")
-                    .replace(/\\n/g, "<br>")
-                    .replace(/\n/g, "<br>");
-
-                let speakerClass = "";
-                let isNarrator = speaker === "旁白" || speaker === "【系統】" || speaker === "？？？";
-                let isChoice = speaker.includes("【選擇肢】") || speaker.includes("【選擇】");
-
-                if (isNarrator) speakerClass = "role-narrator";
-                else if (isChoice) speakerClass = "role-choice";
-
-                const realNameForBtn = (isNarrator || isChoice) ? "" : this.getCharaRealName(speaker);
-
-                let avatarHtml = "";
-                if (!isNarrator && !isChoice) {
-                    const realName = realNameForBtn;
-                    let avatarContent = "";
-
-                    let overrideUnitId = item.unit_id;
-                    if (realName === "貪吃佩可" && String(this.activeStoryId).startsWith("13830")) {
-                        overrideUnitId = 138331;
-                    }
-
-                    if (overrideUnitId) {
-                        avatarContent = AvatarService.getAvatarHtmlByUnitId(overrideUnitId, realName, this.speakerAvatars);
-                    } else {
-                        avatarContent = AvatarService.getAvatarHtml(realName, this.speakerAvatars);
-                    }
-
-                    avatarHtml = `
-                        <div class="game-chara-avatar-wrapper" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})" style="cursor: pointer;">
-                             <div class="game-chara-avatar">
-                                 ${avatarContent}
-                             </div>
-                        </div>
-                    `;
-                }
-
-                const voiceBtn = item.voice ? `<span class="dialogue-voice-btn" onclick="event.stopPropagation(); QuestMapModule.playVoice('${item.voice}')" style="cursor: pointer; margin-left: 6px; font-size: 0.85rem; color: var(--accent-color); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">🔊</span>` : '';
-
-                html += `
-                    <div class="game-dialogue-line ${speakerClass}">
-                        ${avatarHtml}
-                        <div class="game-dialogue-content">
-                            <div class="game-dialogue-speaker" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realNameForBtn).replace(/\"/g, '&quot;')})" style="cursor: pointer; display: inline-block;">
-                                ${safeSpeaker}${voiceBtn}
-                            </div>
-                            <div class="game-dialogue-text">${words}</div>
-                        </div>
-                    </div>
-                `;
-            });
-
-            // 如果該話擁有 CG 插畫且對白 JSON 內沒有 special still 節點，則自動在末端追加完結 CG 圖片
-            const currentStoryObj = this.getStoryById(storyId);
-            if (currentStoryObj && (currentStoryObj.still_id || currentStoryObj.bg_id)) {
-                const hasStillInList = dialogueList.some(item => item.type === 'still');
-                if (!hasStillInList) {
-                    const bottomStillImgHtml = currentStoryObj.still_id
-                        ? StoryAssetService.getStillHtml(currentStoryObj.still_id, 'dialogue-still-img still-clickable', '')
-                        : StoryAssetService.getBackgroundHtml(currentStoryObj.bg_id, 'dialogue-still-img still-clickable', '');
-                    html += `
-                        <div class="game-dialogue-still-wrap" style="margin-top: 20px; margin-bottom: 10px;">
-                            <div class="game-dialogue-still-label">✨ 劇情插畫</div>
-                            <div class="game-dialogue-still" onclick="QuestMapModule.openStillPopup(event)">
-                                ${bottomStillImgHtml}
-                            </div>
-                        </div>
-                    `;
-                }
-            }
-
-            board.innerHTML = html;
-
-            // 切換看板背景
             const cinemaPanel = document.querySelector('.cinema-panel');
-            if (cinemaPanel) {
-                if (firstBgUrl) {
-                    cinemaPanel.style.backgroundImage = `url('${firstBgUrl}')`;
-                } else {
-                    cinemaPanel.style.backgroundImage = 'none';
-                }
-                cinemaPanel.style.backgroundSize = 'cover';
-                cinemaPanel.style.backgroundPosition = 'center';
-            }
-            board.scrollTop = 0;
+            const currentStoryObj = this.getStoryById(storyId);
+
+            window.DialogueView.renderDialogue({
+                boardEl: board,
+                badgesBarEl: badgesBar,
+                cinemaPanelEl: cinemaPanel,
+                storyId: storyId,
+                dialogueList: dialogueList,
+                speakerNames: speakerNames,
+                speakerAvatars: this.speakerAvatars,
+                currentStoryObj: currentStoryObj,
+                resolveRealName: this.getCharaRealName.bind(this),
+                escapeHtml: this.escapeHtml.bind(this)
+            });
 
         } catch (err) {
             console.error("加載台詞失敗:", err);
-            board.innerHTML = `
-                <div class="dialogue-error-box" style="padding: 15px; border-radius: 8px; background: rgba(230, 73, 73, 0.05); border: 1px dashed rgba(230, 73, 73, 0.2); text-align: left;">
-                    <div style="color: #d63031; font-weight: 700; font-size: 0.88rem; margin-bottom: 6px;">⚠️ 台詞文本尚未下載</div>
-                    <div style="color: var(--text-primary); font-size: 0.82rem; line-height: 1.5;">
-                        本話的對白文本尚未下載到您的電腦中。<br>
-                        請在本地專案根目錄中，執行命令下載全部對白：
-                    </div>
-                    <code style="display: block; margin-top: 8px; background: rgba(0,0,0,0.05); padding: 8px; border-radius: 4px; color: var(--accent-color); font-family: Consolas, monospace; font-size: 0.8rem; border: 1px solid rgba(94, 107, 125, 0.15);">
-                        python tools/maintenance/download_stories_tw.py
-                    </code>
-                    <button onclick="QuestMapModule.loadDialogue(${storyId})" style="margin-top: 10px; padding: 8px 16px; background: var(--accent-color); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">🔄 重新載入</button>
-                </div>
-            `;
+            window.DialogueView.renderError(board, storyId);
         } finally {
             this.isLoadingDialogue = false;
         }
