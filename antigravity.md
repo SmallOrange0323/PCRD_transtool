@@ -9,14 +9,15 @@
 
 ## 📁 目錄結構職責說明
 *   `dashboard/`: Story Map 前端原始碼與本地即時開發目錄（包含 `map.js`, `characters.js`, `avatar-service.js`, `data/`, `story/`）。
-*   `dist_story_map/`: 打包後的 GitHub Pages 獨立發布目錄（具備獨立 git working tree）。
+*   `dist_story_map/`: 打包後的 GitHub Pages 獨立發布目錄（由 pipeline 生成，請勿手動修改）。
 *   `pipeline/`: 核心資料管線（`fetch.py`, `bundle.py`, `deploy.py`, `validate.py`, `update.py`）。
-*   `update_story_map.py`: 根目錄一鍵更新入口。
-*   `tools/`: 通用維護工具（`tools/maintenance/`）與診斷工具（`tools/diagnostics/`）。
-*   `experiments/`: 獨立/歷史實驗專案（如 `experiments/translator/` 日翻中即時翻譯器）。
-*   `archive/`: 歷史特定活動一次性修復腳本與遷移工具。
-*   `docs/`: 最新架構文檔與資料流手冊。
+*   `update_story_map.py`: 官方標準一鍵更新入口。
+*   `tools/`: 核心底層工具與相容性工具，下轄 `tools/diagnostics/`（診斷探查）與 `tools/maintenance/`（維護工具）。
+*   `archive/legacy_scripts/`: 歷史特定活動一次性修復腳本與過期工具安全封存區。
+*   `docs/`: 世界觀指南、版本記錄、專案文件與歷史盤點；正式架構與 Pipeline 文件將於 Phase 4 持續收斂。
 *   `.agents/`: AI Agent 協作規範與長期記憶指南。
+*   `translator/`: 獨立實驗專案（日翻中即時懸浮翻譯器）。
+*   `pcr_demo/`, `pcrd_sim/`: 早期探索與原型專案 (Legacy)。
 
 ## 🧠 上下文記憶 (Context)
 *   **主要產物**: 公主連結劇情地圖 (Web App)

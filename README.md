@@ -77,22 +77,36 @@ PCRD_transtool/
 │   ├── map.js, characters.js   # 業務邏輯控制器
 │   ├── data/                   # 章節與活動元數據 JSON
 │   └── story/                  # 官方解密對白 JSON (9000+ 篇)
-├── dist_story_map/             # 🚀 GitHub Pages 獨立發布目錄 (具備獨立 .git)
+├── dist_story_map/             # 🚀 GitHub Pages 獨立發布目錄 (由 pipeline 生成，請勿手動修改)
 ├── pipeline/                   # ⭐ Story Map Update Pipeline v1 核心模組
 │   ├── fetch.py                # CDN 資源探測與下載解密
 │   ├── bundle.py               # 決定性前端打包與 Cache-Busting
-│   ├── deploy.py               # 部署發布 (只推送 dist 至 gh-pages)
+│   ├── deploy.py               # 正式部署發布 (只推送 dist 至 gh-pages)
 │   ├── validate.py             # 全量資料一致性自檢門禁
 │   └── update.py               # 統一增量更新協調器
-├── update_story_map.py         # 🌟 根目錄一鍵更新快捷指令
-├── tools/                      # 🛠️ 維護與診斷工具集
-├── experiments/                # 🧪 歷史/獨立實驗專案 (如 AI 翻譯器)
-├── archive/                    # 📦 歷史特定活動一次性修正腳本
-└── docs/                       # 📚 架構指南與資料流規格文檔
+├── update_story_map.py         # 🌟 官方標準一鍵更新入口
+├── tools/                      # 🛠️ 核心底層工具與相容性工具 (pcrd_fetch.py, pcrd_deploy.py, local_server.py 等)
+│   ├── diagnostics/            # 🔍 診斷、探查與唯讀分析工具 (如 scan_highest_sonet_version.py 等)
+│   └── maintenance/            # 🔧 高影響、人工啟動之批次維護工具 (如 download_stories_tw.py, download_voices_tw.py)
+├── archive/                    # 📦 歷史封存目錄
+│   └── legacy_scripts/         # 歷史一次性修正腳本 (具副作用或過期入口已設置 Hard Stop 防護)
+├── docs/                       # 📚 世界觀規範、版本記錄、專案文件與歷史盤點
+├── .agents/                    # 🤖 AI Agent 協作指南與長期記憶
+├── translator/                 # 🧪 獨立實驗專案：PC 遊戲即時 AI 翻譯器
+├── pcr_demo/                   # 🧪 早期展示 Demo (Legacy)
+└── pcrd_sim/                   # 🧪 早期戰鬥模擬實驗 (Legacy)
 ```
+
+### 🛠️ 工具層級說明 (Tools Taxonomy)
+* **`tools/` (根層工具)**：核心底層引擎（如 `pcrd_fetch.py`）與舊版相容工具（如 `pcrd_deploy.py`）。正式管線發布請統一使用 `python update_story_map.py --deploy`。
+* **`tools/diagnostics/`**：唯讀診斷與分析工具。提供資料表結構分析、CDN 版本探測與素材比對（註：部分工具如 `find_db_files.py` 刻意自執行當前目錄 `os.walk('.')` 開始動態尋找）。
+* **`tools/maintenance/`**：人工手動觸發的批次維護與全量恢復工具。日常例行更新仍請使用標準入口 `python update_story_map.py`。
+* **`archive/legacy_scripts/`**：歷史修復與過期腳本保存庫。具副作用或已廢棄之入口已配置 Execution Guard (Hard Stop)；歷史唯讀腳本則安全封存作為歷史追溯。
 
 ---
 
-## 🧪 其他實驗性專案 (Experiments)
+## 🧪 獨立與歷史實驗專案 (Side Projects)
 
-* **[PC 遊戲即時 AI 翻譯器](experiments/translator/)**：專為日版遊戲設計的 OCR + Gemini Vision 即時懸浮翻譯工具。
+* **[PC 遊戲即時 AI 翻譯器](translator/)**：專為日版遊戲設計的 OCR + Gemini Vision 即時懸浮翻譯工具。
+* **早期探索專案**：`pcr_demo/`、`pcrd_sim/`（戰鬥模擬與初期原型探索，已停止維護）。
+
