@@ -1,6 +1,7 @@
 /**
  * tests/test_branch_story_integration.js
  * 第 3 部分支劇情 (Branch Story) 整合單元測試
+ * 涵蓋 Runtime Schema 邊界、資料契約 (Contracts) 與閱讀載入合約
  */
 
 const assert = require('assert');
@@ -24,7 +25,7 @@ function test(name, fn) {
     }
 }
 
-console.log("=== Testing Branch Story Integration ===");
+console.log("=== Testing Branch Story Integration (Amended) ===");
 
 // 載入真實的 branch_stories.json
 const rawBranchJsonPath = path.join(__dirname, '../dashboard/data/branch_stories.json');
@@ -37,7 +38,7 @@ test("Test 1 — 63 supplemental entries transformed correctly", () => {
     assert(transformed.every(s => s.part === 3 && s.type === 'main' && s.isBranch === true), "All must be Part 3 main branch");
 });
 
-// Test 2 — Chapter counts (Ch 1: 3, Ch 9: 8, Ch 16: 1)
+// Test 2 — Chapter specific counts
 test("Test 2 — Chapter specific counts", () => {
     const transformed = ChapterDataService.transformBranchStories(branchData);
     const byChapter = {};
@@ -83,7 +84,7 @@ test("Test 4 — Unresolved entries use runtime fallback label", () => {
     assert.strictEqual(s2201102.chapter, "分支劇情 2", "2201102 fallback chapter");
 });
 
-// Test 5 — Source object is NOT mutated
+// Test 5 — Source data object is not mutated
 test("Test 5 — Source data object is not mutated", () => {
     const originalEntry = branchData.stories.find(s => s.story_id === 2201101);
     assert.strictEqual(originalEntry.title, null, "Source title must remain null");
@@ -124,8 +125,8 @@ test("Test 8 — Duplicate supplemental ID protection", () => {
             version: 1,
             part: 3,
             stories: [
-                { story_id: 2201101, chapter: 1, metadata_status: "unresolved" },
-                { story_id: 2201101, chapter: 1, metadata_status: "unresolved" }
+                { story_id: 2201101, chapter: 1, branch_label: null, title: null, subtitle: null, metadata_status: "unresolved" },
+                { story_id: 2201101, chapter: 1, branch_label: null, title: null, subtitle: null, metadata_status: "unresolved" }
             ]
         });
     } catch (e) {
@@ -151,6 +152,142 @@ test("Test 9 — Malformed metadata schema fails loudly", () => {
         threw2 = true;
     }
     assert(threw2, "Must fail loudly when stories is not an array");
+});
+
+// Test 10 — Invalid metadata_status fails loudly
+test("Test 10 — Invalid metadata_status fails loudly", () => {
+    let threw = false;
+    try {
+        ChapterDataService.transformBranchStories({
+            version: 1,
+            part: 3,
+            stories: [
+                { story_id: 2201101, chapter: 1, branch_label: null, title: null, subtitle: null, metadata_status: "unknown_custom_status" }
+            ]
+        });
+    } catch (e) {
+        threw = true;
+    }
+    assert(threw, "Must throw on unknown metadata_status");
+});
+
+// Test 11 — Out-of-range chapter fails loudly
+test("Test 11 — Out-of-range chapter fails loudly (0 and 17)", () => {
+    let threw0 = false;
+    try {
+        ChapterDataService.transformBranchStories({
+            version: 1,
+            part: 3,
+            stories: [
+                { story_id: 2200101, chapter: 0, branch_label: null, title: null, subtitle: null, metadata_status: "unresolved" }
+            ]
+        });
+    } catch (e) {
+        threw0 = true;
+    }
+    assert(threw0, "Must throw on chapter 0");
+
+    let threw17 = false;
+    try {
+        ChapterDataService.transformBranchStories({
+            version: 1,
+            part: 3,
+            stories: [
+                { story_id: 2217101, chapter: 17, branch_label: null, title: null, subtitle: null, metadata_status: "unresolved" }
+            ]
+        });
+    } catch (e) {
+        threw17 = true;
+    }
+    assert(threw17, "Must throw on chapter 17");
+});
+
+// Test 12 — Resolved metadata completeness fails loudly
+test("Test 12 — Resolved metadata completeness (missing title/subtitle/branch_label)", () => {
+    let threwMissingTitle = false;
+    try {
+        ChapterDataService.transformBranchStories({
+            version: 1,
+            part: 3,
+            stories: [
+                { story_id: 2213101, chapter: 13, branch_label: "L I", title: null, subtitle: "死者的世界裡最臭的東西", metadata_status: "resolved_official_screenshot" }
+            ]
+        });
+    } catch (e) {
+        threwMissingTitle = true;
+    }
+    assert(threwMissingTitle, "Must throw on resolved entry with null title");
+
+    let threwMissingSubtitle = false;
+    try {
+        ChapterDataService.transformBranchStories({
+            version: 1,
+            part: 3,
+            stories: [
+                { story_id: 2213101, chapter: 13, branch_label: "L I", title: "分支劇情 L I", subtitle: "", metadata_status: "resolved_official_screenshot" }
+            ]
+        });
+    } catch (e) {
+        threwMissingSubtitle = true;
+    }
+    assert(threwMissingSubtitle, "Must throw on resolved entry with empty subtitle");
+});
+
+// Test 13 — Unresolved descriptive metadata contamination fails loudly
+test("Test 13 — Unresolved descriptive metadata contamination fails loudly", () => {
+    let threwContaminated = false;
+    try {
+        ChapterDataService.transformBranchStories({
+            version: 1,
+            part: 3,
+            stories: [
+                { story_id: 2201101, chapter: 1, branch_label: null, title: "synthetic title", subtitle: null, metadata_status: "unresolved" }
+            ]
+        });
+    } catch (e) {
+        threwContaminated = true;
+    }
+    assert(threwContaminated, "Must throw when unresolved entry has non-null title");
+});
+
+// Test 14 — Non-integer story_id / chapter rejects
+test("Test 14 — Non-integer story_id / chapter rejects", () => {
+    let threwStrId = false;
+    try {
+        ChapterDataService.transformBranchStories({
+            version: 1,
+            part: 3,
+            stories: [
+                { story_id: "2201101", chapter: 1, branch_label: null, title: null, subtitle: null, metadata_status: "unresolved" }
+            ]
+        });
+    } catch (e) {
+        threwStrId = true;
+    }
+    assert(threwStrId, "Must throw on string story_id");
+
+    let threwStrCh = false;
+    try {
+        ChapterDataService.transformBranchStories({
+            version: 1,
+            part: 3,
+            stories: [
+                { story_id: 2201101, chapter: "1", branch_label: null, title: null, subtitle: null, metadata_status: "unresolved" }
+            ]
+        });
+    } catch (e) {
+        threwStrCh = true;
+    }
+    assert(threwStrCh, "Must throw on string chapter");
+});
+
+// Test 15 — Click & dialogue loading contract
+test("Test 15 — Story click contract generates valid loadDialogue target", () => {
+    const transformed = ChapterDataService.transformBranchStories(branchData);
+    const s2213101 = transformed.find(s => s.id === 2213101);
+
+    assert.strictEqual(s2213101.id, 2213101, "Story ID must be preserved for QuestMapModule.selectStory/loadDialogue");
+    assert(fs.existsSync(path.join(__dirname, `../dashboard/story/${s2213101.id}.json`)), "Target story JSON must exist on disk");
 });
 
 console.log(`\n✅ All ${testsPassed} branch story integration tests passed successfully!`);

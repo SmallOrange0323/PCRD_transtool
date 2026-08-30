@@ -15,40 +15,70 @@ console.log("chapter-data.js loaded");
 
         /**
          * 將 branch_stories.json 資料轉換為 Story Map 的統一 story 物件陣列
+         * 嚴格執行 Runtime Schema 與契約驗證 (Fail Loudly)
          * @param {Object} branchData - branch_stories.json 的根物件
          * @returns {Array} 統一 story 結構列表
          */
         transformBranchStories(branchData) {
             if (!branchData) return [];
-            if (typeof branchData !== 'object' || branchData.version !== 1 || branchData.part !== 3 || !Array.isArray(branchData.stories)) {
+            if (
+                typeof branchData !== 'object' ||
+                branchData.version !== 1 ||
+                branchData.part !== 3 ||
+                !Array.isArray(branchData.stories)
+            ) {
                 throw new Error("[ChapterDataService] branch_stories.json 結構格式不符合預期 (Schema Error)");
             }
 
             const seenIds = new Set();
             return branchData.stories.map((s, idx) => {
-                if (!s.story_id || !s.chapter) {
-                    throw new Error(`[ChapterDataService] 第 ${idx} 筆分支劇情缺少 story_id 或 chapter`);
+                // 1. story_id 型別與正整數檢查
+                if (!Number.isInteger(s.story_id) || s.story_id <= 0) {
+                    throw new Error(`[ChapterDataService] 第 ${idx} 筆分支劇情 story_id 必須為正整數: ${s.story_id}`);
                 }
                 if (seenIds.has(s.story_id)) {
                     throw new Error(`[ChapterDataService] 發現重複的 story_id: ${s.story_id}`);
                 }
                 seenIds.add(s.story_id);
 
-                const groupId = 2200 + s.chapter;
-                const isResolved = s.metadata_status === "resolved_official_screenshot";
+                // 2. chapter 範圍與整數檢查 (嚴格限定 1 ~ 16)
+                if (!Number.isInteger(s.chapter) || s.chapter < 1 || s.chapter > 16) {
+                    throw new Error(`[ChapterDataService] 第 ${idx} 筆分支劇情 chapter 必須為 1~16 之整數: ${s.chapter}`);
+                }
 
-                // 不修改來源 s 物件，依規則計算 runtime provisional display
+                // 3. metadata_status 契約檢查
+                const status = s.metadata_status;
+                if (status !== "resolved_official_screenshot" && status !== "unresolved") {
+                    throw new Error(`[ChapterDataService] 第 ${idx} 筆分支劇情 metadata_status 不合法: ${status}`);
+                }
+
                 let chapterDisplay = "";
                 let titleDisplay = "";
 
-                if (isResolved) {
-                    chapterDisplay = s.title || `分支劇情 ${s.branch_label || ''}`.trim();
-                    titleDisplay = s.subtitle || "";
-                } else {
+                // 4. Resolved 契約檢查：必須完整包含非空之 branch_label, title, subtitle
+                if (status === "resolved_official_screenshot") {
+                    if (
+                        typeof s.branch_label !== 'string' || !s.branch_label.trim() ||
+                        typeof s.title !== 'string' || !s.title.trim() ||
+                        typeof s.subtitle !== 'string' || !s.subtitle.trim()
+                    ) {
+                        throw new Error(`[ChapterDataService] 第 ${idx} 筆 resolved 分支劇情 (${s.story_id}) 缺少必要之描述性欄位`);
+                    }
+                    chapterDisplay = s.title;
+                    titleDisplay = s.subtitle;
+                }
+
+                // 5. Unresolved 契約檢查：branch_label, title, subtitle 必須嚴格為 null
+                if (status === "unresolved") {
+                    if (s.branch_label !== null || s.title !== null || s.subtitle !== null) {
+                        throw new Error(`[ChapterDataService] 第 ${idx} 筆 unresolved 分支劇情 (${s.story_id}) 混入了非 null 描述性欄位`);
+                    }
                     const branchIdx = (s.story_id % 100);
                     chapterDisplay = `分支劇情 ${branchIdx}`;
                     titleDisplay = `分支劇情 ${branchIdx}`;
                 }
+
+                const groupId = 2200 + s.chapter;
 
                 return {
                     id: s.story_id,
@@ -60,7 +90,7 @@ console.log("chapter-data.js loaded");
                     type: 'main',
                     isBranch: true,
                     branchLabel: s.branch_label || null,
-                    metadataStatus: s.metadata_status || "unresolved"
+                    metadataStatus: status
                 };
             });
         },
