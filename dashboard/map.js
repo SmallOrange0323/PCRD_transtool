@@ -451,6 +451,14 @@ const QuestMapModule = {
                     }));
                     this.stories = this.stories.concat(towerStories);
 
+                    // 5. 台版第 3 部分支劇情補充 (Supplemental Branch Stories)
+                    if (window.ChapterDataService && Array.isArray(window.ChapterDataService.branchStories)) {
+                        const existingIds = new Set(this.stories.map(s => s.id));
+                        const newBranchStories = window.ChapterDataService.branchStories.filter(s => !existingIds.has(s.id));
+                        this.stories = this.stories.concat(newBranchStories);
+                        console.log(`[QuestMapModule] 成功補充載入 ${newBranchStories.length} 篇第 3 部分支劇情`);
+                    }
+
                     console.log(`[QuestMapModule] 台版模式載入完畢：主線 ${rawData.length} 筆，個人 ${charaStories.length} 筆，公會 ${guildStories.length} 筆，其他 ${towerStories.length} 筆`);
 
                 } else {

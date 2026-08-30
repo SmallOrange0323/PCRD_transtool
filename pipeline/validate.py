@@ -87,7 +87,24 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
         "story_thumbnails.json": lambda d: isinstance(d, dict) and len(d) > 0,
         "npc_avatars.json": lambda d: isinstance(d, dict) and len(d) > 0,
         "tracked_characters.json": lambda d: isinstance(d, dict) and len(d) > 0,
-        "event_summaries.json": lambda d: isinstance(d, dict) and len(d) > 0
+        "event_summaries.json": lambda d: isinstance(d, dict) and len(d) > 0,
+        "branch_stories.json": lambda d: (
+            isinstance(d, dict) and
+            d.get("version") == 1 and
+            d.get("part") == 3 and
+            isinstance(d.get("stories"), list) and
+            len(d.get("stories")) > 0 and
+            all(
+                isinstance(s.get("story_id"), int) and
+                isinstance(s.get("chapter"), int) and 1 <= s.get("chapter") <= 16 and
+                s.get("metadata_status") in ("resolved_official_screenshot", "unresolved") and
+                (
+                    (s.get("metadata_status") == "resolved_official_screenshot" and s.get("title") and s.get("subtitle")) or
+                    (s.get("metadata_status") == "unresolved" and s.get("title") is None and s.get("subtitle") is None and s.get("branch_label") is None)
+                )
+                for s in d.get("stories")
+            )
+        )
     }
     
     for meta_name, schema_validator in required_metadata.items():
@@ -151,7 +168,7 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
         else:
             res.error(f"發現 {corrupted_count} 篇損壞之對白劇本！")
 
-        # 5. 比對 Expected vs Actual 話數集合
+        # 5. 比對 Expected vs Actual 話數集合 (涵蓋 DB 主線、extra_events 與 branch_stories)
         extra_story_ids = set()
         extra_path = data_dir / "extra_events.json"
         if extra_path.exists():
@@ -162,7 +179,17 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
             except Exception:
                 pass
 
-        expected_story_ids = db_story_ids.union(extra_story_ids)
+        branch_story_ids = set()
+        branch_path = data_dir / "branch_stories.json"
+        if branch_path.exists():
+            try:
+                with open(branch_path, "r", encoding="utf-8") as f:
+                    branch_data = json.load(f)
+                branch_story_ids = set(s.get("story_id") for s in branch_data.get("stories", []) if s.get("story_id"))
+            except Exception:
+                pass
+
+        expected_story_ids = db_story_ids.union(extra_story_ids).union(branch_story_ids)
         missing_in_disk = expected_story_ids - actual_story_ids
         if missing_in_disk:
             res.warning(f"元數據中尚有 {len(missing_in_disk)} 話未下載本機對白 (例如部分歷史活動)")
