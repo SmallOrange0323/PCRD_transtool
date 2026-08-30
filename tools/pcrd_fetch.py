@@ -290,14 +290,9 @@ def _get_story_ids_from_db(unit_id):
     except Exception:
         pass
         
-    # Fallback：用規則推算，同時包含 7 位數（新型態）與 8 位數（舊版）
-    base_7 = (unit_id // 100) * 1000 + 1  # 138701 -> 1387001
-    ids = []
-    # 產生 7 位數 ID (1387001 ~ 1387004)
-    ids.extend([base_7 + i for i in range(4)])
-    # 產生 8 位數 ID (1387011 ~ 1387014)
-    ids.extend([unit_id * 10 + i for i in range(1, 5)])
-    return ids
+    # Fallback：用標準 7 位數規則推算第 1～4 話 (例: 139401 -> 1394001 ~ 1394004)
+    base_7 = (unit_id // 100) * 1000 + 1
+    return [base_7 + i for i in range(4)]
 
 
 
