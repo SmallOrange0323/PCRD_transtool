@@ -19,6 +19,13 @@ import json
 import re
 from pathlib import Path
 
+if sys.platform == 'win32':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+        sys.stderr.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DASHBOARD_DIR = PROJECT_ROOT / "dashboard"
 DIST_DIR = PROJECT_ROOT / "dist_story_map"
@@ -117,6 +124,10 @@ def bundle_story_map(dry_run: bool = False) -> bool:
         ("story-asset-service.js", "story-asset-service.js"),
         ("chapter-data.js", "chapter-data.js"),
         ("characters.js", "characters.js"),
+        ("speaker-view.js", "speaker-view.js"),
+        ("chara-modal.js", "chara-modal.js"),
+        ("dialogue-normalizer.js", "dialogue-normalizer.js"),
+        ("media-service.js", "media-service.js"),
         ("map.js", "map.js"),
         ("sql-wasm.js", "sql-wasm.js"),
         ("sql-wasm.wasm", "sql-wasm.wasm"),
@@ -167,20 +178,37 @@ def bundle_story_map(dry_run: bool = False) -> bool:
         with open(tracked_path, "r", encoding="utf-8") as f:
             tracked = json.load(f)
         for char in tracked.get("characters", []):
-            # 卡面立繪
+            # 卡面立繪 (支援 canonical: <card_id> 與 legacy: card_full_<card_id>)
             for card_id in char.get("card_ids", []):
                 for ext in [".webp", ".png"]:
-                    cs = DASHBOARD_DIR / "card" / "full" / f"card_full_{card_id}{ext}"
-                    cd = DIST_DIR / "card" / "full" / f"card_full_{card_id}{ext}"
-                    if cs.exists() and copy_if_different(cs, cd):
-                        card_copied += 1
-            # 角色頭像
+                    cs_canon = DASHBOARD_DIR / "card" / "full" / f"{card_id}{ext}"
+                    cs_legacy = DASHBOARD_DIR / "card" / "full" / f"card_full_{card_id}{ext}"
+                    if cs_canon.exists():
+                        if copy_if_different(cs_canon, DIST_DIR / "card" / "full" / f"{card_id}{ext}"):
+                            card_copied += 1
+                    if cs_legacy.exists():
+                        if copy_if_different(cs_legacy, DIST_DIR / "card" / "full" / f"card_full_{card_id}{ext}"):
+                            card_copied += 1
+                        # 亦複製一份至 canonical
+                        if not cs_canon.exists():
+                            if copy_if_different(cs_legacy, DIST_DIR / "card" / "full" / f"{card_id}{ext}"):
+                                card_copied += 1
+
+            # 角色頭像 (支援 canonical: <icon_id> 與 legacy: unit_icon_<icon_id>)
             for icon_id in char.get("icon_ids", []):
                 for ext in [".webp", ".png"]:
-                    is_src = DASHBOARD_DIR / "icon" / "unit" / f"unit_icon_{icon_id}{ext}"
-                    is_dst = DIST_DIR / "icon" / "unit" / f"unit_icon_{icon_id}{ext}"
-                    if is_src.exists() and copy_if_different(is_src, is_dst):
-                        icon_copied += 1
+                    is_canon = DASHBOARD_DIR / "icon" / "unit" / f"{icon_id}{ext}"
+                    is_legacy = DASHBOARD_DIR / "icon" / "unit" / f"unit_icon_{icon_id}{ext}"
+                    if is_canon.exists():
+                        if copy_if_different(is_canon, DIST_DIR / "icon" / "unit" / f"{icon_id}{ext}"):
+                            icon_copied += 1
+                    if is_legacy.exists():
+                        if copy_if_different(is_legacy, DIST_DIR / "icon" / "unit" / f"unit_icon_{icon_id}{ext}"):
+                            icon_copied += 1
+                        # 亦複製一份至 canonical
+                        if not is_canon.exists():
+                            if copy_if_different(is_legacy, DIST_DIR / "icon" / "unit" / f"{icon_id}{ext}"):
+                                icon_copied += 1
 
     # 同步 NPC 頭像 (190000~199999 及特例 NPC)
     icon_src_dir = DASHBOARD_DIR / "icon" / "unit"
@@ -214,6 +242,10 @@ def bundle_story_map(dry_run: bool = False) -> bool:
     ch_js_path = DASHBOARD_DIR / "chapter-data.js"
     char_js_path = DASHBOARD_DIR / "characters.js"
     avatar_js_path = DASHBOARD_DIR / "avatar-service.js"
+    speaker_js_path = DASHBOARD_DIR / "speaker-view.js"
+    modal_js_path = DASHBOARD_DIR / "chara-modal.js"
+    norm_js_path = DASHBOARD_DIR / "dialogue-normalizer.js"
+    media_js_path = DASHBOARD_DIR / "media-service.js"
     map_js_path = DASHBOARD_DIR / "map.js"
 
     if html_src.exists() and db_js_path.exists() and ch_js_path.exists():
@@ -238,6 +270,10 @@ def bundle_story_map(dry_run: bool = False) -> bool:
         # 決定性 Content Cache-Busting (使用各自檔案的 SHA-256 前 8 碼)
         char_hash = calc_sha256(char_js_path)[:8]
         avatar_hash = calc_sha256(avatar_js_path)[:8]
+        speaker_hash = calc_sha256(speaker_js_path)[:8]
+        modal_hash = calc_sha256(modal_js_path)[:8]
+        norm_hash = calc_sha256(norm_js_path)[:8]
+        media_hash = calc_sha256(media_js_path)[:8]
         map_hash = calc_sha256(map_js_path)[:8]
 
         html_content = re.sub(
@@ -248,6 +284,26 @@ def bundle_story_map(dry_run: bool = False) -> bool:
         html_content = re.sub(
             r'<script src="avatar-service\.js(?:\?v=[^"]*)?"></script>',
             f'<script src="avatar-service.js?v={avatar_hash}"></script>',
+            html_content
+        )
+        html_content = re.sub(
+            r'<script src="speaker-view\.js(?:\?v=[^"]*)?"></script>',
+            f'<script src="speaker-view.js?v={speaker_hash}"></script>',
+            html_content
+        )
+        html_content = re.sub(
+            r'<script src="chara-modal\.js(?:\?v=[^"]*)?"></script>',
+            f'<script src="chara-modal.js?v={modal_hash}"></script>',
+            html_content
+        )
+        html_content = re.sub(
+            r'<script src="dialogue-normalizer\.js(?:\?v=[^"]*)?"></script>',
+            f'<script src="dialogue-normalizer.js?v={norm_hash}"></script>',
+            html_content
+        )
+        html_content = re.sub(
+            r'<script src="media-service\.js(?:\?v=[^"]*)?"></script>',
+            f'<script src="media-service.js?v={media_hash}"></script>',
             html_content
         )
         html_content = re.sub(
