@@ -104,6 +104,13 @@
             "start_time": "即將登場",
             "thumbnail_id": 5215401,
             "value": 10215
+        },
+        {
+            "story_group_id": 10216,
+            "title": "少女與戰車 聯動合作篇\n～戰車道少女與阿斯特朗的魔法特訓～",
+            "start_time": "2026/09/01 16:00:00",
+            "thumbnail_id": 521600201,
+            "value": 10216
         }
     ],
     "stories": [
@@ -2113,6 +2120,75 @@
             "groupId": 10214,
             "isEvent": true,
             "bg_id": "502820"
+        },
+        {
+            "id": 5216001,
+            "chapter": "第 1 話",
+            "title": "妹妹美穗、姊姊真穗",
+            "groupId": 10216,
+            "isEvent": true,
+            "bg_id": "500361"
+        },
+        {
+            "id": 5216002,
+            "chapter": "第 2 話",
+            "title": "魔法與戰車特訓",
+            "groupId": 10216,
+            "isEvent": true,
+            "still_id": "521600201",
+            "bg_id": "510350"
+        },
+        {
+            "id": 5216003,
+            "chapter": "第 3 話",
+            "title": "失蹤的同伴",
+            "groupId": 10216,
+            "isEvent": true,
+            "still_id": "521600301",
+            "bg_id": "510150"
+        },
+        {
+            "id": 5216004,
+            "chapter": "第 4 話",
+            "title": "球型魔像再次襲擊",
+            "groupId": 10216,
+            "isEvent": true,
+            "bg_id": "500360"
+        },
+        {
+            "id": 5216005,
+            "chapter": "第 5 話",
+            "title": "決意的突圍",
+            "groupId": 10216,
+            "isEvent": true,
+            "still_id": "521600501",
+            "bg_id": "500366"
+        },
+        {
+            "id": 5216006,
+            "chapter": "第 6 話",
+            "title": "虎式戰車出擊！",
+            "groupId": 10216,
+            "isEvent": true,
+            "still_id": "521600601",
+            "bg_id": "500940"
+        },
+        {
+            "id": 5216007,
+            "chapter": "第 7 話",
+            "title": "戰車道的心意",
+            "groupId": 10216,
+            "isEvent": true,
+            "still_id": "521600701",
+            "bg_id": "500021"
+        },
+        {
+            "id": 5216008,
+            "chapter": "終幕",
+            "title": "迎向未來的旅程",
+            "groupId": 10216,
+            "isEvent": true,
+            "bg_id": "510270"
         }
     ]
 }

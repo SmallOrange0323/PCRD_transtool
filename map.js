@@ -387,9 +387,13 @@ const QuestMapModule = {
                     // 由於台服資料庫 (redive_tw.db) 有時尚未上架新角色的個人故事章節 (如冬日栞)，
                     // 我們在此自動為已下載故事對話的新角色補全 4 話的個人故事目錄，確保網頁必定能順利讀取！
                     const pendingNewCharas = [
-                        { unitId: 138301, name: "貪吃佩可（阿斯特萊亞）", prefix: "13830" },
-                        { unitId: 138701, name: "若菜（冬日）", prefix: "13870" },
-                        { unitId: 138801, name: "栞（冬日）", prefix: "13880" }
+                        { unitId: 138301, name: "貪吃佩可（阿斯特萊亞）", prefix: "138300" },
+                        { unitId: 138701, name: "若菜（冬日）", prefix: "138700" },
+                        { unitId: 138801, name: "栞（冬日）", prefix: "138800" },
+                        { unitId: 139101, name: "凱留（霸瞳天星）", prefix: "139100" },
+                        { unitId: 139201, name: "美穗", prefix: "139200" },
+                        { unitId: 139301, name: "真穗", prefix: "139300" },
+                        { unitId: 139401, name: "艾麗卡", prefix: "139400" }
                     ];
 
                     pendingNewCharas.forEach(ch => {
@@ -398,7 +402,7 @@ const QuestMapModule = {
                         if (!exists) {
                             for (let i = 1; i <= 4; i++) {
                                 charaStories.push({
-                                    id: parseInt(`${ch.prefix}0${i}`),
+                                    id: parseInt(`${ch.prefix}${i}`),
                                     chapter: `${ch.name} 第${i}話`,
                                     title: `第 ${i} 話`,
                                     groupId: checkGroupId,
@@ -544,7 +548,8 @@ const QuestMapModule = {
                         10212: "2026/05/01 16:00:00",
                         10213: "2026/06/01 16:00:00",
                         10214: "2026/07/01 16:00:00",
-                        10215: "2026/08/01 16:00:00"
+                        10215: "2026/08/01 16:00:00",
+                        10216: "2026/09/01 16:00:00"
                     };
 
                     const extraEventsMapped = this.extraEvents.events.map(e => ({
@@ -1836,62 +1841,9 @@ const QuestMapModule = {
                 return;
             }
 
-            // 合併相同語音的連續對話行
-            const dialogueList = [];
-            rawDialogueList.forEach(item => {
-                if (item.type === 'still' || item.type === 'background' || item.type === 'movie') {
-                    dialogueList.push(item);
-                    return;
-                }
-                const cleanedWords = (item.words || "").replace(/\\n/g, "").replace(/\n/g, "").trim();
-                if (!cleanedWords) {
-                    return; // 忽略純空行或純 \n 的氣泡，消除大行距
-                }
-                
-                const last = dialogueList[dialogueList.length - 1];
-                if (last && 
-                    last.type !== 'still' && 
-                    last.type !== 'background' && 
-                    last.type !== 'movie' && 
-                    last.name === item.name && 
-                    (!item.voice || last.voice === item.voice)) {
-                    
-                    let lastWords = (last.words || "").trim();
-                    let currentWords = (item.words || "").trim();
-                    
-                    if (!currentWords) {
-                        return; // 如果下一行是空的，直接忽略
-                    }
-                    
-                    if (!lastWords) {
-                        last.words = currentWords;
-                    } else {
-                        last.words = lastWords + "\n" + currentWords;
-                    }
-                    
-                    if (!last.voice && item.voice) {
-                        last.voice = item.voice;
-                    }
-                } else {
-                    const cloned = { ...item };
-                    if (cloned.words) {
-                        cloned.words = cloned.words.trim();
-                    }
-                    dialogueList.push(cloned);
-                }
-            });
+            // 使用 DialogueNormalizer 進行純資料正規化與發言人萃取
+            const { dialogueList, speakerNames } = window.DialogueNormalizer.normalize(rawDialogueList);
 
-            const speakerNames = [];
-            dialogueList.forEach(item => {
-                if (item.name) {
-                    const names = item.name.split(/[、＆&]|和|與/).map(n => n.trim()).filter(Boolean);
-                    names.forEach(name => {
-                        if (!speakerNames.includes(name)) {
-                            speakerNames.push(name);
-                        }
-                    });
-                }
-            });
             await this.loadDialogueAvatars(speakerNames);
 
             const badgesBar = document.getElementById('chara-badges-bar');
@@ -2087,7 +2039,7 @@ const QuestMapModule = {
                         請在本地專案根目錄中，執行命令下載全部對白：
                     </div>
                     <code style="display: block; margin-top: 8px; background: rgba(0,0,0,0.05); padding: 8px; border-radius: 4px; color: var(--accent-color); font-family: Consolas, monospace; font-size: 0.8rem; border: 1px solid rgba(94, 107, 125, 0.15);">
-                        python download_stories_tw.py
+                        python tools/maintenance/download_stories_tw.py
                     </code>
                     <button onclick="QuestMapModule.loadDialogue(${storyId})" style="margin-top: 10px; padding: 8px 16px; background: var(--accent-color); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">🔄 重新載入</button>
                 </div>
@@ -2098,126 +2050,24 @@ const QuestMapModule = {
     },
 
     openStillPopup(event) {
-        const imgEl = event.target.closest('.game-dialogue-still').querySelector('img');
-        if (!imgEl || !imgEl.src) return;
-
-        let overlay = document.getElementById('still-popup-overlay');
-        if (!overlay) {
-            overlay = document.createElement('div');
-            overlay.id = 'still-popup-overlay';
-            overlay.className = 'still-popup-overlay';
-            overlay.onclick = function(e) {
-                if (e.target === overlay) {
-                    QuestMapModule.closeStillPopup();
-                }
-            };
-            const closeBtn = document.createElement('button');
-            closeBtn.className = 'still-popup-close-btn';
-            closeBtn.innerHTML = '&times;';
-            closeBtn.onclick = function() {
-                QuestMapModule.closeStillPopup();
-            };
-            const popupImg = document.createElement('img');
-            popupImg.id = 'still-popup-img';
-            popupImg.onclick = function(e) { e.stopPropagation(); };
-            overlay.appendChild(popupImg);
-            overlay.appendChild(closeBtn);
-            document.body.appendChild(overlay);
-        }
-
-        const popupImg = document.getElementById('still-popup-img');
-        popupImg.src = imgEl.src;
-
-        if (imgEl.dataset.candidates) {
-            popupImg.dataset.candidates = imgEl.dataset.candidates;
-            popupImg.dataset.step = imgEl.dataset.step || "0";
-            popupImg.onerror = function() { StoryAssetService.handleImageError(this); };
-        } else {
-            popupImg.removeAttribute('data-candidates');
-            popupImg.removeAttribute('data-step');
-            popupImg.onerror = null;
-        }
-
-        requestAnimationFrame(() => {
-            overlay.classList.add('active');
-        });
-
-        this._stillPopupKeyHandler = (e) => {
-            if (e.key === 'Escape') this.closeStillPopup();
-        };
-        document.addEventListener('keydown', this._stillPopupKeyHandler);
+        return window.MediaService.openStillPopup(event);
     },
 
     closeStillPopup() {
-        const overlay = document.getElementById('still-popup-overlay');
-        if (overlay) {
-            overlay.classList.remove('active');
-        }
-        if (this._stillPopupKeyHandler) {
-            document.removeEventListener('keydown', this._stillPopupKeyHandler);
-            this._stillPopupKeyHandler = null;
-        }
+        return window.MediaService.closeStillPopup();
     },
 
     playVoice(voiceName) {
-        if (!voiceName) return;
-        const groupId = voiceName.substring(7, 14);
-
-        const cdnList = [
-            `sound/story_vo/${voiceName}.m4a`,
-            `https://prcn-sound.estertion.win/story_vo/${groupId}/${voiceName}.m4a`,
-            `https://redive.estertion.win/sound/story_vo/${groupId}/${voiceName}.m4a`
-        ];
-
-        if (this.currentAudio) this.currentAudio.pause();
-
-        const tryPlay = (index) => {
-            if (index >= cdnList.length) {
-                console.warn('[QuestMapModule] 該劇情的語音檔在遠端鏡像站尚未同步更新。');
-                return;
-            }
-            const audio = new Audio(cdnList[index]);
-            audio.play().catch(err => {
-                if (err.name === 'NotAllowedError') {
-                    console.warn('[QuestMapModule] 語音播放被瀏覽器自動播放政策封鎖。');
-                    return;
-                }
-                tryPlay(index + 1);
-            });
-            this.currentAudio = audio;
-        };
-
-        tryPlay(0);
+        return window.MediaService.playVoice(voiceName);
     },
 
     handleAvatarError(img, realName) {
         // 方案 B 重構：已廢棄，由 AvatarService 統一接管
     },
 
-    // Modal 單例管理
+    // Modal 單例管理 (向下相容與委託)
     getCharaModal() {
-        let modalEl = document.getElementById('game-chara-modal');
-        if (!modalEl) {
-            modalEl = document.createElement('div');
-            modalEl.id = 'game-chara-modal';
-            modalEl.className = 'game-modal-overlay';
-            modalEl.onclick = function(event) {
-                if (event.target === modalEl) {
-                    modalEl.classList.remove('active');
-                }
-            };
-            // 支援 Escape 鍵關閉
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    const m = document.getElementById('game-chara-modal');
-                    if (m && m.classList.contains('active')) {
-                        m.classList.remove('active');
-                    }
-                }
-            });
-            document.body.appendChild(modalEl);
-        }
-        return modalEl;
+        return window.CharaModalView ? window.CharaModalView.getCharaModal() : null;
     },
 
     async showCharaModal(charaName) {
@@ -2245,121 +2095,22 @@ const QuestMapModule = {
         const appearances = (this.appearanceMap &&
             (this.appearanceMap[realCharaName] || this.appearanceMap[charaName])) || [];
 
-        let avatarUrl = "icon/unit/000000.webp";
-        const unitId = AvatarService.getUnitId(realCharaName, this.speakerAvatars);
-        if (unitId) {
-            const candidates = AvatarService.getUrlCandidates(unitId);
-            avatarUrl = candidates[0] || avatarUrl;
-        }
-
-        const modalEl = this.getCharaModal();
-
-        let appListHtml = "";
-        if (appearances.length === 0) {
-            appListHtml = `<div style="color: var(--text-secondary); font-size: 0.85rem; font-style: italic;">暫無登場話數統計數據。</div>`;
-        } else {
-            appListHtml = appearances.map(storyId => {
+        window.CharaModalView.renderModal({
+            realCharaName,
+            profile,
+            appearances,
+            speakerAvatars: this.speakerAvatars,
+            avatarService: window.AvatarService,
+            resolveStoryLabel: (storyId) => {
                 const story = this.getStoryById(storyId);
-                let label = `ID: ${storyId}`;
-                if (story) {
-                    const cleanCh = story.chapter.replace(/^(第\d+部\s*)?([^\s]+章\s*|[^\s]+序章\s*|[^\s]+幕間[^\s]*\s*)/, '');
-                    label = `${cleanCh} ${story.title}`.trim();
-                    if (label.length > 15) label = label.substring(0, 15) + "...";
-                }
-                return `<button class="chara-appear-btn" onclick="QuestMapModule.jumpToStory(${storyId}, 'game-chara-modal')" style="background: rgba(232,56,117,0.07); border: 1px solid rgba(232,56,117,0.2); border-radius: 8px; padding: 6px 12px; color: var(--accent-color); cursor: pointer; font-size: 0.82rem; font-weight: 600; transition: all 0.2s; display: inline-block;">${label}</button>`;
-            }).join('');
-        }
-
-        const guild = profile ? (profile.guild || "未知") : "未知";
-        const race = profile ? (profile.race || "未知") : "未知";
-        const rawAge = profile ? (profile.age || "") : "";
-        const age = rawAge ? `${rawAge}歲` : "未知";
-        const rawHeight = profile ? (profile.height || "") : "";
-        const height = rawHeight ? `${rawHeight}cm` : "未知";
-        const rawWeight = profile ? (profile.weight || "") : "";
-        const weight = rawWeight ? `${rawWeight}kg` : "未知";
-        const birth = (profile && profile.birth_month) ? `${profile.birth_month}月${profile.birth_day}日` : "未知";
-        const cv = profile ? (profile.voice || "未知") : "未知";
-        const selfText = profile ? this.escapeHtml(profile.self_text || "暫無自我介紹。").replace(/\\n/g, '<br>') : "暫無自我介紹。";
-        const catchCopy = profile ? (profile.catch_copy || "") : "";
-
-        let detailsHtml = "";
-        if (profile) {
-            detailsHtml = `
-                <div style="flex: 1; min-width: 200px;">
-                    <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; color: var(--text-primary);">
-                        <tr>
-                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600; width: 60px;">公會：</td>
-                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${guild}</td>
-                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600; width: 60px;">種族：</td>
-                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${race}</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">年齡：</td>
-                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${age}</td>
-                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">生日：</td>
-                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${birth}</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">身高：</td>
-                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${height}</td>
-                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">體重：</td>
-                            <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${weight}</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">聲優：</td>
-                            <td colspan="3" style="padding: 4px 0; color: var(--accent-color); font-weight: bold;">${cv}</td>
-                        </tr>
-                    </table>
-                </div>
-            `;
-        } else {
-            detailsHtml = `
-                <div style="flex: 1; min-width: 200px; display: flex; flex-direction: column; justify-content: center;">
-                    <div style="color: var(--text-secondary); font-size: 0.9rem; font-style: italic; border: 1px dashed rgba(232, 56, 117, 0.2); padding: 15px; border-radius: 8px; background: rgba(232, 56, 117, 0.03);">
-                        ℹ️ 此角色為劇中登場人物或 NPC，尚無設定集數據。
-                    </div>
-                </div>
-            `;
-        }
-
-        let bioHtml = "";
-        if (profile) {
-            bioHtml = `
-                ${catchCopy ? `<div style="font-style: italic; color: var(--accent-color); font-size: 0.9rem; margin-bottom: 10px; text-align: left;">「${catchCopy}」</div>` : ''}
-                <div style="background: rgba(94, 107, 125, 0.04); padding: 12px; border-radius: 8px; border: 1px solid rgba(232, 56, 117, 0.08); font-size: 0.85rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 15px; text-align: left;">
-                    ${selfText}
-                </div>
-            `;
-        }
-
-        modalEl.innerHTML = `
-            <div class="game-modal-content" style="max-height: 85vh; overflow-y: auto;">
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(94, 107, 125, 0.1); padding-bottom: 12px; margin-bottom: 15px;">
-                    <h3 style="margin: 0; color: var(--accent-color); font-size: 1.25rem;">🔍 角色檔案：${realCharaName}</h3>
-                    <span class="game-modal-close-btn" onclick="document.getElementById('game-chara-modal').classList.remove('active')" style="cursor: pointer; font-size: 1.5rem; color: var(--text-secondary); transition: transform 0.2s;"
-                           onmouseover="this.style.transform='rotate(90deg)'" onmouseout="this.style.transform='none'">&times;</span>
-                </div>
-
-                <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px;">
-                    <div style="width: 100px; height: 100px; border-radius: 12px; overflow: hidden; border: 2px solid rgba(232, 56, 117, 0.15); background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 0;">
-                        ${window.AvatarService.getAvatarHtml(realCharaName, this.speakerAvatars)}
-                    </div>
-                    ${detailsHtml}
-                </div>
-
-                ${bioHtml}
-
-                <div style="border-top: 1px solid rgba(94, 107, 125, 0.1); padding-top: 15px;">
-                    <h4 style="margin: 0 0 10px 0; color: var(--text-primary); font-size: 0.95rem;">📖 登場話數 (點擊直接跳轉放映)：</h4>
-                    <div style="display: flex; gap: 8px; flex-wrap: wrap; max-height: 150px; overflow-y: auto; padding: 5px;">
-                        ${appListHtml}
-                    </div>
-                </div>
-            </div>
-        `;
-
-        modalEl.classList.add('active');
+                if (!story) return `ID: ${storyId}`;
+                const cleanCh = story.chapter.replace(/^(第\d+部\s*)?([^\s]+章\s*|[^\s]+序章\s*|[^\s]+幕間[^\s]*\s*)/, '');
+                let label = `${cleanCh} ${story.title}`.trim();
+                if (label.length > 15) label = label.substring(0, 15) + "...";
+                return label;
+            },
+            escapeHtml: (str) => this.escapeHtml(str)
+        });
     },
 
     jumpToStory(storyId, closeModalId) {
@@ -2431,118 +2182,22 @@ const QuestMapModule = {
         });
     },
 
+    _getSpeakerViewOptions() {
+        return {
+            appearanceMap: this.appearanceMap,
+            speakerAvatars: this.speakerAvatars,
+            searchQuery: this.speakerSearchQuery,
+            sortOrder: this.speakerSortOrder,
+            avatarService: window.AvatarService,
+            resolveRealName: (name) => this.getCharaRealName(name),
+            escapeHtml: (str) => this.escapeHtml(str)
+        };
+    },
+
     renderSpeakerTab(tab) {
-        const searchVal = this.speakerSearchQuery || "";
-        const safeSearchVal = this.escapeHtml(searchVal);
-        const sortVal = this.speakerSortOrder || "appearances-desc";
-
-        let speakers = Object.keys(this.appearanceMap || {});
-        const nonRealSpeakers = ["旁白", "【系統】", "？？？", "店員", "店長", "選擇肢", "選擇"];
-        speakers = speakers.filter(name => {
-            const clean = name.trim();
-            return !nonRealSpeakers.some(nonReal => clean.includes(nonReal));
-        });
-
-        if (searchVal.trim()) {
-            const query = searchVal.trim().toLowerCase();
-            speakers = speakers.filter(name => name.toLowerCase().includes(query));
-        }
-
-        speakers.sort((a, b) => {
-            const countA = (this.appearanceMap[a] || []).length;
-            const countB = (this.appearanceMap[b] || []).length;
-            if (sortVal === 'appearances-desc') {
-                return countB - countA || a.localeCompare(b, 'zh-Hant-TW');
-            } else if (sortVal === 'appearances-asc') {
-                return countA - countB || a.localeCompare(b, 'zh-Hant-TW');
-            } else {
-                return a.localeCompare(b, 'zh-Hant-TW');
-            }
-        });
-
- tab.innerHTML = `
- <div class="floating-back-btn" onclick="QuestMapModule.handleFloatingBack()" style="position: fixed; top: 20px; left: 20px; z-index: 9998; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #2d6bcf, #1a4a9e); color: #fff; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; box-shadow: 0 4px 15px rgba(26, 74, 158, 0.5); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.15)'; this.style.boxShadow='0 6px 20px rgba(26, 74, 158, 0.7)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(26, 74, 158, 0.5)';">←</div>
- <div class="map-container glass-card">
- <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
- <button onclick="QuestMapModule.handleBackClick()" class="back-to-menu-btn" style="
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        width: 32px;
-                        height: 32px;
-                        border-radius: 50%;
-                        background: linear-gradient(135deg, #0984e3, #00cec9);
-                        color: #fff;
-                        border: none;
-                        cursor: pointer;
-                        box-shadow: 0 2px 6px rgba(9, 132, 227, 0.4);
-                        transition: transform 0.2s ease, box-shadow 0.2s ease;
-                        font-size: 1rem;
-                        font-weight: bold;
-                        flex-shrink: 0;
-                    " onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 4px 12px rgba(9, 132, 227, 0.6)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 6px rgba(9, 132, 227, 0.4)';">
-                        ←
-                    </button>
-                    <span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;"><span style="font-size: 1.1rem;">🏠</span> 劇情大廳</span>
-                    <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
-                    <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">👥 登場角色</span>
-                </div>
-                <div class="map-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 15px; margin-bottom: 20px;">
-                    <div>
-                        <h2>👥 登場角色總覽</h2>
-                        <p class="subtitle">統計所有登場人物的登場話數，點擊可直接查詢詳細資料與登場話數列表</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap; margin-bottom: 20px;">
-                    <div style="flex: 1; min-width: 250px;">
-                        <input type="text" id="speaker-search-input" placeholder="🔍 搜尋登場角色名字..." value="${safeSearchVal}"  
-                               oninput="QuestMapModule.handleSpeakerSearch(this.value)" 
-                               style="width: 100%; padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(0,0,0,0.2); color: #fff; font-size: 0.9rem; outline: none; transition: border 0.2s;">
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                        <span style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">排序方式：</span>
-                        <select onchange="QuestMapModule.handleSpeakerSort(this.value)" 
-                                style="padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(20,20,20,0.8); color: #fff; font-size: 0.9rem; outline: none; cursor: pointer;">
-                            <option value="appearances-desc" ${sortVal === 'appearances-desc' ? 'selected' : ''}>登場話數：多 ➔ 少</option>
-                            <option value="appearances-asc" ${sortVal === 'appearances-asc' ? 'selected' : ''}>登場話數：少 ➔ 多</option>
-                            <option value="name-asc" ${sortVal === 'name-asc' ? 'selected' : ''}>名字排序：A ➔ Z</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="speaker-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 15px; max-height: 65vh; overflow-y: auto; padding-right: 5px;">
-                    ${speakers.map(name => {
-                        const count = (this.appearanceMap[name] || []).length;
-                        const realName = this.getCharaRealName(name);
-                        const safeName = this.escapeHtml(name);
-                        const safeRealName = this.escapeHtml(realName);
-                        const unitId = AvatarService.getUnitId(realName, this.speakerAvatars);
-                        let avatarHtml = "";
-                        if (unitId) {
-                            const candidates = AvatarService.getUrlCandidates(unitId);
-                            avatarHtml = `<img src="${candidates[0]}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='${candidates[1] || candidates[0]}'">`;
-                        } else {
-                            avatarHtml = `<div class="npc-avatar-placeholder" style="font-size: 1.2rem; font-weight: bold; color: var(--primary-dark);">${safeRealName.substring(0, 2)}</div>`;
-                        }
-
-                        return `
-                            <div class="speaker-card glass-card" onclick="QuestMapModule.showCharaModal(${JSON.stringify(name).replace(/"/g, '&quot;')})"
-                                 onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='rgba(255,255,255,0.2)'; this.style.background='rgba(255,255,255,0.08)';"
-                                 onmouseout="this.style.transform='none'; this.style.borderColor='rgba(255,255,255,0.08)'; this.style.background='rgba(255,255,255,0.03)';"
-                                 style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 15px 10px; text-align: center; cursor: pointer; transition: all 0.2s ease-in-out; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
-                                <div style="width: 70px; height: 70px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center;">
-                                    ${avatarHtml}
-                                </div>
-                                <div style="font-weight: bold; font-size: 0.9rem; color: var(--text-main); text-overflow: ellipsis; white-space: nowrap; overflow: hidden; width: 100%;" title="${safeName}">${safeName}</div>
-                                <div style="font-size: 0.78rem; color: #ffa94d;">🎬 登場 ${count} 話</div>
-                            </div>
-                        `;
-                    }).join('')}
-                    ${speakers.length === 0 ? `<div style="grid-column: 1/-1; text-align: center; color: rgba(255,255,255,0.4); padding: 50px 0;">查無符合條件的登場角色</div>` : ''}
-                </div>
-            </div>
-        `;
+        if (!tab) return;
+        const options = this._getSpeakerViewOptions();
+        tab.innerHTML = window.SpeakerView.renderSpeakerPageHtml(options);
     },
 
     handleSpeakerSearch(value) {
@@ -2568,51 +2223,11 @@ const QuestMapModule = {
             if (tab) this.renderSpeakerTab(tab);
             return;
         }
-        const searchVal = this.speakerSearchQuery || "";
-        const sortVal = this.speakerSortOrder || "appearances-desc";
-        let speakers = Object.keys(this.appearanceMap || {});
-        const nonRealSpeakers = ["旁白", "【系統】", "？？？", "店員", "店長", "選擇肢", "選擇"];
-        speakers = speakers.filter(name => !nonRealSpeakers.some(nr => name.trim().includes(nr)));
-        if (searchVal.trim()) {
-            const query = searchVal.trim().toLowerCase();
-            speakers = speakers.filter(name => name.toLowerCase().includes(query));
-        }
-        speakers.sort((a, b) => {
-            const countA = (this.appearanceMap[a] || []).length;
-            const countB = (this.appearanceMap[b] || []).length;
-            if (sortVal === 'appearances-desc') return countB - countA || a.localeCompare(b, 'zh-Hant-TW');
-            if (sortVal === 'appearances-asc') return countA - countB || a.localeCompare(b, 'zh-Hant-TW');
-            return a.localeCompare(b, 'zh-Hant-TW');
-        });
-        gridEl.innerHTML = speakers.map(name => {
-            const count = (this.appearanceMap[name] || []).length;
-            const realName = this.getCharaRealName(name);
-            const safeName = this.escapeHtml(name);
-            const safeRealName = this.escapeHtml(realName);
-            const unitId = AvatarService.getUnitId(realName, this.speakerAvatars);
-            let avatarHtml = "";
-            if (unitId) {
-                const candidates = AvatarService.getUrlCandidates(unitId);
-                avatarHtml = `<img src="${candidates[0]}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='${candidates[1] || candidates[0]}'">`;
-            } else {
-                avatarHtml = `<div class="npc-avatar-placeholder" style="font-size: 1.2rem; font-weight: bold; color: var(--primary-dark);">${safeRealName.substring(0, 2)}</div>`;
-            }
-            return `
-                <div class="speaker-card glass-card" onclick="QuestMapModule.showCharaModal(${JSON.stringify(name).replace(/"/g, '&quot;')})"
-                     style="background: rgba(255,255,255,0.03); border: 1px solid rgba(232,56,117,0.1); border-radius: 12px; padding: 15px 10px; text-align: center; cursor: pointer; transition: all 0.2s ease-in-out; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;"
-                     onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='rgba(232,56,117,0.25)'; this.style.background='rgba(232,56,117,0.04)';"
-                     onmouseout="this.style.transform='none'; this.style.borderColor='rgba(232,56,117,0.1)'; this.style.background='rgba(255,255,255,0.03)';">
-                    <div style="width: 70px; height: 70px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(232,56,117,0.15); background: rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center;">
-                        ${avatarHtml}
-                    </div>
-                    <div style="font-weight: bold; font-size: 0.9rem; color: var(--text-primary); text-overflow: ellipsis; white-space: nowrap; overflow: hidden; width: 100%;" title="${safeName}">${safeName}</div>
-                    <div style="font-size: 0.78rem; color: var(--accent-color);">🎬 登場 ${count} 話</div>
-                </div>
-            `;
-        }).join('') + (speakers.length === 0 ? `<div style="grid-column: 1/-1; text-align: center; color: var(--text-secondary); padding: 50px 0;">查無符合條件的登場角色 🔍</div>` : '');
+        const options = this._getSpeakerViewOptions();
+        gridEl.innerHTML = window.SpeakerView.renderSpeakerGridHtml(options);
     }
 };
 
-if (window.ChapterDataService && window.AvatarService) {
+if (window.ChapterDataService && window.AvatarService && window.SpeakerView && window.CharaModalView && window.DialogueNormalizer && window.MediaService) {
     console.log("[QuestMapModule] 所有相依服務已就緒");
 }
