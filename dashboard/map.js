@@ -2050,96 +2050,15 @@ const QuestMapModule = {
     },
 
     openStillPopup(event) {
-        const imgEl = event.target.closest('.game-dialogue-still').querySelector('img');
-        if (!imgEl || !imgEl.src) return;
-
-        let overlay = document.getElementById('still-popup-overlay');
-        if (!overlay) {
-            overlay = document.createElement('div');
-            overlay.id = 'still-popup-overlay';
-            overlay.className = 'still-popup-overlay';
-            overlay.onclick = function(e) {
-                if (e.target === overlay) {
-                    QuestMapModule.closeStillPopup();
-                }
-            };
-            const closeBtn = document.createElement('button');
-            closeBtn.className = 'still-popup-close-btn';
-            closeBtn.innerHTML = '&times;';
-            closeBtn.onclick = function() {
-                QuestMapModule.closeStillPopup();
-            };
-            const popupImg = document.createElement('img');
-            popupImg.id = 'still-popup-img';
-            popupImg.onclick = function(e) { e.stopPropagation(); };
-            overlay.appendChild(popupImg);
-            overlay.appendChild(closeBtn);
-            document.body.appendChild(overlay);
-        }
-
-        const popupImg = document.getElementById('still-popup-img');
-        popupImg.src = imgEl.src;
-
-        if (imgEl.dataset.candidates) {
-            popupImg.dataset.candidates = imgEl.dataset.candidates;
-            popupImg.dataset.step = imgEl.dataset.step || "0";
-            popupImg.onerror = function() { StoryAssetService.handleImageError(this); };
-        } else {
-            popupImg.removeAttribute('data-candidates');
-            popupImg.removeAttribute('data-step');
-            popupImg.onerror = null;
-        }
-
-        requestAnimationFrame(() => {
-            overlay.classList.add('active');
-        });
-
-        this._stillPopupKeyHandler = (e) => {
-            if (e.key === 'Escape') this.closeStillPopup();
-        };
-        document.addEventListener('keydown', this._stillPopupKeyHandler);
+        return window.MediaService.openStillPopup(event);
     },
 
     closeStillPopup() {
-        const overlay = document.getElementById('still-popup-overlay');
-        if (overlay) {
-            overlay.classList.remove('active');
-        }
-        if (this._stillPopupKeyHandler) {
-            document.removeEventListener('keydown', this._stillPopupKeyHandler);
-            this._stillPopupKeyHandler = null;
-        }
+        return window.MediaService.closeStillPopup();
     },
 
     playVoice(voiceName) {
-        if (!voiceName) return;
-        const groupId = voiceName.substring(7, 14);
-
-        const cdnList = [
-            `sound/story_vo/${voiceName}.m4a`,
-            `https://prcn-sound.estertion.win/story_vo/${groupId}/${voiceName}.m4a`,
-            `https://redive.estertion.win/sound/story_vo/${groupId}/${voiceName}.m4a`
-        ];
-
-        if (this.currentAudio) this.currentAudio.pause();
-
-        const tryPlay = (index) => {
-            if (index >= cdnList.length) {
-                console.warn('[QuestMapModule] 該劇情的語音檔在遠端鏡像站尚未同步更新。');
-                return;
-            }
-            const audio = new Audio(cdnList[index]);
-            audio.play().catch(err => {
-                if (err.name === 'NotAllowedError') {
-                    console.warn('[QuestMapModule] 語音播放被瀏覽器自動播放政策封鎖。');
-                    return;
-                }
-                tryPlay(index + 1);
-            });
-            this.currentAudio = audio;
-        };
-
-        tryPlay(0);
+        return window.MediaService.playVoice(voiceName);
     },
 
     handleAvatarError(img, realName) {
@@ -2309,6 +2228,6 @@ const QuestMapModule = {
     }
 };
 
-if (window.ChapterDataService && window.AvatarService && window.SpeakerView && window.CharaModalView && window.DialogueNormalizer) {
+if (window.ChapterDataService && window.AvatarService && window.SpeakerView && window.CharaModalView && window.DialogueNormalizer && window.MediaService) {
     console.log("[QuestMapModule] 所有相依服務已就緒");
 }
