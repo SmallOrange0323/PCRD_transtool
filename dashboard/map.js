@@ -1841,62 +1841,9 @@ const QuestMapModule = {
                 return;
             }
 
-            // 合併相同語音的連續對話行
-            const dialogueList = [];
-            rawDialogueList.forEach(item => {
-                if (item.type === 'still' || item.type === 'background' || item.type === 'movie') {
-                    dialogueList.push(item);
-                    return;
-                }
-                const cleanedWords = (item.words || "").replace(/\\n/g, "").replace(/\n/g, "").trim();
-                if (!cleanedWords) {
-                    return; // 忽略純空行或純 \n 的氣泡，消除大行距
-                }
-                
-                const last = dialogueList[dialogueList.length - 1];
-                if (last && 
-                    last.type !== 'still' && 
-                    last.type !== 'background' && 
-                    last.type !== 'movie' && 
-                    last.name === item.name && 
-                    (!item.voice || last.voice === item.voice)) {
-                    
-                    let lastWords = (last.words || "").trim();
-                    let currentWords = (item.words || "").trim();
-                    
-                    if (!currentWords) {
-                        return; // 如果下一行是空的，直接忽略
-                    }
-                    
-                    if (!lastWords) {
-                        last.words = currentWords;
-                    } else {
-                        last.words = lastWords + "\n" + currentWords;
-                    }
-                    
-                    if (!last.voice && item.voice) {
-                        last.voice = item.voice;
-                    }
-                } else {
-                    const cloned = { ...item };
-                    if (cloned.words) {
-                        cloned.words = cloned.words.trim();
-                    }
-                    dialogueList.push(cloned);
-                }
-            });
+            // 使用 DialogueNormalizer 進行純資料正規化與發言人萃取
+            const { dialogueList, speakerNames } = window.DialogueNormalizer.normalize(rawDialogueList);
 
-            const speakerNames = [];
-            dialogueList.forEach(item => {
-                if (item.name) {
-                    const names = item.name.split(/[、＆&]|和|與/).map(n => n.trim()).filter(Boolean);
-                    names.forEach(name => {
-                        if (!speakerNames.includes(name)) {
-                            speakerNames.push(name);
-                        }
-                    });
-                }
-            });
             await this.loadDialogueAvatars(speakerNames);
 
             const badgesBar = document.getElementById('chara-badges-bar');
@@ -2362,6 +2309,6 @@ const QuestMapModule = {
     }
 };
 
-if (window.ChapterDataService && window.AvatarService && window.SpeakerView && window.CharaModalView) {
+if (window.ChapterDataService && window.AvatarService && window.SpeakerView && window.CharaModalView && window.DialogueNormalizer) {
     console.log("[QuestMapModule] 所有相依服務已就緒");
 }
