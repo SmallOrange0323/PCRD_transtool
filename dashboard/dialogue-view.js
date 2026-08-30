@@ -5,6 +5,7 @@ console.log("dialogue-view.js loaded");
  * 以及載入中、空資料、載入失敗等各狀態之 HTML 生成與 DOM 渲染。
  * 
  * 本模組為純視圖（View）層，不持有應用程式業務狀態，不發起網路請求與資料庫查詢。
+ * 對 AvatarService 與 StoryAssetService 為強制硬依賴（Fail Loudly），嚴禁防禦性靜默回退。
  */
 
 (function() {
@@ -95,7 +96,7 @@ console.log("dialogue-view.js loaded");
                 const realName = resolveRealName ? resolveRealName(name) : name;
                 if (renderedSet.has(realName)) return;
                 renderedSet.add(realName);
-                const avatarHtml = window.AvatarService ? window.AvatarService.getAvatarHtml(realName, speakerAvatars) : "";
+                const avatarHtml = window.AvatarService.getAvatarHtml(realName, speakerAvatars);
                 badgeHtmls.push(`
                     <div class="game-chara-avatar-badge" title="${realName}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})">
                         ${avatarHtml}
@@ -128,9 +129,7 @@ console.log("dialogue-view.js loaded");
                 if (item.type === 'still') {
                     const stillId = item.still_id || item.still;
                     if (stillId && String(stillId).trim().toLowerCase() !== 'end') {
-                        const stillImgHtml = window.StoryAssetService
-                            ? window.StoryAssetService.getStillHtml(stillId, 'dialogue-still-img still-clickable', '')
-                            : "";
+                        const stillImgHtml = window.StoryAssetService.getStillHtml(stillId, 'dialogue-still-img still-clickable', '');
                         html += `
                             <div class="game-dialogue-still-wrap">
                                 <div class="game-dialogue-still-label">✨ 劇情插畫</div>
@@ -214,12 +213,10 @@ console.log("dialogue-view.js loaded");
                         overrideUnitId = 138331;
                     }
 
-                    if (window.AvatarService) {
-                        if (overrideUnitId) {
-                            avatarContent = window.AvatarService.getAvatarHtmlByUnitId(overrideUnitId, realName, speakerAvatars);
-                        } else {
-                            avatarContent = window.AvatarService.getAvatarHtml(realName, speakerAvatars);
-                        }
+                    if (overrideUnitId) {
+                        avatarContent = window.AvatarService.getAvatarHtmlByUnitId(overrideUnitId, realName, speakerAvatars);
+                    } else {
+                        avatarContent = window.AvatarService.getAvatarHtml(realName, speakerAvatars);
                     }
 
                     avatarHtml = `
@@ -251,8 +248,8 @@ console.log("dialogue-view.js loaded");
                 const hasStillInList = (dialogueList || []).some(item => item.type === 'still');
                 if (!hasStillInList) {
                     const bottomStillImgHtml = currentStoryObj.still_id
-                        ? (window.StoryAssetService ? window.StoryAssetService.getStillHtml(currentStoryObj.still_id, 'dialogue-still-img still-clickable', '') : '')
-                        : (window.StoryAssetService ? window.StoryAssetService.getBackgroundHtml(currentStoryObj.bg_id, 'dialogue-still-img still-clickable', '') : '');
+                        ? window.StoryAssetService.getStillHtml(currentStoryObj.still_id, 'dialogue-still-img still-clickable', '')
+                        : window.StoryAssetService.getBackgroundHtml(currentStoryObj.bg_id, 'dialogue-still-img still-clickable', '');
                     html += `
                         <div class="game-dialogue-still-wrap" style="margin-top: 20px; margin-bottom: 10px;">
                             <div class="game-dialogue-still-label">✨ 劇情插畫</div>

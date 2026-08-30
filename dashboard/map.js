@@ -1833,7 +1833,6 @@ const QuestMapModule = {
 
             if (!rawDialogueList || rawDialogueList.length === 0) {
                 window.DialogueView.renderEmpty(board);
-                this.isLoadingDialogue = false;
                 return;
             }
 

@@ -1,6 +1,7 @@
 /**
  * tests/test_dialogue_view.js
  * 劇情對白視圖 (DialogueView) 單元測試
+ * 驗證硬依賴 (Hard Dependency)、回歸行為與事件合約
  */
 
 const assert = require('assert');
@@ -182,6 +183,54 @@ test("Test 8 — Error UI retry contract", () => {
 
     assert(errorHtml.includes("⚠️ 台詞文本尚未下載"), "Should render error title");
     assert(errorHtml.includes("QuestMapModule.loadDialogue(1001002)"), "Should include reload button calling QuestMapModule.loadDialogue(storyId)");
+});
+
+// Test 9 — Hard dependency enforcement on AvatarService
+test("Test 9 — AvatarService hard dependency (fails loudly if missing)", () => {
+    const originalService = global.AvatarService;
+    global.AvatarService = undefined;
+    global.window.AvatarService = undefined;
+
+    let threw = false;
+    try {
+        DialogueView.generateDialogueHtml({
+            storyId: 1001001,
+            dialogueList: [{ name: "可可蘿", words: "測試" }],
+            speakerAvatars: { "可可蘿": 105701 },
+            resolveRealName: (n) => n
+        });
+    } catch (e) {
+        threw = true;
+    } finally {
+        global.AvatarService = originalService;
+        global.window.AvatarService = originalService;
+    }
+
+    assert(threw, "generateDialogueHtml must fail loudly when AvatarService is missing");
+});
+
+// Test 10 — Hard dependency enforcement on StoryAssetService
+test("Test 10 — StoryAssetService hard dependency (fails loudly if missing)", () => {
+    const originalService = global.StoryAssetService;
+    global.StoryAssetService = undefined;
+    global.window.StoryAssetService = undefined;
+
+    let threw = false;
+    try {
+        DialogueView.generateDialogueHtml({
+            storyId: 1001001,
+            dialogueList: [{ type: "still", still_id: "1000101" }],
+            speakerAvatars: {},
+            resolveRealName: (n) => n
+        });
+    } catch (e) {
+        threw = true;
+    } finally {
+        global.StoryAssetService = originalService;
+        global.window.StoryAssetService = originalService;
+    }
+
+    assert(threw, "generateDialogueHtml must fail loudly when StoryAssetService is missing");
 });
 
 console.log(`\n✅ All ${testsPassed} DialogueView tests passed successfully!`);
