@@ -6,7 +6,7 @@
 > **專案唯一核心定位 (Core Focus)**：
 > 1. **主要生產專案 (Primary Production Project)**：**「公主連結劇情地圖（Story Map）」**。
 > 2. **核心維護流程 (Primary Maintenance Workflow)**：**CDN ➡️ Story Map 資料管線（`pipeline/` 與 `update_story_map.py`）**。
-> 3. **實驗性模組 (Experiments)**：`experiments/translator/` 日翻中即時翻譯器等獨立實驗。
+> 3. **獨立實驗專案 (Side Projects)**：`translator/` 日翻中即時翻譯器等獨立實驗。
 > 4. **歷史廢棄規劃 (Legacy / Deprecated)**：舊版曾規劃之競技場查隊、公會戰 BOSS 數據導航、新聞公告監控等，已全數標記為 Legacy，AI 嚴禁將其視為當前維護目標。
 > 5. **官方術語基準**：所有名詞、術語均以**台灣代理商（So-net）的繁體中文官方翻譯為唯一基準**。
 
@@ -77,25 +77,33 @@
 ---
 
 ## 五、 其他參考指南文件
-* 👤 [角色設定指南 (docs/pcrd_characters.md)](file:///e:/OneDrive%20-%20%E5%AF%B0%E5%AE%87%E7%9F%A5%E8%AD%98%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/PCRD_tool/docs/pcrd_characters.md)
-* 🎬 [主線劇情話數指南 (docs/pcrd_story_line.md)](file:///e:/OneDrive%20-%20%E5%AF%B0%E5%AE%87%E7%9F%A5%E8%AD%98%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/PCRD_tool/docs/pcrd_story_line.md)
-* 🌌 [世界觀與名詞定義 (docs/pcrd_universe.md)](file:///e:/OneDrive%20-%20%E5%AF%B0%E5%AE%87%E7%9F%A5%E8%AD%98%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/PCRD_tool/docs/pcrd_universe.md)
-* 📖 [官方用語集 (docs/pcrd_glossary.md)](file:///e:/OneDrive%20-%20%E5%AF%B0%E5%AE%87%E7%9F%A5%E8%AD%98%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/PCRD_tool/docs/pcrd_glossary.md)
+* 👤 [角色設定指南](../docs/pcrd_characters.md) — 收錄各個行會、角色背景與台版譯名。
+* 🎬 [主線劇情話數指南](../docs/pcrd_story_line.md) — 收錄第一部至第三部的章節大綱與話數分類邏輯。
+* 🌌 [世界觀與名詞定義](../docs/pcrd_universe.md) — 收錄七冠權能、專有名詞與 So-net 官方譯名對照表。
+* 📖 [官方用語集](../docs/pcrd_glossary.md) — 收錄遊戲內用語集的官方中文定義與釋義。
+* 🔄 [資料更新管線手冊](../docs/PIPELINE_WORKFLOW.md) — Story Map 官方標準更新、驗證與發布工作流。
 
 ---
 
-## 六、 多媒體素材下載指令
+## 六、 多媒體素材下載指令 (手動維護工具)
 
-本專案支援實體多媒體資源下載。在解密對白文字後，可執行以下指令將官方實體資源直接整合至網頁系統中：
+> [!NOTE]
+> **日常 Story Map 增量更新與發布請優先使用標準管線：`python update_story_map.py`**（參閱 [PIPELINE_WORKFLOW.md](../docs/PIPELINE_WORKFLOW.md)）。  
+> 以下指令為特定單話素材的手動維護輔助工具（Manual Utility）：
 
 1. **下載指定劇情話數的所有語音音檔 (M4A)**：
    ```bash
+   python -m pipeline.fetch fetch-story-voices --story-id [story_id]
+   # 或底層引擎指令：
    python tools/pcrd_fetch.py fetch-story-voices --story-id [story_id]
    ```
    * *功能*：解析該話 JSON 劇本中的所有語音 ID，自動連線鏡像大語音池下載 `.m4a` 檔案至 `dashboard/sound/[story_id]/` 目錄中。
 
 2. **下載指定劇情話數的所有 CG 插畫與背景圖 (WebP)**：
    ```bash
+   python -m pipeline.fetch fetch-story-images --story-id [story_id]
+   # 或底層引擎指令：
    python tools/pcrd_fetch.py fetch-story-images --story-id [story_id]
    ```
    * *功能*：自動下載官方 CDN 明文 `bg2_assetmanifest` 與 `unit2_assetmanifest`，匹配該話在引導 Bundle 中定義的所有背景 ID 與 CG ID，再從 CDN pool 下載對應 `.unity3d` 文件並使用 UnityPy 解碼導出無損 WebP 大圖至 `dashboard/still/bg/` 與 `dashboard/still/scenario/` 目錄中。
+

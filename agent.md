@@ -80,7 +80,22 @@
 
 ### 3. 四大核心指南文件引用
 進行更深度的開發或需要更詳細的角色、劇情與設定清單時，請務必參閱以下四份由專案維護的完整指南：
-* 👤 [角色設定指南 (docs/pcrd_characters.md)](file:///docs/pcrd_characters.md) — 收錄各個行會、角色背景與台版譯名。
-* 🎬 [主線劇情話數指南 (docs/pcrd_story_line.md)](file:///docs/pcrd_story_line.md) — 收錄第一部至第三部的章節大綱與話數分類邏輯。
-* 🌌 [世界觀與名詞定義 (docs/pcrd_universe.md)](file:///docs/pcrd_universe.md) — 收錄七冠權能、專有名詞與 So-net 官方譯名對照表。
-* 📖 [官方用語集 (docs/pcrd_glossary.md)](file:///docs/pcrd_glossary.md) — 收錄遊戲內用語集的官方中文定義與釋義。
+* 👤 [角色設定指南 (docs/pcrd_characters.md)](docs/pcrd_characters.md) — 收錄各個行會、角色背景與台版譯名。
+* 🎬 [主線劇情話數指南 (docs/pcrd_story_line.md)](docs/pcrd_story_line.md) — 收錄第一部至第三部的章節大綱與話數分類邏輯。
+* 🌌 [世界觀與名詞定義 (docs/pcrd_universe.md)](docs/pcrd_universe.md) — 收錄七冠權能、專有名詞與 So-net 官方譯名對照表。
+* 📖 [官方用語集 (docs/pcrd_glossary.md)](docs/pcrd_glossary.md) — 收錄遊戲內用語集的官方中文定義與釋義。
+
+---
+
+## 📚 四、 權威技術規範文件 (Canonical Technical References)
+
+涉及目前系統架構、資料所有權、模組邊界與不可破壞之不變量時，以：
+* 🏛️ [系統架構手冊 (docs/ARCHITECTURE.md)](docs/ARCHITECTURE.md)
+
+涉及 Story Map 資料更新、決定性封裝、驗證門禁與發布流程時，以：
+* 🔄 [資料更新管線工作手冊 (docs/PIPELINE_WORKFLOW.md)](docs/PIPELINE_WORKFLOW.md)
+
+為目前技術架構與操作流程的權威文件基準（Canonical Documented Reference）。  
+實際程式碼實作仍定義系統的真實運行行為；若文件與實作不一致，應先確認實作並更新 canonical docs。歷史盤點、遷移記錄或舊設計文件不得覆蓋上述 canonical docs。
+
+
