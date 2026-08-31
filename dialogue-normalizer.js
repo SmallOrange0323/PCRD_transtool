@@ -10,6 +10,25 @@ console.log("dialogue-normalizer.js loaded");
  */
 
 (function() {
+    /**
+     * 驗證並解析有效之具體 unit_id (大於 0 的正整數)
+     * @param {*} value
+     * @returns {number|null}
+     */
+    function getConcreteUnitId(value) {
+        if (value === null || value === undefined) return null;
+        if (typeof value === 'number') {
+            return Number.isInteger(value) && value > 0 ? value : null;
+        }
+        if (typeof value === 'string') {
+            const trimmed = value.trim();
+            if (!/^\d+$/.test(trimmed)) return null;
+            const parsed = Number(trimmed);
+            return Number.isInteger(parsed) && parsed > 0 ? parsed : null;
+        }
+        return null;
+    }
+
     const DialogueNormalizer = {
         /**
          * 正規化對白劇本資料並萃取發言人清單
@@ -42,13 +61,23 @@ console.log("dialogue-normalizer.js loaded");
                 }
 
                 const last = dialogueList[dialogueList.length - 1];
-                // 合併條件：前一筆存在、非特殊項目、相同發言人姓名、且語音相容 (當前無語音標籤或語音標籤完全相同)
+
+                const lastUnitId = last ? getConcreteUnitId(last.unit_id) : null;
+                const currentUnitId = getConcreteUnitId(item.unit_id);
+                const hasConcreteUnitConflict = (
+                    lastUnitId !== null &&
+                    currentUnitId !== null &&
+                    lastUnitId !== currentUnitId
+                );
+
+                // 合併條件：前一筆存在、非特殊項目、相同發言人姓名、語音相容且無具體 unit_id 衝突
                 if (last &&
                     last.type !== 'still' &&
                     last.type !== 'background' &&
                     last.type !== 'movie' &&
                     last.name === item.name &&
-                    (!item.voice || last.voice === item.voice)) {
+                    (!item.voice || last.voice === item.voice) &&
+                    !hasConcreteUnitConflict) {
 
                     let lastWords = (last.words || "").trim();
                     let currentWords = (item.words || "").trim();
