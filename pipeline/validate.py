@@ -3,6 +3,12 @@
 """
 PCRD Story Map Pipeline - Validator (Single Source of Verification)
 提供發布前與更新後的資料完整性自檢門禁。全專案唯一的驗證邏輯來源。
+包含：
+1. 核心檔案與 WASM/DB 存在性
+2. 元數據 JSON 解析與 Schema 檢驗
+3. 全量 9000+ 對白 JSON 語法與完整性
+4. 決定性 Cache-Busting 與內嵌標記檢驗
+5. 部署體積門禁 (Deployment Footprint Gate: Warning 750 MiB, Hard Error 900 MiB)
 """
 
 import os
@@ -11,10 +17,15 @@ import json
 import sqlite3
 import hashlib
 from pathlib import Path
+from typing import Tuple, Set, Optional
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DASHBOARD_DIR = PROJECT_ROOT / "dashboard"
 DIST_DIR = PROJECT_ROOT / "dist_story_map"
+
+# 部署體積門禁閾值 (Bytes)
+FOOTPRINT_WARN_BYTES = 750 * 1024 * 1024   # 750 MiB
+FOOTPRINT_HARD_BYTES = 900 * 1024 * 1024   # 900 MiB
 
 class ValidationResult:
     def __init__(self):
@@ -44,6 +55,45 @@ def calc_sha256(filepath: Path) -> str:
         while chunk := f.read(65536):
             h.update(chunk)
     return h.hexdigest()
+
+def calculate_deployment_footprint(dist_dir: Path = DIST_DIR, exclude_subdirs: Optional[Set[str]] = None) -> int:
+    """
+    計算預期部署至 GitHub Pages 的實際資產總大小 (bytes)。
+    排除本機快取目錄 (如 .git, sound, card)。
+    """
+    if not dist_dir.exists():
+        return 0
+    total = 0
+    excl = exclude_subdirs or {".git", "sound", "card"}
+    for root, dirs, files in os.walk(dist_dir):
+        rel = Path(root).relative_to(dist_dir)
+        parts = rel.parts
+        if any(p in excl for p in parts):
+            continue
+        for f in files:
+            try:
+                total += (Path(root) / f).stat().st_size
+            except Exception:
+                pass
+    return total
+
+def check_footprint_gate(dist_dir: Path = DIST_DIR, footprint_bytes: Optional[int] = None) -> Tuple[bool, str, int]:
+    """
+    檢查部署體積門禁。
+    :return: (is_pass, status_msg, actual_bytes)
+    """
+    actual_bytes = footprint_bytes if footprint_bytes is not None else calculate_deployment_footprint(dist_dir)
+    actual_mib = actual_bytes / (1024 * 1024)
+    warn_mib = FOOTPRINT_WARN_BYTES / (1024 * 1024)
+    hard_mib = FOOTPRINT_HARD_BYTES / (1024 * 1024)
+
+    msg = f"Deployment footprint: {actual_mib:.1f} MiB ({actual_bytes:,} bytes) | Warning: {warn_mib:.0f} MiB | Hard limit: {hard_mib:.0f} MiB"
+    if actual_bytes >= FOOTPRINT_HARD_BYTES:
+        return False, f"{msg} -> HARD ERROR (超過 900 MiB 上限！)", actual_bytes
+    elif actual_bytes >= FOOTPRINT_WARN_BYTES:
+        return True, f"{msg} -> WARNING (已超過 750 MiB 預警線)", actual_bytes
+    else:
+        return True, f"{msg} -> PASS", actual_bytes
 
 def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> bool:
     """
@@ -198,7 +248,7 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
     else:
         res.error("對白劇本目錄 story/ 不存在！")
 
-    # 6. 元數據映射解析 (P1-2: 準確陳述 metadata 解析狀態)
+    # 6. 元數據映射解析
     thumb_path = data_dir / "story_thumbnails.json"
     if thumb_path.exists():
         try:
@@ -208,7 +258,7 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
         except Exception as e:
             res.warning(f"story_thumbnails 解析異常: {e}")
 
-    # 7. 若 check_dist=True，執行 dist_story_map 專屬集合與檔案深度驗證 (P1-1)
+    # 7. 若 check_dist=True，執行 dist_story_map 專屬集合與檔案深度驗證
     if check_dist or base_dir == DIST_DIR:
         print(f"\n🔍 執行 dist_story_map 專屬部署結構與對白集合驗證...")
         dist_idx = DIST_DIR / "index.html"
@@ -240,7 +290,7 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
         else:
             res.error("dist_story_map/data/db_info.json 不存在！")
 
-        # 深度比對 dist/story 對白集合 (P1-1: 比對 dashboard vs dist)
+        # 深度比對 dist/story 對白集合
         dist_story_dir = DIST_DIR / "story"
         if dist_story_dir.exists():
             dist_story_files = list(dist_story_dir.glob("*.json"))
@@ -261,7 +311,6 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
                     dist_corrupt += 1
                     res.error(f"dist 對白 JSON 損壞: dist_story_map/story/{dsf.name} - {e}")
 
-            # 檢查 dashboard 的 story 是否全部成功同步至 dist
             missing_in_dist = actual_story_ids - dist_sids
             if missing_in_dist:
                 res.error(f"dist_story_map 缺失 {len(missing_in_dist)} 篇對白 (Bundler 漏同步): 範例 {list(missing_in_dist)[:5]}")
@@ -281,6 +330,16 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
                         json.load(f)
                 except Exception as e:
                     res.error(f"dist_story_map 元數據損壞: data/{meta_name} - {e}")
+
+        # 8. 部署體積門禁檢驗 (Deployment Footprint Gate)
+        print(f"\n📦 執行 GitHub Pages 部署體積門禁 (Footprint Gate)...")
+        is_pass, gate_msg, _ = check_footprint_gate(DIST_DIR)
+        if not is_pass:
+            res.error(f"體積門禁失敗: {gate_msg}")
+        elif "WARNING" in gate_msg:
+            res.warning(f"體積門禁預警: {gate_msg}")
+        else:
+            res.ok(f"體積門禁正常: {gate_msg}")
 
     # 總結
     print(f"\n📋 驗證總結: {len(res.errors)} 個錯誤, {len(res.warnings)} 個警告")
