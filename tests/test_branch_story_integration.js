@@ -1,7 +1,7 @@
 /**
  * tests/test_branch_story_integration.js
  * 第 3 部分支劇情 (Branch Story) 整合單元測試
- * 涵蓋 Runtime Schema 邊界、資料契約 (Contracts) 與閱讀載入合約
+ * 涵蓋 Runtime Schema 邊界、資料契約 (Contracts)、閱讀載入合約與初始化載入順序
  */
 
 const assert = require('assert');
@@ -288,6 +288,69 @@ test("Test 15 — Story click contract generates valid loadDialogue target", () 
 
     assert.strictEqual(s2213101.id, 2213101, "Story ID must be preserved for QuestMapModule.selectStory/loadDialogue");
     assert(fs.existsSync(path.join(__dirname, `../dashboard/story/${s2213101.id}.json`)), "Target story JSON must exist on disk");
+});
+
+// Test 16 — Load order source contract in dashboard/map.js
+test("Test 16 — dashboard/map.js enforces ChapterDataService.load() before branchStories merge", () => {
+    const mapJsPath = path.join(__dirname, '../dashboard/map.js');
+    const mapSrc = fs.readFileSync(mapJsPath, 'utf-8');
+
+    const loadDataMatch = mapSrc.match(/async\s+loadData\s*\(\)\s*\{([\s\S]*?)\n\s*groupStories\s*\(\)/);
+    assert(loadDataMatch, "loadData function must exist in dashboard/map.js");
+    const loadDataBody = loadDataMatch[1];
+
+    const loadCallIndex = loadDataBody.indexOf("await window.ChapterDataService.load()");
+    const branchMergeIndex = loadDataBody.indexOf("window.ChapterDataService.branchStories");
+
+    assert(loadCallIndex >= 0, "await window.ChapterDataService.load() must be called in loadData()");
+    assert(branchMergeIndex >= 0, "window.ChapterDataService.branchStories must be accessed in loadData()");
+    assert(loadCallIndex < branchMergeIndex, "ChapterDataService.load() must occur BEFORE branchStories is read for merge");
+
+    // 確保尾端無多餘的重複 load 呼叫
+    const remainingAfterMerge = loadDataBody.substring(branchMergeIndex);
+    assert(!remainingAfterMerge.includes("ChapterDataService.load()"), "No redundant ChapterDataService.load() after branch merge");
+});
+
+// Test 17 — Load order runtime simulation & representative story presence
+test("Test 17 — ChapterDataService load completes before branch merge & representative IDs present", async () => {
+    // 模擬 ChapterDataService 的非同步載入行為
+    ChapterDataService.branchStories = ChapterDataService.transformBranchStories(branchData);
+    assert.strictEqual(ChapterDataService.branchStories.length, 63, "Branch stories must be 63 before merge");
+
+    // 模擬 QuestMapModule.loadData 的初始化與合併流程
+    const mockModule = {
+        stories: [
+            { id: 2201001, chapter: "第3部 第1章 第1話", title: "序幕", groupId: 2201, part: 3, type: 'main' },
+            { id: 2213001, chapter: "第3部 第13章 第1話", title: "大江戶", groupId: 2213, part: 3, type: 'main' }
+        ]
+    };
+
+    // 執行 supplemental branch merge
+    if (ChapterDataService && Array.isArray(ChapterDataService.branchStories)) {
+        const existingIds = new Set(mockModule.stories.map(s => s.id));
+        const newBranchStories = ChapterDataService.branchStories.filter(s => !existingIds.has(s.id));
+        mockModule.stories = mockModule.stories.concat(newBranchStories);
+    }
+
+    // 1. 代表性 ID 檢查
+    const representativeIds = [2201101, 2209101, 2213101, 2213104, 2216101];
+    representativeIds.forEach(id => {
+        const found = mockModule.stories.find(s => s.id === id);
+        assert(found, `Representative story ID ${id} must be present in stories`);
+        assert.strictEqual(found.part, 3, `Story ${id} part must be 3`);
+        assert.strictEqual(found.type, 'main', `Story ${id} type must be main`);
+    });
+
+    // 2. 重複 ID 檢查
+    const idCountMap = {};
+    mockModule.stories.forEach(s => {
+        idCountMap[s.id] = (idCountMap[s.id] || 0) + 1;
+    });
+    const duplicateIds = Object.keys(idCountMap).filter(id => idCountMap[id] > 1);
+    assert.strictEqual(duplicateIds.length, 0, `Must have 0 duplicate IDs, found: ${duplicateIds.join(',')}`);
+
+    // 3. 總長度檢查
+    assert.strictEqual(mockModule.stories.length, 2 + 63, "Total stories length must equal DB stories + 63 branch stories");
 });
 
 console.log(`\n✅ All ${testsPassed} branch story integration tests passed successfully!`);

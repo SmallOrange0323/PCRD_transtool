@@ -210,6 +210,11 @@ const QuestMapModule = {
 
     async loadData() {
         try {
+            // 優先確保 ChapterDataService 完整就緒（包含章節中繼資料與分支劇情補充元數據）
+            if (window.ChapterDataService) {
+                await window.ChapterDataService.load();
+            }
+
             if (Object.keys(this.speakerAvatars).length === 0) {
                 try {
                     const checkTableSql = `SELECT name FROM sqlite_master WHERE type='table' AND name='unit_data'`;
@@ -608,7 +613,6 @@ const QuestMapModule = {
                 }
                 console.log(`[QuestMapModule] 成功載入 ${this.eventStories.length} 筆活動話數 (含新形式活動)`);
             }
-            await ChapterDataService.load();
         } catch (err) {
             console.error("[QuestMapModule] 載入劇情數據失敗:", err);
         }
