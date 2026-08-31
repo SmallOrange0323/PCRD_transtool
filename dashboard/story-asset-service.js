@@ -21,6 +21,23 @@ window.StoryAssetService = {
     defaultBgId: 10000,
 
     /**
+     * 判定當前執行環境是否為 GitHub Pages 生產環境 (smallorange0323.github.io/PCRD_transtool/)
+     * @returns {boolean}
+     */
+    isProductionPages() {
+        try {
+            if (typeof window === 'undefined' || !window.location) {
+                return false;
+            }
+            const host = (window.location.hostname || '').toLowerCase();
+            const path = window.location.pathname || '';
+            return host === 'smallorange0323.github.io' && path.startsWith('/PCRD_transtool/');
+        } catch (e) {
+            return false;
+        }
+    },
+
+    /**
      * HTML 實體編碼輔助函數，避免 XSS
      */
     escapeHtml(str) {
@@ -86,9 +103,13 @@ window.StoryAssetService = {
         const candidates = [];
 
         if (id) {
-            // 1. 本地候選路徑 (.webp 與 .png)
-            candidates.push(`${this.localBase}still/story/${id}.webp`);
-            candidates.push(`${this.localBase}still/story/${id}.png`);
+            const isProd = this.isProductionPages();
+
+            // 1. 本地候選路徑 (.webp 與 .png) - 僅在非 Production Pages 加入
+            if (!isProd) {
+                candidates.push(`${this.localBase}still/story/${id}.webp`);
+                candidates.push(`${this.localBase}still/story/${id}.png`);
+            }
 
             const isNineDigit = id.length >= 9 || parseInt(id) > 10000000;
 
