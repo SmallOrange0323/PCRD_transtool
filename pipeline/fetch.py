@@ -16,12 +16,16 @@ sys.path.insert(0, str(PROJECT_ROOT / "tools"))
 try:
     from pcrd_fetch import (
         cmd_update_db as update_db,
+        cmd_fetch_story as fetch_story,
         cmd_fetch_stories as fetch_stories,
         cmd_fetch_assets as fetch_assets,
         cmd_scan_cdn as scan_cdn,
         cmd_fetch_story_voices as fetch_story_voices,
         cmd_fetch_story_images as fetch_story_images,
         cmd_sync_episode as sync_episode,
+        fetch_story_json_by_id,
+        StoryFetchResult,
+        load_story_manifest_hash_map,
         _get_sonet_ver as get_truth_version,
         _get_story_ids_from_db,
         main as pcrd_fetch_main

@@ -21,6 +21,8 @@ import sys
 import time
 import urllib.request
 from struct import unpack
+from typing import Dict, List, Set, Any, Tuple, Optional
+from pathlib import Path
 
 try:
     if hasattr(sys.stdout, 'reconfigure'):
@@ -461,6 +463,139 @@ def cmd_update_db(args):
 
     _write_output(args.output, results)
     print(f"\n✅ DB 更新完成！報告已寫入 {args.output}")
+
+
+from dataclasses import dataclass
+
+@dataclass
+class StoryFetchResult:
+    story_id: int
+    status: str  # 'OK', 'HASH_NOT_FOUND', 'NETWORK_ERROR', 'PARSE_ERROR', 'WRITE_ERROR'
+    dialogue_count: int = 0
+    hash: Optional[str] = None
+    written_path: Optional[str] = None
+    error_message: Optional[str] = None
+
+def load_story_manifest_hash_map(truth_version: Optional[str] = None) -> Dict[int, str]:
+    """
+    從 CDN 下載並解析 storydata2_assetmanifest，回傳 {story_id: hash} 字典。
+    """
+    ver = truth_version or _get_sonet_ver()
+    manifest_url = f"{SONET_CDN}/Resources/{ver}/Jpn/AssetBundles/Android/manifest/storydata2_assetmanifest"
+    manifest_data = _http_get(manifest_url, WEB_HEADER)
+    
+    hash_map: Dict[int, str] = {}
+    pattern = re.compile(r"storydata_(\d+)\.unity3d")
+    for line in manifest_data.decode("utf-8", errors="ignore").splitlines():
+        parts = line.strip().split(",")
+        if len(parts) >= 3:
+            path, _, h = parts[0], parts[1], parts[2]
+            match = pattern.search(path)
+            if match:
+                try:
+                    sid = int(match.group(1))
+                    hash_map[sid] = h
+                except ValueError:
+                    pass
+    return hash_map
+
+def fetch_story_json_by_id(
+    story_id: int,
+    manifest_hash_map: Optional[Dict[int, str]] = None,
+    timeout: int = 15
+) -> StoryFetchResult:
+    """
+    通用單話劇情對白 JSON 下載原語 (Generic JSON Fetch Primitive)：
+    1. 僅下載與解密對白 JSON，使用原子替換寫入 dashboard/story/<story_id>.json
+    2. 無多媒體 (語音/背景/CG) 下載副作用
+    3. 無縮圖 (story_thumbnails.json) 修改副作用
+    4. 無 report 檔案或 sys.exit() 副作用
+    5. 支援傳入 manifest_hash_map 避免批次時重複下載 manifest
+    """
+    h = None
+    if manifest_hash_map is not None:
+        h = manifest_hash_map.get(story_id)
+    else:
+        try:
+            m_map = load_story_manifest_hash_map()
+            h = m_map.get(story_id)
+        except Exception as e:
+            return StoryFetchResult(
+                story_id=story_id,
+                status="NETWORK_ERROR",
+                error_message=f"載入 Manifest 失敗: {e}"
+            )
+
+    if not h:
+        return StoryFetchResult(
+            story_id=story_id,
+            status="HASH_NOT_FOUND",
+            error_message=f"無法在 Manifest 中找到 story_id={story_id} 的 Bundle Hash"
+        )
+
+    bundle_url = f"{SONET_CDN}/pool/AssetBundles/{h[:2]}/{h}"
+    try:
+        req = urllib.request.Request(bundle_url, headers=WEB_HEADER)
+        with urllib.request.urlopen(req, timeout=timeout) as res:
+            bundle_data = res.read()
+    except Exception as e:
+        return StoryFetchResult(
+            story_id=story_id,
+            status="NETWORK_ERROR",
+            hash=h,
+            error_message=f"下載 AssetBundle 失敗: {e}"
+        )
+
+    try:
+        dialogues = _parse_bundle_dialogues(bundle_data)
+    except Exception as e:
+        return StoryFetchResult(
+            story_id=story_id,
+            status="PARSE_ERROR",
+            hash=h,
+            error_message=f"解析對白 Bundle 失敗: {e}"
+        )
+
+    out_dir = Path(STORY_DIR)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_path = out_dir / f"{story_id}.json"
+    tmp_path = out_dir / f"{story_id}.json.tmp"
+
+    try:
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            json.dump(dialogues, f, ensure_ascii=False, indent=2)
+        tmp_path.replace(out_path)
+    except Exception as e:
+        if tmp_path.exists():
+            try:
+                tmp_path.unlink()
+            except Exception:
+                pass
+        return StoryFetchResult(
+            story_id=story_id,
+            status="WRITE_ERROR",
+            hash=h,
+            error_message=f"原子寫入對白 JSON 失敗: {e}"
+        )
+
+    return StoryFetchResult(
+        story_id=story_id,
+        status="OK",
+        dialogue_count=len(dialogues),
+        hash=h,
+        written_path=str(out_path)
+    )
+
+def cmd_fetch_story(args):
+    """CLI subcommand: 僅下載單話對白 JSON。"""
+    story_id = args.story_id
+    print(f"📖 正在下載單話對白 JSON (story_id={story_id})...")
+    res = fetch_story_json_by_id(story_id)
+    if res.status == "OK":
+        print(f"✅ 對白解密成功: {res.dialogue_count} 句對白 -> {res.written_path} (Hash: {res.hash[:8] if res.hash else 'N/A'})")
+    else:
+        print(f"❌ 下載失敗 [{res.status}]: {res.error_message}", file=sys.stderr)
+        sys.exit(1)
 
 
 def cmd_fetch_stories(args):
@@ -1526,37 +1661,19 @@ def cmd_sync_episode(args):
     print(f"\n⚡ 開始一鍵完整同步話數 story_id={story_id} 的所有資源...")
 
     # ──────────────── 1. 下載並解密對白 JSON ────────────────
-    ver = _get_sonet_ver()
-    manifest_url = f"{SONET_CDN}/Resources/{ver}/Jpn/AssetBundles/Android/manifest/storydata2_assetmanifest"
-    h = None
-    try:
-        manifest_data = _http_get(manifest_url, WEB_HEADER)
-        for line in manifest_data.decode('utf-8').splitlines():
-            parts = line.strip().split(",")
-            if len(parts) >= 3 and f"storydata_{story_id}.unity3d" in parts[0]:
-                h = parts[2]
-                break
-    except Exception as e:
-        print(f"  ❌ 載入 Manifest 失敗: {e}", file=sys.stderr)
+    print(f"  [Step 1] 下載解密對白 JSON (story_id={story_id})...")
+    res = fetch_story_json_by_id(story_id)
+    if res.status != "OK":
+        print(f"  ❌ 對白下載失敗 [{res.status}]: {res.error_message}", file=sys.stderr)
         sys.exit(1)
 
-    if not h:
-        print(f"  ❌ 錯誤：無法在 Manifest 中找到 story_id={story_id} 的 Hash，請確認該話是否實裝。")
-        sys.exit(1)
+    print(f"    ✅ 對白解密成功: {res.dialogue_count} 句對白 -> {res.written_path} (Hash: {res.hash[:8] if res.hash else 'N/A'})")
 
-    url_bundle = f"{SONET_CDN}/pool/AssetBundles/{h[:2]}/{h}"
-    print(f"  [Step 1] 下載解密對白 JSON (Hash: {h[:8]})...")
-    
     dialogues = []
     try:
-        bundle_data = _http_get(url_bundle, WEB_HEADER)
-        dialogues = _parse_bundle_dialogues(bundle_data)
-        os.makedirs(STORY_DIR, exist_ok=True)
-        out_path = os.path.join(STORY_DIR, f"{story_id}.json")
-        with open(out_path, 'w', encoding='utf-8') as f:
-            json.dump(dialogues, f, ensure_ascii=False, indent=2)
-        print(f"    ✅ 對白解密成功: {len(dialogues)} 句對白 -> story/{story_id}.json")
-        
+        with open(res.written_path, "r", encoding="utf-8") as f:
+            dialogues = json.load(f)
+
         # ── 自動分析並更新 story_thumbnails.json ──
         thumbnails_path = os.path.join(DASHBOARD_DIR, "data", "story_thumbnails.json")
         still_id = None
@@ -1601,7 +1718,7 @@ def cmd_sync_episode(args):
         print(f"    📝 自動更新縮圖快取 (story_thumbnails.json) 成功! (still_id={still_id}, bg_id={bg_id})")
         
     except Exception as e:
-        print(f"  ❌ 對白解密或更新縮圖失敗: {e}", file=sys.stderr)
+        print(f"  ❌ 更新縮圖失敗: {e}", file=sys.stderr)
         sys.exit(1)
 
     # ──────────────── 2. 自動下載語音封包並解碼轉檔 ────────────────
@@ -1693,6 +1810,10 @@ def main():
     )
     p_scan.add_argument("--output", default="tools/scan_cdn_report.md", help="輸出偵測報告路徑")
 
+    # fetch-story (Generic single-story JSON primitive CLI)
+    p_story = sub.add_parser("fetch-story", help="下載指定單話劇情對白 JSON (輕量零副作用)")
+    p_story.add_argument("--story-id", type=int, required=True, help="劇情 story_id (例如 2001001)")
+
     # fetch-story-voices
     p_sv = sub.add_parser("fetch-story-voices", help="下載並整合指定劇情話數的音檔素材")
     p_sv.add_argument("--story-id", type=int, required=True, help="主線劇情故事 story_id (例如 2001001)")
@@ -1710,6 +1831,7 @@ def main():
     args = parser.parse_args()
     dispatch = {
         "update-db": cmd_update_db,
+        "fetch-story": cmd_fetch_story,
         "fetch-stories": cmd_fetch_stories,
         "fetch-assets": cmd_fetch_assets,
         "report": cmd_report,
