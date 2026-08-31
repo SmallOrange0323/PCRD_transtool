@@ -1,0 +1,1652 @@
+{
+  "summary": {
+    "total_numeric_stories_scanned": 9033,
+    "total_raw_speakers": 3819,
+    "total_appearance_names": 3087,
+    "visible_speaker_cards": 2993,
+    "runtime_disposition": {
+      "valid_candidate_image": 344,
+      "broken_image_risk": 0,
+      "text_fallback": 2649
+    },
+    "quality_distribution": {
+      "GOOD_REPRESENTATIVE": 217,
+      "VALID_NON_DOMINANT": 40,
+      "AMBIGUOUS_MULTI_VARIANT": 45,
+      "UNOBSERVED": 42,
+      "GENERIC_NPC": 2338,
+      "NO_RESOLUTION": 311
+    },
+    "low_id_source_distribution": {},
+    "ui_collision_groups_count": 23,
+    "heuristic_unrelated_collisions_count": 0
+  },
+  "top_cards": [
+    {
+      "name": "可可蘿",
+      "clean_name": "可可蘿",
+      "story_count": 1018,
+      "dialogue_count": 32265,
+      "selected_unit_id": 105913,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 47.2%)",
+      "dominant_unit_id": 105913,
+      "dominant_share": 0.4720895663999494,
+      "observed_unit_ids": {
+        "105913": 14927,
+        "105911": 7797,
+        "107611": 1358,
+        "115511": 1300,
+        "111911": 1137
+      },
+      "missing_unit_ids": 646
+    },
+    {
+      "name": "貪吃佩可",
+      "clean_name": "貪吃佩可",
+      "story_count": 930,
+      "dialogue_count": 35712,
+      "selected_unit_id": 105812,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 46.2%)",
+      "dominant_unit_id": 105812,
+      "dominant_share": 0.46196583722442225,
+      "observed_unit_ids": {
+        "105812": 15632,
+        "105811": 7821,
+        "105831": 3564,
+        "127911": 1932,
+        "111811": 1182
+      },
+      "missing_unit_ids": 1874
+    },
+    {
+      "name": "凱留",
+      "clean_name": "凱留",
+      "story_count": 871,
+      "dialogue_count": 31366,
+      "selected_unit_id": 106012,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 47.8%)",
+      "dominant_unit_id": 106012,
+      "dominant_share": 0.4780418540180533,
+      "observed_unit_ids": {
+        "106012": 14140,
+        "106011": 8446,
+        "127212": 1463,
+        "112011": 1299,
+        "107811": 1083
+      },
+      "missing_unit_ids": 1787
+    },
+    {
+      "name": "愛梅斯",
+      "clean_name": "愛梅斯",
+      "story_count": 529,
+      "dialogue_count": 15831,
+      "selected_unit_id": 190011,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "GOOD_REPRESENTATIVE",
+      "reason": "Selected unit_id (190011) is dominant representation (91.4%)",
+      "dominant_unit_id": 190011,
+      "dominant_share": 0.9142947903430749,
+      "observed_unit_ids": {
+        "190011": 14391,
+        "131711": 1349
+      },
+      "missing_unit_ids": 91
+    },
+    {
+      "name": "怜",
+      "clean_name": "怜",
+      "story_count": 389,
+      "dialogue_count": 15548,
+      "selected_unit_id": 100311,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 46.3%)",
+      "dominant_unit_id": 100311,
+      "dominant_share": 0.463082068433239,
+      "observed_unit_ids": {
+        "100311": 7200,
+        "122511": 1632,
+        "108911": 1433,
+        "114011": 1274,
+        "100331": 865
+      },
+      "missing_unit_ids": 0
+    },
+    {
+      "name": "雪菲",
+      "clean_name": "雪菲",
+      "story_count": 386,
+      "dialogue_count": 15198,
+      "selected_unit_id": 106412,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "GOOD_REPRESENTATIVE",
+      "reason": "Selected unit_id (106412) is dominant representation (50.3%)",
+      "dominant_unit_id": 106412,
+      "dominant_share": 0.5025931486283609,
+      "observed_unit_ids": {
+        "106412": 7365,
+        "106411": 2726,
+        "135111": 1783,
+        "120711": 1629,
+        "106414": 477
+      },
+      "missing_unit_ids": 544
+    },
+    {
+      "name": "日和",
+      "clean_name": "日",
+      "story_count": 358,
+      "dialogue_count": 15067,
+      "selected_unit_id": 100111,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "GOOD_REPRESENTATIVE",
+      "reason": "Selected unit_id (100111) is dominant representation (51.8%)",
+      "dominant_unit_id": 100111,
+      "dominant_share": 0.5176876617773943,
+      "observed_unit_ids": {
+        "100111": 7800,
+        "122411": 1594,
+        "108711": 1304,
+        "135712": 1252,
+        "100132": 816
+      },
+      "missing_unit_ids": 0
+    },
+    {
+      "name": "優衣",
+      "clean_name": "優衣",
+      "story_count": 334,
+      "dialogue_count": 15494,
+      "selected_unit_id": 100211,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 34.2%)",
+      "dominant_unit_id": 100211,
+      "dominant_share": 0.34193881502517104,
+      "observed_unit_ids": {
+        "100211": 5298,
+        "100213": 3269,
+        "108811": 1650,
+        "100231": 1245,
+        "122611": 1011
+      },
+      "missing_unit_ids": 0
+    },
+    {
+      "name": "祈梨",
+      "clean_name": "祈梨",
+      "story_count": 258,
+      "dialogue_count": 12869,
+      "selected_unit_id": 106611,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "GOOD_REPRESENTATIVE",
+      "reason": "Selected unit_id (106611) is dominant representation (54.3%)",
+      "dominant_unit_id": 106611,
+      "dominant_share": 0.5426218043360013,
+      "observed_unit_ids": {
+        "106611": 6983,
+        "121611": 1595,
+        "128311": 1437,
+        "116511": 1332,
+        "106631": 1035
+      },
+      "missing_unit_ids": 0
+    },
+    {
+      "name": "咲戀",
+      "clean_name": "咲戀",
+      "story_count": 248,
+      "dialogue_count": 15872,
+      "selected_unit_id": 102811,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 48.5%)",
+      "dominant_unit_id": 102811,
+      "dominant_share": 0.4847364731374673,
+      "observed_unit_ids": {
+        "102811": 7606,
+        "114511": 2191,
+        "127512": 1775,
+        "133512": 1114,
+        "110311": 938
+      },
+      "missing_unit_ids": 181
+    },
+    {
+      "name": "望",
+      "clean_name": "望",
+      "story_count": 224,
+      "dialogue_count": 11275,
+      "selected_unit_id": 102913,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 21.1%)",
+      "dominant_unit_id": 102913,
+      "dominant_share": 0.21099778270509978,
+      "observed_unit_ids": {
+        "102913": 2379,
+        "117211": 1709,
+        "132212": 1636,
+        "111611": 1254,
+        "102931": 1162
+      },
+      "missing_unit_ids": 0
+    },
+    {
+      "name": "克莉絲提娜",
+      "clean_name": "克莉絲提娜",
+      "story_count": 219,
+      "dialogue_count": 11720,
+      "selected_unit_id": 107111,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "GOOD_REPRESENTATIVE",
+      "reason": "Selected unit_id (107111) is dominant representation (57.4%)",
+      "dominant_unit_id": 107111,
+      "dominant_share": 0.5738243430152143,
+      "observed_unit_ids": {
+        "107111": 6638,
+        "107131": 1765,
+        "111511": 1225,
+        "123811": 918,
+        "133912": 478
+      },
+      "missing_unit_ids": 152
+    },
+    {
+      "name": "真步",
+      "clean_name": "真步",
+      "story_count": 217,
+      "dialogue_count": 13485,
+      "selected_unit_id": 101011,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 36.6%)",
+      "dominant_unit_id": 101011,
+      "dominant_share": 0.36586650613289184,
+      "observed_unit_ids": {
+        "101011": 4862,
+        "123111": 2224,
+        "131011": 2205,
+        "116011": 1387,
+        "110611": 1297
+      },
+      "missing_unit_ids": 196
+    },
+    {
+      "name": "茉莉",
+      "clean_name": "茉莉",
+      "story_count": 215,
+      "dialogue_count": 9934,
+      "selected_unit_id": 100511,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 42.6%)",
+      "dominant_unit_id": 100511,
+      "dominant_share": 0.4256090195288907,
+      "observed_unit_ids": {
+        "100511": 4228,
+        "100512": 2316,
+        "100531": 1251,
+        "114111": 1125,
+        "123912": 386
+      },
+      "missing_unit_ids": 0
+    },
+    {
+      "name": "純",
+      "clean_name": "純",
+      "story_count": 210,
+      "dialogue_count": 8857,
+      "selected_unit_id": 104711,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "GOOD_REPRESENTATIVE",
+      "reason": "Selected unit_id (104711) is dominant representation (61.9%)",
+      "dominant_unit_id": 104711,
+      "dominant_share": 0.6193826600090785,
+      "observed_unit_ids": {
+        "104711": 5458,
+        "104715": 756,
+        "124212": 597,
+        "104712": 526,
+        "104713": 334
+      },
+      "missing_unit_ids": 45
+    },
+    {
+      "name": "莉莉",
+      "clean_name": "莉莉",
+      "story_count": 210,
+      "dialogue_count": 8928,
+      "selected_unit_id": 125811,
+      "resolution_step": "customMap",
+      "underlying_source": "customMap",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "VALID_NON_DOMINANT",
+      "reason": "Selected unit_id (125811) observed in data, but dominant is 125812 (51.0%)",
+      "dominant_unit_id": 125812,
+      "dominant_share": 0.5096803241782981,
+      "observed_unit_ids": {
+        "125812": 4528,
+        "131611": 2322,
+        "125811": 972,
+        "125831": 604,
+        "125813": 445
+      },
+      "missing_unit_ids": 44
+    },
+    {
+      "name": "栞",
+      "clean_name": "栞",
+      "story_count": 209,
+      "dialogue_count": 11244,
+      "selected_unit_id": 103811,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 32.7%)",
+      "dominant_unit_id": 103811,
+      "dominant_share": 0.32682201289043133,
+      "observed_unit_ids": {
+        "103811": 3296,
+        "103813": 3027,
+        "125414": 957,
+        "103831": 888,
+        "125411": 647
+      },
+      "missing_unit_ids": 1159
+    },
+    {
+      "name": "嘉夜",
+      "clean_name": "嘉夜",
+      "story_count": 208,
+      "dialogue_count": 9954,
+      "selected_unit_id": 106511,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "GOOD_REPRESENTATIVE",
+      "reason": "Selected unit_id (106511) is dominant representation (65.4%)",
+      "dominant_unit_id": 106511,
+      "dominant_share": 0.6535061281896725,
+      "observed_unit_ids": {
+        "106511": 6505,
+        "116611": 1272,
+        "106531": 1066,
+        "124911": 946,
+        "106532": 165
+      },
+      "missing_unit_ids": 0
+    },
+    {
+      "name": "璃乃",
+      "clean_name": "璃乃",
+      "story_count": 207,
+      "dialogue_count": 11135,
+      "selected_unit_id": 101112,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 40.5%)",
+      "dominant_unit_id": 101112,
+      "dominant_share": 0.40547822182308035,
+      "observed_unit_ids": {
+        "101112": 4515,
+        "137912": 2000,
+        "112912": 1359,
+        "119311": 1262,
+        "101131": 1062
+      },
+      "missing_unit_ids": 0
+    },
+    {
+      "name": "鏡華",
+      "clean_name": "鏡華",
+      "story_count": 206,
+      "dialogue_count": 10344,
+      "selected_unit_id": 103611,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 43.7%)",
+      "dominant_unit_id": 103611,
+      "dominant_share": 0.4371561574269996,
+      "observed_unit_ids": {
+        "103611": 4132,
+        "130711": 1826,
+        "111111": 1253,
+        "122711": 1102,
+        "103631": 744
+      },
+      "missing_unit_ids": 892
+    },
+    {
+      "name": "真琴",
+      "clean_name": "真琴",
+      "story_count": 200,
+      "dialogue_count": 9767,
+      "selected_unit_id": 104311,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 44.6%)",
+      "dominant_unit_id": 104311,
+      "dominant_share": 0.44609398996621275,
+      "observed_unit_ids": {
+        "104311": 4357,
+        "129811": 1712,
+        "115911": 1525,
+        "110411": 1209,
+        "104331": 958
+      },
+      "missing_unit_ids": 0
+    },
+    {
+      "name": "流夏",
+      "clean_name": "流夏",
+      "story_count": 195,
+      "dialogue_count": 9278,
+      "selected_unit_id": 105611,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 39.9%)",
+      "dominant_unit_id": 105611,
+      "dominant_share": 0.39879284328519077,
+      "observed_unit_ids": {
+        "105611": 3700,
+        "113111": 1579,
+        "127612": 1481,
+        "120811": 1036,
+        "105631": 623
+      },
+      "missing_unit_ids": 0
+    },
+    {
+      "name": "靜流",
+      "clean_name": "靜流",
+      "story_count": 194,
+      "dialogue_count": 10696,
+      "selected_unit_id": 104911,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 34.4%)",
+      "dominant_unit_id": 104911,
+      "dominant_share": 0.34367988032909497,
+      "observed_unit_ids": {
+        "104911": 3676,
+        "136511": 1675,
+        "104914": 1368,
+        "117111": 1256,
+        "109111": 586
+      },
+      "missing_unit_ids": 0
+    },
+    {
+      "name": "伊莉亞",
+      "clean_name": "伊莉亞",
+      "story_count": 193,
+      "dialogue_count": 10639,
+      "selected_unit_id": 104412,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 27.6%)",
+      "dominant_unit_id": 104412,
+      "dominant_share": 0.2762477676473353,
+      "observed_unit_ids": {
+        "104412": 2939,
+        "126211": 1830,
+        "111711": 1240,
+        "104411": 1177,
+        "104431": 1104
+      },
+      "missing_unit_ids": 0
+    },
+    {
+      "name": "紡希",
+      "clean_name": "紡希",
+      "story_count": 191,
+      "dialogue_count": 9944,
+      "selected_unit_id": 105411,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 42.0%)",
+      "dominant_unit_id": 105411,
+      "dominant_share": 0.41982262703739215,
+      "observed_unit_ids": {
+        "105411": 3503,
+        "117411": 1353,
+        "134812": 1313,
+        "113911": 758,
+        "105432": 442
+      },
+      "missing_unit_ids": 1600
+    },
+    {
+      "name": "霞",
+      "clean_name": "霞",
+      "story_count": 189,
+      "dialogue_count": 13792,
+      "selected_unit_id": 101411,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "GOOD_REPRESENTATIVE",
+      "reason": "Selected unit_id (101411) is dominant representation (54.7%)",
+      "dominant_unit_id": 101411,
+      "dominant_share": 0.5473462877030162,
+      "observed_unit_ids": {
+        "101411": 7549,
+        "101431": 1841,
+        "137412": 1421,
+        "128511": 1242,
+        "137411": 1196
+      },
+      "missing_unit_ids": 0
+    },
+    {
+      "name": "惠理子",
+      "clean_name": "惠理子",
+      "story_count": 186,
+      "dialogue_count": 9234,
+      "selected_unit_id": 102711,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 39.3%)",
+      "dominant_unit_id": 102711,
+      "dominant_share": 0.3934372969460689,
+      "observed_unit_ids": {
+        "102711": 3633,
+        "129911": 1670,
+        "117011": 1583,
+        "102731": 899,
+        "109011": 790
+      },
+      "missing_unit_ids": 0
+    },
+    {
+      "name": "普蕾西亞",
+      "clean_name": "普蕾西亞",
+      "story_count": 180,
+      "dialogue_count": 4096,
+      "selected_unit_id": 126112,
+      "resolution_step": "customMap",
+      "underlying_source": "customMap",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "GOOD_REPRESENTATIVE",
+      "reason": "Selected unit_id (126112) is dominant representation (51.5%)",
+      "dominant_unit_id": 126112,
+      "dominant_share": 0.515292390506484,
+      "observed_unit_ids": {
+        "126112": 2106,
+        "135211": 1073,
+        "126111": 408,
+        "126131": 240,
+        "126113": 231
+      },
+      "missing_unit_ids": 9
+    },
+    {
+      "name": "優花梨",
+      "clean_name": "優花梨",
+      "story_count": 179,
+      "dialogue_count": 9048,
+      "selected_unit_id": 103411,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 28.1%)",
+      "dominant_unit_id": 103411,
+      "dominant_share": 0.28138815207780726,
+      "observed_unit_ids": {
+        "103411": 2546,
+        "122211": 1747,
+        "126811": 1510,
+        "103412": 1419,
+        "103433": 783
+      },
+      "missing_unit_ids": 0
+    },
+    {
+      "name": "帆稀",
+      "clean_name": "帆稀",
+      "story_count": 179,
+      "dialogue_count": 11078,
+      "selected_unit_id": 106711,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "GOOD_REPRESENTATIVE",
+      "reason": "Selected unit_id (106711) is dominant representation (57.1%)",
+      "dominant_unit_id": 106711,
+      "dominant_share": 0.5708872458410351,
+      "observed_unit_ids": {
+        "106711": 6177,
+        "124511": 1920,
+        "131811": 1241,
+        "106731": 966,
+        "131813": 254
+      },
+      "missing_unit_ids": 258
+    }
+  ],
+  "spotlight_cases": {
+    "優衣": {
+      "name": "優衣",
+      "clean_name": "優衣",
+      "story_count": 334,
+      "dialogue_count": 15494,
+      "selected_unit_id": 100211,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 34.2%)",
+      "dominant_unit_id": 100211,
+      "dominant_share": 0.34193881502517104,
+      "observed_unit_ids": {
+        "100211": 5298,
+        "100213": 3269,
+        "108811": 1650,
+        "100231": 1245,
+        "122611": 1011
+      },
+      "missing_unit_ids": 0
+    },
+    "凱留": {
+      "name": "凱留",
+      "clean_name": "凱留",
+      "story_count": 871,
+      "dialogue_count": 31366,
+      "selected_unit_id": 106012,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 47.8%)",
+      "dominant_unit_id": 106012,
+      "dominant_share": 0.4780418540180533,
+      "observed_unit_ids": {
+        "106012": 14140,
+        "106011": 8446,
+        "127212": 1463,
+        "112011": 1299,
+        "107811": 1083
+      },
+      "missing_unit_ids": 1787
+    },
+    "可可蘿": {
+      "name": "可可蘿",
+      "clean_name": "可可蘿",
+      "story_count": 1018,
+      "dialogue_count": 32265,
+      "selected_unit_id": 105913,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 47.2%)",
+      "dominant_unit_id": 105913,
+      "dominant_share": 0.4720895663999494,
+      "observed_unit_ids": {
+        "105913": 14927,
+        "105911": 7797,
+        "107611": 1358,
+        "115511": 1300,
+        "111911": 1137
+      },
+      "missing_unit_ids": 646
+    },
+    "咲戀": {
+      "name": "咲戀",
+      "clean_name": "咲戀",
+      "story_count": 248,
+      "dialogue_count": 15872,
+      "selected_unit_id": 102811,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 48.5%)",
+      "dominant_unit_id": 102811,
+      "dominant_share": 0.4847364731374673,
+      "observed_unit_ids": {
+        "102811": 7606,
+        "114511": 2191,
+        "127512": 1775,
+        "133512": 1114,
+        "110311": 938
+      },
+      "missing_unit_ids": 181
+    },
+    "怜": {
+      "name": "怜",
+      "clean_name": "怜",
+      "story_count": 389,
+      "dialogue_count": 15548,
+      "selected_unit_id": 100311,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 46.3%)",
+      "dominant_unit_id": 100311,
+      "dominant_share": 0.463082068433239,
+      "observed_unit_ids": {
+        "100311": 7200,
+        "122511": 1632,
+        "108911": 1433,
+        "114011": 1274,
+        "100331": 865
+      },
+      "missing_unit_ids": 0
+    },
+    "日和": {
+      "name": "日和",
+      "clean_name": "日",
+      "story_count": 358,
+      "dialogue_count": 15067,
+      "selected_unit_id": 100111,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "GOOD_REPRESENTATIVE",
+      "reason": "Selected unit_id (100111) is dominant representation (51.8%)",
+      "dominant_unit_id": 100111,
+      "dominant_share": 0.5176876617773943,
+      "observed_unit_ids": {
+        "100111": 7800,
+        "122411": 1594,
+        "108711": 1304,
+        "135712": 1252,
+        "100132": 816
+      },
+      "missing_unit_ids": 0
+    },
+    "望": {
+      "name": "望",
+      "clean_name": "望",
+      "story_count": 224,
+      "dialogue_count": 11275,
+      "selected_unit_id": 102913,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 21.1%)",
+      "dominant_unit_id": 102913,
+      "dominant_share": 0.21099778270509978,
+      "observed_unit_ids": {
+        "102913": 2379,
+        "117211": 1709,
+        "132212": 1636,
+        "111611": 1254,
+        "102931": 1162
+      },
+      "missing_unit_ids": 0
+    },
+    "栞": {
+      "name": "栞",
+      "clean_name": "栞",
+      "story_count": 209,
+      "dialogue_count": 11244,
+      "selected_unit_id": 103811,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 32.7%)",
+      "dominant_unit_id": 103811,
+      "dominant_share": 0.32682201289043133,
+      "observed_unit_ids": {
+        "103811": 3296,
+        "103813": 3027,
+        "125414": 957,
+        "103831": 888,
+        "125411": 647
+      },
+      "missing_unit_ids": 1159
+    },
+    "碧": {
+      "name": "碧",
+      "clean_name": "碧",
+      "story_count": 175,
+      "dialogue_count": 12941,
+      "selected_unit_id": 104011,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 35.8%)",
+      "dominant_unit_id": 104011,
+      "dominant_share": 0.3584730700873194,
+      "observed_unit_ids": {
+        "104011": 4639,
+        "116711": 1938,
+        "122111": 1868,
+        "134612": 1670,
+        "110711": 1123
+      },
+      "missing_unit_ids": 0
+    },
+    "純": {
+      "name": "純",
+      "clean_name": "純",
+      "story_count": 210,
+      "dialogue_count": 8857,
+      "selected_unit_id": 104711,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "GOOD_REPRESENTATIVE",
+      "reason": "Selected unit_id (104711) is dominant representation (61.9%)",
+      "dominant_unit_id": 104711,
+      "dominant_share": 0.6193826600090785,
+      "observed_unit_ids": {
+        "104711": 5458,
+        "104715": 756,
+        "124212": 597,
+        "104712": 526,
+        "104713": 334
+      },
+      "missing_unit_ids": 45
+    },
+    "貪吃佩可": {
+      "name": "貪吃佩可",
+      "clean_name": "貪吃佩可",
+      "story_count": 930,
+      "dialogue_count": 35712,
+      "selected_unit_id": 105812,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 46.2%)",
+      "dominant_unit_id": 105812,
+      "dominant_share": 0.46196583722442225,
+      "observed_unit_ids": {
+        "105812": 15632,
+        "105811": 7821,
+        "105831": 3564,
+        "127911": 1932,
+        "111811": 1182
+      },
+      "missing_unit_ids": 1874
+    },
+    "雪菲": {
+      "name": "雪菲",
+      "clean_name": "雪菲",
+      "story_count": 386,
+      "dialogue_count": 15198,
+      "selected_unit_id": 106412,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "GOOD_REPRESENTATIVE",
+      "reason": "Selected unit_id (106412) is dominant representation (50.3%)",
+      "dominant_unit_id": 106412,
+      "dominant_share": 0.5025931486283609,
+      "observed_unit_ids": {
+        "106412": 7365,
+        "106411": 2726,
+        "135111": 1783,
+        "120711": 1629,
+        "106414": 477
+      },
+      "missing_unit_ids": 544
+    },
+    "靜流": {
+      "name": "靜流",
+      "clean_name": "靜流",
+      "story_count": 194,
+      "dialogue_count": 10696,
+      "selected_unit_id": 104911,
+      "resolution_step": "speakerAvatars_clean",
+      "underlying_source": "npc_avatars",
+      "candidate_count": 8,
+      "rendering_disposition": "valid_candidate_image",
+      "quality_class": "AMBIGUOUS_MULTI_VARIANT",
+      "reason": "Selected unit_id is most frequent but multi-variant split exists (share 34.4%)",
+      "dominant_unit_id": 104911,
+      "dominant_share": 0.34367988032909497,
+      "observed_unit_ids": {
+        "104911": 3676,
+        "136511": 1675,
+        "104914": 1368,
+        "117111": 1256,
+        "109111": 586
+      },
+      "missing_unit_ids": 0
+    }
+  },
+  "low_id_broken_image_risk_examples": [],
+  "ui_collision_groups": [
+    {
+      "clean_name": "伊緒",
+      "card_count": 2,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "伊緒",
+        "伊緒和美里"
+      ],
+      "selected_uids": {
+        "伊緒": 101811,
+        "伊緒和美里": 101811
+      },
+      "uids_by_name": {
+        "伊緒": [
+          101811,
+          132912,
+          110111,
+          101831,
+          101832
+        ],
+        "伊緒和美里": [
+          1,
+          101811
+        ]
+      }
+    },
+    {
+      "clean_name": "佐藤",
+      "card_count": 2,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "佐藤",
+        "佐藤與安博"
+      ],
+      "selected_uids": {
+        "佐藤": null,
+        "佐藤與安博": null
+      },
+      "uids_by_name": {
+        "佐藤": [
+          6511,
+          717,
+          711
+        ],
+        "佐藤與安博": [
+          1
+        ]
+      }
+    },
+    {
+      "clean_name": "倭",
+      "card_count": 2,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "倭",
+        "倭和客人們"
+      ],
+      "selected_uids": {
+        "倭": 130012,
+        "倭和客人們": 130012
+      },
+      "uids_by_name": {
+        "倭": [
+          130012,
+          130011,
+          130031,
+          130013,
+          130112
+        ],
+        "倭和客人們": [
+          1
+        ]
+      }
+    },
+    {
+      "clean_name": "凱留",
+      "card_count": 2,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "凱留",
+        "凱留（變裝）"
+      ],
+      "selected_uids": {
+        "凱留": 106012,
+        "凱留（變裝）": 106012
+      },
+      "uids_by_name": {
+        "凱留": [
+          106012,
+          106011,
+          127212,
+          112011,
+          107811
+        ],
+        "凱留（變裝）": [
+          112012
+        ]
+      }
+    },
+    {
+      "clean_name": "可可蘿",
+      "card_count": 4,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "可可蘿",
+        "可可蘿、凱留",
+        "可可蘿、雪菲",
+        "可可蘿（變裝）"
+      ],
+      "selected_uids": {
+        "可可蘿": 105913,
+        "可可蘿、凱留": 105913,
+        "可可蘿、雪菲": 105913,
+        "可可蘿（變裝）": 105913
+      },
+      "uids_by_name": {
+        "可可蘿": [
+          105913,
+          105911,
+          107611,
+          115511,
+          111911
+        ],
+        "可可蘿、凱留": [
+          1
+        ],
+        "可可蘿、雪菲": [
+          1
+        ],
+        "可可蘿（變裝）": [
+          111912
+        ]
+      }
+    },
+    {
+      "clean_name": "史萊姆",
+      "card_count": 4,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "史萊姆",
+        "史萊姆（紅）",
+        "史萊姆（藍）",
+        "史萊姆（黃）"
+      ],
+      "selected_uids": {
+        "史萊姆": 191612,
+        "史萊姆（紅）": 191612,
+        "史萊姆（藍）": 191612,
+        "史萊姆（黃）": 191612
+      },
+      "uids_by_name": {
+        "史萊姆": [
+          3
+        ],
+        "史萊姆（紅）": [
+          191612
+        ],
+        "史萊姆（藍）": [
+          191612
+        ],
+        "史萊姆（黃）": [
+          191612
+        ]
+      }
+    },
+    {
+      "clean_name": "",
+      "card_count": 2,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "和服的女性",
+        "和正"
+      ],
+      "selected_uids": {
+        "和服的女性": 100111,
+        "和正": 100111
+      },
+      "uids_by_name": {
+        "和服的女性": [
+          135831
+        ],
+        "和正": [
+          6411,
+          106011,
+          112011
+        ]
+      }
+    },
+    {
+      "clean_name": "妮諾",
+      "card_count": 2,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "妮諾",
+        "妮諾與鈴奈"
+      ],
+      "selected_uids": {
+        "妮諾": 109611,
+        "妮諾與鈴奈": 109611
+      },
+      "uids_by_name": {
+        "妮諾": [
+          103011,
+          117811,
+          137111,
+          109611,
+          103031
+        ],
+        "妮諾與鈴奈": [
+          1
+        ]
+      }
+    },
+    {
+      "clean_name": "宮子",
+      "card_count": 2,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "宮子",
+        "宮子（剎鬼）"
+      ],
+      "selected_uids": {
+        "宮子": 100711,
+        "宮子（剎鬼）": 100711
+      },
+      "uids_by_name": {
+        "宮子": [
+          100711,
+          119911,
+          108211,
+          100731,
+          100011
+        ],
+        "宮子（剎鬼）": [
+          135916
+        ]
+      }
+    },
+    {
+      "clean_name": "彌勒",
+      "card_count": 3,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "彌勒",
+        "彌勒、格魯尼",
+        "彌勒、霸瞳皇帝"
+      ],
+      "selected_uids": {
+        "彌勒": 192611,
+        "彌勒、格魯尼": 192611,
+        "彌勒、霸瞳皇帝": 192611
+      },
+      "uids_by_name": {
+        "彌勒": [
+          192611,
+          192613
+        ],
+        "彌勒、格魯尼": [],
+        "彌勒、霸瞳皇帝": []
+      }
+    },
+    {
+      "clean_name": "情侶",
+      "card_count": 3,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "情侶",
+        "情侶（女）",
+        "情侶（男）"
+      ],
+      "selected_uids": {
+        "情侶": null,
+        "情侶（女）": null,
+        "情侶（男）": null
+      },
+      "uids_by_name": {
+        "情侶": [
+          1
+        ],
+        "情侶（女）": [
+          411,
+          1212,
+          413
+        ],
+        "情侶（男）": [
+          311,
+          414,
+          312
+        ]
+      }
+    },
+    {
+      "clean_name": "日",
+      "card_count": 7,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "日和",
+        "日和‧優衣",
+        "日和一行人",
+        "日和的同學1",
+        "日和的同學2",
+        "日和的同學們",
+        "日和的母親"
+      ],
+      "selected_uids": {
+        "日和": 100111,
+        "日和‧優衣": 100111,
+        "日和一行人": 100111,
+        "日和的同學1": 100111,
+        "日和的同學2": 100111,
+        "日和的同學們": 100111,
+        "日和的母親": 100111
+      },
+      "uids_by_name": {
+        "日和": [
+          100111,
+          122411,
+          108711,
+          135712,
+          100132
+        ],
+        "日和‧優衣": [
+          1
+        ],
+        "日和一行人": [
+          1
+        ],
+        "日和的同學1": [
+          1
+        ],
+        "日和的同學2": [
+          1
+        ],
+        "日和的同學們": [
+          1
+        ],
+        "日和的母親": [
+          1
+        ]
+      }
+    },
+    {
+      "clean_name": "晶",
+      "card_count": 2,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "晶",
+        "晶與真那"
+      ],
+      "selected_uids": {
+        "晶": 106831,
+        "晶與真那": 106831
+      },
+      "uids_by_name": {
+        "晶": [
+          106831,
+          106832,
+          106834,
+          1,
+          105913
+        ],
+        "晶與真那": [
+          1
+        ]
+      }
+    },
+    {
+      "clean_name": "格蕾斯",
+      "card_count": 4,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "格蕾斯",
+        "格蕾斯（上下）",
+        "格蕾斯（上）",
+        "格蕾斯（下）"
+      ],
+      "selected_uids": {
+        "格蕾斯": 138901,
+        "格蕾斯（上下）": 138901,
+        "格蕾斯（上）": 138901,
+        "格蕾斯（下）": 138901
+      },
+      "uids_by_name": {
+        "格蕾斯": [
+          133012,
+          133011,
+          133014,
+          133013,
+          1
+        ],
+        "格蕾斯（上下）": [
+          1
+        ],
+        "格蕾斯（上）": [
+          133016
+        ],
+        "格蕾斯（下）": [
+          1
+        ]
+      }
+    },
+    {
+      "clean_name": "無賴",
+      "card_count": 2,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "無賴（大）",
+        "無賴（小）"
+      ],
+      "selected_uids": {
+        "無賴（大）": null,
+        "無賴（小）": null
+      },
+      "uids_by_name": {
+        "無賴（大）": [
+          911
+        ],
+        "無賴（小）": [
+          811
+        ]
+      }
+    },
+    {
+      "clean_name": "笨蛋情侶",
+      "card_count": 3,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "笨蛋情侶",
+        "笨蛋情侶（女）",
+        "笨蛋情侶（男）"
+      ],
+      "selected_uids": {
+        "笨蛋情侶": null,
+        "笨蛋情侶（女）": null,
+        "笨蛋情侶（男）": null
+      },
+      "uids_by_name": {
+        "笨蛋情侶": [
+          1
+        ],
+        "笨蛋情侶（女）": [
+          1211
+        ],
+        "笨蛋情侶（男）": [
+          1111
+        ]
+      }
+    },
+    {
+      "clean_name": "紡希",
+      "card_count": 2,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "紡希",
+        "紡希與華音"
+      ],
+      "selected_uids": {
+        "紡希": 105411,
+        "紡希與華音": 105411
+      },
+      "uids_by_name": {
+        "紡希": [
+          105411,
+          117411,
+          134812,
+          113911,
+          105432
+        ],
+        "紡希與華音": [
+          134912,
+          1,
+          134911
+        ]
+      }
+    },
+    {
+      "clean_name": "貪吃佩可",
+      "card_count": 4,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "貪吃佩可",
+        "貪吃佩可、芙蕾雅",
+        "貪吃佩可、雪菲",
+        "貪吃佩可（變裝）"
+      ],
+      "selected_uids": {
+        "貪吃佩可": 105812,
+        "貪吃佩可、芙蕾雅": 105812,
+        "貪吃佩可、雪菲": 105812,
+        "貪吃佩可（變裝）": 105812
+      },
+      "uids_by_name": {
+        "貪吃佩可": [
+          105812,
+          105811,
+          105831,
+          127911,
+          111811
+        ],
+        "貪吃佩可、芙蕾雅": [
+          1
+        ],
+        "貪吃佩可、雪菲": [
+          1
+        ],
+        "貪吃佩可（變裝）": [
+          111812
+        ]
+      }
+    },
+    {
+      "clean_name": "避難民眾",
+      "card_count": 2,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "避難民眾（中年男性）",
+        "避難民眾（少年）"
+      ],
+      "selected_uids": {
+        "避難民眾（中年男性）": null,
+        "避難民眾（少年）": null
+      },
+      "uids_by_name": {
+        "避難民眾（中年男性）": [
+          1411
+        ],
+        "避難民眾（少年）": [
+          111
+        ]
+      }
+    },
+    {
+      "clean_name": "雪菲",
+      "card_count": 3,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "雪菲",
+        "雪菲、凱留",
+        "雪菲（厄莉絲）"
+      ],
+      "selected_uids": {
+        "雪菲": 106412,
+        "雪菲、凱留": 106412,
+        "雪菲（厄莉絲）": 106412
+      },
+      "uids_by_name": {
+        "雪菲": [
+          106412,
+          106411,
+          135111,
+          120711,
+          106414
+        ],
+        "雪菲、凱留": [
+          1,
+          106412
+        ],
+        "雪菲（厄莉絲）": [
+          106414
+        ]
+      }
+    },
+    {
+      "clean_name": "霸瞳皇帝",
+      "card_count": 3,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "霸瞳皇帝",
+        "霸瞳皇帝、格魯尼",
+        "霸瞳皇帝、芙蕾雅"
+      ],
+      "selected_uids": {
+        "霸瞳皇帝": 106914,
+        "霸瞳皇帝、格魯尼": 106914,
+        "霸瞳皇帝、芙蕾雅": 106914
+      },
+      "uids_by_name": {
+        "霸瞳皇帝": [
+          106914,
+          106911,
+          106915,
+          106912,
+          106913
+        ],
+        "霸瞳皇帝、格魯尼": [],
+        "霸瞳皇帝、芙蕾雅": []
+      }
+    },
+    {
+      "clean_name": "馬克",
+      "card_count": 2,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "馬克",
+        "馬克（中年）"
+      ],
+      "selected_uids": {
+        "馬克": null,
+        "馬克（中年）": null
+      },
+      "uids_by_name": {
+        "馬克": [
+          1111
+        ],
+        "馬克（中年）": [
+          1411
+        ]
+      }
+    },
+    {
+      "clean_name": "魔物",
+      "card_count": 2,
+      "collision_type": "VARIANT_OR_SUBSET",
+      "names": [
+        "魔物",
+        "魔物({0})"
+      ],
+      "selected_uids": {
+        "魔物": 191812,
+        "魔物({0})": 191812
+      },
+      "uids_by_name": {
+        "魔物": [
+          1611,
+          1614,
+          15611,
+          191812,
+          10111
+        ],
+        "魔物({0})": [
+          1611
+        ]
+      }
+    }
+  ],
+  "heuristic_unrelated_collisions": []
+}
