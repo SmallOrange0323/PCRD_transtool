@@ -1,0 +1,290 @@
+{
+  "command_map": [
+    {
+      "role": "CANONICAL_UPDATE_ORCHESTRATOR",
+      "command": "python update_story_map.py",
+      "module": "pipeline.update:run_pipeline_update",
+      "performs_upstream_sync": true,
+      "target_repository": "SOURCE_REPO (Working Tree)",
+      "dry_run_supported": true,
+      "deploy_supported": true,
+      "description": "標準日常更新入口：包含上游資料同步階段 (CDN 探測、DB/劇本同步、決定性打包、全量門禁自檢)"
+    },
+    {
+      "role": "CANONICAL_DRY_RUN_SIMULATION",
+      "command": "python update_story_map.py --dry-run",
+      "module": "pipeline.update",
+      "performs_upstream_sync": false,
+      "target_repository": "SOURCE_REPO (Read-Only)",
+      "dry_run_supported": true,
+      "deploy_supported": false,
+      "description": "零副作用模擬：執行唯讀 CDN 探測、打包體積預估與全量資料自檢，零檔案寫入與刪除"
+    },
+    {
+      "role": "DEPLOY_ONLY_PRIMITIVE",
+      "command": "python -m pipeline.deploy",
+      "module": "pipeline.deploy:deploy_story_map",
+      "performs_upstream_sync": false,
+      "target_repository": "DEPLOYMENT_REPO (dist_story_map -> gh-pages)",
+      "dry_run_supported": false,
+      "deploy_supported": true,
+      "description": "純發布指令 (Deploy-Only)：不抓取上游、不修改主倉庫，僅驗證並將已建置之 dist 提交推送至 gh-pages"
+    },
+    {
+      "role": "DETERMINISTIC_BUNDLER_ONLY",
+      "command": "python -m pipeline.bundle",
+      "module": "pipeline.bundle:bundle_story_map",
+      "performs_upstream_sync": false,
+      "target_repository": "SOURCE_TO_DIST_BUILD",
+      "dry_run_supported": true,
+      "deploy_supported": false,
+      "description": "純打包工具 (Bundle-Only)：不抓取上游，純粹基於本地已提交原始碼決定性生成 dist 產物"
+    },
+    {
+      "role": "SINGLE_SOURCE_VALIDATOR",
+      "command": "python -m pipeline.validate",
+      "module": "pipeline.validate:validate_story_map",
+      "performs_upstream_sync": false,
+      "target_repository": "SOURCE_AND_DIST",
+      "dry_run_supported": false,
+      "deploy_supported": false,
+      "description": "全專案唯一驗證門禁：檢驗核心檔案、DB 查詢正常、9000+ 劇本 list-root 結構、Schema 與部署體積"
+    },
+    {
+      "role": "ONE_SHOT_CONVENIENCE_UPDATE_DEPLOY",
+      "command": "python update_story_map.py --deploy",
+      "module": "pipeline.update -> pipeline.deploy",
+      "performs_upstream_sync": true,
+      "target_repository": "SOURCE_AND_DIST",
+      "status": "CONVENIENCE_ONLY_NOT_FOR_REVIEWED_RELEASE",
+      "description": "單次一鍵更新並發布：包含上游同步，僅適用於免審查之應急或本地單機流程，不建議用於可重現之正式發布"
+    }
+  ],
+  "repo_architecture": {
+    "source_repository": {
+      "name": "Main Source Repository",
+      "branch": "main / data update branches",
+      "scope": "dashboard/redive_tw.db, dashboard/story/*.json, dashboard/data/*.json, dashboard/*.js, pipeline/*",
+      "persistence_mechanism": "Targeted Git staging & commit by operator/workflow",
+      "auto_committed_by_deploy": false
+    },
+    "deployment_repository": {
+      "name": "Deployment Repository (Nested Worktree)",
+      "path": "dist_story_map",
+      "branch": "gh-pages",
+      "scope": "Static deployment bundle artifact only",
+      "persistence_mechanism": "pipeline.deploy automated git commit & push",
+      "prohibited_action": "Never run 'git add dist_story_map' in source repository"
+    },
+    "synchronization_boundary": {
+      "source_sync_before_commit": true,
+      "full_update_after_commit_allowed": false,
+      "deploy_only_after_commit": true,
+      "preferred_final_flow": [
+        "1. git merge to main & verify origin/main SHA",
+        "2. python -m pipeline.bundle (rebuild dist strictly from committed main, zero upstream sync)",
+        "3. python -m pipeline.validate",
+        "4. python -m pipeline.deploy (publish dist to gh-pages)"
+      ]
+    },
+    "release_consistency_invariant": "APPROVED_MAIN_SHA_DETERMINISTIC_REPRODUCIBILITY (The dist artifact deployed to gh-pages must be generated from the exact source state represented by the approved origin/main commit, with no upstream mutation step in between)"
+  },
+  "tool_classification": [
+    {
+      "tool_name": "scan-cdn",
+      "command": "python -m pipeline.fetch scan-cdn",
+      "classification": "DISCOVERY_ONLY",
+      "scope": "探測 So-net CDN 是否有新 TruthVersion、檢查 manifest 是否有預上架素材，不下載對白 JSON"
+    },
+    {
+      "tool_name": "fetch-stories",
+      "command": "python -m pipeline.fetch fetch-stories --unit-id <unit_id>",
+      "classification": "DOWNLOAD_JSON_CHARACTER_ONLY",
+      "scope": "僅限依角色 unit_id 查詢 DB 並下載該角色的個人劇情對白 JSON"
+    },
+    {
+      "tool_name": "sync-episode",
+      "command": "python -m pipeline.fetch sync-episode --story-id <story_id>",
+      "classification": "DOWNLOAD_JSON_SINGLE_EPISODE",
+      "scope": "依單一 story_id 從 manifest 匹配 Hash，下載對白 JSON 並一併下載音訊與圖像素材"
+    },
+    {
+      "tool_name": "fetch-story-voices",
+      "command": "python -m pipeline.fetch fetch-story-voices --story-id <story_id>",
+      "classification": "DOWNLOAD_MEDIA_ONLY",
+      "scope": "僅下載指定話數的 M4A 語音音檔"
+    },
+    {
+      "tool_name": "fetch-story-images",
+      "command": "python -m pipeline.fetch fetch-story-images --story-id <story_id>",
+      "classification": "DOWNLOAD_MEDIA_ONLY",
+      "scope": "僅下載指定話數的背景與 CG WebP 大圖"
+    },
+    {
+      "tool_name": "fetch-assets",
+      "command": "python -m pipeline.fetch fetch-assets --unit-id <unit_id>",
+      "classification": "DOWNLOAD_MEDIA_ONLY",
+      "scope": "僅下載指定角色的頭像與卡面立繪素材"
+    }
+  ],
+  "story_type_matrix": [
+    {
+      "story_type": "Character Story (個人劇情)",
+      "frontend_discovery_if_local_exists": "YES (由 SQLite story_detail 驅動，未入庫角色由 pendingNewCharas 兜底)",
+      "canonical_update_auto_fetches_json": "PARTIAL (僅自動增量下載 tracked_characters.json 中註冊之 unit_id 劇本)",
+      "verified_acquisition_path": "python -m pipeline.fetch fetch-stories --unit-id <unit_id> (或 sync-episode --story-id)"
+    },
+    {
+      "story_type": "Main Story (主線劇情)",
+      "frontend_discovery_if_local_exists": "YES (由 SQLite story_detail 表自動建立章節目錄)",
+      "canonical_update_auto_fetches_json": "NO (Canonical update 未涵蓋主線劇本批次掃描)",
+      "verified_acquisition_path": "python -m pipeline.fetch sync-episode --story-id <story_id> (單話抓取；無專屬批次主線下載器)"
+    },
+    {
+      "story_type": "Guild Story (公會劇情)",
+      "frontend_discovery_if_local_exists": "YES (由 SQLite story_detail 驅動)",
+      "canonical_update_auto_fetches_json": "NO",
+      "verified_acquisition_path": "python -m pipeline.fetch sync-episode --story-id <story_id> (單話抓取；無專屬批次公會下載器)"
+    },
+    {
+      "story_type": "Event Story (活動劇情)",
+      "frontend_discovery_if_local_exists": "YES (由 SQLite story_detail 驅動，新形式活動由 extra_events.json 補充)",
+      "canonical_update_auto_fetches_json": "NO",
+      "verified_acquisition_path": "python -m pipeline.fetch sync-episode --story-id <story_id> (單話抓取；無專屬批次活動下載器)"
+    },
+    {
+      "story_type": "Tower / System (露娜塔/系統)",
+      "frontend_discovery_if_local_exists": "YES (由 SQLite story_detail 驅動)",
+      "canonical_update_auto_fetches_json": "NO",
+      "verified_acquisition_path": "python -m pipeline.fetch sync-episode --story-id <story_id> (單話抓取；無專屬批次露娜塔下載器)"
+    },
+    {
+      "story_type": "Part 3 Branch (第 3 部分支補充)",
+      "frontend_discovery_if_local_exists": "YES (由 branch_stories.json 補充載入)",
+      "canonical_update_auto_fetches_json": "NO",
+      "verified_acquisition_path": "MANUAL_CURATION (手動提取 JSON 並更新 branch_stories.json)"
+    }
+  ],
+  "warning_behavior_table": [
+    {
+      "warning_condition": "CDN TruthVersion probe network failure / timeout",
+      "pipeline_continues": true,
+      "exit_code_can_be_zero": true,
+      "consequence": "Freshness uncertainty / Stale-success risk (若本地有 DB，管線使用舊版資料成功打包並通過驗證)"
+    },
+    {
+      "warning_condition": "tracked_characters.json read exception",
+      "pipeline_continues": true,
+      "exit_code_can_be_zero": true,
+      "consequence": "Degraded-success risk (跳過追蹤角色缺失對白檢查，繼續打包現有劇本)"
+    },
+    {
+      "warning_condition": "Non-numeric story filename (e.g. story/speaker_appearance.json)",
+      "pipeline_continues": true,
+      "exit_code_can_be_zero": true,
+      "consequence": "None (合法警告，驗證器正確跳過元數據檔案並檢查其餘數字劇本)"
+    },
+    {
+      "warning_condition": "Metadata missing local dialogues (e.g. 17 historic un-fetched events)",
+      "pipeline_continues": true,
+      "exit_code_can_be_zero": true,
+      "consequence": "Partial historic coverage (允許歷史少數可選劇本未下載)"
+    },
+    {
+      "warning_condition": "Footprint Warning (750 MiB <= size < 900 MiB)",
+      "pipeline_continues": true,
+      "exit_code_can_be_zero": true,
+      "consequence": "Approaching Pages hard limit, warning logged but deploy allowed"
+    }
+  ],
+  "metadata_registry": [
+    {
+      "file": "dashboard/data/db_info.json",
+      "generator": "pipeline.bundle:bundle_story_map",
+      "category": "AUTOMATIC_IN_CANONICAL_UPDATE",
+      "input": "dashboard/redive_tw.db (SHA-256 prefix & size)",
+      "automatic": true,
+      "deterministic": true,
+      "required_by_validator": true
+    },
+    {
+      "file": "dashboard/data/story_thumbnails.json",
+      "generator": "tools/scan_story_thumbnails.py / tools.pcrd_fetch",
+      "category": "MANUAL_MAINTENANCE_UTILITY",
+      "input": "dashboard/story/*.json (Scanned still & bg IDs)",
+      "automatic": false,
+      "deterministic": true,
+      "required_by_validator": true
+    },
+    {
+      "file": "dashboard/data/speaker_appearance.json",
+      "generator": "tools/rebuild_metadata.py",
+      "category": "MANUAL_MAINTENANCE_UTILITY",
+      "input": "dashboard/story/*.json (Speaker name appearances)",
+      "automatic": false,
+      "deterministic": true,
+      "required_by_validator": false
+    },
+    {
+      "file": "dashboard/data/chapters.json",
+      "generator": "Static schema / Manual curation",
+      "category": "MANUAL_CURATION",
+      "input": "Official chapter navigation tree",
+      "automatic": false,
+      "deterministic": true,
+      "required_by_validator": true
+    },
+    {
+      "file": "dashboard/data/branch_stories.json",
+      "generator": "Manual curation & Screenshot verification",
+      "category": "MANUAL_CURATION",
+      "input": "Part 3 Branch story supplemental titles",
+      "automatic": false,
+      "deterministic": true,
+      "required_by_validator": true
+    },
+    {
+      "file": "dashboard/data/npc_avatars.json",
+      "generator": "So-net CDN manifest extractor",
+      "category": "MANUAL_MAINTENANCE_UTILITY",
+      "input": "storydata2_assetmanifest unit IDs",
+      "automatic": false,
+      "deterministic": true,
+      "required_by_validator": true
+    },
+    {
+      "file": "dashboard/data/tracked_characters.json",
+      "generator": "Static configuration",
+      "category": "MANUAL_CURATION",
+      "input": "Tracked playable characters list",
+      "automatic": false,
+      "deterministic": true,
+      "required_by_validator": true
+    }
+  ],
+  "validator_coverage": {
+    "dist_relationship": "SOURCE_SUBSET_OF_DIST (Source ⊆ Dist, verifies all numeric source story IDs exist in dist, extras allowed)",
+    "extra_dist_stories_rejected": false,
+    "story_json_validation_depth": "JSON parseability + list-root structural verification (逐篇檢驗 JSON 可解析且根物件為 list)",
+    "db_query_semantics": "Validator successfully queries unit_data count, story_detail IDs, event_story_data count, and reports dataset metrics.",
+    "covered_checks": [
+      "All 11 core files existence in dashboard (story_map.html, style.css, map.js, characters.js, avatar-service.js, story-asset-service.js, chapter-data.js, db.js, sql-wasm.js, sql-wasm.wasm, redive_tw.db)",
+      "SQLite database tables exist and can be successfully queried (unit_data, story_detail, event_story_data)",
+      "Required metadata JSON parsing and basic schema validation (chapters, extra_events, story_thumbnails, npc_avatars, tracked_characters, event_summaries, branch_stories)",
+      "branch_stories.json strict schema contract (version 1, part 3, chapters 1-16, status validation)",
+      "Full 9,033+ story JSON parsing and list-root structure check",
+      "Dist index.html inlining verification (db.js, chapter-data.js)",
+      "Dist db_info.json deterministic version format check (hash_*)",
+      "Dist story JSON containment check (all numeric dashboard stories exist in dist)",
+      "Deployment footprint gate (Warning 750 MiB, Hard Error 900 MiB)"
+    ],
+    "known_gaps": [
+      "Validator does not enforce exact bidirectional equality (extras in dist are permitted)",
+      "Validator does not inspect remote HTTP 200 availability of third-party CDN assets",
+      "Validator does not verify audio codec integrity of local .m4a files",
+      "Validator does not check semantic story text grammar or translation accuracy",
+      "Validator does not enforce bidirectional file existence for optional historic event side-stories"
+    ]
+  },
+  "idempotence_status": "PARTIALLY_VERIFIED (Bundler is component-level deterministic via SHA-256; end-to-end network rerun not fully verified in live state)"
+}
