@@ -158,4 +158,97 @@ console.log('開始執行 DialogueNormalizer 測試案例...');
     assert.notStrictEqual(res.dialogueList[1], input[2], '輸出特殊物件不應與輸入特殊物件共享相同 reference');
 }
 
+// Case 10: Same speaker + same concrete unit_id -> merge
+{
+    const input = [
+        { name: '可可蘿', words: '主人早安。', unit_id: 105911, voice: 'vo_1' },
+        { name: '可可蘿', words: '今天也要加油喔。', unit_id: 105911, voice: 'vo_1' }
+    ];
+    const res = DialogueNormalizer.normalize(input);
+    assert.strictEqual(res.dialogueList.length, 1, '同發言人且相同具體 unit_id 應正常合併');
+    assert.strictEqual(res.dialogueList[0].words, '主人早安。\n今天也要加油喔。');
+    assert.strictEqual(res.dialogueList[0].unit_id, 105911);
+}
+
+// Case 11: Same speaker + different concrete unit_id -> DO NOT merge
+{
+    const input = [
+        { name: '可可蘿', words: '主人早安。', unit_id: 105911, voice: 'vo_1' },
+        { name: '可可蘿', words: '衣服換好了。', unit_id: 105931, voice: 'vo_1' }
+    ];
+    const res = DialogueNormalizer.normalize(input);
+    assert.strictEqual(res.dialogueList.length, 2, '同發言人但不同具體 unit_id 必須阻止合併以防資訊遺失');
+    assert.strictEqual(res.dialogueList[0].unit_id, 105911);
+    assert.strictEqual(res.dialogueList[1].unit_id, 105931);
+}
+
+// Case 12: Previous concrete + current missing -> legacy merge
+{
+    const input = [
+        { name: '可可蘿', words: '主人早安。', unit_id: 105911 },
+        { name: '可可蘿', words: '今天天氣很好。' }
+    ];
+    const res = DialogueNormalizer.normalize(input);
+    assert.strictEqual(res.dialogueList.length, 1, '一端缺少 unit_id 時應維持 Legacy 合併行為');
+    assert.strictEqual(res.dialogueList[0].unit_id, 105911, '應保留前一筆的 unit_id');
+}
+
+// Case 13: Previous missing + current concrete -> legacy merge
+{
+    const input = [
+        { name: '可可蘿', words: '主人早安。' },
+        { name: '可可蘿', words: '今天天氣很好。', unit_id: 105911 }
+    ];
+    const res = DialogueNormalizer.normalize(input);
+    assert.strictEqual(res.dialogueList.length, 1, '前一筆缺少 unit_id 但相容時應維持 Legacy 合併行為');
+}
+
+// Case 14: Both missing unit_id -> legacy merge
+{
+    const input = [
+        { name: '可可蘿', words: '主人早安。' },
+        { name: '可可蘿', words: '今天天氣很好。' }
+    ];
+    const res = DialogueNormalizer.normalize(input);
+    assert.strictEqual(res.dialogueList.length, 1, '兩端均無 unit_id 時應維持 Legacy 合併行為');
+}
+
+// Case 15: Numeric string concrete IDs
+{
+    const input = [
+        { name: '可可蘿', words: '主人早安。', unit_id: '105911' },
+        { name: '可可蘿', words: '衣服換好了。', unit_id: '105931' }
+    ];
+    const res = DialogueNormalizer.normalize(input);
+    assert.strictEqual(res.dialogueList.length, 2, '數字字串 unit_id 亦應正確判定為具體衝突並阻止合併');
+    assert.strictEqual(res.dialogueList[0].unit_id, '105911', '原始資料格式應完整保留');
+    assert.strictEqual(res.dialogueList[1].unit_id, '105931', '原始資料格式應完整保留');
+}
+
+// Case 16: Invalid / zero IDs treated as non-concrete (no conflict)
+{
+    const input = [
+        { name: '可可蘿', words: '第一句', unit_id: 0 },
+        { name: '可可蘿', words: '第二句', unit_id: 'invalid_id' },
+        { name: '可可蘿', words: '第三句', unit_id: '' }
+    ];
+    const res = DialogueNormalizer.normalize(input);
+    assert.strictEqual(res.dialogueList.length, 1, '非正整數 ID 視為 non-concrete，維持 Legacy 合併');
+}
+
+// Case 17: Chain merge 1001 -> 1002 -> 1002
+{
+    const input = [
+        { name: '可可蘿', words: '台詞 1', unit_id: 105911 },
+        { name: '可可蘿', words: '台詞 2', unit_id: 105931 },
+        { name: '可可蘿', words: '台詞 3', unit_id: 105931 }
+    ];
+    const res = DialogueNormalizer.normalize(input);
+    assert.strictEqual(res.dialogueList.length, 2, '鏈式切換應精確切成 2 筆');
+    assert.strictEqual(res.dialogueList[0].unit_id, 105911);
+    assert.strictEqual(res.dialogueList[0].words, '台詞 1');
+    assert.strictEqual(res.dialogueList[1].unit_id, 105931);
+    assert.strictEqual(res.dialogueList[1].words, '台詞 2\n台詞 3');
+}
+
 console.log('DialogueNormalizer tests passed.');
