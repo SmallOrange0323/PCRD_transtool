@@ -131,14 +131,27 @@ test("Test 4 — Still and Background special nodes contract", () => {
 
 // Test 5 — Special avatar override for 13830*
 test("Test 5 — Special avatar override for story 13830*", () => {
-    const { html } = DialogueView.generateDialogueHtml({
-        storyId: 1383001,
-        dialogueList: [{ name: "貪吃佩可", words: "好香的味道！" }],
-        speakerAvatars: { "貪吃佩可": 105801 },
-        resolveRealName: (n) => n
-    });
+    let capturedUnitId = null;
+    const origGetAvatarHtmlByUnitId = global.AvatarService.getAvatarHtmlByUnitId;
+    global.AvatarService.getAvatarHtmlByUnitId = (unitId, realName, speakerAvatars) => {
+        capturedUnitId = unitId;
+        return origGetAvatarHtmlByUnitId(unitId, realName, speakerAvatars);
+    };
 
-    assert(html.includes("icon/unit/138331.png"), "Story 13830* should override Peco avatar to 138331");
+    try {
+        const { html } = DialogueView.generateDialogueHtml({
+            storyId: 1383001,
+            dialogueList: [{ name: "貪吃佩可", words: "好香的味道！" }],
+            speakerAvatars: { "貪吃佩可": 105801 },
+            resolveRealName: (n) => n
+        });
+
+        assert.strictEqual(capturedUnitId, 138331, "DialogueView must pass exact unit_id 138331 to AvatarService for story 13830*");
+        assert(html.includes("icon/unit/138331.png"), "Story 13830* should override Peco avatar to 138331");
+        assert(!html.includes("icon/unit/138311.png"), "Story 13830* avatar must NOT be normalized to 138311");
+    } finally {
+        global.AvatarService.getAvatarHtmlByUnitId = origGetAvatarHtmlByUnitId;
+    }
 });
 
 // Test 6 — Player-name substitution and HTML escaping

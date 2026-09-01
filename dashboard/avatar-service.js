@@ -63,6 +63,19 @@ window.AvatarService = {
         "逸見艾麗卡": 139431,
     },
 
+    // 集中定義明確指定之 Exact-Appearance 集合 (不執行普通 +11 normalization)
+    exactPortraitIds: new Set([
+        107411, 107412, 107431 // 幻境龍后等特殊 NPC/Boss 形態
+    ]),
+
+    // 集中定義 Exact-ID 優先並支援 Base+11 備選的特殊角色 (GuP 聯動、138331 專屬 override 等)
+    exactFirstWithBaseFallback: new Set([
+        138331, // dialogue-view 專屬指定之阿斯特賴亞佩可頭像 override
+        139231, // 西住美穗 (GuP 官方發布之 canonical 頭像)
+        139331, // 西住真穗 (GuP)
+        139431  // 逸見艾麗卡 (GuP)
+    ]),
+
     // 快取：charaName -> { unitId, url, triedCdnIndex }
     cache: {},
 
@@ -85,39 +98,67 @@ window.AvatarService = {
         return clean;
     },
 
+    /**
+     * 核心 Helper：解析發言人/角色之對話立繪頭像 ID 優先序 (Identity & Tier Resolution)
+     * 分離 Identity 解析與 Portrait Tier 決策，集中管理策略集合
+     * @param {number|string} unitId 
+     * @returns {Array<number>} 候選 ID 陣列 (優先序由前至後)
+     */
+    resolveDialoguePortraitIds(unitId) {
+        if (!unitId || (typeof unitId !== 'number' && typeof unitId !== 'string')) return [];
+        const numId = Number(unitId);
+        if (!Number.isInteger(numId) || numId < 100000) return [];
+
+        // 1. NPC 角色 (>= 190000)：維持 exact unit ID，不進行 base 規整化
+        if (numId >= 190000) {
+            return [numId];
+        }
+
+        // 2. 已知特殊 NPC / Exact-ID 角色 (如 107411 幻境龍后、107412、107431 等)
+        if (this.exactPortraitIds.has(numId)) {
+            return [numId];
+        }
+
+        // 3. 特殊 Exact-ID 優先角色 (如 138331 佩可 override、139231 美穗、139331 真穗、139431 艾麗卡)
+        // 保持既有 canonical/exact mapping 優先，次選 base+11
+        if (this.exactFirstWithBaseFallback.has(numId)) {
+            const baseId = Math.floor(numId / 100) * 100;
+            return [numId, baseId + 11];
+        }
+
+        // 4. 普通可玩角色 (Ordinary Playable Unit) 與換裝 Variant (< 190000)
+        // 嚴格保留自身換裝之百位基底 (baseId)，首選 +11 (日常基礎立繪)，次選 +31 (3★卡面立繪)
+        const baseId = Math.floor(numId / 100) * 100;
+        return [baseId + 11, baseId + 31];
+    },
+
     // 核心：生成頭像 URL 陣列（依優先序）
     getUrlCandidates(unitId) {
         if (!unitId || unitId < 100000) return [];
-        const baseId = Math.floor(unitId / 100) * 100;
+        const portraitIds = this.resolveDialoguePortraitIds(unitId);
+        if (portraitIds.length === 0) return [];
+
         const candidates = [];
         
         // 1. webp 格式 (優先)
-        // 本地：base+31 (Live2D/大圖)
-        candidates.push(`${this.localBase}${baseId + 31}.webp`);
-        // CDN：base+31
-        this.cdnBases.forEach(cdn => candidates.push(`${cdn}${baseId + 31}.webp`));
-        // 本地：base+11 (SD/小圖)
-        candidates.push(`${this.localBase}${baseId + 11}.webp`);
-        // CDN：base+11
-        this.cdnBases.forEach(cdn => candidates.push(`${cdn}${baseId + 11}.webp`));
+        portraitIds.forEach(id => {
+            candidates.push(`${this.localBase}${id}.webp`);
+            this.cdnBases.forEach(cdn => candidates.push(`${cdn}${id}.webp`));
+        });
 
         // 2. png 格式 (降級備用，特別是 NPC 資源)
-        // 本地：base+31 (Live2D/大圖)
-        candidates.push(`${this.localBase}${baseId + 31}.png`);
-        // CDN：base+31
-        this.cdnBases.forEach(cdn => candidates.push(`${cdn}${baseId + 31}.png`));
-        // 本地：base+11 (SD/小圖)
-        candidates.push(`${this.localBase}${baseId + 11}.png`);
-        // CDN：base+11
-        this.cdnBases.forEach(cdn => candidates.push(`${cdn}${baseId + 11}.png`));
+        portraitIds.forEach(id => {
+            candidates.push(`${this.localBase}${id}.png`);
+            this.cdnBases.forEach(cdn => candidates.push(`${cdn}${id}.png`));
+        });
 
         return candidates;
     },
 
     getAvatarUrl(unitId) {
         if (!unitId) return 'https://redive.estertion.win/icon/unit/100001.webp';
-        const baseId = Math.floor(unitId / 100) * 100;
-        const mainId = (unitId < 190000) ? (baseId + 31) : unitId;
+        const portraitIds = this.resolveDialoguePortraitIds(unitId);
+        const mainId = portraitIds.length > 0 ? portraitIds[0] : unitId;
         return `icon/unit/${mainId}.png`;
     },
 
@@ -128,7 +169,7 @@ window.AvatarService = {
         return `https://redive.estertion.win/card/full/${mainId}.webp`;
     },
 
-    // 公開 API：取得最佳頭像 img 元素 HTML
+    // 公開 API：取得最佳頭像 img 元素 HTML (根據角色名稱)
     getAvatarHtml(charaName, externalAvatars = {}) {
         const cleanName = this.cleanName(charaName);
         const unitId = this.getUnitId(cleanName, externalAvatars);
@@ -137,13 +178,13 @@ window.AvatarService = {
             return this.getFallbackHtml(cleanName);
         }
 
-        const baseId = Math.floor(unitId / 100) * 100;
-        const mainId = (unitId < 190000) ? (baseId + 31) : unitId;
+        const portraitIds = this.resolveDialoguePortraitIds(unitId);
+        const mainId = portraitIds.length > 0 ? portraitIds[0] : unitId;
         // 優先使用本地端的 .png 圖片
         const src = `icon/unit/${mainId}.png`;
         const safeName = this.escapeForJsString(cleanName);
 
-        return `<img src="${src}" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleError(this, '${safeName}', ${baseId}, ${unitId})">`;
+        return `<img src="${src}" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleError(this, '${safeName}', ${unitId})">`;
     },
 
     // 取得最佳頭像 img 元素 HTML (根據 unit_id)
@@ -158,41 +199,57 @@ window.AvatarService = {
             return this.getFallbackHtml(cleanName);
         }
 
-        const baseId = Math.floor(finalUnitId / 100) * 100;
-        const mainId = (finalUnitId < 190000) ? (baseId + 31) : finalUnitId;
+        const portraitIds = this.resolveDialoguePortraitIds(finalUnitId);
+        const mainId = portraitIds.length > 0 ? portraitIds[0] : finalUnitId;
         // 優先使用本地端的 .png 圖片
         const src = `icon/unit/${mainId}.png`;
         const safeName = this.escapeForJsString(cleanName);
 
-        return `<img src="${src}" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleError(this, '${safeName}', ${baseId}, ${finalUnitId})">`;
+        return `<img src="${src}" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleError(this, '${safeName}', ${finalUnitId})">`;
     },
 
     // 靜態錯誤處理函式，用於逐步降級載入圖片或顯示文字佔位符
-    handleError(img, safeName, baseId, finalUnitId) {
+    handleError(img, safeName, arg3, arg4) {
+        const finalUnitId = (arg4 !== undefined) ? arg4 : arg3;
         if (!img.dataset.step) {
             img.dataset.step = "1";
         }
-        const step = parseInt(img.dataset.step);
-        const mainId = (finalUnitId < 190000) ? (baseId + 31) : finalUnitId;
+        const step = parseInt(img.dataset.step, 10);
+        const portraitIds = this.resolveDialoguePortraitIds(finalUnitId);
+        const primaryId = portraitIds.length > 0 ? portraitIds[0] : finalUnitId;
+        const secondaryId = portraitIds.length > 1 ? portraitIds[1] : null;
 
         if (step === 1) {
             img.dataset.step = "2";
-            // 第一步：如果本地 png 失敗，嘗試 So-net 00500012 的 .png
-            img.src = `https://img-pc.so-net.tw/dl/Resources/00500012/Jpn/AssetBundles/Android/icon/unit/${mainId}.png`;
+            // 第一步：如果本地 primaryId png 失敗，嘗試 So-net 00500012 的 primaryId .png
+            img.src = `https://img-pc.so-net.tw/dl/Resources/00500012/Jpn/AssetBundles/Android/icon/unit/${primaryId}.png`;
             return;
         }
         if (step === 2) {
             img.dataset.step = "3";
-            // 第二步：如果 So-net 00500012 失敗，嘗試 So-net 00500015 的 .png
-            img.src = `https://img-pc.so-net.tw/dl/Resources/00500015/Jpn/AssetBundles/Android/icon/unit/${mainId}.png`;
+            // 第二步：如果 So-net 00500012 失敗，嘗試 So-net 00500015 的 primaryId .png
+            img.src = `https://img-pc.so-net.tw/dl/Resources/00500015/Jpn/AssetBundles/Android/icon/unit/${primaryId}.png`;
             return;
         }
         if (step === 3) {
             img.dataset.step = "4";
-            // 第三步：如果 So-net 皆失敗，嘗試 EsterTion 的 .webp (EsterTion 頭像最齊全的格式)
-            img.src = `https://redive.estertion.win/icon/unit/${mainId}.webp`;
+            // 第三步：如果 So-net 皆失敗，嘗試 EsterTion 的 primaryId .webp (EsterTion 頭像最齊全的格式)
+            img.src = `https://redive.estertion.win/icon/unit/${primaryId}.webp`;
             return;
         }
+        if (step === 4 && secondaryId) {
+            img.dataset.step = "5";
+            // 第四步：若 primaryId 均失敗且有 secondaryId (例如 +31 備選)，嘗試本地 secondaryId .png
+            img.src = `icon/unit/${secondaryId}.png`;
+            return;
+        }
+        if (step === 5 && secondaryId) {
+            img.dataset.step = "6";
+            // 第五步：嘗試 EsterTion 的 secondaryId .webp
+            img.src = `https://redive.estertion.win/icon/unit/${secondaryId}.webp`;
+            return;
+        }
+
         // 最後失敗：隱藏圖片並顯示文字佔位符
         img.style.display = 'none';
         if (img.parentNode) {
@@ -240,7 +297,7 @@ window.AvatarService = {
         if (!img.dataset.step) {
             img.dataset.step = "1";
         }
-        const step = parseInt(img.dataset.step);
+        const step = parseInt(img.dataset.step, 10);
 
         if (step === 1) {
             img.dataset.step = "2";
