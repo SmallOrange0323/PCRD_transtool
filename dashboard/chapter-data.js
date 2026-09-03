@@ -48,7 +48,8 @@ console.log("chapter-data.js loaded");
 
                 // 3. metadata_status 契約檢查
                 const status = s.metadata_status;
-                if (status !== "resolved_official_screenshot" && status !== "unresolved") {
+                const isResolved = status === "resolved_official_bundle" || status === "resolved_official_screenshot";
+                if (!isResolved && status !== "unresolved") {
                     throw new Error(`[ChapterDataService] 第 ${idx} 筆分支劇情 metadata_status 不合法: ${status}`);
                 }
 
@@ -56,7 +57,7 @@ console.log("chapter-data.js loaded");
                 let titleDisplay = "";
 
                 // 4. Resolved 契約檢查：必須完整包含非空之 branch_label, title, subtitle
-                if (status === "resolved_official_screenshot") {
+                if (isResolved) {
                     if (
                         typeof s.branch_label !== 'string' || !s.branch_label.trim() ||
                         typeof s.title !== 'string' || !s.title.trim() ||

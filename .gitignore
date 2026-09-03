@@ -57,3 +57,8 @@ dashboard/versions/**/*.png
 dashboard/versions/**/*.skel
 dashboard/versions/**/*.atlas
 dashboard/versions/**/*.m4a
+
+# 14. 忽略本地媒體下載目錄與影片格式
+downloads/
+*.usm
+*.mp4

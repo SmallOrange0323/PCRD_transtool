@@ -147,9 +147,9 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
             all(
                 isinstance(s.get("story_id"), int) and
                 isinstance(s.get("chapter"), int) and 1 <= s.get("chapter") <= 16 and
-                s.get("metadata_status") in ("resolved_official_screenshot", "unresolved") and
+                s.get("metadata_status") in ("resolved_official_bundle", "resolved_official_screenshot", "unresolved") and
                 (
-                    (s.get("metadata_status") == "resolved_official_screenshot" and s.get("title") and s.get("subtitle")) or
+                    (s.get("metadata_status") in ("resolved_official_bundle", "resolved_official_screenshot") and s.get("title") and s.get("subtitle")) or
                     (s.get("metadata_status") == "unresolved" and s.get("title") is None and s.get("subtitle") is None and s.get("branch_label") is None)
                 )
                 for s in d.get("stories")
