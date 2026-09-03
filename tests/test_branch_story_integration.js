@@ -53,43 +53,63 @@ test("Test 2 — Chapter specific counts", () => {
     assert.strictEqual(byChapter[16], 1, "Chapter 16 should have 1 branch story");
 });
 
-// Test 3 — Resolved entries use verified descriptive metadata
-test("Test 3 — Resolved entries use verified metadata", () => {
+// Test 3 — All 63 entries use verified official bundle metadata
+test("Test 3 — All 63 entries use verified official bundle metadata", () => {
     const transformed = ChapterDataService.transformBranchStories(branchData);
+    assert.strictEqual(transformed.length, 63, "All 63 entries present");
+    assert(transformed.every(s => s.metadataStatus === "resolved_official_bundle"), "All 63 stories must be resolved_official_bundle");
+
+    const s2201101 = transformed.find(s => s.id === 2201101);
     const s2213101 = transformed.find(s => s.id === 2213101);
     const s2213104 = transformed.find(s => s.id === 2213104);
-
-    assert(s2213101, "2213101 must exist");
-    assert.strictEqual(s2213101.chapter, "分支劇情 L I", "2213101 chapter label must match official verified title");
-    assert.strictEqual(s2213101.title, "死者的世界裡最臭的東西", "2213101 title must match official subtitle");
-    assert.strictEqual(s2213101.metadataStatus, "resolved_official_screenshot");
-
-    assert(s2213104, "2213104 must exist");
-    assert.strictEqual(s2213104.chapter, "分支劇情 R V", "2213104 chapter label must match official verified title");
-    assert.strictEqual(s2213104.title, "錢與豐滿與現實", "2213104 title must match official subtitle");
-});
-
-// Test 4 — Unresolved entries use runtime fallback label
-test("Test 4 — Unresolved entries use runtime fallback label", () => {
-    const transformed = ChapterDataService.transformBranchStories(branchData);
-    const s2201101 = transformed.find(s => s.id === 2201101);
-    const s2201102 = transformed.find(s => s.id === 2201102);
+    const s2216101 = transformed.find(s => s.id === 2216101);
 
     assert(s2201101, "2201101 must exist");
-    assert.strictEqual(s2201101.chapter, "分支劇情 1", "2201101 fallback chapter");
-    assert.strictEqual(s2201101.title, "分支劇情 1", "2201101 fallback title");
-    assert.strictEqual(s2201101.metadataStatus, "unresolved");
+    assert.strictEqual(s2201101.chapter, "分支劇情 第1話");
+    assert.strictEqual(s2201101.title, "黑社會公會，前往背面世界");
 
-    assert(s2201102, "2201102 must exist");
-    assert.strictEqual(s2201102.chapter, "分支劇情 2", "2201102 fallback chapter");
+    assert(s2213101, "2213101 must exist");
+    assert.strictEqual(s2213101.chapter, "分支劇情 L I");
+    assert.strictEqual(s2213101.title, "棘手大小姐們的觀光約會？");
+
+    assert(s2213104, "2213104 must exist");
+    assert.strictEqual(s2213104.chapter, "分支劇情 R V");
+    assert.strictEqual(s2213104.title, "錢與豐滿與現實");
+
+    assert(s2216101, "2216101 must exist");
+    assert.strictEqual(s2216101.chapter, "分支劇情 第1話");
+    assert.strictEqual(s2216101.title, "新人偶像小志那");
+});
+
+// Test 4 — Unresolved mock entries use runtime fallback label
+test("Test 4 — Unresolved mock entries use runtime fallback label", () => {
+    const mockUnresolvedData = {
+        version: 1,
+        part: 3,
+        stories: [
+            { story_id: 2201101, chapter: 1, branch_label: null, title: null, subtitle: null, metadata_status: "unresolved" },
+            { story_id: 2201102, chapter: 1, branch_label: null, title: null, subtitle: null, metadata_status: "unresolved" }
+        ]
+    };
+    const transformed = ChapterDataService.transformBranchStories(mockUnresolvedData);
+    assert.strictEqual(transformed[0].chapter, "分支劇情 1", "2201101 fallback chapter");
+    assert.strictEqual(transformed[0].title, "分支劇情 1", "2201101 fallback title");
+    assert.strictEqual(transformed[0].metadataStatus, "unresolved");
+    assert.strictEqual(transformed[1].chapter, "分支劇情 2", "2201102 fallback chapter");
 });
 
 // Test 5 — Source data object is not mutated
 test("Test 5 — Source data object is not mutated", () => {
-    const originalEntry = branchData.stories.find(s => s.story_id === 2201101);
-    assert.strictEqual(originalEntry.title, null, "Source title must remain null");
-    assert.strictEqual(originalEntry.subtitle, null, "Source subtitle must remain null");
-    assert.strictEqual(originalEntry.branch_label, null, "Source branch_label must remain null");
+    const mockInput = {
+        version: 1,
+        part: 3,
+        stories: [
+            { story_id: 2201101, chapter: 1, branch_label: "第1話", title: "分支劇情 第1話", subtitle: "黑社會公會，前往背面世界", metadata_status: "resolved_official_bundle" }
+        ]
+    };
+    const originalSubtitle = mockInput.stories[0].subtitle;
+    ChapterDataService.transformBranchStories(mockInput);
+    assert.strictEqual(mockInput.stories[0].subtitle, originalSubtitle, "Source subtitle must remain untouched");
 });
 
 // Test 6 — Ordinary stories preserved when merging in QuestMapModule logic

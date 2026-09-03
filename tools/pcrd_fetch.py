@@ -359,8 +359,47 @@ SPEAKER_MAP = {
 }
 
 
-def _parse_bundle_dialogues(bundle_data):
-    """解析 AssetBundle bytes，返回對白列表。"""
+def _parse_bundle_metadata(bundle_data):
+    """解析 AssetBundle bytes 中的元數據 (cmd 0: 話數名稱, cmd 1: 大綱, cmd 32: 副標題)。"""
+    try:
+        import UnityPy
+        UnityPy.config.FALLBACK_UNITY_VERSION = '2021.3.20f1'
+    except ImportError:
+        raise RuntimeError("UnityPy 未安裝，請執行: pip install UnityPy")
+
+    title = None
+    synopsis = None
+    cmd32_title = None
+
+    bundle = UnityPy.load(bundle_data)
+    for obj in bundle.objects:
+        if obj.type.name == "TextAsset":
+            data = obj.read()
+            script = getattr(data, 'script', None) or getattr(data, 'm_Script', None)
+            if not script:
+                continue
+            if isinstance(script, str):
+                script = bytes(script, 'utf-8', 'surrogateescape')
+            commands = _deserialize_story_raw(script)
+            for idx, args in commands:
+                if idx == 0 and args:
+                    title = str(args[0]).strip()
+                elif idx == 1 and args:
+                    synopsis = str(args[0]).strip()
+                elif idx == 32 and args:
+                    cmd32_title = str(args[0]).strip()
+
+    final_title = cmd32_title or title
+    return {
+        "title": final_title,
+        "chapter_title": title,
+        "subtitle": cmd32_title,
+        "synopsis": synopsis
+    }
+
+
+def _parse_bundle_dialogues(bundle_data, extract_metadata=False):
+    """解析 AssetBundle bytes，返回對白列表。若 extract_metadata=True 則返回 (dialogues, metadata)。"""
     try:
         import UnityPy
         UnityPy.config.FALLBACK_UNITY_VERSION = '2021.3.20f1'
@@ -368,6 +407,7 @@ def _parse_bundle_dialogues(bundle_data):
         raise RuntimeError("UnityPy 未安裝，請執行: pip install UnityPy")
 
     dialogues = []
+    bundle_metadata = {"title": None, "chapter_title": None, "subtitle": None, "synopsis": None}
     bundle = UnityPy.load(bundle_data)
     for obj in bundle.objects:
         if obj.type.name == "TextAsset":
@@ -380,10 +420,14 @@ def _parse_bundle_dialogues(bundle_data):
             commands = _deserialize_story_raw(script)
             current_voice = None
             for idx, args in commands:
-                # The scenario format interleaves dialogue with presentation
-                # commands.  Keeping these commands in the exported JSON is
-                # essential: otherwise the reader has no place to show a
-                # background change, a CG, or a movie transition.
+                # 捕獲元數據指令
+                if idx == 0 and args and not bundle_metadata["chapter_title"]:
+                    bundle_metadata["chapter_title"] = str(args[0]).strip()
+                elif idx == 1 and args and not bundle_metadata["synopsis"]:
+                    bundle_metadata["synopsis"] = str(args[0]).strip()
+                elif idx == 32 and args and not bundle_metadata["subtitle"]:
+                    bundle_metadata["subtitle"] = str(args[0]).strip()
+
                 still_match = None
                 if idx != 6:
                     for arg in args:
@@ -404,10 +448,6 @@ def _parse_bundle_dialogues(bundle_data):
                 elif idx == 5 and args:
                     dialogues.append({"type": "background", "bg_id": str(args[0])})
                 elif idx == 46 and args:
-                    # So-net's recent main-story bundles use command 46 for
-                    # movie transitions (for example 221600601).  The ID is
-                    # also used by the matching storydata_still bundle when a
-                    # static preview is available.
                     movie_id = str(args[0])
                     dialogues.append({"type": "movie", "movie_id": movie_id})
                     preview_path = os.path.join(
@@ -424,6 +464,10 @@ def _parse_bundle_dialogues(bundle_data):
                         words = words.replace("主人", "主公大人")
                     dialogues.append({"name": speaker, "words": words, "voice": current_voice})
                     current_voice = None
+
+    bundle_metadata["title"] = bundle_metadata["subtitle"] or bundle_metadata["chapter_title"]
+    if extract_metadata:
+        return dialogues, bundle_metadata
     return dialogues
 
 

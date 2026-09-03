@@ -300,6 +300,18 @@ const QuestMapModule = {
                 }
             }
 
+            if (!this.movieLinks) {
+                try {
+                    const resp = await fetch('data/movie_links.json');
+                    if (resp.ok) {
+                        this.movieLinks = await resp.json();
+                        console.log(`[QuestMapModule] 成功載入動畫連結映射表`);
+                    }
+                } catch (e) {
+                    this.movieLinks = {};
+                }
+            }
+
             if (!this.extraEvents) {
                 try {
                     const resp = await fetch('data/extra_events.json');
@@ -1888,6 +1900,66 @@ const QuestMapModule = {
 
     playVoice(voiceName) {
         return window.MediaService.playVoice(voiceName);
+    },
+
+    openMoviePopup(movieId) {
+        if (!movieId) return;
+        const cleanId = String(movieId).replace('movie_', '').replace('story_', '');
+        const gdriveId = this.movieLinks ? (this.movieLinks[cleanId] || this.movieLinks[`story_${cleanId}`]) : null;
+
+        let modal = document.getElementById('movie-player-modal');
+        if (!modal) {
+            modal = document.createElement('div');
+            modal.id = 'movie-player-modal';
+            modal.className = 'movie-player-modal';
+            modal.innerHTML = `
+                <div class="movie-player-box">
+                    <div class="movie-player-header">
+                        <span>🎬 劇情過場動畫放映室 (1080p 官方繁中字幕)</span>
+                        <span class="close-x" onclick="QuestMapModule.closeMoviePopup()">✖</span>
+                    </div>
+                    <div class="movie-player-body" id="movie-player-body"></div>
+                    <div class="movie-player-footer">
+                        <button class="movie-close-btn" onclick="QuestMapModule.closeMoviePopup()">關閉</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) QuestMapModule.closeMoviePopup();
+            });
+        }
+
+        const bodyEl = document.getElementById('movie-player-body');
+        if (!bodyEl) return;
+
+        if (gdriveId) {
+            bodyEl.innerHTML = `<iframe src="https://drive.google.com/file/d/${gdriveId}/preview" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+        } else {
+            bodyEl.innerHTML = `
+                <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; background: #162030; padding: 24px; text-align: center;">
+                    <div style="font-size: 2.6rem; margin-bottom: 12px; animation: pulse 2s infinite;">☁️</div>
+                    <div style="font-size: 1.15rem; font-weight: 700; color: #60a5fa; margin-bottom: 8px;">動畫標識：story_${cleanId}</div>
+                    <div style="font-size: 0.88rem; color: #cbd5e1; max-width: 480px; line-height: 1.6;">
+                        此動畫正在準備上傳至 Google Drive 雲端中，或尚未同步至映射表。<br>
+                        若您在本地已壓制完畢，請執行同步腳本更新線上串流連結。
+                    </div>
+                </div>
+            `;
+        }
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    },
+
+    closeMoviePopup() {
+        const modal = document.getElementById('movie-player-modal');
+        if (modal) {
+            modal.classList.remove('active');
+            const bodyEl = document.getElementById('movie-player-body');
+            if (bodyEl) bodyEl.innerHTML = '';
+        }
+        document.body.style.overflow = '';
     },
 
     handleAvatarError(img, realName) {
