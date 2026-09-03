@@ -31,6 +31,8 @@ except Exception:
 # ─────────────────────────── 常數 ───────────────────────────
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
 DASHBOARD_DIR = os.path.join(BASE_DIR, "dashboard")
 DIST_DIR = os.path.join(BASE_DIR, "dist_story_map")
 CHARACTERS_JS = os.path.join(DASHBOARD_DIR, "characters.js")
