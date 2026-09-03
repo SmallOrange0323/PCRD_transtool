@@ -65,6 +65,13 @@ def main():
         (os.path.join(dashboard_dir, "data", "story_thumbnails.json"), "data/story_thumbnails.json"),
         (os.path.join(dashboard_dir, "data", "event_summaries.json"), "data/event_summaries.json"),
         (os.path.join(dashboard_dir, "data", "main_story_chapter_summaries.json"), "data/main_story_chapter_summaries.json"),
+        (os.path.join(dashboard_dir, "data", "branch_stories.json"), "data/branch_stories.json"),
+        (os.path.join(dashboard_dir, "data", "movie_links.json"), "data/movie_links.json"),
+        (os.path.join(dashboard_dir, "dialogue-normalizer.js"), "dialogue-normalizer.js"),
+        (os.path.join(dashboard_dir, "media-service.js"), "media-service.js"),
+        (os.path.join(dashboard_dir, "speaker-view.js"), "speaker-view.js"),
+        (os.path.join(dashboard_dir, "chara-modal.js"), "chara-modal.js"),
+        (os.path.join(dashboard_dir, "dialogue-view.js"), "dialogue-view.js"),
     ]
     
     # 複製核心文件
@@ -87,10 +94,16 @@ def main():
             sys.exit(1)
 
     # 自動生成資料庫大小快取資訊檔，防止 GitHub Pages 不支援 HEAD 請求導致的本地 Cache 不更新 Bug
-    # 同時注入以時間為準的 db_version 戳記以實現全自動的 IndexedDB 緩存清空
-    import datetime
+    # 同時注入決定性 hash 版本戳記以符合部署門禁規範
+    import hashlib
+    tw_db = os.path.join(dashboard_dir, "redive_tw.db")
+    if os.path.exists(tw_db):
+        h = hashlib.md5(open(tw_db, "rb").read()).hexdigest()[:12]
+        db_ver = f"hash_{h}"
+    else:
+        db_ver = "hash_default"
     db_info = {
-        "db_version": datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+        "db_version": db_ver
     }
     for region in ['tw', 'jp']:
         db_file = os.path.join(dashboard_dir, f"redive_{region}.db")
@@ -233,24 +246,8 @@ def main():
                     pass
         print(f"[Copy] 成功複製了 {copied_voices} 個新劇情對白語音 M4A 檔案")
 
-    # 動態複製所有劇情劇照 (still/story)
-    still_story_src = os.path.join(dashboard_dir, "still", "story")
-    still_story_dst = os.path.join(dist_dir, "still", "story")
-    if os.path.exists(still_story_src):
-        os.makedirs(still_story_dst, exist_ok=True)
-        copied_stills = 0
-        for item in os.listdir(still_story_src):
-            if item.endswith(".webp"):
-                try:
-                    src_file = os.path.join(still_story_src, item)
-                    dst_file = os.path.join(still_story_dst, item)
-                    if os.path.exists(dst_file) and os.path.getsize(src_file) == os.path.getsize(dst_file):
-                        continue
-                    shutil.copy2(src_file, dst_file)
-                    copied_stills += 1
-                except Exception:
-                    pass
-        print(f"[Copy] 成功複製了 {copied_stills} 個新劇情故事劇照 WebP 檔案")
+    # 提醒：GitHub Pages 發布包中的劇情劇照一律由前端自動 Fallback 至遠端 CDN (estertion)，
+    # 嚴禁將本地 2,500+ 張劇照拷貝進 dist_story_map，以嚴格遵守 900 MiB 體積門禁。
 
     # 複製所有背景圖 (still/bg) 與劇情 CG (still/scenario)
     for sub in ["bg", "scenario"]:
@@ -301,16 +298,18 @@ def main():
             lambda m: f'<script>\n// === chapter-data.js INLINED ===\n{chapter_data_js_code}\n// === END chapter-data.js ===\n</script>',
             html_content
         )
-        # 替換 characters.js 與 avatar-service.js 動態版號以破壞瀏覽器 Cache
+        # 替換前端腳本與樣式表的動態版號以破壞瀏覽器 Cache
         v_ts = int(time.time())
+        for script_name in ["characters.js", "avatar-service.js", "story-asset-service.js", "dialogue-normalizer.js", "media-service.js", "speaker-view.js", "chara-modal.js", "dialogue-view.js", "map.js"]:
+            escaped = re.escape(script_name)
+            html_content = re.sub(
+                rf'<script src="{escaped}(?:\?v=[^"]*)?"></script>',
+                f'<script src="{script_name}?v={v_ts}"></script>',
+                html_content
+            )
         html_content = re.sub(
-            r'<script src="characters\.js(?:\?v=[^"]*)?"></script>',
-            f'<script src="characters.js?v={v_ts}"></script>',
-            html_content
-        )
-        html_content = re.sub(
-            r'<script src="avatar-service\.js(?:\?v=[^"]*)?"></script>',
-            f'<script src="avatar-service.js?v={v_ts}"></script>',
+            r'<link rel="stylesheet" href="style\.css(?:\?v=[^"]*)?">',
+            f'<link rel="stylesheet" href="style.css?v={v_ts}">',
             html_content
         )
 
