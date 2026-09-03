@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- 樣式表 -->
-    <link rel="stylesheet" href="style.css?v=5.0">
+    <link rel="stylesheet" href="style.css?v=1788477070">
 
     <!-- 函式庫 -->
     <script src="sql-wasm.js"></script>
@@ -465,8 +465,8 @@ window.PCRDatabase = {
 
 // === END db.js ===
 </script>
-    <script src="avatar-service.js?v=b55a8025"></script>
-    <script src="story-asset-service.js?v=5.2.1"></script>
+    <script src="avatar-service.js?v=1788477070"></script>
+    <script src="story-asset-service.js?v=1788477070"></script>
     <script>
 // === chapter-data.js INLINED ===
 console.log("chapter-data.js loaded");
@@ -519,7 +519,8 @@ console.log("chapter-data.js loaded");
 
                 // 3. metadata_status 契約檢查
                 const status = s.metadata_status;
-                if (status !== "resolved_official_screenshot" && status !== "unresolved") {
+                const isResolved = status === "resolved_official_bundle" || status === "resolved_official_screenshot";
+                if (!isResolved && status !== "unresolved") {
                     throw new Error(`[ChapterDataService] 第 ${idx} 筆分支劇情 metadata_status 不合法: ${status}`);
                 }
 
@@ -527,7 +528,7 @@ console.log("chapter-data.js loaded");
                 let titleDisplay = "";
 
                 // 4. Resolved 契約檢查：必須完整包含非空之 branch_label, title, subtitle
-                if (status === "resolved_official_screenshot") {
+                if (isResolved) {
                     if (
                         typeof s.branch_label !== 'string' || !s.branch_label.trim() ||
                         typeof s.title !== 'string' || !s.title.trim() ||
@@ -730,13 +731,13 @@ console.log("chapter-data.js loaded");
 })();
 // === END chapter-data.js ===
 </script>
-    <script src="characters.js?v=18a65506"></script>
-    <script src="speaker-view.js?v=0ea47406"></script>
-    <script src="chara-modal.js?v=abeecbc9"></script>
-    <script src="dialogue-normalizer.js?v=f1ddede4"></script>
-    <script src="media-service.js?v=ace8e730"></script>
-    <script src="dialogue-view.js?v=b127e9fb"></script>
-    <script src="map.js?v=bde3847b"></script>
+    <script src="characters.js?v=1788477070"></script>
+    <script src="speaker-view.js?v=1788477070"></script>
+    <script src="chara-modal.js?v=1788477070"></script>
+    <script src="dialogue-normalizer.js?v=1788477070"></script>
+    <script src="media-service.js?v=1788477070"></script>
+    <script src="dialogue-view.js?v=1788477070"></script>
+    <script src="map.js?v=1788477070"></script>
 
     <script>
         console.log("Main script block in story_map.html starting...");
