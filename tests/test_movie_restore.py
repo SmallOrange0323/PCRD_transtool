@@ -25,6 +25,7 @@ import tempfile
 import subprocess
 from pathlib import Path
 
+from tools.repair_story_identities import audit_and_repair
 from tools.movie_restore_core import (
     ROOT,
     KNOWN_GOOD_IDENTITY_BASELINE,
@@ -38,7 +39,7 @@ from tools.movie_restore_core import (
 class TestMovieRestoreComprehensive(unittest.TestCase):
 
     def test_01_unaffected_story_not_written_by_repair(self):
-        """1. Unaffected story is NOT written by repair: files with complete unit_ids are touched 0 times."""
+        """1. Unaffected story is NOT written by repair (apply=True): files with complete unit_ids are touched 0 times."""
         with tempfile.TemporaryDirectory() as tmpdir:
             story_dir = Path(tmpdir)
             test_file = story_dir / "2201002.json"
@@ -47,68 +48,146 @@ class TestMovieRestoreComprehensive(unittest.TestCase):
             ]
             test_file.write_text(json.dumps(clean_data), encoding="utf-8")
             mtime_before = test_file.stat().st_mtime_ns
+            content_before = test_file.read_text(encoding="utf-8")
 
-            # 模擬檢查 affected: 由於 unit_id 數量與 canonical 一致，不應寫入
-            # (以相同的 clean_data 執行模擬 repair 檢查)
-            curr_uids = [x.get("unit_id") for x in clean_data if x.get("unit_id")]
-            canon_uids = [105812]
-            is_affected = (len(curr_uids) < len(canon_uids))
-            self.assertFalse(is_affected)
+            def mock_loader(ref, rel):
+                return copy.deepcopy(clean_data)
 
-            mtime_after = test_file.stat().st_mtime_ns
-            self.assertEqual(mtime_before, mtime_after)
+            stats = audit_and_repair(
+                story_dir=story_dir,
+                apply=True,
+                baseline_loader=mock_loader,
+                story_files=["story/2201002.json"],
+                verbose=False
+            )
+
+            self.assertEqual(stats["stories_audited"], 1)
+            self.assertEqual(stats["stories_affected"], 0)
+            self.assertEqual(stats["stories_written"], 0)
+            self.assertEqual(stats["unaffected_rewritten"], 0)
+            self.assertEqual(test_file.stat().st_mtime_ns, mtime_before)
+            self.assertEqual(test_file.read_text(encoding="utf-8"), content_before)
 
     def test_02_affected_story_is_repaired(self):
-        """2. Affected story is repaired: degraded story lacking unit_id is restored from canonical baseline."""
-        canonical = [
-            {"type": "background", "bg_id": "500030"},
-            {"type": "dialogue", "name": "佩可", "words": "很好吃！", "unit_id": 105812}
-        ]
-        degraded = [
-            {"type": "background", "bg_id": "500030"},
-            {"type": "movie", "movie_id": "200100001"},
-            {"name": "佩可", "words": "很好吃！"}
-        ]
+        """2. Affected story is repaired (apply=True): degraded story lacking unit_id is restored from canonical baseline."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            story_dir = Path(tmpdir)
+            test_file = story_dir / "2201002.json"
+            canonical = [
+                {"type": "background", "bg_id": "500030"},
+                {"type": "dialogue", "name": "佩可", "words": "很好吃！", "unit_id": 105812}
+            ]
+            degraded = [
+                {"type": "background", "bg_id": "500030"},
+                {"type": "movie", "movie_id": "200100001"},
+                {"name": "佩可", "words": "很好吃！"}
+            ]
+            test_file.write_text(json.dumps(degraded), encoding="utf-8")
 
-        repaired = merge_movie_commands(canonical, degraded)
-        self.assertEqual(len(repaired), 3)
-        self.assertEqual(repaired[1]["type"], "movie")
-        self.assertEqual(repaired[1]["movie_id"], "200100001")
-        self.assertEqual(repaired[2]["type"], "dialogue")
-        self.assertEqual(repaired[2]["unit_id"], 105812)
+            def mock_loader(ref, rel):
+                return copy.deepcopy(canonical)
+
+            stats = audit_and_repair(
+                story_dir=story_dir,
+                apply=True,
+                baseline_loader=mock_loader,
+                story_files=["story/2201002.json"],
+                verbose=False
+            )
+
+            self.assertEqual(stats["stories_audited"], 1)
+            self.assertEqual(stats["stories_affected"], 1)
+            self.assertEqual(stats["stories_repairable"], 1)
+            self.assertEqual(stats["stories_skipped_alignment"], 0)
+            self.assertEqual(stats["stories_written"], 1)
+
+            repaired_on_disk = json.loads(test_file.read_text(encoding="utf-8"))
+            self.assertEqual(len(repaired_on_disk), 3)
+            self.assertEqual(repaired_on_disk[1]["type"], "movie")
+            self.assertEqual(repaired_on_disk[1]["movie_id"], "200100001")
+            self.assertEqual(repaired_on_disk[2]["type"], "dialogue")
+            self.assertEqual(repaired_on_disk[2]["unit_id"], 105812)
 
     def test_03_audit_mode_zero_writes(self):
-        """3. Audit mode performs zero writes: --audit flag produces zero filesystem modifications."""
+        """3. Audit mode performs zero writes (apply=False): --audit produces zero filesystem modifications even on affected stories."""
         with tempfile.TemporaryDirectory() as tmpdir:
-            test_file = Path(tmpdir) / "test.json"
-            test_file.write_text("[]", encoding="utf-8")
-            mtime = test_file.stat().st_mtime_ns
+            story_dir = Path(tmpdir)
+            test_file = story_dir / "2201002.json"
+            canonical = [
+                {"type": "background", "bg_id": "500030"},
+                {"type": "dialogue", "name": "佩可", "words": "很好吃！", "unit_id": 105812}
+            ]
+            degraded = [
+                {"type": "background", "bg_id": "500030"},
+                {"type": "movie", "movie_id": "200100001"},
+                {"name": "佩可", "words": "很好吃！"}
+            ]
+            test_file.write_text(json.dumps(degraded), encoding="utf-8")
+            mtime_before = test_file.stat().st_mtime_ns
+            content_before = test_file.read_text(encoding="utf-8")
 
-            # 執行 python tools/repair_story_identities.py --audit 驗證退出碼 0 且檔案未被改寫
-            res = subprocess.run(
-                [sys.executable, str(ROOT / "tools" / "repair_story_identities.py"), "--audit"],
-                capture_output=True,
-                text=True,
-                cwd=str(ROOT)
+            def mock_loader(ref, rel):
+                return copy.deepcopy(canonical)
+
+            stats = audit_and_repair(
+                story_dir=story_dir,
+                apply=False,
+                baseline_loader=mock_loader,
+                story_files=["story/2201002.json"],
+                verbose=False
             )
-            self.assertEqual(res.returncode, 0)
-            self.assertIn("AUDIT MODE (ZERO WRITES)", res.stdout)
-            self.assertEqual(test_file.stat().st_mtime_ns, mtime)
+
+            self.assertEqual(stats["stories_audited"], 1)
+            self.assertEqual(stats["stories_affected"], 1)
+            self.assertEqual(stats["stories_repairable"], 1)
+            self.assertEqual(stats["stories_written"], 0)
+            self.assertEqual(test_file.stat().st_mtime_ns, mtime_before)
+            self.assertEqual(test_file.read_text(encoding="utf-8"), content_before)
 
     def test_04_alignment_mismatch_refuses_modification(self):
-        """4. Alignment mismatch refuses modification: raises AlignmentMismatchError and leaves data untouched."""
-        canonical = [
-            {"type": "background", "bg_id": "500030"},
-            {"type": "dialogue", "name": "佩可", "words": "吃飽了！", "unit_id": 105812}
-        ]
-        mismatched_raw = [
-            {"type": "background", "bg_id": "999999"}, # Mismatch
-            {"type": "movie", "movie_id": "200100001"},
-            {"name": "佩可", "words": "吃飽了！"}
-        ]
+        """4. Alignment mismatch refuses modification: raises AlignmentMismatchError and leaves data untouched on disk (apply=True)."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            story_dir = Path(tmpdir)
+            test_file = story_dir / "2201002.json"
+            canonical = [
+                {"type": "background", "bg_id": "500030"},
+                {"type": "dialogue", "name": "佩可", "words": "吃飽了！", "unit_id": 105812}
+            ]
+            mismatched_raw = [
+                {"type": "background", "bg_id": "999999"},  # Mismatch
+                {"type": "movie", "movie_id": "200100001"},
+                {"name": "佩可", "words": "吃飽了！"}
+            ]
+            test_file.write_text(json.dumps(mismatched_raw), encoding="utf-8")
+            mtime_before = test_file.stat().st_mtime_ns
+            content_before = test_file.read_text(encoding="utf-8")
 
-        with self.assertRaises(AlignmentMismatchError):
-            merge_movie_commands(canonical, mismatched_raw, story_id="test_04")
+            def mock_loader(ref, rel):
+                return copy.deepcopy(canonical)
+
+            stats = audit_and_repair(
+                story_dir=story_dir,
+                apply=True,
+                baseline_loader=mock_loader,
+                story_files=["story/2201002.json"],
+                verbose=False
+            )
+
+            self.assertEqual(stats["stories_audited"], 1)
+            self.assertEqual(stats["stories_affected"], 1)
+            self.assertEqual(stats["stories_repairable"], 0)
+            self.assertEqual(stats["stories_skipped_alignment"], 1)
+            self.assertEqual(stats["stories_written"], 0)
+            self.assertEqual(len(stats["mismatch_details"]), 1)
+            self.assertEqual(stats["mismatch_details"][0][0], "2201002")
+
+            # File on disk must remain strictly untouched
+            self.assertEqual(test_file.stat().st_mtime_ns, mtime_before)
+            self.assertEqual(test_file.read_text(encoding="utf-8"), content_before)
+
+            # Direct unit assertion for merge_movie_commands
+            with self.assertRaises(AlignmentMismatchError):
+                merge_movie_commands(canonical, mismatched_raw, story_id="2201002", validate_alignment=True)
 
     def test_05_no_fallback_append_on_mismatch(self):
         """5. No fallback append on mismatch: fail closed instead of blindly appending movies."""
