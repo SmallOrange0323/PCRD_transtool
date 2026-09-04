@@ -414,5 +414,27 @@ class TestBundleSlimmingAndPrune(unittest.TestCase):
         additions, deltas = calculate_expected_additions_and_deltas(self.mock_dash, self.mock_dist)
         self.assertEqual(additions, file_sz * 2, "dry-run 預估應精確包含 legacy 及由其映射生成之 canonical icon 大小")
 
+    # 22. icon/story official thumbnails preserved and stale pruned
+    def test_22_icon_story_preserved_and_pruned(self):
+        """確保官方劇情縮圖 (icon/story) 能被正確同步並清理孤立檔案"""
+        dash_story_icon = self.mock_dash / "icon" / "story"
+        dash_story_icon.mkdir(parents=True, exist_ok=True)
+        (dash_story_icon / "2201101.webp").write_bytes(b"thumb_2201101")
+        file_sz = len(b"thumb_2201101")
+
+        dist_story_icon = self.mock_dist / "icon" / "story"
+        dist_story_icon.mkdir(parents=True, exist_ok=True)
+        # 存在 source 中的縮圖
+        (dist_story_icon / "2201101.webp").write_bytes(b"thumb_2201101")
+        # 孤立的 stale 縮圖
+        stale_file = dist_story_icon / "9999999.webp"
+        stale_file.write_bytes(b"stale_thumb")
+
+        prune_stats = prune_stale_dist_assets(self.mock_dash, self.mock_dist)
+        self.assertIn("stale icon/story", prune_stats)
+        self.assertEqual(prune_stats["stale icon/story"][0], 1)
+        self.assertFalse(stale_file.exists(), "孤立的縮圖應被清理")
+        self.assertTrue((dist_story_icon / "2201101.webp").exists(), "source 存在的官方縮圖應被保留")
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

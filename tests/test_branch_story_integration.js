@@ -66,7 +66,7 @@ test("Test 3 — All 63 entries use verified official bundle metadata", () => {
     const s2216101 = transformed.find(s => s.id === 2216101);
 
     assert(s2201101, "2201101 must exist");
-    assert.strictEqual(s2201101.chapter, "分支劇情 第1話");
+    assert.strictEqual(s2201101.chapter, "分支劇情 I");
     assert.strictEqual(s2201101.title, "黑社會公會，前往背面世界");
 
     assert(s2213101, "2213101 must exist");
@@ -77,12 +77,17 @@ test("Test 3 — All 63 entries use verified official bundle metadata", () => {
     assert.strictEqual(s2213102.chapter, "分支劇情 L");
     assert.strictEqual(s2213102.title, "亞里莎，遭遇巨人");
 
+    const s2213103 = transformed.find(s => s.id === 2213103);
+    assert(s2213103, "2213103 must exist");
+    assert.strictEqual(s2213103.chapter, "分支劇情 LI");
+    assert.strictEqual(s2213103.title, "死者的世界裡最臭的東西");
+
     assert(s2213104, "2213104 must exist");
     assert.strictEqual(s2213104.chapter, "分支劇情 R V");
     assert.strictEqual(s2213104.title, "錢與豐滿與現實");
 
     assert(s2216101, "2216101 must exist");
-    assert.strictEqual(s2216101.chapter, "分支劇情 第1話");
+    assert.strictEqual(s2216101.chapter, "分支劇情 LVI");
     assert.strictEqual(s2216101.title, "新人偶像小志那");
 });
 

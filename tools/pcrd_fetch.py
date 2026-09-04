@@ -1811,6 +1811,14 @@ def cmd_sync_episode(args):
     print(f"\n🎉 話數 story_id={story_id} 一鍵同步完成！對白、語音與多媒體圖片皆已齊備。")
 
 
+def cmd_fetch_story_thumbnails(args):
+    """下載官方劇情話數專屬縮圖 (256x128 WebP)"""
+    from fetch_story_thumbnails import fetch_all_story_thumbnails
+    force = getattr(args, "force", False)
+    workers = getattr(args, "workers", 8)
+    fetch_all_story_thumbnails(force=force, max_workers=workers)
+
+
 # ─────────────────────────── CLI 入口 ───────────────────────────
 
 
@@ -1872,6 +1880,11 @@ def main():
     p_sync = sub.add_parser("sync-episode", help="一鍵完整同步特定話數的所有資源（JSON、語音、背景、CG）")
     p_sync.add_argument("--story-id", type=int, required=True, help="劇情 story_id")
 
+    # fetch-story-thumbnails
+    p_thumb = sub.add_parser("fetch-story-thumbnails", help="下載主線與分支劇情的官方專屬縮圖 (256x128 WebP)")
+    p_thumb.add_argument("--force", action="store_true", help="強制重新下載並覆蓋現有縮圖")
+    p_thumb.add_argument("--workers", type=int, default=8, help="並行執行緒數 (預設: 8)")
+
     args = parser.parse_args()
     dispatch = {
         "update-db": cmd_update_db,
@@ -1883,6 +1896,7 @@ def main():
         "fetch-story-voices": cmd_fetch_story_voices,
         "fetch-story-images": cmd_fetch_story_images,
         "sync-episode": cmd_sync_episode,
+        "fetch-story-thumbnails": cmd_fetch_story_thumbnails,
     }
     dispatch[args.command](args)
 

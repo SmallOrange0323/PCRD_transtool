@@ -139,4 +139,24 @@ test("Test 7: production with index.html subpath", () => {
     assert.strictEqual(service.isProductionPages(), true, "/PCRD_transtool/index.html 應判定為 production");
 });
 
+// Test 8 — getStoryThumbnailUrls candidate order
+test("Test 8: getStoryThumbnailUrls candidate order (story -> still -> bg -> fallback)", () => {
+    const service = createServiceInstance();
+    const urls = service.getStoryThumbnailUrls("2201101", "1001001", "10040");
+    assert.strictEqual(urls[0], "icon/story/2201101.webp", "第一候選必須為本地官方縮圖");
+    assert(urls.some(u => u.includes("1001001")), "必須包含 still_id 候選");
+    assert(urls.some(u => u.includes("10040")), "必須包含 bg_id 候選");
+    assert(urls.some(u => u.includes("100431.webp")), "最後必須包含預設卡面保底");
+});
+
+// Test 9 — getStoryThumbnailHtml rendering and dataset serialization
+test("Test 9: getStoryThumbnailHtml rendering and error fallback data attribute", () => {
+    const service = createServiceInstance();
+    const html = service.getStoryThumbnailHtml("2201101", null, null, "test-thumb-class", "width:100%;");
+    assert(html.includes('src="icon/story/2201101.webp"'), "img src 必須為第一候選");
+    assert(html.includes('class="test-thumb-class"'), "img class 必須正確套用");
+    assert(html.includes('data-candidates="'), "必須包含已序列化之候選清單");
+    assert(html.includes('onerror="StoryAssetService.handleImageError(this)"'), "必須包含 onerror 處理器");
+});
+
 console.log(`\n🎉 All ${testsPassed} StoryAssetService tests passed!`);

@@ -23,6 +23,7 @@ try:
         cmd_fetch_story_voices as fetch_story_voices,
         cmd_fetch_story_images as fetch_story_images,
         cmd_sync_episode as sync_episode,
+        cmd_fetch_story_thumbnails as fetch_story_thumbnails,
         fetch_story_json_by_id,
         StoryFetchResult,
         load_story_manifest_hash_map,

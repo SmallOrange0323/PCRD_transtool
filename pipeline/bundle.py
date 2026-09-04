@@ -406,6 +406,16 @@ def prune_stale_dist_assets(dashboard_dir: Path = DASHBOARD_DIR, dist_dir: Path 
                 cnt, b = safe_prune_file(df, dry_run=dry_run, dist_root=dist_dir)
                 record_prune("stale still/scenario", cnt, b)
 
+    # 4E. icon/story/*.webp (官方劇情專屬縮圖鏡像清理)
+    dist_icon_story_dir = dist_dir / "icon" / "story"
+    src_icon_story_dir = dashboard_dir / "icon" / "story"
+    if dist_icon_story_dir.exists() and src_icon_story_dir.exists():
+        src_story_icons = {p.name for p in src_icon_story_dir.glob("*.webp")}
+        for df in list(dist_icon_story_dir.glob("*.webp")):
+            if df.name not in src_story_icons:
+                cnt, b = safe_prune_file(df, dry_run=dry_run, dist_root=dist_dir)
+                record_prune("stale icon/story", cnt, b)
+
     # 5. 清理 icon/unit/ 中不在 expected set 的圖片
     dist_icon_unit_dir = dist_dir / "icon" / "unit"
     if dist_icon_unit_dir.exists():
@@ -558,6 +568,20 @@ def calculate_expected_additions_and_deltas(dashboard_dir: Path = DASHBOARD_DIR,
                 if calc_sha256(sf) != calc_sha256(df):
                     deltas += (s_sz - d_sz)
 
+    # 7B. icon/story (官方劇情專屬縮圖)
+    src_icon_story = dashboard_dir / "icon" / "story"
+    dst_icon_story = dist_dir / "icon" / "story"
+    if src_icon_story.exists():
+        for sf in src_icon_story.glob("*.webp"):
+            df = dst_icon_story / sf.name
+            s_sz = sf.stat().st_size
+            if not df.exists():
+                additions += s_sz
+            else:
+                d_sz = df.stat().st_size
+                if calc_sha256(sf) != calc_sha256(df):
+                    deltas += (s_sz - d_sz)
+
     return additions, deltas
 
 def bundle_story_map(dry_run: bool = False) -> bool:
@@ -679,6 +703,11 @@ def bundle_story_map(dry_run: bool = False) -> bool:
         df = DIST_DIR / "icon" / "unit" / dst_name
         if copy_if_different(src_file, df, dry_run=dry_run):
             icon_copied += 1
+
+    # 7B. 同步官方劇情專屬縮圖 (icon/story)
+    icon_story_copied = sync_directory_assets(DASHBOARD_DIR / "icon" / "story", DIST_DIR / "icon" / "story", [".webp"], dry_run=dry_run)
+    if icon_story_copied > 0:
+        print(f"  [Thumb] 官方劇情專屬縮圖: {'預計同步' if dry_run else '已同步'} {icon_story_copied} 個檔案")
 
     # 8. 同步語音音檔 (sound/story_vo) - 本機發布包同步，受 .gitignore 排除
     voice_copied = sync_directory_assets(DASHBOARD_DIR / "sound" / "story_vo", DIST_DIR / "sound" / "story_vo", [".m4a"], dry_run=dry_run)

@@ -121,26 +121,14 @@ const QuestMapModule = {
 
     getStoryItemHtml(s, chDisplay, titleDisplay) {
         let thumbHtml = '';
-        if (this.storyThumbnails && this.storyThumbnails[s.id]) {
-            const thumbData = this.storyThumbnails[s.id];
-            if (thumbData.still_id) {
-                thumbHtml = StoryAssetService.getStillHtml(thumbData.still_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
-            } else if (thumbData.bg_id) {
-                // 無 CG 插畫時，顯示該話專屬的優美場景背景圖
-                thumbHtml = StoryAssetService.getBackgroundHtml(thumbData.bg_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
-            }
-        }
-        if (!thumbHtml) {
-            if (s.still_id) {
-                thumbHtml = StoryAssetService.getStillHtml(s.still_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
-            } else if (s.bg_id) {
-                thumbHtml = StoryAssetService.getBackgroundHtml(s.bg_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
-            } else if (s.type === 'chara' && s.groupId) {
-                const cardId = `${s.groupId}31`;
-                thumbHtml = `<img class="story-thumb-img" src="card/${cardId}.webp" onerror="if(this.src.indexOf('estertion')===-1){this.src='https://redive.estertion.win/card/full/${cardId}.webp';}else{this.src='https://redive.estertion.win/card/full/100431.webp';}" style="width:100%;height:100%;object-fit:cover;" alt="thumbnail">`;
-            } else {
-                thumbHtml = `<img class="story-thumb-img" src="https://redive.estertion.win/card/full/100431.webp" onerror="this.onerror=null; this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';" style="width:100%;height:100%;object-fit:cover;" alt="thumbnail">`;
-            }
+        if (s.type === 'chara' && s.groupId) {
+            const cardId = `${s.groupId}31`;
+            thumbHtml = `<img class="story-thumb-img" src="card/${cardId}.webp" onerror="if(this.src.indexOf('estertion')===-1){this.src='https://redive.estertion.win/card/full/${cardId}.webp';}else{this.src='https://redive.estertion.win/card/full/100431.webp';}" style="width:100%;height:100%;object-fit:cover;" alt="thumbnail">`;
+        } else {
+            const thumbData = (this.storyThumbnails && this.storyThumbnails[s.id]) || {};
+            const stillId = thumbData.still_id || s.still_id || null;
+            const bgId = thumbData.bg_id || s.bg_id || null;
+            thumbHtml = StoryAssetService.getStoryThumbnailHtml(s.id, stillId, bgId, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
         }
  return `
  <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}" id="story-item-${s.id}" onclick="QuestMapModule.selectStory(${s.id})">
@@ -297,6 +285,18 @@ const QuestMapModule = {
                     }
                 } catch (e) {
                     console.error("無法加載登場快取:", e);
+                }
+            }
+
+            if (!this.movieLinks) {
+                try {
+                    const resp = await fetch('data/movie_links.json');
+                    if (resp.ok) {
+                        this.movieLinks = await resp.json();
+                        console.log(`[QuestMapModule] 成功載入動畫連結映射表`);
+                    }
+                } catch (e) {
+                    this.movieLinks = {};
                 }
             }
 
@@ -1001,8 +1001,8 @@ const QuestMapModule = {
                     const info = firstStory ? ChapterDataService.getChapterInfo(this.currentPart, groupId) : null;
                     chTitle = info?.title ? ` - ${info.title}` : "";
 
-                    // 取得章節縮圖 (優先使用 groupId 對照，無則遍歷章節內故事尋找第一個有縮圖的故事)
-                    let chImgUrl = 'https://redive.estertion.win/card/full/100431.webp'; // 預設卡面
+                    // 取得章節縮圖 (優先使用章節內首個故事的官方專屬縮圖，無則逐步降級至 still_id / bg_id / 預設卡面)
+                    let foundStoryId = (childStories && childStories.length > 0) ? childStories[0].id : null;
                     let foundStillId = null;
                     let foundBgId = null;
 
@@ -1012,7 +1012,7 @@ const QuestMapModule = {
                         foundBgId = thumb.bg_id;
                     }
 
-                    if (!foundStillId && !foundBgId && this.storyThumbnails) {
+                    if (!foundStillId && !foundBgId && this.storyThumbnails && childStories) {
                         for (const s of childStories) {
                             const thumb = this.storyThumbnails[s.id];
                             if (thumb) {
@@ -1027,18 +1027,20 @@ const QuestMapModule = {
                         }
                     }
 
-                    if (foundStillId) {
-                        chImgUrl = `https://redive.estertion.win/card/story/${foundStillId}.webp`;
-                    } else if (foundBgId) {
-                        chImgUrl = `https://redive.estertion.win/bg/jpg/${foundBgId}.jpg`;
-                    }
+                    const chapterCardThumbHtml = StoryAssetService.getStoryThumbnailHtml(
+                        foundStoryId,
+                        foundStillId,
+                        foundBgId,
+                        'chapter-card-img',
+                        ''
+                    );
 
                     accordionHtml += `
                         <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
                             <div class="accordion-header chapter-card" onclick="QuestMapModule.toggleChapter(${chIndex})">
                                 <div class="acc-header-title">
                                     <div class="chapter-card-thumb">
-                                        <img class="chapter-card-img" src="${chImgUrl}" onerror="this.onerror=null; this.src='https://redive.estertion.win/card/full/100431.webp';">
+                                        ${chapterCardThumbHtml}
                                     </div>
                                     <span class="acc-ch-name" style="margin-left: 8px;">${this.escapeHtml(cleanChKey)}${this.escapeHtml(chTitle)}</span>
                                 </div>
@@ -1888,6 +1890,72 @@ const QuestMapModule = {
 
     playVoice(voiceName) {
         return window.MediaService.playVoice(voiceName);
+    },
+
+    openMoviePopup(movieId) {
+        if (!movieId) return;
+        if (window.MediaService && typeof window.MediaService.openMoviePopup === 'function') {
+            return window.MediaService.openMoviePopup(movieId, this.movieLinks);
+        }
+        const cleanId = String(movieId).replace('movie_', '').replace('story_', '');
+        const gdriveId = this.movieLinks ? (this.movieLinks[cleanId] || this.movieLinks[`story_${cleanId}`]) : null;
+
+        let modal = document.getElementById('movie-player-modal');
+        if (!modal) {
+            modal = document.createElement('div');
+            modal.id = 'movie-player-modal';
+            modal.className = 'movie-player-modal';
+            modal.innerHTML = `
+                <div class="movie-player-box">
+                    <div class="movie-player-header">
+                        <span>🎬 劇情過場動畫放映室 (1080p 官方繁中字幕)</span>
+                        <span class="close-x" onclick="QuestMapModule.closeMoviePopup()">✖</span>
+                    </div>
+                    <div class="movie-player-body" id="movie-player-body"></div>
+                    <div class="movie-player-footer">
+                        <button class="movie-close-btn" onclick="QuestMapModule.closeMoviePopup()">關閉</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) QuestMapModule.closeMoviePopup();
+            });
+        }
+
+        const bodyEl = document.getElementById('movie-player-body');
+        if (!bodyEl) return;
+
+        if (gdriveId) {
+            bodyEl.innerHTML = `<iframe src="https://drive.google.com/file/d/${gdriveId}/preview" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+        } else {
+            bodyEl.innerHTML = `
+                <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; background: #162030; padding: 24px; text-align: center;">
+                    <div style="font-size: 2.6rem; margin-bottom: 12px; animation: pulse 2s infinite;">☁️</div>
+                    <div style="font-size: 1.15rem; font-weight: 700; color: #60a5fa; margin-bottom: 8px;">動畫標識：story_${cleanId}</div>
+                    <div style="font-size: 0.88rem; color: #cbd5e1; max-width: 480px; line-height: 1.6;">
+                        此動畫正在準備上傳至 Google Drive 雲端中，或尚未同步至映射表。<br>
+                        若您在本地已壓制完畢，請執行同步腳本更新線上串流連結。
+                    </div>
+                </div>
+            `;
+        }
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    },
+
+    closeMoviePopup() {
+        if (window.MediaService && typeof window.MediaService.closeMoviePopup === 'function') {
+            return window.MediaService.closeMoviePopup();
+        }
+        const modal = document.getElementById('movie-player-modal');
+        if (modal) {
+            modal.classList.remove('active');
+            const bodyEl = document.getElementById('movie-player-body');
+            if (bodyEl) bodyEl.innerHTML = '';
+        }
+        document.body.style.overflow = '';
     },
 
     handleAvatarError(img, realName) {

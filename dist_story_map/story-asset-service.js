@@ -235,5 +235,63 @@ window.StoryAssetService = {
             img.src = candidates[index];
         };
         tryLoad();
+    },
+
+    /**
+     * 取得劇情話數官方專屬縮圖 (256x128) 及其降級候選 URL 清單
+     * 候選順序：
+     * 1. 本地官方專屬縮圖：icon/story/{storyId}.webp
+     * 2. 若有 stillId：呼叫 getStillUrls(stillId)
+     * 3. 若有 bgId：呼叫 getBackgroundUrls(bgId)
+     * 4. 遠端預設卡面保底
+     * @param {number|string} storyId 話數 ID (例如 2201101)
+     * @param {number|string} stillId 劇照 CG ID (可選)
+     * @param {number|string} bgId 背景 ID (可選)
+     * @returns {string[]} URL 候選清單
+     */
+    getStoryThumbnailUrls(storyId, stillId = null, bgId = null) {
+        const urls = [];
+        if (storyId) {
+            const sid = String(storyId).trim();
+            // 候選 1: 本地專屬官方縮圖
+            urls.push(`icon/story/${sid}.webp`);
+        }
+        // 候選 2: CG 劇照
+        if (stillId) {
+            const stillUrls = this.getStillUrls(stillId);
+            for (const u of stillUrls) {
+                if (!urls.includes(u)) urls.push(u);
+            }
+        }
+        // 候選 3: 場景背景
+        if (bgId) {
+            const bgUrls = this.getBackgroundUrls(bgId);
+            for (const u of bgUrls) {
+                if (!urls.includes(u)) urls.push(u);
+            }
+        }
+        // 候選 4: 預設卡面保底
+        urls.push('https://redive.estertion.win/card/full/100431.webp');
+        return urls;
+    },
+
+    /**
+     * 取得封裝好的劇情話數縮圖 HTML <img> 標籤
+     * 內建 onerror 逐步降級機制
+     * @param {number|string} storyId 話數 ID
+     * @param {number|string} stillId 劇照 CG ID
+     * @param {number|string} bgId 背景 ID
+     * @param {string} className CSS class
+     * @param {string} style 行內樣式
+     * @returns {string}
+     */
+    getStoryThumbnailHtml(storyId, stillId = null, bgId = null, className = "", style = "") {
+        const candidates = this.getStoryThumbnailUrls(storyId, stillId, bgId);
+        const firstSrc = candidates[0];
+        const remainingCandidates = candidates.slice(1);
+        const serialized = encodeURIComponent(JSON.stringify(remainingCandidates));
+        const safeClass = this.escapeHtml(className);
+        const safeStyle = this.escapeHtml(style);
+        return `<img class="${safeClass}" style="${safeStyle}" src="${firstSrc}" data-candidates="${serialized}" data-step="0" onerror="StoryAssetService.handleImageError(this)" alt="thumbnail">`;
     }
 };
