@@ -514,4 +514,26 @@ test("Test 20 — Field-level provenance contracts and official UI screenshot an
     });
 });
 
+// Test 21 — Pin canonical reality dataset (story_id, category, branch_label, subtitle)
+test("Test 21 — Pin canonical reality dataset to prevent documentation and data drift", () => {
+    const canonicalRealityDataset = [
+        { story_id: 2210102, chapter: 10, branch_label: "R I", subtitle: "被虐狂與眼鏡與現實與──" },
+        { story_id: 2211102, chapter: 11, branch_label: "R II", subtitle: "毛茸茸與收容所與現實" },
+        { story_id: 2212103, chapter: 12, branch_label: "R III", subtitle: "噗吉與mimi與現實" },
+        { story_id: 2212104, chapter: 12, branch_label: "R IV", subtitle: "宅宅與忍者與現實" },
+        { story_id: 2213104, chapter: 13, branch_label: "R V", subtitle: "錢與豐滿與現實" },
+        { story_id: 2214101, chapter: 14, branch_label: "R VI", subtitle: "英雄與跑腿與現實" },
+        { story_id: 2215102, chapter: 15, branch_label: "R VII", subtitle: "大小姐和鯛魚燒和現實和──" }
+    ];
+
+    canonicalRealityDataset.forEach(expected => {
+        const found = branchData.stories.find(s => s.story_id === expected.story_id);
+        assert(found, `Canonical reality record ${expected.story_id} must exist in branch_stories.json`);
+        assert.strictEqual(found.category, "reality", `Record ${expected.story_id} must have category reality`);
+        assert.strictEqual(found.chapter, expected.chapter, `Record ${expected.story_id} chapter mismatch`);
+        assert.strictEqual(found.branch_label, expected.branch_label, `Record ${expected.story_id} branch_label mismatch`);
+        assert.strictEqual(found.subtitle, expected.subtitle, `Record ${expected.story_id} canonical subtitle mismatch`);
+    });
+});
+
 console.log(`\n✅ All ${testsPassed} branch story integration tests passed successfully!`);
