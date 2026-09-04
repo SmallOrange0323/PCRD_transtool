@@ -33,6 +33,9 @@ jobs:
       - name: Run Bundle Slimming & Prune Tests
         run: python -m unittest tests.test_bundle_slimming -v
 
+      - name: Run Avatar Manifest & Bundler Tests
+        run: python -m unittest tests.test_avatar_manifest_bundler -v
+
       - name: Run Movie Restore & Identity Preservation Tests
         run: python -m unittest tests.test_movie_restore -v
 
