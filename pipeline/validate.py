@@ -248,6 +248,119 @@ def validate_story_source_dist_parity(
 
     return is_parity_pass, stats
 
+def validate_avatar_manifest_and_assets(dashboard_dir: Path, res: ValidationResult) -> bool:
+    """
+    【Phase 5 架構門禁】驗證 Avatar Manifest 與實體二進位資產不變量：
+    1. dashboard/data/avatar_assets.json 存在且格式合法 (單一資產登錄表)
+    2. 全量正規劇本 (story/*.json) 的所有 canonical dialogue unit_id (>= 100000) 必須 100% 登錄在 manifest
+    3. 每個 dialogue asset 的 status 必須為 'active' 或 'placeholder_only'
+    4. 每個 active asset 必須具有實體二進位檔案，且其真實 size_bytes 與 sha256 必須與 manifest 100% 相符
+    5. 每個 placeholder_only asset 不得宣告二進位屬性 (filename, size_bytes, sha256 均為 null)
+    6. 不得有重複的 active asset 指向同一個 unit_id
+    """
+    manifest_path = dashboard_dir / "data" / "avatar_assets.json"
+    if not manifest_path.exists():
+        res.error(f"Avatar assets manifest 不存在: {manifest_path}")
+        return False
+
+    try:
+        with open(manifest_path, "r", encoding="utf-8") as f:
+            manifest_data = json.load(f)
+    except Exception as e:
+        res.error(f"Avatar assets manifest JSON 損壞: {e}")
+        return False
+
+    assets = manifest_data.get("assets", [])
+    if not assets:
+        res.error("Avatar assets manifest 為空！")
+        return False
+
+    # 1. 對白話數語意對等 (Story Semantic Parity)
+    story_dir = dashboard_dir / "story"
+    canonical_dialogue_uids = set()
+    if story_dir.exists():
+        for f in story_dir.glob("*.json"):
+            if f.name.endswith(("_parsed.json", ".min.json")):
+                continue
+            try:
+                with open(f, "r", encoding="utf-8") as jf:
+                    data = json.load(jf)
+                rows = data if isinstance(data, list) else data.get("dialogue", [])
+                for r in rows:
+                    uid = r.get("unit_id") if r.get("unit_id") is not None else r.get("speaker_id")
+                    if uid is not None:
+                        try:
+                            n = int(uid)
+                            if n >= 100000:
+                                canonical_dialogue_uids.add(n)
+                        except:
+                            pass
+            except:
+                pass
+
+    manifest_uids = {a.get("unit_id") for a in assets if a.get("unit_id") is not None and a.get("usage") == "dialogue"}
+    missing_dialogue_in_manifest = canonical_dialogue_uids - manifest_uids
+    if missing_dialogue_in_manifest:
+        res.error(f"劇情對白要求的 unit_id 未在 avatar_assets.json 中登錄: {len(missing_dialogue_in_manifest)} 個 (範例: {sorted(list(missing_dialogue_in_manifest))[:5]})")
+    else:
+        res.ok(f"全量劇情對白要求的 {len(canonical_dialogue_uids)} 個 unit_id 皆已完整登錄於 Manifest")
+
+    # 2. 不變量與實體檔案雜湊/大小校驗
+    seen_active_dialogue_uids = set()
+    icon_unit_dir = dashboard_dir / "icon" / "unit"
+    active_count = 0
+    placeholder_count = 0
+    mismatch_errors = 0
+
+    for asset in assets:
+        uid = asset.get("unit_id")
+        usage = asset.get("usage")
+        status = asset.get("status")
+
+        if status not in ["active", "placeholder_only"]:
+            res.error(f"Asset ID {uid} 狀態非法: '{status}'")
+            continue
+
+        if status == "placeholder_only":
+            placeholder_count += 1
+            if asset.get("filename") is not None or asset.get("size_bytes") is not None or asset.get("sha256") is not None:
+                res.error(f"Placeholder-only 資產不得宣告二進位屬性: ID {uid}")
+            continue
+
+        # Active 資產校驗
+        active_count += 1
+        if usage == "dialogue":
+            if uid in seen_active_dialogue_uids:
+                res.error(f"重複的 active dialogue asset: unit_id {uid}")
+            seen_active_dialogue_uids.add(uid)
+
+        fname = asset.get("filename")
+        if not fname:
+            res.error(f"Active 資產缺失 filename: ID {uid}")
+            continue
+
+        src_path = icon_unit_dir / fname
+        if not src_path.exists():
+            res.error(f"Active 資產實體檔案缺失: {src_path}")
+            continue
+
+        actual_size = src_path.stat().st_size
+        declared_size = asset.get("size_bytes")
+        if actual_size != declared_size:
+            res.error(f"檔案大小失配: {fname} (硬碟={actual_size}, manifest={declared_size})")
+            mismatch_errors += 1
+
+        actual_sha = calc_sha256(src_path)
+        declared_sha = asset.get("sha256")
+        if actual_sha != declared_sha:
+            res.error(f"SHA-256 雜湊失配: {fname} (硬碟={actual_sha}, manifest={declared_sha})")
+            mismatch_errors += 1
+
+    if mismatch_errors == 0:
+        res.ok(f"Avatar Manifest 實體二進位對等校驗通過: {active_count} 個 active 檔案大小與 SHA-256 100% 吻合, {placeholder_count} 個 placeholder_only 規格正常")
+
+    return res.is_valid
+
 
 def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> bool:
     """
@@ -427,9 +540,12 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
         try:
             with open(thumb_path, "r", encoding="utf-8") as f:
                 thumbs = json.load(f)
-            res.ok(f"元數據映射表解析成功 (story_thumbnails 包含 {len(thumbs)} 筆章節劇照關聯)")
         except Exception as e:
             res.warning(f"story_thumbnails 解析異常: {e}")
+
+    # 6B. Avatar Manifest 與實體二進位資產門禁 (Phase 5)
+    print(f"\n🎭 執行 Avatar Manifest 與實體二進位資產門禁驗證...")
+    validate_avatar_manifest_and_assets(DASHBOARD_DIR, res)
 
     # 7. 若 check_dist=True，執行 dist_story_map 專屬集合與檔案深度驗證
     if check_dist or base_dir == DIST_DIR:

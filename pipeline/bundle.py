@@ -279,16 +279,47 @@ def render_index_html(dashboard_dir: Path = DASHBOARD_DIR) -> str:
 def get_expected_icon_unit_mappings(dashboard_dir: Path = DASHBOARD_DIR) -> Dict[str, Path]:
     """
     計算 canonical dist icon/unit 檔名與其對應之 source 實體檔案 Path 映射。
-    支援：
-    1. tracked_characters.json 中定義的 icon_ids (支援 <id> 與 legacy unit_icon_<id>)
-    2. legacy unit_icon_<id> 映射至 canonical <id> (若 canonical source 缺失時之降級)
-    3. NPC 頭像 (190000~199999 與特例 107411, 107412, 107431 及規整化 ID 如 107431.ext)
-    :return: {dst_filename: src_path}
+    
+    【Phase 5 架構升級：Manifest-First Authority】
+    1. 唯一權威依據為 dashboard/data/avatar_assets.json
+    2. 對於 status == 'active' 的資產（含 897 個對白頭像與 30 個 UI 頭像）：
+       - 100% 精準映射至 dist_story_map/icon/unit/<filename>
+       - 若 source 實體檔案缺失，立即拋出明確異常，絕不代換
+    3. 對於 status == 'placeholder_only' 的實體（3 個無圖差分）：
+       - 不要求二進位圖檔，不加入發布清單，亦不報錯
+    4. 若 manifest 不存在，回退至 legacy fallback 模式並輸出警告
     """
     mappings: Dict[str, Path] = {}
-    icon_src_dir = dashboard_dir / "icon" / "unit"
+    manifest_path = dashboard_dir / "data" / "avatar_assets.json"
 
-    # 1. tracked_characters
+    # 1. 權威路徑：Manifest 驅動發布 (Primary Authority)
+    if manifest_path.exists():
+        try:
+            with open(manifest_path, "r", encoding="utf-8") as f:
+                manifest_data = json.load(f)
+            
+            for asset in manifest_data.get("assets", []):
+                status = asset.get("status")
+                if status == "active":
+                    fname = asset.get("filename")
+                    if not fname:
+                        raise ValueError(f"[ERROR] Active manifest asset missing filename (ID: {asset.get('unit_id')})")
+                    src_path = dashboard_dir / "icon" / "unit" / fname
+                    if not src_path.exists():
+                        raise FileNotFoundError(f"[ERROR] Active manifest asset missing physical file: {src_path} (ID: {asset.get('unit_id')})")
+                    mappings[fname] = src_path
+                elif status == "placeholder_only":
+                    # 預期無實體二進位，安全略過
+                    continue
+
+            return mappings
+        except Exception as e:
+            if isinstance(e, FileNotFoundError):
+                raise
+            print(f"  [WARN] 讀取 avatar_assets.json 失敗，回退至舊版發布規則: {e}", file=sys.stderr)
+
+    # 2. 舊版備用規則 (Legacy Fallback - 僅在無 manifest 時生效)
+    icon_src_dir = dashboard_dir / "icon" / "unit"
     tracked_path = dashboard_dir / "data" / "tracked_characters.json"
     if tracked_path.exists():
         try:
@@ -308,7 +339,6 @@ def get_expected_icon_unit_mappings(dashboard_dir: Path = DASHBOARD_DIR) -> Dict
         except Exception as e:
             print(f"  [WARN] 讀取 tracked_characters.json 異常: {e}", file=sys.stderr)
 
-    # 2. NPC 與現實專屬頭像 (Reality Story Avatars)
     REALITY_UNIT_IDS = {
         100132, 100232, 100332, 100432, 100531, 100632,
         100731, 100832, 100931, 101032, 101131, 101231,
