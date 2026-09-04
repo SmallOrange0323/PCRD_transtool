@@ -1057,11 +1057,30 @@ const QuestMapModule = {
                     `;
                 } else if (this.activeTabType === 'event') {
                     chIcon = "🏆";
+                    let foundStoryId = (childStories && childStories.length > 0) ? childStories[0].id : null;
+                    let foundStillId = null;
+                    let foundBgId = null;
+                    if (childStories) {
+                        for (const s of childStories) {
+                            if (s.still_id) { foundStillId = s.still_id; break; }
+                            if (!foundBgId && s.bg_id) foundBgId = s.bg_id;
+                        }
+                    }
+                    const chapterCardThumbHtml = StoryAssetService.getStoryThumbnailHtml(
+                        foundStoryId,
+                        foundStillId,
+                        foundBgId,
+                        'chapter-card-img',
+                        ''
+                    );
+
                     accordionHtml += `
                         <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
-                            <div class="accordion-header" onclick="QuestMapModule.toggleChapter(${chIndex})">
-                                <div class="acc-header-title" style="display: flex; align-items: center;">
-                                    <span class="acc-folder-icon" style="display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">${chIcon}</span>
+                            <div class="accordion-header chapter-card" onclick="QuestMapModule.toggleChapter(${chIndex})">
+                                <div class="acc-header-title">
+                                    <div class="chapter-card-thumb">
+                                        ${chapterCardThumbHtml}
+                                    </div>
                                     <span class="acc-ch-name" style="margin-left: 8px;">${this.escapeHtml(chKey)}</span>
                                 </div>
                                 <div class="acc-count">${childStories.length} 話</div>

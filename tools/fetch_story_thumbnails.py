@@ -86,7 +86,7 @@ def load_manifest_story_thumbs(manifest_path: Path = MANIFEST_PATH) -> Dict[str,
 
 
 def collect_target_story_ids() -> List[str]:
-    """收集目前 Story Map 支援的所有話數 ID (主線 + 第 3 部分支)"""
+    """收集目前 Story Map 支援的所有話數 ID (主線 + 第 3 部分支 + 常規活動 + 新形式活動 + 公會/額外劇情)"""
     target_ids = set()
 
     # 1. 主線話數
@@ -105,6 +105,40 @@ def collect_target_story_ids() -> List[str]:
             data = json.load(f)
             for s in data.get("stories", []):
                 target_ids.add(str(s["story_id"]))
+
+    # 3. 常規活動劇情話數 (event_story_detail) 與公會/露娜塔 (story_detail)
+    db_path = DASHBOARD_DIR / "redive_tw.db"
+    if db_path.exists():
+        try:
+            import sqlite3
+            conn = sqlite3.connect(str(db_path))
+            cur = conn.cursor()
+            cur.execute("SELECT story_id FROM event_story_detail")
+            for r in cur.fetchall():
+                target_ids.add(str(r[0]))
+            cur.execute("SELECT story_id FROM story_detail")
+            for r in cur.fetchall():
+                target_ids.add(str(r[0]))
+            conn.close()
+        except Exception as e:
+            print(f"[FetchThumb] 讀取資料庫活動話數失敗: {e}")
+
+    # 4. 新形式活動劇情 (extra_events.json)
+    extra_path = DASHBOARD_DIR / "data" / "extra_events.json"
+    if extra_path.exists():
+        with open(extra_path, "r", encoding="utf-8") as f:
+            extra = json.load(f)
+            for s in extra.get("stories", []):
+                sid = s.get("id") or s.get("story_id")
+                if sid:
+                    target_ids.add(str(sid))
+
+    # 5. 本地 story/*.json 包含的任何有效數字話數
+    story_dir = DASHBOARD_DIR / "story"
+    if story_dir.exists():
+        for p in story_dir.glob("*.json"):
+            if p.stem.isdigit():
+                target_ids.add(p.stem)
 
     return sorted(list(target_ids))
 
