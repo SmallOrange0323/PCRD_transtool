@@ -1,896 +1,1108 @@
 [
     {
         "type": "background",
-        "bg_id": "501200"
+        "background": "501200"
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
         "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
-        "words": "──嘎喔喔喔喔喔！\\n──嘎喔喔喔喔喔！\\n──嘎喔喔喔喔喔！",
-        "voice": null
+        "words": "──嘎喔喔喔喔喔！\n──嘎喔喔喔喔喔！\n──嘎喔喔喔喔喔！",
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "精靈族1",
         "words": "呀啊啊啊",
+        "unit_id": 6511,
         "voice": "vo_adv_2113003_000"
     },
     {
+        "type": "dialogue",
         "name": "精靈族1",
         "words": "啊！！",
-        "voice": null
+        "unit_id": 6511
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
         "words": "可惡！",
+        "unit_id": 3311,
         "voice": "vo_adv_2113003_001"
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 3311
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
         "words": "別退縮，",
-        "voice": null
+        "unit_id": 3311
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
         "words": "撐住！",
-        "voice": null
+        "unit_id": 3311
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "呀啊啊啊啊！？",
+        "unit_id": 104011,
         "voice": "vo_adv_2113003_002"
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "小碧～！？",
+        "unit_id": 101211,
         "voice": "vo_adv_2113003_003"
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "現在不是我們害怕的時候！",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "快點，",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "站起來站起來！",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "可、",
+        "unit_id": 104011,
         "voice": "vo_adv_2113003_004"
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "可是可是可是……！",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
-        "words": "\\n魔物",
-        "voice": null
+        "words": "\n魔物",
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "多成這樣……！！",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
         "words": "抱歉，",
+        "unit_id": 3311,
         "voice": "vo_adv_2113003_005"
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
         "words": "【森林守衛】……！",
-        "voice": null
+        "unit_id": 3311
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
-        "words": "\\n想不到村子竟然被",
-        "voice": null
+        "words": "\n想不到村子竟然被",
+        "unit_id": 3311
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
         "words": "如此大量的魔物給包圍了……",
-        "voice": null
+        "unit_id": 3311
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "別這麼說～",
+        "unit_id": 101511,
         "voice": "vo_adv_2113003_006"
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "我們【森林守衛】，",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n本來就是負責保護精靈之森",
-        "voice": null
+        "words": "\n本來就是負責保護精靈之森",
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "和大家的公會。",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "我反倒",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "慶幸我們",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "有趕上救援呢～",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
         "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "嗯嗯嗯！",
+        "unit_id": 101211,
         "voice": "vo_adv_2113003_007"
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n不管來再多魔物，",
-        "voice": null
+        "words": "\n不管來再多魔物，",
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "都休想踏進村子一步！",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n閃亮亮☆",
-        "voice": null
+        "words": "\n閃亮亮☆",
+        "unit_id": 101211
     },
     {
         "type": "background",
-        "bg_id": "501200"
+        "background": "501200"
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
         "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "嘿嘿～♪",
+        "unit_id": 101211,
         "voice": "vo_adv_2113003_008"
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "小事一樁啦～☆",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "初音！",
+        "unit_id": 101511,
         "voice": "vo_adv_2113003_009"
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n不可以大意喔……！",
-        "voice": null
+        "words": "\n不可以大意喔……！",
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "精靈族1",
         "words": "又來了！",
+        "unit_id": 6511,
         "voice": "vo_adv_2113003_010"
     },
     {
+        "type": "dialogue",
         "name": "精靈族1",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 6511
     },
     {
+        "type": "dialogue",
         "name": "精靈族1",
         "words": "還有",
-        "voice": null
+        "unit_id": 6511
     },
     {
+        "type": "dialogue",
         "name": "精靈族1",
         "words": "那麼多魔物……！",
-        "voice": null
+        "unit_id": 6511
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
         "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "小碧，",
+        "unit_id": 101211,
         "voice": "vo_adv_2113003_011"
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "妳好了嗎！？",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "哈…………",
+        "unit_id": 104011,
         "voice": "vo_adv_2113003_012"
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "呼…………",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "……！",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "咳咳、",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "咳咳！",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "深、",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "深呼吸和心悸",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "卡到氣管……",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "小碧！？",
+        "unit_id": 101511,
         "voice": "vo_adv_2113003_013"
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n振作點……！",
-        "voice": null
+        "words": "\n振作點……！",
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "等等～！？",
+        "unit_id": 101211,
         "voice": "vo_adv_2113003_014"
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "妳還不能倒下去啦，",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "小碧～！",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "我、",
+        "unit_id": 104011,
         "voice": "vo_adv_2113003_015"
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "我、",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "我沒事！",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
-        "words": "\\n我今天",
-        "voice": null
+        "words": "\n我今天",
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "不是一個人！",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "有大家跟我並肩作戰！",
-        "voice": null
+        "unit_id": 104011
     },
     {
         "type": "still",
-        "still": "211300301",
-        "still_id": "211300301"
+        "still": "211300301"
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "為了保護精靈族之村……",
+        "unit_id": 104011,
         "voice": "vo_adv_2113003_016"
     },
     {
+        "type": "dialogue",
         "name": "碧",
-        "words": "\\n身為【森林守衛】的一員……",
-        "voice": null
+        "words": "\n身為【森林守衛】的一員……",
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "我要",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "努力奮鬥！",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
-        "words": "\\n呀、",
-        "voice": null
+        "words": "\n呀、",
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "呀──！",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
         "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "很好～！",
+        "unit_id": 101211,
         "voice": "vo_adv_2113003_017"
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n我會在不破壞村莊的前提下",
-        "voice": null
+        "words": "\n我會在不破壞村莊的前提下",
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "全力施展魔法攻擊！",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "閃亮閃亮☆",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "閃亮亮亮～☆",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
         "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
         "words": "喔喔！",
+        "unit_id": 3311,
         "voice": "vo_adv_2113003_018"
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 3311
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
         "words": "成功了嗎……！？",
-        "voice": null
+        "unit_id": 3311
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
         "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "嗚噫！？",
+        "unit_id": 104011,
         "voice": "vo_adv_2113003_019"
     },
     {
+        "type": "dialogue",
         "name": "碧",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "都已經遍體鱗傷了，",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "還能站起來嗎～！？",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "魔物討厭的薰香",
+        "unit_id": 101511,
         "voice": "vo_adv_2113003_020"
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "也完全沒有效果。",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n怎麼會這樣呢……？",
-        "voice": null
+        "words": "\n怎麼會這樣呢……？",
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "……而且",
+        "unit_id": 101511,
         "voice": "vo_adv_2113003_021"
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "這些魔物們的狀態，",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n感覺",
-        "voice": null
+        "words": "\n感覺",
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "有點奇怪。",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "就好像",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "牠們其實很不願意戰鬥",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "似的……",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "精靈族1",
         "words": "又來了一批！",
+        "unit_id": 6511,
         "voice": "vo_adv_2113003_022"
     },
     {
+        "type": "dialogue",
         "name": "精靈族1",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 6511
     },
     {
+        "type": "dialogue",
         "name": "精靈族1",
         "words": "從森林另一頭",
-        "voice": null
+        "unit_id": 6511
     },
     {
+        "type": "dialogue",
         "name": "精靈族1",
         "words": "來了一大堆……！",
-        "voice": null
+        "unit_id": 6511
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "討厭～！",
+        "unit_id": 101211,
         "voice": "vo_adv_2113003_023"
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n這樣下去沒完沒了啊～！",
-        "voice": null
+        "words": "\n這樣下去沒完沒了啊～！",
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "話說牠們為什麼",
+        "unit_id": 104011,
         "voice": "vo_adv_2113003_024"
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "要發動這樣的襲擊……？",
-        "voice": null
+        "unit_id": 104011
     },
     {
         "type": "background",
-        "bg_id": "501200"
+        "background": "501200"
     },
     {
         "type": "still",
         "still": "end"
     },
     {
+        "type": "dialogue",
         "name": "魔物的聲音",
         "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "孩子的聲音",
         "words": "──呀啊啊啊！",
+        "unit_id": 5411,
         "voice": "vo_adv_2113003_025"
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "咦！？",
+        "unit_id": 101511,
         "voice": "vo_adv_2113003_026"
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n村子裡也有魔物作亂！？",
-        "voice": null
+        "words": "\n村子裡也有魔物作亂！？",
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "精靈族1",
         "words": "長老架起的精靈防壁",
+        "unit_id": 6511,
         "voice": "vo_adv_2113003_027"
     },
     {
+        "type": "dialogue",
         "name": "精靈族1",
         "words": "被攻破了嗎……！？",
-        "voice": null
+        "unit_id": 6511
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
         "words": "糟糕！",
+        "unit_id": 3311,
         "voice": "vo_adv_2113003_028"
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
-        "words": "\\n孩子們",
-        "voice": null
+        "words": "\n孩子們",
+        "unit_id": 3311
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
         "words": "都在神廟裡面避難……！",
-        "voice": null
+        "unit_id": 3311
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "各位村民，",
+        "unit_id": 101511,
         "voice": "vo_adv_2113003_029"
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "可以請你們去處理闖進村子的魔物嗎？",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "入口這邊",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "我們【森林守衛】會守住的……！",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
         "words": "那、",
+        "unit_id": 3311,
         "voice": "vo_adv_2113003_030"
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
         "words": "那就麻煩妳們了！",
-        "voice": null
+        "unit_id": 3311
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
         "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "又來了又來了～！",
+        "unit_id": 104011,
         "voice": "vo_adv_2113003_031"
     },
     {
+        "type": "dialogue",
         "name": "碧",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "光靠我們幾個",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "該怎麼辦？",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "當然是……",
+        "unit_id": 101211,
         "voice": "vo_adv_2113003_032"
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "全部～",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "收拾掉！",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101211
     },
     {
-        "name": "初音",
-        "words": "閃亮亮☆",
-        "voice": null
-    },
-    {
+        "type": "dialogue",
         "name": "初音",
         "words": "閃亮亮☆",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
+        "name": "初音",
+        "words": "閃亮亮☆",
+        "unit_id": 101211
+    },
+    {
+        "type": "dialogue",
         "name": "初音",
         "words": "再一個閃亮亮☆",
-        "voice": null
+        "unit_id": 101211
     },
     {
         "type": "background",
-        "bg_id": "501200"
+        "background": "501200"
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
         "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "……唔……",
+        "unit_id": 101211,
         "voice": "vo_adv_2113003_033"
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "雖然我只要魔力使用過度",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "就會很想睡覺……",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "總之",
+        "unit_id": 101511,
         "voice": "vo_adv_2113003_034"
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "暫時再撐一下吧！",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "要是受傷了，",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "我會馬上幫妳們恢復的……",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "……不過……",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
         "words": "……嘎喔……",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "……為什麼？",
+        "unit_id": 101511,
         "voice": "vo_adv_2113003_035"
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "為什麼",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "非得戰鬥不可呢……？",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "魔物們",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "似乎被某種力量操控著……",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "就連",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "那麼幼小的孩子都……！　",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "呼、",
+        "unit_id": 104011,
         "voice": "vo_adv_2113003_036"
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "呼……",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "還、",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "還早還早！",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
-        "words": "\\n在工廠打工所培養出的毅力",
-        "voice": null
+        "words": "\n在工廠打工所培養出的毅力",
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "可不只有這點程度而已啊……",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
         "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "……噫！",
+        "unit_id": 104011,
         "voice": "vo_adv_2113003_037"
     },
     {
+        "type": "dialogue",
         "name": "碧",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "呀啊啊啊！！？",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "小碧！",
+        "unit_id": 101511,
         "voice": "vo_adv_2113003_038"
     },
     {
         "type": "background",
-        "bg_id": "501200"
+        "background": "501200"
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "……啊啊！？",
+        "unit_id": 101511,
         "voice": "vo_adv_2113003_039"
     },
     {
@@ -899,894 +1111,1111 @@
     },
     {
         "type": "background",
-        "bg_id": "501200"
+        "background": "501200"
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
         "words": "…………",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "魔物們",
+        "unit_id": 104011,
         "voice": "vo_adv_2113003_040"
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "都平靜下來了……？",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "真不愧是美里老師～☆",
+        "unit_id": 101211,
         "voice": "vo_adv_2113003_041"
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "呵呵。",
+        "unit_id": 101511,
         "voice": "vo_adv_2113003_042"
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "不論是孩子們",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "還是魔物……",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n只要願意敞開心扉對話，",
-        "voice": null
+        "words": "\n只要願意敞開心扉對話，",
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "他們肯定都能感受到的。",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "不過，",
+        "unit_id": 101511,
         "voice": "vo_adv_2113003_043"
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "這麼一來……算是告一個段落",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "了吧？",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "結、",
+        "unit_id": 104011,
         "voice": "vo_adv_2113003_044"
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "結果",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "到頭來還是沒搞清楚，",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
-        "words": "\\n為什麼會有這麼多的魔物來襲……",
-        "voice": null
+        "words": "\n為什麼會有這麼多的魔物來襲……",
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "算了啦，",
+        "unit_id": 101211,
         "voice": "vo_adv_2113003_045"
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "小碧！",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "反正既然危機已解除，",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "那就OK啦！",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "閃亮亮☆",
-        "voice": null
+        "unit_id": 101211
     },
     {
         "type": "background",
-        "bg_id": "500170"
+        "background": "500170"
     },
     {
+        "type": "dialogue",
         "name": "尾狗刀",
         "words": "──咦～？",
+        "unit_id": 106211,
         "voice": "vo_adv_2113003_046"
     },
     {
+        "type": "dialogue",
         "name": "尾狗刀",
-        "words": "\\n竟然用母性來壓制魔物。",
-        "voice": null
+        "words": "\n竟然用母性來壓制魔物。",
+        "unit_id": 106211
     },
     {
+        "type": "dialogue",
         "name": "尾狗刀",
         "words": "那是",
+        "unit_id": 106211,
         "voice": "vo_adv_2113003_047"
     },
     {
+        "type": "dialogue",
         "name": "尾狗刀",
         "words": "我所不知道的隱藏技能嗎？",
-        "voice": null
+        "unit_id": 106211
     },
     {
+        "type": "dialogue",
         "name": "尾狗刀",
-        "words": "\\n還是說",
-        "voice": null
+        "words": "\n還是說",
+        "unit_id": 106211
     },
     {
+        "type": "dialogue",
         "name": "尾狗刀",
         "words": "是某種類型的洗腦？",
-        "voice": null
+        "unit_id": 106211
     },
     {
+        "type": "dialogue",
         "name": "尾狗刀",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 106211
     },
     {
+        "type": "dialogue",
         "name": "尾狗刀",
         "words": "不管是哪一種",
-        "voice": null
+        "unit_id": 106211
     },
     {
+        "type": "dialogue",
         "name": "尾狗刀",
         "words": "都很厲害呢──",
-        "voice": null
+        "unit_id": 106211
     },
     {
+        "type": "dialogue",
         "name": "尾狗刀",
         "words": "……不過",
+        "unit_id": 106211,
         "voice": "vo_adv_2113003_048"
     },
     {
+        "type": "dialogue",
         "name": "尾狗刀",
         "words": "當然──？",
-        "voice": null
+        "unit_id": 106211
     },
     {
+        "type": "dialogue",
         "name": "尾狗刀",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 106211
     },
     {
+        "type": "dialogue",
         "name": "尾狗刀",
         "words": "才不可能就此",
-        "voice": null
+        "unit_id": 106211
     },
     {
+        "type": "dialogue",
         "name": "尾狗刀",
         "words": "告一個段落呢──",
-        "voice": null
+        "unit_id": 106211
     },
     {
         "type": "background",
-        "bg_id": "501200"
+        "background": "501200"
     },
     {
+        "type": "dialogue",
         "name": "遠處傳來的聲音",
-        "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "words": "──嘎喔喔喔喔喔！"
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "……咦！？",
+        "unit_id": 101211,
         "voice": "vo_adv_2113003_049"
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "剛、",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "剛才好像",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "從遠方傳來奇怪的魔物的聲音……",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "對、",
+        "unit_id": 104011,
         "voice": "vo_adv_2113003_050"
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "對啊……！",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "是一種",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "讓背後寒毛直豎",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "的吼叫聲！",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "的、",
+        "unit_id": 101512,
         "voice": "vo_adv_2113003_051"
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "的確……",
-        "voice": null
+        "unit_id": 101512
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n……但",
-        "voice": null
+        "words": "\n……但",
+        "unit_id": 101512
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "我倒覺得比較像",
-        "voice": null
+        "unit_id": 101512
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "精靈的……？",
-        "voice": null
+        "unit_id": 101512
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "呀",
+        "unit_id": 101512,
         "voice": "vo_adv_2113003_052"
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "啊！",
-        "voice": null
+        "unit_id": 101512
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
         "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "哇哇哇！",
+        "unit_id": 101211,
         "voice": "vo_adv_2113003_053"
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n魔物們",
-        "voice": null
+        "words": "\n魔物們",
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "又開始發狂了～！",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "這這這、",
+        "unit_id": 104011,
         "voice": "vo_adv_2113003_054"
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "是剛才那個奇怪的吼叫聲造成的嗎……！？",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
-        "words": "\\n照情況看來……！",
-        "voice": null
+        "words": "\n照情況看來……！",
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "……！",
+        "unit_id": 101512,
         "voice": "vo_adv_2113003_055"
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n入口以外的地方",
-        "voice": null
+        "words": "\n入口以外的地方",
+        "unit_id": 101512
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "也有魔物湧現了……！",
-        "voice": null
+        "unit_id": 101512
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "大家",
+        "unit_id": 101512,
         "voice": "vo_adv_2113003_056"
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "快住手，",
-        "voice": null
+        "unit_id": 101512
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "拜託……！",
-        "voice": null
+        "unit_id": 101512
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n不可以",
-        "voice": null
+        "words": "\n不可以",
+        "unit_id": 101512
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "做這種事……！",
-        "voice": null
+        "unit_id": 101512
     },
     {
+        "type": "dialogue",
         "name": "遠處傳來的聲音",
-        "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "words": "──嘎喔喔喔喔喔！"
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
         "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "呀啊啊啊！",
+        "unit_id": 104011,
         "voice": "vo_adv_2113003_057"
     },
     {
+        "type": "dialogue",
         "name": "碧",
-        "words": "\\n看來牠們根本就聽不進去啊～！？",
-        "voice": null
+        "words": "\n看來牠們根本就聽不進去啊～！？",
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "是剛才的吼叫聲",
+        "unit_id": 101511,
         "voice": "vo_adv_2113003_058"
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "剝奪了牠們的理智嗎……？",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "──呀",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "啊！",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "……唔！",
+        "unit_id": 101211,
         "voice": "vo_adv_2113003_059"
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "抱歉，",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "美里老師！",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n我馬上",
-        "voice": null
+        "words": "\n我馬上",
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "把牠們趕跑！",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "呼啊……",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "初音！？",
+        "unit_id": 104011,
         "voice": "vo_adv_2113003_060"
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "呼啊…………",
+        "unit_id": 101211,
         "voice": "vo_adv_2113003_061"
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "從剛才就一直用盡全力，",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "害我現在好想睡覺……",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
         "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "──超火力全開！",
+        "unit_id": 180411,
         "voice": "vo_adv_2113003_062"
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
-        "words": "\\n公主突襲──！！",
-        "voice": null
+        "words": "\n公主突襲──！！",
+        "unit_id": 180411
     },
     {
         "type": "background",
-        "bg_id": "501200"
+        "background": "501200"
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
         "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "咦咦咦！？",
+        "unit_id": 104011,
         "voice": "vo_adv_2113003_063"
     },
     {
+        "type": "dialogue",
         "name": "碧",
-        "words": "\\n妳是！",
-        "voice": null
+        "words": "\n妳是！",
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "咦～？",
+        "unit_id": 101211,
         "voice": "vo_adv_2113003_064"
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "貪吃佩可～！？",
-        "voice": null
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "沒錯！",
+        "unit_id": 180411,
         "voice": "vo_adv_2113003_065"
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
-        "words": "\\n好久不見了，",
-        "voice": null
+        "words": "\n好久不見了，",
+        "unit_id": 180411
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "【森林守衛】的各位！",
-        "voice": null
+        "unit_id": 180411
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "哎呀哎呀？",
+        "unit_id": 101511,
         "voice": "vo_adv_2113003_066"
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n{0}也來啦？",
-        "voice": null
+        "words": "\n{player}也來啦？",
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "真是幫了大忙～♪",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "我們",
+        "unit_id": 180411,
         "voice": "vo_adv_2113003_067"
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "是來這裡見小可蘿的父親的。",
-        "voice": null
+        "unit_id": 180411
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 180411
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "快到村子的時候",
-        "voice": null
+        "unit_id": 180411
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "聽到魔物們的吼叫聲，",
-        "voice": null
+        "unit_id": 180411
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
-        "words": "\\n所以就",
-        "voice": null
+        "words": "\n所以就",
+        "unit_id": 180411
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "連忙衝過來了。",
-        "voice": null
+        "unit_id": 180411
     },
     {
+        "type": "dialogue",
         "name": "初音",
         "words": "抱歉～！",
+        "unit_id": 101211,
         "voice": "vo_adv_2113003_068"
     },
     {
+        "type": "dialogue",
         "name": "初音",
-        "words": "\\n我們也是一頭霧水……！",
-        "voice": null
+        "words": "\n我們也是一頭霧水……！",
+        "unit_id": 101211
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "先不說那個……！",
+        "unit_id": 101511,
         "voice": "vo_adv_2113003_069"
     },
     {
+        "type": "dialogue",
         "name": "美里",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "你們可以",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "美里",
         "words": "再多幫忙一下嗎？",
-        "voice": null
+        "unit_id": 101511
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "有好多魔物",
+        "unit_id": 104011,
         "voice": "vo_adv_2113003_070"
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "從後方的森林湧進村子裡了！",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
-        "words": "\\n精靈族之村的村民們",
-        "voice": null
+        "words": "\n精靈族之村的村民們",
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "碧",
         "words": "有危險～！",
-        "voice": null
+        "unit_id": 104011
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "啊，",
+        "unit_id": 180411,
         "voice": "vo_adv_2113003_071"
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "應該不用擔心！",
-        "voice": null
+        "unit_id": 180411
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 180411
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "那邊──",
-        "voice": null
+        "unit_id": 180411
     },
     {
         "type": "background",
-        "bg_id": "500170"
+        "background": "500170"
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
-        "words": "──嘎喔喔喔喔喔！\\n──嘎喔喔喔喔喔！\\n──嘎喔喔喔喔喔！",
-        "voice": null
+        "words": "──嘎喔喔喔喔喔！\n──嘎喔喔喔喔喔！\n──嘎喔喔喔喔喔！",
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "精靈族1",
         "words": "不行，",
+        "unit_id": 6511,
         "voice": "vo_adv_2113003_072"
     },
     {
+        "type": "dialogue",
         "name": "精靈族1",
         "words": "數量太多了……！",
-        "voice": null
+        "unit_id": 6511
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
         "words": "可惡！",
+        "unit_id": 3311,
         "voice": "vo_adv_2113003_073"
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 3311
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
         "words": "沒救了嗎……",
-        "voice": null
+        "unit_id": 3311
     },
     {
         "type": "background",
-        "bg_id": "500170"
+        "background": "500170"
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
         "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
         "words": "什、",
+        "unit_id": 3311,
         "voice": "vo_adv_2113003_074"
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
         "words": "什麼！？",
-        "voice": null
+        "unit_id": 3311
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
-        "words": "\\n攻擊魔法",
-        "voice": null
+        "words": "\n攻擊魔法",
+        "unit_id": 3311
     },
     {
+        "type": "dialogue",
         "name": "精靈族2",
         "words": "從上空……！？",
-        "voice": null
+        "unit_id": 3311
     },
     {
+        "type": "dialogue",
         "name": "精靈族1",
         "words": "完全精準命中魔物……",
+        "unit_id": 6511,
         "voice": "vo_adv_2113003_075"
     },
     {
+        "type": "dialogue",
         "name": "精靈族1",
         "words": "是誰！？",
-        "voice": null
+        "unit_id": 6511
     },
     {
+        "type": "dialogue",
         "name": "凱留",
         "words": "…………",
+        "unit_id": 180611,
         "voice": "vo_adv_2113003_076"
     },
     {
         "type": "background",
-        "bg_id": "500520"
+        "background": "500520"
     },
     {
+        "type": "dialogue",
         "name": "凱留",
         "words": "──我現在",
+        "unit_id": 180611,
         "voice": "vo_adv_2113003_077"
     },
     {
+        "type": "dialogue",
         "name": "凱留",
         "words": "真的超級火大。",
-        "voice": null
+        "unit_id": 180611
     },
     {
+        "type": "dialogue",
         "name": "凱留",
-        "words": "\\n雖然遷怒是不對的，",
-        "voice": null
+        "words": "\n雖然遷怒是不對的，",
+        "unit_id": 180611
     },
     {
+        "type": "dialogue",
         "name": "凱留",
         "words": "但我還是要大鬧一場──",
-        "voice": null
+        "unit_id": 180611
     },
     {
+        "type": "dialogue",
         "name": "凱留",
         "words": "去死吧──！！！！！",
+        "unit_id": 180611,
         "voice": "vo_adv_2113003_078"
     },
     {
         "type": "background",
-        "bg_id": "501220"
+        "background": "501220"
     },
     {
+        "type": "dialogue",
         "name": "魔物群",
         "words": "──嘎喔喔喔喔喔！",
-        "voice": null
+        "unit_id": 1611
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "入侵神廟的魔物，",
+        "unit_id": 180511,
         "voice": "vo_adv_2113003_079"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "\\n應該全部打倒了吧……",
-        "voice": null
+        "words": "\n應該全部打倒了吧……",
+        "unit_id": 180511
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "真是千鈞一髮。",
-        "voice": null
+        "unit_id": 180511
     },
     {
+        "type": "dialogue",
         "name": "精靈的小孩",
         "words": "可可蘿姐姐，",
+        "unit_id": 5411,
         "voice": "vo_adv_2113003_080"
     },
     {
+        "type": "dialogue",
         "name": "精靈的小孩",
         "words": "謝謝妳～！",
-        "voice": null
+        "unit_id": 5411
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "不客氣。",
+        "unit_id": 180511,
         "voice": "vo_adv_2113003_081"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 180511
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "請問一下，",
-        "voice": null
+        "unit_id": 180511
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "父親大人現在身在何處？",
-        "voice": null
+        "unit_id": 180511
     },
     {
+        "type": "dialogue",
         "name": "精靈族3",
         "words": "喔，",
+        "unit_id": 6511,
         "voice": "vo_adv_2113003_082"
     },
     {
+        "type": "dialogue",
         "name": "精靈族3",
         "words": "在神廟深處。",
-        "voice": null
+        "unit_id": 6511
     },
     {
+        "type": "dialogue",
         "name": "精靈族3",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 6511
     },
     {
+        "type": "dialogue",
         "name": "精靈族3",
         "words": "長老",
-        "voice": null
+        "unit_id": 6511
     },
     {
+        "type": "dialogue",
         "name": "精靈族3",
         "words": "為了保護我們，",
-        "voice": null
+        "unit_id": 6511
     },
     {
+        "type": "dialogue",
         "name": "精靈族3",
         "words": "帶頭迎戰魔物，",
-        "voice": null
+        "unit_id": 6511
     },
     {
+        "type": "dialogue",
         "name": "精靈族3",
-        "words": "\\n卻不慎受傷……",
-        "voice": null
+        "words": "\n卻不慎受傷……",
+        "unit_id": 6511
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "……！",
+        "unit_id": 180511,
         "voice": "vo_adv_2113003_083"
     },
     {
+        "type": "dialogue",
         "name": "精靈族3",
         "words": "村子能夠守住，",
+        "unit_id": 6511,
         "voice": "vo_adv_2113003_084"
     },
     {
+        "type": "dialogue",
         "name": "精靈族3",
-        "words": "\\n都是拜長老在【森林守衛】趕到之前，",
-        "voice": null
+        "words": "\n都是拜長老在【森林守衛】趕到之前，",
+        "unit_id": 6511
     },
     {
+        "type": "dialogue",
         "name": "精靈族3",
-        "words": "\\n奮勇擋下魔物之賜。",
-        "voice": null
+        "words": "\n奮勇擋下魔物之賜。",
+        "unit_id": 6511
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "原來是這樣啊……",
+        "unit_id": 180511,
         "voice": "vo_adv_2113003_085"
     },
     {
+        "type": "dialogue",
         "name": "長老",
         "words": "……是可可蘿",
+        "unit_id": 107212,
         "voice": "vo_adv_2113003_086"
     },
     {
+        "type": "dialogue",
         "name": "長老",
         "words": "嗎……？",
-        "voice": null
+        "unit_id": 107212
     }
 ]

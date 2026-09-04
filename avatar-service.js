@@ -703,9 +703,9 @@ window.AvatarService = {
             return [numId, baseId + 11];
         }
 
-        // 4. 現實專屬頭像或非標準尾數形態 (如 104532 空花、102832 咲戀、103232 秋乃、104632 珠希、100832 雪等)
+        // 4. 明確定義的現實專屬頭像 ID (如 104532 空花、102832 咲戀、103232 秋乃、104632 珠希、100832 雪等)
         // 嚴格保留自身的 exact ID，次選 baseId + 11
-        if (this.exactRealityIds.has(numId) || (numId % 100 !== 11 && numId % 100 !== 31 && numId % 100 !== 61)) {
+        if (this.exactRealityIds.has(numId)) {
             const baseId = Math.floor(numId / 100) * 100;
             return [numId, baseId + 11];
         }

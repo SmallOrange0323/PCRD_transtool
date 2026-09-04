@@ -1,1125 +1,1400 @@
 [
     {
         "type": "background",
-        "bg_id": "500783"
+        "background": "500783"
     },
     {
         "type": "still",
-        "still": "201500401",
-        "still_id": "201500401"
+        "still": "201500401"
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
-        "words": "{0}，",
+        "words": "{player}，",
+        "unit_id": 105811,
         "voice": "vo_adv_2015004_000"
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
-        "words": "\\n{0}！",
-        "voice": null
+        "words": "\n{player}！",
+        "unit_id": 105811
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
-        "words": "\\n求你了，",
-        "voice": null
+        "words": "\n求你了，",
+        "unit_id": 105811
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "振作一點啊……！",
-        "voice": null
+        "unit_id": 105811
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "主公大人！",
+        "words": "主人！",
+        "unit_id": 105911,
         "voice": "vo_adv_2015004_001"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "\\n請您",
-        "voice": null
+        "words": "\n請您",
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "保持清醒！",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "\\n這就立刻",
-        "voice": null
+        "words": "\n這就立刻",
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "替您使用恢復魔法……！",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "我們馬上就會治好你的，",
+        "unit_id": 100211,
         "voice": "vo_adv_2015004_002"
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "騎士先生！",
-        "voice": null
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "優衣",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "……光之精靈啊！",
-        "voice": null
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "放出治癒的光輝……！",
-        "voice": null
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "予以在下等，",
+        "unit_id": 105911,
         "voice": "vo_adv_2015004_003"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "光之加護……！",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "騎士先生……！",
+        "unit_id": 100211,
         "voice": "vo_adv_2015004_004"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "主、",
+        "unit_id": 105911,
         "voice": "vo_adv_2015004_005"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "人……！",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "日和",
         "words": "騎士先生！",
+        "unit_id": 100111,
         "voice": "vo_adv_2015004_006"
     },
     {
+        "type": "dialogue",
         "name": "怜",
-        "words": "{0}……！",
+        "words": "{player}……！",
+        "unit_id": 100311,
         "voice": "vo_adv_2015004_007"
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
-        "words": "{0}……！",
+        "words": "{player}……！",
+        "unit_id": 105811,
         "voice": "vo_adv_2015004_008"
     },
     {
+        "type": "dialogue",
         "name": "凱留",
         "words": "你如果死了，",
+        "unit_id": 106011,
         "voice": "vo_adv_2015004_009"
     },
     {
+        "type": "dialogue",
         "name": "凱留",
         "words": "我可是不會饒過你的啊！",
-        "voice": null
+        "unit_id": 106011
     },
     {
+        "type": "dialogue",
         "name": "靜流",
         "words": "弟弟，",
+        "unit_id": 104911,
         "voice": "vo_adv_2015004_010"
     },
     {
+        "type": "dialogue",
         "name": "靜流",
         "words": "你振作點！",
-        "voice": null
+        "unit_id": 104911
     },
     {
+        "type": "dialogue",
         "name": "璃乃",
         "words": "哥哥，",
+        "unit_id": 101112,
         "voice": "vo_adv_2015004_011"
     },
     {
+        "type": "dialogue",
         "name": "璃乃",
         "words": "加油啊！",
-        "voice": null
+        "unit_id": 101112
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "哈啊、",
+        "unit_id": 100211,
         "voice": "vo_adv_2015004_012"
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "哈啊……！",
-        "voice": null
+        "unit_id": 100211
     },
     {
         "type": "background",
-        "bg_id": "500783"
+        "background": "500783"
     },
     {
         "type": "still",
         "still": "end"
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "……怎麼樣？",
+        "unit_id": 106915,
         "voice": "vo_adv_2015004_013"
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
-        "words": "\\n優衣。",
-        "voice": null
+        "words": "\n優衣。",
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
-        "words": "\\n妳成功用自己最擅長的恢復魔法，",
-        "voice": null
+        "words": "\n妳成功用自己最擅長的恢復魔法，",
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "讓他活過來了嗎？",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "嗚、",
+        "unit_id": 100211,
         "voice": "vo_adv_2015004_014"
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "嗚、",
-        "voice": null
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "嗚嗚嗚……！",
-        "voice": null
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "優衣",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "騎士先生、",
-        "voice": null
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "騎士先生……",
-        "voice": null
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "你睜開眼睛啊……！",
-        "voice": null
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "優衣小姐……！",
+        "unit_id": 105911,
         "voice": "vo_adv_2015004_015"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "\\n別分散注意力了！",
-        "voice": null
+        "words": "\n別分散注意力了！",
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "應、",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "應該還來得及的……！",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "沒用的唷，",
+        "unit_id": 106915,
         "voice": "vo_adv_2015004_016"
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "沒用。",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "不論你們用上多麼高等的恢復魔法，",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
-        "words": "\\n已經失去的性命也是救不回來的……♪",
-        "voice": null
+        "words": "\n已經失去的性命也是救不回來的……♪",
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "這就是規則唷。",
+        "unit_id": 106915,
         "voice": "vo_adv_2015004_017"
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
-        "words": "\\n就如同我身為「神」，",
-        "voice": null
+        "words": "\n就如同我身為「神」，",
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "只須奪取，",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "無須與人相互理解一樣……",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
-        "words": "\\n這便是這個世界的道理。",
-        "voice": null
+        "words": "\n這便是這個世界的道理。",
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "吶，",
+        "unit_id": 106915,
         "voice": "vo_adv_2015004_018"
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "妳現在的心情如何呀？",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "公主殿下……",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
-        "words": "\\n又有一樣妳最珍貴的事物被我給奪走了呢！",
-        "voice": null
+        "words": "\n又有一樣妳最珍貴的事物被我給奪走了呢！",
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "呵呵、",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "呵哈哈哈哈哈……♪",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "怎麼會、",
+        "unit_id": 105811,
         "voice": "vo_adv_2015004_019"
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "怎麼會這樣……",
-        "voice": null
+        "unit_id": 105811
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 105811
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "因為我的錯，",
-        "voice": null
+        "unit_id": 105811
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
-        "words": "害得{0}……",
-        "voice": null
+        "words": "害得{player}……",
+        "unit_id": 105811
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "……",
+        "unit_id": 106915,
         "voice": "vo_adv_2015004_020"
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "因為過於絕望，",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "連我的話都聽不進去了嗎？",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
-        "words": "\\n我原本還在期待",
-        "voice": null
+        "words": "\n我原本還在期待",
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "你們會帶著何等的怨恨來報仇呢。",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "呵呵……",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "真沒意思♪",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "日和",
         "words": "啊啊……",
+        "unit_id": 100111,
         "voice": "vo_adv_2015004_021"
     },
     {
+        "type": "dialogue",
         "name": "日和",
         "words": "直到剛剛",
-        "voice": null
+        "unit_id": 100111
     },
     {
+        "type": "dialogue",
         "name": "日和",
         "words": "都還幫助著我們的",
-        "voice": null
+        "unit_id": 100111
     },
     {
+        "type": "dialogue",
         "name": "日和",
-        "words": "\\n騎士先生的強化……",
-        "voice": null
+        "words": "\n騎士先生的強化……",
+        "unit_id": 100111
     },
     {
+        "type": "dialogue",
         "name": "日和",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 100111
     },
     {
+        "type": "dialogue",
         "name": "日和",
         "words": "已經完全",
-        "voice": null
+        "unit_id": 100111
     },
     {
+        "type": "dialogue",
         "name": "日和",
         "words": "消失了……！",
-        "voice": null
+        "unit_id": 100111
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "日和，",
+        "unit_id": 106915,
         "voice": "vo_adv_2015004_022"
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "妳又是怎麼想的呢？",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
-        "words": "\\n不久前，",
-        "voice": null
+        "words": "\n不久前，",
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "妳嘴巴上還說著什麼",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "想要幫助我的蠢話……",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
-        "words": "\\n在我奪走他之後的現在，",
-        "voice": null
+        "words": "\n在我奪走他之後的現在，",
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "妳還能說出一樣的話嗎？",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "日和",
         "words": "……！",
+        "unit_id": 100111,
         "voice": "vo_adv_2015004_023"
     },
     {
+        "type": "dialogue",
         "name": "日和",
-        "words": "\\n我、",
-        "voice": null
+        "words": "\n我、",
+        "unit_id": 100111
     },
     {
+        "type": "dialogue",
         "name": "日和",
         "words": "我是……",
-        "voice": null
+        "unit_id": 100111
     },
     {
+        "type": "dialogue",
         "name": "日和",
         "words": "但是……",
-        "voice": null
+        "unit_id": 100111
     },
     {
+        "type": "dialogue",
         "name": "怜",
         "words": "別聽她說的任何話，",
+        "unit_id": 100311,
         "voice": "vo_adv_2015004_024"
     },
     {
+        "type": "dialogue",
         "name": "怜",
         "words": "日和。",
-        "voice": null
+        "unit_id": 100311
     },
     {
+        "type": "dialogue",
         "name": "怜",
-        "words": "\\n不論是方才還是如今……",
-        "voice": null
+        "words": "\n不論是方才還是如今……",
+        "unit_id": 100311
     },
     {
+        "type": "dialogue",
         "name": "怜",
-        "words": "\\n我們都必須將她打倒，",
-        "voice": null
+        "words": "\n我們都必須將她打倒，",
+        "unit_id": 100311
     },
     {
+        "type": "dialogue",
         "name": "怜",
         "words": "這件事並沒有改變。",
-        "voice": null
+        "unit_id": 100311
     },
     {
+        "type": "dialogue",
         "name": "日和",
         "words": "……",
+        "unit_id": 100111,
         "voice": "vo_adv_2015004_025"
     },
     {
+        "type": "dialogue",
         "name": "日和",
         "words": "怜……",
-        "voice": null
+        "unit_id": 100111
     },
     {
+        "type": "dialogue",
         "name": "怜",
         "words": "即使……",
+        "unit_id": 100311,
         "voice": "vo_adv_2015004_026"
     },
     {
+        "type": "dialogue",
         "name": "怜",
         "words": "沒錯，",
-        "voice": null
+        "unit_id": 100311
     },
     {
+        "type": "dialogue",
         "name": "怜",
-        "words": "\\n即使失去了{0}的支援也一樣。",
-        "voice": null
+        "words": "\n即使失去了{player}的支援也一樣。",
+        "unit_id": 100311
     },
     {
+        "type": "dialogue",
         "name": "怜",
         "words": "……啊啊，",
+        "unit_id": 100311,
         "voice": "vo_adv_2015004_027"
     },
     {
+        "type": "dialogue",
         "name": "怜",
         "words": "但是……",
-        "voice": null
+        "unit_id": 100311
     },
     {
+        "type": "dialogue",
         "name": "怜",
-        "words": "\\n我這把劍……",
-        "voice": null
+        "words": "\n我這把劍……",
+        "unit_id": 100311
     },
     {
+        "type": "dialogue",
         "name": "怜",
         "words": "竟是如此沉重嗎……？",
-        "voice": null
+        "unit_id": 100311
     },
     {
+        "type": "dialogue",
         "name": "真琴",
-        "words": "……{0}，",
+        "words": "……{player}，",
+        "unit_id": 104311,
         "voice": "vo_adv_2015004_028"
     },
     {
+        "type": "dialogue",
         "name": "真琴",
-        "words": "\\n這不是真的吧，",
-        "voice": null
+        "words": "\n這不是真的吧，",
+        "unit_id": 104311
     },
     {
+        "type": "dialogue",
         "name": "真琴",
         "words": "你……",
-        "voice": null
+        "unit_id": 104311
     },
     {
+        "type": "dialogue",
         "name": "香織",
         "words": "……真琴。",
+        "unit_id": 101711,
         "voice": "vo_adv_2015004_029"
     },
     {
+        "type": "dialogue",
         "name": "香織",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101711
     },
     {
+        "type": "dialogue",
         "name": "香織",
         "words": "給我站起來。",
-        "voice": null
+        "unit_id": 101711
     },
     {
+        "type": "dialogue",
         "name": "真琴",
         "words": "香織……",
+        "unit_id": 104311,
         "voice": "vo_adv_2015004_030"
     },
     {
+        "type": "dialogue",
         "name": "真琴",
         "words": "妳就",
-        "voice": null
+        "unit_id": 104311
     },
     {
+        "type": "dialogue",
         "name": "真琴",
         "words": "沒什麼感覺嗎！",
-        "voice": null
+        "unit_id": 104311
     },
     {
+        "type": "dialogue",
         "name": "真琴",
-        "words": "\\n那傢伙……",
-        "voice": null
+        "words": "\n那傢伙……",
+        "unit_id": 104311
     },
     {
+        "type": "dialogue",
         "name": "真琴",
         "words": "那傢伙",
-        "voice": null
+        "unit_id": 104311
     },
     {
+        "type": "dialogue",
         "name": "真琴",
         "words": "可是死了啊！",
-        "voice": null
+        "unit_id": 104311
     },
     {
+        "type": "dialogue",
         "name": "香織",
         "words": "怎麼可能沒感覺呀！",
+        "unit_id": 101711,
         "voice": "vo_adv_2015004_031"
     },
     {
+        "type": "dialogue",
         "name": "香織",
-        "words": "\\n但是……",
-        "voice": null
+        "words": "\n但是……",
+        "unit_id": 101711
     },
     {
+        "type": "dialogue",
         "name": "香織",
         "words": "我們現在",
-        "voice": null
+        "unit_id": 101711
     },
     {
+        "type": "dialogue",
         "name": "香織",
         "words": "可是在戰場上，",
-        "voice": null
+        "unit_id": 101711
     },
     {
+        "type": "dialogue",
         "name": "香織",
         "words": "是在一決生死的戰鬥途中啊！",
-        "voice": null
+        "unit_id": 101711
     },
     {
+        "type": "dialogue",
         "name": "香織",
-        "words": "\\n就算要哭也是之後的事，",
-        "voice": null
+        "words": "\n就算要哭也是之後的事，",
+        "unit_id": 101711
     },
     {
+        "type": "dialogue",
         "name": "香織",
         "words": "不然一下子就會被幹掉了呀！",
-        "voice": null
+        "unit_id": 101711
     },
     {
+        "type": "dialogue",
         "name": "真琴",
         "words": "……！",
+        "unit_id": 104311,
         "voice": "vo_adv_2015004_032"
     },
     {
+        "type": "dialogue",
         "name": "真琴",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 104311
     },
     {
+        "type": "dialogue",
         "name": "真琴",
         "words": "是啊，",
-        "voice": null
+        "unit_id": 104311
     },
     {
+        "type": "dialogue",
         "name": "真琴",
         "words": "妳說的沒錯……",
-        "voice": null
+        "unit_id": 104311
     },
     {
+        "type": "dialogue",
         "name": "真琴",
         "words": "可惡……！",
-        "voice": null
+        "unit_id": 104311
     },
     {
+        "type": "dialogue",
         "name": "靜流",
         "words": "對不起唷，",
+        "unit_id": 104911,
         "voice": "vo_adv_2015004_033"
     },
     {
+        "type": "dialogue",
         "name": "靜流",
         "words": "弟弟……",
-        "voice": null
+        "unit_id": 104911
     },
     {
+        "type": "dialogue",
         "name": "靜流",
         "words": "姐姐竟然沒辦法保護你。",
-        "voice": null
+        "unit_id": 104911
     },
     {
+        "type": "dialogue",
         "name": "靜流",
-        "words": "\\n姐姐這麼沒用，",
-        "voice": null
+        "words": "\n姐姐這麼沒用，",
+        "unit_id": 104911
     },
     {
+        "type": "dialogue",
         "name": "靜流",
         "words": "真是對不起呢……",
-        "voice": null
+        "unit_id": 104911
     },
     {
+        "type": "dialogue",
         "name": "靜流",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 104911
     },
     {
+        "type": "dialogue",
         "name": "靜流",
         "words": "……所以，",
-        "voice": null
+        "unit_id": 104911
     },
     {
+        "type": "dialogue",
         "name": "靜流",
         "words": "至少……",
-        "voice": null
+        "unit_id": 104911
     },
     {
+        "type": "dialogue",
         "name": "璃乃",
         "words": "哥哥的這一箭之仇……",
+        "unit_id": 101112,
         "voice": "vo_adv_2015004_034"
     },
     {
+        "type": "dialogue",
         "name": "璃乃",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 101112
     },
     {
+        "type": "dialogue",
         "name": "璃乃",
         "words": "就由我們",
-        "voice": null
+        "unit_id": 101112
     },
     {
+        "type": "dialogue",
         "name": "璃乃",
         "words": "來報……！",
-        "voice": null
+        "unit_id": 101112
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "呵呵……",
+        "unit_id": 106915,
         "voice": "vo_adv_2015004_035"
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "呵哈哈哈！",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
-        "words": "\\n雖然你們的實力",
-        "voice": null
+        "words": "\n雖然你們的實力",
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "依舊如此無趣……",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "――但那顫抖的雙唇。",
+        "unit_id": 106915,
         "voice": "vo_adv_2015004_036"
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "咬著牙的憤恨模樣。",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
-        "words": "\\n再加上，",
-        "voice": null
+        "words": "\n再加上，",
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "一雙雙因哀傷",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "而混濁不清的眼睛……",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "……在這無趣的戰鬥之中，",
+        "unit_id": 106915,
         "voice": "vo_adv_2015004_037"
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "反倒稱得上是我所喜愛的景象了唷。",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
-        "words": "\\n好了……",
-        "voice": null
+        "words": "\n好了……",
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "過來吧。",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
-        "words": "\\n就由我這個「神」來親手",
-        "voice": null
+        "words": "\n就由我這個「神」來親手",
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "霸瞳皇帝",
         "words": "將你們全都送去跟他一樣的地方吧！",
-        "voice": null
+        "unit_id": 106915
     },
     {
+        "type": "dialogue",
         "name": "大家",
         "words": "嗚啊啊啊啊啊――！！",
+        "unit_id": 1,
         "voice": "vo_adv_2015004_038"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "……主",
+        "unit_id": 105911,
         "voice": "vo_adv_2015004_039"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "人……",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "對不起，",
+        "unit_id": 100211,
         "voice": "vo_adv_2015004_040"
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "對不起唷，騎士先生……",
-        "voice": null
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "優衣",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "這都是因為",
-        "voice": null
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "我力量不足……",
-        "voice": null
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "嗚、",
+        "unit_id": 105811,
         "voice": "vo_adv_2015004_041"
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "嗚……",
-        "voice": null
+        "unit_id": 105811
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 105811
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "如果你沒有替我",
-        "voice": null
+        "unit_id": 105811
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "擋下那一擊的話……！",
-        "voice": null
+        "unit_id": 105811
     },
     {
+        "type": "dialogue",
         "name": "凱留",
         "words": "如果我",
+        "unit_id": 106011,
         "voice": "vo_adv_2015004_042"
     },
     {
+        "type": "dialogue",
         "name": "凱留",
         "words": "能夠阻止陛下的話……！",
-        "voice": null
+        "unit_id": 106011
     },
     {
+        "type": "dialogue",
         "name": "怜、日和",
         "words": "呀啊啊～～！",
+        "unit_id": 1,
         "voice": "vo_adv_2015004_043"
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "怜、",
+        "unit_id": 100211,
         "voice": "vo_adv_2015004_044"
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "日和……！",
-        "voice": null
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "優衣",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "再、",
-        "voice": null
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "再這麼下去",
-        "voice": null
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "就連她們倆也會……",
-        "voice": null
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "對不起，騎士先生，",
-        "voice": null
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "優衣",
         "words": "我馬上就會回到你身邊的！",
-        "voice": null
+        "unit_id": 100211
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "……",
+        "unit_id": 105911,
         "voice": "vo_adv_2015004_045"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "……即使大家",
+        "unit_id": 105911,
         "voice": "vo_adv_2015004_046"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "拚了命戰鬥……",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "然而對上霸瞳皇帝時，",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "若沒有主公大人的力量……",
-        "voice": null
+        "words": "若沒有主人的力量……",
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "真琴",
         "words": "嗚哇啊～！！",
+        "unit_id": 104311,
         "voice": "vo_adv_2015004_047"
     },
     {
+        "type": "dialogue",
         "name": "靜流",
         "words": "呀啊啊～！！",
+        "unit_id": 104911,
         "voice": "vo_adv_2015004_048"
     },
     {
+        "type": "dialogue",
         "name": "貪吃佩可",
         "words": "……啊啊……！",
+        "unit_id": 105811,
         "voice": "vo_adv_2015004_049"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "大家一位",
+        "unit_id": 105911,
         "voice": "vo_adv_2015004_050"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "接著一位……",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "身受重傷",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "而倒下。",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "\\n",
-        "voice": null
+        "words": "\n",
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "其中也不乏，",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "早已無法以一己之力站起身的人了吧……",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "……啊啊，",
+        "unit_id": 105911,
         "voice": "vo_adv_2015004_051"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "在下……",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "竟是如此軟弱無能啊。",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "\\n不僅沒有拯救大家的力量……",
-        "voice": null
+        "words": "\n不僅沒有拯救大家的力量……",
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "\\n就連",
-        "voice": null
+        "words": "\n就連",
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "引導主公大人走到最後也……",
-        "voice": null
+        "words": "引導主人走到最後也……",
+        "unit_id": 105911
     },
     {
         "type": "still",
-        "still": "201500402",
-        "still_id": "201500402"
+        "still": "201500402"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "……主公大人……",
+        "words": "……主人……",
+        "unit_id": 105911,
         "voice": "vo_adv_2015004_052"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "主公大人……",
+        "words": "主人……",
+        "unit_id": 105911,
         "voice": "vo_adv_2015004_053"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "主公大人……",
+        "words": "主人……",
+        "unit_id": 105911,
         "voice": "vo_adv_2015004_054"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "嗚……",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "您為何",
+        "unit_id": 105911,
         "voice": "vo_adv_2015004_055"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "不睜開眼睛呢？",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "\\n是因為在下",
-        "voice": null
+        "words": "\n是因為在下",
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "做了什麼讓您感到困擾的事情嗎……",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "竟然得在此處與您分別，",
+        "unit_id": 105911,
         "voice": "vo_adv_2015004_056"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "在下無法接受。",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "\\n不是都約定好了，",
-        "voice": null
+        "words": "\n不是都約定好了，",
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "無論天涯海角在下都會與您相伴的嗎？",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "\\n在下不希望讓此處",
-        "voice": null
+        "words": "\n在下不希望讓此處",
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "成為在下引導您抵達的最後終點……",
-        "voice": null
+        "unit_id": 105911
     },
     {
         "type": "still",
@@ -1127,68 +1402,81 @@
     },
     {
         "type": "still",
-        "still": "201500404",
-        "still_id": "201500404"
+        "still": "201500404"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "請您",
+        "unit_id": 105911,
         "voice": "vo_adv_2015004_057"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "睜開",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "雙眼吧。",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "\\n請您如同平時一般，",
-        "voice": null
+        "words": "\n請您如同平時一般，",
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "溫柔地",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "撫摸在下的頭吧。",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "\\n倘若，",
-        "voice": null
+        "words": "\n倘若，",
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "能夠實現這個願望……",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "就算要在下，",
+        "unit_id": 105911,
         "voice": "vo_adv_2015004_058"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "向您獻上所有的一切也在所不惜……",
-        "voice": null
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
-        "words": "\\n所以請您……",
-        "voice": null
+        "words": "\n所以請您……",
+        "unit_id": 105911
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "還請您……",
-        "voice": null
+        "unit_id": 105911
     },
     {
         "type": "still",
@@ -1196,18 +1484,20 @@
     },
     {
         "type": "still",
-        "still": "201500405",
-        "still_id": "201500405"
+        "still": "201500405"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "主",
+        "unit_id": 105911,
         "voice": "vo_adv_2015004_059"
     },
     {
+        "type": "dialogue",
         "name": "可可蘿",
         "words": "人……",
-        "voice": null
+        "unit_id": 105911
     },
     {
         "type": "still",
@@ -1215,8 +1505,7 @@
     },
     {
         "type": "still",
-        "still": "201500406",
-        "still_id": "201500406"
+        "still": "201500406"
     },
     {
         "type": "still",
