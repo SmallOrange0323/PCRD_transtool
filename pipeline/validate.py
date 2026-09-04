@@ -95,6 +95,160 @@ def check_footprint_gate(dist_dir: Path = DIST_DIR, footprint_bytes: Optional[in
     else:
         return True, f"{msg} -> PASS", actual_bytes
 
+def validate_story_source_dist_parity(
+    src_story_dir: Path,
+    dist_story_dir: Path,
+    result: Optional[ValidationResult] = None,
+    verbose: bool = True
+) -> Tuple[bool, dict]:
+    """
+    Permanent validation gate ensuring semantic parity between source and dist stories.
+    Validates:
+    1. Numeric story file set parity (source IDs == dist IDs)
+    2. Unit ID sequence parity (source unit_id sequence == dist unit_id sequence)
+    3. Dialogue type parity (source dialogue count == dist dialogue count)
+    4. Movie command sequence parity (source movie_ids sequence == dist movie_ids sequence)
+    """
+    res = result or ValidationResult()
+    stats = {
+        "source_stories": 0,
+        "dist_stories": 0,
+        "unit_id_mismatches": 0,
+        "dialogue_mismatches": 0,
+        "movie_mismatches": 0,
+        "missing_in_dist": [],
+        "extra_in_dist": [],
+        "unit_id_mismatch_samples": [],
+        "dialogue_mismatch_samples": [],
+        "movie_mismatch_samples": []
+    }
+
+    if not src_story_dir.exists():
+        res.error(f"源碼對白目錄不存在: {src_story_dir}")
+        return False, stats
+
+    if not dist_story_dir.exists():
+        res.error(f"發布對白目錄不存在: {dist_story_dir}")
+        return False, stats
+
+    # 1. 蒐集數值型故事集合 (排除非數值輔助 JSON)
+    src_files = {}
+    for p in src_story_dir.glob("*.json"):
+        if p.stem.isdigit():
+            src_files[int(p.stem)] = p
+
+    dist_files = {}
+    for p in dist_story_dir.glob("*.json"):
+        if p.stem.isdigit():
+            dist_files[int(p.stem)] = p
+
+    src_sids = set(src_files.keys())
+    dist_sids = set(dist_files.keys())
+    stats["source_stories"] = len(src_sids)
+    stats["dist_stories"] = len(dist_sids)
+
+    missing = sorted(list(src_sids - dist_sids))
+    extra = sorted(list(dist_sids - src_sids))
+
+    if missing:
+        stats["missing_in_dist"] = missing
+        sample = missing[:5]
+        res.error(f"發布對白 (dist) 缺失 {len(missing)} 篇數值型故事 (範例: {sample})")
+
+    if extra:
+        stats["extra_in_dist"] = extra
+        sample = extra[:5]
+        res.error(f"發布對白 (dist) 多出 {len(extra)} 篇未在源碼之數值型故事 (範例: {sample})")
+
+    # 2. 逐篇深入比對共同話數的語意合約
+    common_sids = sorted(list(src_sids.intersection(dist_sids)))
+    for sid in common_sids:
+        src_path = src_files[sid]
+        dist_path = dist_files[sid]
+
+        try:
+            with open(src_path, "r", encoding="utf-8") as f:
+                s_data = json.load(f)
+        except Exception as e:
+            res.error(f"源碼對白 JSON 損壞: {src_path.name} - {e}")
+            continue
+
+        try:
+            with open(dist_path, "r", encoding="utf-8") as f:
+                d_data = json.load(f)
+        except Exception as e:
+            res.error(f"發布對白 JSON 損壞: {dist_path.name} - {e}")
+            continue
+
+        if not isinstance(s_data, list):
+            res.error(f"源碼對白根結構非陣列: {src_path.name}")
+            continue
+        if not isinstance(d_data, list):
+            res.error(f"發布對白根結構非陣列: {dist_path.name}")
+            continue
+
+        # A. Unit ID 序列循序比對
+        s_uids = [x.get("unit_id") for x in s_data if isinstance(x, dict) and x.get("unit_id") is not None]
+        d_uids = [x.get("unit_id") for x in d_data if isinstance(x, dict) and x.get("unit_id") is not None]
+        if s_uids != d_uids:
+            stats["unit_id_mismatches"] += 1
+            if len(stats["unit_id_mismatch_samples"]) < 5:
+                stats["unit_id_mismatch_samples"].append((sid, len(s_uids), len(d_uids)))
+
+        # B. Dialogue 類型筆數比對
+        s_diag_count = sum(1 for x in s_data if isinstance(x, dict) and x.get("type") == "dialogue")
+        d_diag_count = sum(1 for x in d_data if isinstance(x, dict) and x.get("type") == "dialogue")
+        if s_diag_count != d_diag_count:
+            stats["dialogue_mismatches"] += 1
+            if len(stats["dialogue_mismatch_samples"]) < 5:
+                stats["dialogue_mismatch_samples"].append((sid, s_diag_count, d_diag_count))
+
+        # C. Movie 指令循序比對
+        s_movies = [x.get("movie_id") for x in s_data if isinstance(x, dict) and x.get("type") == "movie"]
+        d_movies = [x.get("movie_id") for x in d_data if isinstance(x, dict) and x.get("type") == "movie"]
+        if s_movies != d_movies:
+            stats["movie_mismatches"] += 1
+            if len(stats["movie_mismatch_samples"]) < 5:
+                stats["movie_mismatch_samples"].append((sid, s_movies, d_movies))
+
+    # 3. 回報失配錯誤
+    if stats["unit_id_mismatches"] > 0:
+        for sid, s_len, d_len in stats["unit_id_mismatch_samples"]:
+            res.error(f"story/{sid} unit_id parity mismatch: source={s_len} dist={d_len}")
+        res.error(f"發現 {stats['unit_id_mismatches']} 篇故事 unit_id 序列不一致！")
+
+    if stats["dialogue_mismatches"] > 0:
+        for sid, s_cnt, d_cnt in stats["dialogue_mismatch_samples"]:
+            res.error(f"story/{sid} dialogue parity mismatch: source={s_cnt} dist={d_cnt}")
+        res.error(f"發現 {stats['dialogue_mismatches']} 篇故事 dialogue 筆數不一致！")
+
+    if stats["movie_mismatches"] > 0:
+        for sid, s_mov, d_mov in stats["movie_mismatch_samples"]:
+            res.error(f"story/{sid} movie parity mismatch: source={s_mov} dist={d_mov}")
+        res.error(f"發現 {stats['movie_mismatches']} 篇故事 movie 指令不一致！")
+
+    is_parity_pass = (
+        len(missing) == 0 and
+        len(extra) == 0 and
+        stats["unit_id_mismatches"] == 0 and
+        stats["dialogue_mismatches"] == 0 and
+        stats["movie_mismatches"] == 0
+    )
+
+    if is_parity_pass and verbose:
+        res.ok(
+            f"Story source/dist parity:\n"
+            f"    source stories: {stats['source_stories']}\n"
+            f"    dist stories: {stats['dist_stories']}\n"
+            f"    unit_id mismatches: {stats['unit_id_mismatches']}\n"
+            f"    dialogue mismatches: {stats['dialogue_mismatches']}\n"
+            f"    movie mismatches: {stats['movie_mismatches']}\n"
+            f"    PASS"
+        )
+
+    return is_parity_pass, stats
+
+
 def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> bool:
     """
     執行 Story Map 全量一致性檢查。
@@ -290,34 +444,10 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
         else:
             res.error("dist_story_map/data/db_info.json 不存在！")
 
-        # 深度比對 dist/story 對白集合
+        # 深度比對 dist/story 對白集合與語意對等門禁 (Parity Gate)
+        src_story_dir = base_dir / "story" if is_dashboard else DASHBOARD_DIR / "story"
         dist_story_dir = DIST_DIR / "story"
-        if dist_story_dir.exists():
-            dist_story_files = list(dist_story_dir.glob("*.json"))
-            dist_sids = set()
-            dist_corrupt = 0
-            for dsf in dist_story_files:
-                try:
-                    dsid = int(dsf.stem)
-                    dist_sids.add(dsid)
-                    with open(dsf, "r", encoding="utf-8") as f:
-                        data = json.load(f)
-                    if not isinstance(data, list):
-                        dist_corrupt += 1
-                        res.error(f"dist 對白非陣列: dist_story_map/story/{dsf.name}")
-                except ValueError:
-                    pass
-                except Exception as e:
-                    dist_corrupt += 1
-                    res.error(f"dist 對白 JSON 損壞: dist_story_map/story/{dsf.name} - {e}")
-
-            missing_in_dist = actual_story_ids - dist_sids
-            if missing_in_dist:
-                res.error(f"dist_story_map 缺失 {len(missing_in_dist)} 篇對白 (Bundler 漏同步): 範例 {list(missing_in_dist)[:5]}")
-            else:
-                res.ok(f"dist_story_map/story/ 與源碼對白集合完全一致 (共 {len(dist_sids)} 篇)")
-        else:
-            res.error("dist_story_map/story/ 目錄不存在！")
+        validate_story_source_dist_parity(src_story_dir, dist_story_dir, result=res, verbose=True)
 
         # 深度驗證 dist/data 元數據
         for meta_name in required_metadata.keys():
