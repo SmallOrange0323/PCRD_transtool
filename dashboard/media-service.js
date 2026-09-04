@@ -123,6 +123,129 @@ console.log("media-service.js loaded");
         },
 
         /**
+         * 正規化動畫 ID，去除 movie_ 或 story_ 前綴
+         * @param {string|number} movieId - 動畫 ID
+         * @returns {string} 正規化後的乾淨 ID
+         */
+        normalizeMovieId(movieId) {
+            if (!movieId) return "";
+            return String(movieId).replace(/^movie_/, '').replace(/^story_/, '').trim();
+        },
+
+        /**
+         * 從映射表中查詢對應的 Google Drive File ID
+         * @param {string|number} movieId - 動畫 ID
+         * @param {Object} movieLinks - ID 映射字典
+         * @returns {string|null} Google Drive File ID 或 null
+         */
+        lookupMovieGdriveId(movieId, movieLinks) {
+            if (!movieLinks || typeof movieLinks !== 'object') return null;
+            const cleanId = this.normalizeMovieId(movieId);
+            if (!cleanId) return null;
+            return movieLinks[cleanId] || movieLinks[`story_${cleanId}`] || null;
+        },
+
+        /**
+         * 取得 Google Drive 內嵌預覽 URL
+         * @param {string} gdriveId - Google Drive File ID
+         * @returns {string|null} 預覽 URL 或 null
+         */
+        getMoviePreviewUrl(gdriveId) {
+            if (!gdriveId || typeof gdriveId !== 'string') return null;
+            return `https://drive.google.com/file/d/${gdriveId}/preview`;
+        },
+
+        /**
+         * 產生未映射/尚未上傳動畫的 Fallback 提示 HTML
+         * @param {string} cleanId - 正規化後的動畫 ID
+         * @returns {string} HTML 字串
+         */
+        getMovieFallbackHtml(cleanId) {
+            return `
+                <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; background: #162030; padding: 24px; text-align: center;">
+                    <div style="font-size: 2.6rem; margin-bottom: 12px; animation: pulse 2s infinite;">☁️</div>
+                    <div style="font-size: 1.15rem; font-weight: 700; color: #60a5fa; margin-bottom: 8px;">動畫標識：story_${cleanId}</div>
+                    <div style="font-size: 0.88rem; color: #cbd5e1; max-width: 480px; line-height: 1.6;">
+                        此動畫正在準備上傳至 Google Drive 雲端中，或尚未同步至映射表。<br>
+                        若您在本地已壓制完畢，請執行同步腳本更新線上串流連結。
+                    </div>
+                </div>
+            `;
+        },
+
+        /**
+         * 開啟過場動畫全螢幕/視窗播放彈窗
+         * @param {string|number} movieId - 動畫 ID
+         * @param {Object} movieLinks - 映射字典
+         * @param {Document} doc - DOM Document 對象 (預設為全域 document)
+         */
+        openMoviePopup(movieId, movieLinks, doc) {
+            if (!movieId) return;
+            const targetDoc = doc || (typeof document !== 'undefined' ? document : null);
+            if (!targetDoc) return;
+
+            const cleanId = this.normalizeMovieId(movieId);
+            const gdriveId = this.lookupMovieGdriveId(movieId, movieLinks);
+
+            let modal = targetDoc.getElementById('movie-player-modal');
+            if (!modal) {
+                modal = targetDoc.createElement('div');
+                modal.id = 'movie-player-modal';
+                modal.className = 'movie-player-modal';
+                modal.innerHTML = `
+                    <div class="movie-player-box">
+                        <div class="movie-player-header">
+                            <span>🎬 劇情過場動畫放映室 (1080p 官方繁中字幕)</span>
+                            <span class="close-x" onclick="QuestMapModule.closeMoviePopup()">✖</span>
+                        </div>
+                        <div class="movie-player-body" id="movie-player-body"></div>
+                        <div class="movie-player-footer">
+                            <button class="movie-close-btn" onclick="QuestMapModule.closeMoviePopup()">關閉</button>
+                        </div>
+                    </div>
+                `;
+                targetDoc.body.appendChild(modal);
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) this.closeMoviePopup(targetDoc);
+                });
+            }
+
+            const bodyEl = targetDoc.getElementById('movie-player-body');
+            if (!bodyEl) return;
+
+            if (gdriveId) {
+                const previewUrl = this.getMoviePreviewUrl(gdriveId);
+                bodyEl.innerHTML = `<iframe src="${previewUrl}" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+            } else {
+                bodyEl.innerHTML = this.getMovieFallbackHtml(cleanId);
+            }
+
+            modal.classList.add('active');
+            if (targetDoc.body && targetDoc.body.style) {
+                targetDoc.body.style.overflow = 'hidden';
+            }
+        },
+
+        /**
+         * 關閉過場動畫彈窗並清空 iframe/body
+         * @param {Document} doc - DOM Document 對象
+         */
+        closeMoviePopup(doc) {
+            const targetDoc = doc || (typeof document !== 'undefined' ? document : null);
+            if (!targetDoc) return;
+
+            const modal = targetDoc.getElementById('movie-player-modal');
+            if (modal) {
+                modal.classList.remove('active');
+                const bodyEl = targetDoc.getElementById('movie-player-body');
+                if (bodyEl) bodyEl.innerHTML = '';
+            }
+            if (targetDoc.body && targetDoc.body.style) {
+                targetDoc.body.style.overflow = '';
+            }
+        },
+
+        /**
          * 關閉 CG 插畫彈窗並清理鍵盤監聽事件
          */
         closeStillPopup() {

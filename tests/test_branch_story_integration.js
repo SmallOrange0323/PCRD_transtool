@@ -61,6 +61,7 @@ test("Test 3 — All 63 entries use verified official bundle metadata", () => {
 
     const s2201101 = transformed.find(s => s.id === 2201101);
     const s2213101 = transformed.find(s => s.id === 2213101);
+    const s2213102 = transformed.find(s => s.id === 2213102);
     const s2213104 = transformed.find(s => s.id === 2213104);
     const s2216101 = transformed.find(s => s.id === 2216101);
 
@@ -69,8 +70,12 @@ test("Test 3 — All 63 entries use verified official bundle metadata", () => {
     assert.strictEqual(s2201101.title, "黑社會公會，前往背面世界");
 
     assert(s2213101, "2213101 must exist");
-    assert.strictEqual(s2213101.chapter, "分支劇情 L I");
+    assert.strictEqual(s2213101.chapter, "分支劇情 XLIX");
     assert.strictEqual(s2213101.title, "棘手大小姐們的觀光約會？");
+
+    assert(s2213102, "2213102 must exist");
+    assert.strictEqual(s2213102.chapter, "分支劇情 L");
+    assert.strictEqual(s2213102.title, "亞里莎，遭遇巨人");
 
     assert(s2213104, "2213104 must exist");
     assert.strictEqual(s2213104.chapter, "分支劇情 R V");

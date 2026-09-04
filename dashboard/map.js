@@ -1904,6 +1904,9 @@ const QuestMapModule = {
 
     openMoviePopup(movieId) {
         if (!movieId) return;
+        if (window.MediaService && typeof window.MediaService.openMoviePopup === 'function') {
+            return window.MediaService.openMoviePopup(movieId, this.movieLinks);
+        }
         const cleanId = String(movieId).replace('movie_', '').replace('story_', '');
         const gdriveId = this.movieLinks ? (this.movieLinks[cleanId] || this.movieLinks[`story_${cleanId}`]) : null;
 
@@ -1953,6 +1956,9 @@ const QuestMapModule = {
     },
 
     closeMoviePopup() {
+        if (window.MediaService && typeof window.MediaService.closeMoviePopup === 'function') {
+            return window.MediaService.closeMoviePopup();
+        }
         const modal = document.getElementById('movie-player-modal');
         if (modal) {
             modal.classList.remove('active');
