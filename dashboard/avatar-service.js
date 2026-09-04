@@ -826,6 +826,8 @@ globalScope.AvatarService = {
     },
 
     /**
+     * @deprecated 請改用 resolveExactDialoguePortrait（顯式對白頭像）或 resolveDefaultPortraitIds（通用推斷路徑）。
+     * 此混合解析器僅保留供外部審查腳本與相容性測試調用，內部生產呼叫次數已歸零。
      * 核心 Helper：解析發言人/角色之對話立繪頭像 ID 優先序 (Identity & Tier Resolution)
      * 分離 Identity 解析與 Portrait Tier 決策，集中管理策略集合
      * @param {number|string} unitId 
@@ -853,7 +855,7 @@ globalScope.AvatarService = {
     // 核心：生成頭像 URL 陣列（依優先序）
     getUrlCandidates(unitId) {
         if (!unitId || unitId < 100000) return [];
-        const portraitIds = this.resolveDialoguePortraitIds(unitId);
+        const portraitIds = this.resolveDefaultPortraitIds(unitId);
         if (portraitIds.length === 0) return [];
 
         const candidates = [];
@@ -875,7 +877,7 @@ globalScope.AvatarService = {
 
     getAvatarUrl(unitId) {
         if (!unitId) return 'https://redive.estertion.win/icon/unit/100001.webp';
-        const portraitIds = this.resolveDialoguePortraitIds(unitId);
+        const portraitIds = this.resolveDefaultPortraitIds(unitId);
         const mainId = portraitIds.length > 0 ? portraitIds[0] : unitId;
         return `icon/unit/${mainId}.png`;
     },
@@ -952,7 +954,7 @@ globalScope.AvatarService = {
             img.dataset.step = "1";
         }
         const step = parseInt(img.dataset.step, 10);
-        const portraitIds = this.resolveDialoguePortraitIds(finalUnitId);
+        const portraitIds = this.resolveDefaultPortraitIds(finalUnitId);
         const primaryId = portraitIds.length > 0 ? portraitIds[0] : finalUnitId;
         const secondaryId = portraitIds.length > 1 ? portraitIds[1] : null;
 

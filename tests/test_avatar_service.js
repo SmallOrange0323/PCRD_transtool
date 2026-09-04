@@ -434,5 +434,69 @@ await asyncTest("Test 14 — Concurrent ensureManifestLoaded calls execute exact
     }
 });
 
+// Test 15 — Generic Manifest-Active ID: Full inference ladder and secondary fallback preserved
+test("Test 15 — Generic Manifest-Active ID: Full inference ladder and secondary fallback preserved", () => {
+    // 105811 佩可（在 Manifest 中為 active）
+    // 通用解析必須包含 [105811, 105831]，絕不能被 Manifest active 截斷為單一 [105811]
+    const defaultIds = AvatarService.resolveDefaultPortraitIds(105811);
+    assert.deepStrictEqual(defaultIds, [105811, 105831], "resolveDefaultPortraitIds(105811) must return [105811, 105831]");
+
+    // 模擬 handleError 流程：即使 105811 在 manifest active，通用錯誤降級依然能在 Step 4 轉進 Step 5 嘗試 secondary 105831
+    let currentSrc = "";
+    let displayStyle = "";
+    let parentInnerHtml = "";
+    const mockImg = {
+        dataset: {},
+        get src() { return currentSrc; },
+        set src(v) { currentSrc = v; },
+        style: {
+            set display(val) { displayStyle = val; },
+            get display() { return displayStyle; }
+        },
+        parentNode: {
+            set innerHTML(val) { parentInnerHtml = val; },
+            get innerHTML() { return parentInnerHtml; }
+        }
+    };
+
+    AvatarService.handleError(mockImg, "貪吃佩可", 105811); // step 1 -> step 2
+    assert.strictEqual(mockImg.dataset.step, "2");
+    assert(mockImg.src.includes("105811.png") && mockImg.src.includes("00500012"));
+
+    AvatarService.handleError(mockImg, "貪吃佩可", 105811); // step 2 -> step 3
+    assert.strictEqual(mockImg.dataset.step, "3");
+    assert(mockImg.src.includes("105811.png") && mockImg.src.includes("00500015"));
+
+    AvatarService.handleError(mockImg, "貪吃佩可", 105811); // step 3 -> step 4
+    assert.strictEqual(mockImg.dataset.step, "4");
+    assert(mockImg.src.includes("105811.webp") && mockImg.src.includes("estertion"));
+
+    AvatarService.handleError(mockImg, "貪吃佩可", 105811); // step 4 -> step 5 (secondary fallback)
+    assert.strictEqual(mockImg.dataset.step, "5");
+    assert(mockImg.src.includes("105831.png"), "Step 5 must fallback to secondary 105831.png");
+
+    AvatarService.handleError(mockImg, "貪吃佩可", 105811); // step 5 -> step 6
+    assert.strictEqual(mockImg.dataset.step, "6");
+    assert(mockImg.src.includes("105831.webp") && mockImg.src.includes("estertion"));
+
+    // 139231 西住美穗 (exactFirstWithBaseFallback, manifest active)
+    const mihoIds = AvatarService.resolveDefaultPortraitIds(139231);
+    assert.deepStrictEqual(mihoIds, [139231, 139211], "resolveDefaultPortraitIds(139231) must return [139231, 139211]");
+});
+
+// Test 16 — Generic getUrlCandidates & getAvatarUrl derive from resolveDefaultPortraitIds
+test("Test 16 — Generic getUrlCandidates & getAvatarUrl derive from resolveDefaultPortraitIds", () => {
+    // 105811 候選陣列必須涵蓋 primary (105811) 與 secondary (105831)
+    const candidates = AvatarService.getUrlCandidates(105811);
+    assert(candidates.length > 0, "getUrlCandidates must return candidates");
+    const hasPrimary = candidates.some(c => c.includes("105811"));
+    const hasSecondary = candidates.some(c => c.includes("105831"));
+    assert(hasPrimary, "Candidates must include primary 105811");
+    assert(hasSecondary, "Candidates must include secondary 105831 even if 105811 is manifest-active");
+
+    const avatarUrl = AvatarService.getAvatarUrl(105811);
+    assert.strictEqual(avatarUrl, "icon/unit/105811.png", "getAvatarUrl should use primary ID from default ladder");
+});
+
 console.log(`\n✅ All ${testsPassed} AvatarService Phase 6 tests passed successfully!`);
 })();
