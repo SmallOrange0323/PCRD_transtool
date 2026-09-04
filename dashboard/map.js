@@ -1926,14 +1926,7 @@ const QuestMapModule = {
             modal.className = 'movie-player-modal';
             modal.innerHTML = `
                 <div class="movie-player-box">
-                    <div class="movie-player-header">
-                        <span>🎬 劇情過場動畫放映室 (1080p 官方繁中字幕)</span>
-                        <span class="close-x" onclick="QuestMapModule.closeMoviePopup()">✖</span>
-                    </div>
                     <div class="movie-player-body" id="movie-player-body"></div>
-                    <div class="movie-player-footer">
-                        <button class="movie-close-btn" onclick="QuestMapModule.closeMoviePopup()">關閉</button>
-                    </div>
                 </div>
             `;
             document.body.appendChild(modal);
@@ -1946,7 +1939,7 @@ const QuestMapModule = {
         if (!bodyEl) return;
 
         if (gdriveId) {
-            bodyEl.innerHTML = `<iframe src="https://drive.google.com/file/d/${gdriveId}/preview" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+            bodyEl.innerHTML = `<iframe src="https://drive.google.com/file/d/${gdriveId}/preview?autoplay=1" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>`;
         } else {
             bodyEl.innerHTML = `
                 <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; background: #162030; padding: 24px; text-align: center;">

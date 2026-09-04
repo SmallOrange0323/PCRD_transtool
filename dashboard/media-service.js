@@ -146,13 +146,15 @@ console.log("media-service.js loaded");
         },
 
         /**
-         * 取得 Google Drive 內嵌預覽 URL
+         * 取得 Google Drive 內嵌預覽 URL (預設啟用自動播放)
          * @param {string} gdriveId - Google Drive File ID
+         * @param {boolean} autoplay - 是否啟用自動播放
          * @returns {string|null} 預覽 URL 或 null
          */
-        getMoviePreviewUrl(gdriveId) {
+        getMoviePreviewUrl(gdriveId, autoplay = true) {
             if (!gdriveId || typeof gdriveId !== 'string') return null;
-            return `https://drive.google.com/file/d/${gdriveId}/preview`;
+            const base = `https://drive.google.com/file/d/${gdriveId}/preview`;
+            return autoplay ? `${base}?autoplay=1` : base;
         },
 
         /**
@@ -167,14 +169,14 @@ console.log("media-service.js loaded");
                     <div style="font-size: 1.15rem; font-weight: 700; color: #60a5fa; margin-bottom: 8px;">動畫標識：story_${cleanId}</div>
                     <div style="font-size: 0.88rem; color: #cbd5e1; max-width: 480px; line-height: 1.6;">
                         此動畫正在準備上傳至 Google Drive 雲端中，或尚未同步至映射表。<br>
-                        若您在本地已壓制完畢，請執行同步腳本更新線上串流連結。
+                        點擊遮罩任意處即可關閉。
                     </div>
                 </div>
             `;
         },
 
         /**
-         * 開啟過場動畫全螢幕/視窗播放彈窗
+         * 開啟過場動畫全螢幕/視窗播放彈窗 (純淨沉浸式影音播放，無外框標題列)
          * @param {string|number} movieId - 動畫 ID
          * @param {Object} movieLinks - 映射字典
          * @param {Document} doc - DOM Document 對象 (預設為全域 document)
@@ -194,14 +196,7 @@ console.log("media-service.js loaded");
                 modal.className = 'movie-player-modal';
                 modal.innerHTML = `
                     <div class="movie-player-box">
-                        <div class="movie-player-header">
-                            <span>🎬 劇情過場動畫放映室 (1080p 官方繁中字幕)</span>
-                            <span class="close-x" onclick="QuestMapModule.closeMoviePopup()">✖</span>
-                        </div>
                         <div class="movie-player-body" id="movie-player-body"></div>
-                        <div class="movie-player-footer">
-                            <button class="movie-close-btn" onclick="QuestMapModule.closeMoviePopup()">關閉</button>
-                        </div>
                     </div>
                 `;
                 targetDoc.body.appendChild(modal);
@@ -210,12 +205,22 @@ console.log("media-service.js loaded");
                 });
             }
 
+            // 綁定 ESC 鍵關閉
+            if (!this._movieEscHandler) {
+                this._movieEscHandler = (e) => {
+                    if (e.key === 'Escape' || e.keyCode === 27) {
+                        this.closeMoviePopup(targetDoc);
+                    }
+                };
+                targetDoc.addEventListener('keydown', this._movieEscHandler);
+            }
+
             const bodyEl = targetDoc.getElementById('movie-player-body');
             if (!bodyEl) return;
 
             if (gdriveId) {
-                const previewUrl = this.getMoviePreviewUrl(gdriveId);
-                bodyEl.innerHTML = `<iframe src="${previewUrl}" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+                const previewUrl = this.getMoviePreviewUrl(gdriveId, true);
+                bodyEl.innerHTML = `<iframe src="${previewUrl}" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>`;
             } else {
                 bodyEl.innerHTML = this.getMovieFallbackHtml(cleanId);
             }
@@ -242,6 +247,10 @@ console.log("media-service.js loaded");
             }
             if (targetDoc.body && targetDoc.body.style) {
                 targetDoc.body.style.overflow = '';
+            }
+            if (this._movieEscHandler) {
+                targetDoc.removeEventListener('keydown', this._movieEscHandler);
+                this._movieEscHandler = null;
             }
         },
 

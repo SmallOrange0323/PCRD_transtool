@@ -81,7 +81,8 @@ console.log('\n開始執行 Movie Feature 聚焦測試案例 (5項指標)...');
 
 // 3. mapped ID -> Google Drive preview URL
 {
-    assert.strictEqual(MediaService.getMoviePreviewUrl('1a2b3c4d'), 'https://drive.google.com/file/d/1a2b3c4d/preview');
+    assert.strictEqual(MediaService.getMoviePreviewUrl('1a2b3c4d'), 'https://drive.google.com/file/d/1a2b3c4d/preview?autoplay=1');
+    assert.strictEqual(MediaService.getMoviePreviewUrl('1a2b3c4d', false), 'https://drive.google.com/file/d/1a2b3c4d/preview');
     assert.strictEqual(MediaService.getMoviePreviewUrl(''), null);
     assert.strictEqual(MediaService.getMoviePreviewUrl(null), null);
     console.log('  [PASS] 3. mapped ID -> Google Drive preview URL');
@@ -127,7 +128,9 @@ console.log('\n開始執行 Movie Feature 聚焦測試案例 (5項指標)...');
                 bodyEl.id = 'movie-player-body';
                 elements['movie-player-body'] = bodyEl;
             }
-        }
+        },
+        addEventListener(evt, fn) {},
+        removeEventListener(evt, fn) {}
     };
 
     const mockLinks = { '2213101': 'mock_drive_id_101' };
@@ -138,7 +141,7 @@ console.log('\n開始執行 Movie Feature 聚焦測試案例 (5項指標)...');
     const bodyEl = elements['movie-player-body'];
     assert(modal, 'Modal 元素必須被建立');
     assert(modal.classList.contains('active'), '開啟後 Modal 必須帶有 active class');
-    assert(bodyEl.innerHTML.includes('iframe src="https://drive.google.com/file/d/mock_drive_id_101/preview"'), '必須注入 Google Drive 預覽 iframe');
+    assert(bodyEl.innerHTML.includes('iframe src="https://drive.google.com/file/d/mock_drive_id_101/preview?autoplay=1"'), '必須注入 Google Drive 預覽 iframe (含 autoplay)');
     assert.strictEqual(mockDoc.body.style.overflow, 'hidden', '開啟後 body 必須鎖定捲動');
 
     // 5b. close popup clears iframe/body
