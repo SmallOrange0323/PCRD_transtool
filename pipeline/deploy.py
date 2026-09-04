@@ -85,5 +85,11 @@ def run_deploy(message: str = None, dry_run: bool = False) -> bool:
     return True
 
 if __name__ == "__main__":
-    success = run_deploy()
+    import argparse
+    parser = argparse.ArgumentParser(description="PCRD Story Map GitHub Pages 部署工具")
+    parser.add_argument("-m", "--message", type=str, default=None, help="Commit 訊息")
+    parser.add_argument("--dry-run", action="store_true", help="模擬運行，不提交、不推送")
+    args = parser.parse_args()
+
+    success = run_deploy(message=args.message, dry_run=args.dry_run)
     sys.exit(0 if success else 1)
