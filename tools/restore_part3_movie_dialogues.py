@@ -4,6 +4,7 @@
 tools/restore_part3_movie_dialogues.py
 Restore official movie commands for Part 3 stories while preserving enriched story identity.
 Writes strictly to source (dashboard/story/), never to dist_story_map/.
+Fails closed on semantic anchor alignment mismatch.
 """
 
 import os
@@ -24,7 +25,10 @@ from tools.pcrd_fetch import (
     load_story_manifest_hash_map,
     _parse_bundle_dialogues
 )
-from tools.movie_restore_core import restore_story_file
+from tools.movie_restore_core import (
+    restore_story_file,
+    AlignmentMismatchError
+)
 
 try:
     import UnityPy
@@ -49,6 +53,7 @@ def main():
 
     total_movies = 0
     updated_stories = 0
+    skipped_mismatch = 0
 
     for idx, sid in enumerate(p3_sids, 1):
         h = hashes[sid]
@@ -57,7 +62,7 @@ def main():
             req = urllib.request.Request(url, headers=WEB_HEADER)
             with urllib.request.urlopen(req, timeout=25) as res:
                 bundle_bytes = res.read()
-            raw_dialogues, _ = _parse_bundle_dialogues(bundle_bytes, extract_metadata=True)
+            raw_dialogues, _ = _parse_bundle_dialogues(bundle_bytes, extract_metadata=False)
             
             merged = restore_story_file(sid, raw_dialogues, story_dir=story_dir)
             movies = [d for d in merged if isinstance(d, dict) and d.get("type") == "movie"]
@@ -65,10 +70,13 @@ def main():
                 updated_stories += 1
                 total_movies += len(movies)
                 print(f"  [{idx}/{len(p3_sids)}] Story {sid}: {len(movies)} movie(s) merged.")
+        except AlignmentMismatchError as ame:
+            skipped_mismatch += 1
+            print(f"  [{idx}/{len(p3_sids)}] Story {sid}: [FAIL CLOSED] {ame}", file=sys.stderr)
         except Exception as e:
             print(f"  [{idx}/{len(p3_sids)}] Story {sid}: Error: {e}", file=sys.stderr)
 
-    print(f"Part 3 restoration complete. Updated stories: {updated_stories}, Total movies: {total_movies}")
+    print(f"Part 3 restoration complete. Updated stories: {updated_stories}, Total movies: {total_movies}, Skipped due to mismatch: {skipped_mismatch}")
 
 
 if __name__ == "__main__":

@@ -4,6 +4,7 @@
 tools/restore_part1_part2_movies.py
 Restore official movie commands for Part 1 & Part 2 stories while preserving enriched story identity.
 Writes strictly to source (dashboard/story/), never to dist_story_map/.
+Fails closed on semantic anchor alignment mismatch.
 """
 
 import os
@@ -25,7 +26,10 @@ from tools.pcrd_fetch import (
     load_story_manifest_hash_map,
     _parse_bundle_dialogues
 )
-from tools.movie_restore_core import restore_story_file
+from tools.movie_restore_core import (
+    restore_story_file,
+    AlignmentMismatchError
+)
 
 try:
     import UnityPy
@@ -41,7 +45,7 @@ def process_story(sid, h, story_dir):
     with urllib.request.urlopen(req, timeout=30) as res:
         bundle_bytes = res.read()
 
-    raw_dialogues, _ = _parse_bundle_dialogues(bundle_bytes, extract_metadata=True)
+    raw_dialogues, _ = _parse_bundle_dialogues(bundle_bytes, extract_metadata=False)
     merged = restore_story_file(sid, raw_dialogues, story_dir=story_dir)
     movies = [d for d in merged if isinstance(d, dict) and d.get("type") == "movie"]
     return sid, len(movies), [m["movie_id"] for m in movies]
@@ -64,6 +68,7 @@ def main():
 
     total_movies = 0
     stories_with_movies = 0
+    skipped_mismatches = 0
 
     with ThreadPoolExecutor(max_workers=8) as executor:
         futures = {executor.submit(process_story, sid, hashes[sid], story_dir): sid for sid in all_sids}
@@ -77,10 +82,13 @@ def main():
                     stories_with_movies += 1
                     total_movies += movie_count
                     print(f"  [{completed}/{len(all_sids)}] Story {sid_res}: {movie_count} movie(s): {movie_ids}")
+            except AlignmentMismatchError as ame:
+                skipped_mismatches += 1
+                print(f"  [{completed}/{len(all_sids)}] Story {sid}: [FAIL CLOSED] {ame}", file=sys.stderr)
             except Exception as e:
                 print(f"  [{completed}/{len(all_sids)}] Story {sid}: Error: {e}", file=sys.stderr)
 
-    print(f"Part 1 & 2 restoration complete. Stories with movies: {stories_with_movies}, Total movies: {total_movies}")
+    print(f"Part 1 & 2 restoration complete. Stories with movies: {stories_with_movies}, Total movies: {total_movies}, Skipped due to mismatch: {skipped_mismatches}")
 
 
 if __name__ == "__main__":
