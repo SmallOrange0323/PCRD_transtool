@@ -76,13 +76,49 @@ window.AvatarService = {
         139431  // 逸見艾麗卡 (GuP)
     ]),
 
+    // 第 3 部分支劇情現實篇章之角色現實專屬頭像 ID 映射表
+    realityAvatarMap: {
+        "空花": 104532, "遠見空花": 104532, "遠見 空花": 104532,
+        "莉瑪": 105231,
+        "真陽": 103332, "野戶真陽": 103332, "野戶 真陽": 103332,
+        "綾音": 102332, "北條綾音": 102332, "北條 綾音": 102332,
+        "美美": 102032, "茜美美": 102032, "茜 美美": 102032,
+        "鈴奈": 101632, "美波鈴奈": 101632, "美波 鈴奈": 101632,
+        "妮諾": 103031, "妮諾・珠貝爾": 103031,
+        "七七香": 101332, "丹野七七香": 101332, "丹野 七七香": 101332,
+        "霞": 101431, "小霧": 101431, "霧原霞": 101431, "霧原 霞": 101431,
+        "真琴": 104331, "安芸真琴": 104331, "安芸 真琴": 104331,
+        "貪吃佩可": 105831, "佩可": 105831, "尤絲蒂亞娜": 105831, "尤絲蒂亞娜‧F‧阿斯特賴亞": 105831,
+        "伊緒": 101832, "支倉伊緒": 101832, "支倉 伊緒": 101832,
+        "美里": 101533, "愛川美里": 101533, "愛川 美里": 101533,
+        "克蕾雅": 118031, "克蕾雅‧波洋希亞": 118031, "神秘女性": 118031,
+        "茉莉": 100531, "織原茉莉": 100531, "織原 茉莉": 100531,
+        "雪": 100832, "虹村雪": 100832, "虹村 雪": 100832,
+        "美冬": 104833, "大泉美冬": 104833, "大泉 美冬": 104833,
+        "祈梨": 106631, "一之瀨祈梨": 106631, "一之瀨 祈梨": 106631,
+        "秋乃": 103232, "藤堂秋乃": 103232, "藤堂 秋乃": 103232,
+        "珠希": 104632, "宮坂珠希": 104632, "宮坂 珠希": 104632,
+        "咲戀": 102832, "佐佐木咲戀": 102832, "佐佐木 咲戀": 102832
+    },
+
+    // 明確定義的現實專屬頭像 ID 集合 (嚴格優先保留 exact ID)
+    exactRealityIds: new Set([
+        104532, 105231, 103332, 102332, 102032, 101632,
+        103031, 101332, 101431, 104331, 105831, 101832,
+        101533, 118031, 100531, 100832, 104833, 106631,
+        103232, 104632, 102832
+    ]),
+
     // 快取：charaName -> { unitId, url, triedCdnIndex }
     cache: {},
 
     // 取得角色 unit_id（優先 customMap，再從外部傳入的 speakerAvatars 查找）
-    getUnitId(charaName, externalAvatars = {}) {
+    getUnitId(charaName, externalAvatars = {}, isReality = false) {
         if (!charaName) return null;
         const cleanName = this.cleanName(charaName);
+        if (isReality && this.realityAvatarMap[cleanName]) {
+            return this.realityAvatarMap[cleanName];
+        }
         if (this.customMap[cleanName]) return this.customMap[cleanName];
         if (externalAvatars[cleanName]) return externalAvatars[cleanName];
         if (externalAvatars[charaName]) return externalAvatars[charaName];
@@ -126,7 +162,14 @@ window.AvatarService = {
             return [numId, baseId + 11];
         }
 
-        // 4. 普通可玩角色 (Ordinary Playable Unit) 與換裝 Variant (< 190000)
+        // 4. 現實專屬頭像或非標準尾數形態 (如 104532 空花、102832 咲戀、103232 秋乃、104632 珠希、100832 雪等)
+        // 嚴格保留自身的 exact ID，次選 baseId + 11
+        if (this.exactRealityIds.has(numId) || (numId % 100 !== 11 && numId % 100 !== 31 && numId % 100 !== 61)) {
+            const baseId = Math.floor(numId / 100) * 100;
+            return [numId, baseId + 11];
+        }
+
+        // 5. 普通可玩角色 (Ordinary Playable Unit) 與換裝 Variant (< 190000)
         // 嚴格保留自身換裝之百位基底 (baseId)，首選 +11 (日常基礎立繪)，次選 +31 (3★卡面立繪)
         const baseId = Math.floor(numId / 100) * 100;
         return [baseId + 11, baseId + 31];
