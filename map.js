@@ -121,26 +121,14 @@ const QuestMapModule = {
 
     getStoryItemHtml(s, chDisplay, titleDisplay) {
         let thumbHtml = '';
-        if (this.storyThumbnails && this.storyThumbnails[s.id]) {
-            const thumbData = this.storyThumbnails[s.id];
-            if (thumbData.still_id) {
-                thumbHtml = StoryAssetService.getStillHtml(thumbData.still_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
-            } else if (thumbData.bg_id) {
-                // 無 CG 插畫時，顯示該話專屬的優美場景背景圖
-                thumbHtml = StoryAssetService.getBackgroundHtml(thumbData.bg_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
-            }
-        }
-        if (!thumbHtml) {
-            if (s.still_id) {
-                thumbHtml = StoryAssetService.getStillHtml(s.still_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
-            } else if (s.bg_id) {
-                thumbHtml = StoryAssetService.getBackgroundHtml(s.bg_id, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
-            } else if (s.type === 'chara' && s.groupId) {
-                const cardId = `${s.groupId}31`;
-                thumbHtml = `<img class="story-thumb-img" src="card/${cardId}.webp" onerror="if(this.src.indexOf('estertion')===-1){this.src='https://redive.estertion.win/card/full/${cardId}.webp';}else{this.src='https://redive.estertion.win/card/full/100431.webp';}" style="width:100%;height:100%;object-fit:cover;" alt="thumbnail">`;
-            } else {
-                thumbHtml = `<img class="story-thumb-img" src="https://redive.estertion.win/card/full/100431.webp" onerror="this.onerror=null; this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';" style="width:100%;height:100%;object-fit:cover;" alt="thumbnail">`;
-            }
+        if (s.type === 'chara' && s.groupId) {
+            const cardId = `${s.groupId}31`;
+            thumbHtml = `<img class="story-thumb-img" src="card/${cardId}.webp" onerror="if(this.src.indexOf('estertion')===-1){this.src='https://redive.estertion.win/card/full/${cardId}.webp';}else{this.src='https://redive.estertion.win/card/full/100431.webp';}" style="width:100%;height:100%;object-fit:cover;" alt="thumbnail">`;
+        } else {
+            const thumbData = (this.storyThumbnails && this.storyThumbnails[s.id]) || {};
+            const stillId = thumbData.still_id || s.still_id || null;
+            const bgId = thumbData.bg_id || s.bg_id || null;
+            thumbHtml = StoryAssetService.getStoryThumbnailHtml(s.id, stillId, bgId, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
         }
  return `
  <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}" id="story-item-${s.id}" onclick="QuestMapModule.selectStory(${s.id})">
@@ -1013,8 +1001,8 @@ const QuestMapModule = {
                     const info = firstStory ? ChapterDataService.getChapterInfo(this.currentPart, groupId) : null;
                     chTitle = info?.title ? ` - ${info.title}` : "";
 
-                    // 取得章節縮圖 (優先使用 groupId 對照，無則遍歷章節內故事尋找第一個有縮圖的故事)
-                    let chImgUrl = 'https://redive.estertion.win/card/full/100431.webp'; // 預設卡面
+                    // 取得章節縮圖 (優先使用章節內首個故事的官方專屬縮圖，無則逐步降級至 still_id / bg_id / 預設卡面)
+                    let foundStoryId = (childStories && childStories.length > 0) ? childStories[0].id : null;
                     let foundStillId = null;
                     let foundBgId = null;
 
@@ -1024,7 +1012,7 @@ const QuestMapModule = {
                         foundBgId = thumb.bg_id;
                     }
 
-                    if (!foundStillId && !foundBgId && this.storyThumbnails) {
+                    if (!foundStillId && !foundBgId && this.storyThumbnails && childStories) {
                         for (const s of childStories) {
                             const thumb = this.storyThumbnails[s.id];
                             if (thumb) {
@@ -1039,18 +1027,20 @@ const QuestMapModule = {
                         }
                     }
 
-                    if (foundStillId) {
-                        chImgUrl = `https://redive.estertion.win/card/story/${foundStillId}.webp`;
-                    } else if (foundBgId) {
-                        chImgUrl = `https://redive.estertion.win/bg/jpg/${foundBgId}.jpg`;
-                    }
+                    const chapterCardThumbHtml = StoryAssetService.getStoryThumbnailHtml(
+                        foundStoryId,
+                        foundStillId,
+                        foundBgId,
+                        'chapter-card-img',
+                        ''
+                    );
 
                     accordionHtml += `
                         <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
                             <div class="accordion-header chapter-card" onclick="QuestMapModule.toggleChapter(${chIndex})">
                                 <div class="acc-header-title">
                                     <div class="chapter-card-thumb">
-                                        <img class="chapter-card-img" src="${chImgUrl}" onerror="this.onerror=null; this.src='https://redive.estertion.win/card/full/100431.webp';">
+                                        ${chapterCardThumbHtml}
                                     </div>
                                     <span class="acc-ch-name" style="margin-left: 8px;">${this.escapeHtml(cleanChKey)}${this.escapeHtml(chTitle)}</span>
                                 </div>
@@ -1067,11 +1057,30 @@ const QuestMapModule = {
                     `;
                 } else if (this.activeTabType === 'event') {
                     chIcon = "🏆";
+                    let foundStoryId = (childStories && childStories.length > 0) ? childStories[0].id : null;
+                    let foundStillId = null;
+                    let foundBgId = null;
+                    if (childStories) {
+                        for (const s of childStories) {
+                            if (s.still_id) { foundStillId = s.still_id; break; }
+                            if (!foundBgId && s.bg_id) foundBgId = s.bg_id;
+                        }
+                    }
+                    const chapterCardThumbHtml = StoryAssetService.getStoryThumbnailHtml(
+                        foundStoryId,
+                        foundStillId,
+                        foundBgId,
+                        'chapter-card-img',
+                        ''
+                    );
+
                     accordionHtml += `
                         <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
-                            <div class="accordion-header" onclick="QuestMapModule.toggleChapter(${chIndex})">
-                                <div class="acc-header-title" style="display: flex; align-items: center;">
-                                    <span class="acc-folder-icon" style="display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">${chIcon}</span>
+                            <div class="accordion-header chapter-card" onclick="QuestMapModule.toggleChapter(${chIndex})">
+                                <div class="acc-header-title">
+                                    <div class="chapter-card-thumb">
+                                        ${chapterCardThumbHtml}
+                                    </div>
                                     <span class="acc-ch-name" style="margin-left: 8px;">${this.escapeHtml(chKey)}</span>
                                 </div>
                                 <div class="acc-count">${childStories.length} 話</div>
