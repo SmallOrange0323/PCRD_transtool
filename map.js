@@ -203,6 +203,11 @@ const QuestMapModule = {
                 await window.ChapterDataService.load();
             }
 
+            // 確保 AvatarService Manifest 完整就緒 (Exact Dialogue Avatar 治理)
+            if (window.AvatarService && typeof window.AvatarService.ensureManifestLoaded === 'function') {
+                await window.AvatarService.ensureManifestLoaded();
+            }
+
             if (Object.keys(this.speakerAvatars).length === 0) {
                 try {
                     const checkTableSql = `SELECT name FROM sqlite_master WHERE type='table' AND name='unit_data'`;

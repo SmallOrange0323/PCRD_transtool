@@ -147,11 +147,6 @@ console.log("dialogue-view.js loaded");
                     if (bgId) {
                         const bgUrl = `https://redive.estertion.win/bg/jpg/${bgId}.jpg`;
                         if (!firstBgUrl) firstBgUrl = bgUrl;
-                        html += `
-                            <div class="game-dialogue-bg-change" data-bg="${bgUrl}" style="margin: 12px 0; padding: 8px 12px; font-size: 0.8rem; color: rgba(255,255,255,0.4); text-align: center; border-top: 1px dashed rgba(255,255,255,0.15); border-bottom: 1px dashed rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; gap: 6px;">
-                                🎬 場景切換：${bgId}
-                            </div>
-                        `;
                     }
                     return;
                 }
@@ -208,21 +203,27 @@ console.log("dialogue-view.js loaded");
                     const realName = realNameForBtn;
                     let avatarContent = "";
 
-                    let overrideUnitId = item.unit_id;
-                    const isRealityStory = [2210102, 2211102, 2212103, 2212104, 2213104, 2214101, 2215102].includes(Number(storyId));
-                    if (isRealityStory && window.AvatarService && window.AvatarService.realityAvatarMap) {
-                        const realityId = window.AvatarService.realityAvatarMap[realName] || window.AvatarService.realityAvatarMap[speaker];
-                        if (realityId) {
-                            overrideUnitId = realityId;
-                        }
-                    } else if (realName === "貪吃佩可" && String(storyId).startsWith("13830")) {
-                        overrideUnitId = 138331;
-                    }
+                    const numUnitId = Number(item.unit_id);
+                    const hasExplicitUnitId = Number.isInteger(numUnitId) && numUnitId >= 100000;
 
-                    if (overrideUnitId) {
-                        avatarContent = window.AvatarService.getAvatarHtmlByUnitId(overrideUnitId, realName, speakerAvatars);
+                    if (hasExplicitUnitId) {
+                        // A. 顯式 Canonical unit_id 絕對優先 (EXPLICIT ALWAYS WINS)
+                        // 絕不進行 realityAvatarMap 或 13830* 改寫，直接調用 exact 解析
+                        avatarContent = window.AvatarService.getAvatarHtmlByUnitId(numUnitId, realName, speakerAvatars);
                     } else {
-                        avatarContent = window.AvatarService.getAvatarHtml(realName, speakerAvatars);
+                        // B. 無有效顯式 unit_id 之推斷相容路徑 (INFERENCE-ONLY LEGACY COMPATIBILITY)
+                        let inferredAvatars = speakerAvatars;
+                        const isRealityStory = [2210102, 2211102, 2212103, 2212104, 2213104, 2214101, 2215102].includes(Number(storyId));
+                        if (isRealityStory && window.AvatarService && window.AvatarService.realityAvatarMap) {
+                            const realityId = window.AvatarService.realityAvatarMap[realName] || window.AvatarService.realityAvatarMap[speaker];
+                            if (realityId) {
+                                inferredAvatars = Object.assign({}, speakerAvatars, { [realName]: realityId });
+                            }
+                        } else if (realName === "貪吃佩可" && String(storyId).startsWith("13830")) {
+                            inferredAvatars = Object.assign({}, speakerAvatars, { [realName]: 138331 });
+                        }
+
+                        avatarContent = window.AvatarService.getAvatarHtml(realName, inferredAvatars);
                     }
 
                     avatarHtml = `

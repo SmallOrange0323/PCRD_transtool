@@ -4,7 +4,152 @@ console.log("avatar-service.js loaded");
  * 集中管理角色頭像 URL 生成、降級邏輯、快取與預載
  */
 
-window.AvatarService = {
+const globalScope = typeof window !== 'undefined' ? window : (typeof global !== 'undefined' ? global : this);
+globalScope.AvatarService = {
+    // Phase 6: Avatar Manifest 登錄表快取
+    manifestMap: new Map(),
+    manifestLoaded: false,
+    manifestUnavailable: false,
+    _manifestPromise: null,
+
+    /**
+     * 載入並快取 Avatar Manifest (avatar_assets.json)
+     * @param {Object} manifestData - Manifest JSON 物件
+     */
+    loadManifest(manifestData) {
+        if (!manifestData || !Array.isArray(manifestData.assets)) {
+            this.manifestMap.clear();
+            this.manifestLoaded = true;
+            this.manifestUnavailable = true;
+            return;
+        }
+        this.manifestMap.clear();
+        for (const entry of manifestData.assets) {
+            if (entry.unit_id != null) {
+                this.manifestMap.set(Number(entry.unit_id), entry);
+            }
+        }
+        this.manifestLoaded = true;
+        this.manifestUnavailable = false;
+    },
+
+    /**
+     * 異步確保 Manifest 已載入 (供前端與異步呼叫端使用，永不 Reject)
+     * @returns {Promise<void>}
+     */
+    async ensureManifestLoaded() {
+        if (this.manifestLoaded) return;
+        if (this._manifestPromise) return this._manifestPromise;
+        if (typeof fetch !== 'undefined') {
+            this._manifestPromise = fetch('data/avatar_assets.json')
+                .then(res => {
+                    if (res.ok) return res.json();
+                    throw new Error(`HTTP ${res.status}`);
+                })
+                .then(manifestData => {
+                    this.loadManifest(manifestData);
+                })
+                .catch(err => {
+                    console.warn('[AvatarService] Failed to fetch avatar_assets.json; failing closed to unavailable state:', err);
+                    this.manifestMap.clear();
+                    this.manifestLoaded = true;
+                    this.manifestUnavailable = true;
+                });
+            return this._manifestPromise;
+        }
+    },
+
+    /**
+     * 【Phase 6 核心契約】顯式對白頭像解析 (Exact Dialogue Identity Resolution)
+     * 嚴格保持顯式 unit_id，不進行百位規整化、不換裝替代、不查詢名字推斷
+     * @param {number|string} unitId 
+     * @param {Object} [options]
+     * @param {boolean} [options.warnIfAbsent=true] - 當 unit_id 不在 Manifest 時是否發出 warning
+     * @returns {Object|null} { status: 'active'|'placeholder_only'|'unknown_placeholder'|'manifest_unavailable', unitId: number, filename: string|null }
+     */
+    resolveExactDialoguePortrait(unitId, options = {}) {
+        if (!unitId || (typeof unitId !== 'number' && typeof unitId !== 'string')) return null;
+        const numId = Number(unitId);
+        if (!Number.isInteger(numId) || numId < 100000) return null;
+
+        // 若 Manifest 載入失敗/不可用，明確標記狀態並 Fail-Closed
+        if (this.manifestUnavailable) {
+            if (options.warnIfAbsent !== false) {
+                console.warn(`[AvatarService] Avatar manifest is unavailable; failing closed explicit dialogue unit_id ${numId} to placeholder.`);
+            }
+            return {
+                status: 'manifest_unavailable',
+                unitId: numId,
+                filename: null
+            };
+        }
+
+        const entry = this.manifestMap.get(numId);
+        if (entry) {
+            if (entry.status === 'active') {
+                return {
+                    status: 'active',
+                    unitId: numId,
+                    filename: entry.filename || `${numId}.png`
+                };
+            }
+            if (entry.status === 'placeholder_only') {
+                return {
+                    status: 'placeholder_only',
+                    unitId: numId,
+                    filename: null
+                };
+            }
+        }
+
+        // 顯式 ID 未在 Manifest 登錄：嚴格 Fail Closed 顯示佔位符，並在未被抑制時警告
+        if (options.warnIfAbsent !== false) {
+            console.warn(`[AvatarService] Explicit dialogue unit_id ${numId} is absent from avatar_assets.json; failing closed to placeholder.`);
+        }
+        return {
+            status: 'unknown_placeholder',
+            unitId: numId,
+            filename: null
+        };
+    },
+
+    /**
+     * 通用/名字推斷對白頭像解析 (Generic / Inferred Identity Resolution)
+     * 僅供無顯式 unit_id 之通用 UI、卡片、可玩角色名稱推斷時使用
+     * @param {number|string} unitId 
+     * @returns {Array<number>} 候選 ID 陣列 (優先序由前至後)
+     */
+    resolveDefaultPortraitIds(unitId) {
+        if (!unitId || (typeof unitId !== 'number' && typeof unitId !== 'string')) return [];
+        const numId = Number(unitId);
+        if (!Number.isInteger(numId) || numId < 100000) return [];
+
+        // 1. NPC 角色 (>= 190000)：維持 exact unit ID
+        if (numId >= 190000) {
+            return [numId];
+        }
+
+        // 2. 已知特殊 NPC / Exact-ID 角色 (如 107411 幻境龍后、107412、107431 等)
+        if (this.exactPortraitIds.has(numId)) {
+            return [numId];
+        }
+
+        // 3. 特殊 Exact-ID 優先角色 (如 138331 佩可 override、139231 美穗、139331 真穗、139431 艾麗卡)
+        if (this.exactFirstWithBaseFallback.has(numId)) {
+            const baseId = Math.floor(numId / 100) * 100;
+            return [numId, baseId + 11];
+        }
+
+        // 4. 明確定義的現實專屬頭像 ID
+        if (this.exactRealityIds.has(numId)) {
+            const baseId = Math.floor(numId / 100) * 100;
+            return [numId, baseId + 11];
+        }
+
+        // 5. 普通可玩角色與換裝 Variant (< 190000)
+        const baseId = Math.floor(numId / 100) * 100;
+        return [baseId + 11, baseId + 31];
+    },
     // 【修正 Bug 4 & Bug 8】HTML 實體編碼輔助函數
     escapeHtml(str) {
         if (!str) return "";
@@ -78,6 +223,8 @@ window.AvatarService = {
 
     // 第 3 部分支劇情現實篇章之角色現實專屬頭像 ID 映射表
     realityAvatarMap: {
+        "八斗神": 193631,
+        "八斗神局長": 193631,
         "一之瀨 祈梨": 106631,
         "一之瀨祈梨": 106631,
         "一華 牡丹": 129631,
@@ -407,6 +554,9 @@ window.AvatarService = {
         "真行寺 由仁": 111032,
         "真行寺由仁": 111032,
         "真那": 106931,
+        "真軌": 191031,
+        "狂真咲 真軌": 191031,
+        "狂真咲真軌": 191031,
         "真陽": 103332,
         "真陽（聖誕節）": 103332,
         "真陽（遊俠）": 103332,
@@ -639,7 +789,7 @@ window.AvatarService = {
         104833, 104932, 105032, 105132, 105231, 105332,
         105432, 105532, 105632, 105731, 105831, 105932,
         106031, 106131, 106331, 106432, 106532, 106631,
-        106731, 106832, 106931, 107032, 107131, 110832,
+        106731, 106832, 106931, 107031, 107032, 107131, 110832,
         110932, 111032, 111431, 112431, 112531, 112631,
         118031, 118131, 118231, 118531, 122332, 123331,
         125631, 125831, 126031, 126131, 126431, 126532,
@@ -676,50 +826,36 @@ window.AvatarService = {
     },
 
     /**
+     * @deprecated 請改用 resolveExactDialoguePortrait（顯式對白頭像）或 resolveDefaultPortraitIds（通用推斷路徑）。
+     * 此混合解析器僅保留供外部審查腳本與相容性測試調用，內部生產呼叫次數已歸零。
      * 核心 Helper：解析發言人/角色之對話立繪頭像 ID 優先序 (Identity & Tier Resolution)
      * 分離 Identity 解析與 Portrait Tier 決策，集中管理策略集合
      * @param {number|string} unitId 
      * @returns {Array<number>} 候選 ID 陣列 (優先序由前至後)
      */
-    resolveDialoguePortraitIds(unitId) {
+    resolveDialoguePortraitIds(unitId, options = {}) {
         if (!unitId || (typeof unitId !== 'number' && typeof unitId !== 'string')) return [];
         const numId = Number(unitId);
         if (!Number.isInteger(numId) || numId < 100000) return [];
 
-        // 1. NPC 角色 (>= 190000)：維持 exact unit ID，不進行 base 規整化
-        if (numId >= 190000) {
+        // Phase 6: 顯式 Exact 優先判定
+        const exact = this.resolveExactDialoguePortrait(numId, { warnIfAbsent: false });
+        if (exact && (exact.status === 'active' || exact.status === 'placeholder_only')) {
             return [numId];
         }
 
-        // 2. 已知特殊 NPC / Exact-ID 角色 (如 107411 幻境龍后、107412、107431 等)
-        if (this.exactPortraitIds.has(numId)) {
-            return [numId];
+        if (options.exact) {
+            return (exact && exact.status === 'active') ? [numId] : [];
         }
 
-        // 3. 特殊 Exact-ID 優先角色 (如 138331 佩可 override、139231 美穗、139331 真穗、139431 艾麗卡)
-        // 保持既有 canonical/exact mapping 優先，次選 base+11
-        if (this.exactFirstWithBaseFallback.has(numId)) {
-            const baseId = Math.floor(numId / 100) * 100;
-            return [numId, baseId + 11];
-        }
-
-        // 4. 明確定義的現實專屬頭像 ID (如 104532 空花、102832 咲戀、103232 秋乃、104632 珠希、100832 雪等)
-        // 嚴格保留自身的 exact ID，次選 baseId + 11
-        if (this.exactRealityIds.has(numId)) {
-            const baseId = Math.floor(numId / 100) * 100;
-            return [numId, baseId + 11];
-        }
-
-        // 5. 普通可玩角色 (Ordinary Playable Unit) 與換裝 Variant (< 190000)
-        // 嚴格保留自身換裝之百位基底 (baseId)，首選 +11 (日常基礎立繪)，次選 +31 (3★卡面立繪)
-        const baseId = Math.floor(numId / 100) * 100;
-        return [baseId + 11, baseId + 31];
+        // 否則回退到通用預設解析
+        return this.resolveDefaultPortraitIds(numId);
     },
 
     // 核心：生成頭像 URL 陣列（依優先序）
     getUrlCandidates(unitId) {
         if (!unitId || unitId < 100000) return [];
-        const portraitIds = this.resolveDialoguePortraitIds(unitId);
+        const portraitIds = this.resolveDefaultPortraitIds(unitId);
         if (portraitIds.length === 0) return [];
 
         const candidates = [];
@@ -741,7 +877,7 @@ window.AvatarService = {
 
     getAvatarUrl(unitId) {
         if (!unitId) return 'https://redive.estertion.win/icon/unit/100001.webp';
-        const portraitIds = this.resolveDialoguePortraitIds(unitId);
+        const portraitIds = this.resolveDefaultPortraitIds(unitId);
         const mainId = portraitIds.length > 0 ? portraitIds[0] : unitId;
         return `icon/unit/${mainId}.png`;
     },
@@ -753,7 +889,7 @@ window.AvatarService = {
         return `https://redive.estertion.win/card/full/${mainId}.webp`;
     },
 
-    // 公開 API：取得最佳頭像 img 元素 HTML (根據角色名稱)
+    // 公開 API：取得最佳頭像 img 元素 HTML (根據角色名稱，通用推斷路徑)
     getAvatarHtml(charaName, externalAvatars = {}) {
         const cleanName = this.cleanName(charaName);
         const unitId = this.getUnitId(cleanName, externalAvatars);
@@ -762,7 +898,7 @@ window.AvatarService = {
             return this.getFallbackHtml(cleanName);
         }
 
-        const portraitIds = this.resolveDialoguePortraitIds(unitId);
+        const portraitIds = this.resolveDefaultPortraitIds(unitId);
         const mainId = portraitIds.length > 0 ? portraitIds[0] : unitId;
         // 優先使用本地端的 .png 圖片
         const src = `icon/unit/${mainId}.png`;
@@ -774,22 +910,41 @@ window.AvatarService = {
     // 取得最佳頭像 img 元素 HTML (根據 unit_id)
     getAvatarHtmlByUnitId(unitId, charaName, externalAvatars = {}) {
         const cleanName = this.cleanName(charaName);
-        let finalUnitId = unitId;
-        if (!finalUnitId || finalUnitId < 100000) {
-            finalUnitId = this.getUnitId(cleanName, externalAvatars);
+        const numId = Number(unitId);
+
+        // A. 顯式對白 ID 路徑 (EXPLICIT DIALOGUE IDENTITY: unit_id >= 100000)
+        if (Number.isInteger(numId) && numId >= 100000) {
+            const resolved = this.resolveExactDialoguePortrait(numId);
+            if (resolved.status === 'active') {
+                const src = `icon/unit/${resolved.filename}`;
+                const safeName = this.escapeForJsString(cleanName);
+                return `<img src="${src}" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleExactDialogueError(this, '${safeName}', ${numId})">`;
+            }
+            // placeholder_only 或未登錄 ID：直接輸出文字佔位符，不發送任何圖片請求
+            return this.getFallbackHtml(cleanName);
         }
 
+        // B. 通用推斷路徑 (INFERRED / NAME-ONLY)
+        let finalUnitId = this.getUnitId(cleanName, externalAvatars);
         if (!finalUnitId || finalUnitId < 100000) {
             return this.getFallbackHtml(cleanName);
         }
 
-        const portraitIds = this.resolveDialoguePortraitIds(finalUnitId);
+        const portraitIds = this.resolveDefaultPortraitIds(finalUnitId);
         const mainId = portraitIds.length > 0 ? portraitIds[0] : finalUnitId;
-        // 優先使用本地端的 .png 圖片
         const src = `icon/unit/${mainId}.png`;
         const safeName = this.escapeForJsString(cleanName);
 
         return `<img src="${src}" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleError(this, '${safeName}', ${finalUnitId})">`;
+    },
+
+    // 顯式對白專用立即 Fail-Closed 錯誤處理器 (不重試 CDN，不替換 ID)
+    handleExactDialogueError(img, safeName, unitId) {
+        img.style.display = 'none';
+        if (img.parentNode) {
+            const label = safeName ? safeName.substring(0, 2) : "??";
+            img.parentNode.innerHTML = `<div class="npc-avatar-placeholder">${AvatarService.escapeHtml(label)}</div>`;
+        }
     },
 
     // 靜態錯誤處理函式，用於逐步降級載入圖片或顯示文字佔位符
@@ -799,7 +954,7 @@ window.AvatarService = {
             img.dataset.step = "1";
         }
         const step = parseInt(img.dataset.step, 10);
-        const portraitIds = this.resolveDialoguePortraitIds(finalUnitId);
+        const portraitIds = this.resolveDefaultPortraitIds(finalUnitId);
         const primaryId = portraitIds.length > 0 ? portraitIds[0] : finalUnitId;
         const secondaryId = portraitIds.length > 1 ? portraitIds[1] : null;
 
@@ -911,3 +1066,26 @@ window.AvatarService = {
         img.src = 'https://redive.estertion.win/icon/equipment/999999.webp';
     }
 };
+// Node.js 環境自動載入 Manifest 支援單元測試與審查腳本
+if (typeof process !== 'undefined' && process.versions && process.versions.node) {
+    try {
+        const fs = require('fs');
+        const path = require('path');
+        const manifestPath = path.resolve(__dirname, 'data', 'avatar_assets.json');
+        if (fs.existsSync(manifestPath)) {
+            const manifestData = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+            globalScope.AvatarService.loadManifest(manifestData);
+        }
+    } catch (e) {
+        // Node 環境降級忽略
+    }
+}
+
+// 瀏覽器環境自動嘗試載入 Manifest
+if (typeof window !== 'undefined' && typeof window.fetch === 'function') {
+    globalScope.AvatarService.ensureManifestLoaded();
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = globalScope.AvatarService;
+}

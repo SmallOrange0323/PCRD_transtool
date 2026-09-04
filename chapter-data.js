@@ -23,7 +23,7 @@ console.log("chapter-data.js loaded");
             if (!branchData) return [];
             if (
                 typeof branchData !== 'object' ||
-                branchData.version !== 1 ||
+                (branchData.version !== 1 && branchData.version !== 2) ||
                 branchData.part !== 3 ||
                 !Array.isArray(branchData.stories)
             ) {
@@ -46,9 +46,9 @@ console.log("chapter-data.js loaded");
                     throw new Error(`[ChapterDataService] 第 ${idx} 筆分支劇情 chapter 必須為 1~16 之整數: ${s.chapter}`);
                 }
 
-                // 3. metadata_status 契約檢查
-                const status = s.metadata_status;
-                const isResolved = status === "resolved_official_bundle" || status === "resolved_official_screenshot";
+                // 3. metadata_status / provenance 契約檢查 (相容 v1 metadata_status 與 v2 field-level provenance)
+                const status = s.metadata_status || (s.provenance ? "resolved_official_bundle" : null);
+                const isResolved = status === "resolved_official_bundle" || status === "resolved_official_screenshot" || !!s.provenance;
                 if (!isResolved && status !== "unresolved") {
                     throw new Error(`[ChapterDataService] 第 ${idx} 筆分支劇情 metadata_status 不合法: ${status}`);
                 }
@@ -91,7 +91,7 @@ console.log("chapter-data.js loaded");
                     type: 'main',
                     isBranch: true,
                     branchLabel: s.branch_label || null,
-                    metadataStatus: status
+                    metadataStatus: status || (s.provenance ? "resolved_official_bundle" : "unresolved")
                 };
             });
         },

@@ -465,7 +465,7 @@ window.PCRDatabase = {
 
 // === END db.js ===
 </script>
-    <script src="avatar-service.js?v=b3db0637"></script>
+    <script src="avatar-service.js?v=84ffd187"></script>
     <script src="story-asset-service.js?v=5.2.1"></script>
     <script>
 // === chapter-data.js INLINED ===
@@ -494,7 +494,7 @@ console.log("chapter-data.js loaded");
             if (!branchData) return [];
             if (
                 typeof branchData !== 'object' ||
-                branchData.version !== 1 ||
+                (branchData.version !== 1 && branchData.version !== 2) ||
                 branchData.part !== 3 ||
                 !Array.isArray(branchData.stories)
             ) {
@@ -517,9 +517,9 @@ console.log("chapter-data.js loaded");
                     throw new Error(`[ChapterDataService] 第 ${idx} 筆分支劇情 chapter 必須為 1~16 之整數: ${s.chapter}`);
                 }
 
-                // 3. metadata_status 契約檢查
-                const status = s.metadata_status;
-                const isResolved = status === "resolved_official_bundle" || status === "resolved_official_screenshot";
+                // 3. metadata_status / provenance 契約檢查 (相容 v1 metadata_status 與 v2 field-level provenance)
+                const status = s.metadata_status || (s.provenance ? "resolved_official_bundle" : null);
+                const isResolved = status === "resolved_official_bundle" || status === "resolved_official_screenshot" || !!s.provenance;
                 if (!isResolved && status !== "unresolved") {
                     throw new Error(`[ChapterDataService] 第 ${idx} 筆分支劇情 metadata_status 不合法: ${status}`);
                 }
@@ -562,7 +562,7 @@ console.log("chapter-data.js loaded");
                     type: 'main',
                     isBranch: true,
                     branchLabel: s.branch_label || null,
-                    metadataStatus: status
+                    metadataStatus: status || (s.provenance ? "resolved_official_bundle" : "unresolved")
                 };
             });
         },
@@ -734,10 +734,10 @@ console.log("chapter-data.js loaded");
     <script src="characters.js?v=18a65506"></script>
     <script src="speaker-view.js?v=0ea47406"></script>
     <script src="chara-modal.js?v=abeecbc9"></script>
-    <script src="dialogue-normalizer.js?v=f1ddede4"></script>
+    <script src="dialogue-normalizer.js?v=91fa01ca"></script>
     <script src="media-service.js?v=dceb12c2"></script>
-    <script src="dialogue-view.js?v=dda92268"></script>
-    <script src="map.js?v=ee376978"></script>
+    <script src="dialogue-view.js?v=feb81b19"></script>
+    <script src="map.js?v=72d4759f"></script>
 
     <script>
         console.log("Main script block in story_map.html starting...");
