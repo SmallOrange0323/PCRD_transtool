@@ -121,8 +121,8 @@ test("Test 4 — Still and Background special nodes contract", () => {
         resolveRealName: (n) => n
     });
 
-    assert(html.includes("game-dialogue-bg-change"), "Should render bg change marker");
-    assert(html.includes("500010"), "Should contain bg id");
+    // 遊戲實機全文模式不顯示場景切換標籤，但首張背景圖 URL 必須被正確捕獲
+    assert(!html.includes("game-dialogue-bg-change"), "Should NOT render bg change marker in full text view");
     assert.strictEqual(firstBgUrl, "https://redive.estertion.win/bg/jpg/500010.jpg", "Should capture firstBgUrl");
     assert(html.includes("game-dialogue-still"), "Should render still wrapper");
     assert(html.includes("QuestMapModule.openStillPopup(event)"), "Should have openStillPopup contract");

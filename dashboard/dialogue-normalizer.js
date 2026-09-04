@@ -79,17 +79,24 @@ console.log("dialogue-normalizer.js loaded");
                     (!item.voice || last.voice === item.voice) &&
                     !hasConcreteUnitConflict) {
 
-                    let lastWords = (last.words || "").trim();
-                    let currentWords = (item.words || "").trim();
+                    const rawCurrentWords = item.words || "";
+                    // 判定官方劇本換行標記（以 \n 開頭或前句以 \n 結尾）
+                    const hasLeadingNewline = rawCurrentWords.startsWith("\n") || rawCurrentWords.startsWith("\r\n");
+                    const hasTrailingNewline = (last.words || "").endsWith("\n") || (last.words || "").endsWith("\r\n");
 
-                    if (!currentWords) {
-                        return; // 如果當前行去除前後空白後為空，直接忽略
+                    const cleanCurrent = rawCurrentWords.replace(/^[\r\n]+/, "").trimEnd();
+                    if (!cleanCurrent) {
+                        return; // 若純為換行/空白，直接忽略
                     }
 
-                    if (!lastWords) {
-                        last.words = currentWords;
+                    if (!last.words) {
+                        last.words = cleanCurrent;
+                    } else if (hasLeadingNewline || hasTrailingNewline) {
+                        // 官方劇本明確帶有換行意圖，保留換行
+                        last.words = last.words.trimEnd() + "\n" + cleanCurrent;
                     } else {
-                        last.words = lastWords + "\n" + currentWords;
+                        // 官方劇本無換行標記，屬於同一行內的連續斷句，同行接續（對齊遊戲實機全文模式）
+                        last.words = last.words.trimEnd() + cleanCurrent;
                     }
 
                     // 若前一筆無 voice 但當前筆有 voice，繼承 voice 標籤
@@ -99,7 +106,7 @@ console.log("dialogue-normalizer.js loaded");
                 } else {
                     const cloned = { ...item };
                     if (cloned.words) {
-                        cloned.words = cloned.words.trim();
+                        cloned.words = cloned.words.replace(/^[\r\n]+/, "").trimEnd();
                     }
                     dialogueList.push(cloned);
                 }

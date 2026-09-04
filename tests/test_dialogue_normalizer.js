@@ -49,16 +49,25 @@ console.log('開始執行 DialogueNormalizer 測試案例...');
     assert.strictEqual(res.dialogueList[1].words, '第二句');
 }
 
-// Case 3: Same speaker + same voice merges
+// Case 3: Same speaker + same voice merges (with \n)
 {
     const input = [
         { name: '佑樹', voice: 'vo_001', words: 'hello' },
-        { name: '佑樹', voice: 'vo_001', words: 'world' }
+        { name: '佑樹', voice: 'vo_001', words: '\nworld' }
     ];
     const res = DialogueNormalizer.normalize(input);
     assert.strictEqual(res.dialogueList.length, 1, '同發言人同語音應合併為一筆');
-    assert.strictEqual(res.dialogueList[0].words, 'hello\nworld');
+    assert.strictEqual(res.dialogueList[0].words, 'hello\nworld', '帶有換行意圖時應以 \\n 相連');
     assert.strictEqual(res.dialogueList[0].voice, 'vo_001');
+
+    // 子案例：無 \n 時同行接續（對齊遊戲實機全文模式）
+    const inputInline = [
+        { name: '真軌', voice: 'vo_000', words: '我的、' },
+        { name: '真軌', voice: 'vo_000', words: '主……' }
+    ];
+    const resInline = DialogueNormalizer.normalize(inputInline);
+    assert.strictEqual(resInline.dialogueList.length, 1);
+    assert.strictEqual(resInline.dialogueList[0].words, '我的、主……', '無換行標記時應同行相接');
 }
 
 // Case 4: Same speaker + different voice does NOT merge
@@ -73,11 +82,11 @@ console.log('開始執行 DialogueNormalizer 測試案例...');
     assert.strictEqual(res.dialogueList[1].words, '早安');
 }
 
-// Case 5: Current no-item-voice compatibility (A / voice_1 / hello + A / no voice / world -> merge)
+// Case 5: Current no-item-voice compatibility (A / voice_1 / hello + A / no voice / \nworld -> merge)
 {
     const input = [
         { name: '凱留', voice: 'vo_201', words: '等一下！' },
-        { name: '凱留', words: '你在做什麼？' }
+        { name: '凱留', words: '\n你在做什麼？' }
     ];
     const res = DialogueNormalizer.normalize(input);
     assert.strictEqual(res.dialogueList.length, 1, '後者無語音標籤時應相容合併');
@@ -162,7 +171,7 @@ console.log('開始執行 DialogueNormalizer 測試案例...');
 {
     const input = [
         { name: '可可蘿', words: '主人早安。', unit_id: 105911, voice: 'vo_1' },
-        { name: '可可蘿', words: '今天也要加油喔。', unit_id: 105911, voice: 'vo_1' }
+        { name: '可可蘿', words: '\n今天也要加油喔。', unit_id: 105911, voice: 'vo_1' }
     ];
     const res = DialogueNormalizer.normalize(input);
     assert.strictEqual(res.dialogueList.length, 1, '同發言人且相同具體 unit_id 應正常合併');
@@ -241,7 +250,7 @@ console.log('開始執行 DialogueNormalizer 測試案例...');
     const input = [
         { name: '可可蘿', words: '台詞 1', unit_id: 105911 },
         { name: '可可蘿', words: '台詞 2', unit_id: 105931 },
-        { name: '可可蘿', words: '台詞 3', unit_id: 105931 }
+        { name: '可可蘿', words: '\n台詞 3', unit_id: 105931 }
     ];
     const res = DialogueNormalizer.normalize(input);
     assert.strictEqual(res.dialogueList.length, 2, '鏈式切換應精確切成 2 筆');

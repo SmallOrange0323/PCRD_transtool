@@ -147,11 +147,6 @@ console.log("dialogue-view.js loaded");
                     if (bgId) {
                         const bgUrl = `https://redive.estertion.win/bg/jpg/${bgId}.jpg`;
                         if (!firstBgUrl) firstBgUrl = bgUrl;
-                        html += `
-                            <div class="game-dialogue-bg-change" data-bg="${bgUrl}" style="margin: 12px 0; padding: 8px 12px; font-size: 0.8rem; color: rgba(255,255,255,0.4); text-align: center; border-top: 1px dashed rgba(255,255,255,0.15); border-bottom: 1px dashed rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; gap: 6px;">
-                                🎬 場景切換：${bgId}
-                            </div>
-                        `;
                     }
                     return;
                 }
