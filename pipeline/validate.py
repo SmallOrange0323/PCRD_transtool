@@ -294,17 +294,36 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
         "event_summaries.json": lambda d: isinstance(d, dict) and len(d) > 0,
         "branch_stories.json": lambda d: (
             isinstance(d, dict) and
-            d.get("version") == 1 and
+            d.get("version") in (1, 2) and
             d.get("part") == 3 and
             isinstance(d.get("stories"), list) and
             len(d.get("stories")) > 0 and
             all(
                 isinstance(s.get("story_id"), int) and
                 isinstance(s.get("chapter"), int) and 1 <= s.get("chapter") <= 16 and
-                s.get("metadata_status") in ("resolved_official_bundle", "resolved_official_screenshot", "unresolved") and
                 (
-                    (s.get("metadata_status") in ("resolved_official_bundle", "resolved_official_screenshot") and s.get("title") and s.get("subtitle")) or
-                    (s.get("metadata_status") == "unresolved" and s.get("title") is None and s.get("subtitle") is None and s.get("branch_label") is None)
+                    (
+                        d.get("version") == 2 and
+                        s.get("category") in ("ordinary", "reality") and
+                        isinstance(s.get("branch_label"), str) and len(s.get("branch_label").strip()) > 0 and
+                        s.get("title") == f"分支劇情 {s.get('branch_label')}" and
+                        isinstance(s.get("subtitle"), str) and len(s.get("subtitle").strip()) > 0 and
+                        isinstance(s.get("provenance"), dict) and
+                        s["provenance"].get("subtitle") == "PROVEN_FROM_STORY_BUNDLE" and
+                        s["provenance"].get("category") == "DERIVED_FROM_CURRENT_DATASET_RULE" and
+                        s["provenance"].get("branch_label") == "DERIVED_FROM_CATEGORY_AND_GLOBAL_SEQUENCE" and
+                        s["provenance"].get("title") == "DERIVED_FROM_BRANCH_LABEL" and
+                        s["provenance"].get("official_ui") in ("VERIFIED_BY_OFFICIAL_UI", None)
+                    )
+                    or
+                    (
+                        d.get("version") == 1 and
+                        s.get("metadata_status") in ("resolved_official_bundle", "resolved_official_screenshot", "unresolved") and
+                        (
+                            (s.get("metadata_status") in ("resolved_official_bundle", "resolved_official_screenshot") and s.get("title") and s.get("subtitle")) or
+                            (s.get("metadata_status") == "unresolved" and s.get("title") is None and s.get("subtitle") is None and s.get("branch_label") is None)
+                        )
+                    )
                 )
                 for s in d.get("stories")
             )

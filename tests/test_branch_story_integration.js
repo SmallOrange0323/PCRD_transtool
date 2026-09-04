@@ -169,7 +169,7 @@ test("Test 8 — Duplicate supplemental ID protection", () => {
 test("Test 9 — Malformed metadata schema fails loudly", () => {
     let threw1 = false;
     try {
-        ChapterDataService.transformBranchStories({ version: 2, part: 3, stories: [] });
+        ChapterDataService.transformBranchStories({ version: 99, part: 3, stories: [] });
     } catch (e) {
         threw1 = true;
     }
@@ -386,6 +386,132 @@ test("Test 17 — ChapterDataService load completes before branch merge & repres
 
     // 3. 總長度檢查
     assert.strictEqual(mockModule.stories.length, 2 + 63, "Total stories length must equal DB stories + 63 branch stories");
+});
+
+// Phase 3 — Schema v2 & Field-Level Provenance Requirements (A through M)
+
+// Test 18 — Schema v2 root properties, record counts, and story_id uniqueness (A, B, C, D)
+test("Test 18 — Schema v2 root properties, record counts, and story_id uniqueness (A, B, C, D)", () => {
+    // A. schema version is 2
+    assert.strictEqual(branchData.version, 2, "A. Schema version must be 2");
+    assert.strictEqual(branchData.part, 3, "Part must be 3");
+
+    // B. total record count remains 63
+    assert(Array.isArray(branchData.stories), "Stories must be an array");
+    assert.strictEqual(branchData.stories.length, 63, "B. Total record count must remain 63");
+
+    // C. story_id uniqueness
+    const idSet = new Set();
+    branchData.stories.forEach(s => {
+        assert(!idSet.has(s.story_id), `C. Duplicate story_id found: ${s.story_id}`);
+        idSet.add(s.story_id);
+    });
+    assert.strictEqual(idSet.size, 63, "C. All 63 story_ids must be unique");
+
+    // D. all records have required fields
+    branchData.stories.forEach((s, idx) => {
+        assert(Number.isInteger(s.story_id) && s.story_id > 0, `D. Record ${idx} must have valid integer story_id`);
+        assert(Number.isInteger(s.chapter) && s.chapter >= 1 && s.chapter <= 16, `D. Record ${idx} must have chapter 1-16`);
+        assert(typeof s.category === 'string', `D. Record ${idx} must have string category`);
+        assert(typeof s.branch_label === 'string' && s.branch_label.trim(), `D. Record ${idx} must have non-empty branch_label`);
+        assert(typeof s.title === 'string' && s.title.trim(), `D. Record ${idx} must have non-empty title`);
+        assert(typeof s.subtitle === 'string' && s.subtitle.trim(), `D. Record ${idx} must have non-empty subtitle`);
+        assert(s.provenance && typeof s.provenance === 'object', `D. Record ${idx} must have provenance object`);
+    });
+});
+
+// Test 19 — Category vocabulary, counts, and reality sequence (E, F, G, H)
+test("Test 19 — Category vocabulary, counts, and reality sequence (E, F, G, H)", () => {
+    // E. category vocabulary only: ordinary, reality
+    branchData.stories.forEach((s, idx) => {
+        assert(["ordinary", "reality"].includes(s.category), `E. Record ${idx} category must be ordinary or reality, got ${s.category}`);
+    });
+
+    // F. exact category counts: ordinary = 56, reality = 7
+    const ordinaryRecords = branchData.stories.filter(s => s.category === "ordinary");
+    const realityRecords = branchData.stories.filter(s => s.category === "reality");
+    assert.strictEqual(ordinaryRecords.length, 56, "F. Ordinary count must be 56");
+    assert.strictEqual(realityRecords.length, 7, "F. Reality count must be 7");
+
+    // G. exact reality sequence
+    const expectedRealitySequence = [
+        { story_id: 2210102, branch_label: "R I" },
+        { story_id: 2211102, branch_label: "R II" },
+        { story_id: 2212103, branch_label: "R III" },
+        { story_id: 2212104, branch_label: "R IV" },
+        { story_id: 2213104, branch_label: "R V" },
+        { story_id: 2214101, branch_label: "R VI" },
+        { story_id: 2215102, branch_label: "R VII" }
+    ];
+
+    expectedRealitySequence.forEach(exp => {
+        const found = branchData.stories.find(s => s.story_id === exp.story_id);
+        assert(found, `G. Reality record ${exp.story_id} must exist`);
+        assert.strictEqual(found.category, "reality", `G. Record ${exp.story_id} must be category reality`);
+        assert.strictEqual(found.branch_label, exp.branch_label, `G. Record ${exp.story_id} must have label ${exp.branch_label}`);
+    });
+
+    // H. all reality records: provenance.category == DERIVED_FROM_CURRENT_DATASET_RULE
+    realityRecords.forEach(s => {
+        assert.strictEqual(
+            s.provenance.category,
+            "DERIVED_FROM_CURRENT_DATASET_RULE",
+            `H. Reality record ${s.story_id} provenance.category must be DERIVED_FROM_CURRENT_DATASET_RULE`
+        );
+    });
+});
+
+// Test 20 — Field-level provenance contracts and official UI screenshot anchors (I, J, K, L, M)
+test("Test 20 — Field-level provenance contracts and official UI screenshot anchors (I, J, K, L, M)", () => {
+    const knownUiAnchors = {
+        2213101: { branch_label: "XLIX", subtitle: "棘手大小姐們的觀光約會？" },
+        2213102: { branch_label: "L", subtitle: "亞里莎，遭遇巨人" },
+        2213104: { branch_label: "R V", subtitle: "錢與豐滿與現實" }
+    };
+
+    branchData.stories.forEach((s, idx) => {
+        // I. all branch_label fields: provenance.branch_label == DERIVED_FROM_CATEGORY_AND_GLOBAL_SEQUENCE
+        assert.strictEqual(
+            s.provenance.branch_label,
+            "DERIVED_FROM_CATEGORY_AND_GLOBAL_SEQUENCE",
+            `I. Record ${s.story_id} provenance.branch_label must be DERIVED_FROM_CATEGORY_AND_GLOBAL_SEQUENCE`
+        );
+
+        // J. all titles: title == "分支劇情 " + branch_label, provenance.title == DERIVED_FROM_BRANCH_LABEL
+        assert.strictEqual(s.title, `分支劇情 ${s.branch_label}`, `J. Record ${s.story_id} title must match '分支劇情 ' + branch_label`);
+        assert.strictEqual(
+            s.provenance.title,
+            "DERIVED_FROM_BRANCH_LABEL",
+            `J. Record ${s.story_id} provenance.title must be DERIVED_FROM_BRANCH_LABEL`
+        );
+
+        // K. all subtitles: non-empty, provenance.subtitle == PROVEN_FROM_STORY_BUNDLE
+        assert(s.subtitle && s.subtitle.trim().length > 0, `K. Record ${s.story_id} subtitle must be non-empty`);
+        assert.strictEqual(
+            s.provenance.subtitle,
+            "PROVEN_FROM_STORY_BUNDLE",
+            `K. Record ${s.story_id} provenance.subtitle must be PROVEN_FROM_STORY_BUNDLE`
+        );
+
+        // L & M. official UI screenshot anchors
+        if (s.story_id in knownUiAnchors) {
+            const expectedAnchor = knownUiAnchors[s.story_id];
+            assert.strictEqual(s.branch_label, expectedAnchor.branch_label, `L. Anchor ${s.story_id} branch_label mismatch`);
+            assert.strictEqual(s.subtitle, expectedAnchor.subtitle, `L. Anchor ${s.story_id} subtitle mismatch`);
+            assert.strictEqual(
+                s.provenance.official_ui,
+                "VERIFIED_BY_OFFICIAL_UI",
+                `L. Anchor record ${s.story_id} must have provenance.official_ui == VERIFIED_BY_OFFICIAL_UI`
+            );
+        } else {
+            // M. records without direct screenshot evidence must not falsely claim VERIFIED_BY_OFFICIAL_UI
+            assert.strictEqual(
+                s.provenance.official_ui,
+                null,
+                `M. Record ${s.story_id} must NOT falsely claim VERIFIED_BY_OFFICIAL_UI (must be null)`
+            );
+        }
+    });
 });
 
 console.log(`\n✅ All ${testsPassed} branch story integration tests passed successfully!`);
