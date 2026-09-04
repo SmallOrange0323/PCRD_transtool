@@ -209,7 +209,13 @@ console.log("dialogue-view.js loaded");
                     let avatarContent = "";
 
                     let overrideUnitId = item.unit_id;
-                    if (realName === "貪吃佩可" && String(storyId).startsWith("13830")) {
+                    const isRealityStory = [2210102, 2211102, 2212103, 2212104, 2213104, 2214101, 2215102].includes(Number(storyId));
+                    if (isRealityStory && window.AvatarService && window.AvatarService.realityAvatarMap) {
+                        const realityId = window.AvatarService.realityAvatarMap[realName] || window.AvatarService.realityAvatarMap[speaker];
+                        if (realityId) {
+                            overrideUnitId = realityId;
+                        }
+                    } else if (realName === "貪吃佩可" && String(storyId).startsWith("13830")) {
                         overrideUnitId = 138331;
                     }
 

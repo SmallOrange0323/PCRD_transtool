@@ -308,7 +308,13 @@ def get_expected_icon_unit_mappings(dashboard_dir: Path = DASHBOARD_DIR) -> Dict
         except Exception as e:
             print(f"  [WARN] 讀取 tracked_characters.json 異常: {e}", file=sys.stderr)
 
-    # 2. NPC
+    # 2. NPC 與現實專屬頭像 (Reality Story Avatars)
+    REALITY_UNIT_IDS = {
+        104532, 105231, 103332, 102332, 102032, 101632,
+        103031, 101332, 101431, 104331, 105831, 101832,
+        101533, 118031, 100531, 100832, 104833, 106631,
+        103232, 104632, 102832
+    }
     if icon_src_dir.exists():
         for item in icon_src_dir.glob("*.*"):
             if item.suffix.lower() not in [".png", ".webp"]:
@@ -316,9 +322,9 @@ def get_expected_icon_unit_mappings(dashboard_dir: Path = DASHBOARD_DIR) -> Dict
             clean_id = item.stem.replace("unit_icon_", "")
             if clean_id.isdigit():
                 val = int(clean_id)
-                if (190000 <= val <= 199999) or (val in [107411, 107412, 107431]):
+                if (190000 <= val <= 199999) or (val in [107411, 107412, 107431]) or (val in REALITY_UNIT_IDS):
                     mappings[item.name] = item
-                    if val < 190000:
+                    if val < 190000 and val not in REALITY_UNIT_IDS:
                         base_id = (val // 100) * 100
                         mappings[f"{base_id + 31}{item.suffix.lower()}"] = item
 
