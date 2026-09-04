@@ -12,6 +12,11 @@ global.window = global;
 
 // 注入 AvatarService 與 StoryAssetService stub
 global.AvatarService = {
+    realityAvatarMap: {
+        "佩可": 105831,
+        "貪吃佩可": 105831,
+        "可可蘿": 105932
+    },
     getAvatarHtml: (realName, speakerAvatars) => `<img src="icon/unit/${speakerAvatars[realName] || 999999}.png" alt="${realName}">`,
     getAvatarHtmlByUnitId: (unitId, realName, speakerAvatars) => `<img src="icon/unit/${unitId}.png" alt="${realName}">`
 };
@@ -129,29 +134,51 @@ test("Test 4 — Still and Background special nodes contract", () => {
     assert(html.includes("still/scenario/1000101.webp"), "Should render still image tag");
 });
 
-// Test 5 — Special avatar override for 13830*
-test("Test 5 — Special avatar override for story 13830*", () => {
-    let capturedUnitId = null;
-    const origGetAvatarHtmlByUnitId = global.AvatarService.getAvatarHtmlByUnitId;
-    global.AvatarService.getAvatarHtmlByUnitId = (unitId, realName, speakerAvatars) => {
-        capturedUnitId = unitId;
-        return origGetAvatarHtmlByUnitId(unitId, realName, speakerAvatars);
-    };
+// Test 5A — Reality story explicit unit_id wins unconditionally over realityAvatarMap
+test("Test 5A — Reality story explicit unit_id wins unconditionally over realityAvatarMap", () => {
+    const { html } = DialogueView.generateDialogueHtml({
+        storyId: 2213104,
+        dialogueList: [{ name: "可可蘿", words: "主人，早安。", unit_id: 105913 }],
+        speakerAvatars: { "可可蘿": 105901 },
+        resolveRealName: (n) => n
+    });
 
-    try {
-        const { html } = DialogueView.generateDialogueHtml({
-            storyId: 1383001,
-            dialogueList: [{ name: "貪吃佩可", words: "好香的味道！" }],
-            speakerAvatars: { "貪吃佩可": 105801 },
-            resolveRealName: (n) => n
-        });
+    assert(html.includes("icon/unit/105913.png"), "Explicit unit_id 105913 must be rendered");
+    assert(!html.includes("105932.png"), "Must NOT rewrite explicit 105913 to realityAvatarMap 105932");
+});
 
-        assert.strictEqual(capturedUnitId, 138331, "DialogueView must pass exact unit_id 138331 to AvatarService for story 13830*");
-        assert(html.includes("icon/unit/138331.png"), "Story 13830* should override Peco avatar to 138331");
-        assert(!html.includes("icon/unit/138311.png"), "Story 13830* avatar must NOT be normalized to 138311");
-    } finally {
-        global.AvatarService.getAvatarHtmlByUnitId = origGetAvatarHtmlByUnitId;
-    }
+// Test 5B — Story 13830* explicit unit_id wins unconditionally over 138331 override
+test("Test 5B — Story 13830* explicit unit_id wins unconditionally over 138331 override", () => {
+    const { html } = DialogueView.generateDialogueHtml({
+        storyId: 1383001,
+        dialogueList: [{ name: "貪吃佩可", words: "這是我本來的樣子！", unit_id: 105812 }],
+        speakerAvatars: { "貪吃佩可": 105801 },
+        resolveRealName: (n) => n
+    });
+
+    assert(html.includes("icon/unit/105812.png"), "Explicit unit_id 105812 must be rendered");
+    assert(!html.includes("138331.png"), "Must NOT rewrite explicit 105812 to 138331");
+});
+
+// Test 5C — Inference compatibility remains when explicit unit_id is absent
+test("Test 5C — Inference compatibility remains when explicit unit_id is absent", () => {
+    // 1. Reality story without explicit unit_id falls back to realityAvatarMap
+    const { html: realityHtml } = DialogueView.generateDialogueHtml({
+        storyId: 2213104,
+        dialogueList: [{ name: "可可蘿", words: "現實中的相遇。" }],
+        speakerAvatars: { "可可蘿": 105901 },
+        resolveRealName: (n) => n
+    });
+    assert(realityHtml.includes("icon/unit/105932.png"), "Reality story without explicit ID must fall back to realityAvatarMap 105932");
+
+    // 2. Story 13830* without explicit unit_id falls back to 138331
+    const { html: pecoHtml } = DialogueView.generateDialogueHtml({
+        storyId: 1383001,
+        dialogueList: [{ name: "貪吃佩可", words: "好香的味道！" }],
+        speakerAvatars: { "貪吃佩可": 105801 },
+        resolveRealName: (n) => n
+    });
+    assert(pecoHtml.includes("icon/unit/138331.png"), "Story 13830* without explicit ID must fall back to 138331");
 });
 
 // Test 6 — Player-name substitution and HTML escaping
