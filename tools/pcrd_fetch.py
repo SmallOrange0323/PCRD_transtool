@@ -450,11 +450,6 @@ def _parse_bundle_dialogues(bundle_data, extract_metadata=False):
                 elif idx == 46 and args:
                     movie_id = str(args[0])
                     dialogues.append({"type": "movie", "movie_id": movie_id})
-                    preview_path = os.path.join(
-                        DASHBOARD_DIR, "still", "story", f"{movie_id}.webp"
-                    )
-                    if os.path.exists(preview_path):
-                        dialogues.append({"type": "still", "still": movie_id, "still_id": movie_id})
                 elif idx == 12 and args:
                     current_voice = args[0]
                 elif idx == 6 and len(args) >= 2:
