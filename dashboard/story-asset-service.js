@@ -240,37 +240,64 @@ window.StoryAssetService = {
     /**
      * 取得劇情話數官方專屬縮圖 (256x128) 及其降級候選 URL 清單
      * 候選順序：
-     * 1. 本地官方專屬縮圖：icon/story/{storyId}.webp
-     * 2. 若有 stillId：呼叫 getStillUrls(stillId)
-     * 3. 若有 bgId：呼叫 getBackgroundUrls(bgId)
-     * 4. 遠端預設卡面保底
-     * @param {number|string} storyId 話數 ID (例如 2201101)
+     * A. 若為角色劇情情境 (options.characterGroupId 為合法純數字):
+     *    1. 本地官方專屬縮圖：icon/story/{storyId}.webp
+     *    2. 本地角色 3★ 卡面：card/{characterGroupId}31.webp
+     *    3. 遠端角色 3★ 卡面：https://redive.estertion.win/card/full/{characterGroupId}31.webp
+     *    4. 遠端預設卡面保底：https://redive.estertion.win/card/full/100431.webp
+     *    (注意：角色劇情模式排除 still 與 bg 降級)
+     *
+     * B. 一般劇情情境 (無 characterGroupId 或格式不合法):
+     *    1. 本地官方專屬縮圖：icon/story/{storyId}.webp
+     *    2. 若有 stillId：呼叫 getStillUrls(stillId)
+     *    3. 若有 bgId：呼叫 getBackgroundUrls(bgId)
+     *    4. 遠端預設卡面保底
+     * @param {number|string} storyId 話數 ID (例如 2201101 或 1001001)
      * @param {number|string} stillId 劇照 CG ID (可選)
      * @param {number|string} bgId 背景 ID (可選)
+     * @param {Object} [options={}] 選項，可包含 characterGroupId
      * @returns {string[]} URL 候選清單
      */
-    getStoryThumbnailUrls(storyId, stillId = null, bgId = null) {
+    getStoryThumbnailUrls(storyId, stillId = null, bgId = null, options = {}) {
         const urls = [];
         if (storyId) {
             const sid = String(storyId).trim();
             // 候選 1: 本地專屬官方縮圖
             urls.push(`icon/story/${sid}.webp`);
         }
-        // 候選 2: CG 劇照
-        if (stillId) {
-            const stillUrls = this.getStillUrls(stillId);
-            for (const u of stillUrls) {
-                if (!urls.includes(u)) urls.push(u);
+
+        // 驗證 characterGroupId 是否為純數字字串/數字
+        let validCharaGroupId = null;
+        if (options && options.characterGroupId != null) {
+            const rawGid = String(options.characterGroupId).trim();
+            if (/^\d+$/.test(rawGid)) {
+                validCharaGroupId = rawGid;
             }
         }
-        // 候選 3: 場景背景
-        if (bgId) {
-            const bgUrls = this.getBackgroundUrls(bgId);
-            for (const u of bgUrls) {
-                if (!urls.includes(u)) urls.push(u);
+
+        if (validCharaGroupId) {
+            // Option A: 角色劇情降級合約 (排除 still 與 bg)
+            urls.push(`card/${validCharaGroupId}31.webp`);
+            urls.push(`https://redive.estertion.win/card/full/${validCharaGroupId}31.webp`);
+        } else {
+            // 一般劇情降級合約
+            // 候選 2: CG 劇照
+            if (stillId) {
+                const stillUrls = this.getStillUrls(stillId);
+                for (const u of stillUrls) {
+                    if (!urls.includes(u)) urls.push(u);
+                }
+            }
+            // 候選 3: 場景背景
+            if (bgId) {
+                const bgUrls = this.getBackgroundUrls(bgId);
+                for (const u of bgUrls) {
+                    if (!urls.includes(u)) urls.push(u);
+                }
             }
         }
-        // 候選 4: 預設卡面保底
+
+        // 預設卡面保底
         urls.push('https://redive.estertion.win/card/full/100431.webp');
         return urls;
     },
@@ -283,10 +310,11 @@ window.StoryAssetService = {
      * @param {number|string} bgId 背景 ID
      * @param {string} className CSS class
      * @param {string} style 行內樣式
+     * @param {Object} [options={}] 選項，可包含 characterGroupId
      * @returns {string}
      */
-    getStoryThumbnailHtml(storyId, stillId = null, bgId = null, className = "", style = "") {
-        const candidates = this.getStoryThumbnailUrls(storyId, stillId, bgId);
+    getStoryThumbnailHtml(storyId, stillId = null, bgId = null, className = "", style = "", options = {}) {
+        const candidates = this.getStoryThumbnailUrls(storyId, stillId, bgId, options);
         const firstSrc = candidates[0];
         const remainingCandidates = candidates.slice(1);
         const serialized = encodeURIComponent(JSON.stringify(remainingCandidates));

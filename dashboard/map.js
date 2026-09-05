@@ -120,16 +120,18 @@ const QuestMapModule = {
     },
 
     getStoryItemHtml(s, chDisplay, titleDisplay) {
-        let thumbHtml = '';
-        if (s.type === 'chara' && s.groupId) {
-            const cardId = `${s.groupId}31`;
-            thumbHtml = `<img class="story-thumb-img" src="card/${cardId}.webp" onerror="if(this.src.indexOf('estertion')===-1){this.src='https://redive.estertion.win/card/full/${cardId}.webp';}else{this.src='https://redive.estertion.win/card/full/100431.webp';}" style="width:100%;height:100%;object-fit:cover;" alt="thumbnail">`;
-        } else {
-            const thumbData = (this.storyThumbnails && this.storyThumbnails[s.id]) || {};
-            const stillId = thumbData.still_id || s.still_id || null;
-            const bgId = thumbData.bg_id || s.bg_id || null;
-            thumbHtml = StoryAssetService.getStoryThumbnailHtml(s.id, stillId, bgId, 'story-thumb-img', 'width:100%;height:100%;object-fit:cover;');
-        }
+        const thumbData = (this.storyThumbnails && this.storyThumbnails[s.id]) || {};
+        const stillId = thumbData.still_id || s.still_id || null;
+        const bgId = thumbData.bg_id || s.bg_id || null;
+        const options = (s.type === 'chara' && s.groupId) ? { characterGroupId: s.groupId } : {};
+        const thumbHtml = StoryAssetService.getStoryThumbnailHtml(
+            s.id,
+            stillId,
+            bgId,
+            'story-thumb-img',
+            'width:100%;height:100%;object-fit:cover;',
+            options
+        );
  return `
  <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}" id="story-item-${s.id}" onclick="QuestMapModule.selectStory(${s.id})">
  <div class="story-item-thumb">

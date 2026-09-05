@@ -159,4 +159,85 @@ test("Test 9: getStoryThumbnailHtml rendering and error fallback data attribute"
     assert(html.includes('onerror="StoryAssetService.handleImageError(this)"'), "必須包含 onerror 處理器");
 });
 
+// Test 10 — Character candidate order (Option A contract)
+test("Test 10: Character candidate order (story -> local card -> remote card -> global default)", () => {
+    const service = createServiceInstance();
+    const urls = service.getStoryThumbnailUrls("1001001", null, null, { characterGroupId: 1001 });
+    assert.strictEqual(urls[0], "icon/story/1001001.webp", "第一候選必須為本地官方縮圖");
+    assert.strictEqual(urls[1], "card/100131.webp", "第二候選必須為本機角色 3★ 卡面");
+    assert.strictEqual(urls[2], "https://redive.estertion.win/card/full/100131.webp", "第三候選必須為遠端角色 3★ 卡面");
+    assert.strictEqual(urls[3], "https://redive.estertion.win/card/full/100431.webp", "最後必須為全域預設卡面保底");
+    assert.strictEqual(urls.length, 4, "角色模式候選長度應為 4");
+});
+
+// Test 11 — Missing-current-asset scenario
+test("Test 11: Missing-current-asset candidate chain (e.g. 1390001)", () => {
+    const service = createServiceInstance();
+    const urls = service.getStoryThumbnailUrls("1390001", null, null, { characterGroupId: 1390 });
+    assert.strictEqual(urls[0], "icon/story/1390001.webp");
+    assert.strictEqual(urls[1], "card/139031.webp");
+    assert.strictEqual(urls[2], "https://redive.estertion.win/card/full/139031.webp");
+    assert.strictEqual(urls[3], "https://redive.estertion.win/card/full/100431.webp");
+});
+
+// Test 12 — Character mode ignores still/bg
+test("Test 12: Character mode strictly excludes still and background fallbacks", () => {
+    const service = createServiceInstance();
+    const urls = service.getStoryThumbnailUrls("1001002", "100100201", "502460", { characterGroupId: "1001" });
+    assert.strictEqual(urls[0], "icon/story/1001002.webp");
+    assert.strictEqual(urls[1], "card/100131.webp");
+    assert.strictEqual(urls[2], "https://redive.estertion.win/card/full/100131.webp");
+    assert.strictEqual(urls[3], "https://redive.estertion.win/card/full/100431.webp");
+    assert.strictEqual(urls.some(u => u.includes("100100201")), false, "不得包含 still 候選");
+    assert.strictEqual(urls.some(u => u.includes("502460")), false, "不得包含 bg 候選");
+});
+
+// Test 13 — Generic behavior remains unchanged
+test("Test 13: Generic behavior remains unchanged when options has no characterGroupId", () => {
+    const service = createServiceInstance();
+    const urlsNoOpt = service.getStoryThumbnailUrls("2201101", "1001001", "10040");
+    const urlsEmptyOpt = service.getStoryThumbnailUrls("2201101", "1001001", "10040", {});
+    assert.deepStrictEqual(urlsNoOpt, urlsEmptyOpt, "空 options 與未傳 options 結果必須一致");
+    assert.strictEqual(urlsNoOpt[0], "icon/story/2201101.webp");
+    assert(urlsNoOpt.some(u => u.includes("1001001")), "必須包含 still 候選");
+    assert(urlsNoOpt.some(u => u.includes("10040")), "必須包含 bg 候選");
+    assert.strictEqual(urlsNoOpt[urlsNoOpt.length - 1], "https://redive.estertion.win/card/full/100431.webp");
+});
+
+// Test 14 — Invalid characterGroupId safely handled
+test("Test 14: Invalid characterGroupId safely falls back to generic without generating malformed URLs", () => {
+    const service = createServiceInstance();
+    const invalidInputs = ["../evil", "1001/foo", "abc", null, "", "1001.31"];
+    for (const inv of invalidInputs) {
+        const urls = service.getStoryThumbnailUrls("2201101", "1001001", "10040", { characterGroupId: inv });
+        assert.strictEqual(urls.some(u => u.includes("../evil")), false, `不安全輸入 ${inv} 不得流入 URL`);
+        assert.strictEqual(urls.some(u => u.includes("foo")), false, `不安全輸入 ${inv} 不得流入 URL`);
+        if (inv) {
+            assert.strictEqual(urls.some(u => u.includes(String(inv))), false, `無效輸入 ${inv} 不得作為路徑片段`);
+        }
+        // 應安全退回一般通用路徑（第一項為專屬縮圖，最後一項為全域 100431 保底）
+        assert.strictEqual(urls[0], "icon/story/2201101.webp");
+        assert(urls.some(u => u.includes("1001001")), "應保留一般 still 候選");
+    }
+});
+
+// Test 15 — HTML serialization with characterGroupId
+test("Test 15: getStoryThumbnailHtml renders primary and serializes character card fallbacks", () => {
+    const service = createServiceInstance();
+    const html = service.getStoryThumbnailHtml("1001001", null, null, "story-thumb-img", "width:100%;", { characterGroupId: 1001 });
+    assert(html.includes('src="icon/story/1001001.webp"'), "首選 src 必須為官方話數縮圖");
+    assert(html.includes('class="story-thumb-img"'), "class 必須套用");
+    assert(html.includes('onerror="StoryAssetService.handleImageError(this)"'), "必須套用 onerror 處理器");
+
+    // 反序列化 data-candidates 驗證
+    const match = html.match(/data-candidates="([^"]+)"/);
+    assert(match, "必須包含 data-candidates 屬性");
+    const candidates = JSON.parse(decodeURIComponent(match[1]));
+    assert.deepStrictEqual(candidates, [
+        "card/100131.webp",
+        "https://redive.estertion.win/card/full/100131.webp",
+        "https://redive.estertion.win/card/full/100431.webp"
+    ], "data-candidates 必須依序為本機卡面、遠端卡面與全域保底");
+});
+
 console.log(`\n🎉 All ${testsPassed} StoryAssetService tests passed!`);
