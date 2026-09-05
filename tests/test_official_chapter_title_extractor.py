@@ -30,6 +30,7 @@ from pipeline.extract_chapter_titles import (
     resolve_physical_schema_for_version,
     discover_bundle_from_cdn_manifest,
     generate_review_table,
+    main,
     CONTRACT_PATH,
     SQLITE_HEADER
 )
@@ -131,15 +132,54 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
         self.assertIn("00600025", c.get("physical_schema_by_truth_version", {}))
         self.assertIn("baseline_00600025_facts", c)
 
-    def test_version_pinned_schema_resolution(self):
-        """驗證已知版號成功解析，未登錄版號 Fail-Closed 拒絕猜測"""
+    def test_version_pinned_schema_resolution_success(self):
+        """驗證已知合法版號成功解析對應混淆表映射"""
         ver, schema = resolve_physical_schema_for_version("00600025", self.contract)
         self.assertEqual(ver, "00600025")
         self.assertEqual(schema["physical_table"], self.table_name)
 
-        # 未知版號必須明確報錯
+    def test_version_pinned_schema_resolution_fails_closed_when_version_missing(self):
+        """
+        [Provenance Safety A]
+        驗證 resolve_physical_schema_for_version 在 truth_version 為 None 或空字串時嚴格 Fail-Closed，
+        絕不隱式 fallback 至 last_verified。
+        """
+        with self.assertRaises(ValueError) as ctx:
+            resolve_physical_schema_for_version(None, self.contract)
+        self.assertIn("TruthVersion is required for VERSION-PINNED masterdata schema resolution", str(ctx.exception))
+
+        with self.assertRaises(ValueError) as ctx:
+            resolve_physical_schema_for_version("", self.contract)
+        self.assertIn("TruthVersion is required for VERSION-PINNED masterdata schema resolution", str(ctx.exception))
+
+    def test_version_pinned_schema_resolution_fails_closed_when_version_unknown(self):
+        """
+        [Provenance Safety D]
+        驗證 resolve_physical_schema_for_version 在未知版號時嚴格 Fail-Closed 拒絕猜測。
+        """
         with self.assertRaises(ValueError) as ctx:
             resolve_physical_schema_for_version("99999999", self.contract)
+        self.assertIn("Unsupported masterdata schema for TruthVersion 99999999", str(ctx.exception))
+
+    def test_extract_from_db_fails_closed_when_version_missing(self):
+        """
+        [Provenance Safety B]
+        驗證 extract_official_chapter_titles_from_db 在 truth_version=None 時嚴格 Fail-Closed，
+        絕不隱式標記為契約 last_verified 版號。
+        """
+        conn = self._create_mock_db(OFFICIAL_TW_00600025_BASELINE_ROWS[:2])
+        with self.assertRaises(ValueError) as ctx:
+            extract_official_chapter_titles_from_db(conn, contract=self.contract, truth_version=None)
+        self.assertIn("TruthVersion is required for VERSION-PINNED masterdata schema resolution", str(ctx.exception))
+
+    def test_extract_from_db_fails_closed_with_unknown_version(self):
+        """
+        [Provenance Safety D - DB Path]
+        驗證從 DB 提取時若指定未登錄版號，精確拋出 Unsupported masterdata schema 錯誤。
+        """
+        conn = self._create_mock_db(OFFICIAL_TW_00600025_BASELINE_ROWS[:2])
+        with self.assertRaises(ValueError) as ctx:
+            extract_official_chapter_titles_from_db(conn, contract=self.contract, truth_version="99999999")
         self.assertIn("Unsupported masterdata schema for TruthVersion 99999999", str(ctx.exception))
 
     # ──────────────── 2. Baseline 00600025 Fixture 驗證 ────────────────
@@ -187,6 +227,11 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
         self.assertEqual(len(part2), 16, "第 2 部必須為 16 章 (2101~2116)")
         self.assertEqual(len(part3), 16, "第 3 部必須為 16 章 (2201~2216)")
 
+        # 斷言 canonical title provenance 標記 (非 official_tw_masterdata)
+        for r in chapters:
+            self.assertEqual(r["title_provenance"], "official_tw_localized_asset", "每筆記錄之 provenance 必須為 canonical official_tw_localized_asset")
+            self.assertNotIn("provenance", r, "不得包含額外之非正規 provenance 鍵")
+
     # ──────────────── 3. Generic Future-Compatible 模式驗證 ────────────────
 
     def test_generic_future_compatible_accepts_chapter_2217(self):
@@ -212,6 +257,7 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
         self.assertEqual(c2217["chapter_num"], 17)
         self.assertEqual(c2217["official_title"], "合成測試未來第十七章標題")
         self.assertEqual(c2217["raw_title"], "第3部 第17章_合成測試未來第十七章標題")
+        self.assertEqual(c2217["title_provenance"], "official_tw_localized_asset")
 
     # ──────────────── 4. 結構欄位過濾 (story_group_type == 2) ────────────────
 
@@ -281,7 +327,7 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
         """非標準 SQLite 標頭必須直接拋出 ValueError 終止"""
         invalid_bytes = b"NOT_A_SQLITE_FILE_CONTENT"
         with self.assertRaises(ValueError) as ctx:
-            extract_official_chapter_titles_from_db(invalid_bytes, contract=self.contract)
+            extract_official_chapter_titles_from_db(invalid_bytes, contract=self.contract, truth_version="00600025")
         self.assertIn("SQLite", str(ctx.exception))
 
     def test_fail_closed_missing_table(self):
@@ -352,7 +398,7 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
                 "chapter_num": 14,
                 "official_title": "阿爾莎特的誘惑",
                 "raw_title": "第3部 第14章_阿爾莎特的誘惑",
-                "provenance": "official_tw_masterdata"
+                "title_provenance": "official_tw_localized_asset"
             },
             {
                 "chapter_id": 2215,
@@ -360,7 +406,7 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
                 "chapter_num": 15,
                 "official_title": "嚮導幼君",  # 官方母檔
                 "raw_title": "第3部 第15章_嚮導幼君",
-                "provenance": "official_tw_masterdata"
+                "title_provenance": "official_tw_localized_asset"
             },
             {
                 "chapter_id": 2213,
@@ -368,7 +414,7 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
                 "chapter_num": 13,
                 "official_title": "降臨的幻境",
                 "raw_title": "第3部 第13章_降臨的幻境",
-                "provenance": "official_tw_masterdata"
+                "title_provenance": "official_tw_localized_asset"
             }
         ]
 
@@ -392,6 +438,62 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
         self.assertIsNone(rev_by_id[2213]["current_title"])
         self.assertEqual(rev_by_id[2213]["official_title"], "降臨的幻境")
         self.assertTrue(rev_by_id[2213]["would_change"])
+
+    # ──────────────── 9. Provenance 安全性與 CLI 整合測試 ────────────────
+
+    def test_from_cdn_mocked_flow_passes_discovered_version(self):
+        """
+        [Provenance Safety E - Hermetic Mock CDN Flow]
+        驗證 --from-cdn 流程動態探索版號並將其精確傳入 schema resolution 與 extraction，
+        全程在 Mock 環境執行，不發起任何實際網路請求。
+        """
+        conn = self._create_mock_db(OFFICIAL_TW_00600025_BASELINE_ROWS[:3])
+        mock_sqlite_bytes = conn.serialize()
+
+        mock_bundle_info = {
+            "truth_version": "00600025",
+            "platform": "Android",
+            "manifest_name": "masterdata2_assetmanifest",
+            "bundle_path": "a/masterdata_master.unity3d",
+            "bundle_pool_hash": "d93a6e336023c2fe",
+            "bundle_compressed_size": 14171483
+        }
+
+        with patch("pipeline.extract_chapter_titles.get_current_truth_version", return_value="00600025") as mock_get_tv, \
+             patch("pipeline.extract_chapter_titles.discover_bundle_from_cdn_manifest", return_value=mock_bundle_info) as mock_discover, \
+             patch("pipeline.extract_chapter_titles.download_bundle_by_pool_hash", return_value=b"mock_unity3d_bytes") as mock_download, \
+             patch("pipeline.extract_chapter_titles.extract_master_sqlite_from_bundle", return_value=mock_sqlite_bytes) as mock_extract_bundle:
+
+            out_capture = []
+            with patch("builtins.print", side_effect=lambda *args: out_capture.append(" ".join(str(a) for a in args))):
+                main(["--from-cdn"])
+
+            mock_get_tv.assert_called_once()
+            mock_discover.assert_called_once_with(truth_version="00600025")
+            mock_download.assert_called_once_with("d93a6e336023c2fe")
+            mock_extract_bundle.assert_called_once_with(b"mock_unity3d_bytes")
+
+            output_text = "\n".join(out_capture)
+            self.assertIn("TruthVersion: 00600025", output_text)
+            self.assertIn("成功提取 3 個官方主線章節標題", output_text)
+
+    def test_cli_local_modes_require_explicit_truth_version(self):
+        """
+        [Provenance Safety 2 - Local CLI Modes Require Explicit Version]
+        驗證 --db-path 與 --bundle-path 在缺少 --truth-version 時嚴格 Fail-Closed，
+        拒絕猜測或自動呼叫 discovery。
+        """
+        # --db-path 缺少 --truth-version
+        with self.assertRaises(SystemExit) as ctx:
+            with patch("sys.stderr"):
+                main(["--db-path", "dummy.db"])
+        self.assertNotEqual(ctx.exception.code, 0)
+
+        # --bundle-path 缺少 --truth-version
+        with self.assertRaises(SystemExit) as ctx:
+            with patch("sys.stderr"):
+                main(["--bundle-path", "dummy.unity3d"])
+        self.assertNotEqual(ctx.exception.code, 0)
 
 
 if __name__ == "__main__":

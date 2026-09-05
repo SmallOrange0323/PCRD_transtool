@@ -217,19 +217,21 @@ def resolve_physical_schema_for_version(
 ) -> Tuple[str, Dict[str, str]]:
     """
     VERSION-PINNED 實體資料表結構解析。
-    若傳入之 TruthVersion 尚未登錄於契約之 physical_schema_by_truth_version，
-    嚴格 Fail-Closed 拋出例外，禁止隨機猜測或默認重用舊版結構。
+    truth_version 為必要參數；若為 None、空字串或未登錄於契約之 physical_schema_by_truth_version，
+    嚴格 Fail-Closed 拋出例外，禁止隨機猜測、禁止隱式 fallback 至 last_verified。
     """
     if contract is None:
         contract = load_source_contract()
+
+    if not truth_version or not str(truth_version).strip():
+        raise ValueError("TruthVersion is required for VERSION-PINNED masterdata schema resolution")
 
     schema_map = contract.get("physical_schema_by_truth_version", {})
     if not schema_map:
         raise ValueError("契約中未定義 physical_schema_by_truth_version")
 
-    # 若未指定 version，嘗試使用 last_verified 的 version
-    target_ver = truth_version or contract.get("last_verified", {}).get("truth_version")
-    if not target_ver or target_ver not in schema_map:
+    target_ver = str(truth_version).strip()
+    if target_ver not in schema_map:
         raise ValueError(f"Unsupported masterdata schema for TruthVersion {target_ver}")
 
     return target_ver, schema_map[target_ver]
@@ -357,7 +359,7 @@ def extract_official_chapter_titles_from_db(
                 "chapter_num": chapter_num,
                 "official_title": official_title,
                 "raw_title": raw_title,
-                "provenance": "official_tw_masterdata"
+                "title_provenance": "official_tw_localized_asset"
             })
 
         # 計算實際產出的 metadata
@@ -444,7 +446,7 @@ def generate_review_table(
     return review_rows
 
 
-def main():
+def main(argv: Optional[List[str]] = None):
     parser = argparse.ArgumentParser(
         description="PCRD 官方台版主線章節標題提取器 (Schema 2.0.0)",
         formatter_class=argparse.RawDescriptionHelpFormatter
@@ -459,7 +461,7 @@ def main():
     parser.add_argument("--review-output", type=str, help="輸出與 chapters.json 之比對審查報表路徑 (JSON)")
     parser.add_argument("--contract", type=str, help="自訂來源契約 JSON 路徑")
 
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     contract = load_source_contract(args.contract)
 
@@ -467,14 +469,18 @@ def main():
     run_source_info = {}
 
     if args.db_path:
+        if not target_tv or not str(target_tv).strip():
+            parser.error("--truth-version 是使用 --db-path 時的必要參數 (VERSION-PINNED masterdata schema resolution)")
         db_path = Path(args.db_path)
-        print(f"[INFO] 讀取本機 SQLite 資料庫: {db_path}")
+        print(f"[INFO] 讀取本機 SQLite 資料庫: {db_path} (TruthVersion: {target_tv})")
         extraction_result = extract_official_chapter_titles_from_db(
             db_path, contract=contract, truth_version=target_tv
         )
     elif args.bundle_path:
+        if not target_tv or not str(target_tv).strip():
+            parser.error("--truth-version 是使用 --bundle-path 時的必要參數 (VERSION-PINNED masterdata schema resolution)")
         bundle_path = Path(args.bundle_path)
-        print(f"[INFO] 解析本機 AssetBundle: {bundle_path}")
+        print(f"[INFO] 解析本機 AssetBundle: {bundle_path} (TruthVersion: {target_tv})")
         sqlite_bytes = extract_master_sqlite_from_bundle(bundle_path)
         extraction_result = extract_official_chapter_titles_from_db(
             sqlite_bytes, contract=contract, truth_version=target_tv
