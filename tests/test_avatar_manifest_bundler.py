@@ -271,46 +271,68 @@ class TestAvatarManifestBundler(unittest.TestCase):
         is_valid = validate_avatar_manifest_and_assets(DASHBOARD_DIR, res)
         self.assertTrue(is_valid, f"Validation should pass on canonical source: {res.errors}")
 
-        # 測試不安全路徑檢驗 (例如含有 ..)
-        with tempfile.TemporaryDirectory() as tmpdir:
-            tmp_dash = Path(tmpdir)
-            tmp_data = tmp_dash / "data"
-            tmp_data.mkdir(parents=True)
-            tmp_icon = tmp_dash / "icon" / "unit"
-            tmp_icon.mkdir(parents=True)
-            (tmp_icon / "999999.png").write_bytes(b"primary content")
-            p_sha = hashlib.sha256(b"primary content").hexdigest()
+        # 正向案例：icon/story_unit/192711.png 必須在 validator 與 bundler 雙雙通過
+        override_mappings = get_expected_dialogue_override_mappings(DASHBOARD_DIR)
+        self.assertIn("icon/story_unit/192711.png", override_mappings)
 
-            mock_manifest = {
-                "version": 1,
-                "assets": [
-                    {
-                        "unit_id": 999999,
-                        "filename": "999999.png",
-                        "format": "png",
-                        "usage": "dialogue",
-                        "status": "active",
-                        "size_bytes": len(b"primary content"),
-                        "sha256": p_sha,
-                        "provenance": "test",
-                        "dialogue_asset": {
-                            "path": "icon/story_unit/../999999.png",
-                            "format": "png",
-                            "size_bytes": 100,
-                            "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
-                            "provenance": "test"
-                        }
+        # 測試不安全路徑矩陣：驗證 Validator 與 Bundler 雙層合約均拒絕
+        unsafe_paths = [
+            "icon/story_unit/../999999.png",
+            "C:/temp/999999.png",
+            "/tmp/999999.png",
+            "https://example.com/999999.png",
+            "http://example.com/999999.png",
+            r"\server\share\999999.png"
+        ]
+
+        for unsafe_p in unsafe_paths:
+            with self.subTest(path=unsafe_p):
+                with tempfile.TemporaryDirectory() as tmpdir:
+                    tmp_dash = Path(tmpdir)
+                    tmp_data = tmp_dash / "data"
+                    tmp_data.mkdir(parents=True)
+                    tmp_icon = tmp_dash / "icon" / "unit"
+                    tmp_icon.mkdir(parents=True)
+                    (tmp_icon / "999999.png").write_bytes(b"primary content")
+                    p_sha = hashlib.sha256(b"primary content").hexdigest()
+
+                    mock_manifest = {
+                        "version": 1,
+                        "assets": [
+                            {
+                                "unit_id": 999999,
+                                "filename": "999999.png",
+                                "format": "png",
+                                "usage": "dialogue",
+                                "status": "active",
+                                "size_bytes": len(b"primary content"),
+                                "sha256": p_sha,
+                                "provenance": "test",
+                                "dialogue_asset": {
+                                    "path": unsafe_p,
+                                    "format": "png",
+                                    "size_bytes": 100,
+                                    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+                                    "provenance": "test"
+                                }
+                            }
+                        ]
                     }
-                ]
-            }
-            with open(tmp_data / "avatar_assets.json", "w", encoding="utf-8") as f:
-                json.dump(mock_manifest, f)
+                    with open(tmp_data / "avatar_assets.json", "w", encoding="utf-8") as f:
+                        json.dump(mock_manifest, f)
 
-            res_bad = ValidationResult()
-            is_valid_bad = validate_avatar_manifest_and_assets(tmp_dash, res_bad)
-            self.assertFalse(is_valid_bad)
-            insecure_errors = [e for e in res_bad.errors if "路徑不安全" in e or "insecure" in e.lower()]
-            self.assertGreater(len(insecure_errors), 0)
+                    # A. 驗證 Validator 拒絕
+                    res_bad = ValidationResult()
+                    is_valid_bad = validate_avatar_manifest_and_assets(tmp_dash, res_bad)
+                    self.assertFalse(is_valid_bad, f"Validator must reject unsafe path: {unsafe_p}")
+                    self.assertGreater(
+                        len(res_bad.errors), 0,
+                        f"Validator must report errors for unsafe path: {unsafe_p}"
+                    )
+
+                    # B. 驗證 Bundler 拒絕 (必須拋出 ValueError)
+                    with self.assertRaises(ValueError, msg=f"Bundler must reject unsafe path: {unsafe_p}"):
+                        get_expected_dialogue_override_mappings(tmp_dash)
 
 if __name__ == "__main__":
     unittest.main()
