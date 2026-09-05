@@ -54,6 +54,12 @@ jobs:
       - name: Run Branch Story Integration Tests
         run: node tests/test_branch_story_integration.js
 
+      - name: Run Chapter Metadata Contract Tests
+        run: python -m unittest tests.test_chapter_metadata -v
+
+      - name: Run Chapter Titles Runtime Contract Tests
+        run: node tests/test_chapter_titles_runtime.js
+
       - name: Run Story Asset Service Tests
         run: node tests/test_story_asset_service.js
 

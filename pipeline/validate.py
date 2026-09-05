@@ -393,6 +393,84 @@ def validate_avatar_manifest_and_assets(dashboard_dir: Path, res: ValidationResu
     return res.is_valid
 
 
+VALID_CHAPTER_TITLE_PROVENANCE = {"official_tw_game_ui", "official_tw_localized_asset", "unresolved"}
+VALID_CHAPTER_SUMMARY_PROVENANCE = {"legacy_unverified", "legacy_curated", "curated_manual", "ai_generated", "official", "unresolved"}
+
+def validate_chapters_metadata(data: dict) -> Tuple[bool, str]:
+    """
+    驗證 chapters.json 的主線章節元數據與來源隔離性 (Provenance Quarantine)。
+    嚴格規範：
+    1. key: 非空字串
+    2. order: 整數
+    3. title_locale: 必須為 "zh-TW"
+    4. title_provenance: official_tw_game_ui | official_tw_localized_asset | unresolved
+    5. summary_provenance: legacy_curated | curated_manual | ai_generated | official | unresolved
+    6. official 來源時 title 必須為非空字串；unresolved 時 title 必須為 None
+    7. Part / Group ID 一致性
+    """
+    if not isinstance(data, dict):
+        return False, "chapters.json 根物件必須為字典"
+
+    parts = ["1", "2", "3"]
+    for p in parts:
+        if p not in data:
+            return False, f"缺少部別 {p} 節點"
+        part_data = data[p]
+        if not isinstance(part_data, dict):
+            return False, f"部別 {p} 內容必須為字典"
+        if "game_world" not in part_data:
+            return False, f"部別 {p} 缺少 game_world 節點"
+
+        gw = part_data["game_world"]
+        if not isinstance(gw, dict) or len(gw) == 0:
+            return False, f"部別 {p} 的 game_world 必須為非空字典"
+
+        for gid_str, entry in gw.items():
+            if not gid_str.isdigit():
+                return False, f"部別 {p} 包含非數字 group_id: {gid_str}"
+            gid = int(gid_str)
+
+            # Part / group_id 範圍一致性檢驗
+            if p == "1" and not (2000 <= gid <= 2099):
+                return False, f"第 1 部包含非預期 group_id: {gid}"
+            elif p == "2" and not (2100 <= gid <= 2199):
+                return False, f"第 2 部包含非預期 group_id: {gid}"
+            elif p == "3" and not (2200 <= gid <= 2299):
+                return False, f"第 3 部包含非預期 group_id: {gid}"
+
+            if not isinstance(entry, dict):
+                return False, f"章節 {gid} 內容必須為字典"
+
+            key = entry.get("key")
+            if not isinstance(key, str) or len(key.strip()) == 0:
+                return False, f"章節 {gid} key 必須為非空字串"
+
+            order = entry.get("order")
+            if not isinstance(order, int) or isinstance(order, bool):
+                return False, f"章節 {gid} order 必須為整數"
+
+            locale = entry.get("title_locale")
+            if locale != "zh-TW":
+                return False, f"章節 {gid} title_locale 必須為 'zh-TW'，當前為: {locale}"
+
+            title_prov = entry.get("title_provenance")
+            if title_prov not in VALID_CHAPTER_TITLE_PROVENANCE:
+                return False, f"章節 {gid} title_provenance 不合法: {title_prov}"
+
+            summary_prov = entry.get("summary_provenance")
+            if summary_prov not in VALID_CHAPTER_SUMMARY_PROVENANCE:
+                return False, f"章節 {gid} summary_provenance 不合法: {summary_prov}"
+
+            title = entry.get("title")
+            if title_prov in ("official_tw_game_ui", "official_tw_localized_asset"):
+                if not isinstance(title, str) or len(title.strip()) == 0:
+                    return False, f"章節 {gid} 來源為 {title_prov}，但 title 為空或非字串"
+            elif title_prov == "unresolved":
+                if title is not None:
+                    return False, f"章節 {gid} 來源為 unresolved，但 title 非 null (值為: {title})"
+
+    return True, ""
+
 def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> bool:
     """
     執行 Story Map 全量一致性檢查。
@@ -430,7 +508,7 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
     # 2. 必備元數據 JSON 檢查與 Schema 驗證
     data_dir = base_dir / "data"
     required_metadata = {
-        "chapters.json": lambda d: isinstance(d, dict) and len(d) > 0,
+        "chapters.json": lambda d: validate_chapters_metadata(d)[0],
         "extra_events.json": lambda d: isinstance(d, dict) and "events" in d and "stories" in d,
         "story_thumbnails.json": lambda d: isinstance(d, dict) and len(d) > 0,
         "npc_avatars.json": lambda d: isinstance(d, dict) and len(d) > 0,
@@ -485,7 +563,11 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
             if schema_validator(data):
                 res.ok(f"元數據 JSON 解析與 Schema 驗證正常: data/{meta_name}")
             else:
-                res.error(f"元數據 Schema 結構不符合預期: data/{meta_name}")
+                if meta_name == "chapters.json":
+                    _, err = validate_chapters_metadata(data)
+                    res.error(f"元數據 Schema 結構不符合預期: data/{meta_name} ({err})")
+                else:
+                    res.error(f"元數據 Schema 結構不符合預期: data/{meta_name}")
         except Exception as e:
             res.error(f"元數據 JSON 格式損壞: data/{meta_name} - {e}")
 
