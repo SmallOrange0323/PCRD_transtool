@@ -379,6 +379,46 @@ def build_expected_icon_unit_set(dashboard_dir: Path = DASHBOARD_DIR) -> Set[str
     """根據 get_expected_icon_unit_mappings 回傳所有 expected icon 檔名集合"""
     return set(get_expected_icon_unit_mappings(dashboard_dir).keys())
 
+def get_expected_dialogue_override_mappings(dashboard_dir: Path = DASHBOARD_DIR) -> Dict[str, Path]:
+    """
+    計算由 avatar_assets.json 中 dialogue_asset 宣告的覆蓋頭像映射。
+    :return: {rel_path_str: source_Path}
+    """
+    mappings: Dict[str, Path] = {}
+    manifest_path = dashboard_dir / "data" / "avatar_assets.json"
+    if not manifest_path.exists():
+        return mappings
+
+    try:
+        with open(manifest_path, "r", encoding="utf-8") as f:
+            manifest_data = json.load(f)
+        for asset in manifest_data.get("assets", []):
+            if asset.get("status") == "active" and "dialogue_asset" in asset:
+                d_asset = asset["dialogue_asset"]
+                p_str = d_asset.get("path")
+                if not p_str:
+                    continue
+                # 路徑安全檢查
+                if ".." in p_str or p_str.startswith(("/", "\\", "http://", "https://")):
+                    raise ValueError(f"[ERROR] Insecure dialogue_asset path: {p_str}")
+                if not p_str.startswith("icon/story_unit/"):
+                    raise ValueError(f"[ERROR] dialogue_asset path must be under icon/story_unit/: {p_str}")
+                
+                src_path = dashboard_dir / p_str
+                if not src_path.exists():
+                    raise FileNotFoundError(f"[ERROR] Active dialogue_asset missing physical file: {src_path}")
+                mappings[p_str] = src_path
+    except Exception as e:
+        if isinstance(e, (FileNotFoundError, ValueError)):
+            raise
+        print(f"  [WARN] 讀取 dialogue_asset 異常: {e}", file=sys.stderr)
+
+    return mappings
+
+def build_expected_story_unit_set(dashboard_dir: Path = DASHBOARD_DIR) -> Set[str]:
+    """回傳所有 expected icon/story_unit 檔名集合"""
+    return {p.name for p in get_expected_dialogue_override_mappings(dashboard_dir).values()}
+
 def prune_stale_dist_assets(dashboard_dir: Path = DASHBOARD_DIR, dist_dir: Path = DIST_DIR, dry_run: bool = False) -> Dict[str, Tuple[int, int]]:
     """
     執行決定性清理 (Deterministic Pruning)：
@@ -475,6 +515,15 @@ def prune_stale_dist_assets(dashboard_dir: Path = DASHBOARD_DIR, dist_dir: Path 
             if item.suffix.lower() in IMAGE_EXTENSIONS and item.name not in expected_icons:
                 cnt, b = safe_prune_file(item, dry_run=dry_run, dist_root=dist_dir)
                 record_prune("icon/unit surplus", cnt, b)
+
+    # 5B. 清理 icon/story_unit/ 中不在 expected story_unit 集合的圖片
+    dist_story_unit_dir = dist_dir / "icon" / "story_unit"
+    if dist_story_unit_dir.exists():
+        expected_story_units = build_expected_story_unit_set(dashboard_dir)
+        for item in list(dist_story_unit_dir.glob("*.*")):
+            if item.suffix.lower() in IMAGE_EXTENSIONS and item.name not in expected_story_units:
+                cnt, b = safe_prune_file(item, dry_run=dry_run, dist_root=dist_dir)
+                record_prune("icon/story_unit surplus", cnt, b)
 
     return prune_stats
 
@@ -633,6 +682,19 @@ def calculate_expected_additions_and_deltas(dashboard_dir: Path = DASHBOARD_DIR,
                 if calc_sha256(sf) != calc_sha256(df):
                     deltas += (s_sz - d_sz)
 
+    # 7C. icon/story_unit (對白專屬覆蓋頭像)
+    story_overrides = get_expected_dialogue_override_mappings(dashboard_dir)
+    for rel_path, sf in story_overrides.items():
+        if sf.exists():
+            df = dist_dir / rel_path
+            s_sz = sf.stat().st_size
+            if not df.exists():
+                additions += s_sz
+            else:
+                d_sz = df.stat().st_size
+                if calc_sha256(sf) != calc_sha256(df):
+                    deltas += (s_sz - d_sz)
+
     return additions, deltas
 
 def bundle_story_map(dry_run: bool = False) -> bool:
@@ -759,6 +821,17 @@ def bundle_story_map(dry_run: bool = False) -> bool:
     icon_story_copied = sync_directory_assets(DASHBOARD_DIR / "icon" / "story", DIST_DIR / "icon" / "story", [".webp"], dry_run=dry_run)
     if icon_story_copied > 0:
         print(f"  [Thumb] 官方劇情專屬縮圖: {'預計同步' if dry_run else '已同步'} {icon_story_copied} 個檔案")
+
+    # 7C. 同步對白專屬覆蓋頭像 (icon/story_unit)
+    story_override_copied = 0
+    story_overrides = get_expected_dialogue_override_mappings(DASHBOARD_DIR)
+    for rel_path, src_file in story_overrides.items():
+        df = DIST_DIR / rel_path
+        df.parent.mkdir(parents=True, exist_ok=True)
+        if copy_if_different(src_file, df, dry_run=dry_run):
+            story_override_copied += 1
+    if story_override_copied > 0:
+        print(f"  [Avatar Override] 對白專屬覆蓋頭像: {'預計同步' if dry_run else '已同步'} {story_override_copied} 個檔案")
 
     # 8. 同步語音音檔 (sound/story_vo) - 本機發布包同步，受 .gitignore 排除
     voice_copied = sync_directory_assets(DASHBOARD_DIR / "sound" / "story_vo", DIST_DIR / "sound" / "story_vo", [".m4a"], dry_run=dry_run)

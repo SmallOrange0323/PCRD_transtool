@@ -498,5 +498,42 @@ test("Test 16 — Generic getUrlCandidates & getAvatarUrl derive from resolveDef
     assert.strictEqual(avatarUrl, "icon/unit/105811.png", "getAvatarUrl should use primary ID from default ladder");
 });
 
+// Test 17 — Namespace Segregation: 192711 dialogue override vs generic consumer
+test("Test 17 — Namespace Segregation: 192711 dialogue override vs generic consumer", () => {
+    // 1. Explicit dialogue 192711 -> icon/story_unit/192711.png (TYPE-R)
+    const exact192711 = AvatarService.resolveExactDialoguePortrait(192711);
+    assert(exact192711, "192711 must resolve in manifest");
+    assert.strictEqual(exact192711.status, "active");
+    assert.strictEqual(exact192711.filename, "192711.png");
+    assert.strictEqual(exact192711.path, "icon/story_unit/192711.png");
+
+    const htmlDialogue = AvatarService.getAvatarHtmlByUnitId(192711, "TYPE-R");
+    assert(htmlDialogue.includes('src="icon/story_unit/192711.png"'), "Explicit dialogue 192711 must render icon/story_unit/192711.png");
+    assert(htmlDialogue.includes("AvatarService.handleExactDialogueError"), "Must use handleExactDialogueError with no CDN fallback");
+
+    // 2. Generic consumer: 艾爾格雅 mapped to 192711 -> icon/unit/192711.png (Shefi / Unit2)
+    const npcAvatars = { "艾爾格雅": 192711 };
+    const htmlGeneric = AvatarService.getAvatarHtml("艾爾格雅", npcAvatars);
+    assert(htmlGeneric.includes('src="icon/unit/192711.png"'), "Generic consumer 艾爾格雅 must render icon/unit/192711.png");
+    assert(!htmlGeneric.includes("story_unit"), "Generic consumer must NOT use story_unit override");
+});
+
+// Test 18 — Normal non-collision and placeholder-only regression coverage
+test("Test 18 — Normal non-collision and placeholder-only regression coverage", () => {
+    // Normal non-collision explicit dialogue: 105813
+    const exact105813 = AvatarService.resolveExactDialoguePortrait(105813);
+    assert.strictEqual(exact105813.path, "icon/unit/105813.png");
+    const html105813 = AvatarService.getAvatarHtmlByUnitId(105813, "貪吃佩可");
+    assert(html105813.includes('src="icon/unit/105813.png"'));
+
+    // Placeholder only: 190813
+    const exactPlaceholder = AvatarService.resolveExactDialoguePortrait(190813);
+    assert.strictEqual(exactPlaceholder.status, "placeholder_only");
+    assert.strictEqual(exactPlaceholder.filename, null);
+    const htmlPlaceholder = AvatarService.getAvatarHtmlByUnitId(190813, "拉吉拉吉");
+    assert(htmlPlaceholder.includes("npc-avatar-placeholder"));
+    assert(!htmlPlaceholder.includes("<img"));
+});
+
 console.log(`\n✅ All ${testsPassed} AvatarService Phase 6 tests passed successfully!`);
 })();

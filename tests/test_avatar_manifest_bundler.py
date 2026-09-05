@@ -30,6 +30,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from pipeline.bundle import (
     get_expected_icon_unit_mappings,
+    get_expected_dialogue_override_mappings,
     build_expected_icon_unit_set,
     DASHBOARD_DIR,
     DIST_DIR
@@ -251,6 +252,65 @@ class TestAvatarManifestBundler(unittest.TestCase):
         reality_fixtures = [105812, 105913, 106012, 106412, 106831, 107331]
         for fid in reality_fixtures:
             self.assertIn(f"{fid}.png", mappings)
+
+    def test_9_dialogue_override_story_unit_published(self):
+        """9. 驗證 dialogue_asset 宣告之覆蓋頭像會被獨立映射發布，且 primary 不受影響"""
+        primary_mappings = get_expected_icon_unit_mappings()
+        self.assertEqual(len(primary_mappings), 927)
+        self.assertIn("192711.png", primary_mappings)
+        self.assertEqual(primary_mappings["192711.png"], DASHBOARD_DIR / "icon" / "unit" / "192711.png")
+
+        override_mappings = get_expected_dialogue_override_mappings()
+        self.assertEqual(len(override_mappings), 1)
+        self.assertIn("icon/story_unit/192711.png", override_mappings)
+        self.assertEqual(override_mappings["icon/story_unit/192711.png"], DASHBOARD_DIR / "icon" / "story_unit" / "192711.png")
+
+    def test_10_dialogue_override_validation_and_rejection(self):
+        """10. 驗證 validator 獨立校驗 dialogue_asset，並拒絕不安全路徑"""
+        res = ValidationResult()
+        is_valid = validate_avatar_manifest_and_assets(DASHBOARD_DIR, res)
+        self.assertTrue(is_valid, f"Validation should pass on canonical source: {res.errors}")
+
+        # 測試不安全路徑檢驗 (例如含有 ..)
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_dash = Path(tmpdir)
+            tmp_data = tmp_dash / "data"
+            tmp_data.mkdir(parents=True)
+            tmp_icon = tmp_dash / "icon" / "unit"
+            tmp_icon.mkdir(parents=True)
+            (tmp_icon / "999999.png").write_bytes(b"primary content")
+            p_sha = hashlib.sha256(b"primary content").hexdigest()
+
+            mock_manifest = {
+                "version": 1,
+                "assets": [
+                    {
+                        "unit_id": 999999,
+                        "filename": "999999.png",
+                        "format": "png",
+                        "usage": "dialogue",
+                        "status": "active",
+                        "size_bytes": len(b"primary content"),
+                        "sha256": p_sha,
+                        "provenance": "test",
+                        "dialogue_asset": {
+                            "path": "icon/story_unit/../999999.png",
+                            "format": "png",
+                            "size_bytes": 100,
+                            "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+                            "provenance": "test"
+                        }
+                    }
+                ]
+            }
+            with open(tmp_data / "avatar_assets.json", "w", encoding="utf-8") as f:
+                json.dump(mock_manifest, f)
+
+            res_bad = ValidationResult()
+            is_valid_bad = validate_avatar_manifest_and_assets(tmp_dash, res_bad)
+            self.assertFalse(is_valid_bad)
+            insecure_errors = [e for e in res_bad.errors if "路徑不安全" in e or "insecure" in e.lower()]
+            self.assertGreater(len(insecure_errors), 0)
 
 if __name__ == "__main__":
     unittest.main()

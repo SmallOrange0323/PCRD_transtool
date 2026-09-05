@@ -356,6 +356,37 @@ def validate_avatar_manifest_and_assets(dashboard_dir: Path, res: ValidationResu
             res.error(f"SHA-256 雜湊失配: {fname} (硬碟={actual_sha}, manifest={declared_sha})")
             mismatch_errors += 1
 
+        # Dialogue Override 資產校驗 (可選)
+        if "dialogue_asset" in asset:
+            d_asset = asset["dialogue_asset"]
+            d_path_str = d_asset.get("path")
+            if not d_path_str:
+                res.error(f"dialogue_asset 缺失 path: ID {uid}")
+                mismatch_errors += 1
+            elif ".." in d_path_str or d_path_str.startswith(("/", "\\", "http://", "https://")):
+                res.error(f"dialogue_asset 路徑不安全: ID {uid}, path='{d_path_str}'")
+                mismatch_errors += 1
+            elif not d_path_str.startswith("icon/story_unit/"):
+                res.error(f"dialogue_asset 必須位於 icon/story_unit/ 底下: ID {uid}, path='{d_path_str}'")
+                mismatch_errors += 1
+            else:
+                d_src_path = dashboard_dir / d_path_str
+                if not d_src_path.exists():
+                    res.error(f"dialogue_asset 實體檔案缺失: {d_src_path} (ID {uid})")
+                    mismatch_errors += 1
+                else:
+                    d_actual_size = d_src_path.stat().st_size
+                    d_declared_size = d_asset.get("size_bytes")
+                    if d_actual_size != d_declared_size:
+                        res.error(f"dialogue_asset 檔案大小失配: {d_path_str} (硬碟={d_actual_size}, manifest={d_declared_size})")
+                        mismatch_errors += 1
+
+                    d_actual_sha = calc_sha256(d_src_path)
+                    d_declared_sha = d_asset.get("sha256")
+                    if d_actual_sha != d_declared_sha:
+                        res.error(f"dialogue_asset SHA-256 雜湊失配: {d_path_str} (硬碟={d_actual_sha}, manifest={d_declared_sha})")
+                        mismatch_errors += 1
+
     if mismatch_errors == 0:
         res.ok(f"Avatar Manifest 實體二進位對等校驗通過: {active_count} 個 active 檔案大小與 SHA-256 100% 吻合, {placeholder_count} 個 placeholder_only 規格正常")
 
@@ -595,6 +626,32 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
                         json.load(f)
                 except Exception as e:
                     res.error(f"dist_story_map 元數據損壞: data/{meta_name} - {e}")
+
+        # 深度驗證 dist/icon/story_unit 對白覆蓋資產
+        manifest_path = DASHBOARD_DIR / "data" / "avatar_assets.json"
+        if manifest_path.exists():
+            try:
+                with open(manifest_path, "r", encoding="utf-8") as f:
+                    manifest_data = json.load(f)
+                for asset in manifest_data.get("assets", []):
+                    if asset.get("status") == "active" and "dialogue_asset" in asset:
+                        d_asset = asset["dialogue_asset"]
+                        p_str = d_asset.get("path")
+                        if p_str:
+                            dist_d_path = DIST_DIR / p_str
+                            if not dist_d_path.exists():
+                                res.error(f"dist_story_map 缺失 dialogue_asset: {p_str}")
+                            else:
+                                d_act_sz = dist_d_path.stat().st_size
+                                d_exp_sz = d_asset.get("size_bytes")
+                                if d_act_sz != d_exp_sz:
+                                    res.error(f"dist dialogue_asset 檔案大小失配: {p_str} ({d_act_sz} != {d_exp_sz})")
+                                d_act_sha = calc_sha256(dist_d_path)
+                                d_exp_sha = d_asset.get("sha256")
+                                if d_act_sha != d_exp_sha:
+                                    res.error(f"dist dialogue_asset SHA-256 失配: {p_str}")
+            except Exception as e:
+                res.error(f"校驗 dist dialogue_asset 失敗: {e}")
 
         # 8. 部署體積門禁檢驗 (Deployment Footprint Gate)
         print(f"\n📦 執行 GitHub Pages 部署體積門禁 (Footprint Gate)...")

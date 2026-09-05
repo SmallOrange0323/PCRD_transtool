@@ -7,6 +7,7 @@
     "active_dialogue_count": 897,
     "placeholder_only_count": 3,
     "ui_assets_count": 30,
+    "dialogue_overrides_count": 1,
     "total_active_bytes": 18583224,
     "total_active_mib": 17.7223
   },
@@ -8639,7 +8640,14 @@
       "status": "active",
       "size_bytes": 30120,
       "sha256": "443c0868c655f5e2929d6a8d956b636636467dcebeb83ea6d374c710c712f081",
-      "provenance": "legacy_existing_asset"
+      "provenance": "legacy_existing_asset",
+      "dialogue_asset": {
+        "path": "icon/story_unit/192711.png",
+        "format": "png",
+        "size_bytes": 18504,
+        "sha256": "6fc1586376e2c7116b4bd370ad4a9810ab828cf4545c5971b95590777de7ae15",
+        "provenance": "official_storydata2_bundle"
+      }
     },
     {
       "unit_id": 192721,

@@ -87,10 +87,12 @@ globalScope.AvatarService = {
         const entry = this.manifestMap.get(numId);
         if (entry) {
             if (entry.status === 'active') {
+                const dialoguePath = (entry.dialogue_asset && entry.dialogue_asset.path) ? entry.dialogue_asset.path : null;
                 return {
                     status: 'active',
                     unitId: numId,
-                    filename: entry.filename || `${numId}.png`
+                    filename: entry.filename || `${numId}.png`,
+                    path: dialoguePath || `icon/unit/${entry.filename || `${numId}.png`}`
                 };
             }
             if (entry.status === 'placeholder_only') {
@@ -916,7 +918,7 @@ globalScope.AvatarService = {
         if (Number.isInteger(numId) && numId >= 100000) {
             const resolved = this.resolveExactDialoguePortrait(numId);
             if (resolved.status === 'active') {
-                const src = `icon/unit/${resolved.filename}`;
+                const src = resolved.path || `icon/unit/${resolved.filename}`;
                 const safeName = this.escapeForJsString(cleanName);
                 return `<img src="${src}" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleExactDialogueError(this, '${safeName}', ${numId})">`;
             }
