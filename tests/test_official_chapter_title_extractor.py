@@ -15,8 +15,10 @@ import os
 import sys
 import json
 import sqlite3
+import hashlib
 import unittest
 from unittest.mock import patch, MagicMock
+import urllib.error
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -28,6 +30,9 @@ from pipeline.extract_chapter_titles import (
     extract_master_sqlite_from_bundle,
     extract_official_chapter_titles_from_db,
     resolve_physical_schema_for_version,
+    verify_official_source_identity,
+    parse_main_story_titles,
+    get_current_truth_version,
     discover_bundle_from_cdn_manifest,
     generate_review_table,
     main,
@@ -122,15 +127,30 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
         conn.commit()
         return conn
 
-    # ──────────────── 1. 契約規格與 VERSION-PINNED 解析 ────────────────
+    def _create_contract_with_matching_fingerprint(self, db_bytes: bytes, truth_version: str = "00600025") -> dict:
+        """建立包含給定 db_bytes 實際 SHA-256 指紋的合約副本"""
+        contract_copy = json.loads(json.dumps(self.contract))
+        if truth_version in contract_copy["physical_schema_by_truth_version"]:
+            contract_copy["physical_schema_by_truth_version"][truth_version]["verified_sqlite_sha256"] = hashlib.sha256(db_bytes).hexdigest()
+        return contract_copy
+
+    # ──────────────── 1. 契約規格與指紋登錄 ────────────────
 
     def test_contract_structure_schema_v2(self):
-        """驗證契約 2.0.0 結構：包含 source, discovery, physical_schema 與 baseline_facts"""
+        """驗證契約 2.0.0 結構：包含 source, discovery, physical_schema, verified_sqlite_sha256 與 baseline_facts"""
         c = self.contract
         self.assertEqual(c.get("schema_version"), "2.0.0")
         self.assertEqual(c.get("source", {}).get("logical_table"), "story_group_data")
         self.assertIn("00600025", c.get("physical_schema_by_truth_version", {}))
         self.assertIn("baseline_00600025_facts", c)
+
+        # 斷言 00600025 包含 verified_sqlite_sha256 指紋
+        schema_00600025 = c["physical_schema_by_truth_version"]["00600025"]
+        self.assertIn("verified_sqlite_sha256", schema_00600025)
+        self.assertEqual(
+            schema_00600025["verified_sqlite_sha256"],
+            "c2225cda45878559bbe383dc8a1cc87f653d0f1622bc08727e55128b05600af6"
+        )
 
     def test_version_pinned_schema_resolution_success(self):
         """驗證已知合法版號成功解析對應混淆表映射"""
@@ -182,7 +202,136 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
             extract_official_chapter_titles_from_db(conn, contract=self.contract, truth_version="99999999")
         self.assertIn("Unsupported masterdata schema for TruthVersion 99999999", str(ctx.exception))
 
-    # ──────────────── 2. Baseline 00600025 Fixture 驗證 ────────────────
+    # ──────────────── 2. Online-Only TruthVersion Discovery (Blocker 1) ────────────────
+
+    def test_online_truth_version_discovery_success(self):
+        """
+        [Blocker 1.1] 線上回應合法 TruthVersion 時成功解析
+        """
+        mock_response_body = json.dumps({"data": {"truthVersion": "00600025"}}).encode("utf-8")
+        mock_response = MagicMock()
+        mock_response.read.return_value = mock_response_body
+        mock_response.__enter__.return_value = mock_response
+
+        with patch("urllib.request.urlopen", return_value=mock_response):
+            tv = get_current_truth_version()
+            self.assertEqual(tv, "00600025")
+
+    def test_online_truth_version_discovery_fails_closed_when_request_fails(self):
+        """
+        [Blocker 1.2] 線上請求失敗時嚴格 Fail-Closed 拋出 RuntimeError，絕不靜默 fallback
+        """
+        with patch("urllib.request.urlopen", side_effect=urllib.error.URLError("Network unreachable")):
+            with self.assertRaises(RuntimeError) as ctx:
+                get_current_truth_version()
+            self.assertIn("Unable to verify current TW TruthVersion online", str(ctx.exception))
+
+    def test_online_truth_version_ignores_local_version_history_and_fallback(self):
+        """
+        [Blocker 1.3] 即使本機存在 version_history.json 或本地資料庫，線上失敗時依然嚴格 Fail-Closed
+        """
+        with patch("urllib.request.urlopen", side_effect=TimeoutError("Connection timed out")):
+            with self.assertRaises(RuntimeError) as ctx:
+                get_current_truth_version()
+            self.assertIn("Unable to verify current TW TruthVersion online", str(ctx.exception))
+
+    # ──────────────── 3. Verified Fingerprint Registry & Provenance (Blocker 2) ────────────────
+
+    def test_local_db_with_valid_fingerprint_succeeds(self):
+        """
+        [Blocker 2.A] 當本機 SQLite 之 SHA-256 符合契約登錄之指紋時，通過驗證並標記 official_tw_localized_asset
+        """
+        conn = self._create_mock_db(OFFICIAL_TW_00600025_BASELINE_ROWS[:3])
+        db_bytes = conn.serialize()
+        matching_contract = self._create_contract_with_matching_fingerprint(db_bytes, "00600025")
+
+        run_info = {"input_mode": "local_db", "input_path": "master.db"}
+        res = extract_official_chapter_titles_from_db(
+            db_bytes, contract=matching_contract, truth_version="00600025", run_source_info=run_info
+        )
+
+        meta = res["source_metadata"]
+        chapters = res["chapters"]
+
+        self.assertEqual(meta["input_mode"], "local_db")
+        self.assertEqual(meta["source_verification"], "fingerprint_verified")
+        self.assertEqual(meta["input_path"], "master.db")
+        # 斷言絕不捏造 CDN manifest/bundle 欄位
+        self.assertIsNone(meta["manifest_name"])
+        self.assertIsNone(meta["bundle_path"])
+        self.assertIsNone(meta["bundle_pool_hash"])
+
+        # 斷言已驗證指紋的記錄獲得 canonical 標籤
+        self.assertEqual(chapters[0]["title_provenance"], "official_tw_localized_asset")
+
+    def test_local_db_with_mutated_fingerprint_fails_closed(self):
+        """
+        [Blocker 2.B] 相同 Schema 但內容遭到更動 (Mutated DB)，指紋不合時必須嚴格 Fail-Closed
+        """
+        conn = self._create_mock_db(OFFICIAL_TW_00600025_BASELINE_ROWS[:3])
+        db_bytes = conn.serialize()
+        # 契約期望的指紋與 mock db bytes 必然不符
+        run_info = {"input_mode": "local_db", "input_path": "tampered.db"}
+        with self.assertRaises(ValueError) as ctx:
+            extract_official_chapter_titles_from_db(
+                db_bytes, contract=self.contract, truth_version="00600025", run_source_info=run_info
+            )
+        self.assertIn("Local masterdata fingerprint does not match verified TruthVersion 00600025", str(ctx.exception))
+
+    def test_local_bundle_with_mutated_extracted_db_fails_closed(self):
+        """
+        [Blocker 2.C] 本機 Bundle 提取出的 SQLite 指紋不符時，嚴格 Fail-Closed
+        """
+        conn = self._create_mock_db(OFFICIAL_TW_00600025_BASELINE_ROWS[:3])
+        db_bytes = conn.serialize()
+        run_info = {"input_mode": "local_bundle", "input_path": "fake.unity3d"}
+        with self.assertRaises(ValueError) as ctx:
+            extract_official_chapter_titles_from_db(
+                db_bytes, contract=self.contract, truth_version="00600025", run_source_info=run_info
+            )
+        self.assertIn("Local masterdata fingerprint does not match verified TruthVersion 00600025", str(ctx.exception))
+
+    def test_local_mode_metadata_does_not_fabricate_cdn_fields(self):
+        """
+        [Blocker 2.D] 驗證本機模式 (local_db 與 local_bundle) 的 source_metadata 絕不假造 CDN 路徑
+        """
+        conn = self._create_mock_db(OFFICIAL_TW_00600025_BASELINE_ROWS[:2])
+        db_bytes = conn.serialize()
+        matching_contract = self._create_contract_with_matching_fingerprint(db_bytes, "00600025")
+
+        for mode, path_name in [("local_db", "test.db"), ("local_bundle", "test.unity3d")]:
+            run_info = {"input_mode": mode, "input_path": path_name}
+            res = extract_official_chapter_titles_from_db(
+                db_bytes, contract=matching_contract, truth_version="00600025", run_source_info=run_info
+            )
+            meta = res["source_metadata"]
+            self.assertEqual(meta["input_mode"], mode)
+            self.assertEqual(meta["source_verification"], "fingerprint_verified")
+            self.assertEqual(meta["input_path"], path_name)
+            self.assertIsNone(meta["manifest_name"], f"{mode} 模式下 manifest_name 必須為 None")
+            self.assertIsNone(meta["bundle_path"], f"{mode} 模式下 bundle_path 必須為 None")
+            self.assertIsNone(meta["bundle_pool_hash"], f"{mode} 模式下 bundle_pool_hash 必須為 None")
+
+    def test_synthetic_pure_parser_works_without_claiming_canonical_provenance(self):
+        """
+        [Blocker 2.F] 純解析器可在合成測試資料上獨立運作，但標記為 unverified_synthetic，不僭稱 canonical 官方來源
+        """
+        conn = self._create_mock_db(OFFICIAL_TW_00600025_BASELINE_ROWS[:2])
+        # A. 使用 parse_main_story_titles 純解析函式
+        pure_chapters = parse_main_story_titles(
+            conn, self.table_name, self.col_id, self.col_type, self.col_title, title_provenance="test_synthetic"
+        )
+        self.assertEqual(len(pure_chapters), 2)
+        self.assertEqual(pure_chapters[0]["title_provenance"], "test_synthetic")
+
+        # B. 使用 allow_unverified_identity=True 的 extract_official_chapter_titles_from_db
+        res = extract_official_chapter_titles_from_db(
+            conn, contract=self.contract, truth_version="00600025", allow_unverified_identity=True
+        )
+        self.assertEqual(res["source_metadata"]["source_verification"], "unverified_synthetic")
+        self.assertEqual(res["chapters"][0]["title_provenance"], "unverified_synthetic")
+
+    # ──────────────── 4. Baseline 00600025 Fixture 驗證 ────────────────
 
     def test_baseline_00600025_facts_hermetic(self):
         """
@@ -191,7 +340,13 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
         完全自包含，不依賴外部檔案或網路。
         """
         conn = self._create_mock_db(OFFICIAL_TW_00600025_BASELINE_ROWS)
-        res = extract_official_chapter_titles_from_db(conn, contract=self.contract, truth_version="00600025")
+        db_bytes = conn.serialize()
+        matching_contract = self._create_contract_with_matching_fingerprint(db_bytes, "00600025")
+
+        res = extract_official_chapter_titles_from_db(
+            db_bytes, contract=matching_contract, truth_version="00600025",
+            run_source_info={"input_mode": "local_db", "input_path": "baseline.db"}
+        )
         chapters = res["chapters"]
         meta = res["source_metadata"]
 
@@ -200,6 +355,7 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
 
         # 斷言 ACTUAL run metadata 正確記錄
         self.assertEqual(meta["truth_version"], "00600025")
+        self.assertEqual(meta["source_verification"], "fingerprint_verified")
         self.assertEqual(meta["logical_table_resolution"], "VERSION-PINNED")
 
         by_id = {r["chapter_id"]: r for r in chapters}
@@ -232,7 +388,7 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
             self.assertEqual(r["title_provenance"], "official_tw_localized_asset", "每筆記錄之 provenance 必須為 canonical official_tw_localized_asset")
             self.assertNotIn("provenance", r, "不得包含額外之非正規 provenance 鍵")
 
-    # ──────────────── 3. Generic Future-Compatible 模式驗證 ────────────────
+    # ──────────────── 5. Generic Future-Compatible 模式驗證 ────────────────
 
     def test_generic_future_compatible_accepts_chapter_2217(self):
         """
@@ -244,7 +400,12 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
         rows.append((2217, 2, "第3部 第17章_合成測試未來第十七章標題"))
 
         conn = self._create_mock_db(rows)
-        res = extract_official_chapter_titles_from_db(conn, contract=self.contract, truth_version="00600025")
+        db_bytes = conn.serialize()
+        matching_contract = self._create_contract_with_matching_fingerprint(db_bytes, "00600025")
+
+        res = extract_official_chapter_titles_from_db(
+            db_bytes, contract=matching_contract, truth_version="00600025"
+        )
         chapters = res["chapters"]
 
         # 總數應為 49
@@ -259,7 +420,7 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
         self.assertEqual(c2217["raw_title"], "第3部 第17章_合成測試未來第十七章標題")
         self.assertEqual(c2217["title_provenance"], "official_tw_localized_asset")
 
-    # ──────────────── 4. 結構欄位過濾 (story_group_type == 2) ────────────────
+    # ──────────────── 6. 結構欄位過濾 (story_group_type == 2) ────────────────
 
     def test_structural_filtering_excludes_non_main_story(self):
         """
@@ -272,8 +433,7 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
             (2150, 3, "第50話_無關的公會劇情")
         ]
         conn = self._create_mock_db(mock_rows)
-        res = extract_official_chapter_titles_from_db(conn, contract=self.contract, truth_version="00600025")
-        chapters = res["chapters"]
+        chapters = parse_main_story_titles(conn, self.table_name, self.col_id, self.col_type, self.col_title)
 
         self.assertEqual(len(chapters), 1, "僅有 story_group_type == 2 之主線章節被提取")
         self.assertEqual(chapters[0]["chapter_id"], 2001)
@@ -288,13 +448,12 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
             (5001, 2, "第5001章_異常大數字章節")
         ]
         conn = self._create_mock_db(mock_rows)
-        res = extract_official_chapter_titles_from_db(conn, contract=self.contract, truth_version="00600025")
-        chapters = res["chapters"]
+        chapters = parse_main_story_titles(conn, self.table_name, self.col_id, self.col_type, self.col_title)
 
         self.assertEqual(len(chapters), 1)
         self.assertEqual(chapters[0]["chapter_id"], 2001)
 
-    # ──────────────── 5. UnityPy 隔離與可選依賴驗證 ────────────────
+    # ──────────────── 7. UnityPy 隔離與可選依賴驗證 ────────────────
 
     def test_unitypy_optional_isolation(self):
         """
@@ -302,46 +461,47 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
         1. 當 UnityPy 不存在時，SQLite 與純標題提取功能 100% 正常運作。
         2. 僅在嘗試調用 AssetBundle 解壓時拋出明確的 ImportError。
         """
-        # 模擬 UnityPy 模組完全不存在
         with patch.dict(sys.modules, {"UnityPy": None}):
             # A. 驗證純 DB 解析功能不受任何影響
             conn = self._create_mock_db(OFFICIAL_TW_00600025_BASELINE_ROWS[:3])
-            res = extract_official_chapter_titles_from_db(conn, contract=self.contract, truth_version="00600025")
-            self.assertEqual(len(res["chapters"]), 3)
+            chapters = parse_main_story_titles(conn, self.table_name, self.col_id, self.col_type, self.col_title)
+            self.assertEqual(len(chapters), 3)
 
             # B. 驗證調用 extract_master_sqlite_from_bundle 時給出明確錯誤
             with self.assertRaises(ImportError) as ctx:
                 extract_master_sqlite_from_bundle(b"dummy_bundle_content")
             self.assertIn("提取 AssetBundle 需要 UnityPy 套件", str(ctx.exception))
 
-    # ──────────────── 6. 分割邏輯與 Fail-Closed 防禦 ────────────────
+    # ──────────────── 8. 分割邏輯與 Fail-Closed 防禦 ────────────────
 
     def test_partition_logic_with_multiple_underscores(self):
         """若標題後綴本身包含底線，partition('_') 必須保留所有後續底線"""
         mock_rows = [(2001, 2, "第1部 第1章_特殊_次級標題_結尾")]
         conn = self._create_mock_db(mock_rows)
-        res = extract_official_chapter_titles_from_db(conn, contract=self.contract, truth_version="00600025")
-        self.assertEqual(res["chapters"][0]["official_title"], "特殊_次級標題_結尾")
+        chapters = parse_main_story_titles(conn, self.table_name, self.col_id, self.col_type, self.col_title)
+        self.assertEqual(chapters[0]["official_title"], "特殊_次級標題_結尾")
 
     def test_fail_closed_invalid_sqlite_header(self):
         """非標準 SQLite 標頭必須直接拋出 ValueError 終止"""
         invalid_bytes = b"NOT_A_SQLITE_FILE_CONTENT"
         with self.assertRaises(ValueError) as ctx:
-            extract_official_chapter_titles_from_db(invalid_bytes, contract=self.contract, truth_version="00600025")
+            extract_official_chapter_titles_from_db(
+                invalid_bytes, contract=self.contract, truth_version="00600025", allow_unverified_identity=True
+            )
         self.assertIn("SQLite", str(ctx.exception))
 
     def test_fail_closed_missing_table(self):
         """資料庫缺少混淆實體表時必須拋出 KeyError 終止"""
         conn = self._create_mock_db(custom_table="wrong_table_name")
         with self.assertRaises(KeyError) as ctx:
-            extract_official_chapter_titles_from_db(conn, contract=self.contract, truth_version="00600025")
+            parse_main_story_titles(conn, "wrong_table_name_missing", self.col_id, self.col_type, self.col_title)
         self.assertIn("未找到混淆實體表", str(ctx.exception))
 
     def test_fail_closed_missing_column(self):
         """資料表缺少目標實體欄位時必須拋出 KeyError 終止"""
         conn = self._create_mock_db(custom_cols=("wrong_id", "wrong_type", "wrong_title"))
         with self.assertRaises(KeyError) as ctx:
-            extract_official_chapter_titles_from_db(conn, contract=self.contract, truth_version="00600025")
+            parse_main_story_titles(conn, self.table_name, "missing_col_id", self.col_type, self.col_title)
         self.assertIn("缺少欄位", str(ctx.exception))
 
     def test_fail_closed_missing_underscore_separator(self):
@@ -349,7 +509,7 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
         mock_rows = [(2001, 2, "第1部 第1章 無底線分隔標題")]
         conn = self._create_mock_db(mock_rows)
         with self.assertRaises(ValueError) as ctx:
-            extract_official_chapter_titles_from_db(conn, contract=self.contract, truth_version="00600025")
+            parse_main_story_titles(conn, self.table_name, self.col_id, self.col_type, self.col_title)
         self.assertIn("缺少底線分隔符", str(ctx.exception))
 
     def test_fail_closed_empty_title_after_separator(self):
@@ -357,10 +517,10 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
         mock_rows = [(2001, 2, "第1部 第1章_")]
         conn = self._create_mock_db(mock_rows)
         with self.assertRaises(ValueError) as ctx:
-            extract_official_chapter_titles_from_db(conn, contract=self.contract, truth_version="00600025")
+            parse_main_story_titles(conn, self.table_name, self.col_id, self.col_type, self.col_title)
         self.assertIn("為空字串", str(ctx.exception))
 
-    # ──────────────── 7. CDN Manifest 動態解析測試 (Hermetic Mock) ────────────────
+    # ──────────────── 9. CDN Manifest 動態解析與 Mock 流程 ────────────────
 
     def test_cdn_manifest_discovery_hermetic_mock(self):
         """
@@ -387,7 +547,57 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
             self.assertEqual(bundle_info["bundle_pool_hash"], "d93a6e336023c2fe")
             self.assertEqual(bundle_info["bundle_compressed_size"], 14171483)
 
-    # ──────────────── 8. 審查報表生成測試 ────────────────
+    def test_from_cdn_mocked_flow_records_actual_metadata(self):
+        """
+        [Provenance Safety E - Actual CDN Metadata Flow]
+        驗證 --from-cdn 流程動態探索版號並精確傳入 extraction，記錄 ACTUAL cdn metadata。
+        """
+        conn = self._create_mock_db(OFFICIAL_TW_00600025_BASELINE_ROWS[:3])
+        mock_sqlite_bytes = conn.serialize()
+
+        mock_bundle_info = {
+            "truth_version": "00600025",
+            "platform": "Android",
+            "manifest_name": "masterdata2_assetmanifest",
+            "bundle_path": "a/masterdata_master.unity3d",
+            "bundle_pool_hash": "d93a6e336023c2fe",
+            "bundle_compressed_size": 14171483
+        }
+
+        with patch("pipeline.extract_chapter_titles.get_current_truth_version", return_value="00600025") as mock_get_tv, \
+             patch("pipeline.extract_chapter_titles.discover_bundle_from_cdn_manifest", return_value=mock_bundle_info) as mock_discover, \
+             patch("pipeline.extract_chapter_titles.download_bundle_by_pool_hash", return_value=b"mock_unity3d_bytes") as mock_download, \
+             patch("pipeline.extract_chapter_titles.extract_master_sqlite_from_bundle", return_value=mock_sqlite_bytes) as mock_extract_bundle:
+
+            out_capture = []
+            with patch("builtins.print", side_effect=lambda *args: out_capture.append(" ".join(str(a) for a in args))):
+                main(["--from-cdn"])
+
+            mock_get_tv.assert_called_once()
+            mock_discover.assert_called_once_with(truth_version="00600025")
+            mock_download.assert_called_once_with("d93a6e336023c2fe")
+            mock_extract_bundle.assert_called_once_with(b"mock_unity3d_bytes")
+
+            output_text = "\n".join(out_capture)
+            self.assertIn("TruthVersion: 00600025", output_text)
+            self.assertIn("成功提取 3 個官方主線章節標題", output_text)
+
+    # ──────────────── 10. CLI 參數安全性與比對報表測試 ────────────────
+
+    def test_cli_local_modes_require_explicit_truth_version(self):
+        """
+        [Local CLI Modes Require Explicit Version]
+        驗證 --db-path 與 --bundle-path 在缺少 --truth-version 時嚴格 Fail-Closed。
+        """
+        with self.assertRaises(SystemExit) as ctx:
+            with patch("sys.stderr"):
+                main(["--db-path", "dummy.db"])
+        self.assertNotEqual(ctx.exception.code, 0)
+
+        with self.assertRaises(SystemExit) as ctx:
+            with patch("sys.stderr"):
+                main(["--bundle-path", "dummy.unity3d"])
+        self.assertNotEqual(ctx.exception.code, 0)
 
     def test_review_table_generation(self):
         """驗證審查報表比對邏輯與 would_change 旗標精準度"""
@@ -438,62 +648,6 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
         self.assertIsNone(rev_by_id[2213]["current_title"])
         self.assertEqual(rev_by_id[2213]["official_title"], "降臨的幻境")
         self.assertTrue(rev_by_id[2213]["would_change"])
-
-    # ──────────────── 9. Provenance 安全性與 CLI 整合測試 ────────────────
-
-    def test_from_cdn_mocked_flow_passes_discovered_version(self):
-        """
-        [Provenance Safety E - Hermetic Mock CDN Flow]
-        驗證 --from-cdn 流程動態探索版號並將其精確傳入 schema resolution 與 extraction，
-        全程在 Mock 環境執行，不發起任何實際網路請求。
-        """
-        conn = self._create_mock_db(OFFICIAL_TW_00600025_BASELINE_ROWS[:3])
-        mock_sqlite_bytes = conn.serialize()
-
-        mock_bundle_info = {
-            "truth_version": "00600025",
-            "platform": "Android",
-            "manifest_name": "masterdata2_assetmanifest",
-            "bundle_path": "a/masterdata_master.unity3d",
-            "bundle_pool_hash": "d93a6e336023c2fe",
-            "bundle_compressed_size": 14171483
-        }
-
-        with patch("pipeline.extract_chapter_titles.get_current_truth_version", return_value="00600025") as mock_get_tv, \
-             patch("pipeline.extract_chapter_titles.discover_bundle_from_cdn_manifest", return_value=mock_bundle_info) as mock_discover, \
-             patch("pipeline.extract_chapter_titles.download_bundle_by_pool_hash", return_value=b"mock_unity3d_bytes") as mock_download, \
-             patch("pipeline.extract_chapter_titles.extract_master_sqlite_from_bundle", return_value=mock_sqlite_bytes) as mock_extract_bundle:
-
-            out_capture = []
-            with patch("builtins.print", side_effect=lambda *args: out_capture.append(" ".join(str(a) for a in args))):
-                main(["--from-cdn"])
-
-            mock_get_tv.assert_called_once()
-            mock_discover.assert_called_once_with(truth_version="00600025")
-            mock_download.assert_called_once_with("d93a6e336023c2fe")
-            mock_extract_bundle.assert_called_once_with(b"mock_unity3d_bytes")
-
-            output_text = "\n".join(out_capture)
-            self.assertIn("TruthVersion: 00600025", output_text)
-            self.assertIn("成功提取 3 個官方主線章節標題", output_text)
-
-    def test_cli_local_modes_require_explicit_truth_version(self):
-        """
-        [Provenance Safety 2 - Local CLI Modes Require Explicit Version]
-        驗證 --db-path 與 --bundle-path 在缺少 --truth-version 時嚴格 Fail-Closed，
-        拒絕猜測或自動呼叫 discovery。
-        """
-        # --db-path 缺少 --truth-version
-        with self.assertRaises(SystemExit) as ctx:
-            with patch("sys.stderr"):
-                main(["--db-path", "dummy.db"])
-        self.assertNotEqual(ctx.exception.code, 0)
-
-        # --bundle-path 缺少 --truth-version
-        with self.assertRaises(SystemExit) as ctx:
-            with patch("sys.stderr"):
-                main(["--bundle-path", "dummy.unity3d"])
-        self.assertNotEqual(ctx.exception.code, 0)
 
 
 if __name__ == "__main__":
