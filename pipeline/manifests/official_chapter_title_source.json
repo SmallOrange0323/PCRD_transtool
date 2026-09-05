@@ -27,8 +27,9 @@
       "story_group_id_column": "032c5a5d0ff3b125fcfb67d42eee2411413bf31a53695a51e9af73fc05fcdd59",
       "story_group_type_column": "a931d23fe36046431e12c56294b5adae095a8f6db8838ed4de4db2d90306a717",
       "title_column": "9d24f4eba5a8073ad4a21861ee3e6d587f873f1933d2470c28db4cc402a4b258",
-      "verified_sqlite_sha256": "c2225cda45878559bbe383dc8a1cc87f653d0f1622bc08727e55128b05600af6",
-      "verified_pure_sqlite_sha256": "12a3c55de43f2e5a884aafadcdb4fc11af785068eb5a14c5ba8db0dc6ed853f1"
+      "verified_bundle_sha256": "0f9e4dca95321a03dd6ce9ebcd81322915c77eae7cf42cc1d898e1f6739d582d",
+      "verified_textasset_payload_sha256": "c2225cda45878559bbe383dc8a1cc87f653d0f1622bc08727e55128b05600af6",
+      "verified_sqlite_sha256": "12a3c55de43f2e5a884aafadcdb4fc11af785068eb5a14c5ba8db0dc6ed853f1"
     }
   },
 
@@ -36,9 +37,12 @@
     "truth_version": "00600025",
     "bundle_pool_hash": "d93a6e336023c2fe",
     "bundle_size": 14171483,
+    "bundle_sha256": "0f9e4dca95321a03dd6ce9ebcd81322915c77eae7cf42cc1d898e1f6739d582d",
     "sqlite_header_offset": 16,
-    "extracted_sqlite_size": 45461520,
-    "extracted_sqlite_sha256": "c2225cda45878559bbe383dc8a1cc87f653d0f1622bc08727e55128b05600af6",
+    "textasset_payload_size": 45461520,
+    "textasset_payload_sha256": "c2225cda45878559bbe383dc8a1cc87f653d0f1622bc08727e55128b05600af6",
+    "pure_sqlite_size": 45461504,
+    "pure_sqlite_sha256": "12a3c55de43f2e5a884aafadcdb4fc11af785068eb5a14c5ba8db0dc6ed853f1",
     "physical_table": "v1_51ff2de3dc985ab301a8291904a69a8a49044a74070d82b09779c0b4b2244e90",
     "story_group_id_column": "032c5a5d0ff3b125fcfb67d42eee2411413bf31a53695a51e9af73fc05fcdd59",
     "story_group_type_column": "a931d23fe36046431e12c56294b5adae095a8f6db8838ed4de4db2d90306a717",

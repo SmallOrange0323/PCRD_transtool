@@ -149,8 +149,8 @@ def download_bundle_by_pool_hash(
 
 def extract_master_sqlite_from_bundle(bundle_source: Union[str, Path, bytes]) -> bytes:
     """
-    從 Unity3D AssetBundle (a/masterdata_master.unity3d) 提取 master TextAsset 二進位資料。
-    保留包含 offset 標頭之完整 TextAsset extracted payload (45,461,520 bytes)，內部包含 SQLite 3 標頭。
+    從 Unity3D AssetBundle (a/masterdata_master.unity3d) 提取 master TextAsset 二進位資料，
+    並精準定位 SQLite 標頭，回傳純 SQLite 3 二進位資料 (以 b"SQLite format 3\\x00" 開頭)。
     """
     try:
         import UnityPy
@@ -161,7 +161,7 @@ def extract_master_sqlite_from_bundle(bundle_source: Union[str, Path, bytes]) ->
     if isinstance(bundle_source, Path):
         bundle_source = str(bundle_source)
     env = UnityPy.load(bundle_source)
-    payload_bytes = None
+    pure_bytes = None
 
     for obj in env.objects:
         if obj.type.name == "TextAsset":
@@ -169,15 +169,16 @@ def extract_master_sqlite_from_bundle(bundle_source: Union[str, Path, bytes]) ->
                 raw_bytes = obj.get_raw_data()
                 idx = raw_bytes.find(SQLITE_HEADER)
                 if idx != -1:
-                    payload_bytes = raw_bytes
+                    pure_bytes = raw_bytes[idx:]
                     break
             except Exception:
                 continue
 
-    if payload_bytes is None:
+    if pure_bytes is None:
         raise ValueError("AssetBundle 中未找到包含 SQLite 3 標頭之 TextAsset")
 
-    return payload_bytes
+    assert pure_bytes.startswith(SQLITE_HEADER), "提取之二進位資料必須以 SQLite format 3 標頭開頭"
+    return pure_bytes
 
 
 def _calculate_part_and_chapter(story_group_id: int) -> Tuple[int, int]:
@@ -231,11 +232,14 @@ def verify_official_source_identity(
     contract: Optional[Dict[str, Any]] = None
 ) -> str:
     """
-    核對本機 SQLite 之 SHA-256 指紋是否與指定 TruthVersion 在契約中登錄的 verified_sqlite_sha256 完全吻合。
-    若版號未登錄、未包含指紋或指紋不符，一律 Fail-Closed 拋出例外。
+    核對本機純 SQLite 之 SHA-256 指紋是否與指定 TruthVersion 在契約中登錄的 verified_sqlite_sha256 完全吻合。
+    契約為唯一指紋權威；若版號未登錄、未包含指紋或指紋不符，一律 Fail-Closed 拋出例外。
     """
     if contract is None:
         contract = load_source_contract()
+
+    if not sqlite_bytes.startswith(SQLITE_HEADER):
+        raise ValueError(f"提供的二進位資料非標準 SQLite 3 格式 (標頭: {sqlite_bytes[:16]!r})")
 
     schema_map = contract.get("physical_schema_by_truth_version", {})
     if truth_version not in schema_map:
@@ -243,18 +247,11 @@ def verify_official_source_identity(
 
     version_entry = schema_map[truth_version]
     expected_sha = version_entry.get("verified_sqlite_sha256")
-    pure_sha = version_entry.get("verified_pure_sqlite_sha256")
     if not expected_sha:
         raise ValueError(f"TruthVersion {truth_version} has no verified source fingerprint registered")
 
-    allowed_shas = {str(expected_sha).lower()}
-    if pure_sha:
-        allowed_shas.add(str(pure_sha).lower())
-    # 向後相容初始 forensic 占位值
-    allowed_shas.add("472251bb3138b36873919e9929845da4c6ec8d19760aa01712a1f11a4ba8e678")
-
     actual_sha = hashlib.sha256(sqlite_bytes).hexdigest()
-    if actual_sha.lower() not in allowed_shas:
+    if actual_sha.lower() != str(expected_sha).lower():
         raise ValueError(
             f"Local masterdata fingerprint does not match verified TruthVersion {truth_version} "
             f"(actual: {actual_sha}, expected: {expected_sha})"
@@ -269,7 +266,7 @@ def parse_main_story_titles(
     col_group_id: str,
     col_story_type: str,
     col_title: str,
-    title_provenance: str = "official_tw_localized_asset"
+    title_provenance: str = "unverified_synthetic"
 ) -> List[Dict[str, Any]]:
     """
     從 SQLite 資料庫連線中查詢並解析主線章節標題。
@@ -380,11 +377,16 @@ def extract_official_chapter_titles_from_db(
         conn = db_source
         if hasattr(conn, "serialize"):
             try:
-                sqlite_bytes_for_hash = conn.serialize()
+                serialized = conn.serialize()
+                if serialized.startswith(SQLITE_HEADER):
+                    sqlite_bytes_for_hash = serialized
+                else:
+                    idx = serialized.find(SQLITE_HEADER)
+                    if idx != -1:
+                        sqlite_bytes_for_hash = serialized[idx:]
             except Exception:
                 sqlite_bytes_for_hash = None
     elif isinstance(db_source, bytes):
-        sqlite_bytes_for_hash = db_source
         if db_source.startswith(SQLITE_HEADER):
             db_payload = db_source
         else:
@@ -393,6 +395,7 @@ def extract_official_chapter_titles_from_db(
                 db_payload = db_source[idx:]
             else:
                 raise ValueError(f"提供的二進位資料非標準 SQLite 3 格式 (標頭: {db_source[:16]!r})")
+        sqlite_bytes_for_hash = db_payload
         conn = sqlite3.connect(":memory:")
         conn.deserialize(db_payload)
         close_conn = True
@@ -402,17 +405,22 @@ def extract_official_chapter_titles_from_db(
             raise FileNotFoundError(f"SQLite 資料庫檔案不存在: {db_path}")
         with open(db_path, "rb") as f:
             file_bytes = f.read()
-        sqlite_bytes_for_hash = file_bytes
         if file_bytes.startswith(SQLITE_HEADER):
+            db_payload = file_bytes
             conn = sqlite3.connect(str(db_path))
         else:
             idx = file_bytes.find(SQLITE_HEADER)
             if idx != -1:
+                db_payload = file_bytes[idx:]
                 conn = sqlite3.connect(":memory:")
-                conn.deserialize(file_bytes[idx:])
+                conn.deserialize(db_payload)
             else:
                 raise ValueError(f"檔案非標準 SQLite 3 格式: {db_path} (標頭: {file_bytes[:16]!r})")
+        sqlite_bytes_for_hash = db_payload
         close_conn = True
+
+    if sqlite_bytes_for_hash is not None:
+        assert sqlite_bytes_for_hash.startswith(SQLITE_HEADER), "sqlite_bytes_for_hash 必須為純 SQLite 3 格式"
 
     try:
         run_info = run_source_info or {}
@@ -443,7 +451,7 @@ def extract_official_chapter_titles_from_db(
             title_provenance=title_provenance
         )
 
-        # 計算實際產出的 SQLite SHA-256
+        # 計算實際產出的 Canonical Pure SQLite SHA-256
         sqlite_sha256 = (
             hashlib.sha256(sqlite_bytes_for_hash).hexdigest()
             if sqlite_bytes_for_hash is not None else None
@@ -468,6 +476,8 @@ def extract_official_chapter_titles_from_db(
                 "selection_filter": "story_group_type == 2 AND (2000 <= story_group_id < 3000)",
                 "extracted_chapter_count": len(chapters)
             }
+            if run_info.get("bundle_sha256"):
+                source_metadata["bundle_sha256"] = run_info["bundle_sha256"]
         elif input_mode in ("local_db", "local_bundle"):
             source_metadata = {
                 "input_mode": input_mode,
@@ -486,6 +496,8 @@ def extract_official_chapter_titles_from_db(
                 "selection_filter": "story_group_type == 2 AND (2000 <= story_group_id < 3000)",
                 "extracted_chapter_count": len(chapters)
             }
+            if run_info.get("bundle_sha256"):
+                source_metadata["bundle_sha256"] = run_info["bundle_sha256"]
         else:
             source_metadata = {
                 "input_mode": input_mode or "memory_or_bytes",
@@ -605,10 +617,14 @@ def main(argv: Optional[List[str]] = None):
             parser.error("--truth-version 是使用 --bundle-path 時的必要參數 (VERSION-PINNED masterdata schema resolution)")
         bundle_path = Path(args.bundle_path)
         print(f"[INFO] 解析本機 AssetBundle: {bundle_path} (TruthVersion: {target_tv})")
-        sqlite_bytes = extract_master_sqlite_from_bundle(bundle_path)
+        with open(bundle_path, "rb") as f:
+            bundle_bytes = f.read()
+        bundle_sha256 = hashlib.sha256(bundle_bytes).hexdigest()
+        sqlite_bytes = extract_master_sqlite_from_bundle(bundle_bytes)
         run_source_info = {
             "input_mode": "local_bundle",
-            "input_path": str(bundle_path)
+            "input_path": str(bundle_path),
+            "bundle_sha256": bundle_sha256
         }
         extraction_result = extract_official_chapter_titles_from_db(
             sqlite_bytes, contract=contract, truth_version=target_tv, run_source_info=run_source_info
@@ -626,6 +642,7 @@ def main(argv: Optional[List[str]] = None):
 
         print(f"[INFO] 從 CDN pool 下載 Bundle ({pool_hash})...")
         bundle_bytes = download_bundle_by_pool_hash(pool_hash)
+        bundle_sha256 = hashlib.sha256(bundle_bytes).hexdigest()
         print(f"[INFO] 下載完成 ({len(bundle_bytes):,} bytes)，正在提取 SQLite...")
         sqlite_bytes = extract_master_sqlite_from_bundle(bundle_bytes)
 
@@ -635,7 +652,8 @@ def main(argv: Optional[List[str]] = None):
             "platform": bundle_info.get("platform", "Android"),
             "manifest_name": bundle_info["manifest_name"],
             "bundle_path": bundle_info["bundle_path"],
-            "bundle_pool_hash": pool_hash
+            "bundle_pool_hash": pool_hash,
+            "bundle_sha256": bundle_sha256
         }
         extraction_result = extract_official_chapter_titles_from_db(
             sqlite_bytes, contract=contract, truth_version=target_tv, run_source_info=run_source_info

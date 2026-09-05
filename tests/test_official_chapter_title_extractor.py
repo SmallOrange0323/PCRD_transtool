@@ -144,13 +144,40 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
         self.assertIn("00600025", c.get("physical_schema_by_truth_version", {}))
         self.assertIn("baseline_00600025_facts", c)
 
-        # 斷言 00600025 包含 verified_sqlite_sha256 指紋
+        # 斷言 00600025 包含語意清晰之指紋登錄
         schema_00600025 = c["physical_schema_by_truth_version"]["00600025"]
+        self.assertIn("verified_bundle_sha256", schema_00600025)
+        self.assertIn("verified_textasset_payload_sha256", schema_00600025)
         self.assertIn("verified_sqlite_sha256", schema_00600025)
         self.assertEqual(
-            schema_00600025["verified_sqlite_sha256"],
+            schema_00600025["verified_bundle_sha256"],
+            "0f9e4dca95321a03dd6ce9ebcd81322915c77eae7cf42cc1d898e1f6739d582d"
+        )
+        self.assertEqual(
+            schema_00600025["verified_textasset_payload_sha256"],
             "c2225cda45878559bbe383dc8a1cc87f653d0f1622bc08727e55128b05600af6"
         )
+        self.assertEqual(
+            schema_00600025["verified_sqlite_sha256"],
+            "12a3c55de43f2e5a884aafadcdb4fc11af785068eb5a14c5ba8db0dc6ed853f1"
+        )
+
+    def test_legacy_placeholder_fingerprint_rejected(self):
+        """
+        [Provenance Safety - Reject Legacy Placeholder]
+        驗證契約中與 verify_official_source_identity 中已徹底移除 472251bb... 占位指紋，
+        任何使用該舊指紋的資料庫均嚴格 Fail-Closed。
+        """
+        legacy_placeholder = "472251bb3138b36873919e9929845da4c6ec8d19760aa01712a1f11a4ba8e678"
+        # 斷言契約中未登錄此舊占位符
+        for ver, schema in self.contract.get("physical_schema_by_truth_version", {}).items():
+            self.assertNotEqual(schema.get("verified_sqlite_sha256"), legacy_placeholder)
+
+        # 斷言驗證器比對時若僅有此舊指紋會拋出 ValueError
+        conn = self._create_mock_db(OFFICIAL_TW_00600025_BASELINE_ROWS[:2])
+        db_bytes = conn.serialize()
+        with self.assertRaises(ValueError):
+            verify_official_source_identity(db_bytes, "00600025", self.contract)
 
     def test_version_pinned_schema_resolution_success(self):
         """驗證已知合法版號成功解析對應混淆表映射"""
@@ -317,19 +344,97 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
         [Blocker 2.F] 純解析器可在合成測試資料上獨立運作，但標記為 unverified_synthetic，不僭稱 canonical 官方來源
         """
         conn = self._create_mock_db(OFFICIAL_TW_00600025_BASELINE_ROWS[:2])
-        # A. 使用 parse_main_story_titles 純解析函式
+        # A. 使用 parse_main_story_titles 純解析函式 (未傳入 title_provenance 參數時預設為 unverified_synthetic)
+        default_chapters = parse_main_story_titles(
+            conn, self.table_name, self.col_id, self.col_type, self.col_title
+        )
+        self.assertEqual(len(default_chapters), 2)
+        self.assertEqual(default_chapters[0]["title_provenance"], "unverified_synthetic")
+        self.assertNotEqual(default_chapters[0]["title_provenance"], "official_tw_localized_asset")
+
+        # B. 顯式傳入 title_provenance="test_synthetic"
         pure_chapters = parse_main_story_titles(
             conn, self.table_name, self.col_id, self.col_type, self.col_title, title_provenance="test_synthetic"
         )
-        self.assertEqual(len(pure_chapters), 2)
         self.assertEqual(pure_chapters[0]["title_provenance"], "test_synthetic")
 
-        # B. 使用 allow_unverified_identity=True 的 extract_official_chapter_titles_from_db
+        # C. 使用 allow_unverified_identity=True 的 extract_official_chapter_titles_from_db
         res = extract_official_chapter_titles_from_db(
             conn, contract=self.contract, truth_version="00600025", allow_unverified_identity=True
         )
         self.assertEqual(res["source_metadata"]["source_verification"], "unverified_synthetic")
         self.assertEqual(res["chapters"][0]["title_provenance"], "unverified_synthetic")
+
+    def test_extract_master_sqlite_from_bundle_returns_pure_sqlite(self):
+        """
+        [Extraction Normalization]
+        驗證 extract_master_sqlite_from_bundle 回傳之二進位資料開頭嚴格為 b'SQLite format 3\\x00'。
+        """
+        mock_sqlite_body = b"SQLite format 3\x00" + b"\x00" * 100
+        mock_raw_payload = b"\x00" * 16 + mock_sqlite_body  # 模擬前 16 bytes 為 Unity header
+
+        mock_obj = MagicMock()
+        mock_obj.type.name = "TextAsset"
+        mock_obj.get_raw_data.return_value = mock_raw_payload
+
+        mock_env = MagicMock()
+        mock_env.objects = [mock_obj]
+
+        with patch("UnityPy.load", return_value=mock_env):
+            extracted = extract_master_sqlite_from_bundle(b"dummy_bundle_bytes")
+            self.assertTrue(extracted.startswith(SQLITE_HEADER))
+            self.assertEqual(extracted, mock_sqlite_body)
+
+    def test_canonical_sqlite_hash_parity_across_all_modes(self):
+        """
+        [Fingerprint Parity Across Modes]
+        驗證相同資料庫內容在 local_db、local_bundle 與 cdn 模式下，
+        其 source_metadata["sqlite_sha256"] 產出值 100% 完全相同（皆為 canonical pure SQLite SHA）。
+        """
+        conn = self._create_mock_db(OFFICIAL_TW_00600025_BASELINE_ROWS[:3])
+        pure_db_bytes = conn.serialize()
+        self.assertTrue(pure_db_bytes.startswith(SQLITE_HEADER))
+        canonical_sha = hashlib.sha256(pure_db_bytes).hexdigest()
+
+        matching_contract = self._create_contract_with_matching_fingerprint(pure_db_bytes, "00600025")
+
+        # 1. local_db 模式
+        res_db = extract_official_chapter_titles_from_db(
+            pure_db_bytes, contract=matching_contract, truth_version="00600025",
+            run_source_info={"input_mode": "local_db", "input_path": "test.db"}
+        )
+        self.assertEqual(res_db["source_metadata"]["sqlite_sha256"], canonical_sha)
+
+        # 2. local_bundle 模式 (mock bundle extraction 直接回傳 pure_db_bytes)
+        res_bundle = extract_official_chapter_titles_from_db(
+            pure_db_bytes, contract=matching_contract, truth_version="00600025",
+            run_source_info={"input_mode": "local_bundle", "input_path": "test.unity3d", "bundle_sha256": "mock_bundle_sha"}
+        )
+        self.assertEqual(res_bundle["source_metadata"]["sqlite_sha256"], canonical_sha)
+        self.assertEqual(res_bundle["source_metadata"]["bundle_sha256"], "mock_bundle_sha")
+
+        # 3. cdn 模式
+        res_cdn = extract_official_chapter_titles_from_db(
+            pure_db_bytes, contract=matching_contract, truth_version="00600025",
+            run_source_info={
+                "input_mode": "cdn",
+                "source_verification": "cdn_verified",
+                "truth_version": "00600025",
+                "manifest_name": "masterdata2_assetmanifest",
+                "bundle_path": "a/masterdata_master.unity3d",
+                "bundle_pool_hash": "d93a6e336023c2fe"
+            }
+        )
+        self.assertEqual(res_cdn["source_metadata"]["sqlite_sha256"], canonical_sha)
+
+        # 斷言三者完全一致
+        self.assertEqual(res_db["source_metadata"]["sqlite_sha256"], res_bundle["source_metadata"]["sqlite_sha256"])
+        self.assertEqual(res_bundle["source_metadata"]["sqlite_sha256"], res_cdn["source_metadata"]["sqlite_sha256"])
+
+        # 斷言三者 chapters 標題均獲得 canonical 來源標籤
+        self.assertEqual(res_db["chapters"][0]["title_provenance"], "official_tw_localized_asset")
+        self.assertEqual(res_bundle["chapters"][0]["title_provenance"], "official_tw_localized_asset")
+        self.assertEqual(res_cdn["chapters"][0]["title_provenance"], "official_tw_localized_asset")
 
     # ──────────────── 4. Baseline 00600025 Fixture 驗證 ────────────────
 
