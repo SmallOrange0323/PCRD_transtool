@@ -18,6 +18,7 @@ import sqlite3
 import hashlib
 import unittest
 from unittest.mock import patch, MagicMock
+from types import ModuleType, SimpleNamespace
 import urllib.error
 from pathlib import Path
 
@@ -367,8 +368,9 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
 
     def test_extract_master_sqlite_from_bundle_returns_pure_sqlite(self):
         """
-        [Extraction Normalization]
+        [Extraction Normalization - Hermetic Module Injection]
         驗證 extract_master_sqlite_from_bundle 回傳之二進位資料開頭嚴格為 b'SQLite format 3\\x00'。
+        透過 sys.modules 注入 fake UnityPy 模組，不依賴本機或 CI 環境中是否實際安裝 UnityPy 套件。
         """
         mock_sqlite_body = b"SQLite format 3\x00" + b"\x00" * 100
         mock_raw_payload = b"\x00" * 16 + mock_sqlite_body  # 模擬前 16 bytes 為 Unity header
@@ -380,10 +382,15 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
         mock_env = MagicMock()
         mock_env.objects = [mock_obj]
 
-        with patch("UnityPy.load", return_value=mock_env):
+        fake_unitypy = ModuleType("UnityPy")
+        fake_unitypy.config = SimpleNamespace(FALLBACK_UNITY_VERSION=None)
+        fake_unitypy.load = MagicMock(return_value=mock_env)
+
+        with patch.dict(sys.modules, {"UnityPy": fake_unitypy}):
             extracted = extract_master_sqlite_from_bundle(b"dummy_bundle_bytes")
             self.assertTrue(extracted.startswith(SQLITE_HEADER))
             self.assertEqual(extracted, mock_sqlite_body)
+            fake_unitypy.load.assert_called_once_with(b"dummy_bundle_bytes")
 
     def test_canonical_sqlite_hash_parity_across_all_modes(self):
         """
