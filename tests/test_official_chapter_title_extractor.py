@@ -16,6 +16,7 @@ import sys
 import json
 import sqlite3
 import hashlib
+import tempfile
 import unittest
 from unittest.mock import patch, MagicMock
 from types import ModuleType, SimpleNamespace
@@ -740,26 +741,44 @@ class TestOfficialChapterTitleExtractor(unittest.TestCase):
             }
         ]
 
-        review = generate_review_table(extracted)
-        rev_by_id = {r["chapter_id"]: r for r in review}
+        # 使用封閉 fixture 驗證審查比對邏輯 (包含：無標題變更、字元差異、舊標題為 null)
+        mock_chapters_data = {
+            "3": {
+                "game_world": {
+                    "2213": {"title": None, "title_provenance": "legacy_unverified", "legacy_title": "降臨的幻境"},
+                    "2214": {"title": "阿爾莎特的誘惑", "title_provenance": "official_tw_game_ui", "legacy_title": "阿爾莎特的誘惑"},
+                    "2215": {"title": "響導幼君", "title_provenance": "official_tw_game_ui", "legacy_title": "嚮導幼君"}
+                }
+            }
+        }
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False, encoding="utf-8") as f:
+            json.dump(mock_chapters_data, f, ensure_ascii=False)
+            mock_path = f.name
 
-        # 2214 在現有 chapters.json 中也是 "阿爾莎特的誘惑"
-        self.assertIn(2214, rev_by_id)
-        self.assertEqual(rev_by_id[2214]["current_title"], "阿爾莎特的誘惑")
-        self.assertEqual(rev_by_id[2214]["official_title"], "阿爾莎特的誘惑")
-        self.assertFalse(rev_by_id[2214]["would_change"])
+        try:
+            review = generate_review_table(extracted, current_chapters_path=mock_path)
+            rev_by_id = {r["chapter_id"]: r for r in review}
 
-        # 2215 在現有 chapters.json 中是 "響導幼君"，官方母檔為 "嚮導幼君"
-        self.assertIn(2215, rev_by_id)
-        self.assertEqual(rev_by_id[2215]["current_title"], "響導幼君")
-        self.assertEqual(rev_by_id[2215]["official_title"], "嚮導幼君")
-        self.assertTrue(rev_by_id[2215]["would_change"], "2215 應檢測出字元差異 (響導 -> 嚮導)")
+            # 2214: 標題相同，would_change 應為 False
+            self.assertIn(2214, rev_by_id)
+            self.assertEqual(rev_by_id[2214]["current_title"], "阿爾莎特的誘惑")
+            self.assertEqual(rev_by_id[2214]["official_title"], "阿爾莎特的誘惑")
+            self.assertFalse(rev_by_id[2214]["would_change"])
 
-        # 2213 在現有 chapters.json 中是 null (unresolved)
-        self.assertIn(2213, rev_by_id)
-        self.assertIsNone(rev_by_id[2213]["current_title"])
-        self.assertEqual(rev_by_id[2213]["official_title"], "降臨的幻境")
-        self.assertTrue(rev_by_id[2213]["would_change"])
+            # 2215: 舊標題為 "響導幼君"，官方母檔為 "嚮導幼君"，would_change 應為 True
+            self.assertIn(2215, rev_by_id)
+            self.assertEqual(rev_by_id[2215]["current_title"], "響導幼君")
+            self.assertEqual(rev_by_id[2215]["official_title"], "嚮導幼君")
+            self.assertTrue(rev_by_id[2215]["would_change"], "2215 應檢測出字元差異 (響導 -> 嚮導)")
+
+            # 2213: 舊標題為 null (unresolved)，would_change 應為 True
+            self.assertIn(2213, rev_by_id)
+            self.assertIsNone(rev_by_id[2213]["current_title"])
+            self.assertEqual(rev_by_id[2213]["official_title"], "降臨的幻境")
+            self.assertTrue(rev_by_id[2213]["would_change"])
+        finally:
+            if os.path.exists(mock_path):
+                os.remove(mock_path)
 
 
 if __name__ == "__main__":
