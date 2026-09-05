@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PCRD Official TW Chapter Title Canonical Source Contract",
+  "description": "官方台版主線劇情章節標題母檔來源契約與結構規格",
+  "schema_version": "2.0.0",
+  "locale": "zh-TW",
+  "source_type": "official_tw_localized_asset",
+
+  "source": {
+    "manifest_name": "masterdata2_assetmanifest",
+    "bundle_path": "a/masterdata_master.unity3d",
+    "unity_object": "master",
+    "logical_table": "story_group_data"
+  },
+
+  "discovery": {
+    "truth_version": "latest",
+    "manifest_lookup": true,
+    "platform": "Android",
+    "manifest_url_template": "{cdn_base}/Resources/{truth_version}/Jpn/AssetBundles/{platform}/manifest/{manifest_name}",
+    "pool_url_template": "{cdn_base}/pool/AssetBundles/{pool_hash_prefix}/{pool_hash}"
+  },
+
+  "physical_schema_by_truth_version": {
+    "00600025": {
+      "physical_table": "v1_51ff2de3dc985ab301a8291904a69a8a49044a74070d82b09779c0b4b2244e90",
+      "story_group_id_column": "032c5a5d0ff3b125fcfb67d42eee2411413bf31a53695a51e9af73fc05fcdd59",
+      "story_group_type_column": "a931d23fe36046431e12c56294b5adae095a8f6db8838ed4de4db2d90306a717",
+      "title_column": "9d24f4eba5a8073ad4a21861ee3e6d587f873f1933d2470c28db4cc402a4b258"
+    }
+  },
+
+  "last_verified": {
+    "truth_version": "00600025",
+    "bundle_pool_hash": "d93a6e336023c2fe",
+    "bundle_size": 14171483,
+    "sqlite_header_offset": 16,
+    "extracted_sqlite_size": 45461520,
+    "extracted_sqlite_sha256": "472251bb3138b36873919e9929845da4c6ec8d19760aa01712a1f11a4ba8e678",
+    "physical_table": "v1_51ff2de3dc985ab301a8291904a69a8a49044a74070d82b09779c0b4b2244e90",
+    "story_group_id_column": "032c5a5d0ff3b125fcfb67d42eee2411413bf31a53695a51e9af73fc05fcdd59",
+    "story_group_type_column": "a931d23fe36046431e12c56294b5adae095a8f6db8838ed4de4db2d90306a717",
+    "title_column": "9d24f4eba5a8073ad4a21861ee3e6d587f873f1933d2470c28db4cc402a4b258"
+  },
+
+  "parsing_specification": {
+    "separator": "_",
+    "partition_rule": "prefix, sep, title = raw_title.partition('_')",
+    "raw_title_format": "{part_prefix}_{chapter_title}",
+    "selection_rule": "story_group_type == 2 AND (2000 <= story_group_id < 3000)",
+    "fail_closed_rules": [
+      "Must be valid SQLite 3 database header",
+      "TruthVersion must map to verified physical schema in physical_schema_by_truth_version; unknown version fails closed",
+      "Physical table and required columns must exist in database",
+      "Separator '_' must be present in raw_title (sep == '_')",
+      "Extracted chapter_title must be non-empty string",
+      "No fallback to legacy chapters.json, episode titles, or Japanese DB is permitted"
+    ]
+  },
+
+  "baseline_00600025_facts": {
+    "chapter_count": 48,
+    "part_distribution": {
+      "part_1": {
+        "count": 16,
+        "range": [2000, 2015]
+      },
+      "part_2": {
+        "count": 16,
+        "range": [2101, 2116]
+      },
+      "part_3": {
+        "count": 16,
+        "range": [2201, 2216]
+      }
+    },
+    "anchors": {
+      "2214": {
+        "raw_title": "第3部 第14章_阿爾莎特的誘惑",
+        "official_title": "阿爾莎特的誘惑"
+      },
+      "2215": {
+        "raw_title": "第3部 第15章_嚮導幼君",
+        "official_title": "嚮導幼君",
+        "first_char_codepoint": "0x56ae",
+        "note": "U+56AE (嚮) is official canonical TW masterdata character, supersedes screenshot U+97FF (響)"
+      },
+      "2216": {
+        "raw_title": "第3部 第16章_三方爭霸",
+        "official_title": "三方爭霸"
+      }
+    }
+  }
+}

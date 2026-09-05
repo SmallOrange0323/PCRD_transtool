@@ -60,6 +60,9 @@ jobs:
       - name: Run Chapter Titles Runtime Contract Tests
         run: node tests/test_chapter_titles_runtime.js
 
+      - name: Run Official TW Chapter Title Extractor Tests
+        run: python -m unittest tests.test_official_chapter_title_extractor -v
+
       - name: Run Story Asset Service Tests
         run: node tests/test_story_asset_service.js
 
