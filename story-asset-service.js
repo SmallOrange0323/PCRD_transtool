@@ -321,5 +321,49 @@ window.StoryAssetService = {
         const safeClass = this.escapeHtml(className);
         const safeStyle = this.escapeHtml(style);
         return `<img class="${safeClass}" style="${safeStyle}" src="${firstSrc}" data-candidates="${serialized}" data-step="0" onerror="StoryAssetService.handleImageError(this)" alt="thumbnail">`;
+    },
+
+    /**
+     * 取得活動頂層專屬縮圖 (256x128 官方專屬 Logo 底圖) 及其降級候選 URL 清單
+     * 候選順序：
+     * 1. 本地活動專屬頂層縮圖：icon/event_top/{eventTopId}.webp
+     * 2. 平滑降級至話數縮圖 / 劇照 / 背景 / 預設卡面
+     * @param {number|string} eventTopId 活動 ID (例如 5216 或 5001)
+     * @param {number|string} fallbackStoryId 降級首話 ID (可選)
+     * @param {number|string} stillId 劇照 CG ID (可選)
+     * @param {number|string} bgId 背景 ID (可選)
+     * @returns {string[]} URL 候選清單
+     */
+    getEventTopThumbnailUrls(eventTopId, fallbackStoryId = null, stillId = null, bgId = null) {
+        const urls = [];
+        const rawEid = eventTopId != null ? String(eventTopId).trim() : "";
+        if (rawEid && /^[1-9]\d*$/.test(rawEid)) {
+            urls.push(`icon/event_top/${rawEid}.webp`);
+        }
+        const fallbackUrls = this.getStoryThumbnailUrls(fallbackStoryId, stillId, bgId);
+        for (const u of fallbackUrls) {
+            if (!urls.includes(u)) urls.push(u);
+        }
+        return urls;
+    },
+
+    /**
+     * 取得封裝好的活動頂層縮圖 HTML <img> 標籤
+     * @param {number|string} eventTopId 活動頂層 ID
+     * @param {number|string} fallbackStoryId 降級首話 ID
+     * @param {number|string} stillId 劇照 CG ID
+     * @param {number|string} bgId 背景 ID
+     * @param {string} className CSS class
+     * @param {string} style 行內樣式
+     * @returns {string}
+     */
+    getEventTopThumbnailHtml(eventTopId, fallbackStoryId = null, stillId = null, bgId = null, className = "", style = "") {
+        const candidates = this.getEventTopThumbnailUrls(eventTopId, fallbackStoryId, stillId, bgId);
+        const firstSrc = candidates[0] || 'https://redive.estertion.win/card/full/100431.webp';
+        const remainingCandidates = candidates.slice(1);
+        const serialized = encodeURIComponent(JSON.stringify(remainingCandidates));
+        const safeClass = this.escapeHtml(className);
+        const safeStyle = this.escapeHtml(style);
+        return `<img class="${safeClass}" style="${safeStyle}" src="${firstSrc}" data-candidates="${serialized}" data-step="0" onerror="StoryAssetService.handleImageError(this)" alt="thumbnail">`;
     }
 };

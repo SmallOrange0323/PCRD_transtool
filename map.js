@@ -359,7 +359,7 @@ const QuestMapModule = {
                 if (isTW) {
                     // 1. 台版主線劇情
                     const sql = `
-                        SELECT story_id, title, sub_title, story_group_id
+                        SELECT story_id, title, sub_title, story_group_id, story_end
                         FROM story_detail
                         WHERE story_id >= 2000000 AND story_id < 3000000
                         ORDER BY story_id ASC
@@ -375,6 +375,7 @@ const QuestMapModule = {
                             part: ChapterDataService.getPartFromGroupId(groupId),
                             isEvent: false,
                             type: 'main',
+                            storyEnd: row.story_end || 0,
                         };
                     });
 
@@ -476,7 +477,7 @@ const QuestMapModule = {
                 } else {
                     // 原日版模式
                     const sql = `
-                        SELECT story_id, title, sub_title, story_group_id
+                        SELECT story_id, title, sub_title, story_group_id, story_end
                         FROM story_detail
                         WHERE story_id >= 2000000 AND story_id < 5000000
                         ORDER BY story_id ASC
@@ -492,6 +493,7 @@ const QuestMapModule = {
                             part: ChapterDataService.getPartFromGroupId(groupId),
                             isEvent: false,
                             type: 'main',
+                            storyEnd: row.story_end || 0,
                         };
                     });
                     console.log(`[QuestMapModule] 日版模式載入：${this.stories.length} 筆主線`);
@@ -1008,8 +1010,9 @@ const QuestMapModule = {
                     const info = firstStory ? ChapterDataService.getChapterInfo(this.currentPart, groupId) : null;
                     chTitle = info?.title ? ` - ${info.title}` : "";
 
-                    // 取得章節縮圖 (優先使用章節內首個故事的官方專屬縮圖，無則逐步降級至 still_id / bg_id / 預設卡面)
-                    let foundStoryId = (childStories && childStories.length > 0) ? childStories[0].id : null;
+                    // 取得章節縮圖 (優先使用官方資料庫 storyEnd === 1 指定之高潮/代表話數縮圖，若無則回退首話)
+                    const endStory = childStories ? childStories.find(s => s.storyEnd === 1) : null;
+                    let foundStoryId = endStory ? endStory.id : ((childStories && childStories.length > 0) ? childStories[0].id : null);
                     let foundStillId = null;
                     let foundBgId = null;
 
@@ -1020,7 +1023,8 @@ const QuestMapModule = {
                     }
 
                     if (!foundStillId && !foundBgId && this.storyThumbnails && childStories) {
-                        for (const s of childStories) {
+                        const targetStories = endStory ? [endStory, ...childStories.filter(s => s.id !== endStory.id)] : childStories;
+                        for (const s of targetStories) {
                             const thumb = this.storyThumbnails[s.id];
                             if (thumb) {
                                 if (thumb.still_id) {
@@ -1067,13 +1071,24 @@ const QuestMapModule = {
                     let foundStoryId = (childStories && childStories.length > 0) ? childStories[0].id : null;
                     let foundStillId = null;
                     let foundBgId = null;
-                    if (childStories) {
+                    let eventTopId = null;
+
+                    if (childStories && childStories.length > 0) {
+                        const firstStory = childStories[0];
+                        if (firstStory.id && String(firstStory.id).length >= 7) {
+                            eventTopId = String(firstStory.id).slice(0, 4);
+                        } else if (firstStory.groupId) {
+                            eventTopId = String(firstStory.groupId);
+                        }
+
                         for (const s of childStories) {
                             if (s.still_id) { foundStillId = s.still_id; break; }
                             if (!foundBgId && s.bg_id) foundBgId = s.bg_id;
                         }
                     }
-                    const chapterCardThumbHtml = StoryAssetService.getStoryThumbnailHtml(
+
+                    const chapterCardThumbHtml = StoryAssetService.getEventTopThumbnailHtml(
+                        eventTopId,
                         foundStoryId,
                         foundStillId,
                         foundBgId,
