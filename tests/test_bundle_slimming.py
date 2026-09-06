@@ -28,6 +28,7 @@ import unittest
 import tempfile
 import shutil
 import json
+import hashlib
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -472,6 +473,54 @@ class TestBundleSlimmingAndPrune(unittest.TestCase):
         copied = sync_directory_assets(dash_event_top, dist_event_top, [".webp"], dry_run=False)
         self.assertEqual(copied, 1, "應同步 1 個新縮圖檔案")
         self.assertTrue((dist_event_top / "5002.webp").exists(), "新縮圖應被複製至 dist")
+
+    # 24. story-asset-service cache-busting and determinism
+    def test_24_story_asset_service_cache_busting(self):
+        """確保 story-asset-service.js 具備 SHA-256 前 8 碼 content-hash cache-busting 且具備決定性"""
+        (self.mock_dash / "story_map.html").write_text(
+            '<script src="db.js"></script>\n'
+            '<script src="chapter-data.js"></script>\n'
+            '<script src="story-asset-service.js?v=5.2.1"></script>',
+            encoding="utf-8"
+        )
+        (self.mock_dash / "db.js").write_text('console.log("db");', encoding="utf-8")
+        (self.mock_dash / "chapter-data.js").write_text('console.log("chapter");', encoding="utf-8")
+
+        initial_story_asset_code = 'console.log("story asset v1");'
+        (self.mock_dash / "story-asset-service.js").write_text(initial_story_asset_code, encoding="utf-8")
+        expected_hash1 = hashlib.sha256(initial_story_asset_code.encode("utf-8")).hexdigest()[:8]
+
+        # 1. 第一次渲染
+        rendered1 = render_index_html(self.mock_dash)
+
+        # 檢驗 A: rendered index 中的 story-asset-service.js?v= 等於該檔案實際 SHA-256 前 8 碼
+        self.assertIn(f'<script src="story-asset-service.js?v={expected_hash1}"></script>', rendered1)
+
+        # 檢驗 B: 不再保留固定 story-asset-service.js?v=5.2.1
+        self.assertNotIn('story-asset-service.js?v=5.2.1', rendered1)
+
+        # 檢驗 C: repeated render 在 source 不變時 byte-for-byte deterministic
+        rendered1_repeat = render_index_html(self.mock_dash)
+        self.assertEqual(rendered1, rendered1_repeat, "相同 source 必須產生完全相同的 byte-for-byte index.html")
+
+        # 檢驗 D: 修改 story-asset-service.js 內容後，其 render 出來的 cache key 必須跟著改變
+        mutated_story_asset_code = 'console.log("story asset v2 with new api");'
+        (self.mock_dash / "story-asset-service.js").write_text(mutated_story_asset_code, encoding="utf-8")
+        expected_hash2 = hashlib.sha256(mutated_story_asset_code.encode("utf-8")).hexdigest()[:8]
+        self.assertNotEqual(expected_hash1, expected_hash2)
+
+        rendered2 = render_index_html(self.mock_dash)
+        self.assertIn(f'<script src="story-asset-service.js?v={expected_hash2}"></script>', rendered2)
+        self.assertNotIn(f'<script src="story-asset-service.js?v={expected_hash1}"></script>', rendered2)
+
+        # 檢驗 E: 真實 repo 上的 dashboard/story_map.html 渲染驗證
+        from pipeline.bundle import DASHBOARD_DIR
+        real_rendered = render_index_html(DASHBOARD_DIR)
+        real_sa_path = DASHBOARD_DIR / "story-asset-service.js"
+        real_sa_hash = hashlib.sha256(real_sa_path.read_bytes()).hexdigest()[:8]
+        self.assertIn(f'<script src="story-asset-service.js?v={real_sa_hash}"></script>', real_rendered)
+        self.assertNotIn('story-asset-service.js?v=5.2.1', real_rendered)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

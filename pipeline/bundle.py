@@ -231,6 +231,7 @@ def render_index_html(dashboard_dir: Path = DASHBOARD_DIR) -> str:
     ch_js_path = dashboard_dir / "chapter-data.js"
     char_js_path = dashboard_dir / "characters.js"
     avatar_js_path = dashboard_dir / "avatar-service.js"
+    story_asset_js_path = dashboard_dir / "story-asset-service.js"
     speaker_js_path = dashboard_dir / "speaker-view.js"
     modal_js_path = dashboard_dir / "chara-modal.js"
     norm_js_path = dashboard_dir / "dialogue-normalizer.js"
@@ -258,6 +259,7 @@ def render_index_html(dashboard_dir: Path = DASHBOARD_DIR) -> str:
 
     char_hash = calc_sha256(char_js_path)[:8]
     avatar_hash = calc_sha256(avatar_js_path)[:8]
+    story_asset_hash = calc_sha256(story_asset_js_path)[:8]
     speaker_hash = calc_sha256(speaker_js_path)[:8]
     modal_hash = calc_sha256(modal_js_path)[:8]
     norm_hash = calc_sha256(norm_js_path)[:8]
@@ -267,6 +269,7 @@ def render_index_html(dashboard_dir: Path = DASHBOARD_DIR) -> str:
 
     html_content = re.sub(r'<script src="characters\.js(?:\?v=[^"]*)?"></script>', f'<script src="characters.js?v={char_hash}"></script>', html_content)
     html_content = re.sub(r'<script src="avatar-service\.js(?:\?v=[^"]*)?"></script>', f'<script src="avatar-service.js?v={avatar_hash}"></script>', html_content)
+    html_content = re.sub(r'<script src="story-asset-service\.js(?:\?v=[^"]*)?"></script>', f'<script src="story-asset-service.js?v={story_asset_hash}"></script>', html_content)
     html_content = re.sub(r'<script src="speaker-view\.js(?:\?v=[^"]*)?"></script>', f'<script src="speaker-view.js?v={speaker_hash}"></script>', html_content)
     html_content = re.sub(r'<script src="chara-modal\.js(?:\?v=[^"]*)?"></script>', f'<script src="chara-modal.js?v={modal_hash}"></script>', html_content)
     html_content = re.sub(r'<script src="dialogue-normalizer\.js(?:\?v=[^"]*)?"></script>', f'<script src="dialogue-normalizer.js?v={norm_hash}"></script>', html_content)
