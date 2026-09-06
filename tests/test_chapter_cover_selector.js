@@ -137,20 +137,45 @@ test("Test 5: Defensive handling for empty or null childStories", () => {
     assert.strictEqual(resEmpty.isFromStoryEnd, false);
 });
 
-// Test 6: 主線真實關鍵章節 2214, 2215, 2216 實體資料庫驗證
-test("Test 6: Real-world database verification for key chapters 2214, 2215, 2216", () => {
-    const storyIconDir = path.join(__dirname, '../dashboard/icon/story');
-    const keyStories = [
-        { group: 2214, expectedEndStory: 2214099 },
-        { group: 2215, expectedEndStory: 2215004 },
-        { group: 2216, expectedEndStory: 2216004 }
+// Test 6: 主線關鍵章節 2214, 2215, 2216 Hermetic Fixture 映射驗證 (Clean-Clone Safe)
+test("Test 6: Hermetic fixture verification for key chapters 2214, 2215, 2216", () => {
+    const fixtures = [
+        {
+            groupId: 2214,
+            episodes: [
+                { id: 2214001, storyEnd: 0, title: "第1話" },
+                { id: 2214002, storyEnd: 0, title: "第2話" },
+                { id: 2214099, storyEnd: 1, title: "終章" }
+            ],
+            expectedStoryId: 2214099
+        },
+        {
+            groupId: 2215,
+            episodes: [
+                { id: 2215001, storyEnd: 0, title: "第1話" },
+                { id: 2215002, storyEnd: 0, title: "第2話" },
+                { id: 2215003, storyEnd: 0, title: "第3話" },
+                { id: 2215004, storyEnd: 1, title: "第4話" }
+            ],
+            expectedStoryId: 2215004
+        },
+        {
+            groupId: 2216,
+            episodes: [
+                { id: 2216001, storyEnd: 0, title: "第1話" },
+                { id: 2216002, storyEnd: 0, title: "第2話" },
+                { id: 2216003, storyEnd: 0, title: "第3話" },
+                { id: 2216004, storyEnd: 1, title: "第4話" }
+            ],
+            expectedStoryId: 2216004
+        }
     ];
 
-    for (const item of keyStories) {
-        const thumbPath = path.join(storyIconDir, `${item.expectedEndStory}.webp`);
-        assert(fs.existsSync(thumbPath), `關鍵代表話數縮圖 ${item.expectedEndStory}.webp 必須存在於 dashboard/icon/story/`);
-        const stat = fs.statSync(thumbPath);
-        assert(stat.size > 0, `關鍵代表話數縮圖 ${item.expectedEndStory}.webp 檔案大小必須大於 0 (實際: ${stat.size} bytes)`);
+    for (const f of fixtures) {
+        const res = selectChapterCover(f.groupId, f.episodes, {});
+        assert.strictEqual(res.storyId, f.expectedStoryId, `Chapter ${f.groupId} must select ${f.expectedStoryId}`);
+        assert.strictEqual(res.isFromStoryEnd, true);
+        assert.notStrictEqual(res.storyId, f.episodes[0].id, `Chapter ${f.groupId} must NOT select first episode`);
     }
 });
 
