@@ -1,10 +1,21 @@
 {
-  "timestamp": "2026-09-06 12:52:03",
+  "timestamp": "2026-09-06 15:09:23",
   "mode": "online_update",
   "truth_version": "00600025",
   "total_targets": 130,
   "downloaded": 0,
   "cached": 130,
   "failed": [],
-  "output_dir": "dashboard/icon/event_top"
+  "output_dir": "dashboard/icon/event_top",
+  "verify_result": {
+    "status": "PASS",
+    "total_expected": 130,
+    "matched_count": 130,
+    "missing_count": 0,
+    "extra_count": 0,
+    "missing_ids": [],
+    "extra_ids": [],
+    "asset_relative_dir": "dashboard/icon/event_top"
+  },
+  "success": true
 }

@@ -86,7 +86,7 @@ def write_contract_manifest(
     targets: Dict[str, Dict[str, Any]],
     contract_path: Path = MANIFEST_CONTRACT_PATH
 ) -> Path:
-    """寫入/更新決定性 official_event_top_manifest.json (純相對路徑)"""
+    """原子性寫入/更新決定性 official_event_top_manifest.json (純相對路徑)"""
     contract_data = {
         "title": "PCRD Official TW Event Story Top Thumbnail Source Manifest",
         "description": "官方台版活動頂層專屬縮圖來源與資源對照清單",
@@ -100,8 +100,10 @@ def write_contract_manifest(
         "targets": targets
     }
     contract_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(contract_path, "w", encoding="utf-8") as f:
+    temp_contract = contract_path.with_suffix(".tmp")
+    with open(temp_contract, "w", encoding="utf-8") as f:
         json.dump(contract_data, f, ensure_ascii=False, indent=2)
+    temp_contract.replace(contract_path)
     return contract_path
 
 
@@ -231,10 +233,11 @@ def verify_local_assets(
 
 def is_target_identity_equal(old_info: Optional[Dict[str, Any]], new_info: Dict[str, Any]) -> bool:
     """
-    比對前後版本之 AssetBundle 標識是否完全一致。
-    比對欄位：pool_hash (必備), bundle_md5, bundle_size
+    嚴格比對前後版本之 AssetBundle 標識是否完全一致。
+    要求 pool_hash, bundle_md5, bundle_size 三者均存在且完全相等。
+    若任一必要標識欄位缺失，保守判定為不相等 (強制重新下載)。
     """
-    if not old_info or not isinstance(old_info, dict):
+    if not old_info or not isinstance(old_info, dict) or not new_info or not isinstance(new_info, dict):
         return False
 
     old_hash = old_info.get("pool_hash")
@@ -244,12 +247,12 @@ def is_target_identity_equal(old_info: Optional[Dict[str, Any]], new_info: Dict[
 
     old_md5 = old_info.get("bundle_md5")
     new_md5 = new_info.get("bundle_md5")
-    if old_md5 and new_md5 and str(old_md5).lower() != str(new_md5).lower():
+    if not old_md5 or not new_md5 or str(old_md5).strip().lower() != str(new_md5).strip().lower():
         return False
 
     old_size = old_info.get("bundle_size")
     new_size = new_info.get("bundle_size")
-    if old_size is not None and new_size is not None and old_size != new_size:
+    if old_size is None or new_size is None or old_size != new_size:
         return False
 
     return True
@@ -267,7 +270,13 @@ def run_pipeline(
     """
     執行活動頂層專屬縮圖下載/重建管線。
     支援模式：
-    - ONLINE UPDATE MODE (from_contract=False): 線上探測 TruthVersion (Fail-Closed) ➡️ 比對舊合約 Identity ➡️ 下載 manifest ➡️ 更新 contract ➡️ 下載/重抓變更資產
+    - ONLINE UPDATE MODE (from_contract=False):
+        1. 載入現有 contract 作為 old_targets
+        2. 線上探測 TruthVersion (Fail-Closed)
+        3. 下載 CDN manifest 並解析 targets (NEW TARGETS)
+        4. 判定並下載/提取資產
+        5. 驗證本地素材集合完全吻合
+        6. 事務性晉升 (Transactional Promotion): 僅在全部下載成功且驗證通過後，才原子性覆寫 contract_path！
     - PINNED CONTRACT MODE (from_contract=True): 讀取已追蹤之 contract ➡️ 離線/固定版本補齊缺失資產
     """
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -285,7 +294,7 @@ def run_pipeline(
             source_truth_version = get_current_truth_version()
         print(f"[FetchEventTop] 執行模式: ONLINE UPDATE (線上 TruthVersion: {source_truth_version})")
 
-        # 在覆寫前載入舊契約以進行 Identity-aware 快取比對
+        # A. 載入現有 tracked contract 作為 OLD CONTRACT (若不存在則為空)
         old_targets = {}
         if contract_path.exists():
             try:
@@ -295,13 +304,14 @@ def run_pipeline(
             except Exception:
                 old_targets = {}
 
+        # B & C. 下載 CDN manifest 並解析 NEW TARGETS
         manifest_text = download_cdn_manifest(source_truth_version)
         targets = parse_event_top_targets_from_manifest(manifest_text)
-        write_contract_manifest(source_truth_version, targets, contract_path)
+        # 注意：此處絕不先行覆寫 contract_path！必須待下載與驗證成功後才事務性晉升！
 
     print(f"[FetchEventTop] 目標活動頂層專屬縮圖數: {len(targets)} 筆")
 
-    # 決定性判定每個 target 的下載需求 (Identity-Aware)
+    # D & E. 決定性判定每個 target 的下載需求 (Identity-Aware)
     tasks = []
     for eid, info in targets.items():
         out_file = output_dir / f"{eid}.webp"
@@ -314,7 +324,7 @@ def run_pipeline(
         elif mode == "pinned_contract":
             need_download = False
         else:
-            # online_update 模式：比對舊版本契約標識
+            # online_update 模式：嚴格比對舊版本契約標識 (pool_hash, bundle_md5, bundle_size)
             old_info = old_targets.get(eid)
             if old_info and is_target_identity_equal(old_info, info):
                 need_download = False
@@ -357,7 +367,22 @@ def run_pipeline(
     print(f"  - 處理失敗: {len(failed_list)} 張")
     print("=" * 60)
 
-    # 執行結果報告：truth_version 嚴格來自實際執行的 source_truth_version
+    # F. 驗證本地狀態 (Exact Local Verification)
+    verify_result = verify_local_assets(targets, asset_dir=output_dir)
+
+    # G. 判定整體成功與否 (Fail-Closed)
+    overall_success = (len(failed_list) == 0 and verify_result["status"] == "PASS")
+
+    # H. 事務性合約晉升 (Transactional Contract Promotion)
+    # 只有在 ONLINE UPDATE 模式且全部下載成功與驗證 PASS 時，才原子性寫入新合約
+    if mode == "online_update":
+        if overall_success:
+            write_contract_manifest(source_truth_version, targets, contract_path)
+            print(f"[FetchEventTop] 契約已事務性晉升至版本: {source_truth_version}")
+        else:
+            print("[FetchEventTop] 更新存在失敗或本地集合未完全吻合，拒絕晉升合約！保留原合約狀態。", file=sys.stderr)
+
+    # I. 寫入包含最終狀態的完整執行報告 (Final Execution Report)
     report_data = {
         "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
         "mode": mode,
@@ -366,23 +391,15 @@ def run_pipeline(
         "downloaded": success_count,
         "cached": cached_count,
         "failed": failed_list,
-        "output_dir": "dashboard/icon/event_top"
+        "output_dir": "dashboard/icon/event_top",
+        "verify_result": verify_result,
+        "success": overall_success
     }
 
     report_path.parent.mkdir(parents=True, exist_ok=True)
     with open(report_path, "w", encoding="utf-8") as f:
         json.dump(report_data, f, ensure_ascii=False, indent=2)
-    print(f"[FetchEventTop] 執行報告已儲存至: {report_path}")
-
-    # 驗證本地狀態 (Exact Local Verification)
-    verify_result = verify_local_assets(targets, asset_dir=output_dir)
-    report_data["verify_result"] = verify_result
-
-    # 若有下載失敗，或本地不完全符合 expected (missing > 0 或 extra > 0)，Fail-Closed
-    if len(failed_list) > 0 or verify_result["status"] != "PASS":
-        report_data["success"] = False
-    else:
-        report_data["success"] = True
+    print(f"[FetchEventTop] 最終執行報告已儲存至: {report_path}")
 
     return report_data
 

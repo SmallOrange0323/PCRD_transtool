@@ -27,6 +27,7 @@ from tools.fetch_event_top_thumbnails import (
     load_pinned_contract,
     download_and_extract_event_top,
     verify_local_assets,
+    is_target_identity_equal,
     run_pipeline
 )
 
@@ -51,7 +52,10 @@ class TestEventTopThumbnailFetcher(unittest.TestCase):
     def test_01_online_current_mode_uses_discovered_truth_version(self, mock_extract, mock_dl_manifest, mock_get_tv):
         mock_get_tv.return_value = "00600099"
         mock_dl_manifest.return_value = "a/icon_thumb_event_story_top_5001.unity3d,md5_5001,hash_5001,sub,12000,\n"
-        mock_extract.return_value = ("5001", True, None)
+        def extract_side_effect(eid, bname, phash, force):
+            (self.mock_out / f"{eid}.webp").write_bytes(b"webp_data")
+            return (eid, True, None)
+        mock_extract.side_effect = extract_side_effect
 
         res = run_pipeline(
             from_contract=False,
@@ -375,6 +379,163 @@ class TestEventTopThumbnailFetcher(unittest.TestCase):
         self.assertEqual(res["downloaded"], 1, "素材 identity 變更時必須被計為 downloaded")
         self.assertTrue(mock_extract.call_args[0][3], "必須以 force=True 重新下載與提取")
 
+    # 16. Failed refresh does NOT promote new contract
+    @patch("tools.fetch_event_top_thumbnails.get_current_truth_version")
+    @patch("tools.fetch_event_top_thumbnails.download_cdn_manifest")
+    @patch("tools.fetch_event_top_thumbnails.download_and_extract_event_top")
+    def test_16_failed_refresh_does_not_promote_new_contract(self, mock_extract, mock_dl_manifest, mock_get_tv):
+        old_targets = {
+            "5001": {"bundle_name": "a/icon_thumb_event_story_top_5001.unity3d", "pool_hash": "OLD_HASH", "bundle_md5": "OLD_MD5", "bundle_size": 1000}
+        }
+        write_contract_manifest("00600025", old_targets, contract_path=self.mock_contract)
+        (self.mock_out / "5001.webp").write_bytes(b"old_v25_webp")
+
+        mock_get_tv.return_value = "00600026"
+        mock_dl_manifest.return_value = "a/icon_thumb_event_story_top_5001.unity3d,NEW_MD5,NEW_HASH,sub,2000,\n"
+        mock_extract.return_value = ("5001", False, "Download error 500")
+
+        res = run_pipeline(
+            from_contract=False,
+            contract_path=self.mock_contract,
+            output_dir=self.mock_out,
+            report_path=self.mock_report
+        )
+
+        self.assertFalse(res["success"], "下載失敗時 overall success 必須為 False")
+        self.assertEqual(len(res["failed"]), 1)
+
+        # 關鍵驗證：契約文件未被修改，仍然維持舊版 00600025 與 OLD_HASH
+        with open(self.mock_contract, "r", encoding="utf-8") as f:
+            saved_contract = json.load(f)
+        self.assertEqual(saved_contract["truth_version"], "00600025", "下載失敗時不得晉升合約 TruthVersion")
+        self.assertEqual(saved_contract["targets"]["5001"]["pool_hash"], "OLD_HASH", "下載失敗時不得更新 targets 標識")
+
+    # 17. Retry after failed refresh still forces changed asset download
+    @patch("tools.fetch_event_top_thumbnails.get_current_truth_version")
+    @patch("tools.fetch_event_top_thumbnails.download_cdn_manifest")
+    @patch("tools.fetch_event_top_thumbnails.download_and_extract_event_top")
+    def test_17_retry_after_failed_refresh_still_forces_changed_asset_download(self, mock_extract, mock_dl_manifest, mock_get_tv):
+        # 初始狀態：合約為 v25，本地有舊的 5001.webp
+        write_contract_manifest("00600025", {
+            "5001": {"bundle_name": "a/icon_thumb_event_story_top_5001.unity3d", "pool_hash": "OLD_HASH", "bundle_md5": "OLD_MD5", "bundle_size": 1000}
+        }, contract_path=self.mock_contract)
+        (self.mock_out / "5001.webp").write_bytes(b"old_v25_webp")
+
+        mock_get_tv.return_value = "00600026"
+        mock_dl_manifest.return_value = "a/icon_thumb_event_story_top_5001.unity3d,NEW_MD5,NEW_HASH,sub,2000,\n"
+
+        # 第 1 次執行：失敗
+        mock_extract.return_value = ("5001", False, "Network Timeout")
+        res1 = run_pipeline(
+            from_contract=False,
+            contract_path=self.mock_contract,
+            output_dir=self.mock_out,
+            report_path=self.mock_report
+        )
+        self.assertFalse(res1["success"])
+
+        # 第 2 次執行 (重試)：因為合約保持在 v25，重試時依然比對到 OLD_HASH != NEW_HASH，必須再次強制下載！
+        def extract_side_effect(eid, bname, phash, force):
+            (self.mock_out / f"{eid}.webp").write_bytes(b"new_v26_webp")
+            return (eid, True, None)
+        mock_extract.side_effect = extract_side_effect
+
+        res2 = run_pipeline(
+            from_contract=False,
+            contract_path=self.mock_contract,
+            output_dir=self.mock_out,
+            report_path=self.mock_report
+        )
+
+        self.assertTrue(mock_extract.call_args[0][3], "重試時必須依然維持 force=True 強制重新下載")
+        self.assertEqual(res2["cached"], 0, "舊 WebP 絕不可在重試時被誤判為 cached")
+        self.assertEqual(res2["downloaded"], 1)
+        self.assertTrue(res2["success"])
+
+        # 成功後合約終於晉升
+        with open(self.mock_contract, "r", encoding="utf-8") as f:
+            saved_contract = json.load(f)
+        self.assertEqual(saved_contract["truth_version"], "00600026")
+        self.assertEqual(saved_contract["targets"]["5001"]["pool_hash"], "NEW_HASH")
+
+    # 18. Successful refresh promotes new contract
+    @patch("tools.fetch_event_top_thumbnails.get_current_truth_version")
+    @patch("tools.fetch_event_top_thumbnails.download_cdn_manifest")
+    @patch("tools.fetch_event_top_thumbnails.download_and_extract_event_top")
+    def test_18_successful_refresh_promotes_new_contract(self, mock_extract, mock_dl_manifest, mock_get_tv):
+        write_contract_manifest("00600025", {
+            "5001": {"bundle_name": "a/icon_thumb_event_story_top_5001.unity3d", "pool_hash": "OLD_HASH", "bundle_md5": "OLD_MD5", "bundle_size": 1000}
+        }, contract_path=self.mock_contract)
+
+        mock_get_tv.return_value = "00600026"
+        mock_dl_manifest.return_value = "a/icon_thumb_event_story_top_5001.unity3d,NEW_MD5,NEW_HASH,sub,2000,\n"
+
+        def extract_side_effect(eid, bname, phash, force):
+            (self.mock_out / f"{eid}.webp").write_bytes(b"new_webp")
+            return (eid, True, None)
+        mock_extract.side_effect = extract_side_effect
+
+        res = run_pipeline(
+            from_contract=False,
+            contract_path=self.mock_contract,
+            output_dir=self.mock_out,
+            report_path=self.mock_report
+        )
+
+        self.assertTrue(res["success"])
+        with open(self.mock_contract, "r", encoding="utf-8") as f:
+            saved_contract = json.load(f)
+        self.assertEqual(saved_contract["truth_version"], "00600026")
+        self.assertEqual(saved_contract["targets"]["5001"]["pool_hash"], "NEW_HASH")
+
+    # 19. Incomplete old/new identity does NOT allow cache reuse
+    def test_19_incomplete_identity_does_not_allow_cache_reuse(self):
+        # 完整基準
+        base = {"pool_hash": "h1", "bundle_md5": "m1", "bundle_size": 100}
+        self.assertTrue(is_target_identity_equal(base, base))
+
+        # 缺少任一欄位即保守回傳 False
+        self.assertFalse(is_target_identity_equal(None, base))
+        self.assertFalse(is_target_identity_equal(base, None))
+        self.assertFalse(is_target_identity_equal({}, base))
+        self.assertFalse(is_target_identity_equal({"pool_hash": "h1"}, base))
+        self.assertFalse(is_target_identity_equal({"pool_hash": "h1", "bundle_md5": "m1"}, base))
+        self.assertFalse(is_target_identity_equal(base, {"pool_hash": "h1", "bundle_md5": "m1"}))
+        self.assertFalse(is_target_identity_equal({"pool_hash": "h1", "bundle_size": 100}, base))
+
+    # 20. Report file contains final verify_result and success
+    @patch("tools.fetch_event_top_thumbnails.get_current_truth_version")
+    @patch("tools.fetch_event_top_thumbnails.download_cdn_manifest")
+    @patch("tools.fetch_event_top_thumbnails.download_and_extract_event_top")
+    def test_20_report_file_contains_final_verify_result_and_success(self, mock_extract, mock_dl_manifest, mock_get_tv):
+        mock_get_tv.return_value = "00600026"
+        mock_dl_manifest.return_value = "a/icon_thumb_event_story_top_5001.unity3d,m1,h1,sub,100,\n"
+
+        def extract_side_effect(eid, bname, phash, force):
+            (self.mock_out / f"{eid}.webp").write_bytes(b"webp_content")
+            return (eid, True, None)
+        mock_extract.side_effect = extract_side_effect
+
+        run_pipeline(
+            from_contract=False,
+            contract_path=self.mock_contract,
+            output_dir=self.mock_out,
+            report_path=self.mock_report
+        )
+
+        self.assertTrue(self.mock_report.exists(), "執行報告檔案必須存在")
+        with open(self.mock_report, "r", encoding="utf-8") as f:
+            report_json = json.load(f)
+
+        self.assertIn("verify_result", report_json, "報告必須包含 verify_result")
+        self.assertEqual(report_json["verify_result"]["status"], "PASS")
+        self.assertIn("success", report_json, "報告必須包含 success")
+        self.assertTrue(report_json["success"])
+        # 確認純相對路徑，無絕對路徑洩漏
+        self.assertEqual(report_json["output_dir"], "dashboard/icon/event_top")
+        self.assertFalse(":" in report_json["output_dir"])
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
