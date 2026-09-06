@@ -240,4 +240,70 @@ test("Test 15: getStoryThumbnailHtml renders primary and serializes character ca
     ], "data-candidates 必須依序為本機卡面、遠端卡面與全域保底");
 });
 
+// Test 16 — Event top thumbnail priority
+test("Test 16: getEventTopThumbnailUrls prioritizes icon/event_top over fallbacks", () => {
+    const service = createServiceInstance();
+    const urls = service.getEventTopThumbnailUrls("5001", "500101", "1001001", "10040");
+    assert.strictEqual(urls[0], "icon/event_top/5001.webp", "第一候選必須為官方活動頂層專屬縮圖");
+    assert.strictEqual(urls[1], "icon/story/500101.webp", "第二候選必須為首話話數縮圖");
+    assert(urls.some(u => u.includes("1001001")), "必須包含 still 候選");
+    assert(urls.some(u => u.includes("10040")), "必須包含 bg 候選");
+    assert.strictEqual(urls[urls.length - 1], "https://redive.estertion.win/card/full/100431.webp", "最後必須為預設卡面保底");
+});
+
+// Test 17 — Graceful fallback when event_top missing / error stepping candidates
+test("Test 17: Event top fallback sequence remains ordered and valid for onerror stepping", () => {
+    const service = createServiceInstance();
+    const urls = service.getEventTopThumbnailUrls("5002", "500201", null, null);
+    assert.strictEqual(urls[0], "icon/event_top/5002.webp");
+    assert.strictEqual(urls[1], "icon/story/500201.webp");
+    assert.strictEqual(urls[2], "https://redive.estertion.win/card/full/100431.webp");
+    assert.strictEqual(urls.length, 3);
+});
+
+// Test 18 — Defensive handling when event_id is null / undefined / 0 / "0"
+test("Test 18: Defensive handling when event_id is null, undefined, 0, '0', or invalid", () => {
+    const service = createServiceInstance();
+    const invalidEventIds = [null, undefined, 0, "0", "", "   ", "abc", "../evil"];
+    for (const inv of invalidEventIds) {
+        const urls = service.getEventTopThumbnailUrls(inv, "500101");
+        assert.strictEqual(urls.some(u => u.includes("icon/event_top/")), false, `無效 eventId ${inv} 不得產生 event_top URL`);
+        assert.strictEqual(urls[0], "icon/story/500101.webp", "無效 eventId 應平滑由 fallbackStoryId 接管");
+        assert.strictEqual(urls[urls.length - 1], "https://redive.estertion.win/card/full/100431.webp");
+    }
+
+    // 全空極端情況
+    const emptyUrls = service.getEventTopThumbnailUrls(null, null);
+    assert.strictEqual(emptyUrls.length, 1);
+    assert.strictEqual(emptyUrls[0], "https://redive.estertion.win/card/full/100431.webp");
+});
+
+// Test 19 — getEventTopThumbnailHtml valid syntax, attribute escaping, and onerror wiring
+test("Test 19: getEventTopThumbnailHtml produces valid image tag, escaped attributes, and onerror handler", () => {
+    const service = createServiceInstance();
+    const html = service.getEventTopThumbnailHtml("5001", "500101", null, null, "event-cover-img", "width:100%;");
+    assert(html.startsWith("<img "), "必須以 <img 開頭");
+    assert(html.endsWith(">"), "必須以 > 結尾");
+    assert(html.includes('src="icon/event_top/5001.webp"'), "首選 src 必須為活動頂層縮圖");
+    assert(html.includes('class="event-cover-img"'), "class 屬性必須正確套用");
+    assert(html.includes('style="width:100%;"'), "style 屬性必須正確套用");
+    assert(html.includes('data-candidates="'), "必須包含 data-candidates 屬性");
+    assert(html.includes('data-step="0"'), "必須包含 data-step='0'");
+    assert(html.includes('onerror="StoryAssetService.handleImageError(this)"'), "必須包含 onerror 處理器");
+
+    // 反序列化驗證候選網址
+    const match = html.match(/data-candidates="([^"]+)"/);
+    assert(match, "data-candidates 必須存在");
+    const candidates = JSON.parse(decodeURIComponent(match[1]));
+    assert.deepStrictEqual(candidates, [
+        "icon/story/500101.webp",
+        "https://redive.estertion.win/card/full/100431.webp"
+    ]);
+
+    // 極端全空防禦測試
+    const emptyHtml = service.getEventTopThumbnailHtml(null, null);
+    assert(emptyHtml.includes('src="https://redive.estertion.win/card/full/100431.webp"'), "全空時首選 src 應為預設保底卡面");
+    assert(emptyHtml.includes('onerror="StoryAssetService.handleImageError(this)"'));
+});
+
 console.log(`\n🎉 All ${testsPassed} StoryAssetService tests passed!`);

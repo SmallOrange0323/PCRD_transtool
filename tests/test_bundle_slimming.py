@@ -436,5 +436,42 @@ class TestBundleSlimmingAndPrune(unittest.TestCase):
         self.assertFalse(stale_file.exists(), "孤立的縮圖應被清理")
         self.assertTrue((dist_story_icon / "2201101.webp").exists(), "source 存在的官方縮圖應被保留")
 
+    # 23. icon/event_top official thumbnails preserved, stale pruned, and additions/deltas projected
+    def test_23_icon_event_top_preserved_and_pruned(self):
+        """確保官方活動頂層專屬縮圖 (icon/event_top) 能被正確同步、清理孤立檔案並計入 dry-run additions/deltas"""
+        dash_event_top = self.mock_dash / "icon" / "event_top"
+        dash_event_top.mkdir(parents=True, exist_ok=True)
+        (dash_event_top / "5001.webp").write_bytes(b"event_top_5001_bytes")
+        file_sz = len(b"event_top_5001_bytes")
+
+        dist_event_top = self.mock_dist / "icon" / "event_top"
+        dist_event_top.mkdir(parents=True, exist_ok=True)
+        # 存在 source 中的縮圖
+        (dist_event_top / "5001.webp").write_bytes(b"event_top_5001_bytes")
+        # 孤立的 stale 縮圖
+        stale_file = dist_event_top / "9999.webp"
+        stale_file.write_bytes(b"stale_event_top")
+
+        # 驗證 prune_stale_dist_assets 正確清理 stale 且保留現有
+        prune_stats = prune_stale_dist_assets(self.mock_dash, self.mock_dist)
+        self.assertIn("stale icon/event_top", prune_stats)
+        self.assertEqual(prune_stats["stale icon/event_top"][0], 1)
+        self.assertFalse(stale_file.exists(), "孤立的活動縮圖應被清理")
+        self.assertTrue((dist_event_top / "5001.webp").exists(), "source 存在的官方活動縮圖應被保留")
+
+        # 驗證新活動縮圖被 calculate_expected_additions_and_deltas 正確預估
+        (dash_event_top / "5002.webp").write_bytes(b"event_top_5002_new_bytes")
+        new_sz = len(b"event_top_5002_new_bytes")
+
+        # 隔離 db_info.json 以排除額外 delta 干擾
+        (self.mock_dist / "data").mkdir(parents=True, exist_ok=True)
+        sim_db_info = json.dumps({"db_version": "hash_nodata", "tw_size": 0, "jp_size": 0}, ensure_ascii=False, indent=2).encode("utf-8")
+        (self.mock_dist / "data" / "db_info.json").write_bytes(sim_db_info)
+
+        # 實體同步驗證
+        copied = sync_directory_assets(dash_event_top, dist_event_top, [".webp"], dry_run=False)
+        self.assertEqual(copied, 1, "應同步 1 個新縮圖檔案")
+        self.assertTrue((dist_event_top / "5002.webp").exists(), "新縮圖應被複製至 dist")
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

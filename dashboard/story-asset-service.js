@@ -336,9 +336,9 @@ window.StoryAssetService = {
      */
     getEventTopThumbnailUrls(eventTopId, fallbackStoryId = null, stillId = null, bgId = null) {
         const urls = [];
-        if (eventTopId) {
-            const eid = String(eventTopId).trim();
-            urls.push(`icon/event_top/${eid}.webp`);
+        const rawEid = eventTopId != null ? String(eventTopId).trim() : "";
+        if (rawEid && /^[1-9]\d*$/.test(rawEid)) {
+            urls.push(`icon/event_top/${rawEid}.webp`);
         }
         const fallbackUrls = this.getStoryThumbnailUrls(fallbackStoryId, stillId, bgId);
         for (const u of fallbackUrls) {
@@ -359,7 +359,7 @@ window.StoryAssetService = {
      */
     getEventTopThumbnailHtml(eventTopId, fallbackStoryId = null, stillId = null, bgId = null, className = "", style = "") {
         const candidates = this.getEventTopThumbnailUrls(eventTopId, fallbackStoryId, stillId, bgId);
-        const firstSrc = candidates[0];
+        const firstSrc = candidates[0] || 'https://redive.estertion.win/card/full/100431.webp';
         const remainingCandidates = candidates.slice(1);
         const serialized = encodeURIComponent(JSON.stringify(remainingCandidates));
         const safeClass = this.escapeHtml(className);
