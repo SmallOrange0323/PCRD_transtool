@@ -507,6 +507,16 @@ def prune_stale_dist_assets(dashboard_dir: Path = DASHBOARD_DIR, dist_dir: Path 
                 cnt, b = safe_prune_file(df, dry_run=dry_run, dist_root=dist_dir)
                 record_prune("stale icon/story", cnt, b)
 
+    # 4F. icon/event_top/*.webp (官方活動頂層專屬縮圖鏡像清理)
+    dist_icon_event_top_dir = dist_dir / "icon" / "event_top"
+    src_icon_event_top_dir = dashboard_dir / "icon" / "event_top"
+    if dist_icon_event_top_dir.exists() and src_icon_event_top_dir.exists():
+        src_event_top_icons = {p.name for p in src_icon_event_top_dir.glob("*.webp")}
+        for df in list(dist_icon_event_top_dir.glob("*.webp")):
+            if df.name not in src_event_top_icons:
+                cnt, b = safe_prune_file(df, dry_run=dry_run, dist_root=dist_dir)
+                record_prune("stale icon/event_top", cnt, b)
+
     # 5. 清理 icon/unit/ 中不在 expected set 的圖片
     dist_icon_unit_dir = dist_dir / "icon" / "unit"
     if dist_icon_unit_dir.exists():
@@ -695,6 +705,20 @@ def calculate_expected_additions_and_deltas(dashboard_dir: Path = DASHBOARD_DIR,
                 if calc_sha256(sf) != calc_sha256(df):
                     deltas += (s_sz - d_sz)
 
+    # 7D. icon/event_top (官方活動頂層專屬縮圖)
+    src_icon_event_top = dashboard_dir / "icon" / "event_top"
+    dst_icon_event_top = dist_dir / "icon" / "event_top"
+    if src_icon_event_top.exists():
+        for sf in src_icon_event_top.glob("*.webp"):
+            df = dst_icon_event_top / sf.name
+            s_sz = sf.stat().st_size
+            if not df.exists():
+                additions += s_sz
+            else:
+                d_sz = df.stat().st_size
+                if calc_sha256(sf) != calc_sha256(df):
+                    deltas += (s_sz - d_sz)
+
     return additions, deltas
 
 def bundle_story_map(dry_run: bool = False) -> bool:
@@ -832,6 +856,11 @@ def bundle_story_map(dry_run: bool = False) -> bool:
             story_override_copied += 1
     if story_override_copied > 0:
         print(f"  [Avatar Override] 對白專屬覆蓋頭像: {'預計同步' if dry_run else '已同步'} {story_override_copied} 個檔案")
+
+    # 7D. 同步官方活動頂層專屬縮圖 (icon/event_top)
+    icon_event_top_copied = sync_directory_assets(DASHBOARD_DIR / "icon" / "event_top", DIST_DIR / "icon" / "event_top", [".webp"], dry_run=dry_run)
+    if icon_event_top_copied > 0:
+        print(f"  [EventTop] 官方活動頂層專屬縮圖: {'預計同步' if dry_run else '已同步'} {icon_event_top_copied} 個檔案")
 
     # 8. 同步語音音檔 (sound/story_vo) - 本機發布包同步，受 .gitignore 排除
     voice_copied = sync_directory_assets(DASHBOARD_DIR / "sound" / "story_vo", DIST_DIR / "sound" / "story_vo", [".m4a"], dry_run=dry_run)
