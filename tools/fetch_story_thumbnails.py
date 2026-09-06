@@ -35,9 +35,12 @@ OUTPUT_DIR = DASHBOARD_DIR / "icon" / "story"
 MANIFEST_PATH = BASE_DIR / "icon2_assetmanifest"
 
 
-def get_latest_truth_version() -> str:
-    """嘗試從 So-net 探測最新 TruthVersion，預設 00500015"""
-    candidates = ["00500015", "00500012", "00500010"]
+def get_latest_truth_version(specified_ver: Optional[str] = None) -> str:
+    """嘗試從 So-net 探測最新 TruthVersion，若有指定則優先使用"""
+    if specified_ver and str(specified_ver).strip():
+        return str(specified_ver).strip()
+
+    candidates = ["00600025", "00600024", "00600023", "00600020", "00500015", "00500012", "00500010"]
     for ver in candidates:
         url = f"{SONET_CDN}/Resources/{ver}/Jpn/AssetBundles/Android/manifest/icon2_assetmanifest"
         req = urllib.request.Request(url, headers=SONET_HEADER)
@@ -47,15 +50,15 @@ def get_latest_truth_version() -> str:
                     return ver
         except Exception:
             continue
-    return "00500015"
+    return "00600025"
 
 
-def ensure_manifest(manifest_path: Path = MANIFEST_PATH) -> Path:
-    """確保本地存在 icon2_assetmanifest，若不存在則從 CDN 下載"""
-    if manifest_path.exists() and manifest_path.stat().st_size > 0:
+def ensure_manifest(manifest_path: Path = MANIFEST_PATH, force_update: bool = False, truth_version: Optional[str] = None) -> Path:
+    """確保本地存在最新 icon2_assetmanifest，若不存在或要求強制更新則從 CDN 下載"""
+    if not force_update and manifest_path.exists() and manifest_path.stat().st_size > 0:
         return manifest_path
     
-    ver = get_latest_truth_version()
+    ver = get_latest_truth_version(truth_version)
     url = f"{SONET_CDN}/Resources/{ver}/Jpn/AssetBundles/Android/manifest/icon2_assetmanifest"
     print(f"[FetchThumb] 正在從 CDN 下載 icon2_assetmanifest (版本: {ver})...")
     req = urllib.request.Request(url, headers=SONET_HEADER)
@@ -67,12 +70,12 @@ def ensure_manifest(manifest_path: Path = MANIFEST_PATH) -> Path:
     return manifest_path
 
 
-def load_manifest_story_thumbs(manifest_path: Path = MANIFEST_PATH) -> Dict[str, str]:
+def load_manifest_story_thumbs(manifest_path: Path = MANIFEST_PATH, force_update: bool = False, truth_version: Optional[str] = None) -> Dict[str, str]:
     """
     從 manifest 中解析出所有 a/icon_thumb_story_{story_id}.unity3d 的 hash。
     回傳字典: {story_id: bundle_hash}
     """
-    ensure_manifest(manifest_path)
+    ensure_manifest(manifest_path, force_update=force_update, truth_version=truth_version)
     thumbs = {}
     with open(manifest_path, "r", encoding="utf-8") as f:
         for line in f:
@@ -85,8 +88,11 @@ def load_manifest_story_thumbs(manifest_path: Path = MANIFEST_PATH) -> Dict[str,
     return thumbs
 
 
-def collect_target_story_ids() -> List[str]:
-    """收集目前 Story Map 支援的所有話數 ID (主線 + 第 3 部分支 + 常規活動 + 新形式活動 + 公會/額外劇情)"""
+def collect_target_story_ids(prefix: Optional[str] = None, story_ids: Optional[List[str]] = None) -> List[str]:
+    """收集目前 Story Map 支援的所有話數 ID (可依 prefix 或具體 story_id 過濾)"""
+    if story_ids:
+        return sorted([str(sid).strip() for sid in story_ids if str(sid).strip()])
+
     target_ids = set()
 
     # 1. 主線話數
@@ -140,7 +146,12 @@ def collect_target_story_ids() -> List[str]:
             if p.stem.isdigit():
                 target_ids.add(p.stem)
 
-    return sorted(list(target_ids))
+    all_ids = sorted(list(target_ids))
+    if prefix:
+        pfx_str = str(prefix).strip()
+        all_ids = [sid for sid in all_ids if sid.startswith(pfx_str)]
+
+    return all_ids
 
 
 def download_and_extract_thumb(story_id: str, bundle_hash: str, output_dir: Path = OUTPUT_DIR, force: bool = False) -> Tuple[str, bool, Optional[str]]:
@@ -164,7 +175,7 @@ def download_and_extract_thumb(story_id: str, bundle_hash: str, output_dir: Path
         import UnityPy
         from PIL import Image
 
-        UnityPy.config.FALLBACK_UNITY_VERSION = "2021.3.20f1"
+        UnityPy.config.FALLBACK_UNITY_VERSION = "2020.3.34f1"
         env = UnityPy.load(bundle_bytes)
 
         found_img = None
@@ -184,11 +195,18 @@ def download_and_extract_thumb(story_id: str, bundle_hash: str, output_dir: Path
         return story_id, False, f"UnityPy extract error: {e}"
 
 
-def fetch_all_story_thumbnails(force: bool = False, max_workers: int = 8) -> Dict[str, Any]:
+def fetch_all_story_thumbnails(
+    force: bool = False,
+    max_workers: int = 8,
+    prefix: Optional[str] = None,
+    story_ids: Optional[List[str]] = None,
+    truth_version: Optional[str] = None,
+    update_manifest: bool = False
+) -> Dict[str, Any]:
     """批次抓取並轉檔所有目標話數官方專屬縮圖"""
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    manifest_thumbs = load_manifest_story_thumbs()
-    target_ids = collect_target_story_ids()
+    manifest_thumbs = load_manifest_story_thumbs(force_update=update_manifest, truth_version=truth_version)
+    target_ids = collect_target_story_ids(prefix=prefix, story_ids=story_ids)
 
     print(f"[FetchThumb] 目標話數總計: {len(target_ids)} 話")
     print(f"[FetchThumb] CDN Manifest 中包含的縮圖數: {len(manifest_thumbs)} 筆")
@@ -262,9 +280,20 @@ def main():
     parser = argparse.ArgumentParser(description="PCRD 官方劇情話數專屬縮圖抓取工具")
     parser.add_argument("--force", action="store_true", help="強制重新下載並覆蓋現有 WebP")
     parser.add_argument("--workers", type=int, default=8, help="並行執行緒數 (預設: 8)")
+    parser.add_argument("--prefix", type=str, help="話數前綴過濾 (例如 5216)")
+    parser.add_argument("--story-id", nargs="+", help="指定單一或多個話數 ID")
+    parser.add_argument("--truth-version", type=str, help="指定 TruthVersion (預設自動探測)")
+    parser.add_argument("--update-manifest", action="store_true", help="強制重新自 CDN 下載最新 icon2_assetmanifest")
     args = parser.parse_args()
 
-    fetch_all_story_thumbnails(force=args.force, max_workers=args.workers)
+    fetch_all_story_thumbnails(
+        force=args.force,
+        max_workers=args.workers,
+        prefix=args.prefix,
+        story_ids=args.story_id,
+        truth_version=args.truth_version,
+        update_manifest=args.update_manifest
+    )
 
 
 if __name__ == "__main__":
