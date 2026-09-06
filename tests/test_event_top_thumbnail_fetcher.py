@@ -227,6 +227,154 @@ class TestEventTopThumbnailFetcher(unittest.TestCase):
         self.assertFalse(ok)
         self.assertIn("Size mismatch", str(err))
 
+    # 10. SAME event_id + SAME pool_hash/md5/size + existing WebP -> cache reuse allowed
+    @patch("tools.fetch_event_top_thumbnails.get_current_truth_version")
+    @patch("tools.fetch_event_top_thumbnails.download_cdn_manifest")
+    @patch("tools.fetch_event_top_thumbnails.download_and_extract_event_top")
+    def test_10_same_identity_allows_cache_reuse(self, mock_extract, mock_dl_manifest, mock_get_tv):
+        mock_get_tv.return_value = "00600025"
+        mock_dl_manifest.return_value = "a/icon_thumb_event_story_top_5001.unity3d,md5_same,hash_same,sub,12000,\n"
+        # 舊合約記錄完全相同 identity
+        write_contract_manifest("00600025", {
+            "5001": {"bundle_name": "a/icon_thumb_event_story_top_5001.unity3d", "pool_hash": "hash_same", "bundle_md5": "md5_same", "bundle_size": 12000}
+        }, contract_path=self.mock_contract)
+        # 本地已存在輸出 WebP
+        (self.mock_out / "5001.webp").write_bytes(b"existing_webp")
+        mock_extract.return_value = ("5001", True, "cached")
+
+        res = run_pipeline(
+            from_contract=False,
+            contract_path=self.mock_contract,
+            output_dir=self.mock_out,
+            report_path=self.mock_report
+        )
+
+        mock_extract.assert_called_once_with("5001", mock_extract.call_args[0][1], self.mock_out, False)
+        self.assertEqual(res["cached"], 1)
+        self.assertEqual(res["downloaded"], 0)
+
+    # 11. SAME event_id + CHANGED pool_hash + existing WebP -> MUST call downloader / re-extract
+    @patch("tools.fetch_event_top_thumbnails.get_current_truth_version")
+    @patch("tools.fetch_event_top_thumbnails.download_cdn_manifest")
+    @patch("tools.fetch_event_top_thumbnails.download_and_extract_event_top")
+    def test_11_changed_pool_hash_forces_download(self, mock_extract, mock_dl_manifest, mock_get_tv):
+        mock_get_tv.return_value = "00600026"
+        mock_dl_manifest.return_value = "a/icon_thumb_event_story_top_5001.unity3d,md5_same,hash_NEW,sub,12000,\n"
+        # 舊合約是 hash_OLD
+        write_contract_manifest("00600025", {
+            "5001": {"bundle_name": "a/icon_thumb_event_story_top_5001.unity3d", "pool_hash": "hash_OLD", "bundle_md5": "md5_same", "bundle_size": 12000}
+        }, contract_path=self.mock_contract)
+        (self.mock_out / "5001.webp").write_bytes(b"stale_webp")
+        mock_extract.return_value = ("5001", True, None)
+
+        run_pipeline(
+            from_contract=False,
+            contract_path=self.mock_contract,
+            output_dir=self.mock_out,
+            report_path=self.mock_report
+        )
+
+        # 斷言傳入的 force 參數必須為 True
+        self.assertTrue(mock_extract.call_args[0][3], "pool_hash 變更時必須強制重新下載 (force=True)")
+
+    # 12. SAME event_id + CHANGED bundle_md5 -> MUST refresh
+    @patch("tools.fetch_event_top_thumbnails.get_current_truth_version")
+    @patch("tools.fetch_event_top_thumbnails.download_cdn_manifest")
+    @patch("tools.fetch_event_top_thumbnails.download_and_extract_event_top")
+    def test_12_changed_bundle_md5_forces_download(self, mock_extract, mock_dl_manifest, mock_get_tv):
+        mock_get_tv.return_value = "00600026"
+        mock_dl_manifest.return_value = "a/icon_thumb_event_story_top_5001.unity3d,md5_NEW,hash_same,sub,12000,\n"
+        # 舊合約是 md5_OLD
+        write_contract_manifest("00600025", {
+            "5001": {"bundle_name": "a/icon_thumb_event_story_top_5001.unity3d", "pool_hash": "hash_same", "bundle_md5": "md5_OLD", "bundle_size": 12000}
+        }, contract_path=self.mock_contract)
+        (self.mock_out / "5001.webp").write_bytes(b"stale_webp")
+        mock_extract.return_value = ("5001", True, None)
+
+        run_pipeline(
+            from_contract=False,
+            contract_path=self.mock_contract,
+            output_dir=self.mock_out,
+            report_path=self.mock_report
+        )
+
+        self.assertTrue(mock_extract.call_args[0][3], "bundle_md5 變更時必須強制重新下載 (force=True)")
+
+    # 13. SAME event_id + CHANGED bundle_size -> MUST refresh
+    @patch("tools.fetch_event_top_thumbnails.get_current_truth_version")
+    @patch("tools.fetch_event_top_thumbnails.download_cdn_manifest")
+    @patch("tools.fetch_event_top_thumbnails.download_and_extract_event_top")
+    def test_13_changed_bundle_size_forces_download(self, mock_extract, mock_dl_manifest, mock_get_tv):
+        mock_get_tv.return_value = "00600026"
+        mock_dl_manifest.return_value = "a/icon_thumb_event_story_top_5001.unity3d,md5_same,hash_same,sub,99999,\n"
+        # 舊合約 size 是 12000
+        write_contract_manifest("00600025", {
+            "5001": {"bundle_name": "a/icon_thumb_event_story_top_5001.unity3d", "pool_hash": "hash_same", "bundle_md5": "md5_same", "bundle_size": 12000}
+        }, contract_path=self.mock_contract)
+        (self.mock_out / "5001.webp").write_bytes(b"stale_webp")
+        mock_extract.return_value = ("5001", True, None)
+
+        run_pipeline(
+            from_contract=False,
+            contract_path=self.mock_contract,
+            output_dir=self.mock_out,
+            report_path=self.mock_report
+        )
+
+        self.assertTrue(mock_extract.call_args[0][3], "bundle_size 變更時必須強制重新下載 (force=True)")
+
+    # 14. NEW event_id -> MUST download
+    @patch("tools.fetch_event_top_thumbnails.get_current_truth_version")
+    @patch("tools.fetch_event_top_thumbnails.download_cdn_manifest")
+    @patch("tools.fetch_event_top_thumbnails.download_and_extract_event_top")
+    def test_14_new_event_id_forces_download(self, mock_extract, mock_dl_manifest, mock_get_tv):
+        mock_get_tv.return_value = "00600026"
+        mock_dl_manifest.return_value = "a/icon_thumb_event_story_top_5009.unity3d,md5_9,hash_9,sub,15000,\n"
+        # 舊合約完全無 5009
+        write_contract_manifest("00600025", {
+            "5001": {"bundle_name": "a/icon_thumb_event_story_top_5001.unity3d", "pool_hash": "h1"}
+        }, contract_path=self.mock_contract)
+        (self.mock_out / "5009.webp").write_bytes(b"dummy_webp")
+        mock_extract.return_value = ("5009", True, None)
+
+        run_pipeline(
+            from_contract=False,
+            contract_path=self.mock_contract,
+            output_dir=self.mock_out,
+            report_path=self.mock_report
+        )
+
+        self.assertTrue(mock_extract.call_args[0][3], "全新事件即便本地存在檔案也必須強制下載 (force=True)")
+
+    # 15. Provenance regression: Old-version WebP cannot masquerade as new-version source
+    @patch("tools.fetch_event_top_thumbnails.get_current_truth_version")
+    @patch("tools.fetch_event_top_thumbnails.download_cdn_manifest")
+    @patch("tools.fetch_event_top_thumbnails.download_and_extract_event_top")
+    def test_15_provenance_regression_old_version_webp_cannot_masquerade(self, mock_extract, mock_dl_manifest, mock_get_tv):
+        # 舊版合約
+        write_contract_manifest("00600025", {
+            "5001": {"bundle_name": "a/icon_thumb_event_story_top_5001.unity3d", "pool_hash": "OLD_HASH", "bundle_md5": "OLD_MD5", "bundle_size": 1000}
+        }, contract_path=self.mock_contract)
+        # 本地已有 5001.webp
+        (self.mock_out / "5001.webp").write_bytes(b"old_v25_webp")
+
+        # 線上探測到新版 00600026 且 5001 的 pool_hash 變為 NEW_HASH
+        mock_get_tv.return_value = "00600026"
+        mock_dl_manifest.return_value = "a/icon_thumb_event_story_top_5001.unity3d,NEW_MD5,NEW_HASH,sub,2000,\n"
+        mock_extract.return_value = ("5001", True, None)
+
+        res = run_pipeline(
+            from_contract=False,
+            contract_path=self.mock_contract,
+            output_dir=self.mock_out,
+            report_path=self.mock_report
+        )
+
+        # 驗證: 5001.webp 絕不能被視為 cached！
+        self.assertEqual(res["cached"], 0, "素材 identity 變更時絕不得被計為 cached")
+        self.assertEqual(res["downloaded"], 1, "素材 identity 變更時必須被計為 downloaded")
+        self.assertTrue(mock_extract.call_args[0][3], "必須以 force=True 重新下載與提取")
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

@@ -229,6 +229,32 @@ def verify_local_assets(
     return result
 
 
+def is_target_identity_equal(old_info: Optional[Dict[str, Any]], new_info: Dict[str, Any]) -> bool:
+    """
+    比對前後版本之 AssetBundle 標識是否完全一致。
+    比對欄位：pool_hash (必備), bundle_md5, bundle_size
+    """
+    if not old_info or not isinstance(old_info, dict):
+        return False
+
+    old_hash = old_info.get("pool_hash")
+    new_hash = new_info.get("pool_hash")
+    if not old_hash or not new_hash or old_hash != new_hash:
+        return False
+
+    old_md5 = old_info.get("bundle_md5")
+    new_md5 = new_info.get("bundle_md5")
+    if old_md5 and new_md5 and str(old_md5).lower() != str(new_md5).lower():
+        return False
+
+    old_size = old_info.get("bundle_size")
+    new_size = new_info.get("bundle_size")
+    if old_size is not None and new_size is not None and old_size != new_size:
+        return False
+
+    return True
+
+
 def run_pipeline(
     from_contract: bool = False,
     specified_truth_version: Optional[str] = None,
@@ -241,8 +267,8 @@ def run_pipeline(
     """
     執行活動頂層專屬縮圖下載/重建管線。
     支援模式：
-    - ONLINE UPDATE MODE (from_contract=False): 線上探測 TruthVersion (Fail-Closed) ➡️ 下載 manifest ➡️ 更新 contract ➡️ 下載解密
-    - PINNED CONTRACT MODE (from_contract=True): 讀取已追蹤之 contract ➡️ 離線重建
+    - ONLINE UPDATE MODE (from_contract=False): 線上探測 TruthVersion (Fail-Closed) ➡️ 比對舊合約 Identity ➡️ 下載 manifest ➡️ 更新 contract ➡️ 下載/重抓變更資產
+    - PINNED CONTRACT MODE (from_contract=True): 讀取已追蹤之 contract ➡️ 離線/固定版本補齊缺失資產
     """
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -250,6 +276,7 @@ def run_pipeline(
         mode = "pinned_contract"
         source_truth_version, targets = load_pinned_contract(contract_path)
         print(f"[FetchEventTop] 執行模式: PINNED CONTRACT (版本: {source_truth_version})")
+        old_targets = targets
     else:
         mode = "online_update"
         if specified_truth_version and str(specified_truth_version).strip():
@@ -258,12 +285,43 @@ def run_pipeline(
             source_truth_version = get_current_truth_version()
         print(f"[FetchEventTop] 執行模式: ONLINE UPDATE (線上 TruthVersion: {source_truth_version})")
 
+        # 在覆寫前載入舊契約以進行 Identity-aware 快取比對
+        old_targets = {}
+        if contract_path.exists():
+            try:
+                with open(contract_path, "r", encoding="utf-8") as f:
+                    old_c_data = json.load(f)
+                    old_targets = old_c_data.get("targets", {})
+            except Exception:
+                old_targets = {}
+
         manifest_text = download_cdn_manifest(source_truth_version)
         targets = parse_event_top_targets_from_manifest(manifest_text)
         write_contract_manifest(source_truth_version, targets, contract_path)
 
     print(f"[FetchEventTop] 目標活動頂層專屬縮圖數: {len(targets)} 筆")
-    tasks = [(eid, info) for eid, info in targets.items()]
+
+    # 決定性判定每個 target 的下載需求 (Identity-Aware)
+    tasks = []
+    for eid, info in targets.items():
+        out_file = output_dir / f"{eid}.webp"
+        file_exists = out_file.exists() and out_file.stat().st_size > 0
+
+        if force:
+            need_download = True
+        elif not file_exists:
+            need_download = True
+        elif mode == "pinned_contract":
+            need_download = False
+        else:
+            # online_update 模式：比對舊版本契約標識
+            old_info = old_targets.get(eid)
+            if old_info and is_target_identity_equal(old_info, info):
+                need_download = False
+            else:
+                need_download = True
+
+        tasks.append((eid, info, need_download))
 
     success_count = 0
     cached_count = 0
@@ -272,8 +330,8 @@ def run_pipeline(
     start_time = time.time()
     with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
         futures = {
-            executor.submit(download_and_extract_event_top, eid, info, output_dir, force): eid
-            for eid, info in tasks
+            executor.submit(download_and_extract_event_top, eid, info, output_dir, need_download): eid
+            for eid, info, need_download in tasks
         }
         completed = 0
         total = len(futures)
