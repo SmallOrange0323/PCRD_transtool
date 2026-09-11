@@ -408,13 +408,14 @@ def rebuild_official_metadata(
     sample_limit: Optional[int] = None,
     write_story_json: bool = False,
     timeout: int = 15,
+    dashboard_dir: Optional[Union[str, Path]] = None,
 ) -> Tuple[bool, Optional[str], int, List[int]]:
     """
     可測試之官方元數據側車重建/回補 Orchestrator (Replacement Semantics)：
     1. 驗證 sample_limit (若有傳入必須 > 0)
     2. 安全防禦：若 sample_limit 存在且 output_path 為預設 production 路徑，自動轉向 scratch/ 防止污染
-    3. 取得 TruthVersion snapshot 與 bundle_refs
-    4. 決定目標 universe：若未指定 target_story_ids 則使用 Canonical Story Map Expected IDs
+    3. 決定目標 universe：若未指定 target_story_ids，建構 CanonicalStoryUniverse，並嚴格檢查 analysis_status == VALID 且 expected_ids 非空
+    4. 取得 TruthVersion snapshot 與 bundle_refs
     5. 使用 sync_story_batch_with_metadata 進行 batch 抓取 (write_story_json 預設 False，replace_existing=True，全量替換以清除過期 stale entries)
     :return: (success, metadata_version, processed_count, failed_ids)
     """
@@ -427,7 +428,29 @@ def rebuild_official_metadata(
         # Sample 模式防污染：自動寫入 scratch/ 目錄
         target_out = PROJECT_ROOT / "scratch" / "sample_official_metadata.json"
 
-    # 1. 取得 TruthVersion
+    # 1. 決定目標話數 (Canonical Expected Universe 或顯式傳入)
+    if target_story_ids is not None:
+        target_ids = list(target_story_ids)
+        if not target_ids:
+            return False, None, 0, []
+    else:
+        from pipeline.coverage import build_canonical_story_universe, CoverageAnalysisStatus
+        target_dash = Path(dashboard_dir) if dashboard_dir else DASHBOARD_DIR
+        univ = build_canonical_story_universe(dashboard_dir=target_dash)
+        if univ.analysis_status != CoverageAnalysisStatus.VALID:
+            # 來源 DEGRADED 或 INVALID，Fail Loudly，禁止 destructive replacement
+            return False, None, 0, []
+        if len(univ.expected_ids) == 0:
+            # 空宇宙禁止 replacement
+            return False, None, 0, []
+        target_ids = sorted(list(univ.expected_ids))
+
+    if sample_limit is not None:
+        target_ids = target_ids[:sample_limit]
+        if not target_ids:
+            return False, None, 0, []
+
+    # 2. 取得 TruthVersion
     tv = truth_version
     if not tv:
         try:
@@ -436,23 +459,12 @@ def rebuild_official_metadata(
         except Exception:
             return False, None, 0, []
 
-    # 2. 載入 bundle_refs
+    # 3. 載入 bundle_refs
     try:
         from tools.pcrd_fetch import load_story_manifest_bundle_refs, sync_story_batch_with_metadata
         bundle_refs = load_story_manifest_bundle_refs(truth_version=tv)
     except Exception:
         return False, None, 0, []
-
-    # 3. 確定目標話數 (Canonical Expected IDs ∩ bundle_refs)
-    if target_story_ids is not None:
-        target_ids = list(target_story_ids)
-    else:
-        from pipeline.coverage import get_canonical_expected_story_ids
-        canonical_expected = get_canonical_expected_story_ids(DASHBOARD_DIR)
-        target_ids = sorted(list(canonical_expected))
-
-    if sample_limit is not None:
-        target_ids = target_ids[:sample_limit]
 
     # 檢查是否有預期話數不在 bundle_refs 中
     missing_bundle_ids = [sid for sid in target_ids if sid not in bundle_refs]

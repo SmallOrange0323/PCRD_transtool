@@ -772,6 +772,173 @@ class TestOfficialMetadataPipeline(unittest.TestCase):
             self.assertFalse(ok_strict2)
             self.assertTrue(any("來源健康狀態異常" in err for err in res_strict2.errors))
 
+    # ----------------------------------------------------------------------
+    # 26. Destructive-Rebuild Safety: DEGRADED Universe Rejection
+    # ----------------------------------------------------------------------
+    @patch("pipeline.coverage.build_canonical_story_universe")
+    @patch("tools.pcrd_fetch.load_story_manifest_bundle_refs")
+    @patch("tools.pcrd_fetch._http_get")
+    def test_26_rebuild_degraded_universe_rejected_and_safe(self, mock_http, mock_load_refs, mock_build_univ):
+        """26. 驗證 Universe DEGRADED 時 full rebuild 立即安全拒絕，零網路請求，manifest bytes 不變"""
+        manifest_file = self.tmp_path / "official_story_metadata.json"
+        initial_entry = self._create_mock_entry(100101)
+        batch_update_manifest_entries({100101: initial_entry}, truth_version="00600025", filepath=manifest_file)
+        initial_bytes = manifest_file.read_bytes()
+
+        mock_build_univ.return_value = CanonicalStoryUniverse(
+            required_ids={100101},
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids={100101},
+            source_status={"database": "OK", "tracked_characters": "ERROR (Corrupted)"},
+            analysis_status=CoverageAnalysisStatus.DEGRADED,
+            analysis_errors=["tracked_characters DB error"]
+        )
+
+        ok, m_ver, count, failed = rebuild_official_metadata(output_path=manifest_file, truth_version="00600025")
+
+        self.assertFalse(ok)
+        self.assertIsNone(m_ver)
+        self.assertEqual(count, 0)
+        self.assertEqual(manifest_file.read_bytes(), initial_bytes)
+        mock_load_refs.assert_not_called()
+        mock_http.assert_not_called()
+
+    # ----------------------------------------------------------------------
+    # 27. Destructive-Rebuild Safety: INVALID Universe Rejection
+    # ----------------------------------------------------------------------
+    @patch("pipeline.coverage.build_canonical_story_universe")
+    @patch("tools.pcrd_fetch.load_story_manifest_bundle_refs")
+    @patch("tools.pcrd_fetch._http_get")
+    def test_27_rebuild_invalid_universe_rejected_and_safe(self, mock_http, mock_load_refs, mock_build_univ):
+        """27. 驗證 Universe INVALID 時 full rebuild 立即安全拒絕，零網路請求，manifest bytes 不變"""
+        manifest_file = self.tmp_path / "official_story_metadata.json"
+        initial_entry = self._create_mock_entry(100101)
+        batch_update_manifest_entries({100101: initial_entry}, truth_version="00600025", filepath=manifest_file)
+        initial_bytes = manifest_file.read_bytes()
+
+        mock_build_univ.return_value = CanonicalStoryUniverse(
+            required_ids=set(),
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids=set(),
+            source_status={"database": "MISSING", "tracked_characters": "OK"},
+            analysis_status=CoverageAnalysisStatus.INVALID,
+            analysis_errors=["database missing"]
+        )
+
+        ok, m_ver, count, failed = rebuild_official_metadata(output_path=manifest_file, truth_version="00600025")
+
+        self.assertFalse(ok)
+        self.assertIsNone(m_ver)
+        self.assertEqual(count, 0)
+        self.assertEqual(manifest_file.read_bytes(), initial_bytes)
+        mock_load_refs.assert_not_called()
+        mock_http.assert_not_called()
+
+    # ----------------------------------------------------------------------
+    # 28. Destructive-Rebuild Safety: Empty Canonical Universe Rejection
+    # ----------------------------------------------------------------------
+    @patch("pipeline.coverage.build_canonical_story_universe")
+    @patch("tools.pcrd_fetch.load_story_manifest_bundle_refs")
+    @patch("tools.pcrd_fetch._http_get")
+    def test_28_rebuild_empty_canonical_universe_rejected(self, mock_http, mock_load_refs, mock_build_univ):
+        """28. 驗證 Universe 雖為 VALID 但 expected_ids 為空時，禁止 replacement 覆寫現有 manifest"""
+        manifest_file = self.tmp_path / "official_story_metadata.json"
+        initial_entry = self._create_mock_entry(100101)
+        batch_update_manifest_entries({100101: initial_entry}, truth_version="00600025", filepath=manifest_file)
+        initial_bytes = manifest_file.read_bytes()
+
+        mock_build_univ.return_value = CanonicalStoryUniverse(
+            required_ids=set(),
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids=set(),
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+
+        ok, m_ver, count, failed = rebuild_official_metadata(output_path=manifest_file, truth_version="00600025")
+
+        self.assertFalse(ok)
+        self.assertIsNone(m_ver)
+        self.assertEqual(count, 0)
+        self.assertEqual(manifest_file.read_bytes(), initial_bytes)
+        mock_load_refs.assert_not_called()
+        mock_http.assert_not_called()
+
+    # ----------------------------------------------------------------------
+    # 29. Canonical Source Health: Tracked Character DB Query with 0 Rows
+    # ----------------------------------------------------------------------
+    def test_29_tracked_char_db_query_zero_rows_fallback_healthy(self):
+        """29. 驗證 tracked_characters 查詢 DB 成功但為 0 rows 時，依 policy 正常 fallback 4 話且來源保持健康 (VALID)"""
+        mock_dash = self.tmp_path / "dashboard_29"
+        mock_data = mock_dash / "data"
+        mock_data.mkdir(parents=True)
+        db_path = mock_dash / "redive_tw.db"
+
+        # 建立合法 SQLite 資料庫
+        conn = sqlite3.connect(str(db_path))
+        cur = conn.cursor()
+        cur.execute("CREATE TABLE story_detail (story_id INTEGER PRIMARY KEY)")
+        cur.execute("INSERT INTO story_detail VALUES (200101)")
+        cur.execute("CREATE TABLE chara_story_status (story_id INTEGER PRIMARY KEY)")
+        # 不插入任何 chara_story_status 資料 (0 rows)
+        conn.commit()
+        conn.close()
+
+        # 建立 tracked_characters.json, branch_stories.json, extra_events.json
+        with open(mock_data / "tracked_characters.json", "w", encoding="utf-8") as f:
+            json.dump({"characters": [{"unit_id": 100101}]}, f)
+        with open(mock_data / "branch_stories.json", "w", encoding="utf-8") as f:
+            json.dump({"stories": []}, f)
+        with open(mock_data / "extra_events.json", "w", encoding="utf-8") as f:
+            json.dump({"stories": []}, f)
+
+        # 直接測試 helper
+        from pipeline.coverage import _get_story_ids_from_db_isolated
+        ids = _get_story_ids_from_db_isolated(db_path, 100101)
+        self.assertEqual(ids, [1001001, 1001002, 1001003, 1001004])
+
+        # 測試 universe
+        univ = build_canonical_story_universe(mock_dash)
+        self.assertEqual(univ.source_status["database"], "OK")
+        self.assertEqual(univ.source_status["tracked_characters"], "OK")
+        self.assertEqual(univ.analysis_status, CoverageAnalysisStatus.VALID)
+        self.assertTrue({1001001, 1001002, 1001003, 1001004}.issubset(univ.expected_ids))
+
+    # ----------------------------------------------------------------------
+    # 30. Canonical Source Health: Tracked Character DB SQL Error -> Unhealthy Universe
+    # ----------------------------------------------------------------------
+    def test_30_tracked_char_db_sql_error_causes_unhealthy_universe(self):
+        """30. 驗證 tracked_characters 查詢 DB 遇到 SQL/table 錯誤時，不得吞掉例外並偽裝健康，必須標記 DEGRADED"""
+        mock_dash = self.tmp_path / "dashboard_30"
+        mock_data = mock_dash / "data"
+        mock_data.mkdir(parents=True)
+        db_path = mock_dash / "redive_tw.db"
+
+        # 建立 SQLite 資料庫，但缺少 chara_story_status 表格 (觸發 SQL Error)
+        conn = sqlite3.connect(str(db_path))
+        cur = conn.cursor()
+        cur.execute("CREATE TABLE story_detail (story_id INTEGER PRIMARY KEY)")
+        cur.execute("INSERT INTO story_detail VALUES (200101)")
+        conn.commit()
+        conn.close()
+
+        with open(mock_data / "tracked_characters.json", "w", encoding="utf-8") as f:
+            json.dump({"characters": [{"unit_id": 100101}]}, f)
+        with open(mock_data / "branch_stories.json", "w", encoding="utf-8") as f:
+            json.dump({"stories": []}, f)
+        with open(mock_data / "extra_events.json", "w", encoding="utf-8") as f:
+            json.dump({"stories": []}, f)
+
+        univ = build_canonical_story_universe(mock_dash)
+        self.assertEqual(univ.source_status["database"], "OK")
+        self.assertTrue(univ.source_status["tracked_characters"].startswith("ERROR"))
+        self.assertEqual(univ.analysis_status, CoverageAnalysisStatus.DEGRADED)
+        self.assertTrue(len(univ.analysis_errors) > 0)
+
 
 if __name__ == "__main__":
     unittest.main()

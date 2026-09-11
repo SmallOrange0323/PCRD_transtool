@@ -143,26 +143,24 @@ class CoverageResult:
 
 def _get_story_ids_from_db_isolated(db_path: Path, unit_id: int) -> List[int]:
     """從指定的 DB 查詢角色個人劇情的 story_id 清單 (純粹本機查詢，零全域依賴)。"""
+    base_7 = (unit_id // 100) * 1000 + 1
+    fallback_ids = [base_7 + i for i in range(4)]
     if not db_path.exists():
-        base_7 = (unit_id // 100) * 1000 + 1
-        return [base_7 + i for i in range(4)]
+        return fallback_ids
+    conn = sqlite3.connect(str(db_path))
     try:
-        conn = sqlite3.connect(str(db_path))
         cur = conn.cursor()
         cur.execute(
             "SELECT story_id FROM chara_story_status WHERE story_id LIKE ? ORDER BY story_id",
             (f"{unit_id // 100}%",)
         )
         rows = cur.fetchall()
-        conn.close()
         if rows:
-            base_7 = (unit_id // 100) * 1000 + 1
             expected = {base_7 + i for i in range(4)}
             return sorted({r[0] for r in rows} | expected)
-    except Exception:
-        pass
-    base_7 = (unit_id // 100) * 1000 + 1
-    return [base_7 + i for i in range(4)]
+        return fallback_ids
+    finally:
+        conn.close()
 
 
 def build_canonical_story_universe(dashboard_dir: Optional[Union[str, Path]] = None) -> CanonicalStoryUniverse:
