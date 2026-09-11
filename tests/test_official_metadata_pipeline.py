@@ -1539,10 +1539,10 @@ class TestOfficialMetadataPipeline(unittest.TestCase):
             self.assertEqual(state["completed_count"], 2)
 
     # ----------------------------------------------------------------------
-    # 46. Checkpoint TruthVersion Mismatch Fails Loudly Zero Network
+    # 46. Checkpoint TruthVersion Mismatch Fails Before Story Fetch
     # ----------------------------------------------------------------------
-    def test_46_checkpoint_truth_version_mismatch_fails_loudly_zero_network(self):
-        """46. 驗證快照 TruthVersion 與當前不符時，resume 堅決拒絕且零網路呼叫"""
+    def test_46_checkpoint_truth_version_mismatch_fails_before_story_fetch(self):
+        """46. 驗證快照 TruthVersion 與當前不符時，resume 堅決拒絕且零話數抓取 (Zero Story Fetch)"""
         mock_dash = self.tmp_path / "dashboard_46"
         (mock_dash / "data").mkdir(parents=True)
         (mock_dash / "story").mkdir(parents=True)
@@ -1581,7 +1581,7 @@ class TestOfficialMetadataPipeline(unittest.TestCase):
     # 47. Checkpoint Target Fingerprint Mismatch Fails Loudly
     # ----------------------------------------------------------------------
     def test_47_checkpoint_target_fingerprint_mismatch_fails_loudly(self):
-        """47. 驗證快照話數指紋與當前目標不符時，resume 堅決拒絕且零網路呼叫"""
+        """47. 驗證快照話數指紋與當前目標不符時，resume 堅決拒絕且零話數抓取 (Zero Story Fetch)"""
         mock_dash = self.tmp_path / "dashboard_47"
         (mock_dash / "data").mkdir(parents=True)
         (mock_dash / "story").mkdir(parents=True)
@@ -1651,7 +1651,7 @@ class TestOfficialMetadataPipeline(unittest.TestCase):
     # 50. Malformed Checkpoint Fails Loudly
     # ----------------------------------------------------------------------
     def test_50_malformed_checkpoint_fails_loudly(self):
-        """50. 驗證快照檔案損毀 (非 JSON 格式) 時，resume 堅決失敗且零網路呼叫"""
+        """50. 驗證快照檔案損毀 (非 JSON 格式) 時，resume 堅決失敗且零話數抓取 (Zero Story Fetch)"""
         mock_dash = self.tmp_path / "dashboard_50"
         (mock_dash / "data").mkdir(parents=True)
         (mock_dash / "story").mkdir(parents=True)
