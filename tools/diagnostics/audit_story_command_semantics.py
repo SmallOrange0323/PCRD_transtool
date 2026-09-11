@@ -5,12 +5,14 @@ audit_story_command_semantics.py
 
 專案: PCRD Story Map (PCRD_transtool)
 功能: 深度驗證 Story AssetBundle 高價值指令語意 (Issue #2 Research R2)
-約束: 嚴格唯讀 (Strictly Read-Only)。只輸出結果至 scratch/，嚴禁修改任何正式目錄或資料庫。
+約束: Production/source read-only. Writes are permitted only under scratch/.
+      嚴格遵守 Evidence-Calibrated Research Mode 規範。
 """
 
 import os
 import sys
 import json
+import shutil
 import sqlite3
 import argparse
 import subprocess
@@ -54,6 +56,24 @@ from tools.diagnostics.audit_story_command_inventory import (
     pick_adaptive_batch,
     get_story_category,
 )
+
+
+def resolve_ffprobe_path(cli_path: Optional[str] = None) -> Optional[str]:
+    """
+    可重現的 ffprobe 探索機制：
+    1. CLI 指定參數 --ffprobe
+    2. shutil.which("ffprobe") 系統 PATH 尋找
+    3. Windows 常見安裝路徑 fallback
+    """
+    if cli_path and Path(cli_path).exists():
+        return str(Path(cli_path).resolve())
+    system_which = shutil.which("ffprobe")
+    if system_which:
+        return system_which
+    windows_fallback = r"C:\FFmpeg\bin\ffprobe.exe"
+    if Path(windows_fallback).exists():
+        return windows_fallback
+    return None
 
 
 def download_and_parse_bundle_cached(
@@ -133,7 +153,8 @@ def download_and_parse_bundle_cached(
 def analyze_prefix_inversion(commands_pool: List[Tuple[int, List[Tuple[int, List[Any]]]]]) -> Dict[str, Any]:
     """
     1. 資源前綴反轉分析 (Resource-Prefix Inversion Analysis)
-    掃描參數中的資源字串，反向統計特定前綴對應到的 Command IDs
+    掃描參數中的資源字串，反向統計特定前綴對應到的 Command IDs，
+    並由 script 自動計算 prefix_total 與 ratio_of_prefix，包含嚴格 invariant 檢驗。
     """
     prefix_to_cmds = defaultdict(lambda: defaultdict(int))
     cmd_to_prefixes = defaultdict(lambda: defaultdict(int))
@@ -157,19 +178,36 @@ def analyze_prefix_inversion(commands_pool: List[Tuple[int, List[Tuple[int, List
                     if len(sample_values_by_prefix[matched_pfx]) < 5 and a not in sample_values_by_prefix[matched_pfx]:
                         sample_values_by_prefix[matched_pfx].append(a)
 
+    prefix_summary = {}
+    for pfx in known_prefixes:
+        cdict = prefix_to_cmds.get(pfx, {})
+        prefix_total = sum(cdict.values())
+        cmd_list = []
+        for cid, cnt in sorted(cdict.items(), key=lambda x: x[1], reverse=True):
+            ratio = round(cnt / prefix_total, 4) if prefix_total > 0 else 0.0
+            cmd_list.append({
+                "command_id": cid,
+                "count": cnt,
+                "ratio_of_prefix": ratio
+            })
+
+        # Invariant / Consistency Checks
+        if prefix_total > 0:
+            count_sum = sum(x["count"] for x in cmd_list)
+            ratio_sum = sum(x["ratio_of_prefix"] for x in cmd_list)
+            assert count_sum == prefix_total, f"Invariant violation: {pfx} count sum {count_sum} != {prefix_total}"
+            assert abs(ratio_sum - 1.0) <= 0.005, f"Invariant violation: {pfx} ratio sum {ratio_sum} != 1.0"
+
+        prefix_summary[pfx] = {
+            "prefix_total": prefix_total,
+            "commands": cmd_list
+        }
+
     result = {
-        "prefix_to_commands": {},
-        "command_to_prefixes": {},
+        "prefix_summary": prefix_summary,
+        "command_to_prefixes": {str(cid): dict(pdict) for cid, pdict in cmd_to_prefixes.items()},
         "prefix_samples": dict(sample_values_by_prefix),
     }
-
-    for pfx, cdict in prefix_to_cmds.items():
-        result["prefix_to_commands"][pfx] = [
-            {"command_id": cid, "count": cnt} for cid, cnt in sorted(cdict.items(), key=lambda x: x[1], reverse=True)
-        ]
-
-    for cid, pdict in cmd_to_prefixes.items():
-        result["command_to_prefixes"][str(cid)] = dict(pdict)
 
     return result
 
@@ -201,7 +239,6 @@ def analyze_sequence_contexts(
                 prev_counts[cid][prev_cid] += 1
                 next_counts[cid][next_cid] += 1
 
-                # 3-gram: (i-1, i, i+1)
                 trigram = (prev_cid, cid, next_cid)
                 trigram_counts[cid][trigram] += 1
 
@@ -209,15 +246,15 @@ def analyze_sequence_contexts(
     for cid in target_cids:
         tot = total_counts[cid]
         top_prev = [
-            {"prev_cid": pc, "count": cnt, "ratio": round(cnt / tot, 4) if tot > 0 else 0}
+            {"prev_cid": pc, "count": cnt, "ratio": round(cnt / tot, 4) if tot > 0 else 0.0}
             for pc, cnt in prev_counts[cid].most_common(5)
         ]
         top_next = [
-            {"next_cid": nc, "count": cnt, "ratio": round(cnt / tot, 4) if tot > 0 else 0}
+            {"next_cid": nc, "count": cnt, "ratio": round(cnt / tot, 4) if tot > 0 else 0.0}
             for nc, cnt in next_counts[cid].most_common(5)
         ]
         top_trigrams = [
-            {"trigram": f"{tg[0]} -> {tg[1]} -> {tg[2]}", "count": cnt, "ratio": round(cnt / tot, 4) if tot > 0 else 0}
+            {"trigram": f"{tg[0]} -> {tg[1]} -> {tg[2]}", "count": cnt, "ratio": round(cnt / tot, 4) if tot > 0 else 0.0}
             for tg, cnt in trigram_counts[cid].most_common(5)
         ]
 
@@ -234,11 +271,12 @@ def analyze_sequence_contexts(
 def analyze_timing_and_voice(
     commands_pool: List[Tuple[int, List[Tuple[int, List[Any]]]]],
     sound_dir: Path,
-    ffprobe_path: str = r"C:\FFmpeg\bin\ffprobe.exe",
+    ffprobe_path: Optional[str] = None,
     max_voice_align_samples: int = 150
 ) -> Dict[str, Any]:
     """
     3. 時序指令數值分佈與語音時長實測對齊 (Timing vs Voice Duration Correlation)
+    以邊界終止符明確分割 Voice Turn Window，修正 EOF finalization，並保存完整 provenance。
     """
     values_by_cmd = defaultdict(list)
     for sid, cmds in commands_pool:
@@ -274,59 +312,88 @@ def analyze_timing_and_voice(
         else:
             timing_distribution[str(cid)] = {"count": 0}
 
-    voice_alignments = []
-    has_ffprobe = Path(ffprobe_path).exists()
+    # 語音長度對齊實測
+    resolved_ffprobe = resolve_ffprobe_path(ffprobe_path)
+    ffprobe_available = (resolved_ffprobe is not None and Path(resolved_ffprobe).exists())
 
-    if has_ffprobe and sound_dir.exists():
+    voice_alignments = []
+    failed_count = 0
+    boundary_cids = {12, 7, 11, 5, 27, 46, 49}
+
+    if ffprobe_available and sound_dir.exists():
         for sid, cmds in commands_pool:
             if len(voice_alignments) >= max_voice_align_samples:
                 break
 
-            curr_voice = None
-            curr_cmd13 = []
-            for cid, args in cmds:
-                if cid == 12:
-                    if curr_voice:
-                        m4a_path = sound_dir / f"{curr_voice}.m4a"
-                        if m4a_path.exists():
-                            try:
-                                probe_cmd = [
-                                    ffprobe_path, "-v", "error",
-                                    "-show_entries", "format=duration",
-                                    "-of", "json", str(m4a_path)
-                                ]
-                                res = subprocess.run(probe_cmd, capture_output=True, text=True, timeout=5)
-                                dur = float(json.loads(res.stdout)["format"]["duration"])
-                                voice_alignments.append({
-                                    "voice_id": curr_voice,
-                                    "story_id": sid,
-                                    "actual_duration_sec": round(dur, 3),
-                                    "cmd13_count": len(curr_cmd13),
-                                    "cmd13_sum": sum(curr_cmd13),
-                                    "cmd13_first": curr_cmd13[0] if curr_cmd13 else 0,
-                                    "cmd13_list": curr_cmd13
-                                })
-                                if len(voice_alignments) >= max_voice_align_samples:
-                                    break
-                            except Exception:
-                                pass
-                    curr_voice = args[0] if args else None
-                    curr_cmd13 = []
-                elif cid == 13:
-                    if curr_voice and args:
-                        try:
-                            curr_cmd13.append(float(args[0]))
-                        except ValueError:
-                            pass
+            active_turn: Optional[Dict[str, Any]] = None
 
-    correlation_sum = 0.0
-    correlation_first = 0.0
-    if len(voice_alignments) >= 10:
+            def finalize_turn(turn: Dict[str, Any], end_idx: int):
+                nonlocal failed_count
+                if len(voice_alignments) >= max_voice_align_samples:
+                    return
+                vname = turn["voice_id"]
+                m4a_path = sound_dir / f"{vname}.m4a"
+                if m4a_path.exists():
+                    try:
+                        probe_cmd = [
+                            resolved_ffprobe, "-v", "error",
+                            "-show_entries", "format=duration",
+                            "-of", "json", str(m4a_path)
+                        ]
+                        res = subprocess.run(probe_cmd, capture_output=True, text=True, timeout=5)
+                        dur = float(json.loads(res.stdout)["format"]["duration"])
+                        voice_alignments.append({
+                            "story_id": sid,
+                            "voice_id": vname,
+                            "voice_command_index": turn["voice_cmd_idx"],
+                            "segmentation_end_index": end_idx,
+                            "included_cmd13_indices": list(turn["cmd13_indices"]),
+                            "included_cmd13_values": list(turn["cmd13_values"]),
+                            "cmd13_count": len(turn["cmd13_values"]),
+                            "cmd13_sum": sum(turn["cmd13_values"]),
+                            "cmd13_first": turn["cmd13_values"][0] if turn["cmd13_values"] else 0.0,
+                            "actual_duration_sec": round(dur, 3)
+                        })
+                    except Exception:
+                        failed_count += 1
+
+            for idx, (cid, args) in enumerate(cmds):
+                if cid in boundary_cids and active_turn:
+                    finalize_turn(active_turn, idx)
+                    active_turn = None
+                    if len(voice_alignments) >= max_voice_align_samples:
+                        break
+
+                if cid == 12 and args:
+                    active_turn = {
+                        "voice_id": args[0],
+                        "voice_cmd_idx": idx,
+                        "cmd13_indices": [],
+                        "cmd13_values": []
+                    }
+                elif cid == 13 and active_turn and args:
+                    try:
+                        v = float(args[0])
+                        active_turn["cmd13_indices"].append(idx)
+                        active_turn["cmd13_values"].append(v)
+                    except ValueError:
+                        pass
+
+            # EOF finalization
+            if active_turn and len(voice_alignments) < max_voice_align_samples:
+                finalize_turn(active_turn, len(cmds))
+
+    # 計算統計相關性 (Pearson r)
+    correlation_sum = None
+    correlation_first = None
+    evaluation_status = "EVALUATED" if ffprobe_available else "NOT_EVALUATED"
+
+    if ffprobe_available and len(voice_alignments) >= 10:
         durs = [x["actual_duration_sec"] for x in voice_alignments]
         sums = [x["cmd13_sum"] for x in voice_alignments]
         firsts = [x["cmd13_first"] for x in voice_alignments]
 
-        def calc_pearson(x: List[float], y: List[float]) -> float:
+        def calc_pearson(x: List[float], y: List[float]) -> Optional[float]:
             n = len(x)
             mx = sum(x) / n
             my = sum(y) / n
@@ -342,7 +409,12 @@ def analyze_timing_and_voice(
 
     return {
         "timing_distribution": timing_distribution,
-        "voice_alignment_sample_count": len(voice_alignments),
+        "ffprobe_available": ffprobe_available,
+        "ffprobe_path_used": resolved_ffprobe,
+        "evaluation_status": evaluation_status,
+        "requested_alignment_samples": max_voice_align_samples,
+        "successful_alignment_samples": len(voice_alignments),
+        "failed_alignment_samples": failed_count,
         "pearson_r_duration_vs_cmd13_sum": correlation_sum,
         "pearson_r_duration_vs_cmd13_first": correlation_first,
         "sample_alignments": voice_alignments[:10]
@@ -407,6 +479,7 @@ def run_semantics_audit(
     project_root: Path,
     output_json: Path,
     cache_dir: Optional[Path] = None,
+    ffprobe_path: Optional[str] = None,
     max_samples: int = 180
 ):
     print("=" * 60)
@@ -441,6 +514,11 @@ def run_semantics_audit(
     full_queue = (stratified_samples + rich_media_samples + batch_1 + batch_2)[:max_samples]
     print(f"  [Queue] 確定性重現 {len(full_queue)} 話抽樣隊列")
 
+    # 統計樣品組成
+    sample_composition = defaultdict(int)
+    for sid, cat, stype in full_queue:
+        sample_composition[cat] += 1
+
     # 3. 載入與反序列化所有抽樣話數
     commands_pool: List[Tuple[int, List[Tuple[int, List[Any]]]]] = []
     print("\n  [Parse] 開始載入並解析抽樣 Bundle...")
@@ -472,7 +550,6 @@ def run_semantics_audit(
 
     print("  [Analysis 3] 執行時序指令數值分佈與 ffprobe 語音長度實測對齊...")
     sound_dir = project_root / "dashboard" / "sound" / "story_vo"
-    ffprobe_path = r"C:\FFmpeg\bin\ffprobe.exe"
     timing_results = analyze_timing_and_voice(commands_pool, sound_dir, ffprobe_path)
 
     print("  [Analysis 4] 提取全部 cmd 100 地點文字...")
@@ -485,6 +562,7 @@ def run_semantics_audit(
     report_data = {
         "truth_version": truth_version,
         "sample_count": len(commands_pool),
+        "sample_composition_by_category": dict(sample_composition),
         "resource_prefix_inversion": prefix_results,
         "sequence_contexts": sequence_results,
         "timing_and_voice_correlation": timing_results,
@@ -519,6 +597,12 @@ def main():
         help="Bundle 本地暫存快取目錄 (預設: scratch/story_bundles_cache)"
     )
     parser.add_argument(
+        "--ffprobe",
+        type=str,
+        default=None,
+        help="指定 ffprobe 執行檔路徑 (選填，若未指定則自動依序探索 PATH 與 Windows 預設路徑)"
+    )
+    parser.add_argument(
         "--samples",
         type=int,
         default=180,
@@ -530,6 +614,7 @@ def main():
         project_root=PROJECT_ROOT,
         output_json=args.output,
         cache_dir=args.cache_dir,
+        ffprobe_path=args.ffprobe,
         max_samples=args.samples
     )
 
