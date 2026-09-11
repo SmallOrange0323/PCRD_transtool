@@ -49,58 +49,66 @@ except ImportError:
 
 PARSER_BEHAVIOR_MAP = {
     0: {
-        "parser_status": "PARSED_BUT_DROPPED",
+        "parser_behavior": "PARSED_BUT_DROPPED",
         "semantic_hypothesis": "Primary / Display-Title Metadata (Main/Chara/Guild/Sys 多數為序號標籤，Event 可能為 display title)",
-        "confidence": "HIGH",
+        "semantic_status": "CONFIRMED",
+        "semantic_confidence": "HIGH",
         "currently_persisted": False,
         "product_value": "話數標題與序號展示"
     },
     1: {
-        "parser_status": "PARSED_BUT_DROPPED",
-        "semantic_hypothesis": "官方劇情大綱 (Official Synopsis)",
-        "confidence": "VERY HIGH",
+        "parser_behavior": "PARSED_BUT_DROPPED",
+        "semantic_hypothesis": "官方長篇劇情大綱 (Official Synopsis)",
+        "semantic_status": "CONFIRMED",
+        "semantic_confidence": "VERY HIGH",
         "currently_persisted": False,
         "product_value": "📜 官方大綱面板"
     },
     5: {
-        "parser_status": "PARSED_AND_PERSISTED",
+        "parser_behavior": "PARSED_AND_PERSISTED",
         "semantic_hypothesis": "背景設定／切換 (Background Transition)",
-        "confidence": "VERY HIGH",
+        "semantic_status": "CONFIRMED",
+        "semantic_confidence": "VERY HIGH",
         "currently_persisted": True,
         "product_value": "劇情場景即時背景圖渲染"
     },
     6: {
-        "parser_status": "PARSED_AND_PERSISTED",
+        "parser_behavior": "PARSED_AND_PERSISTED",
         "semantic_hypothesis": "對白文本與說話者 (Dialogue Text & Speaker)",
-        "confidence": "VERY HIGH",
+        "semantic_status": "CONFIRMED",
+        "semantic_confidence": "VERY HIGH",
         "currently_persisted": True,
         "product_value": "劇情全文對話主體"
     },
     12: {
-        "parser_status": "PARTIALLY_PARSED",
-        "semantic_hypothesis": "語音音檔關聯 (Voice Association)",
-        "confidence": "VERY HIGH",
+        "parser_behavior": "PARTIALLY_PARSED",
+        "semantic_hypothesis": "語音音檔關聯 (Voice Association，current_voice 暫存並綁定下一個 cmd 6)",
+        "semantic_status": "CONFIRMED",
+        "semantic_confidence": "VERY HIGH",
         "currently_persisted": True,
-        "product_value": "單句語音播放 (僅配對至緊隨之 cmd 6)"
+        "product_value": "單句語音播放"
     },
     32: {
-        "parser_status": "PARSED_BUT_DROPPED",
+        "parser_behavior": "PARSED_BUT_DROPPED",
         "semantic_hypothesis": "官方話數副標題／話名 (Official Episode Subtitle / Episode Name)",
-        "confidence": "VERY HIGH",
+        "semantic_status": "CONFIRMED",
+        "semantic_confidence": "VERY HIGH",
         "currently_persisted": False,
         "product_value": "話名展示"
     },
     46: {
-        "parser_status": "PARSED_AND_PERSISTED",
+        "parser_behavior": "PARSED_AND_PERSISTED",
         "semantic_hypothesis": "動畫影片切換／播放 (Movie Playback)",
-        "confidence": "VERY HIGH",
+        "semantic_status": "CONFIRMED",
+        "semantic_confidence": "VERY HIGH",
         "currently_persisted": True,
         "product_value": "劇情動畫影片播放"
     },
     49: {
-        "parser_status": "PARSED_AND_PERSISTED",
+        "parser_behavior": "PARSED_AND_PERSISTED",
         "semantic_hypothesis": "CG 插畫切換／結束 (Still Display / End)",
-        "confidence": "VERY HIGH",
+        "semantic_status": "CONFIRMED",
+        "semantic_confidence": "VERY HIGH",
         "currently_persisted": True,
         "product_value": "劇情插畫 CG 渲染"
     }
@@ -341,12 +349,24 @@ def run_command_census(project_root: Path, output_json: Path, max_limit: int = 2
         "PARSE_ERROR": 0
     }
 
+    sample_composition = {
+        "stratified": defaultdict(int),
+        "rich_media": defaultdict(int),
+        "adaptive": defaultdict(int),
+        "total_by_category": defaultdict(int)
+    }
+
     commands_meta = defaultdict(lambda: {
         "story_count": 0,
+        "story_count_by_category": defaultdict(int),
         "occurrence_count": 0,
-        "by_category": defaultdict(int),
+        "occurrence_count_by_category": defaultdict(int),
+        "arg_count_min": float("inf"),
+        "arg_count_max": 0,
         "arg_patterns": set(),
         "sample_args": [],
+        "first_positions": [],
+        "last_positions": [],
         "neighbor_contexts": [],
         "stories": []
     })
@@ -360,6 +380,9 @@ def run_command_census(project_root: Path, output_json: Path, max_limit: int = 2
         sid, cat, sample_type = full_queue[idx]
         idx += 1
         processed_count += 1
+
+        sample_composition[sample_type][cat] += 1
+        sample_composition["total_by_category"][cat] += 1
 
         h = manifest_map.get(sid)
         if not h:
@@ -388,11 +411,23 @@ def run_command_census(project_root: Path, output_json: Path, max_limit: int = 2
                 new_cmds_in_this_story.add(cmd)
                 last_new_cmd_sample_index = processed_count
 
-        # 記錄詳細 command 數據
+        # 記錄位置與詳細 command 數據
+        first_pos_in_story = {}
+        last_pos_in_story = {}
         for pos, (cmd_id, args) in enumerate(commands):
+            if cmd_id not in first_pos_in_story:
+                first_pos_in_story[cmd_id] = pos
+            last_pos_in_story[cmd_id] = pos
+
             c_entry = commands_meta[cmd_id]
             c_entry["occurrence_count"] += 1
-            c_entry["by_category"][cat] += 1
+            c_entry["occurrence_count_by_category"][cat] += 1
+
+            arg_len = len(args)
+            if arg_len < c_entry["arg_count_min"]:
+                c_entry["arg_count_min"] = arg_len
+            if arg_len > c_entry["arg_count_max"]:
+                c_entry["arg_count_max"] = arg_len
 
             pattern = tuple(summarize_arg_type(a) for a in args)
             c_entry["arg_patterns"].add(pattern)
@@ -415,9 +450,30 @@ def run_command_census(project_root: Path, output_json: Path, max_limit: int = 2
                 c_entry["neighbor_contexts"].append(ctx_item)
 
         for cmd_id in unique_cmds_in_story:
-            commands_meta[cmd_id]["story_count"] += 1
-            if len(commands_meta[cmd_id]["stories"]) < 10:
-                commands_meta[cmd_id]["stories"].append(sid)
+            c_entry = commands_meta[cmd_id]
+            c_entry["story_count"] += 1
+            c_entry["story_count_by_category"][cat] += 1
+            if len(c_entry["stories"]) < 10:
+                c_entry["stories"].append(sid)
+
+            if len(c_entry["first_positions"]) < 5 and cmd_id in first_pos_in_story:
+                fpos = first_pos_in_story[cmd_id]
+                c_entry["first_positions"].append({
+                    "story_id": sid,
+                    "category": cat,
+                    "index": fpos,
+                    "total": len(commands),
+                    "ratio": round(fpos / max(1, len(commands)), 4)
+                })
+            if len(c_entry["last_positions"]) < 5 and cmd_id in last_pos_in_story:
+                lpos = last_pos_in_story[cmd_id]
+                c_entry["last_positions"].append({
+                    "story_id": sid,
+                    "category": cat,
+                    "index": lpos,
+                    "total": len(commands),
+                    "ratio": round(lpos / max(1, len(commands)), 4)
+                })
 
         new_info = f" -> NEW COMMANDS: {sorted(list(new_cmds_in_this_story))}" if new_cmds_in_this_story else ""
         if processed_count % 10 == 0 or new_cmds_in_this_story or processed_count == len(full_queue):
@@ -447,7 +503,16 @@ def run_command_census(project_root: Path, output_json: Path, max_limit: int = 2
         "truth_version": truth_version,
         "stories_scanned": processed_count,
         "status_distribution": stats,
-        "unique_command_ids": sorted(list(known_command_ids)),
+        "observed_command_count": len(known_command_ids),
+        "observed_min_command_id": min(known_command_ids) if known_command_ids else 0,
+        "observed_max_command_id": max(known_command_ids) if known_command_ids else 0,
+        "observed_command_ids": sorted(list(known_command_ids)),
+        "sample_composition": {
+            "stratified": dict(sample_composition["stratified"]),
+            "rich_media": dict(sample_composition["rich_media"]),
+            "adaptive": dict(sample_composition["adaptive"]),
+            "total_by_category": dict(sample_composition["total_by_category"])
+        },
         "last_new_cmd_sample_index": last_new_cmd_sample_index,
         "samples_since_last_new_cmd": processed_count - last_new_cmd_sample_index,
         "saturation_reached": saturation_reached,
@@ -457,25 +522,32 @@ def run_command_census(project_root: Path, output_json: Path, max_limit: int = 2
     for cmd_id in sorted(list(known_command_ids)):
         c_entry = commands_meta[cmd_id]
         p_info = PARSER_BEHAVIOR_MAP.get(cmd_id, {
-            "parser_status": "UNKNOWN",
-            "semantic_hypothesis": "UNKNOWN",
-            "confidence": "NONE",
+            "parser_behavior": "IGNORED",
+            "semantic_hypothesis": "未知演出控制 (待後續 R2 驗證)",
+            "semantic_status": "UNKNOWN",
+            "semantic_confidence": "UNKNOWN",
             "currently_persisted": False,
             "product_value": "待調研"
         })
 
         output_data["commands"][str(cmd_id)] = {
             "command_id": cmd_id,
-            "parser_status": p_info["parser_status"],
+            "parser_behavior": p_info["parser_behavior"],
             "semantic_hypothesis": p_info["semantic_hypothesis"],
-            "confidence": p_info["confidence"],
+            "semantic_status": p_info["semantic_status"],
+            "semantic_confidence": p_info["semantic_confidence"],
             "currently_persisted": p_info["currently_persisted"],
             "product_value": p_info["product_value"],
             "story_count": c_entry["story_count"],
+            "story_count_by_category": dict(c_entry["story_count_by_category"]),
             "occurrence_count": c_entry["occurrence_count"],
-            "by_category": dict(c_entry["by_category"]),
+            "occurrence_count_by_category": dict(c_entry["occurrence_count_by_category"]),
+            "arg_count_min": 0 if c_entry["arg_count_min"] == float("inf") else c_entry["arg_count_min"],
+            "arg_count_max": c_entry["arg_count_max"],
             "arg_patterns": [list(p) for p in c_entry["arg_patterns"]],
             "sample_args": c_entry["sample_args"],
+            "first_positions": c_entry["first_positions"],
+            "last_positions": c_entry["last_positions"],
             "neighbor_contexts": c_entry["neighbor_contexts"],
             "sample_stories": c_entry["stories"]
         }
