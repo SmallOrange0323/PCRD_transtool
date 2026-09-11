@@ -434,8 +434,9 @@ def build_metadata_eligible_story_universe(
 ) -> MetadataEligibleUniverse:
     """
     建構 Story Map 元數據適用宇宙 (Metadata Eligible Universe)：
-    由 Canonical Expected Story IDs ∩ Locally Present Numeric Story JSON IDs 構成。
-    代表目前 Story Map 前端本地實際存在、可閱讀且需要 runtime metadata sidecar 的故事話數集合。
+    依據 D2.2 ADR 定義，official_story_metadata.json 為全量話數 Episode-level Metadata Sidecar。
+    其覆蓋範圍 (eligible_ids) 嚴格等同於全部本地 numeric dashboard/story/*.json IDs。
+    同時保留 Canonical Universe 以獨立負責 upstream/source health 與 required story coverage 門禁。
     """
     base_dir = Path(dashboard_dir) if dashboard_dir else DASHBOARD_DIR
     story_dir = base_dir / "story"
@@ -448,7 +449,7 @@ def build_metadata_eligible_story_universe(
 
     univ = build_canonical_story_universe(dashboard_dir=dashboard_dir)
 
-    eligible_ids = univ.expected_ids & local_present
+    eligible_ids = set(local_present)
     missing_required_local_ids = univ.required_ids - local_present
     optional_not_local_ids = univ.optional_ids - local_present
     unknown_not_local_ids = univ.unknown_ids - local_present
