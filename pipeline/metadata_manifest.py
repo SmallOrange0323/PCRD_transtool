@@ -344,6 +344,33 @@ def save_canonical_manifest(manifest: Dict[str, Any], filepath: Path = MANIFEST_
     return m_version
 
 
+def batch_update_manifest_entries(
+    entries: Dict[Union[int, str], Dict[str, Any]],
+    truth_version: Optional[str] = None,
+    filepath: Path = MANIFEST_PATH
+) -> str:
+    """
+    批次原子插入或更新多話元數據至 Manifest：
+    1. 在記憶體中載入現有 manifest（若不存在且有 truth_version 則建立空 manifest）
+    2. 批次更新所有 entries，更新 episode_count
+    3. 若提供 truth_version 則更新頂層 truth_version
+    4. 驗證契約合規性（契約失敗則直接拋出例外，完全不寫入檔案）
+    5. 透過 save_canonical_manifest 原子寫入檔案
+    6. 回傳更新後之 metadata_version
+    """
+    manifest = load_metadata_manifest(filepath, default_truth_version=truth_version)
+    if truth_version:
+        manifest["truth_version"] = str(truth_version)
+
+    for sid, entry in entries.items():
+        sid_str = str(sid)
+        manifest["episodes"][sid_str] = entry
+
+    manifest["episode_count"] = len(manifest["episodes"])
+    validate_manifest_dict_contract(manifest)
+    return save_canonical_manifest(manifest, filepath)
+
+
 def update_manifest_entry(
     story_id: int | str,
     entry: Dict[str, Any],
@@ -354,16 +381,86 @@ def update_manifest_entry(
     增量插入或更新單一話數元數據至 Manifest。
     :return: 更新後之 metadata_version
     """
-    manifest = load_metadata_manifest(filepath, default_truth_version=truth_version)
-    if truth_version:
-        manifest["truth_version"] = str(truth_version)
+    return batch_update_manifest_entries({story_id: entry}, truth_version=truth_version, filepath=filepath)
 
-    sid_str = str(story_id)
-    manifest["episodes"][sid_str] = entry
-    manifest["episode_count"] = len(manifest["episodes"])
 
-    return save_canonical_manifest(manifest, filepath)
+def run_cli():
+    """CLI 入口，支援官方元數據側車清單之查詢與回補程序"""
+    import argparse
+    parser = argparse.ArgumentParser(
+        description="PCRD Official Story Metadata Manifest 管理與回補工具"
+    )
+    parser.add_argument("--rebuild", action="store_true", help="重建/回補官方元數據側車清單 (需連線 CDN)")
+    parser.add_argument("--sample", type=int, default=None, help="僅針對前 N 話樣本進行回補測試")
+    parser.add_argument("--truth-version", type=str, default=None, help="指定 8 位數字 TruthVersion (選填)")
+    parser.add_argument("--output", type=str, default=None, help="輸出檔案路徑 (預設為 dashboard/data/official_story_metadata.json)")
+
+    args = parser.parse_args()
+
+    if args.rebuild:
+        print("=" * 60)
+        print("⚡ [Bootstrap / Backfill] 官方元數據側車清單回補程序")
+        print("=" * 60)
+        out_path = Path(args.output) if args.output else MANIFEST_PATH
+        print(f"  目標檔案: {out_path}")
+        print("  網路需求: 需要連線 So-net CDN (storydata2_assetmanifest 與 pool/AssetBundles)")
+
+        tv = args.truth_version
+        if not tv:
+            try:
+                from pipeline.fetch import get_truth_version
+                tv = get_truth_version()
+            except Exception as e:
+                print(f"❌ 無法探測 TruthVersion: {e}", file=sys.stderr)
+                sys.exit(1)
+
+        print(f"  確定 TruthVersion 快照: {tv}")
+
+        try:
+            from tools.pcrd_fetch import load_story_manifest_bundle_refs, fetch_story_json_by_id
+            bundle_refs = load_story_manifest_bundle_refs(truth_version=tv)
+        except Exception as e:
+            print(f"❌ 載入 Story Manifest 失敗: {e}", file=sys.stderr)
+            sys.exit(1)
+
+        all_story_ids = sorted(bundle_refs.keys())
+        total_available = len(all_story_ids)
+        print(f"  CDN 上共有 {total_available} 話故事 AssetBundle 索引")
+
+        if args.sample:
+            target_story_ids = all_story_ids[:args.sample]
+            print(f"  [樣本模式] 僅處理前 {len(target_story_ids)} 話")
+        else:
+            print(f"⚠️  警告: 即將處理全量 {total_available} 話！")
+            confirm = input("確定要執行全量 CDN 回補嗎？(輸入 YES 繼續): ")
+            if confirm.strip() != "YES":
+                print("操作已取消。")
+                sys.exit(0)
+            target_story_ids = all_story_ids
+
+        collected_entries = {}
+        failed_count = 0
+        print(f"  開始抓取並萃取元數據...")
+        for i, sid in enumerate(target_story_ids, 1):
+            ref = bundle_refs[sid]
+            res = fetch_story_json_by_id(sid, bundle_ref=ref, extract_metadata=True, timeout=15)
+            if res.status == "OK" and res.metadata:
+                collected_entries[sid] = res.metadata.to_dict()
+                print(f"  [{i}/{len(target_story_ids)}] story_id={sid} OK")
+            else:
+                failed_count += 1
+                print(f"  [{i}/{len(target_story_ids)}] story_id={sid} FAILED: {res.error_message}", file=sys.stderr)
+
+        if failed_count > 0:
+            print(f"❌ 回補過程中有 {failed_count} 話失敗，基於全有全無原子原則，不寫入 Manifest！", file=sys.stderr)
+            sys.exit(1)
+
+        print(f"  所有 {len(collected_entries)} 話萃取完成，正在原子寫入 Manifest...")
+        m_ver = batch_update_manifest_entries(collected_entries, truth_version=tv, filepath=out_path)
+        print(f"✅ 回補完成！已原子寫入: {out_path} (metadata_version: {m_ver})")
+    else:
+        parser.print_help()
 
 
 if __name__ == '__main__':
-    print('metadata_manifest module loaded.')
+    run_cli()

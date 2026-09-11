@@ -568,6 +568,121 @@ def validate_voice_gap_manifest_and_assets(
     return res.is_valid
 
 
+def validate_official_story_metadata(
+    dashboard_dir: Path,
+    dist_dir: Optional[Path] = None,
+    check_dist: bool = False,
+    res: Optional[ValidationResult] = None,
+    allow_bootstrap_incomplete: bool = True,
+    verbose: bool = True
+) -> bool:
+    """
+    官方故事元數據 (Official Story Metadata Manifest) 專屬門禁檢驗：
+    1. 來源檔案存在性與契約檢驗 (若不存在且 allow_bootstrap_incomplete 則標記 BOOTSTRAP_INCOMPLETE 狀態)
+    2. validate_manifest_dict_contract 契約檢驗
+    3. episode_count 與 len(episodes) 一致性
+    4. 數字話數 ID 鍵名檢驗
+    5. Anti-Hallucination / Fake Synopsis Regression Guard (嚴禁「美食殿堂的羈絆」、「進一步的昇華」)
+    6. 覆蓋度狀態模型 (Coverage State Model: BOOTSTRAP_INCOMPLETE vs COMPLETE)
+    7. 若 check_dist=True 且來源存在：
+       - dist/data/official_story_metadata.json 必須存在且 SHA-256 與 source 100% 一致 (SHA Parity Gate)
+       - dist/data/db_info.json 必須包含 metadata_version 且嚴格等於 sha256(source)[:12]
+    """
+    if res is None:
+        res = ValidationResult()
+
+    source_manifest = dashboard_dir / "data" / "official_story_metadata.json"
+
+    # 1. 來源 Manifest 存在性檢驗
+    if not source_manifest.exists():
+        if allow_bootstrap_incomplete:
+            res.warning("[Metadata Gate] official_story_metadata.json 尚未建立 (狀態: BOOTSTRAP_INCOMPLETE)")
+            return True
+        else:
+            res.error("[Metadata Gate] 來源 official_story_metadata.json 不存在且不允許未完成狀態！")
+            return False
+
+    # 2. 來源 JSON 解析與 Schema 契約驗證
+    try:
+        source_bytes = source_manifest.read_bytes()
+        source_data = json.loads(source_bytes.decode("utf-8"))
+    except Exception as e:
+        res.error(f"[Metadata Gate] 來源 official_story_metadata.json 解析失敗: {e}")
+        return False
+
+    try:
+        from pipeline.metadata_manifest import validate_manifest_dict_contract
+        validate_manifest_dict_contract(source_data)
+    except Exception as e:
+        res.error(f"[Metadata Gate] 來源 official_story_metadata.json 契約校驗失敗: {e}")
+        return False
+
+    # 3. episode_count 與鍵名數字格式
+    episodes = source_data.get("episodes", {})
+    count = source_data.get("episode_count", 0)
+    if count != len(episodes):
+        res.error(f"[Metadata Gate] episode_count ({count}) 與實際話數 ({len(episodes)}) 不符！")
+
+    # 4. Anti-Hallucination / Fake Synopsis Regression Guard
+    banned_phrases = ["美食殿堂的羈絆", "進一步的昇華"]
+    for sid, ep in episodes.items():
+        synopsis = ep.get("official_synopsis")
+        if synopsis:
+            for phrase in banned_phrases:
+                if phrase in synopsis:
+                    res.error(
+                        f"[Metadata Gate] 話數 {sid} 包含已確認之假大綱/幻覺文字 (Regression Guard): '{phrase}'"
+                    )
+
+    # 5. 覆蓋度狀態模型 (Coverage State Model)
+    total_episodes = len(episodes)
+    if total_episodes >= 9033:
+        if verbose:
+            res.ok(f"[Metadata Gate] official_story_metadata 覆蓋狀態: COMPLETE ({total_episodes} 話)")
+    else:
+        if allow_bootstrap_incomplete:
+            res.warning(f"[Metadata Gate] official_story_metadata 覆蓋狀態: BOOTSTRAP_INCOMPLETE ({total_episodes}/9033 話)")
+        else:
+            res.error(f"[Metadata Gate] official_story_metadata 覆蓋不足 ({total_episodes}/9033 話)，未達到完整發布要求！")
+
+    # 6. 若 check_dist=True，執行 Source/Dist SHA Parity 與 db_info.json 門禁
+    if check_dist and dist_dir is not None:
+        dist_manifest = dist_dir / "data" / "official_story_metadata.json"
+        if not dist_manifest.exists():
+            res.error("[Metadata Gate] dist_story_map/data/official_story_metadata.json 不存在！")
+        else:
+            dist_bytes = dist_manifest.read_bytes()
+            src_sha = hashlib.sha256(source_bytes).hexdigest()
+            dist_sha = hashlib.sha256(dist_bytes).hexdigest()
+            if src_sha == dist_sha:
+                if verbose:
+                    res.ok(f"[Metadata Gate] official_story_metadata.json Source/Dist SHA-256 100% 一致 (SHA: {src_sha[:12]})")
+            else:
+                res.error(f"[Metadata Gate] official_story_metadata.json Source/Dist SHA-256 不一致！(Source: {src_sha[:12]}, Dist: {dist_sha[:12]})")
+
+        # 檢驗 dist db_info.json 的 metadata_version
+        dist_db_info_path = dist_dir / "data" / "db_info.json"
+        if dist_db_info_path.exists():
+            try:
+                dist_db_info = json.loads(dist_db_info_path.read_text(encoding="utf-8"))
+                dist_meta_ver = dist_db_info.get("metadata_version")
+                expected_meta_ver = hashlib.sha256(source_bytes).hexdigest()[:12]
+                if dist_meta_ver == expected_meta_ver:
+                    if verbose:
+                        res.ok(f"[Metadata Gate] dist db_info.json metadata_version 匹配正常: {dist_meta_ver}")
+                else:
+                    res.error(
+                        f"[Metadata Gate] dist db_info.json metadata_version 不符合預期！"
+                        f"(dist: {dist_meta_ver}, expected: {expected_meta_ver})"
+                    )
+            except Exception as e:
+                res.error(f"[Metadata Gate] 讀取 dist db_info.json 失敗: {e}")
+        else:
+            res.error("[Metadata Gate] dist db_info.json 不存在！")
+
+    return res.is_valid
+
+
 VALID_CHAPTER_TITLE_PROVENANCE = {"official_tw_game_ui", "official_tw_localized_asset", "unresolved"}
 VALID_CHAPTER_SUMMARY_PROVENANCE = {"legacy_unverified", "legacy_curated", "curated_manual", "ai_generated", "official", "unresolved"}
 
@@ -839,6 +954,11 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
     print(f"\n🔊 執行 Gap Voice 權威清單與來源二進位資產門禁驗證...")
     validate_voice_gap_manifest_and_assets(DASHBOARD_DIR, dist_dir=None, res=res, check_dist=False)
 
+    # 6D. 官方故事元數據側車門禁 (Official Story Metadata Manifest Gate)
+    print(f"\n📜 執行官方故事元數據側車門禁驗證...")
+    src_board_dir = base_dir if is_dashboard else DASHBOARD_DIR
+    validate_official_story_metadata(src_board_dir, dist_dir=None, check_dist=False, res=res, allow_bootstrap_incomplete=True)
+
     # 7. 若 check_dist=True，執行 dist_story_map 專屬集合與檔案深度驗證
     if check_dist or base_dir == DIST_DIR:
         print(f"\n🔍 執行 dist_story_map 專屬部署結構與對白集合驗證...")
@@ -917,6 +1037,10 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
         # 深度驗證 dist/sound/story_vo Gap 語音對等性 (Parity Gate)
         print(f"\n🔊 執行 dist_story_map Gap Voice 對等性門禁驗證...")
         validate_voice_gap_manifest_and_assets(DASHBOARD_DIR, dist_dir=DIST_DIR, res=res, check_dist=True)
+
+        # 深度驗證 dist official_story_metadata.json 與 metadata_version 對齊門禁
+        print(f"\n📜 執行 dist_story_map 官方故事元數據與 metadata_version 對齊門禁驗證...")
+        validate_official_story_metadata(src_board_dir, dist_dir=DIST_DIR, check_dist=True, res=res, allow_bootstrap_incomplete=True)
 
         # 8. 部署體積門禁檢驗 (Deployment Footprint Gate)
         print(f"\n📦 執行 GitHub Pages 部署體積門禁 (Footprint Gate)...")

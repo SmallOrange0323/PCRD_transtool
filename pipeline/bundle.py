@@ -643,11 +643,16 @@ def calculate_expected_additions_and_deltas(dashboard_dir: Path = DASHBOARD_DIR,
                 if calc_sha256(jf) != calc_sha256(df):
                     deltas += (s_sz - d_sz)
 
-    # 3. db_info.json (精確計算 bytes)
+    # 3. db_info.json (精確計算 bytes，若存在 official_story_metadata.json 則注入 metadata_version)
     db_src = dashboard_dir / "redive_tw.db"
     db_sz = db_src.stat().st_size if db_src.exists() else 0
     db_hash = calc_sha256(db_src)[:12] if db_src.exists() else "nodata"
-    sim_db_info = json.dumps({"db_version": f"hash_{db_hash}", "tw_size": db_sz, "jp_size": 0}, ensure_ascii=False, indent=2).encode("utf-8")
+    sim_db_dict = {"db_version": f"hash_{db_hash}", "tw_size": db_sz, "jp_size": 0}
+    meta_src = dashboard_dir / "data" / "official_story_metadata.json"
+    if meta_src.exists():
+        sim_db_dict["metadata_version"] = calc_sha256(meta_src)[:12]
+
+    sim_db_info = json.dumps(sim_db_dict, ensure_ascii=False, indent=2).encode("utf-8")
     db_info_dst = dst_data / "db_info.json"
     if not db_info_dst.exists():
         additions += len(sim_db_info)
@@ -837,13 +842,23 @@ def bundle_story_map(dry_run: bool = False) -> bool:
             if copy_if_different(jf, dst_data_dir / jf.name, force_overwrite=True, dry_run=dry_run):
                 data_updated += 1
 
-    # 4. 計算決定性 db_version
+    # 4. 計算決定性 db_version 與 metadata_version
     db_size = db_src.stat().st_size if db_src.exists() else 0
-    db_info_bytes = json.dumps({
+    db_info_dict = {
         "db_version": f"hash_{db_hash}",
         "tw_size": db_size,
         "jp_size": 0
-    }, ensure_ascii=False, indent=2).encode("utf-8")
+    }
+    meta_src = src_data_dir / "official_story_metadata.json"
+    if meta_src.exists():
+        metadata_ver = calc_sha256(meta_src)[:12]
+        db_info_dict["metadata_version"] = metadata_ver
+        if dry_run:
+            print(f"  [DRY-RUN] would set metadata_version={metadata_ver}")
+        else:
+            print(f"  [Metadata Info] 決定性 metadata_version: {metadata_ver}")
+
+    db_info_bytes = json.dumps(db_info_dict, ensure_ascii=False, indent=2).encode("utf-8")
     db_info_path = dst_data_dir / "db_info.json"
     if not dry_run:
         dst_data_dir.mkdir(parents=True, exist_ok=True)
