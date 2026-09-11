@@ -1,8 +1,8 @@
-# Issue #2 — Design Review D1.1
+# Issue #2 — Design Review D1.2
 # Story Map 故事元數據持久化與產品整合架構盤點 (Architecture Inventory)
 
-> **版本**：1.1.0 (Design Review D1.1 — Evidence & Architecture Correction)<br/>
-> **基準 Commit**：`dd75f1dc943939232db3e9c9a5c4c0b1430fc361` (main) / `89334bbe73e655b8c9683dbe6ef93d2be4010c6d` (D1 remote)<br/>
+> **版本**：1.2.0 (Design Review D1.2 — Evidence Accounting Correction)<br/>
+> **基準 Commit**：`dd75f1dc943939232db3e9c9a5c4c0b1430fc361` (main) / `9833b84bc16d52cfaded4e959ef51fce14ee0fa3` (D1.1 remote)<br/>
 > **分支**：`design/story-metadata-persistence-review`  
 > **審查模式**：Evidence-Calibrated Research & Architecture Audit Mode  
 > **性質**：架構分析與資料契約盤點（唯讀審查，本階段不進行實體代碼修改，不選定最終方案）
@@ -15,8 +15,11 @@
 
 本審查核心架構結論：
 1. **現有資料契約具極高約束力 (Top-level Array Contract)**：
-   - **抽樣觀察**：在 502 篇分層抽樣劇本中，100.0% (502/502) 觀察為頂層陣列（Top-level JSON Array）。
-   - **母體全量驗證**：經 `pipeline/validate.py` 執行全域檢驗，全量 9,034 篇 JSON 檔案（包含 9,033 篇數字話數 ID 劇本，以及 1 篇非數字 ID 的 `story/speaker_appearance.json` 統計檔）全數通過 `isinstance(dialogues, list)` 門禁校驗。
+   - **抽樣觀察 (Sample Observation)**：在 502 篇分層抽樣劇本中，100.0% (502/502) 觀察為頂層陣列（Top-level JSON Array）。
+   - **母體全量驗證 (Population Verification)**：
+     - `dashboard/story/` 本地掃描共有 9,034 個 `*.json` 檔案。
+     - 其中 9,033 篇具備數字話數 ID（Numeric Story JSON），在 `pipeline/validate.py` 執行期實際通過 `json.load()` 與 `isinstance(dialogues, list)` 硬性斷言驗證，證實 100% (9,033/9,033) 均為頂層陣列。
+     - 另外 1 篇為非數字檔名輔助檔案 `story/speaker_appearance.json`（Non-numeric Auxiliary File），在 validator 控制流中於 `int(sf.stem)` 轉換階段觸發 `ValueError`，被記錄為 warning 後直接略過（skip），未進入 `json.load` 與陣列斷言邏輯；其頂層結構不得宣稱由此驗證門禁 VERIFIED。
    - 前端 `dialogue-normalizer.js`、`map.js`、`characters.js` 以及後端 `pipeline/validate.py` 對此結構均有**硬性斷言（Hard Assertions）**。若貿然將根結構改寫為物件（Schema Migration），將直接破壞所有既有 Consumer 並造成驗證門禁全面死鎖。
 2. **Auto Play v1 邊界釐清（Persistence vs Runtime）**：
    - **Persistence / Schema Change: NO**。現有 `story/{id}.json` 中的 `voice` 標籤、`words` 與陣列順序完全滿足自動播放需求，**不需要任何資料庫遷移或 JSON Schema Migration**，亦不依賴低信心的演出計時指令（`cmd 13`）。
@@ -88,9 +91,12 @@ flowchart TD
 
 ### 1. 檔案規格與頂層結構 (Root Shape)
 * **規格**：**Top-level JSON Array (`List[Dict[str, Any]]`)**。
-* **母體與抽樣數據區隔**：
+* **母體與抽樣數據區隔 (Population vs Sample Accounting)**：
   * **抽樣觀察 (Sample Observation)**：在 502 篇分層抽樣劇本中，**100.0% (502/502) 均為頂層陣列**，無任何頂層 Object 格式。
-  * **全量母體驗證 (Population Verification)**：經 `pipeline/validate.py` 執行全域門禁檢驗，全量 9,034 篇 JSON 檔案（9,033 篇數字話數 ID 與 1 篇 `speaker_appearance.json` warning）**100% 通過 `isinstance(dialogues, list)` 斷言**。
+  * **全量母體驗證 (Population Verification & Control Flow)**：
+    * `dashboard/story/` 目錄本地掃描共包含 9,034 個 `*.json` 檔案。
+    * **9,033 篇數字話數 ID 劇本 (Numeric Story Files)**：在 `pipeline/validate.py` 的逐檔校驗迴圈中，成功轉換為整數 ID (`sid = int(sf.stem)`)，並實際執行 `json.load(f)` 與 `isinstance(dialogues, list)` 斷言，全數 100% 通過檢驗（VERIFIED）。
+    * **1 篇非數字輔助檔案 `story/speaker_appearance.json` (Non-numeric Auxiliary File)**：在嘗試轉換為整數 ID 時觸發 `ValueError`，在 validator 控制流中被捕獲並記錄 `res.warning("對白劇本檔名非數字 ID: story/speaker_appearance.json")` 後直接跳過，**並未執行 `json.load`，亦未通過 `isinstance(..., list)` 斷言**。因此該輔助檔案之根結構不得宣稱由此門禁 VERIFIED。（註：validator 結尾輸出之「共 9034 篇 JSON 均格式合法」為報告文字匯總與控制流未完全對齊之顯示現象，不代表非數字輔助檔執行過陣列斷言）。
 
 ### 2. 現有事件節點型別 (Observed Event Types)
 劇本陣列中的元素共包含以下五種節點規格：
@@ -169,7 +175,7 @@ flowchart TD
 | **cmd 1** | Metadata | **官方劇情大綱 (Official Synopsis)**<br/>長篇劇情概要，存在率 100%，非空率 89.4% | **VERIFIED** | **極高**<br/>(取代人工捏造大綱) | **強烈建議** | 非必需 (UI即時受惠) | 📜 官方大綱面板 |
 | **cmd 32** | Metadata | **話數副標題 (Subtitle / Episode Name)**<br/>與 DB 吻合度高，存在率 88.9% | **VERIFIED** | **高**<br/>(校正話名標籤) | **強烈建議** | 非必需 | 🏷️ 正式話名顯示 |
 | **cmd 0** | Metadata | **話數標籤 / 主標題 (Title Metadata)**<br/>序號或部章標籤，存在率 100% | **HIGH** | 中 | 建議 | 非必需 | 序號輔助導航 |
-| **cmd 100** | Location | **場景地點標題 (Location Title)**<br/>官方繁中地名橫幅，180話共 16 occurrences | **HIGH** | 中高 | 建議 (Phase 2) | 非必需 | 🗺️ 地點切換轉場浮水印 |
+| **cmd 100** | Location | **場景地點標題 (Location Title)**<br/>官方繁中地名橫幅，180話共 16 occurrences (12 unique stories) | **HIGH** | 中高 | 建議 (Phase 2) | 非必需 | 🗺️ 地點切換轉場浮水印 |
 | **cmd 11** | Interaction | **玩家互動選擇肢 (Interactive Choices)**<br/>選項按鈕與跳轉標籤，180話共 780 occurrences | **HIGH** | 中 | 建議 (Phase 2) | 非必需 (可預設首選) | 🔀 互動分支閱讀模式 |
 | **cmd 12** | Audio | **語音關聯 (Voice Association)**<br/>14,703 筆 `vo_` 100% 關聯至此指令 | **VERIFIED** | **極高** | **已持久化** (`voice`) | **核心必需** | 🔊 對白單句播放 / 自動播放 |
 | **cmd 5/46/49**| Media | **背景 / 動畫 / CG 劇照** | **VERIFIED** | **極高** | **已持久化** | 非必需 | 🖼️ 多媒體閱讀呈現 |
@@ -185,10 +191,10 @@ flowchart TD
 | **cmd 26** | Audio | **單次音效觸發 (One-shot SE)** | **HIGH** | 中低 | **暫禁入正式結構** | 完全無關 | 未來音效連動 |
 | **cmd 67** | Audio | **參數化音效／循環控制 (Controlled SE)** | **HIGH** | 低 | **暫禁入正式結構** | 完全無關 | 未來音效連動 |
 | **cmd 51** | Audio | **常駐環境氛圍音 (Ambience Loop)** | **HIGH** | 低 | **暫禁入正式結構** | 完全無關 | 未來環境音連動 |
-| **cmd 9** | Audio | **BGM 淡出／停止 (BGM Stop)** (佔 `bgm_` 99.2%)| **HIGH** | 低 | **暫禁入正式結構** | 完全無關 | 未來背景音樂連播 |
-| **cmd 13** | Timing | **子句停頓／間歇延遲 (Inter-phrase Delay)**<br/>語意 Timing，單位與 blocking 未確認 | **HYPOTHESIS** | 低 | **暫禁入正式結構** | **完全無關**<br/>(禁由 delay 驅動) | 待逆向確認計時單位 |
-| **cmd 27** | Timing | **幕簾過渡／轉場黑屏等待 (Curtain Wait)** | **HYPOTHESIS** | 低 | **暫禁入正式結構** | 完全無關 | 待逆向確認計時單位 |
-| **cmd 61** | Timing | **畫面淡入淡出時長 (Fade Duration)** | **HYPOTHESIS** | 低 | **暫禁入正式結構** | 完全無關 | 待逆向確認計時單位 |
+| **cmd 9** | Audio | **BGM 淡出／停止 (BGM Stop/Fade)**<br/>佔 `bgm_` 99.24% (1,312次) | **OBSERVED / INFERRED**<br/>(強資源前綴模式) | 低 | **暫禁入正式結構** | 完全無關 | 未來背景音樂連播 |
+| **cmd 13** | Timing | **子句停頓／打字機演出延遲 (Delay/Pacing)**<br/>語音時長相關性中度，非通用計時器 | **Semantic: HIGH**<br/>Runtime: HYPOTHESIS | 低 | **暫禁入正式結構** | **完全無關**<br/>(禁由 delay 驅動) | 待逆向確認計時單位 |
+| **cmd 27** | Timing | **幕簾過渡／轉場黑屏等待 (Curtain Wait)** | **Semantic: HIGH**<br/>Runtime: HYPOTHESIS | 低 | **暫禁入正式結構** | 完全無關 | 待逆向確認計時單位 |
+| **cmd 61** | Timing | **畫面淡入淡出時長 (Fade Duration)** | **Semantic: HIGH**<br/>Runtime: HYPOTHESIS | 低 | **暫禁入正式結構** | 完全無關 | 待逆向確認計時單位 |
 
 > [!NOTE]
 > **未校準指令排除說明**：早期 R1 假說中提及之 `cmd 10/14/16`（原猜測與 Staging 有關）、`cmd 18/20`（原猜測與 Camera 有關）、`cmd 8/15`（原猜測與 Audio 有關）、`cmd 22`（原猜測與 Timing 有關），在 R2 的嚴格驗證中均未獲得充足證據支持，故全數不列入確認的候選清單中，嚴禁納入生產契約。
@@ -250,7 +256,10 @@ graph TD
 
 * **`cmd 100`（場景地點橫幅）**：
   - 在 180 話確定性抽樣中**共觀察到 16 次出現 (occurrences)**。
-  - 分佈於 11 話主線劇情中（4 話各出現 2 次，7 話各出現 1 次）。
+  - 分佈於 **12 話獨立主線劇情 (12 unique Story IDs)**：
+    - **4 個 Story IDs 各出現 2 次 (共 8 occurrences)**：`2104006`、`2201007`、`2210006`、`2212001`；
+    - **8 個 Story IDs 各出現 1 次 (共 8 occurrences)**：`2000002`、`2005006`、`2007005`、`2009001`、`2102007`、`2109002`、`2205001`、`2208004`。
+    - 算術驗證：$4 \times 2 + 8 \times 1 = 16\text{ occurrences}$；$4 + 8 = 12\text{ unique Story IDs}$。
 * **`cmd 11`（玩家分支互動選項）**：
   - 在 180 話確定性抽樣中**共觀察到 780 次出現 (occurrences)**。
   - **89.23%** 緊接 `cmd 7`（等待玩家點擊輸入），10.0% 呈現連續分歧 `11 -> 11 -> 7`。
@@ -419,15 +428,18 @@ graph TD
 ## 九、 證據邊界 (Evidence Boundary)
 
 * **VERIFIED (已證實)**：
-  - 現有 `story/{id}.json` 抽樣 502/502 篇為頂層陣列，全量 9,034 篇經 `pipeline/validate.py` 檢驗 100% 通過陣列斷言。
+  - 現有 `story/{id}.json` 抽樣 502/502 篇為頂層陣列；全量 9,033 篇數字話數 ID 經 `pipeline/validate.py` 實測 100% 通過 `isinstance(dialogues, list)` 陣列斷言（非數字輔助檔 `story/speaker_appearance.json` 在控制流中被 warning 跳過，其根結構未在此 gate VERIFIED）。
   - `map.js:1695-1727` 依故事類型查詢 5 張不同資料表之 `sub_title`，且在桌面版空值時存在人工捏造之「美食殿堂的羈絆」fallback 字串。
   - `cmd 1` 存在率為 100.0% (180/180)，非空率為 89.4% (161/180)，空值率為 10.6% (19/180，主要為 System 劇本)。
-  - `cmd 100` 在 180 話抽樣中共出現 16 次，單話可出現多筆且帶不同 `stream_index`。
+  - `cmd 100` 在 180 話抽樣中共出現 16 次 (occurrences)，分佈於 12 個 unique Story IDs（4 話各 2 次，8 話各 1 次），且單話多筆各自帶有不同 `stream_index`。
   - `cmd 11` 在 180 話抽樣中共出現 780 次，89.23% 緊接 `cmd 7`。
   - Auto Play v1 在 Persistence / Schema 層級無需任何改動，但在 Runtime 層級需要適配控制器以捕捉音訊結束事件（現有 `MediaService.playVoice` 無 callback / handle）。
 * **HIGH-CONFIDENCE (高置信度推論)**：
   - 方案 A（Sidecar Manifest）或 Hybrid 策略在工程風險、打包相容性與回滾難度上顯著優於全量改寫的方案 C。
   - 新建獨立 `StoryDataService` 比擴充多媒體專用的 `StoryAssetService` 更符合單一職責原則。
+  - `cmd 13` / `cmd 27` / `cmd 61` 的語意領域 (Semantic domain: Timing / Transition Delay / Fade Duration) 具高置信度。
+* **OBSERVED / INFERRED**：
+  - `cmd 9`：觀察到 99.24% 的 `bgm_` 前綴集中於此（1,312 次），推論其為背景音樂淡出／停止控制（BGM Stop），未設獨立卡片正式評級。
 * **HYPOTHESIS / UNRESOLVED (假說與未決項目)**：
-  - `cmd 13` / `cmd 27` / `cmd 61` 的時間單位與 blocking 屬性尚未經 runtime 反編譯或 wall-clock 實測證實，嚴禁作為生產計時依據。
+  - `cmd 13` / `cmd 27` / `cmd 61` 的具體時間單位（秒 vs 幀數）與 blocking / non-blocking 屬性尚未經 runtime 反編譯或 wall-clock 實測證實，嚴禁作為生產計時依據。
   - 方案 A 體積增加 ~2.7 MB 屬 `[ESTIMATE]` 推估，實際以實作產物為準。
