@@ -13,7 +13,7 @@
 
 ## 一、 執行摘要 (Executive Summary)
 
-本研究（Research R2）在 R1 指令普查收斂出的 71 種二進位指令基礎上，針對音訊（Group A）、時序節奏（Group B）、立繪演出（Group C）、鏡頭視口（Group D）、地點橫幅（Group E）及互動分歧（Group F）等高價值指令群進行**資源前綴反轉**、**狀態轉移 N-Gram 上下文**與**透過 `ffprobe` 進行物理音訊時長對齊**。本報告嚴格依據專案 `Evidence-Calibrated Research Mode` 撰寫，區分直接觀察 (OBSERVED)、合理推論 (INFERRED) 與待驗證假說 (HYPOTHESIS)。
+本研究（Research R2）在 R1 指令普查收斂出的 71 種二進位指令基礎上，針對音訊（Group A）、時序節奏（Group B）、立繪演出（Group C）、鏡頭視口（Group D）、地點橫幅（Group E）及互動分歧（Group F）等高價值指令群進行**資源前綴反轉**、**狀態轉移 N-Gram 上下文**與**透過 `ffprobe` 進行物理音訊時長對齊**。本報告嚴格依據專案 `AGENTS.md` 之 `Evidence-Calibrated Research Mode` 撰寫，嚴格區分直接觀察 (OBSERVED)、合理推論 (INFERRED) 與待驗證假說 (HYPOTHESIS)。
 
 ### 核心觀察與推論摘要
 
@@ -22,12 +22,11 @@
    - 音效前綴 `se_`：共 7,774 次出現，主要分佈於 `cmd 26`（4,570 次，58.79%）、`cmd 59`（1,715 次，22.06%）與 `cmd 54`（1,411 次，18.15%）。
    - 環境音前綴 `amb_`：共 1,335 次出現，分佈於 `cmd 67`（476 次，35.66%）、`cmd 26`（471 次，35.28%）、`cmd 51`（338 次，25.32%）與 `cmd 61`（50 次，3.75%）。
    - 背景音樂前綴 `bgm_`：共 1,322 次出現，分佈於 `cmd 9`（1,312 次，99.24%）、`cmd 103`（9 次，0.68%）與 `cmd 101`（1 次，0.08%）。
-2. **時序指令並非音訊時長計時器 (INFERRED from Controlled Measurement)**：
-   - 透過 `ffprobe` 實測 103 筆本地真實語音音檔時長（秒），並以語音邊界隔離（Voice Turn Window）排除非對白轉場指令：
-     - 單句內部 `cmd 13` 累計總和與語音時長之皮爾森相關係數為 **$r = 0.6783$**（中高度正相關）。
-     - 單句內部首個 `cmd 13` 與語音時長之相關係數為 **$r = 0.4161$**。
-   - **反例佐證**：在樣本中觀察到語音音檔長度達 3.263 秒（如 `vo_adv_1001001_001`），但該語音段落內的 `cmd 13` 為空（累計值 0）。
-   - **產品推論**：`cmd 13` 數值並非音訊播放計時器，Auto Play 功能不可依賴 `cmd 13` 倒數語音播放，必須以真實音訊事件 (Audio Ended) 或音訊實體時長為依據。
+2. **時序指令並非通用語音長度計時器 (OBSERVED / INFERRED / HYPOTHESIS)**：
+   - **OBSERVED**：透過 `ffprobe` 實測 103 筆本地真實語音音檔時長（秒），以嚴格語音邊界隔離（Voice Turn Window）排除轉場指令後，單句內部 `cmd 13` 累計值與語音時長之皮爾森相關係數為 **$r = 0.6783$**；首個 `cmd 13` 相關係數為 **$r = 0.4161$**。同時觀察到語音長度達 3.263 秒但段落內 `cmd 13` 為空（累計值 0）的反例（`vo_adv_1001001_001`）。
+   - **INFERRED (LIKELY)**：最合理解釋為語句間隔或打字機演出停頓延遲 (delay/pacing)，其數值與語音長度存在粗略節奏相關，但反例顯示其並非通用語音長度計時器。
+   - **HYPOTHESIS / UNRESOLVED**：時間單位為 frame @ 30fps 仍屬假說；執行期是否為 blocking 機制尚未確認。
+   - **PRODUCT IMPLICATION**：Auto Play 功能**不可依賴 `cmd 13` 作為語音播放時長**，必須以真實音訊事件 (Audio Ended) 或音訊實體時長為依據。
 3. **場景橫幅文字呈現 (OBSERVED)**：
    - 提取 180 話抽樣中全部 16 筆 `cmd 100` 參數，觀察到其參數均為遊戲內對應的官方繁體中文場景地名（包含「蘭德索爾」、「拉比林斯的公會據點」、「月光學院」、「古城」及異空間遮罩「？？？」）。
 4. **互動分歧選項指令重新識別 (OBSERVED & INFERRED)**：
@@ -89,7 +88,7 @@
   - 完整上下文序列：
     ```text
     [idx 3] cmd 46, args=['200000101', '0', '0']  (動畫片段 Part 1)
-    [idx 4] cmd 61, args=['0.5']                 (淡入淡出 0.5s)
+    [idx 4] cmd 61, args=['0.5']                 (淡入淡出 0.5)
     [idx 5] cmd 101, args=['bgm_M38']             (cmd 101)
     [idx 6] cmd 46, args=['200000102']           (動畫片段 Part 2)
     ```
@@ -126,35 +125,49 @@
 #### `cmd 13` — 子句停頓與動畫間歇延遲 (Script Animation & Inter-phrase Delay)
 - **DOMAIN**: Timing / Script Flow
 - **ACTION**: 暫停腳本推進，供打字機換行、標點停頓或立繪動作同步展示
-- **ARGUMENT SCHEMA**: `[frames: int/float]`（常見：`['15']`, `['30']`, `['45']`, `['20']`）
-- **BLOCKING**: **HYPOTHESIS** (待執行期驗證)
-- **TIMING UNIT**: **HYPOTHESIS: Frames @ 30fps** (30 單位約 1.0 秒，待執行期反編譯或即時鐘表實測確認)
-- **CONFIDENCE**: **HIGH-CONFIDENCE (功能定位為停頓延遲) / HYPOTHESIS (特定幀率與阻塞機制)**
-- **EVIDENCE (OBSERVED & MEASURED)**:
+- **ARGUMENT SCHEMA**: `[timing_value: numeric]`（常見：`['15']`, `['30']`, `['45']`, `['35']`, `['25']`, `['20']`, `['10']`）
+- **BLOCKING**: **HYPOTHESIS / UNRESOLVED**（待二進位反編譯或 runtime trace 確認）
+- **TIMING UNIT**: **HYPOTHESIS / UNRESOLVED**（推測可能為 Frames @ 30fps，但未經反編譯或 wall-clock 實測確認）
+- **CONFIDENCE**:
+  - 語意領域 (Timing / Delay / Pacing): **HIGH-CONFIDENCE**
+  - 時間單位與阻塞屬性 (Frames @ 30fps / Blocking): **HYPOTHESIS / UNRESOLVED**
+- **OBSERVED**:
   - 180 話樣本中出現 38,567 次，**80.72%** 的序列分佈為 `6 -> 13 -> 6`（對白分句之間）。
-  - 離散值分佈高度集中於整數檔位：`15` (15.7%), `30` (14.2%), `20` (8.8%), `10` (8.4%), `45` (6.2%)。
-  - **ffprobe 實測對齊 (103 筆樣本)**：單句內部 `cmd 13` 總和與語音時長之皮爾森相關係數為 **$r = 0.6783$**。
-- **COUNTER-EVIDENCE (OBSERVED)**:
-  - 存在語音長度達 3.263 秒但後續 `cmd 13` 為空的案例（`vo_adv_1001001_001`）。
-  - 證實 `cmd 13` 並非語音播放完成計時器。
-- **PRODUCT RELEVANCE**: Auto Play 模式下推薦作為語句內部標點間隔依據，但不能取代語音實際時長。
+  - 數值分佈：min=0.0, max=195.0, mean=35.91, median=30.0, p25=20.0, p75=45.0。前四大高頻離散值：`30.0` (15.25%), `15.0` (14.82%), `45.0` (8.86%), `35.0` (7.97%)。
+  - **ffprobe 實測對齊 (103 筆樣本)**：單句內部 `cmd 13` 總和與語音時長之皮爾森相關係數為 **$r = 0.6783$**；首個 `cmd 13` 與語音時長之相關係數為 **$r = 0.4161$**。
+  - **反例佐證 (OBSERVED)**：在樣本中觀察到語音長度達 3.263 秒但相鄰 `cmd 13` 為空的案例（`vo_adv_1001001_001`，累計總和為 0）。
+- **INFERRED (LIKELY)**:
+  - 最合理解釋為語句間隔或打字機演出停頓延遲 (delay/pacing)，其數值與語音長度存在粗略節奏相關，但反例顯示其並非通用語音長度計時器。
+- **HYPOTHESIS / UNRESOLVED**:
+  - 時間單位是否為 30fps 幀數、執行期是否阻塞協程或等待使用者輸入。
+- **PRODUCT IMPLICATION**:
+  - Auto Play 功能**不可依賴 `cmd 13` 作為語音播放時長**。
 
 #### `cmd 27` — 幕簾過渡／轉場黑屏等待 (Scene Transition Curtain Wait)
 - **DOMAIN**: Timing / Scene Transition
 - **ACTION**: 等待場景黑屏／淡出遮蔽
-- **ARGUMENT SCHEMA**: `[fade_in: float, fade_out: float]`（常見 `['1', '1']`, `['1', '0.3']`）
-- **BLOCKING**: LIKELY Blocking
-- **TIMING UNIT**: LIKELY Seconds
-- **CONFIDENCE**: **HIGH-CONFIDENCE**
-- **EVIDENCE (OBSERVED)**: 常見於話數結尾（`9 -> 27 -> [EOF]` 佔 13.91%）或切換背景前（`27 -> 5` 佔 18.81%）。
+- **ARGUMENT SCHEMA**: `[param_1: numeric, param_2: numeric]`（常見 `['1', '1']`, `['1', '0.3']`, `['0.5', '0.5']`）
+- **BLOCKING**: **HYPOTHESIS / UNRESOLVED**（待 runtime trace 確認）
+- **TIMING UNIT**: **HYPOTHESIS / UNRESOLVED**（推測為秒，但缺乏反編譯或 wall-clock 實測確認）
+- **CONFIDENCE**:
+  - 語意領域 (Scene Transition / Curtain Wait): **HIGH-CONFIDENCE**
+  - 時間單位與阻塞屬性 (Seconds / Blocking): **HYPOTHESIS / UNRESOLVED**
+- **EVIDENCE (OBSERVED)**:
+  - 180 話樣本中出現 1,308 次，常見於話數結尾（`9 -> 27 -> [EOF]` 佔 13.91%）或切換背景前（`27 -> 5` 佔 18.81%）。
+  - 數值分佈：min=0.0, max=1.0, mean=0.95, median=1.0, p25=1.0, p75=1.0。高頻值：`1.0` (92.51%), `0.5` (4.28%), `0.3` (2.52%)。
 
 #### `cmd 61` — 畫面轉場淡入淡出時長 (Screen Fade Duration)
 - **DOMAIN**: Visual Transition / Timing
 - **ACTION**: 指定全螢幕淡入或淡出之持續時長
-- **ARGUMENT SCHEMA**: `[duration: float, optional_param?]`（常見 `['1']`, `['0.5']`）
-- **TIMING UNIT**: LIKELY Seconds
-- **CONFIDENCE**: **HIGH-CONFIDENCE**
-- **EVIDENCE (OBSERVED)**: 數值主要為 `1.0` (68.4%) 與 `0.5` (24.1%)，常與轉場特效 `cmd 31` 或環境音 `cmd 51` 配套出現。
+- **ARGUMENT SCHEMA**: `[param_1: numeric, param_2: optional_param?]`（常見 `['1']`, `['0.5']`）
+- **BLOCKING**: **HYPOTHESIS / UNRESOLVED**（待 runtime trace 確認）
+- **TIMING UNIT**: **HYPOTHESIS / UNRESOLVED**（推測為秒，但缺乏反編譯或 wall-clock 實測確認）
+- **CONFIDENCE**:
+  - 語意領域 (Screen Fade Duration): **HIGH-CONFIDENCE**
+  - 時間單位與阻塞屬性 (Seconds / Blocking): **HYPOTHESIS / UNRESOLVED**
+- **EVIDENCE (OBSERVED)**:
+  - 180 話樣本中出現 333 次，常與轉場特效 `cmd 31` 或環境音 `cmd 51` 配套出現。
+  - 數值分佈：min=0.5, max=3.0, mean=1.01, median=1.0, p25=1.0, p75=1.0。高頻值：`1.0` (97.90%), `0.5` (0.90%), `3.0` (0.60%), `2.0` (0.60%)。
 
 ---
 
@@ -273,29 +286,51 @@
 
 ## 五、 時序數值分佈與語音長度實測 (Timing vs Voice Duration)
 
-### 1. 數值分佈特徵 (Distribution Profile)
+### 1. Bundle 解析審計與 Audio Accounting (Fail Loudly 完整記帳)
 
-| 指令 ID | 樣本總數 | 最小值 | 最大值 | 平均值 | 中位數 | P25 | P75 | 前四大高頻離散值 |
+所有樣本候選、解析狀態與音檔覆蓋計數均由診斷腳本精確記帳並持久化於 JSON 根部：
+
+| 記帳層級 | 指標項目 | 數值 | 狀態 / 解釋 |
+| :--- | :--- | :---: | :--- |
+| **Bundle Parsing Accounting** | `requested_story_samples` | 180 | 確定性分層抽樣計畫請求數 |
+| | `successfully_parsed_stories` | 180 | 成功載入並完成二進位指令流解析之話數 |
+| | `failed_story_parses` | 0 | 解析失敗話數（無漏失） |
+| **Audio Alignment Accounting** | `voice_turn_candidates` | 14,703 | 180 話中符合語音轉場（Voice Turn Window）之候選總數 |
+| | `local_audio_present` | 103 | 本地既有音檔存在之樣本數（來自 1001001, 1001012, 1004001） |
+| | `local_audio_missing` | 14,600 | 本地未下載音檔之候選總數（Fail Loudly 記帳，未默默略過） |
+| | `probe_attempted` | 103 | 嘗試執行 `ffprobe` 時長探測次數 |
+| | `probe_success` | 103 | 成功獲取音訊精確時長次數 |
+| | `probe_failed` | 0 | 探測失敗次數 |
+| | `max_alignment_samples` | 150 | 對齊上限閾值參數 |
+| | `successful_alignment_samples` | 103 | 最終納入統計與關聯計算之有效樣本數 |
+| | `alignments` 完整陣列長度 | 103 | 機器可讀 JSON 中保存之完整 provenance 記錄數 |
+| **Tool Execution Status** | `evaluation_status` | `EVALUATED` | 工具狀態判定（可重現探測） |
+| | `ffprobe_path_used` | `C:\FFmpeg\bin\ffprobe.EXE` | 執行期探測使用之實體二進位路徑 |
+
+> [!NOTE]
+> **完整 Provenance 保存**：所有 103 筆對齊樣本之完整溯源資料（包含 `story_id`, `voice_id`, `audio_path`, `duration_sec`, `voice_cmd_idx`, `end_idx`, `cmd13_indices`, `cmd13_values`, `cmd13_count`, `cmd13_sum`, `dialogue_text`）均 100% 完整保存於 `scratch/story_command_semantics_r2.json` 的 `"alignments"` 陣列中，且 `successful_alignment_samples == len(alignments) == 103`。同時提供 `"alignment_preview"`（前 10 筆）便於快速預覽。
+
+### 2. 時序指令數值分佈特徵 (Distribution Profile)
+
+所有分佈統計值均直接由診斷腳本輸出，無人工重新計算：
+
+| 指令 ID | 樣本總數 (count) | 最小值 (min) | 最大值 (max) | 平均值 (mean) | 中位數 (median) | P25 | P75 | 前四大高頻離散值 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`cmd 13`** | 38,567 | 0.0 | 3600.0 | 32.5 | 30.0 | 15.0 | 45.0 | **15** (15.7%), **30** (14.2%), **20** (8.8%), **10** (8.4%) |
-| **`cmd 27`** | 654 | 0.05 | 10.0 | 0.98 | 1.0 | 0.5 | 1.0 | **1.0** (47.2%), **0.5** (15.3%), **0.3** (11.6%), **2.0** (5.8%) |
-| **`cmd 61`** | 332 | 0.1 | 5.0 | 0.92 | 1.0 | 0.5 | 1.0 | **1.0** (68.4%), **0.5** (24.1%), **2.0** (3.3%), **0.3** (1.8%) |
+| **`cmd 13`** | 38,567 | 0.0 | 195.0 | 35.91 | 30.0 | 20.0 | 45.0 | **30.0** (15.25%), **15.0** (14.82%), **45.0** (8.86%), **35.0** (7.97%) |
+| **`cmd 27`** | 1,308 | 0.0 | 1.0 | 0.95 | 1.0 | 1.0 | 1.0 | **1.0** (92.51%), **0.5** (4.28%), **0.3** (2.52%), **0.0** (0.31%) |
+| **`cmd 61`** | 333 | 0.5 | 3.0 | 1.01 | 1.0 | 1.0 | 1.0 | **1.0** (97.90%), **0.5** (0.90%), **3.0** (0.60%), **2.0** (0.60%) |
 
-### 2. ffprobe 實測對齊方法學校正 (Methodology Before vs After)
+### 3. ffprobe 實測對齊方法學與結果
 
-- **原始方法學 (Before)**：
-  - 邊界僅以「下一個 `cmd 12`」為結束，未隔離非對白轉場指令；
-  - 話數結尾 EOF 時最後一個語音未執行 flush。
-  - 實測樣本數: 100；$r$ (duration vs cmd13 sum): **0.6554**；$r$ (first): **0.4274**。
-- **修正後方法學 (After)**：
-  - 定義嚴格 Voice Turn Window：以 `cmd 12` 為起點，遇到邊界終止集合 `{12, 7, 11, 5, 27, 46, 49}` 或話數結尾 EOF 時強制 flush；
-  - 保存完整 provenance（包含 `story_id`, `voice_id`, `voice_cmd_idx`, `end_idx`, `cmd13_indices`, `cmd13_values`）；
-  - 實測樣本數: 103（涵蓋話數末尾補齊之 3 筆樣本）；
-  - 皮爾森相關係數 (duration vs cmd13 sum): **$r = 0.6783$**；
-  - 皮爾森相關係數 (duration vs cmd13 first): **$r = 0.4161$**。
-- **工具可重現性 (Reproducibility)**：
-  - 探索順序：CLI `--ffprobe` ➡️ `shutil.which("ffprobe")` ➡️ Windows fallback。
-  - 本次狀態：`EVALUATED`（路徑: `C:\FFmpeg\bin\ffprobe.EXE`，成功: 103，失敗: 0）。
+- **語音邊界隔離 (Voice Turn Window)**：
+  - 以 `cmd 12` 為起點，遇到邊界終止集合 `{12, 7, 11, 5, 27, 46, 49}` 或話數結尾 EOF 時強制 flush，確保非對白轉場指令不會被誤計入該句對白。
+- **對齊結果**：
+  - 實測對齊樣本數: 103 筆；
+  - 皮爾森相關係數 (語音時長 vs 句內 `cmd 13` 累計總和): **$r = 0.6783$**；
+  - 皮爾森相關係數 (語音時長 vs 句內首個 `cmd 13`): **$r = 0.4161$**。
+- **反例分析 (Counter-example)**：
+  - 語音 `vo_adv_1001001_001` 實體音訊長度為 3.263 秒，但在該 Voice Turn Window 內未出現任何 `cmd 13`（累計總和為 0）。
+  - 此反例充分證明 `cmd 13` 並非通用語音播放長度計時器。
 
 ---
 
@@ -306,6 +341,7 @@
 ### 1. 分析母體與抽樣範圍
 - **母體範圍 (Population Universe)**：So-net 台服 CDN TruthVersion `00600025` 共 9,057 個 Story AssetBundle。
 - **抽樣範圍 (Sample Scope)**：180 個 Story AssetBundle（涵蓋 Main 37, Chara 45, Guild 44, Event 41, System 13）。非全域窮盡掃描。
+- **音訊對齊樣本**：103 筆本地既有語音檔案，覆蓋 14,703 個語音候選中的 103 筆，其餘 14,600 筆本地缺失已記帳。
 
 ### 2. 結論分級 (Confidence Stratification)
 
@@ -317,17 +353,18 @@
 - **HIGH-CONFIDENCE (高度可信推論)**：
   - `cmd 11` 為玩家分支選項指令（780 次出現，89.23% 接 `cmd 7` 輸入等待）。
   - `cmd 68` 為角色站位指令、`cmd 3` 為面部表情切換、`cmd 4` 為立繪退場、`cmd 59` 為表情氣泡。
-  - `cmd 13` 數值並非語音長度計時器，而是劇本演出停頓延遲。
+  - `cmd 13` 語意領域為劇本演出或分句間隔停頓延遲 (pacing/delay)，且其數值與文本/語音長度存在中度正相關。
+  - `cmd 27` 語意領域為幕簾過渡／轉場黑屏等待。
+  - `cmd 61` 語意領域為全螢幕畫面淡入淡出。
 - **LIKELY (最合理解釋)**：
   - `cmd 103` 為話數開場／段落指定 BGM。
   - `cmd 101` 為特定動畫片段銜接處之 BGM 切換。
   - `cmd 86`, `87`, `88` 分別對應鏡頭座標、平移路徑與縮放。
-- **HYPOTHESIS (待驗證假說，不得作為生產事實)**：
-  - `cmd 13` 之物理時間單位為「Frames @ 30fps」（雖高度吻合 15, 30, 45 等整數倍，但尚未取得二進位反編譯或即時鐘表計時驗證）。
-  - `cmd 13` 在遊戲運行時是否屬於 Blocking（阻塞型）指令。
-- **UNRESOLVED (現有證據不足以判斷)**：
-  - 引擎底層語音播畢通知機制（是否為 `OnVoiceComplete` 事件回調或獨立協程）。
-  - `cmd 101` 的生命週期與通道覆寫邏輯（僅 1 筆樣本，無法推論一般性規則）。
+- **HYPOTHESIS / UNRESOLVED (待驗證假說，不得作為生產事實)**：
+  - **時序物理單位**：`cmd 13` 之物理單位是否為「Frames @ 30fps」；`cmd 27` 與 `cmd 61` 之物理單位是否為「Seconds」（均缺乏反編譯或 wall-clock 實測證據）。
+  - **執行期阻塞機制**：`cmd 13`、`cmd 27`、`cmd 61` 在 Unity 執行期是否屬於 Blocking（阻塞型）指令、是否涉及協程等待或非同步計時。
+  - **引擎語音回調機制**：底層語音播畢通知機制（是否為 `OnVoiceComplete` 事件回調或獨立協程）。
+  - **單例指令通道規則**：`cmd 101` 的生命週期與通道覆寫邏輯（僅 1 筆樣本，無法推論一般性規則）。
 
 ### 3. 生產實作約束 (Production Constraints)
 - **禁止預設假設**：後續 Auto Play 或播放器開發，**嚴禁將 `cmd 13` 視為語音長度**。

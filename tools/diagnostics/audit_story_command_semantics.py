@@ -272,11 +272,11 @@ def analyze_timing_and_voice(
     commands_pool: List[Tuple[int, List[Tuple[int, List[Any]]]]],
     sound_dir: Path,
     ffprobe_path: Optional[str] = None,
-    max_voice_align_samples: int = 150
+    max_alignment_samples: int = 150
 ) -> Dict[str, Any]:
     """
     3. 時序指令數值分佈與語音時長實測對齊 (Timing vs Voice Duration Correlation)
-    以邊界終止符明確分割 Voice Turn Window，修正 EOF finalization，並保存完整 provenance。
+    以邊界終止符明確分割 Voice Turn Window，修正 EOF finalization，並保存全部成功對齊之完整 provenance。
     """
     values_by_cmd = defaultdict(list)
     for sid, cmds in commands_pool:
@@ -316,79 +316,100 @@ def analyze_timing_and_voice(
     resolved_ffprobe = resolve_ffprobe_path(ffprobe_path)
     ffprobe_available = (resolved_ffprobe is not None and Path(resolved_ffprobe).exists())
 
+    voice_turn_candidates = 0
+    local_audio_present = 0
+    local_audio_missing = 0
+    probe_attempted = 0
+    probe_success = 0
+    probe_failed = 0
+
     voice_alignments = []
-    failed_count = 0
     boundary_cids = {12, 7, 11, 5, 27, 46, 49}
 
-    if ffprobe_available and sound_dir.exists():
-        for sid, cmds in commands_pool:
-            if len(voice_alignments) >= max_voice_align_samples:
-                break
+    for sid, cmds in commands_pool:
+        active_turn: Optional[Dict[str, Any]] = None
 
-            active_turn: Optional[Dict[str, Any]] = None
+        def finalize_turn(turn: Dict[str, Any], end_idx: int):
+            nonlocal voice_turn_candidates, local_audio_present, local_audio_missing
+            nonlocal probe_attempted, probe_success, probe_failed
 
-            def finalize_turn(turn: Dict[str, Any], end_idx: int):
-                nonlocal failed_count
-                if len(voice_alignments) >= max_voice_align_samples:
-                    return
-                vname = turn["voice_id"]
-                m4a_path = sound_dir / f"{vname}.m4a"
-                if m4a_path.exists():
-                    try:
-                        probe_cmd = [
-                            resolved_ffprobe, "-v", "error",
-                            "-show_entries", "format=duration",
-                            "-of", "json", str(m4a_path)
-                        ]
-                        res = subprocess.run(probe_cmd, capture_output=True, text=True, timeout=5)
-                        dur = float(json.loads(res.stdout)["format"]["duration"])
-                        voice_alignments.append({
-                            "story_id": sid,
-                            "voice_id": vname,
-                            "voice_command_index": turn["voice_cmd_idx"],
-                            "segmentation_end_index": end_idx,
-                            "included_cmd13_indices": list(turn["cmd13_indices"]),
-                            "included_cmd13_values": list(turn["cmd13_values"]),
-                            "cmd13_count": len(turn["cmd13_values"]),
-                            "cmd13_sum": sum(turn["cmd13_values"]),
-                            "cmd13_first": turn["cmd13_values"][0] if turn["cmd13_values"] else 0.0,
-                            "actual_duration_sec": round(dur, 3)
-                        })
-                    except Exception:
-                        failed_count += 1
+            voice_turn_candidates += 1
+            vname = turn["voice_id"]
+            m4a_path = sound_dir / f"{vname}.m4a"
 
-            for idx, (cid, args) in enumerate(cmds):
-                if cid in boundary_cids and active_turn:
-                    finalize_turn(active_turn, idx)
-                    active_turn = None
-                    if len(voice_alignments) >= max_voice_align_samples:
-                        break
+            if not m4a_path.exists():
+                local_audio_missing += 1
+                return
 
-                if cid == 12 and args:
-                    active_turn = {
-                        "voice_id": args[0],
-                        "voice_cmd_idx": idx,
-                        "cmd13_indices": [],
-                        "cmd13_values": []
-                    }
-                elif cid == 13 and active_turn and args:
-                    try:
-                        v = float(args[0])
-                        active_turn["cmd13_indices"].append(idx)
-                        active_turn["cmd13_values"].append(v)
-                    except ValueError:
-                        pass
+            local_audio_present += 1
 
-            # EOF finalization
-            if active_turn and len(voice_alignments) < max_voice_align_samples:
-                finalize_turn(active_turn, len(cmds))
+            if len(voice_alignments) >= max_alignment_samples or not ffprobe_available:
+                return
+
+            probe_attempted += 1
+            try:
+                probe_cmd = [
+                    resolved_ffprobe, "-v", "error",
+                    "-show_entries", "format=duration",
+                    "-of", "json", str(m4a_path)
+                ]
+                res = subprocess.run(probe_cmd, capture_output=True, text=True, timeout=5)
+                dur = float(json.loads(res.stdout)["format"]["duration"])
+                probe_success += 1
+                voice_alignments.append({
+                    "story_id": sid,
+                    "voice_id": vname,
+                    "voice_command_index": turn["voice_cmd_idx"],
+                    "segmentation_end_index": end_idx,
+                    "included_cmd13_indices": list(turn["cmd13_indices"]),
+                    "included_cmd13_values": list(turn["cmd13_values"]),
+                    "cmd13_count": len(turn["cmd13_values"]),
+                    "cmd13_sum": sum(turn["cmd13_values"]),
+                    "cmd13_first": turn["cmd13_values"][0] if turn["cmd13_values"] else 0.0,
+                    "actual_duration_sec": round(dur, 3)
+                })
+            except Exception:
+                probe_failed += 1
+
+        for idx, (cid, args) in enumerate(cmds):
+            if cid in boundary_cids and active_turn:
+                finalize_turn(active_turn, idx)
+                active_turn = None
+
+            if cid == 12 and args:
+                active_turn = {
+                    "voice_id": args[0],
+                    "voice_cmd_idx": idx,
+                    "cmd13_indices": [],
+                    "cmd13_values": []
+                }
+            elif cid == 13 and active_turn and args:
+                try:
+                    v = float(args[0])
+                    active_turn["cmd13_indices"].append(idx)
+                    active_turn["cmd13_values"].append(v)
+                except ValueError:
+                    pass
+
+        # EOF finalization
+        if active_turn:
+            finalize_turn(active_turn, len(cmds))
+
+    # 判定評估狀態
+    if not ffprobe_available:
+        evaluation_status = "NOT_EVALUATED"
+    elif len(voice_alignments) < 10:
+        evaluation_status = "INCONCLUSIVE"
+    elif probe_failed > 0:
+        evaluation_status = "PARTIAL"
+    else:
+        evaluation_status = "EVALUATED"
 
     # 計算統計相關性 (Pearson r)
     correlation_sum = None
     correlation_first = None
-    evaluation_status = "EVALUATED" if ffprobe_available else "NOT_EVALUATED"
 
-    if ffprobe_available and len(voice_alignments) >= 10:
+    if evaluation_status in ["EVALUATED", "PARTIAL"] and len(voice_alignments) >= 10:
         durs = [x["actual_duration_sec"] for x in voice_alignments]
         sums = [x["cmd13_sum"] for x in voice_alignments]
         firsts = [x["cmd13_first"] for x in voice_alignments]
@@ -407,17 +428,27 @@ def analyze_timing_and_voice(
         correlation_sum = calc_pearson(durs, sums)
         correlation_first = calc_pearson(durs, firsts)
 
+    # Invariant: successful_alignment_samples 嚴格等於 len(alignments)
+    assert len(voice_alignments) == probe_success, f"Alignment invariant mismatch: {len(voice_alignments)} != {probe_success}"
+
     return {
         "timing_distribution": timing_distribution,
         "ffprobe_available": ffprobe_available,
         "ffprobe_path_used": resolved_ffprobe,
         "evaluation_status": evaluation_status,
-        "requested_alignment_samples": max_voice_align_samples,
+        "max_alignment_samples": max_alignment_samples,
+        "voice_turn_candidates": voice_turn_candidates,
+        "local_audio_present": local_audio_present,
+        "local_audio_missing": local_audio_missing,
+        "probe_attempted": probe_attempted,
+        "probe_success": probe_success,
+        "probe_failed": probe_failed,
         "successful_alignment_samples": len(voice_alignments),
-        "failed_alignment_samples": failed_count,
+        "correlation_sample_count": len(voice_alignments),
         "pearson_r_duration_vs_cmd13_sum": correlation_sum,
         "pearson_r_duration_vs_cmd13_first": correlation_first,
-        "sample_alignments": voice_alignments[:10]
+        "alignments": voice_alignments,
+        "alignment_preview": voice_alignments[:10]
     }
 
 
@@ -480,7 +511,8 @@ def run_semantics_audit(
     output_json: Path,
     cache_dir: Optional[Path] = None,
     ffprobe_path: Optional[str] = None,
-    max_samples: int = 180
+    max_samples: int = 180,
+    max_alignment_samples: int = 150
 ):
     print("=" * 60)
     print("🔬 Story AssetBundle Command Semantics Audit (Research R2)")
@@ -512,22 +544,28 @@ def run_semantics_audit(
         picked_set.add(s[0])
 
     full_queue = (stratified_samples + rich_media_samples + batch_1 + batch_2)[:max_samples]
-    print(f"  [Queue] 確定性重現 {len(full_queue)} 話抽樣隊列")
+    requested_story_samples = len(full_queue)
+    print(f"  [Queue] 確定性重現 {requested_story_samples} 話抽樣隊列")
 
     # 統計樣品組成
     sample_composition = defaultdict(int)
     for sid, cat, stype in full_queue:
         sample_composition[cat] += 1
 
-    # 3. 載入與反序列化所有抽樣話數
+    # 3. 載入與反序列化所有抽樣話數，完整記錄 parsing accounting
     commands_pool: List[Tuple[int, List[Tuple[int, List[Any]]]]] = []
+    failed_story_parses = 0
     print("\n  [Parse] 開始載入並解析抽樣 Bundle...")
     for idx, (sid, cat, stype) in enumerate(full_queue, 1):
         status, cmds = download_and_parse_bundle_cached(sid, manifest_map, cache_dir)
         if status == "PARSE_OK" and cmds:
             commands_pool.append((sid, cmds))
+        else:
+            failed_story_parses += 1
         if idx % 30 == 0 or idx == len(full_queue):
             print(f"    - 進度: {idx}/{len(full_queue)} 話完成 (有效解析: {len(commands_pool)} 話)")
+
+    successfully_parsed_stories = len(commands_pool)
 
     # 4. 各模組分析
     print("\n  [Analysis 1] 執行資源前綴反轉分析 (Resource-Prefix Inversion)...")
@@ -550,7 +588,7 @@ def run_semantics_audit(
 
     print("  [Analysis 3] 執行時序指令數值分佈與 ffprobe 語音長度實測對齊...")
     sound_dir = project_root / "dashboard" / "sound" / "story_vo"
-    timing_results = analyze_timing_and_voice(commands_pool, sound_dir, ffprobe_path)
+    timing_results = analyze_timing_and_voice(commands_pool, sound_dir, ffprobe_path, max_alignment_samples)
 
     print("  [Analysis 4] 提取全部 cmd 100 地點文字...")
     location_results = extract_location_command_data(commands_pool)
@@ -562,6 +600,11 @@ def run_semantics_audit(
     report_data = {
         "truth_version": truth_version,
         "sample_count": len(commands_pool),
+        "parsing_accounting": {
+            "requested_story_samples": requested_story_samples,
+            "successfully_parsed_stories": successfully_parsed_stories,
+            "failed_story_parses": failed_story_parses
+        },
         "sample_composition_by_category": dict(sample_composition),
         "resource_prefix_inversion": prefix_results,
         "sequence_contexts": sequence_results,
@@ -608,6 +651,12 @@ def main():
         default=180,
         help="掃描抽樣話數上限 (預設: 180，完全對齊 R1 抽樣集)"
     )
+    parser.add_argument(
+        "--max-alignment-samples",
+        type=int,
+        default=150,
+        help="語音對齊最大抽樣上限 cap (預設: 150)"
+    )
 
     args = parser.parse_args()
     run_semantics_audit(
@@ -615,7 +664,8 @@ def main():
         output_json=args.output,
         cache_dir=args.cache_dir,
         ffprobe_path=args.ffprobe,
-        max_samples=args.samples
+        max_samples=args.samples,
+        max_alignment_samples=args.max_alignment_samples
     )
 
 
