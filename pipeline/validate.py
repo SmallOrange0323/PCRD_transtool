@@ -27,6 +27,11 @@ DIST_DIR = PROJECT_ROOT / "dist_story_map"
 FOOTPRINT_WARN_BYTES = 750 * 1024 * 1024   # 750 MiB
 FOOTPRINT_HARD_BYTES = 900 * 1024 * 1024   # 900 MiB
 
+# 歷史已知之偽造大綱完整文字 (Anti-Hallucination Guard)
+KNOWN_FAKE_SYNOPSES_EXACT = {
+    "本話為重要主線劇情，美食殿堂的羈絆在此得到了進一步的昇華。",
+}
+
 class ValidationResult:
     def __init__(self):
         self.errors = []
@@ -623,16 +628,25 @@ def validate_official_story_metadata(
     if count != len(episodes):
         res.error(f"[Metadata Gate] episode_count ({count}) 與實際話數 ({len(episodes)}) 不符！")
 
-    # 4. Anti-Hallucination / Fake Synopsis Regression Guard
-    banned_phrases = ["美食殿堂的羈絆", "進一步的昇華"]
+    # 4. Anti-Hallucination / Fake Synopsis Regression Guard (精確比對歷史偽造大綱)
     for sid, ep in episodes.items():
         synopsis = ep.get("official_synopsis")
-        if synopsis:
-            for phrase in banned_phrases:
-                if phrase in synopsis:
-                    res.error(
-                        f"[Metadata Gate] 話數 {sid} 包含已確認之假大綱/幻覺文字 (Regression Guard): '{phrase}'"
-                    )
+        if synopsis and isinstance(synopsis, str):
+            normalized = synopsis.strip()
+            if normalized in KNOWN_FAKE_SYNOPSES_EXACT:
+                res.error(
+                    f"[Metadata Gate] 話數 {sid} 包含已確認之假大綱/幻覺文字 (Regression Guard): '{normalized}'"
+                )
+
+    # 4.1 Runtime Regression Guard: 檢查 map.js 是否重新出現完整 fake fallback
+    map_js_path = dashboard_dir / "map.js"
+    if map_js_path.exists():
+        map_content = map_js_path.read_text(encoding="utf-8")
+        for fake_text in KNOWN_FAKE_SYNOPSES_EXACT:
+            if fake_text in map_content:
+                res.error(
+                    f"[Metadata Gate] map.js 包含已確認之假大綱完整文字 (Runtime Regression Guard): '{fake_text}'"
+                )
 
     # 5. 覆蓋度與話數宇宙狀態模型 (Metadata Eligible Universe & Coverage Gate)
     from pipeline.coverage import build_metadata_eligible_story_universe

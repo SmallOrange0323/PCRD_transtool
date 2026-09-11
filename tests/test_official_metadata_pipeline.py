@@ -714,7 +714,7 @@ class TestOfficialMetadataPipeline(unittest.TestCase):
         (mock_board / "data").mkdir(parents=True)
         manifest_file = mock_board / "data" / "official_story_metadata.json"
 
-        fake_entry = self._create_mock_entry(100101, synopsis="這是美食殿堂的羈絆的冒險")
+        fake_entry = self._create_mock_entry(100101, synopsis="本話為重要主線劇情，美食殿堂的羈絆在此得到了進一步的昇華。")
         batch_update_manifest_entries({100101: fake_entry}, truth_version="00600025", filepath=manifest_file)
 
         res = ValidationResult()
@@ -1983,6 +1983,106 @@ class TestOfficialMetadataPipeline(unittest.TestCase):
             for p in mock_dash.rglob("*"):
                 self.assertNotIn("checkpoint", p.name.lower())
                 self.assertNotIn("bootstrap_state", p.name.lower())
+
+
+    # ----------------------------------------------------------------------
+    # 58. Legitimate Official Counterexample Contains Banned Phrase Passes
+    # ----------------------------------------------------------------------
+    def test_58_legitimate_official_counterexample_contains_banned_phrase_passes(self):
+        """58. 驗證真實官方大綱 (如 4003016) 內文包含『美食殿堂的羈絆』時，不得誤判為假大綱，必須 PASS"""
+        mock_board = self.tmp_path / "dashboard_58"
+        (mock_board / "data").mkdir(parents=True)
+        manifest_file = mock_board / "data" / "official_story_metadata.json"
+
+        official_text = (
+            "美食殿堂一行人總算打倒了強敵。雪菲說默契十足的聯手攻擊成為決定勝負的關鍵時，"
+            "讓她感受到了美食殿堂的羈絆。聽到這句話後，貪吃佩可等人懷著溫暖的心情踏上了歸途。"
+        )
+        # 故意使用非 4003016 的隨機話數 (如 100101)，證明完全不依賴任何 Story ID 白名單
+        legit_entry = self._create_mock_entry(100101, synopsis=official_text)
+        batch_update_manifest_entries({100101: legit_entry}, truth_version="00600025", filepath=manifest_file)
+
+        res = ValidationResult()
+        ok = validate_official_story_metadata(mock_board, check_dist=False, res=res, allow_bootstrap_incomplete=True, verbose=False)
+        self.assertTrue(ok)
+        self.assertEqual(len(res.errors), 0)
+
+    # ----------------------------------------------------------------------
+    # 59. Legitimate Different Text Contains Second Phrase Passes
+    # ----------------------------------------------------------------------
+    def test_59_legitimate_different_text_contains_second_phrase_passes(self):
+        """59. 驗證合法不同文字包含『進一步的昇華』時，不得誤判，必須 PASS"""
+        mock_board = self.tmp_path / "dashboard_59"
+        (mock_board / "data").mkdir(parents=True)
+        manifest_file = mock_board / "data" / "official_story_metadata.json"
+
+        legit_text = "經過長期的特訓，眾人的技巧得到了進一步的昇華，迎戰強敵。"
+        legit_entry = self._create_mock_entry(100101, synopsis=legit_text)
+        batch_update_manifest_entries({100101: legit_entry}, truth_version="00600025", filepath=manifest_file)
+
+        res = ValidationResult()
+        ok = validate_official_story_metadata(mock_board, check_dist=False, res=res, allow_bootstrap_incomplete=True, verbose=False)
+        self.assertTrue(ok)
+        self.assertEqual(len(res.errors), 0)
+
+    # ----------------------------------------------------------------------
+    # 60. Exact Fake Fallback Rejected
+    # ----------------------------------------------------------------------
+    def test_60_exact_fake_fallback_rejected(self):
+        """60. 驗證精準符合歷史假大綱全句時，精準攔截並報錯 (FAIL)"""
+        mock_board = self.tmp_path / "dashboard_60"
+        (mock_board / "data").mkdir(parents=True)
+        manifest_file = mock_board / "data" / "official_story_metadata.json"
+
+        fake_text = "本話為重要主線劇情，美食殿堂的羈絆在此得到了進一步的昇華。"
+        fake_entry = self._create_mock_entry(100101, synopsis=fake_text)
+        batch_update_manifest_entries({100101: fake_entry}, truth_version="00600025", filepath=manifest_file)
+
+        res = ValidationResult()
+        ok = validate_official_story_metadata(mock_board, check_dist=False, res=res, allow_bootstrap_incomplete=True, verbose=False)
+        self.assertFalse(ok)
+        self.assertTrue(any("包含已確認之假大綱/幻覺文字" in err for err in res.errors))
+
+    # ----------------------------------------------------------------------
+    # 61. Fake Fallback With Whitespace Rejected
+    # ----------------------------------------------------------------------
+    def test_61_fake_fallback_with_whitespace_rejected(self):
+        """61. 驗證假大綱前後夾帶空白字元或換行時，仍經正規化精準攔截 (FAIL)"""
+        mock_board = self.tmp_path / "dashboard_61"
+        (mock_board / "data").mkdir(parents=True)
+        manifest_file = mock_board / "data" / "official_story_metadata.json"
+
+        padded_fake = "   \n  本話為重要主線劇情，美食殿堂的羈絆在此得到了進一步的昇華。  \t \n "
+        fake_entry = self._create_mock_entry(100101, synopsis=padded_fake)
+        batch_update_manifest_entries({100101: fake_entry}, truth_version="00600025", filepath=manifest_file)
+
+        res = ValidationResult()
+        ok = validate_official_story_metadata(mock_board, check_dist=False, res=res, allow_bootstrap_incomplete=True, verbose=False)
+        self.assertFalse(ok)
+        self.assertTrue(any("包含已確認之假大綱/幻覺文字" in err for err in res.errors))
+
+    # ----------------------------------------------------------------------
+    # 62. map.js Contains Exact Fake Fallback Rejected
+    # ----------------------------------------------------------------------
+    def test_62_map_js_contains_exact_fake_fallback_rejected(self):
+        """62. 驗證當 map.js 重新被植入完整歷史假大綱時，Runtime Regression Guard 報錯攔截 (FAIL)"""
+        mock_board = self.tmp_path / "dashboard_62"
+        (mock_board / "data").mkdir(parents=True)
+        manifest_file = mock_board / "data" / "official_story_metadata.json"
+
+        # Manifest 本身正常
+        batch_update_manifest_entries({100101: self._create_mock_entry(100101)}, truth_version="00600025", filepath=manifest_file)
+
+        # map.js 中植入完整歷史假大綱
+        (mock_board / "map.js").write_text(
+            "const fallback = '本話為重要主線劇情，美食殿堂的羈絆在此得到了進一步的昇華。';",
+            encoding="utf-8"
+        )
+
+        res = ValidationResult()
+        ok = validate_official_story_metadata(mock_board, check_dist=False, res=res, allow_bootstrap_incomplete=True, verbose=False)
+        self.assertFalse(ok)
+        self.assertTrue(any("map.js 包含已確認之假大綱完整文字" in err for err in res.errors))
 
 if __name__ == "__main__":
     unittest.main()
