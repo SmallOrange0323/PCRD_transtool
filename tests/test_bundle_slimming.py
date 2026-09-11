@@ -326,9 +326,9 @@ class TestBundleSlimmingAndPrune(unittest.TestCase):
         self.assertFalse(is_p)
         self.assertIn("HARD ERROR", msg)
 
-    # 19. card/full and sound/story_vo sync and footprint exclusion (Restored & Enhanced)
-    def test_19_card_and_voice_sync_and_footprint_exclusion(self):
-        """確保 card/full 與 sound/story_vo 正常同步至本地發布包，且被 Pages footprint 正確排除"""
+    # 19. card exclusion and voice inclusion in footprint (Restored & Enhanced)
+    def test_19_card_exclusion_and_voice_inclusion_in_footprint(self):
+        """確保 card/full 排除但 sound/story_vo 正確計入 Pages deployment footprint"""
         dash_card = self.mock_dash / "card" / "full"
         dash_voice = self.mock_dash / "sound" / "story_vo"
         dash_card.mkdir(parents=True, exist_ok=True)

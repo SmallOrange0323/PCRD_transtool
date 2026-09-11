@@ -350,7 +350,7 @@ class TestVoiceGapPipeline(unittest.TestCase):
         self.assertTrue(is_pass)
         self.assertIn("PASS", msg)
         self.assertLess(projected_size, 650 * 1024 * 1024, f"預估大小過大: {projected_size / 1024 / 1024:.2f} MiB")
-        self.assertGreater(projected_size, 300 * 1024 * 1024)
+        self.assertGreaterEqual(projected_size, EXPECTED_GAP_VOICE_TOTAL_BYTES, "預估體積至少應包含所有 Gap 語音檔案總大小")
 
 
 if __name__ == "__main__":
