@@ -55,6 +55,11 @@ from pipeline.metadata_manifest import (
     rebuild_official_metadata,
     OfficialEpisodeMetadata,
     EpisodeProvenance,
+    compute_target_fingerprint,
+    save_bootstrap_checkpoint,
+    load_and_validate_bootstrap_checkpoint,
+    CHECKPOINT_STATE_FILENAME,
+    CHECKPOINT_DATA_FILENAME,
 )
 from pipeline.coverage import (
     build_canonical_story_universe,
@@ -1362,6 +1367,622 @@ class TestOfficialMetadataPipeline(unittest.TestCase):
             # 斷言：不得為 canonical.expected_ids (其缺少 5001)
             self.assertNotEqual(m_univ.eligible_ids, mock_univ.expected_ids)
 
+
+
+    # ----------------------------------------------------------------------
+    # 43. Checkpoint Network Error Saves Progress Manifest Absent
+    # ----------------------------------------------------------------------
+    def test_43_checkpoint_network_error_saves_progress_manifest_absent(self):
+        """43. 模擬第 1 話成功、第 2 話 NETWORK_ERROR，驗證快照保存 1 話、狀態為 IN_PROGRESS、生產清單零寫入"""
+        mock_dash = self.tmp_path / "dashboard_43"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+        (mock_dash / "story" / "100102.json").write_text("[]", encoding="utf-8")
+        chk_dir = self.tmp_path / "scratch_43"
+        prod_manifest = mock_dash / "data" / "official_story_metadata.json"
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101, 100102},
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids={100101, 100102},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        bundle_refs = {
+            100101: StoryBundleRef(100101, "00600025", "hash100101", "storydata_100101.unity3d"),
+            100102: StoryBundleRef(100102, "00600025", "hash100102", "storydata_100102.unity3d"),
+        }
+
+        def mock_fetch(sid, bundle_ref=None, extract_metadata=True, write_story_json=False, timeout=30):
+            if sid == 100101:
+                return StoryFetchResult(story_id=sid, status="OK", metadata=self._create_mock_entry(100101))
+            else:
+                return StoryFetchResult(story_id=sid, status="NETWORK_ERROR", error_message="Simulated Network Timeout")
+
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ), \
+             patch("tools.pcrd_fetch.load_story_manifest_bundle_refs", return_value=bundle_refs), \
+             patch("tools.pcrd_fetch.fetch_story_json_by_id", side_effect=mock_fetch):
+            ok, m_ver, count, failed = rebuild_official_metadata(
+                truth_version="00600025",
+                output_path=prod_manifest,
+                dashboard_dir=mock_dash,
+                checkpoint_dir=chk_dir,
+                story_retry_attempts=1,
+            )
+            self.assertFalse(ok)
+            self.assertEqual(count, 1)
+            self.assertEqual(failed, [100102])
+            self.assertFalse(prod_manifest.exists(), "生產清單不得在失敗時建立")
+
+            state_file = chk_dir / CHECKPOINT_STATE_FILENAME
+            data_file = chk_dir / CHECKPOINT_DATA_FILENAME
+            self.assertTrue(state_file.exists())
+            self.assertTrue(data_file.exists())
+
+            state = json.loads(state_file.read_text(encoding="utf-8"))
+            self.assertEqual(state["status"], "IN_PROGRESS")
+            self.assertEqual(state["completed_count"], 1)
+            self.assertEqual(state["target_count"], 2)
+
+            chk_data = json.loads(data_file.read_text(encoding="utf-8"))
+            self.assertEqual(chk_data["episode_count"], 1)
+            self.assertIn("100101", chk_data["episodes"])
+            self.assertNotIn("100102", chk_data["episodes"])
+
+    # ----------------------------------------------------------------------
+    # 44. Resume Skips Completed Fetches Pending Only
+    # ----------------------------------------------------------------------
+    def test_44_resume_skips_completed_fetches_pending_only(self):
+        """44. 驗證從中斷快照續跑時，已完成話數絕不重複發起網路請求，僅抓取待處理話數"""
+        mock_dash = self.tmp_path / "dashboard_44"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+        (mock_dash / "story" / "100102.json").write_text("[]", encoding="utf-8")
+        chk_dir = self.tmp_path / "scratch_44"
+        prod_manifest = mock_dash / "data" / "official_story_metadata.json"
+
+        # 預先在 checkpoint 中存入 100101
+        target_ids = [100101, 100102]
+        existing_meta = {100101: self._create_mock_entry(100101)}
+        save_bootstrap_checkpoint(chk_dir, target_ids, "00600025", existing_meta, status="IN_PROGRESS")
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101, 100102},
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids={100101, 100102},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        bundle_refs = {
+            100101: StoryBundleRef(100101, "00600025", "hash100101", "storydata_100101.unity3d"),
+            100102: StoryBundleRef(100102, "00600025", "hash100102", "storydata_100102.unity3d"),
+        }
+
+        fetched_sids = []
+        def mock_fetch(sid, bundle_ref=None, extract_metadata=True, write_story_json=False, timeout=30):
+            fetched_sids.append(sid)
+            return StoryFetchResult(story_id=sid, status="OK", metadata=self._create_mock_entry(sid))
+
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ), \
+             patch("tools.pcrd_fetch.load_story_manifest_bundle_refs", return_value=bundle_refs), \
+             patch("tools.pcrd_fetch.fetch_story_json_by_id", side_effect=mock_fetch):
+            ok, m_ver, count, failed = rebuild_official_metadata(
+                truth_version="00600025",
+                output_path=prod_manifest,
+                dashboard_dir=mock_dash,
+                checkpoint_dir=chk_dir,
+                resume=True,
+            )
+            self.assertTrue(ok)
+            self.assertEqual(count, 2)
+            self.assertEqual(failed, [])
+            # 關鍵斷言：100101 絕不可被重複 fetch，僅 fetch 100102
+            self.assertEqual(fetched_sids, [100102])
+
+    # ----------------------------------------------------------------------
+    # 45. Resume Completes Final Production Manifest Exact
+    # ----------------------------------------------------------------------
+    def test_45_resume_completes_final_production_manifest_exact(self):
+        """45. 驗證續跑全數成功後，生產清單完整建立且包含全量話數，checkpoint 狀態更新為 COMPLETE"""
+        mock_dash = self.tmp_path / "dashboard_45"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+        (mock_dash / "story" / "100102.json").write_text("[]", encoding="utf-8")
+        chk_dir = self.tmp_path / "scratch_45"
+        prod_manifest = mock_dash / "data" / "official_story_metadata.json"
+
+        target_ids = [100101, 100102]
+        existing_meta = {100101: self._create_mock_entry(100101)}
+        save_bootstrap_checkpoint(chk_dir, target_ids, "00600025", existing_meta, status="IN_PROGRESS")
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101, 100102},
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids={100101, 100102},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        bundle_refs = {
+            100101: StoryBundleRef(100101, "00600025", "hash100101", "storydata_100101.unity3d"),
+            100102: StoryBundleRef(100102, "00600025", "hash100102", "storydata_100102.unity3d"),
+        }
+
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ), \
+             patch("tools.pcrd_fetch.load_story_manifest_bundle_refs", return_value=bundle_refs), \
+             patch("tools.pcrd_fetch.fetch_story_json_by_id", return_value=StoryFetchResult(story_id=100102, status="OK", metadata=self._create_mock_entry(100102))):
+            ok, m_ver, count, failed = rebuild_official_metadata(
+                truth_version="00600025",
+                output_path=prod_manifest,
+                dashboard_dir=mock_dash,
+                checkpoint_dir=chk_dir,
+                resume=True,
+            )
+            self.assertTrue(ok)
+            self.assertTrue(prod_manifest.exists())
+            prod_data = json.loads(prod_manifest.read_text(encoding="utf-8"))
+            self.assertEqual(prod_data["episode_count"], 2)
+            self.assertIn("100101", prod_data["episodes"])
+            self.assertIn("100102", prod_data["episodes"])
+
+            state_file = chk_dir / CHECKPOINT_STATE_FILENAME
+            state = json.loads(state_file.read_text(encoding="utf-8"))
+            self.assertEqual(state["status"], "COMPLETE")
+            self.assertEqual(state["completed_count"], 2)
+
+    # ----------------------------------------------------------------------
+    # 46. Checkpoint TruthVersion Mismatch Fails Loudly Zero Network
+    # ----------------------------------------------------------------------
+    def test_46_checkpoint_truth_version_mismatch_fails_loudly_zero_network(self):
+        """46. 驗證快照 TruthVersion 與當前不符時，resume 堅決拒絕且零網路呼叫"""
+        mock_dash = self.tmp_path / "dashboard_46"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+        chk_dir = self.tmp_path / "scratch_46"
+        prod_manifest = mock_dash / "data" / "official_story_metadata.json"
+
+        target_ids = [100101]
+        save_bootstrap_checkpoint(chk_dir, target_ids, "00600024", {100101: self._create_mock_entry(100101, tv="00600024")})
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101},
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids={100101},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        bundle_refs = {100101: StoryBundleRef(100101, "00600025", "h", "b")}
+
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ), \
+             patch("tools.pcrd_fetch.load_story_manifest_bundle_refs", return_value=bundle_refs), \
+             patch("tools.pcrd_fetch.fetch_story_json_by_id") as mock_fetch:
+            ok, m_ver, count, failed = rebuild_official_metadata(
+                truth_version="00600025",
+                output_path=prod_manifest,
+                dashboard_dir=mock_dash,
+                checkpoint_dir=chk_dir,
+                resume=True,
+            )
+            self.assertFalse(ok)
+            mock_fetch.assert_not_called()
+
+    # ----------------------------------------------------------------------
+    # 47. Checkpoint Target Fingerprint Mismatch Fails Loudly
+    # ----------------------------------------------------------------------
+    def test_47_checkpoint_target_fingerprint_mismatch_fails_loudly(self):
+        """47. 驗證快照話數指紋與當前目標不符時，resume 堅決拒絕且零網路呼叫"""
+        mock_dash = self.tmp_path / "dashboard_47"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+        (mock_dash / "story" / "100102.json").write_text("[]", encoding="utf-8")
+        chk_dir = self.tmp_path / "scratch_47"
+        prod_manifest = mock_dash / "data" / "official_story_metadata.json"
+
+        save_bootstrap_checkpoint(chk_dir, [100101], "00600025", {100101: self._create_mock_entry(100101)})
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101, 100102},
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids={100101, 100102},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        bundle_refs = {
+            100101: StoryBundleRef(100101, "00600025", "h1", "b1"),
+            100102: StoryBundleRef(100102, "00600025", "h2", "b2"),
+        }
+
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ), \
+             patch("tools.pcrd_fetch.load_story_manifest_bundle_refs", return_value=bundle_refs), \
+             patch("tools.pcrd_fetch.fetch_story_json_by_id") as mock_fetch:
+            ok, m_ver, count, failed = rebuild_official_metadata(
+                truth_version="00600025",
+                output_path=prod_manifest,
+                dashboard_dir=mock_dash,
+                checkpoint_dir=chk_dir,
+                resume=True,
+            )
+            self.assertFalse(ok)
+            mock_fetch.assert_not_called()
+
+    # ----------------------------------------------------------------------
+    # 48. Checkpoint Unexpected Story ID Fails Loudly
+    # ----------------------------------------------------------------------
+    def test_48_checkpoint_unexpected_story_id_fails_loudly(self):
+        """48. 驗證快照資料包含目標範圍外的多餘話數時，load_and_validate 堅決報錯"""
+        chk_dir = self.tmp_path / "scratch_48"
+        target_ids = [100101]
+        episodes = {
+            100101: self._create_mock_entry(100101),
+            999999: self._create_mock_entry(999999),
+        }
+        save_bootstrap_checkpoint(chk_dir, target_ids, "00600025", episodes)
+        with self.assertRaises(ValueError):
+            load_and_validate_bootstrap_checkpoint(chk_dir, target_ids, "00600025")
+
+    # ----------------------------------------------------------------------
+    # 49. Checkpoint Provenance TV Mismatch Fails Loudly
+    # ----------------------------------------------------------------------
+    def test_49_checkpoint_provenance_tv_mismatch_fails_loudly(self):
+        """49. 驗證快照內個別話數之 provenance.truth_version 與版本不符時，堅決報錯"""
+        chk_dir = self.tmp_path / "scratch_49"
+        target_ids = [100101]
+        bad_entry = self._create_mock_entry(100101, tv="00600024")
+        episodes = {100101: bad_entry}
+        save_bootstrap_checkpoint(chk_dir, target_ids, "00600025", episodes)
+        with self.assertRaises(ValueError):
+            load_and_validate_bootstrap_checkpoint(chk_dir, target_ids, "00600025")
+
+    # ----------------------------------------------------------------------
+    # 50. Malformed Checkpoint Fails Loudly
+    # ----------------------------------------------------------------------
+    def test_50_malformed_checkpoint_fails_loudly(self):
+        """50. 驗證快照檔案損毀 (非 JSON 格式) 時，resume 堅決失敗且零網路呼叫"""
+        mock_dash = self.tmp_path / "dashboard_50"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+        chk_dir = self.tmp_path / "scratch_50"
+        chk_dir.mkdir(parents=True)
+        (chk_dir / CHECKPOINT_STATE_FILENAME).write_text("corrupted_json{{{", encoding="utf-8")
+        (chk_dir / CHECKPOINT_DATA_FILENAME).write_text("corrupted_json{{{", encoding="utf-8")
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101},
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids={100101},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        bundle_refs = {100101: StoryBundleRef(100101, "00600025", "h", "b")}
+
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ), \
+             patch("tools.pcrd_fetch.load_story_manifest_bundle_refs", return_value=bundle_refs), \
+             patch("tools.pcrd_fetch.fetch_story_json_by_id") as mock_fetch:
+            ok, m_ver, count, failed = rebuild_official_metadata(
+                truth_version="00600025",
+                dashboard_dir=mock_dash,
+                checkpoint_dir=chk_dir,
+                resume=True,
+            )
+            self.assertFalse(ok)
+            mock_fetch.assert_not_called()
+
+    # ----------------------------------------------------------------------
+    # 51. Network Error Story Level Retries Eventual Success
+    # ----------------------------------------------------------------------
+    def test_51_network_error_story_level_retries_eventual_success(self):
+        """51. 驗證單話遭遇 NETWORK_ERROR 時依設定進行退避重試，若最終成功則繼續推進"""
+        mock_dash = self.tmp_path / "dashboard_51"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+        chk_dir = self.tmp_path / "scratch_51"
+        prod_manifest = mock_dash / "data" / "official_story_metadata.json"
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101},
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids={100101},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        bundle_refs = {100101: StoryBundleRef(100101, "00600025", "h", "b")}
+
+        attempts = 0
+        def mock_fetch(sid, bundle_ref=None, extract_metadata=True, write_story_json=False, timeout=30):
+            nonlocal attempts
+            attempts += 1
+            if attempts < 3:
+                return StoryFetchResult(story_id=sid, status="NETWORK_ERROR", error_message="Flaky CDN Timeout")
+            return StoryFetchResult(story_id=sid, status="OK", metadata=self._create_mock_entry(100101))
+
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ), \
+             patch("tools.pcrd_fetch.load_story_manifest_bundle_refs", return_value=bundle_refs), \
+             patch("tools.pcrd_fetch.fetch_story_json_by_id", side_effect=mock_fetch):
+            ok, m_ver, count, failed = rebuild_official_metadata(
+                truth_version="00600025",
+                output_path=prod_manifest,
+                dashboard_dir=mock_dash,
+                checkpoint_dir=chk_dir,
+                story_retry_attempts=3,
+                story_retry_backoff=[0.001, 0.001, 0.001],
+            )
+            self.assertTrue(ok)
+            self.assertEqual(attempts, 3)
+            self.assertEqual(count, 1)
+            self.assertEqual(failed, [])
+            self.assertTrue(prod_manifest.exists())
+
+    # ----------------------------------------------------------------------
+    # 52. Parse Error No Story Level Retry
+    # ----------------------------------------------------------------------
+    def test_52_parse_error_no_story_level_retry(self):
+        """52. 驗證單話遭遇 PARSE_ERROR (非網路錯誤) 時絕不進行無效重試，立即中斷並保存快照"""
+        mock_dash = self.tmp_path / "dashboard_52"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+        chk_dir = self.tmp_path / "scratch_52"
+        prod_manifest = mock_dash / "data" / "official_story_metadata.json"
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101},
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids={100101},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        bundle_refs = {100101: StoryBundleRef(100101, "00600025", "h", "b")}
+
+        attempts = 0
+        def mock_fetch(sid, bundle_ref=None, extract_metadata=True, write_story_json=False, timeout=30):
+            nonlocal attempts
+            attempts += 1
+            return StoryFetchResult(story_id=sid, status="PARSE_ERROR", error_message="Corrupted Bundle Data")
+
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ), \
+             patch("tools.pcrd_fetch.load_story_manifest_bundle_refs", return_value=bundle_refs), \
+             patch("tools.pcrd_fetch.fetch_story_json_by_id", side_effect=mock_fetch):
+            ok, m_ver, count, failed = rebuild_official_metadata(
+                truth_version="00600025",
+                output_path=prod_manifest,
+                dashboard_dir=mock_dash,
+                checkpoint_dir=chk_dir,
+                story_retry_attempts=3,
+                story_retry_backoff=[0.001, 0.001, 0.001],
+            )
+            self.assertFalse(ok)
+            self.assertEqual(attempts, 1, "PARSE_ERROR 絕不可發起重試")
+            self.assertEqual(failed, [100101])
+            self.assertFalse(prod_manifest.exists())
+
+    # ----------------------------------------------------------------------
+    # 53. Completed Story Never Refetched On Resume
+    # ----------------------------------------------------------------------
+    def test_53_completed_story_never_refetched_on_resume(self):
+        """53. 驗證在 3 話任務中快照已完成 2 話時，resume 僅發起第 3 話之請求"""
+        mock_dash = self.tmp_path / "dashboard_53"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        for sid in [100101, 100102, 100103]:
+            (mock_dash / "story" / f"{sid}.json").write_text("[]", encoding="utf-8")
+        chk_dir = self.tmp_path / "scratch_53"
+
+        target_ids = [100101, 100102, 100103]
+        existing_meta = {
+            100101: self._create_mock_entry(100101),
+            100102: self._create_mock_entry(100102),
+        }
+        save_bootstrap_checkpoint(chk_dir, target_ids, "00600025", existing_meta, status="IN_PROGRESS")
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids=set(target_ids),
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids=set(target_ids),
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        bundle_refs = {sid: StoryBundleRef(sid, "00600025", f"h_{sid}", f"b_{sid}") for sid in target_ids}
+
+        fetched_sids = []
+        def mock_fetch(sid, bundle_ref=None, extract_metadata=True, write_story_json=False, timeout=30):
+            fetched_sids.append(sid)
+            return StoryFetchResult(story_id=sid, status="OK", metadata=self._create_mock_entry(sid))
+
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ), \
+             patch("tools.pcrd_fetch.load_story_manifest_bundle_refs", return_value=bundle_refs), \
+             patch("tools.pcrd_fetch.fetch_story_json_by_id", side_effect=mock_fetch):
+            ok, m_ver, count, failed = rebuild_official_metadata(
+                truth_version="00600025",
+                output_path=mock_dash / "data" / "official_story_metadata.json",
+                dashboard_dir=mock_dash,
+                checkpoint_dir=chk_dir,
+                resume=True,
+            )
+            self.assertTrue(ok)
+            self.assertEqual(fetched_sids, [100103])
+
+    # ----------------------------------------------------------------------
+    # 54. Production Manifest Never Partial
+    # ----------------------------------------------------------------------
+    def test_54_production_manifest_never_partial(self):
+        """54. 驗證任何階段性中斷時，生產清單 official_story_metadata.json 絕不寫入半成品"""
+        mock_dash = self.tmp_path / "dashboard_54"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        for sid in [100101, 100102]:
+            (mock_dash / "story" / f"{sid}.json").write_text("[]", encoding="utf-8")
+        chk_dir = self.tmp_path / "scratch_54"
+        prod_manifest = mock_dash / "data" / "official_story_metadata.json"
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101, 100102},
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids={100101, 100102},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        bundle_refs = {
+            100101: StoryBundleRef(100101, "00600025", "h1", "b1"),
+            100102: StoryBundleRef(100102, "00600025", "h2", "b2"),
+        }
+
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ), \
+             patch("tools.pcrd_fetch.load_story_manifest_bundle_refs", return_value=bundle_refs), \
+             patch("tools.pcrd_fetch.fetch_story_json_by_id", side_effect=[
+                 StoryFetchResult(story_id=100101, status="OK", metadata=self._create_mock_entry(100101)),
+                 StoryFetchResult(story_id=100102, status="NETWORK_ERROR", error_message="Dropped"),
+             ]):
+            ok, m_ver, count, failed = rebuild_official_metadata(
+                truth_version="00600025",
+                output_path=prod_manifest,
+                dashboard_dir=mock_dash,
+                checkpoint_dir=chk_dir,
+                story_retry_attempts=1,
+            )
+            self.assertFalse(ok)
+            self.assertFalse(prod_manifest.exists())
+
+    # ----------------------------------------------------------------------
+    # 55. Final Production Write Is Atomic
+    # ----------------------------------------------------------------------
+    def test_55_final_production_write_is_atomic(self):
+        """55. 驗證全數完成時，生產清單是透過原子寫入機制替換落盤"""
+        mock_dash = self.tmp_path / "dashboard_55"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+        chk_dir = self.tmp_path / "scratch_55"
+        prod_manifest = mock_dash / "data" / "official_story_metadata.json"
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101},
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids={100101},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        bundle_refs = {100101: StoryBundleRef(100101, "00600025", "h", "b")}
+
+        from pipeline.metadata_manifest import save_canonical_manifest
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ), \
+             patch("tools.pcrd_fetch.load_story_manifest_bundle_refs", return_value=bundle_refs), \
+             patch("tools.pcrd_fetch.fetch_story_json_by_id", return_value=StoryFetchResult(story_id=100101, status="OK", metadata=self._create_mock_entry(100101))), \
+             patch("pipeline.metadata_manifest.save_canonical_manifest", wraps=save_canonical_manifest) as mock_save:
+            ok, m_ver, count, failed = rebuild_official_metadata(
+                truth_version="00600025",
+                output_path=prod_manifest,
+                dashboard_dir=mock_dash,
+                checkpoint_dir=chk_dir,
+            )
+            self.assertTrue(ok)
+            # 檢查 save_canonical_manifest 有被呼叫，且傳入的 filepath 為 prod_manifest
+            calls = [call[1].get("filepath") or (call[0][1] if len(call[0]) > 1 else None) for call in mock_save.call_args_list]
+            self.assertIn(prod_manifest, calls)
+
+    # ----------------------------------------------------------------------
+    # 56. Write Story JSON Remains False Zero Write
+    # ----------------------------------------------------------------------
+    def test_56_write_story_json_remains_false_zero_write(self):
+        """56. 驗證執行過程中 write_story_json=False，本地 story/*.json 內容與雜湊完全零變動"""
+        mock_dash = self.tmp_path / "dashboard_56"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        story_file = mock_dash / "story" / "100101.json"
+        story_content = '[{"id": 1, "speaker": "佩可", "text": "原文不變"}]'
+        story_file.write_text(story_content, encoding="utf-8")
+        orig_hash = hashlib.sha256(story_file.read_bytes()).hexdigest()
+
+        chk_dir = self.tmp_path / "scratch_56"
+        prod_manifest = mock_dash / "data" / "official_story_metadata.json"
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101},
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids={100101},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        bundle_refs = {100101: StoryBundleRef(100101, "00600025", "h", "b")}
+
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ), \
+             patch("tools.pcrd_fetch.load_story_manifest_bundle_refs", return_value=bundle_refs), \
+             patch("tools.pcrd_fetch.fetch_story_json_by_id", return_value=StoryFetchResult(story_id=100101, status="OK", metadata=self._create_mock_entry(100101))):
+            ok, m_ver, count, failed = rebuild_official_metadata(
+                truth_version="00600025",
+                output_path=prod_manifest,
+                dashboard_dir=mock_dash,
+                checkpoint_dir=chk_dir,
+                write_story_json=False,
+            )
+            self.assertTrue(ok)
+            new_hash = hashlib.sha256(story_file.read_bytes()).hexdigest()
+            self.assertEqual(orig_hash, new_hash, "本地 story JSON 檔案在 metadata 回補中嚴禁被修改")
+
+    # ----------------------------------------------------------------------
+    # 57. Checkpoint And State Files Isolated In Scratch
+    # ----------------------------------------------------------------------
+    def test_57_checkpoint_and_state_files_isolated_in_scratch(self):
+        """57. 驗證快照檔案與狀態檔案完全隔離於 scratch 目錄，dashboard/ 及其子目錄絕無污染"""
+        mock_dash = self.tmp_path / "dashboard_57"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+        chk_dir = self.tmp_path / "scratch_57"
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101},
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids={100101},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        bundle_refs = {100101: StoryBundleRef(100101, "00600025", "h", "b")}
+
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ), \
+             patch("tools.pcrd_fetch.load_story_manifest_bundle_refs", return_value=bundle_refs), \
+             patch("tools.pcrd_fetch.fetch_story_json_by_id", return_value=StoryFetchResult(story_id=100101, status="OK", metadata=self._create_mock_entry(100101))):
+            rebuild_official_metadata(
+                truth_version="00600025",
+                output_path=mock_dash / "data" / "official_story_metadata.json",
+                dashboard_dir=mock_dash,
+                checkpoint_dir=chk_dir,
+            )
+            # 遍歷 mock_dash
+            for p in mock_dash.rglob("*"):
+                self.assertNotIn("checkpoint", p.name.lower())
+                self.assertNotIn("bootstrap_state", p.name.lower())
 
 if __name__ == "__main__":
     unittest.main()

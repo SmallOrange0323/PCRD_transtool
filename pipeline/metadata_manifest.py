@@ -15,7 +15,7 @@ import json
 import hashlib
 import re
 from pathlib import Path
-from typing import Dict, Any, Optional, Union, List, Tuple, Set
+from typing import Dict, Any, Optional, Union, List, Tuple, Set, Sequence, Iterable
 from dataclasses import dataclass, field
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -401,31 +401,201 @@ def update_manifest_entry(
     return batch_update_manifest_entries({story_id: entry}, truth_version=truth_version, filepath=filepath)
 
 
+CHECKPOINT_SCHEMA_VERSION = "1.0.0"
+CHECKPOINT_STATE_FILENAME = "official_story_metadata_bootstrap_state.json"
+CHECKPOINT_DATA_FILENAME = "official_story_metadata_bootstrap_checkpoint.json"
+
+
+def compute_target_fingerprint(target_ids: Iterable[int]) -> str:
+    """計算目標話數集合之決定性 SHA-256 指紋"""
+    sorted_str = ",".join(str(x) for x in sorted(target_ids))
+    return hashlib.sha256(sorted_str.encode("utf-8")).hexdigest()
+
+
+def save_bootstrap_checkpoint(
+    checkpoint_dir: Path,
+    target_ids: List[int],
+    truth_version: str,
+    episodes: Dict[Any, Any],
+    status: str = "IN_PROGRESS"
+) -> Tuple[Path, Path]:
+    """
+    以原子寫入 (tmp -> replace) 儲存 Bootstrap Checkpoint 狀態與資料檔案。
+    """
+    checkpoint_dir.mkdir(parents=True, exist_ok=True)
+    state_file = checkpoint_dir / CHECKPOINT_STATE_FILENAME
+    data_file = checkpoint_dir / CHECKPOINT_DATA_FILENAME
+
+    target_fingerprint = compute_target_fingerprint(target_ids)
+    episodes_dict = {str(k): v for k, v in episodes.items()}
+
+    state_obj = {
+        "checkpoint_schema_version": CHECKPOINT_SCHEMA_VERSION,
+        "status": status,
+        "truth_version": str(truth_version),
+        "target_count": len(target_ids),
+        "target_ids_sha256": target_fingerprint,
+        "completed_count": len(episodes_dict)
+    }
+
+    data_obj = {
+        "schema_version": SCHEMA_VERSION,
+        "truth_version": str(truth_version),
+        "episode_count": len(episodes_dict),
+        "episodes": episodes_dict
+    }
+
+    # 原子寫入 data
+    tmp_data = checkpoint_dir / f"{CHECKPOINT_DATA_FILENAME}.tmp"
+    with open(tmp_data, "w", encoding="utf-8") as f:
+        json.dump(data_obj, f, ensure_ascii=False, indent=2)
+    tmp_data.replace(data_file)
+
+    # 原子寫入 state
+    tmp_state = checkpoint_dir / f"{CHECKPOINT_STATE_FILENAME}.tmp"
+    with open(tmp_state, "w", encoding="utf-8") as f:
+        json.dump(state_obj, f, ensure_ascii=False, indent=2)
+    tmp_state.replace(state_file)
+
+    return state_file, data_file
+
+
+def load_and_validate_bootstrap_checkpoint(
+    checkpoint_dir: Path,
+    target_ids: List[int],
+    requested_truth_version: str
+) -> Dict[int, Any]:
+    """
+    載入並以嚴格契約驗證 Bootstrap Checkpoint：
+    1. state 與 data 檔案存在性
+    2. state 結構與欄位規格
+    3. truth_version 單一快照比對
+    4. target_count 與 target_ids_sha256 指紋比對
+    5. validate_manifest_dict_contract 契約檢驗
+    6. episodes 節點話數 ID 必須為數字且為 target_ids 之子集
+    7. 所有 entry provenance truth_version 比對
+    若有任一不符，Fail Loudly 拋出 ValueError，絕不發起網路請求與 production 寫入。
+    """
+    state_file = checkpoint_dir / CHECKPOINT_STATE_FILENAME
+    data_file = checkpoint_dir / CHECKPOINT_DATA_FILENAME
+
+    if not state_file.exists():
+        raise FileNotFoundError(f"[CheckpointError] Checkpoint 狀態檔案不存在: {state_file}")
+    if not data_file.exists():
+        raise FileNotFoundError(f"[CheckpointError] Checkpoint 資料檔案不存在: {data_file}")
+
+    try:
+        with open(state_file, "r", encoding="utf-8") as f:
+            state = json.load(f)
+    except Exception as e:
+        raise ValueError(f"[CheckpointError] Checkpoint 狀態檔案損壞: {e}")
+
+    try:
+        with open(data_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as e:
+        raise ValueError(f"[CheckpointError] Checkpoint 資料檔案損壞: {e}")
+
+    if not isinstance(state, dict) or not isinstance(data, dict):
+        raise ValueError("[CheckpointError] Checkpoint state 與 data 頂層必須為字典物件")
+
+    if state.get("checkpoint_schema_version") != CHECKPOINT_SCHEMA_VERSION:
+        raise ValueError(f"[CheckpointError] 不支援之 Checkpoint schema version: {state.get('checkpoint_schema_version')}")
+
+    if state.get("truth_version") != str(requested_truth_version):
+        raise ValueError(
+            f"[CheckpointError] Checkpoint TruthVersion ({state.get('truth_version')}) "
+            f"與請求之版本 ({requested_truth_version}) 不一致！"
+        )
+
+    if state.get("target_count") != len(target_ids):
+        raise ValueError(
+            f"[CheckpointError] Checkpoint target_count ({state.get('target_count')}) "
+            f"與當前目標數量 ({len(target_ids)}) 不一致！"
+        )
+
+    expected_fingerprint = compute_target_fingerprint(target_ids)
+    if state.get("target_ids_sha256") != expected_fingerprint:
+        raise ValueError(
+            f"[CheckpointError] Checkpoint target_ids_sha256 ({state.get('target_ids_sha256')}) "
+            f"與當前話數宇宙指紋 ({expected_fingerprint}) 不相符！"
+        )
+
+    # 驗證 Data 契約 (複用既有 validate_manifest_dict_contract)
+    validate_manifest_dict_contract(data)
+
+    episodes = data.get("episodes", {})
+    if state.get("completed_count") != len(episodes):
+        raise ValueError(
+            f"[CheckpointError] state.completed_count ({state.get('completed_count')}) "
+            f"與實際 episodes 數量 ({len(episodes)}) 不符！"
+        )
+
+    target_set = set(target_ids)
+    validated_episodes: Dict[int, Any] = {}
+    for sid_str, ep in episodes.items():
+        if not sid_str.isdigit():
+            raise ValueError(f"[CheckpointError] Checkpoint 話數 ID 必須為純數字: {sid_str}")
+        sid = int(sid_str)
+        if sid not in target_set:
+            raise ValueError(f"[CheckpointError] Checkpoint 包含非當前預期目標之話數: {sid}")
+
+        prov = ep.get("provenance", {})
+        if prov.get("truth_version") != str(requested_truth_version):
+            raise ValueError(
+                f"[CheckpointError] 話數 {sid} 之 provenance.truth_version ({prov.get('truth_version')}) "
+                f"與請求版本 ({requested_truth_version}) 不一致！"
+            )
+
+        validated_episodes[sid] = ep
+
+    return validated_episodes
+
+
 def rebuild_official_metadata(
     truth_version: Optional[str] = None,
     target_story_ids: Optional[List[int]] = None,
     output_path: Optional[Path] = None,
     sample_limit: Optional[int] = None,
     write_story_json: bool = False,
-    timeout: int = 15,
+    timeout: int = 30,
     dashboard_dir: Optional[Union[str, Path]] = None,
+    resume: bool = False,
+    checkpoint_dir: Optional[Union[str, Path]] = None,
+    story_retry_attempts: int = 3,
+    story_retry_backoff: Optional[List[float]] = None,
+    progress_interval: int = 100,
+    overwrite_checkpoint: bool = True,
 ) -> Tuple[bool, Optional[str], int, List[int]]:
     """
-    可測試之官方元數據側車重建/回補 Orchestrator (Replacement Semantics)：
+    可測試之官方元數據側車重建/回補 Orchestrator (支援 Resumable Checkpoint 與 Network Retry Hardening)：
     1. 驗證 sample_limit (若有傳入必須 > 0)
     2. 安全防禦：若 sample_limit 存在且 output_path 為預設 production 路徑，自動轉向 scratch/ 防止污染
-    3. 決定目標 universe：若未指定 target_story_ids，建構 CanonicalStoryUniverse，並嚴格檢查 analysis_status == VALID 且 expected_ids 非空
+    3. 決定目標 universe：若未指定 target_story_ids，建構 CanonicalStoryUniverse，並嚴格檢查 analysis_status == VALID 且 local_present 非空
     4. 取得 TruthVersion snapshot 與 bundle_refs
-    5. 使用 sync_story_batch_with_metadata 進行 batch 抓取 (write_story_json 預設 False，replace_existing=True，全量替換以清除過期 stale entries)
+    5. Checkpoint 與 Resume 決策：
+       - 若 resume=True：嚴格校驗 Checkpoint Identity 與契約，提取已完成 entries
+       - 若 resume=False：初始化 0 completed 快照
+    6. 依序遍歷 pending_ids：
+       - 故事層級重試 (僅限 NETWORK_ERROR，最多 story_retry_attempts 次)
+       - 每 progress_interval 話原子更新快照
+       - 遇到非網路錯誤或重試耗盡，立即原子保存快照並安全退出 (全有全無原子防護，生產清單零寫入)
+    7. 全數成功後一次性原子寫入生產清單，並標記快照為 COMPLETE。
     :return: (success, metadata_version, processed_count, failed_ids)
     """
+    import time
     if sample_limit is not None:
         if sample_limit <= 0:
             raise ValueError(f"sample_limit 必須大於 0: {sample_limit}")
 
-    target_out = output_path or MANIFEST_PATH
+    if output_path is not None:
+        target_out = Path(output_path)
+    elif dashboard_dir is not None:
+        target_out = Path(dashboard_dir) / "data" / "official_story_metadata.json"
+    else:
+        target_out = MANIFEST_PATH
+
     if sample_limit is not None and target_out == MANIFEST_PATH:
-        # Sample 模式防污染：自動寫入 scratch/ 目錄
         target_out = PROJECT_ROOT / "scratch" / "sample_official_metadata.json"
 
     # 1. 決定目標話數 (Metadata Eligible Universe 或顯式傳入)
@@ -464,7 +634,7 @@ def rebuild_official_metadata(
 
     # 3. 載入 bundle_refs
     try:
-        from tools.pcrd_fetch import load_story_manifest_bundle_refs, sync_story_batch_with_metadata
+        from tools.pcrd_fetch import load_story_manifest_bundle_refs, fetch_story_json_by_id
         bundle_refs = load_story_manifest_bundle_refs(truth_version=tv)
     except Exception:
         return False, None, 0, []
@@ -472,21 +642,113 @@ def rebuild_official_metadata(
     # 檢查是否有預期話數不在 bundle_refs 中
     missing_bundle_ids = [sid for sid in target_ids if sid not in bundle_refs]
     if missing_bundle_ids:
-        # Expected story missing bundle ref fails loudly
         return False, None, 0, missing_bundle_ids
 
-    # 4. 執行批次同步 (Metadata-Only, Replacement Semantics)
-    success, m_ver, success_ids, failed_ids = sync_story_batch_with_metadata(
-        story_ids=target_ids,
-        truth_version=tv,
-        write_story_json=write_story_json,
-        manifest_path=target_out,
-        bundle_refs=bundle_refs,
-        replace_existing=True,
-        timeout=timeout,
-    )
+    # 4. Checkpoint 目錄定位
+    if checkpoint_dir is not None:
+        chk_dir = Path(checkpoint_dir)
+    elif dashboard_dir is not None:
+        chk_dir = Path(dashboard_dir).parent / "scratch"
+    elif target_out != MANIFEST_PATH:
+        chk_dir = target_out.parent / "scratch"
+    elif sample_limit is not None:
+        chk_dir = PROJECT_ROOT / "scratch" / f"sample_chk_{sample_limit}"
+    else:
+        chk_dir = PROJECT_ROOT / "scratch"
 
-    return success, m_ver, len(success_ids), failed_ids
+    state_file = chk_dir / CHECKPOINT_STATE_FILENAME
+    data_file = chk_dir / CHECKPOINT_DATA_FILENAME
+    chk_exists = state_file.exists() and data_file.exists()
+
+    if resume:
+        if not chk_exists:
+            return False, None, 0, []
+        try:
+            checkpoint_episodes = load_and_validate_bootstrap_checkpoint(chk_dir, target_ids, tv)
+        except Exception:
+            return False, None, 0, []
+    else:
+        if chk_exists and not overwrite_checkpoint:
+            return False, None, 0, []
+        checkpoint_episodes = {}
+        save_bootstrap_checkpoint(chk_dir, target_ids, tv, {}, status="IN_PROGRESS")
+
+    completed_ids = set(checkpoint_episodes.keys())
+    pending_ids = [sid for sid in target_ids if sid not in completed_ids]
+
+    collected_metadata: Dict[int, Any] = dict(checkpoint_episodes)
+    failed_ids: List[int] = []
+
+    backoff_delays = story_retry_backoff if story_retry_backoff is not None else [5.0, 15.0, 30.0]
+
+    processed_since_chk = 0
+    for sid in pending_ids:
+        ref = bundle_refs.get(sid)
+        if not ref:
+            failed_ids.append(sid)
+            break
+
+        success_this_story = False
+        for attempt in range(1, story_retry_attempts + 1):
+            res = fetch_story_json_by_id(
+                sid,
+                bundle_ref=ref,
+                extract_metadata=True,
+                write_story_json=write_story_json,
+                timeout=timeout,
+            )
+            if res.status == "OK" and res.metadata is not None:
+                collected_metadata[sid] = res.metadata
+                success_this_story = True
+                break
+
+            if res.status == "NETWORK_ERROR" and attempt < story_retry_attempts:
+                wait_s = backoff_delays[attempt - 1] if attempt - 1 < len(backoff_delays) else 30.0
+                print(
+                    f"[Retry] Story ID: {sid}, attempt {attempt}/{story_retry_attempts}, "
+                    f"reason: {res.error_message}, wait {wait_s}s",
+                    file=sys.stderr,
+                    flush=True
+                )
+                if wait_s > 0:
+                    time.sleep(wait_s)
+            else:
+                break
+
+        if not success_this_story:
+            failed_ids.append(sid)
+            break
+
+        processed_since_chk += 1
+        if processed_since_chk >= progress_interval:
+            save_bootstrap_checkpoint(chk_dir, target_ids, tv, collected_metadata, status="IN_PROGRESS")
+            processed_since_chk = 0
+            pct = len(collected_metadata) / len(target_ids) * 100
+            pending_count = len(target_ids) - len(collected_metadata)
+            print(
+                f"📊 [進度 {len(collected_metadata)}/{len(target_ids)}] ({pct:.1f}%) | "
+                f"待處理: {pending_count} | 最近話數: {sid} | 快照已更新: {chk_dir}",
+                flush=True
+            )
+
+    if failed_ids or len(collected_metadata) != len(target_ids):
+        # 失敗安全防禦：原子保存當前已成功進度，確保生產清單零寫入
+        save_bootstrap_checkpoint(chk_dir, target_ids, tv, collected_metadata, status="IN_PROGRESS")
+        return False, None, len(collected_metadata), failed_ids
+
+    # 全數成功：原子寫入生產清單
+    try:
+        m_ver = batch_update_manifest_entries(
+            collected_metadata,
+            truth_version=tv,
+            filepath=target_out,
+            replace_existing=True,
+        )
+        save_bootstrap_checkpoint(chk_dir, target_ids, tv, collected_metadata, status="COMPLETE")
+        return True, m_ver, len(collected_metadata), []
+    except Exception:
+        save_bootstrap_checkpoint(chk_dir, target_ids, tv, collected_metadata, status="IN_PROGRESS")
+        return False, None, len(collected_metadata), target_ids
 
 
 def run_cli():
@@ -496,9 +758,12 @@ def run_cli():
         description="PCRD Official Story Metadata Manifest 管理與回補工具"
     )
     parser.add_argument("--rebuild", action="store_true", help="重建/回補官方元數據側車清單 (需連線 CDN)")
+    parser.add_argument("--resume", action="store_true", help="從上次中斷之快照 (checkpoint) 繼續執行")
     parser.add_argument("--sample", type=int, default=None, help="僅針對前 N 話樣本進行回補測試 (N 必須 > 0)")
     parser.add_argument("--truth-version", type=str, default=None, help="指定 8 位數字 TruthVersion (選填)")
     parser.add_argument("--output", type=str, default=None, help="輸出檔案路徑")
+    parser.add_argument("--timeout", type=int, default=30, help="單話請求逾時秒數 (預設: 30)")
+    parser.add_argument("--progress-interval", type=int, default=100, help="進度回報與快照更新間隔話數 (預設: 100)")
 
     args = parser.parse_args()
 
@@ -510,6 +775,25 @@ def run_cli():
         print("⚡ [Bootstrap / Backfill] 官方元數據側車清單回補程序")
         print("=" * 60)
 
+        chk_dir = PROJECT_ROOT / "scratch"
+        state_file = chk_dir / CHECKPOINT_STATE_FILENAME
+        data_file = chk_dir / CHECKPOINT_DATA_FILENAME
+        chk_exists = state_file.exists() and data_file.exists()
+
+        if args.resume:
+            if not chk_exists:
+                print(f"❌ [ERROR] 指定了 --resume 但未找到中斷快照檔案: {state_file}", file=sys.stderr)
+                sys.exit(1)
+        else:
+            if chk_exists and not args.sample:
+                print(
+                    f"❌ [ERROR] 偵測到既有中斷快照檔案: {state_file}。\n"
+                    f"   若要從上次中斷處續跑，請加上 --resume 參數；\n"
+                    f"   若要全新重新抓取，請先手動移除或封存該快照目錄。",
+                    file=sys.stderr
+                )
+                sys.exit(1)
+
         out_path = Path(args.output) if args.output else None
         if args.sample and not out_path:
             out_path = PROJECT_ROOT / "scratch" / "sample_official_metadata.json"
@@ -520,6 +804,8 @@ def run_cli():
 
         print("  網路需求: 需要連線 So-net CDN (storydata2_assetmanifest 與 pool/AssetBundles)")
         print("  模式: Metadata-Only (絕不修改 dashboard/story/*.json)")
+        if args.resume:
+            print("  模式: 斷點續傳 (Resume from scratch checkpoint)")
 
         if not args.sample:
             print(f"⚠️  警告: 即將處理全量故事話數！")
@@ -533,6 +819,10 @@ def run_cli():
             output_path=out_path,
             sample_limit=args.sample,
             write_story_json=False,
+            timeout=args.timeout,
+            resume=args.resume,
+            progress_interval=args.progress_interval,
+            overwrite_checkpoint=False if not args.resume else True,
         )
 
         if ok:
