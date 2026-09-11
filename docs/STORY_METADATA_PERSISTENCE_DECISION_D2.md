@@ -1,8 +1,8 @@
-# Issue #2 — Design Review D2.1
+# Issue #2 — Design Review D2.2
 # Story Map 官方故事元數據持久化策略決策記錄 (Architecture Decision Record)
 
-> **版本**：1.1.0 (Architecture Decision Record — D2.1 Persistence Contract & Pipeline Reality Correction)<br/>
-> **基準 Commit**：`b896ff5151e5d082074ac7898cbb9708198f3fd8` (main / D1 Final)<br/>
+> **版本**：1.2.0 (Architecture Decision Record — D2.2 Final Contract Correction)<br/>
+> **基準 Commit**：`8a9d24c6d38a18dbcb57f24913443ed3ca60af22` (D2.1 Final)<br/>
 > **分支**：`design/story-metadata-persistence-decision`  
 > **審查模式**：Evidence-Calibrated Architecture Decision Mode  
 > **性質**：架構決策記錄 (ADR) — 正式選定持久化策略，定義資料契約與管線規範（唯讀設計，本階段不修改 production 代碼）
@@ -20,7 +20,7 @@
 1. **現有契約極度脆弱且具硬約束**：全量 9,033 篇數字 ID 的 `story/{id}.json` 均為**頂層 JSON 陣列 (Top-level Array)**，前端 `dialogue-normalizer.js`、`map.js`、`characters.js` 以及門禁 `pipeline/validate.py` 均對此結構有**不可違逆的硬性斷言**。
 2. **大綱渲染存在歷史遺留缺陷**：桌面版詳情面板因依賴資料庫查詢 `sub_title`，在查無記錄或空值時會觸發硬編碼的回退字串「本話為重要主線劇情，美食殿堂的羈絆在此得到了進一步的昇華。」並標註為「📌 官方大綱」，嚴重違反專案真實性原則。
 
-本決策記錄 (D2.1) 旨在正式解決：**「如何以零破壞、高擴展、易維護的方式，將話數層級的官方元數據持久化並整合入 Story Map 產品管線中？」**
+本決策記錄 (D2.2) 旨在正式解決：**「如何以零破壞、高擴展、易維護的方式，將話數層級的官方元數據持久化並整合入 Story Map 產品管線中？」**
 
 ---
 
@@ -130,19 +130,20 @@
 
 ### 1. JSON Schema 定義 (Draft-07 規範)
 
-> [!NOTE]
-> **確定性構建規範**：移除 `generated_at` 時間戳記，以確保構建產物在內容未變更時具備 Byte-for-Byte 絕對確定性。新增 `metadata_version` 作為清單實體之確定性內容識別碼。
+> [!IMPORTANT]
+> **消除自循環雜湊 (Non-Circular Deterministic Hash)**：
+> 清單檔案本體**不包含 `metadata_version` 與 `generated_at`**。若將雜湊值寫入檔案本體，將造成「寫入雜湊導致內容改變、內容改變導致雜湊失效」之自指循環 (Self-referential Hash Circularity)。
+> Canonical Manifest 頂層僅包含 4 個純內容必要欄位：`schema_version`, `truth_version`, `episode_count`, `episodes`。
 
 ```json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "PCRDOfficialStoryMetadataManifest",
   "type": "object",
-  "required": ["schema_version", "truth_version", "metadata_version", "episode_count", "episodes"],
+  "required": ["schema_version", "truth_version", "episode_count", "episodes"],
   "properties": {
     "schema_version": { "type": "string", "enum": ["1.0.0"] },
     "truth_version": { "type": "string", "pattern": "^[0-9]{8}$" },
-    "metadata_version": { "type": "string", "pattern": "^[0-9a-f]{12}$" },
     "episode_count": { "type": "integer", "minimum": 0 },
     "episodes": {
       "type": "object",
@@ -157,7 +158,7 @@
             "type": "object",
             "required": [
               "truth_version",
-              "bundle_hash",
+              "cdn_bundle_hash",
               "bundle_name",
               "cmd1_present",
               "cmd1_nonempty",
@@ -166,7 +167,8 @@
             ],
             "properties": {
               "truth_version": { "type": "string" },
-              "bundle_hash": { "type": "string" },
+              "cdn_bundle_hash": { "type": "string" },
+              "bundle_sha256": { "type": "string" },
               "bundle_name": { "type": "string" },
               "cmd1_present": { "type": "boolean" },
               "cmd1_nonempty": { "type": "boolean" },
@@ -192,7 +194,8 @@
 | `episodes.<id>.official_synopsis` | `string \| null` | `cmd 1` args[0] | **官方長篇劇情大綱**。若 `cmd1_nonempty` 為 `false` 或指令缺失，**一律嚴格規整為 `null`**。嚴禁任何自造文案。 |
 | `episodes.<id>.subtitle` | `string \| null` | `cmd 32` args[0] | 官方話數副標題／正式話名（如「冒失女僕娘的委託」）。若 `cmd32_nonempty` 為 `false` 或指令缺失，為 `null`。 |
 | `episodes.<id>.provenance.truth_version` | `string` | CDN Manifest | 提取時的 So-net TruthVersion 版本號（如 `00600025`）。 |
-| `episodes.<id>.provenance.bundle_hash` | `string` | CDN Manifest | 原始 AssetBundle 二進位之 SHA-256 雜湊值（提供完整唯一性與防篡改追溯）。 |
+| `episodes.<id>.provenance.cdn_bundle_hash` | `string` | CDN Manifest | CDN assetmanifest 提供之原始 bundle identifier/hash，**不推定其 hash 演算法**（專供構造 CDN pool 下載 URL）。 |
+| `episodes.<id>.provenance.bundle_sha256` | `string` *(可選)* | 本地二進位運算 | (可選欄位) 本地實際下載之 `bundle_data` 二進位 bytes 由 `hashlib.sha256(bundle_data).hexdigest()` 計算取得。**嚴禁將 `cdn_bundle_hash` 與 `bundle_sha256` 混為一談**。 |
 | `episodes.<id>.provenance.bundle_name` | `string` | CDN Manifest | 原始 AssetBundle 內部路徑名稱（例如 `a/storydata_1001001.unity3d`）。 |
 | `episodes.<id>.provenance.cmd1_present` | `boolean` | 二進位指令串流 | 指示該話二進位串流中是否存在 `cmd 1` 指令。 |
 | `episodes.<id>.provenance.cmd1_nonempty`| `boolean` | 二進位指令串流 | 指示該話 `cmd 1` 之 args[0] 經 decode 與 strip 後是否為非空字串。 |
@@ -212,25 +215,37 @@ else:
 
 ## 9. Versioning Strategy (專屬版本控制與快取策略)
 
-為避免元數據快取與無關的 SQLite DB hash 或全域版本混淆，建立專屬快取合約：
+為杜絕 self-hash 循環依賴，並嚴格隔離元數據快取與 SQLite DB hash，建立如下單向快取契約：
 
-1. **確定性版本計算 (Deterministic Metadata Version)**：
-   - `metadata_version` 定義為 canonical `official_story_metadata.json` 內容之 SHA-256 前 12 碼：
-     $$\text{metadata\_version} = \text{SHA-256}(\text{canonical\_json})[0:12]$$
-   - 僅當元數據內容（大綱、標題、話數）實質變更時，`metadata_version` 才會改變。
-2. **Build Info 宣告擴充 (未來實作規劃)**：
-   - 在後續代碼實作中，`pipeline/bundle.py` 產出 `db_info.json` 時，將擴充收納 `metadata_version` 欄位（標記：此為實作階段規劃，非目前代碼現狀）：
-     ```json
-     {
-       "db_version": "hash_xxxxxx",
-       "metadata_version": "hash_yyyyyy",
-       "tw_size": 123456
-     }
-     ```
-3. **前端載入快取協議**：
-   - 前端發起請求時帶入專屬版本識別碼：
-     `fetch('data/official_story_metadata.json?v=' + metadataVersion)`
-   - 前端優先重用主應用已載入之 build/metadata info；若尚未載入，則由 `StoryDataService` 發起前置請求或 fallback 到當前 Session 記憶體快取。
+### 1. 單向版本衍生流程 (One-way Deterministic Versioning)
+```mermaid
+flowchart LR
+    ManifestSrc["dashboard/data/official_story_metadata.json<br/>(Canonical Source Bytes)"] -->|SHA-256| HashCalc["sha256(source_bytes)[:12]"]
+    HashCalc -->|寫入| DBInfo["dist_story_map/data/db_info.json<br/>{ metadata_version: 'hash_...' }"]
+    DBInfo -->|前端無快取 Fetch| Client["StoryDataService (Browser)"]
+    Client -->|帶入 Version Query| FetchManifest["fetch('official_story_metadata.json?v=metadata_version')"]
+```
+
+1. **Manifest 本體純淨**：`official_story_metadata.json` 不包含 `metadata_version`。
+2. **Bundling 階段計算**：
+   - 打包時讀取最終 canonical `dashboard/data/official_story_metadata.json` 的 source bytes 計算 SHA-256；
+   - 取得 `metadata_version = sha256(source_bytes)[:12]`；
+   - 寫入發布產物 `dist_story_map/data/db_info.json` 中的 `metadata_version` 欄位。
+3. **門禁對等校驗**：
+   Validator 強制驗證：
+   - `db_info.metadata_version == sha256(source_manifest_bytes)[:12]`
+   - `sha256(dashboard/.../official_story_metadata.json) == sha256(dist_story_map/.../official_story_metadata.json)`
+
+### 2. 前端快取獲取與失效策略 (Cache-Busting Contract)
+- **避免 Build Info 瀏覽器過期快取**：
+  `StoryDataService` 若需要獨立請求 `db_info.json`，必須強制防快取：
+  `fetch("data/db_info.json", { cache: "no-store" })` 或 `fetch("data/db_info.json?v=" + Date.now())`。
+- **元數據請求帶入版本**：
+  取得 `info.metadata_version` 後，發起：
+  `fetch("data/official_story_metadata.json?v=" + info.metadata_version)`。
+- **缺失處理與安全邊界 (Missing Version Fallback Policy)**：
+  若 `db_info.json` 中 `metadata_version` 欄位缺失，**絕對嚴禁 fallback 到 `db_version` 作為元數據新鮮度憑證**！
+  此時允許採用安全的 fail-safe：直接以 `{ cache: "no-store" }` 請求清單或優雅降級，絕不混用不同領域的 hash。
 
 ---
 
@@ -279,7 +294,7 @@ sequenceDiagram
 1. **檔案存在性門禁 (File Existence Gate)**：
    `dashboard/data/official_story_metadata.json` 必須實體存在。
 2. **JSON Schema 嚴格門禁 (Schema Conformance Gate)**：
-   必須嚴格符合第 8 節定義之 Draft-07 Schema，禁止任何額外未定義屬性 (`additionalProperties: false`)。
+   必須嚴格符合第 8 節定義之 Draft-07 Schema，禁止任何額外未定義屬性 (`additionalProperties: false`)。頂層僅允許 4 個規範欄位。
 3. **確定性鍵排序門禁 (Deterministic Ordering Gate)**：
    頂層鍵名與 `episodes` 底下的話數 ID 鍵名必須按字典序／數值嚴格遞增排序。
 4. **數字 ID 格式門禁 (Numeric ID Gate)**：
@@ -287,13 +302,14 @@ sequenceDiagram
 5. **話數計數一致性門禁 (Count Parity Gate)**：
    必須滿足 `episode_count == len(episodes)`。
 6. **Provenance 完整性門禁 (Provenance Completeness Gate)**：
-   每話節點必須具備完整的 `truth_version`, `bundle_hash`, `bundle_name`, 以及四個布林標記（`cmd1_present`, `cmd1_nonempty`, `cmd32_present`, `cmd32_nonempty`）。
+   每話節點必須具備完整的 `truth_version`, `cdn_bundle_hash`, `bundle_name`, 以及四個布林標記（`cmd1_present`, `cmd1_nonempty`, `cmd32_present`, `cmd32_nonempty`）。若包含 `bundle_sha256` 必須符合 SHA-256 格式。
 7. **來源無污染門禁 (Provenance Purity Gate)**：
    Provenance 欄位禁止包含任何未知或未宣告的來源標籤。
 8. **解析異常 Fail Loudly 門禁 (Extraction Integrity Gate)**：
    提取過程若遇二進位損毀或例外，必須中斷管線，嚴禁寫入半殘或預設資料。
-9. **發布二進位等價門禁 (Post-Bundle SHA Parity Gate)**：
-   `dist_story_map/data/official_story_metadata.json` 的 SHA-256 必須與源碼端 100% 一致。
+9. **發布二進位等價與版本一致門禁 (Post-Bundle Parity & Version Gate)**：
+   - `dist_story_map/data/official_story_metadata.json` 的 SHA-256 必須與源碼端 100% 一致；
+   - `dist_story_map/data/db_info.json` 中的 `metadata_version` 必須等於 `sha256(source_manifest_bytes)[:12]`。
 10. **防幻覺真實性門禁 (Anti-Hallucination Integrity Gate)**：
     - **核心不變量 (Provenance Invariant)**：`official_synopsis` 必須且只能源自 `cmd 1` 提取路徑，空值時必須為 `null`，嚴禁任何來源（DB `sub_title`、`chapter_summary`、LLM、人工字串）介入；
     - **已知迴歸防禦 (Known Regression Guard)**：全量掃描 `official_synopsis`，嚴格斷言不得包含「美食殿堂的羈絆」、「進一步的昇華」等歷史硬編碼字樣。
@@ -307,7 +323,7 @@ sequenceDiagram
 ## 12. Bundler Contract (發布打包契約)
 
 對齊 `pipeline/bundle.py` 的實體控制流：
-1. **原生自動同步**：
+1. **現行代碼真實行為 (Current Behavior)**：
    在 `pipeline/bundle.py` 第 830-838 行中，打包邏輯使用：
    ```python
    for jf in src_data_dir.glob("*.json"):
@@ -315,9 +331,10 @@ sequenceDiagram
            continue
        copy_if_different(jf, dst_data_dir / jf.name, force_overwrite=True, dry_run=dry_run)
    ```
-   因此，只要 `official_story_metadata.json` 放置於 `dashboard/data/`，**就會被原生 glob 邏輯自動同步至 `dist_story_map/data/`，無需自創任何額外的 pruning whitelist 或例外清單**。
-2. **校驗責任分工**：
-   既有 bundler 只負責比對 SHA 並複製檔案，不進行語法檢查。二進位等價性與資料正確性由 `pipeline/validate.py` 門禁第 9 項硬性檢查負責把關。
+   在 `force_overwrite=True` 時，`copy_if_different` 直接執行複製覆蓋，**現行 Bundler 並未在打包當下對 data JSON 進行 source/dist SHA-256 比對**。
+   但只要 `official_story_metadata.json` 放置於 `dashboard/data/`，**就會被原生 glob 邏輯自動複製至 `dist_story_map/data/`，無需自創任何額外的 pruning whitelist 或例外清單**。
+2. **新完整性責任分工 (New Integrity Contract)**：
+   打包後之二進位等價性（Source/Dist SHA Parity）及 `db_info.metadata_version` 之一致性，**明確定為 post-bundle validator（門禁第 9 項）的主動檢查責任**，不得宣稱 existing bundler 已完成此校驗。
 
 ---
 
@@ -326,7 +343,12 @@ sequenceDiagram
 ### 1. 職責分離：獨立 `StoryDataService`
 維持 `dashboard/story-asset-service.js` 專責多媒體 CDN 資源之單一職責，新建專屬服務：`dashboard/story-data-service.js`（`window.StoryDataService`）。
 
-### 2. 前端介面與快取協議
+### 2. 前端介面與快取協議 (Failure & Retry Contract)
+
+> [!IMPORTANT]
+> **優雅降級與重試合約 (Failure & Retry Contract)**：
+> 1. 若元數據載入失敗，`_metadataCache` 保持 `null`，且**必須將 `_loadingPromise` 重設為 `null`**，以允許使用者或後續動作進行 Retry，絕不讓第一次失敗的 rejected Promise 永久卡死整個瀏覽器 Session。
+> 2. 失敗時記錄 warning 並返回空物件或 `null`，閱讀器本體正常呈現對白，大綱面板安全隱藏。
 
 ```javascript
 window.StoryDataService = {
@@ -334,38 +356,63 @@ window.StoryDataService = {
     _loadingPromise: null,
 
     /**
-     * 惰性載入官方元數據清單 (單一 Session 僅 fetch 1 次)
+     * 取得最新 build info 中的 metadata_version (避免 stale cache)
+     */
+    async fetchMetadataVersion() {
+        try {
+            // 強制 no-store 避免快取 stale db_info
+            const resp = await fetch("data/db_info.json", { cache: "no-store" });
+            if (resp.ok) {
+                const info = await resp.json();
+                if (info && info.metadata_version) {
+                    return info.metadata_version;
+                }
+            }
+        } catch (e) {
+            console.warn("[StoryDataService] 無法取得最新 db_info.metadata_version", e);
+        }
+        // 嚴禁 fallback 到 db_version！缺失時回傳 null
+        return null;
+    },
+
+    /**
+     * 惰性載入官方元數據清單 (單一 Session 成功後僅 fetch 1 次)
      */
     async ensureMetadataLoaded() {
         if (this._metadataCache) return this._metadataCache;
         if (this._loadingPromise) return this._loadingPromise;
 
         this._loadingPromise = (async () => {
-            // 優先讀取 build info，避免相依不存在的 PCRDatabase.dbVersion
-            let version = "1.0.0";
             try {
-                const infoResp = await fetch("data/db_info.json");
-                if (infoResp.ok) {
-                    const info = await infoResp.json();
-                    version = info.metadata_version || info.db_version || version;
-                }
-            } catch (e) {
-                console.warn("[StoryDataService] 無法讀取 db_info，使用預設快取標記", e);
-            }
+                const version = await this.fetchMetadataVersion();
+                // 若 version 存在帶 query，若不存在則直接請求（不 fallback 到 db_version）
+                const url = version
+                    ? `data/official_story_metadata.json?v=${version}`
+                    : `data/official_story_metadata.json`;
 
-            const resp = await fetch(`data/official_story_metadata.json?v=${version}`);
-            if (!resp.ok) throw new Error(`Metadata load failed: ${resp.status}`);
-            const data = await resp.json();
-            this._metadataCache = data.episodes || {};
-            return this._metadataCache;
+                const resp = await fetch(url, version ? {} : { cache: "no-store" });
+                if (!resp.ok) {
+                    throw new Error(`HTTP ${resp.status} ${resp.statusText}`);
+                }
+                const data = await resp.json();
+                this._metadataCache = data.episodes || {};
+                return this._metadataCache;
+            } catch (err) {
+                console.warn("[StoryDataService] 官方元數據載入失敗，觸發優雅降級:", err);
+                // 重設 loadingPromise，允許後續重試，絕不永久卡死 Session
+                this._loadingPromise = null;
+                this._metadataCache = null;
+                return {};
+            }
         })();
+
         return this._loadingPromise;
     },
 
     /**
      * 取得指定話數的官方元數據
      * @param {number|string} storyId
-     * @returns {Promise<{chapter_title: string|null, official_synopsis: string|null, subtitle: string|null}>}
+     * @returns {Promise<{chapter_title: string|null, official_synopsis: string|null, subtitle: string|null}|null>}
      */
     async getStoryMetadata(storyId) {
         const episodes = await this.ensureMetadataLoaded();
@@ -398,8 +445,8 @@ if (meta && meta.official_synopsis) {
    python update_story_map.py
    ```
    管線將重新編譯、重建驗證門禁並同步至 dist 目錄。由於對白檔案未受任何破壞，整次回滾僅涉及單一檔案，風險極低。
-2. **前端優雅降級 (Graceful Degradation)**：
-   若網路異常導致 `official_story_metadata.json` 載入失敗（HTTP 404/500），`StoryDataService` 會捕獲異常並返回空元數據。前端閱讀器與對白渲染**完全不受影響**，僅大綱面板安全隱藏。
+2. **前端優雅降級與重試 (Graceful Degradation & Retry)**：
+   若網路異常導致 `official_story_metadata.json` 載入失敗（HTTP 404/500），`StoryDataService` 會捕獲異常、重設 Promise 並返回空元數據。前端閱讀器與對白渲染**完全不受影響**，僅大綱面板安全隱藏，且後續重試不受阻塞。
 
 ---
 
@@ -477,6 +524,7 @@ if (meta && meta.official_synopsis) {
 - **推估未壓縮精簡大小 (Estimated Raw Compact)**：**~4,542,896 bytes (~4.33 MiB)**
 - **推估 Gzip 傳輸大小 (Estimated Gzip)**：**~228,033 bytes (~222.69 KiB)**
 - **狀態標記**：`SAMPLE_BASED_ESTIMATE (Not production verified)`
+- **非線性縮放說明**：Gzip 壓縮率不假定嚴格線性縮放（Gzip scaling is not assumed strictly linear; 222.69 KiB is planning estimate only）。
 
 ### 3. 合成模擬測試之修正說明 (Correction on Synthetic Benchmark)
 先前於 D2 初版中曾記錄「9,033 話 Gzip 約 77.61 KiB」之數據，經架構審查確認該測試採用了單一固定大綱字串重複填充 8,075 次之合成資料（Synthetic Data）。由於同一字串重複出現導致 Gzip 字典壓縮率人為虛高（97.6%）。該數值標記為 `OBSERVED (Synthetic Benchmark, Deflated by Repeated Strings)`，**不得作為驗證依據**。
@@ -503,7 +551,7 @@ if (meta && meta.official_synopsis) {
   - `map.js:1695-1727` 存在人工捏造之「美食殿堂的羈絆」fallback，且被誤標為官方大綱。
   - `cmd 1` 在 180 話抽樣中存在率為 100.0% (180/180)，非空率為 89.4% (161/180)，空值率為 10.6% (19/180)。
   - 真實 180 話原型清單實測大小為 Compact 90,526 bytes (502.92 B/rec)，Gzip 4,544 bytes (25.24 B/rec)。
-  - `pipeline/bundle.py` 對 `data/*.json` 採 `glob("*.json")` 同步，無特殊 pruning whitelist。
+  - `pipeline/bundle.py` 對 `data/*.json` 採 `glob("*.json")` 同步並使用 `force_overwrite=True`，無現行 SHA 比對。
   - 本地 repo 無 AssetBundle 二進位快取，`fetch_story_json_by_id` 讀取後即釋放記憶體 buffer。
   - `tools/pcrd_fetch.py` 的 `bundle_metadata["title"]` 會將 `subtitle or chapter_title` 覆蓋賦值。
   - Auto Play v1 僅依賴音訊結束事件，不需要任何資料結構遷移。
@@ -511,7 +559,7 @@ if (meta && meta.official_synopsis) {
   - 方案 A (Dedicated Sidecar Manifest) 在零破壞既有契約、避免檔案爆炸、單一真實來源與故障隔離維度上，是本專案的最優解。
   - 新設獨立 `StoryDataService` 比擴充 `StoryAssetService` 更具職責單一性。
 * **SAMPLE-BASED ESTIMATE (抽樣推估項目)**：
-  - 全量 9,033 話精簡大小約 4.33 MiB、Gzip 傳輸體積約 222.7 KiB 屬基於 180 話原型之抽樣推估值 (`SAMPLE_BASED_ESTIMATE`)。
+  - 全量 9,033 話精簡大小約 4.33 MiB、Gzip 傳輸體積約 222.7 KiB 屬基於 180 話原型之抽樣推估值 (`SAMPLE_BASED_ESTIMATE`)，Gzip 縮放非嚴格線性。
 * **NOT VERIFIED / PENDING (尚未驗證項目)**：
   - 全庫 9,033 話實際生產產物的精確二進位與 Gzip 體積（待全庫萃取實裝後測量）。
   - Layer 2 循序事件（地點橫幅、選擇肢）的具體前端渲染協議。
