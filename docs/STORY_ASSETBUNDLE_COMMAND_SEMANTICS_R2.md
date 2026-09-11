@@ -7,7 +7,9 @@
 **樣本基準**：180 話確定性抽樣（Main 55, Chara 31, Guild 31, Event 32, System 31；分層 100 + 富媒體 25 + 自適應 55，Manifest SHA-256: `6b0a6e61669d0671baa47e225fb53842d31c9b33fbdeaae324418564b8a00a5c`；抽樣策略源自 R1，但未證明 story-level identity）
 **分析腳本**：[`tools/diagnostics/audit_story_command_semantics.py`](tools/diagnostics/audit_story_command_semantics.py)
 **約束邊界**：Production/source read-only. Writes are permitted only under scratch/.
-**機器可讀產物**：`scratch/story_command_semantics_r2.json`
+**機器可讀產物**：
+- 執行期診斷產物 (Execution Artifact, 僅存於 `scratch/` 不納入版本控制): `scratch/story_command_semantics_r2.json`
+- 固化研究樣品清單 (Frozen Research Provenance, 已納入版本控制): [`docs/STORY_ASSETBUNDLE_COMMAND_SEMANTICS_R2_SAMPLE_MANIFEST.json`](STORY_ASSETBUNDLE_COMMAND_SEMANTICS_R2_SAMPLE_MANIFEST.json)
 
 ---
 
@@ -294,7 +296,7 @@
 
 ### 1. 樣品清單與解析審計 (Sample Manifest & Parsing Accounting)
 
-所有樣本清單、解析狀態與音檔覆蓋計數均由診斷腳本精確記帳並持久化於 JSON 根部：
+本研究的 180 話抽樣名單已完整固化並納入版本控制追蹤於 [`docs/STORY_ASSETBUNDLE_COMMAND_SEMANTICS_R2_SAMPLE_MANIFEST.json`](STORY_ASSETBUNDLE_COMMAND_SEMANTICS_R2_SAMPLE_MANIFEST.json)（作為 R2 frozen research provenance）。執行期之完整報告保存於本地 `scratch/story_command_semantics_r2.json`（作為 execution artifact）。所有樣本清單、解析狀態與音檔覆蓋計數均由診斷腳本精確記帳：
 
 | 記帳層級 | 指標項目 | 數值 | 狀態 / 解釋 |
 | :--- | :--- | :---: | :--- |
@@ -339,7 +341,7 @@
 - **語音邊界隔離 (Voice Turn Window)**：
   - 以 `cmd 12` 為起點，遇到邊界終止集合 `{12, 7, 11, 5, 27, 46, 49}` 或話數結尾 EOF 時強制 flush，確保非對白轉場指令不會被誤計入該句對白。
 - **對齊結果**：
-  - 實測對齊樣本數: 103 筆（來自 3 話主線：`1001001`、`1001002`、`1001003`）；
+  - 實測對齊樣本數: 103 筆（來自 3 話角色劇情：`1001001`、`1001002`、`1001003`）；
   - 皮爾森相關係數 (語音時長 vs 句內 `cmd 13` 累計總和): **$r = 0.6783$**；
   - 皮爾森相關係數 (語音時長 vs 句內首個 `cmd 13`): **$r = 0.4161$**。
 - **反例分析 (Counter-example)**：
@@ -358,7 +360,7 @@
 - **樣品同源性聲明**：本抽樣隊列採用源自 R1 的抽樣演算法策略生成，但現有 R1 機器產物未持久化全量 180 話之 story ID 清單，**未證明與 R1 為 story-level 完全一致之樣品**。
 - **音訊對齊邊界與集中性揭露**：
   - 皮爾森相關係數測量範圍為「本地可取得音檔之 103 個 voice-turn 子集」，覆蓋率為 0.7005%（103 / 14,703），覆蓋狀態判定為 `PARTIAL_LOCAL_AUDIO`。
-  - 103 筆實測樣本高度集中於 3 話主線章節（`1001001` 共 48 筆、`1001002` 共 30 筆、`1001003` 共 25 筆），不得外推為 14,703 個候選母體之全域相關性。
+  - 103 筆實測樣本高度集中於 3 話角色劇情章節（`1001001` 共 48 筆、`1001002` 共 30 筆、`1001003` 共 25 筆），不得外推為 14,703 個候選母體之全域相關性。
   - 工具執行狀態 `EVALUATED` 僅代表探測工具鏈執行成功，不代表音訊母體已全量評估。
 
 ### 2. 結論分級 (Confidence Stratification)

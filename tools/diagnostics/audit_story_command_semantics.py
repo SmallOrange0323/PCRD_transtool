@@ -549,7 +549,7 @@ def run_semantics_audit(
     manifest_ids = set(manifest_map.keys())
     print(f"  [Manifest] 解析出 {len(manifest_map):,} 個 Story AssetBundle")
 
-    # 2. 依 R1 確定性分層抽樣重現 180 話名單
+    # 2. 使用源自 R1 的確定性抽樣策略產生 R2 180 話名單
     db_path = project_root / "dashboard" / "redive_tw.db"
     candidates = load_stratified_candidates(db_path, manifest_ids)
 
@@ -569,7 +569,7 @@ def run_semantics_audit(
 
     full_queue = (stratified_samples + rich_media_samples + batch_1 + batch_2)[:max_samples]
     requested_story_samples = len(full_queue)
-    print(f"  [Queue] 確定性重現 {requested_story_samples} 話抽樣隊列")
+    print(f"  [Queue] 已產生源自 R1 抽樣策略之確定性 {requested_story_samples} 話抽樣隊列")
 
     sample_manifest = [
         {"story_id": sid, "category": cat, "sample_type": stype}
@@ -705,7 +705,7 @@ def main():
         "--samples",
         type=int,
         default=180,
-        help="掃描抽樣話數上限 (預設: 180，完全對齊 R1 抽樣集)"
+        help="掃描抽樣話數上限 (預設: 180，使用源自 R1 的確定性抽樣策略)"
     )
     parser.add_argument(
         "--max-alignment-samples",
