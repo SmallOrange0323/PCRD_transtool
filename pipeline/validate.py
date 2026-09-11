@@ -17,7 +17,7 @@ import json
 import sqlite3
 import hashlib
 from pathlib import Path
-from typing import Tuple, Set, Optional
+from typing import Tuple, Set, Optional, List, Dict, Any
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DASHBOARD_DIR = PROJECT_ROOT / "dashboard"
@@ -59,12 +59,14 @@ def calc_sha256(filepath: Path) -> str:
 def calculate_deployment_footprint(dist_dir: Path = DIST_DIR, exclude_subdirs: Optional[Set[str]] = None) -> int:
     """
     計算預期部署至 GitHub Pages 的實際資產總大小 (bytes)。
-    排除本機快取目錄 (如 .git, sound, card)。
+    .git  → excluded
+    card  → excluded (本機卡面完整大圖，不納入部署)
+    sound → INCLUDED (sound/story_vo/*.m4a 包含正式發布的 Gap 語音集合)
     """
     if not dist_dir.exists():
         return 0
     total = 0
-    excl = exclude_subdirs or {".git", "sound", "card"}
+    excl = exclude_subdirs or {".git", "card"}
     for root, dirs, files in os.walk(dist_dir):
         rel = Path(root).relative_to(dist_dir)
         parts = rel.parts
@@ -393,6 +395,179 @@ def validate_avatar_manifest_and_assets(dashboard_dir: Path, res: ValidationResu
     return res.is_valid
 
 
+# ==============================================================================
+# Gap Voice 權威清單與資產校驗門禁 (Phase Gap-Voice)
+# ==============================================================================
+EXPECTED_GAP_VOICE_COUNT = 236
+EXPECTED_GAP_VOICE_TOTAL_BYTES = 25051018
+
+def load_and_validate_gap_voice_manifest(
+    manifest_path: Path,
+    sound_dir: Optional[Path] = None,
+    verify_hashes: bool = False
+) -> Tuple[List[dict], Dict[str, Path]]:
+    """
+    載入並嚴格驗證 Gap Voice 權威清單 (voice_gap_assets.json)。
+    若清單缺失、損壞、欄位不合法、檔名不安全、包含重複檔名，或指定的音檔不存在，拋出明確異常 (Fail Loudly)。
+    返回: (assets_list, {filename: physical_path})
+    """
+    if not manifest_path.exists():
+        raise FileNotFoundError(f"[ERROR] Gap Voice 權威清單不存在: {manifest_path}")
+
+    try:
+        with open(manifest_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as e:
+        raise ValueError(f"[ERROR] Gap Voice 清單 JSON 損壞: {e}")
+
+    if not isinstance(data, dict):
+        raise ValueError("[ERROR] Gap Voice 清單根結構必須為 JSON 物件")
+
+    assets = data.get("assets")
+    if not isinstance(assets, list):
+        raise ValueError("[ERROR] Gap Voice 清單缺少 'assets' 陣列")
+
+    declared_count = data.get("count")
+    if declared_count != len(assets):
+        raise ValueError(f"[ERROR] Gap Voice 清單宣告 count={declared_count} 但實際含有 {len(assets)} 筆資料")
+
+    declared_bytes = data.get("total_bytes")
+    actual_bytes = sum(a.get("size", 0) for a in assets if isinstance(a, dict))
+    if declared_bytes != actual_bytes:
+        raise ValueError(f"[ERROR] Gap Voice 清單宣告 total_bytes={declared_bytes} 但資產總和為 {actual_bytes}")
+
+    seen_filenames = set()
+    mappings: Dict[str, Path] = {}
+
+    for idx, item in enumerate(assets):
+        if not isinstance(item, dict):
+            raise ValueError(f"[ERROR] 第 {idx} 筆資產非 JSON 物件")
+
+        fname = item.get("filename")
+        voice = item.get("voice")
+        size = item.get("size")
+        sha256 = item.get("sha256")
+
+        if not isinstance(fname, str) or not fname.strip():
+            raise ValueError(f"[ERROR] 第 {idx} 筆資產 filename 缺失或無效")
+
+        # 安全性與檔名規範檢查 (防止路徑穿越與非規範檔名)
+        if "/" in fname or "\\" in fname or ".." in fname:
+            raise ValueError(f"[ERROR] 不安全的檔名 (包含路徑分隔符或穿越符號): {fname}")
+        if os.path.isabs(fname) or "://" in fname or Path(fname).name != fname:
+            raise ValueError(f"[ERROR] 不安全的檔名 (絕對路徑、URL 或非單一 basename): {fname}")
+        if not fname.endswith(".m4a"):
+            raise ValueError(f"[ERROR] 檔名非 .m4a 副檔名: {fname}")
+
+        if not isinstance(voice, str) or f"{voice}.m4a" != fname:
+            raise ValueError(f"[ERROR] voice 識別碼 '{voice}' 與 filename '{fname}' 不相符")
+
+        if not isinstance(size, int) or size <= 0:
+            raise ValueError(f"[ERROR] 檔案大小無效或為 0-byte: {fname} (size={size})")
+
+        if not isinstance(sha256, str) or len(sha256) != 64:
+            raise ValueError(f"[ERROR] SHA-256 格式無效: {fname}")
+
+        if fname in seen_filenames:
+            raise ValueError(f"[ERROR] 清單包含重複檔名: {fname}")
+        seen_filenames.add(fname)
+
+        if sound_dir is not None:
+            phys_path = sound_dir / fname
+            if not phys_path.exists():
+                raise FileNotFoundError(f"[ERROR] Gap Voice 本地實體檔案缺失: {phys_path}")
+            act_size = phys_path.stat().st_size
+            if act_size != size:
+                raise ValueError(f"[ERROR] 檔案大小不吻合: {fname} (硬碟={act_size}, 清單={size})")
+            if verify_hashes:
+                act_sha = calc_sha256(phys_path)
+                if act_sha != sha256:
+                    raise ValueError(f"[ERROR] SHA-256 雜湊不吻合: {fname} (硬碟={act_sha}, 清單={sha256})")
+            mappings[fname] = phys_path
+
+    return assets, mappings
+
+
+def validate_voice_gap_manifest_and_assets(
+    dashboard_dir: Path,
+    dist_dir: Optional[Path] = None,
+    res: Optional[ValidationResult] = None,
+    check_dist: bool = False,
+    verbose: bool = True
+) -> bool:
+    """
+    驗證 Gap Voice 權威清單與二進位資產不變量：
+    1. Source: voice_gap_assets.json 不變量校驗 (236 檔 / 25,051,018 bytes / 安全檔名 / SHA256)
+    2. Dist (若 check_dist=True): dist/sound/story_vo/*.m4a 必須與 manifest 100% 精準對齊
+    """
+    if res is None:
+        res = ValidationResult()
+
+    manifest_path = dashboard_dir / "data" / "voice_gap_assets.json"
+    src_sound_dir = dashboard_dir / "sound" / "story_vo"
+
+    # 1. 來源端 Manifest 與實體資產檢驗
+    try:
+        assets, mappings = load_and_validate_gap_voice_manifest(
+            manifest_path, sound_dir=src_sound_dir, verify_hashes=True
+        )
+    except Exception as e:
+        res.error(str(e))
+        return False
+
+    # 生產標準常數驗證
+    if len(assets) != EXPECTED_GAP_VOICE_COUNT:
+        res.error(f"Gap Voice 檔案數量與生產基準不符: 實際={len(assets)}, 預期={EXPECTED_GAP_VOICE_COUNT}")
+    total_bytes = sum(a["size"] for a in assets)
+    if total_bytes != EXPECTED_GAP_VOICE_TOTAL_BYTES:
+        res.error(f"Gap Voice 總體積與生產基準不符: 實際={total_bytes}, 預期={EXPECTED_GAP_VOICE_TOTAL_BYTES}")
+
+    if res.is_valid:
+        if verbose:
+            res.ok(f"Gap Voice 權威清單與來源資產校驗通過: {len(assets)} 個音檔 ({total_bytes:,} bytes) 雜湊大小 100% 吻合")
+
+    # 2. 發布端 Dist Parity 檢驗 (若指定 check_dist)
+    if check_dist and dist_dir is not None:
+        dist_sound_dir = dist_dir / "sound" / "story_vo"
+        if not dist_sound_dir.exists():
+            res.error(f"dist_story_map 缺失語音目錄: {dist_sound_dir}")
+            return False
+
+        dist_m4a_files = {f.name: f for f in dist_sound_dir.glob("*.m4a")}
+        manifest_filenames = {a["filename"]: a for a in assets}
+
+        missing_in_dist = set(manifest_filenames.keys()) - set(dist_m4a_files.keys())
+        extra_in_dist = set(dist_m4a_files.keys()) - set(manifest_filenames.keys())
+
+        if missing_in_dist:
+            res.error(f"dist Gap Voice 缺失檔案 ({len(missing_in_dist)} 個): 範例 {sorted(list(missing_in_dist))[:5]}")
+        if extra_in_dist:
+            res.error(f"dist Gap Voice 含有非白名單多餘音檔 ({len(extra_in_dist)} 個): 範例 {sorted(list(extra_in_dist))[:5]}")
+
+        # 檢驗交集檔案的大小與 SHA-256
+        corrupted_in_dist = []
+        for fname in sorted(set(manifest_filenames.keys()) & set(dist_m4a_files.keys())):
+            df = dist_m4a_files[fname]
+            exp_info = manifest_filenames[fname]
+            if df.stat().st_size != exp_info["size"] or calc_sha256(df) != exp_info["sha256"]:
+                corrupted_in_dist.append(fname)
+
+        if corrupted_in_dist:
+            res.error(f"dist Gap Voice 檔案內容損壞或大小/雜湊不吻合 ({len(corrupted_in_dist)} 個): 範例 {corrupted_in_dist[:5]}")
+
+        if not missing_in_dist and not extra_in_dist and not corrupted_in_dist:
+            if verbose:
+                res.ok(
+                    f"Gap Voice dist parity:\n"
+                    f"    expected: {len(manifest_filenames)}\n"
+                    f"    actual:   {len(dist_m4a_files)}\n"
+                    f"    bytes:    {total_bytes:,}\n"
+                    f"    PASS"
+                )
+
+    return res.is_valid
+
+
 VALID_CHAPTER_TITLE_PROVENANCE = {"official_tw_game_ui", "official_tw_localized_asset", "unresolved"}
 VALID_CHAPTER_SUMMARY_PROVENANCE = {"legacy_unverified", "legacy_curated", "curated_manual", "ai_generated", "official", "unresolved"}
 
@@ -660,6 +835,10 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
     print(f"\n🎭 執行 Avatar Manifest 與實體二進位資產門禁驗證...")
     validate_avatar_manifest_and_assets(DASHBOARD_DIR, res)
 
+    # 6C. Gap Voice 權威清單與來源二進位資產門禁
+    print(f"\n🔊 執行 Gap Voice 權威清單與來源二進位資產門禁驗證...")
+    validate_voice_gap_manifest_and_assets(DASHBOARD_DIR, dist_dir=None, res=res, check_dist=False)
+
     # 7. 若 check_dist=True，執行 dist_story_map 專屬集合與檔案深度驗證
     if check_dist or base_dir == DIST_DIR:
         print(f"\n🔍 執行 dist_story_map 專屬部署結構與對白集合驗證...")
@@ -734,6 +913,10 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
                                     res.error(f"dist dialogue_asset SHA-256 失配: {p_str}")
             except Exception as e:
                 res.error(f"校驗 dist dialogue_asset 失敗: {e}")
+
+        # 深度驗證 dist/sound/story_vo Gap 語音對等性 (Parity Gate)
+        print(f"\n🔊 執行 dist_story_map Gap Voice 對等性門禁驗證...")
+        validate_voice_gap_manifest_and_assets(DASHBOARD_DIR, dist_dir=DIST_DIR, res=res, check_dist=True)
 
         # 8. 部署體積門禁檢驗 (Deployment Footprint Gate)
         print(f"\n📦 執行 GitHub Pages 部署體積門禁 (Footprint Gate)...")

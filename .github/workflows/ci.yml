@@ -36,6 +36,9 @@ jobs:
       - name: Run Avatar Manifest & Bundler Tests
         run: python -m unittest tests.test_avatar_manifest_bundler -v
 
+      - name: Run Voice Gap Pipeline Tests
+        run: python -m unittest tests.test_voice_gap_pipeline -v
+
       - name: Run Movie Restore & Identity Preservation Tests
         run: python -m unittest tests.test_movie_restore -v
 

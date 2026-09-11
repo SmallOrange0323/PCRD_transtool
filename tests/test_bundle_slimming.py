@@ -65,6 +65,13 @@ class TestBundleSlimmingAndPrune(unittest.TestCase):
         self.mock_dist = self.mock_root / "dist_story_map"
         self.mock_dash.mkdir(parents=True, exist_ok=True)
         self.mock_dist.mkdir(parents=True, exist_ok=True)
+        mock_data = self.mock_dash / "data"
+        mock_dist_data = self.mock_dist / "data"
+        mock_data.mkdir(parents=True, exist_ok=True)
+        mock_dist_data.mkdir(parents=True, exist_ok=True)
+        sample_json = json.dumps({"count": 0, "total_bytes": 0, "assets": []})
+        (mock_data / "voice_gap_assets.json").write_text(sample_json, encoding="utf-8")
+        (mock_dist_data / "voice_gap_assets.json").write_text(sample_json, encoding="utf-8")
 
     def tearDown(self):
         try:
@@ -342,9 +349,10 @@ class TestBundleSlimmingAndPrune(unittest.TestCase):
         self.assertTrue((dist_card / "100131.webp").exists())
         self.assertTrue((dist_voice / "vo_1001.m4a").exists())
 
-        # 測試 calculate_deployment_footprint 是否正確排除 card/ 與 sound/
+        # 測試 calculate_deployment_footprint 是否正確排除 card/ 並計入 sound/
         footprint = calculate_deployment_footprint(self.mock_dist)
-        self.assertEqual(footprint, 0, "card/ 與 sound/ 應被排除在 deployment footprint 之外")
+        exp_footprint = len(b"voice_audio_bytes_67890") + (self.mock_dist / "data" / "voice_gap_assets.json").stat().st_size
+        self.assertEqual(footprint, exp_footprint, "card/ 應被排除，sound/ 應計入 deployment footprint")
 
     # 20. dynamic rendered index.html growth reflected in dry-run estimate (Restored & Enhanced)
     def test_20_generated_index_growth_projection(self):

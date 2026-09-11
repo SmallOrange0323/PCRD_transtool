@@ -427,29 +427,17 @@ def get_expected_gap_voice_mappings(dashboard_dir: Path = DASHBOARD_DIR) -> Dict
     """
     計算預期發布之 Gap 語音檔案映射：{filename: source_path}。
     以 dashboard/data/voice_gap_assets.json 為唯一權威依據。
-    若檔案或清單缺失，拋出明確異常 (Fail Loudly)。
+    若清單缺失、欄位無效、檔名不安全，或音檔缺失，拋出明確異常 (Fail Loudly)。
+    絕不允許在清單缺失時默默回傳空集合。
     """
-    mappings: Dict[str, Path] = {}
+    from pipeline.validate import load_and_validate_gap_voice_manifest
     manifest_path = dashboard_dir / "data" / "voice_gap_assets.json"
-    if not manifest_path.exists():
-        return mappings
-
-    try:
-        with open(manifest_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        for asset in data.get("assets", []):
-            fname = asset.get("filename")
-            if not fname:
-                raise ValueError("[ERROR] Gap voice asset missing filename")
-            src_path = dashboard_dir / "sound" / "story_vo" / fname
-            if not src_path.exists():
-                raise FileNotFoundError(f"[ERROR] Gap voice asset missing physical file: {src_path}")
-            mappings[fname] = src_path
-    except Exception as e:
-        if isinstance(e, (FileNotFoundError, ValueError)):
-            raise
-        print(f"  [WARN] 讀取 voice_gap_assets.json 異常: {e}", file=sys.stderr)
-
+    sound_dir = dashboard_dir / "sound" / "story_vo"
+    _, mappings = load_and_validate_gap_voice_manifest(
+        manifest_path=manifest_path,
+        sound_dir=sound_dir,
+        verify_hashes=False
+    )
     return mappings
 
 def build_expected_gap_voice_set(dashboard_dir: Path = DASHBOARD_DIR) -> Set[str]:
@@ -612,7 +600,9 @@ def sync_nojekyll(dist_dir: Path = DIST_DIR, dry_run: bool = False) -> Tuple[str
 def calculate_expected_additions_and_deltas(dashboard_dir: Path = DASHBOARD_DIR, dist_dir: Path = DIST_DIR) -> Tuple[int, int]:
     """
     計算如果執行打包，預計新增的檔案 bytes (additions) 與修改檔案的 size 變化 (deltas)。
-    僅計算 Canonical Production 範圍（排除 .git, sound, card）。
+    僅計算 Canonical Production 範圍：
+    - card = local-only / excluded
+    - sound/story_vo Gap set = canonical production / counted
     :return: (additions_bytes, deltas_bytes)
     """
     additions = 0
