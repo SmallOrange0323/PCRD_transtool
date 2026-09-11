@@ -1676,33 +1676,23 @@ const QuestMapModule = {
 
         if (this.activeSummaryTab === 'episode' || isMobile) {
             try {
-                let tableName = 'story_detail';
-                if (story.isEvent) {
-                    tableName = 'event_story_detail';
-                } else {
-                    const checkChara = await window.PCRDatabase.runQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='chara_story_detail'");
-                    const isTW = !(checkChara && checkChara.length > 0);
-                    if (isTW) {
-                        tableName = 'story_detail';
-                    } else if (story.type === 'guild') {
-                        tableName = 'guild_story_detail';
-                    } else if (story.type === 'chara') {
-                        tableName = 'chara_story_detail';
-                    } else if (story.type === 'tower') {
-                        tableName = 'tower_story_detail';
+                let officialSynopsis = null;
+                if (window.StoryDataService) {
+                    try {
+                        officialSynopsis = await window.StoryDataService.getOfficialSynopsis(this.activeStoryId);
+                    } catch (err) {
+                        console.warn('[QuestMapModule] 取得官方大綱失敗:', err);
                     }
                 }
-                const sql = `SELECT sub_title FROM ${tableName} WHERE story_id = ${this.activeStoryId}`;
-                const result = await window.PCRDatabase.runQuery(sql);
-                let officialSummary = "";
-                if (result && result.length > 0 && result[0].sub_title) {
-                    officialSummary = result[0].sub_title;
-                }
-                const isMobile = window.innerWidth <= 768;
+
                 let topDirOrSummaryHtml = "";
                 if (isMobile) {
                     topDirOrSummaryHtml = this.getQuickDirectoryHtml();
                 } else {
+                    const synopsisDisplay = officialSynopsis
+                        ? `<p style="margin:0; color: var(--text-primary); line-height: 1.7;">${this.escapeHtml(officialSynopsis)}</p>`
+                        : `<p style="margin:0; color: var(--text-secondary); font-size: 0.88rem;">本話暫無官方大綱</p>`;
+
                     topDirOrSummaryHtml = `
                         <div style="
                             background: linear-gradient(135deg, rgba(232,56,117,0.04) 0%, rgba(196,36,106,0.04) 100%);
@@ -1724,7 +1714,7 @@ const QuestMapModule = {
                                     letter-spacing:1px;
                                 ">📌 官方大綱</span>
                             </div>
-                            <p style="margin:0; color: var(--text-primary);">${this.escapeHtml(officialSummary) || "本話為重要主線劇情，美食殿堂的羈絆在此得到了進一步的昇華。"}</p>
+                            ${synopsisDisplay}
                         </div>
                     `;
                 }

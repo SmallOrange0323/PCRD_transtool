@@ -817,6 +817,7 @@ def validate_story_map(
         base_dir / "characters.js",
         base_dir / "avatar-service.js",
         base_dir / "story-asset-service.js",
+        base_dir / "story-data-service.js",
         base_dir / "chapter-data.js",
         base_dir / "db.js",
         base_dir / "sql-wasm.js",
