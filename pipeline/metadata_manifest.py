@@ -347,20 +347,37 @@ def save_canonical_manifest(manifest: Dict[str, Any], filepath: Path = MANIFEST_
 def batch_update_manifest_entries(
     entries: Dict[Union[int, str], Dict[str, Any]],
     truth_version: Optional[str] = None,
-    filepath: Path = MANIFEST_PATH
+    filepath: Path = MANIFEST_PATH,
+    replace_existing: bool = False
 ) -> str:
     """
     批次原子插入或更新多話元數據至 Manifest：
-    1. 在記憶體中載入現有 manifest（若不存在且有 truth_version 則建立空 manifest）
-    2. 批次更新所有 entries，更新 episode_count
-    3. 若提供 truth_version 則更新頂層 truth_version
-    4. 驗證契約合規性（契約失敗則直接拋出例外，完全不寫入檔案）
-    5. 透過 save_canonical_manifest 原子寫入檔案
-    6. 回傳更新後之 metadata_version
+    1. 若 replace_existing=True，建立乾淨的空 manifest (Replacement Semantics)；
+       若為 False，則在記憶體中載入現有 manifest（若不存在且有 truth_version 則建立空 manifest）
+    2. 驗證所有 entries 之 provenance.truth_version 是否與傳入之 snapshot truth_version 一致
+    3. 批次更新所有 entries，更新 episode_count
+    4. 若提供 truth_version 則更新頂層 truth_version
+    5. 驗證契約合規性（契約失敗則直接拋出例外，完全不寫入檔案）
+    6. 透過 save_canonical_manifest 原子寫入檔案
+    7. 回傳更新後之 metadata_version
     """
-    manifest = load_metadata_manifest(filepath, default_truth_version=truth_version)
+    if replace_existing:
+        if not truth_version:
+            raise ValueError("replace_existing=True 時必須提供有效的 truth_version！")
+        manifest = create_empty_manifest(truth_version=str(truth_version))
+    else:
+        manifest = load_metadata_manifest(filepath, default_truth_version=truth_version)
+
     if truth_version:
-        manifest["truth_version"] = str(truth_version)
+        str_tv = str(truth_version)
+        manifest["truth_version"] = str_tv
+        for sid, entry in entries.items():
+            prov = entry.get("provenance", {}) if isinstance(entry, dict) else {}
+            entry_tv = prov.get("truth_version")
+            if entry_tv and entry_tv != str_tv:
+                raise ValueError(
+                    f"話數 {sid} provenance.truth_version ({entry_tv}) 與本次批次 snapshot truth_version ({str_tv}) 不一致！"
+                )
 
     for sid, entry in entries.items():
         sid_str = str(sid)
@@ -393,12 +410,12 @@ def rebuild_official_metadata(
     timeout: int = 15,
 ) -> Tuple[bool, Optional[str], int, List[int]]:
     """
-    可測試之官方元數據側車重建/回補 Orchestrator：
+    可測試之官方元數據側車重建/回補 Orchestrator (Replacement Semantics)：
     1. 驗證 sample_limit (若有傳入必須 > 0)
     2. 安全防禦：若 sample_limit 存在且 output_path 為預設 production 路徑，自動轉向 scratch/ 防止污染
     3. 取得 TruthVersion snapshot 與 bundle_refs
     4. 決定目標 universe：若未指定 target_story_ids 則使用 Canonical Story Map Expected IDs
-    5. 使用 sync_story_batch_with_metadata 進行 batch 抓取 (write_story_json 預設 False，保證 Metadata-Only)
+    5. 使用 sync_story_batch_with_metadata 進行 batch 抓取 (write_story_json 預設 False，replace_existing=True，全量替換以清除過期 stale entries)
     :return: (success, metadata_version, processed_count, failed_ids)
     """
     if sample_limit is not None:
@@ -443,13 +460,14 @@ def rebuild_official_metadata(
         # Expected story missing bundle ref fails loudly
         return False, None, 0, missing_bundle_ids
 
-    # 4. 執行批次同步 (Metadata-Only)
+    # 4. 執行批次同步 (Metadata-Only, Replacement Semantics)
     success, m_ver, success_ids, failed_ids = sync_story_batch_with_metadata(
         story_ids=target_ids,
         truth_version=tv,
         write_story_json=write_story_json,
         manifest_path=target_out,
         bundle_refs=bundle_refs,
+        replace_existing=True,
         timeout=timeout,
     )
 

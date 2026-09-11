@@ -12,7 +12,7 @@ import json
 import sqlite3
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Dict, List, Set, Any, Tuple, Optional
+from typing import Dict, List, Set, Any, Tuple, Optional, Union
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DASHBOARD_DIR = PROJECT_ROOT / "dashboard"
@@ -110,6 +110,18 @@ class CoverageAnalysisStatus:
     INVALID = "INVALID"
 
 @dataclass
+class CanonicalStoryUniverse:
+    required_ids: Set[int]
+    optional_ids: Set[int]
+    unknown_ids: Set[int]
+    expected_ids: Set[int]
+    source_status: Dict[str, str]
+    analysis_status: str  # VALID, DEGRADED, INVALID
+    analysis_errors: List[str]
+    metrics: Dict[str, Any] = field(default_factory=dict)
+    overlaps: Dict[str, int] = field(default_factory=dict)
+
+@dataclass
 class CoverageResult:
     analysis_status: str  # VALID, DEGRADED, INVALID
     analysis_errors: List[str]
@@ -128,10 +140,46 @@ class CoverageResult:
     overlaps: Dict[str, int] = field(default_factory=dict)
     policy_status: Dict[str, str] = field(default_factory=dict)
 
-def analyze_coverage() -> CoverageResult:
+
+def _get_story_ids_from_db_isolated(db_path: Path, unit_id: int) -> List[int]:
+    """從指定的 DB 查詢角色個人劇情的 story_id 清單 (純粹本機查詢，零全域依賴)。"""
+    if not db_path.exists():
+        base_7 = (unit_id // 100) * 1000 + 1
+        return [base_7 + i for i in range(4)]
+    try:
+        conn = sqlite3.connect(str(db_path))
+        cur = conn.cursor()
+        cur.execute(
+            "SELECT story_id FROM chara_story_status WHERE story_id LIKE ? ORDER BY story_id",
+            (f"{unit_id // 100}%",)
+        )
+        rows = cur.fetchall()
+        conn.close()
+        if rows:
+            base_7 = (unit_id // 100) * 1000 + 1
+            expected = {base_7 + i for i in range(4)}
+            return sorted({r[0] for r in rows} | expected)
+    except Exception:
+        pass
+    base_7 = (unit_id // 100) * 1000 + 1
+    return [base_7 + i for i in range(4)]
+
+
+def build_canonical_story_universe(dashboard_dir: Optional[Union[str, Path]] = None) -> CanonicalStoryUniverse:
     """
-    動態分析當前資料庫與元數據之劇本覆蓋現況 (具備來源健康度與完整性檢驗，純讀取零副作用)
+    建構 Story Map 權威話數宇宙 (Canonical Story Universe)：
+    由 DB (story_detail) + tracked_characters.json + branch_stories.json + extra_events.json 構成。
+    若指定 dashboard_dir 則使用其內部路徑隔離，未指定則使用全域 DASHBOARD_DIR/DATA_DIR/DB_PATH。
     """
+    if dashboard_dir is not None:
+        base_dir = Path(dashboard_dir)
+        data_dir = base_dir / "data"
+        db_path = base_dir / "redive_tw.db"
+    else:
+        base_dir = DASHBOARD_DIR
+        data_dir = DATA_DIR
+        db_path = DB_PATH
+
     analysis_errors: List[str] = []
     source_status: Dict[str, str] = {
         "database": "OK",
@@ -140,14 +188,7 @@ def analyze_coverage() -> CoverageResult:
         "extra_events": "OK"
     }
 
-    # 1. 本地數字劇本
-    local_present: Set[int] = set()
-    if STORY_DIR.exists():
-        for p in STORY_DIR.glob("*.json"):
-            if p.stem.isdigit():
-                local_present.add(int(p.stem))
-
-    # 2. 資料庫查詢 (權威來源 1: DB)
+    # 1. 資料庫查詢 (權威來源 1: DB)
     db_story_detail_ids: Set[int] = set()
     db_main_ids: Set[int] = set()
     db_character_ids: Set[int] = set()
@@ -155,12 +196,12 @@ def analyze_coverage() -> CoverageResult:
     db_tower_ids: Set[int] = set()
     db_special_other_ids: Set[int] = set()
 
-    if not DB_PATH.exists():
-        source_status["database"] = "MISSING (redive_tw.db not found)"
-        analysis_errors.append("SQLite 資料庫 redive_tw.db 不存在")
+    if not db_path.exists():
+        source_status["database"] = f"MISSING (redive_tw.db not found at {db_path})"
+        analysis_errors.append(f"SQLite 資料庫不存在: {db_path}")
     else:
         try:
-            conn = sqlite3.connect(str(DB_PATH))
+            conn = sqlite3.connect(str(db_path))
             cur = conn.cursor()
             cur.execute("SELECT story_id FROM story_detail")
             for (sid,) in cur.fetchall():
@@ -174,8 +215,6 @@ def analyze_coverage() -> CoverageResult:
                     db_guild_ids.add(sid)
                 elif s_str.startswith("4"):
                     db_tower_ids.add(sid)
-                elif s_str.startswith("9"):
-                    db_special_other_ids.add(sid)
                 else:
                     db_special_other_ids.add(sid)
             conn.close()
@@ -183,33 +222,32 @@ def analyze_coverage() -> CoverageResult:
             source_status["database"] = f"ERROR ({e})"
             analysis_errors.append(f"查詢 SQLite story_detail 失敗: {e}")
 
-    # 3. 追蹤角色 (權威來源 2: tracked_characters.json & helper)
+    # 2. 追蹤角色 (權威來源 2: tracked_characters.json)
     tracked_units_count = 0
     tracked_char_required_ids: Set[int] = set()
-    tracked_file = DATA_DIR / "tracked_characters.json"
+    tracked_file = data_dir / "tracked_characters.json"
 
     if not tracked_file.exists():
-        source_status["tracked_characters"] = "MISSING (tracked_characters.json not found)"
-        analysis_errors.append("配置檔案 tracked_characters.json 不存在")
+        source_status["tracked_characters"] = f"MISSING (tracked_characters.json not found at {tracked_file})"
+        analysis_errors.append(f"配置檔案不存在: {tracked_file}")
     else:
         try:
             with open(tracked_file, "r", encoding="utf-8") as f:
                 tracked_data = json.load(f)
-            from tools.pcrd_fetch import _get_story_ids_from_db
             tracked_uids = [c["unit_id"] for c in tracked_data.get("characters", []) if "unit_id" in c]
             tracked_units_count = len(tracked_uids)
             for uid in tracked_uids:
-                tracked_char_required_ids.update(_get_story_ids_from_db(uid))
+                tracked_char_required_ids.update(_get_story_ids_from_db_isolated(db_path, uid))
         except Exception as e:
             source_status["tracked_characters"] = f"ERROR ({e})"
             analysis_errors.append(f"解析 tracked_characters 或計算話數失敗: {e}")
 
-    # 4. 元數據 (權威來源 3 & 4: branch_stories.json & extra_events.json)
+    # 3. 分支故事 (權威來源 3: branch_stories.json)
     branch_expected_ids: Set[int] = set()
-    branch_file = DATA_DIR / "branch_stories.json"
+    branch_file = data_dir / "branch_stories.json"
     if not branch_file.exists():
-        source_status["branch_stories"] = "MISSING (branch_stories.json not found)"
-        analysis_errors.append("元數據 branch_stories.json 不存在")
+        source_status["branch_stories"] = f"MISSING (branch_stories.json not found at {branch_file})"
+        analysis_errors.append(f"元數據檔案不存在: {branch_file}")
     else:
         try:
             with open(branch_file, "r", encoding="utf-8") as f:
@@ -225,11 +263,12 @@ def analyze_coverage() -> CoverageResult:
             source_status["branch_stories"] = f"ERROR ({e})"
             analysis_errors.append(f"解析 branch_stories.json 失敗: {e}")
 
+    # 4. 額外活動 (權威來源 4: extra_events.json)
     extra_event_expected_ids: Set[int] = set()
-    extra_file = DATA_DIR / "extra_events.json"
+    extra_file = data_dir / "extra_events.json"
     if not extra_file.exists():
-        source_status["extra_events"] = "MISSING (extra_events.json not found)"
-        analysis_errors.append("元數據 extra_events.json 不存在")
+        source_status["extra_events"] = f"MISSING (extra_events.json not found at {extra_file})"
+        analysis_errors.append(f"元數據檔案不存在: {extra_file}")
     else:
         try:
             with open(extra_file, "r", encoding="utf-8") as f:
@@ -279,10 +318,7 @@ def analyze_coverage() -> CoverageResult:
         tracked_char_required_ids
     )
     unknown_expected_ids = all_known_sources - (required_story_ids | optional_historic_ids)
-
-    missing_required = required_story_ids - local_present
-    missing_optional = optional_historic_ids - local_present
-    missing_unknown = unknown_expected_ids - local_present
+    expected_ids = required_story_ids | optional_historic_ids | unknown_expected_ids
 
     overlaps = {
         "branch_vs_main": len(branch_expected_ids & db_main_ids),
@@ -301,13 +337,47 @@ def analyze_coverage() -> CoverageResult:
         "db_story_detail_total": len(db_story_detail_ids),
     }
 
+    return CanonicalStoryUniverse(
+        required_ids=required_story_ids,
+        optional_ids=optional_historic_ids,
+        unknown_ids=unknown_expected_ids,
+        expected_ids=expected_ids,
+        source_status=source_status,
+        analysis_status=analysis_status,
+        analysis_errors=analysis_errors,
+        metrics=metrics,
+        overlaps=overlaps,
+    )
+
+
+def analyze_coverage(dashboard_dir: Optional[Union[str, Path]] = None) -> CoverageResult:
+    """
+    動態分析當前資料庫與元數據之劇本覆蓋現況 (具備來源健康度與完整性檢驗，純讀取零副作用)
+    """
+    base_dir = Path(dashboard_dir) if dashboard_dir else DASHBOARD_DIR
+    story_dir = base_dir / "story"
+
+    # 1. 本地數字劇本
+    local_present: Set[int] = set()
+    if story_dir.exists():
+        for p in story_dir.glob("*.json"):
+            if p.stem.isdigit():
+                local_present.add(int(p.stem))
+
+    # 2. 獲取共享之權威宇宙
+    univ = build_canonical_story_universe(dashboard_dir=dashboard_dir)
+
+    missing_required = univ.required_ids - local_present
+    missing_optional = univ.optional_ids - local_present
+    missing_unknown = univ.unknown_ids - local_present
+
     # 政策狀態評估 (Policy Status)
-    if analysis_status == CoverageAnalysisStatus.VALID:
+    if univ.analysis_status == CoverageAnalysisStatus.VALID:
         policy_status = {
-            "required_policy_status": "DEFINED" if len(unknown_expected_ids) == 0 else "PARTIAL",
-            "optional_policy_status": "DEFINED" if len(unknown_expected_ids) == 0 else "PARTIAL"
+            "required_policy_status": "DEFINED" if len(univ.unknown_ids) == 0 else "PARTIAL",
+            "optional_policy_status": "DEFINED" if len(univ.unknown_ids) == 0 else "PARTIAL"
         }
-    elif analysis_status == CoverageAnalysisStatus.DEGRADED:
+    elif univ.analysis_status == CoverageAnalysisStatus.DEGRADED:
         policy_status = {
             "required_policy_status": "PARTIAL",
             "optional_policy_status": "PARTIAL"
@@ -319,95 +389,33 @@ def analyze_coverage() -> CoverageResult:
         }
 
     return CoverageResult(
-        analysis_status=analysis_status,
-        analysis_errors=analysis_errors,
-        source_status=source_status,
+        analysis_status=univ.analysis_status,
+        analysis_errors=univ.analysis_errors,
+        source_status=univ.source_status,
         local_present_count=len(local_present),
-        required_total_count=len(required_story_ids),
-        optional_total_count=len(optional_historic_ids),
-        unknown_expected_count=len(unknown_expected_ids),
+        required_total_count=len(univ.required_ids),
+        optional_total_count=len(univ.optional_ids),
+        unknown_expected_count=len(univ.unknown_ids),
         missing_required_count=len(missing_required),
         missing_optional_count=len(missing_optional),
         missing_unknown_count=len(missing_unknown),
         missing_required_ids=sorted(list(missing_required)),
         missing_optional_ids=sorted(list(missing_optional)),
         missing_unknown_ids=sorted(list(missing_unknown)),
-        metrics=metrics,
-        overlaps=overlaps,
+        metrics=univ.metrics,
+        overlaps=univ.overlaps,
         policy_status=policy_status
     )
 
 
-def get_canonical_expected_story_ids(dashboard_dir: Optional[Path] = None, required_only: bool = False) -> Set[int]:
+def get_canonical_expected_story_ids(
+    dashboard_dir: Optional[Union[str, Path]] = None,
+    required_only: bool = False
+) -> Set[int]:
     """
     取得 Story Map 權威預期話數集合 (Canonical Expected Story Universe)：
     由 DB (story_detail) + extra_events.json + branch_stories.json + tracked_characters.json 構成。
     若 required_only=True 僅回傳產品必備話數；預設回傳所有已知權威來源話數集合。
     """
-    base_dir = dashboard_dir or DASHBOARD_DIR
-    data_dir = base_dir / "data"
-    db_path = base_dir / "redive_tw.db"
-
-    expected_ids = set()
-    required_ids = set()
-
-    # 1. DB
-    if db_path.exists():
-        try:
-            conn = sqlite3.connect(str(db_path))
-            cur = conn.cursor()
-            cur.execute("SELECT story_id FROM story_detail")
-            for (sid,) in cur.fetchall():
-                expected_ids.add(sid)
-                s_str = str(sid)
-                if s_str.startswith("2") or s_str.startswith("3") or s_str.startswith("4"):
-                    required_ids.add(sid)
-            conn.close()
-        except Exception:
-            pass
-
-    # 2. tracked_characters.json
-    tracked_file = data_dir / "tracked_characters.json"
-    if tracked_file.exists() and db_path.exists():
-        try:
-            with open(tracked_file, "r", encoding="utf-8") as f:
-                t_data = json.load(f)
-            from tools.pcrd_fetch import _get_story_ids_from_db
-            for c in t_data.get("characters", []):
-                uid = c.get("unit_id")
-                if uid:
-                    u_sids = _get_story_ids_from_db(uid)
-                    expected_ids.update(u_sids)
-                    required_ids.update(u_sids)
-        except Exception:
-            pass
-
-    # 3. branch_stories.json
-    branch_file = data_dir / "branch_stories.json"
-    if branch_file.exists():
-        try:
-            with open(branch_file, "r", encoding="utf-8") as f:
-                b_data = json.load(f)
-            for item in b_data.get("stories", []):
-                sid = item.get("story_id")
-                if isinstance(sid, int):
-                    expected_ids.add(sid)
-                    required_ids.add(sid)
-        except Exception:
-            pass
-
-    # 4. extra_events.json
-    extra_file = data_dir / "extra_events.json"
-    if extra_file.exists():
-        try:
-            with open(extra_file, "r", encoding="utf-8") as f:
-                e_data = json.load(f)
-            for item in e_data.get("stories", []):
-                sid = item.get("id") or item.get("story_id")
-                if isinstance(sid, int):
-                    expected_ids.add(sid)
-                    required_ids.add(sid)
-        except Exception:
-            pass
-
-    return required_ids if required_only else expected_ids
+    univ = build_canonical_story_universe(dashboard_dir=dashboard_dir)
+    return univ.required_ids if required_only else univ.expected_ids

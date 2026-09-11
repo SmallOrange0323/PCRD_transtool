@@ -634,20 +634,37 @@ def validate_official_story_metadata(
                         f"[Metadata Gate] 話數 {sid} 包含已確認之假大綱/幻覺文字 (Regression Guard): '{phrase}'"
                     )
 
-    # 5. 覆蓋度狀態模型 (Coverage State Model: 基於集合差集比對，嚴禁硬編碼數字)
-    from pipeline.coverage import get_canonical_expected_story_ids
-    canonical_expected_ids = get_canonical_expected_story_ids(dashboard_dir)
+    # 5. 覆蓋度與話數宇宙狀態模型 (Canonical Universe & Coverage Gate)
+    from pipeline.coverage import build_canonical_story_universe
+    canonical_univ = build_canonical_story_universe(dashboard_dir)
+
+    if canonical_univ.analysis_status != "VALID":
+        u_msg = f"[Metadata Gate] Canonical Universe 來源健康狀態異常: {canonical_univ.analysis_status} ({canonical_univ.analysis_errors})"
+        if allow_bootstrap_incomplete:
+            res.warning(u_msg)
+        else:
+            res.error(u_msg)
+
+    canonical_expected_ids = canonical_univ.expected_ids
     manifest_sids = set(int(sid) for sid in episodes.keys())
 
     missing_ids = canonical_expected_ids - manifest_sids
+    unexpected_ids = manifest_sids - canonical_expected_ids
 
-    if len(missing_ids) == 0 and len(canonical_expected_ids) > 0:
+    if unexpected_ids:
+        unexp_msg = f"[Metadata Gate] 發現 {len(unexpected_ids)} 話未知/非 Canonical 話數元數據: {sorted(list(unexpected_ids))[:10]}"
+        if allow_bootstrap_incomplete:
+            res.warning(unexp_msg)
+        else:
+            res.error(unexp_msg)
+
+    if len(missing_ids) == 0 and len(unexpected_ids) == 0 and len(canonical_expected_ids) > 0:
         if verbose:
             res.ok(
                 f"[Metadata Gate] official_story_metadata 覆蓋狀態: COMPLETE "
                 f"(共 {len(manifest_sids)} 話，包含所有權威預期話數)"
             )
-    else:
+    elif missing_ids:
         msg = (
             f"[Metadata Gate] official_story_metadata 覆蓋不足: "
             f"缺失 {len(missing_ids)} 話 (現有 {len(manifest_sids)}/{len(canonical_expected_ids)} 話)"

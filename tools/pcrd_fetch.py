@@ -542,6 +542,14 @@ class StoryBundleRef:
     cdn_bundle_hash: str
     bundle_name: str
 
+    def __post_init__(self):
+        if not isinstance(self.truth_version, str) or not re.match(r"^\d{8}$", self.truth_version):
+            raise ValueError(f"StoryBundleRef.truth_version 必須為 8 碼數字字串: {self.truth_version!r}")
+        if not isinstance(self.cdn_bundle_hash, str) or not self.cdn_bundle_hash.strip():
+            raise ValueError(f"StoryBundleRef.cdn_bundle_hash 必須為非空字串: {self.cdn_bundle_hash!r}")
+        if not isinstance(self.bundle_name, str) or not self.bundle_name.strip():
+            raise ValueError(f"StoryBundleRef.bundle_name 必須為非空字串，不得為空或純空白: {self.bundle_name!r}")
+
 
 @dataclass
 class StoryFetchResult:
@@ -685,8 +693,13 @@ def fetch_story_json_by_id(
 
     ep_metadata = None
     if extract_metadata:
-        if not b_name:
-            b_name = f"storydata_{story_id}.unity3d"
+        if not b_name or not str(b_name).strip():
+            return StoryFetchResult(
+                story_id=story_id,
+                status="PARSE_ERROR",
+                hash=h,
+                error_message="extract_metadata=True 時 bundle_name 必須來自有效 Manifest Entry，不得為空或空白猜測"
+            )
         try:
             dialogues, raw_meta = _parse_bundle_dialogues(bundle_data, extract_metadata=True)
             syn = raw_meta.get("official_synopsis") or raw_meta.get("synopsis")
@@ -767,23 +780,34 @@ def sync_story_batch_with_metadata(
     write_story_json: bool = True,
     manifest_path: Optional[Path] = None,
     bundle_refs: Optional[Dict[int, StoryBundleRef]] = None,
+    replace_existing: bool = False,
     timeout: int = 15,
 ) -> Tuple[bool, Optional[str], List[int], List[int]]:
     """
     正式批次同步話數與官方元數據原語 (Batch Sync Primitive)：
-    1. TruthVersion snapshot once (若未傳入則探測 1 次)
-    2. bundle_refs load once (若未傳入則依 truth_version 載入 1 次)
-    3. 遍歷 target story_ids 提取對白與元數據 (依 write_story_json 決定是否寫入 story/*.json)
-    4. 收集成功結果至記憶體 working copy
-    5. 全數成功才呼叫 batch_update_manifest_entries 一次性提交 Manifest
-    6. 若有任一話失敗，絕不提交 Manifest，達成嚴格全有全無 (All-or-Nothing) 原子性
+    1. TruthVersion snapshot once:
+       - 若 caller 傳入 bundle_refs，直接推導其唯一之 truth_version，比對一致性，絕不額外探測
+       - 若未傳入 bundle_refs，則探測 1 次並載入 bundle_refs
+    2. 遍歷 target story_ids 提取對白與元數據 (依 write_story_json 決定是否寫入 story/*.json)
+    3. 收集成功結果至記憶體 working copy
+    4. 全數成功才呼叫 batch_update_manifest_entries 一次性提交 Manifest (支援 replace_existing 重建模式)
+    5. 若有任一話失敗，絕不提交 Manifest，達成嚴格全有全無 (All-or-Nothing) 原子性
     :return: (success, metadata_version, success_ids, failed_ids)
     """
-    resolved_tv = truth_version or _get_sonet_ver()
-    if not resolved_tv:
-        return False, None, [], story_ids
-
-    if bundle_refs is None:
+    if bundle_refs is not None:
+        tv_set = {ref.truth_version for ref in bundle_refs.values() if ref.truth_version}
+        if not tv_set:
+            return False, None, [], story_ids
+        if len(tv_set) > 1:
+            raise ValueError(f"bundle_refs 包含多種 TruthVersion，違反單一快照合約: {tv_set}")
+        refs_tv = next(iter(tv_set))
+        if truth_version is not None and str(truth_version) != refs_tv:
+            raise ValueError(f"傳入之 truth_version ({truth_version}) 與 bundle_refs 之版號 ({refs_tv}) 不一致！")
+        resolved_tv = refs_tv
+    else:
+        resolved_tv = truth_version or _get_sonet_ver()
+        if not resolved_tv:
+            return False, None, [], story_ids
         try:
             bundle_refs = load_story_manifest_bundle_refs(truth_version=resolved_tv)
         except Exception:
@@ -826,6 +850,7 @@ def sync_story_batch_with_metadata(
             collected_metadata,
             truth_version=resolved_tv,
             filepath=target_manifest_path,
+            replace_existing=replace_existing,
         )
         return True, m_ver, success_ids, []
     except Exception:
