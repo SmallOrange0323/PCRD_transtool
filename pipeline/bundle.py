@@ -20,6 +20,7 @@ import shutil
 import hashlib
 import json
 import re
+import sqlite3
 from pathlib import Path
 from typing import Set, Tuple, List, Dict, Optional
 
@@ -283,13 +284,13 @@ def render_index_html(dashboard_dir: Path = DASHBOARD_DIR) -> str:
 
     return html_content
 
-def get_expected_icon_unit_mappings(dashboard_dir: Path = DASHBOARD_DIR) -> Dict[str, Path]:
+def get_expected_dialogue_icon_mappings(dashboard_dir: Path = DASHBOARD_DIR) -> Dict[str, Path]:
     """
-    計算 canonical dist icon/unit 檔名與其對應之 source 實體檔案 Path 映射。
+    計算劇情對白所需之 canonical dist icon/unit 檔名與其對應之 source 實體檔案 Path 映射。
     
     【Phase 5 架構升級：Manifest-First Authority】
     1. 唯一權威依據為 dashboard/data/avatar_assets.json
-    2. 對於 status == 'active' 的資產（含 897 個對白頭像與 30 個 UI 頭像）：
+    2. 對於 status == 'active' 的資產（含 897 個對白頭像與 30 個 UI 頭像，共 927 個）：
        - 100% 精準映射至 dist_story_map/icon/unit/<filename>
        - 若 source 實體檔案缺失，立即拋出明確異常，絕不代換
     3. 對於 status == 'placeholder_only' 的實體（3 個無圖差分）：
@@ -381,6 +382,111 @@ def get_expected_icon_unit_mappings(dashboard_dir: Path = DASHBOARD_DIR) -> Dict
                         mappings[f"{base_id + 31}{item.suffix.lower()}"] = item
 
     return mappings
+
+def get_playable_character_unit_ids(dashboard_dir: Path = DASHBOARD_DIR) -> Set[int]:
+    """
+    取得角色圖鑑之可玩角色 Canonical unit_id 集合。
+    
+    資料來源與規則：
+    1. redive_tw.db (unit_data 與 unit_rarity 表)：
+       - 嚴格限定 100000 < unit_id < 200000 (與前端 characters.js SQL 完全一致)
+       - unit_name NOT LIKE '%怪物%'
+       - 存在於 unit_rarity 中
+       - 排除 >= 400000 之召喚物或影子怪
+    2. tracked_characters.json：
+       - 合併登錄之最新或聯動角色 (如 GuP 139401 等)
+    """
+    playable_uids: Set[int] = set()
+
+    # 1. 從 SQLite redive_tw.db 查詢所有可玩角色
+    db_path = dashboard_dir / "redive_tw.db"
+    if db_path.exists():
+        try:
+            conn = sqlite3.connect(str(db_path))
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT DISTINCT unit_id FROM unit_data 
+                WHERE unit_id < 200000 AND unit_id > 100000 
+                AND unit_name NOT LIKE '%怪物%'
+                AND unit_id IN (SELECT DISTINCT unit_id FROM unit_rarity)
+            """)
+            for row in cursor.fetchall():
+                playable_uids.add(row[0])
+            conn.close()
+        except Exception as e:
+            print(f"  [WARN] 讀取 redive_tw.db 角色資料失敗: {e}", file=sys.stderr)
+
+    # 2. 合併 tracked_characters.json (如 GuP 聯動角 139401 等)
+    tracked_path = dashboard_dir / "data" / "tracked_characters.json"
+    if tracked_path.exists():
+        try:
+            with open(tracked_path, "r", encoding="utf-8") as f:
+                tracked = json.load(f)
+            for char in tracked.get("characters", []):
+                uid = char.get("unit_id")
+                if uid:
+                    playable_uids.add(int(uid))
+        except Exception as e:
+            print(f"  [WARN] 讀取 tracked_characters.json 失敗: {e}", file=sys.stderr)
+
+    return playable_uids
+
+
+def get_character_catalog_icon_mappings(dashboard_dir: Path = DASHBOARD_DIR) -> Dict[str, Path]:
+    """
+    計算角色圖鑑 (Character Catalog) 所需的可玩角色代表頭像映射。
+    
+    規則：
+    1. 呼叫 canonical helper get_playable_character_unit_ids 取得所有可玩角色 unit_id
+    2. 對每個角色 unit_id，規整化為 base_id = (unit_id // 100) * 100
+    3. 候選代表頭像為 base_id + 11 與 base_id + 31 (若 unit_id >= 190000 則保留原 unit_id)
+    4. 僅納入 dashboard/icon/unit/ 中實際存在的實體 .png 檔案
+    5. 維持 deterministic 排序
+    """
+    mappings: Dict[str, Path] = {}
+    icon_unit_dir = dashboard_dir / "icon" / "unit"
+    if not icon_unit_dir.exists():
+        return mappings
+
+    playable_uids = get_playable_character_unit_ids(dashboard_dir)
+
+    # 收集候選代表頭像檔名
+    candidate_filenames: Set[str] = set()
+    for uid in playable_uids:
+        if uid >= 190000:
+            candidate_filenames.add(f"{uid}.png")
+        else:
+            base_id = (uid // 100) * 100
+            candidate_filenames.add(f"{base_id + 11}.png")
+            candidate_filenames.add(f"{base_id + 31}.png")
+
+    for fname in sorted(candidate_filenames):
+        src_file = icon_unit_dir / fname
+        if src_file.exists():
+            mappings[fname] = src_file
+
+    return mappings
+
+def get_expected_icon_unit_mappings(dashboard_dir: Path = DASHBOARD_DIR, include_catalog: bool = True) -> Dict[str, Path]:
+    """
+    計算 canonical dist icon/unit 檔名與其對應之 source 實體檔案 Path 映射。
+    
+    【發布集合架構：Dialogue Active ∪ Character Catalog】
+    1. 劇情對白需要的頭像 (Dialogue Active Mappings)：
+       來自 dashboard/data/avatar_assets.json 中 status == 'active' 的資產 (927 個)
+    2. 角色圖鑑需要的可玩角色代表頭像 (Character Catalog Mappings)：
+       來自 redive_tw.db 與 tracked_characters.json 之可玩角色，依 unit_id -> +11 / +31 規則映射
+    3. 執行 100% 決定性之聯集 (Deterministic Union)，依檔名排序
+    """
+    dialogue_mappings = get_expected_dialogue_icon_mappings(dashboard_dir)
+    if not include_catalog:
+        return dialogue_mappings
+
+    catalog_mappings = get_character_catalog_icon_mappings(dashboard_dir)
+    union_mappings: Dict[str, Path] = {}
+    for fname in sorted(set(dialogue_mappings.keys()) | set(catalog_mappings.keys())):
+        union_mappings[fname] = dialogue_mappings.get(fname) or catalog_mappings[fname]
+    return union_mappings
 
 def build_expected_icon_unit_set(dashboard_dir: Path = DASHBOARD_DIR) -> Set[str]:
     """根據 get_expected_icon_unit_mappings 回傳所有 expected icon 檔名集合"""

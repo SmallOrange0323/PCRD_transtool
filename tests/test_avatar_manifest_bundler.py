@@ -30,6 +30,8 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from pipeline.bundle import (
     get_expected_icon_unit_mappings,
+    get_expected_dialogue_icon_mappings,
+    get_character_catalog_icon_mappings,
     get_expected_dialogue_override_mappings,
     build_expected_icon_unit_set,
     DASHBOARD_DIR,
@@ -245,25 +247,45 @@ class TestAvatarManifestBundler(unittest.TestCase):
 
     def test_8_old_reality_hardcoded_rule_no_longer_required(self):
         """8. 驗證 Manifest-First 權威模式不再需要 legacy hard-coded reality 規則"""
-        mappings = get_expected_icon_unit_mappings()
-        self.assertEqual(len(mappings), 927)
+        dialogue_mappings = get_expected_dialogue_icon_mappings()
+        self.assertEqual(len(dialogue_mappings), 927)
 
         # 驗證著名的 reality fixtures 在 expected 中
         reality_fixtures = [105812, 105913, 106012, 106412, 106831, 107331]
         for fid in reality_fixtures:
-            self.assertIn(f"{fid}.png", mappings)
+            self.assertIn(f"{fid}.png", dialogue_mappings)
 
     def test_9_dialogue_override_story_unit_published(self):
         """9. 驗證 dialogue_asset 宣告之覆蓋頭像會被獨立映射發布，且 primary 不受影響"""
-        primary_mappings = get_expected_icon_unit_mappings()
-        self.assertEqual(len(primary_mappings), 927)
-        self.assertIn("192711.png", primary_mappings)
-        self.assertEqual(primary_mappings["192711.png"], DASHBOARD_DIR / "icon" / "unit" / "192711.png")
+        dialogue_mappings = get_expected_dialogue_icon_mappings()
+        self.assertEqual(len(dialogue_mappings), 927)
+        self.assertIn("192711.png", dialogue_mappings)
+        self.assertEqual(dialogue_mappings["192711.png"], DASHBOARD_DIR / "icon" / "unit" / "192711.png")
 
         override_mappings = get_expected_dialogue_override_mappings()
         self.assertEqual(len(override_mappings), 1)
         self.assertIn("icon/story_unit/192711.png", override_mappings)
         self.assertEqual(override_mappings["icon/story_unit/192711.png"], DASHBOARD_DIR / "icon" / "story_unit" / "192711.png")
+
+    def test_11_character_catalog_avatars_included(self):
+        """11. 驗證角色圖鑑代表頭像完整納入發布集合，補齊原本缺失的 7 位可玩角色"""
+        catalog_mappings = get_character_catalog_icon_mappings()
+        self.assertGreaterEqual(len(catalog_mappings), 670)
+
+        missing_7 = [181101, 181001, 180901, 180801, 180701, 123001, 118601]
+        for uid in missing_7:
+            base_id = (uid // 100) * 100
+            self.assertIn(f"{base_id + 11}.png", catalog_mappings)
+            self.assertIn(f"{base_id + 31}.png", catalog_mappings)
+
+        union_mappings = get_expected_icon_unit_mappings()
+        self.assertEqual(len(union_mappings), 1143)
+        # 確保對白 active 頭像全部包含
+        for fname in get_expected_dialogue_icon_mappings():
+            self.assertIn(fname, union_mappings)
+        # 確保角色圖鑑頭像全部包含
+        for fname in catalog_mappings:
+            self.assertIn(fname, union_mappings)
 
     def test_10_dialogue_override_validation_and_rejection(self):
         """10. 驗證 validator 獨立校驗 dialogue_asset，並拒絕不安全路徑"""
