@@ -24,15 +24,17 @@ MANIFEST_PATH = DASHBOARD_DIR / "data" / "official_story_metadata.json"
 
 SCHEMA_VERSION = "1.0.0"
 CANONICAL_TOP_LEVEL_KEYS = ["schema_version", "truth_version", "episode_count", "episodes"]
-PROVENANCE_REQUIRED_KEYS = [
+PROVENANCE_REQUIRED_KEYS = {
     "truth_version",
     "cdn_bundle_hash",
     "bundle_name",
     "cmd1_present",
     "cmd1_nonempty",
     "cmd32_present",
-    "cmd32_nonempty"
-]
+    "cmd32_nonempty",
+}
+PROVENANCE_ALLOWED_OPTIONAL_KEYS = {"bundle_sha256"}
+PROVENANCE_ALL_ALLOWED_KEYS = PROVENANCE_REQUIRED_KEYS | PROVENANCE_ALLOWED_OPTIONAL_KEYS
 
 
 @dataclass
@@ -85,6 +87,10 @@ class OfficialStoryMetadataManifest:
     episodes: Dict[Union[int, str], Union[OfficialEpisodeMetadata, Dict[str, Any]]] = field(default_factory=dict)
     schema_version: str = SCHEMA_VERSION
 
+    def __post_init__(self):
+        if not isinstance(self.truth_version, str) or not re.match(r"^[0-9]{8}$", self.truth_version):
+            raise ValueError(f"[ContractError] 無效的 truth_version: {self.truth_version}，必須為 8 位數字字串")
+
     @property
     def episode_count(self) -> int:
         return len(self.episodes)
@@ -108,8 +114,10 @@ class OfficialStoryMetadataManifest:
         return serialize_canonical_manifest(self.to_dict())
 
 
-def create_empty_manifest(truth_version: str = "00600025") -> Dict[str, Any]:
-    """建立符合 D2.2 契約之空白 Manifest 字典物件"""
+def create_empty_manifest(truth_version: str) -> Dict[str, Any]:
+    """建立符合 D2.2 契約之空白 Manifest 字典物件（嚴禁預設值，強制顯式傳入合規 8 碼 TruthVersion）"""
+    if not isinstance(truth_version, str) or not re.match(r"^[0-9]{8}$", truth_version):
+        raise ValueError(f"[ContractError] 無效的 truth_version: {truth_version}，必須為 8 位數字字串")
     return {
         "schema_version": SCHEMA_VERSION,
         "truth_version": str(truth_version),
@@ -124,7 +132,10 @@ def validate_manifest_dict_contract(manifest: Dict[str, Any]) -> None:
     1. 頂層僅允許 Canonical 4 欄位，禁止 generated_at 與 metadata_version (避免 self-hash circularity)
     2. episode_count 必須嚴格等於 len(episodes)
     3. episodes 鍵名必須全為數字字串
-    4. 每個 episode 必須包含必要欄位與合規 provenance
+    4. 每個 episode 必須包含合法 4 欄位，嚴禁額外欄位 (additionalProperties: false)
+    5. provenance 必須符合必填 7 欄位 + 可選 1 欄位 (bundle_sha256 格式驗證)
+    6. 標記蘊含規則：nonempty -> present
+    7. synopsis / subtitle 嚴格 null contract
     """
     if not isinstance(manifest, dict):
         raise ValueError("[ContractError] Manifest 頂層必須為字典物件")
@@ -142,6 +153,10 @@ def validate_manifest_dict_contract(manifest: Dict[str, Any]) -> None:
     if manifest.get("schema_version") != SCHEMA_VERSION:
         raise ValueError(f"[ContractError] 不支援的 schema_version: {manifest.get('schema_version')}")
 
+    tv = manifest.get("truth_version")
+    if not isinstance(tv, str) or not re.match(r"^[0-9]{8}$", tv):
+        raise ValueError(f"[ContractError] Manifest 頂層 truth_version 必須為 8 位數字字串: {tv}")
+
     episodes = manifest.get("episodes", {})
     if not isinstance(episodes, dict):
         raise ValueError("[ContractError] episodes 必須為字典物件")
@@ -151,6 +166,8 @@ def validate_manifest_dict_contract(manifest: Dict[str, Any]) -> None:
         raise ValueError(f"[ContractError] episode_count ({count}) 與 len(episodes) ({len(episodes)}) 不一致！")
 
     num_pattern = re.compile(r"^[0-9]+$")
+    allowed_ep_keys = {"chapter_title", "official_synopsis", "subtitle", "provenance"}
+
     for sid, ep in episodes.items():
         if not num_pattern.match(str(sid)):
             raise ValueError(f"[ContractError] 話數 ID 鍵名必須為純數字字串: {sid}")
@@ -158,10 +175,13 @@ def validate_manifest_dict_contract(manifest: Dict[str, Any]) -> None:
         if not isinstance(ep, dict):
             raise ValueError(f"[ContractError] 話數 {sid} 之節點必須為字典物件")
 
-        required_ep_keys = {"chapter_title", "official_synopsis", "subtitle", "provenance"}
         ep_keys = set(ep.keys())
-        if not required_ep_keys.issubset(ep_keys):
-            raise ValueError(f"[ContractError] 話數 {sid} 欄位不符: 缺少 {required_ep_keys - ep_keys}")
+        if ep_keys != allowed_ep_keys:
+            missing = allowed_ep_keys - ep_keys
+            extra = ep_keys - allowed_ep_keys
+            raise ValueError(
+                f"[ContractError] 話數 {sid} 欄位不符 (additionalProperties: false): 缺少 {missing}, 多出 {extra}"
+            )
 
         if ep["chapter_title"] is not None and not isinstance(ep["chapter_title"], str):
             raise ValueError(f"[ContractError] 話數 {sid} chapter_title 必須為 string 或 null")
@@ -175,20 +195,58 @@ def validate_manifest_dict_contract(manifest: Dict[str, Any]) -> None:
             raise ValueError(f"[ContractError] 話數 {sid} provenance 必須為字典物件")
 
         prov_keys = set(prov.keys())
-        for req_k in PROVENANCE_REQUIRED_KEYS:
-            if req_k not in prov_keys:
-                raise ValueError(f"[ContractError] 話數 {sid} provenance 缺少必要欄位: {req_k}")
+        missing_prov = PROVENANCE_REQUIRED_KEYS - prov_keys
+        if missing_prov:
+            raise ValueError(f"[ContractError] 話數 {sid} provenance 缺少必要欄位: {missing_prov}")
+        extra_prov = prov_keys - PROVENANCE_ALL_ALLOWED_KEYS
+        if extra_prov:
+            raise ValueError(
+                f"[ContractError] 話數 {sid} provenance 包含未允許之欄位 (additionalProperties: false): {extra_prov}"
+            )
+
+        # 欄位值規格驗證
+        p_tv = prov["truth_version"]
+        if not isinstance(p_tv, str) or not re.match(r"^[0-9]{8}$", p_tv):
+            raise ValueError(f"[ContractError] 話數 {sid} provenance.truth_version 必須為 8 位數字字串: {p_tv}")
+
+        p_cbh = prov["cdn_bundle_hash"]
+        if not isinstance(p_cbh, str) or not p_cbh.strip():
+            raise ValueError(f"[ContractError] 話數 {sid} provenance.cdn_bundle_hash 必須為非空字串")
+
+        p_bn = prov["bundle_name"]
+        if not isinstance(p_bn, str) or not p_bn.strip():
+            raise ValueError(f"[ContractError] 話數 {sid} provenance.bundle_name 必須為非空字串")
+
+        p_sha = prov.get("bundle_sha256")
+        if p_sha is not None:
+            if not isinstance(p_sha, str) or not re.match(r"^[0-9a-fA-F]{64}$", p_sha):
+                raise ValueError(f"[ContractError] 話數 {sid} provenance.bundle_sha256 必須為 64 位十六進位字串: {p_sha}")
 
         for flag_k in ["cmd1_present", "cmd1_nonempty", "cmd32_present", "cmd32_nonempty"]:
             if not isinstance(prov[flag_k], bool):
                 raise ValueError(f"[ContractError] 話數 {sid} provenance.{flag_k} 必須為布林值")
 
+        # 蘊含關係檢查 (Invariants)
+        if prov["cmd1_nonempty"] and not prov["cmd1_present"]:
+            raise ValueError(f"[ContractError] 話數 {sid} cmd1_nonempty 為 True 但 cmd1_present 為 False，違反蘊含關係！")
+        if prov["cmd32_nonempty"] and not prov["cmd32_present"]:
+            raise ValueError(f"[ContractError] 話數 {sid} cmd32_nonempty 為 True 但 cmd32_present 為 False，違反蘊含關係！")
+
+        # Synopsis Null Contract
         if prov["cmd1_present"] and prov["cmd1_nonempty"]:
-            if not ep["official_synopsis"]:
-                raise ValueError(f"[ContractError] 話數 {sid} 標記 cmd1_nonempty 為 True 但 official_synopsis 為空！")
+            if not isinstance(ep["official_synopsis"], str) or not ep["official_synopsis"].strip():
+                raise ValueError(f"[ContractError] 話數 {sid} 標記 cmd1 為 nonempty，但 official_synopsis 為空或非字串！")
         else:
             if ep["official_synopsis"] is not None:
-                raise ValueError(f"[ContractError] 話數 {sid} cmd1 為空或缺失，official_synopsis 必須嚴格規整為 null！")
+                raise ValueError(f"[ContractError] 話數 {sid} cmd1 非 nonempty，official_synopsis 必須嚴格為 null (None)！")
+
+        # Subtitle Null Contract
+        if prov["cmd32_present"] and prov["cmd32_nonempty"]:
+            if not isinstance(ep["subtitle"], str) or not ep["subtitle"].strip():
+                raise ValueError(f"[ContractError] 話數 {sid} 標記 cmd32 為 nonempty，但 subtitle 為空或非字串！")
+        else:
+            if ep["subtitle"] is not None:
+                raise ValueError(f"[ContractError] 話數 {sid} cmd32 非 nonempty，subtitle 必須嚴格為 null (None)！")
 
 
 def serialize_canonical_manifest(manifest: Dict[str, Any]) -> str:
@@ -247,10 +305,12 @@ def compute_manifest_version(manifest_bytes: bytes) -> str:
     return hashlib.sha256(manifest_bytes).hexdigest()[:12]
 
 
-def load_metadata_manifest(filepath: Path = MANIFEST_PATH) -> Dict[str, Any]:
-    """讀取 Manifest 檔案，若不存在則回傳空白骨架"""
+def load_metadata_manifest(filepath: Path = MANIFEST_PATH, default_truth_version: Optional[str] = None) -> Dict[str, Any]:
+    """讀取 Manifest 檔案，若不存在且提供 default_truth_version 則回傳空白骨架，否則拋出 FileNotFoundError"""
     if not filepath.exists():
-        return create_empty_manifest()
+        if default_truth_version is not None:
+            return create_empty_manifest(default_truth_version)
+        raise FileNotFoundError(f"[ContractError] Manifest 檔案不存在: {filepath}，且未提供 default_truth_version")
     with open(filepath, "r", encoding="utf-8") as f:
         data = json.load(f)
     validate_manifest_dict_contract(data)
@@ -286,7 +346,7 @@ def update_manifest_entry(
     增量插入或更新單一話數元數據至 Manifest。
     :return: 更新後之 metadata_version
     """
-    manifest = load_metadata_manifest(filepath)
+    manifest = load_metadata_manifest(filepath, default_truth_version=truth_version)
     if truth_version:
         manifest["truth_version"] = str(truth_version)
 

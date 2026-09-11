@@ -528,6 +528,14 @@ def cmd_update_db(args):
 
 from dataclasses import dataclass
 
+@dataclass(frozen=True)
+class StoryBundleRef:
+    story_id: int
+    truth_version: str
+    cdn_bundle_hash: str
+    bundle_name: str
+
+
 @dataclass
 class StoryFetchResult:
     story_id: int
@@ -538,15 +546,19 @@ class StoryFetchResult:
     error_message: Optional[str] = None
     metadata: Optional[Dict[str, Any]] = None
 
-def load_story_manifest_hash_map(truth_version: Optional[str] = None) -> Dict[int, str]:
+
+def load_story_manifest_bundle_refs(truth_version: Optional[str] = None) -> Dict[int, StoryBundleRef]:
     """
-    從 CDN 下載並解析 storydata2_assetmanifest，回傳 {story_id: hash} 字典。
+    從 CDN 下載並解析 storydata2_assetmanifest，回傳 {story_id: StoryBundleRef} 字典。
+    保留 manifest 原始路徑作為 bundle_name，並記錄單一快照之 truth_version。
     """
     ver = truth_version or _get_sonet_ver()
+    if not ver:
+        raise RuntimeError("無法取得 So-net TruthVersion，無法載入 Manifest")
     manifest_url = f"{SONET_CDN}/Resources/{ver}/Jpn/AssetBundles/Android/manifest/storydata2_assetmanifest"
     manifest_data = _http_get(manifest_url, WEB_HEADER)
-    
-    hash_map: Dict[int, str] = {}
+
+    refs: Dict[int, StoryBundleRef] = {}
     pattern = re.compile(r"storydata_(\d+)\.unity3d")
     for line in manifest_data.decode("utf-8", errors="ignore").splitlines():
         parts = line.strip().split(",")
@@ -556,34 +568,87 @@ def load_story_manifest_hash_map(truth_version: Optional[str] = None) -> Dict[in
             if match:
                 try:
                     sid = int(match.group(1))
-                    hash_map[sid] = h
+                    refs[sid] = StoryBundleRef(
+                        story_id=sid,
+                        truth_version=ver,
+                        cdn_bundle_hash=h,
+                        bundle_name=path
+                    )
                 except ValueError:
                     pass
-    return hash_map
+    return refs
+
+
+def load_story_manifest_hash_map(truth_version: Optional[str] = None) -> Dict[int, str]:
+    """
+    從 CDN 下載並解析 storydata2_assetmanifest，回傳 {story_id: hash} 字典。
+    向後相容包裝，內部使用 load_story_manifest_bundle_refs。
+    """
+    refs = load_story_manifest_bundle_refs(truth_version=truth_version)
+    return {sid: ref.cdn_bundle_hash for sid, ref in refs.items()}
+
 
 def fetch_story_json_by_id(
     story_id: int,
     manifest_hash_map: Optional[Dict[int, str]] = None,
     timeout: int = 15,
-    extract_metadata: bool = True,
-    truth_version: Optional[str] = None
+    extract_metadata: bool = False,
+    truth_version: Optional[str] = None,
+    bundle_ref: Optional[StoryBundleRef] = None,
+    bundle_refs: Optional[Dict[int, StoryBundleRef]] = None,
 ) -> StoryFetchResult:
     """
     通用單話劇情對白 JSON 下載原語 (Generic JSON Fetch Primitive)：
     1. 僅下載與解密對白 JSON，使用原子替換寫入 dashboard/story/<story_id>.json (維持頂層陣列)
     2. 若 extract_metadata=True，在同一 AssetBundle 二進位下載生命週期中同時萃取官方元數據
-    3. 無多媒體 (語音/背景/CG) 下載副作用
-    4. 無縮圖 (story_thumbnails.json) 修改副作用
-    5. 無 report 檔案或 sys.exit() 副作用
-    6. 支援傳入 manifest_hash_map 避免批次時重複下載 manifest
+    3. 來源溯源 (Provenance) 嚴格單一快照與真實 bundle_name，若傳入裸 manifest_hash_map 且要求萃取元數據則 Fail Loudly
+    4. 無多媒體 (語音/背景/CG) 下載副作用
+    5. 無縮圖 (story_thumbnails.json) 修改副作用
+    6. 無 report 檔案或 sys.exit() 副作用
     """
-    h = None
-    if manifest_hash_map is not None:
+    h: Optional[str] = None
+    b_name: Optional[str] = None
+    resolved_truth_ver: Optional[str] = None
+
+    if bundle_ref is not None:
+        if bundle_ref.story_id != story_id:
+            raise ValueError(f"傳入之 bundle_ref.story_id ({bundle_ref.story_id}) 與要求之 story_id ({story_id}) 不符！")
+        h = bundle_ref.cdn_bundle_hash
+        b_name = bundle_ref.bundle_name
+        resolved_truth_ver = bundle_ref.truth_version
+    elif bundle_refs is not None:
+        ref = bundle_refs.get(story_id)
+        if not ref:
+            return StoryFetchResult(
+                story_id=story_id,
+                status="HASH_NOT_FOUND",
+                error_message=f"無法在 bundle_refs 中找到 story_id={story_id} 的 Bundle Entry"
+            )
+        h = ref.cdn_bundle_hash
+        b_name = ref.bundle_name
+        resolved_truth_ver = ref.truth_version
+    elif manifest_hash_map is not None:
+        if extract_metadata:
+            raise ValueError(
+                "Cannot extract metadata with raw manifest_hash_map without provenance bundle_ref; "
+                "pass bundle_refs/bundle_ref or let fetch_story_json_by_id resolve bundle refs."
+            )
         h = manifest_hash_map.get(story_id)
     else:
+        # Snapshot TruthVersion 一次，貫穿後續流程，避免 race condition
+        resolved_truth_ver = truth_version or _get_sonet_ver()
+        if not resolved_truth_ver:
+            return StoryFetchResult(
+                story_id=story_id,
+                status="NETWORK_ERROR",
+                error_message="無法取得 So-net TruthVersion"
+            )
         try:
-            m_map = load_story_manifest_hash_map(truth_version=truth_version)
-            h = m_map.get(story_id)
+            refs = load_story_manifest_bundle_refs(truth_version=resolved_truth_ver)
+            ref = refs.get(story_id)
+            if ref:
+                h = ref.cdn_bundle_hash
+                b_name = ref.bundle_name
         except Exception as e:
             return StoryFetchResult(
                 story_id=story_id,
@@ -612,25 +677,29 @@ def fetch_story_json_by_id(
         )
 
     bundle_sha256 = hashlib.sha256(bundle_data).hexdigest()
-    current_truth_ver = truth_version or _get_sonet_ver()
     ep_metadata = None
 
     try:
         if extract_metadata:
             dialogues, raw_meta = _parse_bundle_dialogues(bundle_data, extract_metadata=True)
+            c1_p = bool(raw_meta.get("cmd1_present"))
+            c1_ne = bool(raw_meta.get("cmd1_nonempty"))
+            c32_p = bool(raw_meta.get("cmd32_present"))
+            c32_ne = bool(raw_meta.get("cmd32_nonempty"))
+
             ep_metadata = {
                 "chapter_title": raw_meta.get("chapter_title"),
-                "official_synopsis": raw_meta.get("synopsis") if (raw_meta.get("cmd1_present") and raw_meta.get("cmd1_nonempty")) else None,
-                "subtitle": raw_meta.get("subtitle") if (raw_meta.get("cmd32_present") and raw_meta.get("cmd32_nonempty")) else None,
+                "official_synopsis": raw_meta.get("synopsis") if (c1_p and c1_ne) else None,
+                "subtitle": raw_meta.get("subtitle") if (c32_p and c32_ne) else None,
                 "provenance": {
-                    "truth_version": current_truth_ver,
+                    "truth_version": resolved_truth_ver,
                     "cdn_bundle_hash": h,
+                    "bundle_name": b_name,
                     "bundle_sha256": bundle_sha256,
-                    "bundle_name": f"a/storydata_{story_id}.unity3d",
-                    "cmd1_present": bool(raw_meta.get("cmd1_present")),
-                    "cmd1_nonempty": bool(raw_meta.get("cmd1_nonempty")),
-                    "cmd32_present": bool(raw_meta.get("cmd32_present")),
-                    "cmd32_nonempty": bool(raw_meta.get("cmd32_nonempty"))
+                    "cmd1_present": c1_p,
+                    "cmd1_nonempty": c1_ne,
+                    "cmd32_present": c32_p,
+                    "cmd32_nonempty": c32_ne,
                 }
             }
         else:
