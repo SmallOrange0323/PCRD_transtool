@@ -13,6 +13,7 @@ pcrd_fetch.py — PCRD 台版資料抓取 CLI 工具
 
 import argparse
 import base64
+import hashlib
 import json
 import os
 import re
@@ -407,7 +408,16 @@ def _parse_bundle_dialogues(bundle_data, extract_metadata=False):
         raise RuntimeError("UnityPy 未安裝，請執行: pip install UnityPy")
 
     dialogues = []
-    bundle_metadata = {"title": None, "chapter_title": None, "subtitle": None, "synopsis": None}
+    bundle_metadata = {
+        "title": None,
+        "chapter_title": None,
+        "subtitle": None,
+        "synopsis": None,
+        "cmd1_present": False,
+        "cmd1_nonempty": False,
+        "cmd32_present": False,
+        "cmd32_nonempty": False,
+    }
     bundle = UnityPy.load(bundle_data)
     for obj in bundle.objects:
         if obj.type.name == "TextAsset":
@@ -422,11 +432,23 @@ def _parse_bundle_dialogues(bundle_data, extract_metadata=False):
             for idx, args in commands:
                 # 捕獲元數據指令
                 if idx == 0 and args and not bundle_metadata["chapter_title"]:
-                    bundle_metadata["chapter_title"] = str(args[0]).strip()
-                elif idx == 1 and args and not bundle_metadata["synopsis"]:
-                    bundle_metadata["synopsis"] = str(args[0]).strip()
-                elif idx == 32 and args and not bundle_metadata["subtitle"]:
-                    bundle_metadata["subtitle"] = str(args[0]).strip()
+                    val0 = str(args[0]).strip()
+                    if val0:
+                        bundle_metadata["chapter_title"] = val0
+                elif idx == 1:
+                    bundle_metadata["cmd1_present"] = True
+                    val1 = str(args[0]).strip() if args else ""
+                    if val1:
+                        bundle_metadata["cmd1_nonempty"] = True
+                        if not bundle_metadata["synopsis"]:
+                            bundle_metadata["synopsis"] = val1
+                elif idx == 32:
+                    bundle_metadata["cmd32_present"] = True
+                    val32 = str(args[0]).strip() if args else ""
+                    if val32:
+                        bundle_metadata["cmd32_nonempty"] = True
+                        if not bundle_metadata["subtitle"]:
+                            bundle_metadata["subtitle"] = val32
 
                 still_match = None
                 if idx != 6:
@@ -514,6 +536,7 @@ class StoryFetchResult:
     hash: Optional[str] = None
     written_path: Optional[str] = None
     error_message: Optional[str] = None
+    metadata: Optional[Dict[str, Any]] = None
 
 def load_story_manifest_hash_map(truth_version: Optional[str] = None) -> Dict[int, str]:
     """
@@ -541,22 +564,25 @@ def load_story_manifest_hash_map(truth_version: Optional[str] = None) -> Dict[in
 def fetch_story_json_by_id(
     story_id: int,
     manifest_hash_map: Optional[Dict[int, str]] = None,
-    timeout: int = 15
+    timeout: int = 15,
+    extract_metadata: bool = True,
+    truth_version: Optional[str] = None
 ) -> StoryFetchResult:
     """
     通用單話劇情對白 JSON 下載原語 (Generic JSON Fetch Primitive)：
-    1. 僅下載與解密對白 JSON，使用原子替換寫入 dashboard/story/<story_id>.json
-    2. 無多媒體 (語音/背景/CG) 下載副作用
-    3. 無縮圖 (story_thumbnails.json) 修改副作用
-    4. 無 report 檔案或 sys.exit() 副作用
-    5. 支援傳入 manifest_hash_map 避免批次時重複下載 manifest
+    1. 僅下載與解密對白 JSON，使用原子替換寫入 dashboard/story/<story_id>.json (維持頂層陣列)
+    2. 若 extract_metadata=True，在同一 AssetBundle 二進位下載生命週期中同時萃取官方元數據
+    3. 無多媒體 (語音/背景/CG) 下載副作用
+    4. 無縮圖 (story_thumbnails.json) 修改副作用
+    5. 無 report 檔案或 sys.exit() 副作用
+    6. 支援傳入 manifest_hash_map 避免批次時重複下載 manifest
     """
     h = None
     if manifest_hash_map is not None:
         h = manifest_hash_map.get(story_id)
     else:
         try:
-            m_map = load_story_manifest_hash_map()
+            m_map = load_story_manifest_hash_map(truth_version=truth_version)
             h = m_map.get(story_id)
         except Exception as e:
             return StoryFetchResult(
@@ -585,8 +611,30 @@ def fetch_story_json_by_id(
             error_message=f"下載 AssetBundle 失敗: {e}"
         )
 
+    bundle_sha256 = hashlib.sha256(bundle_data).hexdigest()
+    current_truth_ver = truth_version or _get_sonet_ver()
+    ep_metadata = None
+
     try:
-        dialogues = _parse_bundle_dialogues(bundle_data)
+        if extract_metadata:
+            dialogues, raw_meta = _parse_bundle_dialogues(bundle_data, extract_metadata=True)
+            ep_metadata = {
+                "chapter_title": raw_meta.get("chapter_title"),
+                "official_synopsis": raw_meta.get("synopsis") if (raw_meta.get("cmd1_present") and raw_meta.get("cmd1_nonempty")) else None,
+                "subtitle": raw_meta.get("subtitle") if (raw_meta.get("cmd32_present") and raw_meta.get("cmd32_nonempty")) else None,
+                "provenance": {
+                    "truth_version": current_truth_ver,
+                    "cdn_bundle_hash": h,
+                    "bundle_sha256": bundle_sha256,
+                    "bundle_name": f"a/storydata_{story_id}.unity3d",
+                    "cmd1_present": bool(raw_meta.get("cmd1_present")),
+                    "cmd1_nonempty": bool(raw_meta.get("cmd1_nonempty")),
+                    "cmd32_present": bool(raw_meta.get("cmd32_present")),
+                    "cmd32_nonempty": bool(raw_meta.get("cmd32_nonempty"))
+                }
+            }
+        else:
+            dialogues = _parse_bundle_dialogues(bundle_data, extract_metadata=False)
     except Exception as e:
         return StoryFetchResult(
             story_id=story_id,
@@ -622,7 +670,8 @@ def fetch_story_json_by_id(
         status="OK",
         dialogue_count=len(dialogues),
         hash=h,
-        written_path=str(out_path)
+        written_path=str(out_path),
+        metadata=ep_metadata
     )
 
 def cmd_fetch_story(args):
