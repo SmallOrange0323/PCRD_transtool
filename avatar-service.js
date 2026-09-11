@@ -909,6 +909,30 @@ globalScope.AvatarService = {
         return `<img src="${src}" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleError(this, '${safeName}', ${unitId})">`;
     },
 
+    /**
+     * 專供角色圖鑑 (Character Catalog / Grid / Table) 使用的頭像 HTML 生成器
+     * 接收資料庫 Canonical unit_id (例如 181201) 與 unitName
+     * 使用 resolveDefaultPortraitIds 規整化為 +11 / +31 代表頭像，絕不誤入對白 Exact-ID 門禁
+     * @param {number|string} unitId - 資料庫 unit_id (例如 181201)
+     * @param {string} unitName - 角色名稱 (例如 "雪菲（公主）")
+     * @returns {string} img 標籤或文字佔位符 HTML
+     */
+    getCharacterCardAvatarHtml(unitId, unitName) {
+        const cleanName = this.cleanName(unitName);
+        const numId = Number(unitId);
+
+        if (!Number.isInteger(numId) || numId < 100000) {
+            return this.getFallbackHtml(cleanName);
+        }
+
+        const portraitIds = this.resolveDefaultPortraitIds(numId);
+        const mainId = portraitIds.length > 0 ? portraitIds[0] : numId;
+        const src = `icon/unit/${mainId}.png`;
+        const safeName = this.escapeForJsString(cleanName);
+
+        return `<img src="${src}" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleError(this, '${safeName}', ${numId})">`;
+    },
+
     // 取得最佳頭像 img 元素 HTML (根據 unit_id)
     getAvatarHtmlByUnitId(unitId, charaName, externalAvatars = {}) {
         const cleanName = this.cleanName(charaName);

@@ -173,7 +173,7 @@ window.CharactersModule = {
         if (characters.length === 0) return '<div class="empty-msg">找不到符合條件的角色</div>';
         
         return characters.map(c => {
-            const avatarHtml = window.AvatarService.getAvatarHtmlByUnitId(c.unit_id, c.unit_name);
+            const avatarHtml = window.AvatarService.getCharacterCardAvatarHtml(c.unit_id, c.unit_name);
 
             return `
                 <div class="char-card glass-card" onclick="CharactersModule.showDetail(${c.unit_id})">
@@ -212,7 +212,7 @@ window.CharactersModule = {
                 </thead>
                 <tbody>
                     ${characters.map(c => {
-                        const avatarHtml = window.AvatarService.getAvatarHtmlByUnitId(c.unit_id, c.unit_name);
+                        const avatarHtml = window.AvatarService.getCharacterCardAvatarHtml(c.unit_id, c.unit_name);
                         const isExcluded = this.excludedUnitIds.has(c.unit_id);
 
                         return `
@@ -350,7 +350,7 @@ window.CharactersModule = {
             body.innerHTML = `
                 <div class="detail-header">
                     <div class="detail-avatar" style="overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 0;">
-                        ${window.AvatarService.getAvatarHtmlByUnitId(unitId, gameName)}
+                        ${window.AvatarService.getCharacterCardAvatarHtml(unitId, gameName)}
                     </div>
                     <div class="detail-main-info">
                         <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
@@ -713,7 +713,7 @@ window.CharactersModule = {
                                         </div>
                                         <div class="guild-members" style="display: flex; flex-wrap: wrap; gap: 8px;">
                                             ${list.map(c => {
-                                                const avatarHtml = window.AvatarService.getAvatarHtmlByUnitId(c.unit_id, c.unit_name);
+                                                const avatarHtml = window.AvatarService.getCharacterCardAvatarHtml(c.unit_id, c.unit_name);
                                                 return `
                                                     <div class="member-avatar-wrapper" onclick="CharactersModule.showDetail(${c.unit_id})" 
                                                          title="${c.unit_name} (ID: ${c.unit_id})" 
