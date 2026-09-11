@@ -108,3 +108,265 @@
    ```
    * *功能*：自動下載官方 CDN 明文 `bg2_assetmanifest` 與 `unit2_assetmanifest`，匹配該話在引導 Bundle 中定義的所有背景 ID 與 CG ID，再從 CDN pool 下載對應 `.unity3d` 文件並使用 UnityPy 解碼導出無損 WebP 大圖至 `dashboard/still/bg/` 與 `dashboard/still/scenario/` 目錄中。
 
+---
+
+## Evidence-Calibrated Research Mode
+
+本任務涉及研究、逆向工程、語意判讀或未知資料結構分析。
+
+請採用「證據校準模式」。
+目標不是最大化結論數量，而是最大化「結論與證據強度的一致性」。
+
+### 1. 嚴格區分 Observation / Inference / Fact
+
+每個重要結論必須先判斷屬於哪一層：
+
+**OBSERVED**
+= 直接從目前資料、原始 command stream、檔案、runtime output 或實測結果觀察到。
+
+**INFERRED**
+= 根據 observation 做出的合理推論，但尚未直接看到 runtime implementation 或 exhaustive evidence。
+
+**VERIFIED**
+= 有直接證據可以排除主要替代解釋，或經過足夠完整的交叉驗證。
+
+不要把 INFERRED 寫成 VERIFIED。
+
+例如：
+
+可以寫：
+「在本次 180 話樣本中，14,703 個 vo_ reference 全部出現在 cmd12。」
+
+除非完成 exhaustive scan，不要寫：
+「vo_ 只可能出現在 cmd12。」
+
+除非看到 runtime implementation 或足夠實測，不要寫：
+「cmd12 是引擎唯一的語音掛載入口。」
+
+---
+
+### 2. Confidence 必須與證據類型相符
+
+使用以下分級：
+
+- **VERIFIED**：直接證據／可重現實測／完整資料掃描支持。
+- **HIGH-CONFIDENCE**：多種獨立證據一致，但仍存在未驗證的 runtime 或資料範圍。
+- **LIKELY**：最合理解釋，但仍存在合理替代解釋。
+- **HYPOTHESIS**：目前值得驗證的假說，不得當作產品事實使用。
+- **UNRESOLVED**：現有證據不足以判斷。
+
+禁止僅因「看起來很合理」給 VERY HIGH / VERIFIED。
+
+如果只有 1 個 occurrence，除非語意由參數本身直接自證，不得對 lifecycle / timing / blocking / causal behavior 給 HIGH confidence。
+
+---
+
+### 3. Sample Evidence 不得偷換成 Population Evidence
+
+若研究只涵蓋抽樣資料，所有結論必須保留 scope。
+
+例如：
+
+正確：
+「在本次 180 話樣本中未觀察到 cmd28。」
+
+錯誤：
+「cmd28 不存在。」
+
+正確：
+「本次樣本中的 vo_ reference 100% 對應 cmd12。」
+
+錯誤：
+「cmd12 是整個引擎唯一 voice command。」
+
+只有真正 exhaustive scan 才可以使用：
+- 全部
+- 唯一
+- 永遠
+- 一定
+- 100% 全域
+- 完全
+- 無例外
+
+即使使用這些字，也必須明確寫出 universe：
+例如「在 TruthVersion X 的 9,033 個 Story Bundle 全量掃描中」。
+
+---
+
+### 4. Correlation 不等於 mechanism
+
+統計相關只能支持關聯，不得直接推出 runtime mechanism。
+
+例如：
+$r = 0.65$
+
+只能支持：
+「兩者存在中高度相關。」
+
+不能單憑此證明：
+- 「A 是 B 的計時器」
+- 「A 的單位一定是 frame」
+- 「runtime 使用 A 等待 B」
+
+如果要判定 timing unit / blocking / async / callback / lifecycle，優先需要至少一種：
+
+- runtime / decompiled implementation
+- controlled experiment
+- wall-clock timing measurement
+- repeated counterexample testing
+- independent data source
+- protocol / schema evidence
+
+否則標成 HYPOTHESIS 或 UNRESOLVED。
+
+---
+
+### 5. 不得補完不存在的 runtime 細節
+
+若沒有直接證據，禁止自行補出看似合理的實作，例如：
+
+- OnVoiceComplete
+- SoundManager callback
+- Unity coroutine
+- async event
+- internal state machine
+- frame loop
+- specific FPS
+
+可以說：
+「可能由 audio-ended event、使用者輸入或其他 runtime mechanism 驅動，目前未確認。」
+
+不得說：
+「由 OnVoiceComplete 驅動。」
+
+---
+
+### 6. 主動尋找反證
+
+對每個 HIGH-CONFIDENCE 以上的重要結論，至少嘗試回答：
+
+- 有沒有反例？
+- 有沒有另一種同樣合理的解釋？
+- 樣本是否偏斜？
+- 此結論依賴哪些假設？
+- 若這個假設錯了，結論是否仍成立？
+
+若找到反例，不要把它當 nuisance 忽略。必須降低 confidence 或縮小 claim scope。
+
+---
+
+### 7. Evidence wording 必須可審計
+
+優先寫：
+
+- 「觀察到……」
+- 「在本次樣本中……」
+- 「與……一致」
+- 「支持……解釋」
+- 「目前最可能……」
+- 「尚不能排除……」
+- 「需要 runtime evidence 才能確認……」
+
+避免沒有充分證據時使用：
+
+- 「證實」
+- 「確定」
+- 「完全還原」
+- 「唯一」
+- 「必然」
+- 「引擎就是」
+- 「100%」
+- 「全盤清晰」
+- 「毫無疑問」
+
+---
+
+### 8. Machine Result 與 Human Interpretation 分離
+
+所有統計數值應由 script 產生：
+`count` / `total` / `ratio` / `sample_count` / `correlation`。
+
+Markdown 報告不得自行重新人工計算同一數值。
+
+報告應區分：
+
+- **RAW EVIDENCE**：script / JSON 實際輸出
+- **INTERPRETATION**：對 raw evidence 的語意判讀
+- **PRODUCT IMPLICATION**：對 Story Map / Auto Play 等產品的影響
+
+不要把這三層混在同一句話裡。
+
+---
+
+### 9. Tool Failure 必須 Fail Loudly
+
+若研究依賴：
+
+- ffprobe
+- network
+- UnityPy
+- CDN
+- database
+- external source
+
+而工具不可用、樣本不足或解析失敗：
+
+不得默默跳過後仍輸出正常-looking 結論。
+
+必須明確標記：
+- `NOT_EVALUATED`
+- `PARTIAL`
+- `INCONCLUSIVE`
+
+並記錄成功／失敗樣本數。
+
+---
+
+### 10. 最終報告必須包含 Evidence Boundary
+
+報告最後增加：
+
+## Evidence Boundary
+
+明確列出：
+
+- 本輪實際分析的 universe / sample
+- 哪些結論是 VERIFIED
+- 哪些是 HIGH-CONFIDENCE
+- 哪些仍是 HYPOTHESIS
+- 哪些是 UNRESOLVED
+- 哪些結論尚不能用來驅動 production implementation
+- 下一步需要什麼證據才能升級 confidence
+
+若 evidence 不足，允許研究結果是「目前無法確認」。
+
+「沒有得到結論」也是合法且有價值的研究結果。
+
+---
+
+### 11. Completion wording
+
+不要因為研究腳本成功執行，就宣稱「語意已完全還原」。
+
+COMPLETED 只代表：
+「本階段預定研究工作已完成。」
+
+不代表：
+「所有研究問題均已得到確定答案。」
+
+若仍有 unresolved questions，必須明確保留在報告中。
+
+---
+
+### 核心原則
+
+寧可寫：
+「目前證據支持 X，但 Y 尚未確認。」
+
+也不要寫：
+「已證實 X。」
+
+然後在 External Review 才發現證據其實只支持前一句。
+
+External Review 會優先檢查 claim 是否超出 evidence。
+若不確定該使用哪個 confidence level，請選較低一級並說明缺少什麼證據。
