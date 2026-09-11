@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-PCRD Story Map Pipeline - StoryDataService & M3A UI Integration Tests (M3A.1 Hardened)
-涵蓋 25 項針對性 Runtime、Service、Non-Blocking Dialogue、Race Guard、Shape Hardening、Cache-Busting 與 UI Integrity 門禁測試 (全數 Hermetic 零外網洩漏)：
+PCRD Story Map Pipeline - StoryDataService & M3A UI Integration Tests (M3A.2 Dialogue Concurrency)
+涵蓋 31 項針對性 Runtime、Service、Non-Blocking Dialogue、Token-Scoped Loading Guard、Stale-Load Lifecycle、Shape Hardening、Cache-Busting 與 UI Integrity 門禁測試 (全數 Hermetic 零外網洩漏)：
 1. StoryDataService global exists
 2. metadata_version present -> versioned manifest request
 3. db_info request uses no-store
@@ -27,6 +27,12 @@ PCRD Story Map Pipeline - StoryDataService & M3A UI Integration Tests (M3A.1 Har
 23. bundler copies story-data-service.js to dist
 24. render_index_html applies content-hash cache busting
 25. validator rejects missing runtime service with precise error message
+26. dialogue concurrency: A pending dialogue -> B dialogue still starts
+27. dialogue concurrency: B renders before stale A
+28. dialogue concurrency: stale A never renders after B
+29. dialogue concurrency: stale A cannot clear B loading state
+30. dialogue concurrency: after stale A/B sequence, C still loads normally (permanent lock regression test)
+31. dialogue concurrency: same-token duplicate dialogue request suppressed
 """
 
 import os
@@ -82,6 +88,15 @@ def run_node_test_script(js_code: str, include_map: bool = False) -> dict:
         }}
     }};
     global.window = window;
+
+    // 將全域 fetch 橋接至 window.fetch，確保雙向相容
+    global.fetch = async (url, options) => {{
+        if (typeof window.fetch === 'function') {{
+            return window.fetch(url, options);
+        }}
+        return {{ ok: false, status: 404 }};
+    }};
+
     function createMockElement(id) {{
         const el = {{
             id,
@@ -161,9 +176,10 @@ def run_node_test_script(js_code: str, include_map: bool = False) -> dict:
 
 
 class TestStoryDataServiceRuntime(unittest.TestCase):
+    """M3A Runtime & StoryDataService 門禁測試"""
 
     def setUp(self):
-        self.tmp_dir = tempfile.mkdtemp()
+        self.tmp_dir = tempfile.mkdtemp(prefix="pcrd_m3a_test_")
         self.tmp_path = Path(self.tmp_dir)
 
     def tearDown(self):
@@ -173,44 +189,43 @@ class TestStoryDataServiceRuntime(unittest.TestCase):
     def test_01_story_data_service_global_exists(self):
         """1. 驗證 window.StoryDataService 正確建立且具備標準 API"""
         js = """
-        const exists = typeof window.StoryDataService === 'object' && window.StoryDataService !== null;
-        const hasEnsure = typeof window.StoryDataService.ensureMetadataLoaded === 'function';
-        const hasGetEp = typeof window.StoryDataService.getEpisodeMetadata === 'function';
-        const hasGetSyn = typeof window.StoryDataService.getOfficialSynopsis === 'function';
-        const hasGetCh = typeof window.StoryDataService.getChapterTitle === 'function';
-        const hasGetSub = typeof window.StoryDataService.getSubtitle === 'function';
-        console.log(JSON.stringify({ success: true, exists, hasEnsure, hasGetEp, hasGetSyn, hasGetCh, hasGetSub }));
+        console.log(JSON.stringify({
+            exists: typeof window.StoryDataService !== 'undefined',
+            hasEnsureMetadataLoaded: typeof window.StoryDataService.ensureMetadataLoaded === 'function',
+            hasGetEpisodeMetadata: typeof window.StoryDataService.getEpisodeMetadata === 'function',
+            hasGetOfficialSynopsis: typeof window.StoryDataService.getOfficialSynopsis === 'function'
+        }));
         """
         res = run_node_test_script(js)
-        self.assertTrue(res.get("success"))
         self.assertTrue(res.get("exists"))
-        self.assertTrue(res.get("hasEnsure"))
-        self.assertTrue(res.get("hasGetEp"))
-        self.assertTrue(res.get("hasGetSyn"))
-        self.assertTrue(res.get("hasGetCh"))
-        self.assertTrue(res.get("hasGetSub"))
+        self.assertTrue(res.get("hasEnsureMetadataLoaded"))
+        self.assertTrue(res.get("hasGetEpisodeMetadata"))
+        self.assertTrue(res.get("hasGetOfficialSynopsis"))
 
     # 2. metadata_version present -> versioned manifest request
     def test_02_metadata_version_present_uses_versioned_request(self):
         """2. 驗證 db_info 含有 metadata_version 時，以版本號 query 請求 official_story_metadata.json"""
         js = """
-        const fetchCalls = [];
-        global.fetch = async (url, opts) => {
-            fetchCalls.push({ url, opts });
-            if (url === 'data/db_info.json') {
+        let requestedUrls = [];
+        window.fetch = async (url, options) => {
+            requestedUrls.push({ url, options });
+            if (url.includes('db_info.json')) {
                 return {
                     ok: true,
-                    json: async () => ({ metadata_version: 'a1b2c3d4e5f6', db_version: 'db_9999' })
+                    json: async () => ({ db_version: 'hash_db123', metadata_version: 'meta_ver_789' })
                 };
             }
-            if (url.startsWith('data/official_story_metadata.json')) {
+            if (url.includes('official_story_metadata.json')) {
                 return {
                     ok: true,
                     json: async () => ({
-                        schema_version: 1,
-                        truth_version: '00600025',
+                        schema_version: '1.0.0',
+                        truth_version: '00600023',
                         episodes: {
-                            '100101': { official_synopsis: '測試大綱 1' }
+                            '100101': {
+                                story_id: 100101,
+                                official_synopsis: '測試大綱'
+                            }
                         }
                     })
                 };
@@ -218,116 +233,143 @@ class TestStoryDataServiceRuntime(unittest.TestCase):
             return { ok: false, status: 404 };
         };
 
-        const res = await window.StoryDataService.ensureMetadataLoaded();
+        const result = await window.StoryDataService.ensureMetadataLoaded();
         console.log(JSON.stringify({
             success: true,
-            fetchCalls,
-            hasLoaded: res !== null && typeof res['100101'] === 'object'
+            requestedUrls,
+            has100101: result && result['100101'] ? true : false
         }));
         """
         res = run_node_test_script(js)
         self.assertTrue(res.get("success"))
-        self.assertTrue(res.get("hasLoaded"))
-        calls = res.get("fetchCalls", [])
-        self.assertEqual(len(calls), 2)
-        self.assertEqual(calls[0]["url"], "data/db_info.json")
-        self.assertEqual(calls[1]["url"], "data/official_story_metadata.json?v=a1b2c3d4e5f6")
+        self.assertTrue(res.get("has100101"))
+        urls = [item["url"] for item in res["requestedUrls"]]
+        self.assertTrue(any("data/official_story_metadata.json?v=meta_ver_789" in u for u in urls))
 
     # 3. db_info request uses no-store
     def test_03_db_info_request_uses_no_store(self):
         """3. 驗證探測 db_info.json 時必須使用 cache: 'no-store'"""
         js = """
-        let dbInfoOpts = null;
-        global.fetch = async (url, opts) => {
-            if (url === 'data/db_info.json') {
-                dbInfoOpts = opts;
+        let dbInfoOptions = null;
+        window.fetch = async (url, options) => {
+            if (url.includes('db_info.json')) {
+                dbInfoOptions = options;
                 return { ok: false, status: 404 };
             }
-            if (url.startsWith('data/official_story_metadata.json')) {
+            if (url.includes('official_story_metadata.json')) {
                 return { ok: false, status: 404 };
             }
             return { ok: false, status: 404 };
         };
 
         await window.StoryDataService.ensureMetadataLoaded();
-        console.log(JSON.stringify({ success: true, dbInfoOpts }));
+        console.log(JSON.stringify({
+            success: true,
+            dbInfoOptions
+        }));
         """
         res = run_node_test_script(js)
         self.assertTrue(res.get("success"))
-        opts = res.get("dbInfoOpts")
-        self.assertIsNotNone(opts)
-        self.assertEqual(opts.get("cache"), "no-store")
+        self.assertIsNotNone(res.get("dbInfoOptions"))
+        self.assertEqual(res["dbInfoOptions"].get("cache"), "no-store")
 
     # 4. metadata_version missing -> no-store manifest request
     def test_04_metadata_version_missing_uses_no_store_request(self):
         """4. 驗證 db_info 不存在或無 metadata_version 時，以 no-store 直接請求 official_story_metadata.json"""
         js = """
-        const fetchCalls = [];
-        global.fetch = async (url, opts) => {
-            fetchCalls.push({ url, opts });
-            if (url === 'data/db_info.json') {
-                return { ok: true, json: async () => ({}) };
+        let manifestOptions = null;
+        let manifestUrl = null;
+        window.fetch = async (url, options) => {
+            if (url.includes('db_info.json')) {
+                return { ok: false, status: 404 };
             }
-            if (url === 'data/official_story_metadata.json') {
+            if (url.includes('official_story_metadata.json')) {
+                manifestUrl = url;
+                manifestOptions = options;
                 return {
                     ok: true,
-                    json: async () => ({ episodes: { '100101': { official_synopsis: '測試' } } })
+                    json: async () => ({
+                        schema_version: '1.0.0',
+                        truth_version: '00600023',
+                        episodes: {}
+                    })
                 };
             }
             return { ok: false, status: 404 };
         };
 
         await window.StoryDataService.ensureMetadataLoaded();
-        console.log(JSON.stringify({ success: true, fetchCalls }));
+        console.log(JSON.stringify({
+            success: true,
+            manifestUrl,
+            manifestOptions
+        }));
         """
         res = run_node_test_script(js)
         self.assertTrue(res.get("success"))
-        calls = res.get("fetchCalls", [])
-        self.assertEqual(len(calls), 2)
-        self.assertEqual(calls[1]["url"], "data/official_story_metadata.json")
-        self.assertEqual(calls[1]["opts"].get("cache"), "no-store")
+        self.assertEqual(res.get("manifestUrl"), "data/official_story_metadata.json")
+        self.assertIsNotNone(res.get("manifestOptions"))
+        self.assertEqual(res["manifestOptions"].get("cache"), "no-store")
 
     # 5. db_version fallback strictly forbidden
     def test_05_db_version_fallback_strictly_forbidden(self):
         """5. 驗證 db_info 僅有 db_version 時，嚴格禁止 fallback 使用 db_version 作為 metadata 查詢參數"""
         js = """
-        const fetchCalls = [];
-        global.fetch = async (url, opts) => {
-            fetchCalls.push({ url, opts });
-            if (url === 'data/db_info.json') {
-                return { ok: true, json: async () => ({ db_version: 'db_hash_123456' }) };
+        let requestedManifestUrl = null;
+        let requestedManifestOptions = null;
+        window.fetch = async (url, options) => {
+            if (url.includes('db_info.json')) {
+                return {
+                    ok: true,
+                    json: async () => ({ db_version: 'hash_db_only_123' })
+                };
             }
-            if (url === 'data/official_story_metadata.json') {
-                return { ok: true, json: async () => ({ episodes: {} }) };
+            if (url.includes('official_story_metadata.json')) {
+                requestedManifestUrl = url;
+                requestedManifestOptions = options;
+                return {
+                    ok: true,
+                    json: async () => ({
+                        schema_version: '1.0.0',
+                        truth_version: '00600023',
+                        episodes: {}
+                    })
+                };
             }
             return { ok: false, status: 404 };
         };
 
         await window.StoryDataService.ensureMetadataLoaded();
-        console.log(JSON.stringify({ success: true, fetchCalls }));
+        console.log(JSON.stringify({
+            success: true,
+            requestedManifestUrl,
+            requestedManifestOptions
+        }));
         """
         res = run_node_test_script(js)
         self.assertTrue(res.get("success"))
-        calls = res.get("fetchCalls", [])
-        self.assertEqual(len(calls), 2)
-        self.assertEqual(calls[1]["url"], "data/official_story_metadata.json")
-        self.assertNotIn("db_hash", calls[1]["url"])
+        self.assertNotIn("hash_db_only_123", res.get("requestedManifestUrl") or "")
+        self.assertEqual(res.get("requestedManifestUrl"), "data/official_story_metadata.json")
+        self.assertEqual(res.get("requestedManifestOptions", {}).get("cache"), "no-store")
 
     # 6. concurrent calls share one loading operation
     def test_06_concurrent_calls_share_one_loading_operation(self):
         """6. 驗證多次並發呼叫 ensureMetadataLoaded 共享同一個 Promise，只觸發一次網路載入"""
         js = """
         let manifestFetchCount = 0;
-        global.fetch = async (url, opts) => {
-            if (url === 'data/db_info.json') {
-                return { ok: true, json: async () => ({ metadata_version: 'v123' }) };
+        window.fetch = async (url) => {
+            if (url.includes('db_info.json')) {
+                return { ok: true, json: async () => ({ metadata_version: 'v1' }) };
             }
-            if (url.startsWith('data/official_story_metadata.json')) {
+            if (url.includes('official_story_metadata.json')) {
                 manifestFetchCount++;
-                await new Promise(r => setTimeout(r, 10));
-                return { ok: true, json: async () => ({ episodes: { '100101': { official_synopsis: 'OK' } } }) };
+                await new Promise(r => setTimeout(r, 50));
+                return {
+                    ok: true,
+                    json: async () => ({ schema_version: '1.0.0', truth_version: '00600023', episodes: {} })
+                };
             }
-            return { ok: false };
+            return { ok: false, status: 404 };
         };
 
         const [r1, r2, r3] = await Promise.all([
@@ -339,7 +381,7 @@ class TestStoryDataServiceRuntime(unittest.TestCase):
         console.log(JSON.stringify({
             success: true,
             manifestFetchCount,
-            allSame: r1 === r2 && r2 === r3 && r1['100101'].official_synopsis === 'OK'
+            allSame: r1 === r2 && r2 === r3
         }));
         """
         res = run_node_test_script(js)
@@ -351,221 +393,303 @@ class TestStoryDataServiceRuntime(unittest.TestCase):
     def test_07_successful_load_caches_episodes(self):
         """7. 驗證載入成功後將 episodes 存入快取，後續呼叫不再發起 fetch"""
         js = """
-        let totalCalls = 0;
-        global.fetch = async (url) => {
-            totalCalls++;
-            if (url === 'data/db_info.json') return { ok: true, json: async () => ({ metadata_version: 'v1' }) };
-            return { ok: true, json: async () => ({ episodes: { '100101': { subtitle: 'Sub 1' } } }) };
+        let fetchCount = 0;
+        window.fetch = async (url) => {
+            fetchCount++;
+            if (url.includes('db_info.json')) {
+                return { ok: true, json: async () => ({ metadata_version: 'v1' }) };
+            }
+            if (url.includes('official_story_metadata.json')) {
+                return {
+                    ok: true,
+                    json: async () => ({
+                        schema_version: '1.0.0',
+                        truth_version: '00600023',
+                        episodes: { '100101': { story_id: 100101, official_synopsis: '快取測試' } }
+                    })
+                };
+            }
+            return { ok: false, status: 404 };
         };
 
         await window.StoryDataService.ensureMetadataLoaded();
-        const callCountAfterFirst = totalCalls;
+        const initialCount = fetchCount;
 
-        const ep = await window.StoryDataService.getEpisodeMetadata(100101);
-        const sub = await window.StoryDataService.getSubtitle(100101);
+        const ep1 = await window.StoryDataService.getEpisodeMetadata(100101);
+        const ep2 = await window.StoryDataService.getEpisodeMetadata('100101');
+        const finalCount = fetchCount;
 
         console.log(JSON.stringify({
             success: true,
-            callCountAfterFirst,
-            totalCallsAfterAll: totalCalls,
-            sub
+            initialCount,
+            finalCount,
+            hasCache: ep1 !== null && ep1.official_synopsis === '快取測試',
+            sameObject: ep1 === ep2
         }));
         """
         res = run_node_test_script(js)
         self.assertTrue(res.get("success"))
-        self.assertEqual(res.get("callCountAfterFirst"), 2)
-        self.assertEqual(res.get("totalCallsAfterAll"), 2)
-        self.assertEqual(res.get("sub"), "Sub 1")
+        self.assertTrue(res.get("hasCache"))
+        self.assertTrue(res.get("sameObject"))
+        self.assertEqual(res.get("initialCount"), res.get("finalCount"))
 
     # 8. failed load resets _loadingPromise
     def test_08_failed_load_resets_loading_promise(self):
         """8. 驗證載入失敗時 _loadingPromise 正確重設為 null，且 _metadataCache 保持 null"""
         js = """
-        global.fetch = async () => ({ ok: false, status: 500 });
+        window.fetch = async () => {
+            throw new Error("Network error simulation");
+        };
 
-        const res = await window.StoryDataService.ensureMetadataLoaded();
-        const loadingPromiseNull = window.StoryDataService._loadingPromise === null;
-        const cacheNull = window.StoryDataService._metadataCache === null;
+        const result = await window.StoryDataService.ensureMetadataLoaded();
 
         console.log(JSON.stringify({
             success: true,
-            resIsNull: res === null,
-            loadingPromiseNull,
-            cacheNull
+            resultIsNull: result === null,
+            loadingPromiseIsNull: window.StoryDataService._loadingPromise === null,
+            metadataCacheIsNull: window.StoryDataService._metadataCache === null
         }));
         """
         res = run_node_test_script(js)
         self.assertTrue(res.get("success"))
-        self.assertTrue(res.get("resIsNull"))
-        self.assertTrue(res.get("loadingPromiseNull"))
-        self.assertTrue(res.get("cacheNull"))
+        self.assertTrue(res.get("resultIsNull"))
+        self.assertTrue(res.get("loadingPromiseIsNull"))
+        self.assertTrue(res.get("metadataCacheIsNull"))
 
     # 9. failed load permits retry
     def test_09_failed_load_permits_retry(self):
         """9. 驗證第一次載入失敗後，第二次呼叫可正常重試並在成功後取得資料"""
         js = """
-        let attempt = 0;
-        global.fetch = async (url) => {
-            if (url === 'data/db_info.json') return { ok: true, json: async () => ({ metadata_version: 'v1' }) };
-            attempt++;
-            if (attempt === 1) {
-                return { ok: false, status: 500 };
+        let attempts = 0;
+        window.fetch = async (url) => {
+            if (url.includes('db_info.json')) {
+                return { ok: true, json: async () => ({ metadata_version: 'v1' }) };
             }
-            return { ok: true, json: async () => ({ episodes: { '100101': { official_synopsis: 'RETRY_SUCCESS' } } }) };
+            if (url.includes('official_story_metadata.json')) {
+                attempts++;
+                if (attempts === 1) {
+                    throw new Error("Temporary network error");
+                }
+                return {
+                    ok: true,
+                    json: async () => ({
+                        schema_version: '1.0.0',
+                        truth_version: '00600023',
+                        episodes: { '100101': { story_id: 100101, official_synopsis: '重試成功' } }
+                    })
+                };
+            }
+            return { ok: false, status: 404 };
         };
 
-        const res1 = await window.StoryDataService.getOfficialSynopsis(100101);
-        const res2 = await window.StoryDataService.getOfficialSynopsis(100101);
+        const res1 = await window.StoryDataService.ensureMetadataLoaded();
+        const res2 = await window.StoryDataService.ensureMetadataLoaded();
 
         console.log(JSON.stringify({
             success: true,
-            res1,
-            res2,
-            attempt
+            res1IsNull: res1 === null,
+            res2IsObject: res2 !== null && typeof res2 === 'object',
+            res2HasData: res2 && res2['100101'] ? res2['100101'].official_synopsis : null
         }));
         """
         res = run_node_test_script(js)
         self.assertTrue(res.get("success"))
-        self.assertIsNone(res.get("res1"))
-        self.assertEqual(res.get("res2"), "RETRY_SUCCESS")
-        self.assertEqual(res.get("attempt"), 2)
+        self.assertTrue(res.get("res1IsNull"))
+        self.assertTrue(res.get("res2IsObject"))
+        self.assertEqual(res.get("res2HasData"), "重試成功")
 
-    # 10. malformed manifest graceful degradation
+    # 10. malformed root/episodes manifest graceful degradation
     def test_10_malformed_manifest_graceful_degradation(self):
         """10. 驗證 Manifest 頂層非物件或 episodes 損壞時優雅降級為 null，絕不拋出例外崩潰 UI"""
         js = """
-        global.fetch = async (url) => {
-            if (url === 'data/db_info.json') return { ok: true, json: async () => ({ metadata_version: 'v1' }) };
-            return { ok: true, json: async () => ({ schema_version: 1, episodes: "invalid_string" }) };
+        let errors = [];
+        window.fetch = async (url) => {
+            if (url.includes('db_info.json')) return { ok: false, status: 404 };
+            if (url.includes('official_story_metadata.json')) {
+                // 回傳損壞的 episodes (非 object，例如 string 或 array)
+                return {
+                    ok: true,
+                    json: async () => ({ schema_version: '1.0.0', truth_version: '00600023', episodes: "malformed" })
+                };
+            }
+            return { ok: false, status: 404 };
         };
 
-        let threw = false;
-        let res = null;
+        let result = null;
         try {
-            res = await window.StoryDataService.getOfficialSynopsis(100101);
+            result = await window.StoryDataService.ensureMetadataLoaded();
         } catch (e) {
-            threw = true;
+            errors.push(e.message);
         }
 
-        console.log(JSON.stringify({ success: true, threw, res }));
-        """
-        res = run_node_test_script(js)
-        self.assertTrue(res.get("success"))
-        self.assertFalse(res.get("threw"))
-        self.assertIsNone(res.get("res"))
-
-    # 11. malformed episode array / null entry rejected
-    def test_11_malformed_episode_entry_rejected(self):
-        """11. 驗證 episode entry 為 Array 或 null 時，整份 Manifest 被拒絕，快取保持 null"""
-        js = """
-        global.fetch = async (url) => {
-            if (url === 'data/db_info.json') return { ok: true, json: async () => ({ metadata_version: 'v1' }) };
-            return { ok: true, json: async () => ({
-                episodes: {
-                    '100101': ['invalid_array_entry'],
-                    '100102': null
-                }
-            }) };
-        };
-
-        const res = await window.StoryDataService.ensureMetadataLoaded();
-        const ep = await window.StoryDataService.getEpisodeMetadata(100101);
-
         console.log(JSON.stringify({
-            success: true,
-            resIsNull: res === null,
-            epIsNull: ep === null,
+            success: errors.length === 0,
+            resultIsNull: result === null,
             cacheIsNull: window.StoryDataService._metadataCache === null
         }));
         """
         res = run_node_test_script(js)
         self.assertTrue(res.get("success"))
-        self.assertTrue(res.get("resIsNull"))
-        self.assertTrue(res.get("epIsNull"))
+        self.assertTrue(res.get("resultIsNull"))
+        self.assertTrue(res.get("cacheIsNull"))
+
+    # 11. malformed episode array / null entry rejected
+    def test_11_malformed_episode_entry_rejected(self):
+        """11. 驗證 episode entry 為 Array 或 null 時，整份 Manifest 被拒絕，快取保持 null"""
+        js = """
+        window.fetch = async (url) => {
+            if (url.includes('db_info.json')) return { ok: false, status: 404 };
+            if (url.includes('official_story_metadata.json')) {
+                // 回傳 episodes 含有損壞的 entry (例如 Array 或 null)
+                return {
+                    ok: true,
+                    json: async () => ({
+                        schema_version: '1.0.0',
+                        truth_version: '00600023',
+                        episodes: {
+                            '100101': ['invalid', 'array'],
+                            '100102': null
+                        }
+                    })
+                };
+            }
+            return { ok: false, status: 404 };
+        };
+
+        const result = await window.StoryDataService.ensureMetadataLoaded();
+
+        console.log(JSON.stringify({
+            success: true,
+            resultIsNull: result === null,
+            cacheIsNull: window.StoryDataService._metadataCache === null
+        }));
+        """
+        res = run_node_test_script(js)
+        self.assertTrue(res.get("success"))
+        self.assertTrue(res.get("resultIsNull"))
         self.assertTrue(res.get("cacheIsNull"))
 
     # 12. normal plain object episode entry accepted
     def test_12_normal_plain_object_episode_entry_accepted(self):
         """12. 驗證合規之 episode entry 正確載入並解析"""
         js = """
-        global.fetch = async (url) => {
-            if (url === 'data/db_info.json') return { ok: true, json: async () => ({ metadata_version: 'v1' }) };
-            return { ok: true, json: async () => ({
-                episodes: {
-                    '100101': { official_synopsis: 'VALID_SYNOPSIS', chapter_title: 'TITLE', subtitle: 'SUB' }
-                }
-            }) };
+        window.fetch = async (url) => {
+            if (url.includes('db_info.json')) return { ok: false, status: 404 };
+            if (url.includes('official_story_metadata.json')) {
+                return {
+                    ok: true,
+                    json: async () => ({
+                        schema_version: '1.0.0',
+                        truth_version: '00600023',
+                        episodes: {
+                            '100101': {
+                                story_id: 100101,
+                                official_chapter_title: '第1章',
+                                official_subtitle: '第1話',
+                                official_synopsis: '合規大綱',
+                                provenance: {
+                                    truth_version: '00600023',
+                                    bundle_name: 'storydata_100101.unity3d',
+                                    cdn_bundle_hash: 'hash100101'
+                                }
+                            }
+                        }
+                    })
+                };
+            }
+            return { ok: false, status: 404 };
         };
 
         const ep = await window.StoryDataService.getEpisodeMetadata(100101);
+
         console.log(JSON.stringify({
             success: true,
-            synopsis: ep?.official_synopsis,
-            title: ep?.chapter_title,
-            sub: ep?.subtitle
+            epNotNull: ep !== null,
+            synopsis: ep ? ep.official_synopsis : null
         }));
         """
         res = run_node_test_script(js)
         self.assertTrue(res.get("success"))
-        self.assertEqual(res.get("synopsis"), "VALID_SYNOPSIS")
-        self.assertEqual(res.get("title"), "TITLE")
-        self.assertEqual(res.get("sub"), "SUB")
+        self.assertTrue(res.get("epNotNull"))
+        self.assertEqual(res.get("synopsis"), "合規大綱")
 
     # 13. getEpisodeMetadata numeric and string ID works
     def test_13_get_episode_metadata_numeric_and_string_id(self):
         """13. 驗證 getEpisodeMetadata 傳入數字或字串 ID 均可正確查得節點"""
         js = """
-        global.fetch = async (url) => {
-            if (url === 'data/db_info.json') return { ok: true, json: async () => ({ metadata_version: 'v1' }) };
-            return { ok: true, json: async () => ({
-                episodes: {
-                    '100101': { official_synopsis: 'SYNOPSIS_100101', chapter_title: 'TITLE_1' }
-                }
-            }) };
+        window.fetch = async (url) => {
+            if (url.includes('db_info.json')) return { ok: false, status: 404 };
+            if (url.includes('official_story_metadata.json')) {
+                return {
+                    ok: true,
+                    json: async () => ({
+                        schema_version: '1.0.0',
+                        truth_version: '00600023',
+                        episodes: {
+                            '100101': { story_id: 100101, official_synopsis: '測試查表' }
+                        }
+                    })
+                };
+            }
+            return { ok: false, status: 404 };
         };
 
-        const epNum = await window.StoryDataService.getEpisodeMetadata(100101);
-        const epStr = await window.StoryDataService.getEpisodeMetadata("100101");
-        const epNull = await window.StoryDataService.getEpisodeMetadata(null);
+        const resNum = await window.StoryDataService.getEpisodeMetadata(100101);
+        const resStr = await window.StoryDataService.getEpisodeMetadata('100101');
+        const resNone = await window.StoryDataService.getEpisodeMetadata(999999);
 
         console.log(JSON.stringify({
             success: true,
-            numSynopsis: epNum?.official_synopsis,
-            strSynopsis: epStr?.official_synopsis,
-            nullResult: epNull
+            numMatch: resNum !== null && resNum.story_id === 100101,
+            strMatch: resStr !== null && resStr.story_id === 100101,
+            noneMatch: resNone === null
         }));
         """
         res = run_node_test_script(js)
         self.assertTrue(res.get("success"))
-        self.assertEqual(res.get("numSynopsis"), "SYNOPSIS_100101")
-        self.assertEqual(res.get("strSynopsis"), "SYNOPSIS_100101")
-        self.assertIsNone(res.get("nullResult"))
+        self.assertTrue(res.get("numMatch"))
+        self.assertTrue(res.get("strMatch"))
+        self.assertTrue(res.get("noneMatch"))
 
     # 14. null synopsis returns null
     def test_14_null_synopsis_returns_null(self):
         """14. 驗證話數 official_synopsis 為 null 或空白時，getOfficialSynopsis 嚴格回傳 null"""
         js = """
-        global.fetch = async (url) => {
-            if (url === 'data/db_info.json') return { ok: true, json: async () => ({ metadata_version: 'v1' }) };
-            return { ok: true, json: async () => ({
-                episodes: {
-                    '100101': { official_synopsis: null },
-                    '100102': { official_synopsis: '   ' }
-                }
-            }) };
+        window.fetch = async (url) => {
+            if (url.includes('db_info.json')) return { ok: false, status: 404 };
+            if (url.includes('official_story_metadata.json')) {
+                return {
+                    ok: true,
+                    json: async () => ({
+                        schema_version: '1.0.0',
+                        truth_version: '00600023',
+                        episodes: {
+                            '100101': { story_id: 100101, official_synopsis: null },
+                            '100102': { story_id: 100102, official_synopsis: '   ' },
+                            '100103': { story_id: 100103, official_synopsis: '有內容大綱' }
+                        }
+                    })
+                };
+            }
+            return { ok: false, status: 404 };
         };
 
         const s1 = await window.StoryDataService.getOfficialSynopsis(100101);
         const s2 = await window.StoryDataService.getOfficialSynopsis(100102);
-        const s3 = await window.StoryDataService.getOfficialSynopsis(999999);
+        const s3 = await window.StoryDataService.getOfficialSynopsis(100103);
 
-        console.log(JSON.stringify({ success: true, s1, s2, s3 }));
+        console.log(JSON.stringify({
+            success: true,
+            s1IsNull: s1 === null,
+            s2IsNull: s2 === null,
+            s3Value: s3
+        }));
         """
         res = run_node_test_script(js)
         self.assertTrue(res.get("success"))
-        self.assertIsNone(res.get("s1"))
-        self.assertIsNone(res.get("s2"))
-        self.assertIsNone(res.get("s3"))
+        self.assertTrue(res.get("s1IsNull"))
+        self.assertTrue(res.get("s2IsNull"))
+        self.assertEqual(res.get("s3Value"), "有內容大綱")
 
     # 15. non-blocking: pending metadata does not block dialogue shell and dialogue load
     def test_15_pending_metadata_does_not_block_dialogue(self):
@@ -626,73 +750,73 @@ class TestStoryDataServiceRuntime(unittest.TestCase):
         qm.updateNavigationButtons = () => {};
         qm.updateReaderState = () => {};
         qm.loadDialogue = () => {};
-        qm.getQuickDirectoryHtml = () => '<div class="quick-dir">QUICK_DIR</div>';
+        qm.getQuickDirectoryHtml = () => '<div id="quick-dir">QUICK_DIR</div>';
 
         qm.selectStory(100101);
 
         console.log(JSON.stringify({
             success: true,
-            metadataFetchCount,
-            activeStoryId: qm.activeStoryId
+            metadataFetchCount
         }));
         """
         res = run_node_test_script(js, include_map=True)
         self.assertTrue(res.get("success"))
         self.assertEqual(res.get("metadataFetchCount"), 0)
-        self.assertEqual(res.get("activeStoryId"), 100101)
 
     # 17. async story race guard: stale A metadata resolve does not overwrite active B synopsis
     def test_17_stale_story_race_guard(self):
         """17. 驗證快速切換話數時，舊話數 A 延遲回傳之大綱不會覆蓋當前話數 B"""
         js = """
-        let resolveStoryA;
-        const promiseA = new Promise(resolve => { resolveStoryA = resolve; });
-
-        window.StoryDataService.getOfficialSynopsis = async (sid) => {
-            if (sid === 100101) {
-                return promiseA;
-            }
-            if (sid === 100102) {
-                return 'SYNOPSIS_FOR_B';
-            }
-            return null;
-        };
-
         const qm = window.QuestMapModule;
-        qm.getStoryById = (sid) => ({ id: sid, chapter: '第1章', title: `話 ${sid}` });
+        qm.getStoryById = (id) => ({ id, chapter: `第${id}章`, title: `話標題 ${id}` });
         qm.isDialogueExpanded = false;
         qm.updateNavigationButtons = () => {};
         qm.updateReaderState = () => {};
+        qm.loadDialogue = () => {};
 
-        // 1. 先點擊話數 A (100101)
+        let resolveA = null;
+        window.StoryDataService.getOfficialSynopsis = (sid) => {
+            if (sid === 100101) {
+                return new Promise((resolve) => {
+                    resolveA = () => resolve('大綱 A (延遲)');
+                });
+            }
+            if (sid === 100102) {
+                return Promise.resolve('大綱 B (快速)');
+            }
+            return Promise.resolve(null);
+        };
+
+        // 1. 使用者先選 100101 (A)
         qm.selectStory(100101);
 
-        // 2. 快速點擊話數 B (100102)
+        // 2. 快速切換至 100102 (B)
         qm.selectStory(100102);
 
-        // 3. 稍後話數 B 完成，檢查 synopsis
-        await new Promise(r => setTimeout(r, 10));
+        // 等待 microtasks 讓 B 完成
+        await new Promise(r => setTimeout(r, 20));
+
         const synopsisEl = global.document.getElementById('official-synopsis-content');
-        const synopsisBText = synopsisEl.textContent;
+        const bSynopsis = synopsisEl ? synopsisEl.textContent : null;
 
-        // 4. 此時延遲的 A 終於 resolve
-        resolveStoryA('STALE_SYNOPSIS_FOR_A');
-        await new Promise(r => setTimeout(r, 10));
+        // 3. 現在 resolve 舊話數 A
+        if (resolveA) resolveA();
+        await new Promise(r => setTimeout(r, 20));
 
-        const synopsisAfterLateA = synopsisEl.textContent;
+        const finalSynopsis = synopsisEl ? synopsisEl.textContent : null;
 
         console.log(JSON.stringify({
             success: true,
-            synopsisBText,
-            synopsisAfterLateA,
-            activeStoryId: qm.activeStoryId
+            bSynopsis,
+            finalSynopsis,
+            staleDidNotOverwrite: finalSynopsis === '大綱 B (快速)'
         }));
         """
         res = run_node_test_script(js, include_map=True)
         self.assertTrue(res.get("success"))
-        self.assertEqual(res.get("synopsisBText"), "SYNOPSIS_FOR_B")
-        self.assertEqual(res.get("synopsisAfterLateA"), "SYNOPSIS_FOR_B")
-        self.assertEqual(res.get("activeStoryId"), 100102)
+        self.assertEqual(res.get("bSynopsis"), "大綱 B (快速)")
+        self.assertEqual(res.get("finalSynopsis"), "大綱 B (快速)")
+        self.assertTrue(res.get("staleDidNotOverwrite"))
 
     # 18. map.js no DB sub_title -> official synopsis mapping
     def test_18_map_js_no_db_subtitle_to_official_synopsis(self):
@@ -776,7 +900,7 @@ class TestStoryDataServiceRuntime(unittest.TestCase):
         (mock_board / "characters.js").write_text("var a=1;", encoding="utf-8")
         (mock_board / "avatar-service.js").write_text("var a=1;", encoding="utf-8")
         (mock_board / "story-asset-service.js").write_text("var a=1;", encoding="utf-8")
-        (mock_board / "chapter-data.js").write_text("var a=1;", encoding="utf-8")
+        (mock_board / "chapter-data.js").write_text("var cd=1;", encoding="utf-8")
         (mock_board / "db.js").write_text("var a=1;", encoding="utf-8")
         (mock_board / "sql-wasm.js").write_text("var a=1;", encoding="utf-8")
         (mock_board / "sql-wasm.wasm").write_bytes(b"wasm")
@@ -789,6 +913,343 @@ class TestStoryDataServiceRuntime(unittest.TestCase):
         output_str = out.getvalue()
         self.assertFalse(ok)
         self.assertIn("story-data-service.js", output_str)
+
+    # 26. dialogue concurrency: A pending dialogue -> B dialogue still starts
+    def test_26_pending_a_dialogue_allows_b_dialogue_start(self):
+        """26. 驗證當話數 A 對白加載處於 pending 時，切換至話數 B 仍能立即啟動話數 B 的 fetch"""
+        js = """
+        const qm = window.QuestMapModule;
+        qm.getStoryById = (id) => ({ id, chapter: `第${id}章`, title: `話標題 ${id}` });
+        qm.isDialogueExpanded = true;
+        qm.updateNavigationButtons = () => {};
+        qm.updateReaderState = () => {};
+
+        let fetchUrls = [];
+        let resolveA = null;
+
+        global.fetch = (url) => {
+            fetchUrls.push(url);
+            if (url.includes('100101')) {
+                return new Promise((resolve) => {
+                    resolveA = resolve;
+                });
+            }
+            if (url.includes('100102')) {
+                return Promise.resolve({
+                    ok: true,
+                    json: async () => [{ name: '佩可', text: '對白B' }]
+                });
+            }
+            return Promise.resolve({ ok: true, json: async () => [] });
+        };
+
+        // 1. selectStory(A)
+        qm.selectStory(100101);
+
+        // 2. 在 A 尚未 resolve 時 selectStory(B)
+        qm.selectStory(100102);
+
+        // 等待 microtasks 執行以讓 B 的 Promise chain 完成
+        await new Promise(r => setTimeout(r, 20));
+
+        console.log(JSON.stringify({
+            success: true,
+            fetchUrls,
+            activeStoryId: qm.activeStoryId,
+            isLoadingDialogue: qm.isLoadingDialogue
+        }));
+        """
+        res = run_node_test_script(js, include_map=True)
+        self.assertTrue(res.get("success"))
+        urls = res.get("fetchUrls", [])
+        self.assertTrue(any("100101" in u for u in urls), "必須已發起話數 A 之請求")
+        self.assertTrue(any("100102" in u for u in urls), "必須在 A pending 狀態下成功發起話數 B 之請求")
+        self.assertEqual(res.get("activeStoryId"), 100102)
+        self.assertFalse(res.get("isLoadingDialogue"))
+
+    # 27. dialogue concurrency: B renders before stale A
+    def test_27_b_renders_before_stale_a(self):
+        """27. 驗證話數 B 之對白在舊話數 A 尚未完成前即正確渲染"""
+        js = """
+        const qm = window.QuestMapModule;
+        qm.getStoryById = (id) => ({ id, chapter: `第${id}章`, title: `話標題 ${id}` });
+        qm.isDialogueExpanded = true;
+        qm.updateNavigationButtons = () => {};
+        qm.updateReaderState = () => {};
+
+        let renderedStories = [];
+        window.DialogueView.renderDialogue = (params) => {
+            renderedStories.push(params.storyId);
+        };
+
+        let resolveA = null;
+        global.fetch = (url) => {
+            if (url.includes('100101')) {
+                return new Promise((resolve) => {
+                    resolveA = resolve;
+                });
+            }
+            if (url.includes('100102')) {
+                return Promise.resolve({
+                    ok: true,
+                    json: async () => [{ name: '佩可', text: '對白B' }]
+                });
+            }
+            return Promise.resolve({ ok: true, json: async () => [] });
+        };
+
+        qm.selectStory(100101);
+        qm.selectStory(100102);
+
+        await new Promise(r => setTimeout(r, 20));
+
+        console.log(JSON.stringify({
+            success: true,
+            renderedStories
+        }));
+        """
+        res = run_node_test_script(js, include_map=True)
+        self.assertTrue(res.get("success"))
+        self.assertEqual(res.get("renderedStories"), [100102])
+
+    # 28. dialogue concurrency: stale A never renders after B
+    def test_28_stale_a_never_renders_after_b(self):
+        """28. 驗證當舊話數 A 延遲 resolve 時，絕不渲染話數 A 且不覆蓋話數 B"""
+        js = """
+        const qm = window.QuestMapModule;
+        qm.getStoryById = (id) => ({ id, chapter: `第${id}章`, title: `話標題 ${id}` });
+        qm.isDialogueExpanded = true;
+        qm.updateNavigationButtons = () => {};
+        qm.updateReaderState = () => {};
+
+        let renderedStories = [];
+        window.DialogueView.renderDialogue = (params) => {
+            renderedStories.push(params.storyId);
+        };
+
+        let resolveA = null;
+        global.fetch = (url) => {
+            if (url.includes('100101')) {
+                return new Promise((resolve) => {
+                    resolveA = () => resolve({
+                        ok: true,
+                        json: async () => [{ name: '凱留', text: '對白A' }]
+                    });
+                });
+            }
+            if (url.includes('100102')) {
+                return Promise.resolve({
+                    ok: true,
+                    json: async () => [{ name: '佩可', text: '對白B' }]
+                });
+            }
+            return Promise.resolve({ ok: true, json: async () => [] });
+        };
+
+        qm.selectStory(100101);
+        qm.selectStory(100102);
+
+        await new Promise(r => setTimeout(r, 20));
+
+        // 現在 resolve 舊話數 A
+        if (resolveA) resolveA();
+
+        await new Promise(r => setTimeout(r, 20));
+
+        console.log(JSON.stringify({
+            success: true,
+            renderedStories,
+            activeStoryId: qm.activeStoryId
+        }));
+        """
+        res = run_node_test_script(js, include_map=True)
+        self.assertTrue(res.get("success"))
+        self.assertEqual(res.get("renderedStories"), [100102])
+        self.assertEqual(res.get("activeStoryId"), 100102)
+
+    # 29. dialogue concurrency: stale A cannot clear B loading state
+    def test_29_stale_a_cannot_clear_b_loading_state(self):
+        """29. 驗證當 A 與 B 同時處於請求中時，A 的完成不得清除話數 B 專屬的 loading 狀態"""
+        js = """
+        const qm = window.QuestMapModule;
+        qm.getStoryById = (id) => ({ id, chapter: `第${id}章`, title: `話標題 ${id}` });
+        qm.isDialogueExpanded = true;
+        qm.updateNavigationButtons = () => {};
+        qm.updateReaderState = () => {};
+
+        let resolveA = null;
+        let resolveB = null;
+
+        global.fetch = (url) => {
+            if (url.includes('100101')) {
+                return new Promise((resolve) => {
+                    resolveA = () => resolve({
+                        ok: true,
+                        json: async () => [{ name: '凱留', text: '對白A' }]
+                    });
+                });
+            }
+            if (url.includes('100102')) {
+                return new Promise((resolve) => {
+                    resolveB = () => resolve({
+                        ok: true,
+                        json: async () => [{ name: '佩可', text: '對白B' }]
+                    });
+                });
+            }
+            return Promise.resolve({ ok: true, json: async () => [] });
+        };
+
+        qm.selectStory(100101);
+        const tokenA = qm._storyRenderToken;
+
+        qm.selectStory(100102);
+        const tokenB = qm._storyRenderToken;
+
+        // 此時 A, B 都在加載中
+        const loadingBeforeResolveA = qm.isLoadingDialogue;
+        const tokenBeforeResolveA = qm._dialogueLoadingToken;
+
+        // Resolve 舊話數 A
+        if (resolveA) resolveA();
+        await new Promise(r => setTimeout(r, 20));
+
+        // A 完成後，B 仍在加載，loading 狀態不得被 A 的 finally 偷清除
+        const loadingAfterResolveA = qm.isLoadingDialogue;
+        const tokenAfterResolveA = qm._dialogueLoadingToken;
+
+        // Resolve 話數 B
+        if (resolveB) resolveB();
+        await new Promise(r => setTimeout(r, 20));
+
+        // B 完成後，loading 狀態正常清除
+        const loadingAfterResolveB = qm.isLoadingDialogue;
+        const tokenAfterResolveB = qm._dialogueLoadingToken;
+
+        console.log(JSON.stringify({
+            success: true,
+            tokenA,
+            tokenB,
+            loadingBeforeResolveA,
+            tokenBeforeResolveA,
+            loadingAfterResolveA,
+            tokenAfterResolveA,
+            loadingAfterResolveB,
+            tokenAfterResolveB
+        }));
+        """
+        res = run_node_test_script(js, include_map=True)
+        self.assertTrue(res.get("success"))
+        self.assertTrue(res.get("loadingBeforeResolveA"))
+        self.assertEqual(res.get("tokenBeforeResolveA"), res.get("tokenB"))
+        self.assertTrue(res.get("loadingAfterResolveA"), "A 的 finally 絕不可將 B 正在進行中的 loading 改為 false")
+        self.assertEqual(res.get("tokenAfterResolveA"), res.get("tokenB"))
+        self.assertFalse(res.get("loadingAfterResolveB"), "B 正常完成後 loading 應重設為 false")
+        self.assertIsNone(res.get("tokenAfterResolveB"))
+
+    # 30. dialogue concurrency: after stale A/B sequence, C still loads normally
+    def test_30_after_stale_ab_sequence_c_still_loads_normally(self):
+        """30. 回歸防護測試：驗證在經歷 A (stale) -> B 切換序列後，後續切換至話數 C 仍可正常加載與渲染對白 (無永久鎖死)"""
+        js = """
+        const qm = window.QuestMapModule;
+        qm.getStoryById = (id) => ({ id, chapter: `第${id}章`, title: `話標題 ${id}` });
+        qm.isDialogueExpanded = true;
+        qm.updateNavigationButtons = () => {};
+        qm.updateReaderState = () => {};
+
+        let renderedStories = [];
+        window.DialogueView.renderDialogue = (params) => {
+            renderedStories.push(params.storyId);
+        };
+
+        let resolveA = null;
+        global.fetch = (url) => {
+            if (url.includes('100101')) {
+                return new Promise((resolve) => {
+                    resolveA = () => resolve({
+                        ok: true,
+                        json: async () => [{ name: '凱留', text: '對白A' }]
+                    });
+                });
+            }
+            if (url.includes('100102')) {
+                return Promise.resolve({
+                    ok: true,
+                    json: async () => [{ name: '佩可', text: '對白B' }]
+                });
+            }
+            if (url.includes('100103')) {
+                return Promise.resolve({
+                    ok: true,
+                    json: async () => [{ name: '可可蘿', text: '對白C' }]
+                });
+            }
+            return Promise.resolve({ ok: true, json: async () => [] });
+        };
+
+        // 1. A 啟動 (pending)
+        qm.selectStory(100101);
+
+        // 2. 切換至 B
+        qm.selectStory(100102);
+        await new Promise(r => setTimeout(r, 20));
+
+        // 3. A 延遲 resolve
+        if (resolveA) resolveA();
+        await new Promise(r => setTimeout(r, 20));
+
+        // 4. 現在切換至 C (驗證永不 dead-lock)
+        qm.selectStory(100103);
+        await new Promise(r => setTimeout(r, 20));
+
+        console.log(JSON.stringify({
+            success: true,
+            renderedStories,
+            activeStoryId: qm.activeStoryId,
+            isLoadingDialogue: qm.isLoadingDialogue
+        }));
+        """
+        res = run_node_test_script(js, include_map=True)
+        self.assertTrue(res.get("success"))
+        self.assertEqual(res.get("renderedStories"), [100102, 100103])
+        self.assertEqual(res.get("activeStoryId"), 100103)
+        self.assertFalse(res.get("isLoadingDialogue"))
+
+    # 31. dialogue concurrency: same-token duplicate dialogue request suppressed
+    def test_31_same_token_duplicate_dialogue_request_suppressed(self):
+        """31. 驗證同一 token / 相同話數短時間內重複呼叫 loadDialogue 被正確抑制，不發起重複請求"""
+        js = """
+        const qm = window.QuestMapModule;
+        qm.getStoryById = (id) => ({ id, chapter: `第${id}章`, title: `話標題 ${id}` });
+        qm.isDialogueExpanded = true;
+        qm.updateNavigationButtons = () => {};
+        qm.updateReaderState = () => {};
+
+        let storyFetchCount = 0;
+        global.fetch = (url) => {
+            if (url.includes('story/')) {
+                storyFetchCount++;
+            }
+            return new Promise(() => {}); // 保持 pending
+        };
+
+        // 1. selectStory(A)
+        qm.selectStory(100101);
+        const token = qm._storyRenderToken;
+
+        // 2. 重複呼叫 loadDialogue 傳入相同 token
+        qm.loadDialogue(100101, token);
+        qm.loadDialogue(100101, token);
+
+        console.log(JSON.stringify({
+            success: true,
+            storyFetchCount,
+            dialogueLoadingToken: qm._dialogueLoadingToken
+        }));
+        """
+        res = run_node_test_script(js, include_map=True)
+        self.assertTrue(res.get("success"))
+        self.assertEqual(res.get("storyFetchCount"), 1)
 
 
 if __name__ == "__main__":

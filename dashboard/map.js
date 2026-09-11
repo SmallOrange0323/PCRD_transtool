@@ -1909,7 +1909,12 @@ const QuestMapModule = {
             return;
         }
 
-        if (this.isLoadingDialogue) return;
+        // Token-scoped guard: 僅防止同一 token / 相同請求重複啟動，絕不阻止新話數 (新 token)
+        if (this._dialogueLoadingToken === currentToken) {
+            return;
+        }
+
+        this._dialogueLoadingToken = currentToken;
         this.isLoadingDialogue = true;
 
         window.DialogueView.renderLoading(board);
@@ -1963,7 +1968,8 @@ const QuestMapModule = {
                 window.DialogueView.renderError(board, storyId);
             }
         } finally {
-            if (currentToken === this._storyRenderToken) {
+            if (this._dialogueLoadingToken === currentToken) {
+                this._dialogueLoadingToken = null;
                 this.isLoadingDialogue = false;
             }
         }
