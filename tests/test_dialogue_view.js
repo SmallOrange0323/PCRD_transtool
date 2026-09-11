@@ -100,8 +100,8 @@ test("Test 2 — Normal bubble markup", () => {
     assert(html.includes('QuestMapModule.showCharaModal(&quot;可可蘿&quot;)'), "Should have chara modal contract");
 });
 
-// Test 3 — Voice button wiring
-test("Test 3 — Voice button inline contract", () => {
+// Test 3 — Voice button wiring and DOM contract
+test("Test 3 — Voice button DOM contract and decoupling", () => {
     const { html } = DialogueView.generateDialogueHtml({
         storyId: 1001001,
         dialogueList: [{ name: "凱留", words: "才、才沒有特別為你準備呢！", voice: "vo_story_1001001_001" }],
@@ -112,6 +112,23 @@ test("Test 3 — Voice button inline contract", () => {
     assert(html.includes("dialogue-voice-btn"), "Should have voice button class");
     assert(html.includes("event.stopPropagation()"), "Should contain stopPropagation");
     assert(html.includes("QuestMapModule.playVoice('vo_story_1001001_001')"), "Should call QuestMapModule.playVoice");
+
+    // DOM contract 嚴格驗證：
+    // game-dialogue-speaker-wrap
+    // ├── game-dialogue-speaker
+    // └── dialogue-voice-btn
+    assert(html.includes("game-dialogue-speaker-wrap"), "Must have game-dialogue-speaker-wrap container");
+
+    // 驗證語音按鈕與人名是平級兄弟結構，且按鈕不得被包在 game-dialogue-speaker 內部
+    const speakerTagMatch = html.match(/<span class="game-dialogue-speaker"[^>]*>([\s\S]*?)<\/span>/);
+    assert(speakerTagMatch, "Must find isolated game-dialogue-speaker element");
+    const speakerContent = speakerTagMatch[1];
+    assert(!speakerContent.includes("dialogue-voice-btn"), "dialogue-voice-btn must NOT be nested inside game-dialogue-speaker");
+    assert(!speakerContent.includes("playVoice"), "playVoice must NOT be triggered from within speaker element");
+
+    // 驗證 wrap 結構內依序包含 speaker 與 voice-btn
+    const wrapRegex = /<div class="game-dialogue-speaker-wrap">[\s\S]*?<span class="game-dialogue-speaker"[\s\S]*?<\/span>[\s\S]*?<button[^>]*class="dialogue-voice-btn"/;
+    assert(wrapRegex.test(html), "DOM hierarchy contract violated: wrap must contain sibling speaker then voice button");
 });
 
 // Test 4 — Still and background special nodes

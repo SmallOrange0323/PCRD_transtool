@@ -9,7 +9,7 @@ PCRD Story Map Pipeline - Bundler (100% Deterministic & Controlled Deployment)
 3. 嚴格部署體積控制（精準複製 tracked 角色與 NPC 素材；大體積 still/story CG 移交遠端 CDN）
 4. 決定性清理機制 (Deterministic Pruning)：清理歷史殘留目錄、重複 DB 與無效鏡像檔案，保護 .git
 5. 決定性 .nojekyll 標記建立與正規化 (0 bytes)
-6. 完整支援 card/full 與 sound/story_vo 本機發布包同步（受 .gitignore 排除，不計入 Pages 體積）
+6. 精準支援 sound/story_vo 生產環境 Gap 語音集合同步（依據 voice_gap_assets.json 權威白名單發布，受收緊的 .gitignore 追蹤並計入 Pages 體積；非 gap 音檔決定性清理；card/full 仍受 .gitignore 排除）
 7. 真正零副作用且 100% 決定性對齊的 --dry-run 精準預測
 """
 
@@ -33,6 +33,7 @@ if sys.platform == 'win32':
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DASHBOARD_DIR = PROJECT_ROOT / "dashboard"
 DIST_DIR = PROJECT_ROOT / "dist_story_map"
+VOICE_GAP_ASSETS_PATH = DASHBOARD_DIR / "data" / "voice_gap_assets.json"
 
 # 支援的圖片副檔名
 IMAGE_EXTENSIONS = {".webp", ".png"}
@@ -422,6 +423,39 @@ def build_expected_story_unit_set(dashboard_dir: Path = DASHBOARD_DIR) -> Set[st
     """回傳所有 expected icon/story_unit 檔名集合"""
     return {p.name for p in get_expected_dialogue_override_mappings(dashboard_dir).values()}
 
+def get_expected_gap_voice_mappings(dashboard_dir: Path = DASHBOARD_DIR) -> Dict[str, Path]:
+    """
+    計算預期發布之 Gap 語音檔案映射：{filename: source_path}。
+    以 dashboard/data/voice_gap_assets.json 為唯一權威依據。
+    若檔案或清單缺失，拋出明確異常 (Fail Loudly)。
+    """
+    mappings: Dict[str, Path] = {}
+    manifest_path = dashboard_dir / "data" / "voice_gap_assets.json"
+    if not manifest_path.exists():
+        return mappings
+
+    try:
+        with open(manifest_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        for asset in data.get("assets", []):
+            fname = asset.get("filename")
+            if not fname:
+                raise ValueError("[ERROR] Gap voice asset missing filename")
+            src_path = dashboard_dir / "sound" / "story_vo" / fname
+            if not src_path.exists():
+                raise FileNotFoundError(f"[ERROR] Gap voice asset missing physical file: {src_path}")
+            mappings[fname] = src_path
+    except Exception as e:
+        if isinstance(e, (FileNotFoundError, ValueError)):
+            raise
+        print(f"  [WARN] 讀取 voice_gap_assets.json 異常: {e}", file=sys.stderr)
+
+    return mappings
+
+def build_expected_gap_voice_set(dashboard_dir: Path = DASHBOARD_DIR) -> Set[str]:
+    """回傳所有 expected Gap 語音檔名集合"""
+    return set(get_expected_gap_voice_mappings(dashboard_dir).keys())
+
 def prune_stale_dist_assets(dashboard_dir: Path = DASHBOARD_DIR, dist_dir: Path = DIST_DIR, dry_run: bool = False) -> Dict[str, Tuple[int, int]]:
     """
     執行決定性清理 (Deterministic Pruning)：
@@ -537,6 +571,15 @@ def prune_stale_dist_assets(dashboard_dir: Path = DASHBOARD_DIR, dist_dir: Path 
             if item.suffix.lower() in IMAGE_EXTENSIONS and item.name not in expected_story_units:
                 cnt, b = safe_prune_file(item, dry_run=dry_run, dist_root=dist_dir)
                 record_prune("icon/story_unit surplus", cnt, b)
+
+    # 5C. 清理 sound/story_vo/ 中不在 expected gap voice 集合的檔案
+    dist_sound_dir = dist_dir / "sound" / "story_vo"
+    if dist_sound_dir.exists():
+        expected_voices = build_expected_gap_voice_set(dashboard_dir)
+        for item in list(dist_sound_dir.glob("*.m4a")):
+            if item.name not in expected_voices:
+                cnt, b = safe_prune_file(item, dry_run=dry_run, dist_root=dist_dir)
+                record_prune("sound/story_vo surplus", cnt, b)
 
     return prune_stats
 
@@ -722,6 +765,20 @@ def calculate_expected_additions_and_deltas(dashboard_dir: Path = DASHBOARD_DIR,
                 if calc_sha256(sf) != calc_sha256(df):
                     deltas += (s_sz - d_sz)
 
+    # 7E. sound/story_vo (精準 Gap 語音)
+    gap_voice_mappings = get_expected_gap_voice_mappings(dashboard_dir)
+    dst_sound_dir = dist_dir / "sound" / "story_vo"
+    for dst_name, sf in gap_voice_mappings.items():
+        if sf.exists():
+            df = dst_sound_dir / dst_name
+            s_sz = sf.stat().st_size
+            if not df.exists():
+                additions += s_sz
+            else:
+                d_sz = df.stat().st_size
+                if calc_sha256(sf) != calc_sha256(df):
+                    deltas += (s_sz - d_sz)
+
     return additions, deltas
 
 def bundle_story_map(dry_run: bool = False) -> bool:
@@ -742,8 +799,8 @@ def bundle_story_map(dry_run: bool = False) -> bool:
     if not dry_run:
         DIST_DIR.mkdir(parents=True, exist_ok=True)
 
-    # 計算初始符合部署條件的大小 (排除 .git, sound, card)
-    initial_deployment_size = get_directory_size(DIST_DIR, exclude_subdirs={".git", "sound", "card"})
+    # 計算初始符合部署條件的大小 (排除 .git, card)
+    initial_deployment_size = get_directory_size(DIST_DIR, exclude_subdirs={".git", "card"})
 
     # 1. 同步核心 HTML、CSS、JS
     core_files = [
@@ -865,8 +922,18 @@ def bundle_story_map(dry_run: bool = False) -> bool:
     if icon_event_top_copied > 0:
         print(f"  [EventTop] 官方活動頂層專屬縮圖: {'預計同步' if dry_run else '已同步'} {icon_event_top_copied} 個檔案")
 
-    # 8. 同步語音音檔 (sound/story_vo) - 本機發布包同步，受 .gitignore 排除
-    voice_copied = sync_directory_assets(DASHBOARD_DIR / "sound" / "story_vo", DIST_DIR / "sound" / "story_vo", [".m4a"], dry_run=dry_run)
+    # 8. 同步語音音檔 (sound/story_vo) - 精準 Gap 語音同步
+    gap_voice_mappings = get_expected_gap_voice_mappings(DASHBOARD_DIR)
+    voice_copied = 0
+    dst_voice_dir = DIST_DIR / "sound" / "story_vo"
+    if not dry_run:
+        dst_voice_dir.mkdir(parents=True, exist_ok=True)
+    for dst_name, src_file in gap_voice_mappings.items():
+        df = dst_voice_dir / dst_name
+        if copy_if_different(src_file, df, dry_run=dry_run):
+            voice_copied += 1
+    if len(gap_voice_mappings) > 0:
+        print(f"  [Gap Voice] 精準缺口語音 (Gap Voice): {'預計同步' if dry_run else '已同步'} {len(gap_voice_mappings)} 個檔案中更新 {voice_copied} 個")
 
     # 9. 決定性 .nojekyll 管理
     nojekyll_act, _ = sync_nojekyll(DIST_DIR, dry_run=dry_run)
@@ -912,7 +979,7 @@ def bundle_story_map(dry_run: bool = False) -> bool:
         print(f"  Projected deployment footprint:  {projected_deployment_size:>12,} bytes ({projected_deployment_size / (1024*1024):>8.2f} MiB)")
         print("  [DRY-RUN] 模擬運行模式（零副作用）：未寫入或修改任何實體檔案。")
     else:
-        final_deployment_size = get_directory_size(DIST_DIR, exclude_subdirs={".git", "sound", "card"})
+        final_deployment_size = get_directory_size(DIST_DIR, exclude_subdirs={".git", "card"})
         print(f"\n  [Dist Size] 發布包最終體積: {final_deployment_size / (1024*1024):.2f} MiB (清理前: {initial_deployment_size / (1024*1024):.2f} MiB, 淨減量: {(initial_deployment_size - final_deployment_size) / (1024*1024):.2f} MiB)")
         print("✅ Story Map 封裝與瘦身清理完成！")
 
