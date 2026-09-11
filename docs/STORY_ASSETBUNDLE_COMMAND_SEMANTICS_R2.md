@@ -4,7 +4,7 @@
 **階段**：Issue #2 — Research R2 (High-Value Command Semantic Validation)
 **狀態**：`COMPLETED` (待 External Review，僅代表本階段研究工作完成，不代表所有指令細節已確定)
 **審計基準**：So-net 台服 CDN TruthVersion `00600025`（線上 Manifest 總量: 9,057 個 Story AssetBundle）
-**樣本基準**：180 話確定性分層抽樣（Main 37, Chara 45, Guild 44, Event 41, System 13；與 R1 完全同源）
+**樣本基準**：180 話確定性抽樣（Main 55, Chara 31, Guild 31, Event 32, System 31；分層 100 + 富媒體 25 + 自適應 55，Manifest SHA-256: `6b0a6e61669d0671baa47e225fb53842d31c9b33fbdeaae324418564b8a00a5c`；抽樣策略源自 R1，但未證明 story-level identity）
 **分析腳本**：[`tools/diagnostics/audit_story_command_semantics.py`](tools/diagnostics/audit_story_command_semantics.py)
 **約束邊界**：Production/source read-only. Writes are permitted only under scratch/.
 **機器可讀產物**：`scratch/story_command_semantics_r2.json`
@@ -22,9 +22,9 @@
    - 音效前綴 `se_`：共 7,774 次出現，主要分佈於 `cmd 26`（4,570 次，58.79%）、`cmd 59`（1,715 次，22.06%）與 `cmd 54`（1,411 次，18.15%）。
    - 環境音前綴 `amb_`：共 1,335 次出現，分佈於 `cmd 67`（476 次，35.66%）、`cmd 26`（471 次，35.28%）、`cmd 51`（338 次，25.32%）與 `cmd 61`（50 次，3.75%）。
    - 背景音樂前綴 `bgm_`：共 1,322 次出現，分佈於 `cmd 9`（1,312 次，99.24%）、`cmd 103`（9 次，0.68%）與 `cmd 101`（1 次，0.08%）。
-2. **時序指令並非通用語音長度計時器 (OBSERVED / INFERRED / HYPOTHESIS)**：
-   - **OBSERVED**：透過 `ffprobe` 實測 103 筆本地真實語音音檔時長（秒），以嚴格語音邊界隔離（Voice Turn Window）排除轉場指令後，單句內部 `cmd 13` 累計值與語音時長之皮爾森相關係數為 **$r = 0.6783$**；首個 `cmd 13` 相關係數為 **$r = 0.4161$**。同時觀察到語音長度達 3.263 秒但段落內 `cmd 13` 為空（累計值 0）的反例（`vo_adv_1001001_001`）。
-   - **INFERRED (LIKELY)**：最合理解釋為語句間隔或打字機演出停頓延遲 (delay/pacing)，其數值與語音長度存在粗略節奏相關，但反例顯示其並非通用語音長度計時器。
+2. **時序指令與本地語音長度子集對齊 (OBSERVED / INFERRED / HYPOTHESIS)**：
+   - **OBSERVED (子集測量)**：針對本地可取得音檔之 103 個語音段落（集中於 `1001001`, `1001002`, `1001003` 3 話，覆蓋率為 103 / 14,703 = 0.7005%，狀態為 `PARTIAL_LOCAL_AUDIO`），以嚴格語音邊界隔離（Voice Turn Window）排除轉場指令後，單句內部 `cmd 13` 累計值與語音時長之皮爾森相關係數為 **$r = 0.6783$**；首個 `cmd 13` 相關係數為 **$r = 0.4161$**。同時觀察到語音長度達 3.263 秒但段落內 `cmd 13` 為空（累計值 0）的反例（`vo_adv_1001001_001`）。
+   - **INFERRED (LIKELY)**：最合理解釋為語句間隔或打字機演出停頓延遲 (delay/pacing)，其數值與語音長度在此子集中存在中度節奏相關，但反例顯示其並非通用語音長度計時器。
    - **HYPOTHESIS / UNRESOLVED**：時間單位為 frame @ 30fps 仍屬假說；執行期是否為 blocking 機制尚未確認。
    - **PRODUCT IMPLICATION**：Auto Play 功能**不可依賴 `cmd 13` 作為語音播放時長**，必須以真實音訊事件 (Audio Ended) 或音訊實體時長為依據。
 3. **場景橫幅文字呈現 (OBSERVED)**：
@@ -132,9 +132,11 @@
   - 語意領域 (Timing / Delay / Pacing): **HIGH-CONFIDENCE**
   - 時間單位與阻塞屬性 (Frames @ 30fps / Blocking): **HYPOTHESIS / UNRESOLVED**
 - **OBSERVED**:
-  - 180 話樣本中出現 38,567 次，**80.72%** 的序列分佈為 `6 -> 13 -> 6`（對白分句之間）。
+  - **指令出現次數 (command_occurrence_count)**: 38,567 次（與序列上下文 total_occurrences 一致）。
+  - **觀察數值筆數 (numeric_value_count)**: 38,567 筆（每指令皆為 1 個數值參數）。
+  - 序列關係：**80.72%** 呈現 `6 -> 13 -> 6`（對白分句之間）。
   - 數值分佈：min=0.0, max=195.0, mean=35.91, median=30.0, p25=20.0, p75=45.0。前四大高頻離散值：`30.0` (15.25%), `15.0` (14.82%), `45.0` (8.86%), `35.0` (7.97%)。
-  - **ffprobe 實測對齊 (103 筆樣本)**：單句內部 `cmd 13` 總和與語音時長之皮爾森相關係數為 **$r = 0.6783$**；首個 `cmd 13` 與語音時長之相關係數為 **$r = 0.4161$**。
+  - **ffprobe 實測子集對齊 (103 筆樣本)**：在 3 話既有音檔子集中，單句內部 `cmd 13` 總和與語音時長之皮爾森相關係數為 **$r = 0.6783$**；首個 `cmd 13` 與語音時長之相關係數為 **$r = 0.4161$**。
   - **反例佐證 (OBSERVED)**：在樣本中觀察到語音長度達 3.263 秒但相鄰 `cmd 13` 為空的案例（`vo_adv_1001001_001`，累計總和為 0）。
 - **INFERRED (LIKELY)**:
   - 最合理解釋為語句間隔或打字機演出停頓延遲 (delay/pacing)，其數值與語音長度存在粗略節奏相關，但反例顯示其並非通用語音長度計時器。
@@ -153,8 +155,10 @@
   - 語意領域 (Scene Transition / Curtain Wait): **HIGH-CONFIDENCE**
   - 時間單位與阻塞屬性 (Seconds / Blocking): **HYPOTHESIS / UNRESOLVED**
 - **EVIDENCE (OBSERVED)**:
-  - 180 話樣本中出現 1,308 次，常見於話數結尾（`9 -> 27 -> [EOF]` 佔 13.91%）或切換背景前（`27 -> 5` 佔 18.81%）。
-  - 數值分佈：min=0.0, max=1.0, mean=0.95, median=1.0, p25=1.0, p75=1.0。高頻值：`1.0` (92.51%), `0.5` (4.28%), `0.3` (2.52%)。
+  - **指令出現次數 (command_occurrence_count)**: 654 次（與序列上下文 total_occurrences 一致）。
+  - **觀察數值筆數 (numeric_value_count)**: 1,308 筆（每指令皆為 2 個數值參數，654 × 2 = 1,308）。
+  - 序列關係：常見於話數結尾（`9 -> 27 -> [EOF]` 佔 13.91%）或切換背景前（`27 -> 5` 佔 18.81%）。
+  - 數值分佈：min=0.0, max=1.0, mean=0.95, median=1.0, p25=1.0, p75=1.0。高頻值：`1.0` (92.51%), `0.5` (4.28%), `0.3` (2.52%), `0.0` (0.31%)。
 
 #### `cmd 61` — 畫面轉場淡入淡出時長 (Screen Fade Duration)
 - **DOMAIN**: Visual Transition / Timing
@@ -166,7 +170,9 @@
   - 語意領域 (Screen Fade Duration): **HIGH-CONFIDENCE**
   - 時間單位與阻塞屬性 (Seconds / Blocking): **HYPOTHESIS / UNRESOLVED**
 - **EVIDENCE (OBSERVED)**:
-  - 180 話樣本中出現 333 次，常與轉場特效 `cmd 31` 或環境音 `cmd 51` 配套出現。
+  - **指令出現次數 (command_occurrence_count)**: 332 次（與序列上下文 total_occurrences 一致）。
+  - **觀察數值筆數 (numeric_value_count)**: 333 筆（331 次帶 1 參數，1 次帶 2 參數）。
+  - 序列關係：常與轉場特效 `cmd 31` 或環境音 `cmd 51` 配套出現。
   - 數值分佈：min=0.5, max=3.0, mean=1.01, median=1.0, p25=1.0, p75=1.0。高頻值：`1.0` (97.90%), `0.5` (0.90%), `3.0` (0.60%), `2.0` (0.60%)。
 
 ---
@@ -286,46 +292,54 @@
 
 ## 五、 時序數值分佈與語音長度實測 (Timing vs Voice Duration)
 
-### 1. Bundle 解析審計與 Audio Accounting (Fail Loudly 完整記帳)
+### 1. 樣品清單與解析審計 (Sample Manifest & Parsing Accounting)
 
-所有樣本候選、解析狀態與音檔覆蓋計數均由診斷腳本精確記帳並持久化於 JSON 根部：
+所有樣本清單、解析狀態與音檔覆蓋計數均由診斷腳本精確記帳並持久化於 JSON 根部：
 
 | 記帳層級 | 指標項目 | 數值 | 狀態 / 解釋 |
 | :--- | :--- | :---: | :--- |
-| **Bundle Parsing Accounting** | `requested_story_samples` | 180 | 確定性分層抽樣計畫請求數 |
+| **Sample Manifest Accounting** | `sample_manifest_count` | 180 | 確定性抽樣清單總話數 |
+| | `sample_manifest_sha256` | `6b0a6e61669d0671baa47e225fb53842d31c9b33fbdeaae324418564b8a00a5c` | Canonical JSON SHA-256 數位簽名 |
+| | 樣品類別組成 (by Category) | Main: 55, Chara: 31, Guild: 31, Event: 32, System: 31 | 5 大類別加總等於 180 |
+| | 抽樣類型組成 (by Type) | stratified: 100, rich_media: 25, adaptive: 55 | 3 種來源加總等於 180 |
+| **Bundle Parsing Accounting** | `requested_story_samples` | 180 | 確定性抽樣計畫請求數 |
 | | `successfully_parsed_stories` | 180 | 成功載入並完成二進位指令流解析之話數 |
-| | `failed_story_parses` | 0 | 解析失敗話數（無漏失） |
+| | `failed_story_parses` | 0 | 解析失敗話數（100% 成功） |
 | **Audio Alignment Accounting** | `voice_turn_candidates` | 14,703 | 180 話中符合語音轉場（Voice Turn Window）之候選總數 |
-| | `local_audio_present` | 103 | 本地既有音檔存在之樣本數（來自 1001001, 1001012, 1004001） |
-| | `local_audio_missing` | 14,600 | 本地未下載音檔之候選總數（Fail Loudly 記帳，未默默略過） |
+| | `local_audio_present` | 103 | 本地既有音檔存在之樣本數（來自話數 `1001001`, `1001002`, `1001003`） |
+| | `local_audio_missing` | 14,600 | 本地未下載音檔之候選總數（Fail Loudly 記帳） |
+| | `audio_coverage_ratio` | 0.007005 (0.7005%) | 本地音檔覆蓋比例 (`103 / 14703`) |
+| | `coverage_status` | `PARTIAL_LOCAL_AUDIO` | 音訊覆蓋範圍狀態判定（僅子集評估） |
+| | `alignment_story_count` | 3 | 實測音檔來源之話數數量 |
+| | `alignment_story_ids` | `['1001001', '1001002', '1001003']` | 實測音檔所屬話數 ID 清單（各 48, 30, 25 筆） |
 | | `probe_attempted` | 103 | 嘗試執行 `ffprobe` 時長探測次數 |
 | | `probe_success` | 103 | 成功獲取音訊精確時長次數 |
 | | `probe_failed` | 0 | 探測失敗次數 |
 | | `max_alignment_samples` | 150 | 對齊上限閾值參數 |
 | | `successful_alignment_samples` | 103 | 最終納入統計與關聯計算之有效樣本數 |
 | | `alignments` 完整陣列長度 | 103 | 機器可讀 JSON 中保存之完整 provenance 記錄數 |
-| **Tool Execution Status** | `evaluation_status` | `EVALUATED` | 工具狀態判定（可重現探測） |
+| **Tool Execution Status** | `evaluation_status` | `EVALUATED` | 工具執行狀態（可重現探測完成） |
 | | `ffprobe_path_used` | `C:\FFmpeg\bin\ffprobe.EXE` | 執行期探測使用之實體二進位路徑 |
 
 > [!NOTE]
-> **完整 Provenance 保存**：所有 103 筆對齊樣本之完整溯源資料（包含 `story_id`, `voice_id`, `audio_path`, `duration_sec`, `voice_cmd_idx`, `end_idx`, `cmd13_indices`, `cmd13_values`, `cmd13_count`, `cmd13_sum`, `dialogue_text`）均 100% 完整保存於 `scratch/story_command_semantics_r2.json` 的 `"alignments"` 陣列中，且 `successful_alignment_samples == len(alignments) == 103`。同時提供 `"alignment_preview"`（前 10 筆）便於快速預覽。
+> **完整 Provenance 保存**：所有 103 筆對齊樣本之完整溯源資料（包含 `story_id`, `voice_id`, `actual_duration_sec`, `voice_command_index`, `segmentation_end_index`, `included_cmd13_indices`, `included_cmd13_values`, `cmd13_count`, `cmd13_sum`, `cmd13_first`）均 100% 完整保存於 `scratch/story_command_semantics_r2.json` 的 `"alignments"` 陣列中，且 `successful_alignment_samples == len(alignments) == 103`。同時提供 `"alignment_preview"`（前 10 筆）便於快速預覽。
 
 ### 2. 時序指令數值分佈特徵 (Distribution Profile)
 
-所有分佈統計值均直接由診斷腳本輸出，無人工重新計算：
+所有數值統計值均直接由診斷腳本輸出，明確區分指令出現次數與數值參數計數：
 
-| 指令 ID | 樣本總數 (count) | 最小值 (min) | 最大值 (max) | 平均值 (mean) | 中位數 (median) | P25 | P75 | 前四大高頻離散值 |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`cmd 13`** | 38,567 | 0.0 | 195.0 | 35.91 | 30.0 | 20.0 | 45.0 | **30.0** (15.25%), **15.0** (14.82%), **45.0** (8.86%), **35.0** (7.97%) |
-| **`cmd 27`** | 1,308 | 0.0 | 1.0 | 0.95 | 1.0 | 1.0 | 1.0 | **1.0** (92.51%), **0.5** (4.28%), **0.3** (2.52%), **0.0** (0.31%) |
-| **`cmd 61`** | 333 | 0.5 | 3.0 | 1.01 | 1.0 | 1.0 | 1.0 | **1.0** (97.90%), **0.5** (0.90%), **3.0** (0.60%), **2.0** (0.60%) |
+| 指令 ID | 指令出現次數 (command_occurrence_count) | 觀察數值筆數 (numeric_value_count) | 每指令參數數分佈 (numeric_values_per_command) | 最小值 (min) | 最大值 (max) | 平均值 (mean) | 中位數 (median) | P25 | P75 | 前四大高頻離散數值 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| **`cmd 13`** | 38,567 | 38,567 | 1 參數: 38,567 (100.0%) | 0.0 | 195.0 | 35.91 | 30.0 | 20.0 | 45.0 | **30.0** (15.25%), **15.0** (14.82%), **45.0** (8.86%), **35.0** (7.97%) |
+| **`cmd 27`** | 654 | 1,308 | 2 參數: 654 (100.0%) | 0.0 | 1.0 | 0.95 | 1.0 | 1.0 | 1.0 | **1.0** (92.51%), **0.5** (4.28%), **0.3** (2.52%), **0.0** (0.31%) |
+| **`cmd 61`** | 332 | 333 | 1 參數: 331 (99.7%), 2 參數: 1 (0.3%) | 0.5 | 3.0 | 1.01 | 1.0 | 1.0 | 1.0 | **1.0** (97.90%), **0.5** (0.90%), **3.0** (0.60%), **2.0** (0.60%) |
 
 ### 3. ffprobe 實測對齊方法學與結果
 
 - **語音邊界隔離 (Voice Turn Window)**：
   - 以 `cmd 12` 為起點，遇到邊界終止集合 `{12, 7, 11, 5, 27, 46, 49}` 或話數結尾 EOF 時強制 flush，確保非對白轉場指令不會被誤計入該句對白。
 - **對齊結果**：
-  - 實測對齊樣本數: 103 筆；
+  - 實測對齊樣本數: 103 筆（來自 3 話主線：`1001001`、`1001002`、`1001003`）；
   - 皮爾森相關係數 (語音時長 vs 句內 `cmd 13` 累計總和): **$r = 0.6783$**；
   - 皮爾森相關係數 (語音時長 vs 句內首個 `cmd 13`): **$r = 0.4161$**。
 - **反例分析 (Counter-example)**：
@@ -340,8 +354,12 @@
 
 ### 1. 分析母體與抽樣範圍
 - **母體範圍 (Population Universe)**：So-net 台服 CDN TruthVersion `00600025` 共 9,057 個 Story AssetBundle。
-- **抽樣範圍 (Sample Scope)**：180 個 Story AssetBundle（涵蓋 Main 37, Chara 45, Guild 44, Event 41, System 13）。非全域窮盡掃描。
-- **音訊對齊樣本**：103 筆本地既有語音檔案，覆蓋 14,703 個語音候選中的 103 筆，其餘 14,600 筆本地缺失已記帳。
+- **抽樣範圍 (Sample Scope)**：獨立確定性 180 個 Story AssetBundle（Main 55, Chara 31, Guild 31, Event 32, System 31；分層 100 + 富媒體 25 + 自適應 55，Manifest SHA-256: `6b0a6e61669d0671baa47e225fb53842d31c9b33fbdeaae324418564b8a00a5c`）。
+- **樣品同源性聲明**：本抽樣隊列採用源自 R1 的抽樣演算法策略生成，但現有 R1 機器產物未持久化全量 180 話之 story ID 清單，**未證明與 R1 為 story-level 完全一致之樣品**。
+- **音訊對齊邊界與集中性揭露**：
+  - 皮爾森相關係數測量範圍為「本地可取得音檔之 103 個 voice-turn 子集」，覆蓋率為 0.7005%（103 / 14,703），覆蓋狀態判定為 `PARTIAL_LOCAL_AUDIO`。
+  - 103 筆實測樣本高度集中於 3 話主線章節（`1001001` 共 48 筆、`1001002` 共 30 筆、`1001003` 共 25 筆），不得外推為 14,703 個候選母體之全域相關性。
+  - 工具執行狀態 `EVALUATED` 僅代表探測工具鏈執行成功，不代表音訊母體已全量評估。
 
 ### 2. 結論分級 (Confidence Stratification)
 
@@ -353,7 +371,7 @@
 - **HIGH-CONFIDENCE (高度可信推論)**：
   - `cmd 11` 為玩家分支選項指令（780 次出現，89.23% 接 `cmd 7` 輸入等待）。
   - `cmd 68` 為角色站位指令、`cmd 3` 為面部表情切換、`cmd 4` 為立繪退場、`cmd 59` 為表情氣泡。
-  - `cmd 13` 語意領域為劇本演出或分句間隔停頓延遲 (pacing/delay)，且其數值與文本/語音長度存在中度正相關。
+  - `cmd 13` 語意領域為劇本演出或分句間隔停頓延遲 (pacing/delay)，其數值在實測子集中與文本/語音長度存在中度正相關。
   - `cmd 27` 語意領域為幕簾過渡／轉場黑屏等待。
   - `cmd 61` 語意領域為全螢幕畫面淡入淡出。
 - **LIKELY (最合理解釋)**：
@@ -367,6 +385,6 @@
   - **單例指令通道規則**：`cmd 101` 的生命週期與通道覆寫邏輯（僅 1 筆樣本，無法推論一般性規則）。
 
 ### 3. 生產實作約束 (Production Constraints)
-- **禁止預設假設**：後續 Auto Play 或播放器開發，**嚴禁將 `cmd 13` 視為語音長度**。
+- **禁止預設假設**：後續 Auto Play 或播放器開發，**嚴禁將 `cmd 13` 視為通用語音長度**。
 - **持久化約束**：本研究為純調研，不預先承諾將所有演出指令持久化至現有 `dashboard/story/*.json`，架構方案留待後續設計審查評估。
 - **完成定義聲明**：R2 `COMPLETED` 僅代表本階段預定調研工作完成，不代表所有指令之底層執行期機制已完全確定。

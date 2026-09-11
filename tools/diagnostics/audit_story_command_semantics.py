@@ -14,6 +14,7 @@ import sys
 import json
 import shutil
 import sqlite3
+import hashlib
 import argparse
 import subprocess
 import urllib.request
@@ -278,39 +279,54 @@ def analyze_timing_and_voice(
     3. 時序指令數值分佈與語音時長實測對齊 (Timing vs Voice Duration Correlation)
     以邊界終止符明確分割 Voice Turn Window，修正 EOF finalization，並保存全部成功對齊之完整 provenance。
     """
+    occurrences_by_cmd = Counter()
     values_by_cmd = defaultdict(list)
+    values_per_cmd_counts = defaultdict(Counter)
+
     for sid, cmds in commands_pool:
         for cid, args in cmds:
             if cid in [13, 27, 61]:
+                occurrences_by_cmd[cid] += 1
+                cmd_vals = []
                 for a in args:
                     try:
                         v = float(a)
-                        values_by_cmd[cid].append(v)
+                        cmd_vals.append(v)
                     except ValueError:
                         pass
+                values_by_cmd[cid].extend(cmd_vals)
+                values_per_cmd_counts[cid][len(cmd_vals)] += 1
 
     timing_distribution = {}
     for cid in [13, 27, 61]:
         vals = values_by_cmd[cid]
+        cmd_occ = occurrences_by_cmd[cid]
+        num_vals_cnt = len(vals)
+        args_dist = {str(k): v for k, v in values_per_cmd_counts[cid].items()}
         if vals:
             sorted_vals = sorted(vals)
-            n = len(vals)
             counter = Counter(vals)
             timing_distribution[str(cid)] = {
-                "count": n,
+                "command_occurrence_count": cmd_occ,
+                "numeric_value_count": num_vals_cnt,
+                "numeric_values_per_command": args_dist,
                 "min": sorted_vals[0],
                 "max": sorted_vals[-1],
-                "mean": round(sum(vals) / n, 2),
-                "median": sorted_vals[n // 2],
-                "p25": sorted_vals[int(n * 0.25)],
-                "p75": sorted_vals[int(n * 0.75)],
+                "mean": round(sum(vals) / num_vals_cnt, 2),
+                "median": sorted_vals[num_vals_cnt // 2],
+                "p25": sorted_vals[int(num_vals_cnt * 0.25)],
+                "p75": sorted_vals[int(num_vals_cnt * 0.75)],
                 "top_discrete_values": [
-                    {"value": val, "count": cnt, "ratio": round(cnt / n, 4)}
+                    {"value": val, "count": cnt, "ratio": round(cnt / num_vals_cnt, 4)}
                     for val, cnt in counter.most_common(8)
                 ]
             }
         else:
-            timing_distribution[str(cid)] = {"count": 0}
+            timing_distribution[str(cid)] = {
+                "command_occurrence_count": cmd_occ,
+                "numeric_value_count": 0,
+                "numeric_values_per_command": args_dist
+            }
 
     # 語音長度對齊實測
     resolved_ffprobe = resolve_ffprobe_path(ffprobe_path)
@@ -431,19 +447,27 @@ def analyze_timing_and_voice(
     # Invariant: successful_alignment_samples 嚴格等於 len(alignments)
     assert len(voice_alignments) == probe_success, f"Alignment invariant mismatch: {len(voice_alignments)} != {probe_success}"
 
+    alignment_story_ids = sorted(list(set(str(a["story_id"]) for a in voice_alignments)))
+    alignment_story_count = len(alignment_story_ids)
+    audio_coverage_ratio = round(local_audio_present / voice_turn_candidates, 6) if voice_turn_candidates > 0 else 0.0
+
     return {
         "timing_distribution": timing_distribution,
         "ffprobe_available": ffprobe_available,
         "ffprobe_path_used": resolved_ffprobe,
         "evaluation_status": evaluation_status,
+        "coverage_status": "PARTIAL_LOCAL_AUDIO",
         "max_alignment_samples": max_alignment_samples,
         "voice_turn_candidates": voice_turn_candidates,
         "local_audio_present": local_audio_present,
         "local_audio_missing": local_audio_missing,
+        "audio_coverage_ratio": audio_coverage_ratio,
         "probe_attempted": probe_attempted,
         "probe_success": probe_success,
         "probe_failed": probe_failed,
         "successful_alignment_samples": len(voice_alignments),
+        "alignment_story_count": alignment_story_count,
+        "alignment_story_ids": alignment_story_ids,
         "correlation_sample_count": len(voice_alignments),
         "pearson_r_duration_vs_cmd13_sum": correlation_sum,
         "pearson_r_duration_vs_cmd13_first": correlation_first,
@@ -547,10 +571,31 @@ def run_semantics_audit(
     requested_story_samples = len(full_queue)
     print(f"  [Queue] 確定性重現 {requested_story_samples} 話抽樣隊列")
 
+    sample_manifest = [
+        {"story_id": sid, "category": cat, "sample_type": stype}
+        for sid, cat, stype in full_queue
+    ]
+    sample_manifest_count = len(sample_manifest)
+
+    # 確定性 canonical representation (JSON sort_keys, compact separators) 計算 SHA-256
+    canonical_bytes = json.dumps(sample_manifest, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    sample_manifest_sha256 = hashlib.sha256(canonical_bytes).hexdigest()
+
     # 統計樣品組成
-    sample_composition = defaultdict(int)
-    for sid, cat, stype in full_queue:
-        sample_composition[cat] += 1
+    sample_composition_by_category = defaultdict(int)
+    sample_composition_by_type = defaultdict(int)
+    for s in sample_manifest:
+        sample_composition_by_category[s["category"]] += 1
+        sample_composition_by_type[s["sample_type"]] += 1
+
+    sample_composition_by_category = dict(sample_composition_by_category)
+    sample_composition_by_type = dict(sample_composition_by_type)
+
+    # Invariants (Finding A)
+    assert sample_manifest_count == requested_story_samples, f"Manifest count mismatch: {sample_manifest_count} != {requested_story_samples}"
+    assert sample_manifest_count == len(sample_manifest), f"Manifest len mismatch: {sample_manifest_count} != {len(sample_manifest)}"
+    assert sum(sample_composition_by_category.values()) == sample_manifest_count, "Category composition sum mismatch"
+    assert sum(sample_composition_by_type.values()) == sample_manifest_count, "Type composition sum mismatch"
 
     # 3. 載入與反序列化所有抽樣話數，完整記錄 parsing accounting
     commands_pool: List[Tuple[int, List[Tuple[int, List[Any]]]]] = []
@@ -590,6 +635,13 @@ def run_semantics_audit(
     sound_dir = project_root / "dashboard" / "sound" / "story_vo"
     timing_results = analyze_timing_and_voice(commands_pool, sound_dir, ffprobe_path, max_alignment_samples)
 
+    # Invariants (Finding B): timing occurrence == sequence occurrence
+    for cid in [13, 27, 61]:
+        cid_str = str(cid)
+        sc_occ = sequence_results[cid_str]["total_occurrences"]
+        tm_occ = timing_results["timing_distribution"][cid_str]["command_occurrence_count"]
+        assert tm_occ == sc_occ, f"Occurrence invariant failed for cmd {cid}: timing={tm_occ} != sequence={sc_occ}"
+
     print("  [Analysis 4] 提取全部 cmd 100 地點文字...")
     location_results = extract_location_command_data(commands_pool)
 
@@ -605,7 +657,11 @@ def run_semantics_audit(
             "successfully_parsed_stories": successfully_parsed_stories,
             "failed_story_parses": failed_story_parses
         },
-        "sample_composition_by_category": dict(sample_composition),
+        "sample_manifest_count": sample_manifest_count,
+        "sample_manifest_sha256": sample_manifest_sha256,
+        "sample_composition_by_category": sample_composition_by_category,
+        "sample_composition_by_type": sample_composition_by_type,
+        "sample_manifest": sample_manifest,
         "resource_prefix_inversion": prefix_results,
         "sequence_contexts": sequence_results,
         "timing_and_voice_correlation": timing_results,
