@@ -1228,8 +1228,6 @@ const QuestMapModule = {
                             <div class="summary-section" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 15px;">
                                 <div class="summary-tabs" style="display: flex; border-bottom: 2px solid rgba(94, 107, 125, 0.15); margin-bottom: 10px; gap: 8px;">
                                     <button id="tab-summary-episode" class="summary-tab active" onclick="QuestMapModule.switchSummaryTab('episode')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid var(--accent-color); color: var(--accent-color); cursor: pointer; font-weight: bold; font-size: 0.88rem;">📜 單話大綱</button>
-                                    <button id="tab-summary-ai-summary" class="summary-tab" onclick="QuestMapModule.switchSummaryTab('ai-summary')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid transparent; color: var(--text-secondary); cursor: pointer; font-size: 0.88rem;">💡 單話摘要簡介</button>
-                                    <button id="tab-summary-chapter" class="summary-tab" onclick="QuestMapModule.switchSummaryTab('chapter')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid transparent; color: var(--text-secondary); cursor: pointer; font-size: 0.88rem;">📖 整章摘要簡介</button>
                                 </div>
                                 <div id="cinema-summary" class="summary-text" style="flex: 1; overflow-y: auto; display: flex; flex-direction: column;">
                                     點擊右側章節清單，即刻載入大綱與對白文本。
@@ -1592,6 +1590,11 @@ const QuestMapModule = {
     },
 
     switchSummaryTab(tabType) {
+        // 安全門禁：暫時隱藏 Legacy AI Summary，禁止非行動端進入 chapter/ai-summary
+        const isMobile = window.innerWidth <= 768;
+        if (tabType === 'ai-summary' || (!isMobile && tabType === 'chapter')) {
+            tabType = 'episode';
+        }
         this.activeSummaryTab = tabType;
         this.updateSummaryTabsUI();
         this.updateSummaryContent();
@@ -1603,11 +1606,9 @@ const QuestMapModule = {
         if (!tabsContainer) return;
 
         if (!isMobile) {
-            // 桌機版回復原本的三頁籤
+            // 桌機版：暫時隱藏 AI 單話摘要與整章摘要頁籤，僅保留單話大綱
             tabsContainer.innerHTML = `
-                <button id="tab-summary-episode" class="summary-tab ${this.activeSummaryTab === 'episode' ? 'active' : ''}" onclick="QuestMapModule.switchSummaryTab('episode')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid ${this.activeSummaryTab === 'episode' ? 'var(--accent-color)' : 'transparent'}; color: ${this.activeSummaryTab === 'episode' ? 'var(--accent-color)' : 'var(--text-secondary)'}; cursor: pointer; font-weight: ${this.activeSummaryTab === 'episode' ? 'bold' : 'normal'}; font-size: 0.88rem;">📜 單話大綱</button>
-                <button id="tab-summary-ai-summary" class="summary-tab ${this.activeSummaryTab === 'ai-summary' ? 'active' : ''}" onclick="QuestMapModule.switchSummaryTab('ai-summary')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid ${this.activeSummaryTab === 'ai-summary' ? 'var(--accent-color)' : 'transparent'}; color: ${this.activeSummaryTab === 'ai-summary' ? 'var(--accent-color)' : 'var(--text-secondary)'}; cursor: pointer; font-weight: ${this.activeSummaryTab === 'ai-summary' ? 'bold' : 'normal'}; font-size: 0.88rem;">💡 單話摘要簡介</button>
-                <button id="tab-summary-chapter" class="summary-tab ${this.activeSummaryTab === 'chapter' ? 'active' : ''}" onclick="QuestMapModule.switchSummaryTab('chapter')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid ${this.activeSummaryTab === 'chapter' ? 'var(--accent-color)' : 'transparent'}; color: ${this.activeSummaryTab === 'chapter' ? 'var(--accent-color)' : 'var(--text-secondary)'}; cursor: pointer; font-weight: ${this.activeSummaryTab === 'chapter' ? 'bold' : 'normal'}; font-size: 0.88rem;">📖 整章摘要簡介</button>
+                <button id="tab-summary-episode" class="summary-tab active" onclick="QuestMapModule.switchSummaryTab('episode')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid var(--accent-color); color: var(--accent-color); cursor: pointer; font-weight: bold; font-size: 0.88rem;">📜 單話大綱</button>
             `;
             return;
         }
@@ -1668,7 +1669,12 @@ const QuestMapModule = {
 
         const isMobile = window.innerWidth <= 768;
 
-        if (this.activeSummaryTab === 'episode' || (isMobile && this.activeSummaryTab !== 'ai-summary')) {
+        // 安全防護：若處於 hidden tab 狀態，強制回退至 'episode'
+        if (this.activeSummaryTab === 'ai-summary' || (!isMobile && this.activeSummaryTab === 'chapter')) {
+            this.activeSummaryTab = 'episode';
+        }
+
+        if (this.activeSummaryTab === 'episode' || isMobile) {
             try {
                 let tableName = 'story_detail';
                 if (story.isEvent) {
