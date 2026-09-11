@@ -748,13 +748,13 @@ class TestOfficialMetadataPipeline(unittest.TestCase):
             res_strict = ValidationResult()
             ok_strict = validate_official_story_metadata(mock_board, check_dist=False, res=res_strict, allow_bootstrap_incomplete=False, verbose=False)
             self.assertFalse(ok_strict)
-            self.assertTrue(any("未知/非 Canonical 話數元數據" in err for err in res_strict.errors))
+            self.assertTrue(any("非 Eligible 話數元數據" in err or "非 Canonical 話數元數據" in err for err in res_strict.errors))
 
             # Dev 模式：發出 Warning
             res_dev = ValidationResult()
             ok_dev = validate_official_story_metadata(mock_board, check_dist=False, res=res_dev, allow_bootstrap_incomplete=True, verbose=False)
             self.assertTrue(ok_dev)
-            self.assertTrue(any("非 Canonical 話數元數據" in w for w in res_dev.warnings))
+            self.assertTrue(any("非 Eligible 話數元數據" in w or "非 Canonical 話數元數據" in w for w in res_dev.warnings))
 
         # 2. Universe 非 VALID 時 strict 模式拒絕
         mock_univ_degraded = CanonicalStoryUniverse(
@@ -938,6 +938,374 @@ class TestOfficialMetadataPipeline(unittest.TestCase):
         self.assertTrue(univ.source_status["tracked_characters"].startswith("ERROR"))
         self.assertEqual(univ.analysis_status, CoverageAnalysisStatus.DEGRADED)
         self.assertTrue(len(univ.analysis_errors) > 0)
+
+
+
+    # ----------------------------------------------------------------------
+    # 31. Metadata Eligible Universe: Required + Local + Bundle -> Eligible
+    # ----------------------------------------------------------------------
+    def test_31_required_local_bundle_is_eligible(self):
+        """31. 驗證 Required 話數且本地存在 story JSON 時，歸入 eligible_ids"""
+        mock_dash = self.tmp_path / "dashboard_31"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101},
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids={100101},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        from pipeline.coverage import build_metadata_eligible_story_universe
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ):
+            m_univ = build_metadata_eligible_story_universe(mock_dash)
+            self.assertEqual(m_univ.eligible_ids, {100101})
+            self.assertEqual(len(m_univ.missing_required_local_ids), 0)
+
+    # ----------------------------------------------------------------------
+    # 32. Metadata Eligible Universe: Optional + Local -> Eligible
+    # ----------------------------------------------------------------------
+    def test_32_optional_local_is_eligible(self):
+        """32. 驗證 Optional 話數且本地存在 story JSON 時，歸入 eligible_ids"""
+        mock_dash = self.tmp_path / "dashboard_32"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "200101.json").write_text("[]", encoding="utf-8")
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids=set(),
+            optional_ids={200101},
+            unknown_ids=set(),
+            expected_ids={200101},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        from pipeline.coverage import build_metadata_eligible_story_universe
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ):
+            m_univ = build_metadata_eligible_story_universe(mock_dash)
+            self.assertEqual(m_univ.eligible_ids, {200101})
+            self.assertEqual(len(m_univ.optional_not_local_ids), 0)
+
+    # ----------------------------------------------------------------------
+    # 33. Metadata Eligible Universe: Optional + NOT Local -> NOT Eligible & Allows Complete
+    # ----------------------------------------------------------------------
+    def test_33_optional_not_local_not_eligible_allows_strict_complete(self):
+        """33. 驗證 Optional 話數若本地無 story JSON，不進入 eligible_ids，且不阻止 strict complete"""
+        mock_dash = self.tmp_path / "dashboard_33"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+        # 200101 為 optional，本地無對應 json
+
+        manifest_file = mock_dash / "data" / "official_story_metadata.json"
+        batch_update_manifest_entries(
+            {100101: self._create_mock_entry(100101)},
+            truth_version="00600025",
+            filepath=manifest_file
+        )
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101},
+            optional_ids={200101},
+            unknown_ids=set(),
+            expected_ids={100101, 200101},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ):
+            res = ValidationResult()
+            ok = validate_official_story_metadata(mock_dash, check_dist=False, res=res, allow_bootstrap_incomplete=False, verbose=False)
+            self.assertTrue(ok)
+            self.assertEqual(len(res.errors), 0)
+
+    # ----------------------------------------------------------------------
+    # 34. Metadata Eligible Universe: Required + NOT Local -> Strict FAIL
+    # ----------------------------------------------------------------------
+    def test_34_required_not_local_causes_strict_fail(self):
+        """34. 驗證 Required 話數若本地缺少 story JSON，Strict 門禁堅決拒絕 (Hard FAIL)"""
+        mock_dash = self.tmp_path / "dashboard_34"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        # 100101 為 required，但本地目錄為空
+
+        manifest_file = mock_dash / "data" / "official_story_metadata.json"
+        batch_update_manifest_entries(
+            {100101: self._create_mock_entry(100101)},
+            truth_version="00600025",
+            filepath=manifest_file
+        )
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101},
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids={100101},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ):
+            res = ValidationResult()
+            ok = validate_official_story_metadata(mock_dash, check_dist=False, res=res, allow_bootstrap_incomplete=False, verbose=False)
+            self.assertFalse(ok)
+            self.assertTrue(any("核心必備劇本缺少本地 JSON" in err for err in res.errors))
+
+    # ----------------------------------------------------------------------
+    # 35. Canonical {1,2,3}, Local {1,2}, 3 Optional, Manifest {1,2} -> Strict PASS
+    # ----------------------------------------------------------------------
+    def test_35_canonical_expected_123_local_12_opt_3_manifest_12_strict_pass(self):
+        """35. 驗證 Canonical {1,2,3}、Local {1,2}、3 Optional、Manifest {1,2} 情況下 Strict 驗證 PASS"""
+        mock_dash = self.tmp_path / "dashboard_35"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+        (mock_dash / "story" / "100102.json").write_text("[]", encoding="utf-8")
+
+        manifest_file = mock_dash / "data" / "official_story_metadata.json"
+        batch_update_manifest_entries(
+            {100101: self._create_mock_entry(100101), 100102: self._create_mock_entry(100102)},
+            truth_version="00600025",
+            filepath=manifest_file
+        )
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101},
+            optional_ids={100102, 100103},
+            unknown_ids=set(),
+            expected_ids={100101, 100102, 100103},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ):
+            res = ValidationResult()
+            ok = validate_official_story_metadata(mock_dash, check_dist=False, res=res, allow_bootstrap_incomplete=False, verbose=False)
+            self.assertTrue(ok)
+            self.assertEqual(len(res.errors), 0)
+
+    # ----------------------------------------------------------------------
+    # 36. Same as 35 but 3 is Required -> Strict FAIL
+    # ----------------------------------------------------------------------
+    def test_36_canonical_expected_123_local_12_req_3_manifest_12_strict_fail(self):
+        """36. 驗證當話數 3 為 Required 卻缺少本地 JSON 時，Strict 驗證堅決 FAIL"""
+        mock_dash = self.tmp_path / "dashboard_36"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+        (mock_dash / "story" / "100102.json").write_text("[]", encoding="utf-8")
+
+        manifest_file = mock_dash / "data" / "official_story_metadata.json"
+        batch_update_manifest_entries(
+            {100101: self._create_mock_entry(100101), 100102: self._create_mock_entry(100102)},
+            truth_version="00600025",
+            filepath=manifest_file
+        )
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101, 100103},  # 100103 是 required 但本地無 JSON
+            optional_ids={100102},
+            unknown_ids=set(),
+            expected_ids={100101, 100102, 100103},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ):
+            res = ValidationResult()
+            ok = validate_official_story_metadata(mock_dash, check_dist=False, res=res, allow_bootstrap_incomplete=False, verbose=False)
+            self.assertFalse(ok)
+            self.assertTrue(any("核心必備劇本缺少本地 JSON" in err for err in res.errors))
+
+    # ----------------------------------------------------------------------
+    # 37. Optional Story 3 Adds Local JSON, Old Manifest {1,2} -> Strict FAIL missing 3
+    # ----------------------------------------------------------------------
+    def test_37_optional_story_3_adds_local_json_old_manifest_12_strict_fail(self):
+        """37. 驗證當 Optional 話數 3 新增本地 JSON 但 Manifest 尚未同步時，Strict 驗證回報缺失 3"""
+        mock_dash = self.tmp_path / "dashboard_37"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+        (mock_dash / "story" / "100102.json").write_text("[]", encoding="utf-8")
+        (mock_dash / "story" / "100103.json").write_text("[]", encoding="utf-8")  # 新增 100103
+
+        manifest_file = mock_dash / "data" / "official_story_metadata.json"
+        batch_update_manifest_entries(
+            {100101: self._create_mock_entry(100101), 100102: self._create_mock_entry(100102)},
+            truth_version="00600025",
+            filepath=manifest_file
+        )
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101},
+            optional_ids={100102, 100103},
+            unknown_ids=set(),
+            expected_ids={100101, 100102, 100103},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ):
+            res = ValidationResult()
+            ok = validate_official_story_metadata(mock_dash, check_dist=False, res=res, allow_bootstrap_incomplete=False, verbose=False)
+            self.assertFalse(ok)
+            self.assertTrue(any("缺失 1 話" in err for err in res.errors))
+
+    # ----------------------------------------------------------------------
+    # 38. Update Manifest with 3 -> Strict PASS
+    # ----------------------------------------------------------------------
+    def test_38_manifest_updated_with_3_strict_pass(self):
+        """38. 驗證 Manifest 補齊話數 3 後，Strict 驗證重新恢復 PASS"""
+        mock_dash = self.tmp_path / "dashboard_38"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+        (mock_dash / "story" / "100102.json").write_text("[]", encoding="utf-8")
+        (mock_dash / "story" / "100103.json").write_text("[]", encoding="utf-8")
+
+        manifest_file = mock_dash / "data" / "official_story_metadata.json"
+        batch_update_manifest_entries(
+            {
+                100101: self._create_mock_entry(100101),
+                100102: self._create_mock_entry(100102),
+                100103: self._create_mock_entry(100103)
+            },
+            truth_version="00600025",
+            filepath=manifest_file
+        )
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101},
+            optional_ids={100102, 100103},
+            unknown_ids=set(),
+            expected_ids={100101, 100102, 100103},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ):
+            res = ValidationResult()
+            ok = validate_official_story_metadata(mock_dash, check_dist=False, res=res, allow_bootstrap_incomplete=False, verbose=False)
+            self.assertTrue(ok)
+            self.assertEqual(len(res.errors), 0)
+
+    # ----------------------------------------------------------------------
+    # 39. Eligible Story Without Bundle Ref -> Bootstrap Preflight FAIL
+    # ----------------------------------------------------------------------
+    @patch("pipeline.coverage.build_canonical_story_universe")
+    @patch("tools.pcrd_fetch.load_story_manifest_bundle_refs")
+    def test_39_eligible_story_without_bundle_ref_fails_bootstrap_preflight(self, mock_load_refs, mock_build_univ):
+        """39. 驗證當 Eligible 話數缺少 CDN bundle_ref 時，rebuild preflight 堅決報錯 (FAIL)"""
+        mock_dash = self.tmp_path / "dashboard_39"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+
+        mock_build_univ.return_value = CanonicalStoryUniverse(
+            required_ids={100101},
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids={100101},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        # mock bundle_refs 為空字典 (缺少 100101)
+        mock_load_refs.return_value = {}
+
+        ok, m_ver, count, failed = rebuild_official_metadata(
+            truth_version="00600025",
+            output_path=mock_dash / "data" / "official_story_metadata.json",
+            dashboard_dir=mock_dash
+        )
+        self.assertFalse(ok)
+        self.assertIn(100101, failed)
+
+    # ----------------------------------------------------------------------
+    # 40. Optional Non-Local Without Bundle Ref -> Bootstrap Preflight Does NOT Fail
+    # ----------------------------------------------------------------------
+    @patch("pipeline.coverage.build_canonical_story_universe")
+    @patch("tools.pcrd_fetch.load_story_manifest_bundle_refs")
+    def test_40_optional_non_local_without_bundle_ref_succeeds_bootstrap_preflight(self, mock_load_refs, mock_build_univ):
+        """40. 驗證 Optional 且非本地之話數 (如 DB 預載) 即使缺少 bundle_ref，亦不阻止 eligible bootstrap 執行"""
+        mock_dash = self.tmp_path / "dashboard_40"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+        # 100102 為 optional 且本地無 json
+
+        mock_build_univ.return_value = CanonicalStoryUniverse(
+            required_ids={100101},
+            optional_ids={100102},
+            unknown_ids=set(),
+            expected_ids={100101, 100102},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+        # CDN 僅有 100101 之 bundle_ref (無 100102)
+        mock_load_refs.return_value = {
+            100101: StoryBundleRef(
+                story_id=100101,
+                truth_version="00600025",
+                cdn_bundle_hash="hash100101",
+                bundle_name="storydata_100101.unity3d"
+            )
+        }
+        mock_cmds = [(0, ["話數標題"]), (1, ["官方大綱文字"]), (6, ["佩可", "台詞"])]
+        with patch("pipeline.fetch.get_truth_version", return_value="00600025"), \
+             patch("urllib.request.urlopen", return_value=MockResponse(b"mock_bundle")), \
+             patch("UnityPy.load", return_value=DummyBundle()), \
+             patch("tools.pcrd_fetch._deserialize_story_raw", return_value=mock_cmds):
+            ok, m_ver, count, failed = rebuild_official_metadata(
+                truth_version="00600025",
+                output_path=mock_dash / "data" / "official_story_metadata.json",
+                dashboard_dir=mock_dash
+            )
+            self.assertTrue(ok)
+            self.assertEqual(count, 1)
+            self.assertEqual(failed, [])
+
+    # ----------------------------------------------------------------------
+    # 41. Validator Zero Live Network Dependency
+    # ----------------------------------------------------------------------
+    def test_41_validator_zero_live_network_dependency(self):
+        """41. 驗證 Validator 在完全阻斷網路的情況下，仍能 100% 離線完成驗證"""
+        mock_dash = self.tmp_path / "dashboard_41"
+        (mock_dash / "data").mkdir(parents=True)
+        (mock_dash / "story").mkdir(parents=True)
+        (mock_dash / "story" / "100101.json").write_text("[]", encoding="utf-8")
+
+        manifest_file = mock_dash / "data" / "official_story_metadata.json"
+        batch_update_manifest_entries(
+            {100101: self._create_mock_entry(100101)},
+            truth_version="00600025",
+            filepath=manifest_file
+        )
+
+        mock_univ = CanonicalStoryUniverse(
+            required_ids={100101},
+            optional_ids=set(),
+            unknown_ids=set(),
+            expected_ids={100101},
+            source_status={"database": "OK", "tracked_characters": "OK", "branch_stories": "OK", "extra_events": "OK"},
+            analysis_status=CoverageAnalysisStatus.VALID,
+            analysis_errors=[]
+        )
+
+        def forbidden_network(*args, **kwargs):
+            raise RuntimeError("Live Network Access is Strictly Forbidden in Validator!")
+
+        with patch("pipeline.coverage.build_canonical_story_universe", return_value=mock_univ),              patch("urllib.request.urlopen", side_effect=forbidden_network),              patch("tools.pcrd_fetch._http_get", side_effect=forbidden_network):
+            res = ValidationResult()
+            ok = validate_official_story_metadata(mock_dash, check_dist=False, res=res, allow_bootstrap_incomplete=False, verbose=False)
+            self.assertTrue(ok)
+            self.assertEqual(len(res.errors), 0)
 
 
 if __name__ == "__main__":

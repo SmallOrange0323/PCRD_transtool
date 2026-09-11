@@ -428,22 +428,25 @@ def rebuild_official_metadata(
         # Sample 模式防污染：自動寫入 scratch/ 目錄
         target_out = PROJECT_ROOT / "scratch" / "sample_official_metadata.json"
 
-    # 1. 決定目標話數 (Canonical Expected Universe 或顯式傳入)
+    # 1. 決定目標話數 (Metadata Eligible Universe 或顯式傳入)
     if target_story_ids is not None:
         target_ids = list(target_story_ids)
         if not target_ids:
             return False, None, 0, []
     else:
-        from pipeline.coverage import build_canonical_story_universe, CoverageAnalysisStatus
+        from pipeline.coverage import build_metadata_eligible_story_universe, CoverageAnalysisStatus
         target_dash = Path(dashboard_dir) if dashboard_dir else DASHBOARD_DIR
-        univ = build_canonical_story_universe(dashboard_dir=target_dash)
-        if univ.analysis_status != CoverageAnalysisStatus.VALID:
+        metadata_univ = build_metadata_eligible_story_universe(dashboard_dir=target_dash)
+        if metadata_univ.canonical.analysis_status != CoverageAnalysisStatus.VALID:
             # 來源 DEGRADED 或 INVALID，Fail Loudly，禁止 destructive replacement
             return False, None, 0, []
-        if len(univ.expected_ids) == 0:
+        if len(metadata_univ.missing_required_local_ids) > 0:
+            # Required story 缺少本地 story JSON，視為不完整狀態，禁止 replacement
+            return False, None, 0, sorted(list(metadata_univ.missing_required_local_ids))
+        if len(metadata_univ.eligible_ids) == 0:
             # 空宇宙禁止 replacement
             return False, None, 0, []
-        target_ids = sorted(list(univ.expected_ids))
+        target_ids = sorted(list(metadata_univ.eligible_ids))
 
     if sample_limit is not None:
         target_ids = target_ids[:sample_limit]

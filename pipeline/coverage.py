@@ -122,6 +122,16 @@ class CanonicalStoryUniverse:
     overlaps: Dict[str, int] = field(default_factory=dict)
 
 @dataclass
+class MetadataEligibleUniverse:
+    canonical: CanonicalStoryUniverse
+    local_present_ids: Set[int]
+    eligible_ids: Set[int]
+    missing_required_local_ids: Set[int]
+    optional_not_local_ids: Set[int]
+    unknown_not_local_ids: Set[int]
+
+
+@dataclass
 class CoverageResult:
     analysis_status: str  # VALID, DEGRADED, INVALID
     analysis_errors: List[str]
@@ -417,3 +427,37 @@ def get_canonical_expected_story_ids(
     """
     univ = build_canonical_story_universe(dashboard_dir=dashboard_dir)
     return univ.required_ids if required_only else univ.expected_ids
+
+
+def build_metadata_eligible_story_universe(
+    dashboard_dir: Optional[Union[str, Path]] = None
+) -> MetadataEligibleUniverse:
+    """
+    建構 Story Map 元數據適用宇宙 (Metadata Eligible Universe)：
+    由 Canonical Expected Story IDs ∩ Locally Present Numeric Story JSON IDs 構成。
+    代表目前 Story Map 前端本地實際存在、可閱讀且需要 runtime metadata sidecar 的故事話數集合。
+    """
+    base_dir = Path(dashboard_dir) if dashboard_dir else DASHBOARD_DIR
+    story_dir = base_dir / "story"
+
+    local_present: Set[int] = set()
+    if story_dir.exists():
+        for p in story_dir.glob("*.json"):
+            if p.stem.isdigit():
+                local_present.add(int(p.stem))
+
+    univ = build_canonical_story_universe(dashboard_dir=dashboard_dir)
+
+    eligible_ids = univ.expected_ids & local_present
+    missing_required_local_ids = univ.required_ids - local_present
+    optional_not_local_ids = univ.optional_ids - local_present
+    unknown_not_local_ids = univ.unknown_ids - local_present
+
+    return MetadataEligibleUniverse(
+        canonical=univ,
+        local_present_ids=local_present,
+        eligible_ids=eligible_ids,
+        missing_required_local_ids=missing_required_local_ids,
+        optional_not_local_ids=optional_not_local_ids,
+        unknown_not_local_ids=unknown_not_local_ids,
+    )
