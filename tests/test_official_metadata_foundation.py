@@ -591,7 +591,7 @@ class TestOfficialMetadataFoundation(unittest.TestCase):
 
     def test_manifest_contract_rejects_invalid_bundle_sha256_format(self):
         """25. bundle_sha256 若存在，必須嚴格為 64 碼十六進位字串"""
-        invalid_hashes = ["short_hash", "z" * 64, "1" * 63, "1" * 65]
+        invalid_hashes = ["short_hash", "z" * 64, "1" * 63, "1" * 65, "", "   "]
         for bad_hash in invalid_hashes:
             ep = {
                 "chapter_title": "標題",
@@ -765,6 +765,91 @@ class TestOfficialMetadataFoundation(unittest.TestCase):
         res = load_metadata_manifest(fake_path, default_truth_version="10080000")
         self.assertEqual(res["truth_version"], "10080000")
         self.assertEqual(res["episode_count"], 0)
+
+    def test_manifest_contract_bundle_sha256_absent_is_valid(self):
+        """32. bundle_sha256 欄位 absent 為合規狀態 (Optional, not nullable)"""
+        ep = {
+            "chapter_title": "標題",
+            "official_synopsis": None,
+            "subtitle": None,
+            "provenance": {
+                "truth_version": "10080000",
+                "cdn_bundle_hash": "h",
+                "bundle_name": "b",
+                "cmd1_present": False,
+                "cmd1_nonempty": False,
+                "cmd32_present": False,
+                "cmd32_nonempty": False
+                # bundle_sha256 key 完全 absent
+            }
+        }
+        manifest = {
+            "schema_version": SCHEMA_VERSION,
+            "truth_version": "10080000",
+            "episode_count": 1,
+            "episodes": {"100101": ep}
+        }
+        validate_manifest_dict_contract(manifest)
+        serialized = serialize_canonical_manifest(manifest)
+        parsed = json.loads(serialized)
+        self.assertNotIn("bundle_sha256", parsed["episodes"]["100101"]["provenance"])
+
+    def test_manifest_contract_rejects_bundle_sha256_present_null(self):
+        """33. bundle_sha256 存在但為 null/None 時拒絕 (Optional != Nullable)"""
+        ep = {
+            "chapter_title": "標題",
+            "official_synopsis": None,
+            "subtitle": None,
+            "provenance": {
+                "truth_version": "10080000",
+                "cdn_bundle_hash": "h",
+                "bundle_name": "b",
+                "bundle_sha256": None,  # present 但為 None
+                "cmd1_present": False,
+                "cmd1_nonempty": False,
+                "cmd32_present": False,
+                "cmd32_nonempty": False
+            }
+        }
+        manifest = {
+            "schema_version": SCHEMA_VERSION,
+            "truth_version": "10080000",
+            "episode_count": 1,
+            "episodes": {"100101": ep}
+        }
+        with self.assertRaises(ValueError) as ctx:
+            validate_manifest_dict_contract(manifest)
+        self.assertIn("bundle_sha256", str(ctx.exception))
+        self.assertIn("不接受 null", str(ctx.exception))
+
+    def test_manifest_contract_rejects_empty_or_whitespace_chapter_title(self):
+        """34. chapter_title 為空字串或純空白字串時拒絕 (必須規整為 null)"""
+        for bad_title in ["", "   ", "\t", "\n"]:
+            ep = {
+                "chapter_title": bad_title,
+                "official_synopsis": None,
+                "subtitle": None,
+                "provenance": {
+                    "truth_version": "10080000",
+                    "cdn_bundle_hash": "h",
+                    "bundle_name": "b",
+                    "cmd1_present": False,
+                    "cmd1_nonempty": False,
+                    "cmd32_present": False,
+                    "cmd32_nonempty": False
+                }
+            }
+            manifest = {
+                "schema_version": SCHEMA_VERSION,
+                "truth_version": "10080000",
+                "episode_count": 1,
+                "episodes": {"100101": ep}
+            }
+            with self.subTest(bad_title=bad_title):
+                with self.assertRaises(ValueError) as ctx:
+                    validate_manifest_dict_contract(manifest)
+                self.assertIn("chapter_title", str(ctx.exception))
+                self.assertIn("必須規整為 null", str(ctx.exception))
 
 
 if __name__ == "__main__":

@@ -183,8 +183,13 @@ def validate_manifest_dict_contract(manifest: Dict[str, Any]) -> None:
                 f"[ContractError] 話數 {sid} 欄位不符 (additionalProperties: false): 缺少 {missing}, 多出 {extra}"
             )
 
-        if ep["chapter_title"] is not None and not isinstance(ep["chapter_title"], str):
-            raise ValueError(f"[ContractError] 話數 {sid} chapter_title 必須為 string 或 null")
+        c_title = ep["chapter_title"]
+        if c_title is not None:
+            if not isinstance(c_title, str):
+                raise ValueError(f"[ContractError] 話數 {sid} chapter_title 必須為 string 或 null")
+            if not c_title.strip():
+                raise ValueError(f"[ContractError] 話數 {sid} chapter_title 為空字串或純空白字串，必須規整為 null")
+
         if ep["official_synopsis"] is not None and not isinstance(ep["official_synopsis"], str):
             raise ValueError(f"[ContractError] 話數 {sid} official_synopsis 必須為 string 或 null")
         if ep["subtitle"] is not None and not isinstance(ep["subtitle"], str):
@@ -217,10 +222,13 @@ def validate_manifest_dict_contract(manifest: Dict[str, Any]) -> None:
         if not isinstance(p_bn, str) or not p_bn.strip():
             raise ValueError(f"[ContractError] 話數 {sid} provenance.bundle_name 必須為非空字串")
 
-        p_sha = prov.get("bundle_sha256")
-        if p_sha is not None:
+        if "bundle_sha256" in prov:
+            p_sha = prov["bundle_sha256"]
             if not isinstance(p_sha, str) or not re.match(r"^[0-9a-fA-F]{64}$", p_sha):
-                raise ValueError(f"[ContractError] 話數 {sid} provenance.bundle_sha256 必須為 64 位十六進位字串: {p_sha}")
+                raise ValueError(
+                    f"[ContractError] 話數 {sid} provenance.bundle_sha256 存在時必須為 64 位十六進位字串，"
+                    f"不接受 null、空字串或無效格式: {p_sha!r}"
+                )
 
         for flag_k in ["cmd1_present", "cmd1_nonempty", "cmd32_present", "cmd32_nonempty"]:
             if not isinstance(prov[flag_k], bool):
@@ -273,7 +281,7 @@ def serialize_canonical_manifest(manifest: Dict[str, Any]) -> str:
             "cmd32_present": prov["cmd32_present"],
             "cmd32_nonempty": prov["cmd32_nonempty"]
         }
-        if "bundle_sha256" in prov and prov["bundle_sha256"] is not None:
+        if "bundle_sha256" in prov:
             sorted_prov["bundle_sha256"] = prov["bundle_sha256"]
 
         sorted_episodes[sid] = {
