@@ -70,6 +70,14 @@
                         return null;
                     }
 
+                    // 4. 嚴格檢查所有 episode entries 的形狀 (不得為 null, 必須為 object, 不得為 Array)
+                    for (const [sid, ep] of Object.entries(episodes)) {
+                        if (ep === null || typeof ep !== "object" || Array.isArray(ep)) {
+                            console.warn(`[StoryDataService] 話數 ${sid} 之元數據結構無效 (非物件或為 Array)`);
+                            return null;
+                        }
+                    }
+
                     this._metadataCache = episodes;
                     return this._metadataCache;
                 } catch (err) {
@@ -94,7 +102,10 @@
             if (!episodes) return null;
             const sidStr = String(storyId);
             const ep = episodes[sidStr];
-            return (ep && typeof ep === "object") ? ep : null;
+            if (ep === null || typeof ep !== "object" || Array.isArray(ep)) {
+                return null;
+            }
+            return ep;
         }
 
         /**

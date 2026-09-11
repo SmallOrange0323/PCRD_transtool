@@ -1376,6 +1376,9 @@ const QuestMapModule = {
         document.querySelectorAll('.story-item').forEach(el => el.classList.remove('active'));
         const activeItem = document.getElementById(`story-item-${storyId}`);
         if (activeItem) activeItem.classList.add('active');
+        this._storyRenderToken = (this._storyRenderToken || 0) + 1;
+        const currentToken = this._storyRenderToken;
+        this.activeStoryId = storyId;
 
         const story = this.getStoryById(storyId);
         if (!story) return;
@@ -1398,10 +1401,12 @@ const QuestMapModule = {
             }
             titleEl.innerText = story.title || "話標題";
 
-            await this.updateSummaryContent();
+            // 1. 同步建立 shell 與對白容器 (零阻塞)
+            this.updateSummaryContent(currentToken);
 
+            // 2. 立即啟動對白文本載入 (不等待任何 metadata 非同步請求)
             if (this.isDialogueExpanded) {
-                this.loadDialogue(storyId);
+                this.loadDialogue(storyId, currentToken);
             }
             this.updateNavigationButtons();
             this.updateReaderState();
@@ -1660,13 +1665,15 @@ const QuestMapModule = {
         tabsContainer.innerHTML = tabsHtml;
     },
 
-    async updateSummaryContent() {
+    updateSummaryContent(token) {
         const summaryEl = document.getElementById('cinema-summary');
         if (!summaryEl || !this.activeStoryId) return;
 
         const story = this.getStoryById(this.activeStoryId);
         if (!story) return;
 
+        const currentStoryId = this.activeStoryId;
+        const currentToken = token || this._storyRenderToken;
         const isMobile = window.innerWidth <= 768;
 
         // 安全防護：若處於 hidden tab 狀態，強制回退至 'episode'
@@ -1676,25 +1683,12 @@ const QuestMapModule = {
 
         if (this.activeSummaryTab === 'episode' || isMobile) {
             try {
-                let officialSynopsis = null;
-                if (window.StoryDataService) {
-                    try {
-                        officialSynopsis = await window.StoryDataService.getOfficialSynopsis(this.activeStoryId);
-                    } catch (err) {
-                        console.warn('[QuestMapModule] 取得官方大綱失敗:', err);
-                    }
-                }
-
                 let topDirOrSummaryHtml = "";
                 if (isMobile) {
                     topDirOrSummaryHtml = this.getQuickDirectoryHtml();
                 } else {
-                    const synopsisDisplay = officialSynopsis
-                        ? `<p style="margin:0; color: var(--text-primary); line-height: 1.7;">${this.escapeHtml(officialSynopsis)}</p>`
-                        : `<p style="margin:0; color: var(--text-secondary); font-size: 0.88rem;">本話暫無官方大綱</p>`;
-
                     topDirOrSummaryHtml = `
-                        <div style="
+                        <div id="official-synopsis-box" style="
                             background: linear-gradient(135deg, rgba(232,56,117,0.04) 0%, rgba(196,36,106,0.04) 100%);
                             border: 1px solid rgba(232,56,117,0.15);
                             border-radius: 12px;
@@ -1714,7 +1708,7 @@ const QuestMapModule = {
                                     letter-spacing:1px;
                                 ">📌 官方大綱</span>
                             </div>
-                            ${synopsisDisplay}
+                            <p id="official-synopsis-content" style="margin:0; color: var(--text-secondary); font-size: 0.88rem;">正在載入官方大綱…</p>
                         </div>
                     `;
                 }
@@ -1748,9 +1742,14 @@ const QuestMapModule = {
                     </div>
                 `;
                 this.updateSummaryTabsUI();
+
+                // 桌機版非同步載入官方大綱 (完全不阻塞對白文本載入)
+                if (!isMobile) {
+                    this.refreshOfficialSynopsis(currentStoryId, currentToken);
+                }
             } catch (e) {
                 console.error(e);
-                summaryEl.innerHTML = `<div style="color: #ff6b6b;">無法載入官方大綱。</div>`;
+                summaryEl.innerHTML = `<div style="color: #ff6b6b;">無法載入大綱與劇情視圖。</div>`;
             }
         } else if (this.activeSummaryTab === 'ai-summary') {
             try {
@@ -1867,9 +1866,48 @@ const QuestMapModule = {
         }
     },
 
-    async loadDialogue(storyId) {
+    async refreshOfficialSynopsis(storyId, token) {
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) return; // Mobile 模式完全不發起 metadata fetch
+
+        let officialSynopsis = null;
+        if (window.StoryDataService) {
+            try {
+                officialSynopsis = await window.StoryDataService.getOfficialSynopsis(storyId);
+            } catch (err) {
+                console.warn('[QuestMapModule] 取得官方大綱失敗:', err);
+            }
+        }
+
+        // Stale Story Race Guard: 若使用者已切換至其他話數，忽略此延遲回傳之大綱
+        if (token !== this._storyRenderToken || this.activeStoryId !== storyId) {
+            return;
+        }
+
+        const synopsisEl = document.getElementById('official-synopsis-content');
+        if (!synopsisEl) return;
+
+        if (officialSynopsis && typeof officialSynopsis === 'string' && officialSynopsis.trim()) {
+            synopsisEl.textContent = officialSynopsis.trim();
+            synopsisEl.style.color = 'var(--text-primary)';
+            synopsisEl.style.lineHeight = '1.7';
+            synopsisEl.style.fontSize = '0.9rem';
+        } else {
+            synopsisEl.textContent = '本話暫無官方大綱';
+            synopsisEl.style.color = 'var(--text-secondary)';
+            synopsisEl.style.fontSize = '0.88rem';
+        }
+    },
+
+    async loadDialogue(storyId, token) {
+        const currentToken = token || this._storyRenderToken;
         const board = document.getElementById('dialogue-board');
         if (!board) return;
+
+        // 若切換話數，檢查 token
+        if (currentToken !== this._storyRenderToken || this.activeStoryId !== storyId) {
+            return;
+        }
 
         if (this.isLoadingDialogue) return;
         this.isLoadingDialogue = true;
@@ -1882,6 +1920,11 @@ const QuestMapModule = {
 
             const rawDialogueList = await response.json();
 
+            // 再次檢查 token (防止非同步 fetch 期間話數已切換)
+            if (currentToken !== this._storyRenderToken || this.activeStoryId !== storyId) {
+                return;
+            }
+
             if (!rawDialogueList || rawDialogueList.length === 0) {
                 window.DialogueView.renderEmpty(board);
                 return;
@@ -1891,6 +1934,11 @@ const QuestMapModule = {
             const { dialogueList, speakerNames } = window.DialogueNormalizer.normalize(rawDialogueList);
 
             await this.loadDialogueAvatars(speakerNames);
+
+            // 再次檢查 token (防止頭像查詢期間話數已切換)
+            if (currentToken !== this._storyRenderToken || this.activeStoryId !== storyId) {
+                return;
+            }
 
             const badgesBar = document.getElementById('chara-badges-bar');
             const cinemaPanel = document.querySelector('.cinema-panel');
@@ -1910,10 +1958,14 @@ const QuestMapModule = {
             });
 
         } catch (err) {
-            console.error("加載台詞失敗:", err);
-            window.DialogueView.renderError(board, storyId);
+            if (currentToken === this._storyRenderToken && this.activeStoryId === storyId) {
+                console.error("加載台詞失敗:", err);
+                window.DialogueView.renderError(board, storyId);
+            }
         } finally {
-            this.isLoadingDialogue = false;
+            if (currentToken === this._storyRenderToken) {
+                this.isLoadingDialogue = false;
+            }
         }
     },
 
@@ -2158,3 +2210,5 @@ const QuestMapModule = {
 if (window.ChapterDataService && window.AvatarService && window.SpeakerView && window.CharaModalView && window.DialogueNormalizer && window.MediaService) {
     console.log("[QuestMapModule] 所有相依服務已就緒");
 }
+
+window.QuestMapModule = QuestMapModule;
