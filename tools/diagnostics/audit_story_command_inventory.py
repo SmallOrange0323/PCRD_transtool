@@ -371,6 +371,26 @@ def run_command_census(project_root: Path, output_json: Path, max_limit: int = 2
         "stories": []
     })
 
+    # 新增專項覆蓋率追蹤器
+    bgm_stories = set()
+    se_stories = set()
+    ambience_stories = set()
+    bgm_by_cat = defaultdict(int)
+    se_by_cat = defaultdict(int)
+    ambience_by_cat = defaultdict(int)
+
+    cmd1_present_cnt = 0
+    cmd1_nonempty_cnt = 0
+    cmd1_empty_cnt = 0
+    cmd1_nonempty_by_cat = defaultdict(int)
+    cmd1_empty_by_cat = defaultdict(int)
+
+    cmd32_present_cnt = 0
+    cmd32_nonempty_cnt = 0
+    cmd32_empty_cnt = 0
+    cmd32_nonempty_by_cat = defaultdict(int)
+    cmd32_empty_by_cat = defaultdict(int)
+
     known_command_ids: Set[int] = set()
     last_new_cmd_sample_index = 0
     processed_count = 0
@@ -404,6 +424,41 @@ def run_command_census(project_root: Path, output_json: Path, max_limit: int = 2
         new_cmds_in_this_story = set()
         story_cmd_seq = [c[0] for c in commands]
         unique_cmds_in_story = set(story_cmd_seq)
+
+        # 追蹤 Union Staging Coverage (僅限本次 observed 的真實 ID)
+        if unique_cmds_in_story & {101, 103}:
+            bgm_stories.add(sid)
+            bgm_by_cat[cat] += 1
+        if unique_cmds_in_story & {26, 67}:
+            se_stories.add(sid)
+            se_by_cat[cat] += 1
+        if unique_cmds_in_story & {51}:
+            ambience_stories.add(sid)
+            ambience_by_cat[cat] += 1
+
+        # 追蹤 cmd 1 (大綱) 非空覆蓋率
+        cmd1_instances = [c[1] for c in commands if c[0] == 1]
+        if cmd1_instances:
+            cmd1_present_cnt += 1
+            has_nonempty_cmd1 = any(len(args) > 0 and str(args[0]).strip() != "" for args in cmd1_instances)
+            if has_nonempty_cmd1:
+                cmd1_nonempty_cnt += 1
+                cmd1_nonempty_by_cat[cat] += 1
+            else:
+                cmd1_empty_cnt += 1
+                cmd1_empty_by_cat[cat] += 1
+
+        # 追蹤 cmd 32 (副標題/話名) 非空覆蓋率
+        cmd32_instances = [c[1] for c in commands if c[0] == 32]
+        if cmd32_instances:
+            cmd32_present_cnt += 1
+            has_nonempty_cmd32 = any(len(args) > 0 and str(args[0]).strip() != "" for args in cmd32_instances)
+            if has_nonempty_cmd32:
+                cmd32_nonempty_cnt += 1
+                cmd32_nonempty_by_cat[cat] += 1
+            else:
+                cmd32_empty_cnt += 1
+                cmd32_empty_by_cat[cat] += 1
 
         for cmd in unique_cmds_in_story:
             if cmd not in known_command_ids:
@@ -489,15 +544,30 @@ def run_command_census(project_root: Path, output_json: Path, max_limit: int = 2
                         picked_set.add(s[0])
                     full_queue.extend(extra_batch)
 
-    saturation_reached = (processed_count - last_new_cmd_sample_index >= 50) or (processed_count >= max_limit)
+    samples_since_last_new = processed_count - last_new_cmd_sample_index
+    sample_level_saturation = (samples_since_last_new >= 50)
+    max_limit_reached = (processed_count >= max_limit)
+    if sample_level_saturation:
+        stop_reason = "SATURATION"
+    elif max_limit_reached:
+        stop_reason = "MAX_LIMIT"
+    else:
+        stop_reason = "QUEUE_EXHAUSTED"
+
     print("\n" + "=" * 60)
     print("📊 掃描完成統計 (Census Summary)")
     print("=" * 60)
     print(f"  總計處理故事數: {processed_count}")
     print(f"  狀態分佈: {stats}")
     print(f"  共發現獨立 Command IDs: {len(known_command_ids)} 個: {sorted(list(known_command_ids))}")
-    print(f"  最後發現新 Command 於第 {last_new_cmd_sample_index} 話 (距今已連續 {processed_count - last_new_cmd_sample_index} 話無新指令)")
-    print(f"  飽和收斂狀態 (Saturation Reached): {saturation_reached}")
+    print(f"  最後發現新 Command 於第 {last_new_cmd_sample_index} 話 (距今已連續 {samples_since_last_new} 話無新指令)")
+    print(f"  樣品級飽和狀態 (Sample-Level Saturation): {sample_level_saturation}")
+    print(f"  終止原因 (Stop Reason): {stop_reason}")
+    print(f"  BGM Union Coverage: {len(bgm_stories)} 話")
+    print(f"  SE Union Coverage: {len(se_stories)} 話")
+    print(f"  Ambience Union Coverage: {len(ambience_stories)} 話")
+    print(f"  cmd 1 (大綱): 存在 {cmd1_present_cnt} 話, 非空 {cmd1_nonempty_cnt} 話, 空值 {cmd1_empty_cnt} 話")
+    print(f"  cmd 32 (話名): 存在 {cmd32_present_cnt} 話, 非空 {cmd32_nonempty_cnt} 話, 空值 {cmd32_empty_cnt} 話")
 
     output_data = {
         "truth_version": truth_version,
@@ -514,8 +584,36 @@ def run_command_census(project_root: Path, output_json: Path, max_limit: int = 2
             "total_by_category": dict(sample_composition["total_by_category"])
         },
         "last_new_cmd_sample_index": last_new_cmd_sample_index,
-        "samples_since_last_new_cmd": processed_count - last_new_cmd_sample_index,
-        "saturation_reached": saturation_reached,
+        "samples_since_last_new_cmd": samples_since_last_new,
+        "sample_level_saturation": sample_level_saturation,
+        "max_limit_reached": max_limit_reached,
+        "stop_reason": stop_reason,
+        "saturation_reached": sample_level_saturation,  # 相容性保留
+        "synopsis_coverage": {
+            "cmd1_present_story_count": cmd1_present_cnt,
+            "cmd1_nonempty_story_count": cmd1_nonempty_cnt,
+            "cmd1_empty_story_count": cmd1_empty_cnt,
+            "cmd1_nonempty_story_count_by_category": dict(cmd1_nonempty_by_cat),
+            "cmd1_empty_story_count_by_category": dict(cmd1_empty_by_cat)
+        },
+        "subtitle_coverage": {
+            "cmd32_present_story_count": cmd32_present_cnt,
+            "cmd32_nonempty_story_count": cmd32_nonempty_cnt,
+            "cmd32_empty_story_count": cmd32_empty_cnt,
+            "cmd32_nonempty_story_count_by_category": dict(cmd32_nonempty_by_cat),
+            "cmd32_empty_story_count_by_category": dict(cmd32_empty_by_cat)
+        },
+        "staging_union_coverage": {
+            "bgm_candidate_command_ids": [101, 103],
+            "bgm_union_story_count": len(bgm_stories),
+            "bgm_union_story_count_by_category": dict(bgm_by_cat),
+            "se_candidate_command_ids": [26, 67],
+            "se_union_story_count": len(se_stories),
+            "se_union_story_count_by_category": dict(se_by_cat),
+            "ambience_candidate_command_ids": [51],
+            "ambience_union_story_count": len(ambience_stories),
+            "ambience_union_story_count_by_category": dict(ambience_by_cat)
+        },
         "commands": {}
     }
 

@@ -1,7 +1,7 @@
 # Story AssetBundle 抽樣指令全景盤點與未利用元數據調查報告
 # (180-Sample Story AssetBundle Command Census & Observed Inventory)
 
-> **文檔狀態**：Research R1.1 證據模型校正完成（180 話分層+偏向+擴展抽樣，樣品級飽和收斂確認）
+> **文檔狀態**：Research R1.2 證據模型最終校正完成（180 話分層+偏向+擴展抽樣，樣品級飽和收斂確認）
 > **建立日期**：2026-09-11
 > **關聯議題**：`[Research] 重新盤點 Story AssetBundle command schema 與未利用 metadata` (Issue #2)
 > **研究聲明與限制 (Caveat)**：
@@ -17,7 +17,8 @@
 TOTAL STORIES SCANNED        = 180 (分層抽樣 100 + 富媒體偏向 25 + 自適應擴展 55)
 SCAN COMPLETION STATUS       = PARSE_OK: 180, NETWORK_ERROR: 0, HASH_NOT_FOUND: 0, PARSE_ERROR: 0 (100% 成功)
 OBSERVED COMMAND COUNT       = 71 (指令 ID 介於 0 至 112)
-CONVERGENCE SATURATION       = SAMPLE_LEVEL_SATURATION REACHED (第 126 話發現最後一個新指令 cmd 47，其後連續 54 話無任何新指令，符合 >= 50 話飽和標準)
+CONVERGENCE SATURATION       = SAMPLE_LEVEL_SATURATION (最後新指令於第 126 話發現 cmd 47，其後連續 54 話無新指令)
+STOP REASON                  = SATURATION (max_limit_reached: False)
 TRUTH VERSION TESTED         = 00600025 (So-net 台服當前最新版本)
 
 CURRENT PARSER COVERAGE      = 8 / 71 (11.3%)
@@ -26,12 +27,14 @@ CURRENT PARSER COVERAGE      = 8 / 71 (11.3%)
   - PARSED_BUT_DROPPED       = 3 (cmd 0: 標題序號, cmd 1: 官方大綱, cmd 32: 話名副標題)
   - IGNORED BY PARSER        = 63 (共 63 個指令在現有解析流程中完全未處理)
 
-KEY PRODUCT OPPORTUNITIES    = 
-  1. 官方文本補完: cmd 1 (長篇劇情大綱) 與 cmd 32 (官方話名) 具極高價值，可直接解決 Phase 0 發現的官方大綱缺口。
-  2. 地點字卡支援: cmd 100 (Location Title Card，如「古城」) 具高可視性，可於前端話數開頭展現精緻地名標籤。
-  3. 音訊與氛圍升級: cmd 101/103 (BGM 相關), cmd 26/67 (SE 音效), cmd 51/52 (Ambience 環境音) 為沉浸式閱聽的關鍵核心。
-  4. 視覺與表情演出: cmd 3 (表情差分), cmd 59 (氣泡表情與音效), cmd 68 (舞台站位), cmd 70 (黑幕/白閃淡入淡出)。
-  5. 未來 Auto Play 候選時序: cmd 13 (台詞等待標記), cmd 27/61 (演出等待秒數) 為潛在時序控制依據 (待 R2 驗證)。
+OFFICIAL TEXT NON-EMPTY COVERAGE =
+  - cmd 1 (官方大綱) 存在率 : 180 / 180 (100.0%) | 非空內容: 161 話 (89.4%) | 空值: 19 話 (10.6%)
+  - cmd 32 (副標/話名) 存在率: 160 / 180 (88.9%) | 非空內容: 160 話 (100.0%) | 空值: 0 話 (0.0%)
+
+STAGING UNION STORY COVERAGE =
+  - BGM 候選涵蓋 (cmd 101, 103)   : 6 話 (3.3%)
+  - SE 候選涵蓋 (cmd 26, 67)     : 164 話 (91.1%)
+  - Ambience 候選涵蓋 (cmd 51)   : 83 話 (46.1%)
 ```
 
 ---
@@ -48,7 +51,7 @@ KEY PRODUCT OPPORTUNITIES    =
    - 由 `pick_rich_media_samples` 依影片、插畫、背景與語音密度評分，專門挑選高演出密度話數 (Main 24 話、Event 1 話)。
 3. **自適應擴展抽樣 (Adaptive Expansion, 55 話)**：
    - 當掃描至第 125 話時，距最後新指令僅 0 話 (未達 50 話飽和門檻)，自動自適應擴展 55 話 (5 大類別各 11 話)。
-   - 在第 126 話發現最後一個新指令 `cmd 47` 後，連續 54 話未再出現任何新指令，正式收斂。
+   - 在第 126 話發現最後一個新指令 `cmd 47` 後，連續 54 話未再出現任何新指令，正式觸發飽和收斂判定 (`stop_reason = SATURATION`)。
 
 ### 2. 實際樣本組成統計 (Machine-Readable Sample Composition)
 
@@ -82,15 +85,17 @@ KEY PRODUCT OPPORTUNITIES    =
 }
 ```
 
-### 3. 樣品級收斂統計 (Sample-Level Convergence)
-| 掃描進度區間 | 累積話數 | 累積唯一指令數 | 新增指令數 | 代表性新發現指令 |
-| :--- | :--- | :--- | :--- | :--- |
-| 前 10 話 (主線早期) | 10 | 48 | 48 | cmd 0, 1, 3, 4, 5, 6, 12, 13, 26, 32, 50, 68, 70, 101 等基礎指令 |
-| 11 ~ 30 話 (角色與公會) | 30 | 58 | 10 | cmd 51 (環境音), cmd 59 (氣泡表情), cmd 86/87/88 (運鏡平移/縮放) |
-| 31 ~ 70 話 (活動與六星) | 70 | 66 | 8 | cmd 46 (動畫), cmd 49 (插畫CG), cmd 67 (帶參數SE), cmd 100 (地點字卡) |
-| 71 ~ 125 話 (第3部與終局) | 125 | 70 | 4 | cmd 54 (角色換裝), cmd 98 (粒子特效), cmd 102 (多角色組合) |
-| 第 126 話 | 126 | 71 | 1 | cmd 47 (角色特殊光環特效) |
-| 127 ~ 180 話 (連續收斂檢驗) | 180 | 71 | 0 | **無任何新指令出現 (連續 54 話穩定飽和)** |
+### 3. 大綱與話名非空內容覆蓋率分析 (Synopsis & Subtitle Non-Empty Coverage)
+
+本輪研究最重要的發現之一：**「指令存在 (Command Presence)」不等於「具備非空內容 (Non-Empty Content)」**。在 180 話抽樣中：
+
+| 文本欄位 | 指令 ID | 抽樣話數存在率 | 非空內容話數 (率) | 空值內容話數 (率) | 分類非空分佈 (Non-Empty by Category) |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **官方長篇大綱** | `cmd 1` | 180/180 (100.0%) | **161/180 (89.4%)** | 19/180 (10.6%) | Main: 54/55, Chara: 31/31, Guild: 31/31, Event: 29/32, **System: 16/31 (51.6%)** |
+| **官方話名副標題** | `cmd 32` | 160/180 (88.9%) | **160/180 (88.9%)** | 0/180 (0.0%) | Main: 53/55, Chara: 31/31, Guild: 31/31, Event: 29/32, System: 16/31 |
+
+> [!IMPORTANT]
+> **大綱空值分析**：`cmd 1` 的 19 筆空值中，有 15 筆集中於 **System 類別** (如露娜之塔層數對白、特定系統引導)。這說明遊戲原廠在系統類劇本中普遍未撰寫官方大綱。未來在產品端呈現時，必須針對空值設計標準 Fallback 機制，而非假設 100% 話數皆有大綱。
 
 ---
 
@@ -101,7 +106,7 @@ KEY PRODUCT OPPORTUNITIES    =
 | ID | Parser Behavior | 參數長度與典型特徵 (Observed Signature) | 話數涵蓋 (率) | 出現次數 | 語意推測 (Semantic Hypothesis) | 客觀觀察依據 (Evidence) | 信心度 | 產品價值 |
 | :---: | :--- | :--- | :---: | :---: | :--- | :--- | :---: | :---: |
 | **0** | 🟠 `DROPPED` | 長度 1~1，如 `['序章 前篇']` | 180 (100.0%) | 180 | 主要／顯示標題元數據 (Primary / Display-Title Metadata) | 抽樣字串多為序號或標籤 (如「序章 前篇」)，活動劇情表現為話數名稱；tools/pcrd_fetch.py 解析為 chapter_title | HIGH | MEDIUM |
-| **1** | 🟠 `DROPPED` | 長度 1~1，如 `['']` | 180 (100.0%) | 180 | 官方長篇劇情大綱 (Official Synopsis) | 抽樣字串為 50~100 字繁中長篇情節概要；tools/pcrd_fetch.py 解析為 synopsis | VERY HIGH | HIGH |
+| **1** | 🟠 `DROPPED` | 長度 1~1，如 `['']` | 180 (100.0%) | 180 | 官方長篇劇情大綱 (Official Synopsis) | 抽樣字串為 50~100 字繁中長篇情節概要 (161 話非空，19 話空值)；tools/pcrd_fetch.py 解析為 synopsis | VERY HIGH | HIGH |
 | **3** | ⚪ `IGNORED` | 長度 2~2，如 `['190011', '1']` | 165 (91.7%) | 21,823 | 角色立繪與表情差分切換 (Face Expression / Unit Staging) | 參數型態為 (int:unit_id, int:face_id)，頻繁出現於角色發言或情態轉變前後 | MEDIUM | HIGH |
 | **4** | ⚪ `IGNORED` | 長度 1~1，如 `['190011']` | 165 (91.7%) | 15,052 | 角色動作動畫／口型同步觸發 (Character Motion / Lip Sync) | 參數型態為 (int:unit_id)，常緊鄰 cmd 6 (對白) 出現 | MEDIUM | MEDIUM |
 | **5** | 🟢 `PERSISTED` | 長度 1~1，如 `['500270']` | 165 (91.7%) | 826 | 場景背景切換 (Background Transition) | 參數型態為 (int:bg_id)；tools/pcrd_fetch.py 內建分支解析為 background 並持久化 | VERY HIGH | HIGH |
@@ -440,33 +445,34 @@ KEY PRODUCT OPPORTUNITIES    =
 
 ## 六、 Decoded-but-Dropped 資料分析 (cmd 0, cmd 1, cmd 32)
 
-在現有 `tools/pcrd_fetch.py` 中，`_parse_bundle_metadata(bundle_data)` 實際上已能解析 `cmd 0`、`cmd 1` 與 `cmd 32`，但在生產管線中並未持久化至 story JSON：
+在現有 `tools/pcrd_fetch.py` 中，`_parse_bundle_metadata(bundle_data)` 實際上已能解析 `cmd 0`、`cmd 1` 與 `cmd 32`，但在生產管線中並未持久化：
 
 1. **`cmd 0` (主要／顯示標題元數據，PARSED_BUT_DROPPED)**：
    - **現況**：被解析為 `bundle_metadata['chapter_title']`。在主線/角色/公會多為序號 (如「第1章 第1話」或「序章 前篇」)，活動中可為話名。
-   - **影響**：生產 story JSON 缺少官方話數標籤，導致前端導航目前需依賴 `chapters.json` 與 DB 關聯拼湊。
+   - **影響**：生產發布產物缺少官方話數標籤，導致前端導航目前需依賴 `chapters.json` 與 DB 關聯拼湊。
 2. **`cmd 1` (官方長篇劇情大綱，PARSED_BUT_DROPPED)**：
-   - **現況**：被解析為 `bundle_metadata['synopsis']`。文字長達 50~100 字繁體中文，完整敘述起承轉合。
-   - **影響**：由於未持久化至前端 JSON，前端 UI 誤將 DB `sub_title` (短話名) 冠以「官方大綱」標籤，造成 Phase 0 審計所指出的語意錯置。
+   - **現況**：被解析為 `bundle_metadata['synopsis']`。在 161 話中包含 50~100 字繁體中文情節摘要，19 話為空值。
+   - **影響**：由於未持久化，前端 UI 誤將 DB `sub_title` (短話名) 冠以「官方大綱」標籤，造成 Phase 0 審計所指出的語意錯置。
 3. **`cmd 32` (官方話數副標題／話名，PARSED_BUT_DROPPED)**：
-   - **現況**：被解析為 `bundle_metadata['subtitle']`。與 `redive_tw.db` 中的 `story_detail.sub_title` 抽樣比對 20/25 逐字完全相同 (其餘 5 筆僅為標點/譯名微調)。
+   - **現況**：被解析為 `bundle_metadata['subtitle']`。在 160 話中包含非空短話名，與 `redive_tw.db` 中的 `story_detail.sub_title` 抽樣比對 20/25 逐字完全相同。
    - **影響**：若能直接從 AssetBundle 讀取並持久化，可擺脫對第三方鏡像 DB 欄位的單向相依。
 
 ---
 
 ## 七、 演出資訊特別檢查清單 (Staging Information Audit)
 
-針對閱聽體驗最關切的音訊、視覺與時序資訊，客觀查核結果如下：
+針對閱聽體驗最關切的音訊、視覺與時序資訊，客觀查核結果如下（涵蓋話數均來自機器可讀聯集統計）：
 
 | 演出面向 | 對應指令 | 存在性 (話數) | 客觀證據特徵 | 語意推測與驗證狀態 |
 | :--- | :--- | :---: | :--- | :--- |
-| **BGM 背景音樂** | `cmd 101` (關聯/播放), `cmd 103` (淡出/停止) | **YES** (85 話) | 參數直接為 `bgm_*` 檔名 (如 `bgm_M38`) | **HYPOTHESIS** (Domain HIGH, exact action 待 R2 驗證) |
-| **SE 音效** | `cmd 26` (觸發), `cmd 67` (帶參), `cmd 28` (停止) | **YES** (164 話) | 參數直接為 `se_*` 標識符 (如 `se_adv_step_...`) | **HYPOTHESIS** (Domain HIGH, runtime behavior 待 R2 驗證) |
-| **Ambience 環境音** | `cmd 51` (循環), `cmd 52` (停止) | **YES** (83 話) | 參數直接為 `amb_*` 標識符 (如 `amb_adv_wind_01`) | **HYPOTHESIS** (Domain HIGH, runtime behavior 待 R2 驗證) |
-| **Fade / 轉場效果** | `cmd 70` (色碼淡入淡出), `cmd 61` (過渡等待) | **YES** (112 話) | 參數為 RGB 數值 (如 `['255','255','255']`) | **HYPOTHESIS** (視覺過渡控制，待 R2 驗證) |
-| **Camera 運鏡** | `cmd 86` (平移), `cmd 87` (縮放), `cmd 88` (重置), `cmd 29` (震動) | **YES** (153 話) | 參數為 X/Y 偏移座標或震幅 | **HYPOTHESIS** (運鏡與震動控制，待 R2 驗證) |
-| **Choice 分支選項** | `cmd 12` | **YES** (157 話) | 參數為語音檔名，暫存綁定至下一個 cmd 6 | **CONFIRMED** (現有 parser 已處理為語音關聯) |
-| **Timing / 候選時序** | `cmd 13` (台詞標記), `cmd 27` (秒數等待), `cmd 61` (轉場等待) | **YES** (165 話) | 參數為數值字串 (如 `['1', '1']`, `['0.5']`) | **HYPOTHESIS** (Candidate timing commands，待 R2 證明阻斷性) |
+| **BGM 背景音樂** | `cmd 101, cmd 103` | **YES (6 話)** | 參數直接為 `bgm_*` 檔名 (如 `bgm_M38`, `bgm_M86`) | **HYPOTHESIS** (Domain HIGH, exact action 待 R2 驗證) |
+| **SE 音效** | `cmd 26, cmd 67` | **YES (164 話)** | 參數直接為 `se_*` 標識符 (如 `se_adv_step_...`) | **HYPOTHESIS** (Domain HIGH, runtime behavior 待 R2 驗證) |
+| **Ambience 環境音** | `cmd 51` | **YES (83 話)** | 參數直接為 `amb_*` 標識符 (如 `amb_adv_wind_01`) | **HYPOTHESIS** (Domain HIGH, runtime behavior 待 R2 驗證) |
+| **Fade / 轉場效果** | `cmd 70, cmd 61` | **YES (112 話)** | 參數為 RGB 數值 (如 `['255','255','255']`) | **HYPOTHESIS** (視覺過渡控制，待 R2 驗證) |
+| **Camera 運鏡** | `cmd 86, cmd 87, cmd 88, cmd 29` | **YES (153 話)** | 參數為 X/Y 偏移座標或震幅 | **HYPOTHESIS** (運鏡與震動控制，待 R2 驗證) |
+| **Voice 語音關聯** | `cmd 12` | **YES (165 話)** | 參數為語音資源檔名，暫存 current_voice 並綁定至下一個 cmd 6 | **CONFIRMED** (現有 parser 已處理為語音關聯) |
+| **Choice / 分支選項** | *(未確認)* | **NOT CONFIRMED IN R1** | 本次 71 個觀察指令中尚未確認獨立分支選項指令 | **UNKNOWN** (待 R2 逆向驗證) |
+| **Timing / 候選時序** | `cmd 13, cmd 27, cmd 61` | **YES (165 話)** | 參數為數值字串 (如 `['1', '1']`, `['0.5']`) | **HYPOTHESIS** (Candidate timing commands，待 R2 證明阻斷性) |
 
 ---
 
@@ -474,13 +480,19 @@ KEY PRODUCT OPPORTUNITIES    =
 
 基於上述觀察事實，後續 Phase 可循序規劃以下產品演進方向（本輪不做架構決策）：
 
-1. **第一優先順序：官方文本補完 (Official Text Ingestion)**：
-   - 將 `cmd 1` (大綱) 與 `cmd 32` (話名) 正式持久化至 Story JSON 與索引層。
-   - 前端 UI 修正為標準四層架構：【官方話名 (cmd 32)】+【官方大綱 (cmd 1)】+【AI 速讀懶人包】+【官方劇情全文 (cmd 6)】。
+1. **第一優先順序：官方文本補完 (Official Text Ingestion & Presentation)**：
+   - **文本價值**：`cmd 1` (大綱，161 話非空) 與 `cmd 32` (話名，160 話非空) 具極高價值，可直接補完官方文字。
+   - **持久化方案待決策 (Future Persistence Target TBD)**：
+     具體落地儲存架構須於設計審查中定案。目前候選方案包含：
+     - *方案 A (Sidecar Manifest)*：獨立清單檔案，不改動既有對白檔案。
+     - *方案 B (Independent Metadata JSON)*：單話分離元數據檔。
+     - *方案 C (Existing Index Layer Extension)*：擴充既有章節目錄索引。
+     - *方案 D (Story Schema Migration)*：將對白 JSON 升級為包含 metadata 與 dialogues 的包裝結構。
+   - **前端呈現架構**：規劃為標準四層架構：【官方話名 (cmd 32)】+【官方大綱 (cmd 1)】+【AI 速讀懶人包】+【官方劇情全文 (cmd 6)】。
 2. **第二優先順序：地點字卡與章節呈現 (Location & Episode Card)**：
    - 解析 `cmd 100`，於話數開頭或場景切換時渲染出如遊戲原廠般之毛玻璃地點小標籤 (例如「古城」)。
 3. **第三優先順序：官方音效與音樂播放 (Audio Experience)**：
-   - 支援 `cmd 101/103` (BGM) 與 `cmd 51/52` (Ambience)，配合 CDN 現有音訊池實現邊讀邊聽官方原聲。
+   - 支援 `cmd 101/103` (BGM) 與 `cmd 51` (Ambience)，配合 CDN 現有音訊池實現邊讀邊聽官方原聲。
 4. **第四優先順序：潛在時序同步與 Auto Play 探索 (Auto Play Candidates Exploration)**：
    - 將 `cmd 13`、`cmd 27` 與 `cmd 61` 列為候選時序控制指令。在進入實作前，必須於 R2 徹底驗證其參數單位 (幀數/毫秒/秒)、觸發時機、阻斷性以及與語音長度之關係，不得預先假設為原生時鐘。
 
@@ -491,6 +503,6 @@ KEY PRODUCT OPPORTUNITIES    =
 > [!IMPORTANT]
 > **本輪研究邊界明確宣告**：
 > 1. **NO PRODUCTION CODE CHANGES**：本輪未更動 `pipeline/fetch.py`、`tools/pcrd_fetch.py`、`pipeline/update.py` 或任何發布管線。
-> 2. **NO SCHEMA DECISION**：本報告僅列出客觀觀察事實與推測信心度，未定案未來 Story JSON schema。所有結構變更須待後續 Implementation Phase 批准。
+> 2. **NO SCHEMA DECISION**：本報告僅列出客觀觀察事實與推測信心度，未定案未來 Story JSON schema 或特定持久化載體。所有結構變更須待後續 Implementation Phase 批准。
 > 3. **STRICTLY NON-DESTRUCTIVE**：所有掃描作業皆透過唯讀記憶體解密與 scratch 暫存完成，完全不污染既有資料庫或靜態檔案。
 
