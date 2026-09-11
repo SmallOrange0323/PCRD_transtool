@@ -279,7 +279,10 @@ def run_pipeline_update(
     # 3. 執行全量一致性驗證門禁
     print("\n[步驟 3/3] 執行全量資料完整性驗證門禁...")
     try:
-        validate_ok = validate_story_map(check_dist=(not dry_run))
+        validate_ok = validate_story_map(
+            check_dist=(not dry_run),
+            allow_metadata_bootstrap_incomplete=(not (auto_deploy and not dry_run))
+        )
         if not validate_ok:
             print("❌ 驗證門禁未通過！", file=sys.stderr)
             return 1

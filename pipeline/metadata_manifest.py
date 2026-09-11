@@ -15,7 +15,7 @@ import json
 import hashlib
 import re
 from pathlib import Path
-from typing import Dict, Any, Optional, Union
+from typing import Dict, Any, Optional, Union, List, Tuple, Set
 from dataclasses import dataclass, field
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -384,6 +384,78 @@ def update_manifest_entry(
     return batch_update_manifest_entries({story_id: entry}, truth_version=truth_version, filepath=filepath)
 
 
+def rebuild_official_metadata(
+    truth_version: Optional[str] = None,
+    target_story_ids: Optional[List[int]] = None,
+    output_path: Optional[Path] = None,
+    sample_limit: Optional[int] = None,
+    write_story_json: bool = False,
+    timeout: int = 15,
+) -> Tuple[bool, Optional[str], int, List[int]]:
+    """
+    可測試之官方元數據側車重建/回補 Orchestrator：
+    1. 驗證 sample_limit (若有傳入必須 > 0)
+    2. 安全防禦：若 sample_limit 存在且 output_path 為預設 production 路徑，自動轉向 scratch/ 防止污染
+    3. 取得 TruthVersion snapshot 與 bundle_refs
+    4. 決定目標 universe：若未指定 target_story_ids 則使用 Canonical Story Map Expected IDs
+    5. 使用 sync_story_batch_with_metadata 進行 batch 抓取 (write_story_json 預設 False，保證 Metadata-Only)
+    :return: (success, metadata_version, processed_count, failed_ids)
+    """
+    if sample_limit is not None:
+        if sample_limit <= 0:
+            raise ValueError(f"sample_limit 必須大於 0: {sample_limit}")
+
+    target_out = output_path or MANIFEST_PATH
+    if sample_limit is not None and target_out == MANIFEST_PATH:
+        # Sample 模式防污染：自動寫入 scratch/ 目錄
+        target_out = PROJECT_ROOT / "scratch" / "sample_official_metadata.json"
+
+    # 1. 取得 TruthVersion
+    tv = truth_version
+    if not tv:
+        try:
+            from pipeline.fetch import get_truth_version
+            tv = get_truth_version()
+        except Exception:
+            return False, None, 0, []
+
+    # 2. 載入 bundle_refs
+    try:
+        from tools.pcrd_fetch import load_story_manifest_bundle_refs, sync_story_batch_with_metadata
+        bundle_refs = load_story_manifest_bundle_refs(truth_version=tv)
+    except Exception:
+        return False, None, 0, []
+
+    # 3. 確定目標話數 (Canonical Expected IDs ∩ bundle_refs)
+    if target_story_ids is not None:
+        target_ids = list(target_story_ids)
+    else:
+        from pipeline.coverage import get_canonical_expected_story_ids
+        canonical_expected = get_canonical_expected_story_ids(DASHBOARD_DIR)
+        target_ids = sorted(list(canonical_expected))
+
+    if sample_limit is not None:
+        target_ids = target_ids[:sample_limit]
+
+    # 檢查是否有預期話數不在 bundle_refs 中
+    missing_bundle_ids = [sid for sid in target_ids if sid not in bundle_refs]
+    if missing_bundle_ids:
+        # Expected story missing bundle ref fails loudly
+        return False, None, 0, missing_bundle_ids
+
+    # 4. 執行批次同步 (Metadata-Only)
+    success, m_ver, success_ids, failed_ids = sync_story_batch_with_metadata(
+        story_ids=target_ids,
+        truth_version=tv,
+        write_story_json=write_story_json,
+        manifest_path=target_out,
+        bundle_refs=bundle_refs,
+        timeout=timeout,
+    )
+
+    return success, m_ver, len(success_ids), failed_ids
+
+
 def run_cli():
     """CLI 入口，支援官方元數據側車清單之查詢與回補程序"""
     import argparse
@@ -391,73 +463,51 @@ def run_cli():
         description="PCRD Official Story Metadata Manifest 管理與回補工具"
     )
     parser.add_argument("--rebuild", action="store_true", help="重建/回補官方元數據側車清單 (需連線 CDN)")
-    parser.add_argument("--sample", type=int, default=None, help="僅針對前 N 話樣本進行回補測試")
+    parser.add_argument("--sample", type=int, default=None, help="僅針對前 N 話樣本進行回補測試 (N 必須 > 0)")
     parser.add_argument("--truth-version", type=str, default=None, help="指定 8 位數字 TruthVersion (選填)")
-    parser.add_argument("--output", type=str, default=None, help="輸出檔案路徑 (預設為 dashboard/data/official_story_metadata.json)")
+    parser.add_argument("--output", type=str, default=None, help="輸出檔案路徑")
 
     args = parser.parse_args()
 
     if args.rebuild:
+        if args.sample is not None and args.sample <= 0:
+            parser.error("--sample 參數必須為大於 0 的正整數")
+
         print("=" * 60)
         print("⚡ [Bootstrap / Backfill] 官方元數據側車清單回補程序")
         print("=" * 60)
-        out_path = Path(args.output) if args.output else MANIFEST_PATH
-        print(f"  目標檔案: {out_path}")
+
+        out_path = Path(args.output) if args.output else None
+        if args.sample and not out_path:
+            out_path = PROJECT_ROOT / "scratch" / "sample_official_metadata.json"
+            print(f"  [安全防禦] Sample 模式未指定 --output，自動輸出至樣本檔案: {out_path}")
+        elif not out_path:
+            out_path = MANIFEST_PATH
+            print(f"  目標檔案: {out_path}")
+
         print("  網路需求: 需要連線 So-net CDN (storydata2_assetmanifest 與 pool/AssetBundles)")
+        print("  模式: Metadata-Only (絕不修改 dashboard/story/*.json)")
 
-        tv = args.truth_version
-        if not tv:
-            try:
-                from pipeline.fetch import get_truth_version
-                tv = get_truth_version()
-            except Exception as e:
-                print(f"❌ 無法探測 TruthVersion: {e}", file=sys.stderr)
-                sys.exit(1)
-
-        print(f"  確定 TruthVersion 快照: {tv}")
-
-        try:
-            from tools.pcrd_fetch import load_story_manifest_bundle_refs, fetch_story_json_by_id
-            bundle_refs = load_story_manifest_bundle_refs(truth_version=tv)
-        except Exception as e:
-            print(f"❌ 載入 Story Manifest 失敗: {e}", file=sys.stderr)
-            sys.exit(1)
-
-        all_story_ids = sorted(bundle_refs.keys())
-        total_available = len(all_story_ids)
-        print(f"  CDN 上共有 {total_available} 話故事 AssetBundle 索引")
-
-        if args.sample:
-            target_story_ids = all_story_ids[:args.sample]
-            print(f"  [樣本模式] 僅處理前 {len(target_story_ids)} 話")
-        else:
-            print(f"⚠️  警告: 即將處理全量 {total_available} 話！")
+        if not args.sample:
+            print(f"⚠️  警告: 即將處理全量故事話數！")
             confirm = input("確定要執行全量 CDN 回補嗎？(輸入 YES 繼續): ")
             if confirm.strip() != "YES":
                 print("操作已取消。")
                 sys.exit(0)
-            target_story_ids = all_story_ids
 
-        collected_entries = {}
-        failed_count = 0
-        print(f"  開始抓取並萃取元數據...")
-        for i, sid in enumerate(target_story_ids, 1):
-            ref = bundle_refs[sid]
-            res = fetch_story_json_by_id(sid, bundle_ref=ref, extract_metadata=True, timeout=15)
-            if res.status == "OK" and res.metadata:
-                collected_entries[sid] = res.metadata.to_dict()
-                print(f"  [{i}/{len(target_story_ids)}] story_id={sid} OK")
-            else:
-                failed_count += 1
-                print(f"  [{i}/{len(target_story_ids)}] story_id={sid} FAILED: {res.error_message}", file=sys.stderr)
+        ok, m_ver, count, failed_ids = rebuild_official_metadata(
+            truth_version=args.truth_version,
+            output_path=out_path,
+            sample_limit=args.sample,
+            write_story_json=False,
+        )
 
-        if failed_count > 0:
-            print(f"❌ 回補過程中有 {failed_count} 話失敗，基於全有全無原子原則，不寫入 Manifest！", file=sys.stderr)
+        if ok:
+            print(f"✅ 回補完成！成功處理 {count} 話，已原子寫入: {out_path} (metadata_version: {m_ver})")
+            sys.exit(0)
+        else:
+            print(f"❌ 回補失敗！失敗話數: {failed_ids}，基於全有全無原子原則，Manifest 零寫入！", file=sys.stderr)
             sys.exit(1)
-
-        print(f"  所有 {len(collected_entries)} 話萃取完成，正在原子寫入 Manifest...")
-        m_ver = batch_update_manifest_entries(collected_entries, truth_version=tv, filepath=out_path)
-        print(f"✅ 回補完成！已原子寫入: {out_path} (metadata_version: {m_ver})")
     else:
         parser.print_help()
 

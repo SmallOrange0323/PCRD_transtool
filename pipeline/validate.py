@@ -634,16 +634,28 @@ def validate_official_story_metadata(
                         f"[Metadata Gate] 話數 {sid} 包含已確認之假大綱/幻覺文字 (Regression Guard): '{phrase}'"
                     )
 
-    # 5. 覆蓋度狀態模型 (Coverage State Model)
-    total_episodes = len(episodes)
-    if total_episodes >= 9033:
+    # 5. 覆蓋度狀態模型 (Coverage State Model: 基於集合差集比對，嚴禁硬編碼數字)
+    from pipeline.coverage import get_canonical_expected_story_ids
+    canonical_expected_ids = get_canonical_expected_story_ids(dashboard_dir)
+    manifest_sids = set(int(sid) for sid in episodes.keys())
+
+    missing_ids = canonical_expected_ids - manifest_sids
+
+    if len(missing_ids) == 0 and len(canonical_expected_ids) > 0:
         if verbose:
-            res.ok(f"[Metadata Gate] official_story_metadata 覆蓋狀態: COMPLETE ({total_episodes} 話)")
+            res.ok(
+                f"[Metadata Gate] official_story_metadata 覆蓋狀態: COMPLETE "
+                f"(共 {len(manifest_sids)} 話，包含所有權威預期話數)"
+            )
     else:
+        msg = (
+            f"[Metadata Gate] official_story_metadata 覆蓋不足: "
+            f"缺失 {len(missing_ids)} 話 (現有 {len(manifest_sids)}/{len(canonical_expected_ids)} 話)"
+        )
         if allow_bootstrap_incomplete:
-            res.warning(f"[Metadata Gate] official_story_metadata 覆蓋狀態: BOOTSTRAP_INCOMPLETE ({total_episodes}/9033 話)")
+            res.warning(f"{msg} (狀態: BOOTSTRAP_INCOMPLETE)")
         else:
-            res.error(f"[Metadata Gate] official_story_metadata 覆蓋不足 ({total_episodes}/9033 話)，未達到完整發布要求！")
+            res.error(f"{msg} (未達到嚴格發布要求！)")
 
     # 6. 若 check_dist=True，執行 Source/Dist SHA Parity 與 db_info.json 門禁
     if check_dist and dist_dir is not None:
@@ -761,11 +773,16 @@ def validate_chapters_metadata(data: dict) -> Tuple[bool, str]:
 
     return True, ""
 
-def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> bool:
+def validate_story_map(
+    target_dir: Path = None,
+    check_dist: bool = False,
+    allow_metadata_bootstrap_incomplete: bool = True
+) -> bool:
     """
     執行 Story Map 全量一致性檢查。
     :param target_dir: 檢查目標目錄，預設為 dashboard
     :param check_dist: 是否同時對 dist_story_map 進行完整部署集合驗證
+    :param allow_metadata_bootstrap_incomplete: 是否允許官方故事元數據處於引導未完成 (BOOTSTRAP_INCOMPLETE) 狀態
     :return: True 通過, False 存在致命錯誤
     """
     base_dir = target_dir or DASHBOARD_DIR
@@ -957,7 +974,13 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
     # 6D. 官方故事元數據側車門禁 (Official Story Metadata Manifest Gate)
     print(f"\n📜 執行官方故事元數據側車門禁驗證...")
     src_board_dir = base_dir if is_dashboard else DASHBOARD_DIR
-    validate_official_story_metadata(src_board_dir, dist_dir=None, check_dist=False, res=res, allow_bootstrap_incomplete=True)
+    validate_official_story_metadata(
+        src_board_dir,
+        dist_dir=None,
+        check_dist=False,
+        res=res,
+        allow_bootstrap_incomplete=allow_metadata_bootstrap_incomplete
+    )
 
     # 7. 若 check_dist=True，執行 dist_story_map 專屬集合與檔案深度驗證
     if check_dist or base_dir == DIST_DIR:
@@ -1040,7 +1063,13 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
 
         # 深度驗證 dist official_story_metadata.json 與 metadata_version 對齊門禁
         print(f"\n📜 執行 dist_story_map 官方故事元數據與 metadata_version 對齊門禁驗證...")
-        validate_official_story_metadata(src_board_dir, dist_dir=DIST_DIR, check_dist=True, res=res, allow_bootstrap_incomplete=True)
+        validate_official_story_metadata(
+            src_board_dir,
+            dist_dir=DIST_DIR,
+            check_dist=True,
+            res=res,
+            allow_bootstrap_incomplete=allow_metadata_bootstrap_incomplete
+        )
 
         # 8. 部署體積門禁檢驗 (Deployment Footprint Gate)
         print(f"\n📦 執行 GitHub Pages 部署體積門禁 (Footprint Gate)...")
@@ -1061,6 +1090,17 @@ def validate_story_map(target_dir: Path = None, check_dist: bool = False) -> boo
     return res.is_valid
 
 if __name__ == "__main__":
-    target = Path(sys.argv[1]) if len(sys.argv) > 1 else DASHBOARD_DIR
-    success = validate_story_map(target, check_dist=True)
+    import argparse
+    parser = argparse.ArgumentParser(description="PCRD Story Map 一致性驗證門禁")
+    parser.add_argument("target", nargs="?", default=str(DASHBOARD_DIR), help="驗證目標目錄 (預設 dashboard)")
+    parser.add_argument("--no-dist", action="store_true", help="不執行 dist_story_map 深度驗證")
+    parser.add_argument("--strict-metadata", action="store_true", help="啟用官方故事元數據嚴格發布門禁 (拒絕 BOOTSTRAP_INCOMPLETE)")
+    args = parser.parse_args()
+
+    target_path = Path(args.target)
+    success = validate_story_map(
+        target_path,
+        check_dist=not args.no_dist,
+        allow_metadata_bootstrap_incomplete=not args.strict_metadata
+    )
     sys.exit(0 if success else 1)

@@ -336,3 +336,78 @@ def analyze_coverage() -> CoverageResult:
         overlaps=overlaps,
         policy_status=policy_status
     )
+
+
+def get_canonical_expected_story_ids(dashboard_dir: Optional[Path] = None, required_only: bool = False) -> Set[int]:
+    """
+    取得 Story Map 權威預期話數集合 (Canonical Expected Story Universe)：
+    由 DB (story_detail) + extra_events.json + branch_stories.json + tracked_characters.json 構成。
+    若 required_only=True 僅回傳產品必備話數；預設回傳所有已知權威來源話數集合。
+    """
+    base_dir = dashboard_dir or DASHBOARD_DIR
+    data_dir = base_dir / "data"
+    db_path = base_dir / "redive_tw.db"
+
+    expected_ids = set()
+    required_ids = set()
+
+    # 1. DB
+    if db_path.exists():
+        try:
+            conn = sqlite3.connect(str(db_path))
+            cur = conn.cursor()
+            cur.execute("SELECT story_id FROM story_detail")
+            for (sid,) in cur.fetchall():
+                expected_ids.add(sid)
+                s_str = str(sid)
+                if s_str.startswith("2") or s_str.startswith("3") or s_str.startswith("4"):
+                    required_ids.add(sid)
+            conn.close()
+        except Exception:
+            pass
+
+    # 2. tracked_characters.json
+    tracked_file = data_dir / "tracked_characters.json"
+    if tracked_file.exists() and db_path.exists():
+        try:
+            with open(tracked_file, "r", encoding="utf-8") as f:
+                t_data = json.load(f)
+            from tools.pcrd_fetch import _get_story_ids_from_db
+            for c in t_data.get("characters", []):
+                uid = c.get("unit_id")
+                if uid:
+                    u_sids = _get_story_ids_from_db(uid)
+                    expected_ids.update(u_sids)
+                    required_ids.update(u_sids)
+        except Exception:
+            pass
+
+    # 3. branch_stories.json
+    branch_file = data_dir / "branch_stories.json"
+    if branch_file.exists():
+        try:
+            with open(branch_file, "r", encoding="utf-8") as f:
+                b_data = json.load(f)
+            for item in b_data.get("stories", []):
+                sid = item.get("story_id")
+                if isinstance(sid, int):
+                    expected_ids.add(sid)
+                    required_ids.add(sid)
+        except Exception:
+            pass
+
+    # 4. extra_events.json
+    extra_file = data_dir / "extra_events.json"
+    if extra_file.exists():
+        try:
+            with open(extra_file, "r", encoding="utf-8") as f:
+                e_data = json.load(f)
+            for item in e_data.get("stories", []):
+                sid = item.get("id") or item.get("story_id")
+                if isinstance(sid, int):
+                    expected_ids.add(sid)
+                    required_ids.add(sid)
+        except Exception:
+            pass
+
+    return required_ids if required_only else expected_ids

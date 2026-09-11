@@ -25,6 +25,7 @@ try:
         cmd_sync_episode as sync_episode,
         cmd_fetch_story_thumbnails as fetch_story_thumbnails,
         fetch_story_json_by_id,
+        sync_story_batch_with_metadata,
         StoryFetchResult,
         load_story_manifest_hash_map,
         _get_sonet_ver as get_truth_version,

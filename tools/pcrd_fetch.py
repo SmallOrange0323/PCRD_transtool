@@ -25,6 +25,8 @@ from struct import unpack
 from typing import Dict, List, Set, Any, Tuple, Optional
 from pathlib import Path
 
+from pipeline.metadata_manifest import EpisodeProvenance, OfficialEpisodeMetadata
+
 try:
     if hasattr(sys.stdout, 'reconfigure'):
         sys.stdout.reconfigure(encoding='utf-8')
@@ -267,6 +269,11 @@ def _get_sonet_ver():
     except Exception:
         pass
     return "00500030"  # 提高預設 fallback 至當前版本
+
+
+def get_latest_truth_version() -> Optional[str]:
+    """取得台版目前實際使用的 So-net TruthVersion (公開 API 包裝)"""
+    return _get_sonet_ver()
 
 
 
@@ -596,10 +603,11 @@ def fetch_story_json_by_id(
     truth_version: Optional[str] = None,
     bundle_ref: Optional[StoryBundleRef] = None,
     bundle_refs: Optional[Dict[int, StoryBundleRef]] = None,
+    write_story_json: bool = True,
 ) -> StoryFetchResult:
     """
     通用單話劇情對白 JSON 下載原語 (Generic JSON Fetch Primitive)：
-    1. 僅下載與解密對白 JSON，使用原子替換寫入 dashboard/story/<story_id>.json (維持頂層陣列)
+    1. 下載與解密對白 JSON，若 write_story_json=True 則使用原子替換寫入 dashboard/story/<story_id>.json (維持頂層陣列)
     2. 若 extract_metadata=True，在同一 AssetBundle 二進位下載生命週期中同時萃取官方元數據
     3. 來源溯源 (Provenance) 嚴格單一快照與真實 bundle_name，若傳入裸 manifest_hash_map 且要求萃取元數據則 Fail Loudly
     4. 無多媒體 (語音/背景/CG) 下載副作用
@@ -660,88 +668,169 @@ def fetch_story_json_by_id(
         return StoryFetchResult(
             story_id=story_id,
             status="HASH_NOT_FOUND",
-            error_message=f"無法在 Manifest 中找到 story_id={story_id} 的 Bundle Hash"
+            error_message=f"無法在 Manifest 中找到 story_id={story_id} 對應之 AssetBundle Hash"
         )
 
+    # 執行下載與解密
     bundle_url = f"{SONET_CDN}/pool/AssetBundles/{h[:2]}/{h}"
     try:
-        req = urllib.request.Request(bundle_url, headers=WEB_HEADER)
-        with urllib.request.urlopen(req, timeout=timeout) as res:
-            bundle_data = res.read()
+        bundle_data = _http_get(bundle_url, WEB_HEADER, timeout=timeout)
     except Exception as e:
         return StoryFetchResult(
             story_id=story_id,
             status="NETWORK_ERROR",
             hash=h,
-            error_message=f"下載 AssetBundle 失敗: {e}"
+            error_message=f"下載 AssetBundle 失敗 ({bundle_url}): {e}"
         )
 
-    bundle_sha256 = hashlib.sha256(bundle_data).hexdigest()
     ep_metadata = None
-
-    try:
-        if extract_metadata:
+    if extract_metadata:
+        if not b_name:
+            b_name = f"storydata_{story_id}.unity3d"
+        try:
             dialogues, raw_meta = _parse_bundle_dialogues(bundle_data, extract_metadata=True)
-            c1_p = bool(raw_meta.get("cmd1_present"))
-            c1_ne = bool(raw_meta.get("cmd1_nonempty"))
-            c32_p = bool(raw_meta.get("cmd32_present"))
-            c32_ne = bool(raw_meta.get("cmd32_nonempty"))
-
-            ep_metadata = {
-                "chapter_title": raw_meta.get("chapter_title"),
-                "official_synopsis": raw_meta.get("synopsis") if (c1_p and c1_ne) else None,
-                "subtitle": raw_meta.get("subtitle") if (c32_p and c32_ne) else None,
-                "provenance": {
-                    "truth_version": resolved_truth_ver,
-                    "cdn_bundle_hash": h,
-                    "bundle_name": b_name,
-                    "bundle_sha256": bundle_sha256,
-                    "cmd1_present": c1_p,
-                    "cmd1_nonempty": c1_ne,
-                    "cmd32_present": c32_p,
-                    "cmd32_nonempty": c32_ne,
-                }
-            }
-        else:
+            syn = raw_meta.get("official_synopsis") or raw_meta.get("synopsis")
+            prov = EpisodeProvenance(
+                truth_version=str(resolved_truth_ver),
+                cdn_bundle_hash=str(h),
+                bundle_name=str(b_name),
+                bundle_sha256=hashlib.sha256(bundle_data).hexdigest(),
+                cmd1_present=bool(raw_meta.get("cmd1_present", False)),
+                cmd1_nonempty=bool(raw_meta.get("cmd1_nonempty", False)),
+                cmd32_present=bool(raw_meta.get("cmd32_present", False)),
+                cmd32_nonempty=bool(raw_meta.get("cmd32_nonempty", False))
+            )
+            ep_metadata_obj = OfficialEpisodeMetadata(
+                story_id=story_id,
+                chapter_title=raw_meta.get("chapter_title"),
+                official_synopsis=syn,
+                subtitle=raw_meta.get("subtitle"),
+                provenance=prov
+            )
+            ep_metadata = ep_metadata_obj.to_dict()
+        except Exception as e:
+            return StoryFetchResult(
+                story_id=story_id,
+                status="PARSE_ERROR",
+                hash=h,
+                error_message=f"解析 AssetBundle 故事對白與元數據失敗: {e}"
+            )
+    else:
+        try:
             dialogues = _parse_bundle_dialogues(bundle_data, extract_metadata=False)
-    except Exception as e:
-        return StoryFetchResult(
-            story_id=story_id,
-            status="PARSE_ERROR",
-            hash=h,
-            error_message=f"解析對白 Bundle 失敗: {e}"
-        )
+        except Exception as e:
+            return StoryFetchResult(
+                story_id=story_id,
+                status="PARSE_ERROR",
+                hash=h,
+                error_message=f"解析 AssetBundle 故事對白失敗: {e}"
+            )
 
-    out_dir = Path(STORY_DIR)
-    out_dir.mkdir(parents=True, exist_ok=True)
-    out_path = out_dir / f"{story_id}.json"
-    tmp_path = out_dir / f"{story_id}.json.tmp"
+    written_path_str: Optional[str] = None
+    if write_story_json:
+        out_dir = Path(STORY_DIR)
+        out_dir.mkdir(parents=True, exist_ok=True)
+        out_path = out_dir / f"{story_id}.json"
+        tmp_path = out_dir / f"{story_id}.json.tmp"
 
-    try:
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(dialogues, f, ensure_ascii=False, indent=2)
-        tmp_path.replace(out_path)
-    except Exception as e:
-        if tmp_path.exists():
-            try:
-                tmp_path.unlink()
-            except Exception:
-                pass
-        return StoryFetchResult(
-            story_id=story_id,
-            status="WRITE_ERROR",
-            hash=h,
-            error_message=f"原子寫入對白 JSON 失敗: {e}"
-        )
+        try:
+            with open(tmp_path, "w", encoding="utf-8") as f:
+                json.dump(dialogues, f, ensure_ascii=False, indent=2)
+            tmp_path.replace(out_path)
+            written_path_str = str(out_path)
+        except Exception as e:
+            if tmp_path.exists():
+                try:
+                    tmp_path.unlink()
+                except Exception:
+                    pass
+            return StoryFetchResult(
+                story_id=story_id,
+                status="WRITE_ERROR",
+                hash=h,
+                error_message=f"原子寫入對白 JSON 失敗: {e}"
+            )
 
     return StoryFetchResult(
         story_id=story_id,
         status="OK",
         dialogue_count=len(dialogues),
         hash=h,
-        written_path=str(out_path),
+        written_path=written_path_str,
         metadata=ep_metadata
     )
+
+
+def sync_story_batch_with_metadata(
+    story_ids: List[int],
+    truth_version: Optional[str] = None,
+    write_story_json: bool = True,
+    manifest_path: Optional[Path] = None,
+    bundle_refs: Optional[Dict[int, StoryBundleRef]] = None,
+    timeout: int = 15,
+) -> Tuple[bool, Optional[str], List[int], List[int]]:
+    """
+    正式批次同步話數與官方元數據原語 (Batch Sync Primitive)：
+    1. TruthVersion snapshot once (若未傳入則探測 1 次)
+    2. bundle_refs load once (若未傳入則依 truth_version 載入 1 次)
+    3. 遍歷 target story_ids 提取對白與元數據 (依 write_story_json 決定是否寫入 story/*.json)
+    4. 收集成功結果至記憶體 working copy
+    5. 全數成功才呼叫 batch_update_manifest_entries 一次性提交 Manifest
+    6. 若有任一話失敗，絕不提交 Manifest，達成嚴格全有全無 (All-or-Nothing) 原子性
+    :return: (success, metadata_version, success_ids, failed_ids)
+    """
+    resolved_tv = truth_version or _get_sonet_ver()
+    if not resolved_tv:
+        return False, None, [], story_ids
+
+    if bundle_refs is None:
+        try:
+            bundle_refs = load_story_manifest_bundle_refs(truth_version=resolved_tv)
+        except Exception:
+            return False, None, [], story_ids
+
+    from pipeline.metadata_manifest import batch_update_manifest_entries, MANIFEST_PATH
+    target_manifest_path = manifest_path or MANIFEST_PATH
+
+    collected_metadata = {}
+    success_ids = []
+    failed_ids = []
+
+    for sid in story_ids:
+        ref = bundle_refs.get(sid)
+        if not ref:
+            failed_ids.append(sid)
+            break
+
+        res = fetch_story_json_by_id(
+            sid,
+            bundle_ref=ref,
+            extract_metadata=True,
+            write_story_json=write_story_json,
+            timeout=timeout,
+        )
+        if res.status == "OK" and res.metadata is not None:
+            collected_metadata[sid] = res.metadata
+            success_ids.append(sid)
+        else:
+            failed_ids.append(sid)
+            break
+
+    if failed_ids or len(success_ids) != len(story_ids):
+        # 失敗回退：絕不寫入 Manifest
+        return False, None, success_ids, failed_ids
+
+    # 全數成功，一次性原子提交 Manifest
+    try:
+        m_ver = batch_update_manifest_entries(
+            collected_metadata,
+            truth_version=resolved_tv,
+            filepath=target_manifest_path,
+        )
+        return True, m_ver, success_ids, []
+    except Exception:
+        return False, None, success_ids, story_ids
+
 
 def cmd_fetch_story(args):
     """CLI subcommand: 僅下載單話對白 JSON。"""
