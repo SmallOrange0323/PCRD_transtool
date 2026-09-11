@@ -20,28 +20,28 @@ WTHEE TRANSFORMATION STATUS
 = PARTIALLY (保留原廠表結構與未中文化底層字串，未進行人為竄改，但移除部分非台服表且缺乏直接二進位對齊證明)
 
 STORY ASSETBUNDLE SOURCE
-= https://img-pc.so-net.tw/dl/Resources/{TruthVersion}/Jpn/AssetBundles/iOS/storydata/... (直接連線 So-net CDN)
+= So-net CDN Pool AssetBundles (經由 Android manifest: {SONET_CDN}/Resources/{ver}/Jpn/AssetBundles/Android/manifest/storydata2_assetmanifest 索引，自 pool/AssetBundles/{hash[:2]}/{hash} 下載)
 
 BUNDLE CMD 0 SEMANTICS
-= 話數序號 / 章節標題 (Episode Number / Chapter Title，例如 "第1章 第1話"、"美食殿堂　第3話")
+= 主要／顯示標題元數據 (Primary / Display-Title Metadata，語意依劇情類型而異：主線/角色/公會/系統多數為話數序號或章節標籤如「第1章 第1話」；活動劇情則可表現為話數名稱如「回憶的歸途」)
 
 BUNDLE CMD 1 SEMANTICS
-= 官方劇情大綱 (Official Synopsis，約 60~150 字繁體中文高完整度情節大綱)
+= 官方劇情大綱 (Official Synopsis，長度數十至近百字之繁體中文長篇情節概要；本次 25 話抽樣 min=55字, max=87字, avg=71.4字, median=71字)
 
 BUNDLE CMD 32 SEMANTICS
-= 官方話數副標題 / 話名 (Official Episode Subtitle / Episode Name，例如 "冒失女僕娘的委託")
+= 官方話數副標題 / 話名 (Official Episode Subtitle / Episode Name，例如「冒失女僕娘的委託」)
 
 BUNDLE CMD 1 VS DB SUB_TITLE
-= COMPLETELY DIFFERENT (cmd 1 為 60~150 字完整大綱；DB sub_title 為 5~15 字短話名，兩者非同一概念)
+= COMPLETELY DIFFERENT (cmd 1 為長篇劇情概要；DB sub_title 為 5~15 字短話名，兩者在定位與篇幅上皆非同一概念)
 
 BUNDLE CMD 32 VS DB SUB_TITLE
-= HIGHLY CONSISTENT (20/25 抽樣逐字完全相同，其餘 5 筆僅為翻譯潤飾或符號全半形差異，語意與定位 100% 同為話名)
+= HIGHLY CONSISTENT (20/25 抽樣逐字完全相同，其餘 5 筆僅為翻譯潤飾或符號全半形差異，語意與定位 100% 同為話名副標題)
 
 IS CMD 1 TRUE OFFICIAL SYNOPSIS?
-= YES (百分之百由 Cygames 原廠與 So-net 官方編纂並封裝於劇本 AssetBundle 二進位流之官方劇情大綱)
+= OFFICIAL_DISTRIBUTED (由 So-net 官方 CDN 發布之 Story AssetBundle 內建長篇劇情大綱文字；抽樣 25/25 話皆包含非空大綱)
 
 ARE STORY JSONS PERSISTING CMD 1?
-= NO (現有 tools/pcrd_fetch.py 於 fetch_story_json_by_id 呼叫時未啟用 extract_metadata=True，未持久化儲存 cmd 1)
+= NO (現有 tools/pcrd_fetch.py 於 fetch_story_json_by_id 呼叫 _parse_bundle_dialogues 時未傳入 extract_metadata=True，且目前 schema 僅持久化對白陣列)
 
 STORY JSON PROVENANCE
 = OFFICIAL_DERIVED (資料源自 So-net CDN 劇本 AssetBundle，但解析過程包含 SPEAKER_MAP 映射、可可蘿代換及 JSON 結構重組)
@@ -53,7 +53,7 @@ FUTURE UI DIRECTION
 = SCENARIO A (官方話名 cmd 32 + 官方大綱 cmd 1 補完 + AI 劇情速讀懶人包 + 官方劇情全文四層分工架構)
 
 PROVENANCE CONFIDENCE
-= HIGH (已直接向 So-net 官方 CDN 下載 AssetBundle 並完成 Unity 二進位流指令級抽樣交叉比對)
+= HIGH (已直接向 So-net 官方 CDN 下載 Android AssetBundle 並完成 Unity 二進位流指令級抽樣交叉比對)
 
 SEMANTIC CONFIDENCE
 = VERY HIGH (25 筆跨類別抽樣 100% 證實 cmd 1 為劇情大綱、cmd 32 與 DB sub_title 為話名副標題)
@@ -101,42 +101,44 @@ graph TD
 為徹底釐清官方劇本 AssetBundle 是否蘊藏真正的大綱，專案團隊於 `tools/diagnostics/audit_bundle_synopsis.py` 建立自動化二進位稽核工具。工具透過 So-net 官方 CDN 資源清單（`storydata2_assetmanifest`）下載原始 AssetBundle，使用 `UnityPy` 解析底層 `TextAsset`，並透過 `pcrd_fetch.py` 的反序列化引擎將二進位流還原為指令陣列 `[(cmd_idx, [args])]`。
 
 ### 2. 官方 AssetBundle 指令語意架構
-經深入逆向分析，Cygames / So-net 劇本檔案開頭之元數據指令具有固定結構：
-* **`cmd 0`**：**話數序號／章節標題**。主線格式如 `第1章 第1話`；公會格式如 `美食殿堂　第3話`；活動格式如 `回憶的歸途`。
-* **`cmd 1`**：**官方劇情大綱（Official Synopsis）**。長度約 60~150 字，由官方撰寫之該話劇情概要（包含主角代稱 `{0}`）。
-* **`cmd 32`**：**話數副標題／話名（Episode Subtitle）**。長度約 5~15 字，例如 `冒失女僕娘的委託`、`歡迎來到美食殿堂！`。
+經深入逆向分析，Cygames / So-net 劇本檔案開頭之元數據指令具有以下結構特徵：
+* **`cmd 0`**：**主要／顯示標題元數據 (Primary / Display-Title Metadata)**。語意依劇情類型而異：
+  - 主線／角色／公會／系統劇情：多數表現為話數序號或章節標籤（如 `第1章 第1話`、`日和　第1話`、`美食殿堂　第3話`）。
+  - 活動劇情 (Event)：可直接表現為話數名稱（如 `回憶的歸途`），部分與 `cmd 32` 相同。
+* **`cmd 1`**：**官方劇情大綱 (Official Synopsis)**。長度為數十至近百字之繁體中文情節概要（抽樣 25 話統計：min=55字, max=87字, avg=71.4字, median=71字），文本內含主角代稱 `{0}`。
+* **`cmd 32`**：**話數副標題／話名 (Episode Subtitle / Episode Name)**。長度約 5~15 字，例如 `冒失女僕娘的委託`、`歡迎來到美食殿堂！`。
 
 ### 3. 跨五大劇情類別 25 筆抽樣比對總表
 
 本輪抽樣嚴格涵蓋主線（5 筆）、角色（5 筆）、公會（5 筆）、活動（5 筆）及系統/露娜塔（5 筆）共 25 話真實資料：
 
-| 類型 | Story ID | 資料庫 `title` | 資料庫 `sub_title` | Bundle `cmd 0` (話數序號) | Bundle `cmd 32` (話名副標題) | Bundle `cmd 1` 是否存在 | `cmd 32` vs DB `sub_title` |
+| 類型 | Story ID | 資料庫 `title` | 資料庫 `sub_title` | Bundle `cmd 0` (標題元數據) | Bundle `cmd 32` (話名副標題) | Bundle `cmd 1` 是否存在 | `cmd 32` vs DB `sub_title` |
 | :--- | :--- | :--- | :--- | :--- | :--- | :---: | :---: |
-| **主線** | 2001001 | 第1章 第1話 | 冒失女僕娘的委託 | 第1章 第1話 | 冒失女僕娘的委託 | ✅ (70字) | 逐字吻合 |
-| **主線** | 2001002 | 第1章 第2話 | 不受歡迎的乘客 | 第1章 第2話 | 不請自來的乘客 | ✅ (71字) | 譯名修飾差異 |
-| **主線** | 2001003 | 第1章 第3話 | 被盯上的少女 | 第1章 第3話 | 被盯上的少女 | ✅ (86字) | 逐字吻合 |
-| **主線** | 2001004 | 第1章 第4話 | 擦身而過的兩人 | 第1章 第4話 | 擦身而過的兩人 | ✅ (64字) | 逐字吻合 |
-| **主線** | 2002001 | 第2章 第1話 | 真步公主的招待 | 第2章 第1話 | 真步公主的招待 | ✅ (64字) | 逐字吻合 |
-| **角色** | 1001001 | 日和 第1話 | 有困難的時候就互相幫助幫助 | 日和　第1話 | 有困難的時候就互相幫助幫助 | ✅ (66字) | 逐字吻合 |
-| **角色** | 1001002 | 日和 第2話 | 打勾勾的誓言 | 日和　第2話 | 打勾勾的誓言 | ✅ (55字) | 逐字吻合 |
-| **角色** | 1001003 | 日和 第3話 | 為笑容許下心願 | 日和　第3話 | 為笑容許下心願 | ✅ (56字) | 逐字吻合 |
-| **角色** | 1001004 | 日和 第4話 | 走散的貓耳女孩 | 日和　第4話 | 走散的貓耳女孩 | ✅ (63字) | 逐字吻合 |
-| **角色** | 1001005 | 日和 第5話 | 尾巴是犯規的？ | 日和　第5話 | 尾巴是犯規的？ | ✅ (57字) | 逐字吻合 |
-| **公會** | 3001001 | 美食殿堂 第1話 | 幸福的餐桌有你有我 | 美食殿堂　第1話 | 幸福的餐桌有你有我 | ✅ (66字) | 逐字吻合 |
-| **公會** | 3001002 | 美食殿堂 第2話 | 就是黃連也吃得下肚唷♪ | 美食殿堂　第2話 | 吃蓼的蟲也沒問題唷♪ | ✅ (62字) | 譯名修飾差異 |
-| **公會** | 3001003 | 美食殿堂 第3話 | 歡迎來到美食殿堂！ | 美食殿堂　第3話 | 歡迎來到美食殿堂！ | ✅ (95字) | 逐字吻合 |
-| **公會** | 3002001 | 王宮騎士團 第1話 | 秩序與混沌的騎士團 | 王宮騎士團　第1話 | 秩序與混沌的騎士團 | ✅ (61字) | 逐字吻合 |
-| **公會** | 3002002 | 王宮騎士團 第2話 | 潛力股在那任務之中 | 王宮騎士團　第2話 | 黃金蛋的任務途中 | ✅ (79字) | 譯名修飾差異 |
+| **主線** | 2001001 | 第1章 第1話 | 冒失女僕娘的委託 | 第1章 第1話 | 冒失女僕娘的委託 | ✅ (65字) | 逐字吻合 |
+| **主線** | 2001002 | 第1章 第2話 | 不受歡迎的乘客 | 第1章 第2話 | 不請自來的乘客 | ✅ (63字) | 譯名修飾差異 |
+| **主線** | 2001003 | 第1章 第3話 | 被盯上的少女 | 第1章 第3話 | 被盯上的少女 | ✅ (79字) | 逐字吻合 |
+| **主線** | 2001004 | 第1章 第4話 | 擦身而過的兩人 | 第1章 第4話 | 擦身而過的兩人 | ✅ (84字) | 逐字吻合 |
+| **主線** | 2002001 | 第2章 第1話 | 真步公主的招待 | 第2章 第1話 | 真步公主的招待 | ✅ (60字) | 逐字吻合 |
+| **角色** | 1001001 | 日和 第1話 | 有困難的時候就互相幫助幫助 | 日和　第1話 | 有困難的時候就互相幫助幫助 | ✅ (60字) | 逐字吻合 |
+| **角色** | 1001002 | 日和 第2話 | 打勾勾的誓言 | 日和　第2話 | 打勾勾的誓言 | ✅ (63字) | 逐字吻合 |
+| **角色** | 1001003 | 日和 第3話 | 為笑容許下心願 | 日和　第3話 | 為笑容許下心願 | ✅ (69字) | 逐字吻合 |
+| **角色** | 1001004 | 日和 第4話 | 走散的貓耳女孩 | 日和　第4話 | 走散的貓耳女孩 | ✅ (71字) | 逐字吻合 |
+| **角色** | 1001005 | 日和 第5話 | 尾巴是犯規的？ | 日和　第5話 | 尾巴是犯規的？ | ✅ (71字) | 逐字吻合 |
+| **公會** | 3001001 | 美食殿堂 第1話 | 幸福的餐桌有你有我 | 美食殿堂　第1話 | 幸福的餐桌有你有我 | ✅ (80字) | 逐字吻合 |
+| **公會** | 3001002 | 美食殿堂 第2話 | 就是黃連也吃得下肚唷♪ | 美食殿堂　第2話 | 吃蓼的蟲也沒問題唷♪ | ✅ (81字) | 譯名修飾差異 |
+| **公會** | 3001003 | 美食殿堂 第3話 | 歡迎來到美食殿堂！ | 美食殿堂　第3話 | 歡迎來到美食殿堂！ | ✅ (83字) | 逐字吻合 |
+| **公會** | 3002001 | 王宮騎士團 第1話 | 秩序與混沌的騎士團 | 王宮騎士團　第1話 | 秩序與混沌的騎士團 | ✅ (55字) | 逐字吻合 |
+| **公會** | 3002002 | 王宮騎士團 第2話 | 潛力股在那任務之中 | 王宮騎士團　第2話 | 黃金蛋的任務途中 | ✅ (76字) | 譯名修飾差異 |
 | **活動** | 5001001 | 初音的禮物大作戰 第1話 | 回憶的歸途 | 回憶的歸途 | 回憶的歸途 | ✅ (69字) | 逐字吻合 |
-| **活動** | 5001002 | 初音的禮物大作戰 第2話 | 與不可思議之書的相遇 | 與不可思議之書的相遇 | 與不可思議之書的相遇 | ✅ (74字) | 逐字吻合 |
-| **活動** | 5001003 | 初音的禮物大作戰 第3話 | Dear‧Sister | Dear・Sister | Dear・Sister | ✅ (65字) | 標點全半形差異 |
-| **活動** | 5002001 | 小小甜心大冒險 第1話 | 一起探險的邀請 | 一起探險的邀請 | 一起探險的邀請 | ✅ (63字) | 逐字吻合 |
-| **活動** | 5002002 | 小小甜心大冒險 第2話 | 重修舊好的食譜 | 重修舊好的食譜 | 重修舊好的食譜 | ✅ (61字) | 逐字吻合 |
-| **系統** | 4001001 | 公會小屋 第1話 | 歡迎來到公會小屋 | 公會小屋 第1話 | 歡迎來到公會小屋 | ✅ (96字) | 逐字吻合 |
-| **系統** | 4001002 | 公會小屋 第2話 | 前往被封印的二樓 | 公會小屋 第2話 | 前往被封印的二樓 | ✅ (86字) | 逐字吻合 |
-| **系統** | 4001003 | 公會小屋 第3話 | 解除封印的重大危機！？ | 公會小屋 第3話 | 解除封印的重大危機！？ | ✅ (77字) | 逐字吻合 |
-| **系統** | 4001004 | 公會小屋 第4話 | 三樓的小小同居人 | 公會小屋 第4話 | 三樓的小小同居人 | ✅ (93字) | 逐字吻合 |
-| **系統** | 4001005 | 公會小屋 第5話 | 妖精們的遊戲 | 公會小屋 第5話 | 妖精們的遊戲 | ✅ (73字) | 逐字吻合 |
+| **活動** | 5001002 | 初音的禮物大作戰 第2話 | 與不可思議之書的相遇 | 與不可思議之書的相遇 | 與不可思議之書的相遇 | ✅ (71字) | 逐字吻合 |
+| **活動** | 5001003 | 初音的禮物大作戰 第3話 | Dear‧Sister | Dear・Sister | Dear・Sister | ✅ (62字) | 標點全半形差異 |
+| **活動** | 5002001 | 小小甜心大冒險 第1話 | 一起探險的邀請 | 一起探險的邀請 | 一起探險的邀請 | ✅ (62字) | 逐字吻合 |
+| **活動** | 5002002 | 小小甜心大冒險 第2話 | 重修舊好的食譜 | 重修舊好的食譜 | 重修舊好的食譜 | ✅ (60字) | 逐字吻合 |
+| **系統** | 4001001 | 公會小屋 第1話 | 歡迎來到公會小屋 | 公會小屋 第1話 | 歡迎來到公會小屋 | ✅ (87字) | 逐字吻合 |
+| **系統** | 4001002 | 公會小屋 第2話 | 前往被封印的二樓 | 公會小屋 第2話 | 前往被封印的二樓 | ✅ (81字) | 逐字吻合 |
+| **系統** | 4001003 | 公會小屋 第3話 | 解除封印的重大危機！？ | 公會小屋 第3話 | 解除封印的重大危機！？ | ✅ (76字) | 逐字吻合 |
+| **系統** | 4001004 | 公會小屋 第4話 | 三樓的小小同居人 | 公會小屋 第4話 | 三樓的小小同居人 | ✅ (86字) | 逐字吻合 |
+| **系統** | 4001005 | 公會小屋 第5話 | 妖精們的遊戲 | 公會小屋 第5話 | 妖精們的遊戲 | ✅ (70字) | 逐字吻合 |
 
 ### 4. 官方大綱 (`cmd 1`) 實體文本範例
 以下節錄抽樣中解析出之官方大綱原始字串：
@@ -148,34 +150,44 @@ graph TD
   > 「獲得了公會小屋的{0}與美食殿堂的成員們。從【公會管理協會】所派來，將會暫時駐守在此的花凜那裡，聽取了說明及注意事項。二樓及三樓因仍處於『調查中』狀態，目前似乎被封鎖了起來。」
 
 ### 5. 一致性與差異分析結論
-1. **`cmd 1` 存在率 100% (25/25)**：
-   抽樣的所有話數中，`cmd 1` 均完備存在，平均字數在 60~100 字之間，文筆流暢且百分之百為台服官方在地化繁體中文。**這證實官方確實有為每話撰寫專屬大綱！**
+1. **抽樣 25/25 話皆包含非空 `cmd 1`**：
+   本次抽樣的所有 25 話中，`cmd 1` 均完備存在，字數落在 55~87 字之間（平均 71.4 字，中位數 71 字），文本皆為繁體中文情節摘要。資料直接取自 So-net 官方 CDN 分發之 Story AssetBundle 二進位流（`OFFICIAL_DISTRIBUTED`）。本結論僅針對抽樣集合驗證，全量覆蓋率將在後續全庫稽核中確認。
 2. **`cmd 32` vs `DB sub_title` 一致率 80% (20/25 逐字吻合)**：
-   未逐字吻合的 5 筆中，差異均為微幅翻譯潤飾（如「不受歡迎」vs「不請自來」；「黃連」vs「吃蓼的蟲」；或全半形中點 `‧` vs `・`）。**兩者語意與定位 100% 一致，同屬 5~15 字之「話名副標題」，絕非大綱。**
+   未逐字吻合的 5 筆中，差異均為微幅翻譯潤飾（如「不受歡迎」vs「不請自來」；「黃連」vs「吃蓼的蟲」；或全半形中點 `‧` vs `・`）。兩者語意定位與篇幅 100% 一致，同屬 5~15 字之「話名副標題」，絕非大綱。
 
 ---
 
 ## 四、 現有管線對 `cmd 1` 的遺漏與 Story JSON 血統校正
 
 ### 1. `cmd 1` 遺漏機制分析 (`tools/pcrd_fetch.py`)
-經檢查 `tools/pcrd_fetch.py`：
+經檢查 `tools/pcrd_fetch.py` 的真實 HEAD 實作：
 ```python
-# tools/pcrd_fetch.py:465-492
-def fetch_story_json_by_id(story_id: int) -> bool:
+# tools/pcrd_fetch.py:401-466 & 541-625 (真實 HEAD 實作)
+def _parse_bundle_dialogues(bundle_data, extract_metadata=False):
     ...
-    # 此處呼叫 _parse_bundle_dialogues 時，未傳入 extract_metadata=True！
-    dialogues, still_ids, bg_ids, movie_ids = _parse_bundle_dialogues(data)
+    # 預設 extract_metadata=False 時回傳對白陣列:
+    if extract_metadata:
+        return dialogues, bundle_metadata
+    return dialogues
+
+def fetch_story_json_by_id(
+    story_id: int,
+    manifest_hash_map: Optional[Dict[int, str]] = None,
+    timeout: int = 15
+) -> StoryFetchResult:
     ...
-    story_data = {
-        "story_id": story_id,
-        "bg": bg_ids,
-        "still": still_ids,
-        "movie": movie_ids,
-        "dialogue": dialogues
-        # ⚠️ 嚴重遺漏：bundle_metadata["synopsis"] (cmd 1) 未被寫入此字典！
-    }
+    bundle_url = f"{SONET_CDN}/pool/AssetBundles/{h[:2]}/{h}"
+    ...
+    # ⚠️ 標準下載原語呼叫時未啟用 extract_metadata=True:
+    dialogues = _parse_bundle_dialogues(bundle_data)
+    ...
+    with open(tmp_path, "w", encoding="utf-8") as f:
+        # ⚠️ 目前持久化契約僅序列化儲存對白陣列 (dialogue array contract):
+        json.dump(dialogues, f, ensure_ascii=False, indent=2)
+    tmp_path.replace(out_path)
+    return StoryFetchResult(...)
 ```
-`pcrd_fetch.py` 雖然內部實作了 `_parse_bundle_metadata` 並能正確抽取 `cmd 1`（`synopsis`），但在主要的資料下載與 JSON 導出函式 `fetch_story_json_by_id` 中，未開啟元數據抽取開關，且導出的 JSON schema 中完全未設計存放大綱的欄位。這導致**官方提供的優質大綱在下載當下被直接拋棄**。
+`pcrd_fetch.py` 內部已實作 `_parse_bundle_metadata` 並具備抽取 `cmd 1`（`synopsis`）的能力，但在標準下載原語 `fetch_story_json_by_id` 呼叫時未啟用 `extract_metadata=True`，且目前 `dashboard/story/<story_id>.json` 的持久化契約僅儲存對白陣列（dialogue array contract），導致隨 AssetBundle 發布的官方大綱文字在解析當下被拋棄。
 
 ### 2. Story JSON 血統校正 (`OFFICIAL_RAW` ➡️ `OFFICIAL_DERIVED`)
 先前文檔將 `dashboard/story/*.json` 歸類為 `OFFICIAL_RAW`，本輪審計依據嚴格血統定義予以校正：
@@ -193,7 +205,7 @@ def fetch_story_json_by_id(story_id: int) -> bool:
 | :--- | :--- | :---: | :--- | :--- |
 | **`📌 官方大綱` (正常有值)** | `story_detail.sub_title` | `OFFICIAL_DERIVED` | **話名 / 副標題**（5~15 字） | **標籤名不符實**：實為話名卻被冠以大綱稱謂 |
 | **`📌 官方大綱` (查無值時)** | 寫死字串 `"本話為重要主線..."` | `GENERIC_FALLBACK` | 偽造的佔位描述 | **嚴重違規 (BUG)**：非官方文字被標為官方 |
-| **未提取之官方大綱** | AssetBundle `cmd 1` | `OFFICIAL_RAW` (未持久化) | **真正的官方劇情大綱**（60~150 字） | **資料遺失**：官方有提供但在轉 JSON 時被拋棄 |
+| **未提取之官方大綱** | AssetBundle `cmd 1` | `OFFICIAL_RAW` (未持久化) | **真正的官方劇情大綱**（數十至近百字，抽樣 avg=71.4字） | **資料遺失**：隨 Bundle 發布但在轉 JSON 時未持久化 |
 | **`💡 單話摘要簡介`** | `ChapterDataService` 快取 | `AI_GENERATED` | 舊版 LLM 生成之摘要 | 早期品質粗糙、缺乏一致性，已於 Phase 0 隱藏 |
 | **`📖 整章摘要簡介`** | `event_summaries.json` | `AI_GENERATED` / `LOCAL_CURATED` | 舊版章節總結 | 涵蓋不均，已於 Phase 0 隱藏 |
 | **`✦ 劇情全文 ✦`** | `dashboard/story/*.json` | `OFFICIAL_DERIVED` | 官方劇本對白（經解析重組） | 正確反映劇本，但包含說話者映射與可可蘿詞彙代換 |
@@ -202,7 +214,7 @@ def fetch_story_json_by_id(story_id: int) -> bool:
 
 ## 六、 未來架構演進：Scenario A 落地實施規劃
 
-由於本次審計 100% 證實了「官方大綱 (`cmd 1`)」真實存在於官方 AssetBundle 中，專案無須被迫在「廢棄官方大綱標籤」與「混淆副標題」之間妥協。未來架構應堅定採行 **Scenario A（四層清晰分工架構）**：
+由於本次審計證實「官方大綱 (`cmd 1`)」確實隨官方 AssetBundle 分發，專案無須在「廢棄官方大綱標籤」與「混淆副標題」之間妥協。未來架構應採行 **Scenario A（四層清晰分工架構）**：
 
 ```text
 ┌─────────────────────────────────────────────────────────────────┐
@@ -223,10 +235,13 @@ def fetch_story_json_by_id(story_id: int) -> bool:
 
 ### 後續分階段路線規劃：
 1. **Phase 0.5（當前完成）**：完成 AssetBundle 指令深度稽核，確認 `cmd 1` 為官方大綱、`cmd 32` 為話名，並修正血統評級。
-2. **Phase A（管線元數據升級）**：
-   - 修改 `tools/pcrd_fetch.py` 與 `pipeline/fetch.py`，開啟 `extract_metadata=True`。
-   - 在 `dashboard/story/*.json` 中持久化保留 `synopsis` (`cmd 1`) 與 `subtitle` (`cmd 32`)。
-   - 建立增量提取機制，無損補完現存 3,000+ 話之官方大綱。
+2. **Phase A（Story AssetBundle Command & Metadata 盤點與設計評估）**：
+   - 全面盤點現有 parser 已知／未知 command IDs。
+   - 對 cmd semantics 建立 confidence / evidence table。
+   - 找出目前 decoded-but-dropped metadata。
+   - 完成 metadata persistence design：評估 sidecar manifest、獨立 metadata JSON、或 story schema migration 之優缺點。
+   - 完成向後相容影響分析 (backward compatibility impact analysis)，確保不破壞既有對白消費契約。
+   - 通過 Design Review 後才進入管線實作階段。
 3. **Phase B（前端 UI 四層分工呈現）**：
    - 將話名（`sub_title`）整合進話數標題。
    - 將 `cmd 1` 正式掛載至真正的「📜 官方大綱」區塊（若無大綱則優雅隱藏，徹底移除寫死的 fallback 文字）。
