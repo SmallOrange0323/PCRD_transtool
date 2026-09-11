@@ -1,2 +1,6 @@
-sound/
 card/
+
+sound/*
+!sound/story_vo/
+sound/story_vo/*
+!sound/story_vo/*.m4a

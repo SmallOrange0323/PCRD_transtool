@@ -1879,24 +1879,77 @@ body {
     overflow: hidden;
 }
 
-/* 說話者名字 */
-.game-dialogue-speaker {
-	font-size: 1rem;
-    font-weight: 700;
-    color: var(--accent-color);
+/* 說話者名字列容器 (包含名字與語音按鈕) */
+.game-dialogue-speaker-wrap {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 /* 說話者名字右邊的細細虛線 */
-.game-dialogue-speaker::after {
+.game-dialogue-speaker-wrap::after {
     content: "";
     flex: 1;
     height: 1px;
     border-bottom: 1px dotted rgba(232, 56, 117, 0.25);
 }
+
+/* 說話者名字 */
+.game-dialogue-speaker {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.2s ease, text-decoration 0.2s ease;
+}
+
+.game-dialogue-speaker:hover {
+    opacity: 0.82;
+    text-decoration: underline;
+}
+
+/* 語音播放按鈕 (乾淨原生風格、大點擊熱區、防止誤觸人名) */
+.dialogue-voice-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.15s ease, opacity 0.15s ease;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.dialogue-voice-btn:hover {
+    background-color: rgba(232, 56, 117, 0.08);
+    opacity: 0.85;
+}
+
+.dialogue-voice-btn:active {
+    background-color: rgba(232, 56, 117, 0.16);
+    opacity: 1;
+}
+
+@media (pointer: coarse) {
+    .dialogue-voice-btn {
+        min-width: 42px;
+        min-height: 42px;
+        font-size: 1.25rem;
+    }
+}
+
 
 /* 對話內文氣泡 */
 .game-dialogue-text {
@@ -1996,13 +2049,18 @@ body {
     padding-left: 0;
 }
 
-.game-dialogue-line.role-choice .game-dialogue-speaker {
-    color: #e64a85;
+.game-dialogue-line.role-choice .game-dialogue-speaker-wrap {
     justify-content: center;
 }
 
+.game-dialogue-line.role-choice .game-dialogue-speaker-wrap::after,
 .game-dialogue-line.role-choice .game-dialogue-speaker::after {
     display: none; /* 隱藏虛線 */
+}
+
+.game-dialogue-line.role-choice .game-dialogue-speaker {
+    color: #e64a85;
+    justify-content: center;
 }
 
 .game-dialogue-line.role-choice .game-dialogue-text {
@@ -2695,9 +2753,20 @@ body {
         padding-left: 0;
     }
 
+    .game-dialogue-speaker-wrap {
+        gap: 10px;
+        margin-bottom: 4px;
+    }
+
     .game-dialogue-speaker {
-        font-size: 0.88rem;
-        margin-bottom: 3px;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    .dialogue-voice-btn {
+        min-width: 42px;
+        min-height: 42px;
+        font-size: 1.25rem;
     }
 
     .game-dialogue-text {

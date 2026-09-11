@@ -235,14 +235,17 @@ console.log("dialogue-view.js loaded");
                     `;
                 }
 
-                const voiceBtn = item.voice ? `<span class="dialogue-voice-btn" onclick="event.stopPropagation(); QuestMapModule.playVoice('${item.voice}')" style="cursor: pointer; margin-left: 6px; font-size: 0.85rem; color: var(--accent-color); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">🔊</span>` : '';
+                const voiceBtn = item.voice ? `<button type="button" class="dialogue-voice-btn" onclick="event.stopPropagation(); QuestMapModule.playVoice('${item.voice}')" title="播放語音" aria-label="播放語音">🔊</button>` : '';
 
                 html += `
                     <div class="game-dialogue-line ${speakerClass}">
                         ${avatarHtml}
                         <div class="game-dialogue-content">
-                            <div class="game-dialogue-speaker" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realNameForBtn).replace(/"/g, '&quot;')})" style="cursor: pointer; display: inline-block;">
-                                ${safeSpeaker}${voiceBtn}
+                            <div class="game-dialogue-speaker-wrap">
+                                <span class="game-dialogue-speaker" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realNameForBtn).replace(/"/g, '&quot;')})" style="cursor: pointer;" title="查看角色資料">
+                                    ${safeSpeaker}
+                                </span>
+                                ${voiceBtn}
                             </div>
                             <div class="game-dialogue-text">${words}</div>
                         </div>
