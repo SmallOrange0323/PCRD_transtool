@@ -93,6 +93,16 @@ window.StoryAssetService = {
     },
 
     /**
+     * 取得劇情背景之單一主要 URL (向後相容 helper)
+     * @param {number|string} bgId 背景 ID
+     * @returns {string} 首選背景 URL
+     */
+    getBackgroundUrl(bgId) {
+        const urls = this.getBackgroundUrls(bgId);
+        return (urls && urls.length > 0) ? urls[0] : "";
+    },
+
+    /**
      * 取得 CG 插畫的 CDN/本地 URL 候選清單
      * CG ID 通常為 6 位數 (例如 100401)
      * @param {number|string} stillId CG 插畫 ID

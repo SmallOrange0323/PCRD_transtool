@@ -28,35 +28,164 @@ console.log("media-service.js loaded");
         },
 
         /**
-         * 播放指定語音，自動暫停前一段音訊並依序嘗試鏡像站點
+         * 播放指定語音 (向後相容包裝)
          * @param {string} voiceName - 語音檔案標籤
+         * @param {Object} [options] - 播放選項
          */
-        playVoice(voiceName) {
-            if (!voiceName) return;
-            const cdnList = this.getVoiceCandidates(voiceName);
-            if (cdnList.length === 0) return;
+        playVoice(voiceName, options = {}) {
+            return this.playVoiceWithOptions(voiceName, options);
+        },
 
-            if (this._currentAudio) {
-                this._currentAudio.pause();
+        /**
+         * 播放指定語音並支援生命週期回呼 (AUTO 連播使用)
+         * @param {string} voiceName - 語音檔案標籤
+         * @param {Object} [options] - 選項 { onStart, onEnded, onError }
+         */
+        playVoiceWithOptions(voiceName, options = {}) {
+            if (!voiceName) {
+                if (typeof options.onError === 'function') {
+                    options.onError(new Error('Missing voiceName'));
+                }
+                return;
+            }
+            const cdnList = this.getVoiceCandidates(voiceName);
+            if (cdnList.length === 0) {
+                if (typeof options.onError === 'function') {
+                    options.onError(new Error('No candidate URLs for voiceName: ' + voiceName));
+                }
+                return;
             }
 
+            // 停止並清理前一段音訊，避免事件重疊
+            this.stopVoice();
+
+            let isDisposed = false;
+
             const tryPlay = (index) => {
+                if (isDisposed) return;
+
                 if (index >= cdnList.length) {
-                    console.warn('[MediaService] 該劇情的語音檔在遠端鏡像站尚未同步更新。');
+                    console.warn('[MediaService] 該劇情的語音檔在遠端鏡像站尚未同步更新: ' + voiceName);
+                    if (typeof options.onError === 'function') {
+                        options.onError(new Error('All CDN candidates failed for: ' + voiceName));
+                    }
                     return;
                 }
+
                 const audio = new Audio(cdnList[index]);
-                audio.play().catch(err => {
-                    if (err.name === 'NotAllowedError') {
+                this._currentAudio = audio;
+
+                // 綁定結束事件
+                audio.onended = () => {
+                    if (isDisposed) return;
+                    if (typeof options.onEnded === 'function') {
+                        options.onEnded();
+                    }
+                };
+
+                let failureHandled = false;
+                const handleFailure = (err) => {
+                    if (isDisposed || failureHandled) return;
+                    failureHandled = true;
+
+                    audio.onended = null;
+                    audio.onerror = null;
+
+                    if (err && err.name === 'NotAllowedError') {
                         console.warn('[MediaService] 語音播放被瀏覽器自動播放政策封鎖。');
+                        if (typeof options.onError === 'function') {
+                            options.onError(err);
+                        }
                         return;
                     }
+
                     tryPlay(index + 1);
+                };
+
+                // 若載入中途出錯，嘗試下一候選 (防重守護)
+                audio.onerror = () => {
+                    handleFailure(new Error('Audio load error'));
+                };
+
+                audio.play().then(() => {
+                    if (isDisposed) {
+                        audio.pause();
+                        return;
+                    }
+                    if (typeof options.onStart === 'function') {
+                        options.onStart(audio);
+                    }
+                }).catch(err => {
+                    handleFailure(err);
                 });
-                this._currentAudio = audio;
             };
 
             tryPlay(0);
+        },
+
+        /**
+         * 暫停目前正在播放的語音 (保留 currentTime)
+         * @returns {boolean} 是否成功執行暫停
+         */
+        pauseVoice() {
+            if (this._currentAudio && !this._currentAudio.paused) {
+                this._currentAudio.pause();
+                return true;
+            }
+            return false;
+        },
+
+        /**
+         * 接續播放目前已暫停的語音 (從 currentTime 繼續)
+         * @returns {Promise<void>|null}
+         */
+        resumeVoice() {
+            if (this._currentAudio && this._currentAudio.paused && !this._currentAudio.ended) {
+                return this._currentAudio.play();
+            }
+            return null;
+        },
+
+        /**
+         * 徹底停止目前語音播放並清理回呼與實例
+         */
+        stopVoice() {
+            if (this._currentAudio) {
+                const audio = this._currentAudio;
+                audio.onended = null;
+                audio.onerror = null;
+                try {
+                    audio.pause();
+                    audio.currentTime = 0;
+                } catch (e) {
+                    // 忽略跨來源或未就緒之例外
+                }
+                this._currentAudio = null;
+            }
+        },
+
+        /**
+         * 檢查目前是否正在播放語音
+         * @returns {boolean}
+         */
+        isPlayingVoice() {
+            return !!(this._currentAudio && !this._currentAudio.paused && !this._currentAudio.ended);
+        },
+
+        /**
+         * 檢查目前是否為暫停狀態
+         * @returns {boolean}
+         */
+        isPausedVoice() {
+            return !!(this._currentAudio && this._currentAudio.paused && !this._currentAudio.ended && this._currentAudio.currentTime > 0);
+        },
+
+        /**
+         * 取得目前 Audio 實例
+         * @returns {Audio|null}
+         */
+        getCurrentAudio() {
+            return this._currentAudio;
         },
 
         /**

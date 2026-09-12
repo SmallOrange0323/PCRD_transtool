@@ -3543,5 +3543,83 @@ body {
     box-shadow: 0 6px 14px rgba(91, 135, 199, 0.35);
 }
 
+/* --- AUTO 語音連播控制器與高亮樣式 --- */
+.auto-voice-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.auto-voice-btn,
+.stop-voice-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    line-height: 1.4;
+}
+
+.auto-voice-btn {
+    background: linear-gradient(135deg, rgba(232, 56, 117, 0.12) 0%, rgba(255, 107, 157, 0.18) 100%);
+    border: 1px solid rgba(232, 56, 117, 0.35);
+    color: var(--accent-color);
+}
+
+.auto-voice-btn:hover {
+    background: linear-gradient(135deg, #e83875 0%, #ff6b9d 100%);
+    border-color: #e83875;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(232, 56, 117, 0.3);
+    transform: translateY(-1px);
+}
+
+.auto-voice-btn.playing {
+    background: linear-gradient(135deg, #e83875 0%, #ff6b9d 100%);
+    border-color: #e83875;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(232, 56, 117, 0.35);
+    animation: auto-voice-pulse 2s infinite ease-in-out;
+}
+
+.auto-voice-btn.paused {
+    background: rgba(232, 56, 117, 0.08);
+    border-color: rgba(232, 56, 117, 0.4);
+    color: var(--accent-color);
+}
+
+.stop-voice-btn {
+    background: rgba(100, 116, 139, 0.12);
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    color: var(--text-secondary);
+}
+
+.stop-voice-btn:hover {
+    background: #e11d48;
+    border-color: #e11d48;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(225, 29, 72, 0.3);
+    transform: translateY(-1px);
+}
+
+@keyframes auto-voice-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.82; }
+}
+
+/* 播放中對白行高亮 (不改變排版高度與外框尺寸) */
+.game-dialogue-line.auto-voice-active {
+    background: rgba(232, 56, 117, 0.07) !important;
+    border-radius: 8px;
+    box-shadow: inset 3px 0 0 var(--accent-color), 0 2px 10px rgba(232, 56, 117, 0.08);
+    transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+
 
 
