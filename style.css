@@ -999,11 +999,23 @@ body {
     margin: 0 auto 2rem;
     padding: 30px;
     border-radius: 24px;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.95);
+    /* 移除數千 px 巨型 container 上的 blur 以大幅消除 GPU 合成與滾動重繪負擔 */
     border: 1px solid var(--glass-border);
-    box-shadow: 0 8px 32px rgba(94, 107, 125, 0.1);
+    box-shadow: 0 8px 32px rgba(94, 107, 125, 0.08);
+}
+
+/* 上方分類導航容器與層級間距 */
+.story-navigation-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* 第一層導航至第二層 pills 間距 10px */
+    margin-top: 8px;
+    margin-bottom: 24px; /* 第二層 pills (或活動模式) 至正文內容區保持 24px 呼吸空間 */
+}
+
+.story-navigation-header .part-selector.secondary-nav-group {
+    margin-bottom: 0;
 }
 
 .map-header {
@@ -1126,24 +1138,22 @@ body {
     height: auto;
 }
 
-/* 左側電影放映區 */
+/* 左側電影放映區 (包含對白長篇列表) */
 .map-visual-area {
     position: relative;
     border-radius: 20px;
     overflow: visible;
-    background: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: #ffffff;
+    /* 移除數千 px 內部對白大容器之 blur，避免滾動時巢狀高斯模糊 GPU 重繪 */
     border: 1px solid var(--glass-border);
-    box-shadow: 0 8px 24px rgba(94, 107, 125, 0.08);
+    box-shadow: 0 8px 24px rgba(94, 107, 125, 0.06);
     padding: 20px;
     height: auto;
 }
 
 .map-control-panel {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.95);
+    /* 側欄改為高品質微透明實色背景，移除模糊以加速 sticky 滾動渲染 */
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     padding: 20px;
@@ -1153,7 +1163,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(94, 107, 125, 0.08);
+    box-shadow: 0 8px 24px rgba(94, 107, 125, 0.06);
 }
 
 .panel-section-title {

@@ -1198,7 +1198,7 @@ const QuestMapModule = {
                     }</span>
                 `}
             </div>
-            <div class="story-navigation-header" style="display: flex; flex-direction: column; gap: 8px; margin-top: 6px; margin-bottom: 6px;">
+            <div class="story-navigation-header">
                 ${(this.activeTabType === 'main' || this.activeTabType === 'event') ? `
                 <div class="primary-nav-group" style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
                     <button class="primary-nav-btn ${this.activeTabType === 'main' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('main')">⚔️ 主線劇情</button>
@@ -1221,7 +1221,7 @@ const QuestMapModule = {
                 </div>
             </div>
 
-            <div class="map-layout" style="margin-top: 10px;">
+            <div class="map-layout">
                 <div class="map-visual-area">
                     <div class="cinema-panel">
                         <div class="cinema-meta" style="display: flex; flex-direction: column;">
@@ -1918,7 +1918,11 @@ const QuestMapModule = {
         if (!synopsisEl) return;
 
         if (officialSynopsis && typeof officialSynopsis === 'string' && officialSynopsis.trim()) {
-            synopsisEl.textContent = officialSynopsis.trim();
+            const rawText = officialSynopsis.trim();
+            const normalizedSynopsis = (window.DialogueView && typeof window.DialogueView.normalizePlayerName === 'function')
+                ? window.DialogueView.normalizePlayerName(rawText)
+                : rawText.replace(/\{player\}|\{0\}|\{player_name\}|\([Oo]\)|（[Oo]）/g, "佑樹");
+            synopsisEl.textContent = normalizedSynopsis;
             synopsisEl.style.color = 'var(--text-primary)';
             synopsisEl.style.lineHeight = '1.7';
             synopsisEl.style.fontSize = '0.9rem';
