@@ -1065,11 +1065,10 @@ body {
     display: grid;
     grid-template-columns: 2.2fr 1fr;
     gap: 20px;
-    align-items: stretch;
+    align-items: start;
     margin-bottom: 0;
-    height: calc(100vh - 180px);
     min-height: 550px;
-    max-height: 800px;
+    height: auto;
 }
 
 /* 左側電影放映區 */
@@ -1083,7 +1082,7 @@ body {
     border: 1px solid var(--glass-border);
     box-shadow: 0 8px 24px rgba(94, 107, 125, 0.08);
     padding: 20px;
-    height: 100%;
+    height: auto;
 }
 
 .map-control-panel {
@@ -1093,7 +1092,9 @@ body {
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     padding: 20px;
-    height: 100%;
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -1139,7 +1140,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 14px;
-    height: 100%;
+    height: auto;
     overflow: visible;
 }
 
