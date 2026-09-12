@@ -13,15 +13,30 @@ console.log("auto-voice-controller.js loaded");
 
 (function() {
     const AutoVoiceController = {
+        AUTO_NEXT_DELAY_MS: 400, // 正常語音播畢至下一句之微間隔 (ms)
         state: 'IDLE', // 'IDLE' | 'PLAYING' | 'PAUSED'
         dialogueList: [],
         currentIndex: -1,
         sessionToken: 0,
         storyId: null,
         boardEl: null,
+        _nextTimer: null,
+        _pendingNextIndex: -1,
 
         // 外部狀態變更監聽回呼 (供 QuestMapModule 更新按鈕 UI)
         onStateChange: null,
+
+        /**
+         * 清除下句排程計時器
+         * @private
+         */
+        _clearNextTimer() {
+            if (this._nextTimer !== null) {
+                clearTimeout(this._nextTimer);
+                this._nextTimer = null;
+            }
+            this._pendingNextIndex = -1;
+        },
 
         /**
          * 啟動 AUTO 語音連播 (從話數第一句有語音的對白開始)
@@ -30,7 +45,7 @@ console.log("auto-voice-controller.js loaded");
          * @param {HTMLElement} [boardEl] - 對白看板容器元素
          */
         start(dialogueList, storyId, boardEl) {
-            this.stop(); // 確保舊 Session 徹底結束
+            this.stop(); // 確保舊 Session 徹底結束 (含清理定時器)
 
             if (!dialogueList || !Array.isArray(dialogueList) || dialogueList.length === 0) {
                 console.warn('[AutoVoiceController] 無可播放的對白列表');
@@ -60,6 +75,20 @@ console.log("auto-voice-controller.js loaded");
          */
         pause() {
             if (this.state !== 'PLAYING') return;
+
+            // 若在 400ms 間隔中暫停，立即取消排程並將進度定位至即將播放的下一個語音行
+            if (this._nextTimer !== null) {
+                clearTimeout(this._nextTimer);
+                this._nextTimer = null;
+                if (this._pendingNextIndex !== -1) {
+                    this.currentIndex = this._pendingNextIndex;
+                    this._pendingNextIndex = -1;
+                    const board = this.boardEl || (typeof document !== 'undefined' ? document.getElementById('dialogue-board') : null);
+                    if (board && window.DialogueView && typeof window.DialogueView.highlightDialogueLine === 'function') {
+                        window.DialogueView.highlightDialogueLine(board, this.currentIndex);
+                    }
+                }
+            }
 
             if (window.MediaService && typeof window.MediaService.pauseVoice === 'function') {
                 window.MediaService.pauseVoice();
@@ -95,7 +124,7 @@ console.log("auto-voice-controller.js loaded");
                 this.state = 'PLAYING';
                 this._notifyState('PLAYING');
             } else {
-                // 若無 current Audio 可接續，但當前對白有效，嘗試重新發起該句播放；否則停止
+                // 若無 current Audio 可接續 (例如在 gap 期間 pause)，以當前有效對白重新發起播放 (零額外延遲)；否則停止
                 if (this.currentIndex >= 0 && this.dialogueList && this.dialogueList[this.currentIndex]) {
                     this.state = 'PLAYING';
                     this._notifyState('PLAYING');
@@ -107,10 +136,11 @@ console.log("auto-voice-controller.js loaded");
         },
 
         /**
-         * 徹底終止 AUTO 連播，使舊 Session 回呼完全失效並清理視圖
+         * 徹底終止 AUTO 連播，使舊 Session 回呼完全失效並清理視圖與計時器
          */
         stop() {
             this.sessionToken++; // 使非同步回呼 (ended / error / promise) 立即失效
+            this._clearNextTimer();
 
             if (window.MediaService && typeof window.MediaService.stopVoice === 'function') {
                 window.MediaService.stopVoice();
@@ -156,10 +186,11 @@ console.log("auto-voice-controller.js loaded");
          */
         _playIndex(index, token) {
             if (token !== this.sessionToken || this.state !== 'PLAYING') return;
+            this._clearNextTimer();
 
             const item = this.dialogueList[index];
             if (!item || !item.voice) {
-                // 若當前行無語音，推進至下一句
+                // 若當前行無語音，立即推進至下一句
                 this._stepNext(index, token);
                 return;
             }
@@ -181,7 +212,8 @@ console.log("auto-voice-controller.js loaded");
             window.MediaService.playVoiceWithOptions(item.voice, {
                 onEnded: () => {
                     if (token !== this.sessionToken || this.state !== 'PLAYING') return;
-                    this._stepNext(index, token);
+                    // 正常播放完畢，等待 400ms 間隔後推進至下一句語音
+                    this._stepNextWithDelay(index, token);
                 },
                 onError: (err) => {
                     if (token !== this.sessionToken || this.state !== 'PLAYING') return;
@@ -193,19 +225,47 @@ console.log("auto-voice-controller.js loaded");
                     }
 
                     console.warn(`[AutoVoiceController] 對白語音播放失敗 (${item.voice})，自動跳過本句。`);
+                    // 錯誤失敗時立即推進，不強制等待 400ms
                     this._stepNext(index, token);
                 }
             });
         },
 
         /**
-         * 推進至下一句具備語音之對白
+         * 帶 400ms 微間隔推進至下一句具備語音之對白
+         * @private
+         * @param {number} currentIndex - 當前索引
+         * @param {number} token - Session Token Guard
+         */
+        _stepNextWithDelay(currentIndex, token) {
+            if (token !== this.sessionToken || this.state !== 'PLAYING') return;
+
+            const nextIndex = this.findNextVoicedIndex(currentIndex + 1);
+            if (nextIndex === -1) {
+                // 已抵達故事結尾 (無更多語音)
+                this.stop();
+                return;
+            }
+
+            this._clearNextTimer();
+            this._pendingNextIndex = nextIndex;
+            this._nextTimer = setTimeout(() => {
+                this._nextTimer = null;
+                this._pendingNextIndex = -1;
+                if (token !== this.sessionToken || this.state !== 'PLAYING') return;
+                this._playIndex(nextIndex, token);
+            }, this.AUTO_NEXT_DELAY_MS);
+        },
+
+        /**
+         * 立即推進至下一句具備語音之對白 (無間隔，用於跳過無語音或錯誤行)
          * @private
          * @param {number} currentIndex - 當前索引
          * @param {number} token - Session Token Guard
          */
         _stepNext(currentIndex, token) {
             if (token !== this.sessionToken || this.state !== 'PLAYING') return;
+            this._clearNextTimer();
 
             const nextIndex = this.findNextVoicedIndex(currentIndex + 1);
             if (nextIndex !== -1) {

@@ -69,12 +69,20 @@ class MockAudio {
     }
     play() {
         this.paused = false;
+        this.ended = false;
         mockAudioLog.push({ type: 'play', src: this.src });
         return Promise.resolve();
     }
     pause() {
         this.paused = true;
         mockAudioLog.push({ type: 'pause', src: this.src });
+    }
+    triggerEnded() {
+        this.ended = true;
+        this.paused = true;
+        if (typeof this.onended === 'function') {
+            this.onended();
+        }
     }
 }
 global.Audio = MockAudio;
@@ -224,9 +232,9 @@ const mockDialogueList = [
 console.log('\n開始執行 3 項真實 Callback 整合測試 (Integration Tests)...');
 
 (async function runIntegrationTests() {
-    // Test A — real ended callback
+    // Test A — real ended callback with 400ms gap
     // AutoVoiceController.start() -> MediaService.playVoiceWithOptions() -> MockAudio 建立
-    // -> 觸發該 Audio instance 的 onended -> Controller 自動切到下一個 voiced dialogue
+    // -> 觸發該 Audio instance 的 onended -> 等待 400ms -> Controller 自動切到下一個 voiced dialogue
     {
         let createdAudios = [];
         global.Audio = class extends MockAudio {
@@ -243,12 +251,148 @@ console.log('\n開始執行 3 項真實 Callback 整合測試 (Integration Tests
         assert(audio1.onended, 'Test A: Audio 實例必須被綁定 onended 回呼');
 
         // 真正觸發 audio1 的 onended
-        audio1.onended();
+        audio1.triggerEnded();
 
-        assert.strictEqual(AutoVoiceController.currentIndex, 3, 'Test A: 觸發 onended 後 Controller 必須自動前進至 index 3');
+        // 剛觸發 onended 時，應處於 400ms gap 緩衝中，尚未推進
+        assert.strictEqual(AutoVoiceController.currentIndex, 1, 'Test A: 剛觸發 onended 時應維持在 index 1 (等待 400ms)');
+        assert.strictEqual(createdAudios.length, 1, 'Test A: 400ms 緩衝期間不得提早建立第 2 個 Audio');
+
+        // 等待 450ms (超過 400ms gap)
+        await new Promise(r => setTimeout(r, 450));
+
+        assert.strictEqual(AutoVoiceController.currentIndex, 3, 'Test A: 400ms gap 後 Controller 必須自動前進至 index 3');
         assert.strictEqual(createdAudios.length, 2, 'Test A: 必須建立第 2 個 Audio 實例播放下一句');
         AutoVoiceController.stop();
-        console.log('✅ Test A (real onended callback 驅動前進) 通過');
+        console.log('✅ Test A (real onended callback 驅動 400ms gap 後前進) 通過');
+    }
+
+    // ==========================================================
+    // 專項測試：400ms Dialogue Gap Lifecycle & State Machine
+    // ==========================================================
+    console.log('\n開始執行 6 項 400ms Dialogue Gap 專項生命週期測試...');
+
+    // Gap Test 1: ended 觸發後 200ms 未推進，450ms 後推進
+    {
+        let audios = [];
+        global.Audio = class extends MockAudio {
+            constructor(src) { super(src); audios.push(this); }
+        };
+        AutoVoiceController.start(mockDialogueList, 1001001);
+        audios[0].triggerEnded();
+        await new Promise(r => setTimeout(r, 200));
+        assert.strictEqual(AutoVoiceController.currentIndex, 1, 'Gap Test 1: 200ms 處應仍處於 gap 緩衝中');
+        assert.strictEqual(audios.length, 1, 'Gap Test 1: 200ms 處不應產生新 audio');
+
+        await new Promise(r => setTimeout(r, 250)); // 累計 450ms
+        assert.strictEqual(AutoVoiceController.currentIndex, 3, 'Gap Test 1: 450ms 處應已推進至下一句');
+        assert.strictEqual(audios.length, 2, 'Gap Test 1: 450ms 處應已播放新 audio');
+        AutoVoiceController.stop();
+        console.log('✅ Gap Test 1 (精準時間點驗證：200ms 未推進，450ms 推進) 通過');
+    }
+
+    // Gap Test 2: 在 gap 中 Stop -> 下一句不播放，狀態保持 IDLE
+    {
+        let audios = [];
+        global.Audio = class extends MockAudio {
+            constructor(src) { super(src); audios.push(this); }
+        };
+        AutoVoiceController.start(mockDialogueList, 1001001);
+        audios[0].triggerEnded();
+        // 在 100ms gap 期間呼叫 stop
+        await new Promise(r => setTimeout(r, 100));
+        AutoVoiceController.stop();
+        assert.strictEqual(AutoVoiceController.state, 'IDLE');
+
+        // 再等 400ms，確認 timer 不會穿透
+        await new Promise(r => setTimeout(r, 400));
+        assert.strictEqual(AutoVoiceController.state, 'IDLE');
+        assert.strictEqual(audios.length, 1, 'Gap Test 2: stop 後不得建立下一句 audio');
+        console.log('✅ Gap Test 2 (gap 期間 stop 確實取消定時器) 通過');
+    }
+
+    // Gap Test 3: 在 gap 中切換話數 / sessionToken 變更 -> 舊定時器失效
+    {
+        let audios = [];
+        global.Audio = class extends MockAudio {
+            constructor(src) { super(src); audios.push(this); }
+        };
+        AutoVoiceController.start(mockDialogueList, 1001001);
+        audios[0].triggerEnded();
+
+        // 在 gap 期間模擬切換到新話數 (start 新話數)
+        await new Promise(r => setTimeout(r, 100));
+        const newDialogueList = [
+            { name: '雪菲', words: '好冷……', voice: 'vo_story_9999001' }
+        ];
+        AutoVoiceController.start(newDialogueList, 9999001);
+        assert.strictEqual(AutoVoiceController.currentIndex, 0);
+
+        // 等候舊 timer 到期 (400ms)
+        await new Promise(r => setTimeout(r, 400));
+        assert.strictEqual(AutoVoiceController.storyId, 9999001, 'Gap Test 3: 話數仍為新話數');
+        assert.strictEqual(AutoVoiceController.currentIndex, 0, 'Gap Test 3: 舊話數 timer 不得竄改新話數 index');
+        AutoVoiceController.stop();
+        console.log('✅ Gap Test 3 (gap 期間 session invalidation 防禦) 通過');
+    }
+
+    // Gap Test 4: 在 gap 中 Pause -> 定時器取消，狀態進入 PAUSED，不被穿透
+    {
+        let audios = [];
+        global.Audio = class extends MockAudio {
+            constructor(src) { super(src); audios.push(this); }
+        };
+        AutoVoiceController.start(mockDialogueList, 1001001);
+        audios[0].triggerEnded();
+
+        // 在 100ms 處 pause
+        await new Promise(r => setTimeout(r, 100));
+        AutoVoiceController.pause();
+        assert.strictEqual(AutoVoiceController.state, 'PAUSED', 'Gap Test 4: 狀態應切換為 PAUSED');
+        assert.strictEqual(AutoVoiceController.currentIndex, 3, 'Gap Test 4: 在 gap 中 pause 應將進度對齊即將接續的第 3 句');
+
+        // 再等待 400ms，確認不會被舊 timer 穿透為 PLAYING
+        await new Promise(r => setTimeout(r, 400));
+        assert.strictEqual(AutoVoiceController.state, 'PAUSED', 'Gap Test 4: 400ms 後狀態仍必須為 PAUSED');
+        assert.strictEqual(audios.length, 1, 'Gap Test 4: 不得有新音訊播放');
+        console.log('✅ Gap Test 4 (gap 期間 pause 不被 timer 穿透) 通過');
+    }
+
+    // Gap Test 5: 在 gap 中 Pause 後 Resume -> 立即播放下一句 (無額外 400ms 延遲)
+    {
+        let audios = [];
+        global.Audio = class extends MockAudio {
+            constructor(src) { super(src); audios.push(this); }
+        };
+        AutoVoiceController.start(mockDialogueList, 1001001);
+        audios[0].triggerEnded();
+
+        await new Promise(r => setTimeout(r, 100));
+        AutoVoiceController.pause();
+        assert.strictEqual(AutoVoiceController.state, 'PAUSED');
+
+        // 呼叫 resume
+        AutoVoiceController.resume();
+        assert.strictEqual(AutoVoiceController.state, 'PLAYING', 'Gap Test 5: resume 後狀態切為 PLAYING');
+        assert.strictEqual(AutoVoiceController.currentIndex, 3, 'Gap Test 5: 應接續第 3 句');
+        assert.strictEqual(audios.length, 2, 'Gap Test 5: 應立即發起第 2 段音訊播放');
+        AutoVoiceController.stop();
+        console.log('✅ Gap Test 5 (gap pause 後 resume 立即接續播放下一句) 通過');
+    }
+
+    // Gap Test 6: onError (播放失敗) -> 立即推進，不強制等待 400ms
+    {
+        let audios = [];
+        global.Audio = class extends MockAudio {
+            constructor(src) { super(src); audios.push(this); }
+        };
+        AutoVoiceController.start(mockDialogueList, 1001001);
+        const token = AutoVoiceController.sessionToken;
+
+        // 模擬內部呼叫 onError (非 NotAllowedError)
+        AutoVoiceController._stepNext(1, token);
+        assert.strictEqual(AutoVoiceController.currentIndex, 3, 'Gap Test 6: 失敗 skip 時應立即前進至 index 3');
+        AutoVoiceController.stop();
+        console.log('✅ Gap Test 6 (onError 快速 skip 零延遲) 通過');
     }
 
     // Test B — candidate exhaustion callback
