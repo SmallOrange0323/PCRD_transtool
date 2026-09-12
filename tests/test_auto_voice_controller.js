@@ -342,7 +342,7 @@ console.log('\n開始執行 3 項真實 Callback 整合測試 (Integration Tests
         assert(typeof bgUrl === 'string' && bgUrl.length > 0, 'Background Regression: 必須回傳合法字串 URL');
         assert(bgUrl.includes('510530'), 'Background Regression: URL 必須包含 bgId');
 
-        // 驗證 DialogueView generateDialogueHtml 解析 background item 不崩潰
+        // 驗證 DialogueView generateDialogueHtml 解析 background item 不崩潰且在全文閱讀中隱藏
         const result = DialogueView.generateDialogueHtml({
             storyId: 5216000,
             dialogueList: [
@@ -354,9 +354,10 @@ console.log('\n開始執行 3 項真實 Callback 整合測試 (Integration Tests
             resolveRealName: (n) => n,
             escapeHtml: (s) => s
         });
-        assert(result && typeof result.firstBgUrl === 'string' && result.firstBgUrl.length > 0, 'Background Regression: firstBgUrl 必須成功產生');
-        assert(result.firstBgUrl.includes('510530'), 'Background Regression: firstBgUrl 必須包含 510530');
-        console.log('✅ Background Regression (bg_id=510530 取得合法 URL 且 DialogueView 渲染正常) 通過');
+        assert(result && typeof result.firstBgUrl === 'string' && result.firstBgUrl === '', 'Background Regression: 全文閱讀中 background command 不設定 firstBgUrl (保持為空字串)');
+        assert(!result.html.includes('場景切換'), 'Background Regression: 全文閱讀不應渲染場景切換節點');
+        assert(result.html.includes('美穗') && result.html.includes('咦？'), 'Background Regression: 對白台詞正常渲染');
+        console.log('✅ Background Regression (bg_id=510530 取得合法 URL 且 DialogueView 依規範隱藏背景節點並保留對白) 通過');
     }
 
     // Regression Test 2 — MediaService candidate failure race guard

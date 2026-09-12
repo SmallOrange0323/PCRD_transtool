@@ -131,21 +131,30 @@ test("Test 3 — Voice button DOM contract and decoupling", () => {
     assert(wrapRegex.test(html), "DOM hierarchy contract violated: wrap must contain sibling speaker then voice button");
 });
 
-// Test 4 — Still and background special nodes
-test("Test 4 — Still and Background special nodes contract", () => {
+// Test 4 — Still and background special nodes regression
+test("Test 4 — Background hidden and Still rendering contract in full text view", () => {
     const { html, firstBgUrl } = DialogueView.generateDialogueHtml({
         storyId: 1001001,
         dialogueList: [
-            { type: "background", background_id: "500010" },
+            { type: "background", bg_id: "500140" },
+            { name: "佩可", words: "好吃到要融化了～", voice: "vo_story_1001001_001" },
             { type: "still", still_id: "1000101" }
         ],
-        speakerAvatars: {},
+        speakerAvatars: { "佩可": 105801 },
         resolveRealName: (n) => n
     });
 
-    // 遊戲實機全文模式不顯示場景切換標籤，但首張背景圖 URL 必須被正確捕獲
-    assert(!html.includes("game-dialogue-bg-change"), "Should NOT render bg change marker in full text view");
-    assert.strictEqual(firstBgUrl, "https://redive.estertion.win/bg/jpg/500010.jpg", "Should capture firstBgUrl");
+    // 遊戲實機全文模式不顯示「場景切換」與背景圖
+    assert(!html.includes("場景切換"), "Should NOT render 場景切換 label in full text view");
+    assert(!html.includes("bg_500140"), "Should NOT render background image in full text view");
+    assert(!html.includes("game-dialogue-bg-change"), "Should NOT render bg change marker");
+    assert.strictEqual(firstBgUrl, "", "firstBgUrl should be empty string");
+
+    // 仍完整包含對白與角色資訊
+    assert(html.includes("佩可"), "Should still include dialogue speaker");
+    assert(html.includes("好吃到要融化了～"), "Should still include dialogue line");
+
+    // 劇情插畫 CG 節點仍正常渲染
     assert(html.includes("game-dialogue-still"), "Should render still wrapper");
     assert(html.includes("QuestMapModule.openStillPopup(event)"), "Should have openStillPopup contract");
     assert(html.includes("still/scenario/1000101.webp"), "Should render still image tag");
