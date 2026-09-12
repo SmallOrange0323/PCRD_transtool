@@ -1190,7 +1190,7 @@ const QuestMapModule = {
                     <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">👤 ${this.escapeHtml(this.activeCharaName)}</span>
                 ` : `
                     <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">${
-                        this.activeTabType === 'main' ? '⚔️ 主要' :
+                        this.activeTabType === 'main' ? '⚔️ 主線劇情' :
                         this.activeTabType === 'event' ? '🏆 活動' :
                         this.activeTabType === 'guild' ? '👥 公會' :
                         this.activeTabType === 'chara' ? '👤 角色' :
@@ -1198,32 +1198,30 @@ const QuestMapModule = {
                     }</span>
                 `}
             </div>
-            <div class="map-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-                <div>
-                    <h2>📖 ${
-                        this.activeTabType === 'main' ? '主要' :
-                        this.activeTabType === 'event' ? '活動' :
-                        this.activeTabType === 'guild' ? '公會' :
-                        this.activeTabType === 'chara' ? '角色' :
-                        this.activeTabType === 'tower' ? '額外' : '登場角色'
-                    }</h2>
-                    <p class="subtitle">載入 So-net 官方繁中劇情大綱與對話文本</p>
-                </div>
+            <div class="story-navigation-header" style="display: flex; flex-direction: column; gap: 8px; margin-top: 6px; margin-bottom: 6px;">
                 ${(this.activeTabType === 'main' || this.activeTabType === 'event') ? `
-                <div class="category-selector" style="display: flex; gap: 12px; flex-wrap: wrap;">
-                    <button class="part-btn ${this.activeTabType === 'main' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('main')" style="font-size: 0.95rem; padding: 10px 24px;">⚔️ 主線劇情</button>
-                    <button class="part-btn ${this.activeTabType === 'event' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('event')" style="font-size: 0.95rem; padding: 10px 24px;">🏆 活動劇情</button>
+                <div class="primary-nav-group" style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                    <button class="primary-nav-btn ${this.activeTabType === 'main' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('main')">⚔️ 主線劇情</button>
+                    <button class="primary-nav-btn ${this.activeTabType === 'event' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('event')">🏆 活動劇情</button>
                 </div>
-                ` : ''}
+                ` : `
+                <div class="other-category-title" style="display: flex; align-items: center; gap: 8px;">
+                    <h2 style="margin: 0; font-size: 1.3rem; color: var(--text-primary);">📖 ${
+                        this.activeTabType === 'guild' ? '公會劇情' :
+                        this.activeTabType === 'chara' ? `${this.activeCharaName ? this.escapeHtml(this.activeCharaName) + ' 的' : ''}角色劇情` :
+                        this.activeTabType === 'tower' ? '額外劇情' : '登場角色'
+                    }</h2>
+                </div>
+                `}
+
+                <div class="part-selector secondary-nav-group" style="display: ${this.activeTabType === 'main' ? 'flex' : 'none'};">
+                    <button class="part-btn secondary-pill ${this.currentPart === 1 ? 'active' : ''}" onclick="QuestMapModule.switchPart(1)">第一部</button>
+                    <button class="part-btn secondary-pill ${this.currentPart === 2 ? 'active' : ''}" onclick="QuestMapModule.switchPart(2)">第二部</button>
+                    <button class="part-btn secondary-pill ${this.currentPart === 3 ? 'active' : ''}" onclick="QuestMapModule.switchPart(3)">第三部</button>
+                </div>
             </div>
 
-            <div class="part-selector" style="display: ${this.activeTabType === 'main' ? 'flex' : 'none'}; margin-top: 15px;">
-                <button class="part-btn ${this.currentPart === 1 ? 'active' : ''}" onclick="QuestMapModule.switchPart(1)">第一部</button>
-                <button class="part-btn ${this.currentPart === 2 ? 'active' : ''}" onclick="QuestMapModule.switchPart(2)">第二部</button>
-                <button class="part-btn ${this.currentPart === 3 ? 'active' : ''}" onclick="QuestMapModule.switchPart(3)">第三部</button>
-            </div>
-
-            <div class="map-layout" style="margin-top: 20px;">
+            <div class="map-layout" style="margin-top: 10px;">
                 <div class="map-visual-area">
                     <div class="cinema-panel">
                         <div class="cinema-meta" style="display: flex; flex-direction: column;">
@@ -1235,8 +1233,10 @@ const QuestMapModule = {
                                 <button class="mobile-only-dir-btn" onclick="QuestMapModule.scrollToControlPanel()" style="padding: 6px 12px; background: rgba(232, 56, 117, 0.08); border: 1px solid rgba(232, 56, 117, 0.2); border-radius: 20px; color: var(--accent-color); font-weight: bold; cursor: pointer; font-size: 0.82rem; transition: all 0.2s;">📂 快速目錄</button>
                             </div>
                             <div class="summary-section" style="flex: 1; display: flex; flex-direction: column; margin-top: 15px;">
-                                <div class="summary-tabs" style="display: flex; border-bottom: 2px solid rgba(94, 107, 125, 0.15); margin-bottom: 10px; gap: 8px;">
-                                    <button id="tab-summary-episode" class="summary-tab active" onclick="QuestMapModule.switchSummaryTab('episode')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid var(--accent-color); color: var(--accent-color); cursor: pointer; font-weight: bold; font-size: 0.88rem;">📜 單話大綱</button>
+                                <div class="summary-tabs" style="display: flex; margin-bottom: 6px; gap: 8px;">
+                                    <div style="font-weight: 700; font-size: 0.92rem; color: var(--text-primary); display: flex; align-items: center; gap: 6px; padding: 4px 0;">
+                                        <span>📌 故事大綱</span>
+                                    </div>
                                 </div>
                                 <div id="cinema-summary" class="summary-text" style="flex: 1; display: flex; flex-direction: column;">
                                     點擊右側章節清單，即刻載入大綱與對白文本。
@@ -1249,8 +1249,8 @@ const QuestMapModule = {
                 <div class="map-control-panel">
                     <div class="panel-section-title">
                         📖 ${
-                            this.activeTabType === 'main' ? '主線劇情編年史目錄' : 
-                            this.activeTabType === 'event' ? '歷年活動劇情目錄' :
+                            this.activeTabType === 'main' ? '章節與話數' : 
+                            this.activeTabType === 'event' ? '歷年活動目錄' :
                             this.activeTabType === 'guild' ? '公會劇情目錄' :
                             this.activeTabType === 'chara' ? `${this.activeCharaName} 的個人劇情目錄` :
                             this.activeTabType === 'tower' ? '露娜塔/系統劇情目錄' : '目錄'
@@ -1626,9 +1626,13 @@ const QuestMapModule = {
         if (!tabsContainer) return;
 
         if (!isMobile) {
-            // 桌機版：暫時隱藏 AI 單話摘要與整章摘要頁籤，僅保留單話大綱
+            // 桌機版：乾淨靜態大綱標題，無 fake tab 與底線點擊提示
+            tabsContainer.style.borderBottom = 'none';
+            tabsContainer.style.marginBottom = '6px';
             tabsContainer.innerHTML = `
-                <button id="tab-summary-episode" class="summary-tab active" onclick="QuestMapModule.switchSummaryTab('episode')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid var(--accent-color); color: var(--accent-color); cursor: pointer; font-weight: bold; font-size: 0.88rem;">📜 單話大綱</button>
+                <div style="font-weight: 700; font-size: 0.92rem; color: var(--text-primary); display: flex; align-items: center; gap: 6px; padding: 4px 0;">
+                    <span>📌 故事大綱</span>
+                </div>
             `;
             return;
         }
