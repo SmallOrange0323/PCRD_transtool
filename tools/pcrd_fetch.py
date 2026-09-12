@@ -1617,7 +1617,47 @@ def cmd_fetch_story_voices(args):
             print(f"  ⚠️ 下載失敗 {voice_id}: {e}")
             
     _write_output(args.output, results)
-    print(f"\n✅ 語音下載整合完成！共下載 {downloaded_count} 筆，報告寫入 {args.output}")
+def extract_canonical_background_image(env, bg_id: str):
+    """
+    從 UnityPy AssetBundle 環境中提取正牌背景主圖 (Texture2D / Sprite)。
+    提取規則：
+    1. 收集 AssetBundle 中所有 Texture2D / Sprite。
+    2. 優先 exact asset name：bg_<bg_id> (忽略大小寫)。
+    3. 若沒有 exact match，fallback 至最大解析度面積 (width * height) 候選。
+    4. 不再使用「遇到第一個 Texture2D 就 break」。
+    
+    回傳: (PIL.Image, asset_name) 或 (None, None)
+    """
+    candidates = []
+    target_name = f"bg_{str(bg_id).strip()}".lower()
+
+    for obj in getattr(env, "objects", []):
+        if getattr(obj, "type", None) and getattr(obj.type, "name", "") in ["Texture2D", "Sprite"]:
+            try:
+                data_obj = obj.read()
+                name = getattr(data_obj, "m_Name", "") or getattr(data_obj, "name", "")
+                img = getattr(data_obj, "image", None)
+                if img:
+                    area = img.size[0] * img.size[1]
+                    candidates.append({
+                        "name": str(name),
+                        "image": img,
+                        "area": area
+                    })
+            except Exception:
+                continue
+
+    if not candidates:
+        return None, None
+
+    # 1. 優先精確名稱匹配 (bg_<bg_id>)
+    for cand in candidates:
+        if cand["name"].lower() == target_name:
+            return cand["image"], cand["name"]
+
+    # 2. Fallback: 最大解析度面積
+    candidates.sort(key=lambda c: c["area"], reverse=True)
+    return candidates[0]["image"], candidates[0]["name"]
 
 
 def cmd_fetch_story_images(args):
@@ -1797,15 +1837,13 @@ def cmd_fetch_story_images(args):
             # 解碼
             env_bg = UnityPy.load(dest_bundle)
             img_extracted = False
-            for obj in env_bg.objects:
-                if obj.type.name in ["Texture2D", "Sprite"]:
-                    data_obj = obj.read()
-                    dest_file = os.path.join(bg_dir, f"bg_{bg_id}.webp")
-                    data_obj.image.save(dest_file, format="WEBP", lossy=True, quality=85)
-                    print(f"  ✅ 成功下載並還原實體背景圖: bg_{bg_id}.webp")
-                    results["bg_images"].append({"bg_id": bg_id, "status": "ok", "dest": dest_file})
-                    img_extracted = True
-                    break
+            best_img, best_name = extract_canonical_background_image(env_bg, bg_id)
+            if best_img:
+                dest_file = os.path.join(bg_dir, f"bg_{bg_id}.webp")
+                best_img.save(dest_file, format="WEBP", lossy=True, quality=85)
+                print(f"  ✅ 成功下載並還原實體背景圖: bg_{bg_id}.webp (來源: {best_name} {best_img.size})")
+                results["bg_images"].append({"bg_id": bg_id, "status": "ok", "dest": dest_file})
+                img_extracted = True
             
             # 手動釋放進程
             del env_bg

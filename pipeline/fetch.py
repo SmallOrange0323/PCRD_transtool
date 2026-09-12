@@ -24,6 +24,7 @@ try:
         cmd_fetch_story_images as fetch_story_images,
         cmd_sync_episode as sync_episode,
         cmd_fetch_story_thumbnails as fetch_story_thumbnails,
+        extract_canonical_background_image,
         fetch_story_json_by_id,
         sync_story_batch_with_metadata,
         StoryFetchResult,
