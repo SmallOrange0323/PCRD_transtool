@@ -1234,11 +1234,11 @@ const QuestMapModule = {
                                 </div>
                                 <button class="mobile-only-dir-btn" onclick="QuestMapModule.scrollToControlPanel()" style="padding: 6px 12px; background: rgba(232, 56, 117, 0.08); border: 1px solid rgba(232, 56, 117, 0.2); border-radius: 20px; color: var(--accent-color); font-weight: bold; cursor: pointer; font-size: 0.82rem; transition: all 0.2s;">📂 快速目錄</button>
                             </div>
-                            <div class="summary-section" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 15px;">
+                            <div class="summary-section" style="flex: 1; display: flex; flex-direction: column; margin-top: 15px;">
                                 <div class="summary-tabs" style="display: flex; border-bottom: 2px solid rgba(94, 107, 125, 0.15); margin-bottom: 10px; gap: 8px;">
                                     <button id="tab-summary-episode" class="summary-tab active" onclick="QuestMapModule.switchSummaryTab('episode')" style="padding: 8px 16px; background: transparent; border: none; border-bottom: 2px solid var(--accent-color); color: var(--accent-color); cursor: pointer; font-weight: bold; font-size: 0.88rem;">📜 單話大綱</button>
                                 </div>
-                                <div id="cinema-summary" class="summary-text" style="flex: 1; overflow-y: auto; display: flex; flex-direction: column;">
+                                <div id="cinema-summary" class="summary-text" style="flex: 1; display: flex; flex-direction: column;">
                                     點擊右側章節清單，即刻載入大綱與對白文本。
                                 </div>
                             </div>
@@ -1736,9 +1736,14 @@ const QuestMapModule = {
                             <div class="game-dialogue-panel">
                                 <div class="game-dialogue-header" style="border-radius: 12px 12px 0 0; display: flex; align-items: center; justify-content: space-between; padding: 10px 16px;">
                                     <div style="font-weight: 700;">✦ 劇情全文 ✦</div>
-                                    <div class="auto-voice-controls" style="display: flex; gap: 8px; align-items: center;">
-                                        <button id="btn-auto-voice" class="auto-voice-btn" type="button" onclick="QuestMapModule.toggleAutoVoice()" title="自動語音連播">▶ AUTO</button>
-                                        <button id="btn-stop-voice" class="stop-voice-btn" type="button" onclick="QuestMapModule.stopAutoVoice()" title="停止連播" style="display: none;">■ STOP</button>
+                                    <div class="auto-voice-control-bar" role="toolbar" aria-label="語音連播控制列">
+                                        <span class="auto-voice-label">AUTO</span>
+                                        <button id="btn-auto-voice" class="auto-voice-play-toggle" type="button" onclick="QuestMapModule.toggleAutoVoice()" aria-label="開始 AUTO" title="播放 / 暫停 (Space)">
+                                            <span class="auto-voice-icon">▶</span>
+                                        </button>
+                                        <button id="btn-stop-voice" class="auto-voice-stop" type="button" onclick="QuestMapModule.stopAutoVoice()" aria-label="停止 AUTO" title="停止連播 (Esc)" disabled>
+                                            <span class="auto-voice-icon">■</span>
+                                        </button>
                                     </div>
                                 </div>
                                 <div id="chara-badges-bar" class="game-chara-list-bar" style="
@@ -2043,26 +2048,40 @@ const QuestMapModule = {
     },
 
     updateAutoVoiceUI(state) {
-        const btnAuto = document.getElementById('btn-auto-voice');
+        const bar = document.querySelector('.auto-voice-control-bar');
+        const btnToggle = document.getElementById('btn-auto-voice');
         const btnStop = document.getElementById('btn-stop-voice');
-        if (!btnAuto) return;
+        if (!btnToggle || !btnStop) return;
 
         const currentState = state || (window.AutoVoiceController ? window.AutoVoiceController.state : 'IDLE');
+        const iconEl = btnToggle.querySelector('.auto-voice-icon') || btnToggle;
 
         if (currentState === 'PLAYING') {
-            btnAuto.innerHTML = '⏸ AUTO';
-            btnAuto.classList.add('playing');
-            btnAuto.classList.remove('paused');
-            if (btnStop) btnStop.style.display = 'inline-flex';
+            iconEl.textContent = '⏸';
+            btnToggle.setAttribute('aria-label', '暫停 AUTO');
+            btnToggle.title = '暫停 (Space)';
+            btnToggle.classList.add('is-playing');
+            btnToggle.classList.remove('is-paused');
+            btnStop.disabled = false;
+            btnStop.setAttribute('aria-label', '停止 AUTO');
+            if (bar) bar.classList.add('is-playing');
         } else if (currentState === 'PAUSED') {
-            btnAuto.innerHTML = '▶ AUTO';
-            btnAuto.classList.remove('playing');
-            btnAuto.classList.add('paused');
-            if (btnStop) btnStop.style.display = 'inline-flex';
+            iconEl.textContent = '▶';
+            btnToggle.setAttribute('aria-label', '繼續 AUTO');
+            btnToggle.title = '繼續播放 (Space)';
+            btnToggle.classList.remove('is-playing');
+            btnToggle.classList.add('is-paused');
+            btnStop.disabled = false;
+            btnStop.setAttribute('aria-label', '停止 AUTO');
+            if (bar) bar.classList.remove('is-playing');
         } else {
-            btnAuto.innerHTML = '▶ AUTO';
-            btnAuto.classList.remove('playing', 'paused');
-            if (btnStop) btnStop.style.display = 'none';
+            iconEl.textContent = '▶';
+            btnToggle.setAttribute('aria-label', '開始 AUTO');
+            btnToggle.title = '播放 (Space)';
+            btnToggle.classList.remove('is-playing', 'is-paused');
+            btnStop.disabled = true;
+            btnStop.setAttribute('aria-label', '停止 AUTO (已停止)');
+            if (bar) bar.classList.remove('is-playing');
         }
     },
 
