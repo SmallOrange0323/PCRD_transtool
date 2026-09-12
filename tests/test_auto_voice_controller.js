@@ -30,15 +30,23 @@ global.document = {
     }
 };
 
+global.AvatarService = {
+    getAvatarHtml: () => '<img class="avatar">',
+    getAvatarHtmlByUnitId: () => '<img class="avatar">'
+};
+
 // 載入待測模組
+require(path.resolve(__dirname, '../dashboard/story-asset-service.js'));
 require(path.resolve(__dirname, '../dashboard/media-service.js'));
 require(path.resolve(__dirname, '../dashboard/dialogue-view.js'));
 require(path.resolve(__dirname, '../dashboard/auto-voice-controller.js'));
 
+const StoryAssetService = global.StoryAssetService;
 const MediaService = global.MediaService;
 const DialogueView = global.DialogueView;
 const AutoVoiceController = global.AutoVoiceController;
 
+assert(StoryAssetService, 'StoryAssetService 必須存在');
 assert(MediaService, 'MediaService 必須存在');
 assert(DialogueView, 'DialogueView 必須存在');
 assert(AutoVoiceController, 'AutoVoiceController 必須存在');
@@ -326,5 +334,72 @@ console.log('\n開始執行 3 項真實 Callback 整合測試 (Integration Tests
         console.log('✅ Test C (stale ended after STOP 完全被無效化) 通過');
     }
 
-    console.log('\n🎉 AutoVoiceController 12 項核心測試 + 3 項真實 Callback 整合測試全部順利通過！');
+    // Regression Test 1 — StoryAssetService Background API
+    // 驗證真實/fixture background item bg_id = 510530
+    // 可以取得合法 URL，不再出現 getBackgroundUrl is not a function
+    {
+        const bgUrl = StoryAssetService.getBackgroundUrl(510530);
+        assert(typeof bgUrl === 'string' && bgUrl.length > 0, 'Background Regression: 必須回傳合法字串 URL');
+        assert(bgUrl.includes('510530'), 'Background Regression: URL 必須包含 bgId');
+
+        // 驗證 DialogueView generateDialogueHtml 解析 background item 不崩潰
+        const result = DialogueView.generateDialogueHtml({
+            storyId: 5216000,
+            dialogueList: [
+                { type: 'background', bg_id: '510530' },
+                { name: '美穗', words: '咦？', voice: 'vo_adv_5216000_000' }
+            ],
+            speakerAvatars: {},
+            currentStoryObj: null,
+            resolveRealName: (n) => n,
+            escapeHtml: (s) => s
+        });
+        assert(result && typeof result.firstBgUrl === 'string' && result.firstBgUrl.length > 0, 'Background Regression: firstBgUrl 必須成功產生');
+        assert(result.firstBgUrl.includes('510530'), 'Background Regression: firstBgUrl 必須包含 510530');
+        console.log('✅ Background Regression (bg_id=510530 取得合法 URL 且 DialogueView 渲染正常) 通過');
+    }
+
+    // Regression Test 2 — MediaService candidate failure race guard
+    // 對單一 candidate 同時模擬 onerror 與 rejected play promise
+    // 確認下一個 candidate 只建立一次，最後全部失敗時 onError count = 1
+    {
+        let raceCreatedAudios = [];
+        let raceOnErrorCount = 0;
+
+        global.Audio = class {
+            constructor(src) {
+                this.src = src;
+                this.onended = null;
+                this.onerror = null;
+                raceCreatedAudios.push(this);
+            }
+            play() {
+                // 同時模擬觸發 onerror 與 promise reject
+                if (typeof this.onerror === 'function') {
+                    this.onerror(new Error('Simulated simultaneous onerror'));
+                }
+                return Promise.reject(new Error('Simulated simultaneous play rejection'));
+            }
+            pause() {}
+        };
+
+        MediaService.playVoiceWithOptions('vo_adv_5216000_000', {
+            onError: (err) => {
+                raceOnErrorCount++;
+            }
+        });
+
+        // 等待微任務與非同步重試排程完成
+        await new Promise(r => setTimeout(r, 50));
+
+        // 候選共 3 個，在 onerror + catch 雙重打擊下，每個 candidate 必須只嘗試 1 次
+        assert.strictEqual(raceCreatedAudios.length, 3, 'Candidate Race Regression: 3 組候選必須剛好嘗試 3 次，不得重複重試');
+        assert.strictEqual(raceOnErrorCount, 1, 'Candidate Race Regression: 最終 onError 只能被呼叫剛好 1 次');
+
+        // 還原 Audio
+        global.Audio = MockAudio;
+        console.log('✅ Candidate Race Regression (onerror 與 play.catch 同時觸發時 candidate 絕不重複推進且 onError count=1) 通過');
+    }
+
+    console.log('\n🎉 AutoVoiceController 12 項核心測試 + 3 項真實 Callback + 2 項 Regression 測試全部順利通過！');
 })();

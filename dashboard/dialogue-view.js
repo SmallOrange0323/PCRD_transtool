@@ -147,7 +147,12 @@ console.log("dialogue-view.js loaded");
                     if (bgId) {
                         const bgImgHtml = window.StoryAssetService.getBackgroundHtml(bgId, 'dialogue-still-img still-clickable', '');
                         if (!firstBgUrl) {
-                            firstBgUrl = window.StoryAssetService.getBackgroundUrl(bgId);
+                            if (typeof window.StoryAssetService.getBackgroundUrl === 'function') {
+                                firstBgUrl = window.StoryAssetService.getBackgroundUrl(bgId);
+                            } else if (typeof window.StoryAssetService.getBackgroundUrls === 'function') {
+                                const urls = window.StoryAssetService.getBackgroundUrls(bgId);
+                                firstBgUrl = (urls && urls.length > 0) ? urls[0] : "";
+                            }
                         }
                         html += `
                             <div class="game-dialogue-still-wrap">

@@ -83,24 +83,11 @@ console.log("media-service.js loaded");
                     }
                 };
 
-                // 若載入中途出錯，嘗試下一候選
-                audio.onerror = () => {
-                    if (isDisposed) return;
-                    audio.onended = null;
-                    audio.onerror = null;
-                    tryPlay(index + 1);
-                };
+                let failureHandled = false;
+                const handleFailure = (err) => {
+                    if (isDisposed || failureHandled) return;
+                    failureHandled = true;
 
-                audio.play().then(() => {
-                    if (isDisposed) {
-                        audio.pause();
-                        return;
-                    }
-                    if (typeof options.onStart === 'function') {
-                        options.onStart(audio);
-                    }
-                }).catch(err => {
-                    if (isDisposed) return;
                     audio.onended = null;
                     audio.onerror = null;
 
@@ -113,6 +100,23 @@ console.log("media-service.js loaded");
                     }
 
                     tryPlay(index + 1);
+                };
+
+                // 若載入中途出錯，嘗試下一候選 (防重守護)
+                audio.onerror = () => {
+                    handleFailure(new Error('Audio load error'));
+                };
+
+                audio.play().then(() => {
+                    if (isDisposed) {
+                        audio.pause();
+                        return;
+                    }
+                    if (typeof options.onStart === 'function') {
+                        options.onStart(audio);
+                    }
+                }).catch(err => {
+                    handleFailure(err);
                 });
             };
 
