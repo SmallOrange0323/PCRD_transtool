@@ -939,28 +939,8 @@ const QuestMapModule = {
             }
 
             tab.innerHTML = `
-                <div class="floating-back-btn" onclick="QuestMapModule.handleFloatingBack()" style="position: fixed; top: 20px; left: 20px; z-index: 9998; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #2d6bcf, #1a4a9e); color: #fff; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; box-shadow: 0 4px 15px rgba(26, 74, 158, 0.5); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.15)'; this.style.boxShadow='0 6px 20px rgba(26, 74, 158, 0.7)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(26, 74, 158, 0.5)';">←</div>
                 <div class="map-container">
-                    <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
-                        <button onclick="QuestMapModule.handleBackClick()" class="back-to-menu-btn" style="
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            width: 32px;
-                            height: 32px;
-                            border-radius: 50%;
-                            background: linear-gradient(135deg, #0984e3, #00cec9);
-                            color: #fff;
-                            border: none;
-                            cursor: pointer;
-                            box-shadow: 0 2px 6px rgba(9, 132, 227, 0.4);
-                            transition: transform 0.2s ease, box-shadow 0.2s ease;
-                            font-size: 1rem;
-                            font-weight: bold;
-                            flex-shrink: 0;
-                        " onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 4px 12px rgba(9, 132, 227, 0.6)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 6px rgba(9, 132, 227, 0.4)';">
-                            ←
-                        </button>
+                    <div class="breadcrumb-container" style="display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
                         <span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;"><span style="font-size: 1.1rem;">🏠</span> 劇情大廳</span>
                         <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
                         <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">👤 角色</span>
@@ -1160,29 +1140,9 @@ const QuestMapModule = {
 
         const isCharaActive = (this.activeTabType === 'chara' && this.activeCharaName);
         tab.innerHTML = `
- <div class="floating-back-btn" onclick="${isCharaActive ? 'QuestMapModule.clearActiveChara()' : 'QuestMapModule.handleFloatingBack()'}" style="position: fixed; top: 20px; left: 20px; z-index: 9998; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #2d6bcf, #1a4a9e); color: #fff; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; box-shadow: 0 4px 15px rgba(26, 74, 158, 0.5); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.15)'; this.style.boxShadow='0 6px 20px rgba(26, 74, 158, 0.7)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(26, 74, 158, 0.5)';">←</div>
- <div class="map-container">
- <div class="breadcrumb-container" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
- <button onclick="QuestMapModule.handleBackClick()" class="back-to-menu-btn" style="
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 32px;
-                    height: 32px;
-                    border-radius: 50%;
-                    background: linear-gradient(135deg, #0984e3, #00cec9);
-                    color: #fff;
-                    border: none;
-                    cursor: pointer;
-                    box-shadow: 0 2px 6px rgba(9, 132, 227, 0.4);
-                    transition: transform 0.2s ease, box-shadow 0.2s ease;
-                    font-size: 1rem;
-                    font-weight: bold;
-                    flex-shrink: 0;
-                " onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 4px 12px rgba(9, 132, 227, 0.6)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 6px rgba(9, 132, 227, 0.4)';">
-                    ←
-                </button>
-                <span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;"><span style="font-size: 1.1rem;">🏠</span> 劇情大廳</span>
+            <div class="map-container">
+                <div class="breadcrumb-container" style="display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
+                    <span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;"><span style="font-size: 1.1rem;">🏠</span> 劇情大廳</span>
                 <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
                 ${isCharaActive ? `
                     <span class="breadcrumb-item linkable" onclick="QuestMapModule.clearActiveChara()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;">👤 角色</span>
