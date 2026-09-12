@@ -26,6 +26,17 @@ console.log("dialogue-view.js loaded");
         },
 
         /**
+         * 將對白與大綱中的玩家名稱佔位符統一規格化為「佑樹」
+         * 支援 token: {player}, {0}, {player_name}, (O), (o), （O）, （o）
+         * @param {string} text - 原始文本
+         * @returns {string} 規格化後文本
+         */
+        normalizePlayerName(text) {
+            if (!text || typeof text !== 'string') return text || "";
+            return text.replace(/\{player\}|\{0\}|\{player_name\}|\([Oo]\)|（[Oo]）/g, "佑樹");
+        },
+
+        /**
          * 渲染載入中狀態 (Loading Spinner)
          * @param {HTMLElement} containerEl - 對白看板容器元素
          */
@@ -179,9 +190,8 @@ console.log("dialogue-view.js loaded");
 
                 const speaker = item.name || "旁白";
                 const safeSpeaker = escapeFn(speaker);
-                const words = escapeFn(item.words || "")
-                    .replace(/\{player\}/g, "佑樹")
-                    .replace(/\{0\}/g, "佑樹")
+                const normalizedRawWords = this.normalizePlayerName(item.words || "");
+                const words = escapeFn(normalizedRawWords)
                     .replace(/\\n/g, "<br>")
                     .replace(/\n/g, "<br>");
 

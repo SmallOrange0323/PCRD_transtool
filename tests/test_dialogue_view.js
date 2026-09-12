@@ -299,4 +299,36 @@ test("Test 10 — StoryAssetService hard dependency (fails loudly if missing)", 
     assert(threw, "generateDialogueHtml must fail loudly when StoryAssetService is missing");
 });
 
+// Test 11 — normalizePlayerName helper across dialogue and summary texts
+test("Test 11 — normalizePlayerName helper (player placeholder -> 佑樹)", () => {
+    assert(typeof DialogueView.normalizePlayerName === "function", "normalizePlayerName must be a function on DialogueView");
+
+    // 基礎佔位符替換
+    assert.strictEqual(DialogueView.normalizePlayerName("{player}，早安！"), "佑樹，早安！");
+    assert.strictEqual(DialogueView.normalizePlayerName("去找{0}吧。"), "去找佑樹吧。");
+    assert.strictEqual(DialogueView.normalizePlayerName("來到(O)家的貪吃佩可……"), "來到佑樹家的貪吃佩可……");
+    assert.strictEqual(DialogueView.normalizePlayerName("來到(o)家的貪吃佩可……"), "來到佑樹家的貪吃佩可……");
+    assert.strictEqual(DialogueView.normalizePlayerName("來到（O）家的貪吃佩可……"), "來到佑樹家的貪吃佩可……");
+    assert.strictEqual(DialogueView.normalizePlayerName("來到（o）家的貪吃佩可……"), "來到佑樹家的貪吃佩可……");
+    assert.strictEqual(DialogueView.normalizePlayerName("多個佔位符：{player}與{0}還有(O)"), "多個佔位符：佑樹與佑樹還有佑樹");
+
+    // 防禦邊界值
+    assert.strictEqual(DialogueView.normalizePlayerName(""), "");
+    assert.strictEqual(DialogueView.normalizePlayerName(null), "");
+    assert.strictEqual(DialogueView.normalizePlayerName(undefined), "");
+
+    // 整合驗證：generateDialogueHtml 中包含 (O) 與 {player} 的對白
+    const { html } = DialogueView.generateDialogueHtml({
+        storyId: 1001001,
+        dialogueList: [
+            { name: "佩可", words: "來到(O)家的貪吃佩可向{player}問好！" }
+        ],
+        speakerAvatars: { "佩可": 105801 },
+        resolveRealName: (n) => n
+    });
+    assert(html.includes("來到佑樹家的貪吃佩可向佑樹問好！"), "generateDialogueHtml must render normalized player name");
+    assert(!html.includes("(O)"), "Must not contain (O)");
+    assert(!html.includes("{player}"), "Must not contain {player}");
+});
+
 console.log(`\n✅ All ${testsPassed} DialogueView tests passed successfully!`);
