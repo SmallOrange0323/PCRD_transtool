@@ -143,26 +143,7 @@ console.log("dialogue-view.js loaded");
                 }
 
                 if (item.type === 'background') {
-                    const bgId = item.bg_id || item.background;
-                    if (bgId) {
-                        const bgImgHtml = window.StoryAssetService.getBackgroundHtml(bgId, 'dialogue-still-img still-clickable', '');
-                        if (!firstBgUrl) {
-                            if (typeof window.StoryAssetService.getBackgroundUrl === 'function') {
-                                firstBgUrl = window.StoryAssetService.getBackgroundUrl(bgId);
-                            } else if (typeof window.StoryAssetService.getBackgroundUrls === 'function') {
-                                const urls = window.StoryAssetService.getBackgroundUrls(bgId);
-                                firstBgUrl = (urls && urls.length > 0) ? urls[0] : "";
-                            }
-                        }
-                        html += `
-                            <div class="game-dialogue-still-wrap">
-                                <div class="game-dialogue-still-label">🌄 場景切換</div>
-                                <div class="game-dialogue-still" onclick="QuestMapModule.openStillPopup(event)">
-                                    ${bgImgHtml}
-                                </div>
-                            </div>
-                        `;
-                    }
+                    // 全文閱讀模式依官方遊戲規格，不渲染場景切換卡片與背景圖
                     return;
                 }
 
