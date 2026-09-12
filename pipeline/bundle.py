@@ -239,6 +239,7 @@ def render_index_html(dashboard_dir: Path = DASHBOARD_DIR) -> str:
     norm_js_path = dashboard_dir / "dialogue-normalizer.js"
     media_js_path = dashboard_dir / "media-service.js"
     dialogue_js_path = dashboard_dir / "dialogue-view.js"
+    auto_voice_js_path = dashboard_dir / "auto-voice-controller.js"
     story_data_js_path = dashboard_dir / "story-data-service.js"
     map_js_path = dashboard_dir / "map.js"
 
@@ -268,6 +269,7 @@ def render_index_html(dashboard_dir: Path = DASHBOARD_DIR) -> str:
     norm_hash = calc_sha256(norm_js_path)[:8]
     media_hash = calc_sha256(media_js_path)[:8]
     dialogue_hash = calc_sha256(dialogue_js_path)[:8]
+    auto_voice_hash = calc_sha256(auto_voice_js_path)[:8] if auto_voice_js_path.exists() else "1.0.0"
     story_data_hash = calc_sha256(story_data_js_path)[:8]
     map_hash = calc_sha256(map_js_path)[:8]
 
@@ -279,6 +281,7 @@ def render_index_html(dashboard_dir: Path = DASHBOARD_DIR) -> str:
     html_content = re.sub(r'<script src="dialogue-normalizer\.js(?:\?v=[^"]*)?"></script>', f'<script src="dialogue-normalizer.js?v={norm_hash}"></script>', html_content)
     html_content = re.sub(r'<script src="media-service\.js(?:\?v=[^"]*)?"></script>', f'<script src="media-service.js?v={media_hash}"></script>', html_content)
     html_content = re.sub(r'<script src="dialogue-view\.js(?:\?v=[^"]*)?"></script>', f'<script src="dialogue-view.js?v={dialogue_hash}"></script>', html_content)
+    html_content = re.sub(r'<script src="auto-voice-controller\.js(?:\?v=[^"]*)?"></script>', f'<script src="auto-voice-controller.js?v={auto_voice_hash}"></script>', html_content)
     html_content = re.sub(r'<script src="story-data-service\.js(?:\?v=[^"]*)?"></script>', f'<script src="story-data-service.js?v={story_data_hash}"></script>', html_content)
     html_content = re.sub(r'<script src="map\.js(?:\?v=[^"]*)?"></script>', f'<script src="map.js?v={map_hash}"></script>', html_content)
 
@@ -722,7 +725,8 @@ def calculate_expected_additions_and_deltas(dashboard_dir: Path = DASHBOARD_DIR,
         "style.css", "db.js", "avatar-service.js", "story-asset-service.js",
         "chapter-data.js", "characters.js", "speaker-view.js", "chara-modal.js",
         "dialogue-normalizer.js", "media-service.js", "dialogue-view.js",
-        "story-data-service.js", "map.js", "sql-wasm.js", "sql-wasm.wasm", "redive_tw.db"
+        "auto-voice-controller.js", "story-data-service.js", "map.js",
+        "sql-wasm.js", "sql-wasm.wasm", "redive_tw.db"
     ]
     for cf in core_files:
         sf = dashboard_dir / cf
@@ -919,6 +923,7 @@ def bundle_story_map(dry_run: bool = False) -> bool:
         ("dialogue-normalizer.js", "dialogue-normalizer.js"),
         ("media-service.js", "media-service.js"),
         ("dialogue-view.js", "dialogue-view.js"),
+        ("auto-voice-controller.js", "auto-voice-controller.js"),
         ("story-data-service.js", "story-data-service.js"),
         ("map.js", "map.js"),
         ("sql-wasm.js", "sql-wasm.js"),

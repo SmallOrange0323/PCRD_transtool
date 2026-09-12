@@ -761,22 +761,31 @@ const QuestMapModule = {
     },
 
     switchTabType(type) {
+        if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
+            window.AutoVoiceController.stop();
+        }
         this.activeTabType = type;
         this.activeStoryId = null;
         this.expandedChapter = null;
         this.safeRender(() => this._render());
     },
 
- goBackToMenu() {
- this.currentView = 'menu';
- this._fadeTransition(() => this._render());
- },
+	goBackToMenu() {
+        if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
+            window.AutoVoiceController.stop();
+        }
+		this.currentView = 'menu';
+		this._fadeTransition(() => this._render());
+	},
 
     handleFloatingBack() {
         this.handleBackClick();
     },
 
     enterCategory(type) {
+        if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
+            window.AutoVoiceController.stop();
+        }
         this.currentView = 'list';
         this.activeTabType = type;
         this.activeStoryId = null;
@@ -1277,6 +1286,9 @@ const QuestMapModule = {
     },
 
     switchPart(part) {
+        if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
+            window.AutoVoiceController.stop();
+        }
         this.currentPart = part;
         this.activeStoryId = null;
         this.expandedChapter = null;
@@ -1371,6 +1383,9 @@ const QuestMapModule = {
     },
 
     async selectStory(storyId) {
+        if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
+            window.AutoVoiceController.stop();
+        }
         this.activeStoryId = storyId;
 
         document.querySelectorAll('.story-item').forEach(el => el.classList.remove('active'));
@@ -1719,7 +1734,13 @@ const QuestMapModule = {
 
                         <div class="dialogue-section">
                             <div class="game-dialogue-panel">
-                                <div class="game-dialogue-header" style="border-radius: 12px 12px 0 0;">✦ 劇情全文 ✦</div>
+                                <div class="game-dialogue-header" style="border-radius: 12px 12px 0 0; display: flex; align-items: center; justify-content: space-between; padding: 10px 16px;">
+                                    <div style="font-weight: 700;">✦ 劇情全文 ✦</div>
+                                    <div class="auto-voice-controls" style="display: flex; gap: 8px; align-items: center;">
+                                        <button id="btn-auto-voice" class="auto-voice-btn" type="button" onclick="QuestMapModule.toggleAutoVoice()" title="自動語音連播">▶ AUTO</button>
+                                        <button id="btn-stop-voice" class="stop-voice-btn" type="button" onclick="QuestMapModule.stopAutoVoice()" title="停止連播" style="display: none;">■ STOP</button>
+                                    </div>
+                                </div>
                                 <div id="chara-badges-bar" class="game-chara-list-bar" style="
                                     background: rgba(252,242,246,0.9);
                                     border-left: 1.5px solid rgba(232,56,117,0.15);
@@ -1962,6 +1983,9 @@ const QuestMapModule = {
                 escapeHtml: this.escapeHtml.bind(this)
             });
 
+            this.currentDialogueList = dialogueList;
+            this.updateAutoVoiceUI();
+
         } catch (err) {
             if (currentToken === this._storyRenderToken && this.activeStoryId === storyId) {
                 console.error("加載台詞失敗:", err);
@@ -1984,7 +2008,62 @@ const QuestMapModule = {
     },
 
     playVoice(voiceName) {
+        if (window.AutoVoiceController && typeof window.AutoVoiceController.onManualVoicePlay === 'function') {
+            window.AutoVoiceController.onManualVoicePlay();
+        }
         return window.MediaService.playVoice(voiceName);
+    },
+
+    toggleAutoVoice() {
+        if (!window.AutoVoiceController) return;
+
+        // 綁定狀態監聽回呼以同步按鈕 UI
+        window.AutoVoiceController.onStateChange = (state) => {
+            this.updateAutoVoiceUI(state);
+        };
+
+        if (window.AutoVoiceController.state === 'IDLE') {
+            if (!this.currentDialogueList || this.currentDialogueList.length === 0) {
+                console.warn('[QuestMapModule] 尚無載入完成之對白清單');
+                return;
+            }
+            const board = document.getElementById('dialogue-board');
+            window.AutoVoiceController.start(this.currentDialogueList, this.activeStoryId, board);
+        } else if (window.AutoVoiceController.state === 'PLAYING') {
+            window.AutoVoiceController.pause();
+        } else if (window.AutoVoiceController.state === 'PAUSED') {
+            window.AutoVoiceController.resume();
+        }
+    },
+
+    stopAutoVoice() {
+        if (window.AutoVoiceController) {
+            window.AutoVoiceController.stop();
+        }
+    },
+
+    updateAutoVoiceUI(state) {
+        const btnAuto = document.getElementById('btn-auto-voice');
+        const btnStop = document.getElementById('btn-stop-voice');
+        if (!btnAuto) return;
+
+        const currentState = state || (window.AutoVoiceController ? window.AutoVoiceController.state : 'IDLE');
+
+        if (currentState === 'PLAYING') {
+            btnAuto.innerHTML = '⏸ AUTO';
+            btnAuto.classList.add('playing');
+            btnAuto.classList.remove('paused');
+            if (btnStop) btnStop.style.display = 'inline-flex';
+        } else if (currentState === 'PAUSED') {
+            btnAuto.innerHTML = '▶ AUTO';
+            btnAuto.classList.remove('playing');
+            btnAuto.classList.add('paused');
+            if (btnStop) btnStop.style.display = 'inline-flex';
+        } else {
+            btnAuto.innerHTML = '▶ AUTO';
+            btnAuto.classList.remove('playing', 'paused');
+            if (btnStop) btnStop.style.display = 'none';
+        }
     },
 
     openMoviePopup(movieId) {

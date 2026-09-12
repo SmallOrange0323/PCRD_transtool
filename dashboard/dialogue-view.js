@@ -125,7 +125,7 @@ console.log("dialogue-view.js loaded");
             let html = "";
             let firstBgUrl = "";
 
-            (dialogueList || []).forEach(item => {
+            (dialogueList || []).forEach((item, index) => {
                 if (item.type === 'still') {
                     const stillId = item.still_id || item.still;
                     if (stillId && String(stillId).trim().toLowerCase() !== 'end') {
@@ -143,10 +143,20 @@ console.log("dialogue-view.js loaded");
                 }
 
                 if (item.type === 'background') {
-                    const bgId = item.background_id || item.background || item.bg_id || item.bg;
+                    const bgId = item.bg_id || item.background;
                     if (bgId) {
-                        const bgUrl = `https://redive.estertion.win/bg/jpg/${bgId}.jpg`;
-                        if (!firstBgUrl) firstBgUrl = bgUrl;
+                        const bgImgHtml = window.StoryAssetService.getBackgroundHtml(bgId, 'dialogue-still-img still-clickable', '');
+                        if (!firstBgUrl) {
+                            firstBgUrl = window.StoryAssetService.getBackgroundUrl(bgId);
+                        }
+                        html += `
+                            <div class="game-dialogue-still-wrap">
+                                <div class="game-dialogue-still-label">🌄 場景切換</div>
+                                <div class="game-dialogue-still" onclick="QuestMapModule.openStillPopup(event)">
+                                    ${bgImgHtml}
+                                </div>
+                            </div>
+                        `;
                     }
                     return;
                 }
@@ -236,9 +246,10 @@ console.log("dialogue-view.js loaded");
                 }
 
                 const voiceBtn = item.voice ? `<button type="button" class="dialogue-voice-btn" onclick="event.stopPropagation(); QuestMapModule.playVoice('${item.voice}')" title="播放語音" aria-label="播放語音">🔊</button>` : '';
+                const voiceAttr = item.voice ? ` data-voice="${item.voice}"` : '';
 
                 html += `
-                    <div class="game-dialogue-line ${speakerClass}">
+                    <div class="game-dialogue-line ${speakerClass}" data-dialogue-index="${index}"${voiceAttr}>
                         ${avatarHtml}
                         <div class="game-dialogue-content">
                             <div class="game-dialogue-speaker-wrap">
@@ -321,6 +332,35 @@ console.log("dialogue-view.js loaded");
                 cinemaPanelEl.style.backgroundSize = 'cover';
                 cinemaPanelEl.style.backgroundPosition = 'center';
             }
+        },
+
+        /**
+         * 高亮指定對白行並平滑捲動至可見區域
+         * @param {HTMLElement} boardEl - 對白看板容器
+         * @param {number} index - 對白索引
+         */
+        highlightDialogueLine(boardEl, index) {
+            if (!boardEl) return;
+            this.clearDialogueHighlight(boardEl);
+            const lineEl = boardEl.querySelector(`.game-dialogue-line[data-dialogue-index="${index}"]`);
+            if (lineEl) {
+                lineEl.classList.add('auto-voice-active');
+                try {
+                    lineEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } catch (e) {
+                    lineEl.scrollIntoView(true);
+                }
+            }
+        },
+
+        /**
+         * 清除看板內所有對白行的高亮樣式
+         * @param {HTMLElement} boardEl - 對白看板容器
+         */
+        clearDialogueHighlight(boardEl) {
+            if (!boardEl) return;
+            const activeLines = boardEl.querySelectorAll('.game-dialogue-line.auto-voice-active');
+            activeLines.forEach(el => el.classList.remove('auto-voice-active'));
         }
     };
 
