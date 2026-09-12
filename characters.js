@@ -49,7 +49,7 @@ window.CharactersModule = {
             
             // 動態注入最新的角色（防止 SQLite 快取時間差）
             const extraUnits = [
-                { unit_id: 139401, unit_name: "艾麗卡", rarity: 3, pos: null, race: "??", guild: "??" },
+                { unit_id: 139401, unit_name: "艾麗卡（少戰）", rarity: 3, pos: 322, race: "精靈族", guild: "？？？" },
                 { unit_id: 139301, unit_name: "真穗", rarity: 3, pos: null, race: "??", guild: "??" },
                 { unit_id: 139201, unit_name: "美穗", rarity: 3, pos: null, race: "??", guild: "??" },
                 { unit_id: 139101, unit_name: "凱留（霸瞳天星）", rarity: 3, pos: 760, race: "獸人族", guild: "美食殿堂" },
