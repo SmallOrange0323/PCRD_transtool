@@ -80,10 +80,6 @@ body {
     justify-content: flex-end;
 }
 
-.floating-back-btn {
-    top: 10px !important;
-}
-
 .tab-btn {
     background: none;
     border: none;
@@ -1006,12 +1002,16 @@ body {
 }
 
 /* 上方分類導航容器與層級間距 */
+.map-container .breadcrumb-container {
+    margin-bottom: 20px; /* 1. Breadcrumb -> Primary Navigation 間距：20px */
+}
+
 .story-navigation-header {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* 第一層導航至第二層 pills 間距 10px */
-    margin-top: 8px;
-    margin-bottom: 24px; /* 第二層 pills (或活動模式) 至正文內容區保持 24px 呼吸空間 */
+    gap: 16px; /* 2. Primary -> Secondary Navigation 間距：16px */
+    margin-top: 0;
+    margin-bottom: 40px; /* 3 & 4. Secondary Navigation (或活動模式) 至正文內容區保持 40px 明確呼吸空間 */
 }
 
 .story-navigation-header .part-selector.secondary-nav-group {
