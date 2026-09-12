@@ -1029,10 +1029,39 @@ body {
 /* 部別切換器 */
 .part-selector {
     display: flex;
-    gap: 12px;
-    margin-bottom: 25px;
+    gap: 8px;
+    margin-bottom: 12px;
     overflow-x: auto;
-    padding-bottom: 8px;
+    padding-bottom: 4px;
+}
+
+/* 第一層主要導航按鈕 (主線 / 活動) */
+.primary-nav-btn {
+    padding: 9px 22px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border: 1.5px solid rgba(232, 56, 117, 0.25);
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.primary-nav-btn:hover {
+    background: rgba(232, 56, 117, 0.08);
+    border-color: var(--accent-color);
+}
+
+.primary-nav-btn.active {
+    background: var(--accent-gradient);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 4px 14px rgba(255, 107, 157, 0.35);
 }
 
 .part-btn {
@@ -1058,6 +1087,32 @@ body {
     color: #fff;
     border-color: transparent;
     box-shadow: 0 6px 18px rgba(255, 107, 157, 0.3);
+}
+
+/* 第二層次級導航按鈕 (第一部 / 第二部 / 第三部 pills) */
+.part-btn.secondary-pill {
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    border: 1px solid rgba(130, 140, 160, 0.22);
+    background: rgba(245, 247, 250, 0.85);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.part-btn.secondary-pill:hover {
+    background: rgba(232, 56, 117, 0.06);
+    color: var(--accent-color);
+    border-color: rgba(232, 56, 117, 0.3);
+}
+
+.part-btn.secondary-pill.active {
+    background: #4a5568;
+    color: #ffffff;
+    border-color: #4a5568;
+    box-shadow: 0 2px 6px rgba(74, 85, 104, 0.25);
 }
 
 /* 佈局：電影放映區 vs 風琴目錄 */
