@@ -1544,6 +1544,11 @@ const QuestMapModule = {
         }
         this.activeStoryId = storyId;
         this.autoVoiceStartIndex = null;
+        const currentBoard = document.getElementById('dialogue-board');
+        if (currentBoard && window.DialogueView) {
+            window.DialogueView.clearAutoStartSelection(currentBoard);
+            window.DialogueView.clearDialogueHighlight(currentBoard);
+        }
 
         // 雙向狀態同步：若該話屬於另一個 group (例如上一話/下一話跨章節)
         const targetChKey = this.getChapterKeyForStory(storyId);
@@ -2349,6 +2354,18 @@ const QuestMapModule = {
             btnStop.disabled = true;
             btnStop.setAttribute('aria-label', '停止 AUTO (已停止)');
             if (bar) bar.classList.remove('is-playing');
+        }
+
+        const board = document.getElementById('dialogue-board');
+        if (board) {
+            if (currentState === 'PLAYING' || currentState === 'PAUSED') {
+                board.classList.add('auto-voice-running');
+            } else {
+                board.classList.remove('auto-voice-running');
+                if (this.autoVoiceStartIndex !== null && window.DialogueView && typeof window.DialogueView.setAutoStartSelection === 'function') {
+                    window.DialogueView.setAutoStartSelection(board, this.autoVoiceStartIndex);
+                }
+            }
         }
     },
 
