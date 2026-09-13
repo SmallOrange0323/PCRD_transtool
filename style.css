@@ -994,6 +994,7 @@ body {
     max-width: 1800px;
     margin: 0 auto 2rem;
     padding: 30px;
+    padding-top: 40px;
     border-radius: 24px;
     background: rgba(255, 255, 255, 0.95);
     /* 移除數千 px 巨型 container 上的 blur 以大幅消除 GPU 合成與滾動重繪負擔 */
@@ -1003,15 +1004,15 @@ body {
 
 /* 上方分類導航容器與層級間距 */
 .map-container .breadcrumb-container {
-    margin-bottom: 20px; /* 1. Breadcrumb -> Primary Navigation 間距：20px */
+    margin-bottom: 24px; /* 1. Breadcrumb -> Primary Navigation 間距：24px */
 }
 
 .story-navigation-header {
     display: flex;
     flex-direction: column;
-    gap: 16px; /* 2. Primary -> Secondary Navigation 間距：16px */
+    gap: 20px; /* 2. Primary -> Secondary Navigation 間距：20px */
     margin-top: 0;
-    margin-bottom: 40px; /* 3 & 4. Secondary Navigation (或活動模式) 至正文內容區保持 40px 明確呼吸空間 */
+    margin-bottom: 56px; /* 3 & 4. Secondary Navigation (或活動模式) 至正文內容區保持 56px 明確呼吸空間 */
 }
 
 .story-navigation-header .part-selector.secondary-nav-group {
