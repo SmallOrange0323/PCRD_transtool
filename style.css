@@ -1305,20 +1305,19 @@ body {
     color: var(--text-secondary);
 }
 
-/* ===== 雙層目錄 (Two-Level Directory) 樣式 ===== */
+/* ===== 雙層目錄 (Drill-Down UX) 樣式 ===== */
 .directory-container {
     display: flex;
     flex-direction: column;
     flex: 1;
     min-height: 0;
     overflow: hidden;
-    gap: 8px;
 }
 
-.directory-primary-level {
-    flex: 1 1 54%;
-    min-height: 150px;
-    max-height: 58%;
+/* Level 1: 章節或活動清單 (滿高滾動) */
+.directory-view-level1 {
+    flex: 1;
+    min-height: 0;
     overflow-y: auto;
     padding-right: 4px;
     display: flex;
@@ -1326,22 +1325,95 @@ body {
     gap: 8px;
 }
 
-.directory-primary-level::-webkit-scrollbar {
+.directory-view-level1::-webkit-scrollbar {
     width: 5px;
 }
 
-.directory-primary-level::-webkit-scrollbar-track {
+.directory-view-level1::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.02);
     border-radius: 6px;
 }
 
-.directory-primary-level::-webkit-scrollbar-thumb {
+.directory-view-level1::-webkit-scrollbar-thumb {
     background: rgba(94, 107, 125, 0.2);
     border-radius: 6px;
 }
 
-.directory-primary-level::-webkit-scrollbar-thumb:hover {
+.directory-view-level1::-webkit-scrollbar-thumb:hover {
     background: rgba(232, 56, 117, 0.35);
+}
+
+/* Level 2: 話數清單 (含頂部返回導航列) */
+.directory-view-level2 {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.directory-drilldown-header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px 10px;
+    background: linear-gradient(135deg, rgba(232, 56, 117, 0.06) 0%, rgba(232, 56, 117, 0.02) 100%);
+    border: 1px solid rgba(232, 56, 117, 0.15);
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.directory-back-btn {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    background: rgba(232, 56, 117, 0.08);
+    border: 1px solid rgba(232, 56, 117, 0.25);
+    border-radius: 6px;
+    color: var(--accent-color);
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.directory-back-btn:hover {
+    background: var(--accent-color);
+    color: #ffffff;
+    border-color: var(--accent-color);
+    transform: translateX(-2px);
+}
+
+.directory-group-badge-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+}
+
+.directory-secondary-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 75%;
+    text-align: left;
+}
+
+.directory-secondary-count {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    background: rgba(232, 56, 117, 0.08);
+    padding: 1px 8px;
+    border-radius: 10px;
+    flex-shrink: 0;
 }
 
 .directory-group-card {
@@ -1437,37 +1509,9 @@ body {
     flex-shrink: 0;
 }
 
-.directory-secondary-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 7px 10px;
-    background: linear-gradient(135deg, rgba(232, 56, 117, 0.06) 0%, rgba(232, 56, 117, 0.02) 100%);
-    border: 1px solid rgba(232, 56, 117, 0.15);
-    border-radius: 10px;
-    flex-shrink: 0;
-}
-
-.directory-secondary-title {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--accent-color);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 75%;
-    text-align: left;
-}
-
-.directory-secondary-count {
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--text-secondary);
-}
-
 .directory-secondary-level {
-    flex: 1 1 46%;
-    min-height: 120px;
+    flex: 1;
+    min-height: 0;
     overflow-y: auto;
     padding-right: 4px;
     display: flex;

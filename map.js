@@ -32,6 +32,8 @@ const QuestMapModule = {
     storyThumbnails: null,
     activeCharaName: null,
     charaSearchQuery: "",
+    directoryLevel: 'level1', // 'level1' (章節/活動卡片清單) | 'level2' (話數清單)
+    directoryLevel1ScrollTop: 0,
     _dialogueCache: new Map(),
 
     normalizeString(str) {
@@ -780,6 +782,8 @@ const QuestMapModule = {
         this.activeTabType = type;
         this.activeStoryId = null;
         this.expandedChapter = null;
+        this.directoryLevel = 'level1';
+        this.directoryLevel1ScrollTop = 0;
         this.safeRender(() => this._render());
     },
 
@@ -803,6 +807,8 @@ const QuestMapModule = {
         this.activeTabType = type;
         this.activeStoryId = null;
         this.expandedChapter = null;
+        this.directoryLevel = 'level1';
+        this.directoryLevel1ScrollTop = 0;
         if (type === 'chara') {
             this.activeCharaName = null;
         }
@@ -1125,17 +1131,27 @@ const QuestMapModule = {
 
             const secondaryStoriesHtml = this.renderDirectorySecondaryHtml(this.expandedChapter);
 
+            const isL1 = (this.directoryLevel === 'level1');
+            const backBtnText = this.activeTabType === 'event' ? '⬅ 返回活動列表' : '⬅ 返回章節列表';
+
             controlPanelHtml = `
                 <div class="directory-container">
-                    <div class="directory-primary-level" id="directory-primary-list">
+                    <div class="directory-view-level1" id="directory-primary-list" style="display: ${isL1 ? 'flex' : 'none'};">
                         ${primaryCardsHtml}
                     </div>
-                    <div class="directory-secondary-header">
-                        <span class="directory-secondary-title" id="directory-secondary-title" title="${this.escapeHtml(this.normalizeDisplayTitle(currentGroupDisplayTitle))}">${this.escapeHtml(this.normalizeDisplayTitle(currentGroupDisplayTitle))}</span>
-                        <span class="directory-secondary-count" id="directory-secondary-count">${selectedGroupStories.length} 話</span>
-                    </div>
-                    <div class="directory-secondary-level" id="directory-secondary-list">
-                        ${secondaryStoriesHtml}
+                    <div class="directory-view-level2" id="directory-secondary-view" style="display: ${isL1 ? 'none' : 'flex'};">
+                        <div class="directory-drilldown-header">
+                            <button class="directory-back-btn" onclick="QuestMapModule.backToLevel1()">
+                                ${backBtnText}
+                            </button>
+                            <div class="directory-group-badge-box">
+                                <span class="directory-secondary-title" id="directory-secondary-title" title="${this.escapeHtml(this.normalizeDisplayTitle(currentGroupDisplayTitle))}">${this.escapeHtml(this.normalizeDisplayTitle(currentGroupDisplayTitle))}</span>
+                                <span class="directory-secondary-count" id="directory-secondary-count">${selectedGroupStories.length} 話</span>
+                            </div>
+                        </div>
+                        <div class="directory-secondary-level" id="directory-secondary-list">
+                            ${secondaryStoriesHtml}
+                        </div>
                     </div>
                 </div>
             `;
@@ -1255,6 +1271,8 @@ const QuestMapModule = {
         this.currentPart = part;
         this.activeStoryId = null;
         this.expandedChapter = null;
+        this.directoryLevel = 'level1';
+        this.directoryLevel1ScrollTop = 0;
 
         const isMobile = window.innerWidth <= 768;
         const container = document.querySelector('.map-container');
@@ -1312,9 +1330,58 @@ const QuestMapModule = {
 
     selectDirectoryGroup(chKey) {
         if (!this.chapters || !this.chapters[chKey]) return;
-        if (this.expandedChapter === chKey) return;
+
+        // 1. 記錄 Level 1 目前滾動位置
+        const l1 = document.getElementById('directory-primary-list');
+        if (l1) {
+            this.directoryLevel1ScrollTop = l1.scrollTop;
+        }
+
         this.expandedChapter = chKey;
+        this.directoryLevel = 'level2';
+
+        // 2. 更新 Level 2 的內容 (標題、話數列表)
         this.updateDirectoryUI(chKey);
+
+        // 3. 原地切換 view
+        const v1 = document.getElementById('directory-primary-list');
+        const v2 = document.getElementById('directory-secondary-view');
+        if (v1 && v2) {
+            v1.style.display = 'none';
+            v2.style.display = 'flex';
+        }
+        const l2 = document.getElementById('directory-secondary-list');
+        if (l2) l2.scrollTop = 0;
+
+        // 絕對不切換 Reader、不載入話數、不滾動 Reader、不跳視窗
+    },
+
+    backToLevel1() {
+        this.directoryLevel = 'level1';
+        const v1 = document.getElementById('directory-primary-list');
+        const v2 = document.getElementById('directory-secondary-view');
+        if (v1 && v2) {
+            v2.style.display = 'none';
+            v1.style.display = 'flex';
+            if (typeof this.directoryLevel1ScrollTop === 'number') {
+                v1.scrollTop = this.directoryLevel1ScrollTop;
+            }
+        }
+        // 同步第一層 active 樣式 (高亮當前話數所屬章節)
+        if (this.activeStoryId) {
+            const activeChKey = this.getChapterKeyForStory(this.activeStoryId);
+            if (activeChKey) {
+                const chapterKeys = Object.keys(this.chapters);
+                chapterKeys.forEach((key, idx) => {
+                    const card = document.getElementById(`dir-group-${idx}`);
+                    if (card) {
+                        if (key === activeChKey) card.classList.add('active');
+                        else card.classList.remove('active');
+                    }
+                });
+            }
+        }
+        // 絕對不切換 Reader、不影響視窗滾動
     },
 
     updateDirectoryUI(targetChKey) {
