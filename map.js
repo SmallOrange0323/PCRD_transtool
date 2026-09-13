@@ -34,6 +34,7 @@ const QuestMapModule = {
     charaSearchQuery: "",
     directoryLevel: 'level1', // 'level1' (章節/活動卡片清單) | 'level2' (話數清單)
     directoryLevel1ScrollTop: 0,
+    autoVoiceStartIndex: null,
     _dialogueCache: new Map(),
 
     normalizeString(str) {
@@ -146,6 +147,7 @@ const QuestMapModule = {
         );
         const cleanCh = this.normalizeDisplayTitle(chDisplay);
         const cleanTitle = this.normalizeDisplayTitle(titleDisplay);
+        const hasTitle = cleanTitle && cleanTitle !== cleanCh;
         return `
             <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}" id="story-item-${s.id}" onclick="QuestMapModule.selectStory(${s.id})">
                 <div class="story-item-thumb">
@@ -153,7 +155,7 @@ const QuestMapModule = {
                 </div>
                 <div class="story-item-content">
                     <div class="story-item-ch">${this.escapeHtml(cleanCh)}</div>
-                    <div class="story-item-title">${this.escapeHtml(cleanTitle)}</div>
+                    ${hasTitle ? `<div class="story-item-title">${this.escapeHtml(cleanTitle)}</div>` : ''}
                 </div>
                 <div class="story-item-arrow">
                     <svg viewBox="0 0 24 24">
@@ -222,6 +224,11 @@ const QuestMapModule = {
             // 確保 AvatarService Manifest 完整就緒 (Exact Dialogue Avatar 治理)
             if (window.AvatarService && typeof window.AvatarService.ensureManifestLoaded === 'function') {
                 await window.AvatarService.ensureManifestLoaded();
+            }
+
+            // 確保 StoryDataService 官方元數據完整就緒 (活動副標題解析)
+            if (window.StoryDataService && typeof window.StoryDataService.ensureMetadataLoaded === 'function') {
+                await window.StoryDataService.ensureMetadataLoaded();
             }
 
             if (Object.keys(this.speakerAvatars).length === 0) {
@@ -1305,6 +1312,52 @@ const QuestMapModule = {
         this.safeRender(() => this._render());
     },
 
+    /**
+     * 解析活動各話副標題 (Episode Subtitle)
+     * 依據單一優先級解析：
+     * 1. official metadata.subtitle (非空且 meaningful)
+     * 2. story.title (DB event_story_detail.sub_title / extra_events.title，非空且 meaningful)
+     * 3. 兩者皆非 meaningful 則返回空字串 (不捏造假標題)
+     * @param {Object} story - 話數物件
+     * @param {string} chapterLabel - 章節標籤 (如 "第1話")
+     * @returns {string} 各話副標題
+     */
+    resolveEventEpisodeSubtitle(story, chapterLabel) {
+        if (!story) return "";
+
+        const normalizeKey = (str) => {
+            if (!str) return "";
+            return String(str).replace(/[\s\u3000]+/g, "").trim();
+        };
+
+        const isMeaningful = (subtitle, label) => {
+            if (!subtitle || typeof subtitle !== 'string') return false;
+            const cleanSub = subtitle.trim();
+            if (!cleanSub) return false;
+            const subNorm = normalizeKey(cleanSub);
+            const labelNorm = normalizeKey(label);
+            if (subNorm && labelNorm && subNorm === labelNorm) return false;
+            if (/^第\d+話$/.test(subNorm) || subNorm === "序幕" || subNorm === "終幕") return false;
+            return true;
+        };
+
+        // 1. 優先從 StoryDataService 快取取得官方 metadata subtitle
+        if (window.StoryDataService && typeof window.StoryDataService.getSubtitleSync === 'function') {
+            const officialSub = window.StoryDataService.getSubtitleSync(story.id);
+            if (officialSub && isMeaningful(officialSub, chapterLabel)) {
+                return officialSub.trim();
+            }
+        }
+
+        // 2. 次選 story.title (來自 DB event_story_detail 或 extra_events)
+        if (story.title && isMeaningful(story.title, chapterLabel)) {
+            return story.title.trim();
+        }
+
+        // 3. 兩者皆無 meaningful 副標題，回傳空字串
+        return "";
+    },
+
     renderDirectorySecondaryHtml(chKey) {
         if (!this.chapters || !chKey || !this.chapters[chKey]) {
             return `<div style="padding: 20px; text-align: center; color: var(--text-secondary); font-size: 0.85rem;">暫無話數</div>`;
@@ -1312,19 +1365,22 @@ const QuestMapModule = {
         const childStories = this.chapters[chKey] || [];
         return childStories.map(s => {
             let displayChapterName = "";
+            let episodeSubtitle = s.title;
             if (this.activeTabType === 'main') {
                 displayChapterName = s.chapter.replace(/^(第\d+部\s*)?([^\s]+章\s*|[^\s]+序章\s*|[^\s]+幕間[^\s]*\s*)/, '');
+                if (!displayChapterName) displayChapterName = s.chapter;
             } else if (this.activeTabType === 'event') {
                 const cleanEventTitle = chKey.substring(chKey.indexOf('』') + 1 || chKey.indexOf('】') + 1 || chKey.indexOf('」') + 1).trim();
                 displayChapterName = s.chapter.replace(cleanEventTitle, '').trim();
                 if (!displayChapterName) displayChapterName = s.chapter;
+                episodeSubtitle = this.resolveEventEpisodeSubtitle(s, displayChapterName);
             } else if (this.activeTabType === 'guild') {
                 const match = s.chapter ? s.chapter.match(/第\d+話/) : null;
                 displayChapterName = match ? match[0] : (s.chapter || "公會故事");
             } else {
                 displayChapterName = s.chapter || "特別故事";
             }
-            return this.getStoryItemHtml(s, displayChapterName, s.title);
+            return this.getStoryItemHtml(s, displayChapterName, episodeSubtitle);
         }).join('');
     },
 
@@ -1487,6 +1543,7 @@ const QuestMapModule = {
             return;
         }
         this.activeStoryId = storyId;
+        this.autoVoiceStartIndex = null;
 
         // 雙向狀態同步：若該話屬於另一個 group (例如上一話/下一話跨章節)
         const targetChKey = this.getChapterKeyForStory(storyId);
@@ -2150,6 +2207,10 @@ const QuestMapModule = {
             this.currentDialogueList = dialogueList;
             this.updateAutoVoiceUI();
 
+            if (this.autoVoiceStartIndex !== null && window.DialogueView && typeof window.DialogueView.setAutoStartSelection === 'function') {
+                window.DialogueView.setAutoStartSelection(board, this.autoVoiceStartIndex);
+            }
+
         } catch (err) {
             if (currentToken === this._storyRenderToken && this.activeStoryId === storyId) {
                 console.error("加載台詞失敗:", err);
@@ -2178,6 +2239,50 @@ const QuestMapModule = {
         return window.MediaService.playVoice(voiceName);
     },
 
+    /**
+     * 處理點擊對白行以選取或取消 AUTO 播放起點
+     * @param {number} index - 對白行索引
+     * @param {MouseEvent} event - 點擊事件
+     */
+    handleDialogueLineClick(index, event) {
+        // 1. 若非 IDLE 狀態 (PLAYING 或 PAUSED)，忽略起點切換
+        if (window.AutoVoiceController && window.AutoVoiceController.state !== 'IDLE') {
+            return;
+        }
+
+        // 2. 忽略子元素點擊 (語音按鈕、角色頭像、角色名稱連結等)
+        if (event) {
+            const target = event.target;
+            if (target && typeof target.closest === 'function') {
+                if (target.closest('.dialogue-voice-btn') || 
+                    target.closest('.game-chara-avatar-wrapper') || 
+                    target.closest('.game-dialogue-speaker')) {
+                    return;
+                }
+            }
+        }
+
+        // 3. 忽略使用者正在反白拖曳選取文字
+        const selection = window.getSelection ? window.getSelection() : null;
+        if (selection && selection.toString().trim().length > 0) {
+            return;
+        }
+
+        // 4. Same Line Toggle: 若點擊目前已選取的同一個對話行，取消選取
+        const board = document.getElementById('dialogue-board');
+        if (this.autoVoiceStartIndex === index) {
+            this.autoVoiceStartIndex = null;
+            if (window.DialogueView && board) {
+                window.DialogueView.clearAutoStartSelection(board);
+            }
+        } else {
+            this.autoVoiceStartIndex = index;
+            if (window.DialogueView && board) {
+                window.DialogueView.setAutoStartSelection(board, index);
+            }
+        }
+    },
+
     toggleAutoVoice() {
         if (!window.AutoVoiceController) return;
 
@@ -2192,7 +2297,10 @@ const QuestMapModule = {
                 return;
             }
             const board = document.getElementById('dialogue-board');
-            window.AutoVoiceController.start(this.currentDialogueList, this.activeStoryId, board);
+            const startIndex = (typeof this.autoVoiceStartIndex === 'number' && this.autoVoiceStartIndex >= 0)
+                ? this.autoVoiceStartIndex
+                : 0;
+            window.AutoVoiceController.start(this.currentDialogueList, this.activeStoryId, board, startIndex);
         } else if (window.AutoVoiceController.state === 'PLAYING') {
             window.AutoVoiceController.pause();
         } else if (window.AutoVoiceController.state === 'PAUSED') {

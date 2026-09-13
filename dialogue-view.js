@@ -245,7 +245,7 @@ console.log("dialogue-view.js loaded");
                 const voiceAttr = item.voice ? ` data-voice="${item.voice}"` : '';
 
                 html += `
-                    <div class="game-dialogue-line ${speakerClass}" data-dialogue-index="${index}"${voiceAttr}>
+                    <div class="game-dialogue-line ${speakerClass}" data-dialogue-index="${index}"${voiceAttr} onclick="QuestMapModule.handleDialogueLineClick(${index}, event)">
                         ${avatarHtml}
                         <div class="game-dialogue-content">
                             <div class="game-dialogue-speaker-wrap">
@@ -357,6 +357,31 @@ console.log("dialogue-view.js loaded");
             if (!boardEl) return;
             const activeLines = boardEl.querySelectorAll('.game-dialogue-line.auto-voice-active');
             activeLines.forEach(el => el.classList.remove('auto-voice-active'));
+        },
+
+        /**
+         * 設定指定對白行之 AUTO 起點標記
+         * @param {HTMLElement} boardEl - 對白看板容器
+         * @param {number} index - 對白索引
+         */
+        setAutoStartSelection(boardEl, index) {
+            if (!boardEl) return;
+            this.clearAutoStartSelection(boardEl);
+            if (index === null || index === undefined || index < 0) return;
+            const lineEl = boardEl.querySelector(`.game-dialogue-line[data-dialogue-index="${index}"]`);
+            if (lineEl) {
+                lineEl.classList.add('auto-start-selected');
+            }
+        },
+
+        /**
+         * 清除看板內所有對白行之 AUTO 起點標記
+         * @param {HTMLElement} boardEl - 對白看板容器
+         */
+        clearAutoStartSelection(boardEl) {
+            if (!boardEl) return;
+            const selectedLines = boardEl.querySelectorAll('.game-dialogue-line.auto-start-selected');
+            selectedLines.forEach(el => el.classList.remove('auto-start-selected'));
         }
     };
 

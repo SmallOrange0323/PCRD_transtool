@@ -39,12 +39,13 @@ console.log("auto-voice-controller.js loaded");
         },
 
         /**
-         * 啟動 AUTO 語音連播 (從話數第一句有語音的對白開始)
+         * 啟動 AUTO 語音連播 (從指定索引或話數第一句有語音的對白開始)
          * @param {Array<Object>} dialogueList - 當前話數對白列表
          * @param {number|string} storyId - 當前話數 ID
          * @param {HTMLElement} [boardEl] - 對白看板容器元素
+         * @param {number} [startIndex=0] - 搜尋語音之起始對白索引
          */
-        start(dialogueList, storyId, boardEl) {
+        start(dialogueList, storyId, boardEl, startIndex = 0) {
             this.stop(); // 確保舊 Session 徹底結束 (含清理定時器)
 
             if (!dialogueList || !Array.isArray(dialogueList) || dialogueList.length === 0) {
@@ -56,9 +57,10 @@ console.log("auto-voice-controller.js loaded");
             this.storyId = storyId;
             this.boardEl = boardEl || (typeof document !== 'undefined' ? document.getElementById('dialogue-board') : null);
 
-            const firstVoicedIndex = this.findNextVoicedIndex(0);
+            const sIdx = (typeof startIndex === 'number' && Number.isFinite(startIndex) && startIndex >= 0) ? Math.floor(startIndex) : 0;
+            const firstVoicedIndex = this.findNextVoicedIndex(sIdx);
             if (firstVoicedIndex === -1) {
-                console.warn('[AutoVoiceController] 當前話數無任何語音對白');
+                console.warn('[AutoVoiceController] 當前話數或指定索引之後無任何語音對白');
                 this._notifyState('IDLE');
                 return;
             }
