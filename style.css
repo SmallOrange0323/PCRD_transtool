@@ -1543,6 +1543,7 @@ body {
     gap: 14px;
     border-radius: 16px;
     margin-bottom: 0;
+    flex-shrink: 0;
 }
 
 .directory-secondary-level .story-item-thumb {
@@ -1655,6 +1656,7 @@ body {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .story-item::before {
