@@ -1305,6 +1305,215 @@ body {
     color: var(--text-secondary);
 }
 
+/* ===== 雙層目錄 (Two-Level Directory) 樣式 ===== */
+.directory-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    gap: 8px;
+}
+
+.directory-primary-level {
+    flex: 1 1 54%;
+    min-height: 150px;
+    max-height: 58%;
+    overflow-y: auto;
+    padding-right: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.directory-primary-level::-webkit-scrollbar {
+    width: 5px;
+}
+
+.directory-primary-level::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 6px;
+}
+
+.directory-primary-level::-webkit-scrollbar-thumb {
+    background: rgba(94, 107, 125, 0.2);
+    border-radius: 6px;
+}
+
+.directory-primary-level::-webkit-scrollbar-thumb:hover {
+    background: rgba(232, 56, 117, 0.35);
+}
+
+.directory-group-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(232, 56, 117, 0.1);
+    box-shadow: 0 2px 6px rgba(94, 107, 125, 0.04);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.directory-group-card:hover {
+    background: rgba(232, 56, 117, 0.04);
+    border-color: rgba(232, 56, 117, 0.25);
+    transform: translateY(-1px);
+}
+
+.directory-group-card.active {
+    background: linear-gradient(135deg, rgba(232, 56, 117, 0.09) 0%, rgba(232, 56, 117, 0.03) 100%);
+    border-color: rgba(232, 56, 117, 0.45);
+    box-shadow: 0 4px 12px rgba(232, 56, 117, 0.12);
+}
+
+.directory-group-card .chapter-card-thumb {
+    width: 100px;
+    height: 56px;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+    border: 1px solid rgba(232, 56, 117, 0.15);
+    background: #e0e0e0;
+}
+
+.directory-group-card .chapter-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.directory-group-card:hover .chapter-card-img {
+    transform: scale(1.06);
+}
+
+.dir-group-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
+}
+
+.dir-group-name {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.35;
+}
+
+.dir-group-count {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    background: rgba(232, 56, 117, 0.08);
+    padding: 1px 8px;
+    border-radius: 12px;
+    width: fit-content;
+}
+
+.dir-group-icon {
+    font-size: 1.3rem;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(232, 56, 117, 0.06);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.directory-secondary-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 10px;
+    background: linear-gradient(135deg, rgba(232, 56, 117, 0.06) 0%, rgba(232, 56, 117, 0.02) 100%);
+    border: 1px solid rgba(232, 56, 117, 0.15);
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.directory-secondary-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 75%;
+    text-align: left;
+}
+
+.directory-secondary-count {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+.directory-secondary-level {
+    flex: 1 1 46%;
+    min-height: 120px;
+    overflow-y: auto;
+    padding-right: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.directory-secondary-level::-webkit-scrollbar {
+    width: 5px;
+}
+
+.directory-secondary-level::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 6px;
+}
+
+.directory-secondary-level::-webkit-scrollbar-thumb {
+    background: rgba(94, 107, 125, 0.2);
+    border-radius: 6px;
+}
+
+.directory-secondary-level::-webkit-scrollbar-thumb:hover {
+    background: rgba(232, 56, 117, 0.35);
+}
+
+.directory-secondary-level .story-item {
+    padding: 8px 12px;
+    gap: 10px;
+    border-radius: 10px;
+    margin-bottom: 0;
+}
+
+.directory-secondary-level .story-item-thumb {
+    width: 90px;
+    height: 51px;
+    border-radius: 6px;
+}
+
+.directory-secondary-level .story-item-ch {
+    font-size: 0.72rem;
+}
+
+.directory-secondary-level .story-item-title {
+    font-size: 0.85rem;
+}
+
 /* 風琴選單項目樣式 */
 .accordion-container {
     display: flex;

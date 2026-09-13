@@ -120,6 +120,15 @@ const QuestMapModule = {
             .replace(/"/g, "\\\"");
     },
 
+    normalizeDisplayTitle(text) {
+        if (!text) return "";
+        return String(text)
+            .replace(/\\n/g, " ")
+            .replace(/\r?\n/g, " ")
+            .replace(/[\u3000\s]+/g, " ")
+            .trim();
+    },
+
     getStoryItemHtml(s, chDisplay, titleDisplay) {
         const thumbData = (this.storyThumbnails && this.storyThumbnails[s.id]) || {};
         const stillId = thumbData.still_id || s.still_id || null;
@@ -133,23 +142,25 @@ const QuestMapModule = {
             'width:100%;height:100%;object-fit:cover;',
             options
         );
- return `
- <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}" id="story-item-${s.id}" onclick="QuestMapModule.selectStory(${s.id})">
- <div class="story-item-thumb">
- ${thumbHtml}
- </div>
- <div class="story-item-content">
- <div class="story-item-ch">${this.escapeHtml(chDisplay)}</div>
- <div class="story-item-title">${this.escapeHtml(titleDisplay)}</div>
- </div>
- <div class="story-item-arrow">
- <svg viewBox="0 0 24 24">
- <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
- </svg>
- </div>
- </div>
- `;
- },
+        const cleanCh = this.normalizeDisplayTitle(chDisplay);
+        const cleanTitle = this.normalizeDisplayTitle(titleDisplay);
+        return `
+            <div class="story-item ${this.activeStoryId === s.id ? 'active' : ''}" id="story-item-${s.id}" onclick="QuestMapModule.selectStory(${s.id})">
+                <div class="story-item-thumb">
+                    ${thumbHtml}
+                </div>
+                <div class="story-item-content">
+                    <div class="story-item-ch">${this.escapeHtml(cleanCh)}</div>
+                    <div class="story-item-title">${this.escapeHtml(cleanTitle)}</div>
+                </div>
+                <div class="story-item-arrow">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                    </svg>
+                </div>
+            </div>
+        `;
+    },
 
     getCharaRealName(name) {
         if (!name) return "";
@@ -665,14 +676,15 @@ const QuestMapModule = {
         sortedEvents.forEach(evt => {
             const date = new Date(evt.start_time);
             const timeLabel = isNaN(date.getFullYear()) ? "【未知時間】" : `【${date.getFullYear()}年${date.getMonth() + 1}月】`;
-            const chName = `${timeLabel} ${evt.title}`;
+            const cleanTitle = this.normalizeDisplayTitle(evt.title);
+            const chName = `${timeLabel} ${cleanTitle}`;
 
             const childStories = this.eventStories.filter(s => s.groupId === evt.story_group_id);
             if (childStories.length > 0) {
                 this.chapters[chName] = childStories.map(s => ({
                     id: s.id,
-                    chapter: s.chapter || "",
-                    title: s.title || "",
+                    chapter: this.normalizeDisplayTitle(s.chapter || ""),
+                    title: this.normalizeDisplayTitle(s.title || ""),
                     groupId: s.groupId,
                     isEvent: true,
                     eventValue: evt.value,
@@ -976,7 +988,7 @@ const QuestMapModule = {
                     <span style="color: rgba(0,0,0,0.25); font-size: 0.8rem;">/</span>
                     <span style="font-size: 0.85rem; font-weight: bold; color: var(--text-primary);">${this.escapeHtml(this.activeCharaName)}</span>
                 </div>
-                <div class="accordion-content" style="max-height: none; display: block; padding-top: 8px;">
+                <div class="directory-secondary-level" style="max-height: none; display: flex; flex-direction: column; gap: 6px; overflow-y: auto;">
                     ${(this.chapters[this.activeCharaName] || []).map(s => {
                         const displayTitle = s.episodeLabel ? `${s.episodeLabel} ${s.title}` : s.title;
                         return this.getStoryItemHtml(s, "個人故事", displayTitle);
@@ -984,14 +996,14 @@ const QuestMapModule = {
                 </div>
             `;
         } else {
-            let accordionHtml = "";
+            let primaryCardsHtml = "";
             chapterKeys.forEach((chKey, chIndex) => {
-                const isExpanded = this.expandedChapter === chKey;
+                const isSelected = this.expandedChapter === chKey;
                 const childStories = this.chapters[chKey] || [];
-                const safeId = `acc-item-${chIndex}`;
+                const safeId = `dir-group-${chIndex}`;
 
                 let chTitle = "";
-                let chIcon = isExpanded ? '📂' : '📁';
+                let chIcon = isSelected ? '📂' : '📁';
 
                 if (this.activeTabType === 'main') {
                     let cleanChKey = chKey;
@@ -1019,7 +1031,7 @@ const QuestMapModule = {
                             if (thumb) {
                                 if (thumb.still_id) {
                                     foundStillId = thumb.still_id;
-                                    break; // 優先使用劇照，找到立即停止
+                                    break;
                                 }
                                 if (!foundBgId && thumb.bg_id) {
                                     foundBgId = thumb.bg_id;
@@ -1036,28 +1048,18 @@ const QuestMapModule = {
                         ''
                     );
 
-                    accordionHtml += `
-                        <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
-                            <div class="accordion-header chapter-card" onclick="QuestMapModule.toggleChapter(${chIndex})">
-                                <div class="acc-header-title">
-                                    <div class="chapter-card-thumb">
-                                        ${chapterCardThumbHtml}
-                                    </div>
-                                    <span class="acc-ch-name" style="margin-left: 8px;">${this.escapeHtml(cleanChKey)}${this.escapeHtml(chTitle)}</span>
-                                </div>
-                                <div class="acc-count">${childStories.length} 話</div>
+                    primaryCardsHtml += `
+                        <div class="directory-group-card ${isSelected ? 'active' : ''}" id="${safeId}" onclick="QuestMapModule.selectDirectoryGroup('${this.escapeForAttr(chKey)}')">
+                            <div class="chapter-card-thumb">
+                                ${chapterCardThumbHtml}
                             </div>
-                            <div class="accordion-content" style="max-height: ${isExpanded ? 'none' : '0px'}">
-                                ${childStories.map(s => {
-                                    const chDisplay = s.chapter.replace(/^(第\d+部\s*)?([^\s]+章\s*|[^\s]+序章\s*|[^\s]+幕間[^\s]*\s*)/, '');
-                                    const titleDisplay = s.title;
-                                    return this.getStoryItemHtml(s, chDisplay, titleDisplay);
-                                }).join('')}
+                            <div class="dir-group-info">
+                                <div class="dir-group-name">${this.escapeHtml(cleanChKey)}${this.escapeHtml(chTitle)}</div>
+                                <div class="dir-group-count">${childStories.length} 話</div>
                             </div>
                         </div>
                     `;
                 } else if (this.activeTabType === 'event') {
-                    chIcon = "🏆";
                     let foundStoryId = (childStories && childStories.length > 0) ? childStories[0].id : null;
                     let foundStillId = null;
                     let foundBgId = null;
@@ -1086,55 +1088,55 @@ const QuestMapModule = {
                         ''
                     );
 
-                    accordionHtml += `
-                        <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
-                            <div class="accordion-header chapter-card" onclick="QuestMapModule.toggleChapter(${chIndex})">
-                                <div class="acc-header-title">
-                                    <div class="chapter-card-thumb">
-                                        ${chapterCardThumbHtml}
-                                    </div>
-                                    <span class="acc-ch-name" style="margin-left: 8px;">${this.escapeHtml(chKey)}</span>
-                                </div>
-                                <div class="acc-count">${childStories.length} 話</div>
+                    primaryCardsHtml += `
+                        <div class="directory-group-card ${isSelected ? 'active' : ''}" id="${safeId}" onclick="QuestMapModule.selectDirectoryGroup('${this.escapeForAttr(chKey)}')">
+                            <div class="chapter-card-thumb">
+                                ${chapterCardThumbHtml}
                             </div>
-                            <div class="accordion-content" style="max-height: ${isExpanded ? 'none' : '0px'}">
-                                ${childStories.map(s => {
-                                    const cleanEventTitle = chKey.substring(chKey.indexOf('」') + 1).trim();
-                                    let displayChapterName = s.chapter.replace(cleanEventTitle, '').trim();
-                                    if (!displayChapterName) displayChapterName = s.chapter;
-                                    return this.getStoryItemHtml(s, displayChapterName, s.title);
-                                }).join('')}
+                            <div class="dir-group-info">
+                                <div class="dir-group-name">${this.escapeHtml(this.normalizeDisplayTitle(chKey))}</div>
+                                <div class="dir-group-count">${childStories.length} 話</div>
                             </div>
                         </div>
                     `;
                 } else {
                     chIcon = this.activeTabType === 'guild' ? "👥" : "🌙";
-                    accordionHtml += `
-                        <div class="accordion-item ${isExpanded ? 'active' : ''}" id="${safeId}">
-                            <div class="accordion-header" onclick="QuestMapModule.toggleChapter(${chIndex})">
-                                <div class="acc-header-title">
-                                    <span class="acc-folder-icon" style="display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">${chIcon}</span>
-                                    <span class="acc-ch-name" style="margin-left: 8px;">${this.escapeHtml(chKey)}</span>
-                                </div>
-                                <div class="acc-count">${childStories.length} 話</div>
-                            </div>
-                            <div class="accordion-content" style="max-height: ${isExpanded ? 'none' : '0px'}">
-                                ${childStories.map(s => {
-                                    let displayChapterName = "特別故事";
-                                    if (this.activeTabType === 'guild' && s.chapter) {
-                                        const match = s.chapter.match(/第\d+話/);
-                                        if (match) displayChapterName = match[0];
-                                    }
-                                    return this.getStoryItemHtml(s, displayChapterName, s.title);
-                                }).join('')}
+                    primaryCardsHtml += `
+                        <div class="directory-group-card ${isSelected ? 'active' : ''}" id="${safeId}" onclick="QuestMapModule.selectDirectoryGroup('${this.escapeForAttr(chKey)}')">
+                            <div class="dir-group-icon">${chIcon}</div>
+                            <div class="dir-group-info">
+                                <div class="dir-group-name">${this.escapeHtml(this.normalizeDisplayTitle(chKey))}</div>
+                                <div class="dir-group-count">${childStories.length} 話</div>
                             </div>
                         </div>
                     `;
                 }
             });
+
+            const selectedGroupStories = this.chapters[this.expandedChapter] || [];
+            let currentGroupDisplayTitle = this.expandedChapter || "";
+            if (this.activeTabType === 'main' && selectedGroupStories.length > 0) {
+                const firstStory = selectedGroupStories[0];
+                const groupId = firstStory ? firstStory.groupId : null;
+                const info = firstStory ? ChapterDataService.getChapterInfo(this.currentPart, groupId) : null;
+                const chTitle = info?.title ? ` - ${info.title}` : "";
+                currentGroupDisplayTitle = `${this.expandedChapter}${chTitle}`;
+            }
+
+            const secondaryStoriesHtml = this.renderDirectorySecondaryHtml(this.expandedChapter);
+
             controlPanelHtml = `
-                <div class="accordion-container">
-                    ${accordionHtml}
+                <div class="directory-container">
+                    <div class="directory-primary-level" id="directory-primary-list">
+                        ${primaryCardsHtml}
+                    </div>
+                    <div class="directory-secondary-header">
+                        <span class="directory-secondary-title" id="directory-secondary-title" title="${this.escapeHtml(this.normalizeDisplayTitle(currentGroupDisplayTitle))}">${this.escapeHtml(this.normalizeDisplayTitle(currentGroupDisplayTitle))}</span>
+                        <span class="directory-secondary-count" id="directory-secondary-count">${selectedGroupStories.length} 話</span>
+                    </div>
+                    <div class="directory-secondary-level" id="directory-secondary-list">
+                        ${secondaryStoriesHtml}
+                    </div>
                 </div>
             `;
         }
@@ -1211,13 +1213,13 @@ const QuestMapModule = {
                     <div class="panel-section-title">
                         📖 ${
                             this.activeTabType === 'main' ? '章節與話數' : 
-                            this.activeTabType === 'event' ? '歷年活動目錄' :
+                            this.activeTabType === 'event' ? '活動與話數' :
                             this.activeTabType === 'guild' ? '公會劇情目錄' :
                             this.activeTabType === 'chara' ? `${this.activeCharaName} 的個人劇情目錄` :
                             this.activeTabType === 'tower' ? '露娜塔/系統劇情目錄' : '目錄'
                         }
                     </div>
-                    <div class="story-list-scrollbar">
+                    <div class="directory-shell" style="flex: 1; min-height: 0; display: flex; flex-direction: column; overflow: hidden;">
                         ${controlPanelHtml}
                     </div>
                 </div>
@@ -1285,58 +1287,123 @@ const QuestMapModule = {
         this.safeRender(() => this._render());
     },
 
-    toggleChapter(chIndex) {
+    renderDirectorySecondaryHtml(chKey) {
+        if (!this.chapters || !chKey || !this.chapters[chKey]) {
+            return `<div style="padding: 20px; text-align: center; color: var(--text-secondary); font-size: 0.85rem;">暫無話數</div>`;
+        }
+        const childStories = this.chapters[chKey] || [];
+        return childStories.map(s => {
+            let displayChapterName = "";
+            if (this.activeTabType === 'main') {
+                displayChapterName = s.chapter.replace(/^(第\d+部\s*)?([^\s]+章\s*|[^\s]+序章\s*|[^\s]+幕間[^\s]*\s*)/, '');
+            } else if (this.activeTabType === 'event') {
+                const cleanEventTitle = chKey.substring(chKey.indexOf('』') + 1 || chKey.indexOf('】') + 1 || chKey.indexOf('」') + 1).trim();
+                displayChapterName = s.chapter.replace(cleanEventTitle, '').trim();
+                if (!displayChapterName) displayChapterName = s.chapter;
+            } else if (this.activeTabType === 'guild') {
+                const match = s.chapter ? s.chapter.match(/第\d+話/) : null;
+                displayChapterName = match ? match[0] : (s.chapter || "公會故事");
+            } else {
+                displayChapterName = s.chapter || "特別故事";
+            }
+            return this.getStoryItemHtml(s, displayChapterName, s.title);
+        }).join('');
+    },
+
+    selectDirectoryGroup(chKey) {
+        if (!this.chapters || !this.chapters[chKey]) return;
+        if (this.expandedChapter === chKey) return;
+        this.expandedChapter = chKey;
+        this.updateDirectoryUI(chKey);
+    },
+
+    updateDirectoryUI(targetChKey) {
+        const chKey = targetChKey || this.expandedChapter;
+        if (!chKey || !this.chapters) return;
+
+        // 1. 同步第一層卡片 active 樣式並確保可見
         const chapterKeys = Object.keys(this.chapters);
-        const chKey = chapterKeys[chIndex];
-        if (!chKey) return;
+        chapterKeys.forEach((key, idx) => {
+            const card = document.getElementById(`dir-group-${idx}`);
+            if (card) {
+                if (key === chKey) {
+                    card.classList.add('active');
+                    card.scrollIntoView({ block: 'nearest', behavior: 'auto' });
+                } else {
+                    card.classList.remove('active');
+                }
+            }
+        });
 
-        const prevChapter = this.expandedChapter;
-        const prevChIndex = chapterKeys.indexOf(prevChapter);
+        // 2. 同步第二層標題與計數
+        const childStories = this.chapters[chKey] || [];
+        const titleEl = document.getElementById('directory-secondary-title');
+        const countEl = document.getElementById('directory-secondary-count');
+        const listEl = document.getElementById('directory-secondary-list');
 
-        if (this.expandedChapter === chKey) {
-            this.expandedChapter = null;
-        } else {
-            this.expandedChapter = chKey;
+        if (titleEl) {
+            let currentGroupDisplayTitle = chKey;
+            if (this.activeTabType === 'main' && childStories.length > 0) {
+                const firstStory = childStories[0];
+                const groupId = firstStory ? firstStory.groupId : null;
+                const info = firstStory ? ChapterDataService.getChapterInfo(this.currentPart, groupId) : null;
+                const chTitle = info?.title ? ` - ${info.title}` : "";
+                currentGroupDisplayTitle = `${chKey}${chTitle}`;
+            }
+            const cleanTitle = this.normalizeDisplayTitle(currentGroupDisplayTitle);
+            titleEl.innerText = cleanTitle;
+            titleEl.title = cleanTitle;
         }
 
-        if (prevChIndex !== -1) {
-            const prevItem = document.getElementById(`acc-item-${prevChIndex}`);
-            if (prevItem) {
-                prevItem.classList.remove('active');
-                const content = prevItem.querySelector('.accordion-content');
-                if (content) content.style.maxHeight = "0px";
-                if (this.activeTabType === 'main') {
-                    const icon = prevItem.querySelector('.acc-folder-icon');
-                    if (icon) icon.innerText = "📁";
+        if (countEl) {
+            countEl.innerText = `${childStories.length} 話`;
+        }
+
+        if (listEl) {
+            listEl.innerHTML = this.renderDirectorySecondaryHtml(chKey);
+            if (this.activeStoryId) {
+                this.syncSecondLevelActiveStory(this.activeStoryId);
+            }
+        }
+    },
+
+    getChapterKeyForStory(storyId) {
+        if (!this.chapters) return null;
+        for (const [chKey, stories] of Object.entries(this.chapters)) {
+            if (Array.isArray(stories) && stories.some(s => s.id === storyId)) {
+                return chKey;
+            }
+        }
+        return null;
+    },
+
+    getAllActiveTabStories() {
+        if (!this.chapters) return [];
+        const all = [];
+        for (const chKey of Object.keys(this.chapters)) {
+            const list = this.chapters[chKey];
+            if (Array.isArray(list)) {
+                for (const s of list) {
+                    all.push(s);
                 }
             }
         }
+        return all;
+    },
 
-        const currItem = document.getElementById(`acc-item-${chIndex}`);
-        if (currItem && this.expandedChapter === chKey) {
-            currItem.classList.add('active');
-            const childStories = this.chapters[chKey];
-            const content = currItem.querySelector('.accordion-content');
-            if (content) {
-                // 先設為 auto 量測實際高度，再用 transition 展開
-                content.style.maxHeight = 'none';
-                const scrollH = content.scrollHeight;
-                content.style.maxHeight = '0px';
-                requestAnimationFrame(() => {
-                    content.style.maxHeight = scrollH + 'px';
-                    // 動畫結束後切回 none 以適應動態內容
-                    setTimeout(() => { content.style.maxHeight = 'none'; }, 350);
-                });
-            }
-            if (this.activeTabType === 'main') {
-                const icon = currItem.querySelector('.acc-folder-icon');
-                if (icon) icon.innerText = "📂";
-            }
-
-            if (childStories.length > 0) {
-                this.selectStory(childStories[0].id);
-            }
+    syncSecondLevelActiveStory(storyId) {
+        document.querySelectorAll('.story-item').forEach(el => el.classList.remove('active'));
+        const activeItem = document.getElementById(`story-item-${storyId}`);
+        if (activeItem) {
+            activeItem.classList.add('active');
+            activeItem.scrollIntoView({ block: 'nearest', behavior: 'auto' });
         }
+    },
+
+    toggleChapter(chIndex) {
+        const chapterKeys = Object.keys(this.chapters);
+        const chKey = chapterKeys[chIndex];
+        if (chKey) this.selectDirectoryGroup(chKey);
     },
 
     getStoryById(storyId) {
@@ -1347,14 +1414,23 @@ const QuestMapModule = {
         if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
             window.AutoVoiceController.stop();
         }
+        const previousStoryId = this.activeStoryId;
+        if (previousStoryId === storyId) {
+            // 同話重複點擊：保持現有捲動位置，絕不跳回頂部
+            return;
+        }
         this.activeStoryId = storyId;
 
-        document.querySelectorAll('.story-item').forEach(el => el.classList.remove('active'));
-        const activeItem = document.getElementById(`story-item-${storyId}`);
-        if (activeItem) activeItem.classList.add('active');
+        // 雙向狀態同步：若該話屬於另一個 group (例如上一話/下一話跨章節)
+        const targetChKey = this.getChapterKeyForStory(storyId);
+        if (targetChKey && targetChKey !== this.expandedChapter) {
+            this.expandedChapter = targetChKey;
+            this.updateDirectoryUI(targetChKey);
+        }
+        this.syncSecondLevelActiveStory(storyId);
+
         this._storyRenderToken = (this._storyRenderToken || 0) + 1;
         const currentToken = this._storyRenderToken;
-        this.activeStoryId = storyId;
 
         const story = this.getStoryById(storyId);
         if (!story) return;
@@ -1375,24 +1451,23 @@ const QuestMapModule = {
                 const match = story.chapter.match(/^(第\d+部\s*)?([^\s]+)/);
                 chTag.innerText = match ? match[2] : "主線";
             }
-            titleEl.innerText = story.title || "話標題";
-
-            // 1. 同步建立 shell 與對白容器 (零阻塞)
-            this.updateSummaryContent(currentToken);
-
-            // 2. 立即啟動對白文本載入 (不等待任何 metadata 非同步請求)
-            if (this.isDialogueExpanded) {
-                this.loadDialogue(storyId, currentToken);
-            }
-            this.updateNavigationButtons();
-            this.updateReaderState();
-
-            // 3. 話數切換後立即回滾至 Reader 卡片頂端 (避免停留在上一話底部)
-            this.scrollReaderToTop('auto');
-            requestAnimationFrame(() => {
-                this.scrollReaderToTop('auto');
-            });
+            titleEl.innerText = this.normalizeDisplayTitle(story.title || "話標題");
         }
+
+        // 1. 同步建立 shell 與對白容器 (零阻塞)
+        this.updateSummaryContent(currentToken);
+
+        // 2. 立即啟動對白文本載入 (不等待任何 metadata 非同步請求)
+        if (this.isDialogueExpanded) {
+            this.loadDialogue(storyId, currentToken);
+        }
+        this.updateNavigationButtons();
+        this.updateReaderState();
+
+        // 3. 話數切換後單次回滾至 Reader 卡片頂端 (避免停留在上一話底部)
+        setTimeout(() => {
+            this.scrollReaderToTop('auto');
+        }, 0);
     },
 
     toPrevStory() {
@@ -1406,17 +1481,15 @@ const QuestMapModule = {
     },
 
     getPrevStoryId() {
-        const storyItems = Array.from(document.querySelectorAll('.story-item'));
-        const storyIds = storyItems.map(el => parseInt(el.id.replace('story-item-', ''), 10));
-        const index = storyIds.indexOf(this.activeStoryId);
-        return index > 0 ? storyIds[index - 1] : null;
+        const allStories = this.getAllActiveTabStories();
+        const index = allStories.findIndex(s => s.id === this.activeStoryId);
+        return index > 0 ? allStories[index - 1].id : null;
     },
 
     getNextStoryId() {
-        const storyItems = Array.from(document.querySelectorAll('.story-item'));
-        const storyIds = storyItems.map(el => parseInt(el.id.replace('story-item-', ''), 10));
-        const index = storyIds.indexOf(this.activeStoryId);
-        return index !== -1 && index < storyIds.length - 1 ? storyIds[index + 1] : null;
+        const allStories = this.getAllActiveTabStories();
+        const index = allStories.findIndex(s => s.id === this.activeStoryId);
+        return (index !== -1 && index < allStories.length - 1) ? allStories[index + 1].id : null;
     },
 
     updateNavigationButtons() {
@@ -1477,10 +1550,32 @@ const QuestMapModule = {
     scrollReaderToTop(behavior = 'auto') {
         const target = document.querySelector('.cinema-panel') || document.querySelector('.map-visual-area');
         if (target) {
-            target.scrollIntoView({ behavior, block: 'start' });
             const navOffset = 80; // 64px global navbar + 16px spacing
             const targetY = Math.max(0, Math.round(target.getBoundingClientRect().top + window.scrollY - navOffset));
-            window.scrollTo({ top: targetY, behavior });
+            if (behavior === 'smooth') {
+                const startY = window.scrollY;
+                const diff = targetY - startY;
+                if (Math.abs(diff) < 2) {
+                    window.scrollTo({ top: targetY, behavior: 'auto' });
+                    return;
+                }
+                const duration = 240;
+                const startTime = performance.now();
+                const step = () => {
+                    const elapsed = performance.now() - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const ease = progress < 0.5 ? 4 * progress * progress * progress : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+                    window.scrollTo(0, Math.round(startY + diff * ease));
+                    if (progress < 1) {
+                        setTimeout(step, 16);
+                    } else {
+                        window.scrollTo(0, targetY);
+                    }
+                };
+                setTimeout(step, 16);
+            } else {
+                window.scrollTo({ top: targetY, behavior: 'auto' });
+            }
         }
     },
 
