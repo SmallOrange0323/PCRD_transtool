@@ -261,6 +261,21 @@ def render_index_html(dashboard_dir: Path = DASHBOARD_DIR) -> str:
         html_content
     )
 
+    # 計算資料與劇本的決定性 canonical data version (資料庫 + 官方元數據 + 章節目錄)
+    db_src = dashboard_dir / "redive_tw.db"
+    db_ver = calc_sha256(db_src)[:8] if db_src.exists() else "00000000"
+    meta_src = dashboard_dir / "data" / "official_story_metadata.json"
+    meta_ver = calc_sha256(meta_src)[:8] if meta_src.exists() else "00000000"
+    ch_json_src = dashboard_dir / "data" / "chapters.json"
+    ch_ver = calc_sha256(ch_json_src)[:8] if ch_json_src.exists() else "00000000"
+    canonical_data_version = f"{db_ver}_{meta_ver}_{ch_ver}"
+
+    html_content = re.sub(
+        r'<script>window\.PCRD_DATA_VERSION\s*=\s*[^;]+;</script>',
+        f'<script>window.PCRD_DATA_VERSION = "{canonical_data_version}";</script>',
+        html_content
+    )
+
     char_hash = calc_sha256(char_js_path)[:8]
     avatar_hash = calc_sha256(avatar_js_path)[:8]
     story_asset_hash = calc_sha256(story_asset_js_path)[:8]
