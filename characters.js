@@ -91,8 +91,8 @@ window.CharactersModule = {
                     <div style="display: flex; align-items: center; gap: 20px;">
                         <h2 style="margin: 0;">角色圖鑑 (${window.PCRDatabase.currentRegion.toUpperCase()})</h2>
                         <select id="char-sort" class="region-select" style="background-image: none; padding-right: 12px;">
-                            <option value="id-desc" selected>ID 排序</option>
-                            <option value="id-asc">登場時間 (舊→新)</option>
+                            <option value="id-desc" selected>ID 排序（大→小）</option>
+                            <option value="id-asc">ID 排序（小→大）</option>
                             <option value="pos-asc">角色站位 (前→後)</option>
                         </select>
                     </div>
