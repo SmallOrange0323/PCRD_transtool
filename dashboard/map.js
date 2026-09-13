@@ -1386,6 +1386,12 @@ const QuestMapModule = {
             }
             this.updateNavigationButtons();
             this.updateReaderState();
+
+            // 3. 話數切換後立即回滾至 Reader 卡片頂端 (避免停留在上一話底部)
+            this.scrollReaderToTop('auto');
+            requestAnimationFrame(() => {
+                this.scrollReaderToTop('auto');
+            });
         }
     },
 
@@ -1468,14 +1474,18 @@ const QuestMapModule = {
         }
     },
 
-    scrollToTop() {
-        const isMobile = window.innerWidth <= 768;
-        if (isMobile) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-            const cinemaSummary = document.getElementById('cinema-summary');
-            if (cinemaSummary) cinemaSummary.scrollTop = 0;
+    scrollReaderToTop(behavior = 'auto') {
+        const target = document.querySelector('.cinema-panel') || document.querySelector('.map-visual-area');
+        if (target) {
+            target.scrollIntoView({ behavior, block: 'start' });
+            const navOffset = 80; // 64px global navbar + 16px spacing
+            const targetY = Math.max(0, Math.round(target.getBoundingClientRect().top + window.scrollY - navOffset));
+            window.scrollTo({ top: targetY, behavior });
         }
+    },
+
+    scrollToTop() {
+        this.scrollReaderToTop('smooth');
     },
 
     getQuickDirectoryHtml() {
