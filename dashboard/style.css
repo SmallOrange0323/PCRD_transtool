@@ -1514,10 +1514,11 @@ body {
     flex: 1;
     min-height: 0;
     overflow-y: auto;
-    padding-right: 4px;
+    padding: 8px 10px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 4px;
+    box-sizing: border-box;
 }
 
 .directory-secondary-level::-webkit-scrollbar {
@@ -1539,10 +1540,10 @@ body {
 }
 
 .directory-secondary-level .story-item {
-    padding: 14px 18px;
-    gap: 14px;
-    border-radius: 16px;
-    margin-bottom: 0;
+    padding: 16px 20px;
+    gap: 16px;
+    border-radius: 18px;
+    margin-bottom: 12px;
     flex-shrink: 0;
 }
 
@@ -1550,6 +1551,7 @@ body {
     width: 160px;
     height: 90px;
     border-radius: 12px;
+    flex-shrink: 0;
 }
 
 .directory-secondary-level .story-item-ch {
