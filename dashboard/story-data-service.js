@@ -140,6 +140,32 @@
             if (!ep || typeof ep.subtitle !== "string") return null;
             return ep.subtitle.trim() || null;
         }
+
+        /**
+         * 同步從記憶體快取中取得指定話數之官方元數據物件 (若尚未載入則返回 null)。
+         * @param {number|string} storyId
+         * @returns {Object|null}
+         */
+        getMetadataSync(storyId) {
+            if (storyId === undefined || storyId === null || !this._metadataCache) return null;
+            const sidStr = String(storyId);
+            const ep = this._metadataCache[sidStr];
+            if (ep === null || typeof ep !== "object" || Array.isArray(ep)) {
+                return null;
+            }
+            return ep;
+        }
+
+        /**
+         * 同步取得官方副標題 (cmd32)。
+         * @param {number|string} storyId
+         * @returns {string|null}
+         */
+        getSubtitleSync(storyId) {
+            const ep = this.getMetadataSync(storyId);
+            if (!ep || typeof ep.subtitle !== "string") return null;
+            return ep.subtitle.trim() || null;
+        }
     }
 
     // 掛載至全域 window

@@ -546,5 +546,66 @@ console.log('\n開始執行 3 項真實 Callback 整合測試 (Integration Tests
         console.log('✅ Candidate Race Regression (onerror 與 play.catch 同時觸發時 candidate 絕不重複推進且 onError count=1) 通過');
     }
 
-    console.log('\n🎉 AutoVoiceController 12 項核心測試 + 3 項真實 Callback + 2 項 Regression 測試全部順利通過！');
+    // New Feature Test 1 — Selectable Start Point in AutoVoiceController
+    {
+        // 1. 指定 startIndex = 3 (凱留，有語音)
+        AutoVoiceController.start(mockDialogueList, 1001001, null, 3);
+        assert.strictEqual(AutoVoiceController.state, 'PLAYING');
+        assert.strictEqual(AutoVoiceController.currentIndex, 3, '指定 startIndex=3 應直接從第 3 句開始');
+        assert.strictEqual(mockDialogueList[AutoVoiceController.currentIndex].voice, 'vo_story_1001002');
+        AutoVoiceController.stop();
+
+        // 2. 指定 startIndex = 2 (佑樹，無語音) -> 應自動尋找到第 3 句 (凱留)
+        AutoVoiceController.start(mockDialogueList, 1001001, null, 2);
+        assert.strictEqual(AutoVoiceController.state, 'PLAYING');
+        assert.strictEqual(AutoVoiceController.currentIndex, 3, '指定無語音的 startIndex=2 應自動前進到第 3 句');
+        assert.strictEqual(mockDialogueList[AutoVoiceController.currentIndex].voice, 'vo_story_1001002');
+        AutoVoiceController.stop();
+
+        // 3. 指定 startIndex = 4 (無語音，且後面無任何語音) -> 應安全停在 IDLE
+        AutoVoiceController.start(mockDialogueList, 1001001, null, 4);
+        assert.strictEqual(AutoVoiceController.state, 'IDLE', '若 startIndex 後面無任何語音，狀態應維持 IDLE');
+        assert.strictEqual(AutoVoiceController.currentIndex, -1);
+
+        // 4. 未提供 startIndex (預設為 0) -> 從第一句有語音的第 1 句開始
+        AutoVoiceController.start(mockDialogueList, 1001001);
+        assert.strictEqual(AutoVoiceController.currentIndex, 1, '預設應從第 1 句開始');
+        AutoVoiceController.stop();
+
+        console.log('✅ Selectable Start Point (startIndex 指定起點、無語音向後尋找、末端無語音安全退回) 通過');
+    }
+
+    // New Feature Test 2 — DialogueView selection DOM helpers
+    {
+        const mockClasses = new Set();
+        const mockLineEl = {
+            classList: {
+                add: (cls) => mockClasses.add(cls),
+                remove: (cls) => mockClasses.delete(cls),
+                contains: (cls) => mockClasses.has(cls)
+            }
+        };
+        const mockBoard = {
+            querySelector: (sel) => {
+                if (sel.includes('data-dialogue-index="2"')) return mockLineEl;
+                return null;
+            },
+            querySelectorAll: (sel) => {
+                if (sel.includes('auto-start-selected') && mockClasses.has('auto-start-selected')) {
+                    return [mockLineEl];
+                }
+                return [];
+            }
+        };
+
+        DialogueView.setAutoStartSelection(mockBoard, 2);
+        assert(mockClasses.has('auto-start-selected'), '應加入 auto-start-selected class');
+
+        DialogueView.clearAutoStartSelection(mockBoard);
+        assert(!mockClasses.has('auto-start-selected'), '應清除 auto-start-selected class');
+
+        console.log('✅ DialogueView Selection DOM Helpers 通過');
+    }
+
+    console.log('\n🎉 AutoVoiceController 全部測試順利通過！');
 })();
