@@ -32,6 +32,7 @@ const QuestMapModule = {
     storyThumbnails: null,
     activeCharaName: null,
     charaSearchQuery: "",
+    _dialogueCache: new Map(),
 
     normalizeString(str) {
         if (!str) return "";
@@ -800,17 +801,17 @@ const QuestMapModule = {
     _fadeTransition(renderFn) {
         const tab = document.getElementById('map-tab');
         if (!tab) { this.safeRender(renderFn); return; }
-        tab.style.transition = 'opacity 0.2s ease-out';
+        tab.style.transition = 'opacity 0.08s ease-out';
         tab.style.opacity = '0';
         setTimeout(() => {
             this.safeRender(async () => {
                 await renderFn.call(this);
                 requestAnimationFrame(() => {
-                    tab.style.transition = 'opacity 0.3s ease-in';
+                    tab.style.transition = 'opacity 0.12s ease-in';
                     tab.style.opacity = '1';
                 });
             });
-        }, 200);
+        }, 80);
     },
 
     changeMenuBg(type) {
@@ -1914,23 +1915,41 @@ const QuestMapModule = {
         window.DialogueView.renderLoading(board);
 
         try {
-            const response = await fetch(`story/${storyId}.json?v=${Date.now()}`);
-            if (!response.ok) throw new Error("HTTP " + response.status);
+            let dialogueList, speakerNames;
+            const cached = this._dialogueCache.get(storyId);
 
-            const rawDialogueList = await response.json();
+            if (cached) {
+                dialogueList = cached.dialogueList;
+                speakerNames = cached.speakerNames;
+            } else {
+                const ver = window.PCRD_DATA_VERSION || (window.PCRDatabase && window.PCRDatabase.dbVersion) || 'dev';
+                const response = await fetch(`story/${storyId}.json?v=${ver}`);
+                if (!response.ok) throw new Error("HTTP " + response.status);
 
-            // 再次檢查 token (防止非同步 fetch 期間話數已切換)
-            if (currentToken !== this._storyRenderToken || this.activeStoryId !== storyId) {
-                return;
+                const rawDialogueList = await response.json();
+
+                // 再次檢查 token (防止非同步 fetch 期間話數已切換)
+                if (currentToken !== this._storyRenderToken || this.activeStoryId !== storyId) {
+                    return;
+                }
+
+                if (!rawDialogueList || rawDialogueList.length === 0) {
+                    window.DialogueView.renderEmpty(board);
+                    return;
+                }
+
+                // 使用 DialogueNormalizer 進行純資料正規化與發言人萃取
+                const normalized = window.DialogueNormalizer.normalize(rawDialogueList);
+                dialogueList = normalized.dialogueList;
+                speakerNames = normalized.speakerNames;
+
+                // 寫入 LRU 30 話快取
+                if (this._dialogueCache.size >= 30) {
+                    const oldestKey = this._dialogueCache.keys().next().value;
+                    this._dialogueCache.delete(oldestKey);
+                }
+                this._dialogueCache.set(storyId, { dialogueList, speakerNames });
             }
-
-            if (!rawDialogueList || rawDialogueList.length === 0) {
-                window.DialogueView.renderEmpty(board);
-                return;
-            }
-
-            // 使用 DialogueNormalizer 進行純資料正規化與發言人萃取
-            const { dialogueList, speakerNames } = window.DialogueNormalizer.normalize(rawDialogueList);
 
             await this.loadDialogueAvatars(speakerNames);
 

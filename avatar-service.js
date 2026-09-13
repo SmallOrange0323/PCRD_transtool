@@ -906,7 +906,7 @@ globalScope.AvatarService = {
         const src = `icon/unit/${mainId}.png`;
         const safeName = this.escapeForJsString(cleanName);
 
-        return `<img src="${src}" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleError(this, '${safeName}', ${unitId})">`;
+        return `<img src="${src}" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleError(this, '${safeName}', ${unitId})">`;
     },
 
     /**
@@ -930,7 +930,7 @@ globalScope.AvatarService = {
         const src = `icon/unit/${mainId}.png`;
         const safeName = this.escapeForJsString(cleanName);
 
-        return `<img src="${src}" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleError(this, '${safeName}', ${numId})">`;
+        return `<img src="${src}" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleError(this, '${safeName}', ${numId})">`;
     },
 
     // 取得最佳頭像 img 元素 HTML (根據 unit_id)
@@ -944,7 +944,7 @@ globalScope.AvatarService = {
             if (resolved.status === 'active') {
                 const src = resolved.path || `icon/unit/${resolved.filename}`;
                 const safeName = this.escapeForJsString(cleanName);
-                return `<img src="${src}" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleExactDialogueError(this, '${safeName}', ${numId})">`;
+                return `<img src="${src}" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleExactDialogueError(this, '${safeName}', ${numId})">`;
             }
             // placeholder_only 或未登錄 ID：直接輸出文字佔位符，不發送任何圖片請求
             return this.getFallbackHtml(cleanName);
@@ -961,7 +961,7 @@ globalScope.AvatarService = {
         const src = `icon/unit/${mainId}.png`;
         const safeName = this.escapeForJsString(cleanName);
 
-        return `<img src="${src}" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleError(this, '${safeName}', ${finalUnitId})">`;
+        return `<img src="${src}" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleError(this, '${safeName}', ${finalUnitId})">`;
     },
 
     // 顯式對白專用立即 Fail-Closed 錯誤處理器 (不重試 CDN，不替換 ID)

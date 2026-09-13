@@ -166,7 +166,7 @@ window.StoryAssetService = {
         const safeClass = this.escapeHtml(className);
         const safeStyle = this.escapeHtml(style);
 
-        return `<img class="${safeClass}" style="${safeStyle}" src="${firstSrc}" data-candidates="${serialized}" data-step="0" onerror="StoryAssetService.handleImageError(this)">`;
+        return `<img class="${safeClass}" style="${safeStyle}" src="${firstSrc}" loading="lazy" decoding="async" data-candidates="${serialized}" data-step="0" onerror="StoryAssetService.handleImageError(this)">`;
     },
 
     /**
@@ -187,7 +187,7 @@ window.StoryAssetService = {
         const safeClass = this.escapeHtml(className);
         const safeStyle = this.escapeHtml(style);
 
-        return `<img class="${safeClass}" style="${safeStyle}" src="${firstSrc}" data-candidates="${serialized}" data-step="0" onerror="StoryAssetService.handleImageError(this)">`;
+        return `<img class="${safeClass}" style="${safeStyle}" src="${firstSrc}" loading="lazy" decoding="async" data-candidates="${serialized}" data-step="0" onerror="StoryAssetService.handleImageError(this)">`;
     },
 
     /**
@@ -330,7 +330,7 @@ window.StoryAssetService = {
         const serialized = encodeURIComponent(JSON.stringify(remainingCandidates));
         const safeClass = this.escapeHtml(className);
         const safeStyle = this.escapeHtml(style);
-        return `<img class="${safeClass}" style="${safeStyle}" src="${firstSrc}" data-candidates="${serialized}" data-step="0" onerror="StoryAssetService.handleImageError(this)" alt="thumbnail">`;
+        return `<img class="${safeClass}" style="${safeStyle}" src="${firstSrc}" loading="lazy" decoding="async" data-candidates="${serialized}" data-step="0" onerror="StoryAssetService.handleImageError(this)" alt="thumbnail">`;
     },
 
     /**
@@ -374,6 +374,6 @@ window.StoryAssetService = {
         const serialized = encodeURIComponent(JSON.stringify(remainingCandidates));
         const safeClass = this.escapeHtml(className);
         const safeStyle = this.escapeHtml(style);
-        return `<img class="${safeClass}" style="${safeStyle}" src="${firstSrc}" data-candidates="${serialized}" data-step="0" onerror="StoryAssetService.handleImageError(this)" alt="thumbnail">`;
+        return `<img class="${safeClass}" style="${safeStyle}" src="${firstSrc}" loading="lazy" decoding="async" data-candidates="${serialized}" data-step="0" onerror="StoryAssetService.handleImageError(this)" alt="thumbnail">`;
     }
 };

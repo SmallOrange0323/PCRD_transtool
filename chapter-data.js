@@ -100,13 +100,14 @@ console.log("chapter-data.js loaded");
             if (this.loaded) return this.data;
             try {
                 console.log('[ChapterDataService] 開始載入資料檔...');
+                const ver = window.PCRD_DATA_VERSION || (window.PCRDatabase && window.PCRDatabase.dbVersion) || 'dev';
                 const [resp, respSum, respBranch] = await Promise.all([
-                    fetch('data/chapters.json?v=' + Date.now()),
-                    fetch('data/main_story_chapter_summaries.json?v=' + Date.now()).catch(e => {
+                    fetch('data/chapters.json?v=' + ver),
+                    fetch('data/main_story_chapter_summaries.json?v=' + ver).catch(e => {
                         console.error('[ChapterDataService] 載入單話摘要 fetch 失敗:', e);
                         return null;
                     }),
-                    fetch('data/branch_stories.json?v=' + Date.now()).catch(e => {
+                    fetch('data/branch_stories.json?v=' + ver).catch(e => {
                         console.warn('[ChapterDataService] 載入分支劇情 fetch 失敗 (optional):', e);
                         return null;
                     })
