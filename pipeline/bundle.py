@@ -24,6 +24,8 @@ import sqlite3
 from pathlib import Path
 from typing import Set, Tuple, List, Dict, Optional
 
+from concurrent.futures import ThreadPoolExecutor
+
 if sys.platform == 'win32':
     try:
         sys.stdout.reconfigure(encoding='utf-8')
@@ -52,6 +54,74 @@ def calc_sha256(filepath: Path) -> str:
 def calc_sha256_bytes(data: bytes) -> str:
     """計算 byte string 的 SHA-256 Hash"""
     return hashlib.sha256(data).hexdigest()
+
+def compute_story_aggregate_hash(story_dir: Path, max_workers: int = 16) -> str:
+    """
+    對 story_dir/*.json 建立確定性 aggregate SHA-256 雜湊。
+    規則：
+    1. 依 filename 字母升冪排序 (sorted)
+    2. 每個檔案計算 content SHA-256
+    3. 將 '{filename}:{content_sha256}\\n' 餵入 aggregate SHA-256
+    4. 回傳前 12 碼十六進位字串 (不足/目錄不存在則回傳 '000000000000')
+    """
+    if not story_dir.exists() or not story_dir.is_dir():
+        return "000000000000"
+
+    files = sorted([f for f in os.listdir(story_dir) if f.endswith(".json")])
+    if not files:
+        return "000000000000"
+
+    def hash_single_file(fn: str) -> Tuple[str, str]:
+        fp = story_dir / fn
+        try:
+            content = fp.read_bytes()
+            return fn, hashlib.sha256(content).hexdigest()
+        except Exception:
+            return fn, ""
+
+    workers = max(4, min(max_workers, (os.cpu_count() or 4) * 2))
+    if len(files) < 100:
+        file_hashes = [hash_single_file(fn) for fn in files]
+    else:
+        with ThreadPoolExecutor(max_workers=workers) as ex:
+            file_hashes = list(ex.map(hash_single_file, files))
+
+    agg = hashlib.sha256()
+    for fn, digest in file_hashes:
+        agg.update(f"{fn}:{digest}\n".encode("utf-8"))
+
+    return agg.hexdigest()[:12]
+
+def compute_canonical_data_version(dashboard_dir: Path, story_hash: Optional[str] = None) -> str:
+    """
+    計算覆蓋所有 canonical data 依賴的全域 PCRD_DATA_VERSION。
+    包含：
+    1. dashboard/redive_tw.db
+    2. dashboard/data/official_story_metadata.json
+    3. dashboard/data/chapters.json
+    4. dashboard/data/main_story_chapter_summaries.json
+    5. dashboard/data/branch_stories.json
+    6. dashboard/story/*.json (aggregate hash)
+    任何一項新增、刪除、修改內容，版本號必定改變。
+    """
+    db_src = dashboard_dir / "redive_tw.db"
+    db_ver = calc_sha256(db_src)[:8] if db_src.exists() else "00000000"
+
+    meta_src = dashboard_dir / "data" / "official_story_metadata.json"
+    meta_ver = calc_sha256(meta_src)[:8] if meta_src.exists() else "00000000"
+
+    ch_src = dashboard_dir / "data" / "chapters.json"
+    ch_ver = calc_sha256(ch_src)[:8] if ch_src.exists() else "00000000"
+
+    sum_src = dashboard_dir / "data" / "main_story_chapter_summaries.json"
+    sum_ver = calc_sha256(sum_src)[:8] if sum_src.exists() else "00000000"
+
+    branch_src = dashboard_dir / "data" / "branch_stories.json"
+    branch_ver = calc_sha256(branch_src)[:8] if branch_src.exists() else "00000000"
+
+    st_ver = (story_hash[:8] if story_hash else compute_story_aggregate_hash(dashboard_dir / "story")[:8])
+
+    return f"{db_ver}_{meta_ver}_{ch_ver}_{sum_ver}_{branch_ver}_{st_ver}"
 
 def is_safe_dist_path(target: Path, dist_root: Path = DIST_DIR) -> bool:
     """
@@ -221,12 +291,13 @@ def get_directory_size(d: Path, exclude_subdirs: Optional[Set[str]] = None) -> i
                 pass
     return total
 
-def render_index_html(dashboard_dir: Path = DASHBOARD_DIR) -> str:
+def render_index_html(dashboard_dir: Path = DASHBOARD_DIR, story_hash: Optional[str] = None) -> str:
     """
     決定性生成/渲染 Story Map 的 index.html 內容。
     包含：
     1. 內嵌 db.js 與 chapter-data.js
     2. 基於各 JS 檔案內容 SHA-256 前 8 碼進行 Cache-Busting
+    3. 基於六大 canonical data 依賴計算確定性全域 PCRD_DATA_VERSION
     """
     html_src = dashboard_dir / "story_map.html"
     db_js_path = dashboard_dir / "db.js"
@@ -261,14 +332,8 @@ def render_index_html(dashboard_dir: Path = DASHBOARD_DIR) -> str:
         html_content
     )
 
-    # 計算資料與劇本的決定性 canonical data version (資料庫 + 官方元數據 + 章節目錄)
-    db_src = dashboard_dir / "redive_tw.db"
-    db_ver = calc_sha256(db_src)[:8] if db_src.exists() else "00000000"
-    meta_src = dashboard_dir / "data" / "official_story_metadata.json"
-    meta_ver = calc_sha256(meta_src)[:8] if meta_src.exists() else "00000000"
-    ch_json_src = dashboard_dir / "data" / "chapters.json"
-    ch_ver = calc_sha256(ch_json_src)[:8] if ch_json_src.exists() else "00000000"
-    canonical_data_version = f"{db_ver}_{meta_ver}_{ch_ver}"
+    # 計算覆蓋所有依賴的決定性 canonical data version
+    canonical_data_version = compute_canonical_data_version(dashboard_dir, story_hash=story_hash)
 
     html_content = re.sub(
         r'<script>window\.PCRD_DATA_VERSION\s*=\s*[^;]+;</script>',
@@ -724,7 +789,7 @@ def sync_nojekyll(dist_dir: Path = DIST_DIR, dry_run: bool = False) -> Tuple[str
             return "normalized", 0
         return "unchanged", 0
 
-def calculate_expected_additions_and_deltas(dashboard_dir: Path = DASHBOARD_DIR, dist_dir: Path = DIST_DIR) -> Tuple[int, int]:
+def calculate_expected_additions_and_deltas(dashboard_dir: Path = DASHBOARD_DIR, dist_dir: Path = DIST_DIR, story_hash: Optional[str] = None) -> Tuple[int, int]:
     """
     計算如果執行打包，預計新增的檔案 bytes (additions) 與修改檔案的 size 變化 (deltas)。
     僅計算 Canonical Production 範圍：
@@ -759,24 +824,28 @@ def calculate_expected_additions_and_deltas(dashboard_dir: Path = DASHBOARD_DIR,
     src_data = dashboard_dir / "data"
     dst_data = dist_dir / "data"
     if src_data.exists():
-        for jf in src_data.glob("*.json"):
-            if jf.name == "db_info.json":
+        for sf in src_data.glob("*.json"):
+            if sf.name == "db_info.json":
                 continue
-            df = dst_data / jf.name
-            s_sz = jf.stat().st_size
+            df = dst_data / sf.name
+            s_sz = sf.stat().st_size
             if not df.exists():
                 additions += s_sz
             else:
                 d_sz = df.stat().st_size
-                if calc_sha256(jf) != calc_sha256(df):
+                if calc_sha256(sf) != calc_sha256(df):
                     deltas += (s_sz - d_sz)
 
-    # 3. db_info.json (精確計算 bytes，若存在 official_story_metadata.json 則注入 metadata_version)
+    # 3. db_info.json (模擬計算)
     db_src = dashboard_dir / "redive_tw.db"
-    db_sz = db_src.stat().st_size if db_src.exists() else 0
+    db_size = db_src.stat().st_size if db_src.exists() else 0
     db_hash = calc_sha256(db_src)[:12] if db_src.exists() else "nodata"
-    sim_db_dict = {"db_version": f"hash_{db_hash}", "tw_size": db_sz, "jp_size": 0}
-    meta_src = dashboard_dir / "data" / "official_story_metadata.json"
+    sim_db_dict = {
+        "db_version": f"hash_{db_hash}",
+        "tw_size": db_size,
+        "jp_size": 0
+    }
+    meta_src = src_data / "official_story_metadata.json"
     if meta_src.exists():
         sim_db_dict["metadata_version"] = calc_sha256(meta_src)[:12]
 
@@ -791,7 +860,7 @@ def calculate_expected_additions_and_deltas(dashboard_dir: Path = DASHBOARD_DIR,
 
     # 4. index.html (精確渲染計算 bytes，不使用任何 hardcoded 大小)
     try:
-        rendered_html = render_index_html(dashboard_dir)
+        rendered_html = render_index_html(dashboard_dir, story_hash=story_hash)
         rendered_bytes = rendered_html.encode("utf-8")
         html_dst = dist_dir / "index.html"
         if not html_dst.exists():
@@ -924,6 +993,10 @@ def bundle_story_map(dry_run: bool = False) -> bool:
 
     # 計算初始符合部署條件的大小 (排除 .git, card)
     initial_deployment_size = get_directory_size(DIST_DIR, exclude_subdirs={".git", "card"})
+
+    # 決定性計算一次全局 story aggregate hash (避免重複掃描 9000+ 檔案)
+    story_hash = compute_story_aggregate_hash(DASHBOARD_DIR / "story")
+    print(f"  [Story Hash] 決定性 story_aggregate_hash: {story_hash}")
 
     # 1. 同步核心 HTML、CSS、JS
     core_files = [
@@ -1081,7 +1154,7 @@ def bundle_story_map(dry_run: bool = False) -> bool:
 
     # 10. 決定性 index.html 生成與 Cache-Busting (共用 render_index_html 邏輯)
     try:
-        rendered_html = render_index_html(DASHBOARD_DIR)
+        rendered_html = render_index_html(DASHBOARD_DIR, story_hash=story_hash)
         html_dst = DIST_DIR / "index.html"
         if not dry_run:
             html_dst.write_bytes(rendered_html.encode("utf-8"))
@@ -1103,7 +1176,7 @@ def bundle_story_map(dry_run: bool = False) -> bool:
 
     # 12. 計算最終與預估體積 (精準反映 additions/deltas)
     if dry_run:
-        additions_bytes, deltas_bytes = calculate_expected_additions_and_deltas(DASHBOARD_DIR, DIST_DIR)
+        additions_bytes, deltas_bytes = calculate_expected_additions_and_deltas(DASHBOARD_DIR, DIST_DIR, story_hash=story_hash)
         net_delta_bytes = additions_bytes + deltas_bytes
         projected_deployment_size = initial_deployment_size - total_pruned_bytes + net_delta_bytes
 
