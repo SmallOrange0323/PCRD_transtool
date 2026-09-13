@@ -1208,6 +1208,7 @@ body {
     gap: 14px;
     height: auto;
     overflow: visible;
+    scroll-margin-top: calc(var(--global-navbar-height, 64px) + 16px);
 }
 
 .cinema-screen {
