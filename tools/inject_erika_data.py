@@ -147,6 +147,7 @@ story_raw_rows = cur_raw.fetchall()
 for r in story_raw_rows:
     st_data = {c: 0 for c in story_all_tw_cols}
     st_data['story_id'] = r[story_raw_cols.index(sid_col)]
+    st_data['story_group_id'] = 1394
     st_data['title'] = r[26]
     st_data['sub_title'] = r[27]
     st_data['start_time'] = '2026/09/12 16:00:00'
