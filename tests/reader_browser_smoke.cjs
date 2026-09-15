@@ -4,6 +4,7 @@ const assert = require('node:assert/strict');
 const path = require('node:path');
 const os = require('node:os');
 const fs = require('node:fs');
+const { createHash } = require('node:crypto');
 
 (async () => {
     const browser = await chromium.launch({ headless: true, channel: process.env.READER_BROWSER || 'msedge' });
@@ -77,6 +78,34 @@ const fs = require('node:fs');
         if (overflow) console.log(await page.evaluate(() => [...document.querySelectorAll('body *')].filter(el => el.getBoundingClientRect().right > innerWidth + 1).slice(0, 12).map(el => ({ tag: el.tagName, class: el.className, right: el.getBoundingClientRect().right }))));
         assert.equal(overflow, false, 'Mobile page must not overflow horizontally');
         assert.deepEqual(errors, [], 'No uncaught browser errors');
+
+        // Validate a real published hash and a storage-disabled browser together.
+        const database = await (await context.request.get(new URL('redive_tw.db', base).href)).body();
+        const hash = createHash('sha256').update(database).digest('hex').slice(0, 12);
+        const privateContext = await browser.newContext();
+        await privateContext.route('**/*', route => new URL(route.request().url()).hostname === '127.0.0.1' ? route.continue() : route.abort());
+        await privateContext.route('**/data/db_info.json*', route => route.fulfill({ json: { db_version: 'hash_' + hash, tw_size: database.length } }));
+        await privateContext.addInitScript(() => {
+            Object.defineProperty(window, 'localStorage', { get() { throw new Error('storage blocked'); } });
+            Object.defineProperty(window, 'indexedDB', { get() { throw new Error('storage blocked'); } });
+        });
+        const privatePage = await privateContext.newPage();
+        const privateErrors = [];
+        privatePage.on('pageerror', error => privateErrors.push(error.message));
+        await privatePage.goto(base + '#story=1001001');
+        await privatePage.waitForFunction(() => ReaderNavigation.readyStoryId === 1001001);
+        assert.match(await privatePage.locator('.cache-notice').textContent(), /本次仍可閱讀/);
+        assert.equal(await privatePage.evaluate(() => PCRDatabase.dbVersion), 'hash_' + hash);
+        await privatePage.evaluate(() => { Object.defineProperty(navigator, 'clipboard', { value: undefined }); });
+        await privatePage.locator('#reader-share').click();
+        assert.match(await privatePage.getByRole('textbox', { name: '本話分享連結' }).inputValue(), /#story=1001001&line=\d+/);
+        await privateContext.route('**/story/1001002.json*', route => route.fulfill({ status: 404, body: 'missing fixture' }));
+        await privatePage.evaluate(() => QuestMapModule.toNextStory());
+        await privatePage.waitForFunction(() => QuestMapModule.activeStoryId === 1001002 && !QuestMapModule.isLoadingDialogue);
+        assert.equal(await privatePage.evaluate(() => QuestMapModule.currentDialogueList.length), 0);
+        assert.equal(await privatePage.evaluate(() => AutoVoiceController.state), 'IDLE');
+        assert.deepEqual(privateErrors, []);
+        await privateContext.close();
         console.log(JSON.stringify({ passed: true, nextId, saved, routed, screenshots: [path.join(os.tmpdir(), 'pcrd-reader-desktop.png'), path.join(os.tmpdir(), 'pcrd-reader-mobile.png')] }));
     } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exitCode = 1; });

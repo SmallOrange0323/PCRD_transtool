@@ -1549,6 +1549,8 @@ const QuestMapModule = {
         }
         window.ReaderNavigation?.beforeSelect();
         this.activeStoryId = storyId;
+        // A failed new request must never leave the preceding story playable.
+        this.currentDialogueList = [];
         this.autoVoiceStartIndex = null;
         const currentBoard = document.getElementById('dialogue-board');
         if (currentBoard && window.DialogueView) {

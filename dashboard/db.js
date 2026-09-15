@@ -11,7 +11,7 @@ window.PCRDatabase = {
     cacheWarning: '',
 
     async matchesRelease(buffer, size, version) {
-        if (!buffer || (size > 0 && buffer.byteLength !== size)) return false;
+        if (Object.prototype.toString.call(buffer) !== '[object ArrayBuffer]' || (size > 0 && buffer.byteLength !== size)) return false;
         // Published versions contain the first 12 SHA-256 characters.
         const match = /^hash_([a-f0-9]{12})$/.exec(version || '');
         if (match) {

@@ -85,3 +85,9 @@ test('invalid schema closes database and is not cached', async () => {
     assert.equal(calls.closed, 1);
     assert.equal(calls.saved.length, 0);
 });
+
+test('malformed cache record is discarded without preventing a fresh download', async () => {
+    const { db, calls } = setup({ old: { format: 2, version: versionOf(bytes(1)), buffer: { byteLength: 4 } } });
+    assert.ok(await db.initDatabase());
+    assert.equal(calls.downloads.length, 1);
+});
