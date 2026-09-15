@@ -68,12 +68,16 @@ def run_node_test_script(js_code: str, include_map: bool = False) -> dict:
     // 建立瀏覽器全域環境 Mock
     const window = {{
         innerWidth: 1024,
+        scrollY: 0,
         scrollTo: () => {{}},
         DialogueView: {{
             renderLoading: () => {{}},
             renderEmpty: () => {{}},
             renderError: () => {{}},
-            renderDialogue: () => {{}}
+            renderDialogue: () => {{}},
+            clearAutoStartSelection: () => {{}},
+            clearDialogueHighlight: () => {{}},
+            setAutoStartSelection: () => {{}}
         }},
         DialogueNormalizer: {{
             normalize: (raw) => ({{ dialogueList: raw || [], speakerNames: [] }})
@@ -104,6 +108,10 @@ def run_node_test_script(js_code: str, include_map: bool = False) -> dict:
             innerText: '',
             textContent: '',
             style: {{}},
+            scrollIntoView: () => {{}},
+            getBoundingClientRect: () => ({{ top: 0 }}),
+            querySelector: () => null,
+            setAttribute: () => {{}},
             classList: {{ add: () => {{}}, remove: () => {{}}, contains: () => false }}
         }};
         Object.defineProperty(el, 'innerHTML', {{
@@ -134,8 +142,10 @@ def run_node_test_script(js_code: str, include_map: bool = False) -> dict:
         }},
         querySelectorAll: () => [],
         querySelector: () => ({{
+            style: {{}},
             classList: {{ add: () => {{}}, remove: () => {{}}, contains: () => false }},
-            scrollIntoView: () => {{}}
+            scrollIntoView: () => {{}},
+            getBoundingClientRect: () => ({{ top: 0 }})
         }})
     }};
 
@@ -165,7 +175,7 @@ def run_node_test_script(js_code: str, include_map: bool = False) -> dict:
             raise RuntimeError(f"Node execution failed (code {proc.returncode}):\n{proc.stderr}\n{proc.stdout}")
         output = proc.stdout.strip()
         try:
-            return json.loads(output)
+            return json.loads(output.splitlines()[-1])
         except json.JSONDecodeError:
             raise ValueError(f"Failed to parse Node.js output as JSON: {output}")
     finally:
@@ -836,7 +846,8 @@ class TestStoryDataServiceRuntime(unittest.TestCase):
     def test_20_official_synopsis_safely_rendered(self):
         """20. 靜態斷言：map.js 對 officialSynopsis 使用 textContent 設定以杜絕 XSS"""
         map_content = MAP_JS.read_text(encoding="utf-8")
-        self.assertIn("synopsisEl.textContent = officialSynopsis.trim()", map_content)
+        self.assertIn("synopsisEl.textContent = normalizedSynopsis", map_content)
+        self.assertNotIn("synopsisEl.innerHTML =", map_content)
 
     # 21. manifest missing does not block dialogue rendering
     def test_21_manifest_missing_does_not_block_dialogue_rendering(self):
@@ -886,6 +897,8 @@ class TestStoryDataServiceRuntime(unittest.TestCase):
         html_out = render_index_html(DASHBOARD_DIR)
         expected_hash = calc_sha256(STORY_DATA_SERVICE_JS)[:8]
         expected_tag = f'<script src="story-data-service.js?v={expected_hash}"></script>'
+        reader_hash = calc_sha256(DASHBOARD_DIR / "reader-navigation.js")[:8]
+        self.assertIn(f'<script src="reader-navigation.js?v={reader_hash}"></script>', html_out)
         self.assertIn(expected_tag, html_out)
 
     # 25. validator rejects missing runtime service with precise error message
