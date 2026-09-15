@@ -1141,6 +1141,7 @@ body {
 
 /* 左側電影放映區 (包含對白長篇列表) */
 .map-visual-area {
+    min-width: 0;
     position: relative;
     border-radius: 20px;
     overflow: visible;
@@ -2298,6 +2299,27 @@ body {
     border-top: 1px solid rgba(232, 56, 117, 0.1);
 }
 
+.reader-nav-button {
+    font: inherit;
+    font-size: 0.85rem;
+    padding: 7px 10px;
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    color: var(--accent-color);
+    background: var(--bg-secondary, white);
+    cursor: pointer;
+}
+.reader-nav-button:disabled { opacity: 0.5; cursor: default; }
+.nav-right { gap: 6px; }
+.game-dialogue-line { scroll-margin-top: 110px; }
+.reader-navigation-status { margin: 8px 0; font-size: 0.85rem; overflow-wrap: anywhere; }
+.reader-navigation-status:empty { display: none; }
+.reader-navigation-status input { display: block; width: 100%; padding: 8px; }
+@media (max-width: 768px) {
+    .navbar { grid-template-columns: 1fr; height: auto; row-gap: 6px !important; }
+    .navbar .nav-logo, .navbar .nav-tabs, .navbar .nav-right { justify-content: center; }
+    .navbar .nav-right { display: flex; gap: 6px; }
+}
 .mobile-official-synopsis, .cache-notice {
     padding: 12px 16px;
     border: 1px solid rgba(232, 56, 117, 0.2);
@@ -2309,6 +2331,7 @@ body {
 .mobile-official-synopsis summary { cursor: pointer; }
 .mobile-official-synopsis p { margin-bottom: 0; }
 .mobile-official-synopsis summary:focus-visible,
+.reader-nav-button:focus-visible,
 .game-footer-btn:focus-visible {
     outline: 3px solid var(--accent-color);
     outline-offset: 3px;
@@ -4047,7 +4070,4 @@ body {
     background: #ffffff !important;
     box-shadow: 0 4px 10px rgba(100, 120, 150, 0.1) !important;
 }
-
-
-
 

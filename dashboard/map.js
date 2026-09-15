@@ -795,6 +795,8 @@ const QuestMapModule = {
     },
 
 	goBackToMenu() {
+        window.ReaderNavigation?.left();
+        this.activeStoryId = null;
         if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
             window.AutoVoiceController.stop();
         }
@@ -807,6 +809,7 @@ const QuestMapModule = {
     },
 
     enterCategory(type) {
+        window.ReaderNavigation?.left();
         if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
             window.AutoVoiceController.stop();
         }
@@ -1268,10 +1271,11 @@ const QuestMapModule = {
     },
 
     async render(skipAutoSelect = false) {
-        this.safeRender(() => this._render(skipAutoSelect));
+        return this.safeRender(() => this._render(skipAutoSelect));
     },
 
     switchPart(part) {
+        window.ReaderNavigation?.left();
         if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
             window.AutoVoiceController.stop();
         }
@@ -1534,6 +1538,7 @@ const QuestMapModule = {
     },
 
     async selectStory(storyId) {
+        if (!this.getStoryById(storyId)) return;
         if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
             window.AutoVoiceController.stop();
         }
@@ -1542,6 +1547,7 @@ const QuestMapModule = {
             // 同話重複點擊：保持現有捲動位置，絕不跳回頂部
             return;
         }
+        window.ReaderNavigation?.beforeSelect();
         this.activeStoryId = storyId;
         this.autoVoiceStartIndex = null;
         const currentBoard = document.getElementById('dialogue-board');
@@ -1594,8 +1600,9 @@ const QuestMapModule = {
         this.updateReaderState();
 
         // 3. 話數切換後單次回滾至 Reader 卡片頂端 (避免停留在上一話底部)
+        window.ReaderNavigation?.selected(storyId);
         setTimeout(() => {
-            this.scrollReaderToTop('auto');
+            if (this.activeStoryId === storyId && this._storyRenderToken === currentToken) this.scrollReaderToTop('auto');
         }, 0);
     },
 
@@ -1653,6 +1660,7 @@ const QuestMapModule = {
     },
 
     exitReader() {
+        window.ReaderNavigation?.left();
         this.activeStoryId = null;
         document.querySelectorAll('.story-item').forEach(el => el.classList.remove('active'));
         this.updateReaderState();
@@ -2211,6 +2219,7 @@ const QuestMapModule = {
             });
 
             this.currentDialogueList = dialogueList;
+            window.ReaderNavigation?.dialogueReady(storyId);
             this.updateAutoVoiceUI();
 
             if (this.autoVoiceStartIndex !== null && window.DialogueView && typeof window.DialogueView.setAutoStartSelection === 'function') {
@@ -2554,14 +2563,17 @@ const QuestMapModule = {
 
         if (targetChKey) {
             this.expandedChapter = targetChKey;
+            this.directoryLevel = 'level2';
             if (storyType === 'chara') {
                 this.activeCharaName = targetChKey;
             }
         }
 
-        this.safeRender(async () => {
+        return this.safeRender(async () => {
             await this._render(true);
-            this.selectStory(storyId);
+            // Rebuilding the shell needs a fresh selection even for the same ID.
+            this.activeStoryId = null;
+            await this.selectStory(storyId);
             setTimeout(() => {
                 const el = document.getElementById(`story-item-${storyId}`);
                 if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });

@@ -76,6 +76,7 @@
     <script src="auto-voice-controller.js?v=1.0.0"></script>
     <script src="story-data-service.js?v=1.0.0"></script>
     <script src="map.js?v=5.4.0"></script>
+    <script src="reader-navigation.js?v=1.0.0"></script>
 
     <!-- Stabilization A: Story Map playback / async lifecycle hardening -->
     <script>
@@ -199,6 +200,7 @@
                 if (!isCurrentStory()) return;
                 this.currentDialogueList = dialogueList;
                 this.updateAutoVoiceUI();
+                window.ReaderNavigation?.dialogueReady(storyId);
 
                 if (this.autoVoiceStartIndex !== null && window.DialogueView && typeof window.DialogueView.setAutoStartSelection === 'function') {
                     window.DialogueView.setAutoStartSelection(liveBoard, this.autoVoiceStartIndex);
@@ -310,7 +312,8 @@
                 setTimeout(() => overlay.style.display = 'none', 500);
 
                 // 預設渲染劇情地圖
-                QuestMapModule.render();
+                await QuestMapModule.render();
+                window.ReaderNavigation.init(QuestMapModule);
             } catch (err) {
                 text.innerHTML = `
                     <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 10px;">

@@ -352,6 +352,7 @@ def render_index_html(dashboard_dir: Path = DASHBOARD_DIR, story_hash: Optional[
     auto_voice_hash = calc_sha256(auto_voice_js_path)[:8] if auto_voice_js_path.exists() else "1.0.0"
     story_data_hash = calc_sha256(story_data_js_path)[:8]
     map_hash = calc_sha256(map_js_path)[:8]
+    reader_hash = calc_sha256(dashboard_dir / "reader-navigation.js")[:8]
 
     html_content = re.sub(r'<script src="characters\.js(?:\?v=[^"]*)?"></script>', f'<script src="characters.js?v={char_hash}"></script>', html_content)
     html_content = re.sub(r'<script src="avatar-service\.js(?:\?v=[^"]*)?"></script>', f'<script src="avatar-service.js?v={avatar_hash}"></script>', html_content)
@@ -365,6 +366,7 @@ def render_index_html(dashboard_dir: Path = DASHBOARD_DIR, story_hash: Optional[
     html_content = re.sub(r'<script src="story-data-service\.js(?:\?v=[^"]*)?"></script>', f'<script src="story-data-service.js?v={story_data_hash}"></script>', html_content)
     html_content = re.sub(r'<script src="map\.js(?:\?v=[^"]*)?"></script>', f'<script src="map.js?v={map_hash}"></script>', html_content)
 
+    html_content = re.sub(r'<script src="reader-navigation\.js(?:\?v=[^"]*)?"></script>', f'<script src="reader-navigation.js?v={reader_hash}"></script>', html_content)
     return html_content
 
 def get_expected_dialogue_icon_mappings(dashboard_dir: Path = DASHBOARD_DIR) -> Dict[str, Path]:
@@ -805,7 +807,7 @@ def calculate_expected_additions_and_deltas(dashboard_dir: Path = DASHBOARD_DIR,
         "style.css", "db.js", "avatar-service.js", "story-asset-service.js",
         "chapter-data.js", "characters.js", "speaker-view.js", "chara-modal.js",
         "dialogue-normalizer.js", "media-service.js", "dialogue-view.js",
-        "auto-voice-controller.js", "story-data-service.js", "map.js",
+        "auto-voice-controller.js", "story-data-service.js", "map.js", "reader-navigation.js",
         "sql-wasm.js", "sql-wasm.wasm", "redive_tw.db"
     ]
     for cf in core_files:
@@ -1013,6 +1015,7 @@ def bundle_story_map(dry_run: bool = False) -> bool:
         ("dialogue-view.js", "dialogue-view.js"),
         ("auto-voice-controller.js", "auto-voice-controller.js"),
         ("story-data-service.js", "story-data-service.js"),
+        ("reader-navigation.js", "reader-navigation.js"),
         ("map.js", "map.js"),
         ("sql-wasm.js", "sql-wasm.js"),
         ("sql-wasm.wasm", "sql-wasm.wasm"),
