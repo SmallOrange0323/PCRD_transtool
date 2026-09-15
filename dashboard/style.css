@@ -2298,6 +2298,17 @@ body {
     border-top: 1px solid rgba(232, 56, 117, 0.1);
 }
 
+.mobile-official-synopsis, .cache-notice {
+    padding: 12px 16px;
+    border: 1px solid rgba(232, 56, 117, 0.2);
+    border-radius: 12px;
+    background: rgba(232, 56, 117, 0.04);
+    line-height: 1.7;
+}
+
+.mobile-official-synopsis summary { cursor: pointer; }
+.mobile-official-synopsis p { margin-bottom: 0; }
+.mobile-official-synopsis summary:focus-visible,
 .game-footer-btn:focus-visible {
     outline: 3px solid var(--accent-color);
     outline-offset: 3px;
@@ -4036,7 +4047,6 @@ body {
     background: #ffffff !important;
     box-shadow: 0 4px 10px rgba(100, 120, 150, 0.1) !important;
 }
-
 
 
 

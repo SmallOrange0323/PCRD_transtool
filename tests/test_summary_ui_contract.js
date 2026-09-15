@@ -9,6 +9,7 @@
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
+const vm = require('vm');
 
 console.log("=== Testing UI Summary Contract ===");
 
@@ -28,30 +29,32 @@ assert.strictEqual(
     "Initial HTML template should NOT contain desktop tab-summary-chapter button"
 );
 assert.strictEqual(
-    mapJsCode.includes('📜 單話大綱'),
+    mapJsCode.includes('📌 故事大綱'),
     true,
-    "Initial HTML template must preserve 📜 單話大綱 button"
+    "Initial HTML template must preserve 故事大綱 button"
 );
 console.log("  [PASS] Test 1: Initial template has hidden AI and chapter summary tabs.");
 
 // 2. 靜態契約測試：updateSummaryTabsUI 桌機端不應 render AI 摘要按鈕
 console.log("Test 2: Desktop updateSummaryTabsUI checks...");
-assert.strictEqual(
-    mapJsCode.includes('// 桌機版：暫時隱藏 AI 單話摘要與整章摘要頁籤'),
-    true,
-    "updateSummaryTabsUI must contain the desktop hide logic"
-);
+const tabs = { style: {}, innerHTML: '' };
+const browser = { innerWidth: 1280 };
+vm.runInNewContext(mapJsCode, { window: browser, document: { querySelector: () => tabs }, console });
+browser.QuestMapModule.updateSummaryTabsUI();
+assert.ok(tabs.innerHTML.includes('📌 故事大綱'));
+assert.ok(!tabs.innerHTML.includes('<button'), 'Desktop title must not be a fake tab');
 console.log("  [PASS] Test 2: Desktop tabs UI excludes legacy AI summary.");
 
 // 3. 行為沙盒測試：模擬 DOM 環境驗證 switchSummaryTab 安全防衛回退
 console.log("Test 3: Behavioral Sandbox fallback testing...");
 
 function testSwitchSummaryTab(tabType, isMobile) {
-    let activeSummaryTab = tabType;
-    if (tabType === 'ai-summary' || (!isMobile && tabType === 'chapter')) {
-        activeSummaryTab = 'episode';
-    }
-    return activeSummaryTab;
+    browser.innerWidth = isMobile ? 390 : 1280;
+    const map = browser.QuestMapModule;
+    map.updateSummaryTabsUI = () => {};
+    map.updateSummaryContent = () => {};
+    map.switchSummaryTab(tabType);
+    return map.activeSummaryTab;
 }
 
 assert.strictEqual(testSwitchSummaryTab('ai-summary', false), 'episode');

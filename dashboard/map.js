@@ -1899,7 +1899,11 @@ const QuestMapModule = {
             try {
                 let topDirOrSummaryHtml = "";
                 if (isMobile) {
-                    topDirOrSummaryHtml = this.getQuickDirectoryHtml();
+                    topDirOrSummaryHtml = this.getQuickDirectoryHtml() + `
+                        <details class="mobile-official-synopsis" ontoggle="if(this.open) QuestMapModule.refreshOfficialSynopsis(${currentStoryId}, ${currentToken})">
+                            <summary>📌 官方大綱（點擊展開）</summary>
+                            <p id="official-synopsis-content" aria-live="polite">正在載入官方大綱…</p>
+                        </details>`;
                 } else {
                     topDirOrSummaryHtml = `
                         <div id="official-synopsis-box" style="
@@ -2092,9 +2096,6 @@ const QuestMapModule = {
     },
 
     async refreshOfficialSynopsis(storyId, token) {
-        const isMobile = window.innerWidth <= 768;
-        if (isMobile) return; // Mobile 模式完全不發起 metadata fetch
-
         let officialSynopsis = null;
         if (window.StoryDataService) {
             try {
