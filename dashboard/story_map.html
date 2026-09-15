@@ -63,7 +63,7 @@
     </div>
 
     <!-- 程式腳本 -->
-    <script src="db.js?v=20260714b"></script>
+    <script src="db.js?v=20260916"></script>
     <script src="avatar-service.js?v=5.2.2"></script>
     <script src="story-asset-service.js?v=5.2.1"></script>
     <script src="chapter-data.js?v=5.2.2"></script>
@@ -294,6 +294,14 @@
                     text.innerText = msg;
                     progress.style.width = pct + '%';
                 });
+
+                if (PCRDatabase.cacheWarning) {
+                    const notice = document.createElement('p');
+                    notice.setAttribute('role', 'status');
+                    notice.className = 'cache-notice';
+                    notice.textContent = PCRDatabase.cacheWarning;
+                    document.querySelector('main').prepend(notice);
+                }
 
                 // 移除載入遮罩
                 const overlay = document.getElementById('loading-overlay');
