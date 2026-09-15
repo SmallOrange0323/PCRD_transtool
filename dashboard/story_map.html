@@ -279,6 +279,7 @@
 
         // 初始化
         document.addEventListener('DOMContentLoaded', async () => {
+            document.addEventListener('keydown', event => QuestMapModule.handleReaderKeydown(event));
             const progress = document.getElementById('loader-progress');
             const text = document.getElementById('loader-text');
             const regionSelector = document.getElementById('region-selector');

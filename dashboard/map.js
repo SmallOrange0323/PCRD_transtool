@@ -1957,9 +1957,9 @@ const QuestMapModule = {
                                 <div id="dialogue-board" class="game-dialogue-board">
                                 </div>
                                 <div class="game-dialogue-footer" style="border-radius: 0 0 12px 12px;">
-                                    <div id="btn-prev-story" class="game-footer-btn close" style="display: none;" onclick="QuestMapModule.toPrevStory()">⬅ 上一話</div>
-                                    <div class="game-footer-btn close" onclick="QuestMapModule.scrollToTop()">⬆ 回到頂端</div>
-                                    <div id="btn-next-story" class="game-footer-btn skip" style="display: none;" onclick="QuestMapModule.toNextStory()">➡️ 下一話</div>
+                                    <button type="button" id="btn-prev-story" class="game-footer-btn close" style="display: none;" onclick="QuestMapModule.toPrevStory()">⬅ 上一話</button>
+                                    <button type="button" class="game-footer-btn close" onclick="QuestMapModule.scrollToTop()">⬆ 回到頂端</button>
+                                    <button type="button" id="btn-next-story" class="game-footer-btn skip" style="display: none;" onclick="QuestMapModule.toNextStory()">➡️ 下一話</button>
                                 </div>
                             </div>
                         </div>
@@ -2285,6 +2285,25 @@ const QuestMapModule = {
             if (window.DialogueView && board) {
                 window.DialogueView.setAutoStartSelection(board, index);
             }
+        }
+    },
+
+    handleReaderKeydown(event) {
+        if (event.defaultPrevented || event.repeat || event.isComposing || event.keyCode === 229 ||
+            event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return;
+        if (!this.activeStoryId || this.isLoadingDialogue || !this.currentDialogueList?.length) return;
+        const tab = document.getElementById('map-tab');
+        if (!tab?.classList.contains('active') || !document.getElementById('dialogue-board')) return;
+        const target = event.target;
+        if (target?.isContentEditable || target?.closest('input, textarea, select, button, a, summary, [role="button"], [role="textbox"], [contenteditable]:not([contenteditable="false"])')) return;
+        // Dialogs own their keys. Escape must close a popup before stopping AUTO.
+        if (document.body.style.overflow === 'hidden' || document.querySelector('.modal-overlay.active, [role="dialog"][open], dialog[open]')) return;
+        if (event.code === 'Space' || event.key === ' ') {
+            event.preventDefault();
+            this.toggleAutoVoice();
+        } else if (event.key === 'Escape' && window.AutoVoiceController?.isActive()) {
+            event.preventDefault();
+            this.stopAutoVoice();
         }
     },
 

@@ -2298,7 +2298,13 @@ body {
     border-top: 1px solid rgba(232, 56, 117, 0.1);
 }
 
+.game-footer-btn:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
 .game-footer-btn {
+    font-family: inherit;
     min-width: 140px;
     padding: 8px 24px;
     border-radius: 20px;
@@ -4030,7 +4036,6 @@ body {
     background: #ffffff !important;
     box-shadow: 0 4px 10px rgba(100, 120, 150, 0.1) !important;
 }
-
 
 
 
