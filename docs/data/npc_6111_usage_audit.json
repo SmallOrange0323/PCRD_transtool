@@ -1,0 +1,2888 @@
+{
+  "truth_version": "00610007",
+  "manifest_requests": 1,
+  "baseline": {
+    "stories": 57,
+    "stored_rows": 1649,
+    "speaker_distribution": {
+      "秘書": 1627,
+      "秘書一號": 22
+    }
+  },
+  "verification": {
+    "verified_exact": 1269,
+    "collision": 240,
+    "unverifiable": 140
+  },
+  "official_usage": {
+    "total_6111_rows": 1282,
+    "already_present": 1269,
+    "missing_from_current": 13,
+    "missing_speaker_distribution": {
+      "草莓": 13
+    },
+    "stories_with_missing_rows": 1
+  },
+  "safety_assessment": {
+    "collision_count": 240,
+    "unverifiable_count": 140,
+    "safe_for_current_stored_corpus": "NO"
+  },
+  "per_story": [
+    {
+      "story_id": 1180002,
+      "status": "FAIL",
+      "dialogue_count": 298,
+      "stored_6111_rows": 26,
+      "verified_exact": 23,
+      "collision": 3,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 1180006,
+      "status": "FAIL",
+      "dialogue_count": 404,
+      "stored_6111_rows": 30,
+      "verified_exact": 26,
+      "collision": 4,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 1180007,
+      "status": "PASS",
+      "dialogue_count": 326,
+      "stored_6111_rows": 8,
+      "verified_exact": 8,
+      "collision": 0,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 1180008,
+      "status": "PASS",
+      "dialogue_count": 349,
+      "stored_6111_rows": 38,
+      "verified_exact": 38,
+      "collision": 0,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 1280001,
+      "status": "FAIL",
+      "dialogue_count": 535,
+      "stored_6111_rows": 66,
+      "verified_exact": 53,
+      "collision": 13,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 1280003,
+      "status": "FAIL",
+      "dialogue_count": 333,
+      "stored_6111_rows": 47,
+      "verified_exact": 39,
+      "collision": 8,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 1280004,
+      "status": "FAIL",
+      "dialogue_count": 404,
+      "stored_6111_rows": 48,
+      "verified_exact": 35,
+      "collision": 13,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 2105003,
+      "status": "FAIL",
+      "dialogue_count": 417,
+      "stored_6111_rows": 32,
+      "verified_exact": 19,
+      "collision": 13,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 2105005,
+      "status": "FAIL",
+      "dialogue_count": 498,
+      "stored_6111_rows": 16,
+      "verified_exact": 14,
+      "collision": 2,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 2105099,
+      "status": "FAIL",
+      "dialogue_count": 426,
+      "stored_6111_rows": 46,
+      "verified_exact": 45,
+      "collision": 1,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 2106003,
+      "status": "FAIL",
+      "dialogue_count": 445,
+      "stored_6111_rows": 43,
+      "verified_exact": 29,
+      "collision": 14,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 2106010,
+      "status": "FAIL",
+      "dialogue_count": 396,
+      "stored_6111_rows": 16,
+      "verified_exact": 14,
+      "collision": 2,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 2107003,
+      "status": "FAIL",
+      "dialogue_count": 713,
+      "stored_6111_rows": 22,
+      "verified_exact": 19,
+      "collision": 3,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 2108004,
+      "status": "FAIL",
+      "dialogue_count": 703,
+      "stored_6111_rows": 46,
+      "verified_exact": 41,
+      "collision": 5,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 2108008,
+      "status": "FAIL",
+      "dialogue_count": 330,
+      "stored_6111_rows": 26,
+      "verified_exact": 19,
+      "collision": 7,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 2110003,
+      "status": "FAIL",
+      "dialogue_count": 555,
+      "stored_6111_rows": 38,
+      "verified_exact": 37,
+      "collision": 1,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5122003,
+      "status": "FAIL",
+      "dialogue_count": 643,
+      "stored_6111_rows": 22,
+      "verified_exact": 13,
+      "collision": 9,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132000,
+      "status": "FAIL",
+      "dialogue_count": 336,
+      "stored_6111_rows": 39,
+      "verified_exact": 37,
+      "collision": 2,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132001,
+      "status": "FAIL",
+      "dialogue_count": 512,
+      "stored_6111_rows": 24,
+      "verified_exact": 21,
+      "collision": 3,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132002,
+      "status": "FAIL",
+      "dialogue_count": 636,
+      "stored_6111_rows": 40,
+      "verified_exact": 28,
+      "collision": 12,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132003,
+      "status": "FAIL",
+      "dialogue_count": 616,
+      "stored_6111_rows": 35,
+      "verified_exact": 27,
+      "collision": 8,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132004,
+      "status": "FAIL",
+      "dialogue_count": 626,
+      "stored_6111_rows": 58,
+      "verified_exact": 48,
+      "collision": 10,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132005,
+      "status": "UNVERIFIABLE_STORY_DRIFT_LENGTH",
+      "current_length": 605,
+      "parsed_length": 606,
+      "stored_6111_rows": 90,
+      "verified_exact": 0,
+      "collision": 0,
+      "unverifiable": 90,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132006,
+      "status": "UNVERIFIABLE_STORY_DRIFT_LENGTH",
+      "current_length": 603,
+      "parsed_length": 604,
+      "stored_6111_rows": 32,
+      "verified_exact": 0,
+      "collision": 0,
+      "unverifiable": 32,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132007,
+      "status": "UNVERIFIABLE_STORY_DRIFT_LENGTH",
+      "current_length": 252,
+      "parsed_length": 253,
+      "stored_6111_rows": 10,
+      "verified_exact": 0,
+      "collision": 0,
+      "unverifiable": 10,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132061,
+      "status": "FAIL",
+      "dialogue_count": 139,
+      "stored_6111_rows": 47,
+      "verified_exact": 37,
+      "collision": 10,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132068,
+      "status": "FAIL",
+      "dialogue_count": 107,
+      "stored_6111_rows": 60,
+      "verified_exact": 51,
+      "collision": 9,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132101,
+      "status": "PASS",
+      "dialogue_count": 77,
+      "stored_6111_rows": 12,
+      "verified_exact": 12,
+      "collision": 0,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132169,
+      "status": "FAIL",
+      "dialogue_count": 114,
+      "stored_6111_rows": 10,
+      "verified_exact": 7,
+      "collision": 3,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132203,
+      "status": "PASS",
+      "dialogue_count": 38,
+      "stored_6111_rows": 4,
+      "verified_exact": 4,
+      "collision": 0,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132204,
+      "status": "PASS",
+      "dialogue_count": 25,
+      "stored_6111_rows": 6,
+      "verified_exact": 6,
+      "collision": 0,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132301,
+      "status": "FAIL",
+      "dialogue_count": 31,
+      "stored_6111_rows": 14,
+      "verified_exact": 8,
+      "collision": 6,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132302,
+      "status": "FAIL",
+      "dialogue_count": 39,
+      "stored_6111_rows": 5,
+      "verified_exact": 3,
+      "collision": 2,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132308,
+      "status": "PASS",
+      "dialogue_count": 34,
+      "stored_6111_rows": 9,
+      "verified_exact": 9,
+      "collision": 0,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132321,
+      "status": "FAIL",
+      "dialogue_count": 33,
+      "stored_6111_rows": 6,
+      "verified_exact": 3,
+      "collision": 3,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132322,
+      "status": "FAIL",
+      "dialogue_count": 43,
+      "stored_6111_rows": 20,
+      "verified_exact": 13,
+      "collision": 7,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132323,
+      "status": "PASS",
+      "dialogue_count": 23,
+      "stored_6111_rows": 2,
+      "verified_exact": 2,
+      "collision": 0,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132402,
+      "status": "PASS",
+      "dialogue_count": 66,
+      "stored_6111_rows": 14,
+      "verified_exact": 14,
+      "collision": 0,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5132411,
+      "status": "PASS",
+      "dialogue_count": 54,
+      "stored_6111_rows": 13,
+      "verified_exact": 13,
+      "collision": 0,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5140061,
+      "status": "FAIL",
+      "dialogue_count": 139,
+      "stored_6111_rows": 47,
+      "verified_exact": 37,
+      "collision": 10,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5140068,
+      "status": "FAIL",
+      "dialogue_count": 107,
+      "stored_6111_rows": 60,
+      "verified_exact": 51,
+      "collision": 9,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5140169,
+      "status": "FAIL",
+      "dialogue_count": 113,
+      "stored_6111_rows": 10,
+      "verified_exact": 7,
+      "collision": 3,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5142402,
+      "status": "PASS",
+      "dialogue_count": 66,
+      "stored_6111_rows": 14,
+      "verified_exact": 14,
+      "collision": 0,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5142411,
+      "status": "PASS",
+      "dialogue_count": 54,
+      "stored_6111_rows": 13,
+      "verified_exact": 13,
+      "collision": 0,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5146061,
+      "status": "FAIL",
+      "dialogue_count": 139,
+      "stored_6111_rows": 47,
+      "verified_exact": 37,
+      "collision": 10,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5146068,
+      "status": "FAIL",
+      "dialogue_count": 107,
+      "stored_6111_rows": 60,
+      "verified_exact": 51,
+      "collision": 9,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5146169,
+      "status": "FAIL",
+      "dialogue_count": 113,
+      "stored_6111_rows": 10,
+      "verified_exact": 7,
+      "collision": 3,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5213000,
+      "status": "PASS",
+      "dialogue_count": 508,
+      "stored_6111_rows": 11,
+      "verified_exact": 11,
+      "collision": 0,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5213003,
+      "status": "UNVERIFIABLE_STORY_DRIFT_LENGTH",
+      "current_length": 607,
+      "parsed_length": 609,
+      "stored_6111_rows": 4,
+      "verified_exact": 0,
+      "collision": 0,
+      "unverifiable": 4,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5213006,
+      "status": "FAIL",
+      "dialogue_count": 507,
+      "stored_6111_rows": 5,
+      "verified_exact": 4,
+      "collision": 1,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5213011,
+      "status": "UNVERIFIABLE_STORY_DRIFT_LENGTH",
+      "current_length": 502,
+      "parsed_length": 503,
+      "stored_6111_rows": 4,
+      "verified_exact": 0,
+      "collision": 0,
+      "unverifiable": 4,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 5218004,
+      "status": "PASS",
+      "dialogue_count": 301,
+      "stored_6111_rows": 0,
+      "verified_exact": 0,
+      "collision": 0,
+      "unverifiable": 0,
+      "missing_canonical": 13
+    },
+    {
+      "story_id": 7024000,
+      "status": "FAIL",
+      "dialogue_count": 196,
+      "stored_6111_rows": 38,
+      "verified_exact": 36,
+      "collision": 2,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 7024001,
+      "status": "FAIL",
+      "dialogue_count": 377,
+      "stored_6111_rows": 79,
+      "verified_exact": 75,
+      "collision": 4,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 7024002,
+      "status": "PASS",
+      "dialogue_count": 244,
+      "stored_6111_rows": 27,
+      "verified_exact": 27,
+      "collision": 0,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 7024003,
+      "status": "PASS",
+      "dialogue_count": 247,
+      "stored_6111_rows": 11,
+      "verified_exact": 11,
+      "collision": 0,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 7024004,
+      "status": "FAIL",
+      "dialogue_count": 214,
+      "stored_6111_rows": 44,
+      "verified_exact": 36,
+      "collision": 8,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    },
+    {
+      "story_id": 7024005,
+      "status": "FAIL",
+      "dialogue_count": 558,
+      "stored_6111_rows": 45,
+      "verified_exact": 37,
+      "collision": 8,
+      "unverifiable": 0,
+      "missing_canonical": 0
+    }
+  ],
+  "collisions_detail": [
+    {
+      "story_id": 1180002,
+      "row_index": 50,
+      "speaker": "秘書",
+      "words": "倒不如說，您以為是誰在負責管理這邊的帳簿呀……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1180002,
+      "row_index": 67,
+      "speaker": "秘書",
+      "words": "不曉得到底是誰，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1180002,
+      "row_index": 68,
+      "speaker": "秘書",
+      "words": "竟然把箱子堆得這麼不穩……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1180006,
+      "row_index": 255,
+      "speaker": "秘書",
+      "words": "您大可以",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1180006,
+      "row_index": 256,
+      "speaker": "秘書",
+      "words": "表現得更開心一點哪。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1180006,
+      "row_index": 298,
+      "speaker": "秘書",
+      "words": "就大方地說聲「太好了」，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1180006,
+      "row_index": 299,
+      "speaker": "秘書",
+      "words": "不是很好嗎？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280001,
+      "row_index": 40,
+      "speaker": "秘書",
+      "words": "我知道了。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280001,
+      "row_index": 41,
+      "speaker": "秘書",
+      "words": "\n…………",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280001,
+      "row_index": 61,
+      "speaker": "秘書",
+      "words": "連馬都會退縮害怕的工作馬拉松，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280001,
+      "row_index": 62,
+      "speaker": "秘書",
+      "words": "您卻能輕鬆跑完。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280001,
+      "row_index": 71,
+      "speaker": "秘書",
+      "words": "如果只是熬夜一天，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280001,
+      "row_index": 72,
+      "speaker": "秘書",
+      "words": "喝那個反倒會因為太補而有害健康才對。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280001,
+      "row_index": 101,
+      "speaker": "秘書",
+      "words": "覺得不能再",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280001,
+      "row_index": 102,
+      "speaker": "秘書",
+      "words": "讓您這樣勉強自己下去了。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280001,
+      "row_index": 108,
+      "speaker": "秘書",
+      "words": "即使是克蕾琪塔小姐，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280001,
+      "row_index": 109,
+      "speaker": "秘書",
+      "words": "也該會感到疲倦的。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280001,
+      "row_index": 135,
+      "speaker": "秘書",
+      "words": "為了提高往後的工作效率，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280001,
+      "row_index": 136,
+      "speaker": "秘書",
+      "words": "\n今天",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280001,
+      "row_index": 137,
+      "speaker": "秘書",
+      "words": "提早下班也不會有什麼損失。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280003,
+      "row_index": 238,
+      "speaker": "秘書",
+      "words": "我明白了──",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280003,
+      "row_index": 239,
+      "speaker": "秘書",
+      "words": "\n",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280003,
+      "row_index": 240,
+      "speaker": "秘書",
+      "words": "咦？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280003,
+      "row_index": 265,
+      "speaker": "秘書",
+      "words": "那我就先確認一下包裹裡面是什麼。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280003,
+      "row_index": 268,
+      "speaker": "秘書",
+      "words": "這個大小很剛好，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280003,
+      "row_index": 269,
+      "speaker": "秘書",
+      "words": "\n",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280003,
+      "row_index": 270,
+      "speaker": "秘書",
+      "words": "我就心懷感激地收下這份好意了。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280003,
+      "row_index": 290,
+      "speaker": "秘書",
+      "words": "小姐。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280004,
+      "row_index": 300,
+      "speaker": "秘書",
+      "words": "我們還在工作中喔，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280004,
+      "row_index": 301,
+      "speaker": "秘書",
+      "words": "克蕾琪塔小姐。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280004,
+      "row_index": 308,
+      "speaker": "秘書",
+      "words": "這裡是國家名下的社交場所，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280004,
+      "row_index": 309,
+      "speaker": "秘書",
+      "words": "\n這裡在聖誕節時也會",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280004,
+      "row_index": 310,
+      "speaker": "秘書",
+      "words": "開放給所有貴族入內不是嗎？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280004,
+      "row_index": 324,
+      "speaker": "秘書",
+      "words": "比起那種事，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280004,
+      "row_index": 325,
+      "speaker": "秘書",
+      "words": "我們先迅速把工作做完吧，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280004,
+      "row_index": 326,
+      "speaker": "秘書",
+      "words": "\n",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280004,
+      "row_index": 327,
+      "speaker": "秘書",
+      "words": "下班時間也快到了。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280004,
+      "row_index": 344,
+      "speaker": "秘書",
+      "words": "但都不太適合。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280004,
+      "row_index": 345,
+      "speaker": "秘書",
+      "words": "\n該說是缺少奢華感的關係嗎？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280004,
+      "row_index": 371,
+      "speaker": "秘書",
+      "words": "還蠻有趣的。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 1280004,
+      "row_index": 380,
+      "speaker": "秘書",
+      "words": "有了這些照片，一定能做出很棒的報告書。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2105003,
+      "row_index": 38,
+      "speaker": "秘書",
+      "words": "那還是饒了我吧。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2105003,
+      "row_index": 39,
+      "speaker": "秘書",
+      "words": "\n",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2105003,
+      "row_index": 40,
+      "speaker": "秘書",
+      "words": "小心我遞出辭呈",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2105003,
+      "row_index": 41,
+      "speaker": "秘書",
+      "words": "順路跑去【王宮騎士團】據點告狀喔？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2105003,
+      "row_index": 68,
+      "speaker": "秘書",
+      "words": "不對，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2105003,
+      "row_index": 69,
+      "speaker": "秘書",
+      "words": "我不是要說這個。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2105003,
+      "row_index": 70,
+      "speaker": "秘書",
+      "words": "\n",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2105003,
+      "row_index": 71,
+      "speaker": "秘書",
+      "words": "我所在意的，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2105003,
+      "row_index": 72,
+      "speaker": "秘書",
+      "words": "是最近【銀汞貿易】的活躍表現。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2105003,
+      "row_index": 78,
+      "speaker": "秘書",
+      "words": "但在運送、",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2105003,
+      "row_index": 79,
+      "speaker": "秘書",
+      "words": "金融、",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2105003,
+      "row_index": 80,
+      "speaker": "秘書",
+      "words": "武防具等相關的事業上，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2105003,
+      "row_index": 81,
+      "speaker": "秘書",
+      "words": "\n這季收益恐怕將無法避免地大幅減少。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2105005,
+      "row_index": 67,
+      "speaker": "秘書",
+      "words": "而且再過不久，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2105005,
+      "row_index": 68,
+      "speaker": "秘書",
+      "words": "就要到能拿額外獎金的時期了嘛。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2105099,
+      "row_index": 152,
+      "speaker": "秘書",
+      "words": "您太大聲了。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2106003,
+      "row_index": 221,
+      "speaker": "秘書",
+      "words": "不曉得他召集這麼多人，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2106003,
+      "row_index": 222,
+      "speaker": "秘書",
+      "words": "究竟是想拿來做什麼呢。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2106003,
+      "row_index": 247,
+      "speaker": "秘書",
+      "words": "由於事出突然，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2106003,
+      "row_index": 248,
+      "speaker": "秘書",
+      "words": "我不禁一時失了魂，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2106003,
+      "row_index": 249,
+      "speaker": "秘書",
+      "words": "真是萬分失禮。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2106003,
+      "row_index": 254,
+      "speaker": "秘書",
+      "words": "我知道",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2106003,
+      "row_index": 255,
+      "speaker": "秘書",
+      "words": "大江戶那邊",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2106003,
+      "row_index": 256,
+      "speaker": "秘書",
+      "words": "有一家不錯的溫泉旅館。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2106003,
+      "row_index": 257,
+      "speaker": "秘書",
+      "words": "\n能在豪華絢爛的用餐間，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2106003,
+      "row_index": 258,
+      "speaker": "秘書",
+      "words": "享用最高級宴席料理的款待……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2106003,
+      "row_index": 265,
+      "speaker": "秘書",
+      "words": "即使是克蕾琪塔小姐，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2106003,
+      "row_index": 266,
+      "speaker": "秘書",
+      "words": "一旦想到工作做完就能去溫泉旅行，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2106003,
+      "row_index": 267,
+      "speaker": "秘書",
+      "words": "\n多少也會比較有幹勁吧？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2106003,
+      "row_index": 413,
+      "speaker": "秘書",
+      "words": "噫……！",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2106010,
+      "row_index": 233,
+      "speaker": "秘書",
+      "words": "您平安無事真是太好了。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2106010,
+      "row_index": 234,
+      "speaker": "秘書",
+      "words": "\n克蕾琪塔小姐。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2107003,
+      "row_index": 482,
+      "speaker": "秘書",
+      "words": "……只是，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2107003,
+      "row_index": 483,
+      "speaker": "秘書",
+      "words": "沒想到我竟然會",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2107003,
+      "row_index": 484,
+      "speaker": "秘書",
+      "words": "轉職成為國家公務員……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2108004,
+      "row_index": 34,
+      "speaker": "秘書",
+      "words": "我能體會妳的心情。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2108004,
+      "row_index": 85,
+      "speaker": "秘書",
+      "words": "小姐。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2108004,
+      "row_index": 86,
+      "speaker": "秘書",
+      "words": "\n",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2108004,
+      "row_index": 87,
+      "speaker": "秘書",
+      "words": "我不小心的。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2108004,
+      "row_index": 117,
+      "speaker": "秘書",
+      "words": "幫到下班時間之前。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2108008,
+      "row_index": 227,
+      "speaker": "秘書",
+      "words": "您的杯子出現了裂痕……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2108008,
+      "row_index": 262,
+      "speaker": "秘書",
+      "words": "畢竟克蕾琪塔小姐",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2108008,
+      "row_index": 263,
+      "speaker": "秘書",
+      "words": "剛才也一直分心停頓呢。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2108008,
+      "row_index": 290,
+      "speaker": "秘書",
+      "words": "沒想到才過了一個月左右，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2108008,
+      "row_index": 291,
+      "speaker": "秘書",
+      "words": "鎮上就已經恢復以往的繁盛了。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2108008,
+      "row_index": 302,
+      "speaker": "秘書",
+      "words": "只是身為納稅人，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2108008,
+      "row_index": 303,
+      "speaker": "秘書",
+      "words": "我倒認為您那些工作是理所當然的……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 2110003,
+      "row_index": 501,
+      "speaker": "秘書",
+      "words": "太好了……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5122003,
+      "row_index": 226,
+      "speaker": "秘書一號",
+      "words": "我知道了。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5122003,
+      "row_index": 227,
+      "speaker": "秘書一號",
+      "words": "\n",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5122003,
+      "row_index": 228,
+      "speaker": "秘書一號",
+      "words": "那麼請當可燃垃圾丟掉吧。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5122003,
+      "row_index": 229,
+      "speaker": "秘書一號",
+      "words": "我已經受夠了。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5122003,
+      "row_index": 230,
+      "speaker": "秘書一號",
+      "words": "啊，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5122003,
+      "row_index": 231,
+      "speaker": "秘書一號",
+      "words": "因為是紙張，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5122003,
+      "row_index": 232,
+      "speaker": "秘書一號",
+      "words": "\n所以要丟資源回收對吧。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5122003,
+      "row_index": 233,
+      "speaker": "秘書一號",
+      "words": "希望你下輩子能轉生成乾淨的文件喔。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5122003,
+      "row_index": 234,
+      "speaker": "秘書一號",
+      "words": "我丟──",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132000,
+      "row_index": 112,
+      "speaker": "秘書",
+      "words": "他不都總是",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132000,
+      "row_index": 113,
+      "speaker": "秘書",
+      "words": "在陛下身邊嗎？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132001,
+      "row_index": 353,
+      "speaker": "秘書",
+      "words": "希望別有追加的請款。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132001,
+      "row_index": 500,
+      "speaker": "秘書",
+      "words": "要是見到和自己的孩子如出一轍的小嬰兒，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132001,
+      "row_index": 501,
+      "speaker": "秘書",
+      "words": "她該有多驚訝……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132002,
+      "row_index": 11,
+      "speaker": "秘書",
+      "words": "要不要來點硝酸之類的？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132002,
+      "row_index": 12,
+      "speaker": "秘書",
+      "words": "鉛會咻──地融化掉喔。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132002,
+      "row_index": 20,
+      "speaker": "秘書",
+      "words": "狀況又回到原點了，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132002,
+      "row_index": 21,
+      "speaker": "秘書",
+      "words": "我們之後該怎麼辦？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132002,
+      "row_index": 267,
+      "speaker": "秘書",
+      "words": "那如果是兩位過來人，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132002,
+      "row_index": 268,
+      "speaker": "秘書",
+      "words": "理應能預測會發生什麼事，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132002,
+      "row_index": 269,
+      "speaker": "秘書",
+      "words": "對吧？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132002,
+      "row_index": 309,
+      "speaker": "秘書",
+      "words": "還請您小心。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132002,
+      "row_index": 316,
+      "speaker": "秘書",
+      "words": "還請您連我的份一起加油，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132002,
+      "row_index": 317,
+      "speaker": "秘書",
+      "words": "克蕾琪塔小姐。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132002,
+      "row_index": 318,
+      "speaker": "秘書",
+      "words": "\n我會在那邊",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132002,
+      "row_index": 319,
+      "speaker": "秘書",
+      "words": "一邊喝杯茶，一邊守望各位的。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132003,
+      "row_index": 205,
+      "speaker": "秘書",
+      "words": "我們痛失一位值得敬愛的人……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132003,
+      "row_index": 240,
+      "speaker": "秘書",
+      "words": "這很讓人吃不消呢……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132003,
+      "row_index": 241,
+      "speaker": "秘書",
+      "words": "真想洗澡。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132003,
+      "row_index": 375,
+      "speaker": "秘書",
+      "words": "請對他更溫柔一點。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132003,
+      "row_index": 384,
+      "speaker": "秘書",
+      "words": "快，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132003,
+      "row_index": 385,
+      "speaker": "秘書",
+      "words": "現在是時候展現您培養起來的育兒技巧了。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132003,
+      "row_index": 386,
+      "speaker": "秘書",
+      "words": "\n加油，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132003,
+      "row_index": 387,
+      "speaker": "秘書",
+      "words": "克蕾琪塔媽媽。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132004,
+      "row_index": 151,
+      "speaker": "秘書",
+      "words": "誰叫琪塔媽媽不見了，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132004,
+      "row_index": 152,
+      "speaker": "秘書",
+      "words": "害他現在哭個不停呢。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132004,
+      "row_index": 173,
+      "speaker": "秘書",
+      "words": "好了，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132004,
+      "row_index": 174,
+      "speaker": "秘書",
+      "words": "請您不要再意志消沉。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132004,
+      "row_index": 175,
+      "speaker": "秘書",
+      "words": "快回到陛下身邊吧。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132004,
+      "row_index": 481,
+      "speaker": "秘書",
+      "words": "他是「自律型幸福實現機」，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132004,
+      "row_index": 482,
+      "speaker": "秘書",
+      "words": "所以才叫做小律……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132004,
+      "row_index": 483,
+      "speaker": "秘書",
+      "words": "原來如此。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132004,
+      "row_index": 519,
+      "speaker": "秘書",
+      "words": "一般來說，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132004,
+      "row_index": 520,
+      "speaker": "秘書",
+      "words": "魔物與幸福相去甚遠才對啊。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132061,
+      "row_index": 32,
+      "speaker": "秘書",
+      "words": "要我為您計算嗎？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132061,
+      "row_index": 43,
+      "speaker": "秘書",
+      "words": "畢竟要是您漫不經心得意忘形，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132061,
+      "row_index": 44,
+      "speaker": "秘書",
+      "words": "結果失敗了被解雇，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132061,
+      "row_index": 45,
+      "speaker": "秘書",
+      "words": "那我也會很困擾呢。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132061,
+      "row_index": 75,
+      "speaker": "秘書",
+      "words": "克蕾琪塔小姐正由於對活動感到不安",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132061,
+      "row_index": 76,
+      "speaker": "秘書",
+      "words": "而手忙腳亂，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132061,
+      "row_index": 77,
+      "speaker": "秘書",
+      "words": "\n可以請您對她",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132061,
+      "row_index": 78,
+      "speaker": "秘書",
+      "words": "說句寬慰的話嗎？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132061,
+      "row_index": 124,
+      "speaker": "秘書",
+      "words": "雖說她那些行動",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132061,
+      "row_index": 125,
+      "speaker": "秘書",
+      "words": "看著是很有趣……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132068,
+      "row_index": 7,
+      "speaker": "秘書",
+      "words": "這可是難得的特級上等肉。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132068,
+      "row_index": 8,
+      "speaker": "秘書",
+      "words": "您不想吃的話就讓我──",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132068,
+      "row_index": 40,
+      "speaker": "秘書",
+      "words": "就會發生慘劇了。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132068,
+      "row_index": 41,
+      "speaker": "秘書",
+      "words": "\n真的非常辛苦呢。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132068,
+      "row_index": 69,
+      "speaker": "秘書",
+      "words": "所以還請您",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132068,
+      "row_index": 70,
+      "speaker": "秘書",
+      "words": "像往常一樣抬頭挺胸就可以了。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132068,
+      "row_index": 89,
+      "speaker": "秘書",
+      "words": "也請您考慮一下改善我的待遇。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132068,
+      "row_index": 90,
+      "speaker": "秘書",
+      "words": "個人的希望",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132068,
+      "row_index": 91,
+      "speaker": "秘書",
+      "words": "差不多是這個數字……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132169,
+      "row_index": 93,
+      "speaker": "秘書",
+      "words": "我知道您很開心，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132169,
+      "row_index": 94,
+      "speaker": "秘書",
+      "words": "但大清早就過度興奮",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132169,
+      "row_index": 95,
+      "speaker": "秘書",
+      "words": "\n會對周遭的人造成困擾，還請您克制。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132301,
+      "row_index": 5,
+      "speaker": "秘書",
+      "words": "陛下、",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132301,
+      "row_index": 6,
+      "speaker": "秘書",
+      "words": "克蕾琪塔小姐，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132301,
+      "row_index": 7,
+      "speaker": "秘書",
+      "words": "這作為對手太不利了，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132301,
+      "row_index": 8,
+      "speaker": "秘書",
+      "words": "我們準備撤退──",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132301,
+      "row_index": 18,
+      "speaker": "秘書",
+      "words": "那麼強大的怪物就在面前，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132301,
+      "row_index": 19,
+      "speaker": "秘書",
+      "words": "竟然依舊在想美食……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132302,
+      "row_index": 6,
+      "speaker": "秘書",
+      "words": "啊──啊，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132302,
+      "row_index": 7,
+      "speaker": "秘書",
+      "words": "搞砸了呢。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132321,
+      "row_index": 6,
+      "speaker": "秘書",
+      "words": "但認為",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132321,
+      "row_index": 7,
+      "speaker": "秘書",
+      "words": "這次也會……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132321,
+      "row_index": 8,
+      "speaker": "秘書",
+      "words": "看來是預估得太天真了呢。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132322,
+      "row_index": 7,
+      "speaker": "秘書",
+      "words": "要是正面承受，會連一下都堅持不住──",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132322,
+      "row_index": 8,
+      "speaker": "秘書",
+      "words": "\n",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132322,
+      "row_index": 9,
+      "speaker": "秘書",
+      "words": "克蕾琪塔小姐",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132322,
+      "row_index": 10,
+      "speaker": "秘書",
+      "words": "親身證明了這樣的先例呢。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132322,
+      "row_index": 21,
+      "speaker": "秘書",
+      "words": "看樣子那個攻擊",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132322,
+      "row_index": 22,
+      "speaker": "秘書",
+      "words": "就像是會消耗生命的雙面刃呢。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5132322,
+      "row_index": 38,
+      "speaker": "秘書",
+      "words": "您看，後面。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140061,
+      "row_index": 32,
+      "speaker": "秘書",
+      "words": "計算してお見せしますか？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140061,
+      "row_index": 43,
+      "speaker": "秘書",
+      "words": "うっかり調子に乗った挙句",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140061,
+      "row_index": 44,
+      "speaker": "秘書",
+      "words": "失敗してクビになっても",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140061,
+      "row_index": 45,
+      "speaker": "秘書",
+      "words": "困りますしね。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140061,
+      "row_index": 75,
+      "speaker": "秘書",
+      "words": "クレジッタさまがイベントへの不安から",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140061,
+      "row_index": 76,
+      "speaker": "秘書",
+      "words": "右往左往しておりますので、",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140061,
+      "row_index": 77,
+      "speaker": "秘書",
+      "words": "\n優しいお言葉の一つでも",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140061,
+      "row_index": 78,
+      "speaker": "秘書",
+      "words": "かけてあげていただけませんか？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140061,
+      "row_index": 124,
+      "speaker": "秘書",
+      "words": "本人の動きなどは",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140061,
+      "row_index": 125,
+      "speaker": "秘書",
+      "words": "見ていて楽しいのですが……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140068,
+      "row_index": 7,
+      "speaker": "秘書",
+      "words": "せっかくの特上肉ですのに。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140068,
+      "row_index": 8,
+      "speaker": "秘書",
+      "words": "いらないのでしたら私が──",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140068,
+      "row_index": 40,
+      "speaker": "秘書",
+      "words": "一歩間違えば大惨事でした。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140068,
+      "row_index": 41,
+      "speaker": "秘書",
+      "words": "\n本当に大変でしたけどね。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140068,
+      "row_index": 69,
+      "speaker": "秘書",
+      "words": "だからどうか、",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140068,
+      "row_index": 70,
+      "speaker": "秘書",
+      "words": "あなたはいつも通り堂々としていてください。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140068,
+      "row_index": 89,
+      "speaker": "秘書",
+      "words": "待遇の改善もご検討ください。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140068,
+      "row_index": 90,
+      "speaker": "秘書",
+      "words": "希望としては",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140068,
+      "row_index": 91,
+      "speaker": "秘書",
+      "words": "このくらい……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140169,
+      "row_index": 92,
+      "speaker": "秘書",
+      "words": "うれしいのは分かりますが、",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140169,
+      "row_index": 93,
+      "speaker": "秘書",
+      "words": "早朝からあまりテンションを上げると",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5140169,
+      "row_index": 94,
+      "speaker": "秘書",
+      "words": "\n周りの迷惑になるのでお控えください。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146061,
+      "row_index": 32,
+      "speaker": "秘書",
+      "words": "計算してお見せしますか？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146061,
+      "row_index": 43,
+      "speaker": "秘書",
+      "words": "うっかり調子に乗った挙句",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146061,
+      "row_index": 44,
+      "speaker": "秘書",
+      "words": "失敗してクビになっても",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146061,
+      "row_index": 45,
+      "speaker": "秘書",
+      "words": "困りますしね。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146061,
+      "row_index": 75,
+      "speaker": "秘書",
+      "words": "クレジッタさまがイベントへの不安から",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146061,
+      "row_index": 76,
+      "speaker": "秘書",
+      "words": "右往左往しておりますので、",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146061,
+      "row_index": 77,
+      "speaker": "秘書",
+      "words": "\n優しいお言葉の一つでも",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146061,
+      "row_index": 78,
+      "speaker": "秘書",
+      "words": "かけてあげていただけませんか？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146061,
+      "row_index": 124,
+      "speaker": "秘書",
+      "words": "本人の動きなどは",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146061,
+      "row_index": 125,
+      "speaker": "秘書",
+      "words": "見ていて楽しいのですが……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146068,
+      "row_index": 7,
+      "speaker": "秘書",
+      "words": "せっかくの特上肉ですのに。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146068,
+      "row_index": 8,
+      "speaker": "秘書",
+      "words": "いらないのでしたら私が──",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146068,
+      "row_index": 40,
+      "speaker": "秘書",
+      "words": "一歩間違えば大惨事でした。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146068,
+      "row_index": 41,
+      "speaker": "秘書",
+      "words": "\n本当に大変でしたけどね。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146068,
+      "row_index": 69,
+      "speaker": "秘書",
+      "words": "だからどうか、",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146068,
+      "row_index": 70,
+      "speaker": "秘書",
+      "words": "あなたはいつも通り堂々としていてください。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146068,
+      "row_index": 89,
+      "speaker": "秘書",
+      "words": "待遇の改善もご検討ください。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146068,
+      "row_index": 90,
+      "speaker": "秘書",
+      "words": "希望としては",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146068,
+      "row_index": 91,
+      "speaker": "秘書",
+      "words": "このくらい……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146169,
+      "row_index": 92,
+      "speaker": "秘書",
+      "words": "うれしいのは分かりますが、",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146169,
+      "row_index": 93,
+      "speaker": "秘書",
+      "words": "早朝からあまりテンションを上げると",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5146169,
+      "row_index": 94,
+      "speaker": "秘書",
+      "words": "\n周りの迷惑になるのでお控えください。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 5213006,
+      "row_index": 271,
+      "speaker": "秘書",
+      "words": "呀啊啊！",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024000,
+      "row_index": 96,
+      "speaker": "秘書",
+      "words": "不過……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024000,
+      "row_index": 97,
+      "speaker": "秘書",
+      "words": "現在不是開玩笑的時候呢。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024001,
+      "row_index": 258,
+      "speaker": "秘書",
+      "words": "先不說這個了……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024001,
+      "row_index": 259,
+      "speaker": "秘書",
+      "words": "小心後面。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024001,
+      "row_index": 275,
+      "speaker": "秘書",
+      "words": "來，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024001,
+      "row_index": 276,
+      "speaker": "秘書",
+      "words": "快點吧。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024004,
+      "row_index": 15,
+      "speaker": "秘書",
+      "words": "那個人……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024004,
+      "row_index": 16,
+      "speaker": "秘書",
+      "words": "接下來才是最有趣的。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024004,
+      "row_index": 36,
+      "speaker": "秘書",
+      "words": "我去確認。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024004,
+      "row_index": 37,
+      "speaker": "秘書",
+      "words": "\n克蕾琪塔小姐請在這裡稍待片刻。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024004,
+      "row_index": 149,
+      "speaker": "秘書",
+      "words": "看來就算沒有我也沒問題呢。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024004,
+      "row_index": 168,
+      "speaker": "秘書",
+      "words": "一般人",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024004,
+      "row_index": 169,
+      "speaker": "秘書",
+      "words": "才不會大聲嚷嚷著這樣丟臉的事情戰鬥。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024004,
+      "row_index": 191,
+      "speaker": "秘書",
+      "words": "再加上……",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024005,
+      "row_index": 40,
+      "speaker": "秘書",
+      "words": "超過30！？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024005,
+      "row_index": 66,
+      "speaker": "秘書",
+      "words": "不對，",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024005,
+      "row_index": 67,
+      "speaker": "秘書",
+      "words": "魔物是突然出現的！",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024005,
+      "row_index": 369,
+      "speaker": "秘書",
+      "words": "兩位是清醒的啊？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024005,
+      "row_index": 370,
+      "speaker": "秘書",
+      "words": "\n克蕾琪塔小姐呢……？",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024005,
+      "row_index": 417,
+      "speaker": "秘書",
+      "words": "在回到城裡提交報告書之前",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024005,
+      "row_index": 418,
+      "speaker": "秘書",
+      "words": "都還算調查中喔。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    },
+    {
+      "story_id": 7024005,
+      "row_index": 419,
+      "speaker": "秘書",
+      "words": "克蕾琪塔小姐。",
+      "current_unit_id": 6111,
+      "parsed_unit_id": null,
+      "reason": "UNIT_ID_MISMATCH"
+    }
+  ],
+  "missing_canonical_details": {
+    "5218004": [
+      {
+        "story_id": 5218004,
+        "row_index": 115,
+        "speaker": "草莓",
+        "words": "……這裡就是【里士滿工商會】……",
+        "current_unit_id": null,
+        "parsed_unit_id": 6111
+      },
+      {
+        "story_id": 5218004,
+        "row_index": 116,
+        "speaker": "草莓",
+        "words": "\\n",
+        "current_unit_id": null,
+        "parsed_unit_id": 6111
+      },
+      {
+        "story_id": 5218004,
+        "row_index": 120,
+        "speaker": "草莓",
+        "words": "打擾了。",
+        "current_unit_id": null,
+        "parsed_unit_id": 6111
+      },
+      {
+        "story_id": 5218004,
+        "row_index": 121,
+        "speaker": "草莓",
+        "words": "\\n我是來面試的，叫做──",
+        "current_unit_id": null,
+        "parsed_unit_id": 6111
+      },
+      {
+        "story_id": 5218004,
+        "row_index": 132,
+        "speaker": "草莓",
+        "words": "……啊？",
+        "current_unit_id": null,
+        "parsed_unit_id": 6111
+      },
+      {
+        "story_id": 5218004,
+        "row_index": 133,
+        "speaker": "草莓",
+        "words": "咦……？",
+        "current_unit_id": null,
+        "parsed_unit_id": 6111
+      },
+      {
+        "story_id": 5218004,
+        "row_index": 152,
+        "speaker": "草莓",
+        "words": "啊！",
+        "current_unit_id": null,
+        "parsed_unit_id": 6111
+      },
+      {
+        "story_id": 5218004,
+        "row_index": 153,
+        "speaker": "草莓",
+        "words": "妳、",
+        "current_unit_id": null,
+        "parsed_unit_id": 6111
+      },
+      {
+        "story_id": 5218004,
+        "row_index": 154,
+        "speaker": "草莓",
+        "words": "妳好……",
+        "current_unit_id": null,
+        "parsed_unit_id": 6111
+      },
+      {
+        "story_id": 5218004,
+        "row_index": 155,
+        "speaker": "草莓",
+        "words": "\\n",
+        "current_unit_id": null,
+        "parsed_unit_id": 6111
+      },
+      {
+        "story_id": 5218004,
+        "row_index": 166,
+        "speaker": "草莓",
+        "words": "咦……",
+        "current_unit_id": null,
+        "parsed_unit_id": 6111
+      },
+      {
+        "story_id": 5218004,
+        "row_index": 167,
+        "speaker": "草莓",
+        "words": "我、",
+        "current_unit_id": null,
+        "parsed_unit_id": 6111
+      },
+      {
+        "story_id": 5218004,
+        "row_index": 168,
+        "speaker": "草莓",
+        "words": "我知道了……！",
+        "current_unit_id": null,
+        "parsed_unit_id": 6111
+      }
+    ]
+  }
+}
