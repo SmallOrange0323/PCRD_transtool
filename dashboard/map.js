@@ -462,12 +462,12 @@ const QuestMapModule = {
 
                     pendingNewCharas.forEach(ch => {
                         const checkGroupId = Math.floor(ch.unitId / 100);
-                        const exists = charaStories.some(s => s.groupId === checkGroupId);
-                        if (!exists) {
-                            for (let i = 1; i <= 4; i++) {
+                        for (let i = 1; i <= 4; i++) {
+                            const storyId = parseInt(`${ch.prefix}${i}`, 10);
+                            if (!charaStories.some(s => s.id === storyId)) {
                                 const epTitle = (ch.titles && ch.titles[i - 1]) ? ch.titles[i - 1] : `第 ${i} 話`;
                                 charaStories.push({
-                                    id: parseInt(`${ch.prefix}${i}`),
+                                    id: storyId,
                                     chapter: `${ch.name} 第${i}話`,
                                     title: epTitle,
                                     groupId: checkGroupId,
@@ -608,38 +608,44 @@ const QuestMapModule = {
                 // 合併新形式活動主檔
                 if (this.extraEvents && this.extraEvents.events) {
                     const extraStartTimeMap = {
-                        10201: "2025/06/01 16:00:00",
-                        10202: "2025/07/01 16:00:00",
-                        10203: "2025/08/01 16:00:00",
-                        10204: "2025/09/01 16:00:00",
-                        10205: "2025/10/01 16:00:00",
-                        10206: "2025/11/01 16:00:00",
-                        10207: "2025/12/01 16:00:00",
-                        10208: "2026/01/01 16:00:00",
-                        10209: "2026/02/01 16:00:00",
-                        10210: "2026/03/01 16:00:00",
-                        10211: "2026/04/01 16:00:00",
-                        10212: "2026/05/01 16:00:00",
-                        10213: "2026/06/01 16:00:00",
-                        10214: "2026/07/01 16:00:00",
-                        10215: "2026/08/01 16:00:00",
-                        10216: "2026/09/01 16:00:00",
-                        10217: "2026/10/01 16:00:00",
-                        10218: "2026/11/01 16:00:00"
+                        10201: "2025-06-01T16:00:00+08:00",
+                        10202: "2025-07-01T16:00:00+08:00",
+                        10203: "2025-08-01T16:00:00+08:00",
+                        10204: "2025-09-01T16:00:00+08:00",
+                        10205: "2025-10-01T16:00:00+08:00",
+                        10206: "2025-11-01T16:00:00+08:00",
+                        10207: "2025-12-01T16:00:00+08:00",
+                        10208: "2026-01-01T16:00:00+08:00",
+                        10209: "2026-02-01T16:00:00+08:00",
+                        10210: "2026-03-01T16:00:00+08:00",
+                        10211: "2026-04-01T16:00:00+08:00",
+                        10212: "2026-05-01T16:00:00+08:00",
+                        10213: "2026-06-01T16:00:00+08:00",
+                        10214: "2026-07-01T16:00:00+08:00",
+                        10215: "2026-08-01T16:00:00+08:00",
+                        10216: "2026-09-01T16:00:00+08:00",
+                        10217: "2026-10-01T16:00:00+08:00",
+                        10218: "2026-11-01T16:00:00+08:00"
                     };
 
                     const extraEventsMapped = this.extraEvents.events.map(e => ({
                         story_group_id: e.story_group_id,
                         title: e.title,
-                        start_time: extraStartTimeMap[e.story_group_id] || e.start_time || "2025/01/01 16:00:00",
+                        start_time: extraStartTimeMap[e.story_group_id] || e.start_time || "2025-01-01T16:00:00+08:00",
                         thumbnail_id: e.thumbnail_id,
                         value: e.value
                     }));
                     // 將新形式活動合併，並按時間倒序排序
+                    const parseTime = (str) => {
+                        if (!str) return 0;
+                        const t = new Date(str).getTime();
+                        if (!isNaN(t)) return t;
+                        return new Date(String(str).replace(/-/g, '/')).getTime() || 0;
+                    };
                     this.events = extraEventsMapped.concat(this.events);
                     this.events.sort((a, b) => {
-                        const timeA = new Date(a.start_time.replace(/-/g, '/')).getTime();
-                        const timeB = new Date(b.start_time.replace(/-/g, '/')).getTime();
+                        const timeA = parseTime(a.start_time);
+                        const timeB = parseTime(b.start_time);
                         return timeB - timeA;
                     });
                 }
