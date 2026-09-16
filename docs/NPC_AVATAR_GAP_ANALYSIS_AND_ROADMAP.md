@@ -260,9 +260,19 @@ if idx == 4 and args:
 }
 ```
 
-### 3. Closed-Universe Manifest Gate（密閉式清冊門禁規範）
+### 3. Closed-Universe Manifest Gate（雙層 Fail-Closed 門禁架構規範）
 
-短 ID（`< 100000`）不得因為「長度小於 6」或「數值大於 0」就無條件採納，必須由官方 `storydata2_assetmanifest` membership 作為唯一合法性依據。
+短 ID（`< 100000`）的支援絕不代表「所有小數字都合法」，架構上禁止任意放寬門禁。全系統必須依循雙層 Fail-Closed 門禁共同把關：
+
+`Official Manifest Gate (Parser 層) ───► Project Registry Gate (Runtime / Validator 層)`
+
+1. **第一層門禁：權威清冊門禁（Official Manifest Gate，Parser 層）**
+   - 劇本中的短 ID 候選字串必須 `zfill(6)` 後，在權威 `storydata2_assetmanifest` 中確認對應的 `storydata_icon_unit_<asset_key>.unity3d` 存在。
+   - 不存在於官方清冊的數值（如鏡頭機位參數 `1`、`0`、`2` 等）在 Parser 層直接 Drop，安全忽略，絕不寫入 Story JSON。
+2. **第二層門禁：專案登錄門禁（Project Registry Gate，Runtime / Validator 層）**
+   - 即使 Story JSON 帶有短 ID（例如 `unit_id: 6112`），前端 `AvatarService` 與後端 `pipeline.validate` 亦不得無條件信任。
+   - 短 ID 必須正式登錄於 `avatar_assets.json` 且 `status="active"`，才能進行 exact dialogue resolution 與通過 validation gate。
+   - 未在 Registry 登錄的短 ID 依然由前端 Fallback 至文字佔位符，確保架構絕對安全閉環。
 
 #### 判定流程：
 ```text
@@ -294,30 +304,74 @@ Command target (如 "6112" 或 "0" 或 "1")
 
 ## 六、 實作路線 (Implementation Roadmap)
 
-### 階段一：秘書專項 Pilot Case (Phase 1: Canonical Secretary Pilot)
+整體演進切分為三個獨立且遞進的階段：
 
-* **性質**：端到端規格驗證試點（不使用 Name Fallback，全面驗證 Canonical Contract）。
-* **收錄項目**：
-  - 常態秘書：`unit_id: 6111` ↔ `asset_key: "006111"` ↔ `filename: "006111.png"`
-  - 泳裝秘書：`unit_id: 6112` ↔ `asset_key: "006112"` ↔ `filename: "006112.png"`
+- **Phase 1**：short-ID runtime/validator contract + Secretary Pilot
+- **Phase 2**：Manifest-backed parser normalization
+- **Phase 3**：全域 NPC discovery / ingestion
+
+---
+
+### Phase 1 — Canonical Secretary End-to-End Pilot
+
+* **目標**：
+  以秘書為真實試點：
+  - `6111 ↔ "006111"`
+  - `6112 ↔ "006112"`
+  驗證完整鏈路：
+  `Command Identity → Story JSON → Avatar Registry → Frontend Exact Resolution → Validator → Bundle`
+* **Phase 1 必須包含的最小 contract migration**：
+  1. **Avatar Registry Schema 支援**
+     - `avatar_assets.json` 完整支援短 ID 格式：
+       - `unit_id: 6112` (integer)
+       - `asset_key: "006112"` (string)
+       - `filename: "006112.png"` (string)
+  2. **AvatarService（前端 Runtime 契約遷移）**
+     - exact dialogue resolution 不得再以 `unit_id >= 100000` 作為合法性的必要條件。
+     - `< 100000` ID 只能在已存在於正式 avatar manifest / registry 時被解析。
+     - 不得因此開放任意小數字 ID（維持未登錄則 fail-closed）。
+     - `6112` 必須透過 registry exact lookup 解析到 `006112.png`，確保前端渲染泳裝秘書而非 name fallback。
+  3. **pipeline.validate（後端驗證契約遷移）**
+     - canonical dialogue coverage 不得再無條件忽略 `< 100000` unit_id。
+     - 已經由 Canonical Contract 合法產生的短 ID 必須納入 dialogue manifest coverage gate。
+     - active short-ID asset 同樣必須驗證實體 filename / size / sha256。
+     - 不得降低既有 fail-closed 行為。
+  4. **Secretary Assets / Registry 實體登錄**
+     - 下載並解密官方二進位資產至 `dashboard/icon/unit/006111.png` 與 `006112.png`。
+     - 於 `avatar_assets.json` 登錄：
+       - `6111 ↔ "006111" ↔ "006111.png"`
+       - `6112 ↔ "006112" ↔ "006112.png"`
+  5. **Pilot Story 建立與驗證**
+     - `5218004` 使用 exact `unit_id: 6112`。
+     - 必須確認前端實際解析到泳裝秘書，而非 name fallback。
+  6. **Parser 邊界約定**
+     - Phase 1 可以先用已驗證案例手動建立 Pilot Story 資料。
+     - 通用 Closed-Universe Manifest Gate parser upgrade 保留在 Phase 2。
+     - Phase 2 才正式讓 `tools/pcrd_fetch.py` 自動識別所有 manifest-backed short IDs。
+
+---
+
+### Phase 2 — Manifest-Backed Parser Normalization
+
+* **性質**：通用解包器規格升級。
+* **目標**：正式將 Closed-Universe Manifest Gate 實作入 `tools/pcrd_fetch.py`，使解包流程自動識別所有 manifest-backed short IDs。
 * **驗證範圍**：
-  - 下載解密圖檔至 `dashboard/icon/unit/006111.png` 與 `006112.png`。
-  - 在 `avatar_assets.json` 登錄此兩筆 active dialogue 資產。
-  - 更新 `5218004.json` 對白寫入 `unit_id: 6112`。
-  - 執行 `pipeline.bundle` 與 `pipeline.validate` 確認 100% 通過。
+  - 解包器自動對接 `storydata2_assetmanifest`。
+  - 對白指令遇到 `< 100000` 時，自動以 `zfill(6)` 檢核官方清冊。
+  - 命中者自動轉為 integer `unit_id` 寫入 Story JSON。
+  - 重解含短 ID NPC 之話數，確認非角色指令零誤判，短 ID NPC 100% 自動獲取正確 `unit_id`。
 
-### 階段二：解包器權威清冊校驗升級 (Phase 2: Manifest-Backed Parser Upgrade)
+---
 
-* **目標**：正式將 Closed-Universe Manifest Gate 實作入 `tools/pcrd_fetch.py::_parse_bundle_dialogues()`。
-* **驗證**：重解含前導零 NPC 之相關話數，確認非角色指令零誤判，短 ID NPC 100% 自動獲取正確 `unit_id`。
+### Phase 3 — 全域 NPC Discovery 與 Ingestion Pipeline
 
-### 階段三：全域 NPC 資產自動化探測工具鏈 (Phase 3: Automated NPC Discovery Pipeline)
-
-* **目標**：系統化開採剩餘 544 個官方未使用的頭像 Bundle。
+* **性質**：全量生產資料庫開採與收錄。
+* **目標**：系統化開採剩餘 546 個官方未收錄的頭像 Bundle。
 * **工具鏈規劃**：
   1. 對 `storydata2_assetmanifest` 中所有 463 個 `0xxxxx` Bundle 建立快速比對索引。
   2. 掃描全量 9,096 篇劇本，產出《高頻缺圖 NPC 與候選 Bundle 對照建議表》。
   3. 人工/AI 協同審核後，批次匯入二進位檔案與登錄清冊。
+  4. 執行全量 `pipeline.validate` 與 `pipeline.bundle`，達成全站 NPC 頭像覆蓋率的大幅躍升。
 
 ---
 
