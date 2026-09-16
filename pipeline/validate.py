@@ -283,6 +283,14 @@ def validate_avatar_manifest_and_assets(dashboard_dir: Path, res: ValidationResu
         return False
 
     # 1. 對白話數語意對等 (Story Semantic Parity)
+    manifest_uids = {a.get("unit_id") for a in assets if a.get("unit_id") is not None and a.get("usage") == "dialogue"}
+    # Canonical registered short IDs (如 6111, 6112 等): 納入嚴格 mandatory coverage 檢驗
+    KNOWN_CANONICAL_SHORT_IDS = {6111, 6112}
+    canonical_short_uids = KNOWN_CANONICAL_SHORT_IDS | {
+        a.get("unit_id") for a in assets
+        if a.get("unit_id") is not None and a.get("unit_id") < 100000 and a.get("usage") == "dialogue"
+    }
+
     story_dir = dashboard_dir / "story"
     canonical_dialogue_uids = set()
     if story_dir.exists():
@@ -298,14 +306,13 @@ def validate_avatar_manifest_and_assets(dashboard_dir: Path, res: ValidationResu
                     if uid is not None:
                         try:
                             n = int(uid)
-                            if n >= 100000:
+                            if n >= 100000 or n in canonical_short_uids:
                                 canonical_dialogue_uids.add(n)
                         except:
                             pass
             except:
                 pass
 
-    manifest_uids = {a.get("unit_id") for a in assets if a.get("unit_id") is not None and a.get("usage") == "dialogue"}
     missing_dialogue_in_manifest = canonical_dialogue_uids - manifest_uids
     if missing_dialogue_in_manifest:
         res.error(f"劇情對白要求的 unit_id 未在 avatar_assets.json 中登錄: {len(missing_dialogue_in_manifest)} 個 (範例: {sorted(list(missing_dialogue_in_manifest))[:5]})")
@@ -340,6 +347,22 @@ def validate_avatar_manifest_and_assets(dashboard_dir: Path, res: ValidationResu
             if uid in seen_active_dialogue_uids:
                 res.error(f"重複的 active dialogue asset: unit_id {uid}")
             seen_active_dialogue_uids.add(uid)
+
+        # 短 ID Canonical Contract 校驗 (< 100000)
+        if uid is not None and uid < 100000 and usage == "dialogue":
+            asset_key = asset.get("asset_key")
+            expected_key = str(uid).zfill(6)
+            if not asset_key:
+                res.error(f"短 ID dialogue 資產缺失 asset_key: unit_id={uid}")
+                mismatch_errors += 1
+            elif asset_key != expected_key:
+                res.error(f"短 ID dialogue 資產 asset_key 格式非法: unit_id={uid}, asset_key={asset_key}, expected={expected_key}")
+                mismatch_errors += 1
+            
+            expected_filename = f"{expected_key}.png"
+            if asset.get("filename") != expected_filename:
+                res.error(f"短 ID dialogue 資產 filename 不符合 {{asset_key}}.png: unit_id={uid}, filename={asset.get('filename')}, expected={expected_filename}")
+                mismatch_errors += 1
 
         fname = asset.get("filename")
         if not fname:
