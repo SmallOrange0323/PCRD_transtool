@@ -363,15 +363,23 @@ Command target (如 "6112" 或 "0" 或 "1")
 
 ---
 
-### Phase 3 — 全域 NPC Discovery 與 Ingestion Pipeline
+### Phase 3 — Usage-Driven NPC Discovery / Ingestion
 
-* **性質**：全量生產資料庫開採與收錄。
-* **目標**：系統化開採剩餘 546 個官方未收錄的頭像 Bundle。
-* **工具鏈規劃**：
-  1. 對 `storydata2_assetmanifest` 中所有 463 個 `0xxxxx` Bundle 建立快速比對索引。
-  2. 掃描全量 9,096 篇劇本，產出《高頻缺圖 NPC 與候選 Bundle 對照建議表》。
-  3. 人工/AI 協同審核後，批次匯入二進位檔案與登錄清冊。
-  4. 執行全量 `pipeline.validate` 與 `pipeline.bundle`，達成全站 NPC 頭像覆蓋率的大幅躍升。
+546 個未收錄官方 Bundle 僅視為「候選資源池」，不代表全部需要匯入專案。
+
+Phase 3 應以全量 Story Command Stream 為需求來源：
+
+1. 掃描劇情中實際出現的 manifest-backed short IDs / NPC IDs。
+2. 與官方 `storydata2_assetmanifest` 交叉比對。
+3. 找出「實際被劇情引用、目前 Registry 尚未收錄」的官方頭像。
+4. 僅對這些有實際使用證據的資產進行下載、解包、Registry 登錄與驗證。
+5. 未被任何現有劇情引用的 CDN Bundle 保留在候選池中，不因為存在於 CDN 就自動匯入。
+
+因此 Phase 3 的原則是：
+
+`Usage-driven ingestion, not bulk CDN mirroring.`
+
+也就是「依劇情實際需求補齊 NPC 頭像」，不是「把 546 個資產全部塞進專案」。
 
 ---
 
