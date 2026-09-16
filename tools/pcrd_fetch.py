@@ -406,10 +406,56 @@ def _parse_bundle_metadata(bundle_data):
     }
 
 
+def _normalize_story_unit_target(
+    raw_target: Any,
+    portrait_asset_keys: Optional[Set[str]] = None
+) -> Optional[int]:
+    """
+    根據官方 Story command stream 與 Manifest 權威資料庫將 raw target 正規化為 canonical dialogue unit_id (整數)。
+
+    規則：
+    1. 若 raw_target 為空、含 ':' (多人冒號)、或非純數字，回傳 None。
+    2. 若數值 <= 0 (如 0 / "0" 解除焦點)，回傳 None。
+    3. 既有六位數 (val >= 100000 且 len == 6)：直接回傳 val (整數)，完全保持現有相容性。
+    4. 短數字 ID (0 < val < 100000)：
+       - 若 portrait_asset_keys is None，fail-safe 回傳 None (無權威 manifest 依據，不將隨機短 ID 升格)。
+       - 產生 asset_key = f"{val:06d}" (例如 6112 -> "006112")。
+       - 若 asset_key in portrait_asset_keys，回傳 val (整數 6112)。
+       - 否則回傳 None。
+    """
+    if raw_target is None:
+        return None
+    s = str(raw_target).strip()
+    if ":" in s or not s.isdigit():
+        return None
+    try:
+        val = int(s)
+    except ValueError:
+        return None
+
+    if val <= 0:
+        return None
+
+    # 規則 3: 既有六位數
+    if len(s) == 6 and val >= 100000:
+        return val
+
+    # 規則 4: 短數字 ID (需 manifest 權威背書)
+    if val < 100000:
+        if portrait_asset_keys is None:
+            return None
+        asset_key = f"{val:06d}"
+        if asset_key in portrait_asset_keys:
+            return val
+        return None
+
+    return None
+
+
 def _resolve_dialogue_unit_id(
     speaker: str,
     block_cmd4_units: List[Optional[int]],
-    block_cmd3_units: List[int],
+    block_cmd3_units: List[Optional[int]],
     last_speaker: Optional[str],
     last_speaker_unit: Optional[int],
 ) -> Optional[int]:
@@ -424,7 +470,7 @@ def _resolve_dialogue_unit_id(
     3. 其他情況 (包含僅有 cmd 3 表情、多人合言、解除焦點、換人無立繪指令等)
        -> 回傳 None，交由前端 name fallback
     """
-    valid_cmd4 = [u for u in block_cmd4_units if u is not None and isinstance(u, int) and u >= 100000]
+    valid_cmd4 = [u for u in block_cmd4_units if u is not None and isinstance(u, int) and u > 0]
     unique_cmd4 = set(valid_cmd4)
 
     # 規則 1: 區塊有唯一、合法、非多人/非 0 的單一焦點 cmd 4
@@ -434,14 +480,14 @@ def _resolve_dialogue_unit_id(
     # 規則 2: 區塊沒有 cmd 4 / cmd 3，且 speaker 與上一句完全相同，且上一句有可靠 unit_id
     if len(block_cmd4_units) == 0 and len(block_cmd3_units) == 0:
         if speaker and last_speaker and speaker == last_speaker:
-            if last_speaker_unit is not None and isinstance(last_speaker_unit, int) and last_speaker_unit >= 100000:
+            if last_speaker_unit is not None and isinstance(last_speaker_unit, int) and last_speaker_unit > 0:
                 return last_speaker_unit
 
     # 規則 3: 其他情況 (包含僅有 cmd 3) 回傳 None
     return None
 
 
-def _parse_bundle_dialogues(bundle_data, extract_metadata=False):
+def _parse_bundle_dialogues(bundle_data, extract_metadata=False, portrait_asset_keys: Optional[Set[str]] = None):
     """解析 AssetBundle bytes，返回對白列表。若 extract_metadata=True 則返回 (dialogues, metadata)。"""
     try:
         import UnityPy
@@ -500,17 +546,19 @@ def _parse_bundle_dialogues(bundle_data, extract_metadata=False):
                 # 追蹤焦點與表情指令
                 if idx == 4 and args:
                     # cmd 4: [target] (鏡頭焦點切換)
-                    target_str = str(args[0]).strip()
-                    if target_str.isdigit() and len(target_str) == 6 and int(target_str) >= 100000:
-                        block_cmd4_units.append(int(target_str))
-                    elif target_str == "0" or ":" in target_str:
-                        # 顯式非單人、多人同呼或解除焦點
+                    u = _normalize_story_unit_target(args[0], portrait_asset_keys=portrait_asset_keys)
+                    if u is not None:
+                        block_cmd4_units.append(u)
+                    else:
+                        # 無效 short ID、0、":"、或不在 manifest 中，作為 carry barrier 阻斷
                         block_cmd4_units.append(None)
                 elif idx == 3 and args:
                     # cmd 3: [unit_id, emotion_id] (表情/嘴型)
-                    u_str = str(args[0]).strip()
-                    if u_str.isdigit() and len(u_str) == 6 and int(u_str) >= 100000:
-                        block_cmd3_units.append(int(u_str))
+                    u = _normalize_story_unit_target(args[0], portrait_asset_keys=portrait_asset_keys)
+                    if u is not None:
+                        block_cmd3_units.append(u)
+                    else:
+                        block_cmd3_units.append(None)
 
                 still_match = None
                 if idx != 6:
@@ -636,16 +684,44 @@ class StoryFetchResult:
     metadata: Optional[Dict[str, Any]] = None
 
 
-def load_story_manifest_bundle_refs(truth_version: Optional[str] = None) -> Dict[int, StoryBundleRef]:
+def _extract_portrait_asset_keys_from_manifest(manifest_data: Any) -> Set[str]:
     """
-    從 CDN 下載並解析 storydata2_assetmanifest，回傳 {story_id: StoryBundleRef} 字典。
-    保留 manifest 原始路徑作為 bundle_name，並記錄單一快照之 truth_version。
+    從 storydata2_assetmanifest 中提取所有官方頭像之 6 碼 asset_key。
+    匹配正規表達式: storydata_icon_unit_(\\d{6})\\.unity3d
+    例如: storydata_icon_unit_006112.unity3d -> '006112'
+    """
+    if isinstance(manifest_data, bytes):
+        text = manifest_data.decode("utf-8", errors="ignore")
+    else:
+        text = str(manifest_data)
+    pattern = re.compile(r"storydata_icon_unit_(\d{6})\.unity3d")
+    return set(pattern.findall(text))
+
+
+# 快照快取: {truth_version: (Dict[int, StoryBundleRef], Set[str])}
+_STORY_MANIFEST_SNAPSHOT_CACHE: Dict[str, Tuple[Dict[int, StoryBundleRef], Set[str]]] = {}
+
+
+def load_story_manifest_snapshot(
+    truth_version: Optional[str] = None
+) -> Tuple[Dict[int, StoryBundleRef], Set[str]]:
+    """
+    載入單一 TruthVersion 的 storydata2_assetmanifest 快照，回傳:
+    (bundle_refs, portrait_asset_keys)
+
+    同一 TruthVersion 保證只下載一次並快取於記憶體，嚴禁每次 Story 抓取重複請求 Manifest。
     """
     ver = truth_version or _get_sonet_ver()
     if not ver:
-        raise RuntimeError("無法取得 So-net TruthVersion，無法載入 Manifest")
+        raise RuntimeError("無法取得 So-net TruthVersion，無法載入 Manifest 快照")
+
+    if ver in _STORY_MANIFEST_SNAPSHOT_CACHE:
+        return _STORY_MANIFEST_SNAPSHOT_CACHE[ver]
+
     manifest_url = f"{SONET_CDN}/Resources/{ver}/Jpn/AssetBundles/Android/manifest/storydata2_assetmanifest"
     manifest_data = _http_get(manifest_url, WEB_HEADER)
+
+    portrait_keys = _extract_portrait_asset_keys_from_manifest(manifest_data)
 
     refs: Dict[int, StoryBundleRef] = {}
     pattern = re.compile(r"storydata_(\d+)\.unity3d")
@@ -665,6 +741,18 @@ def load_story_manifest_bundle_refs(truth_version: Optional[str] = None) -> Dict
                     )
                 except ValueError:
                     pass
+
+    _STORY_MANIFEST_SNAPSHOT_CACHE[ver] = (refs, portrait_keys)
+    return refs, portrait_keys
+
+
+def load_story_manifest_bundle_refs(truth_version: Optional[str] = None) -> Dict[int, StoryBundleRef]:
+    """
+    從 CDN 下載並解析 storydata2_assetmanifest，回傳 {story_id: StoryBundleRef} 字典。
+    保留 manifest 原始路徑作為 bundle_name，並記錄單一快照之 truth_version。
+    內部透過 load_story_manifest_snapshot 快取，避免重複下載。
+    """
+    refs, _ = load_story_manifest_snapshot(truth_version=truth_version)
     return refs
 
 
@@ -686,6 +774,7 @@ def fetch_story_json_by_id(
     bundle_ref: Optional[StoryBundleRef] = None,
     bundle_refs: Optional[Dict[int, StoryBundleRef]] = None,
     write_story_json: bool = True,
+    portrait_asset_keys: Optional[Set[str]] = None,
 ) -> StoryFetchResult:
     """
     通用單話劇情對白 JSON 下載原語 (Generic JSON Fetch Primitive)：
@@ -765,6 +854,15 @@ def fetch_story_json_by_id(
             error_message=f"下載 AssetBundle 失敗 ({bundle_url}): {e}"
         )
 
+    resolved_portrait_keys = portrait_asset_keys
+    if resolved_portrait_keys is None:
+        try:
+            ver = resolved_truth_ver or (bundle_ref.truth_version if bundle_ref else None) or truth_version or _get_sonet_ver()
+            if ver:
+                _, resolved_portrait_keys = load_story_manifest_snapshot(truth_version=ver)
+        except Exception:
+            pass
+
     ep_metadata = None
     if extract_metadata:
         if not b_name or not str(b_name).strip():
@@ -775,7 +873,11 @@ def fetch_story_json_by_id(
                 error_message="extract_metadata=True 時 bundle_name 必須來自有效 Manifest Entry，不得為空或空白猜測"
             )
         try:
-            dialogues, raw_meta = _parse_bundle_dialogues(bundle_data, extract_metadata=True)
+            dialogues, raw_meta = _parse_bundle_dialogues(
+                bundle_data,
+                extract_metadata=True,
+                portrait_asset_keys=resolved_portrait_keys
+            )
             syn = raw_meta.get("official_synopsis") or raw_meta.get("synopsis")
             prov = EpisodeProvenance(
                 truth_version=str(resolved_truth_ver),
@@ -804,7 +906,11 @@ def fetch_story_json_by_id(
             )
     else:
         try:
-            dialogues = _parse_bundle_dialogues(bundle_data, extract_metadata=False)
+            dialogues = _parse_bundle_dialogues(
+                bundle_data,
+                extract_metadata=False,
+                portrait_asset_keys=resolved_portrait_keys
+            )
         except Exception as e:
             return StoryFetchResult(
                 story_id=story_id,
@@ -890,6 +996,12 @@ def sync_story_batch_with_metadata(
     from pipeline.metadata_manifest import batch_update_manifest_entries, MANIFEST_PATH
     target_manifest_path = manifest_path or MANIFEST_PATH
 
+    portrait_keys = None
+    try:
+        _, portrait_keys = load_story_manifest_snapshot(truth_version=resolved_tv)
+    except Exception:
+        pass
+
     collected_metadata = {}
     success_ids = []
     failed_ids = []
@@ -906,6 +1018,7 @@ def sync_story_batch_with_metadata(
             extract_metadata=True,
             write_story_json=write_story_json,
             timeout=timeout,
+            portrait_asset_keys=portrait_keys,
         )
         if res.status == "OK" and res.metadata is not None:
             collected_metadata[sid] = res.metadata
