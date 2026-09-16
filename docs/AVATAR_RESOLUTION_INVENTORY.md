@@ -20,7 +20,7 @@
 
 | 編號 | 路徑名稱 | 入口函式 / 位置 | 觸發條件 | 使用 Key | 最終圖片來源 | 降級行為 (Fallback) | 用途與定位 | 是否仍需存在 |
 | :---: | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :---: |
-| **A** | **顯式對白 Exact Lookup** | `resolveExactDialoguePortrait`<br>`getAvatarHtmlByUnitId` | 顯式 `unit_id > 0` 且在 Registry 登錄為 active | `numId`<br>(如 `6112`, `100011`, `107411`) | `icon/unit/{filename}`<br>(本地無損 PNG/WebP) | **Fail-Closed**：若失敗或不在 Registry，直接轉文字佔位符，**不重試 CDN、不換 ID、不退回名字** | **未來唯一核心身分路徑**：100% 尊重官方指令流指定的精確角色與形態 | **絕對保留 (Core)** |
+| **A** | **顯式對白 Exact Lookup** | `resolveExactDialoguePortrait`<br>`getAvatarHtmlByUnitId` | 顯式 `unit_id > 0` 且在 Registry 登錄為 active | `numId`<br>(如 `6112`, `100011`, `107411`) | `icon/unit/{filename}`<br>(本地無損 PNG/WebP) | **兩段式降級 (Current Production)**：<br>1. 已登錄 active：輸出圖片，失敗轉文字佔位符。<br>2. 未登錄且 >= 100000：**嚴格 Fail-Closed** 轉文字佔位符，不退回名字。<br>3. 未登錄且 < 100000：回傳 null，保留退回名字推斷 (Legacy Name Fallback)。 | **未來唯一核心身分路徑**：100% 尊重官方指令流指定的精確角色與形態 | **絕對保留 (Core)** |
 | **B** | **>=190000 NPC Exact 規則** | `resolveDefaultPortraitIds` (Rule 1) | `numId >= 190000` | `numId`<br>(如 `193631`, `194211`) | `icon/unit/{numId}.png`<br>或 CDN 鏡像 | 透過 `handleError` 依序重試本地 → So-net 00500012 → So-net 00500015 → EsterTion → 文字佔位符 | 歷史 NPC 號段保護：防止 NPC 被普通角色的 `+11/+31` 規則改寫 | **可淘汰 (CAN REMOVE)**<br>NPC 登錄 Registry 後直接走 Path A |
 | **C** | **特殊 Boss/NPC Exact 集合** | `exactPortraitIds`<br>(Rule 2) | `exactPortraitIds.has(numId)` (硬編碼 `107411, 107412, 107431`) | `numId` | `icon/unit/{numId}.png` | 透過 `handleError` 依序嘗試 CDN 鏡像 | 歷史特例白名單：防止 <190000 的特殊敵方/Boss 被誤加 `+11` 改寫 | **可淘汰 (CAN REMOVE)**<br>登錄 Registry 後直接走 Path A |
 | **D** | **Exact-First 帶 Base+11 備選** | `exactFirstWithBaseFallback`<br>(Rule 3) | 命中 Set (`138331`, `139231`, `139331`, `139431`) | `[numId, baseId + 11]` | 優先 `numId.png`，失敗時取 `baseId+11.png` | 若 primary 404，在 `handleError` step 4 嘗試 secondary (`baseId + 11`) | GuP 聯動角或特殊形態的跨星級立繪備選 | **可淘汰出核心邏輯**<br>退為資產層 Fallback |
@@ -76,10 +76,13 @@
 - **走入路徑**：`resolveExactDialoguePortrait(6112)`
   - 成功命中 `manifestMap.get(6112)`。
   - 回傳 `{ status: "active", unitId: 6112, filename: "006112.png", path: "icon/unit/006112.png" }`。
-- **關鍵發現**：
-  `AvatarService` 內部已完全具備 short ID exact route 能力。目前唯一阻礙是前端調用處（`dashboard/dialogue-view.js` 第 213 行）硬編碼了門禁：
-  `const hasExplicitUnitId = Number.isInteger(numUnitId) && numUnitId >= 100000;`
-  只要將此處門禁放寬為 `numUnitId > 0`（由 `AvatarService` 自行審核是否為 registered active ID），Short ID 即已 100% 能走 exact route。
+- **關鍵發現（目前生產環境實際行為）**：
+  1. **調用端門禁層**：目前 `dashboard/dialogue-view.js` 第 213 行之門禁為 `numUnitId >= 100000`，因此短 ID 在目前的對白前端視圖中會直接走入 `else` 分支。
+  2. **Service 核心層（兩段式處理）**：若直接調用 `AvatarService.getAvatarHtmlByUnitId(numId)`：
+     - 若為**已登錄之 active short ID**（如 `6112`）：成功命中 Registry，直接輸出 `006112.png` 精確圖檔路徑。
+     - 若為**未登錄之 legacy short ID**（如現存 19 萬行未註冊短 ID）：`resolveExactDialoguePortrait` 回傳 `null`，Service 內部保留了退回名字推斷（Path H: Legacy Name Fallback）的相容路徑，避免既有舊資料破圖。
+     - 相反地，未登錄之 `>= 100000` ID 則嚴格 Fail-Closed 轉為文字佔位符，不退回名字。
+  3. **未來統一關鍵**：只要將 `dialogue-view.js` 門禁放寬為 `numUnitId > 0`，已註冊的短 ID 即可無縫進入 exact route，而未註冊的舊短 ID 仍受 Service 層的相容保護。
 
 ---
 
@@ -160,8 +163,11 @@ avatar_assets.json (Canonical Dialogue Registry)
 
 本提案僅定義後續實施步驟，**本輪不執行實作**：
 
-- **Step 1：調用端門禁放寬**
-  修改 `dashboard/dialogue-view.js`，將 `hasExplicitUnitId` 門禁由 `numUnitId >= 100000` 改為 `numUnitId > 0`，使短 ID（如 6112）與各類合法 ID 一律直接進入 `resolveExactDialoguePortrait`。
+- **Step 1：調用端門禁放寬（過渡期相容步驟 / Transitional Compatibility Step）**
+  修改 `dashboard/dialogue-view.js`，將 `hasExplicitUnitId` 門禁由 `numUnitId >= 100000` 放寬為 `numUnitId > 0`。
+  - **效果**：
+    - 已登錄之 registered short ID（如 `6112`）立即進入 exact registry route 顯示正確頭像。
+    - 未登錄之 legacy short ID（歷史舊資料）進入 Service 後，暫時仍由 `getAvatarHtmlByUnitId` 保留退回名字推斷之過渡保護，避免尚未完成 parser / registry migration 的既有舊話數突然失去頭像。
 - **Step 2：現有 Exact NPC / Boss 全數納入 Registry**
   將目前硬編碼在 `exactPortraitIds` (107411, 107412, 107431) 及 `customMap` 中的常態 NPC，在 `avatar_assets.json` 中確認並補齊 `active` dialogue 條目。
 - **Step 3：Parser 全面穩定輸出官方 Canonical unit_id**
@@ -172,3 +178,9 @@ avatar_assets.json (Canonical Dialogue Registry)
   廢除 `exactPortraitIds` 與 `>= 190000` 特判，將 `resolveDefaultPortraitIds` 限縮為僅供圖鑑與卡片使用的「資產外觀規整化器（+11/+31）」。
 - **Step 6：保留 Name Fallback 於非對白 UI**
   將 `customMap` 標記為內部輔助字典，僅在發言人統計搜尋等無 unit_id 情境發揮作用。
+- **Step 7：最終嚴格收斂（Final Strict Fail-Closed Convergence）**
+  在 Parser canonical unit_id 覆蓋率與 Registry 條目完整度達到目標水準後，執行最後收斂：
+  - **任何 `explicit unit_id > 0` 僅執行 exact registry lookup**。
+  - Registry active → 顯示實體圖檔。
+  - Registry absent / placeholder → **嚴格 Fail-Closed 顯示文字佔位符，徹底移除 short ID 的 name fallback，不再退回猜測名字**。
+  - 最終實現完整目標模型：`dialogue.unit_id → avatar registry → image / text placeholder`，而 name inference 僅嚴格受限於 `unit_id == null` 的純文字 UI。
