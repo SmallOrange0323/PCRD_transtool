@@ -2,14 +2,14 @@
   "version": 1,
   "metadata": {
     "description": "PCRD Story Map - Canonical Avatar Asset Registry",
-    "total_assets": 952,
-    "dialogue_assets_count": 922,
-    "active_dialogue_count": 919,
+    "total_assets": 953,
+    "dialogue_assets_count": 923,
+    "active_dialogue_count": 920,
     "placeholder_only_count": 3,
     "ui_assets_count": 30,
     "dialogue_overrides_count": 1,
-    "total_active_bytes": 19080667,
-    "total_active_mib": 18.1967
+    "total_active_bytes": 19115843,
+    "total_active_mib": 18.2303
   },
   "assets": [
     {
@@ -8171,6 +8171,16 @@
       "size_bytes": 25222,
       "sha256": "0de5ac8d9ed62c052a192e25415f7f83bbe3919482f5a6080ced6c7e882dc1fc",
       "provenance": "legacy_existing_asset"
+    },
+    {
+      "unit_id": 139111,
+      "filename": "139111.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 35176,
+      "sha256": "5b7495a2773445462cd348785f9d22910e9fe094f455b473d3b98f19f0ff8323",
+      "provenance": "storydata2_assetmanifest"
     },
     {
       "unit_id": 139112,
