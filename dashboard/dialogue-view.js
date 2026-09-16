@@ -210,7 +210,7 @@ console.log("dialogue-view.js loaded");
                     let avatarContent = "";
 
                     const numUnitId = Number(item.unit_id);
-                    const hasExplicitUnitId = Number.isInteger(numUnitId) && numUnitId >= 100000;
+                    const hasExplicitUnitId = Number.isInteger(numUnitId) && numUnitId > 0;
 
                     if (hasExplicitUnitId) {
                         // A. 顯式 Canonical unit_id 絕對優先 (EXPLICIT ALWAYS WINS)
