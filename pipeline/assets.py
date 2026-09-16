@@ -60,7 +60,9 @@ class EventTopCompletenessResult:
     expected_count: int = 0
     present_count: int = 0
     missing_count: int = 0
+    stale_count: int = 0
     missing_ids: List[str] = field(default_factory=list)
+    stale_ids: List[str] = field(default_factory=list)
     success: bool = True
 
 
@@ -160,13 +162,17 @@ def check_movie_coverage(
         except Exception as e:
             print(f"  [WARN] 讀取 movie baseline 失敗: {e}", file=sys.stderr)
 
-    # 讀取 mapped movie_links.json
+    # 讀取 mapped movie_links.json (要求 mapping value 必須非空)
     mapped_ids: Set[str] = set()
     if target_links_path.exists():
         try:
             with open(target_links_path, 'r', encoding='utf-8') as f:
                 mldata = json.load(f)
-            mapped_ids = {normalize_movie_id(k) for k in mldata.keys()}
+            mapped_ids = {
+                normalize_movie_id(k)
+                for k, v in mldata.items()
+                if v and str(v).strip()
+            }
         except Exception as e:
             print(f"  [WARN] 讀取 movie_links.json 失敗: {e}", file=sys.stderr)
 
@@ -280,6 +286,7 @@ def check_event_top_completeness(
         download_cdn_manifest,
         parse_event_top_targets_from_manifest,
         run_pipeline,
+        is_target_identity_equal,
         MANIFEST_CONTRACT_PATH
     )
 
@@ -287,7 +294,7 @@ def check_event_top_completeness(
     target_contract = contract_path or OFFICIAL_EVENT_TOP_MANIFEST
     tv = resolve_truth_version(truth_version)
 
-    # 取得預期 targets
+    # 取得預期 targets (current CDN targets)
     targets: Dict[str, Any] = {}
     try:
         manifest_text = download_cdn_manifest(tv)
@@ -307,6 +314,16 @@ def check_event_top_completeness(
 
     expected_ids = set(targets.keys())
 
+    # 載入現有 tracked contract (作為 identity 比對基準)
+    old_targets: Dict[str, Any] = {}
+    if target_contract.exists():
+        try:
+            with open(target_contract, 'r', encoding='utf-8') as f:
+                cdata = json.load(f)
+                old_targets = cdata.get('targets', {})
+        except Exception:
+            pass
+
     # 比對本地檔案
     local_files: Set[str] = set()
     if target_dir.exists():
@@ -317,9 +334,17 @@ def check_event_top_completeness(
     missing = sorted(list(expected_ids - local_files))
     present = sorted(list(expected_ids & local_files))
 
-    # 若非 dry-run 且有缺失，呼叫既有 pipeline 自動補齊
-    if not dry_run and missing:
-        print(f"  [EventTop] 發現 {len(missing)} 張官方活動頂層縮圖缺失，啟動自動同步...")
+    # 檢查 upstream identity 是否變更 (stale/changed)
+    stale_ids = []
+    for eid, new_info in targets.items():
+        old_info = old_targets.get(eid)
+        if old_info and not is_target_identity_equal(old_info, new_info):
+            stale_ids.append(eid)
+    stale_ids = sorted(stale_ids)
+
+    # 若非 dry-run 且有缺失或素材變更，呼叫既有 pipeline 自動同步
+    if not dry_run and (missing or stale_ids):
+        print(f"  [EventTop] 發現 {len(missing)} 張官方活動頂層縮圖缺失、{len(stale_ids)} 張素材變更，啟動自動同步...")
         try:
             run_pipeline(
                 from_contract=False,
@@ -334,16 +359,28 @@ def check_event_top_completeness(
                     local_files.add(p.stem)
             missing = sorted(list(expected_ids - local_files))
             present = sorted(list(expected_ids & local_files))
+
+            # 重新載入更新後的 contract 比對 identity
+            new_old_targets: Dict[str, Any] = {}
+            if target_contract.exists():
+                with open(target_contract, 'r', encoding='utf-8') as f:
+                    new_old_targets = json.load(f).get('targets', {})
+            stale_ids = sorted([
+                eid for eid, new_info in targets.items()
+                if not is_target_identity_equal(new_old_targets.get(eid), new_info)
+            ])
         except Exception as e:
             print(f"  [ERROR] Event Top 自動同步失敗: {e}", file=sys.stderr)
 
-    success = (len(missing) == 0)
+    success = (len(missing) == 0 and len(stale_ids) == 0)
 
     return EventTopCompletenessResult(
         expected_count=len(expected_ids),
         present_count=len(present),
         missing_count=len(missing),
+        stale_count=len(stale_ids),
         missing_ids=missing,
+        stale_ids=stale_ids,
         success=success
     )
 
@@ -388,31 +425,22 @@ def check_story_thumbnail_completeness(
     target_manifest_file = manifest_path or MANIFEST_PATH
     tv = resolve_truth_version(truth_version)
 
-    # 1. 取得 CDN 上的官方縮圖清單 (記憶體解析，確保 dry-run 零寫入)
+    # 1. 取得指定 TruthVersion 的 CDN 官方縮圖清單 (權威來源，記憶體解析零寫入)
     cdn_thumbs: Dict[str, str] = {}
-    
-    # 若本地已有快取 manifest，直接讀取；若無或需要更新則自 CDN 抓取至記憶體
-    if target_manifest_file.exists() and target_manifest_file.stat().st_size > 0:
-        try:
-            with open(target_manifest_file, 'r', encoding='utf-8', errors='ignore') as f:
-                cdn_thumbs = parse_story_thumbs_from_manifest(f.read())
-        except Exception:
-            pass
-
-    if not cdn_thumbs:
-        try:
-            url = f"{SONET_CDN}/Resources/{tv}/Jpn/AssetBundles/Android/manifest/icon2_assetmanifest"
-            req = urllib.request.Request(url, headers=SONET_HEADER)
-            with urllib.request.urlopen(req, timeout=20) as resp:
-                data = resp.read()
-            manifest_text = data.decode("utf-8", errors="ignore")
-            cdn_thumbs = parse_story_thumbs_from_manifest(manifest_text)
-            # 只有在非 dry-run 時才寫入本地快取
-            if not dry_run:
-                with open(target_manifest_file, "wb") as f:
-                    f.write(data)
-        except Exception as e:
-            print(f"  [WARN] 無法從 CDN 取得 story thumbnails 清單: {e}", file=sys.stderr)
+    try:
+        url = f"{SONET_CDN}/Resources/{tv}/Jpn/AssetBundles/Android/manifest/icon2_assetmanifest"
+        req = urllib.request.Request(url, headers=SONET_HEADER)
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            data = resp.read()
+        manifest_text = data.decode("utf-8", errors="ignore")
+        cdn_thumbs = parse_story_thumbs_from_manifest(manifest_text)
+        # 僅在非 dry-run 且使用本地路徑時，作為下載工具快取保存
+        if not dry_run and target_manifest_file:
+            with open(target_manifest_file, "wb") as f:
+                f.write(data)
+    except Exception as e:
+        print(f"  [ERROR] 無法從 CDN 取得 TruthVersion {tv} 之 icon2_assetmanifest 權威清單: {e}", file=sys.stderr)
+        return StoryThumbnailCompletenessResult(success=False)
 
     # 2. 收集目標話數 universe
     target_universe = collect_target_story_ids(story_ids=story_ids)
@@ -485,9 +513,16 @@ def analyze_asset_completeness(
     print("\nEvent Top:")
     print(f"  expected: {et_res.expected_count}")
     print(f"  missing: {et_res.missing_count}")
+    if et_res.stale_count > 0:
+        print(f"  stale/changed: {et_res.stale_count}")
     print(f"  {'PASS' if et_res.success else 'FAIL'}")
     if not et_res.success:
-        print(f"  ❌ Event Top Gate FAILED (缺失 IDs: {et_res.missing_ids})")
+        err_msg = []
+        if et_res.missing_ids:
+            err_msg.append(f"缺失 IDs: {et_res.missing_ids}")
+        if et_res.stale_ids:
+            err_msg.append(f"素材變更 IDs: {et_res.stale_ids}")
+        print(f"  ❌ Event Top Gate FAILED ({'; '.join(err_msg)})")
 
     # 2. Story Thumbnail
     st_res = check_story_thumbnail_completeness(truth_version=truth_version, dry_run=dry_run)
@@ -519,12 +554,18 @@ def analyze_asset_completeness(
     overall_success = et_res.success and st_res.success and mv_res.success
 
     if overall_success:
-        print("\n✅ Asset Completeness PASS")
         # 非 dry-run 且有新 reference 時，晉升 baseline
         if not dry_run and mv_res.new_references_count > 0:
             current_refs, _ = scan_movie_references()
-            promote_movie_baseline(current_refs)
-            print("  [Baseline] 已成功晉升並更新 movie_reference_manifest.json")
+            promoted = promote_movie_baseline(current_refs)
+            if promoted:
+                print("  [Baseline] 已成功晉升並更新 movie_reference_manifest.json")
+            else:
+                print("  ❌ [ERROR] Baseline promotion 寫入失敗！阻斷後續發布。", file=sys.stderr)
+                overall_success = False
+
+    if overall_success:
+        print("\n✅ Asset Completeness PASS")
     else:
         print("\n❌ Asset Completeness FAIL")
 

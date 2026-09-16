@@ -7,11 +7,18 @@ test_asset_completeness.py — Asset Completeness Gate v1 最小單元測試
      - historical missing -> WARN / non-blocking PASS
      - new mapped -> PASS
      - new missing -> blocking FAIL (回報引用該 movie 的 story ID)
+     - empty/null mapping -> new missing -> FAIL
   3. Movie Baseline Promotion:
      - baseline 不含重複 prefix alias
      - dry-run 不修改 baseline
-  4. Event Top Completeness (Mock 比對與零寫入)
-  5. Story Thumbnail Completeness (Mock 交集計算、fallback 不算 missing、零寫入)
+     - baseline promotion 失敗時誠實判定為 FAIL
+  4. Event Top Completeness:
+     - 缺失檢測 (missing -> FAIL)
+     - upstream identity change 檢測 (old hash != new hash -> stale -> FAIL)
+  5. Story Thumbnail Completeness:
+     - stale-manifest 防禦 (不信任本地舊 manifest，以 CDN 為唯一權威)
+     - fallback 不算 missing
+     - dry-run 零寫入
 """
 
 import json
@@ -20,7 +27,7 @@ import shutil
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock
 
 from pipeline.assets import (
     normalize_movie_id,
@@ -160,8 +167,36 @@ class TestAssetCompleteness(unittest.TestCase):
         self.assertEqual(res.new_missing["521700000"], ["2217052"])
         self.assertFalse(res.success, "New missing must be blocking (FAIL)")
 
+    def test_movie_coverage_empty_mapping_fail(self):
+        """空字串、空白或 null 之 mapping value 視為無效 mapping -> new missing -> FAIL"""
+        story_dir = self.temp_path / "story"
+        story_dir.mkdir()
+
+        with open(story_dir / "101.json", "w", encoding="utf-8") as f:
+            json.dump([{"type": "movie", "movie_id": "1003"}], f)
+
+        baseline_file = self.temp_path / "movie_baseline.json"
+        with open(baseline_file, "w", encoding="utf-8") as f:
+            json.dump({"schema_version": "1.0", "movie_ids": []}, f)
+
+        # 存在 1003 但 mapping value 為空字串
+        links_file = self.temp_path / "movie_links.json"
+        with open(links_file, "w", encoding="utf-8") as f:
+            json.dump({"1003": "", "1004": "   ", "1005": None}, f)
+
+        res = check_movie_coverage(
+            story_dir=story_dir,
+            movie_links_path=links_file,
+            baseline_path=baseline_file
+        )
+
+        self.assertEqual(res.new_references_count, 1)
+        self.assertEqual(res.new_missing_count, 1)
+        self.assertIn("1003", res.new_missing)
+        self.assertFalse(res.success, "Empty mapping string must NOT count as mapped")
+
     # --------------------------------------------------------------------------
-    # 3. Baseline Promotion & Dry-Run Zero-Write Tests
+    # 3. Baseline Promotion Tests
     # --------------------------------------------------------------------------
     def test_promote_movie_baseline_deduplication(self):
         """驗證 baseline 保存時去除別名前綴與重複項目"""
@@ -176,11 +211,25 @@ class TestAssetCompleteness(unittest.TestCase):
         self.assertEqual(data["total_movies"], 3)
         self.assertEqual(data["movie_ids"], ["1001", "2002", "3003"])
 
+    def test_baseline_promotion_failure_handling(self):
+        """測試 promotion 失敗時，門禁誠實判定為 FAIL，阻止後續發布"""
+        with patch("pipeline.assets.check_event_top_completeness") as mock_et, \
+             patch("pipeline.assets.check_story_thumbnail_completeness") as mock_st, \
+             patch("pipeline.assets.check_movie_coverage") as mock_mv, \
+             patch("pipeline.assets.promote_movie_baseline", return_value=False):
+
+            mock_et.return_value = EventTopCompletenessResult(success=True)
+            mock_st.return_value = StoryThumbnailCompletenessResult(success=True)
+            mock_mv.return_value = MovieCoverageResult(new_references_count=1, new_missing_count=0, success=True)
+
+            res = analyze_asset_completeness(dry_run=False)
+            self.assertFalse(res.success, "Baseline promotion failure must cause Asset Completeness FAIL")
+
     # --------------------------------------------------------------------------
     # 4. Event Top Completeness Mock Tests
     # --------------------------------------------------------------------------
-    def test_event_top_completeness_mock(self):
-        """驗證 Event Top 縮圖之缺少判定與 dry-run 零寫入"""
+    def test_event_top_completeness_missing_mock(self):
+        """驗證 Event Top 縮圖缺失判定"""
         asset_dir = self.temp_path / "icon" / "event_top"
         asset_dir.mkdir(parents=True)
         contract_file = self.temp_path / "official_event_top_manifest.json"
@@ -214,71 +263,131 @@ class TestAssetCompleteness(unittest.TestCase):
         self.assertEqual(res.missing_ids, ["5217"])
         self.assertFalse(res.success)
 
-        # 補齊 5217.webp 後再次驗證
-        f5217 = asset_dir / "5217.webp"
-        f5217.write_bytes(b"dummy_webp_content")
+    def test_event_top_identity_change_detection(self):
+        """
+        模擬：
+        same event ID (5216)
+        old contract hash != current CDN hash
+        local webp exists
+        dry-run 必須辨識 changed/stale，而不是因檔案存在就 PASS。
+        """
+        asset_dir = self.temp_path / "icon" / "event_top"
+        asset_dir.mkdir(parents=True)
+        contract_file = self.temp_path / "official_event_top_manifest.json"
 
-        with patch("tools.fetch_event_top_thumbnails.download_cdn_manifest", side_effect=RuntimeError("No CDN in test")):
-            res2 = check_event_top_completeness(
-                truth_version="00610007",
+        # 舊合約資料
+        old_targets = {
+            "5216": {
+                "bundle_name": "a/icon_thumb_event_story_top_5216.unity3d",
+                "bundle_md5": "old_md5",
+                "pool_hash": "old_hash",
+                "bundle_size": 1000
+            }
+        }
+        with open(contract_file, "w", encoding="utf-8") as f:
+            json.dump({"truth_version": "00610007", "targets": old_targets}, f)
+
+        # 本地 webp 存在
+        (asset_dir / "5216.webp").write_bytes(b"dummy_webp")
+
+        # CDN 回傳新的 bundle 標識 (hash 改變)
+        cdn_manifest_text = "a/icon_thumb_event_story_top_5216.unity3d,new_md5,new_hash,header,2000\n"
+
+        with patch("tools.fetch_event_top_thumbnails.download_cdn_manifest", return_value=cdn_manifest_text):
+            res = check_event_top_completeness(
+                truth_version="00610008",
                 dry_run=True,
                 output_dir=asset_dir,
                 contract_path=contract_file
             )
 
-        self.assertEqual(res2.missing_count, 0)
-        self.assertTrue(res2.success)
+        self.assertEqual(res.expected_count, 1)
+        self.assertEqual(res.present_count, 1)
+        self.assertEqual(res.missing_count, 0)
+        self.assertEqual(res.stale_count, 1)
+        self.assertEqual(res.stale_ids, ["5216"])
+        self.assertFalse(res.success, "Identity change must be detected and marked as FAIL in dry-run")
 
     # --------------------------------------------------------------------------
     # 5. Story Thumbnail Completeness Mock Tests
     # --------------------------------------------------------------------------
-    def test_story_thumbnail_completeness_mock(self):
-        """驗證話數縮圖交集計算：CDN 官方有者才納入 required，CDN 無者走 fallback 不算缺失"""
+    def test_story_thumbnail_stale_local_manifest_regression(self):
+        """
+        Regression Test:
+        本地存在舊 manifest (只含 1001001)；
+        線上 TruthVersion CDN manifest 含有 1001001 與 1001002；
+        目標話數包含兩話，但本地缺少 1001002.webp。
+        Gate 必須向 CDN 抓取權威清單，判定 missing = 1001002 並 FAIL，嚴禁信任本地舊清單假 PASS。
+        """
         asset_dir = self.temp_path / "icon" / "story"
         asset_dir.mkdir(parents=True)
-        manifest_file = self.temp_path / "icon2_assetmanifest"
+        local_manifest_file = self.temp_path / "icon2_assetmanifest"
 
-        # 模擬 manifest: CDN 上有 1001001 與 1001002
-        manifest_content = (
-            "a/icon_thumb_story_1001001.unity3d,md5,hash1,100,200\n"
-            "a/icon_thumb_story_1001002.unity3d,md5,hash2,100,200\n"
-        )
-        manifest_file.write_text(manifest_content, encoding="utf-8")
+        # 本地舊 manifest 只有 1001001
+        local_manifest_file.write_text("a/icon_thumb_story_1001001.unity3d,md5,hash1,100,200\n", encoding="utf-8")
 
-        # 目標話數為 1001001, 1001002, 1001003 (其中 1001003 CDN 無官方縮圖，屬於 fallback)
-        target_stories = ["1001001", "1001002", "1001003"]
-
-        # 本地只有 1001001.webp，缺少 1001002.webp
+        # 本地只有 1001001.webp
         (asset_dir / "1001001.webp").write_bytes(b"dummy")
 
-        res = check_story_thumbnail_completeness(
-            truth_version="00610007",
-            dry_run=True,
-            output_dir=asset_dir,
-            manifest_path=manifest_file,
-            story_ids=target_stories
+        # CDN 回傳新版本 manifest (包含 1001001 與 1001002)
+        cdn_manifest_bytes = (
+            b"a/icon_thumb_story_1001001.unity3d,md5,hash1,100,200\n"
+            b"a/icon_thumb_story_1001002.unity3d,md5,hash2,100,200\n"
         )
+
+        class FakeResp:
+            def read(self):
+                return cdn_manifest_bytes
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                pass
+
+        with patch("urllib.request.urlopen", return_value=FakeResp()):
+            res = check_story_thumbnail_completeness(
+                truth_version="00610008",
+                dry_run=True,
+                output_dir=asset_dir,
+                manifest_path=local_manifest_file,
+                story_ids=["1001001", "1001002"]
+            )
 
         self.assertEqual(res.officially_available_count, 2)
-        self.assertEqual(res.fallback_count, 1)
-        self.assertEqual(res.present_count, 1)
         self.assertEqual(res.missing_count, 1)
         self.assertEqual(res.missing_story_ids, ["1001002"])
-        self.assertFalse(res.success)
+        self.assertFalse(res.success, "Must fail because CDN has 1001002 thumbnail but local is missing")
 
-        # 本地補上 1001002.webp (1001003 仍不需本地檔案)
-        (asset_dir / "1001002.webp").write_bytes(b"dummy")
+    def test_story_thumbnail_completeness_fallback_not_missing(self):
+        """驗證話數縮圖 fallback：CDN 無官方縮圖之項目不視為 missing"""
+        asset_dir = self.temp_path / "icon" / "story"
+        asset_dir.mkdir(parents=True)
 
-        res2 = check_story_thumbnail_completeness(
-            truth_version="00610007",
-            dry_run=True,
-            output_dir=asset_dir,
-            manifest_path=manifest_file,
-            story_ids=target_stories
-        )
+        # 模擬 CDN manifest 上只有 1001001
+        cdn_manifest_bytes = b"a/icon_thumb_story_1001001.unity3d,md5,hash1,100,200\n"
 
-        self.assertEqual(res2.missing_count, 0)
-        self.assertTrue(res2.success)
+        # 目標話數為 1001001 與 1001003 (其中 1001003 在 CDN 無縮圖，屬於 fallback)
+        (asset_dir / "1001001.webp").write_bytes(b"dummy")
+
+        class FakeResp:
+            def read(self):
+                return cdn_manifest_bytes
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                pass
+
+        with patch("urllib.request.urlopen", return_value=FakeResp()):
+            res = check_story_thumbnail_completeness(
+                truth_version="00610007",
+                dry_run=True,
+                output_dir=asset_dir,
+                story_ids=["1001001", "1001003"]
+            )
+
+        self.assertEqual(res.officially_available_count, 1)
+        self.assertEqual(res.fallback_count, 1)
+        self.assertEqual(res.missing_count, 0)
+        self.assertTrue(res.success)
 
 
 if __name__ == "__main__":
