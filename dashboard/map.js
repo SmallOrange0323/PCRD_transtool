@@ -400,6 +400,30 @@ const QuestMapModule = {
                         };
                     });
 
+                    // 【主線第 16 章後續幕間劇情兜底 (XXVII ~ XXIX)】
+                    const pendingCh16Interludes = [
+                        { id: 2216097, chapter: "幕間‧XXVII", title: "裂開的天空，崩塌的世界", groupId: 2216, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2216098, chapter: "幕間‧XXVIII", title: "2nd vision", groupId: 2216, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2216099, chapter: "幕間‧XXIX", title: "ANSWER.", groupId: 2216, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                    ];
+                    pendingCh16Interludes.forEach(ep => {
+                        if (!this.stories.some(s => s.id === ep.id)) {
+                            this.stories.push(ep);
+                        }
+                    });
+
+                    // 【主線第 17 章前 3 話兜底】
+                    const pendingCh17Stories = [
+                        { id: 2217001, chapter: "3部 第17章 第1話", title: "「第二型態」", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2217002, chapter: "3部 第17章 第2話", title: "不相交的100億與１", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2217003, chapter: "3部 第17章 第3話", title: "雪菲vs彌勒", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                    ];
+                    pendingCh17Stories.forEach(ep => {
+                        if (!this.stories.some(s => s.id === ep.id)) {
+                            this.stories.push(ep);
+                        }
+                    });
+
                     // 2. 台版個人劇情
                     const charaSql = `
                         SELECT story_id, title, sub_title, story_group_id
@@ -418,7 +442,7 @@ const QuestMapModule = {
                     }));
 
                     // 【最新角色個人劇情目錄自動兜底】
-                    // 由於台服資料庫 (redive_tw.db) 有時尚未上架新角色的個人故事章節 (如冬日栞)，
+                    // 由於台服資料庫 (redive_tw.db) 有時尚未上架新角色的個人故事章節，
                     // 我們在此自動為已下載故事對話的新角色補全 4 話的個人故事目錄，確保網頁必定能順利讀取！
                     const pendingNewCharas = [
                         { unitId: 138301, name: "貪吃佩可（阿斯特萊亞）", prefix: "138300" },
@@ -427,7 +451,13 @@ const QuestMapModule = {
                         { unitId: 139101, name: "凱留（霸瞳天星）", prefix: "139100" },
                         { unitId: 139201, name: "美穗", prefix: "139200" },
                         { unitId: 139301, name: "真穗", prefix: "139300" },
-                        { unitId: 139401, name: "艾麗卡", prefix: "139400" }
+                        { unitId: 139401, name: "艾麗卡", prefix: "139400" },
+                        { unitId: 136901, name: "璐璐伊", prefix: "136900", titles: ["璐璐伊和觸手款待", "近侍璐璐伊和「深邃庭園」", "覺醒！扭動威力！", "奇妙海女的禮物"] },
+                        { unitId: 139501, name: "莉莉（女武神）", prefix: "139500", titles: ["心響共鳴", "思慕逡巡", "比翼連理", "純白無垢"] },
+                        { unitId: 139601, name: "可璃亞（女武神）", prefix: "139600", titles: ["可璃亞，成為不良分子", "我的真心話", "不是乖孩子了", "libertas qualia"] },
+                        { unitId: 139701, name: "普蕾西亞（女武神）", prefix: "139700", titles: ["重逢 的 Porco", "贖罪 的 Ossabaw", "美夢 的 Mangalica", "硬邦邦 的 扭來扭去"] },
+                        { unitId: 139801, name: "雪菲（真龍）", prefix: "139800", titles: ["停下來的翅膀", "兄妹之間", "在追憶的彼端所獲得的事物", "夢見黃昏之影與決心之夢"] },
+                        { unitId: 139901, name: "露易絲瑪莉（夏日）", prefix: "139900", titles: ["HOT LIMIT", "夏日時光的憂鬱", "無法妥協的夏天", "小小戀歌"] }
                     ];
 
                     pendingNewCharas.forEach(ch => {
@@ -435,10 +465,11 @@ const QuestMapModule = {
                         const exists = charaStories.some(s => s.groupId === checkGroupId);
                         if (!exists) {
                             for (let i = 1; i <= 4; i++) {
+                                const epTitle = (ch.titles && ch.titles[i - 1]) ? ch.titles[i - 1] : `第 ${i} 話`;
                                 charaStories.push({
                                     id: parseInt(`${ch.prefix}${i}`),
                                     chapter: `${ch.name} 第${i}話`,
-                                    title: `第 ${i} 話`,
+                                    title: epTitle,
                                     groupId: checkGroupId,
                                     isEvent: false,
                                     type: 'chara',
@@ -592,7 +623,9 @@ const QuestMapModule = {
                         10213: "2026/06/01 16:00:00",
                         10214: "2026/07/01 16:00:00",
                         10215: "2026/08/01 16:00:00",
-                        10216: "2026/09/01 16:00:00"
+                        10216: "2026/09/01 16:00:00",
+                        10217: "2026/10/01 16:00:00",
+                        10218: "2026/11/01 16:00:00"
                     };
 
                     const extraEventsMapped = this.extraEvents.events.map(e => ({

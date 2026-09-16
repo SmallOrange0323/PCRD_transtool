@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "truth_version": "00600025",
-  "episode_count": 9033,
+  "truth_version": "00610007",
+  "episode_count": 9092,
   "episodes": {
     "11": {
       "chapter_title": null,
@@ -135497,6 +135497,537 @@
         "cmd32_nonempty": false,
         "bundle_sha256": "4a7d72dfe93a385347583210b685f10559d0068bf24c76150436fd309c5dae79"
       }
+    },
+    "2217001": {
+      "title": "「第二型態」",
+      "chapter_title": "3部 第17章 第1話",
+      "subtitle": "「第二型態」",
+      "synopsis": "HP歸零的幻境龍后，變化為第二型態作為最後的手段。米奈娃等人因為那壓倒性的力量而被逼至絕境。而守護騎士們──格蕾斯、克蘿茜、安涅默涅現身，試著進行拼死的反擊。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_2217001.unity3d",
+      "cdn_bundle_hash": "254b818a80be41cf"
+    },
+    "2217002": {
+      "title": "不相交的100億與１",
+      "chapter_title": "3部 第17章 第2話",
+      "subtitle": "不相交的100億與１",
+      "synopsis": "幻境龍后在克蘿茜的自爆攻擊下依然毫髮無傷。但不知為何她在將戰鬥交給阿爾莎特和霸瞳皇帝後就撤退了。時間回到……磨練嶄新力量的【美食殿堂】受到天空瓦解的影響，兵分兩路開始行動。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_2217002.unity3d",
+      "cdn_bundle_hash": "30031b1cf1eced49"
+    },
+    "2217003": {
+      "title": "雪菲vs彌勒",
+      "chapter_title": "3部 第17章 第3話",
+      "subtitle": "雪菲vs彌勒",
+      "synopsis": "雪菲和凱留持續調查天空的途中，談起了回到現實的決心，以及對消失的哥哥的思念。另一方面，彌勒察覺到愛梅斯的妨礙，襲擊了索爾之塔。雪菲等人趕到後，仍與彌勒苦戰。就在這時──",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_2217003.unity3d",
+      "cdn_bundle_hash": "8c3c669fbc935276"
+    },
+    "5217000": {
+      "title": "罪孽與夏日的記憶",
+      "chapter_title": "罪孽與夏日的記憶",
+      "subtitle": "罪孽與夏日的記憶",
+      "synopsis": "過去曾在海邊，許下大家一起共度未來的願望。可是眼下，天空撕裂，寄宿怨念的闇影出現。在沒了可璃亞的莉莉一行人面前，羅蘭告知沉眠於黑曜宮的靈魂會消失的危機，事態有了變化。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5217000.unity3d",
+      "cdn_bundle_hash": "7c22b1a503e8c150"
+    },
+    "5217001": {
+      "title": "被侵蝕的告白",
+      "chapter_title": "被侵蝕的告白",
+      "subtitle": "被侵蝕的告白",
+      "synopsis": "當各地充滿不對勁的闇影時，羅蘭告知顛倒之塔的存在與負面精神能量的事。莉莉和普蕾西亞一面擔心沉眠的可璃亞，一面下定決心前往黑曜宮深處，好拯救消失的靈魂。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5217001.unity3d",
+      "cdn_bundle_hash": "f1370a8641fea19c"
+    },
+    "5217002": {
+      "title": "吞下泥濘的正義",
+      "chapter_title": "吞下泥濘的正義",
+      "subtitle": "吞下泥濘的正義",
+      "synopsis": "在顛倒之塔中，八斗神試圖取得認知修正和龐大的負面力量。另一方面，朝著黑曜宮深處前進的莉莉和普蕾西亞，在玄室前遭到無數闇影和八斗神的影像阻攔去路，並受到進一步測試。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5217002.unity3d",
+      "cdn_bundle_hash": "dd2f934bcc343587"
+    },
+    "5217003": {
+      "title": "怨恨的殘響",
+      "chapter_title": "怨恨的殘響",
+      "subtitle": "怨恨的殘響",
+      "synopsis": "受到八斗神挑撥的莉莉，獨自迎戰怨氣沖天的闇影，讓普蕾西亞先行前進。但在玄室前方等待普蕾西亞的，是遭到操控的羅蘭。冰中的可璃亞也依舊還在悔恨的深淵底部繼續痛苦掙扎。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5217003.unity3d",
+      "cdn_bundle_hash": "a1c86ac793c4e8cd"
+    },
+    "5217004": {
+      "title": "沉淪罪惡的少女",
+      "chapter_title": "沉淪罪惡的少女",
+      "subtitle": "沉淪罪惡的少女",
+      "synopsis": "莉莉被怨念摧殘心靈，喊著想得到原諒。冰中的可璃亞沉溺於罪惡感中，甚至無法如願消失。面對擋路的羅蘭猛攻，普蕾西亞險些倒下。然而在那一瞬間，父親阿澤爾德趕來救援了。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5217004.unity3d",
+      "cdn_bundle_hash": "de82023bbd65ab6e"
+    },
+    "5217005": {
+      "title": "羈絆，與那份回應",
+      "chapter_title": "羈絆，與那份回應",
+      "subtitle": "羈絆，與那份回應",
+      "synopsis": "墜入絕望深淵的可璃亞，聽見祖母與夥伴們的聲音後，決定回應大家重新振作。一行人在成功拯救莉莉後，動身趕往普蕾西亞所在處。普蕾西亞則短暫與父親阿澤爾德再會。最後三人帶著堅定的決心，前往顛倒之塔。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5217005.unity3d",
+      "cdn_bundle_hash": "3132aead2b6b0177"
+    },
+    "5217006": {
+      "title": "重生",
+      "chapter_title": "重生",
+      "subtitle": "重生",
+      "synopsis": "抵達顛倒之塔的【幻變少女】們，被八斗神壓倒性的強大力量逼至絕境。但就在此時，似似花和神祕協助者託付給三人的力量，呼應了她們想拯救眾人靈魂的心願，並使少女們重生成了全新的姿態。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5217006.unity3d",
+      "cdn_bundle_hash": "86a244208244b16e"
+    },
+    "5217007": {
+      "title": "即便名字無法留存",
+      "chapter_title": "即便名字無法留存",
+      "subtitle": "即便名字無法留存",
+      "synopsis": "三人以女武神的力量擊退了八斗神。而在負面能量暴走後，莉莉成功利用巫女之力以及羈絆將其鎮住，消失的靈魂們因此得以返回現實。最後媞雅的認知修正也重新再次運作，少女們成功找回了世界的祥和。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5217007.unity3d",
+      "cdn_bundle_hash": "e07b8a88964fd0f7"
+    },
+    "5217051": {
+      "title": "Re:birth maiden　‐重生的少女們‐ 下回預告",
+      "chapter_title": "Re:birth maiden　‐重生的少女們‐ 下回預告",
+      "subtitle": null,
+      "synopsis": "世界發生異變，侵蝕著消失的靈魂。無數靈魂，遭到無盡的黑暗所吞噬──面對不斷逼近的末日，少女們再度挺身而出！",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5217051.unity3d",
+      "cdn_bundle_hash": "a4b28e7e00c037de"
+    },
+    "5217052": {
+      "title": null,
+      "chapter_title": null,
+      "subtitle": null,
+      "synopsis": null,
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5217052.unity3d",
+      "cdn_bundle_hash": "be2e789b46558be6"
+    },
+    "5217301": {
+      "title": null,
+      "chapter_title": null,
+      "subtitle": null,
+      "synopsis": null,
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5217301.unity3d",
+      "cdn_bundle_hash": "06568a2cd2e5da9e"
+    },
+    "5217321": {
+      "title": null,
+      "chapter_title": null,
+      "subtitle": null,
+      "synopsis": null,
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5217321.unity3d",
+      "cdn_bundle_hash": "47d6429bd0a24c5b"
+    },
+    "5217322": {
+      "title": null,
+      "chapter_title": null,
+      "subtitle": null,
+      "synopsis": null,
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5217322.unity3d",
+      "cdn_bundle_hash": "eac8ba71fd8e243b"
+    },
+    "5217323": {
+      "title": null,
+      "chapter_title": null,
+      "subtitle": null,
+      "synopsis": null,
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5217323.unity3d",
+      "cdn_bundle_hash": "3f9d15ec6fd38c79"
+    },
+    "5217401": {
+      "title": "贖罪的下一步",
+      "chapter_title": null,
+      "subtitle": "贖罪的下一步",
+      "synopsis": null,
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5217401.unity3d",
+      "cdn_bundle_hash": "34540dcb0654a2e8"
+    },
+    "5217411": {
+      "title": "約定的餐桌",
+      "chapter_title": null,
+      "subtitle": "約定的餐桌",
+      "synopsis": null,
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5217411.unity3d",
+      "cdn_bundle_hash": "3c6fe6fbbba26586"
+    },
+    "5218000": {
+      "title": "史上最糟的夏天，開幕",
+      "chapter_title": "史上最糟的夏天，開幕",
+      "subtitle": "史上最糟的夏天，開幕",
+      "synopsis": "克蕾琪塔對正在計劃「今年夏天想與達令完成的10件事情」的露易絲瑪莉，發出了建設無人島度假村的邀請。為了牽制深陷妄想的露易絲瑪莉，她被迫喝下「觸碰就會爆炸的祕藥」。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5218000.unity3d",
+      "cdn_bundle_hash": "19292c226b2ffdb3"
+    },
+    "5218001": {
+      "title": "危險值♡攀升中",
+      "chapter_title": "危險值♡攀升中",
+      "subtitle": "危險值♡攀升中",
+      "synopsis": "不小心碰到克蕾琪塔的魔像，引發爆炸的露易絲瑪莉。親眼看見「觸碰就會爆炸的祕藥」的超強破壞力，讓她知道這下絕不可能和{0}有身體接觸而感到絕望。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5218001.unity3d",
+      "cdn_bundle_hash": "46dd6f68049edec5"
+    },
+    "5218002": {
+      "title": "回憶中的鳳梨",
+      "chapter_title": "回憶中的鳳梨",
+      "subtitle": "回憶中的鳳梨",
+      "synopsis": "為了給盡情享受開發中度假村的克蕾琪塔一點顏色瞧瞧，露易絲瑪莉潑灑了某種祕藥。被偷襲的克蕾琪塔因為藥效而巨大化，{0}還剛好被夾在胸部之間──！？",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5218002.unity3d",
+      "cdn_bundle_hash": "3bac8f7b418a038d"
+    },
+    "5218003": {
+      "title": "爆炸也沒關係",
+      "chapter_title": "爆炸也沒關係",
+      "subtitle": "爆炸也沒關係",
+      "synopsis": "邀請{0}到洞窟試膽兼約會的露易絲瑪莉。受浪漫的氣氛所驅使，她情不自禁地覺得「也許觸碰嘴唇沒關係」，卻在快碰到的時候回神想起自己不應該一廂情願。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5218003.unity3d",
+      "cdn_bundle_hash": "d19cf47b32b5fd11"
+    },
+    "5218004": {
+      "title": "工作才是人生",
+      "chapter_title": "工作才是人生",
+      "subtitle": "工作才是人生",
+      "synopsis": "秘書１號述說了與以往始終「視工作為戀人」的克蕾琪塔之間的過去。得知她身為商人對工作懷抱的堅持，與自身對鍊金術的想法重疊，露易絲瑪莉心中油生了幾分尊敬之意。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5218004.unity3d",
+      "cdn_bundle_hash": "c5016a78b974fa32"
+    },
+    "5218005": {
+      "title": "戀愛比幻想更寫實",
+      "chapter_title": "戀愛比幻想更寫實",
+      "subtitle": "戀愛比幻想更寫實",
+      "synopsis": "試營運時，露易絲瑪莉因為{0}跟優衣要扮演情侶角色而吃醋。但在明白了也會重視愛戀對象心情的優衣的堅強後，兩人在身為好對手的同時，感情也越來越深。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5218005.unity3d",
+      "cdn_bundle_hash": "37809f5a9f695e26"
+    },
+    "5218006": {
+      "title": "親吻前的倒數十秒",
+      "chapter_title": "親吻前的倒數十秒",
+      "subtitle": "親吻前的倒數十秒",
+      "synopsis": "露易絲瑪莉雖然以爆破打敗了阻擋情路的魔物，但也被衝擊波帶上了天空。受克蕾琪塔的支援，{0}運用他的機智與勇氣救下了她。懷抱之中的她，心意逐漸滿溢──",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5218006.unity3d",
+      "cdn_bundle_hash": "3abe5d7f91b45f47"
+    },
+    "5218007": {
+      "title": "史上最棒的夏天，來臨",
+      "chapter_title": "史上最棒的夏天，來臨",
+      "subtitle": "史上最棒的夏天，來臨",
+      "synopsis": "「Ｒ＆Ａ度假村」迎來了盛況空前的夏日，克蕾琪塔為了表達感謝，贈送招待券給露易絲瑪莉一行人。露易絲瑪莉幸福的想像著，接下來可以和{0}度過最棒的夏日。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5218007.unity3d",
+      "cdn_bundle_hash": "6cea368b45966ebc"
+    },
+    "5218051": {
+      "title": "禁止觸碰♡島嶼　夏日少女是戀愛炸彈 下回預告",
+      "chapter_title": "禁止觸碰♡島嶼　夏日少女是戀愛炸彈 下回預告",
+      "subtitle": null,
+      "synopsis": "一旦觸碰就會「爆炸」的約會？無人島在14天內搖身一變成了度假村？不管是戀愛還是工作，夏天的少女們都將火力全開！",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5218051.unity3d",
+      "cdn_bundle_hash": "4689c3bfd7b3fb96"
+    },
+    "5218052": {
+      "title": null,
+      "chapter_title": null,
+      "subtitle": null,
+      "synopsis": null,
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5218052.unity3d",
+      "cdn_bundle_hash": "727681c77f8f6aa5"
+    },
+    "5218301": {
+      "title": null,
+      "chapter_title": null,
+      "subtitle": null,
+      "synopsis": null,
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5218301.unity3d",
+      "cdn_bundle_hash": "689fd9b6fac7814f"
+    },
+    "5218321": {
+      "title": null,
+      "chapter_title": null,
+      "subtitle": null,
+      "synopsis": null,
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5218321.unity3d",
+      "cdn_bundle_hash": "c33862358804c948"
+    },
+    "5218322": {
+      "title": null,
+      "chapter_title": null,
+      "subtitle": null,
+      "synopsis": null,
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5218322.unity3d",
+      "cdn_bundle_hash": "2b8254837267d6ed"
+    },
+    "5218323": {
+      "title": null,
+      "chapter_title": null,
+      "subtitle": null,
+      "synopsis": null,
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5218323.unity3d",
+      "cdn_bundle_hash": "4af5e6fa7814ce4d"
+    },
+    "5218401": {
+      "title": "在海邊響起的勝利之聲",
+      "chapter_title": "在海邊響起的勝利之聲",
+      "subtitle": "在海邊響起的勝利之聲",
+      "synopsis": null,
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5218401.unity3d",
+      "cdn_bundle_hash": "ead765415de80a52"
+    },
+    "5218411": {
+      "title": "夏日仍未結束！",
+      "chapter_title": "夏日仍未結束！",
+      "subtitle": "夏日仍未結束！",
+      "synopsis": null,
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_5218411.unity3d",
+      "cdn_bundle_hash": "74bc3c63c6730dda"
+    },
+    "1369001": {
+      "title": "璐璐伊和觸手款待",
+      "chapter_title": "璐璐伊 第1話",
+      "subtitle": "璐璐伊和觸手款待",
+      "synopsis": "璐璐伊受到薇歐莉特的囑託，負責接待來訪巨鯨城的{0}並提供最頂級的款待。璐璐伊作為見習近侍，從更衣、梳理髮型到陪伴入睡，雖然時常搞砸，也依然努力奮鬥。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1369001.unity3d",
+      "cdn_bundle_hash": "18e881dabbfb7999"
+    },
+    "1369002": {
+      "title": "近侍璐璐伊和「深邃庭園」",
+      "chapter_title": "璐璐伊 第2話",
+      "subtitle": "近侍璐璐伊和「深邃庭園」",
+      "synopsis": "璐璐伊決定將{0}選為自己的「候補」，並帶他前往「深邃庭園」。雖然「候補」的身分並未獲得認可，但她相信那一天終將到來。她誓言要作為公主以及人質，成為奠定和平的基石。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1369002.unity3d",
+      "cdn_bundle_hash": "4541bdd1394927a4"
+    },
+    "1369003": {
+      "title": "覺醒！扭動威力！",
+      "chapter_title": "璐璐伊 第3話",
+      "subtitle": "覺醒！扭動威力！",
+      "synopsis": "在歸途上，璐璐伊遭受「深邃庭園」的王子襲擊。{0}的強化讓她覺醒了種族之力，成功化解了戰爭的陰謀。抵達巨鯨城後，璐璐伊對他的愛慕變得更加強烈，心中亦滿懷希望。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1369003.unity3d",
+      "cdn_bundle_hash": "87edf0ab9763a32d"
+    },
+    "1369004": {
+      "title": "奇妙海女的禮物",
+      "chapter_title": "璐璐伊 第4話",
+      "subtitle": "奇妙海女的禮物",
+      "synopsis": "夢境中，{0}於黃昏時分的海邊，遇見了一位海女少女。少女向他述說海中的世界，並邀請他一同前往。不久後，當離別的時間將近，她笑著表示總有一天會再來接他，隨後便離開了。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1369004.unity3d",
+      "cdn_bundle_hash": "b226fcdea689c55e"
+    },
+    "1395001": {
+      "title": "心響共鳴",
+      "chapter_title": "莉莉（女武神） 第1話",
+      "subtitle": "心響共鳴",
+      "synopsis": "為了解救可璃亞，莉莉投入修行，以獲得「連繫的巫女」的力量。在愈來愈感到焦躁的瀑布修行中，莉莉與曾經解救過的魔物之子重逢，並以此為契機，開始掌握「連繫的巫女」的力量。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1395001.unity3d",
+      "cdn_bundle_hash": "c7c659dae2de8024"
+    },
+    "1395002": {
+      "title": "思慕逡巡",
+      "chapter_title": "莉莉（女武神） 第2話",
+      "subtitle": "思慕逡巡",
+      "synopsis": "為了迎戰幻境龍后，莉莉與{0}一同投入接取魔物討伐的委託。在不斷的戰鬥中，莉莉在戰鬥時負傷。以此為契機，莉莉開始不斷思索著「兄長大人」以及自己所抱持的想法。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1395002.unity3d",
+      "cdn_bundle_hash": "898fc4443b77435a"
+    },
+    "1395003": {
+      "title": "比翼連理",
+      "chapter_title": "莉莉（女武神） 第3話",
+      "subtitle": "比翼連理",
+      "synopsis": "莉莉對「兄長大人」懷有近乎崇拜的感情。在反省過去的種種後，為了更加了解「兄長大人」，莉莉提議進行實戰練習。之後，莉莉告訴{0}，自己想要支持真實的他。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1395003.unity3d",
+      "cdn_bundle_hash": "ce6ae1e8c2307889"
+    },
+    "1395004": {
+      "title": "純白無垢",
+      "chapter_title": "莉莉（女武神） 第4話",
+      "subtitle": "純白無垢",
+      "synopsis": "莉莉使用備用鑰匙進門，以新婚妻子的心境迎接{0}回家。然而，她卻發現「兄長大人」的反應很平淡。莉莉思索一番後，換上了白無垢，並成功吸引了「兄長大人」的注意。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1395004.unity3d",
+      "cdn_bundle_hash": "69240d7d15cc9fca"
+    },
+    "1396001": {
+      "title": "可璃亞，成為不良分子",
+      "chapter_title": "可璃亞（女武神） 第1話",
+      "subtitle": "可璃亞，成為不良分子",
+      "synopsis": "決心不再扮演乖孩子的可璃亞，雖然目標成為不良分子，卻因原來的個性而不太順利。然而在特訓途中，看到{0}被突然出現的地痞打傷，可璃亞便憤怒的變身將其擊退，她的英姿被讚譽為女武神。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1396001.unity3d",
+      "cdn_bundle_hash": "4bcf12dd39ac60b9"
+    },
+    "1396002": {
+      "title": "我的真心話",
+      "chapter_title": "可璃亞（女武神） 第2話",
+      "subtitle": "我的真心話",
+      "synopsis": "因為給夥伴添麻煩的愧疚，可璃亞和莉莉、普蕾西亞、安涅默涅一起開啟暢談真心話的女子會。互相將想說的話都說出口加深羈絆的隔天，可璃亞向三人坦白了自己喜歡哥哥的愛戀之心。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1396002.unity3d",
+      "cdn_bundle_hash": "915b58a8e7387ef0"
+    },
+    "1396003": {
+      "title": "不是乖孩子了",
+      "chapter_title": "可璃亞（女武神） 第3話",
+      "subtitle": "不是乖孩子了",
+      "synopsis": "休養期間最後一天，和{0}享受約會時光的可璃亞，在分別時鼓起勇氣提出「再五秒鐘就好」讓他留下，倒數時間卻不知不覺地增加。那是還不想分開的可璃亞小小的任性。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1396003.unity3d",
+      "cdn_bundle_hash": "9e6f562ef87fe67c"
+    },
+    "1396004": {
+      "title": "libertas qualia",
+      "chapter_title": "可璃亞（女武神） 第4話",
+      "subtitle": "libertas qualia",
+      "synopsis": "夢中，璃亞在雨夜離家出走前往{0}身邊，深刻體會到兩人度過的平凡時光才是最幸福的。醒來後，意識到自己不再是籠中鳥的可璃亞，展開自己的羽翼飛向全新的旅程。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1396004.unity3d",
+      "cdn_bundle_hash": "4bbaa21af08247c1"
+    },
+    "1397001": {
+      "title": "重逢 的 Porco",
+      "chapter_title": "普蕾西亞（女武神） 第1話",
+      "subtitle": "重逢 的 Porco",
+      "synopsis": "普蕾西亞為了讓阿澤爾德的靈魂具現化，努力進行著魔法的特訓。藉著女武神的力量、{0}的支持，還有普蕾西亞強烈的思念，阿澤爾德成功復活了。父女二人流著淚緊緊相擁。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1397001.unity3d",
+      "cdn_bundle_hash": "a3440157a49a8eff"
+    },
+    "1397002": {
+      "title": "贖罪 的 Ossabaw",
+      "chapter_title": "普蕾西亞（女武神） 第2話",
+      "subtitle": "贖罪 的 Ossabaw",
+      "synopsis": "阿澤爾德為讓女兒孤苦無依，以及傷害了{0}一行人的過錯負荊請罪。普蕾西亞與{0}都原諒了阿澤爾德。過去的帳都已算清，大家舉辦了慶祝家人再會的餐會。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1397002.unity3d",
+      "cdn_bundle_hash": "710dd7cc9bc9ad84"
+    },
+    "1397003": {
+      "title": "美夢 的 Mangalica",
+      "chapter_title": "普蕾西亞（女武神） 第3話",
+      "subtitle": "美夢 的 Mangalica",
+      "synopsis": "得知 {0}的靈魂開始疲憊，可能會消失。這時普蕾西亞用女武神的翅膀為其按摩，療癒他的靈魂。{0}感覺彷彿就要升天了。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1397003.unity3d",
+      "cdn_bundle_hash": "c1e4c9e5cc4aead2"
+    },
+    "1397004": {
+      "title": "硬邦邦 的 扭來扭去",
+      "chapter_title": "普蕾西亞（女武神） 第4話",
+      "subtitle": "硬邦邦 的 扭來扭去",
+      "synopsis": "在夢中，普蕾西亞打算品嚐{0}的額頭。但是因為媞雅的獨斷獨行，夢被中斷了。普蕾西亞殺進顛倒之塔，各種抱怨。媞雅罕見地慌張起來，並逃了出去。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1397004.unity3d",
+      "cdn_bundle_hash": "8e56b054244675e8"
+    },
+    "1398001": {
+      "title": "停下來的翅膀",
+      "chapter_title": "雪菲（真龍） 第1話",
+      "subtitle": "停下來的翅膀",
+      "synopsis": "雪菲達到了新的覺醒狀態。可是，自從與彌勒一戰後，她便無法像以前一樣發揮力量。在與普蕾西亞進行特訓，以及接受帆稀的建議後，雪菲得知了自身狀態不佳的原因，決定重新面對自己的內心。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1398001.unity3d",
+      "cdn_bundle_hash": "b6644357bc2489a2"
+    },
+    "1398002": {
+      "title": "兄妹之間",
+      "chapter_title": "雪菲（真龍） 第2話",
+      "subtitle": "兄妹之間",
+      "synopsis": "為了準備與哥哥重逢，雪菲拜託{0}成為自己練習向哥哥撒嬌的對象。她一邊因為不習慣這樣的行動而感到害羞，一邊述說與哥哥的回憶並遙想未來，再次對自己的心情有了自覺。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1398002.unity3d",
+      "cdn_bundle_hash": "ff1603467ab7a105"
+    },
+    "1398003": {
+      "title": "在追憶的彼端所獲得的事物",
+      "chapter_title": "雪菲（真龍） 第3話",
+      "subtitle": "在追憶的彼端所獲得的事物",
+      "synopsis": "調整好心情的雪菲造訪了追憶之戰域，挑戰贊恩的幻影。雖然遭遇了意外，但在對未來的渴望之下，她再次取回了完整的力量。然而就在那之後，召喚出來的哥哥卻揭露了一個令人震驚的事實。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1398003.unity3d",
+      "cdn_bundle_hash": "ba10fca52715ddd8"
+    },
+    "1398004": {
+      "title": "夢見黃昏之影與決心之夢",
+      "chapter_title": "雪菲（真龍） 第4話",
+      "subtitle": "夢見黃昏之影與決心之夢",
+      "synopsis": "在夢中與善和{0}度過平靜時光的紫布菜，即便有自覺這是夢境，仍希望能讓這景色成為現實。甦醒的雪菲懷抱著幸福的餘韻及對未來的希望，邁步向前。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1398004.unity3d",
+      "cdn_bundle_hash": "cd200af4957f8ab2"
+    },
+    "1399001": {
+      "title": "HOT LIMIT",
+      "chapter_title": "露易絲瑪莉（夏日） 第1話",
+      "subtitle": "HOT LIMIT",
+      "synopsis": "{0}不小心把「一分開就會爆炸的祕藥」塗在了露易絲瑪莉身上。露易絲瑪莉鍊成了能抵消其效果的祕藥，儘管得以逃脫危險，但她卻因為「無法分開是個太像天堂的地獄」而昏了過去。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1399001.unity3d",
+      "cdn_bundle_hash": "d3c4e5bb71c90c53"
+    },
+    "1399002": {
+      "title": "夏日時光的憂鬱",
+      "chapter_title": "露易絲瑪莉（夏日） 第2話",
+      "subtitle": "夏日時光的憂鬱",
+      "synopsis": "露易絲瑪莉急切地要「和達令一起轉大人」。對於那樣的她，苑建議她「體驗現在才能夠體驗的戀情比較好」。對此，露易絲瑪莉一邊在沙灘上吹著晚風，一邊陷入了沉思。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1399002.unity3d",
+      "cdn_bundle_hash": "aa6eafd4d2cdd918"
+    },
+    "1399003": {
+      "title": "無法妥協的夏天",
+      "chapter_title": "露易絲瑪莉（夏日） 第3話",
+      "subtitle": "無法妥協的夏天",
+      "synopsis": "露易絲瑪莉改變想法，覺得「要先和達令正式交往」。作為為了那個的第一步，她鼓起勇氣邀請{0}一起用情侶吸管喝飲料。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1399003.unity3d",
+      "cdn_bundle_hash": "5f546f82ee593174"
+    },
+    "1399004": {
+      "title": "小小戀歌",
+      "chapter_title": "露易絲瑪莉（夏日） 第4話",
+      "subtitle": "小小戀歌",
+      "synopsis": "夢中，真璃與{0}前往市民游泳池。雖然對包場的狀態感到很害羞，但真璃很享受約會。從夢中醒來的露易絲瑪莉，誓言會為了讓達令選擇自己而更加努力。",
+      "truth_version": "00610007",
+      "bundle_name": "a/storydata_1399004.unity3d",
+      "cdn_bundle_hash": "b571ce3200bbfa5f"
     }
   }
 }
