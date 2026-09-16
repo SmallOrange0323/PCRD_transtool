@@ -1640,10 +1640,12 @@ const QuestMapModule = {
         this.updateNavigationButtons();
         this.updateReaderState();
 
-        // 3. 話數切換後單次回滾至 Reader 卡片頂端 (避免停留在上一話底部)
+        // 3. 話數切換後回到頁面最頂部 (避免停留在上一話底部或 Reader 區域，使頂部導航完整可見)
         window.ReaderNavigation?.selected(storyId);
         setTimeout(() => {
-            if (this.activeStoryId === storyId && this._storyRenderToken === currentToken) this.scrollReaderToTop('auto');
+            if (this.activeStoryId === storyId && this._storyRenderToken === currentToken) {
+                window.scrollTo({ top: 0, behavior: 'auto' });
+            }
         }, 0);
     },
 
