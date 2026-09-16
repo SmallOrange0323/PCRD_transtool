@@ -4,11 +4,11 @@
 PCRD Story Map Pipeline - Update Orchestrator (統一增量更新協調器)
 負責協調完整的 CDN 增量同步、決定性打包、全量驗證與發布。
 
-Story Map Update Pipeline v1 (Phase C2 Minimal Implementation):
+Story Map Update Pipeline v1:
   1. Freshness Evaluation & Gate (結構化判定、鏡像防滯後信任邊界、離線降級支援、生產發布新鮮度防禦門禁)
-  2. Read-Only Story Coverage Guard (唯讀分析必備與可選話數覆蓋，來源完整性檢驗與未歸類話數防禦，不自動抓取)
+  2. Story Coverage Guard + Required Story Auto Sync (缺失核心劇本自動以官方 CDN snapshot 補齊；dry-run 僅驗證可抓取性)
   3. DB sync (TruthVersion 探測與 SQLite 鏡像下載；未證實新鮮度前不虛假推進 version_history)
-  4. Tracked character verification (透過 Coverage Guard 確認 100% 就緒，缺失需手動補齊)
+  4. Asset Completeness Gate (Event Top / Story Thumbnail 自動補齊；Movie 新缺口阻斷)
   5. Deterministic bundle & Cache-Busting (SHA-256 內容比對、體積控制)
   6. Single-source validation gate (9000+ 篇劇本與 dist 集合全量深度自檢)
   7. Safe GitHub Pages deploy (只推送 dist_story_map 至 gh-pages)
@@ -35,6 +35,7 @@ from pipeline.bundle import bundle_story_map
 from pipeline.validate import validate_story_map
 from pipeline.deploy import run_deploy
 from pipeline.assets import analyze_asset_completeness
+from pipeline.story_sync import ensure_required_story_coverage
 from pipeline.coverage import (
     evaluate_freshness,
     analyze_coverage,
@@ -78,7 +79,7 @@ def save_truth_version_state(new_version: str) -> bool:
 
 def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResult, CoverageResult]:
     """
-    探測上游新鮮度、評估劇本覆蓋現況，並執行必要之資料庫同步。
+    探測上游新鮮度、評估劇本覆蓋現況，並自動補齊缺失的核心必備劇本。
     :return: (sync_ok, freshness_result, coverage_result)
     """
     print("\n[步驟 1/4] 探測 So-net CDN 與執行增量資料同步 (Pipeline v1 Scope)...")
@@ -87,7 +88,6 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
         from pipeline.fetch import (
             get_truth_version,
             update_db,
-            get_story_ids_for_unit
         )
     except ImportError as e:
         print(f"❌ [ERROR] 無法載入 fetch 模組: {e}", file=sys.stderr)
@@ -181,12 +181,32 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
         for err in coverage.analysis_errors:
             print(f"    - {err}")
 
+    # 5. 核心必備劇本缺失：自動接回官方 CDN Story Fetch primitive。
     if coverage.missing_required_count > 0:
-        print(f"❌ [ERROR] 發現 {coverage.missing_required_count} 話核心必備劇本缺失，管線安全中斷！", file=sys.stderr)
-        sample_missing = coverage.missing_required_ids[:10]
-        print(f"  缺失必備話數 Sample: {sample_missing}", file=sys.stderr)
-        print(f"  👉 請使用單話抓取工具補齊缺失劇本: python tools/pcrd_fetch.py fetch-story --story-id <id>", file=sys.stderr)
-        return False, freshness, coverage
+        print(f"  [StorySync] 發現 {coverage.missing_required_count} 話核心必備劇本缺失。")
+        print(f"  [StorySync] 缺失 Sample: {coverage.missing_required_ids[:10]}")
+        sync_result, effective_coverage = ensure_required_story_coverage(
+            coverage,
+            truth_version=remote_tv,
+            dry_run=dry_run,
+        )
+
+        if not sync_result.success:
+            print(f"❌ [ERROR] Required Story Auto Sync 失敗: {sync_result.message}", file=sys.stderr)
+            if sync_result.unavailable_ids:
+                print(f"  CDN manifest 尚無對應話數: {sync_result.unavailable_ids[:20]}", file=sys.stderr)
+            if sync_result.failed_ids:
+                print(f"  同步失敗話數: {sync_result.failed_ids[:20]}", file=sys.stderr)
+            return False, freshness, effective_coverage
+
+        if dry_run:
+            print(
+                f"  [DRY-RUN][StorySync] {len(sync_result.fetchable_ids)} 話均存在於 "
+                f"TruthVersion {remote_tv} 官方 story manifest；正式執行時將自動補齊。"
+            )
+        else:
+            coverage = effective_coverage
+            print(f"  [StorySync] 已自動補齊 {len(sync_result.synced_ids)} 話核心必備劇本並重新通過 Coverage Guard。")
 
     if coverage.unknown_expected_count > 0 or coverage.missing_unknown_count > 0:
         print(f"⚠️  [WARN] 發現未歸類之預期話數 (Unknown Expected: {coverage.unknown_expected_count} 話, 缺失: {coverage.missing_unknown_count} 話)")
@@ -196,7 +216,10 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
     if coverage.missing_optional_count > 0:
         print(f"  [WARN] 尚有 {coverage.missing_optional_count} 話可選歷史劇本未下載 (不影響核心功能)")
 
-    print("  [Sync] 所有核心必備劇本與追蹤角色對白均已就緒。")
+    if dry_run and coverage.missing_required_count > 0:
+        print("  [Sync] DRY-RUN：核心必備劇本目前仍缺，但已確認正式執行時可由官方 CDN 自動補齊。")
+    else:
+        print("  [Sync] 所有核心必備劇本與追蹤角色對白均已就緒。")
     return True, freshness, coverage
 
 def print_coverage_report():
@@ -375,14 +398,14 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 常用範例:
-  python update_story_map.py --dry-run                        # 零副作用模擬運行 (不下載、不寫入檔案、不提交 Git)
-  python update_story_map.py                                  # 本地增量同步、打包與全量驗證 (預設不發布)
+  python update_story_map.py --dry-run                        # 零副作用模擬運行 (不寫入、不下載 Story/資產檔、不提交 Git)
+  python update_story_map.py                                  # 自動補齊 required stories / assets、打包與全量驗證 (預設不發布)
   python update_story_map.py --coverage                       # 僅輸出劇本覆蓋率報告 (唯讀零副作用)
-  python update_story_map.py --deploy                         # 本地更新、新鮮度與全量驗證通過後自動推送
+  python update_story_map.py --deploy                         # 完整更新、新鮮度與全量驗證通過後自動推送
   python update_story_map.py --deploy --allow-unconfirmed-freshness  # 緊急模式：覆蓋新鮮度門禁進行發布
 """
     )
-    parser.add_argument("--dry-run", action="store_true", help="模擬運行（零副作用）：不下載、不寫入檔案、不提交 Git")
+    parser.add_argument("--dry-run", action="store_true", help="模擬運行（零副作用）：不寫入、不下載 Story/資產檔、不提交 Git")
     parser.add_argument("--coverage", action="store_true", help="僅輸出唯讀劇本覆蓋率報告 (零副作用)")
     parser.add_argument("--deploy", action="store_true", help="驗證通過後自動推送到 GitHub Pages")
     parser.add_argument("--allow-unconfirmed-freshness", "--allow-unconfirmed", action="store_true", help="允許在新鮮度未確認時強制執行自動部署 (緊急應急覆蓋)")
