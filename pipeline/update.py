@@ -34,6 +34,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "tools"))
 from pipeline.bundle import bundle_story_map
 from pipeline.validate import validate_story_map
 from pipeline.deploy import run_deploy
+from pipeline.assets import analyze_asset_completeness
 from pipeline.coverage import (
     evaluate_freshness,
     analyze_coverage,
@@ -80,7 +81,7 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
     探測上游新鮮度、評估劇本覆蓋現況，並執行必要之資料庫同步。
     :return: (sync_ok, freshness_result, coverage_result)
     """
-    print("\n[步驟 1/3] 探測 So-net CDN 與執行增量資料同步 (Pipeline v1 Scope)...")
+    print("\n[步驟 1/4] 探測 So-net CDN 與執行增量資料同步 (Pipeline v1 Scope)...")
     
     try:
         from pipeline.fetch import (
@@ -265,8 +266,22 @@ def run_pipeline_update(
         print("❌ 增量同步步驟失敗！", file=sys.stderr)
         return 1
 
-    # 2. 封裝 Story Map 獨立發布包
-    print("\n[步驟 2/3] 執行 Story Map 決定性打包與 Cache-Busting...")
+    # 2. 執行資產完整性門禁 (Asset Completeness Gate v1)
+    print("\n[步驟 2/4] 執行資產完整性門禁 (Asset Completeness Gate v1)...")
+    try:
+        asset_res = analyze_asset_completeness(
+            truth_version=freshness.remote_version,
+            dry_run=dry_run
+        )
+        if not asset_res.success:
+            print("❌ 資產完整性門禁未通過！阻止後續打包與發布。", file=sys.stderr)
+            return 1
+    except Exception as e:
+        print(f"❌ 資產完整性檢查過程發生異常: {e}", file=sys.stderr)
+        return 1
+
+    # 3. 封裝 Story Map 獨立發布包
+    print("\n[步驟 3/4] 執行 Story Map 決定性打包與 Cache-Busting...")
     try:
         bundle_ok = bundle_story_map(dry_run=dry_run)
         if not bundle_ok:
@@ -276,8 +291,8 @@ def run_pipeline_update(
         print(f"❌ 打包過程發生異常: {e}", file=sys.stderr)
         return 1
 
-    # 3. 執行全量一致性驗證門禁
-    print("\n[步驟 3/3] 執行全量資料完整性驗證門禁...")
+    # 4. 執行全量一致性驗證門禁
+    print("\n[步驟 4/4] 執行全量資料完整性驗證門禁...")
     try:
         validate_ok = validate_story_map(
             check_dist=(not dry_run),
