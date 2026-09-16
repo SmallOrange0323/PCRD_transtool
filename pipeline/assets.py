@@ -294,23 +294,14 @@ def check_event_top_completeness(
     target_contract = contract_path or OFFICIAL_EVENT_TOP_MANIFEST
     tv = resolve_truth_version(truth_version)
 
-    # 取得預期 targets (current CDN targets)
+    # 取得預期 targets (current CDN targets: Fail-Closed，嚴禁 fallback 至舊 contract)
     targets: Dict[str, Any] = {}
     try:
         manifest_text = download_cdn_manifest(tv)
         targets = parse_event_top_targets_from_manifest(manifest_text)
     except Exception as e:
-        # 若連線 CDN 失敗，嘗試從本地 pinned contract 讀取
-        if target_contract.exists():
-            try:
-                with open(target_contract, 'r', encoding='utf-8') as f:
-                    cdata = json.load(f)
-                targets = cdata.get('targets', {})
-            except Exception:
-                pass
-        if not targets:
-            print(f"  [WARN] 無法取得 Event Top 預期清單: {e}", file=sys.stderr)
-            return EventTopCompletenessResult(success=False)
+        print(f"  [ERROR] 無法從 CDN 取得 TruthVersion {tv} 之 Event Top manifest 權威清單: {e}", file=sys.stderr)
+        return EventTopCompletenessResult(success=False)
 
     expected_ids = set(targets.keys())
 
@@ -334,11 +325,11 @@ def check_event_top_completeness(
     missing = sorted(list(expected_ids - local_files))
     present = sorted(list(expected_ids & local_files))
 
-    # 檢查 upstream identity 是否變更 (stale/changed)
+    # 檢查 upstream identity 是否變更 (stale/changed: old_info 不存在或 identity 不一致)
     stale_ids = []
     for eid, new_info in targets.items():
         old_info = old_targets.get(eid)
-        if old_info and not is_target_identity_equal(old_info, new_info):
+        if (not old_info) or (not is_target_identity_equal(old_info, new_info)):
             stale_ids.append(eid)
     stale_ids = sorted(stale_ids)
 
@@ -367,7 +358,7 @@ def check_event_top_completeness(
                     new_old_targets = json.load(f).get('targets', {})
             stale_ids = sorted([
                 eid for eid, new_info in targets.items()
-                if not is_target_identity_equal(new_old_targets.get(eid), new_info)
+                if (eid not in new_old_targets) or (not is_target_identity_equal(new_old_targets.get(eid), new_info))
             ])
         except Exception as e:
             print(f"  [ERROR] Event Top 自動同步失敗: {e}", file=sys.stderr)
@@ -552,17 +543,6 @@ def analyze_asset_completeness(
         print("Movie processing/upload is required before release.")
 
     overall_success = et_res.success and st_res.success and mv_res.success
-
-    if overall_success:
-        # 非 dry-run 且有新 reference 時，晉升 baseline
-        if not dry_run and mv_res.new_references_count > 0:
-            current_refs, _ = scan_movie_references()
-            promoted = promote_movie_baseline(current_refs)
-            if promoted:
-                print("  [Baseline] 已成功晉升並更新 movie_reference_manifest.json")
-            else:
-                print("  ❌ [ERROR] Baseline promotion 寫入失敗！阻斷後續發布。", file=sys.stderr)
-                overall_success = False
 
     if overall_success:
         print("\n✅ Asset Completeness PASS")

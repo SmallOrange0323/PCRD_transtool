@@ -305,7 +305,23 @@ def run_pipeline_update(
         print(f"❌ 驗證過程發生異常: {e}", file=sys.stderr)
         return 1
 
-    # 4. 可選部署 (只有明確指定 auto_deploy 且非 dry_run 時執行)
+    # 5. 晉升 Movie Reference Baseline (只有全流程驗證通過、非 dry-run 且有新 reference 時執行)
+    if not dry_run and asset_res.movie_coverage.new_references_count > 0:
+        print("\n[Baseline Promotion] 正在更新動畫參照基準清單 (movie_reference_manifest.json)...")
+        try:
+            from pipeline.assets import scan_movie_references, promote_movie_baseline
+            current_refs, _ = scan_movie_references()
+            promoted = promote_movie_baseline(current_refs)
+            if promoted:
+                print(f"  [Baseline] 已成功晉升並更新動畫基準清單 (新增 {asset_res.movie_coverage.new_references_count} 部動畫參照)")
+            else:
+                print("❌ [ERROR] 動畫基準清單 (movie_reference_manifest.json) 寫入失敗！阻斷發布流程。", file=sys.stderr)
+                return 1
+        except Exception as e:
+            print(f"❌ [ERROR] 晉升動畫基準清單時發生異常: {e}", file=sys.stderr)
+            return 1
+
+    # 6. 可選部署 (只有明確指定 auto_deploy 且非 dry_run 時執行)
     if auto_deploy:
         if dry_run:
             print("\n[部署步驟] [DRY-RUN] 模擬部署模式：驗證通過，不執行 Git 提交與推送。")
