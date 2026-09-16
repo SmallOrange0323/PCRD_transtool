@@ -406,6 +406,41 @@ def _parse_bundle_metadata(bundle_data):
     }
 
 
+def _resolve_dialogue_unit_id(
+    speaker: str,
+    block_cmd4_units: List[Optional[int]],
+    block_cmd3_units: List[int],
+    last_speaker: Optional[str],
+    last_speaker_unit: Optional[int],
+) -> Optional[int]:
+    """
+    根據官方 Story command stream 保守推導當前對白之 unit_id。
+
+    規則：
+    1. 區塊有唯一、合法、非多人/非 0 的單一焦點 cmd 4 (len(unique_cmd4) == 1 且 None not in block_cmd4_units)
+       -> 使用該 unit_id
+    2. 區塊沒有 cmd 4 / cmd 3，且 speaker 與上一句完全相同，且上一句有可靠 unit_id
+       -> 延續上一句 unit_id
+    3. 其他情況 (包含僅有 cmd 3 表情、多人合言、解除焦點、換人無立繪指令等)
+       -> 回傳 None，交由前端 name fallback
+    """
+    valid_cmd4 = [u for u in block_cmd4_units if u is not None and isinstance(u, int) and u >= 100000]
+    unique_cmd4 = set(valid_cmd4)
+
+    # 規則 1: 區塊有唯一、合法、非多人/非 0 的單一焦點 cmd 4
+    if len(unique_cmd4) == 1 and (None not in block_cmd4_units):
+        return list(unique_cmd4)[0]
+
+    # 規則 2: 區塊沒有 cmd 4 / cmd 3，且 speaker 與上一句完全相同，且上一句有可靠 unit_id
+    if len(block_cmd4_units) == 0 and len(block_cmd3_units) == 0:
+        if speaker and last_speaker and speaker == last_speaker:
+            if last_speaker_unit is not None and isinstance(last_speaker_unit, int) and last_speaker_unit >= 100000:
+                return last_speaker_unit
+
+    # 規則 3: 其他情況 (包含僅有 cmd 3) 回傳 None
+    return None
+
+
 def _parse_bundle_dialogues(bundle_data, extract_metadata=False):
     """解析 AssetBundle bytes，返回對白列表。若 extract_metadata=True 則返回 (dialogues, metadata)。"""
     try:
@@ -436,8 +471,7 @@ def _parse_bundle_dialogues(bundle_data, extract_metadata=False):
                 script = bytes(script, 'utf-8', 'surrogateescape')
             commands = _deserialize_story_raw(script)
             current_voice = None
-            scene_actor_state = {}  # slot/position -> unit_id
-            block_cmd4_units = []   # 自上一句對白以來的單一焦點 unit_id 列表 (含 None 標記)
+            block_cmd4_units = []   # 自上一句對白以來的焦點 unit_id 列表 (含 None 標記)
             block_cmd3_units = []   # 自上一句對白以來的表情 unit_id 列表
             last_speaker = None
             last_speaker_unit = None
@@ -463,14 +497,8 @@ def _parse_bundle_dialogues(bundle_data, extract_metadata=False):
                         if not bundle_metadata["subtitle"]:
                             bundle_metadata["subtitle"] = val32
 
-                # 追蹤角色舞台與狀態指令
-                if idx == 68 and len(args) >= 2:
-                    # cmd 68: [unit_id, position, emotion_id] (登場/位置設定)
-                    u_str = str(args[0]).strip()
-                    pos_str = str(args[1]).strip()
-                    if u_str.isdigit() and len(u_str) == 6 and int(u_str) >= 100000:
-                        scene_actor_state[pos_str] = int(u_str)
-                elif idx == 4 and args:
+                # 追蹤焦點與表情指令
+                if idx == 4 and args:
                     # cmd 4: [target] (鏡頭焦點切換)
                     target_str = str(args[0]).strip()
                     if target_str.isdigit() and len(target_str) == 6 and int(target_str) >= 100000:
@@ -514,25 +542,16 @@ def _parse_bundle_dialogues(bundle_data, extract_metadata=False):
                     if speaker == "可可蘿":
                         words = words.replace("主人", "主公大人")
 
-                    # 保守判定 speaker 之 unit_id
-                    resolved_unit = None
-                    valid_cmd4 = [u for u in block_cmd4_units if u is not None]
-                    unique_cmd4 = set(valid_cmd4)
-                    unique_cmd3 = set(block_cmd3_units)
-
-                    # 規則 1: 本區塊有且僅有一種有效的單一焦點 cmd 4
-                    if len(unique_cmd4) == 1 and (None not in block_cmd4_units):
-                        resolved_unit = list(unique_cmd4)[0]
-                    # 規則 2: 本區塊無 cmd 4，但有且僅有一種表情 cmd 3
-                    elif len(block_cmd4_units) == 0 and len(unique_cmd3) == 1:
-                        resolved_unit = list(unique_cmd3)[0]
-                    # 規則 3: 本區塊無任何立繪指令，且與上一句為同一位發言者
-                    elif len(block_cmd4_units) == 0 and len(block_cmd3_units) == 0:
-                        if speaker == last_speaker and last_speaker_unit:
-                            resolved_unit = last_speaker_unit
+                    resolved_unit = _resolve_dialogue_unit_id(
+                        speaker=speaker,
+                        block_cmd4_units=block_cmd4_units,
+                        block_cmd3_units=block_cmd3_units,
+                        last_speaker=last_speaker,
+                        last_speaker_unit=last_speaker_unit,
+                    )
 
                     entry = {"name": speaker, "words": words, "voice": current_voice}
-                    if resolved_unit is not None and isinstance(resolved_unit, int) and resolved_unit >= 100000:
+                    if resolved_unit is not None:
                         entry["unit_id"] = resolved_unit
 
                     dialogues.append(entry)
