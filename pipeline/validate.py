@@ -284,11 +284,15 @@ def validate_avatar_manifest_and_assets(dashboard_dir: Path, res: ValidationResu
 
     # 1. 對白話數語意對等 (Story Semantic Parity)
     manifest_uids = {a.get("unit_id") for a in assets if a.get("unit_id") is not None and a.get("usage") == "dialogue"}
-    # Canonical registered short IDs (如 6111, 6112 等): 納入嚴格 mandatory coverage 檢驗
-    KNOWN_CANONICAL_SHORT_IDS = {6111, 6112}
-    canonical_short_uids = KNOWN_CANONICAL_SHORT_IDS | {
+    # Canonical registered short IDs: 完全由正式 Registry (avatar_assets.json) 宣告之合法 active dialogue 資產決定
+    canonical_short_uids = {
         a.get("unit_id") for a in assets
-        if a.get("unit_id") is not None and a.get("unit_id") < 100000 and a.get("usage") == "dialogue"
+        if a.get("unit_id") is not None
+        and a.get("unit_id") < 100000
+        and a.get("usage") == "dialogue"
+        and a.get("status") == "active"
+        and a.get("asset_key")
+        and a.get("filename")
     }
 
     story_dir = dashboard_dir / "story"
