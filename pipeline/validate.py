@@ -259,7 +259,7 @@ def validate_avatar_manifest_and_assets(dashboard_dir: Path, res: ValidationResu
     """
     【Phase 5 架構門禁】驗證 Avatar Manifest 與實體二進位資產不變量：
     1. dashboard/data/avatar_assets.json 存在且格式合法 (單一資產登錄表)
-    2. 全量正規劇本 (story/*.json) 的所有 canonical dialogue unit_id (>= 100000) 必須 100% 登錄在 manifest
+    2. 全量正規劇本 (story/*.json) 的所有 canonical dialogue unit_id (包含 >= 100000 及 registry-backed canonical short IDs) 必須 100% 登錄在 manifest
     3. 每個 dialogue asset 的 status 必須為 'active' 或 'placeholder_only'
     4. 每個 active asset 必須具有實體二進位檔案，且其真實 size_bytes 與 sha256 必須與 manifest 100% 相符
     5. 每個 placeholder_only asset 不得宣告二進位屬性 (filename, size_bytes, sha256 均為 null)

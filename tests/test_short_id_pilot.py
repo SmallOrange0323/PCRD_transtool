@@ -3,7 +3,7 @@ import json
 import subprocess
 import sys
 import tempfile
-import shutil
+import hashlib
 from pathlib import Path
 
 sys.path.insert(0, '.')
@@ -12,12 +12,10 @@ class TestAvatarServiceShortIdContract(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.js_path = Path('dashboard/avatar-service.js')
-        cls.manifest_path = Path('dashboard/data/avatar_assets.json')
         assert cls.js_path.exists(), 'dashboard/avatar-service.js missing'
-        assert cls.manifest_path.exists(), 'dashboard/data/avatar_assets.json missing'
 
-    def test_frontend_contract_via_node(self):
-        """透過 Node.js 執行實際 avatar-service.js，覆蓋 6112、1411、1234、100011"""
+    def test_frontend_contract_hermetic_via_node(self):
+        """透過 Node.js 執行實際 avatar-service.js，使用合成最小 Manifest 驗證 exact resolution 契約"""
         test_script = """
         const fs = require('fs');
         const vm = require('vm');
@@ -34,8 +32,27 @@ class TestAvatarServiceShortIdContract(unittest.TestCase):
         vm.runInContext(jsCode, sandbox);
 
         const AvatarService = sandbox.AvatarService;
-        const manifestData = JSON.parse(fs.readFileSync('dashboard/data/avatar_assets.json', 'utf8'));
-        AvatarService.loadManifest(manifestData);
+        
+        // 最小合成 Manifest (完全不依賴 production avatar_assets.json 與圖檔)
+        const syntheticManifest = {
+            version: 1,
+            assets: [
+                {
+                    unit_id: 6112,
+                    asset_key: "006112",
+                    filename: "006112.png",
+                    usage: "dialogue",
+                    status: "active"
+                },
+                {
+                    unit_id: 100011,
+                    filename: "100011.png",
+                    usage: "dialogue",
+                    status: "active"
+                }
+            ]
+        };
+        AvatarService.loadManifest(syntheticManifest);
 
         // 1. registered canonical short ID 6112
         const res6112 = AvatarService.resolveExactDialoguePortrait(6112);
@@ -70,57 +87,120 @@ class TestAvatarServiceShortIdContract(unittest.TestCase):
             process.exit(5);
         }
 
-        console.log('NODE_CONTRACT_PASS');
+        console.log('NODE_HERMETIC_PASS');
         """
         p = subprocess.run(['node', '-e', test_script], capture_output=True, text=True)
         self.assertEqual(p.returncode, 0, f'Node contract failed: {p.stderr}')
-        self.assertIn('NODE_CONTRACT_PASS', p.stdout)
+        self.assertIn('NODE_HERMETIC_PASS', p.stdout)
 
 
 class TestValidatorShortIdContract(unittest.TestCase):
-    def test_validator_contract_rules(self):
+    def _create_fixture(self, tmpdir_path, asset_key_6112="006112", include_legacy_1411=False, include_six_digit=True, omit_six_digit_registry=False):
+        """建立完全隔離的最小測試 dashboard 環境，不複製 production 資料"""
+        data_dir = tmpdir_path / "data"
+        icon_dir = tmpdir_path / "icon" / "unit"
+        story_dir = tmpdir_path / "story"
+        data_dir.mkdir(parents=True)
+        icon_dir.mkdir(parents=True)
+        story_dir.mkdir(parents=True)
+
+        # 建立 dummy binary 檔案並計算雜湊大小
+        dummy_6112_bytes = b"DUMMY_IMAGE_BINARY_FOR_006112"
+        p_6112 = icon_dir / "006112.png"
+        p_6112.write_bytes(dummy_6112_bytes)
+        size_6112 = len(dummy_6112_bytes)
+        sha_6112 = hashlib.sha256(dummy_6112_bytes).hexdigest()
+
+        assets = [
+            {
+                "unit_id": 6112,
+                "asset_key": asset_key_6112,
+                "filename": "006112.png",
+                "format": "png",
+                "usage": "dialogue",
+                "status": "active",
+                "size_bytes": size_6112,
+                "sha256": sha_6112
+            }
+        ]
+
+        if include_six_digit and not omit_six_digit_registry:
+            dummy_100011_bytes = b"DUMMY_IMAGE_BINARY_FOR_100011"
+            p_100011 = icon_dir / "100011.png"
+            p_100011.write_bytes(dummy_100011_bytes)
+            size_100011 = len(dummy_100011_bytes)
+            sha_100011 = hashlib.sha256(dummy_100011_bytes).hexdigest()
+            assets.append({
+                "unit_id": 100011,
+                "filename": "100011.png",
+                "format": "png",
+                "usage": "dialogue",
+                "status": "active",
+                "size_bytes": size_100011,
+                "sha256": sha_100011
+            })
+
+        manifest = {
+            "version": 1,
+            "metadata": {"total_assets": len(assets)},
+            "assets": assets
+        }
+        (data_dir / "avatar_assets.json").write_text(json.dumps(manifest), encoding="utf-8")
+
+        # 建立 Story fixture
+        story_rows = [
+            {"name": "秘書", "unit_id": 6112, "words": "test 6112"}
+        ]
+        if include_legacy_1411:
+            story_rows.append({"name": "路人", "unit_id": 1411, "words": "test legacy 1411"})
+        if include_six_digit:
+            story_rows.append({"name": "可可蘿", "unit_id": 100011, "words": "test 100011"})
+
+        (story_dir / "5218004.json").write_text(json.dumps(story_rows), encoding="utf-8")
+
+    def test_case_a_valid_pilot_fixture_passes(self):
+        """Case A: 合法 6112 registry + dummy binary + story -> PASS"""
         from pipeline.validate import validate_avatar_manifest_and_assets, ValidationResult
-
-        # A. 現有 dashboard (包含 6112 與 5218004) 必須 PASS
-        res = ValidationResult()
-        ok = validate_avatar_manifest_and_assets(Path('dashboard'), res)
-        self.assertTrue(ok, f'Current validation failed: {res.errors}')
-        self.assertEqual(len(res.errors), 0)
-
-        # B. 測試案例 4: short-ID Registry contract mismatch (6112 + asset_key '006111') -> Validator FAIL
         with tempfile.TemporaryDirectory() as tmpdir:
             tmppath = Path(tmpdir)
-            shutil.copytree('dashboard/data', tmppath / 'data')
-            shutil.copytree('dashboard/icon', tmppath / 'icon')
-            (tmppath / 'story').mkdir(parents=True)
+            self._create_fixture(tmppath, asset_key_6112="006112")
+            res = ValidationResult()
+            ok = validate_avatar_manifest_and_assets(tmppath, res)
+            self.assertTrue(ok, f"Case A should pass: {res.errors}")
+            self.assertEqual(len(res.errors), 0)
 
-            manifest_file = tmppath / 'data' / 'avatar_assets.json'
-            mdata = json.loads(manifest_file.read_text(encoding='utf-8'))
-            for a in mdata['assets']:
-                if a.get('unit_id') == 6112:
-                    a['asset_key'] = '006111'  # 格式或 ID 不一致
-
-            manifest_file.write_text(json.dumps(mdata), encoding='utf-8')
-
-            res_mismatch = ValidationResult()
-            ok_mismatch = validate_avatar_manifest_and_assets(tmppath, res_mismatch)
-            self.assertFalse(ok_mismatch, 'Expected validator FAIL on asset_key mismatch')
-            self.assertTrue(any('asset_key' in err or '006111' in err for err in res_mismatch.errors))
-
-        # C. 測試案例 2: legacy short ID (1411) 存在於 Story 但未在 registry -> 不得報錯
+    def test_case_b_asset_key_mismatch_fails(self):
+        """Case B: 將 asset_key 設為 '006111' 錯配 -> FAIL"""
+        from pipeline.validate import validate_avatar_manifest_and_assets, ValidationResult
         with tempfile.TemporaryDirectory() as tmpdir:
             tmppath = Path(tmpdir)
-            shutil.copytree('dashboard/data', tmppath / 'data')
-            shutil.copytree('dashboard/icon', tmppath / 'icon')
-            (tmppath / 'story').mkdir(parents=True)
+            self._create_fixture(tmppath, asset_key_6112="006111")
+            res = ValidationResult()
+            ok = validate_avatar_manifest_and_assets(tmppath, res)
+            self.assertFalse(ok, "Case B should fail on asset_key mismatch")
+            self.assertTrue(any("asset_key" in err or "006111" in err for err in res.errors))
 
-            # Story 只有 1411 (魔物/路人)
-            story_file = tmppath / 'story' / '1001001.json'
-            story_file.write_text(json.dumps([{'name': '魔物', 'unit_id': 1411}]), encoding='utf-8')
+    def test_case_c_legacy_short_id_unregistered_passes(self):
+        """Case C: Story 額外加入 unit_id = 1411 但 registry 沒有 1411 -> 不因 legacy short ID 產生 missing-registry error"""
+        from pipeline.validate import validate_avatar_manifest_and_assets, ValidationResult
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmppath = Path(tmpdir)
+            self._create_fixture(tmppath, include_legacy_1411=True)
+            res = ValidationResult()
+            ok = validate_avatar_manifest_and_assets(tmppath, res)
+            self.assertTrue(ok, f"Case C should pass without error for legacy 1411: {res.errors}")
+            self.assertEqual(len(res.errors), 0)
 
-            res_legacy = ValidationResult()
-            ok_legacy = validate_avatar_manifest_and_assets(tmppath, res_legacy)
-            self.assertTrue(ok_legacy, f'Legacy short ID 1411 should not cause validator error: {res_legacy.errors}')
+    def test_case_d_existing_six_digit_strict_coverage_maintained(self):
+        """Case D: existing six-digit ID fixture -> 維持原本 strict coverage 行為 (若 registry 缺失 100011 則報錯 FAIL)"""
+        from pipeline.validate import validate_avatar_manifest_and_assets, ValidationResult
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmppath = Path(tmpdir)
+            self._create_fixture(tmppath, include_six_digit=True, omit_six_digit_registry=True)
+            res = ValidationResult()
+            ok = validate_avatar_manifest_and_assets(tmppath, res)
+            self.assertFalse(ok, "Case D should fail when six-digit ID in story is missing from registry")
+            self.assertTrue(any("100011" in err for err in res.errors))
 
 
 if __name__ == '__main__':
