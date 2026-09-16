@@ -17,6 +17,7 @@ from tools.pcrd_fetch import (
     _resolve_dialogue_unit_id,
     load_story_manifest_snapshot,
     _STORY_MANIFEST_SNAPSHOT_CACHE,
+    fetch_story_json_by_id,
 )
 
 
@@ -178,6 +179,82 @@ class TestManifestSnapshotCache(unittest.TestCase):
         self.assertEqual(mock_http_get.call_count, 1)
         self.assertIs(refs1, refs2)
         self.assertIs(keys1, keys2)
+
+
+class TestFetchSnapshotConsistency(unittest.TestCase):
+    """
+    驗證 fetch_story_json_by_id 快照一致性防線：
+    絕不跨 snapshot 猜測最新版本，未提供 TruthVersion 的 legacy hash map 嚴禁 enrichment。
+    """
+    @patch("tools.pcrd_fetch._get_sonet_ver")
+    @patch("tools.pcrd_fetch.load_story_manifest_snapshot")
+    @patch("tools.pcrd_fetch._parse_bundle_dialogues")
+    @patch("tools.pcrd_fetch._http_get")
+    def test_raw_manifest_hash_map_without_truth_version_fail_safe(
+        self, mock_http_get, mock_parse_dialogues, mock_load_snapshot, mock_get_sonet_ver
+    ):
+        """Test 1: raw manifest_hash_map 且未提供 truth_version -> fail-safe 不跨 snapshot 探測版本，parser 收到 None"""
+        mock_http_get.return_value = b"DUMMY_BUNDLE"
+        mock_parse_dialogues.return_value = []
+
+        res = fetch_story_json_by_id(
+            1001001,
+            manifest_hash_map={1001001: "abcdef1234567890"},
+            write_story_json=False,
+        )
+        self.assertEqual(res.status, "OK")
+        mock_load_snapshot.assert_not_called()
+        mock_get_sonet_ver.assert_not_called()
+        # 確認 _parse_bundle_dialogues 的 portrait_asset_keys kwarg 為 None
+        _, kwargs = mock_parse_dialogues.call_args
+        self.assertIsNone(kwargs.get("portrait_asset_keys"))
+
+    @patch("tools.pcrd_fetch._get_sonet_ver")
+    @patch("tools.pcrd_fetch.load_story_manifest_snapshot")
+    @patch("tools.pcrd_fetch._parse_bundle_dialogues")
+    @patch("tools.pcrd_fetch._http_get")
+    def test_raw_manifest_hash_map_with_explicit_truth_version(
+        self, mock_http_get, mock_parse_dialogues, mock_load_snapshot, mock_get_sonet_ver
+    ):
+        """Test 2: raw manifest_hash_map + explicit truth_version -> 依據明確提供之 version 載入同一 snapshot"""
+        mock_http_get.return_value = b"DUMMY_BUNDLE"
+        mock_parse_dialogues.return_value = []
+        mock_load_snapshot.return_value = ({}, {"006112"})
+
+        res = fetch_story_json_by_id(
+            1001001,
+            manifest_hash_map={1001001: "abcdef1234567890"},
+            truth_version="00610007",
+            write_story_json=False,
+        )
+        self.assertEqual(res.status, "OK")
+        mock_load_snapshot.assert_called_once_with(truth_version="00610007")
+        mock_get_sonet_ver.assert_not_called()
+        _, kwargs = mock_parse_dialogues.call_args
+        self.assertEqual(kwargs.get("portrait_asset_keys"), {"006112"})
+
+    @patch("tools.pcrd_fetch._get_sonet_ver")
+    @patch("tools.pcrd_fetch.load_story_manifest_snapshot")
+    @patch("tools.pcrd_fetch._parse_bundle_dialogues")
+    @patch("tools.pcrd_fetch._http_get")
+    def test_explicit_portrait_asset_keys_bypass_manifest_load(
+        self, mock_http_get, mock_parse_dialogues, mock_load_snapshot, mock_get_sonet_ver
+    ):
+        """Test 3: caller 明確傳入 portrait_asset_keys -> 完全不額外呼叫 manifest loader 或版本探測"""
+        mock_http_get.return_value = b"DUMMY_BUNDLE"
+        mock_parse_dialogues.return_value = []
+
+        res = fetch_story_json_by_id(
+            1001001,
+            manifest_hash_map={1001001: "abcdef1234567890"},
+            portrait_asset_keys={"006112"},
+            write_story_json=False,
+        )
+        self.assertEqual(res.status, "OK")
+        mock_load_snapshot.assert_not_called()
+        mock_get_sonet_ver.assert_not_called()
+        _, kwargs = mock_parse_dialogues.call_args
+        self.assertEqual(kwargs.get("portrait_asset_keys"), {"006112"})
 
 
 if __name__ == "__main__":

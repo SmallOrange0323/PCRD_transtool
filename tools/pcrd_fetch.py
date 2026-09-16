@@ -813,6 +813,8 @@ def fetch_story_json_by_id(
                 "pass bundle_refs/bundle_ref or let fetch_story_json_by_id resolve bundle refs."
             )
         h = manifest_hash_map.get(story_id)
+        if truth_version:
+            resolved_truth_ver = str(truth_version)
     else:
         # Snapshot TruthVersion 一次，貫穿後續流程，避免 race condition
         resolved_truth_ver = truth_version or _get_sonet_ver()
@@ -855,11 +857,9 @@ def fetch_story_json_by_id(
         )
 
     resolved_portrait_keys = portrait_asset_keys
-    if resolved_portrait_keys is None:
+    if resolved_portrait_keys is None and resolved_truth_ver is not None:
         try:
-            ver = resolved_truth_ver or (bundle_ref.truth_version if bundle_ref else None) or truth_version or _get_sonet_ver()
-            if ver:
-                _, resolved_portrait_keys = load_story_manifest_snapshot(truth_version=ver)
+            _, resolved_portrait_keys = load_story_manifest_snapshot(truth_version=resolved_truth_ver)
         except Exception:
             pass
 
