@@ -400,6 +400,30 @@ const QuestMapModule = {
                         };
                     });
 
+                    // 【主線第 16 章後續幕間劇情兜底 (XXVII ~ XXIX)】
+                    const pendingCh16Interludes = [
+                        { id: 2216097, chapter: "幕間‧XXVII", title: "裂開的天空，崩塌的世界", groupId: 2216, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2216098, chapter: "幕間‧XXVIII", title: "2nd vision", groupId: 2216, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2216099, chapter: "幕間‧XXIX", title: "ANSWER.", groupId: 2216, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                    ];
+                    pendingCh16Interludes.forEach(ep => {
+                        if (!this.stories.some(s => s.id === ep.id)) {
+                            this.stories.push(ep);
+                        }
+                    });
+
+                    // 【主線第 17 章前 3 話兜底】
+                    const pendingCh17Stories = [
+                        { id: 2217001, chapter: "3部 第17章 第1話", title: "「第二型態」", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2217002, chapter: "3部 第17章 第2話", title: "不相交的100億與１", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2217003, chapter: "3部 第17章 第3話", title: "雪菲vs彌勒", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                    ];
+                    pendingCh17Stories.forEach(ep => {
+                        if (!this.stories.some(s => s.id === ep.id)) {
+                            this.stories.push(ep);
+                        }
+                    });
+
                     // 2. 台版個人劇情
                     const charaSql = `
                         SELECT story_id, title, sub_title, story_group_id
@@ -418,7 +442,7 @@ const QuestMapModule = {
                     }));
 
                     // 【最新角色個人劇情目錄自動兜底】
-                    // 由於台服資料庫 (redive_tw.db) 有時尚未上架新角色的個人故事章節 (如冬日栞)，
+                    // 由於台服資料庫 (redive_tw.db) 有時尚未上架新角色的個人故事章節，
                     // 我們在此自動為已下載故事對話的新角色補全 4 話的個人故事目錄，確保網頁必定能順利讀取！
                     const pendingNewCharas = [
                         { unitId: 138301, name: "貪吃佩可（阿斯特萊亞）", prefix: "138300" },
@@ -427,18 +451,25 @@ const QuestMapModule = {
                         { unitId: 139101, name: "凱留（霸瞳天星）", prefix: "139100" },
                         { unitId: 139201, name: "美穗", prefix: "139200" },
                         { unitId: 139301, name: "真穗", prefix: "139300" },
-                        { unitId: 139401, name: "艾麗卡", prefix: "139400" }
+                        { unitId: 139401, name: "艾麗卡", prefix: "139400" },
+                        { unitId: 136901, name: "璐璐伊", prefix: "136900", titles: ["璐璐伊和觸手款待", "近侍璐璐伊和「深邃庭園」", "覺醒！扭動威力！", "奇妙海女的禮物"] },
+                        { unitId: 139501, name: "莉莉（女武神）", prefix: "139500", titles: ["心響共鳴", "思慕逡巡", "比翼連理", "純白無垢"] },
+                        { unitId: 139601, name: "可璃亞（女武神）", prefix: "139600", titles: ["可璃亞，成為不良分子", "我的真心話", "不是乖孩子了", "libertas qualia"] },
+                        { unitId: 139701, name: "普蕾西亞（女武神）", prefix: "139700", titles: ["重逢 的 Porco", "贖罪 的 Ossabaw", "美夢 的 Mangalica", "硬邦邦 的 扭來扭去"] },
+                        { unitId: 139801, name: "雪菲（真龍）", prefix: "139800", titles: ["停下來的翅膀", "兄妹之間", "在追憶的彼端所獲得的事物", "夢見黃昏之影與決心之夢"] },
+                        { unitId: 139901, name: "露易絲瑪莉（夏日）", prefix: "139900", titles: ["HOT LIMIT", "夏日時光的憂鬱", "無法妥協的夏天", "小小戀歌"] }
                     ];
 
                     pendingNewCharas.forEach(ch => {
                         const checkGroupId = Math.floor(ch.unitId / 100);
-                        const exists = charaStories.some(s => s.groupId === checkGroupId);
-                        if (!exists) {
-                            for (let i = 1; i <= 4; i++) {
+                        for (let i = 1; i <= 4; i++) {
+                            const storyId = parseInt(`${ch.prefix}${i}`, 10);
+                            if (!charaStories.some(s => s.id === storyId)) {
+                                const epTitle = (ch.titles && ch.titles[i - 1]) ? ch.titles[i - 1] : `第 ${i} 話`;
                                 charaStories.push({
-                                    id: parseInt(`${ch.prefix}${i}`),
+                                    id: storyId,
                                     chapter: `${ch.name} 第${i}話`,
-                                    title: `第 ${i} 話`,
+                                    title: epTitle,
                                     groupId: checkGroupId,
                                     isEvent: false,
                                     type: 'chara',
@@ -577,36 +608,44 @@ const QuestMapModule = {
                 // 合併新形式活動主檔
                 if (this.extraEvents && this.extraEvents.events) {
                     const extraStartTimeMap = {
-                        10201: "2025/06/01 16:00:00",
-                        10202: "2025/07/01 16:00:00",
-                        10203: "2025/08/01 16:00:00",
-                        10204: "2025/09/01 16:00:00",
-                        10205: "2025/10/01 16:00:00",
-                        10206: "2025/11/01 16:00:00",
-                        10207: "2025/12/01 16:00:00",
-                        10208: "2026/01/01 16:00:00",
-                        10209: "2026/02/01 16:00:00",
-                        10210: "2026/03/01 16:00:00",
-                        10211: "2026/04/01 16:00:00",
-                        10212: "2026/05/01 16:00:00",
-                        10213: "2026/06/01 16:00:00",
-                        10214: "2026/07/01 16:00:00",
-                        10215: "2026/08/01 16:00:00",
-                        10216: "2026/09/01 16:00:00"
+                        10201: "2025-06-01T16:00:00+08:00",
+                        10202: "2025-07-01T16:00:00+08:00",
+                        10203: "2025-08-01T16:00:00+08:00",
+                        10204: "2025-09-01T16:00:00+08:00",
+                        10205: "2025-10-01T16:00:00+08:00",
+                        10206: "2025-11-01T16:00:00+08:00",
+                        10207: "2025-12-01T16:00:00+08:00",
+                        10208: "2026-01-01T16:00:00+08:00",
+                        10209: "2026-02-01T16:00:00+08:00",
+                        10210: "2026-03-01T16:00:00+08:00",
+                        10211: "2026-04-01T16:00:00+08:00",
+                        10212: "2026-05-01T16:00:00+08:00",
+                        10213: "2026-06-01T16:00:00+08:00",
+                        10214: "2026-07-01T16:00:00+08:00",
+                        10215: "2026-08-01T16:00:00+08:00",
+                        10216: "2026-09-01T16:00:00+08:00",
+                        10217: "2026-10-01T16:00:00+08:00",
+                        10218: "2026-11-01T16:00:00+08:00"
                     };
 
                     const extraEventsMapped = this.extraEvents.events.map(e => ({
                         story_group_id: e.story_group_id,
                         title: e.title,
-                        start_time: extraStartTimeMap[e.story_group_id] || e.start_time || "2025/01/01 16:00:00",
+                        start_time: extraStartTimeMap[e.story_group_id] || e.start_time || "2025-01-01T16:00:00+08:00",
                         thumbnail_id: e.thumbnail_id,
                         value: e.value
                     }));
                     // 將新形式活動合併，並按時間倒序排序
+                    const parseTime = (str) => {
+                        if (!str) return 0;
+                        const t = new Date(str).getTime();
+                        if (!isNaN(t)) return t;
+                        return new Date(String(str).replace(/-/g, '/')).getTime() || 0;
+                    };
                     this.events = extraEventsMapped.concat(this.events);
                     this.events.sort((a, b) => {
-                        const timeA = new Date(a.start_time.replace(/-/g, '/')).getTime();
-                        const timeB = new Date(b.start_time.replace(/-/g, '/')).getTime();
+                        const timeA = parseTime(a.start_time);
+                        const timeB = parseTime(b.start_time);
                         return timeB - timeA;
                     });
                 }
@@ -795,6 +834,8 @@ const QuestMapModule = {
     },
 
 	goBackToMenu() {
+        window.ReaderNavigation?.left();
+        this.activeStoryId = null;
         if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
             window.AutoVoiceController.stop();
         }
@@ -807,6 +848,7 @@ const QuestMapModule = {
     },
 
     enterCategory(type) {
+        window.ReaderNavigation?.left();
         if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
             window.AutoVoiceController.stop();
         }
@@ -1268,10 +1310,11 @@ const QuestMapModule = {
     },
 
     async render(skipAutoSelect = false) {
-        this.safeRender(() => this._render(skipAutoSelect));
+        return this.safeRender(() => this._render(skipAutoSelect));
     },
 
     switchPart(part) {
+        window.ReaderNavigation?.left();
         if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
             window.AutoVoiceController.stop();
         }
@@ -1534,6 +1577,7 @@ const QuestMapModule = {
     },
 
     async selectStory(storyId) {
+        if (!this.getStoryById(storyId)) return;
         if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
             window.AutoVoiceController.stop();
         }
@@ -1542,7 +1586,10 @@ const QuestMapModule = {
             // 同話重複點擊：保持現有捲動位置，絕不跳回頂部
             return;
         }
+        window.ReaderNavigation?.beforeSelect();
         this.activeStoryId = storyId;
+        // A failed new request must never leave the preceding story playable.
+        this.currentDialogueList = [];
         this.autoVoiceStartIndex = null;
         const currentBoard = document.getElementById('dialogue-board');
         if (currentBoard && window.DialogueView) {
@@ -1594,8 +1641,9 @@ const QuestMapModule = {
         this.updateReaderState();
 
         // 3. 話數切換後單次回滾至 Reader 卡片頂端 (避免停留在上一話底部)
+        window.ReaderNavigation?.selected(storyId);
         setTimeout(() => {
-            this.scrollReaderToTop('auto');
+            if (this.activeStoryId === storyId && this._storyRenderToken === currentToken) this.scrollReaderToTop('auto');
         }, 0);
     },
 
@@ -1653,6 +1701,7 @@ const QuestMapModule = {
     },
 
     exitReader() {
+        window.ReaderNavigation?.left();
         this.activeStoryId = null;
         document.querySelectorAll('.story-item').forEach(el => el.classList.remove('active'));
         this.updateReaderState();
@@ -1899,7 +1948,11 @@ const QuestMapModule = {
             try {
                 let topDirOrSummaryHtml = "";
                 if (isMobile) {
-                    topDirOrSummaryHtml = this.getQuickDirectoryHtml();
+                    topDirOrSummaryHtml = this.getQuickDirectoryHtml() + `
+                        <details class="mobile-official-synopsis" ontoggle="if(this.open) QuestMapModule.refreshOfficialSynopsis(${currentStoryId}, ${currentToken})">
+                            <summary>📌 官方大綱（點擊展開）</summary>
+                            <p id="official-synopsis-content" aria-live="polite">正在載入官方大綱…</p>
+                        </details>`;
                 } else {
                     topDirOrSummaryHtml = `
                         <div id="official-synopsis-box" style="
@@ -1957,9 +2010,9 @@ const QuestMapModule = {
                                 <div id="dialogue-board" class="game-dialogue-board">
                                 </div>
                                 <div class="game-dialogue-footer" style="border-radius: 0 0 12px 12px;">
-                                    <div id="btn-prev-story" class="game-footer-btn close" style="display: none;" onclick="QuestMapModule.toPrevStory()">⬅ 上一話</div>
-                                    <div class="game-footer-btn close" onclick="QuestMapModule.scrollToTop()">⬆ 回到頂端</div>
-                                    <div id="btn-next-story" class="game-footer-btn skip" style="display: none;" onclick="QuestMapModule.toNextStory()">➡️ 下一話</div>
+                                    <button type="button" id="btn-prev-story" class="game-footer-btn close" style="display: none;" onclick="QuestMapModule.toPrevStory()">⬅ 上一話</button>
+                                    <button type="button" class="game-footer-btn close" onclick="QuestMapModule.scrollToTop()">⬆ 回到頂端</button>
+                                    <button type="button" id="btn-next-story" class="game-footer-btn skip" style="display: none;" onclick="QuestMapModule.toNextStory()">➡️ 下一話</button>
                                 </div>
                             </div>
                         </div>
@@ -2092,9 +2145,6 @@ const QuestMapModule = {
     },
 
     async refreshOfficialSynopsis(storyId, token) {
-        const isMobile = window.innerWidth <= 768;
-        if (isMobile) return; // Mobile 模式完全不發起 metadata fetch
-
         let officialSynopsis = null;
         if (window.StoryDataService) {
             try {
@@ -2210,6 +2260,7 @@ const QuestMapModule = {
             });
 
             this.currentDialogueList = dialogueList;
+            window.ReaderNavigation?.dialogueReady(storyId);
             this.updateAutoVoiceUI();
 
             if (this.autoVoiceStartIndex !== null && window.DialogueView && typeof window.DialogueView.setAutoStartSelection === 'function') {
@@ -2285,6 +2336,25 @@ const QuestMapModule = {
             if (window.DialogueView && board) {
                 window.DialogueView.setAutoStartSelection(board, index);
             }
+        }
+    },
+
+    handleReaderKeydown(event) {
+        if (event.defaultPrevented || event.repeat || event.isComposing || event.keyCode === 229 ||
+            event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return;
+        if (!this.activeStoryId || this.isLoadingDialogue || !this.currentDialogueList?.length) return;
+        const tab = document.getElementById('map-tab');
+        if (!tab?.classList.contains('active') || !document.getElementById('dialogue-board')) return;
+        const target = event.target;
+        if (target?.isContentEditable || target?.closest('input, textarea, select, button, a, summary, [role="button"], [role="textbox"], [contenteditable]:not([contenteditable="false"])')) return;
+        // Dialogs own their keys. Escape must close a popup before stopping AUTO.
+        if (document.body.style.overflow === 'hidden' || document.querySelector('.modal-overlay.active, [role="dialog"][open], dialog[open]')) return;
+        if (event.code === 'Space' || event.key === ' ') {
+            event.preventDefault();
+            this.toggleAutoVoice();
+        } else if (event.key === 'Escape' && window.AutoVoiceController?.isActive()) {
+            event.preventDefault();
+            this.stopAutoVoice();
         }
     },
 
@@ -2534,14 +2604,17 @@ const QuestMapModule = {
 
         if (targetChKey) {
             this.expandedChapter = targetChKey;
+            this.directoryLevel = 'level2';
             if (storyType === 'chara') {
                 this.activeCharaName = targetChKey;
             }
         }
 
-        this.safeRender(async () => {
+        return this.safeRender(async () => {
             await this._render(true);
-            this.selectStory(storyId);
+            // Rebuilding the shell needs a fresh selection even for the same ID.
+            this.activeStoryId = null;
+            await this.selectStory(storyId);
             setTimeout(() => {
                 const el = document.getElementById(`story-item-${storyId}`);
                 if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });

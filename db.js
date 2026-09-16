@@ -1,7 +1,5 @@
 console.log("db.js loaded");
-if (localStorage.getItem('pcr_region') !== 'tw') {
-    localStorage.setItem('pcr_region', 'tw');
-}
+try { localStorage.setItem('pcr_region', 'tw'); } catch (_) { /* Storage is optional. */ }
 /**
  * PCR 數據導航站 - DB 引擎
  * 負責下載、快取與查詢 SQLite 資料庫
@@ -10,6 +8,34 @@ if (localStorage.getItem('pcr_region') !== 'tw') {
 window.PCRDatabase = {
     db: null,
     currentRegion: 'tw',
+    cacheWarning: '',
+
+    async matchesRelease(buffer, size, version) {
+        if (Object.prototype.toString.call(buffer) !== '[object ArrayBuffer]' || (size > 0 && buffer.byteLength !== size)) return false;
+        // Published versions contain the first 12 SHA-256 characters.
+        const match = /^hash_([a-f0-9]{12})$/.exec(version || '');
+        if (match) {
+            if (!globalThis.crypto || !globalThis.crypto.subtle) {
+                throw new Error('無法驗證資料庫版本，請使用 HTTPS 或 localhost 開啟網站。');
+            }
+            const digest = await globalThis.crypto.subtle.digest('SHA-256', buffer);
+            const hash = Array.from(new Uint8Array(digest), n => n.toString(16).padStart(2, '0')).join('');
+            return hash.startsWith(match[1]);
+        }
+        return true;
+    },
+
+    openVerifiedDatabase(SQL, buffer) {
+        try {
+            this.db = new SQL.Database(new Uint8Array(buffer));
+            if (this.verifyDatabase()) return true;
+        } catch (error) {
+            console.warn('[PCRDatabase] 無法開啟資料庫:', error);
+        }
+        if (this.db && typeof this.db.close === 'function') this.db.close();
+        this.db = null;
+        return false;
+    },
 
     /**
      * 切換區域 (目前僅支援台服，強制定向為 tw)
@@ -47,9 +73,8 @@ window.PCRDatabase = {
         if (this.db) return this.db;
 
         const dbKey = `pcr_db_${this.currentRegion}`;
-        const remoteUrl = `https://wthee.xyz/db/redive_${this.currentRegion}.db`;
         const localPath = `./redive_${this.currentRegion}.db`;
-        const sizeKey = `pcr_db_size_${this.currentRegion}`;
+        this.cacheWarning = '';
 
         try {
             // 1. 初始化 SQL 引擎 (WebAssembly)
@@ -63,17 +88,17 @@ window.PCRDatabase = {
                 locateFile: file => `${file}`
             });
 
-            const timeoutPromise = new Promise((_, reject) => 
-                setTimeout(() => reject(new Error("初始化 SQL 引擎逾時 (10秒)。可能是網路連線不穩定，或是瀏覽器不支援 WebAssembly/WASM。")), 10000)
-            );
-
-            const SQL = await Promise.race([sqlPromise, timeoutPromise]);
+            let timer;
+            const timeoutPromise = new Promise((_, reject) => {
+                timer = setTimeout(() => reject(new Error('初始化 SQL 引擎逾時，請重新載入。')), 10000);
+            });
+            const SQL = await Promise.race([sqlPromise, timeoutPromise]).finally(() => clearTimeout(timer));
 
             // 從 data/db_info.json 一次性取得 size 與 db_version（合併為單一請求）
             let size = 0;
             let latestVersion = "";
             try {
-                const infoRes = await fetch(`data/db_info.json?v=${Date.now()}`);
+                const infoRes = await fetch(`data/db_info.json?v=${Date.now()}`, { signal: AbortSignal.timeout(10000) });
                 if (infoRes.ok) {
                     const info = await infoRes.json();
                     size = parseInt(info[`${this.currentRegion}_size`], 10) || 0;
@@ -87,7 +112,7 @@ window.PCRDatabase = {
             // 若 db_info 無法取得 size，降級使用 HEAD 請求
             if (size <= 0) {
                 try {
-                    const headRes = await fetch(localPath, { method: 'HEAD' });
+                    const headRes = await fetch(localPath, { method: 'HEAD', signal: AbortSignal.timeout(10000) });
                     if (headRes.ok) {
                         const cl = headRes.headers.get('content-length');
                         if (cl) size = parseInt(cl, 10);
@@ -97,77 +122,42 @@ window.PCRDatabase = {
                 }
             }
 
-            // --- [快取失效判斷] 比對版本號或 size 決定是否強制重新下載 ---
-            const cachedVersionKey = `${sizeKey}_version`;
-            const cachedVersion = localStorage.getItem(cachedVersionKey);
-            const cachedSize = localStorage.getItem(sizeKey);
-            let forceReload = false;
-
-            if (latestVersion && String(latestVersion) !== String(cachedVersion)) {
-                console.log(`[PCRDatabase] 版本變更 (伺服器: ${latestVersion}, 本地: ${cachedVersion})，強制重新下載。`);
-                forceReload = true;
-                await this.removeFromIDB(dbKey);
-                // 立刻寫入新版本，防止下載失敗時造成下次開頁面又觸發無限清空循環
-                localStorage.setItem(cachedVersionKey, latestVersion);
-            } else if (!latestVersion && size > 0 && String(size) !== String(cachedSize)) {
-                // 回退機制：無法取得 version 時，比對 size
-                console.log(`[PCRDatabase] Size mismatch (current: ${size}, cached: ${cachedSize})，強制重新下載。`);
-                forceReload = true;
-                await this.removeFromIDB(dbKey);
+            // Version and bytes live in one IDB record. Never erase the previous
+            // release until the replacement has downloaded and passed validation.
+            const cached = await this.loadFromIDB(dbKey);
+            const record = cached && cached.format === 2 ? cached : null;
+            const legacyHashCache = !record && /^hash_[a-f0-9]{12}$/.test(latestVersion);
+            const cacheBytes = record ? record.buffer : cached;
+            const sameVersion = record && latestVersion && record.version === latestVersion;
+            if ((sameVersion || legacyHashCache) &&
+                await this.matchesRelease(cacheBytes, size, latestVersion) &&
+                this.openVerifiedDatabase(SQL, cacheBytes)) {
+                this.dbVersion = latestVersion;
+                if (onProgress) onProgress('已載入快取資料庫', 100);
+                return this.db;
             }
 
-
-            // 2. 嘗試從 IndexedDB 讀取 (快取隔離)
-            let cachedDB = null;
-            if (!forceReload) {
-                cachedDB = await this.loadFromIDB(dbKey);
+            // Only use the database shipped with this site. A third-party mirror
+            // may be a different release, even when its schema and size match.
+            if (onProgress) onProgress('正在下載網站資料庫...', 20);
+            const dbData = await this.downloadDB(`${localPath}?v=${encodeURIComponent(latestVersion || 'current')}`, pct => {
+                if (onProgress) onProgress(`正在下載資料庫... ${pct}%`, 20 + pct * 0.7);
+            });
+            if (!await this.matchesRelease(dbData, size, latestVersion)) {
+                throw new Error('資料庫與網站版本不一致，可能正在更新，請稍後重新載入。');
             }
-
-            if (cachedDB) {
-                if (onProgress) onProgress(`正在載入本地 ${this.currentRegion.toUpperCase()} 快取...`, 50);
-                this.db = new SQL.Database(new Uint8Array(cachedDB));
-                
-                // 驗證快取是否有效與完整
-                if (this.verifyDatabase()) {
-                    console.log(`[PCRDatabase] Loaded and verified ${this.currentRegion} from IndexedDB`);
-                    return this.db;
-                } else {
-                    console.warn(`[PCRDatabase] 快取資料庫無效或損壞，將強制重載...`);
-                    this.db = null;
-                }
+            if (!this.openVerifiedDatabase(SQL, dbData)) {
+                throw new Error('載入的資料庫格式有誤，找不到劇情資料表。');
             }
-
-            // 3. 嘗試從本地目錄取得 (繞過 CORS)
-            if (onProgress) onProgress(`正在檢查本地 ${this.currentRegion.toUpperCase()} 檔案...`, 20);
-            let dbData = await this.downloadDB(localPath).catch(() => null);
-
-            // 4. 嘗試從遠端下載
-            if (!dbData) {
-                if (onProgress) onProgress(`正在下載遠端 ${this.currentRegion.toUpperCase()} 資料庫 (約 20MB)...`, 30);
-                dbData = await this.downloadDB(remoteUrl, (pct) => {
-                    if (onProgress) onProgress(`正在下載資料庫... ${pct}%`, 30 + (pct * 0.6));
-                });
+            this.dbVersion = latestVersion;
+            try {
+                await this.saveToIDB(dbKey, { format: 2, version: latestVersion, buffer: dbData });
+            } catch (error) {
+                this.cacheWarning = '無法保存資料庫快取，本次仍可閱讀；下次開啟會重新下載。';
+                console.warn('[PCRDatabase]', this.cacheWarning, error);
             }
-
-            if (dbData) {
-                this.db = new SQL.Database(new Uint8Array(dbData));
-                if (this.verifyDatabase()) {
-                    await this.saveToIDB(dbKey, dbData);
-                    const finalSize = size > 0 ? size : dbData.byteLength;
-                    localStorage.setItem(sizeKey, finalSize);
-                    if (latestVersion) {
-                        localStorage.setItem(`${sizeKey}_version`, latestVersion);
-                    }
-                    console.log(`[PCRDatabase] Successfully initialized and verified ${this.currentRegion} DB`);
-                    return this.db;
-                } else {
-                    // 【修正 Bug 6】驗證失敗時清除無效的 this.db，避免後續操作在無效資料庫上執行
-                    this.db = null;
-                    throw new Error("載入的資料庫格式有誤，找不到劇情資料表。");
-                }
-            }
-
-            throw new Error(`資料庫載入失敗。`);
+            if (onProgress) onProgress('資料庫已就緒', 100);
+            return this.db;
         } catch (error) {
             console.error('Database Init Error:', error);
             if (onProgress) onProgress(`載入失敗: ${error.message}`, 0);
@@ -223,7 +213,7 @@ window.PCRDatabase = {
 
             if (cachedDB) {
                 if (onProgress) onProgress(`正在載入本地 ${type.toUpperCase()} 快取...`, 50);
-                const specificDb = new SQL.Database(new Uint8Array(cachedDB));
+                const specificDb = new SQL.Database(new Uint8Array(cachedDB.format === 2 ? cachedDB.buffer : cachedDB));
                 console.log(`[PCRDatabase] Loaded specific DB: ${type} from IndexedDB`);
                 return specificDb;
             }
@@ -259,7 +249,7 @@ window.PCRDatabase = {
     async downloadDB(dbUrl, onProgress) {
         try {
             console.log(`正在嘗試從 ${dbUrl} 取得資料庫...`);
-            const response = await fetch(dbUrl);
+            const response = await fetch(dbUrl, { cache: 'no-cache', signal: AbortSignal.timeout(60000) });
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
             const contentLength = response.headers.get('content-length');
@@ -345,6 +335,9 @@ window.PCRDatabase = {
                 store.put(buffer, key);
                 transaction.oncomplete = () => resolve();
                 transaction.onerror = () => reject(transaction.error);
+                transaction.onabort = () => reject(transaction.error || new Error('快取寫入已中止'));
+                transaction.addEventListener('complete', () => db.close());
+                transaction.addEventListener('abort', () => db.close());
             });
         } catch (e) {
             console.error("[PCRDatabase] saveToIDB 失敗:", e);

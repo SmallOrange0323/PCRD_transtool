@@ -10,6 +10,7 @@ console.log("media-service.js loaded");
 (function() {
     const MediaService = {
         _currentAudio: null,
+        _voiceSessionToken: 0,
         _stillPopupKeyHandler: null,
 
         /**
@@ -56,15 +57,16 @@ console.log("media-service.js loaded");
                 return;
             }
 
-            // 停止並清理前一段音訊，避免事件重疊
+            // 停止舊 session，並以 generation token 讓舊 play()/error promise 永久失效。
             this.stopVoice();
-
-            let isDisposed = false;
+            const sessionToken = this._voiceSessionToken;
+            const isCurrentSession = () => sessionToken === this._voiceSessionToken;
 
             const tryPlay = (index) => {
-                if (isDisposed) return;
+                if (!isCurrentSession()) return;
 
                 if (index >= cdnList.length) {
+                    if (!isCurrentSession()) return;
                     console.warn('[MediaService] 該劇情的語音檔在遠端鏡像站尚未同步更新: ' + voiceName);
                     if (typeof options.onError === 'function') {
                         options.onError(new Error('All CDN candidates failed for: ' + voiceName));
@@ -73,11 +75,15 @@ console.log("media-service.js loaded");
                 }
 
                 const audio = new Audio(cdnList[index]);
+                if (!isCurrentSession()) {
+                    try { audio.pause(); } catch (e) { /* ignore */ }
+                    return;
+                }
                 this._currentAudio = audio;
 
                 // 綁定結束事件
                 audio.onended = () => {
-                    if (isDisposed) return;
+                    if (!isCurrentSession() || this._currentAudio !== audio) return;
                     if (typeof options.onEnded === 'function') {
                         options.onEnded();
                     }
@@ -85,13 +91,16 @@ console.log("media-service.js loaded");
 
                 let failureHandled = false;
                 const handleFailure = (err) => {
-                    if (isDisposed || failureHandled) return;
+                    if (!isCurrentSession() || failureHandled) return;
                     failureHandled = true;
 
                     audio.onended = null;
                     audio.onerror = null;
 
                     if (err && err.name === 'NotAllowedError') {
+                        if (this._currentAudio === audio) {
+                            this._currentAudio = null;
+                        }
                         console.warn('[MediaService] 語音播放被瀏覽器自動播放政策封鎖。');
                         if (typeof options.onError === 'function') {
                             options.onError(err);
@@ -108,8 +117,8 @@ console.log("media-service.js loaded");
                 };
 
                 audio.play().then(() => {
-                    if (isDisposed) {
-                        audio.pause();
+                    if (!isCurrentSession() || this._currentAudio !== audio) {
+                        try { audio.pause(); } catch (e) { /* ignore */ }
                         return;
                     }
                     if (typeof options.onStart === 'function') {
@@ -147,9 +156,13 @@ console.log("media-service.js loaded");
         },
 
         /**
-         * 徹底停止目前語音播放並清理回呼與實例
+         * 徹底停止目前語音播放並清理回呼與實例。
+         * 每次呼叫都先遞增 generation token，即使目前沒有 _currentAudio，
+         * 也能讓更早的 async play()/CDN retry chain 無法復活。
          */
         stopVoice() {
+            this._voiceSessionToken++;
+
             if (this._currentAudio) {
                 const audio = this._currentAudio;
                 audio.onended = null;
@@ -307,7 +320,7 @@ console.log("media-service.js loaded");
         /**
          * 開啟過場動畫全螢幕/視窗播放彈窗 (純淨沉浸式影音播放，無外框標題列)
          * @param {string|number} movieId - 動畫 ID
-         * @param {Object} movieLinks - 映射字典
+         * @param {Object} movieLinks - ID 映射字典
          * @param {Document} doc - DOM Document 對象 (預設為全域 document)
          */
         openMoviePopup(movieId, movieLinks, doc) {

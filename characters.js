@@ -5,7 +5,12 @@ window.CharactersModule = {
     viewMode: 'grid',
     realNameMap: null,
     activeUnitId: null,
-    excludedUnitIds: new Set(JSON.parse(localStorage.getItem('excluded_unit_ids') || '[]')),
+    excludedUnitIds: (() => {
+        try {
+            const saved = JSON.parse(localStorage.getItem('excluded_unit_ids') || '[]');
+            return new Set(Array.isArray(saved) ? saved : []);
+        } catch (_) { return new Set(); }
+    })(),
     
     async render() {
         const container = document.getElementById('characters-tab');
@@ -536,7 +541,11 @@ window.CharactersModule = {
         } else {
             this.excludedUnitIds.add(unitId);
         }
-        localStorage.setItem('excluded_unit_ids', JSON.stringify([...this.excludedUnitIds]));
+        try {
+            localStorage.setItem('excluded_unit_ids', JSON.stringify([...this.excludedUnitIds]));
+        } catch (_) {
+            console.warn('[CharactersModule] 本次篩選仍有效，但無法保存設定。');
+        }
         if (typeof this.updateView === 'function') {
             this.updateView();
         }
