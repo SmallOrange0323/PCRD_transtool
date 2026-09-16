@@ -436,6 +436,12 @@ def _parse_bundle_dialogues(bundle_data, extract_metadata=False):
                 script = bytes(script, 'utf-8', 'surrogateescape')
             commands = _deserialize_story_raw(script)
             current_voice = None
+            scene_actor_state = {}  # slot/position -> unit_id
+            block_cmd4_units = []   # 自上一句對白以來的單一焦點 unit_id 列表 (含 None 標記)
+            block_cmd3_units = []   # 自上一句對白以來的表情 unit_id 列表
+            last_speaker = None
+            last_speaker_unit = None
+
             for idx, args in commands:
                 # 捕獲元數據指令
                 if idx == 0 and args and not bundle_metadata["chapter_title"]:
@@ -456,6 +462,27 @@ def _parse_bundle_dialogues(bundle_data, extract_metadata=False):
                         bundle_metadata["cmd32_nonempty"] = True
                         if not bundle_metadata["subtitle"]:
                             bundle_metadata["subtitle"] = val32
+
+                # 追蹤角色舞台與狀態指令
+                if idx == 68 and len(args) >= 2:
+                    # cmd 68: [unit_id, position, emotion_id] (登場/位置設定)
+                    u_str = str(args[0]).strip()
+                    pos_str = str(args[1]).strip()
+                    if u_str.isdigit() and len(u_str) == 6 and int(u_str) >= 100000:
+                        scene_actor_state[pos_str] = int(u_str)
+                elif idx == 4 and args:
+                    # cmd 4: [target] (鏡頭焦點切換)
+                    target_str = str(args[0]).strip()
+                    if target_str.isdigit() and len(target_str) == 6 and int(target_str) >= 100000:
+                        block_cmd4_units.append(int(target_str))
+                    elif target_str == "0" or ":" in target_str:
+                        # 顯式非單人、多人同呼或解除焦點
+                        block_cmd4_units.append(None)
+                elif idx == 3 and args:
+                    # cmd 3: [unit_id, emotion_id] (表情/嘴型)
+                    u_str = str(args[0]).strip()
+                    if u_str.isdigit() and len(u_str) == 6 and int(u_str) >= 100000:
+                        block_cmd3_units.append(int(u_str))
 
                 still_match = None
                 if idx != 6:
@@ -486,8 +513,36 @@ def _parse_bundle_dialogues(bundle_data, extract_metadata=False):
                     words = args[1]
                     if speaker == "可可蘿":
                         words = words.replace("主人", "主公大人")
-                    dialogues.append({"name": speaker, "words": words, "voice": current_voice})
+
+                    # 保守判定 speaker 之 unit_id
+                    resolved_unit = None
+                    valid_cmd4 = [u for u in block_cmd4_units if u is not None]
+                    unique_cmd4 = set(valid_cmd4)
+                    unique_cmd3 = set(block_cmd3_units)
+
+                    # 規則 1: 本區塊有且僅有一種有效的單一焦點 cmd 4
+                    if len(unique_cmd4) == 1 and (None not in block_cmd4_units):
+                        resolved_unit = list(unique_cmd4)[0]
+                    # 規則 2: 本區塊無 cmd 4，但有且僅有一種表情 cmd 3
+                    elif len(block_cmd4_units) == 0 and len(unique_cmd3) == 1:
+                        resolved_unit = list(unique_cmd3)[0]
+                    # 規則 3: 本區塊無任何立繪指令，且與上一句為同一位發言者
+                    elif len(block_cmd4_units) == 0 and len(block_cmd3_units) == 0:
+                        if speaker == last_speaker and last_speaker_unit:
+                            resolved_unit = last_speaker_unit
+
+                    entry = {"name": speaker, "words": words, "voice": current_voice}
+                    if resolved_unit is not None and isinstance(resolved_unit, int) and resolved_unit >= 100000:
+                        entry["unit_id"] = resolved_unit
+
+                    dialogues.append(entry)
                     current_voice = None
+
+                    # 重設區塊狀態與記錄上一個 speaker
+                    last_speaker = speaker
+                    last_speaker_unit = resolved_unit
+                    block_cmd4_units = []
+                    block_cmd3_units = []
 
     bundle_metadata["title"] = bundle_metadata["subtitle"] or bundle_metadata["chapter_title"]
     if extract_metadata:
