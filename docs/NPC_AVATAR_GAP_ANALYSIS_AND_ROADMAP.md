@@ -2,32 +2,54 @@
 
 **文件代號**：`RFC-20260916-NPC-AVATAR-GAP`  
 **建立日期**：2026-09-16  
-**最後修訂**：2026-09-16（精確對白基準審計與 Canonical Contract 規整化）  
-**狀態**：`PROPOSED / UNDER REVIEW`  
+**規格收斂日期**：2026-09-16（正式規格鎖定，作為後續實作之權威依據）  
+**狀態**：`ACCEPTED SPECIFICATION / READY FOR IMPLEMENTATION`  
 **適用範疇**：`pipeline/`（資料更新管線）、`tools/pcrd_fetch.py`（劇理解包器）、`dashboard/data/`（資產登錄表）
 
 ---
 
 ## 摘要 (Executive Summary)
 
-在目前維護的《公主連結 Re:Dive》劇情導航站（Story Map）中，讀者與維護者反映大量劇情配角與 NPC 僅能顯示粉紅色文字佔位符（如「秘書」、「摩拉」、「米亞」）。經排除非對白項目（`still`、`background`、`movie` 及空白行）後之全量審計，確認：
+在《公主連結 Re:Dive》劇情導航站（Story Map）中，讀者與維護者反映大量劇情配角與 NPC 僅能顯示粉紅色文字佔位符（如「秘書」、「摩拉」、「米亞」）。經排除非對白項目（`still` 劇情插畫、`background` 背景切換、`movie` 動畫標記及純空白行）之精確審計，確認：
 
-1. **官方 CDN 實際上儲備了 1,472 個官方立繪頭像 Bundle**，目前專案僅登錄 934 個，尚有 **546 個官方頭像處於未開採狀態**。
-2. 未開採頭像中有 **463 個屬於官方前導補零（`0xxxxx`）的特殊 NPC / 配角 / 怪物 ID**。
-3. 專案解包器（`tools/pcrd_fetch.py`）過去採取硬性防禦條件 `len(target_str) == 6 and int(target_str) >= 100000`，導致官方指令流中去除了前導零的 NPC ID（例如克蕾琪塔秘書的 `6112`）被視為雜訊參數遭全面過濾。
-4. 在全站 9,096 篇正規劇情中，真正實質對白總數為 **1,221,991 行**，其中因缺少頭像而降級為文字佔位符的對白達 **193,467 行（佔 15.83%）**。
-5. **架構決策核心**：單一名字映射（`npc_avatars.json`）無法處理同一 NPC 在不同活動的換裝造型（例如秘書之常態 `006111` vs 泳裝 `006112`）。本 RFC 確立基於官方 AssetManifest 存在性校驗的 **Canonical Contract**，作為根本性解決方案。
+1. **官方 CDN 資源池與登錄現況**：
+   - 官方 CDN 的 `storydata2_assetmanifest` 儲備了 **1,472 個官方立繪頭像 Bundle**。
+   - 現有 `avatar_assets.json` 登錄有 934 個 ID（其中 926 個屬於此池，8 個屬於池外特殊項目）。
+   - 官方 CDN 尚有 **546 個頭像 Bundle 處於未開採狀態**，其中 **463 個屬於官方前導補零（`0xxxxx`）的特殊 NPC / 配角 / 怪物 ID**。
+2. **目前前端解析覆蓋率**：
+   - 全站 9,096 篇正規劇情中，真正實質對白總數為 **1,221,991 行**。
+   - **Current UI Avatar Resolution Coverage（目前 UI 頭像可解析率）** 為 **84.17%（1,028,524 行）**。
+   - **降級為文字方塊之對白 (Placeholder Rows)** 達 **193,467 行（佔 15.83%）**。
+3. **架構核心定案 (Locked Architectural Decisions)**：
+   - **否定單一名字映射**：`npc_avatars.json` 單一名字映射無法處理同一 NPC 在不同活動的換裝造型（例如秘書之常態 `006111` vs 泳裝 `006112`）。
+   - **Canonical Contract 鎖定**：確立 `command unit_id: integer`（如 `6112`）、`official asset_key: six-digit string`（如 `"006112"`）、`filename: "006112.png"` 的標準契約，不再進行型別二選一討論。
+   - **Closed-Universe Manifest Gate**：短 ID（`< 100000`）的合法性不得依賴數值或位數，必須透過 `zfill(6)` 在權威 `storydata2_assetmanifest` 中確認存在對應 Bundle 始得採納。
 
 ---
 
-## 一、 客觀數據審核與基線 (Empirical Audit & Baseline Data)
+## 一、 客觀數據審核與集合關係 (Empirical Audit & Set Relations)
 
-以下數據皆由專案審核腳本於本地資料庫與 So-net 官方 CDN 鏡像即時統計產生。本次審計嚴格過濾 `type in ('still', 'background', 'movie')` 及無實質台詞之空行，確保統計母體 100% 為真正對白行。
+### 1. 官方 CDN 與資產庫之精確集合關係
 
-### 1. 官方 CDN 故事頭像資源池結構
+經對 So-net 官方 `storydata2_assetmanifest` 與本地 `dashboard/data/avatar_assets.json` 進行嚴格之集合交集運算：
 
-* **資料來源**：So-net 官方 `storydata2_assetmanifest`（快取於 `dashboard/versions/cached_manifests/storydata2_assetmanifest.txt`）。
-* **官方 `storydata_icon_unit_*.unity3d` 總數**：**1,472 個**。
+```text
+┌─────────────────────────────────────────────────────────────┐
+│                   Asset Pool Set Relations                  │
+├─────────────────────────────────────────────┬───────────────┤
+│ CDN pool total (storydata_icon_unit_*)      │ 1,472         │
+│ Registry total (avatar_assets.json unique)  │   934         │
+│ Registry ∩ CDN pool                         │   926         │
+│ CDN missing from registry (1,472 - 926)     │   546         │
+│ Registry outside CDN pool (934 - 926)       │     8         │
+└─────────────────────────────────────────────────────────────┘
+```
+
+> **集合關係說明**：
+> `avatar_assets.json` 中現存的 934 筆 ID，並非 100% 來自 `storydata2_assetmanifest`。其中有 8 筆屬於池外資產（包含 3 筆 `placeholder_only` 無圖差分 `[105921, 106913, 190813]`，以及 5 筆特定 UI/追蹤角色資產 `[138931, 139031, 139131, 195511, 195512]`）。
+> 因此，官方 CDN 未開採缺口為 **$1,472 - 926 = 546$ 個**，不能單純使用 $1,472 - 934$ 計算。
+
+### 2. CDN 1,472 個資源池結構拆解
 
 | 資源分類區段 | 命名模式 | Bundle 數量 | 實體內容說明 |
 | :--- | :--- | :---: | :--- |
@@ -35,52 +57,88 @@
 | **標準劇情 NPC 區** | `storydata_icon_unit_19xxxx.unity3d` | **88 個** | 主線第二部/第三部具名核心 NPC（如八斗神 `193611`、羅蘭 `194212`） |
 | **可玩角色與換裝區** | `storydata_icon_unit_{10-18}xxxx.unity3d` | **921 個** | 可玩角色之常態、換裝（泳裝、新年、女武神等）、星級差分 |
 
-### 2. 專案目前收錄現狀
+---
 
-* **現有 `avatar_assets.json` 登錄 ID 總量**：**934 個**（其中 `usage: "dialogue"` 為 923 個）。
-* **官方 CDN 尚未納入專案之資源總量**：**546 個**（佔官方資源池之 37.1%）。
-  * 未收錄之 `0xxxxx` 前導補零特例：463 個。
-  * 未收錄之 `19xxxx` NPC 形態差分：12 個。
-  * 未收錄之其他形態：71 個。
+## 二、 對白覆蓋率指標語意與基準 (Dialogue Coverage Semantics)
 
-### 3. 全量實質對白頭像覆蓋率統計
+本次統計母體嚴格排除 `still`（劇情插畫）、`background`（背景切換）、`movie`（過場動畫）以及無實質台詞之空行氣泡：
 
-* **審核樣本範圍**：`dashboard/story/*.json` 全量正規劇情 **9,096 篇**。
-* **實質對白總行數 (Total Dialogue Rows)**：**1,221,991 行**。
-* **成功解析官方頭像行數 (Valid Avatar Rows)**：**1,028,524 行（84.17%）**。
-* **降級為文字方塊行數 (Placeholder Rows)**：**193,467 行（15.83%）**。
-* **涉及文字方塊之獨立說話者名稱總數**：**3,348 個**。
+* **全量正規話數 (Total Stories)**：**9,096 篇**
+* **實質對白總行數 (Total Dialogue Rows)**：**1,221,991 行**
+* **可解析頭像對白行數 (Resolvable Avatar Rows)**：**1,028,524 行（84.17%）**
+* **降級為文字方塊行數 (Placeholder Rows)**：**193,467 行（15.83%）**
+* **涉及降級之獨立發言標籤總數**：**3,348 個**
 
-### 4. 高頻具名文字方塊角色排行 (Top 20 Named Placeholder Speakers)
-
-排除泛用旁白與群眾呼聲（如「旁白」19,012 句、「？？？」4,862 句、「士兵」、「居民」等），在全劇情實質對白中台詞最多、但目前無法顯示頭像的具名角色如下：
-
-| 排名 | 角色名稱 | 實質對白句數 | 官方 CDN 是否有對應 AssetBundle |
-| :---: | :--- | :---: | :--- |
-| 1 | **男性** | 3,937 句 | 待確認（多位路人合稱） |
-| 2 | **女性** | 2,923 句 | 待確認（多位路人合稱） |
-| 3 | **店長** | 2,479 句 | 待清查（含多個行會專屬店長） |
-| 4 | **女子** | 2,466 句 | 待確認 |
-| 5 | **摩拉** | 2,420 句 | 待確認（主線重要妖精） |
-| 6 | **男子** | 2,001 句 | 待確認 |
-| 7 | **米亞** | 1,749 句 | 待確認 |
-| 8 | **秘書**（克蕾琪塔的秘書） | **1,741 句** | **VERIFIED：官方存在 `006111`（常態）與 `006112`（泳裝）** |
-| 9 | **美穗** | 1,740 句 | 待確認 |
-| 10 | **和正** | 1,559 句 | 待確認 |
-| 11 | **男性１** | 1,498 句 | 待確認 |
-| 12 | **波波爺爺** | 1,446 句 | 待確認 |
-| 13 | **貴族** | 1,428 句 | 待確認 |
-| 14 | **奶奶** | 1,367 句 | 待確認 |
-| 15 | **瑪麗亞** | 1,277 句 | 待確認 |
-| 16 | **司儀** | 1,250 句 | 待確認 |
-| 17 | **老奶奶** | 1,236 句 | 待確認 |
-| 18 | **輝美** | 1,210 句 | 待確認 |
-| 19 | **梅莉莎** | 1,185 句 | 待確認 |
-| 20 | **拉菲** | 1,163 句 | 待確認 |
+> [!IMPORTANT]
+> **指標語意精確界定 (Coverage Semantics Boundary)**：
+> **84.17% 的指標名稱為「Current UI Avatar Resolution Coverage」（目前 UI 頭像可解析率）**。
+> 此比例代表依照目前 Story Map 前端解析規則，該對白可以解析到某個 active avatar。其中**同時包含**：
+> 1. 顯式 `unit_id` 的精確立繪解析；
+> 2. `npc_avatars.json` 名稱 fallback 解析。
+> 
+> 因此，**84.17% 不等同於官方 command stream 的 exact appearance coverage（官方精確造型覆蓋率）**，亦不保證 fallback 解析出的頭像與劇中當下服裝／形態完全一致。
 
 ---
 
-## 二、 案例深入剖析：克蕾琪塔的秘書 (Deep Dive: Secretary of Crechetta)
+## 三、 高頻文字方塊發言排行統計
+
+### 1. 高頻文字方塊發言標籤排行 (Top 20 Placeholder Speaker Labels)
+
+包含全量未被頭像解析的發言人字串（含角色分類、泛用稱謂與群體標籤）：
+
+| 排名 | 發言標籤 (Speaker Label) | 實質對白句數 | 性質分類 |
+| :---: | :--- | :---: | :--- |
+| 1 | **旁白** | 18,987 句 | 系統旁白 |
+| 2 | **？？？** | 4,761 句 | 未知發言者 |
+| 3 | **男性** | 3,937 句 | 泛用路人分類標籤 |
+| 4 | **女性** | 2,923 句 | 泛用路人分類標籤 |
+| 5 | **店長** | 2,479 句 | 職稱稱謂（含多個行會店長） |
+| 6 | **女子** | 2,466 句 | 泛用路人分類標籤 |
+| 7 | **摩拉** | 2,420 句 | 具名角色（主線重要妖精） |
+| 8 | **男子** | 2,001 句 | 泛用路人分類標籤 |
+| 9 | **米亞** | 1,749 句 | 具名角色 |
+| 10 | **秘書** | 1,741 句 | 具名角色（克蕾琪塔的秘書） |
+| 11 | **美穗** | 1,740 句 | 具名角色 |
+| 12 | **和正** | 1,559 句 | 具名角色 |
+| 13 | **男性１** | 1,498 句 | 泛用序號標籤 |
+| 14 | **波波爺爺** | 1,446 句 | 具名角色 |
+| 15 | **貴族** | 1,428 句 | 身分稱謂 |
+| 16 | **奶奶** | 1,367 句 | 泛用親屬/稱謂 |
+| 17 | **瑪麗亞** | 1,277 句 | 具名角色 |
+| 18 | **司儀** | 1,250 句 | 職稱稱謂 |
+| 19 | **老奶奶** | 1,236 句 | 泛用稱謂 |
+| 20 | **輝美** | 1,210 句 | 具名角色 |
+
+### 2. 高頻具名文字方塊角色排行 (Top 20 Named Placeholder Characters)
+
+排除泛用身分稱謂（男子、女子、店長、司儀、長老、父親、奶奶等）與群體雜訊後，全站台詞量最高之真實具名角色如下：
+
+| 排名 | 具名角色 (Named Character) | 實質對白句數 | 官方 CDN 是否有對應 AssetBundle |
+| :---: | :--- | :---: | :--- |
+| 1 | **摩拉** | 2,420 句 | 待清查 |
+| 2 | **米亞** | 1,749 句 | 待清查 |
+| 3 | **秘書**（克蕾琪塔的秘書） | **1,741 句** | **VERIFIED：官方存在 `006111`（常態）與 `006112`（泳裝）** |
+| 4 | **美穗** | 1,740 句 | 待清查 |
+| 5 | **和正** | 1,559 句 | 待清查 |
+| 6 | **波波爺爺** | 1,446 句 | 待清查 |
+| 7 | **瑪麗亞** | 1,277 句 | 待清查 |
+| 8 | **輝美** | 1,210 句 | 待清查 |
+| 9 | **梅莉莎** | 1,185 句 | 待清查 |
+| 10 | **拉菲** | 1,163 句 | 待清查 |
+| 11 | **昴** | 1,135 句 | 待清查 |
+| 12 | **艾麗卡** | 1,065 句 | 待清查 |
+| 13 | **真穗** | 1,044 句 | 待清查 |
+| 14 | **老人** | 948 句 | 待清查 |
+| 15 | **商人** | 923 句 | 待清查 |
+| 16 | **村長** | 901 句 | 待清查 |
+| 17 | **王宮騎士** | 888 句 | 待清查 |
+| 18 | **工廠長** | 862 句 | 待清查 |
+| 19 | **博士** | 840 句 | 待清查 |
+| 20 | **靈界之王** | 770 句 | 待清查 |
+
+---
+
+## 四、 案例深入剖析：克蕾琪塔的秘書 (Deep Dive: Secretary of Crechetta)
 
 ### 1. 官方 AssetBundle 實體驗證 [VERIFIED]
 
@@ -147,75 +205,111 @@ if idx == 4 and args:
 
 ---
 
-## 三、 系統性架構缺口與核心決策 (Systemic Architecture Decisions)
+## 五、 正式架構契約：Canonical Contract 與 Manifest Gate
 
-### 1. 為何「單一名稱映射（`npc_avatars.json`）」不是正確解法？
+### 1. 為何「單一名稱映射（`npc_avatars.json`）」不是正式解法？
 
-在過往的架構中，NPC 通常以 `"角色名": unit_id` 寫入 `dashboard/data/npc_avatars.json`。但秘書案例揭露了此機制的根本缺陷：
+在過往架構中，部分 NPC 透過 `npc_avatars.json` 將名稱直接映射到固定 ID。但秘書案例徹底否定了這種做法作為通用解法：
 - **同名不同造型（形態差分 / 換裝）**：
   - 秘書在常態劇情中使用 **`006111`**（商會制服）。
   - 秘書在本次活動劇情中使用 **`006112`**（泳裝與雞蛋花）。
-- 若在 `npc_avatars.json` 中將 `"秘書"` 寫死為任何一個 ID，必然導致另一個場景發生時空錯亂（如夏日活動穿著商會西裝，或主線嚴肅辦公室穿著泳裝）。
-- **結論**：對白中的換裝與差分，**唯一可靠權威來源只有劇本指令流（Command Stream）中的顯式立繪 ID**。
+- 若在 `npc_avatars.json` 中將 `"秘書"` 映射至任何單一 ID，必然導致另一場景發生時空錯亂（夏日活動穿西裝，或辦公室穿泳裝）。
+- **架構結論**：對白中的換裝與差分，**唯一權威來源是劇本指令流（Command Stream）中的顯式立繪 ID**。
 
-### 2. 建議規範契約 (Canonical Normalization Contract)
+### 2. 正式鎖定之標準契約 (Canonical Contract)
 
-為橋接官方 Command Stream、CDN 二進位資源與現有 Pipeline 門禁，確立以下規範契約：
+本規格正式定案，不再保留型別選擇空間，所有後續實作必須嚴格遵守以下對齊規則：
 
 ```text
-┌─────────────────────────────────────────────────────────────┐
-│                   Canonical Contract                        │
-├──────────────────────┬──────────────────────────────────────┤
-│ Command unit_id      │ 6112 (整數 integer，保持 JSON 資料相容) │
-│ Official asset_key   │ "006112" (6 碼補零字串，對齊官方清冊) │
-│ Binary filename      │ "006112.png" (實體檔案名稱)           │
-│ Registry asset_id    │ 6112 (avatar_assets.json 之 unit_id) │
-└──────────────────────┴──────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────┐
+│                      LOCKED CANONICAL CONTRACT                         │
+├──────────────────────┬─────────────┬───────────────────────────────────┤
+│ 項目                 │ 型別        │ 規範與範例                        │
+├──────────────────────┼─────────────┼───────────────────────────────────┤
+│ Command unit_id      │ integer     │ 6112 (劇本 JSON 欄位永遠為整數)   │
+│ Official asset_key   │ string(6)   │ "006112" (6 碼補零官方識別碼)     │
+│ Binary filename      │ string      │ "006112.png" (實體二進位圖檔)     │
+│ Registry unit_id     │ integer     │ 6112 (avatar_assets.json 查表鍵)  │
+│ Registry asset_key   │ string(6)   │ "006112" (登錄於 avatar_assets)   │
+└──────────────────────┴─────────────┴───────────────────────────────────┘
 ```
 
-### 3. Parser 短 ID 合法性判定契約 (Closed-Universe Manifest Gate)
+#### Story JSON 呈現格式：
+```json
+{
+  "name": "秘書",
+  "words": "簡直就像歷經生離死別的姊妹呢，",
+  "voice": "vo_adv_5218004_006",
+  "unit_id": 6112
+}
+```
+> **嚴格約束**：Story JSON 中的 `unit_id` 永遠維持為數值 `6112`（integer），不得儲存為字串 `"006112"`，亦不得人為加上 offset（如 `196112`）。
 
-以往 parser 採用「固定 6 位數」作為防禦，若單純放寬為「4 位數以上」，可能將其他未知鏡頭參數或座標誤判為角色 ID。
+#### Avatar Registry (`avatar_assets.json`) 登錄格式：
+```json
+{
+  "unit_id": 6112,
+  "asset_key": "006112",
+  "filename": "006112.png",
+  "format": "png",
+  "usage": "dialogue",
+  "status": "active",
+  "size_bytes": 10560,
+  "sha256": "...",
+  "provenance": "storydata2_assetmanifest"
+}
+```
 
-因此，確立基於官方清冊的**密閉驗證規則 (Closed-Universe Verification)**：
-* Parser 處理 `cmd 4` 參數時：
-  ```python
-  if target_str.isdigit():
-      val = int(target_str)
-      if val >= 100000 and len(target_str) == 6:
-          # 標準 6 位數角色 ID (可玩角色 / 19xxxx NPC)
-          block_cmd4_units.append(val)
-      elif val > 0 and len(target_str) < 6:
-          # 短 ID 候選者 (如 6112)
-          asset_key = target_str.zfill(6)
-          # 核心門禁：必須在權威 storydata2_assetmanifest 中存在對應 Bundle
-          if f"storydata_icon_unit_{asset_key}.unity3d" in AUTHORITATIVE_MANIFEST_POOL:
-              block_cmd4_units.append(val)
-          else:
-              # 非合法角色 ID，視為鏡頭/圖層參數安全忽略
-              pass
-  ```
-* **效果**：
-  - 100% 阻絕非角色的座標/圖層雜訊參數。
-  - 100% 精準放行官方存在二進位 AssetBundle 的特殊 NPC（如 `006111`、`006112`）。
+### 3. Closed-Universe Manifest Gate（密閉式清冊門禁規範）
+
+短 ID（`< 100000`）不得因為「長度小於 6」或「數值大於 0」就無條件採納，必須由官方 `storydata2_assetmanifest` membership 作為唯一合法性依據。
+
+#### 判定流程：
+```text
+Command target (如 "6112" 或 "0" 或 "1")
+    ↓
+1. 確認為純數字字串 (target_str.isdigit())
+    ↓
+2. 轉為整數值 (val = int(target_str))
+    ↓
+3. 區分號段：
+   ├─ val >= 100000 且 len == 6：
+   │     直接採納為標準角色 ID
+   │
+   └─ val > 0 且 len < 6 (短 ID 候選者)：
+         ↓
+         a. 格式化為 6 碼 official asset_key: asset_key = target_str.zfill(6)
+         ↓
+         b. 查詢權威清冊: 檢查 storydata_icon_unit_<asset_key>.unity3d 
+            是否存在於 authoritative storydata2_assetmanifest
+         ↓
+         ├─ 存在 (VALID)  → 採納 val (例如 6112) 為合法角色 unit_id
+         └─ 不存在 (DROP) → 視為鏡頭/層級控制參數，安全忽略
+```
+
+* **反例驗證**：若劇本出現 `cmd 4: ['1']`，雖然 `1.zfill(6)` 為 `"000001"`，但官方清冊中不存在 `storydata_icon_unit_000001.unity3d`，門禁直接將其視為機位參數忽略，**零誤判**。
+* **正例驗證**：若劇本出現 `cmd 4: ['6112']`，`6112.zfill(6)` 為 `"006112"`，清冊中精確存在 `storydata_icon_unit_006112.unity3d`，立即判定為合法角色立繪。
 
 ---
 
-## 四、 演進路線 (Implementation Roadmap)
+## 六、 實作路線 (Implementation Roadmap)
 
-### 階段一：秘書專項規範化收錄 (Phase 1: Canonical Secretary Ingestion)
+### 階段一：秘書專項 Pilot Case (Phase 1: Canonical Secretary Pilot)
 
-* **目標**：以最新 Canonical Contract，單點修復克蕾琪塔秘書（常態與泳裝），並使門禁與前端完全相容。
-* **執行重點**：
-  1. 下載並匯出 `006111.png` 與 `006112.png` 至 `dashboard/icon/unit/`。
-  2. 在 `dashboard/data/avatar_assets.json` 中登錄 `unit_id: 6111` 與 `unit_id: 6112`（或 6 碼字串依協議確定），宣告其 filename 分別為 `006111.png` 與 `006112.png`。
-  3. 更新 `5218004.json`（及其他包含秘書之話數），寫入精確之 `unit_id`。
+* **性質**：端到端規格驗證試點（不使用 Name Fallback，全面驗證 Canonical Contract）。
+* **收錄項目**：
+  - 常態秘書：`unit_id: 6111` ↔ `asset_key: "006111"` ↔ `filename: "006111.png"`
+  - 泳裝秘書：`unit_id: 6112` ↔ `asset_key: "006112"` ↔ `filename: "006112.png"`
+* **驗證範圍**：
+  - 下載解密圖檔至 `dashboard/icon/unit/006111.png` 與 `006112.png`。
+  - 在 `avatar_assets.json` 登錄此兩筆 active dialogue 資產。
+  - 更新 `5218004.json` 對白寫入 `unit_id: 6112`。
+  - 執行 `pipeline.bundle` 與 `pipeline.validate` 確認 100% 通過。
 
 ### 階段二：解包器權威清冊校驗升級 (Phase 2: Manifest-Backed Parser Upgrade)
 
 * **目標**：正式將 Closed-Universe Manifest Gate 實作入 `tools/pcrd_fetch.py::_parse_bundle_dialogues()`。
-* **驗證方式**：
-  - 重新解包包含前導零 NPC 之歷史話數，確保非角色指令零誤判，特殊 NPC 100% 正確獲取 ID。
+* **驗證**：重解含前導零 NPC 之相關話數，確認非角色指令零誤判，短 ID NPC 100% 自動獲取正確 `unit_id`。
 
 ### 階段三：全域 NPC 資產自動化探測工具鏈 (Phase 3: Automated NPC Discovery Pipeline)
 
@@ -227,22 +321,13 @@ if idx == 4 and args:
 
 ---
 
-## 五、 Evidence Boundary（證據邊界宣告）
+## 七、 Evidence Boundary（證據邊界宣告）
 
 | 結論項目 | 證據強度 (Confidence Level) | 依據說明 |
 | :--- | :---: | :--- |
 | 官方 CDN 存在秘書專屬頭像 | **VERIFIED** | 已直接從 CDN 下載 `006111` 與 `006112` 並以 UnityPy 解出無損 PNG。 |
 | 5218004 劇本中秘書使用 `6112` | **VERIFIED** | 解析官方 AssetBundle TextAsset command stream，第 121、873、1074 行明確記載 `cmd 4: ['6112']`。 |
 | 解包器過濾規則導致 `unit_id` 遺漏 | **VERIFIED** | `tools/pcrd_fetch.py:503` 明文限制 `len == 6 and >= 100000`，直接導致數值為 6112 時被跳過。 |
-| 官方 CDN 共有 546 個未收錄頭像 | **VERIFIED** | 經比對本地 `avatar_assets.json` 與官方 `storydata2_assetmanifest`，數量精確無誤。 |
+| 官方 CDN 共有 546 個未收錄頭像 | **VERIFIED** | 經精確交集運算：$1472 - 926 = 546$ 個未收錄，8 個池外項目。 |
 | 實質對白總數為 1,221,991 行 | **VERIFIED** | 經排除 `still`、`background`、`movie` 及空白行後之全量審計結果。 |
-| 其他 3,347 個佔位符發言人皆有對應官方立繪 | **UNRESOLVED** | 部分名稱可能純屬無立繪路人（如「女性教員」或純語音），需透過 Phase 3 腳本進行個案交叉比對才能確定。 |
-
----
-
-## 六、 討論問題清單 (Questions for Reviewers & Collaborating AIs)
-
-1. **`unit_id` 資料型別在整體系統的一致性**：
-   在 Story JSON 與 `avatar_assets.json` 中，`unit_id` 欄位維持為整數 `6112`（透過 `asset_key: "006112"` 映射到 `"006112.png"`），還是允許 `unit_id` 形態相容字串 `"006112"`？請評估對既有資料庫欄位與驗證器型別檢查的影響。
-2. **Phase 1 試行方案**：
-   在正式全面重構解包器前，是否贊同先以克蕾琪塔秘書作為試點（Pilot Case），驗證此 Canonical Contract 的端到端可用性？
+| 其他 3,347 個佔位符發言標籤皆有對應官方立繪 | **UNRESOLVED** | 部分標籤純屬無立繪路人（如「女性教員」或純語音），需透過 Phase 3 腳本進行個案交叉比對才能確定。 |
