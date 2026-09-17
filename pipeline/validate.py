@@ -20,6 +20,8 @@ from pathlib import Path
 from typing import Tuple, Set, Optional, List, Dict, Any
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 DASHBOARD_DIR = PROJECT_ROOT / "dashboard"
 DIST_DIR = PROJECT_ROOT / "dist_story_map"
 
@@ -255,7 +257,7 @@ def validate_story_source_dist_parity(
 
     return is_parity_pass, stats
 
-def validate_avatar_manifest_and_assets(dashboard_dir: Path, res: ValidationResult) -> bool:
+def validate_avatar_manifest_and_assets(dashboard_dir: Path, res: ValidationResult, story_dir: Optional[Path] = None) -> bool:
     """
     【Phase 5 架構門禁】驗證 Avatar Manifest 與實體二進位資產不變量：
     1. dashboard/data/avatar_assets.json 存在且格式合法 (單一資產登錄表)
@@ -295,10 +297,10 @@ def validate_avatar_manifest_and_assets(dashboard_dir: Path, res: ValidationResu
         and a.get("filename")
     }
 
-    story_dir = dashboard_dir / "story"
+    target_story_dir = story_dir or (dashboard_dir / "story")
     canonical_dialogue_uids = set()
-    if story_dir.exists():
-        for f in story_dir.glob("*.json"):
+    if target_story_dir.exists():
+        for f in target_story_dir.glob("*.json"):
             if f.name.endswith(("_parsed.json", ".min.json")):
                 continue
             try:
@@ -842,18 +844,21 @@ def validate_chapters_metadata(data: dict) -> Tuple[bool, str]:
 def validate_story_map(
     target_dir: Path = None,
     check_dist: bool = False,
-    allow_metadata_bootstrap_incomplete: bool = True
+    allow_metadata_bootstrap_incomplete: bool = True,
+    story_dir: Optional[Path] = None
 ) -> bool:
     """
     執行 Story Map 全量一致性檢查。
     :param target_dir: 檢查目標目錄，預設為 dashboard
     :param check_dist: 是否同時對 dist_story_map 進行完整部署集合驗證
     :param allow_metadata_bootstrap_incomplete: 是否允許官方故事元數據處於引導未完成 (BOOTSTRAP_INCOMPLETE) 狀態
+    :param story_dir: 自定義故事目錄 (用於 Staging 驗證，預設為 target_dir/story)
     :return: True 通過, False 存在致命錯誤
     """
     base_dir = target_dir or DASHBOARD_DIR
+    target_story_dir = story_dir or (base_dir / "story")
     res = ValidationResult()
-    print(f"\n🛡️  開始 Story Map 資料完整性驗證 (目標: {base_dir.name})...")
+    print(f"\n🛡️  開始 Story Map 資料完整性驗證 (目標: {base_dir.name}, 故事目錄: {target_story_dir.name})...")
 
     # 1. 核心檔案存在性檢查
     is_dashboard = (base_dir == DASHBOARD_DIR)
@@ -967,7 +972,7 @@ def validate_story_map(
         res.error("資料庫檔案 redive_tw.db 不存在！")
 
     # 4. 全量對白劇本逐份解析 (逐檔 json.loads 語法驗證)
-    story_dir = base_dir / "story"
+    story_dir = target_story_dir
     actual_story_ids = set()
     if story_dir.exists():
         story_files = list(story_dir.glob("*.json"))
@@ -1020,7 +1025,7 @@ def validate_story_map(
         else:
             res.ok(f"元數據定義之重要話數本機對白皆已具備")
     else:
-        res.error("對白劇本目錄 story/ 不存在！")
+        res.error(f"對白劇本目錄不存在: {story_dir}")
 
     # 6. 元數據映射解析
     thumb_path = data_dir / "story_thumbnails.json"
@@ -1033,7 +1038,7 @@ def validate_story_map(
 
     # 6B. Avatar Manifest 與實體二進位資產門禁 (Phase 5)
     print(f"\n🎭 執行 Avatar Manifest 與實體二進位資產門禁驗證...")
-    validate_avatar_manifest_and_assets(DASHBOARD_DIR, res)
+    validate_avatar_manifest_and_assets(DASHBOARD_DIR, res, story_dir=target_story_dir)
 
     # 6C. Gap Voice 權威清單與來源二進位資產門禁
     print(f"\n🔊 執行 Gap Voice 權威清單與來源二進位資產門禁驗證...")
@@ -1163,12 +1168,15 @@ if __name__ == "__main__":
     parser.add_argument("target", nargs="?", default=str(DASHBOARD_DIR), help="驗證目標目錄 (預設 dashboard)")
     parser.add_argument("--no-dist", action="store_true", help="不執行 dist_story_map 深度驗證")
     parser.add_argument("--strict-metadata", action="store_true", help="啟用官方故事元數據嚴格發布門禁 (拒絕 BOOTSTRAP_INCOMPLETE)")
+    parser.add_argument("--story-dir", type=str, default=None, help="自定義故事目錄 (例如 Staging 目錄)")
     args = parser.parse_args()
 
     target_path = Path(args.target)
+    story_path = Path(args.story_dir) if args.story_dir else None
     success = validate_story_map(
         target_path,
         check_dist=not args.no_dist,
-        allow_metadata_bootstrap_incomplete=not args.strict_metadata
+        allow_metadata_bootstrap_incomplete=not args.strict_metadata,
+        story_dir=story_path
     )
     sys.exit(0 if success else 1)
