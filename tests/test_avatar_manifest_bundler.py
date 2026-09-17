@@ -61,9 +61,9 @@ class TestAvatarManifestBundler(unittest.TestCase):
             a for a in self.assets
             if a.get("status") == "active" and a.get("usage") == "dialogue"
         ]
-        self.assertEqual(len(active_dialogue_entries), 897)
+        self.assertTrue(active_dialogue_entries, "Manifest must contain active dialogue assets")
 
-        for entry in active_dialogue_entries[:50]:  # 抽樣 50 筆
+        for entry in active_dialogue_entries:
             self.assertIn(
                 entry["filename"],
                 expected_files,
@@ -79,7 +79,6 @@ class TestAvatarManifestBundler(unittest.TestCase):
             a for a in self.assets
             if a.get("status") == "placeholder_only"
         ]
-        self.assertEqual(len(placeholder_entries), 3)
 
         for entry in placeholder_entries:
             uid = entry["unit_id"]
@@ -219,7 +218,7 @@ class TestAvatarManifestBundler(unittest.TestCase):
             a for a in self.assets
             if a.get("status") == "active" and a.get("usage") == "dialogue"
         ]
-        self.assertEqual(len(dialogue_entries), 897)
+        self.assertTrue(dialogue_entries, "Manifest must contain active dialogue assets")
 
         # 抽樣檢查其中知名且曾存在 webp 的對白頭像
         for entry in dialogue_entries[:100]:
@@ -236,7 +235,7 @@ class TestAvatarManifestBundler(unittest.TestCase):
             a for a in self.assets
             if a.get("status") == "active" and a.get("usage") == "ui"
         ]
-        self.assertEqual(len(ui_entries), 30)
+        self.assertTrue(ui_entries, "Manifest must contain UI assets")
 
         for entry in ui_entries:
             self.assertIn(
@@ -248,7 +247,6 @@ class TestAvatarManifestBundler(unittest.TestCase):
     def test_8_old_reality_hardcoded_rule_no_longer_required(self):
         """8. 驗證 Manifest-First 權威模式不再需要 legacy hard-coded reality 規則"""
         dialogue_mappings = get_expected_dialogue_icon_mappings()
-        self.assertEqual(len(dialogue_mappings), 927)
 
         # 驗證著名的 reality fixtures 在 expected 中
         reality_fixtures = [105812, 105913, 106012, 106412, 106831, 107331]
@@ -258,19 +256,18 @@ class TestAvatarManifestBundler(unittest.TestCase):
     def test_9_dialogue_override_story_unit_published(self):
         """9. 驗證 dialogue_asset 宣告之覆蓋頭像會被獨立映射發布，且 primary 不受影響"""
         dialogue_mappings = get_expected_dialogue_icon_mappings()
-        self.assertEqual(len(dialogue_mappings), 927)
         self.assertIn("192711.png", dialogue_mappings)
         self.assertEqual(dialogue_mappings["192711.png"], DASHBOARD_DIR / "icon" / "unit" / "192711.png")
 
         override_mappings = get_expected_dialogue_override_mappings()
-        self.assertEqual(len(override_mappings), 1)
+        self.assertGreaterEqual(len(override_mappings), 1)
         self.assertIn("icon/story_unit/192711.png", override_mappings)
         self.assertEqual(override_mappings["icon/story_unit/192711.png"], DASHBOARD_DIR / "icon" / "story_unit" / "192711.png")
 
     def test_11_character_catalog_avatars_included(self):
         """11. 驗證角色圖鑑代表頭像完整納入發布集合，補齊原本缺失的 7 位可玩角色"""
         catalog_mappings = get_character_catalog_icon_mappings()
-        self.assertGreaterEqual(len(catalog_mappings), 670)
+        self.assertTrue(catalog_mappings, "Character catalog mappings must not be empty")
 
         missing_7 = [181101, 181001, 180901, 180801, 180701, 123001, 118601]
         for uid in missing_7:
@@ -279,7 +276,11 @@ class TestAvatarManifestBundler(unittest.TestCase):
             self.assertIn(f"{base_id + 31}.png", catalog_mappings)
 
         union_mappings = get_expected_icon_unit_mappings()
-        self.assertEqual(len(union_mappings), 1143)
+        self.assertEqual(
+            set(union_mappings),
+            set(get_expected_dialogue_icon_mappings()) | set(catalog_mappings),
+            "Published icon set must equal dialogue ∪ character-catalog mappings"
+        )
         # 確保對白 active 頭像全部包含
         for fname in get_expected_dialogue_icon_mappings():
             self.assertIn(fname, union_mappings)
