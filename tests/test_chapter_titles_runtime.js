@@ -14,7 +14,7 @@
  *    - 第14章 - 阿爾莎特的誘惑
  *    - 第15章 - 嚮導幼君
  *    - 第16章 - 三方爭霸
- * 4. 驗證 legacy_title 絕不洩漏至 getTitle()，且 48 個主線章節皆具備官方標題與 zh-TW 語言標籤
+ * 4. 驗證 legacy_title 絕不洩漏至 getTitle()，且現行主線章節皆具備官方標題與 zh-TW 語言標籤
  * 5. 抽查第 1 部與第 2 部主線標題之正確性與非空契約
  */
 
@@ -56,7 +56,7 @@ test("Test 1: Official canonical titles for Part 3 chapters via ChapterDataServi
 });
 
 test("Test 2: Legacy title does not leak into ChapterDataService getTitle()", () => {
-    // 1. 驗證真實資料庫中的 48 個主線章節皆保留 legacy_title 且 getTitle() 回傳官方 title
+    // 1. 驗證真實資料庫中的現行 Part 3 主線章節皆保留 legacy_title 且 getTitle() 回傳官方 title
     const part3Chapters = chaptersData["3"].game_world;
     for (const [gid, ch] of Object.entries(part3Chapters)) {
         assert(ch.legacy_title, `Part 3 Chapter ${gid} should preserve legacy_title`);
@@ -126,7 +126,7 @@ test("Test 7: Spot check official titles for Part 1 & Part 2", () => {
     assert.strictEqual(ChapterDataService.getTitle(2, '2116'), '終結世界');
 });
 
-test("Test 8: All 48 main story chapters have official title and valid rendered headers", () => {
+test("Test 8: All current main story chapters have official title and valid rendered headers", () => {
     let mainCount = 0;
     for (const part of ["1", "2", "3"]) {
         const gw = chaptersData[part]?.game_world || {};
@@ -141,7 +141,8 @@ test("Test 8: All 48 main story chapters have official title and valid rendered 
             assert(!rendered.includes('null') && !rendered.includes('undefined'));
         }
     }
-    assert.strictEqual(mainCount, 48, "Must verify exactly 48 main story chapters");
+    // 00600025 已驗證 baseline 為 48 章；未來新增章節允許自然成長，但不得低於該基線。
+    assert(mainCount >= 48, `Main story chapter count must not regress below verified baseline (actual: ${mainCount})`);
 });
 
 console.log(`All ${testsPassed} chapter titles runtime tests passed.`);
