@@ -9,7 +9,7 @@ PCRD Story Map Pipeline - Avatar Manifest & Bundler Authority Unit Tests (Phase 
 3. missing active file fails gate validation
 4. hash mismatch fails gate validation
 5. manifest omission of story-required ID fails
-6. duplicate legacy WebP is not part of future expected set
+6. manifest-first mappings exactly match active manifest filenames
 7. UI-only required asset is preserved
 8. old Reality hard-coded publication rule is no longer required for dialogue publication
 9. dialogue override is published independently
@@ -209,23 +209,24 @@ class TestAvatarManifestBundler(unittest.TestCase):
             omission_errors = [e for e in res.errors if "未在 avatar_assets.json 中登錄" in e or "登錄" in e]
             self.assertGreater(len(omission_errors), 0, f"Should report omission error: {res.errors}")
 
-    def test_6_duplicate_legacy_webp_is_not_part_of_future_expected_set(self):
-        """6. 驗證 active 對白 PNG 不會讓同 ID legacy WebP 混入 dialogue mappings。"""
-        expected_files = set(get_expected_dialogue_icon_mappings().keys())
-        dialogue_entries = [
+    def test_6_manifest_first_mappings_match_active_manifest(self):
+        """6. Manifest-First 模式僅發布 manifest 明確列為 active 的檔名，不自行合成 legacy fallback。"""
+        mappings = get_expected_dialogue_icon_mappings()
+        active_entries = [
             a for a in self.assets
-            if a.get("status") == "active" and a.get("usage") == "dialogue"
+            if a.get("status") == "active" and a.get("filename")
         ]
-        self.assertGreater(len(dialogue_entries), 0)
+        active_filenames = {a["filename"] for a in active_entries}
 
-        for entry in dialogue_entries:
+        self.assertGreater(len(active_filenames), 0)
+        self.assertEqual(set(mappings), active_filenames)
+
+        for entry in active_entries:
             filename = entry["filename"]
-            stem = Path(filename).stem
-            uid = entry["unit_id"]
-            self.assertNotIn(f"{stem}.webp", expected_files)
-            self.assertNotIn(f"unit_icon_{stem}.webp", expected_files)
-            self.assertNotIn(f"{uid}.webp", expected_files)
-            self.assertNotIn(f"unit_icon_{uid}.webp", expected_files)
+            self.assertEqual(
+                mappings[filename],
+                DASHBOARD_DIR / "icon" / "unit" / filename,
+            )
 
     def test_7_ui_only_required_asset_is_preserved(self):
         """7. 驗證 UI 所需 active 資產依然由 bundler 完整發布。"""
