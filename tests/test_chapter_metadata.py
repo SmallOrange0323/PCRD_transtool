@@ -14,7 +14,7 @@ H. 驗證器負向測試：title_provenance == 'official_tw_localized_asset' 時
 I. 驗證器負向測試：title_provenance == 'unresolved' 時若 title 為非空字串必須失敗
 J. 容許合法同名章節標題
 K. 容許章節標題與話數副標題文字相同
-L. 摘要 summary_provenance 全量保留為 'legacy_unverified'
+L. 現行 summary_provenance 必須符合 validator allowlist；00600025 baseline 仍維持 legacy_unverified
 M. 不合法 summary_provenance 導致驗證失敗
 N. 現行 chapters.json 100% 通過 validate_chapters_metadata 門禁
 """
@@ -29,7 +29,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from pipeline.validate import validate_chapters_metadata
+from pipeline.validate import VALID_CHAPTER_SUMMARY_PROVENANCE, validate_chapters_metadata
 from tests.test_official_chapter_title_extractor import OFFICIAL_TW_00600025_BASELINE_ROWS
 
 CHAPTERS_PATH = PROJECT_ROOT / 'dashboard' / 'data' / 'chapters.json'
@@ -171,19 +171,24 @@ class TestChapterMetadataProvenance(unittest.TestCase):
         is_valid, msg = validate_chapters_metadata(mutated)
         self.assertTrue(is_valid, f'章節元數據自身驗證通過: {msg}')
 
-    def test_l_summary_provenance_legacy_unverified(self):
-        """L. 現行所有保留歷史綱要皆維持 legacy_unverified provenance。"""
+    def test_l_summary_provenance_contract(self):
+        """L. 現行 provenance 必須合法；00600025 baseline 歷史綱要仍維持 legacy_unverified。"""
         all_gw = self._all_game_world()
-        self.assertGreaterEqual(
-            len(all_gw),
-            len(OFFICIAL_TW_00600025_BASELINE_ROWS),
-            '現行章節數不得少於已驗證的 00600025 官方 baseline',
-        )
+        baseline_ids = {str(group_id) for group_id, _, _ in OFFICIAL_TW_00600025_BASELINE_ROWS}
+
         for cid, info in all_gw.items():
-            self.assertEqual(
+            self.assertIn(
                 info.get('summary_provenance'),
+                VALID_CHAPTER_SUMMARY_PROVENANCE,
+                f'章節 {cid} 之 summary_provenance 不在 validator allowlist',
+            )
+
+        for cid in baseline_ids:
+            self.assertIn(cid, all_gw, f'缺少 baseline 章節 ID: {cid}')
+            self.assertEqual(
+                all_gw[cid].get('summary_provenance'),
                 'legacy_unverified',
-                f'章節 {cid} 之 summary_provenance 必須為 legacy_unverified',
+                f'baseline 章節 {cid} 之 summary_provenance 應維持 legacy_unverified',
             )
 
     def test_m_invalid_summary_provenance_fails_validation(self):
