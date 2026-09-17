@@ -1,1997 +1,2214 @@
 [
-    {
-        "type": "background",
-        "background": "500210"
-    },
-    {
-        "type": "dialogue",
-        "name": "旁白",
-        "words": "為了購買年菜的材料，一行人走過街道前往神殿。"
-    },
-    {
-        "type": "dialogue",
-        "name": "旁白",
-        "words": "\n在路上貪吃佩可停下腳步。"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "怎麼了？",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "\n繼續沿著路走就會到神殿啦。",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "我們可以繞去別的地方一下下嗎？",
-        "unit_id": 111811,
-        "voice": "vo_adv_5082002_001"
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "是沒關係啦。",
-        "unit_id": 120811,
-        "voice": "vo_adv_5082002_002"
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "\n前面有什麼嗎？",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "對了，",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_003"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "妾身也有聽說。",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "\n",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "是在新年舉行的公會對抗競速賽嗎？",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "喔～！",
-        "unit_id": 120811,
-        "voice": "vo_adv_5082002_004"
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "\n這裡就是在福氣公會競速賽與山神大人競賽的那條路啊！",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "\n我在報紙上看到妳們活躍的身手呢。",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "公會競速賽……？",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_005"
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "沒錯。",
-        "unit_id": 111911,
-        "voice": "vo_adv_5082002_006"
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "所謂的公會競速賽是……",
-        "unit_id": 111911
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "發生過這樣的事啊……",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_007"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "\n而且",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "妳們還獲得了優勝，",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "我都不知道。",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "然後，",
-        "unit_id": 112011,
-        "voice": "vo_adv_5082002_008"
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "當時最後的直線區間就是這裡喔。",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "\n",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "現在回想還是覺得很厲害呢，",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "鈴莓的奔跑。",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "和巨大山神大人的激烈競賽……",
-        "unit_id": 111911,
-        "voice": "vo_adv_5082002_009"
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "\n",
-        "unit_id": 111911
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "正所謂一場激戰呢。",
-        "unit_id": 111911
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "是啊……",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_010"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "\n大家",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "都經歷過許多我不知道的事……",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "那樣的激戰，",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_011"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "是怎樣獲勝的啊？",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "如果真要說的話……",
-        "unit_id": 111811,
-        "voice": "vo_adv_5082002_012"
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "就是絕不放棄，",
-        "unit_id": 111811
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "大概吧。",
-        "unit_id": 111811
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "絕不放棄……",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_013"
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "唉，",
-        "unit_id": 112011,
-        "voice": "vo_adv_5082002_014"
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "誰叫在場的都是些不肯死心的人呢。",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "\n包含當時的鈴莓。",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "哎呀～",
-        "unit_id": 111811,
-        "voice": "vo_adv_5082002_015"
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "一想起當時的事，",
-        "unit_id": 111811
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "現在也會覺得手心冒汗……",
-        "unit_id": 111811
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "而且肚子也餓了呢！",
-        "unit_id": 111811,
-        "voice": "vo_adv_5082002_016"
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "為什麼啦！！",
-        "unit_id": 112011,
-        "voice": "vo_adv_5082002_017"
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "因為想起了競速賽後慶功宴的大餐☆",
-        "unit_id": 111811,
-        "voice": "vo_adv_5082002_018"
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "是的，",
-        "unit_id": 111911,
-        "voice": "vo_adv_5082002_019"
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "實在格外美味呢。",
-        "unit_id": 111911
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "結果那也是高級魔物料理吧！",
-        "unit_id": 112011,
-        "voice": "vo_adv_5082002_020"
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "\n",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "嗯，是很美味啦……",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "\n",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "假如那時雪菲在的話，",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "就能更輕鬆地獲得優勝吧？",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "我不知道的，",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_021"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "大家的回憶……",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "\n",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "有點羨慕呢。",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "羨慕……",
-        "unit_id": 112011,
-        "voice": "vo_adv_5082002_022"
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "妳是指高級魔物料理嗎？",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "嗯……？",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_023"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "怎麼了？",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "雪菲？",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "咦？",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_024"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "\n",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "……對不起。",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "我在想事情。",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "哎呀……",
-        "unit_id": 120811,
-        "voice": "vo_adv_5082002_025"
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "看見了。",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "\n是神殿。",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "好！",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_026"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "妾身領先抵達──！",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "請等一下，伊莉亞小姐。",
-        "unit_id": 111911,
-        "voice": "vo_adv_5082002_027"
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "\n穿著新年和服奔跑非常危險。",
-        "unit_id": 111911
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "等等我們──！",
-        "unit_id": 111811,
-        "voice": "vo_adv_5082002_028"
-    },
-    {
-        "type": "background",
-        "background": "500550"
-    },
-    {
-        "type": "dialogue",
-        "name": "旁白",
-        "words": "到達神殿的一行人在院落內參拜。"
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "希望能吃到美味佳餚。",
-        "unit_id": 111811,
-        "voice": "vo_adv_5082002_029"
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "祈求各位今年",
-        "unit_id": 111911,
-        "voice": "vo_adv_5082002_030"
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "平安無事……",
-        "unit_id": 111911
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "希望今年不會被逼著吃下奇怪的東西……",
-        "unit_id": 112011,
-        "voice": "vo_adv_5082002_031"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "大家",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_032"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "都很認真地參拜呢……",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "話說回來人變多了呢。",
-        "unit_id": 112011,
-        "voice": "vo_adv_5082002_033"
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "別走散了……",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "\n",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "呃，",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "咦？",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "大家去哪兒了？",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "可蘿仔？",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "貪吃佩可？",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "哇哇，",
-        "unit_id": 111811,
-        "voice": "vo_adv_5082002_034"
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "被推著走了！",
-        "unit_id": 111811
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "雪菲小姐，",
-        "unit_id": 111911,
-        "voice": "vo_adv_5082002_035"
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "我們先去攤子那邊，",
-        "unit_id": 111911
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "\n妳慢慢來。",
-        "unit_id": 111911
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "嗯，",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_036"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "我知道了。",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "…………",
-        "unit_id": 120811,
-        "voice": "vo_adv_5082002_037"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "嗯嗯嗯嗯",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_038"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "嗯……！",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "流夏小姐很安靜……",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_039"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "伊莉亞小姐……",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "感覺氣勢很可怕呢。",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "無論如何",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_040"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "妾身都要將力量……！",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "\n",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "嗯？",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "怎麼了？雪菲。",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "\n妳不祈禱嗎？",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "那個……",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_041"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "\n我平常也一直在祈禱，",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "希望能恢復記憶。",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "\n",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "其他還要祈求什麼，",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "我就不知道了。",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "什麼都可以啊。",
-        "unit_id": 120811,
-        "voice": "vo_adv_5082002_042"
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "\n像是健康或好運，",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "希望能得到的東西，",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "都可以喔。",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "那種東西也可以嗎？",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_043"
-    },
-    {
-        "type": "still",
-        "still": "508200201"
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "當然。",
-        "unit_id": 120811,
-        "voice": "vo_adv_5082002_044"
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "\n祈禱也是再次確認自己想法的場合。",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "如果有煩惱就說來聽聽吧？",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_045"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "\n",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "正因是同一個公會，",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "有些煩惱也說不出口吧？",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "所謂衣袖相拂也是前生之緣，",
-        "unit_id": 120811,
-        "voice": "vo_adv_5082002_046"
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "是吧。",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "\n我們有緣同穿著這身長袖和服，趁這個機會說說看如何？",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "既然如此……",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_047"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "那就稍微……",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "【美食殿堂】的大家，",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_048"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "有我加入前的回憶，",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "\n也有我加入前的羈絆……",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "嗯，",
-        "unit_id": 120811,
-        "voice": "vo_adv_5082002_049"
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "有種距離感，",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "是嗎？",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "當然，",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_050"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "大家都對我很好。",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "\n",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "可是，",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "正因如此……",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "連自己的過去都不知道的我，",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "\n可以",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "和大家在一起嗎？",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "有時我會這麼想……",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "嗯……",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_051"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "雪菲，",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "\n妳知道妾身從長眠中甦醒的事嗎？",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "嗯、",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_052"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "嗯……",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "\n",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "聽說是【惡魔偽王國軍】的人把妳喚醒的。",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "我甦醒時",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_053"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "沒有半個認識的人。",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "\n而且",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "幾乎完全失去了",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "以前的力量。",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "從這個時代的角度來看，",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_054"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "妾身是過去的人。",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "\n就像獨自被留下的，走失的孩子……",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "但等注意到時，",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_055"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "不只【惡魔偽王國軍】的人，",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "\n包含妳們在內，",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "妾身被許多人圍繞著。",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "\n現在，",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "妾身無法想像沒有大家的生活。",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "我也是。",
-        "unit_id": 120811,
-        "voice": "vo_adv_5082002_056"
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "來到蘭德索爾時，",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "原本是一身輕的獨自旅行。",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "\n等到我注意到時，已經增加了與許多人的連結。",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "所謂人的緣分，",
-        "unit_id": 120811,
-        "voice": "vo_adv_5082002_057"
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "總是在本人沒察覺時就連結起來了。",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "\n",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "雖然用說的可以明白，",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "\n不過實際上不連結起來就很難產生實感呢。",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "是啊。",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_058"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "\n實際上連結起來",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "才會明白。",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "\n妾身也是一開始感到不安。",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "妾身的過去",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_059"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "除了妾身沒人知道。",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "\n",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "但是，",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "即便如此大家仍然跟隨著妾身。",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "\n這點雪菲也一樣吧？",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "過去的事，",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_060"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "不要在意……",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "是這樣嗎？",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "並非如此喔。",
-        "unit_id": 120811,
-        "voice": "vo_adv_5082002_061"
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "\n因為面對過去的方式因人而異呢。",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "\n",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "不過，",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "因為過去而否定現在，",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "就太可惜了。",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "可惜……",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_062"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "\n比起失去的過去，",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "要珍惜現在……",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "是這樣嗎？",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "哈哈哈！",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_063"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "說得好呢！",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "\n",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "沒錯，",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "辜負大家的好意太可惜了。",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "現在",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_064"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "只要率直地回應大家的心意就行了。",
-        "unit_id": 120912
-    },
-    {
-        "type": "still",
-        "still": "508200202"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "大家的心意……",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_065"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "這樣",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "啊。",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "\n感覺心情變輕鬆了。",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "\n謝謝",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "妳們兩個。",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "沒什麼，",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_066"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "別放在心上。",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "\n引導迷惘的人也是支配者的職責！",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "薑是老的辣，",
-        "unit_id": 120811,
-        "voice": "vo_adv_5082002_067"
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "就是這麼一回事。",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "要是對妳有幫助就好。",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "\n",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "話說……",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "想祈求的事",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "決定好了吧？",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "……！",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_068"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "是！",
-        "unit_id": 120711
-    },
-    {
-        "type": "background",
-        "background": "500550"
-    },
-    {
-        "type": "still",
-        "still": "end"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "明年，",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_069"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "還有以後……",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "希望能和大家一直在一起……！　",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "雪菲～！",
-        "unit_id": 111811,
-        "voice": "vo_adv_5082002_070"
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "太好了，",
-        "unit_id": 111811
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "妳沒走遠呢。",
-        "unit_id": 111811
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "\n因為怎麼等妳都沒出現，",
-        "unit_id": 111811
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "\n我擔心得跑來找妳！",
-        "unit_id": 111811
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "抱歉。",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_071"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "\n許願拖太久了……",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "妳許了什麼願呢？",
-        "unit_id": 111811,
-        "voice": "vo_adv_5082002_072"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "這個……",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_073"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "是祕密！",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "咦～",
-        "unit_id": 111811,
-        "voice": "vo_adv_5082002_074"
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "怎麼這樣～！",
-        "unit_id": 111811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "別問那種不識趣的問題啦？",
-        "unit_id": 120811,
-        "voice": "vo_adv_5082002_075"
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "\n",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "喏，",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "快走吧。",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "沒錯！",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_076"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "快點去取得吉祥物的年糕！",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "\n",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "為了妾身完全的復活，",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "買再多都行！",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "\n乾脆全部買下吧！",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "凱留和可可蘿已經先走一步去買了，",
-        "unit_id": 111811,
-        "voice": "vo_adv_5082002_077"
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "\n快點和她們會合吧！",
-        "unit_id": 111811
-    },
-    {
-        "type": "background",
-        "background": "500560"
-    },
-    {
-        "type": "dialogue",
-        "name": "旁白",
-        "words": "然而可可蘿和凱留來到販售吉祥物年糕的攤子，\n等著她們的卻是"
-    },
-    {
-        "type": "dialogue",
-        "name": "旁白",
-        "words": "意想不到的事態。"
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "全部售完了，",
-        "unit_id": 111911,
-        "voice": "vo_adv_5082002_078"
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "是嗎？",
-        "unit_id": 111911
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "啊！？",
-        "unit_id": 112011,
-        "voice": "vo_adv_5082002_079"
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "什麼情況！",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "\n剛才我們經過時不是還有很多嗎！",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "攬客店員",
-        "words": "那個，",
-        "unit_id": 417,
-        "voice": "vo_adv_5082002_080"
-    },
-    {
-        "type": "dialogue",
-        "name": "攬客店員",
-        "words": "剛才有個人全部買走了……",
-        "unit_id": 417
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "怎麼回事啊──！",
-        "unit_id": 112011,
-        "voice": "vo_adv_5082002_081"
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "怎麼這樣……",
-        "unit_id": 111811,
-        "voice": "vo_adv_5082002_082"
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "看來",
-        "unit_id": 111911,
-        "voice": "vo_adv_5082002_083"
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "神殿所有攤子的",
-        "unit_id": 111911
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "吉祥物年糕全都被買光了……",
-        "unit_id": 111911
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "可恨～！",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_084"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "是哪來的傢伙做出這種沒天良的事～！",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "喂喂，",
-        "unit_id": 120811,
-        "voice": "vo_adv_5082002_085"
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "剛才妳不是也想幹同樣的勾當嗎？",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "啊哈哈……",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_086"
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "嗚嗚，",
-        "unit_id": 111811,
-        "voice": "vo_adv_5082002_087"
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "神殿的年糕，",
-        "unit_id": 111811
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "好想吃啊……",
-        "unit_id": 111811
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "已經沒了也沒辦法。",
-        "unit_id": 112011,
-        "voice": "vo_adv_5082002_088"
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "\n",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "前往下個目的地吧。",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "是……",
-        "unit_id": 111811,
-        "voice": "vo_adv_5082002_089"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "是啊……",
-        "unit_id": 120912,
-        "voice": "vo_adv_5082002_090"
-    },
-    {
-        "type": "dialogue",
-        "name": "伊莉亞",
-        "words": "接著要去哪裡？",
-        "unit_id": 120912
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "前往大間吧。",
-        "unit_id": 111911,
-        "voice": "vo_adv_5082002_091"
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "不錯呢。",
-        "unit_id": 120811,
-        "voice": "vo_adv_5082002_092"
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "我們趕緊走吧！",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "\n喏喏！",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "快點出發！",
-        "unit_id": 120811
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "是啊，",
-        "unit_id": 111811,
-        "voice": "vo_adv_5082002_093"
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "打起精神來吧！",
-        "unit_id": 111811
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "\n",
-        "unit_id": 111811
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "美味的海鮮在等著我們喔！",
-        "unit_id": 111811
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "呵呵，",
-        "unit_id": 111911,
-        "voice": "vo_adv_5082002_094"
-    },
-    {
-        "type": "dialogue",
-        "name": "可可蘿",
-        "words": "流夏小姐和貪吃佩可小姐看起來很開心呢。",
-        "unit_id": 111911
-    },
-    {
-        "type": "dialogue",
-        "name": "可疑男子",
-        "words": "嘿嘿嘿……",
-        "unit_id": 811,
-        "voice": "vo_adv_5082002_095"
-    },
-    {
-        "type": "dialogue",
-        "name": "可疑男子",
-        "words": "簡單啦。",
-        "unit_id": 811
-    },
-    {
-        "type": "dialogue",
-        "name": "可疑男子",
-        "words": "\n嗯，雖然把母錢花掉了，",
-        "unit_id": 811
-    },
-    {
-        "type": "dialogue",
-        "name": "可疑男子",
-        "words": "不過這點錢馬上就能……",
-        "unit_id": 811
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "呀！",
-        "unit_id": 112011,
-        "voice": "vo_adv_5082002_096"
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "欸！",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "走路看前面啦！",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "可疑男子",
-        "words": "囉嗦！",
-        "unit_id": 811,
-        "voice": "vo_adv_5082002_097"
-    },
-    {
-        "type": "dialogue",
-        "name": "可疑男子",
-        "words": "別擋路！",
-        "unit_id": 811
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "沒事吧？",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082002_098"
-    },
-    {
-        "type": "dialogue",
-        "name": "雪菲",
-        "words": "凱留。",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "我沒事……",
-        "unit_id": 112011,
-        "voice": "vo_adv_5082002_099"
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "那傢伙搞什麼啊？",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "\n還面露賊笑。",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "啊～",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "凱留",
-        "words": "氣死人了！",
-        "unit_id": 112011
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "那麼，",
-        "unit_id": 111811,
-        "voice": "vo_adv_5082002_100"
-    },
-    {
-        "type": "dialogue",
-        "name": "貪吃佩可",
-        "words": "就朝大間出發吧！",
-        "unit_id": 111811
-    },
-    {
-        "type": "dialogue",
-        "name": "流夏",
-        "words": "好！",
-        "unit_id": 120811,
-        "voice": "vo_adv_5082002_101"
-    },
-    {
-        "type": "dialogue",
-        "name": "旁白",
-        "words": "於是，雖然碰上一些問題，"
-    },
-    {
-        "type": "dialogue",
-        "name": "旁白",
-        "words": "\n但是回憶的年菜巡迴之旅仍將持續下去。"
-    }
+  {
+    "type": "background",
+    "bg_id": "500210"
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "為了購買年菜的材料，一行人走過街道前往神殿。",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "\\n在路上貪吃佩可停下腳步。",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "怎麼了？",
+    "voice": "vo_adv_5082002_000",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "\\n繼續沿著路走就會到神殿啦。",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "我們可以繞去別的地方一下下嗎？",
+    "voice": "vo_adv_5082002_001",
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "是沒關係啦。",
+    "voice": "vo_adv_5082002_002",
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "\\n前面有什麼嗎？",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "對了，",
+    "voice": "vo_adv_5082002_003",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "妾身也有聽說。",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "是在新年舉行的公會對抗競速賽嗎？",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "喔～！",
+    "voice": "vo_adv_5082002_004",
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "\\n這裡就是在福氣公會競速賽與山神大人競賽的那條路啊！",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "\\n我在報紙上看到妳們活躍的身手呢。",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "公會競速賽……？",
+    "voice": "vo_adv_5082002_005",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "沒錯。",
+    "voice": "vo_adv_5082002_006",
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "所謂的公會競速賽是……",
+    "voice": null,
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "發生過這樣的事啊……",
+    "voice": "vo_adv_5082002_007",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "\\n而且",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "妳們還獲得了優勝，",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "我都不知道。",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "然後，",
+    "voice": "vo_adv_5082002_008",
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "當時最後的直線區間就是這裡喔。",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "現在回想還是覺得很厲害呢，",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "鈴莓的奔跑。",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "和巨大山神大人的激烈競賽……",
+    "voice": "vo_adv_5082002_009",
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "正所謂一場激戰呢。",
+    "voice": null,
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "是啊……",
+    "voice": "vo_adv_5082002_010",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "\\n大家",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "都經歷過許多我不知道的事……",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "那樣的激戰，",
+    "voice": "vo_adv_5082002_011",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "是怎樣獲勝的啊？",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "如果真要說的話……",
+    "voice": "vo_adv_5082002_012",
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "就是絕不放棄，",
+    "voice": null,
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "大概吧。",
+    "voice": null,
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "絕不放棄……",
+    "voice": "vo_adv_5082002_013",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "唉，",
+    "voice": "vo_adv_5082002_014",
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "誰叫在場的都是些不肯死心的人呢。",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "\\n包含當時的鈴莓。",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "哎呀～",
+    "voice": "vo_adv_5082002_015",
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "一想起當時的事，",
+    "voice": null,
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "現在也會覺得手心冒汗……",
+    "voice": null,
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "而且肚子也餓了呢！",
+    "voice": "vo_adv_5082002_016",
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "為什麼啦！！",
+    "voice": "vo_adv_5082002_017",
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "因為想起了競速賽後慶功宴的大餐☆",
+    "voice": "vo_adv_5082002_018",
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "是的，",
+    "voice": "vo_adv_5082002_019",
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "實在格外美味呢。",
+    "voice": null,
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "結果那也是高級魔物料理吧！",
+    "voice": "vo_adv_5082002_020",
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "嗯，是很美味啦……",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "假如那時雪菲在的話，",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "就能更輕鬆地獲得優勝吧？",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "我不知道的，",
+    "voice": "vo_adv_5082002_021",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "大家的回憶……",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "有點羨慕呢。",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "羨慕……",
+    "voice": "vo_adv_5082002_022",
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "妳是指高級魔物料理嗎？",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "嗯……？",
+    "voice": "vo_adv_5082002_023",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "怎麼了？",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "雪菲？",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "咦？",
+    "voice": "vo_adv_5082002_024",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "……對不起。",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "我在想事情。",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "哎呀……",
+    "voice": "vo_adv_5082002_025",
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "看見了。",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "\\n是神殿。",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "好！",
+    "voice": "vo_adv_5082002_026",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "妾身領先抵達──！",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "請等一下，伊莉亞小姐。",
+    "voice": "vo_adv_5082002_027",
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "\\n穿著新年和服奔跑非常危險。",
+    "voice": null,
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "等等我們──！",
+    "voice": "vo_adv_5082002_028",
+    "unit_id": 111811
+  },
+  {
+    "type": "background",
+    "bg_id": "500550"
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "到達神殿的一行人在院落內參拜。",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "希望能吃到美味佳餚。",
+    "voice": "vo_adv_5082002_029",
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "祈求各位今年",
+    "voice": "vo_adv_5082002_030",
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "平安無事……",
+    "voice": null,
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "希望今年不會被逼著吃下奇怪的東西……",
+    "voice": "vo_adv_5082002_031",
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "大家",
+    "voice": "vo_adv_5082002_032",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "都很認真地參拜呢……",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "話說回來人變多了呢。",
+    "voice": "vo_adv_5082002_033",
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "別走散了……",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "呃，",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "咦？",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "大家去哪兒了？",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "可蘿仔？",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "貪吃佩可？",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "哇哇，",
+    "voice": "vo_adv_5082002_034",
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "被推著走了！",
+    "voice": null,
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "雪菲小姐，",
+    "voice": "vo_adv_5082002_035",
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "我們先去攤子那邊，",
+    "voice": null,
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "\\n妳慢慢來。",
+    "voice": null,
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "嗯，",
+    "voice": "vo_adv_5082002_036",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "我知道了。",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "…………",
+    "voice": "vo_adv_5082002_037",
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "嗯嗯嗯嗯",
+    "voice": "vo_adv_5082002_038",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "嗯……！",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "流夏小姐很安靜……",
+    "voice": "vo_adv_5082002_039",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "伊莉亞小姐……",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "感覺氣勢很可怕呢。",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "無論如何",
+    "voice": "vo_adv_5082002_040",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "妾身都要將力量……！",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "嗯？",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "怎麼了？雪菲。",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "\\n妳不祈禱嗎？",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "那個……",
+    "voice": "vo_adv_5082002_041",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "\\n我平常也一直在祈禱，",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "希望能恢復記憶。",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "其他還要祈求什麼，",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "我就不知道了。",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "什麼都可以啊。",
+    "voice": "vo_adv_5082002_042",
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "\\n像是健康或好運，",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "希望能得到的東西，",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "都可以喔。",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "那種東西也可以嗎？",
+    "voice": "vo_adv_5082002_043",
+    "unit_id": 120711
+  },
+  {
+    "type": "still",
+    "still_id": "508200201"
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "當然。",
+    "voice": "vo_adv_5082002_044",
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "\\n祈禱也是再次確認自己想法的場合。",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "如果有煩惱就說來聽聽吧？",
+    "voice": "vo_adv_5082002_045",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "正因是同一個公會，",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "有些煩惱也說不出口吧？",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "所謂衣袖相拂也是前生之緣，",
+    "voice": "vo_adv_5082002_046",
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "是吧。",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "\\n我們有緣同穿著這身長袖和服，趁這個機會說說看如何？",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "既然如此……",
+    "voice": "vo_adv_5082002_047",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "那就稍微……",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "【美食殿堂】的大家，",
+    "voice": "vo_adv_5082002_048",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "有我加入前的回憶，",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "\\n也有我加入前的羈絆……",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "嗯，",
+    "voice": "vo_adv_5082002_049",
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "有種距離感，",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "是嗎？",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "當然，",
+    "voice": "vo_adv_5082002_050",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "大家都對我很好。",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "可是，",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "正因如此……",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "連自己的過去都不知道的我，",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "\\n可以",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "和大家在一起嗎？",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "有時我會這麼想……",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "嗯……",
+    "voice": "vo_adv_5082002_051",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "雪菲，",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "\\n妳知道妾身從長眠中甦醒的事嗎？",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "嗯、",
+    "voice": "vo_adv_5082002_052",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "嗯……",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "聽說是【惡魔偽王國軍】的人把妳喚醒的。",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "我甦醒時",
+    "voice": "vo_adv_5082002_053",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "沒有半個認識的人。",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "\\n而且",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "幾乎完全失去了",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "以前的力量。",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "從這個時代的角度來看，",
+    "voice": "vo_adv_5082002_054",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "妾身是過去的人。",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "\\n就像獨自被留下的，走失的孩子……",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "但等注意到時，",
+    "voice": "vo_adv_5082002_055",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "不只【惡魔偽王國軍】的人，",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "\\n包含妳們在內，",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "妾身被許多人圍繞著。",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "\\n現在，",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "妾身無法想像沒有大家的生活。",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "我也是。",
+    "voice": "vo_adv_5082002_056",
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "來到蘭德索爾時，",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "原本是一身輕的獨自旅行。",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "\\n等到我注意到時，已經增加了與許多人的連結。",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "所謂人的緣分，",
+    "voice": "vo_adv_5082002_057",
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "總是在本人沒察覺時就連結起來了。",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "雖然用說的可以明白，",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "\\n不過實際上不連結起來就很難產生實感呢。",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "是啊。",
+    "voice": "vo_adv_5082002_058",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "\\n實際上連結起來",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "才會明白。",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "\\n妾身也是一開始感到不安。",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "妾身的過去",
+    "voice": "vo_adv_5082002_059",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "除了妾身沒人知道。",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "但是，",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "即便如此大家仍然跟隨著妾身。",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "\\n這點雪菲也一樣吧？",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "過去的事，",
+    "voice": "vo_adv_5082002_060",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "不要在意……",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "是這樣嗎？",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "並非如此喔。",
+    "voice": "vo_adv_5082002_061",
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "\\n因為面對過去的方式因人而異呢。",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "不過，",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "因為過去而否定現在，",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "就太可惜了。",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "可惜……",
+    "voice": "vo_adv_5082002_062",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "\\n比起失去的過去，",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "要珍惜現在……",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "是這樣嗎？",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "哈哈哈！",
+    "voice": "vo_adv_5082002_063",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "說得好呢！",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "沒錯，",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "辜負大家的好意太可惜了。",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "現在",
+    "voice": "vo_adv_5082002_064",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "只要率直地回應大家的心意就行了。",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "still",
+    "still_id": "508200202"
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "大家的心意……",
+    "voice": "vo_adv_5082002_065",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "這樣",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "啊。",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "\\n感覺心情變輕鬆了。",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "\\n謝謝",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "妳們兩個。",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "沒什麼，",
+    "voice": "vo_adv_5082002_066",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "別放在心上。",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "\\n引導迷惘的人也是支配者的職責！",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "薑是老的辣，",
+    "voice": "vo_adv_5082002_067",
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "就是這麼一回事。",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "要是對妳有幫助就好。",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "話說……",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "想祈求的事",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "決定好了吧？",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "……！",
+    "voice": "vo_adv_5082002_068",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "是！",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "background",
+    "bg_id": "500550"
+  },
+  {
+    "type": "still",
+    "still_id": "end"
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "明年，",
+    "voice": "vo_adv_5082002_069",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "還有以後……",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "希望能和大家一直在一起……！　",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "雪菲～！",
+    "voice": "vo_adv_5082002_070",
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "太好了，",
+    "voice": null,
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "妳沒走遠呢。",
+    "voice": null,
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n因為怎麼等妳都沒出現，",
+    "voice": null,
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n我擔心得跑來找妳！",
+    "voice": null,
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "抱歉。",
+    "voice": "vo_adv_5082002_071",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "\\n許願拖太久了……",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "妳許了什麼願呢？",
+    "voice": "vo_adv_5082002_072",
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "這個……",
+    "voice": "vo_adv_5082002_073",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "是祕密！",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "咦～",
+    "voice": "vo_adv_5082002_074",
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "怎麼這樣～！",
+    "voice": null,
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "別問那種不識趣的問題啦？",
+    "voice": "vo_adv_5082002_075",
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "喏，",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "快走吧。",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "沒錯！",
+    "voice": "vo_adv_5082002_076",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "快點去取得吉祥物的年糕！",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "為了妾身完全的復活，",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "買再多都行！",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "\\n乾脆全部買下吧！",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "凱留和可可蘿已經先走一步去買了，",
+    "voice": "vo_adv_5082002_077",
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n快點和她們會合吧！",
+    "voice": null,
+    "unit_id": 111811
+  },
+  {
+    "type": "background",
+    "bg_id": "500560"
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "然而可可蘿和凱留來到販售吉祥物年糕的攤子，\\n等著她們的卻是",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "意想不到的事態。",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "全部售完了，",
+    "voice": "vo_adv_5082002_078",
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "是嗎？",
+    "voice": null,
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "啊！？",
+    "voice": "vo_adv_5082002_079",
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "什麼情況！",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "\\n剛才我們經過時不是還有很多嗎！",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "攬客店員",
+    "words": "那個，",
+    "voice": "vo_adv_5082002_080",
+    "unit_id": 417
+  },
+  {
+    "type": "dialogue",
+    "name": "攬客店員",
+    "words": "剛才有個人全部買走了……",
+    "voice": null,
+    "unit_id": 417
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "怎麼回事啊──！",
+    "voice": "vo_adv_5082002_081",
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "怎麼這樣……",
+    "voice": "vo_adv_5082002_082",
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "看來",
+    "voice": "vo_adv_5082002_083",
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "神殿所有攤子的",
+    "voice": null,
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "吉祥物年糕全都被買光了……",
+    "voice": null,
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "可恨～！",
+    "voice": "vo_adv_5082002_084",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "是哪來的傢伙做出這種沒天良的事～！",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "喂喂，",
+    "voice": "vo_adv_5082002_085",
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "剛才妳不是也想幹同樣的勾當嗎？",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "啊哈哈……",
+    "voice": "vo_adv_5082002_086",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "嗚嗚，",
+    "voice": "vo_adv_5082002_087",
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "神殿的年糕，",
+    "voice": null,
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "好想吃啊……",
+    "voice": null,
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "已經沒了也沒辦法。",
+    "voice": "vo_adv_5082002_088",
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "前往下個目的地吧。",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "是……",
+    "voice": "vo_adv_5082002_089",
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "是啊……",
+    "voice": "vo_adv_5082002_090",
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "伊莉亞",
+    "words": "接著要去哪裡？",
+    "voice": null,
+    "unit_id": 120912
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "前往大間吧。",
+    "voice": "vo_adv_5082002_091",
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "不錯呢。",
+    "voice": "vo_adv_5082002_092",
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "我們趕緊走吧！",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "\\n喏喏！",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "快點出發！",
+    "voice": null,
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "是啊，",
+    "voice": "vo_adv_5082002_093",
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "打起精神來吧！",
+    "voice": null,
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "美味的海鮮在等著我們喔！",
+    "voice": null,
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "呵呵，",
+    "voice": "vo_adv_5082002_094",
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "流夏小姐和貪吃佩可小姐看起來很開心呢。",
+    "voice": null,
+    "unit_id": 111911
+  },
+  {
+    "type": "dialogue",
+    "name": "可疑男子",
+    "words": "嘿嘿嘿……",
+    "voice": "vo_adv_5082002_095",
+    "unit_id": 811
+  },
+  {
+    "type": "dialogue",
+    "name": "可疑男子",
+    "words": "簡單啦。",
+    "voice": null,
+    "unit_id": 811
+  },
+  {
+    "type": "dialogue",
+    "name": "可疑男子",
+    "words": "\\n嗯，雖然把母錢花掉了，",
+    "voice": null,
+    "unit_id": 811
+  },
+  {
+    "type": "dialogue",
+    "name": "可疑男子",
+    "words": "不過這點錢馬上就能……",
+    "voice": null,
+    "unit_id": 811
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "呀！",
+    "voice": "vo_adv_5082002_096",
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "欸！",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "走路看前面啦！",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "可疑男子",
+    "words": "囉嗦！",
+    "voice": "vo_adv_5082002_097",
+    "unit_id": 811
+  },
+  {
+    "type": "dialogue",
+    "name": "可疑男子",
+    "words": "別擋路！",
+    "voice": null,
+    "unit_id": 811
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "沒事吧？",
+    "voice": "vo_adv_5082002_098",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "雪菲",
+    "words": "凱留。",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "我沒事……",
+    "voice": "vo_adv_5082002_099",
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "那傢伙搞什麼啊？",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "\\n還面露賊笑。",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "啊～",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "氣死人了！",
+    "voice": null,
+    "unit_id": 112011
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "那麼，",
+    "voice": "vo_adv_5082002_100",
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "就朝大間出發吧！",
+    "voice": null,
+    "unit_id": 111811
+  },
+  {
+    "type": "dialogue",
+    "name": "流夏",
+    "words": "好！",
+    "voice": "vo_adv_5082002_101",
+    "unit_id": 120811
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "於是，雖然碰上一些問題，",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "\\n但是回憶的年菜巡迴之旅仍將持續下去。",
+    "voice": null,
+    "unit_id": null
+  }
 ]

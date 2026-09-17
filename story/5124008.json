@@ -1,3316 +1,3704 @@
 [
-    {
-        "type": "background",
-        "background": "500142"
-    },
-    {
-        "type": "dialogue",
-        "name": "ナレーション",
-        "words": "カオリがサーターアンダギーを食べさせたことで、"
-    },
-    {
-        "type": "dialogue",
-        "name": "ナレーション",
-        "words": "\nわたあめちゃんを元通りの愛くるしい姿に戻すことに成功した。"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "よしよし、",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "いい子だね～！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "わたあめちゃん",
-        "words": "くぅ～～ん！",
-        "unit_id": 7611,
-        "voice": "vo_adv_5076008_001"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "みんなのおかげさ～！",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_002"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n{player}も、",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "よく走ったさ～ね！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "騎士団のオノオノガタのみなさん、",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_003"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "これで文句ないでショウ！",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "\n",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "もう被害は出しまセン！",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "元はといえば、",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_004"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "わたあめちゃんが暴れたのも、",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "\n悪事を働いたサーカス団に誘拐されたせいデス……",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "とっちめるなら、",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_005"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "サーカス団を調査するべきデス！",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "騎士団隊長",
-        "words": "ふむ……",
-        "unit_id": 712,
-        "voice": "vo_adv_5076008_006"
-    },
-    {
-        "type": "dialogue",
-        "name": "騎士団隊長",
-        "words": "そこまで言うなら、",
-        "unit_id": 712
-    },
-    {
-        "type": "dialogue",
-        "name": "騎士団隊長",
-        "words": "確かめてみるとしよう。",
-        "unit_id": 712
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "おーい！　",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_007"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "お前ら、",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "大丈夫か！？",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "オオー！　",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_008"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "ジャックさんデース！",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "\nよくぞご無事で！",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "さっき、",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_009"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "聞こえてたぞー！",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "\nよくもオイラを置いてけぼりにしたなー！",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "まあいいじゃん！　",
-        "unit_id": 117911,
-        "voice": "vo_adv_5076008_010"
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "元気そうだし！",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "\n",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "さすがエリート精霊って感じ？",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "ま、",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_011"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "まあな！",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "それより、",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_012"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "お前らやったな！",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "\n",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "よくあのヘルドッグを手懐けたな！　",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "どうやったんだ？",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "カオリさんのおかげデス！",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_013"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "\n",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "彼女の優しさが、",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "元の",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "優しいわたあめちゃんに戻したんデスよ。",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "そうか……",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_014"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "\nそんなことできるヤツが、",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "あの方以外にもいたとはな……",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "あの方……？",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_015"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "おーい！　",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_016"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "君たちー！",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "あっ、",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_017"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "博士ー！　",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "こっちこっちー！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\nわたあめちゃん帰ってきたよー！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "ああ、",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_018"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "研究所でもわたあめちゃんの異変を感知していて、",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\nずっと計器で観測していたよ。",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "君たちが追っているだろうと思っていたものの、",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_019"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\nその異変をどうしてもこの目で見たくて、",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "ここまで来たんだが……",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "どうやらもう解決したようだね。",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_020"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\n間近で観測できなかったのは残念だが、",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "いい数値は得られたよ！",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "あは～、",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_021"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "残念だったね～",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "わたあめちゃんは、",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "もういつも通りさ～！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "わたあめちゃん",
-        "words": "ばうわうっ！",
-        "unit_id": 7611,
-        "voice": "vo_adv_5076008_022"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "そういえば、",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_023"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "変な叫び声のことは",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "どうなったさ～？",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "ああ、",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_024"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "あれか……",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\n",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "私は、",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "わたあめちゃんの変化の前触れだと考えている。",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "変化に必要な霊力を体内で高めたことで、",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_025"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\nこの現実界に何かしらの影響を与えたんだろう。",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "いいか、",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_026"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "思い出してみてくれ。",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\nあの叫び声が鳴り響いた時のことを。",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "一度目は、",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_027"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "わたあめちゃんたちが合体する前夜……",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\nそして二度目は、",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "暴れ出す直前だ。",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "そっか～、",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_028"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "いつもわたあめちゃんに何かあった時だったね～",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "現実界に影響を与えてるなんて、",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_029"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "わたあめちゃんは、",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "すごい妖魔さ～！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "その通り！　",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_030"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "あの叫び声は、",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "大厄災の前触れに違いないと思っていたが、",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\nやはりその通りだったようだな！",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "叫び声って……",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_031"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "数日前から何度か聞こえていた、",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "\n泣き声みたいなやつのことか？　",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "それだったら──",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "しかし、",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_032"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "元の穏やかなわたあめちゃんに戻った以上！",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\n",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "大厄災は去ったのだ！",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "マジー！？",
-        "unit_id": 117911,
-        "voice": "vo_adv_5076008_033"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "やりまシタね！　",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_034"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "ハロウィンセイバーズの",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "大勝利デス！",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "オイラの話聞けよ！　",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_035"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "ったく、",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "勝手に言ってろ……",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "\n",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "それじゃ、",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "これからヘルドッグを霊界に送るから、",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "ちょっと離れてろ。",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "……博士、",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_036"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "それは本当さ～？",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n証明する材料は揃ったの～？",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "状況がそれを物語っている！　",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_037"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "今回の私の経験こそ証拠だ！",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\n",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "それを基に論文を書き上げてみせるよ！",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "あは～、",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_038"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "論文そんなんでいいの〜？",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\nなんていい加減な研究なんだろうね～",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "？？？",
-        "words": "ウオオオオオオオオォォォォォォン！！！！",
-        "unit_id": 1,
-        "voice": "vo_adv_5076008_039"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "ムムっ！　",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_040"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "もしや、",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "またわたあめちゃんに変化がっ！？",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "ちょっとー！　",
-        "unit_id": 117911,
-        "voice": "vo_adv_5076008_041"
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "だいやくさい、",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "終わったんじゃないのー？",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "みんな……",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_042"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "気を引き締めるさ～……",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "これはまずいぞ……！　",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_043"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "みんな気をつけろ！！",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "おおっ……！　",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_044"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "エネルギー計測機が、",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "次元の揺らぎを示しているぞ！！",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\nまさか……",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "ここで霊界とのゲートが開くのか！？",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "？？？",
-        "words": "──ううううううう……",
-        "unit_id": 1,
-        "voice": "vo_adv_5076008_045"
-    },
-    {
-        "type": "background",
-        "background": "500142"
-    },
-    {
-        "type": "dialogue",
-        "name": "？？？",
-        "words": "……ううっ",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_046"
-    },
-    {
-        "type": "dialogue",
-        "name": "？？？",
-        "words": "……",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "？？？",
-        "words": "うええん……",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "おお……",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_047"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "おおおおっ！！！",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\n目の前でゲートが開き、",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "妖魔が現れる瞬間が見られるとは！！",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "きゃっはー！",
-        "unit_id": 117911,
-        "voice": "vo_adv_5076008_048"
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "\nなんかちっこくてもにカワデビルじゃん！",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "あっ……",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_049"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "あ",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "あっ……",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "ジャック、",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_050"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "そんなに驚いてどうしたさ～？",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n霊界から来たし、",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "知り合いなの～？",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "博士、",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_051"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "あの妖魔も捕まえたほうがいいデスか？",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "\nあまり強そうに見えませんし、",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "きっと楽勝デス！",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "おい、",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_052"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "ニノン！　",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "口を慎め！",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "\n",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "こ、",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "この方は……",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "いや、",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "こちらにいらっしゃるお方は……",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "ヘルドッグの飼い主にして、",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_053"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "オイラたちが住む霊界の王だ！！",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "うわああん……",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_054"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "ヘルドッグちゃんどこぉ……？",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "わたあめちゃん",
-        "words": "ばうわうっ！！",
-        "unit_id": 7611,
-        "voice": "vo_adv_5076008_055"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "おおー！　",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_056"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "ヘルドッグちゃ〜〜ん！！",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\n会いたかったよ～！！",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "ほ、",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_057"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "本当に霊界の王なの～……？",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "全然そんな風には見えないさ～……？",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "霊界の王なら、",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_058"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "\nもっと",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "ショーグンのような",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "風格というものがあっても……？",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "マジでそんなすごい人なの？",
-        "unit_id": 117911,
-        "voice": "vo_adv_5076008_059"
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "\nもにカワ度、",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "爆上がりしたんだけど……？",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "おお、",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_060"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "よしよし……",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\nかわいいねー、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "ヘルドッグちゃん……！",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "ちょ、",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_061"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "ちょっと！　",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "王様！",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "なんじゃ、",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_062"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "ジャックか……？",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\n",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "うるさいのう！　",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "感動の再会の邪魔をするでない！",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "すみません……",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_063"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "ですが、",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "こちらにいる者たちが、",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "\n現実界でヘルドッグと過ごしていまして……",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "ずっと世話を……",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "なにっ！？　",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_064"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "それを早く言わんか！！",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "……",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_065"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "ごっほん！",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\n小さき人間の子らよ、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "こちらに来たまえ。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "ハイタ〜イ！　",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_066"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "なになに〜？",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "此度は、",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_067"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "ワシの愛犬が大変世話になったのう。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\n最大の敬意を表させてもらおうぞ。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "ワシは、",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_068"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "1000万の時にわたり、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "霊界の王の座に君臨する者じゃ！",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "マジ？　",
-        "unit_id": 117911,
-        "voice": "vo_adv_5076008_069"
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "いきなりキャラ変したんですけど！？",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "オオー！　",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_070"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "威厳のある喋り方になったデス！",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "なんくるないさ～！",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_071"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "わたあめちゃんの飼い主が見つかって",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "よかったさ～！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "わたあめちゃん……",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_072"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "お主らは、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "そう呼んでおったのか。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\n",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "ふ",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "む……",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "なかなかいい名だな。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "それより、",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_073"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "どうしてわたあめちゃんだけ現実界に来たの～？",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "それはだな……",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_074"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "この子は無類の甘い物好きでな。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\nとりわけ、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "現実界のすうぃーつと呼ばれる物に目がなくてのう。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "現実界で",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_075"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "ハロウィンと呼ばれる時期になると、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\n世界の次元が曖昧になる故……",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\n時々",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "その甘い匂いだけが、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "ワシらの住む霊界に漏れてくるのだ。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "ヘルドッグちゃんがそれを嗅いでから、",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_076"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\nもうそれはそれは大変で……",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "まあ、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "わがままなところもかわいいのだが。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "それで、",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_077"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "毎年ワシの家来を遣わせて、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\n一年分のすうぃーつを",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "現実界から持ってこさせていた……",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "だが、",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_078"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "此度は我慢できずに、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "自分で小さなゲートを開けてしまってな。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\n",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "体を分裂させ、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "そこから現実界に逃げ出してしまったのだ。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "あは～、",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_079"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "腹ペコだったんだね～！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "どうりですっごい食べっぷりだったわけさ～！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "年々食欲が旺盛になっていってな……",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_080"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "すまなかった。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "ねねね、",
-        "unit_id": 117911,
-        "voice": "vo_adv_5076008_081"
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "ずっと気になってたんだけど、",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "本当に王様なの？",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "\n",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "自分ではそう言ってるけど……",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "全然そうは見えなくて……",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "し、",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_082"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "失礼な！",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "\nこのお姿は、",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "本当の姿ではないだけだ！",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "霊界にいらっしゃる時は、",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_083"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "\nヘルドッグを片手に乗せられるくらい巨大なお姿で……",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "ああ。",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_084"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "本来ならワシは、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "霊界を離れることはできなくてな……",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "そうですよ！",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_085"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "\nだから代わりにオイラが来たんじゃないですか！",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "し、",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_086"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "仕方ないではないか！",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\nヘルドッグちゃんが心配で",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "仕方なかったのだから……",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "王様はな……",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_087"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "\n本当のお姿のまま、",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "ゲートを通ることはできないのさ。",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "あまりに大きすぎる霊力がゲートを破壊してしまい、",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_088"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "\nお前たちの現実界とオイラたちの霊界が、",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "一つになってしまうんだよ。",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "マジ……？　",
-        "unit_id": 117911,
-        "voice": "vo_adv_5076008_089"
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "王様、",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "やばすぎっしょ……",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "今のお姿は、",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_090"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "いわば人形のようなもの。",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "\n王様の魂のみが入っているんだ。",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "だから、霊力はほとんどない。",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "現実界で、",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_091"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "もしこの状態の王様が人間に襲われるようなことでもあれば、",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "\n",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "霊界との戦争になるだろう……",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "なるほどさ～",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_092"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "だからジャックが代わりに来たってことなんだね～！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "うむ……",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_093"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "だが、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "気が休まらなくてな……",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\n待っている間……",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "恥ずかしい話だが、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "泣いて過ごしていたんだよ。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "もしや！",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_094"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "\nあの叫び声は、",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "あなたのものだったんデスね！",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "王様の座に就く者の声ならば、",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_095"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\n次元の境界に影響を与えることができるというわけですね！",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "わたあめちゃんは、飼い主の声を聞いたから、",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_096"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\nあの晩は遠吠えを上げて……",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\n故郷が恋しくなったから、",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "巨大な姿に戻ったというわけだ！",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "王様は、",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_097"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "わたあめちゃんのことを、",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "そんなにも思っていたんデスね！",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "王様、",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_098"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "安心するさ～！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "私たちが、",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "ちゃんと面倒を見ていたさ～！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "おお、",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_099"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "そうか……",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "小さき人間の子よ、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\n見たところ、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "お主も犬のような姿をしているではないか。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "そうさ～",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_100"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n私は、",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "犬の獣人族だよ～！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "カオりんにすっごい懐いてたんだよ！",
-        "unit_id": 117911,
-        "voice": "vo_adv_5076008_101"
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "\n",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "手作りのサーターアンダギーってお菓子を",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "ずっとあげてたし！",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "おお！",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_102"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\nそれは大変手間をかけさせたな。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "サーター",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_103"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "アンダギー",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "というのは、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "現実界のすうぃーつか？",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\nよかったらそれの作り方を教えてはもらえぬか？",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "もちろんさ～！",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_104"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "では、",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_105"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "ジャックに伝えておいてくれ。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\nお主は、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "もう少しこちらに留まるのであろう？",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "はい！",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_106"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "\nオイラは、毎年",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "人間の友達と約束がありますので。",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "そうか。",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_107"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "では任せたぞ。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\nさて、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "ワシは一足先に戻るとしよう。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "えー！　",
-        "unit_id": 117911,
-        "voice": "vo_adv_5076008_108"
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "王様もう帰っちゃうの？",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "\n",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "せっかくだし、",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "うちらと遊ぼーよ！",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "そうしたいのはやまやまだが……",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_109"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "霊界の王たるワシが、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\nこれ以上お主らの世界に干渉すれば、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "予期せぬ事態が起こるやもしれん。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "そっか〜",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_110"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n残念だけど、",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "そういうことなら仕方ないさ〜",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "うむ。",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_111"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "現実界に来たのは初めてのことだが、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\n犬好きの小さき人間の子らと知り合えて、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "ワシはうれしく思うぞ！",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "此度の件をきっかけに、",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_112"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "我が世界と現実界の交流も増えるとよいな。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "種族や住む世界が違っても、",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_113"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "犬好きのお主らのために、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\n有事の際はワシを頼るといい。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "この借りは必ず返させてもらおう！",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "では",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_114"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "これにてワシは失礼するぞ。",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\n",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "一緒に帰るぞ、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "ヘルドッグちゃん！",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "その姿ではゲートは通れんだろう？",
-        "unit_id": 7711,
-        "voice": "vo_adv_5076008_115"
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "\n",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "ほれ、",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "霊界の王",
-        "words": "小さくおなり……",
-        "unit_id": 7711
-    },
-    {
-        "type": "dialogue",
-        "name": "わたあめちゃん",
-        "words": "きゃんっ！",
-        "unit_id": 7611,
-        "voice": "vo_adv_5076008_116"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "わたあめちゃん、",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_117"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "元気でね～！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "また、一緒にサーターアンダギー食べようね～！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "わたあめちゃん",
-        "words": "わおーーんっ！",
-        "unit_id": 7611,
-        "voice": "vo_adv_5076008_118"
-    },
-    {
-        "type": "background",
-        "background": "500142"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "帰っちゃいまシタね。",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_119"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "\n",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "なんとも",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "慌ただしい一夜でシタ……",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "そいえばジャック。",
-        "unit_id": 117911,
-        "voice": "vo_adv_5076008_120"
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "\n約束って何？　",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "こっちに友達とかいるんだ？",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "ああ！　",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_121"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "ミヤコとシノブってヤツとな！",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "\n",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "毎年ハロウィンパーティーしてるんだ！",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "確かその二人って……",
-        "unit_id": 117911,
-        "voice": "vo_adv_5076008_122"
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "この前うちら会った気がする！",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "スズナさんが、",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_123"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "妖魔と間違えて捕まえていた",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "幽霊の子デスね！",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "おお！　",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_124"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "お前たちも知り合いだったのか！",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "\n",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "ってわけだから、",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "オイラも行ってくるよ！",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "レシピは霊界に戻る前に受け取りにいくから。",
-        "unit_id": 10511,
-        "voice": "vo_adv_5076008_125"
-    },
-    {
-        "type": "dialogue",
-        "name": "ジャック",
-        "words": "\nそれまでに準備しといてくれ！",
-        "unit_id": 10511
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "了解さ～！　",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_126"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "ジャックも、",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "ハロウィン楽しんでね～！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "君たち！　",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_127"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "今回はよくぞ頑張ってくれた！",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "なんくるないさ～！",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_128"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "……でも、",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "博士の言ってる大厄災って",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "結局なんだったわけ～？",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "ウ〜ム……",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_129"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "わたあめちゃんが暴れたことでショウか？",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "\n",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "それとも、",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "霊界の王様が",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "現実界に来たことデスか……？",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "結局、",
-        "unit_id": 117911,
-        "voice": "vo_adv_5076008_130"
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "最後までよくわかんなかったね～",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "\n",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "てか、",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "博士もほんとに博士なのか、",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "怪しくなってきたし……",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "でも、",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_131"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "博士の研究を手伝って",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "わたあめちゃんを捕まえなかったら、",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "もっと大変なことになってたかもしれないさ～？",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "私たちが捕まえたから、",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_132"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "王様にすぐ返すことができたさ～",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "最初からあのサーカス団に捕まってたら、",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\nサーターアンダギーの味も知らなかったさ～ね～",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "ということは……",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_133"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "大厄災が来るという博士の考えは、",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "\nやはり",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "間違ってなかったということデスか？",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "科学者だっていうわりに",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_134"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "根拠は薄かったけど、",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "意外とすごい人だったのかもね……？",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "ま、",
-        "unit_id": 117911,
-        "voice": "vo_adv_5076008_135"
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "すごそうな王様とも仲良くなれたし、",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "とりま結果オーライじゃね！",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "うむ！　",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_136"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "この人選をした私の目に狂いはなかった！",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "しかし！　",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_137"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "霊界については、まだわからないことだらけだ。",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\n私の知らない脅威に満ちているに違いない！",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "そこで、",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_138"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "その装備は君たちに預けておくことにしよう。",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\n",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "新たな論文を書く時は、",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "また力を貸してもらうからね！",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "え、",
-        "unit_id": 117911,
-        "voice": "vo_adv_5076008_139"
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "ろんぶんって",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "何回も書くものなの？　",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "超大変じゃね？",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "\n",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "うち、",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "読書感想文ですらしんどくて、",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "一回も出したことないし。",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "助けを求める声あらば",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_140"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "シュバっと即参上！　",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "それが",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "武士道精神デス！",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "\n",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "ワタシはまた力を貸しマスよー！",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "私ももちろん協力するさ〜！",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_141"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "またわたあめちゃんにも",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "会えるかもしれないからね〜！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "んじゃうちも！　",
-        "unit_id": 117911,
-        "voice": "vo_adv_5076008_142"
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "なんだかんだ楽しかったし、",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "おっけー！",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "ああ、",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_143"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "よろしく頼むよ！",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\n",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "それじゃあ、",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "今回は本当にお疲れさま！",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "ハロウィンセイバーズの諸君！",
-        "unit_id": 7511,
-        "voice": "vo_adv_5076008_144"
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "\n",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "その名の通り、",
-        "unit_id": 7511
-    },
-    {
-        "type": "dialogue",
-        "name": "博士",
-        "words": "君たちの活躍でハロウィンと世界は救われたよ！",
-        "unit_id": 7511
-    },
-    {
-        "type": "background",
-        "background": "505035"
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "んん～！　",
-        "unit_id": 117911,
-        "voice": "vo_adv_5076008_145"
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "よーやく終わったね！",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "\n",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "マジでヘトヘトだけど、",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "スズナ",
-        "words": "気合い入れて遊ぶんでよろー！",
-        "unit_id": 117911
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "ショーグン！　",
-        "unit_id": 117811,
-        "voice": "vo_adv_5076008_146"
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "ここからは",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "ハロウィンを楽しむといたしまショウ！",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "\n",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "宵越しにゼニが残らぬほど",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "ニノン",
-        "words": "豪遊するデース！",
-        "unit_id": 117811
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "ハロウィンフェスティバルも始まるし、",
-        "unit_id": 117711,
-        "voice": "vo_adv_5076008_147"
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "思いっきり羽を伸ばそうねー！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "\n",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "私たちのハロウィンは、",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "カオリ",
-        "words": "ここからスタートさー！",
-        "unit_id": 117711
-    },
-    {
-        "type": "dialogue",
-        "name": "ナレーション",
-        "words": "博士の根拠なき研究に振り回された{player}たちだったが、"
-    },
-    {
-        "type": "dialogue",
-        "name": "ナレーション",
-        "words": "\n図らずも人知れず世界を救うことに成功した。"
-    },
-    {
-        "type": "dialogue",
-        "name": "ナレーション",
-        "words": "そして、ハロウィンセイバーズの面々は、"
-    },
-    {
-        "type": "dialogue",
-        "name": "ナレーション",
-        "words": "\n賑やかな祭りの喧騒の中に消えてゆくのだった──"
-    }
+  {
+    "type": "background",
+    "bg_id": "500142"
+  },
+  {
+    "type": "dialogue",
+    "name": "ナレーション",
+    "words": "カオリがサーターアンダギーを食べさせたことで、",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "ナレーション",
+    "words": "\\nわたあめちゃんを元通りの愛くるしい姿に戻すことに成功した。",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "よしよし、",
+    "voice": "vo_adv_5076008_000",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "いい子だね～！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "わたあめちゃん",
+    "words": "くぅ～～ん！",
+    "voice": "vo_adv_5076008_001",
+    "unit_id": 7611
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "みんなのおかげさ～！",
+    "voice": "vo_adv_5076008_002",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n{0}も、",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "よく走ったさ～ね！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "騎士団のオノオノガタのみなさん、",
+    "voice": "vo_adv_5076008_003",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "これで文句ないでショウ！",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "もう被害は出しまセン！",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "元はといえば、",
+    "voice": "vo_adv_5076008_004",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "わたあめちゃんが暴れたのも、",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "\\n悪事を働いたサーカス団に誘拐されたせいデス……",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "とっちめるなら、",
+    "voice": "vo_adv_5076008_005",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "サーカス団を調査するべきデス！",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "騎士団隊長",
+    "words": "ふむ……",
+    "voice": "vo_adv_5076008_006",
+    "unit_id": 712
+  },
+  {
+    "type": "dialogue",
+    "name": "騎士団隊長",
+    "words": "そこまで言うなら、",
+    "voice": null,
+    "unit_id": 712
+  },
+  {
+    "type": "dialogue",
+    "name": "騎士団隊長",
+    "words": "確かめてみるとしよう。",
+    "voice": null,
+    "unit_id": 712
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "おーい！　",
+    "voice": "vo_adv_5076008_007",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "お前ら、",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "大丈夫か！？",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "オオー！　",
+    "voice": "vo_adv_5076008_008",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "ジャックさんデース！",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "\\nよくぞご無事で！",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "さっき、",
+    "voice": "vo_adv_5076008_009",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "聞こえてたぞー！",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "\\nよくもオイラを置いてけぼりにしたなー！",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "まあいいじゃん！　",
+    "voice": "vo_adv_5076008_010",
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "元気そうだし！",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "さすがエリート精霊って感じ？",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "ま、",
+    "voice": "vo_adv_5076008_011",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "まあな！",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "それより、",
+    "voice": "vo_adv_5076008_012",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "お前らやったな！",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "よくあのヘルドッグを手懐けたな！　",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "どうやったんだ？",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "カオリさんのおかげデス！",
+    "voice": "vo_adv_5076008_013",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "彼女の優しさが、",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "元の",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "優しいわたあめちゃんに戻したんデスよ。",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "そうか……",
+    "voice": "vo_adv_5076008_014",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "\\nそんなことできるヤツが、",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "あの方以外にもいたとはな……",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "あの方……？",
+    "voice": "vo_adv_5076008_015",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "おーい！　",
+    "voice": "vo_adv_5076008_016",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "君たちー！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "あっ、",
+    "voice": "vo_adv_5076008_017",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "博士ー！　",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "こっちこっちー！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\nわたあめちゃん帰ってきたよー！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "ああ、",
+    "voice": "vo_adv_5076008_018",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "研究所でもわたあめちゃんの異変を感知していて、",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\nずっと計器で観測していたよ。",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "君たちが追っているだろうと思っていたものの、",
+    "voice": "vo_adv_5076008_019",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\nその異変をどうしてもこの目で見たくて、",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "ここまで来たんだが……",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "どうやらもう解決したようだね。",
+    "voice": "vo_adv_5076008_020",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\n間近で観測できなかったのは残念だが、",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "いい数値は得られたよ！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "あは～、",
+    "voice": "vo_adv_5076008_021",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "残念だったね～",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "わたあめちゃんは、",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "もういつも通りさ～！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "わたあめちゃん",
+    "words": "ばうわうっ！",
+    "voice": "vo_adv_5076008_022",
+    "unit_id": 7611
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "そういえば、",
+    "voice": "vo_adv_5076008_023",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "変な叫び声のことは",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "どうなったさ～？",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "ああ、",
+    "voice": "vo_adv_5076008_024",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "あれか……",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "私は、",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "わたあめちゃんの変化の前触れだと考えている。",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "変化に必要な霊力を体内で高めたことで、",
+    "voice": "vo_adv_5076008_025",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\nこの現実界に何かしらの影響を与えたんだろう。",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "いいか、",
+    "voice": "vo_adv_5076008_026",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "思い出してみてくれ。",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\nあの叫び声が鳴り響いた時のことを。",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "一度目は、",
+    "voice": "vo_adv_5076008_027",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "わたあめちゃんたちが合体する前夜……",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\nそして二度目は、",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "暴れ出す直前だ。",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "そっか～、",
+    "voice": "vo_adv_5076008_028",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "いつもわたあめちゃんに何かあった時だったね～",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "現実界に影響を与えてるなんて、",
+    "voice": "vo_adv_5076008_029",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "わたあめちゃんは、",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "すごい妖魔さ～！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "その通り！　",
+    "voice": "vo_adv_5076008_030",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "あの叫び声は、",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "大厄災の前触れに違いないと思っていたが、",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\nやはりその通りだったようだな！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "叫び声って……",
+    "voice": "vo_adv_5076008_031",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "数日前から何度か聞こえていた、",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "\\n泣き声みたいなやつのことか？　",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "それだったら──",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "しかし、",
+    "voice": "vo_adv_5076008_032",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "元の穏やかなわたあめちゃんに戻った以上！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "大厄災は去ったのだ！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "マジー！？",
+    "voice": "vo_adv_5076008_033",
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "やりまシタね！　",
+    "voice": "vo_adv_5076008_034",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "ハロウィンセイバーズの",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "大勝利デス！",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "オイラの話聞けよ！　",
+    "voice": "vo_adv_5076008_035",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "ったく、",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "勝手に言ってろ……",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "それじゃ、",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "これからヘルドッグを霊界に送るから、",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "ちょっと離れてろ。",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "……博士、",
+    "voice": "vo_adv_5076008_036",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "それは本当さ～？",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n証明する材料は揃ったの～？",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "状況がそれを物語っている！　",
+    "voice": "vo_adv_5076008_037",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "今回の私の経験こそ証拠だ！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "それを基に論文を書き上げてみせるよ！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "あは～、",
+    "voice": "vo_adv_5076008_038",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "論文そんなんでいいの〜？",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\nなんていい加減な研究なんだろうね～",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "？？？",
+    "words": "ウオオオオオオオオォォォォォォン！！！！",
+    "voice": "vo_adv_5076008_039",
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "ムムっ！　",
+    "voice": "vo_adv_5076008_040",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "もしや、",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "またわたあめちゃんに変化がっ！？",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "ちょっとー！　",
+    "voice": "vo_adv_5076008_041",
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "だいやくさい、",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "終わったんじゃないのー？",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "みんな……",
+    "voice": "vo_adv_5076008_042",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "気を引き締めるさ～……",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "これはまずいぞ……！　",
+    "voice": "vo_adv_5076008_043",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "みんな気をつけろ！！",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "おおっ……！　",
+    "voice": "vo_adv_5076008_044",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "エネルギー計測機が、",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "次元の揺らぎを示しているぞ！！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\nまさか……",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "ここで霊界とのゲートが開くのか！？",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "？？？",
+    "words": "──ううううううう……",
+    "voice": "vo_adv_5076008_045",
+    "unit_id": null
+  },
+  {
+    "type": "background",
+    "bg_id": "500142"
+  },
+  {
+    "type": "dialogue",
+    "name": "？？？",
+    "words": "……ううっ",
+    "voice": "vo_adv_5076008_046",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "？？？",
+    "words": "……",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "？？？",
+    "words": "うええん……",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "おお……",
+    "voice": "vo_adv_5076008_047",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "おおおおっ！！！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\n目の前でゲートが開き、",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "妖魔が現れる瞬間が見られるとは！！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "きゃっはー！",
+    "voice": "vo_adv_5076008_048",
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "\\nなんかちっこくてもにカワデビルじゃん！",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "あっ……",
+    "voice": "vo_adv_5076008_049",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "あ",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "あっ……",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "ジャック、",
+    "voice": "vo_adv_5076008_050",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "そんなに驚いてどうしたさ～？",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n霊界から来たし、",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "知り合いなの～？",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "博士、",
+    "voice": "vo_adv_5076008_051",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "あの妖魔も捕まえたほうがいいデスか？",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "\\nあまり強そうに見えませんし、",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "きっと楽勝デス！",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "おい、",
+    "voice": "vo_adv_5076008_052",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "ニノン！　",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "口を慎め！",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "こ、",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "この方は……",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "いや、",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "こちらにいらっしゃるお方は……",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "ヘルドッグの飼い主にして、",
+    "voice": "vo_adv_5076008_053",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "オイラたちが住む霊界の王だ！！",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "うわああん……",
+    "voice": "vo_adv_5076008_054",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "ヘルドッグちゃんどこぉ……？",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "わたあめちゃん",
+    "words": "ばうわうっ！！",
+    "voice": "vo_adv_5076008_055",
+    "unit_id": 7611
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "おおー！　",
+    "voice": "vo_adv_5076008_056",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "ヘルドッグちゃ〜〜ん！！",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\n会いたかったよ～！！",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "ほ、",
+    "voice": "vo_adv_5076008_057",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "本当に霊界の王なの～……？",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "全然そんな風には見えないさ～……？",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "霊界の王なら、",
+    "voice": "vo_adv_5076008_058",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "\\nもっと",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "ショーグンのような",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "風格というものがあっても……？",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "マジでそんなすごい人なの？",
+    "voice": "vo_adv_5076008_059",
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "\\nもにカワ度、",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "爆上がりしたんだけど……？",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "おお、",
+    "voice": "vo_adv_5076008_060",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "よしよし……",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\nかわいいねー、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "ヘルドッグちゃん……！",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "ちょ、",
+    "voice": "vo_adv_5076008_061",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "ちょっと！　",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "王様！",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "なんじゃ、",
+    "voice": "vo_adv_5076008_062",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "ジャックか……？",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "うるさいのう！　",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "感動の再会の邪魔をするでない！",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "すみません……",
+    "voice": "vo_adv_5076008_063",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "ですが、",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "こちらにいる者たちが、",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "\\n現実界でヘルドッグと過ごしていまして……",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "ずっと世話を……",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "なにっ！？　",
+    "voice": "vo_adv_5076008_064",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "それを早く言わんか！！",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "……",
+    "voice": "vo_adv_5076008_065",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "ごっほん！",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\n小さき人間の子らよ、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "こちらに来たまえ。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "ハイタ〜イ！　",
+    "voice": "vo_adv_5076008_066",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "なになに〜？",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "此度は、",
+    "voice": "vo_adv_5076008_067",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "ワシの愛犬が大変世話になったのう。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\n最大の敬意を表させてもらおうぞ。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "ワシは、",
+    "voice": "vo_adv_5076008_068",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "1000万の時にわたり、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "霊界の王の座に君臨する者じゃ！",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "マジ？　",
+    "voice": "vo_adv_5076008_069",
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "いきなりキャラ変したんですけど！？",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "オオー！　",
+    "voice": "vo_adv_5076008_070",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "威厳のある喋り方になったデス！",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "なんくるないさ～！",
+    "voice": "vo_adv_5076008_071",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "わたあめちゃんの飼い主が見つかって",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "よかったさ～！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "わたあめちゃん……",
+    "voice": "vo_adv_5076008_072",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "お主らは、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "そう呼んでおったのか。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "ふ",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "む……",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "なかなかいい名だな。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "それより、",
+    "voice": "vo_adv_5076008_073",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "どうしてわたあめちゃんだけ現実界に来たの～？",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "それはだな……",
+    "voice": "vo_adv_5076008_074",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "この子は無類の甘い物好きでな。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\nとりわけ、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "現実界のすうぃーつと呼ばれる物に目がなくてのう。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "現実界で",
+    "voice": "vo_adv_5076008_075",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "ハロウィンと呼ばれる時期になると、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\n世界の次元が曖昧になる故……",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\n時々",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "その甘い匂いだけが、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "ワシらの住む霊界に漏れてくるのだ。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "ヘルドッグちゃんがそれを嗅いでから、",
+    "voice": "vo_adv_5076008_076",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\nもうそれはそれは大変で……",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "まあ、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "わがままなところもかわいいのだが。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "それで、",
+    "voice": "vo_adv_5076008_077",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "毎年ワシの家来を遣わせて、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\n一年分のすうぃーつを",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "現実界から持ってこさせていた……",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "だが、",
+    "voice": "vo_adv_5076008_078",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "此度は我慢できずに、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "自分で小さなゲートを開けてしまってな。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "体を分裂させ、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "そこから現実界に逃げ出してしまったのだ。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "あは～、",
+    "voice": "vo_adv_5076008_079",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "腹ペコだったんだね～！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "どうりですっごい食べっぷりだったわけさ～！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "年々食欲が旺盛になっていってな……",
+    "voice": "vo_adv_5076008_080",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "すまなかった。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "ねねね、",
+    "voice": "vo_adv_5076008_081",
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "ずっと気になってたんだけど、",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "本当に王様なの？",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "自分ではそう言ってるけど……",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "全然そうは見えなくて……",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "し、",
+    "voice": "vo_adv_5076008_082",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "失礼な！",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "\\nこのお姿は、",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "本当の姿ではないだけだ！",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "霊界にいらっしゃる時は、",
+    "voice": "vo_adv_5076008_083",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "\\nヘルドッグを片手に乗せられるくらい巨大なお姿で……",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "ああ。",
+    "voice": "vo_adv_5076008_084",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "本来ならワシは、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "霊界を離れることはできなくてな……",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "そうですよ！",
+    "voice": "vo_adv_5076008_085",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "\\nだから代わりにオイラが来たんじゃないですか！",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "し、",
+    "voice": "vo_adv_5076008_086",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "仕方ないではないか！",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\nヘルドッグちゃんが心配で",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "仕方なかったのだから……",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "王様はな……",
+    "voice": "vo_adv_5076008_087",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "\\n本当のお姿のまま、",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "ゲートを通ることはできないのさ。",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "あまりに大きすぎる霊力がゲートを破壊してしまい、",
+    "voice": "vo_adv_5076008_088",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "\\nお前たちの現実界とオイラたちの霊界が、",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "一つになってしまうんだよ。",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "マジ……？　",
+    "voice": "vo_adv_5076008_089",
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "王様、",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "やばすぎっしょ……",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "今のお姿は、",
+    "voice": "vo_adv_5076008_090",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "いわば人形のようなもの。",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "\\n王様の魂のみが入っているんだ。",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "だから、霊力はほとんどない。",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "現実界で、",
+    "voice": "vo_adv_5076008_091",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "もしこの状態の王様が人間に襲われるようなことでもあれば、",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "霊界との戦争になるだろう……",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "なるほどさ～",
+    "voice": "vo_adv_5076008_092",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "だからジャックが代わりに来たってことなんだね～！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "うむ……",
+    "voice": "vo_adv_5076008_093",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "だが、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "気が休まらなくてな……",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\n待っている間……",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "恥ずかしい話だが、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "泣いて過ごしていたんだよ。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "もしや！",
+    "voice": "vo_adv_5076008_094",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "\\nあの叫び声は、",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "あなたのものだったんデスね！",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "王様の座に就く者の声ならば、",
+    "voice": "vo_adv_5076008_095",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\n次元の境界に影響を与えることができるというわけですね！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "わたあめちゃんは、飼い主の声を聞いたから、",
+    "voice": "vo_adv_5076008_096",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\nあの晩は遠吠えを上げて……",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\n故郷が恋しくなったから、",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "巨大な姿に戻ったというわけだ！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "王様は、",
+    "voice": "vo_adv_5076008_097",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "わたあめちゃんのことを、",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "そんなにも思っていたんデスね！",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "王様、",
+    "voice": "vo_adv_5076008_098",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "安心するさ～！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "私たちが、",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "ちゃんと面倒を見ていたさ～！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "おお、",
+    "voice": "vo_adv_5076008_099",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "そうか……",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "小さき人間の子よ、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\n見たところ、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "お主も犬のような姿をしているではないか。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "そうさ～",
+    "voice": "vo_adv_5076008_100",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n私は、",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "犬の獣人族だよ～！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "カオりんにすっごい懐いてたんだよ！",
+    "voice": "vo_adv_5076008_101",
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "手作りのサーターアンダギーってお菓子を",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "ずっとあげてたし！",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "おお！",
+    "voice": "vo_adv_5076008_102",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\nそれは大変手間をかけさせたな。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "サーター",
+    "voice": "vo_adv_5076008_103",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "アンダギー",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "というのは、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "現実界のすうぃーつか？",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\nよかったらそれの作り方を教えてはもらえぬか？",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "もちろんさ～！",
+    "voice": "vo_adv_5076008_104",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "では、",
+    "voice": "vo_adv_5076008_105",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "ジャックに伝えておいてくれ。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\nお主は、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "もう少しこちらに留まるのであろう？",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "はい！",
+    "voice": "vo_adv_5076008_106",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "\\nオイラは、毎年",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "人間の友達と約束がありますので。",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "そうか。",
+    "voice": "vo_adv_5076008_107",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "では任せたぞ。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\nさて、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "ワシは一足先に戻るとしよう。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "えー！　",
+    "voice": "vo_adv_5076008_108",
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "王様もう帰っちゃうの？",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "せっかくだし、",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "うちらと遊ぼーよ！",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "そうしたいのはやまやまだが……",
+    "voice": "vo_adv_5076008_109",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "霊界の王たるワシが、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\nこれ以上お主らの世界に干渉すれば、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "予期せぬ事態が起こるやもしれん。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "そっか〜",
+    "voice": "vo_adv_5076008_110",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n残念だけど、",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "そういうことなら仕方ないさ〜",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "うむ。",
+    "voice": "vo_adv_5076008_111",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "現実界に来たのは初めてのことだが、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\n犬好きの小さき人間の子らと知り合えて、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "ワシはうれしく思うぞ！",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "此度の件をきっかけに、",
+    "voice": "vo_adv_5076008_112",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "我が世界と現実界の交流も増えるとよいな。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "種族や住む世界が違っても、",
+    "voice": "vo_adv_5076008_113",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "犬好きのお主らのために、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\n有事の際はワシを頼るといい。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "この借りは必ず返させてもらおう！",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "では",
+    "voice": "vo_adv_5076008_114",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "これにてワシは失礼するぞ。",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "一緒に帰るぞ、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "ヘルドッグちゃん！",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "その姿ではゲートは通れんだろう？",
+    "voice": "vo_adv_5076008_115",
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "ほれ、",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "霊界の王",
+    "words": "小さくおなり……",
+    "voice": null,
+    "unit_id": 7711
+  },
+  {
+    "type": "dialogue",
+    "name": "わたあめちゃん",
+    "words": "きゃんっ！",
+    "voice": "vo_adv_5076008_116",
+    "unit_id": 7611
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "わたあめちゃん、",
+    "voice": "vo_adv_5076008_117",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "元気でね～！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "また、一緒にサーターアンダギー食べようね～！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "わたあめちゃん",
+    "words": "わおーーんっ！",
+    "voice": "vo_adv_5076008_118",
+    "unit_id": 7611
+  },
+  {
+    "type": "background",
+    "bg_id": "500142"
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "帰っちゃいまシタね。",
+    "voice": "vo_adv_5076008_119",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "なんとも",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "慌ただしい一夜でシタ……",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "そいえばジャック。",
+    "voice": "vo_adv_5076008_120",
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "\\n約束って何？　",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "こっちに友達とかいるんだ？",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "ああ！　",
+    "voice": "vo_adv_5076008_121",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "ミヤコとシノブってヤツとな！",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "毎年ハロウィンパーティーしてるんだ！",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "確かその二人って……",
+    "voice": "vo_adv_5076008_122",
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "この前うちら会った気がする！",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "スズナさんが、",
+    "voice": "vo_adv_5076008_123",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "妖魔と間違えて捕まえていた",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "幽霊の子デスね！",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "おお！　",
+    "voice": "vo_adv_5076008_124",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "お前たちも知り合いだったのか！",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "ってわけだから、",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "オイラも行ってくるよ！",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "レシピは霊界に戻る前に受け取りにいくから。",
+    "voice": "vo_adv_5076008_125",
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "ジャック",
+    "words": "\\nそれまでに準備しといてくれ！",
+    "voice": null,
+    "unit_id": 10511
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "了解さ～！　",
+    "voice": "vo_adv_5076008_126",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "ジャックも、",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "ハロウィン楽しんでね～！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "君たち！　",
+    "voice": "vo_adv_5076008_127",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "今回はよくぞ頑張ってくれた！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "なんくるないさ～！",
+    "voice": "vo_adv_5076008_128",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "……でも、",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "博士の言ってる大厄災って",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "結局なんだったわけ～？",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "ウ〜ム……",
+    "voice": "vo_adv_5076008_129",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "わたあめちゃんが暴れたことでショウか？",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "それとも、",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "霊界の王様が",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "現実界に来たことデスか……？",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "結局、",
+    "voice": "vo_adv_5076008_130",
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "最後までよくわかんなかったね～",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "てか、",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "博士もほんとに博士なのか、",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "怪しくなってきたし……",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "でも、",
+    "voice": "vo_adv_5076008_131",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "博士の研究を手伝って",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "わたあめちゃんを捕まえなかったら、",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "もっと大変なことになってたかもしれないさ～？",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "私たちが捕まえたから、",
+    "voice": "vo_adv_5076008_132",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "王様にすぐ返すことができたさ～",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "最初からあのサーカス団に捕まってたら、",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\nサーターアンダギーの味も知らなかったさ～ね～",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "ということは……",
+    "voice": "vo_adv_5076008_133",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "大厄災が来るという博士の考えは、",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "\\nやはり",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "間違ってなかったということデスか？",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "科学者だっていうわりに",
+    "voice": "vo_adv_5076008_134",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "根拠は薄かったけど、",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "意外とすごい人だったのかもね……？",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "ま、",
+    "voice": "vo_adv_5076008_135",
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "すごそうな王様とも仲良くなれたし、",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "とりま結果オーライじゃね！",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "うむ！　",
+    "voice": "vo_adv_5076008_136",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "この人選をした私の目に狂いはなかった！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "しかし！　",
+    "voice": "vo_adv_5076008_137",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "霊界については、まだわからないことだらけだ。",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\n私の知らない脅威に満ちているに違いない！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "そこで、",
+    "voice": "vo_adv_5076008_138",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "その装備は君たちに預けておくことにしよう。",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "新たな論文を書く時は、",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "また力を貸してもらうからね！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "え、",
+    "voice": "vo_adv_5076008_139",
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "ろんぶんって",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "何回も書くものなの？　",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "超大変じゃね？",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "うち、",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "読書感想文ですらしんどくて、",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "一回も出したことないし。",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "助けを求める声あらば",
+    "voice": "vo_adv_5076008_140",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "シュバっと即参上！　",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "それが",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "武士道精神デス！",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "ワタシはまた力を貸しマスよー！",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "私ももちろん協力するさ〜！",
+    "voice": "vo_adv_5076008_141",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "またわたあめちゃんにも",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "会えるかもしれないからね〜！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "んじゃうちも！　",
+    "voice": "vo_adv_5076008_142",
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "なんだかんだ楽しかったし、",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "おっけー！",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "ああ、",
+    "voice": "vo_adv_5076008_143",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "よろしく頼むよ！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "それじゃあ、",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "今回は本当にお疲れさま！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "ハロウィンセイバーズの諸君！",
+    "voice": "vo_adv_5076008_144",
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "その名の通り、",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "dialogue",
+    "name": "博士",
+    "words": "君たちの活躍でハロウィンと世界は救われたよ！",
+    "voice": null,
+    "unit_id": 7511
+  },
+  {
+    "type": "background",
+    "bg_id": "505035"
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "んん～！　",
+    "voice": "vo_adv_5076008_145",
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "よーやく終わったね！",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "マジでヘトヘトだけど、",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "スズナ",
+    "words": "気合い入れて遊ぶんでよろー！",
+    "voice": null,
+    "unit_id": 117911
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "ショーグン！　",
+    "voice": "vo_adv_5076008_146",
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "ここからは",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "ハロウィンを楽しむといたしまショウ！",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "宵越しにゼニが残らぬほど",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "ニノン",
+    "words": "豪遊するデース！",
+    "voice": null,
+    "unit_id": 117811
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "ハロウィンフェスティバルも始まるし、",
+    "voice": "vo_adv_5076008_147",
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "思いっきり羽を伸ばそうねー！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "私たちのハロウィンは、",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "カオリ",
+    "words": "ここからスタートさー！",
+    "voice": null,
+    "unit_id": 117711
+  },
+  {
+    "type": "dialogue",
+    "name": "ナレーション",
+    "words": "博士の根拠なき研究に振り回された{0}たちだったが、",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "ナレーション",
+    "words": "\\n図らずも人知れず世界を救うことに成功した。",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "ナレーション",
+    "words": "そして、ハロウィンセイバーズの面々は、",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "ナレーション",
+    "words": "\\n賑やかな祭りの喧騒の中に消えてゆくのだった──",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "movie",
+    "movie_id": "507600801"
+  }
 ]

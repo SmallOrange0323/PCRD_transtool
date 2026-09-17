@@ -1,220 +1,251 @@
 [
-    {
-        "type": "background",
-        "background": "501000"
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "嗚嗚……",
-        "unit_id": 113011,
-        "voice": "vo_adv_6042202_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "這個世界究竟是怎麼一回事……？",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "\n無論是植物或",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "建築物之類的",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "都和蘭德索爾完全不同……",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "\n",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "我、",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "我到底該",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "躲在哪裡才好……？",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "咿嗚，",
-        "unit_id": 113011,
-        "voice": "vo_adv_6042202_001"
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "前輩正專注地看著我……！",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "\n",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "果然還是好羞恥……！",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "\n",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "前輩，請等我一下，",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "我現在",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "就去躲起來……！",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "待待、",
-        "unit_id": 113011,
-        "voice": "vo_adv_6042202_002"
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "待在前輩的身後！？",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "\n",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "在那種近距離下看著前輩，",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "這樣真的可以嗎……？",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "\n",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "我、",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "我我、",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "我做不到！",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "我去躲在那邊的蘑菇後面就好了～！",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "咦？",
-        "unit_id": 113011,
-        "voice": "vo_adv_6042202_003"
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "十秒？",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "\n難道",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "是要玩捉迷藏嗎？",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "\n",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "怎麼這麼突然……",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "啊，",
-        "unit_id": 113011
-    },
-    {
-        "type": "dialogue",
-        "name": "步未",
-        "words": "前輩已經開始倒數了！？",
-        "unit_id": 113011
-    }
+  {
+    "type": "background",
+    "bg_id": "501000"
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "嗚嗚……",
+    "voice": "vo_adv_6042202_000",
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "這個世界究竟是怎麼一回事……？",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "\\n無論是植物或",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "建築物之類的",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "都和蘭德索爾完全不同……",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "我、",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "我到底該",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "躲在哪裡才好……？",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "咿嗚，",
+    "voice": "vo_adv_6042202_001",
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "前輩正專注地看著我……！",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "果然還是好羞恥……！",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "前輩，請等我一下，",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "我現在",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "就去躲起來……！",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "待待、",
+    "voice": "vo_adv_6042202_002",
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "待在前輩的身後！？",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "在那種近距離下看著前輩，",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "這樣真的可以嗎……？",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "我、",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "我我、",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "我做不到！",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "我去躲在那邊的蘑菇後面就好了～！",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "咦？",
+    "voice": "vo_adv_6042202_003",
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "十秒？",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "\\n難道",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "是要玩捉迷藏嗎？",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "怎麼這麼突然……",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "啊，",
+    "voice": null,
+    "unit_id": 113011
+  },
+  {
+    "type": "dialogue",
+    "name": "步未",
+    "words": "前輩已經開始倒數了！？",
+    "voice": null,
+    "unit_id": 113011
+  }
 ]

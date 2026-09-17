@@ -1,52 +1,55 @@
 [
-    {
-        "type": "background",
-        "background": "500710"
-    },
-    {
-        "type": "dialogue",
-        "name": "香織",
-        "words": "熱身熱的差不多了呀～",
-        "unit_id": 110511,
-        "voice": "vo_adv_5021710_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "香織",
-        "words": "這樣的話可能可以",
-        "unit_id": 110511,
-        "voice": "vo_adv_5021710_001"
-    },
-    {
-        "type": "dialogue",
-        "name": "香織",
-        "words": "\n再稍微認真一點呢～",
-        "unit_id": 110511
-    },
-    {
-        "type": "dialogue",
-        "name": "香織",
-        "words": "要想像更強的奄美魔物了呀～！",
-        "unit_id": 110511,
-        "voice": "vo_adv_5021710_002"
-    },
-    {
-        "type": "dialogue",
-        "name": "香織",
-        "words": "\n超越我現在的極限喔～！",
-        "unit_id": 110511
-    },
-    {
-        "type": "dialogue",
-        "name": "香織",
-        "words": "好了，",
-        "unit_id": 110511,
-        "voice": "vo_adv_5021710_003"
-    },
-    {
-        "type": "dialogue",
-        "name": "香織",
-        "words": "盡全力過來吧～！",
-        "unit_id": 110511
-    }
+  {
+    "type": "background",
+    "bg_id": "500710"
+  },
+  {
+    "type": "dialogue",
+    "name": "香織",
+    "words": "熱身熱的差不多了呀～",
+    "voice": "vo_adv_5021710_000",
+    "unit_id": 110511
+  },
+  {
+    "type": "dialogue",
+    "name": "香織",
+    "words": "這樣的話可能可以",
+    "voice": "vo_adv_5021710_001",
+    "unit_id": 110511
+  },
+  {
+    "type": "dialogue",
+    "name": "香織",
+    "words": "\\n再稍微認真一點呢～",
+    "voice": null,
+    "unit_id": 110511
+  },
+  {
+    "type": "dialogue",
+    "name": "香織",
+    "words": "要想像更強的奄美魔物了呀～！",
+    "voice": "vo_adv_5021710_002",
+    "unit_id": 110511
+  },
+  {
+    "type": "dialogue",
+    "name": "香織",
+    "words": "\\n超越我現在的極限喔～！",
+    "voice": null,
+    "unit_id": 110511
+  },
+  {
+    "type": "dialogue",
+    "name": "香織",
+    "words": "好了，",
+    "voice": "vo_adv_5021710_003",
+    "unit_id": 110511
+  },
+  {
+    "type": "dialogue",
+    "name": "香織",
+    "words": "盡全力過來吧～！",
+    "voice": null,
+    "unit_id": 110511
+  }
 ]

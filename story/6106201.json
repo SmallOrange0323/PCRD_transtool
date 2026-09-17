@@ -1,154 +1,174 @@
 [
-    {
-        "type": "background",
-        "background": "500010"
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "う～、",
-        "unit_id": 104611,
-        "voice": "vo_adv_6106201_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "ここのところたい焼きの売り上げが頭打ちなのにゃ。",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "\n",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "ここは一つ新しいたい焼きを開発して、",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "販路を拡大するのにゃ！",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "それはいいにゃ！　",
-        "unit_id": 104611,
-        "voice": "vo_adv_6106201_001"
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "中身はお魚を丸ごとぜいたくに使って、",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "\n中身はたくさん生地も薄く……",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "って、",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "つまり焼き魚だにゃ！？",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "\n",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "これじゃたい焼きとは言えなくなっちゃうにゃ～",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "激甘たい焼きってことかにゃ？",
-        "unit_id": 104611,
-        "voice": "vo_adv_6106201_002"
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "\n",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "それなら、",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "プリンみたいにカラメルを塗ってみるのはどうかにゃ！",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "\n",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "カリカリさくさくあまあまで女の子には大ウケするはずにゃ♪",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "にゃるほど、",
-        "unit_id": 104611,
-        "voice": "vo_adv_6106201_003"
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "おにぎりみたいにおかずを具にするんだにゃ？",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "\n",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "おやつだけじゃなくお昼ご飯にもできちゃうのにゃ！",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "\nこれなら販路拡大間違いなしにゃ！　",
-        "unit_id": 104611
-    },
-    {
-        "type": "dialogue",
-        "name": "タマキ",
-        "words": "キミってば冴えてるにゃ♪",
-        "unit_id": 104611
-    }
+  {
+    "type": "background",
+    "bg_id": "500010"
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "う～、",
+    "voice": "vo_adv_6106201_000",
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "ここのところたい焼きの売り上げが頭打ちなのにゃ。",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "ここは一つ新しいたい焼きを開発して、",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "販路を拡大するのにゃ！",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "それはいいにゃ！　",
+    "voice": "vo_adv_6106201_001",
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "中身はお魚を丸ごとぜいたくに使って、",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "\\n中身はたくさん生地も薄く……",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "って、",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "つまり焼き魚だにゃ！？",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "これじゃたい焼きとは言えなくなっちゃうにゃ～",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "激甘たい焼きってことかにゃ？",
+    "voice": "vo_adv_6106201_002",
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "それなら、",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "プリンみたいにカラメルを塗ってみるのはどうかにゃ！",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "カリカリさくさくあまあまで女の子には大ウケするはずにゃ♪",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "にゃるほど、",
+    "voice": "vo_adv_6106201_003",
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "おにぎりみたいにおかずを具にするんだにゃ？",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "おやつだけじゃなくお昼ご飯にもできちゃうのにゃ！",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "\\nこれなら販路拡大間違いなしにゃ！　",
+    "voice": null,
+    "unit_id": 104611
+  },
+  {
+    "type": "dialogue",
+    "name": "タマキ",
+    "words": "キミってば冴えてるにゃ♪",
+    "voice": null,
+    "unit_id": 104611
+  }
 ]

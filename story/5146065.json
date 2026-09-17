@@ -1,597 +1,671 @@
 [
-    {
-        "type": "background",
-        "background": "500036"
-    },
-    {
-        "type": "dialogue",
-        "name": "ナレーション",
-        "words": "クリスマスの準備を進めていたぺコリーヌは、"
-    },
-    {
-        "type": "dialogue",
-        "name": "ナレーション",
-        "words": "\n街中で偶然、知り合いの姿を見つけた。"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "おや？　",
-        "unit_id": 127911,
-        "voice": "vo_adv_5132065_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "あのかわいらしい後ろ姿は……",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "ツムギちゃーん！",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "はい？　",
-        "unit_id": 105411,
-        "voice": "vo_adv_5132065_001"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "あ、",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "ペコリーヌ、",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "さ……",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "は？　",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "え、",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "何？",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "ツムギちゃん？　",
-        "unit_id": 127911,
-        "voice": "vo_adv_5132065_002"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "どうかしましたか？",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "なにこれ、",
-        "unit_id": 105411,
-        "voice": "vo_adv_5132065_003"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "なんなんですかこれはー！",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "わわっ！　",
-        "unit_id": 127911,
-        "voice": "vo_adv_5132065_004"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "ちょ、",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "ツムギちゃん落ち着いて……",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "何言ってるんです、",
-        "unit_id": 105411,
-        "voice": "vo_adv_5132065_005"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "これが落ち着いてられますか！",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "ペコリーヌさん、",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "なんなんですかこの服は！",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "あ、",
-        "unit_id": 127911,
-        "voice": "vo_adv_5132065_006"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "え、",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "と……",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "これはクレジッタさんがクリスマスのイベント用にって",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\nあつらえてくれたんです……",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "けど……",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "ど、",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "どこか変、",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "ですか？",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "変？　",
-        "unit_id": 105411,
-        "voice": "vo_adv_5132065_007"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "もうっ、",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "バカを言わないでください！",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "これは至高にして最高の芸術品ですよ！",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "見るからに豪華ですが、",
-        "unit_id": 105411,
-        "voice": "vo_adv_5132065_008"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "王族だからといって",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "いたずらに",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n高級感をアピールするのではなく、",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n気品と可憐さがバランスよく表現されています。",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "まさにペコリーヌさんのために生み出されたデザインです！",
-        "unit_id": 105411,
-        "voice": "vo_adv_5132065_009"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "それにこの生地……",
-        "unit_id": 105411,
-        "voice": "vo_adv_5132065_010"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "めったにお目にかかれない最高級品ですよ！",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "こんな生地でドレスが仕立てられるなんて、",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\nなんて幸せな縫製職人でしょう、",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "うらやましい！",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "当然、",
-        "unit_id": 105411,
-        "voice": "vo_adv_5132065_011"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "仕事も丁寧で完璧ですね。",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "今の私じゃまだこの域には……",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "あー！　",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "尊敬と悔しさでどうにかなりそうです！",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "ツ、",
-        "unit_id": 127911,
-        "voice": "vo_adv_5132065_012"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "ツムギちゃん！　",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "落ち着いて、",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "落ち着いてください！",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "はぁ、",
-        "unit_id": 105411,
-        "voice": "vo_adv_5132065_013"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "はぁ……",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "すみません、",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "お見苦しいところをお見せしました。",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n全く、",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "とんでもないものをお召しになってますね、",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "ペコリーヌさん。",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "これは全ての縫製職人を虜にする魔性の服ですよ！",
-        "unit_id": 105411,
-        "voice": "vo_adv_5132065_014"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "いやー、",
-        "unit_id": 105411,
-        "voice": "vo_adv_5132065_015"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "気分転換に街に出て正解でした。",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "ここのところずっと仕事に追われてボロボロでしたから……",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "好きでやってる仕事なので",
-        "unit_id": 105411,
-        "voice": "vo_adv_5132065_016"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "イヤになることはないのですが、",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n睡眠不足と疲労でパフォーマンスが落ちるのはキツいです。",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "でも、",
-        "unit_id": 105411,
-        "voice": "vo_adv_5132065_017"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "この服を見たおかげで疲労感が一気に吹き飛びましたよ！",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "うふふ、",
-        "unit_id": 105411,
-        "voice": "vo_adv_5132065_018"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "やる気とアイデアがみなぎってきました！",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n速攻で帰って再開します！",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "ノゾミさんたちみたいに",
-        "unit_id": 105411,
-        "voice": "vo_adv_5132065_019"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "イベントのお手伝いはできませんが、",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "当日は私も楽しませてもらいますね！",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "今日はありがとうございました。",
-        "unit_id": 105411,
-        "voice": "vo_adv_5132065_020"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "それでは失礼します！",
-        "unit_id": 105411
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "あ……",
-        "unit_id": 127911,
-        "voice": "vo_adv_5132065_021"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "ツムギちゃん。",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "行っちゃいましたね……",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\n",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "なんだか怒涛のようでしたけど。",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "あまり意識したことはなかったけど、",
-        "unit_id": 127911,
-        "voice": "vo_adv_5132065_022"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "こんなにも人の心を",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\n動かすことがあるなんて……",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "服ってすごいですね☆",
-        "unit_id": 127911
-    }
+  {
+    "type": "background",
+    "bg_id": "500036"
+  },
+  {
+    "type": "dialogue",
+    "name": "ナレーション",
+    "words": "クリスマスの準備を進めていたぺコリーヌは、",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "ナレーション",
+    "words": "\\n街中で偶然、知り合いの姿を見つけた。",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "おや？　",
+    "voice": "vo_adv_5132065_000",
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "あのかわいらしい後ろ姿は……",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "ツムギちゃーん！",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "はい？　",
+    "voice": "vo_adv_5132065_001",
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "あ、",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "ペコリーヌ、",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "さ……",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "は？　",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "え、",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "何？",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "ツムギちゃん？　",
+    "voice": "vo_adv_5132065_002",
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "どうかしましたか？",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "なにこれ、",
+    "voice": "vo_adv_5132065_003",
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "なんなんですかこれはー！",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "わわっ！　",
+    "voice": "vo_adv_5132065_004",
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "ちょ、",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "ツムギちゃん落ち着いて……",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "何言ってるんです、",
+    "voice": "vo_adv_5132065_005",
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "これが落ち着いてられますか！",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "ペコリーヌさん、",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "なんなんですかこの服は！",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "あ、",
+    "voice": "vo_adv_5132065_006",
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "え、",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "と……",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "これはクレジッタさんがクリスマスのイベント用にって",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\nあつらえてくれたんです……",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "けど……",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "ど、",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "どこか変、",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "ですか？",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "変？　",
+    "voice": "vo_adv_5132065_007",
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "もうっ、",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "バカを言わないでください！",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "これは至高にして最高の芸術品ですよ！",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "見るからに豪華ですが、",
+    "voice": "vo_adv_5132065_008",
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "王族だからといって",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "いたずらに",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n高級感をアピールするのではなく、",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n気品と可憐さがバランスよく表現されています。",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "まさにペコリーヌさんのために生み出されたデザインです！",
+    "voice": "vo_adv_5132065_009",
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "それにこの生地……",
+    "voice": "vo_adv_5132065_010",
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "めったにお目にかかれない最高級品ですよ！",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "こんな生地でドレスが仕立てられるなんて、",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\nなんて幸せな縫製職人でしょう、",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "うらやましい！",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "当然、",
+    "voice": "vo_adv_5132065_011",
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "仕事も丁寧で完璧ですね。",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "今の私じゃまだこの域には……",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "あー！　",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "尊敬と悔しさでどうにかなりそうです！",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "ツ、",
+    "voice": "vo_adv_5132065_012",
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "ツムギちゃん！　",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "落ち着いて、",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "落ち着いてください！",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "はぁ、",
+    "voice": "vo_adv_5132065_013",
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "はぁ……",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "すみません、",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "お見苦しいところをお見せしました。",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n全く、",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "とんでもないものをお召しになってますね、",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "ペコリーヌさん。",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "これは全ての縫製職人を虜にする魔性の服ですよ！",
+    "voice": "vo_adv_5132065_014",
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "いやー、",
+    "voice": "vo_adv_5132065_015",
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "気分転換に街に出て正解でした。",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "ここのところずっと仕事に追われてボロボロでしたから……",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "好きでやってる仕事なので",
+    "voice": "vo_adv_5132065_016",
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "イヤになることはないのですが、",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n睡眠不足と疲労でパフォーマンスが落ちるのはキツいです。",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "でも、",
+    "voice": "vo_adv_5132065_017",
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "この服を見たおかげで疲労感が一気に吹き飛びましたよ！",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "うふふ、",
+    "voice": "vo_adv_5132065_018",
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "やる気とアイデアがみなぎってきました！",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n速攻で帰って再開します！",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "ノゾミさんたちみたいに",
+    "voice": "vo_adv_5132065_019",
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "イベントのお手伝いはできませんが、",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "当日は私も楽しませてもらいますね！",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "今日はありがとうございました。",
+    "voice": "vo_adv_5132065_020",
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "それでは失礼します！",
+    "voice": null,
+    "unit_id": 105411
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "あ……",
+    "voice": "vo_adv_5132065_021",
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "ツムギちゃん。",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "行っちゃいましたね……",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "なんだか怒涛のようでしたけど。",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "あまり意識したことはなかったけど、",
+    "voice": "vo_adv_5132065_022",
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "こんなにも人の心を",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n動かすことがあるなんて……",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "服ってすごいですね☆",
+    "voice": null,
+    "unit_id": 127911
+  }
 ]

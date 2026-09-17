@@ -1,165 +1,378 @@
 [
-    {
-        "type": "background",
-        "background": "501440"
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "もっと、",
-        "unit_id": 5313,
-        "voice": "vo_adv_5128061_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "サレンおねえちゃんやルカおねえさんと",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "\nイチャイチャするべきだと思います。",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "おにいさんたちは、",
-        "unit_id": 5313,
-        "voice": "vo_adv_5128061_001"
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "サレンおねえちゃんたちと夫婦を装って",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "\n入国の許可をもらったわけなんですけど……",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "それにしては",
-        "unit_id": 5313,
-        "voice": "vo_adv_5128061_002"
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "雰囲気がぎこちない",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "というか。",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "\n",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "怪しまれるのも時間の問題な気がするんです。",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "ちょっとズルかもしれませんけど、",
-        "unit_id": 5313,
-        "voice": "vo_adv_5128061_003"
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "\nボクの力で",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "「幻の結婚生活」を見せてあげますね。",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "\n",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "やっぱり、",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "実際にそういう生活を経験してないのが原因だと思うので。",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "これから見るのは、",
-        "unit_id": 5313,
-        "voice": "vo_adv_5128061_004"
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "全部夢に過ぎませんけれど……",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "\n愛し合う人との素敵な日々を楽しんで、",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "今後の参考にしてください。",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "\n",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "お二人にも、",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "異国の子ども",
-        "words": "同じ夢を見せておきますから。",
-        "unit_id": 5313
-    },
-    {
-        "type": "dialogue",
-        "name": "ナレーション",
-        "words": "こうして不思議な力によって、"
-    },
-    {
-        "type": "dialogue",
-        "name": "ナレーション",
-        "words": "\n{player}は結婚生活の夢を見るのだった……"
-    }
+  {
+    "type": "background",
+    "bg_id": "501440"
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "もっと、",
+    "voice": "vo_adv_5128061_000",
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "サレンおねえちゃんやルカおねえさんと",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "\\nイチャイチャするべきだと思います。",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "おにいさんたちは、",
+    "voice": "vo_adv_5128061_001",
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "サレンおねえちゃんたちと夫婦を装って",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "\\n入国の許可をもらったわけなんですけど……",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "それにしては",
+    "voice": "vo_adv_5128061_002",
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "雰囲気がぎこちない",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "というか。",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "怪しまれるのも時間の問題な気がするんです。",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "ちょっとズルかもしれませんけど、",
+    "voice": "vo_adv_5128061_003",
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "\\nボクの力で",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "「幻の結婚生活」を見せてあげますね。",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "やっぱり、",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "実際にそういう生活を経験してないのが原因だと思うので。",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "これから見るのは、",
+    "voice": "vo_adv_5128061_004",
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "全部夢に過ぎませんけれど……",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "\\n愛し合う人との素敵な日々を楽しんで、",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "今後の参考にしてください。",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "お二人にも、",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異国の子ども",
+    "words": "同じ夢を見せておきますから。",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "ナレーション",
+    "words": "こうして不思議な力によって、",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "ナレーション",
+    "words": "\\n{0}は結婚生活の夢を見るのだった……",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "background",
+    "bg_id": "501440"
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "我覺得",
+    "voice": "vo_adv_5128161_000",
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "你應該和咲戀姐姐還有流夏姐姐",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "\\n有更多的親密互動才行。",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "哥哥你們",
+    "voice": "vo_adv_5128161_001",
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "是因為和咲戀姐姐她們偽裝成夫妻，",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "\\n才被允許入國的……",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "作為夫妻，",
+    "voice": "vo_adv_5128161_002",
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "你們之間的氛圍",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "卻有點尷尬。",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "我覺得這樣遲早會讓人起疑的。",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "雖然這麼做有點犯規，",
+    "voice": "vo_adv_5128161_003",
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "\\n不過就用我的力量",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "讓你們看看「夢幻的結婚生活」吧。",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "我認為，",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "原因還是在於你們並沒有實際經歷過那樣的生活。",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "接下來見到的，",
+    "voice": "vo_adv_5128161_004",
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "全部都只是夢境……",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "\\n但就請你好好享受與相愛之人共度的美好日子，",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "作為今後的參考。",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "我也會讓她們兩人",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "異國的小孩子",
+    "words": "夢見同樣的夢。",
+    "voice": null,
+    "unit_id": 5313
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "{0}就這樣透過了神奇的力量，",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "\\n做了一場結婚生活的夢……",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "movie",
+    "movie_id": "512816101"
+  }
 ]

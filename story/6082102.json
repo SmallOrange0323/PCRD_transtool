@@ -1,172 +1,195 @@
 [
-    {
-        "type": "background",
-        "background": "501193"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "カズマサさんからとっておきの漁の技、",
-        "unit_id": 105812,
-        "voice": "vo_adv_6056102_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\n『ひゃぁん漁法』について詳しく教わっちゃいました♪",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\n",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "さっそく一緒に試してみませんかっ？",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "はい、",
-        "unit_id": 105812,
-        "voice": "vo_adv_6056102_001"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "もちろんです♪",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\n",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "えっとですね……",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "まずは腰をこの角度に曲げて……",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\n",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "ここで掛け声です！　",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "『ひゃぁんっ』！？",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "へ？　",
-        "unit_id": 105812,
-        "voice": "vo_adv_6056102_002"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "……あっ、",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "もしかしていきなり実践は危険ってことですか？",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\n",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "確かに……",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "もう少し勉強してからにしたほうがいいかもしれません。",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\n使いこなせるよう、",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "たくさん練習しましょう♪",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "おお、",
-        "unit_id": 105812,
-        "voice": "vo_adv_6056102_003"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "ナイスアイディアです♪",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\n",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "さっそくキャルちゃんを呼んできましょう！",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\nキャルちゃーん……",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "って、",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "どうして逃げるんですかっ？",
-        "unit_id": 105812
-    }
+  {
+    "type": "background",
+    "bg_id": "501193"
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "カズマサさんからとっておきの漁の技、",
+    "voice": "vo_adv_6056102_000",
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n『ひゃぁん漁法』について詳しく教わっちゃいました♪",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "さっそく一緒に試してみませんかっ？",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "はい、",
+    "voice": "vo_adv_6056102_001",
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "もちろんです♪",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "えっとですね……",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "まずは腰をこの角度に曲げて……",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "ここで掛け声です！　",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "『ひゃぁんっ』！？",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "へ？　",
+    "voice": "vo_adv_6056102_002",
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "……あっ、",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "もしかしていきなり実践は危険ってことですか？",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "確かに……",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "もう少し勉強してからにしたほうがいいかもしれません。",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n使いこなせるよう、",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "たくさん練習しましょう♪",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "おお、",
+    "voice": "vo_adv_6056102_003",
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "ナイスアイディアです♪",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "さっそくキャルちゃんを呼んできましょう！",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\nキャルちゃーん……",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "って、",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "どうして逃げるんですかっ？",
+    "voice": null,
+    "unit_id": 105812
+  }
 ]

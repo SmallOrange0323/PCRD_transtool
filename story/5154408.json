@@ -1,55 +1,62 @@
 [
-    {
-        "type": "background",
-        "background": "500881"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "チキンもケーキも、",
-        "unit_id": 127911,
-        "voice": "vo_adv_5132408_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "いつ食べてもおいしいですが、",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\n",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "クリスマスという特別感が",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "いっそうおいしくしてくれるんです！",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\n",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "年に一度の特別なスパイス、",
-        "unit_id": 127911
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "思い切り味わいましょう☆",
-        "unit_id": 127911
-    }
+  {
+    "type": "background",
+    "bg_id": "500881"
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "チキンもケーキも、",
+    "voice": "vo_adv_5132408_000",
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "いつ食べてもおいしいですが、",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "クリスマスという特別感が",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "いっそうおいしくしてくれるんです！",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "年に一度の特別なスパイス、",
+    "voice": null,
+    "unit_id": 127911
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "思い切り味わいましょう☆",
+    "voice": null,
+    "unit_id": 127911
+  }
 ]

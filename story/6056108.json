@@ -1,166 +1,188 @@
 [
-    {
-        "type": "background",
-        "background": "501132"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "そういえば",
-        "unit_id": 113911,
-        "voice": "vo_adv_6050108_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "ハロウィンの定番っていたずらですよね。",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "トリックオアトリート、",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "って。",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "騎士さんはどんないたずらしてみたいですか？",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "…………いきなりなんですか？",
-        "unit_id": 113911,
-        "voice": "vo_adv_6050108_001"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "ああ、",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "それがいたずらのつもりだったんですね。",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "ずいぶんとかわいらしいいたずらで済ませるんですね。",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "ふふっ。",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "それ別にハロウィンっぽくないですけど……",
-        "unit_id": 113911,
-        "voice": "vo_adv_6050108_002"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "よく落ちてるから？",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n騎士さんには猟師の知り合いでもいるんですか？",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "あんまり猟の邪魔しちゃダメですよ。",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "それはいたずらされないためにすることですよ。",
-        "unit_id": 113911,
-        "voice": "vo_adv_6050108_003"
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "はぁ……",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "いたずらするって考えが最初から無いんですね。",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "\n",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "まったく、",
-        "unit_id": 113911
-    },
-    {
-        "type": "dialogue",
-        "name": "ツムギ",
-        "words": "筋金入りのお人よしですね。",
-        "unit_id": 113911
-    }
+  {
+    "type": "background",
+    "bg_id": "501132"
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "そういえば",
+    "voice": "vo_adv_6050108_000",
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "ハロウィンの定番っていたずらですよね。",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "トリックオアトリート、",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "って。",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "騎士さんはどんないたずらしてみたいですか？",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "…………いきなりなんですか？",
+    "voice": "vo_adv_6050108_001",
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "ああ、",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "それがいたずらのつもりだったんですね。",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "ずいぶんとかわいらしいいたずらで済ませるんですね。",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "ふふっ。",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "それ別にハロウィンっぽくないですけど……",
+    "voice": "vo_adv_6050108_002",
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "よく落ちてるから？",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n騎士さんには猟師の知り合いでもいるんですか？",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "あんまり猟の邪魔しちゃダメですよ。",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "それはいたずらされないためにすることですよ。",
+    "voice": "vo_adv_6050108_003",
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "はぁ……",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "いたずらするって考えが最初から無いんですね。",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "まったく、",
+    "voice": null,
+    "unit_id": 113911
+  },
+  {
+    "type": "dialogue",
+    "name": "ツムギ",
+    "words": "筋金入りのお人よしですね。",
+    "voice": null,
+    "unit_id": 113911
+  }
 ]

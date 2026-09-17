@@ -1,96 +1,261 @@
 [
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "エリスさんのシャドウ、",
-        "unit_id": 135111,
-        "voice": "vo_adv_5206323_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "全力全開ね……",
-        "unit_id": 135111
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "\nものすごい迫力だわ……",
-        "unit_id": 135111
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "作戦通り、",
-        "unit_id": 135111,
-        "voice": "vo_adv_5206323_001"
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "連携を取っていきましょう……！",
-        "unit_id": 135111
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "\n",
-        "unit_id": 135111
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "みんな、",
-        "unit_id": 135111
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "準備はいい？",
-        "unit_id": 135111
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "ん。",
-        "unit_id": 135211,
-        "voice": "vo_adv_5206323_002"
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "\n",
-        "unit_id": 135211
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "エリス。",
-        "unit_id": 135211
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "\nだいじょぶ？",
-        "unit_id": 135211
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "ええ。",
-        "unit_id": 135011,
-        "voice": "vo_adv_5206323_003"
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "\n未練は、",
-        "unit_id": 135011
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "手放してみせる……！",
-        "unit_id": 135011
-    }
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "エリスさんのシャドウ、",
+    "voice": "vo_adv_5206323_000",
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "全力全開ね……",
+    "voice": null,
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "\\nものすごい迫力だわ……",
+    "voice": null,
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "作戦通り、",
+    "voice": "vo_adv_5206323_001",
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "連携を取っていきましょう……！",
+    "voice": null,
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "みんな、",
+    "voice": null,
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "準備はいい？",
+    "voice": null,
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "ん。",
+    "voice": "vo_adv_5206323_002",
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "エリス。",
+    "voice": null,
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "\\nだいじょぶ？",
+    "voice": null,
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "ええ。",
+    "voice": "vo_adv_5206323_003",
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "\\n未練は、",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "手放してみせる……！",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "這場「審判」也來到尾聲了呢。",
+    "voice": "vo_adv_5210323_000",
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "妳們還好吧？",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "阿剌克涅小姐！",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "拿娜小姐！",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "阿剌克涅",
+    "words": "我是罪孽深重之身……",
+    "voice": "vo_adv_5210323_001",
+    "unit_id": 136011
+  },
+  {
+    "type": "dialogue",
+    "name": "阿剌克涅",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 136011
+  },
+  {
+    "type": "dialogue",
+    "name": "阿剌克涅",
+    "words": "但是，",
+    "voice": null,
+    "unit_id": 136011
+  },
+  {
+    "type": "dialogue",
+    "name": "阿剌克涅",
+    "words": "對於想要把小拿也捲入罪孽的人，",
+    "voice": null,
+    "unit_id": 136011
+  },
+  {
+    "type": "dialogue",
+    "name": "阿剌克涅",
+    "words": "\\n我絕不輕饒！",
+    "voice": null,
+    "unit_id": 136011
+  },
+  {
+    "type": "dialogue",
+    "name": "拿娜",
+    "words": "要是贏了，拿娜",
+    "voice": "vo_adv_5210323_002",
+    "unit_id": 136211
+  },
+  {
+    "type": "dialogue",
+    "name": "拿娜",
+    "words": "就要拿著寫了「小阿獲判無罪」的紙，",
+    "voice": null,
+    "unit_id": 136211
+  },
+  {
+    "type": "dialogue",
+    "name": "拿娜",
+    "words": "\\n在吉歐‧格黑納到處跑來跑去！",
+    "voice": null,
+    "unit_id": 136211
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "所以說妳為什麼會知道那種事……",
+    "voice": "vo_adv_5210323_003",
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "不，",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "那樣，",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "還不錯呢！",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "務必那麼做喔！",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "無罪判決就在眼前了！",
+    "voice": "vo_adv_5210323_004",
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "我們上吧！",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "拿娜‧阿剌克涅",
+    "words": "好的！",
+    "voice": "vo_adv_5210323_005",
+    "unit_id": null
+  }
 ]

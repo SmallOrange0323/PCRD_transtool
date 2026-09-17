@@ -1,172 +1,195 @@
 [
-    {
-        "type": "background",
-        "background": "501060"
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "それにしても、",
-        "unit_id": 113111,
-        "voice": "vo_adv_6044106_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "彦星のやつは信じられないね。",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "\n",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "あんなにかわいい織姫がいるってのに、",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "\nなんで他の女に目移りしてるんだろうね？　",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "信じられないよ。",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "ああ、",
-        "unit_id": 113111,
-        "voice": "vo_adv_6044106_001"
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "どうしようもない助平野郎だよ。",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "\nああいうヤツにはキツイお灸が必要だからね。",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "\n織姫と協力して、",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "ガツンとお仕置きしてやろうじゃないか。",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "多分、",
-        "unit_id": 113111,
-        "voice": "vo_adv_6044106_002"
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "好きではあるんだろうね。",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "\n",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "ああいうダメ男の言い訳で多いんだよ、",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "一番はおまえだ！　",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "ってね。",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "\nそんな主張が通るわけがないだろうにね、",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "しょうもない。",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "分からなくたって大丈夫だよ。",
-        "unit_id": 113111,
-        "voice": "vo_adv_6044106_003"
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "\nお前さんはそのまま、",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "真っ直ぐに",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "自分らしくあればいい。",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "\n",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "アタシは",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "そういうお前さんの純粋なとこ、",
-        "unit_id": 113111
-    },
-    {
-        "type": "dialogue",
-        "name": "ルカ",
-        "words": "いいと思ってるよ。",
-        "unit_id": 113111
-    }
+  {
+    "type": "background",
+    "bg_id": "501060"
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "それにしても、",
+    "voice": "vo_adv_6044106_000",
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "彦星のやつは信じられないね。",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "あんなにかわいい織姫がいるってのに、",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "\\nなんで他の女に目移りしてるんだろうね？　",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "信じられないよ。",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "ああ、",
+    "voice": "vo_adv_6044106_001",
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "どうしようもない助平野郎だよ。",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "\\nああいうヤツにはキツイお灸が必要だからね。",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "\\n織姫と協力して、",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "ガツンとお仕置きしてやろうじゃないか。",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "多分、",
+    "voice": "vo_adv_6044106_002",
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "好きではあるんだろうね。",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "ああいうダメ男の言い訳で多いんだよ、",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "一番はおまえだ！　",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "ってね。",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "\\nそんな主張が通るわけがないだろうにね、",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "しょうもない。",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "分からなくたって大丈夫だよ。",
+    "voice": "vo_adv_6044106_003",
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "\\nお前さんはそのまま、",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "真っ直ぐに",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "自分らしくあればいい。",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "アタシは",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "そういうお前さんの純粋なとこ、",
+    "voice": null,
+    "unit_id": 113111
+  },
+  {
+    "type": "dialogue",
+    "name": "ルカ",
+    "words": "いいと思ってるよ。",
+    "voice": null,
+    "unit_id": 113111
+  }
 ]

@@ -1,184 +1,209 @@
 [
-    {
-        "type": "background",
-        "background": "501162"
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "オーマの魚を使った料理がおいしくて",
-        "unit_id": 106012,
-        "voice": "vo_adv_6056301_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "つい食べすぎちゃったわ……",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "\n",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "あそこで調子に乗らなきゃ、",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "今頃はのんびりとギルドハウスで年末を\n過ごせてたはずだったのに……",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "わ、わわわわわわかってるわよっ！？",
-        "unit_id": 106012,
-        "voice": "vo_adv_6056301_001"
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "\n",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "ま、",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "まぁ？　",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "考えてみればこれも運動よね！",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "\n",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "食べたぶんだけ、",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "ちゃんと動くわよ！",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "あ、",
-        "unit_id": 106012,
-        "voice": "vo_adv_6056301_002"
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "あんた、",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "ポジティブね……",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "\n",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "まぁ、",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "使ったお金は戻ってこないわけだし。",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "\nこうなった限りはやるしかないわよね。",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "た、",
-        "unit_id": 106012,
-        "voice": "vo_adv_6056301_003"
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "確かに、",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "忘年会自体は悪くなかったけど……",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "\n",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "ああもう、",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "後悔してても仕方ないわ！",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "\n",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "来年もちゃんと忘年会ができるように、",
-        "unit_id": 106012
-    },
-    {
-        "type": "dialogue",
-        "name": "キャル",
-        "words": "大物を釣るわよ！",
-        "unit_id": 106012
-    }
+  {
+    "type": "background",
+    "bg_id": "501162"
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "オーマの魚を使った料理がおいしくて",
+    "voice": "vo_adv_6056301_000",
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "つい食べすぎちゃったわ……",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "あそこで調子に乗らなきゃ、",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "今頃はのんびりとギルドハウスで年末を\\n過ごせてたはずだったのに……",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "わ、わわわわわわかってるわよっ！？",
+    "voice": "vo_adv_6056301_001",
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "ま、",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "まぁ？　",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "考えてみればこれも運動よね！",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "食べたぶんだけ、",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "ちゃんと動くわよ！",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "あ、",
+    "voice": "vo_adv_6056301_002",
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "あんた、",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "ポジティブね……",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "まぁ、",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "使ったお金は戻ってこないわけだし。",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "\\nこうなった限りはやるしかないわよね。",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "た、",
+    "voice": "vo_adv_6056301_003",
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "確かに、",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "忘年会自体は悪くなかったけど……",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "ああもう、",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "後悔してても仕方ないわ！",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "来年もちゃんと忘年会ができるように、",
+    "voice": null,
+    "unit_id": 106012
+  },
+  {
+    "type": "dialogue",
+    "name": "凱留",
+    "words": "大物を釣るわよ！",
+    "voice": null,
+    "unit_id": 106012
+  }
 ]

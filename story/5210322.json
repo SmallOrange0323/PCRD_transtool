@@ -1,189 +1,359 @@
 [
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "今度はシャドウを召喚した……！？",
-        "unit_id": 135111,
-        "voice": "vo_adv_5206322_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "\nしかも、",
-        "unit_id": 135111
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "あれって……",
-        "unit_id": 135111
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "みんな。",
-        "unit_id": 135211,
-        "voice": "vo_adv_5206322_001"
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "\n【アルターメイデン】の",
-        "unit_id": 135211
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "シャドウ。",
-        "unit_id": 135211
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "プレシア、",
-        "unit_id": 135011,
-        "voice": "vo_adv_5206322_002"
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "よく見なさい。",
-        "unit_id": 135011
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "\n阿賀斗紫布菜のシャドウもいるでしょう。",
-        "unit_id": 135011
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "あ。",
-        "unit_id": 135211,
-        "voice": "vo_adv_5206322_003"
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "\n……",
-        "unit_id": 135211
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "シェフィも。",
-        "unit_id": 135211
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "\n【アルターメイデン】。",
-        "unit_id": 135211
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "かにゅう。",
-        "unit_id": 135211
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "ね？",
-        "unit_id": 135211
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "えっ！？",
-        "unit_id": 135111,
-        "voice": "vo_adv_5206322_004"
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "\n",
-        "unit_id": 135111
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "き、",
-        "unit_id": 135111
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "気持ちはうれしいけどっ……",
-        "unit_id": 135111
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "……",
-        "unit_id": 135011,
-        "voice": "vo_adv_5206322_005"
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "元端末のシャドウ、",
-        "unit_id": 135011
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "と言ったところか……",
-        "unit_id": 135011
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "\n調子が狂うわね……",
-        "unit_id": 135011
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "とにかく、",
-        "unit_id": 135011,
-        "voice": "vo_adv_5206322_006"
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "普通のシャドウではないはずよ。",
-        "unit_id": 135011
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "\n",
-        "unit_id": 135011
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "理想郷の力によって、",
-        "unit_id": 135011
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "強化されているかもしれない。",
-        "unit_id": 135011
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "\nわたしのシャドウのように、",
-        "unit_id": 135011
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "復活することも想定して戦いましょう。",
-        "unit_id": 135011
-    }
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "今度はシャドウを召喚した……！？",
+    "voice": "vo_adv_5206322_000",
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "\\nしかも、",
+    "voice": null,
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "あれって……",
+    "voice": null,
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "みんな。",
+    "voice": "vo_adv_5206322_001",
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "\\n【アルターメイデン】の",
+    "voice": null,
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "シャドウ。",
+    "voice": null,
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "プレシア、",
+    "voice": "vo_adv_5206322_002",
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "よく見なさい。",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "\\n阿賀斗紫布菜のシャドウもいるでしょう。",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "あ。",
+    "voice": "vo_adv_5206322_003",
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "\\n……",
+    "voice": null,
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "シェフィも。",
+    "voice": null,
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "\\n【アルターメイデン】。",
+    "voice": null,
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "かにゅう。",
+    "voice": null,
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "ね？",
+    "voice": null,
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "えっ！？",
+    "voice": "vo_adv_5206322_004",
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "き、",
+    "voice": null,
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "気持ちはうれしいけどっ……",
+    "voice": null,
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "……",
+    "voice": "vo_adv_5206322_005",
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "元端末のシャドウ、",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "と言ったところか……",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "\\n調子が狂うわね……",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "とにかく、",
+    "voice": "vo_adv_5206322_006",
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "普通のシャドウではないはずよ。",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "理想郷の力によって、",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "強化されているかもしれない。",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "\\nわたしのシャドウのように、",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "復活することも想定して戦いましょう。",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "拿娜",
+    "words": "啊呣呣呣，",
+    "voice": "vo_adv_5210322_000",
+    "unit_id": 136211
+  },
+  {
+    "type": "dialogue",
+    "name": "拿娜",
+    "words": "力、",
+    "voice": null,
+    "unit_id": 136211
+  },
+  {
+    "type": "dialogue",
+    "name": "拿娜",
+    "words": "力氣被吸走惹……",
+    "voice": null,
+    "unit_id": 136211
+  },
+  {
+    "type": "dialogue",
+    "name": "拿娜",
+    "words": "嗶咿！",
+    "voice": null,
+    "unit_id": 136211
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "竟然吸收我們的力量，",
+    "voice": "vo_adv_5210322_001",
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "真是",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "什麼招式都有呢！",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "與其叫審判長，",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "不如自稱綜合貿易公司比較好吧？",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "阿剌克涅",
+    "words": "如果要對小拿出手，",
+    "voice": "vo_adv_5210322_002",
+    "unit_id": 136011
+  },
+  {
+    "type": "dialogue",
+    "name": "阿剌克涅",
+    "words": "就先衝著我來！",
+    "voice": null,
+    "unit_id": 136011
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "太亂來了──",
+    "voice": "vo_adv_5210322_003",
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "不，",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "意外地有效？",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "由誘餌吸引對方的注意，",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "霞",
+    "words": "我們的攻擊就能打穿……",
+    "voice": null,
+    "unit_id": 137411
+  },
+  {
+    "type": "dialogue",
+    "name": "拿娜",
+    "words": "別、",
+    "voice": "vo_adv_5210322_004",
+    "unit_id": 136211
+  },
+  {
+    "type": "dialogue",
+    "name": "拿娜",
+    "words": "別光顧著想，",
+    "voice": null,
+    "unit_id": 136211
+  },
+  {
+    "type": "dialogue",
+    "name": "拿娜",
+    "words": "快救救拿娜啊～！",
+    "voice": null,
+    "unit_id": 136211
+  }
 ]

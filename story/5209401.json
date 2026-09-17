@@ -1,162 +1,311 @@
 [
-    {
-        "type": "background",
-        "background": "501030"
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "なんとか、",
-        "unit_id": 135111,
-        "voice": "vo_adv_5206401_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "倒せたわね……",
-        "unit_id": 135111
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "\n",
-        "unit_id": 135111
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "エリスさんのシャドウだけあって、",
-        "unit_id": 135111
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "強かった……",
-        "unit_id": 135111
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "……（くんくん）",
-        "unit_id": 135211,
-        "voice": "vo_adv_5206401_001"
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "\n",
-        "unit_id": 135211
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "まだ。",
-        "unit_id": 135211
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "だよ。",
-        "unit_id": 135211
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "尽きない欲望をもとに、",
-        "unit_id": 135011,
-        "voice": "vo_adv_5206401_002"
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "シャドウが復活する……",
-        "unit_id": 135011
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "\n",
-        "unit_id": 135011
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "それに、",
-        "unit_id": 135011
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "彼女はまだ本気を出していないわ……",
-        "unit_id": 135011
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "まだ戦いは続くのね……",
-        "unit_id": 135111,
-        "voice": "vo_adv_5206401_003"
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "\n",
-        "unit_id": 135111
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "でも、",
-        "unit_id": 135111
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "私たちも連携が取れてきたわ。",
-        "unit_id": 135111
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "それは、",
-        "unit_id": 135011,
-        "voice": "vo_adv_5206401_004"
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "分からないけれど……",
-        "unit_id": 135011
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "急ぎましょう。",
-        "unit_id": 135011
-    },
-    {
-        "type": "dialogue",
-        "name": "エリス",
-        "words": "\n次こそは……",
-        "unit_id": 135011
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "つぎは。",
-        "unit_id": 135211,
-        "voice": "vo_adv_5206401_005"
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "\nおしり。",
-        "unit_id": 135211
-    },
-    {
-        "type": "dialogue",
-        "name": "プレシア",
-        "words": "ぺんぺん。",
-        "unit_id": 135211
-    }
+  {
+    "type": "background",
+    "bg_id": "501030"
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "なんとか、",
+    "voice": "vo_adv_5206401_000",
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "倒せたわね……",
+    "voice": null,
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "エリスさんのシャドウだけあって、",
+    "voice": null,
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "強かった……",
+    "voice": null,
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "……（くんくん）",
+    "voice": "vo_adv_5206401_001",
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "まだ。",
+    "voice": null,
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "だよ。",
+    "voice": null,
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "尽きない欲望をもとに、",
+    "voice": "vo_adv_5206401_002",
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "シャドウが復活する……",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "それに、",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "彼女はまだ本気を出していないわ……",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "まだ戦いは続くのね……",
+    "voice": "vo_adv_5206401_003",
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "でも、",
+    "voice": null,
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "私たちも連携が取れてきたわ。",
+    "voice": null,
+    "unit_id": 135111
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "それは、",
+    "voice": "vo_adv_5206401_004",
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "分からないけれど……",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "急ぎましょう。",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "エリス",
+    "words": "\\n次こそは……",
+    "voice": null,
+    "unit_id": 135011
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "つぎは。",
+    "voice": "vo_adv_5206401_005",
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "\\nおしり。",
+    "voice": null,
+    "unit_id": 135211
+  },
+  {
+    "type": "dialogue",
+    "name": "プレシア",
+    "words": "ぺんぺん。",
+    "voice": null,
+    "unit_id": 135211
+  },
+  {
+    "type": "background",
+    "bg_id": "502460"
+  },
+  {
+    "type": "dialogue",
+    "name": "雪野",
+    "words": "呼……",
+    "voice": "vo_adv_5209401_000",
+    "unit_id": 135811
+  },
+  {
+    "type": "dialogue",
+    "name": "雪野",
+    "words": "雖然很可怕，",
+    "voice": null,
+    "unit_id": 135811
+  },
+  {
+    "type": "dialogue",
+    "name": "雪野",
+    "words": "但是成功打倒了……",
+    "voice": null,
+    "unit_id": 135811
+  },
+  {
+    "type": "dialogue",
+    "name": "剎鬼",
+    "words": "沒什麼了不起的嘛。",
+    "voice": "vo_adv_5209401_001",
+    "unit_id": 135911
+  },
+  {
+    "type": "dialogue",
+    "name": "璐璐伊",
+    "words": "好厲害的聯手攻擊！",
+    "voice": "vo_adv_5209401_002",
+    "unit_id": 136912
+  },
+  {
+    "type": "dialogue",
+    "name": "璐璐伊",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 136912
+  },
+  {
+    "type": "dialogue",
+    "name": "璐璐伊",
+    "words": "真不愧素",
+    "voice": null,
+    "unit_id": 136912
+  },
+  {
+    "type": "dialogue",
+    "name": "璐璐伊",
+    "words": "姐接們！",
+    "voice": null,
+    "unit_id": 136912
+  },
+  {
+    "type": "dialogue",
+    "name": "雪野、剎鬼",
+    "words": "「因、因為是兒時玩伴呀。」\\n「嗯，畢竟是兒時玩伴啊。」",
+    "voice": "vo_adv_5209401_003",
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "璐璐伊",
+    "words": "連、",
+    "voice": "vo_adv_5209401_004",
+    "unit_id": 136912
+  },
+  {
+    "type": "dialogue",
+    "name": "璐璐伊",
+    "words": "連縮的話也一樣！",
+    "voice": null,
+    "unit_id": 136912
+  },
+  {
+    "type": "dialogue",
+    "name": "璐璐伊",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 136912
+  },
+  {
+    "type": "dialogue",
+    "name": "璐璐伊",
+    "words": "果然素，",
+    "voice": null,
+    "unit_id": 136912
+  },
+  {
+    "type": "dialogue",
+    "name": "璐璐伊",
+    "words": "默契十足呢～",
+    "voice": null,
+    "unit_id": 136912
+  },
+  {
+    "type": "dialogue",
+    "name": "剎鬼",
+    "words": "…………",
+    "voice": "vo_adv_5209401_005",
+    "unit_id": 135913
+  },
+  {
+    "type": "dialogue",
+    "name": "雪野",
+    "words": "感、",
+    "voice": "vo_adv_5209401_006",
+    "unit_id": 135811
+  },
+  {
+    "type": "dialogue",
+    "name": "雪野",
+    "words": "感覺好害羞呢……",
+    "voice": null,
+    "unit_id": 135811
+  },
+  {
+    "type": "dialogue",
+    "name": "雪野",
+    "words": "呵呵。",
+    "voice": null,
+    "unit_id": 135811
+  }
 ]

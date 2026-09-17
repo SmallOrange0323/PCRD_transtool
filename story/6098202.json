@@ -1,196 +1,223 @@
 [
-    {
-        "type": "background",
-        "background": "501193"
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "漁のために",
-        "unit_id": 105913,
-        "voice": "vo_adv_6056202_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "道具の手入れをお手伝いしていたのですが、",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "\n本当に",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "色々な種類のものがあるようです。",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "\n",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "様々な知識で作り上げられた数々……",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "感服でございます。",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "年季が入っている……",
-        "unit_id": 105913,
-        "voice": "vo_adv_6056202_001"
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "ということでございましょう。",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "\nこのボロボロ具合も、",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "これまで行ってきた漁のあかし……",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "\n",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "ふふ、",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "労いも込めて",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "精一杯お手入れをいたしましょう。",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "あっ……",
-        "unit_id": 105913,
-        "voice": "vo_adv_6056202_002"
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "い、",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "いけません、主さま！",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "\nそちらの道具は",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "さわると大きな音が鳴って――",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "ひゃあっ！？",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "おっと……",
-        "unit_id": 105913,
-        "voice": "vo_adv_6056202_003"
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "ありがとうございます、",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "主さま。",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "\n",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "こちら、",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "カズマサさまに",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "あとで報告いたしましょう。",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "\n",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "万全な状態で漁にのぞめば、",
-        "unit_id": 105913
-    },
-    {
-        "type": "dialogue",
-        "name": "コッコロ",
-        "words": "きっとうまくいくはずですから。",
-        "unit_id": 105913
-    }
+  {
+    "type": "background",
+    "bg_id": "501193"
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "漁のために",
+    "voice": "vo_adv_6056202_000",
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "道具の手入れをお手伝いしていたのですが、",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "\\n本当に",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "色々な種類のものがあるようです。",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "様々な知識で作り上げられた数々……",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "感服でございます。",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "年季が入っている……",
+    "voice": "vo_adv_6056202_001",
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "ということでございましょう。",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "\\nこのボロボロ具合も、",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "これまで行ってきた漁のあかし……",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "ふふ、",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "労いも込めて",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "精一杯お手入れをいたしましょう。",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "あっ……",
+    "voice": "vo_adv_6056202_002",
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "い、",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "いけません、主さま！",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "\\nそちらの道具は",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "さわると大きな音が鳴って――",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "ひゃあっ！？",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "おっと……",
+    "voice": "vo_adv_6056202_003",
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "ありがとうございます、",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "主さま。",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "こちら、",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "カズマサさまに",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "あとで報告いたしましょう。",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "万全な状態で漁にのぞめば、",
+    "voice": null,
+    "unit_id": 105913
+  },
+  {
+    "type": "dialogue",
+    "name": "可可蘿",
+    "words": "きっとうまくいくはずですから。",
+    "voice": null,
+    "unit_id": 105913
+  }
 ]

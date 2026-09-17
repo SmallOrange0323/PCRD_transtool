@@ -1,43 +1,48 @@
 [
-    {
-        "type": "background",
-        "background": "500881"
-    },
-    {
-        "type": "dialogue",
-        "name": "ミヤコ",
-        "words": "サンタさんにおばあちゃんのプリンをお願いするの！",
-        "unit_id": 119911,
-        "voice": "vo_adv_5080430_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "ミヤコ",
-        "words": "\n",
-        "unit_id": 119911
-    },
-    {
-        "type": "dialogue",
-        "name": "ミヤコ",
-        "words": "……ん？　",
-        "unit_id": 119911
-    },
-    {
-        "type": "dialogue",
-        "name": "ミヤコ",
-        "words": "おばあちゃんにお願いしたほうが早いの？",
-        "unit_id": 119911
-    },
-    {
-        "type": "dialogue",
-        "name": "ミヤコ",
-        "words": "\n",
-        "unit_id": 119911
-    },
-    {
-        "type": "dialogue",
-        "name": "ミヤコ",
-        "words": "おばあちゃんのところに行くの！",
-        "unit_id": 119911
-    }
+  {
+    "type": "background",
+    "bg_id": "500881"
+  },
+  {
+    "type": "dialogue",
+    "name": "ミヤコ",
+    "words": "サンタさんにおばあちゃんのプリンをお願いするの！",
+    "voice": "vo_adv_5080430_000",
+    "unit_id": 119911
+  },
+  {
+    "type": "dialogue",
+    "name": "ミヤコ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 119911
+  },
+  {
+    "type": "dialogue",
+    "name": "ミヤコ",
+    "words": "……ん？　",
+    "voice": null,
+    "unit_id": 119911
+  },
+  {
+    "type": "dialogue",
+    "name": "ミヤコ",
+    "words": "おばあちゃんにお願いしたほうが早いの？",
+    "voice": null,
+    "unit_id": 119911
+  },
+  {
+    "type": "dialogue",
+    "name": "ミヤコ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 119911
+  },
+  {
+    "type": "dialogue",
+    "name": "ミヤコ",
+    "words": "おばあちゃんのところに行くの！",
+    "voice": null,
+    "unit_id": 119911
+  }
 ]

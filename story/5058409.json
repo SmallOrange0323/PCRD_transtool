@@ -1,55 +1,62 @@
 [
-    {
-        "type": "background",
-        "background": "500175"
-    },
-    {
-        "type": "dialogue",
-        "name": "エミリア",
-        "words": "ホントに",
-        "unit_id": 109911,
-        "voice": "vo_adv_5017409_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "エミリア",
-        "words": "別世界？",
-        "unit_id": 109911
-    },
-    {
-        "type": "dialogue",
-        "name": "エミリア",
-        "words": "　ってところなのね……",
-        "unit_id": 109911
-    },
-    {
-        "type": "dialogue",
-        "name": "エミリア",
-        "words": "\n",
-        "unit_id": 109911
-    },
-    {
-        "type": "dialogue",
-        "name": "エミリア",
-        "words": "ぱっと見は似ているけど、",
-        "unit_id": 109911
-    },
-    {
-        "type": "dialogue",
-        "name": "エミリア",
-        "words": "食べ物の名前とか、",
-        "unit_id": 109911
-    },
-    {
-        "type": "dialogue",
-        "name": "エミリア",
-        "words": "\n知らない種族とか、",
-        "unit_id": 109911
-    },
-    {
-        "type": "dialogue",
-        "name": "エミリア",
-        "words": "ところどころに違いがあるみたい。",
-        "unit_id": 109911
-    }
+  {
+    "type": "background",
+    "bg_id": "500175"
+  },
+  {
+    "type": "dialogue",
+    "name": "エミリア",
+    "words": "ホントに",
+    "voice": "vo_adv_5017409_000",
+    "unit_id": 109911
+  },
+  {
+    "type": "dialogue",
+    "name": "エミリア",
+    "words": "別世界？",
+    "voice": null,
+    "unit_id": 109911
+  },
+  {
+    "type": "dialogue",
+    "name": "エミリア",
+    "words": "　ってところなのね……",
+    "voice": null,
+    "unit_id": 109911
+  },
+  {
+    "type": "dialogue",
+    "name": "エミリア",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 109911
+  },
+  {
+    "type": "dialogue",
+    "name": "エミリア",
+    "words": "ぱっと見は似ているけど、",
+    "voice": null,
+    "unit_id": 109911
+  },
+  {
+    "type": "dialogue",
+    "name": "エミリア",
+    "words": "食べ物の名前とか、",
+    "voice": null,
+    "unit_id": 109911
+  },
+  {
+    "type": "dialogue",
+    "name": "エミリア",
+    "words": "\\n知らない種族とか、",
+    "voice": null,
+    "unit_id": 109911
+  },
+  {
+    "type": "dialogue",
+    "name": "エミリア",
+    "words": "ところどころに違いがあるみたい。",
+    "voice": null,
+    "unit_id": 109911
+  }
 ]

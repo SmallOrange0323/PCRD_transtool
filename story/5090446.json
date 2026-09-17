@@ -1,43 +1,48 @@
 [
-    {
-        "type": "background",
-        "background": "501031"
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "みんなと過ごす",
-        "unit_id": 120711,
-        "voice": "vo_adv_5082446_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "初めてのお正月……",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "\n",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "すごく楽しみだわ。",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "\nそのためにも、",
-        "unit_id": 120711
-    },
-    {
-        "type": "dialogue",
-        "name": "シェフィ",
-        "words": "準備はしっかりしておかないとね。",
-        "unit_id": 120711
-    }
+  {
+    "type": "background",
+    "bg_id": "501031"
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "みんなと過ごす",
+    "voice": "vo_adv_5082446_000",
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "初めてのお正月……",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "すごく楽しみだわ。",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "\\nそのためにも、",
+    "voice": null,
+    "unit_id": 120711
+  },
+  {
+    "type": "dialogue",
+    "name": "シェフィ",
+    "words": "準備はしっかりしておかないとね。",
+    "voice": null,
+    "unit_id": 120711
+  }
 ]

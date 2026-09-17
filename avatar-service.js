@@ -26,7 +26,10 @@ globalScope.AvatarService = {
         this.manifestMap.clear();
         for (const entry of manifestData.assets) {
             if (entry.unit_id != null) {
-                this.manifestMap.set(Number(entry.unit_id), entry);
+                const uid = Number(entry.unit_id);
+                if (entry.usage === 'dialogue' || !this.manifestMap.has(uid)) {
+                    this.manifestMap.set(uid, entry);
+                }
             }
         }
         this.manifestLoaded = true;
@@ -70,29 +73,33 @@ globalScope.AvatarService = {
     resolveExactDialoguePortrait(unitId, options = {}) {
         if (!unitId || (typeof unitId !== 'number' && typeof unitId !== 'string')) return null;
         const numId = Number(unitId);
-        if (!Number.isInteger(numId) || numId < 100000) return null;
+        if (!Number.isInteger(numId) || numId <= 0) return null;
 
         // 若 Manifest 載入失敗/不可用，明確標記狀態並 Fail-Closed
         if (this.manifestUnavailable) {
-            if (options.warnIfAbsent !== false) {
-                console.warn(`[AvatarService] Avatar manifest is unavailable; failing closed explicit dialogue unit_id ${numId} to placeholder.`);
+            if (numId >= 100000) {
+                if (options.warnIfAbsent !== false) {
+                    console.warn(`[AvatarService] Avatar manifest is unavailable; failing closed explicit dialogue unit_id ${numId} to placeholder.`);
+                }
+                return {
+                    status: 'manifest_unavailable',
+                    unitId: numId,
+                    filename: null
+                };
             }
-            return {
-                status: 'manifest_unavailable',
-                unitId: numId,
-                filename: null
-            };
+            return null;
         }
 
         const entry = this.manifestMap.get(numId);
         if (entry) {
-            if (entry.status === 'active') {
+            if (entry.status === 'active' && (entry.usage === 'dialogue' || !entry.usage)) {
                 const dialoguePath = (entry.dialogue_asset && entry.dialogue_asset.path) ? entry.dialogue_asset.path : null;
+                const fname = entry.filename || (entry.asset_key ? `${entry.asset_key}.png` : `${numId}.png`);
                 return {
                     status: 'active',
                     unitId: numId,
-                    filename: entry.filename || `${numId}.png`,
-                    path: dialoguePath || `icon/unit/${entry.filename || `${numId}.png`}`
+                    filename: fname,
+                    path: dialoguePath || `icon/unit/${fname}`
                 };
             }
             if (entry.status === 'placeholder_only') {
@@ -104,7 +111,12 @@ globalScope.AvatarService = {
             }
         }
 
-        // 顯式 ID 未在 Manifest 登錄：嚴格 Fail Closed 顯示佔位符，並在未被抑制時警告
+        // 對於未登錄或非 active 之 short ID：不 exact resolve，回傳 null 以保留 legacy fallback / 文字佔位符
+        if (numId < 100000) {
+            return null;
+        }
+
+        // >= 100000 顯式 ID 未在 Manifest 登錄：嚴格 Fail Closed 顯示佔位符，並在未被抑制時警告
         if (options.warnIfAbsent !== false) {
             console.warn(`[AvatarService] Explicit dialogue unit_id ${numId} is absent from avatar_assets.json; failing closed to placeholder.`);
         }
@@ -938,16 +950,19 @@ globalScope.AvatarService = {
         const cleanName = this.cleanName(charaName);
         const numId = Number(unitId);
 
-        // A. 顯式對白 ID 路徑 (EXPLICIT DIALOGUE IDENTITY: unit_id >= 100000)
-        if (Number.isInteger(numId) && numId >= 100000) {
+        // A. 顯式對白 ID 路徑 (EXPLICIT DIALOGUE IDENTITY)
+        if (Number.isInteger(numId) && numId > 0) {
             const resolved = this.resolveExactDialoguePortrait(numId);
-            if (resolved.status === 'active') {
+            if (resolved && resolved.status === 'active') {
                 const src = resolved.path || `icon/unit/${resolved.filename}`;
                 const safeName = this.escapeForJsString(cleanName);
                 return `<img src="${src}" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleExactDialogueError(this, '${safeName}', ${numId})">`;
             }
-            // placeholder_only 或未登錄 ID：直接輸出文字佔位符，不發送任何圖片請求
-            return this.getFallbackHtml(cleanName);
+            if (numId >= 100000) {
+                // >= 100000 且未登錄/非 active：直接輸出文字佔位符，嚴格 fail-closed 不 fallback 到 name
+                return this.getFallbackHtml(cleanName);
+            }
+            // numId < 100000 且未在 canonical registry 登錄：保留既有 legacy fallback 路徑 (B)
         }
 
         // B. 通用推斷路徑 (INFERRED / NAME-ONLY)

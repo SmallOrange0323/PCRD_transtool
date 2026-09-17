@@ -1,167 +1,184 @@
 [
-    {
-        "type": "dialogue",
-        "name": "Lovely★莫妮卡",
-        "words": "以魔法提督Lovely★莫妮卡之名，",
-        "unit_id": 114211,
-        "voice": "vo_adv_5052301_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "Lovely★莫妮卡",
-        "words": "\n擊倒反逆獸！",
-        "unit_id": 114211
-    },
-    {
-        "type": "dialogue",
-        "name": "Purely★栞",
-        "words": "首先",
-        "unit_id": 112311,
-        "voice": "vo_adv_5052301_001"
-    },
-    {
-        "type": "dialogue",
-        "name": "Purely★栞",
-        "words": "就來除掉那面",
-        "unit_id": 112311
-    },
-    {
-        "type": "dialogue",
-        "name": "Purely★栞",
-        "words": "\n守護反逆獸的屏障吧……！",
-        "unit_id": 112311
-    },
-    {
-        "type": "dialogue",
-        "name": "Misty★霞",
-        "words": "嗯，",
-        "unit_id": 112211,
-        "voice": "vo_adv_5052301_002"
-    },
-    {
-        "type": "dialogue",
-        "name": "Misty★霞",
-        "words": "這樣大家就也能夠和牠進行戰鬥了！",
-        "unit_id": 112211
-    },
-    {
-        "type": "dialogue",
-        "name": "Shiny★智",
-        "words": "那就交給我吧！",
-        "unit_id": 114311,
-        "voice": "vo_adv_5052301_003"
-    },
-    {
-        "type": "dialogue",
-        "name": "Shiny★智",
-        "words": "\n",
-        "unit_id": 114311
-    },
-    {
-        "type": "dialogue",
-        "name": "Shiny★智",
-        "words": "由我先行攻入，",
-        "unit_id": 114311
-    },
-    {
-        "type": "dialogue",
-        "name": "Shiny★智",
-        "words": "讓牠變得毫無防備！",
-        "unit_id": 114311
-    },
-    {
-        "type": "dialogue",
-        "name": "Shiny★智",
-        "words": "──御久間流",
-        "unit_id": 114311,
-        "voice": "vo_adv_5052301_004"
-    },
-    {
-        "type": "dialogue",
-        "name": "Shiny★智",
-        "words": "魔法劍術，",
-        "unit_id": 114311
-    },
-    {
-        "type": "dialogue",
-        "name": "Shiny★智",
-        "words": "閃耀之劍！",
-        "unit_id": 114311
-    },
-    {
-        "type": "dialogue",
-        "name": "反逆獸",
-        "words": "──嘎喔喔喔喔喔！",
-        "unit_id": 14111
-    },
-    {
-        "type": "dialogue",
-        "name": "Misty★霞",
-        "words": "好耶，",
-        "unit_id": 112211,
-        "voice": "vo_adv_5052301_005"
-    },
-    {
-        "type": "dialogue",
-        "name": "Misty★霞",
-        "words": "打破屏障了！",
-        "unit_id": 112211
-    },
-    {
-        "type": "dialogue",
-        "name": "Purely★栞",
-        "words": "Lovely★莫妮卡！",
-        "unit_id": 112311,
-        "voice": "vo_adv_5052301_006"
-    },
-    {
-        "type": "dialogue",
-        "name": "Purely★栞",
-        "words": "\n請下令！",
-        "unit_id": 112311
-    },
-    {
-        "type": "dialogue",
-        "name": "Lovely★莫妮卡",
-        "words": "很好，",
-        "unit_id": 114211,
-        "voice": "vo_adv_5052301_007"
-    },
-    {
-        "type": "dialogue",
-        "name": "Lovely★莫妮卡",
-        "words": "我們上！",
-        "unit_id": 114211
-    },
-    {
-        "type": "dialogue",
-        "name": "Lovely★莫妮卡",
-        "words": "\nShiny★智、",
-        "unit_id": 114211
-    },
-    {
-        "type": "dialogue",
-        "name": "Lovely★莫妮卡",
-        "words": "Purely★栞、",
-        "unit_id": 114211
-    },
-    {
-        "type": "dialogue",
-        "name": "Lovely★莫妮卡",
-        "words": "、Misty★霞！",
-        "unit_id": 114211
-    },
-    {
-        "type": "dialogue",
-        "name": "Lovely★莫妮卡",
-        "words": "全員",
-        "unit_id": 114211,
-        "voice": "vo_adv_5052301_008"
-    },
-    {
-        "type": "dialogue",
-        "name": "Lovely★莫妮卡",
-        "words": "突擊！",
-        "unit_id": 114211
-    }
+  {
+    "type": "dialogue",
+    "name": "Lovely★莫妮卡",
+    "words": "以魔法提督Lovely★莫妮卡之名，",
+    "voice": "vo_adv_5052301_000",
+    "unit_id": 114211
+  },
+  {
+    "type": "dialogue",
+    "name": "Lovely★莫妮卡",
+    "words": "\\n擊倒反逆獸！",
+    "voice": null,
+    "unit_id": 114211
+  },
+  {
+    "type": "dialogue",
+    "name": "Purely★栞",
+    "words": "首先",
+    "voice": "vo_adv_5052301_001",
+    "unit_id": 112311
+  },
+  {
+    "type": "dialogue",
+    "name": "Purely★栞",
+    "words": "就來除掉那面",
+    "voice": null,
+    "unit_id": 112311
+  },
+  {
+    "type": "dialogue",
+    "name": "Purely★栞",
+    "words": "\\n守護反逆獸的屏障吧……！",
+    "voice": null,
+    "unit_id": 112311
+  },
+  {
+    "type": "dialogue",
+    "name": "Misty★霞",
+    "words": "嗯，",
+    "voice": "vo_adv_5052301_002",
+    "unit_id": 112211
+  },
+  {
+    "type": "dialogue",
+    "name": "Misty★霞",
+    "words": "這樣大家就也能夠和牠進行戰鬥了！",
+    "voice": null,
+    "unit_id": 112211
+  },
+  {
+    "type": "dialogue",
+    "name": "Shiny★智",
+    "words": "那就交給我吧！",
+    "voice": "vo_adv_5052301_003",
+    "unit_id": 114311
+  },
+  {
+    "type": "dialogue",
+    "name": "Shiny★智",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 114311
+  },
+  {
+    "type": "dialogue",
+    "name": "Shiny★智",
+    "words": "由我先行攻入，",
+    "voice": null,
+    "unit_id": 114311
+  },
+  {
+    "type": "dialogue",
+    "name": "Shiny★智",
+    "words": "讓牠變得毫無防備！",
+    "voice": null,
+    "unit_id": 114311
+  },
+  {
+    "type": "dialogue",
+    "name": "Shiny★智",
+    "words": "──御久間流",
+    "voice": "vo_adv_5052301_004",
+    "unit_id": 114311
+  },
+  {
+    "type": "dialogue",
+    "name": "Shiny★智",
+    "words": "魔法劍術，",
+    "voice": null,
+    "unit_id": 114311
+  },
+  {
+    "type": "dialogue",
+    "name": "Shiny★智",
+    "words": "閃耀之劍！",
+    "voice": null,
+    "unit_id": 114311
+  },
+  {
+    "type": "dialogue",
+    "name": "反逆獸",
+    "words": "──嘎喔喔喔喔喔！",
+    "voice": null,
+    "unit_id": 14111
+  },
+  {
+    "type": "dialogue",
+    "name": "Misty★霞",
+    "words": "好耶，",
+    "voice": "vo_adv_5052301_005",
+    "unit_id": 112211
+  },
+  {
+    "type": "dialogue",
+    "name": "Misty★霞",
+    "words": "打破屏障了！",
+    "voice": null,
+    "unit_id": 112211
+  },
+  {
+    "type": "dialogue",
+    "name": "Purely★栞",
+    "words": "Lovely★莫妮卡！",
+    "voice": "vo_adv_5052301_006",
+    "unit_id": 112311
+  },
+  {
+    "type": "dialogue",
+    "name": "Purely★栞",
+    "words": "\\n請下令！",
+    "voice": null,
+    "unit_id": 112311
+  },
+  {
+    "type": "dialogue",
+    "name": "Lovely★莫妮卡",
+    "words": "很好，",
+    "voice": "vo_adv_5052301_007",
+    "unit_id": 114211
+  },
+  {
+    "type": "dialogue",
+    "name": "Lovely★莫妮卡",
+    "words": "我們上！",
+    "voice": null,
+    "unit_id": 114211
+  },
+  {
+    "type": "dialogue",
+    "name": "Lovely★莫妮卡",
+    "words": "\\nShiny★智、",
+    "voice": null,
+    "unit_id": 114211
+  },
+  {
+    "type": "dialogue",
+    "name": "Lovely★莫妮卡",
+    "words": "Purely★栞、",
+    "voice": null,
+    "unit_id": 114211
+  },
+  {
+    "type": "dialogue",
+    "name": "Lovely★莫妮卡",
+    "words": "、Misty★霞！",
+    "voice": null,
+    "unit_id": 114211
+  },
+  {
+    "type": "dialogue",
+    "name": "Lovely★莫妮卡",
+    "words": "全員",
+    "voice": "vo_adv_5052301_008",
+    "unit_id": 114211
+  },
+  {
+    "type": "dialogue",
+    "name": "Lovely★莫妮卡",
+    "words": "突擊！",
+    "voice": null,
+    "unit_id": 114211
+  }
 ]

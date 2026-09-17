@@ -1,160 +1,181 @@
 [
-    {
-        "type": "background",
-        "background": "501162"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "オーマを守りたいっていうカズマサさんの気持ち、",
-        "unit_id": 105812,
-        "voice": "vo_adv_6056103_000"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\n分かる気がするんです。",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\n",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "わたしも【美食殿】がなくなっちゃったりしたら、",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "すごく悲しいですし。",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "わわっ！？　",
-        "unit_id": 105812,
-        "voice": "vo_adv_6056103_001"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "本当に【美食殿】がなくなっちゃうわけじゃないですよ！？",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\nただの、",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "たとえ話ですから！",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\n",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "……でも、",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "そう思ってもらえるのはやっぱりうれしいです♪",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "はい、",
-        "unit_id": 105812,
-        "voice": "vo_adv_6056103_002"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "もちろんですっ！",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\n",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "カズマサさんの居場所……",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "オーマという素敵な町！",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\nわたしたちの手で守りましょう！",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "その通りです！　",
-        "unit_id": 105812,
-        "voice": "vo_adv_6056103_003"
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "やばいですね☆",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\n",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "たとえおいしい物が食べられても、",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "一人じゃ幸せも半減です！",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "\n最高においしいごはんをみんなで食べるために、",
-        "unit_id": 105812
-    },
-    {
-        "type": "dialogue",
-        "name": "ペコリーヌ",
-        "words": "頑張りましょう！",
-        "unit_id": 105812
-    }
+  {
+    "type": "background",
+    "bg_id": "501162"
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "オーマを守りたいっていうカズマサさんの気持ち、",
+    "voice": "vo_adv_6056103_000",
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n分かる気がするんです。",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "わたしも【美食殿】がなくなっちゃったりしたら、",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "すごく悲しいですし。",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "わわっ！？　",
+    "voice": "vo_adv_6056103_001",
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "本当に【美食殿】がなくなっちゃうわけじゃないですよ！？",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\nただの、",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "たとえ話ですから！",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "……でも、",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "そう思ってもらえるのはやっぱりうれしいです♪",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "はい、",
+    "voice": "vo_adv_6056103_002",
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "もちろんですっ！",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "カズマサさんの居場所……",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "オーマという素敵な町！",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\nわたしたちの手で守りましょう！",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "その通りです！　",
+    "voice": "vo_adv_6056103_003",
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "やばいですね☆",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "たとえおいしい物が食べられても、",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "一人じゃ幸せも半減です！",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "\\n最高においしいごはんをみんなで食べるために、",
+    "voice": null,
+    "unit_id": 105812
+  },
+  {
+    "type": "dialogue",
+    "name": "貪吃佩可",
+    "words": "頑張りましょう！",
+    "voice": null,
+    "unit_id": 105812
+  }
 ]

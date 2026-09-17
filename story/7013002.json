@@ -1,937 +1,1057 @@
 [
-    {
-        "type": "background",
-        "background": "500430"
-    },
-    {
-        "type": "dialogue",
-        "name": "旁白",
-        "words": "美冬和{player}為了尋找鈴，快速攀登上露娜之塔。"
-    },
-    {
-        "type": "dialogue",
-        "name": "旁白",
-        "words": "\n那股氣勢簡直任誰都無法阻擋，但是——"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "喝啊啊啊啊啊啊！",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_000"
-    },
-    {
-        "type": "background",
-        "background": "500430"
-    },
-    {
-        "type": "dialogue",
-        "name": "魔物",
-        "words": "——嘎喔喔喔喔喔！",
-        "unit_id": 1611
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "哼。",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_001"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "才這麼一點力量，",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "能不能不要擋在我的面前。",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "\n",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "原本時間就已經不夠用了。",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "魔物",
-        "words": "——咕喔喔喔喔喔！",
-        "unit_id": 1611
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "怎麼又來了！？　",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_002"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "真是的！　",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "就叫你們",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "不要來妨礙我！",
-        "unit_id": 104811
-    },
-    {
-        "type": "background",
-        "background": "500430"
-    },
-    {
-        "type": "dialogue",
-        "name": "魔物",
-        "words": "——嘎喔喔喔喔喔！",
-        "unit_id": 1611
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "呼……",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_003"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "呼……",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "\n",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "一邊登塔一邊戰鬥，",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "比想像中還要吃力呢……",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "若要回頭，",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_004"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "我們又已經走得太遠了。",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "\n",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "而且，",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "我沒事的。",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "我並沒有打算勉強自己，",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_005"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "\n只是在確認鈴平安無事之前，",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "我們再努力一下吧！",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "你在說什麼啊？　",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_006"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "要是在這裡回頭的話，",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "不就前功盡棄了嗎？",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "……啊、",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_007"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "你的意思是回去重整旗鼓再來是嗎？",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "\n",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "抱歉。",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "我好像有點太激動了。",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "謝謝你",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_008"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "這麼顧慮到我。",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "\n不過",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "我還可以繼續前進，沒問題。",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "\n",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "我們趕快去找鈴吧。",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "…………",
-        "unit_id": 102611,
-        "voice": "vo_adv_7013002_009"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "咦、",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_010"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "咦？　",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "是我的錯覺嗎？",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "\n我怎麼感覺鈴好像就在眼前呢。",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "\n",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "難、",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "難道這是幻覺？",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "我就是本人喔。",
-        "unit_id": 102611,
-        "voice": "vo_adv_7013002_011"
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "我看你們兩個人好像有點爭執，",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "不知該怎麼開口叫你們。",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "\n就靜靜在一旁看著。",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "我們很擔心妳喔？　",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_012"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "再說，",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "妳怎麼會在這麼高的樓層呢……",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "我也不知道那到底是陷阱還是捷徑，",
-        "unit_id": 102611,
-        "voice": "vo_adv_7013002_013"
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "\n",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "在塔的入口處",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "有個啟動轉移魔法的開關？　",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "我好像踩到了那個。",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "\n",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "然後就被傳送到上面的樓層了。",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "哎呀～",
-        "unit_id": 102611,
-        "voice": "vo_adv_7013002_014"
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "不過幸好你們來了。",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "\n",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "我還很擔心你們是不是已經回去了。",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "\n",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "從上面過來這裡的途中",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "有一大堆魔物，真的很辛苦～",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "鈴，",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_015"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "難不成妳一路打倒魔物來到這裡嗎！？",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "\n",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "連我都覺得有些吃力了，",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "但妳卻連一絲疲倦都沒有耶。",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "我怎麼可能會一一和牠們戰鬥呢。",
-        "unit_id": 102611,
-        "voice": "vo_adv_7013002_016"
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "\n",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "我是一邊躲躲藏藏",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "一邊來到這裡的。",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "\n",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "呼～",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "總算平安會合了，",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "這樣就能安心回家了……",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "這樣啊。",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_017"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "那麼，妳再跟我們一起",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "爬上去吧！",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "…………咦？",
-        "unit_id": 102611,
-        "voice": "vo_adv_7013002_018"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "既然妳一路上都沒有戰鬥，",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_019"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "應該也沒有很疲累吧。",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "\n",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "既然戰力增加了，",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "我們可以放心去找你記憶的線索了！",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "你那是",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_020"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "什麼表情啊。",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "你在擔心我嗎？",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "\n",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "如果是這樣的話我沒事的！　",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "\n",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "應該說在這裡掉頭回去的話，",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "才真的對身體不好呢！",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "啊、",
-        "unit_id": 102611,
-        "voice": "vo_adv_7013002_021"
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "不是吧、",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "我覺得繼續前進才真的對身體不好……",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "我才不覺得累呢。",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_022"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "\n",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "的確，",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "剛才有點擔心接下來還要一個人前進，",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "\n",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "不過鈴已經跟我們會合了！",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "我是為了要回家才跟你們會合的說……",
-        "unit_id": 102611,
-        "voice": "vo_adv_7013002_023"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "當然，",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_024"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "如果鈴不願意的話",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "我也不會勉強妳的，",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "妳打算怎麼辦？",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "妳、",
-        "unit_id": 102611,
-        "voice": "vo_adv_7013002_025"
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "妳問我？　",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "我……",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "想回去。",
-        "unit_id": 102611,
-        "voice": "vo_adv_7013002_026"
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "非常想回去。",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "\n",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "我好不容易一路往下回到這裡，",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "還要再爬上去真的是有夠麻煩的……",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "…………",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_027"
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "不過呀～",
-        "unit_id": 102611,
-        "voice": "vo_adv_7013002_028"
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "總覺得美冬很想繼續爬的樣子，",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "真是難以拒絕啊～",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "\n",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "如果這只是一般的工作我就直接拒絕了，",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "\n但如果說這裡有那傢伙記憶的線索……",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "好啦，",
-        "unit_id": 102611,
-        "voice": "vo_adv_7013002_029"
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "我知道了啦。",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "我爬就是了。",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "真的嗎！？　",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_030"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "謝謝妳！",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "但是！　",
-        "unit_id": 102611,
-        "voice": "vo_adv_7013002_031"
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "接下來一路上可要聽我的。",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "\n",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "我已經知道前方的狀況了，",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "跟魔物戰鬥這種事",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "我可是敬謝不敏。",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "\n",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "鈴",
-        "words": "我可不想要浪費體力。",
-        "unit_id": 102611
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "我知道了！　",
-        "unit_id": 104811,
-        "voice": "vo_adv_7013002_032"
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "我也討厭浪費呀！",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "\n",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "美冬",
-        "words": "那就遵照鈴的指示！",
-        "unit_id": 104811
-    },
-    {
-        "type": "dialogue",
-        "name": "旁白",
-        "words": "順利會合後的一行人，就由鈴為前導，"
-    },
-    {
-        "type": "dialogue",
-        "name": "旁白",
-        "words": "\n繼續朝著塔的頂端前進。"
-    }
+  {
+    "type": "background",
+    "bg_id": "500430"
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "美冬和{0}為了尋找鈴，快速攀登上露娜之塔。",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "\\n那股氣勢簡直任誰都無法阻擋，但是——",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "喝啊啊啊啊啊啊！",
+    "voice": "vo_adv_7013002_000",
+    "unit_id": 104811
+  },
+  {
+    "type": "background",
+    "bg_id": "500430"
+  },
+  {
+    "type": "dialogue",
+    "name": "魔物",
+    "words": "——嘎喔喔喔喔喔！",
+    "voice": null,
+    "unit_id": 1611
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "哼。",
+    "voice": "vo_adv_7013002_001",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "才這麼一點力量，",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "能不能不要擋在我的面前。",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "原本時間就已經不夠用了。",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "魔物",
+    "words": "——咕喔喔喔喔喔！",
+    "voice": null,
+    "unit_id": 1611
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "怎麼又來了！？　",
+    "voice": "vo_adv_7013002_002",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "真是的！　",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "就叫你們",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "不要來妨礙我！",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "background",
+    "bg_id": "500430"
+  },
+  {
+    "type": "dialogue",
+    "name": "魔物",
+    "words": "——嘎喔喔喔喔喔！",
+    "voice": null,
+    "unit_id": 1611
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "呼……",
+    "voice": "vo_adv_7013002_003",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "呼……",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "一邊登塔一邊戰鬥，",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "比想像中還要吃力呢……",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "若要回頭，",
+    "voice": "vo_adv_7013002_004",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "我們又已經走得太遠了。",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "而且，",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "我沒事的。",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "我並沒有打算勉強自己，",
+    "voice": "vo_adv_7013002_005",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "\\n只是在確認鈴平安無事之前，",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "我們再努力一下吧！",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "你在說什麼啊？　",
+    "voice": "vo_adv_7013002_006",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "要是在這裡回頭的話，",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "不就前功盡棄了嗎？",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "……啊、",
+    "voice": "vo_adv_7013002_007",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "你的意思是回去重整旗鼓再來是嗎？",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "抱歉。",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "我好像有點太激動了。",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "謝謝你",
+    "voice": "vo_adv_7013002_008",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "這麼顧慮到我。",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "\\n不過",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "我還可以繼續前進，沒問題。",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "我們趕快去找鈴吧。",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "…………",
+    "voice": "vo_adv_7013002_009",
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "咦、",
+    "voice": "vo_adv_7013002_010",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "咦？　",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "是我的錯覺嗎？",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "\\n我怎麼感覺鈴好像就在眼前呢。",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "難、",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "難道這是幻覺？",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "我就是本人喔。",
+    "voice": "vo_adv_7013002_011",
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "我看你們兩個人好像有點爭執，",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "不知該怎麼開口叫你們。",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "\\n就靜靜在一旁看著。",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "我們很擔心妳喔？　",
+    "voice": "vo_adv_7013002_012",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "再說，",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "妳怎麼會在這麼高的樓層呢……",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "我也不知道那到底是陷阱還是捷徑，",
+    "voice": "vo_adv_7013002_013",
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "在塔的入口處",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "有個啟動轉移魔法的開關？　",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "我好像踩到了那個。",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "然後就被傳送到上面的樓層了。",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "哎呀～",
+    "voice": "vo_adv_7013002_014",
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "不過幸好你們來了。",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "我還很擔心你們是不是已經回去了。",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "從上面過來這裡的途中",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "有一大堆魔物，真的很辛苦～",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "鈴，",
+    "voice": "vo_adv_7013002_015",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "難不成妳一路打倒魔物來到這裡嗎！？",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "連我都覺得有些吃力了，",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "但妳卻連一絲疲倦都沒有耶。",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "我怎麼可能會一一和牠們戰鬥呢。",
+    "voice": "vo_adv_7013002_016",
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "我是一邊躲躲藏藏",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "一邊來到這裡的。",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "呼～",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "總算平安會合了，",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "這樣就能安心回家了……",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "這樣啊。",
+    "voice": "vo_adv_7013002_017",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "那麼，妳再跟我們一起",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "爬上去吧！",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "…………咦？",
+    "voice": "vo_adv_7013002_018",
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "既然妳一路上都沒有戰鬥，",
+    "voice": "vo_adv_7013002_019",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "應該也沒有很疲累吧。",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "既然戰力增加了，",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "我們可以放心去找你記憶的線索了！",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "你那是",
+    "voice": "vo_adv_7013002_020",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "什麼表情啊。",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "你在擔心我嗎？",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "如果是這樣的話我沒事的！　",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "應該說在這裡掉頭回去的話，",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "才真的對身體不好呢！",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "啊、",
+    "voice": "vo_adv_7013002_021",
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "不是吧、",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "我覺得繼續前進才真的對身體不好……",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "我才不覺得累呢。",
+    "voice": "vo_adv_7013002_022",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "的確，",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "剛才有點擔心接下來還要一個人前進，",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "不過鈴已經跟我們會合了！",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "我是為了要回家才跟你們會合的說……",
+    "voice": "vo_adv_7013002_023",
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "當然，",
+    "voice": "vo_adv_7013002_024",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "如果鈴不願意的話",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "我也不會勉強妳的，",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "妳打算怎麼辦？",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "妳、",
+    "voice": "vo_adv_7013002_025",
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "妳問我？　",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "我……",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "想回去。",
+    "voice": "vo_adv_7013002_026",
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "非常想回去。",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "我好不容易一路往下回到這裡，",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "還要再爬上去真的是有夠麻煩的……",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "…………",
+    "voice": "vo_adv_7013002_027",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "不過呀～",
+    "voice": "vo_adv_7013002_028",
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "總覺得美冬很想繼續爬的樣子，",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "真是難以拒絕啊～",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "如果這只是一般的工作我就直接拒絕了，",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "\\n但如果說這裡有那傢伙記憶的線索……",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "好啦，",
+    "voice": "vo_adv_7013002_029",
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "我知道了啦。",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "我爬就是了。",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "真的嗎！？　",
+    "voice": "vo_adv_7013002_030",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "謝謝妳！",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "但是！　",
+    "voice": "vo_adv_7013002_031",
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "接下來一路上可要聽我的。",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "我已經知道前方的狀況了，",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "跟魔物戰鬥這種事",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "我可是敬謝不敏。",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "鈴",
+    "words": "我可不想要浪費體力。",
+    "voice": null,
+    "unit_id": 102611
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "我知道了！　",
+    "voice": "vo_adv_7013002_032",
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "我也討厭浪費呀！",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "美冬",
+    "words": "那就遵照鈴的指示！",
+    "voice": null,
+    "unit_id": 104811
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "順利會合後的一行人，就由鈴為前導，",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "\\n繼續朝著塔的頂端前進。",
+    "voice": null,
+    "unit_id": null
+  }
 ]
