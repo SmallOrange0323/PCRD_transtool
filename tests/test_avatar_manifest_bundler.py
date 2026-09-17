@@ -210,8 +210,8 @@ class TestAvatarManifestBundler(unittest.TestCase):
             self.assertGreater(len(omission_errors), 0, f"Should report omission error: {res.errors}")
 
     def test_6_duplicate_legacy_webp_is_not_part_of_future_expected_set(self):
-        """6. 驗證 active 對白 PNG 不會讓同 ID legacy WebP 混入 expected set。"""
-        expected_files = set(get_expected_icon_unit_mappings().keys())
+        """6. 驗證 active 對白 PNG 不會讓同 ID legacy WebP 混入 dialogue mappings。"""
+        expected_files = set(get_expected_dialogue_icon_mappings().keys())
         dialogue_entries = [
             a for a in self.assets
             if a.get("status") == "active" and a.get("usage") == "dialogue"
