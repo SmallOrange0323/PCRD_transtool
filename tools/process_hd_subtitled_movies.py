@@ -24,7 +24,17 @@ from pathlib import Path
 if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8")
 
-import imageio_ffmpeg
+try:
+    import imageio_ffmpeg
+    def get_ffmpeg_exe():
+        return imageio_ffmpeg.get_ffmpeg_exe()
+except ImportError:
+    def get_ffmpeg_exe():
+        local_ff = Path(__file__).resolve().parent / "ffmpeg.exe"
+        if local_ff.exists():
+            return str(local_ff)
+        return "ffmpeg"
+
 import UnityPy
 UnityPy.config.FALLBACK_UNITY_VERSION = '2021.3.20f1'
 from wannacri.usm import Usm
@@ -267,11 +277,13 @@ def main():
     parser.add_argument("--part", type=int, choices=[1, 2, 3], default=1, help="指定主線部數: 1=第一部, 2=第二部, 3=第三部 (預設: 1)")
     parser.add_argument("--chapter", type=int, default=None, help="指定下載與壓制的單一章節 (如 1)")
     parser.add_argument("--force", action="store_true", default=False, help="強制重新壓制 (覆蓋現有檔案)")
+    parser.add_argument("--truth-version", type=str, default=None, help="指定 TruthVersion (例如 00610007)")
+    parser.add_argument("--movie-ids", type=str, default=None, help="指定只處理特定的動畫 ID (逗號分隔，例如 221700501,221700502)")
     args = parser.parse_args()
 
     part = args.part
-    ffmpeg_exe = imageio_ffmpeg.get_ffmpeg_exe()
-    ver = _get_sonet_ver()
+    ffmpeg_exe = get_ffmpeg_exe()
+    ver = args.truth_version or _get_sonet_ver()
     print("==================================================")
     print(f"🎬 PCRD 主線第 {part} 部 PC 高畫質 1080p 原生字體壓制管線")
     print("==================================================")
@@ -280,13 +292,18 @@ def main():
 
     pc_movies, sub_bundles = get_manifests(ver)
 
-    # 篩選指定部數
-    target_movies = [m for m in pc_movies if m["part"] == part]
-    if args.chapter is not None:
-        target_movies = [m for m in target_movies if m["chapter"] == args.chapter]
-        mode_desc = f"第 {part} 部第 {args.chapter} 章"
+    # 篩選指定部數或指定動畫 ID
+    if args.movie_ids:
+        specified_ids = {m.strip() for m in args.movie_ids.split(",") if m.strip()}
+        target_movies = [m for m in pc_movies if any(mid in m["filename"] for mid in specified_ids)]
+        mode_desc = f"指定動畫 ID [{', '.join(sorted(specified_ids))}]"
     else:
-        mode_desc = f"第 {part} 部全量"
+        target_movies = [m for m in pc_movies if m["part"] == part]
+        if args.chapter is not None:
+            target_movies = [m for m in target_movies if m["chapter"] == args.chapter]
+            mode_desc = f"第 {part} 部第 {args.chapter} 章"
+        else:
+            mode_desc = f"第 {part} 部全量"
 
     total_count = len(target_movies)
     total_raw_sz = sum(m["size_bytes"] for m in target_movies)
