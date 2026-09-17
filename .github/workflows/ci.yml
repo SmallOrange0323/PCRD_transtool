@@ -58,7 +58,9 @@ jobs:
         run: node tests/test_dialogue_normalizer.js
 
       - name: Run Dialogue View Tests
-        run: node tests/test_dialogue_view.js
+        run: |
+          node tests/test_dialogue_view.js
+          node tests/test_chara_modal.js
 
       - name: Run Media Service Tests
         run: node tests/test_media_service.js
