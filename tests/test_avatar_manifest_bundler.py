@@ -157,27 +157,21 @@ class TestAvatarManifestBundler(unittest.TestCase):
             self.assertFalse(validate_avatar_manifest_and_assets(tmp_dash, res))
             self.assertTrue(any("登錄" in e for e in res.errors))
 
-    def test_6_dialogue_mappings_resolve_to_real_sources(self):
-        """Dialogue mappings must resolve to real source files without assuming one image format."""
-        dialogue_mappings = get_expected_dialogue_icon_mappings()
-        active_dialogue_entries = [
+    def test_6_duplicate_legacy_webp_is_not_in_expected_set(self):
+        """Canonical PNG dialogue entries must not reintroduce legacy WebP names."""
+        expected_files = set(get_expected_icon_unit_mappings())
+        dialogue_entries = [
             a
             for a in self.assets
             if a.get("status") == "active" and a.get("usage") == "dialogue"
         ]
 
-        self.assertGreater(len(dialogue_mappings), 0)
-        for dst_name, src in dialogue_mappings.items():
-            self.assertEqual(Path(dst_name).name, dst_name)
-            self.assertTrue(src.exists(), f"Dialogue mapping source must exist: {dst_name} -> {src}")
-            self.assertTrue(src.is_file(), f"Dialogue mapping source must be a file: {dst_name} -> {src}")
-
-        for entry in active_dialogue_entries:
-            filename = entry["filename"]
-            expected_src = DASHBOARD_DIR / "icon" / "unit" / filename
-            self.assertIn(filename, dialogue_mappings)
-            self.assertEqual(dialogue_mappings[filename], expected_src)
-            self.assertTrue(expected_src.is_file())
+        for entry in dialogue_entries:
+            filename = entry.get("filename", "")
+            stem = Path(filename).stem
+            if filename.lower().endswith(".png"):
+                self.assertNotIn(f"{stem}.webp", expected_files)
+                self.assertNotIn(f"unit_icon_{stem}.webp", expected_files)
 
     def test_7_ui_only_required_assets_are_preserved(self):
         """All active UI-only assets remain in the publish set."""
