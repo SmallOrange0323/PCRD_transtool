@@ -452,6 +452,118 @@ def _normalize_story_unit_target(
     return None
 
 
+class StorySlotStateMachine:
+    """
+    CyGames PCRD Story Engine - Slot & Character State Machine
+    追蹤畫面立繪加載 (cmd 50: BUSTUP, cmd 68: CHARA_FULL)、焦點 (cmd 4: FOCUS)、
+    淡入淡出 (cmd 18: FADEIN, cmd 19: FADEOUT, cmd 45: FADEOUT_ALL) 與表情 (cmd 3: FACE)。
+
+    嚴格保證：
+    1. 絕不將 FACE cmd 3 的 slot 參數 (如 1) 當成 unit_id。
+    2. 絕不以 speaker_name 作為全域身份推導依據。
+    3. 無官方資產狀態背書時，嚴格 Fail-Closed 回傳 None。
+    """
+    def __init__(self, portrait_asset_keys: Optional[Set[str]] = None):
+        self.portrait_keys = portrait_asset_keys
+        # 場上當前已加載且可見的合法 unit_id 集合
+        self.active_units: Set[int] = set()
+        # 當前鏡頭焦點 unit_id
+        self.current_focus: Optional[int] = None
+        # 自上一句對白以來的有效表情 unit_id 列表
+        self.last_block_face_units: List[int] = []
+        # 連續性狀態記錄
+        self.last_speaker: Optional[str] = None
+        self.last_unit_id: Optional[int] = None
+
+    def handle_command(self, cmd_id: int, args: List[Any]):
+        if cmd_id == 50 and args:
+            # cmd 50: BUSTUP [unit_id, pos] 或 [0, 0]
+            val = str(args[0]).strip()
+            if val == "0":
+                # 解除半身立繪
+                self.active_units.clear()
+                self.current_focus = None
+                self.last_unit_id = None
+            else:
+                u = _normalize_story_unit_target(val, self.portrait_keys)
+                if u:
+                    self.active_units.add(u)
+                    self.current_focus = u
+        elif cmd_id == 68 and args:
+            # cmd 68: CHARA_FULL [unit_id, pos, face]
+            u = _normalize_story_unit_target(args[0], self.portrait_keys)
+            if u:
+                self.active_units.add(u)
+                self.current_focus = u
+        elif cmd_id == 18 and args:
+            # cmd 18: FADEIN [unit_id, frames]
+            u = _normalize_story_unit_target(args[0], self.portrait_keys)
+            if u:
+                self.active_units.add(u)
+                self.current_focus = u
+        elif cmd_id == 19 and args:
+            # cmd 19: FADEOUT [unit_id, frames]
+            u = _normalize_story_unit_target(args[0], self.portrait_keys)
+            if u:
+                self.active_units.discard(u)
+                if self.current_focus == u:
+                    self.current_focus = None
+                if self.last_unit_id == u:
+                    self.last_unit_id = None
+        elif cmd_id == 45:
+            # cmd 45: FADEOUT_ALL
+            self.active_units.clear()
+            self.current_focus = None
+            self.last_unit_id = None
+        elif cmd_id == 4 and args:
+            # cmd 4: FOCUS [target]
+            val = str(args[0]).strip()
+            if val == "0" or ":" in val:
+                self.current_focus = None
+            else:
+                u = _normalize_story_unit_target(val, self.portrait_keys)
+                if u:
+                    self.current_focus = u
+                    self.active_units.add(u)
+        elif cmd_id == 3 and args:
+            # cmd 3: FACE [target, emotion]
+            val = str(args[0]).strip()
+            u = _normalize_story_unit_target(val, self.portrait_keys)
+            if u:
+                self.last_block_face_units.append(u)
+                self.active_units.add(u)
+            elif val == "1":
+                # 歷史 slot 1 bug 防護點：
+                # 若場上剛好有唯一活躍角色，該表情操作歸屬於該活躍角色；
+                # 若場上無立繪 (Off-screen)，絕對禁止賦值為 1！
+                if len(self.active_units) == 1:
+                    single_u = list(self.active_units)[0]
+                    self.last_block_face_units.append(single_u)
+
+    def resolve_dialogue_identity(self, speaker: str) -> Optional[int]:
+        resolved = None
+
+        # Priority 1: 當前相機焦點處於活躍立繪中
+        if self.current_focus and self.current_focus in self.active_units:
+            resolved = self.current_focus
+        # Priority 2: 場上剛好只有唯一一個活躍立繪
+        elif len(self.active_units) == 1:
+            resolved = list(self.active_units)[0]
+        # Priority 3: 當前區塊內有唯一合法的 FACE unit_id
+        elif len(self.last_block_face_units) == 1:
+            resolved = self.last_block_face_units[0]
+        # Priority 4: 確定性同發言人延續 (上一發言人相同且立繪仍未卸載)
+        elif (speaker and self.last_speaker and speaker == self.last_speaker and
+              self.last_unit_id and self.last_unit_id in self.active_units):
+            resolved = self.last_unit_id
+
+        # 重設區塊狀態
+        self.last_block_face_units = []
+        self.last_speaker = speaker
+        self.last_unit_id = resolved
+        return resolved
+
+
 def _resolve_dialogue_unit_id(
     speaker: str,
     block_cmd4_units: List[Optional[int]],
@@ -459,32 +571,24 @@ def _resolve_dialogue_unit_id(
     last_speaker: Optional[str],
     last_speaker_unit: Optional[int],
 ) -> Optional[int]:
-    """
-    根據官方 Story command stream 保守推導當前對白之 unit_id。
-
-    規則：
-    1. 區塊有唯一、合法、非多人/非 0 的單一焦點 cmd 4 (len(unique_cmd4) == 1 且 None not in block_cmd4_units)
-       -> 使用該 unit_id
-    2. 區塊沒有 cmd 4 / cmd 3，且 speaker 與上一句完全相同，且上一句有可靠 unit_id
-       -> 延續上一句 unit_id
-    3. 其他情況 (包含僅有 cmd 3 表情、多人合言、解除焦點、換人無立繪指令等)
-       -> 回傳 None，交由前端 name fallback
-    """
+    """向後相容包裝函式。建議新代碼直接使用 StorySlotStateMachine。"""
     valid_cmd4 = [u for u in block_cmd4_units if u is not None and isinstance(u, int) and u > 0]
     unique_cmd4 = set(valid_cmd4)
 
-    # 規則 1: 區塊有唯一、合法、非多人/非 0 的單一焦點 cmd 4
     if len(unique_cmd4) == 1 and (None not in block_cmd4_units):
         return list(unique_cmd4)[0]
 
-    # 規則 2: 區塊沒有 cmd 4 / cmd 3，且 speaker 與上一句完全相同，且上一句有可靠 unit_id
     if len(block_cmd4_units) == 0 and len(block_cmd3_units) == 0:
         if speaker and last_speaker and speaker == last_speaker:
             if last_speaker_unit is not None and isinstance(last_speaker_unit, int) and last_speaker_unit > 0:
                 return last_speaker_unit
 
-    # 規則 3: 其他情況 (包含僅有 cmd 3) 回傳 None
     return None
+
+
+def serialize_canonical_story_json(dialogues: List[Dict[str, Any]]) -> str:
+    """以保證字節確定性的規範格式序列化 Story JSON (固定 UTF-8、縮排 2、ensure_ascii=False)。"""
+    return json.dumps(dialogues, ensure_ascii=False, indent=2) + "\n"
 
 
 def _parse_bundle_dialogues(bundle_data, extract_metadata=False, portrait_asset_keys: Optional[Set[str]] = None):
@@ -507,6 +611,8 @@ def _parse_bundle_dialogues(bundle_data, extract_metadata=False, portrait_asset_
         "cmd32_nonempty": False,
     }
     bundle = UnityPy.load(bundle_data)
+    slot_sm = StorySlotStateMachine(portrait_asset_keys=portrait_asset_keys)
+
     for obj in bundle.objects:
         if obj.type.name == "TextAsset":
             data = obj.read()
@@ -517,10 +623,6 @@ def _parse_bundle_dialogues(bundle_data, extract_metadata=False, portrait_asset_
                 script = bytes(script, 'utf-8', 'surrogateescape')
             commands = _deserialize_story_raw(script)
             current_voice = None
-            block_cmd4_units = []   # 自上一句對白以來的焦點 unit_id 列表 (含 None 標記)
-            block_cmd3_units = []   # 自上一句對白以來的表情 unit_id 列表
-            last_speaker = None
-            last_speaker_unit = None
 
             for idx, args in commands:
                 # 捕獲元數據指令
@@ -543,22 +645,9 @@ def _parse_bundle_dialogues(bundle_data, extract_metadata=False, portrait_asset_
                         if not bundle_metadata["subtitle"]:
                             bundle_metadata["subtitle"] = val32
 
-                # 追蹤焦點與表情指令
-                if idx == 4 and args:
-                    # cmd 4: [target] (鏡頭焦點切換)
-                    u = _normalize_story_unit_target(args[0], portrait_asset_keys=portrait_asset_keys)
-                    if u is not None:
-                        block_cmd4_units.append(u)
-                    else:
-                        # 無效 short ID、0、":"、或不在 manifest 中，作為 carry barrier 阻斷
-                        block_cmd4_units.append(None)
-                elif idx == 3 and args:
-                    # cmd 3: [unit_id, emotion_id] (表情/嘴型)
-                    u = _normalize_story_unit_target(args[0], portrait_asset_keys=portrait_asset_keys)
-                    if u is not None:
-                        block_cmd3_units.append(u)
-                    else:
-                        block_cmd3_units.append(None)
+                # 驅動 Slot 狀態機 (立繪加載、焦點、表情、卸載)
+                if idx in [3, 4, 18, 19, 45, 50, 68]:
+                    slot_sm.handle_command(idx, args)
 
                 still_match = None
                 if idx != 6:
@@ -568,48 +657,40 @@ def _parse_bundle_dialogues(bundle_data, extract_metadata=False, portrait_asset_
                             break
 
                 if still_match:
-                    dialogues.append({"type": "still", "still": still_match.group(1), "still_id": still_match.group(1)})
+                    dialogues.append({"type": "still", "still_id": str(still_match.group(1))})
                 elif idx == 49 and args:
                     still_val = str(args[0])
                     if still_val.lower() == "end":
-                        dialogues.append({"type": "still", "still": "end"})
+                        dialogues.append({"type": "still", "still_id": "end"})
                     else:
                         m_sid = re.search(r'(\d+)', still_val)
                         sid = m_sid.group(1) if m_sid else still_val
-                        dialogues.append({"type": "still", "still": sid, "still_id": sid})
+                        dialogues.append({"type": "still", "still_id": str(sid)})
                 elif idx == 5 and args:
                     dialogues.append({"type": "background", "bg_id": str(args[0])})
                 elif idx == 46 and args:
                     movie_id = str(args[0])
-                    dialogues.append({"type": "movie", "movie_id": movie_id})
+                    dialogues.append({"type": "movie", "movie_id": str(movie_id)})
                 elif idx == 12 and args:
-                    current_voice = args[0]
+                    current_voice = str(args[0])
                 elif idx == 6 and len(args) >= 2:
                     speaker = SPEAKER_MAP.get(args[0], args[0])
                     words = args[1]
                     if speaker == "可可蘿":
                         words = words.replace("主人", "主公大人")
 
-                    resolved_unit = _resolve_dialogue_unit_id(
-                        speaker=speaker,
-                        block_cmd4_units=block_cmd4_units,
-                        block_cmd3_units=block_cmd3_units,
-                        last_speaker=last_speaker,
-                        last_speaker_unit=last_speaker_unit,
-                    )
+                    resolved_unit = slot_sm.resolve_dialogue_identity(speaker)
 
-                    entry = {"name": speaker, "words": words, "voice": current_voice}
-                    if resolved_unit is not None:
-                        entry["unit_id"] = resolved_unit
+                    entry = {
+                        "type": "dialogue",
+                        "name": speaker,
+                        "words": words,
+                        "voice": current_voice if current_voice else None,
+                        "unit_id": resolved_unit if resolved_unit else None
+                    }
 
                     dialogues.append(entry)
                     current_voice = None
-
-                    # 重設區塊狀態與記錄上一個 speaker
-                    last_speaker = speaker
-                    last_speaker_unit = resolved_unit
-                    block_cmd4_units = []
-                    block_cmd3_units = []
 
     bundle_metadata["title"] = bundle_metadata["subtitle"] or bundle_metadata["chapter_title"]
     if extract_metadata:
@@ -763,6 +844,52 @@ def load_story_manifest_hash_map(truth_version: Optional[str] = None) -> Dict[in
     """
     refs = load_story_manifest_bundle_refs(truth_version=truth_version)
     return {sid: ref.cdn_bundle_hash for sid, ref in refs.items()}
+
+
+def discover_manifest_avatar_assets(
+    truth_version: Optional[str] = None
+) -> Dict[str, Any]:
+    """
+    從官方 storydata2_assetmanifest 中以確定性方式提取所有 1400+ 個官方對白頭像，
+    比對既有 avatar_assets.json 並回傳發現與覆蓋分析報告。
+    """
+    _, portrait_keys = load_story_manifest_snapshot(truth_version=truth_version)
+
+    registry_path = os.path.join(DASHBOARD_DIR, "data", "avatar_assets.json")
+    existing_assets = []
+    existing_uids = set()
+    if os.path.exists(registry_path):
+        try:
+            with open(registry_path, "r", encoding="utf-8") as fp:
+                reg_data = json.load(fp)
+                existing_assets = reg_data.get("assets", [])
+                for item in existing_assets:
+                    uid = item.get("unit_id")
+                    if uid is not None:
+                        existing_uids.add(int(uid))
+        except Exception:
+            pass
+
+    manifest_registered = []
+    manifest_unregistered = []
+
+    for k in sorted(portrait_keys):
+        try:
+            num_id = int(k)
+        except ValueError:
+            continue
+        if num_id in existing_uids:
+            manifest_registered.append(num_id)
+        else:
+            manifest_unregistered.append(num_id)
+
+    return {
+        "truth_version": truth_version,
+        "total_manifest_portrait_keys": len(portrait_keys),
+        "registered_in_registry_count": len(manifest_registered),
+        "unregistered_count": len(manifest_unregistered),
+        "unregistered_sample": manifest_unregistered[:30]
+    }
 
 
 def fetch_story_json_by_id(
@@ -927,8 +1054,8 @@ def fetch_story_json_by_id(
         tmp_path = out_dir / f"{story_id}.json.tmp"
 
         try:
-            with open(tmp_path, "w", encoding="utf-8") as f:
-                json.dump(dialogues, f, ensure_ascii=False, indent=2)
+            with open(tmp_path, "w", encoding="utf-8", newline="\n") as f:
+                f.write(serialize_canonical_story_json(dialogues))
             tmp_path.replace(out_path)
             written_path_str = str(out_path)
         except Exception as e:
