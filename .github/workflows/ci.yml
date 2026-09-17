@@ -61,6 +61,7 @@ jobs:
         run: |
           node tests/test_dialogue_view.js
           node tests/test_chara_modal.js
+          node tests/test_player_name_identity.js
 
       - name: Run Media Service Tests
         run: node tests/test_media_service.js

@@ -198,10 +198,16 @@ window.CharaModalView = {
                 : avatarService.getAvatarHtml(realCharaName, speakerAvatars))
             : "";
 
+        // 僅正規化 UI 顯示文字；realCharaName 仍保留原始 identity key（例如 {0}）。
+        const displayCharaName = (window.DialogueView && typeof window.DialogueView.normalizePlayerName === 'function')
+            ? window.DialogueView.normalizePlayerName(realCharaName)
+            : realCharaName;
+        const safeDisplayCharaName = escapeHtml ? escapeHtml(displayCharaName) : displayCharaName;
+
         modalEl.innerHTML = `
             <div class="game-modal-content" style="max-height: 85vh; overflow-y: auto;">
                 <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(94, 107, 125, 0.1); padding-bottom: 12px; margin-bottom: 15px;">
-                    <h3 style="margin: 0; color: var(--accent-color); font-size: 1.25rem;">🔍 角色檔案：${realCharaName}</h3>
+                    <h3 style="margin: 0; color: var(--accent-color); font-size: 1.25rem;">🔍 角色檔案：${safeDisplayCharaName}</h3>
                     <span class="game-modal-close-btn" onclick="document.getElementById('game-chara-modal').classList.remove('active')" style="cursor: pointer; font-size: 1.5rem; color: var(--text-secondary); transition: transform 0.2s;"
                            onmouseover="this.style.transform='rotate(90deg)'" onmouseout="this.style.transform='none'">&times;</span>
                 </div>
