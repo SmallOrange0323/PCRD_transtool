@@ -676,8 +676,6 @@ def _parse_bundle_dialogues(bundle_data, extract_metadata=False, portrait_asset_
                 elif idx == 6 and len(args) >= 2:
                     speaker = SPEAKER_MAP.get(args[0], args[0])
                     words = args[1]
-                    if speaker == "可可蘿":
-                        words = words.replace("主人", "主公大人")
 
                     resolved_unit = slot_sm.resolve_dialogue_identity(speaker)
 

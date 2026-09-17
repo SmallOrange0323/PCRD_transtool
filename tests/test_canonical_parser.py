@@ -154,6 +154,117 @@ class TestCanonicalStoryParser(unittest.TestCase):
                 self.assertIn("movie_id", row)
                 self.assertNotIn("words", row)
 
+    def test_case_h_kokkoro_wording_preservation(self):
+        """Case H: 可可蘿台詞保真性測試 (不得將 主人 替換為 主公大人)"""
+        from unittest.mock import MagicMock, patch
+        from tools.pcrd_fetch import _parse_bundle_dialogues
+
+        class DummyData:
+            def __init__(self):
+                self.script = b"dummy_script_bytes"
+
+        class DummyObject:
+            def __init__(self):
+                self.type = MagicMock()
+                self.type.name = "TextAsset"
+                self._data = DummyData()
+
+            def read(self):
+                return self._data
+
+        class DummyBundle:
+            def __init__(self):
+                self.objects = [DummyObject()]
+
+        mock_cmds = [
+            (50, ["105911", "1"]),
+            (6, ["可可蘿", "主人。"]),
+            (6, ["可可蘿", "主人早安。"]),
+            (6, ["可可蘿", "主人……！？"])
+        ]
+
+        with patch("UnityPy.load", return_value=DummyBundle()), \
+             patch("tools.pcrd_fetch._deserialize_story_raw", return_value=mock_cmds):
+            dialogues = _parse_bundle_dialogues(b"mock", portrait_asset_keys=self.mock_portrait_keys)
+
+        self.assertEqual(len(dialogues), 3)
+        self.assertEqual(dialogues[0]["words"], "主人。")
+        self.assertEqual(dialogues[1]["words"], "主人早安。")
+        self.assertEqual(dialogues[2]["words"], "主人……！？")
+        for d in dialogues:
+            self.assertNotIn("主公大人", d["words"], "絕對禁止將 主人 替換為 主公大人")
+
+    def test_case_i_player_placeholder_preservation(self):
+        """Case I: 官方玩家佔位符 {0} 保真性測試 (不得轉換為 {player})"""
+        from unittest.mock import MagicMock, patch
+        from tools.pcrd_fetch import _parse_bundle_dialogues
+
+        class DummyData:
+            def __init__(self):
+                self.script = b"dummy_script_bytes"
+
+        class DummyObject:
+            def __init__(self):
+                self.type = MagicMock()
+                self.type.name = "TextAsset"
+                self._data = DummyData()
+
+            def read(self):
+                return self._data
+
+        class DummyBundle:
+            def __init__(self):
+                self.objects = [DummyObject()]
+
+        mock_cmds = [
+            (6, ["旁白", "{0}因沒有任何行程而悠哉地休息。"]),
+            (6, ["佩可", "你好呀，{0}！"])
+        ]
+
+        with patch("UnityPy.load", return_value=DummyBundle()), \
+             patch("tools.pcrd_fetch._deserialize_story_raw", return_value=mock_cmds):
+            dialogues = _parse_bundle_dialogues(b"mock", portrait_asset_keys=self.mock_portrait_keys)
+
+        self.assertEqual(len(dialogues), 2)
+        self.assertEqual(dialogues[0]["words"], "{0}因沒有任何行程而悠哉地休息。")
+        self.assertEqual(dialogues[1]["words"], "你好呀，{0}！")
+        for d in dialogues:
+            self.assertNotIn("{player}", d["words"], "不得將官方 {0} 轉換為 {player}")
+
+    def test_case_j_generic_exact_wording_fidelity(self):
+        """Case J: 通用文字精準性測試 (標點符號、換行、特殊符號)"""
+        from unittest.mock import MagicMock, patch
+        from tools.pcrd_fetch import _parse_bundle_dialogues
+
+        class DummyData:
+            def __init__(self):
+                self.script = b"dummy_script_bytes"
+
+        class DummyObject:
+            def __init__(self):
+                self.type = MagicMock()
+                self.type.name = "TextAsset"
+                self._data = DummyData()
+
+            def read(self):
+                return self._data
+
+        class DummyBundle:
+            def __init__(self):
+                self.objects = [DummyObject()]
+
+        sample_words = "『\n多麼美妙的冒險啊♪\n——這就是命運嗎！？……』"
+        mock_cmds = [
+            (6, ["角色A", sample_words])
+        ]
+
+        with patch("UnityPy.load", return_value=DummyBundle()), \
+             patch("tools.pcrd_fetch._deserialize_story_raw", return_value=mock_cmds):
+            dialogues = _parse_bundle_dialogues(b"mock", portrait_asset_keys=self.mock_portrait_keys)
+
+        self.assertEqual(len(dialogues), 1)
+        self.assertEqual(dialogues[0]["words"], sample_words, "字串必須完整精確保留原始字符")
+
 
 if __name__ == "__main__":
     unittest.main()
