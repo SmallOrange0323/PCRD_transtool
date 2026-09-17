@@ -108,8 +108,9 @@ console.log("dialogue-view.js loaded");
                 if (renderedSet.has(realName)) return;
                 renderedSet.add(realName);
                 const avatarHtml = window.AvatarService.getAvatarHtml(realName, speakerAvatars);
+                const displayName = this.normalizePlayerName(realName);
                 badgeHtmls.push(`
-                    <div class="game-chara-avatar-badge" title="${realName}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})">
+                    <div class="game-chara-avatar-badge" title="${this.escapeHtml(displayName)}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})">
                         ${avatarHtml}
                     </div>
                 `);
@@ -188,21 +189,24 @@ console.log("dialogue-view.js loaded");
                     return;
                 }
 
-                const speaker = item.name || "旁白";
-                const safeSpeaker = escapeFn(speaker);
+                // 顯示文字與角色身份分離：玩家 placeholder 只在 UI 顯示為「佑樹」，
+                // avatar / modal / unit_id 查找仍使用官方原始 speaker key（例如 {0}）。
+                const rawSpeaker = item.name || "旁白";
+                const displaySpeaker = this.normalizePlayerName(rawSpeaker);
+                const safeSpeaker = escapeFn(displaySpeaker);
                 const normalizedRawWords = this.normalizePlayerName(item.words || "");
                 const words = escapeFn(normalizedRawWords)
                     .replace(/\\n/g, "<br>")
                     .replace(/\n/g, "<br>");
 
                 let speakerClass = "";
-                let isNarrator = speaker === "旁白" || speaker === "【系統】" || speaker === "？？？";
-                let isChoice = speaker.includes("【選擇肢】") || speaker.includes("【選擇】");
+                let isNarrator = rawSpeaker === "旁白" || rawSpeaker === "【系統】" || rawSpeaker === "？？？";
+                let isChoice = rawSpeaker.includes("【選擇肢】") || rawSpeaker.includes("【選擇】");
 
                 if (isNarrator) speakerClass = "role-narrator";
                 else if (isChoice) speakerClass = "role-choice";
 
-                const realNameForBtn = (isNarrator || isChoice) ? "" : (resolveRealName ? resolveRealName(speaker) : speaker);
+                const realNameForBtn = (isNarrator || isChoice) ? "" : (resolveRealName ? resolveRealName(rawSpeaker) : rawSpeaker);
 
                 let avatarHtml = "";
                 if (!isNarrator && !isChoice) {
@@ -221,7 +225,7 @@ console.log("dialogue-view.js loaded");
                         let inferredAvatars = speakerAvatars;
                         const isRealityStory = [2210102, 2211102, 2212103, 2212104, 2213104, 2214101, 2215102].includes(Number(storyId));
                         if (isRealityStory && window.AvatarService && window.AvatarService.realityAvatarMap) {
-                            const realityId = window.AvatarService.realityAvatarMap[realName] || window.AvatarService.realityAvatarMap[speaker];
+                            const realityId = window.AvatarService.realityAvatarMap[realName] || window.AvatarService.realityAvatarMap[rawSpeaker];
                             if (realityId) {
                                 inferredAvatars = Object.assign({}, speakerAvatars, { [realName]: realityId });
                             }
