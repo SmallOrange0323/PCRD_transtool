@@ -18,16 +18,12 @@ import UnityPy
 from PIL import Image
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-# 注意若在 scratch 執行，需要確保根目錄正確
 if not (PROJECT_ROOT / "dashboard").exists():
-    PROJECT_ROOT = Path("e:/OneDrive - 寰宇知識科技股份有限公司/PCRD_tool")
+    raise RuntimeError(f"Invalid repository root (missing dashboard directory): {PROJECT_ROOT}")
 
 DASHBOARD_DIR = PROJECT_ROOT / "dashboard"
-DIST_DIR = PROJECT_ROOT / "dist_story_map"
 ICON_DIR = DASHBOARD_DIR / "icon" / "unit"
-DIST_ICON_DIR = DIST_DIR / "icon" / "unit"
 REGISTRY_PATH = DASHBOARD_DIR / "data" / "avatar_assets.json"
-DIST_REGISTRY_PATH = DIST_DIR / "data" / "avatar_assets.json"
 MANIFEST_PATH = DASHBOARD_DIR / "versions" / "cached_manifests" / "storydata2_assetmanifest.txt"
 INPUT_IDS_FILE = PROJECT_ROOT / "docs" / "avatar_needs_unpack_ids.txt"
 MISSING_IDS_FILE = PROJECT_ROOT / "docs" / "avatar_official_asset_missing_ids.txt"
@@ -63,14 +59,10 @@ def download_and_extract_avatar(
 ) -> Optional[Dict[str, Any]]:
     png_filename = f"{asset_key}.png"
     out_path = ICON_DIR / png_filename
-    dist_out_path = DIST_ICON_DIR / png_filename
 
     if out_path.exists() and not overwrite:
         size = out_path.stat().st_size
         sha = calc_sha256(out_path)
-        if not dist_out_path.exists():
-            dist_out_path.parent.mkdir(parents=True, exist_ok=True)
-            dist_out_path.write_bytes(out_path.read_bytes())
         return {
             "unit_id": unit_id,
             "asset_key": asset_key,
@@ -106,10 +98,8 @@ def download_and_extract_avatar(
             return None
 
         ICON_DIR.mkdir(parents=True, exist_ok=True)
-        DIST_ICON_DIR.mkdir(parents=True, exist_ok=True)
 
         extracted_img.save(out_path, format="PNG")
-        dist_out_path.write_bytes(out_path.read_bytes())
 
         size = out_path.stat().st_size
         sha = calc_sha256(out_path)
@@ -250,10 +240,6 @@ def run_extraction(max_workers: int = 16) -> bool:
 
     with open(REGISTRY_PATH, "w", encoding="utf-8") as fe:
         json.dump(updated_registry, fe, indent=2, ensure_ascii=False)
-
-    DIST_REGISTRY_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with open(DIST_REGISTRY_PATH, "w", encoding="utf-8") as fd:
-        json.dump(updated_registry, fd, indent=2, ensure_ascii=False)
 
     print(f"Registry updated:")
     print(f"  - New assets added: {new_assets_added}")
