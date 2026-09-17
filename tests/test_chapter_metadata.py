@@ -8,18 +8,17 @@ B. 2215 標題為 '嚮導幼君' (首字 U+56AE 嚮，!= 響導幼君)，來源�
 C. 2216 標題為 '三方爭霸'，來源為 'official_tw_localized_asset'
 D. 2213 標題為 '降臨的幻境'，來源為 'official_tw_localized_asset'
 E. 既往未解析 Part 1 (2000, 2001) 與 Part 2 (2101) 官方標題完備
-F. 全量 48 個 game_world 章節 title 皆非空字串，title_provenance 皆為 'official_tw_localized_asset'，title_locale 皆為 'zh-TW'，legacy_title 完好保留
-G. 官方 TruthVersion 00600025 Extractor Baseline 100% 封閉式對等校驗 (Hermetic Parity)
+F. 現行全部 game_world 章節 title/provenance/locale/legacy_title 合約完整
+G. 官方 TruthVersion 00600025 的 48 筆 baseline 在現行資料中維持 100% 封閉式對等，不禁止後續新增章節
 H. 驗證器負向測試：title_provenance == 'official_tw_localized_asset' 時若 title 為 null 必須失敗
 I. 驗證器負向測試：title_provenance == 'unresolved' 時若 title 為非空字串必須失敗
 J. 容許合法同名章節標題
 K. 容許章節標題與話數副標題文字相同
-L. 摘要 summary_provenance 全量保留為 'legacy_unverified'
+L. 既有 baseline 章節摘要 provenance 維持 legacy_unverified，後續章節可使用 validator 支援之 provenance
 M. 不合法 summary_provenance 導致驗證失敗
 N. 現行 chapters.json 100% 通過 validate_chapters_metadata 門禁
 """
 
-import os
 import sys
 import json
 import unittest
@@ -30,10 +29,14 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from pipeline.validate import validate_chapters_metadata
+from pipeline.validate import (
+    VALID_CHAPTER_SUMMARY_PROVENANCE,
+    validate_chapters_metadata,
+)
 from tests.test_official_chapter_title_extractor import OFFICIAL_TW_00600025_BASELINE_ROWS
 
 CHAPTERS_PATH = PROJECT_ROOT / 'dashboard' / 'data' / 'chapters.json'
+
 
 class TestChapterMetadataProvenance(unittest.TestCase):
     @classmethod
@@ -95,7 +98,6 @@ class TestChapterMetadataProvenance(unittest.TestCase):
 
     def test_e_part1_part2_representative_titles(self):
         """E. 既往未解析之 Part 1 與 Part 2 代表章節均已填入官方標題"""
-        # Part 1: 2000, 2001
         ch_2000 = self._get_chapter('2000')
         self.assertIsNotNone(ch_2000)
         self.assertEqual(ch_2000.get('title'), '牽起羈絆的人們')
@@ -106,16 +108,19 @@ class TestChapterMetadataProvenance(unittest.TestCase):
         self.assertEqual(ch_2001.get('title'), '謎樣少女與記憶之鑰')
         self.assertEqual(ch_2001.get('title_provenance'), 'official_tw_localized_asset')
 
-        # Part 2: 2101
         ch_2101 = self._get_chapter('2101')
         self.assertIsNotNone(ch_2101)
         self.assertEqual(ch_2101.get('title'), '冒險，再起')
         self.assertEqual(ch_2101.get('title_provenance'), 'official_tw_localized_asset')
 
-    def test_f_all_48_chapters_provenance_and_locale(self):
-        """F. 全量 48 個 game_world 章節 title 皆非空字串，title_provenance 皆為 'official_tw_localized_asset'，title_locale 皆為 'zh-TW'，legacy_title 完好保留"""
+    def test_f_all_current_chapters_provenance_and_locale(self):
+        """F. 現行全部 game_world 章節 title/provenance/locale/legacy_title 合約完整。"""
         all_gw = self._all_game_world()
-        self.assertEqual(len(all_gw), 48, 'game_world 章節總數應為 48')
+        self.assertGreaterEqual(
+            len(all_gw),
+            len(OFFICIAL_TW_00600025_BASELINE_ROWS),
+            '現行 game_world 不得少於已封存的官方 baseline 章節數',
+        )
 
         for cid, info in all_gw.items():
             title = info.get('title')
@@ -126,13 +131,13 @@ class TestChapterMetadataProvenance(unittest.TestCase):
             self.assertTrue(bool(info.get('legacy_title')), f'章節 {cid} 必須完整保留 legacy_title')
 
     def test_g_source_extractor_parity_hermetic(self):
-        """G. 官方 TruthVersion 00600025 Extractor Baseline 100% 封閉式對等校驗 (Hermetic Parity)"""
+        """G. 00600025 baseline 逐筆保持官方對等，同時允許後續官方章節追加。"""
         all_gw = self._all_game_world()
-        self.assertEqual(len(all_gw), len(OFFICIAL_TW_00600025_BASELINE_ROWS))
+        self.assertGreaterEqual(len(all_gw), len(OFFICIAL_TW_00600025_BASELINE_ROWS))
 
         for group_id, story_type, raw_title in OFFICIAL_TW_00600025_BASELINE_ROWS:
             cid_str = str(group_id)
-            self.assertIn(cid_str, all_gw, f'缺少章節 ID: {group_id}')
+            self.assertIn(cid_str, all_gw, f'缺少 baseline 章節 ID: {group_id}')
             ch_info = all_gw[cid_str]
 
             prefix, sep, expected_title = raw_title.partition('_')
@@ -173,16 +178,29 @@ class TestChapterMetadataProvenance(unittest.TestCase):
         is_valid, msg = validate_chapters_metadata(mutated)
         self.assertTrue(is_valid, f'章節元數據自身驗證通過: {msg}')
 
-    def test_l_summary_provenance_legacy_unverified(self):
-        """L. 保留之歷史綱要 summary_provenance 必須全部標記為 'legacy_unverified'"""
+    def test_l_summary_provenance_contract(self):
+        """L. baseline 摘要維持 legacy_unverified；新增章節允許 validator 支援的 provenance。"""
         all_gw = self._all_game_world()
-        self.assertEqual(len(all_gw), 48, 'game_world 章節總數應為 48')
-        for cid, info in all_gw.items():
+        baseline_ids = {str(row[0]) for row in OFFICIAL_TW_00600025_BASELINE_ROWS}
+
+        for cid in baseline_ids:
+            self.assertIn(cid, all_gw, f'缺少 baseline 章節 ID: {cid}')
             self.assertEqual(
-                info.get('summary_provenance'),
+                all_gw[cid].get('summary_provenance'),
                 'legacy_unverified',
-                f'章節 {cid} 之 summary_provenance 必須為 legacy_unverified'
+                f'baseline 章節 {cid} 之 summary_provenance 必須為 legacy_unverified',
             )
+
+        for cid, info in all_gw.items():
+            self.assertIn(
+                info.get('summary_provenance'),
+                VALID_CHAPTER_SUMMARY_PROVENANCE,
+                f'章節 {cid} 之 summary_provenance 不在 validator 支援集合中',
+            )
+
+        ch_2217 = self._get_chapter('2217')
+        self.assertIsNotNone(ch_2217, '現行第 3 部第 17 章 2217 不存在')
+        self.assertEqual(ch_2217.get('summary_provenance'), 'curated_manual')
 
     def test_m_invalid_summary_provenance_fails_validation(self):
         """M. 負向測試：不支援之 summary_provenance 值必須導致驗證失敗"""
