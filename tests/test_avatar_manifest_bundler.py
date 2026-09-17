@@ -159,7 +159,7 @@ class TestAvatarManifestBundler(unittest.TestCase):
 
     def test_6_duplicate_legacy_webp_is_not_in_expected_set(self):
         """Canonical PNG dialogue entries must not reintroduce legacy WebP names."""
-        expected_files = set(get_expected_icon_unit_mappings())
+        expected_files = set(get_expected_dialogue_icon_mappings())
         dialogue_entries = [
             a
             for a in self.assets
