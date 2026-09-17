@@ -1,0 +1,111 @@
+name: Audit avatar coverage
+
+on:
+  push:
+    branches:
+      - chatgpt/export-story-unit-ids
+    paths:
+      - .github/workflows/avatar-coverage-audit.yml
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Fetch deployed gh-pages tree
+        shell: bash
+        run: git fetch origin gh-pages:refs/remotes/origin/gh-pages --depth=1
+
+      - name: Audit story avatar coverage
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+
+          story_ids = [int(x.strip()) for x in Path('docs/story_unit_ids_1386.txt').read_text(encoding='utf-8').splitlines() if x.strip()]
+          story_set = set(story_ids)
+          av = json.loads(Path('dashboard/data/avatar_assets.json').read_text(encoding='utf-8'))
+          dialogue_entries = {int(a['unit_id']): a for a in av.get('assets', []) if a.get('usage') == 'dialogue' and a.get('unit_id') is not None}
+
+          main_files = {p.name for p in Path('dashboard/icon/unit').glob('*') if p.is_file()}
+          gh_out = subprocess.check_output(['git','ls-tree','-r','--name-only','origin/gh-pages','--','icon/unit'], text=True)
+          gh_files = {Path(line.strip()).name for line in gh_out.splitlines() if line.strip()}
+
+          active_ok = []
+          placeholder = []
+          registry_only = []
+          recover_from_gh_pages = []
+          needs_unpack = []
+          active_registry_main_png_missing_gh_present = []
+          active_registry_png_missing_everywhere = []
+
+          for uid in story_ids:
+              entry = dialogue_entries.get(uid)
+              expected = f'{uid:06d}.png'
+              if entry:
+                  status = entry.get('status')
+                  filename = entry.get('filename') or expected
+                  if status == 'placeholder_only':
+                      placeholder.append(uid)
+                  elif status == 'active':
+                      if filename in main_files:
+                          active_ok.append(uid)
+                      elif filename in gh_files:
+                          active_registry_main_png_missing_gh_present.append(uid)
+                      else:
+                          active_registry_png_missing_everywhere.append(uid)
+                  else:
+                      # Treat any non-active/non-placeholder dialogue entry as unresolved.
+                      if filename in main_files:
+                          registry_only.append(uid)
+                      elif filename in gh_files:
+                          recover_from_gh_pages.append(uid)
+                      else:
+                          needs_unpack.append(uid)
+              else:
+                  if expected in main_files:
+                      registry_only.append(uid)
+                  elif expected in gh_files:
+                      recover_from_gh_pages.append(uid)
+                  else:
+                      needs_unpack.append(uid)
+
+          unresolved = sorted(set(registry_only + recover_from_gh_pages + needs_unpack + active_registry_main_png_missing_gh_present + active_registry_png_missing_everywhere))
+
+          def write_ids(name, ids):
+              Path('docs', name).write_text(''.join(f'{x}\n' for x in sorted(ids)), encoding='utf-8')
+
+          write_ids('avatar_registry_only_ids.txt', registry_only)
+          write_ids('avatar_recover_from_gh_pages_ids.txt', recover_from_gh_pages)
+          write_ids('avatar_needs_unpack_ids.txt', needs_unpack)
+          write_ids('avatar_active_registry_main_png_missing_gh_present_ids.txt', active_registry_main_png_missing_gh_present)
+          write_ids('avatar_active_registry_png_missing_everywhere_ids.txt', active_registry_png_missing_everywhere)
+
+          report = f'''# Avatar Coverage Audit\n\n- Story unique unit IDs: {len(story_ids)}\n- Dialogue registry entries: {len(dialogue_entries)}\n- Active + PNG present in main: {len(active_ok)}\n- Placeholder-only: {len(placeholder)}\n- Missing registry but PNG already in main (registry-only fix): {len(registry_only)}\n- Missing registry/main PNG but PNG exists on gh-pages (recover; no unpack): {len(recover_from_gh_pages)}\n- Missing registry and PNG absent from both main + gh-pages (needs official unpack): {len(needs_unpack)}\n- Active registry but PNG missing in main, present on gh-pages (recover; no unpack): {len(active_registry_main_png_missing_gh_present)}\n- Active registry but PNG missing from both main + gh-pages (needs investigation/unpack): {len(active_registry_png_missing_everywhere)}\n- Total unresolved against main: {len(unresolved)}\n\n## Sanity\n\n- Story ID count expected 1386: {'PASS' if len(story_ids)==1386 else 'FAIL'}\n- Partition total: {len(active_ok)+len(placeholder)+len(registry_only)+len(recover_from_gh_pages)+len(needs_unpack)+len(active_registry_main_png_missing_gh_present)+len(active_registry_png_missing_everywhere)}\n'''
+          Path('docs/avatar_coverage_audit.md').write_text(report, encoding='utf-8')
+
+          print(report)
+          print('needs_unpack sample:', sorted(needs_unpack)[:50])
+          print('recover_from_gh_pages sample:', sorted(recover_from_gh_pages)[:50])
+          print('registry_only sample:', sorted(registry_only)[:50])
+
+          assert len(story_ids) == 1386
+          assert len(active_ok)+len(placeholder)+len(registry_only)+len(recover_from_gh_pages)+len(needs_unpack)+len(active_registry_main_png_missing_gh_present)+len(active_registry_png_missing_everywhere) == 1386
+          PY
+
+      - name: Commit audit outputs
+        shell: bash
+        run: |
+          git config user.name "ChatGPT Cloud"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/avatar_coverage_audit.md docs/avatar_*_ids.txt
+          git diff --cached --quiet && exit 0
+          git commit -m "docs: add avatar coverage audit"
+          git push
