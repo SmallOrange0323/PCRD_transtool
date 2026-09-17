@@ -1,0 +1,930 @@
+[
+  {
+    "type": "background",
+    "bg_id": "500090"
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "──雖然遇到了各式各樣的問題，",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "\\n但「蘭德索爾文化祭」終於安穩落幕。",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "\\n隔天，智被純給叫出去。",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "嗨，",
+    "voice": "vo_adv_5102601_000",
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "小智。",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "妳來啦。",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "\\n抱歉突然叫妳來。",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "不會，",
+    "voice": "vo_adv_5102601_001",
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "這是理所當然的。",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "不用介意……",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "有新的任務",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "要委託給我嗎？",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "嗯，",
+    "voice": "vo_adv_5102601_002",
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "是啊。",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "\\n這次的任務，",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "跟前幾天的蘭祭也有點關係……",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "跟蘭祭有關的任務……",
+    "voice": "vo_adv_5102601_003",
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "是嗎？",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "嗯嗯，",
+    "voice": "vo_adv_5102601_004",
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "小智在那個活動上，",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "參與了許多事，大放異彩對吧？",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "\\n像是Cosplay、劍舞、",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "\\n還有阻止了直播主獵人小輝美的惡形惡狀。",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "那些事蹟在",
+    "voice": "vo_adv_5102601_005",
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "街頭巷尾十分受到好評呢。",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "\\n【王宮騎士團】好像也有收到許多人詢問",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "關於小智的事。",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "因此，",
+    "voice": "vo_adv_5102601_006",
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "\\n連克蕾琪塔",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "都對此特別關心呢。",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "克蕾琪塔小姐……",
+    "voice": "vo_adv_5102601_007",
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "對我……？",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "是啊！",
+    "voice": "vo_adv_5102601_008",
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "\\n因為【王宮騎士團】",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "正急著招募新血呢。",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "克蕾琪塔似乎是希望",
+    "voice": "vo_adv_5102601_009",
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "小智可以擔任我們",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "\\n【王宮騎士團】成員招募海報的",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "形象大使。",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "咦咦！？",
+    "voice": "vo_adv_5102601_010",
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "就算妳突然這麼說……！？",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "當然，",
+    "voice": "vo_adv_5102601_011",
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "這不是要勉強妳。",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "\\n但是，",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "克蕾琪塔的想法",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "我也覺得是個好主意。",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "如果有崇拜小智的孩子們加入我們，",
+    "voice": "vo_adv_5102601_012",
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "\\n蘭德索爾的治安也會變得更好。",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "也就是說，",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "\\n能夠更好地守護大家「喜歡」的這份心情。",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "守護大家的「喜歡」……",
+    "voice": "vo_adv_5102601_013",
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "所以說，",
+    "voice": "vo_adv_5102601_014",
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "小智妳",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "覺得如何呢？",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "\\n願意協助我們嗎？",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "……",
+    "voice": "vo_adv_5102601_015",
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "我知道了。",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "老實說，",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "我還有點困惑……",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "但我希望能夠幫",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "蘭德索爾盡一份心力。",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "謝謝妳。",
+    "voice": "vo_adv_5102601_016",
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "那麼，",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "事不遲疑，",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "我已經準備好攝影師了……",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "\\n正確來說，",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "是她積極地毛遂自薦",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "才對。",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "\\n總之，",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "讓我介紹一下……",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "好了，",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "純",
+    "words": "請進吧。",
+    "voice": null,
+    "unit_id": 104711
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "呵呵……",
+    "voice": "vo_adv_5102601_017",
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "我們又見面了，",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "智小姐。",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "妳是……！？",
+    "voice": "vo_adv_5102601_018",
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "\\n那個時候，",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "說會一直支持我的人……！",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "是的。",
+    "voice": "vo_adv_5102601_019",
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "我非常希望能夠再次拍攝智小姐的照片，",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "\\n所以積極跟【王宮騎士團】聯絡，",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "\\n就被選為",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "這次拍攝的攝影師了……",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "嘿嘿嘿！",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "話雖如此，",
+    "voice": "vo_adv_5102601_020",
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "但這是工作！",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "\\n我會",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "盡量壓抑自己的私情，好好完成海報照片拍攝的工作！",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "這、",
+    "voice": "vo_adv_5102601_021",
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "這樣啊……",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "那麼……",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "拜託妳了。",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "也請妳多指教！",
+    "voice": "vo_adv_5102601_022",
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "\\n因此，",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "首先希望妳能夠再穿一次",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "蘭祭時的變裝！",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "什麼……！？",
+    "voice": "vo_adv_5102601_023",
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "\\n為什麼團員招募的海報照片，",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "還需要變裝啊？",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "這是我的喜好……",
+    "voice": "vo_adv_5102601_024",
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "不是啦！",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "\\n果然還是因為",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "那套衣服",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "比較能夠展現出警察的感覺嘛！",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "\\n這樣看起來更可以強調【王宮騎士團】",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "的風格。",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "原、",
+    "voice": "vo_adv_5102601_025",
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "原來如此……？",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "被妳這麼一說，",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "好像也有點道理……",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "對吧！",
+    "voice": "vo_adv_5102601_026",
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "所以啦，",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "就請妳趕快",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "換裝吧！",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "\\n別擔心！",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "我會把妳拍得很",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智的粉絲",
+    "words": "帥氣的！",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "……",
+    "voice": "vo_adv_5102601_027",
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "那就",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "拜託妳了。",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "……老實說，",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "我對變裝還是有點害羞……",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "智",
+    "words": "不過又有機會可以穿上那套衣服，覺得有點期待呢……♪",
+    "voice": null,
+    "unit_id": 103712
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "後來，換完裝的智，雖然感到有點害羞，",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "\\n仍然好好地完成了攝影師的要求……",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "\\n終於，出色的團員招募海報完成了。",
+    "voice": null,
+    "unit_id": null
+  }
+]

@@ -1,0 +1,895 @@
+[
+  {
+    "type": "background",
+    "bg_id": "500036"
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "{0}和依里在拉菲的帶領下，",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "\\n走在充滿聖誕氛圍的蘭德索爾街道上。",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "怎麼辦，",
+    "voice": "vo_adv_5106602_000",
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "綾音……",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "真傷腦筋……",
+    "voice": "vo_adv_5106602_001",
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "怎麼了嗎？",
+    "voice": "vo_adv_5106602_002",
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "有困難的話",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "就交給天使處理吧！",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "哇，",
+    "voice": "vo_adv_5106602_003",
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "天使！？",
+    "voice": null,
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "\\n咦咦？",
+    "voice": null,
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "妳是依里和哥哥的",
+    "voice": null,
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "朋友嗎？",
+    "voice": null,
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "噗吉",
+    "words": "「你還真是認識很多",
+    "voice": "vo_adv_5106602_004",
+    "unit_id": 2112
+  },
+  {
+    "type": "dialogue",
+    "name": "噗吉",
+    "words": "奇奇怪怪的人呢！」",
+    "voice": null,
+    "unit_id": 2112
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "……我被奇怪的熊說很奇怪……",
+    "voice": "vo_adv_5106602_005",
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "所以",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "是發生了什麼事呀？",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "其實",
+    "voice": "vo_adv_5106602_006",
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "我們想準備聖誕禮物，",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "\\n送給育幼院的所有人、",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "咲戀媽媽",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "和鈴莓姐。",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "\\n我們有",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "舞台劇的演出費，",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "打算用那筆錢來準備。",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "噗吉",
+    "words": "「今年我們要當所有人的聖誕老人！",
+    "voice": "vo_adv_5106602_007",
+    "unit_id": 2112
+  },
+  {
+    "type": "dialogue",
+    "name": "噗吉",
+    "words": "\\n可是啊……",
+    "voice": null,
+    "unit_id": 2112
+  },
+  {
+    "type": "dialogue",
+    "name": "噗吉",
+    "words": "我們遲遲決定不了要送什麼禮物才好。」",
+    "voice": null,
+    "unit_id": 2112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "原來如此。",
+    "voice": "vo_adv_5106602_008",
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "唔～",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "育幼院的大家要收到什麼才會開心呢……",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "繪本怎麼樣呀？",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "我們一開始",
+    "voice": "vo_adv_5106602_009",
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "也是這麼想的……",
+    "voice": null,
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "可是……",
+    "voice": "vo_adv_5106602_010",
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "書店裡賣的繪本，",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "\\n育幼院裡",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "幾乎都有了。",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "嗯嗯……",
+    "voice": "vo_adv_5106602_011",
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "妳們是想報答",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "育幼院吧。",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "那",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "我就馬上變出貴重的東西吧！",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "\\n要開始囉～！",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "等、",
+    "voice": "vo_adv_5106602_012",
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "等一下。",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "\\n這可是難得的聖誕禮物耶？",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "我覺得那樣不好吧……",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "唔～",
+    "voice": "vo_adv_5106602_013",
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "那該怎麼辦才好呢？",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "你有什麼好點子嗎？",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "什麼？",
+    "voice": "vo_adv_5106602_014",
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "我們",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "自己做繪本？",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "可是，",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "我們要怎麼……",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "那就包在我身上吧！",
+    "voice": "vo_adv_5106602_015",
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "\\n依里，",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "把妳的力量借給我吧！",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "什麼力量……",
+    "voice": "vo_adv_5106602_016",
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "我、",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "我明白了。",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "\\n我該怎麼做呢？",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "在腦海裡想像妳喜歡的書！",
+    "voice": "vo_adv_5106602_017",
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "\\n然後，再加上……",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "\\n天使",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "之箭！",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "有東西從天上掉下來了……",
+    "voice": "vo_adv_5106602_018",
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "這是繪本嗎？",
+    "voice": null,
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "哇，",
+    "voice": null,
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "好可愛的插畫♪",
+    "voice": null,
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "\\n不過，我沒看過這本書呢……",
+    "voice": null,
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "的確是很可愛啦，不過……",
+    "voice": "vo_adv_5106602_019",
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "插畫的風格好像不太像繪本……",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "\\n更像遊戲或",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "動畫的圖畫吧？",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "原來是關於天使的故事呀。",
+    "voice": "vo_adv_5106602_020",
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "\\n難道是",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "依里妳們做的嗎？",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "沒錯！",
+    "voice": "vo_adv_5106602_021",
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "把拉菲我們的故事，",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "搭配依里會喜歡的圖畫",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "，做成了一本書♪",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "妳、",
+    "voice": "vo_adv_5106602_022",
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "妳在說什麼呀！",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "這些圖的風格",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "的確是我會喜歡的啦……",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "這就是",
+    "voice": "vo_adv_5106602_023",
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "我們準備的禮物！",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "拉菲",
+    "words": "\\n妳們願意收下嗎？",
+    "voice": null,
+    "unit_id": 5512
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "哇……",
+    "voice": "vo_adv_5106602_024",
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "太神奇、太厲害了！",
+    "voice": null,
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "居然可以收到天使送的禮物，",
+    "voice": null,
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "真是太棒了！",
+    "voice": null,
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "如果送這個的話，",
+    "voice": "vo_adv_5106602_025",
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "我想育幼院的人都會很開心的。",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "謝謝妳們♪",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "嗚嗚……",
+    "voice": "vo_adv_5106602_026",
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "喜好暴露在大家面前，",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "覺得有點羞恥。",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "但是圖畫得很可愛，",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "讓我好好奇啊……",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "\\n如果可以的話……",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "我下次",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "依里",
+    "words": "可以去看看書嗎？",
+    "voice": null,
+    "unit_id": 124112
+  },
+  {
+    "type": "dialogue",
+    "name": "噗吉",
+    "words": "「不用這麼客氣！",
+    "voice": "vo_adv_5106602_027",
+    "unit_id": 2112
+  },
+  {
+    "type": "dialogue",
+    "name": "噗吉",
+    "words": "\\n大家隨時都可以過來玩啊！」",
+    "voice": null,
+    "unit_id": 2112
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "嗯！",
+    "voice": "vo_adv_5106602_028",
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "綾音 ",
+    "words": "育幼院的大家也都等著妳們來玩哦♪",
+    "voice": null,
+    "unit_id": 108611
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "哥哥，",
+    "voice": "vo_adv_5106602_029",
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "天使小姐，",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "真的很謝謝你們！",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "胡桃",
+    "words": "\\n感覺可以度過一個美好的聖誕節呢♪",
+    "voice": null,
+    "unit_id": 108511
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "就這樣，{0}一行人\\n又再次盡到天使的職責。",
+    "voice": null,
+    "unit_id": null
+  }
+]

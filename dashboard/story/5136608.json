@@ -1,0 +1,524 @@
+[
+  {
+    "type": "background",
+    "bg_id": "500040"
+  },
+  {
+    "type": "dialogue",
+    "name": "ナレーション",
+    "words": "ギルドハウス内を捜し回り、",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "ナレーション",
+    "words": "\\nノウェムとオクトーはようやく跳躍王を発見する。",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "おい、",
+    "voice": "vo_adv_5110608_000",
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "教授！",
+    "voice": null,
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "\\nやっと見つけたぞ！",
+    "voice": null,
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "はあ、",
+    "voice": "vo_adv_5110608_001",
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "ほんと神出鬼没だねえ。",
+    "voice": null,
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "\\n捜すのも一苦労だよ。",
+    "voice": null,
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "なんですか？",
+    "voice": "vo_adv_5110608_002",
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "\\n私は",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "あなたたちほど暇ではないのですが？",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "アタシたちだって暇じゃないぞ！",
+    "voice": "vo_adv_5110608_003",
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "今日ボクらが来たのはクレームだよ。",
+    "voice": "vo_adv_5110608_004",
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "\\nクレーム。",
+    "voice": null,
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "ほう？　",
+    "voice": "vo_adv_5110608_005",
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "私にクレームですか？",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "面白い。",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "聞いてあげましょう。",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "ただ、",
+    "voice": "vo_adv_5110608_006",
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "つまらない内容だったら……",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "わかってますね？",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "つまらない内容なわけあるかよ！",
+    "voice": "vo_adv_5110608_007",
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "\\nこっちは結構切実なんだぞ！",
+    "voice": null,
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "ま、",
+    "voice": "vo_adv_5110608_008",
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "クレームだから面白いわけもないんだけどさ。",
+    "voice": null,
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "ダイゴのことだよ！",
+    "voice": "vo_adv_5110608_009",
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "\\nなんでアイツ、",
+    "voice": null,
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "あんなにケンカ吹っ掛けてくるんだよ！",
+    "voice": null,
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "こっちが任務中でも構わず仕掛けてくるんだけど。",
+    "voice": "vo_adv_5110608_010",
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "\\n勘弁してほしいんだよね。",
+    "voice": null,
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "なるほど……",
+    "voice": "vo_adv_5110608_011",
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "それで私に文句を言いに来たわけですか。",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "ですが、",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "それは無駄としか言えませんね。",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "なんでだよ？",
+    "voice": "vo_adv_5110608_012",
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "\\nオマエのプリンセスナイトだろ？",
+    "voice": null,
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "彼は七冠の私にさえ",
+    "voice": "vo_adv_5110608_013",
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "勝負を挑んできますからね。",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "\\n止めようがありませんよ。",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "それじゃあアタシたちも困るんだよ～！",
+    "voice": "vo_adv_5110608_014",
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "\\nあれだ、",
+    "voice": null,
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "ほごかん……",
+    "voice": null,
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "なんだっけ？",
+    "voice": null,
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "保護監督責任、",
+    "voice": "vo_adv_5110608_015",
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "って言いたいわけ？　",
+    "voice": null,
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "まあ、",
+    "voice": null,
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "厳密には違うけど。",
+    "voice": null,
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "たださあ、",
+    "voice": null,
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "もうちょっと教育をちゃんとしてほしいよね。",
+    "voice": null,
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "それが無理なのは",
+    "voice": "vo_adv_5110608_016",
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "あなたたちもわかっているでしょう？",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "ああいう人間は",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "他にいませんからね。",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "しっかし、",
+    "voice": "vo_adv_5110608_017",
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "なんであんな奴をプリンセスナイトになんか選んだんだよ？",
+    "voice": null,
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "逆ですよ。",
+    "voice": "vo_adv_5110608_018",
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "それくらいじゃないと、",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "\\nプリンセスナイトというものは",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "務まらないからです。",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "そういう特別な存在なのですよ。",
+    "voice": "vo_adv_5110608_019",
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "跳躍王",
+    "words": "\\nプリンセスナイトというものは。",
+    "voice": null,
+    "unit_id": 107311
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "結局、",
+    "voice": "vo_adv_5110608_020",
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "無駄足だったのか？",
+    "voice": null,
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "ノウェム",
+    "words": "はぁ……",
+    "voice": null,
+    "unit_id": 106114
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "しょうがない、",
+    "voice": "vo_adv_5110608_021",
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "これからも適当にあしらって",
+    "voice": null,
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "オクトー",
+    "words": "撒いちゃうしかないねえ。",
+    "voice": null,
+    "unit_id": 106211
+  },
+  {
+    "type": "dialogue",
+    "name": "ナレーション",
+    "words": "ノウェムとオクトーは徒労感に苛まれ、力なくため息をつくのであった。",
+    "voice": null,
+    "unit_id": null
+  }
+]

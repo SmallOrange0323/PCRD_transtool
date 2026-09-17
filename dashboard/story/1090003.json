@@ -1,0 +1,934 @@
+[
+  {
+    "type": "background",
+    "bg_id": "500040"
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "情人節當天。\\n在蘭德索爾城裡四處都\\n飄著甜甜的香味。",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "在那之中，{0}\\n一個人待在公會小屋休息時，\\n聽見廚房傳來某種聲響。",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "{0}慢慢地接近發出聲響的\\n方向――",
+    "voice": null,
+    "unit_id": null
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "您好，{0}大人……",
+    "voice": "vo_adv_1090003_000",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "我來借一下廚房喔。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "哎呀，",
+    "voice": "vo_adv_1090003_001",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "{0}大人……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "您的精神非常好呢。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "我想要",
+    "voice": "vo_adv_1090003_002",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "讓{0}大人\\n品嘗剛作好的",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "巧克力，",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n所以直接過來製作了。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "當然，",
+    "voice": "vo_adv_1090003_003",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "您不需要跟我道謝也沒關係……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "我們是命中註定要結合的人，",
+    "voice": "vo_adv_1090003_004",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n不需要靠言語表達……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "我只是想讓",
+    "voice": "vo_adv_1090003_005",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "{0}大人\\n感到開心而已……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "那麼，",
+    "voice": "vo_adv_1090003_006",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "我借用一下廚房，",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n{0}大人請去休息吧。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "首先要",
+    "voice": "vo_adv_1090003_007",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "把水煮沸……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "啊，",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "這個材料是提味用的，",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "要和這裡的材料混合……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "等顏色改變後，",
+    "voice": "vo_adv_1090003_008",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "把它攪拌到變得滑順為止，",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n此時再加入提味，",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "繼續攪拌到出現光澤……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "然後，",
+    "voice": "vo_adv_1090003_009",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "再把巧克力放到滾水中加熱融化……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "……啊啊，",
+    "voice": "vo_adv_1090003_010",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "完成這個之時，",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n{0}大人就會成為我的俘虜……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "不對，",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "他已經是我的俘虜了呢……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "嘻嘻……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "好，",
+    "voice": "vo_adv_1090003_011",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "再來是放入我自己調配的",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n精心提煉的特製材料",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "就……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "啊，",
+    "voice": "vo_adv_1090003_012",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "真是的……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "您不可以看啦。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "這個試管裡",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "是我祕傳的材料。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "完全沒有放",
+    "voice": "vo_adv_1090003_013",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "對身體有害之物。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n請您相信我，",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "耐心等候吧。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "我會將好吃的巧克力拿過去給您的。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "background",
+    "bg_id": "500040"
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "讓您久等了。",
+    "voice": "vo_adv_1090003_014",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n這個就是",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "我的特製巧克力。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "味道如何？　",
+    "voice": "vo_adv_1090003_015",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "是普通的巧克力吧？",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "嘻嘻……",
+    "voice": "vo_adv_1090003_016",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "外觀很美吧？",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "裡面也是喔。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "來，",
+    "voice": "vo_adv_1090003_017",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "請您品嚐吧。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "嗯，",
+    "voice": "vo_adv_1090003_018",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "吃這個還需要勇氣嗎？",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "欸，",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "雖然是我做的，",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n您也不需要這樣跟我客氣！",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "把嘴張開……",
+    "voice": "vo_adv_1090003_019",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "啊～",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "嗯。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "嘻嘻……",
+    "voice": "vo_adv_1090003_020",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "味道如何呢？",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "甜中帶著微苦，",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "非常好吃嗎？",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "哎呀，",
+    "voice": "vo_adv_1090003_021",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "我好開心……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "嘻嘻……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "……",
+    "voice": "vo_adv_1090003_022",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "您對身體會發生什麼事感到很不安嗎？",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "不過，",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "什麼都不會發生的。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "因為，",
+    "voice": "vo_adv_1090003_023",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "我根本沒有放任何的藥物進去。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "那個試管裡……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "裝了什麼嗎？",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "那裡面是對身體完全無害的",
+    "voice": "vo_adv_1090003_024",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n水果糖漿和利口酒。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "我",
+    "voice": "vo_adv_1090003_025",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "這次只是",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "單純地",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "想讓{0}大人",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n品嚐巧克力……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "您覺得如何呢？　",
+    "voice": "vo_adv_1090003_026",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "我做的巧克力的味道。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "哎呀……",
+    "voice": "vo_adv_1090003_027",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "我就是想聽您這麼說才做的。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "{0}大人，我現在",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "覺得好幸福呀。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "是啊，",
+    "voice": "vo_adv_1090003_028",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "只要{0}大人想吃的話，",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "不管是在何時何地，",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "要吃多少我都會做給您吃。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "現在想起來，",
+    "voice": "vo_adv_1090003_029",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "我總是想要引起{0}大人的注意，",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "時常感到焦慮不安。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n可是，",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "這次我覺得非常的滿足。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "是因為只靠我的力量",
+    "voice": "vo_adv_1090003_030",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "就被稱讚做得很美味嗎……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "咦？　",
+    "voice": "vo_adv_1090003_031",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "你說沒有加任何的藥物",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "是真的嗎？",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "\\n",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "啊，",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "要說的話只放了……",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "我放了滿滿的",
+    "voice": "vo_adv_1090003_032",
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "惠理子",
+    "words": "叫作愛情的藥呢。",
+    "voice": null,
+    "unit_id": 109011
+  },
+  {
+    "type": "dialogue",
+    "name": "旁白",
+    "words": "惠理子如此說著，對我露出了爽朗的笑容。",
+    "voice": null,
+    "unit_id": null
+  }
+]
