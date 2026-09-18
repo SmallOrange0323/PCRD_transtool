@@ -214,6 +214,31 @@ const QuestMapModule = {
         }
     },
 
+    // Story Map playback / async lifecycle has one source of truth here.
+    // AUTO.stop() normally stops MediaService too; the explicit stop also
+    // covers manual voice playback while AUTO itself is IDLE.
+    _stopStoryPlayback() {
+        if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
+            window.AutoVoiceController.stop();
+        }
+        if (window.MediaService && typeof window.MediaService.stopVoice === 'function') {
+            window.MediaService.stopVoice();
+        }
+    },
+
+    _invalidateStoryAsyncWork() {
+        this._storyRenderToken = (this._storyRenderToken || 0) + 1;
+        this._dialogueLoadingToken = null;
+        this.isLoadingDialogue = false;
+    },
+
+    teardownPlayback(options = {}) {
+        this._stopStoryPlayback();
+        if (options.invalidateAsync === true) {
+            this._invalidateStoryAsyncWork();
+        }
+    },
+
     async loadData() {
         try {
             // 優先確保 ChapterDataService 完整就緒（包含章節中繼資料與分支劇情補充元數據）
@@ -822,9 +847,7 @@ const QuestMapModule = {
     },
 
     switchTabType(type) {
-        if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
-            window.AutoVoiceController.stop();
-        }
+        this.teardownPlayback({ invalidateAsync: true });
         this.activeTabType = type;
         this.activeStoryId = null;
         this.expandedChapter = null;
@@ -833,25 +856,21 @@ const QuestMapModule = {
         this.safeRender(() => this._render());
     },
 
-	goBackToMenu() {
+    goBackToMenu() {
+        this.teardownPlayback({ invalidateAsync: true });
         window.ReaderNavigation?.left();
         this.activeStoryId = null;
-        if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
-            window.AutoVoiceController.stop();
-        }
-		this.currentView = 'menu';
-		this._fadeTransition(() => this._render());
-	},
+        this.currentView = 'menu';
+        this._fadeTransition(() => this._render());
+    },
 
     handleFloatingBack() {
         this.handleBackClick();
     },
 
     enterCategory(type) {
+        this.teardownPlayback({ invalidateAsync: true });
         window.ReaderNavigation?.left();
-        if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
-            window.AutoVoiceController.stop();
-        }
         this.currentView = 'list';
         this.activeTabType = type;
         this.activeStoryId = null;
@@ -1314,10 +1333,8 @@ const QuestMapModule = {
     },
 
     switchPart(part) {
+        this.teardownPlayback({ invalidateAsync: true });
         window.ReaderNavigation?.left();
-        if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
-            window.AutoVoiceController.stop();
-        }
         this.currentPart = part;
         this.activeStoryId = null;
         this.expandedChapter = null;
@@ -1577,15 +1594,13 @@ const QuestMapModule = {
     },
 
     async selectStory(storyId) {
-        if (!this.getStoryById(storyId)) return;
-        if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
-            window.AutoVoiceController.stop();
-        }
-        const previousStoryId = this.activeStoryId;
-        if (previousStoryId === storyId) {
-            // 同話重複點擊：保持現有捲動位置，絕不跳回頂部
+        // Same-story re-selection is a strict no-op: keep AUTO/manual playback
+        // and the current scroll position intact.
+        if (this.activeStoryId === storyId) {
             return;
         }
+        this._stopStoryPlayback();
+        if (!this.getStoryById(storyId)) return;
         window.ReaderNavigation?.beforeSelect();
         this.activeStoryId = storyId;
         // A failed new request must never leave the preceding story playable.
@@ -1703,6 +1718,7 @@ const QuestMapModule = {
     },
 
     exitReader() {
+        this.teardownPlayback({ invalidateAsync: true });
         window.ReaderNavigation?.left();
         this.activeStoryId = null;
         document.querySelectorAll('.story-item').forEach(el => el.classList.remove('active'));
@@ -2182,26 +2198,24 @@ const QuestMapModule = {
 
     async loadDialogue(storyId, token) {
         const currentToken = token || this._storyRenderToken;
-        const board = document.getElementById('dialogue-board');
-        if (!board) return;
+        const isCurrentStory = () => (
+            currentToken === this._storyRenderToken &&
+            this.activeStoryId === storyId
+        );
 
-        // 若切換話數，檢查 token
-        if (currentToken !== this._storyRenderToken || this.activeStoryId !== storyId) {
-            return;
-        }
+        if (!isCurrentStory()) return;
 
-        // Token-scoped guard: 僅防止同一 token / 相同請求重複啟動，絕不阻止新話數 (新 token)
-        if (this._dialogueLoadingToken === currentToken) {
-            return;
-        }
+        const initialBoard = document.getElementById('dialogue-board');
+        if (!initialBoard) return;
+        if (this._dialogueLoadingToken === currentToken) return;
 
         this._dialogueLoadingToken = currentToken;
         this.isLoadingDialogue = true;
-
-        window.DialogueView.renderLoading(board);
+        window.DialogueView.renderLoading(initialBoard);
 
         try {
-            let dialogueList, speakerNames;
+            let dialogueList;
+            let speakerNames;
             const cached = this._dialogueCache.get(storyId);
 
             if (cached) {
@@ -2213,23 +2227,20 @@ const QuestMapModule = {
                 if (!response.ok) throw new Error("HTTP " + response.status);
 
                 const rawDialogueList = await response.json();
-
-                // 再次檢查 token (防止非同步 fetch 期間話數已切換)
-                if (currentToken !== this._storyRenderToken || this.activeStoryId !== storyId) {
-                    return;
-                }
+                if (!isCurrentStory()) return;
 
                 if (!rawDialogueList || rawDialogueList.length === 0) {
-                    window.DialogueView.renderEmpty(board);
+                    const liveBoard = document.getElementById('dialogue-board');
+                    if (liveBoard && isCurrentStory()) {
+                        window.DialogueView.renderEmpty(liveBoard);
+                    }
                     return;
                 }
 
-                // 使用 DialogueNormalizer 進行純資料正規化與發言人萃取
                 const normalized = window.DialogueNormalizer.normalize(rawDialogueList);
                 dialogueList = normalized.dialogueList;
                 speakerNames = normalized.speakerNames;
 
-                // 寫入 LRU 30 話快取
                 if (this._dialogueCache.size >= 30) {
                     const oldestKey = this._dialogueCache.keys().next().value;
                     this._dialogueCache.delete(oldestKey);
@@ -2238,41 +2249,45 @@ const QuestMapModule = {
             }
 
             await this.loadDialogueAvatars(speakerNames);
+            if (!isCurrentStory()) return;
 
-            // 再次檢查 token (防止頭像查詢期間話數已切換)
-            if (currentToken !== this._storyRenderToken || this.activeStoryId !== storyId) {
-                return;
-            }
+            // Final commit barrier: resolve live DOM targets after the last await,
+            // never write into a board captured for an older render.
+            const liveBoard = document.getElementById('dialogue-board');
+            if (!liveBoard || !isCurrentStory()) return;
 
             const badgesBar = document.getElementById('chara-badges-bar');
             const cinemaPanel = document.querySelector('.cinema-panel');
             const currentStoryObj = this.getStoryById(storyId);
 
             window.DialogueView.renderDialogue({
-                boardEl: board,
+                boardEl: liveBoard,
                 badgesBarEl: badgesBar,
                 cinemaPanelEl: cinemaPanel,
-                storyId: storyId,
-                dialogueList: dialogueList,
-                speakerNames: speakerNames,
+                storyId,
+                dialogueList,
+                speakerNames,
                 speakerAvatars: this.speakerAvatars,
-                currentStoryObj: currentStoryObj,
+                currentStoryObj,
                 resolveRealName: this.getCharaRealName.bind(this),
                 escapeHtml: this.escapeHtml.bind(this)
             });
 
+            if (!isCurrentStory()) return;
             this.currentDialogueList = dialogueList;
-            window.ReaderNavigation?.dialogueReady(storyId);
             this.updateAutoVoiceUI();
+            window.ReaderNavigation?.dialogueReady(storyId);
 
             if (this.autoVoiceStartIndex !== null && window.DialogueView && typeof window.DialogueView.setAutoStartSelection === 'function') {
-                window.DialogueView.setAutoStartSelection(board, this.autoVoiceStartIndex);
+                window.DialogueView.setAutoStartSelection(liveBoard, this.autoVoiceStartIndex);
             }
-
         } catch (err) {
-            if (currentToken === this._storyRenderToken && this.activeStoryId === storyId) {
+            if (isCurrentStory()) {
                 console.error("加載台詞失敗:", err);
-                window.DialogueView.renderError(board, storyId);
+                const liveBoard = document.getElementById('dialogue-board');
+                if (liveBoard && isCurrentStory()) {
+                    window.DialogueView.renderError(liveBoard, storyId);
+                }
             }
         } finally {
             if (this._dialogueLoadingToken === currentToken) {
@@ -2675,3 +2690,9 @@ if (window.ChapterDataService && window.AvatarService && window.SpeakerView && w
 }
 
 window.QuestMapModule = QuestMapModule;
+
+if (typeof window.addEventListener === 'function') {
+    window.addEventListener('pagehide', () => {
+        QuestMapModule.teardownPlayback({ invalidateAsync: true });
+    });
+}

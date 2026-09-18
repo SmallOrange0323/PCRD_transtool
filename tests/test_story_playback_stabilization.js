@@ -18,6 +18,7 @@
 
 const assert = require('assert');
 const path = require('path');
+const fs = require('fs');
 
 // ─── 環境模擬 ────────────────────────────────────────────────────────────────
 
@@ -55,6 +56,18 @@ const AutoVoiceController = global.AutoVoiceController;
 
 assert(MediaService, 'MediaService 必須存在');
 assert(AutoVoiceController, 'AutoVoiceController 必須存在');
+
+// P0 source-of-truth contract: playback lifecycle logic lives in map.js, not in
+// a later story_map.html monkey patch that can silently override production code.
+const mapSource = fs.readFileSync(path.resolve(__dirname, '../dashboard/map.js'), 'utf8');
+const htmlSource = fs.readFileSync(path.resolve(__dirname, '../dashboard/story_map.html'), 'utf8');
+assert(mapSource.includes('_stopStoryPlayback()'), 'map.js must own playback teardown');
+assert(mapSource.includes('teardownPlayback(options = {})'), 'map.js must own lifecycle invalidation');
+assert(mapSource.includes('const isCurrentStory = () => ('), 'map.js must own stale-dialogue commit guard');
+assert(!htmlSource.includes('Stabilization A: Story Map playback / async lifecycle hardening'),
+    'story_map.html must not contain the old stabilization monkey patch');
+assert(!htmlSource.includes('QuestMapModule.loadDialogue = async function'),
+    'story_map.html must not override loadDialogue at runtime');
 
 // ─── 可控 MockAudio 工廠 ─────────────────────────────────────────────────────
 
