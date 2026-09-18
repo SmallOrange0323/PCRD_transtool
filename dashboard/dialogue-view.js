@@ -110,7 +110,7 @@ console.log("dialogue-view.js loaded");
                 const avatarHtml = window.AvatarService.getAvatarHtml(realName, speakerAvatars);
                 const displayName = this.normalizePlayerName(realName);
                 badgeHtmls.push(`
-                    <div class="game-chara-avatar-badge" title="${this.escapeHtml(displayName)}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')}${modalUnitIdArg})">
+                    <div class="game-chara-avatar-badge" title="${this.escapeHtml(displayName)}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})">
                         ${avatarHtml}
                     </div>
                 `);
@@ -238,7 +238,7 @@ console.log("dialogue-view.js loaded");
                     }
 
                     avatarHtml = `
-                        <div class="game-chara-avatar-wrapper" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})" style="cursor: pointer;">
+                        <div class="game-chara-avatar-wrapper" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')}${modalUnitIdArg})" style="cursor: pointer;">
                              <div class="game-chara-avatar">
                                  ${avatarContent}
                              </div>
