@@ -148,11 +148,15 @@
                 regionSelector.value = PCRDatabase.currentRegion;
             }
 
-            // Single shared startup promise. Any data-backed view can await the
-            // same database initialization instead of starting duplicate work.
-            const databaseReadyPromise = window.PCRDatabase.initDatabase((msg, pct) => {
-                if (text) text.innerText = msg;
-                if (progress) progress.style.width = pct + '%';
+            // Single shared startup promise. Defer the actual SQLite work to a
+            // later browser task so the static landing menu gets the first paint.
+            const databaseReadyPromise = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    window.PCRDatabase.initDatabase((msg, pct) => {
+                        if (text) text.innerText = msg;
+                        if (progress) progress.style.width = pct + '%';
+                    }).then(resolve, reject);
+                }, 0);
             });
             window.PCRD_DATABASE_READY = databaseReadyPromise;
 
