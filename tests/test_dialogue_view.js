@@ -72,6 +72,7 @@ test("Test 1 — Speaker badges rendering and exclusions", () => {
     assert(!mockHtml.includes("【系統】"), "Should exclude 【系統】");
     assert(!mockHtml.includes("【選擇肢】"), "Should exclude 【選擇肢】");
     assert(!mockHtml.includes("？？？"), "Should exclude ？？？");
+    assert(!mockHtml.includes("QuestMapModule.showCharaModal(&quot;貪吃佩可&quot;, 105801)"), "Legacy/name-only badge must not pass a unit_id");
 
     // 驗證 first-seen 順序 (佩可 -> 凱留 -> 可可蘿)
     const idxPeco = mockHtml.indexOf("貪吃佩可");
@@ -106,6 +107,7 @@ test("Test 1B — Explicit unit_id renders badge without name registry entry", (
 
     assert.strictEqual(mockDisplay, "flex", "Explicit-ID speaker badge should be visible");
     assert(mockHtml.includes("icon/unit/6112.png"), "Badge must use exact unit_id 6112");
+    assert(mockHtml.includes("QuestMapModule.showCharaModal(&quot;秘書&quot;, 6112)"), "Explicit badge modal must receive unit_id 6112");
 });
 
 // Test 2 — Normal dialogue bubble

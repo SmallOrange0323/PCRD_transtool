@@ -132,8 +132,9 @@ console.log("dialogue-view.js loaded");
                     ? window.AvatarService.getAvatarHtmlByUnitId(explicitUnitId, realName, speakerAvatars)
                     : window.AvatarService.getAvatarHtml(realName, speakerAvatars);
                 const displayName = this.normalizePlayerName(rawName);
+                const modalUnitIdArg = explicitUnitId !== null ? `, ${explicitUnitId}` : "";
                 badgeHtmls.push(`
-                    <div class="game-chara-avatar-badge" title="${this.escapeHtml(displayName)}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})">
+                    <div class="game-chara-avatar-badge" title="${this.escapeHtml(displayName)}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')}${modalUnitIdArg})">
                         ${avatarHtml}
                     </div>
                 `);
