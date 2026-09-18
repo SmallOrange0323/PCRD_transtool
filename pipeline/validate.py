@@ -261,7 +261,7 @@ def validate_avatar_manifest_and_assets(dashboard_dir: Path, res: ValidationResu
     """
     【Phase 5 架構門禁】驗證 Avatar Manifest 與實體二進位資產不變量：
     1. dashboard/data/avatar_assets.json 存在且格式合法 (單一資產登錄表)
-    2. 全量正規劇本 (story/*.json) 的所有 canonical dialogue unit_id (包含 >= 100000 及 registry-backed canonical short IDs) 必須 100% 登錄在 manifest
+    2. 全量正規劇本 (story/*.json) 的所有 positive explicit dialogue unit_id 必須 100% 登錄在 manifest
     3. 每個 dialogue asset 的 status 必須為 'active' 或 'placeholder_only'
     4. 每個 active asset 必須具有實體二進位檔案，且其真實 size_bytes 與 sha256 必須與 manifest 100% 相符
     5. 每個 placeholder_only asset 不得宣告二進位屬性 (filename, size_bytes, sha256 均為 null)
@@ -285,39 +285,45 @@ def validate_avatar_manifest_and_assets(dashboard_dir: Path, res: ValidationResu
         return False
 
     # 1. 對白話數語意對等 (Story Semantic Parity)
+    #
+    # Story is the authority for required dialogue identity.  In particular, do
+    # not derive the set of legal short IDs from this registry: doing so makes a
+    # missing short-ID entry impossible for this gate to detect.
     manifest_uids = {a.get("unit_id") for a in assets if a.get("unit_id") is not None and a.get("usage") == "dialogue"}
-    # Canonical registered short IDs: 完全由正式 Registry (avatar_assets.json) 宣告之合法 active dialogue 資產決定
-    canonical_short_uids = {
-        a.get("unit_id") for a in assets
-        if a.get("unit_id") is not None
-        and a.get("unit_id") < 100000
-        and a.get("usage") == "dialogue"
-        and a.get("status") == "active"
-        and a.get("asset_key")
-        and a.get("filename")
-    }
 
     target_story_dir = story_dir or (dashboard_dir / "story")
     canonical_dialogue_uids = set()
     if target_story_dir.exists():
         for f in target_story_dir.glob("*.json"):
-            if f.name.endswith(("_parsed.json", ".min.json")):
+            if not f.stem.isdigit():
                 continue
             try:
                 with open(f, "r", encoding="utf-8") as jf:
                     data = json.load(jf)
-                rows = data if isinstance(data, list) else data.get("dialogue", [])
-                for r in rows:
-                    uid = r.get("unit_id") if r.get("unit_id") is not None else r.get("speaker_id")
-                    if uid is not None:
-                        try:
-                            n = int(uid)
-                            if n >= 100000 or n in canonical_short_uids:
-                                canonical_dialogue_uids.add(n)
-                        except:
-                            pass
-            except:
-                pass
+            except Exception as exc:
+                res.error(f"劇情檔案無法讀取或解析: {f} ({exc!r})")
+                continue
+
+            rows = data if isinstance(data, list) else data.get("dialogue", [])
+            if not isinstance(rows, list):
+                res.error(f"劇情檔案 dialogue 欄位不是陣列: {f}")
+                continue
+
+            for index, r in enumerate(rows):
+                if not isinstance(r, dict) or r.get("type") != "dialogue":
+                    continue
+                uid = r.get("unit_id")
+                if uid is None:
+                    continue
+                try:
+                    if isinstance(uid, bool):
+                        raise ValueError("boolean is not a unit_id")
+                    n = int(uid)
+                except (TypeError, ValueError) as exc:
+                    res.error(f"劇情對白 unit_id 無法解析: {f}:{index} ({uid!r}; {exc})")
+                    continue
+                if n > 0:
+                    canonical_dialogue_uids.add(n)
 
     missing_dialogue_in_manifest = canonical_dialogue_uids - manifest_uids
     if missing_dialogue_in_manifest:

@@ -77,17 +77,14 @@ globalScope.AvatarService = {
 
         // 若 Manifest 載入失敗/不可用，明確標記狀態並 Fail-Closed
         if (this.manifestUnavailable) {
-            if (numId >= 100000) {
-                if (options.warnIfAbsent !== false) {
-                    console.warn(`[AvatarService] Avatar manifest is unavailable; failing closed explicit dialogue unit_id ${numId} to placeholder.`);
-                }
-                return {
-                    status: 'manifest_unavailable',
-                    unitId: numId,
-                    filename: null
-                };
+            if (options.warnIfAbsent !== false) {
+                console.warn(`[AvatarService] Avatar manifest is unavailable; failing closed explicit dialogue unit_id ${numId} to placeholder.`);
             }
-            return null;
+            return {
+                status: 'manifest_unavailable',
+                unitId: numId,
+                filename: null
+            };
         }
 
         const entry = this.manifestMap.get(numId);
@@ -111,12 +108,9 @@ globalScope.AvatarService = {
             }
         }
 
-        // 對於未登錄或非 active 之 short ID：不 exact resolve，回傳 null 以保留 legacy fallback / 文字佔位符
-        if (numId < 100000) {
-            return null;
-        }
-
-        // >= 100000 顯式 ID 未在 Manifest 登錄：嚴格 Fail Closed 顯示佔位符，並在未被抑制時警告
+        // Any positive explicit ID absent from the registry is an unknown
+        // identity, regardless of its numeric width.  It must never enter the
+        // name-inference path.
         if (options.warnIfAbsent !== false) {
             console.warn(`[AvatarService] Explicit dialogue unit_id ${numId} is absent from avatar_assets.json; failing closed to placeholder.`);
         }
@@ -958,11 +952,9 @@ globalScope.AvatarService = {
                 const safeName = this.escapeForJsString(cleanName);
                 return `<img src="${src}" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleExactDialogueError(this, '${safeName}', ${numId})">`;
             }
-            if (numId >= 100000) {
-                // >= 100000 且未登錄/非 active：直接輸出文字佔位符，嚴格 fail-closed 不 fallback 到 name
-                return this.getFallbackHtml(cleanName);
-            }
-            // numId < 100000 且未在 canonical registry 登錄：保留既有 legacy fallback 路徑 (B)
+            // Any explicit positive ID that is not active is a text
+            // placeholder.  Do not let an absent short ID reach name inference.
+            return this.getFallbackHtml(cleanName);
         }
 
         // B. 通用推斷路徑 (INFERRED / NAME-ONLY)

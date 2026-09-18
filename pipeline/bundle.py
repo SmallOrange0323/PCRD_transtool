@@ -386,8 +386,9 @@ def get_expected_dialogue_icon_mappings(dashboard_dir: Path = DASHBOARD_DIR) -> 
     manifest_path = dashboard_dir / "data" / "avatar_assets.json"
 
     # 1. 權威路徑：Manifest 驅動發布 (Primary Authority)
-    if manifest_path.exists():
-        try:
+    if not manifest_path.exists():
+        raise FileNotFoundError(f"[ERROR] Avatar manifest is required but missing: {manifest_path}")
+    try:
             with open(manifest_path, "r", encoding="utf-8") as f:
                 manifest_data = json.load(f)
             
@@ -406,10 +407,10 @@ def get_expected_dialogue_icon_mappings(dashboard_dir: Path = DASHBOARD_DIR) -> 
                     continue
 
             return mappings
-        except Exception as e:
-            if isinstance(e, FileNotFoundError):
-                raise
-            print(f"  [WARN] 讀取 avatar_assets.json 失敗，回退至舊版發布規則: {e}", file=sys.stderr)
+    except Exception as e:
+        if isinstance(e, FileNotFoundError):
+            raise
+        raise ValueError(f"[ERROR] Avatar manifest is invalid; refusing legacy publish fallback: {e}") from e
 
     # 2. 舊版備用規則 (Legacy Fallback - 僅在無 manifest 時生效)
     icon_src_dir = dashboard_dir / "icon" / "unit"

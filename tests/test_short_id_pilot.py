@@ -66,18 +66,25 @@ class TestAvatarServiceShortIdContract(unittest.TestCase):
             process.exit(2);
         }
 
-        // 2. unregistered legacy short ID 1411 (不 exact resolve，維持 fallback)
+        // 2. Unregistered short IDs are explicit unknown identities, never a
+        // name-inference candidate.
         const res1411 = AvatarService.resolveExactDialoguePortrait(1411);
-        if (res1411 !== null) {
-            console.error('FAIL_1411_SHOULD_BE_NULL', res1411);
+        if (!res1411 || res1411.status !== 'unknown_placeholder') {
+            console.error('FAIL_1411_MUST_FAIL_CLOSED', res1411);
             process.exit(3);
         }
 
-        // 3. arbitrary unknown short ID 1234 (fail-closed / fallback)
+        // 3. arbitrary unknown short ID also fails closed.
         const res1234 = AvatarService.resolveExactDialoguePortrait(1234);
-        if (res1234 !== null) {
-            console.error('FAIL_1234_SHOULD_BE_NULL', res1234);
+        if (!res1234 || res1234.status !== 'unknown_placeholder') {
+            console.error('FAIL_1234_MUST_FAIL_CLOSED', res1234);
             process.exit(4);
+        }
+
+        const unknownShortHtml = AvatarService.getAvatarHtmlByUnitId(1411, '路人', { '路人': 105801 });
+        if (!unknownShortHtml.includes('npc-avatar-placeholder') || unknownShortHtml.includes('105811.png')) {
+            console.error('FAIL_1411_HTML_MUST_NOT_INFER', unknownShortHtml);
+            process.exit(6);
         }
 
         // 5. existing >=100000 dialogue ID (100011) 行為保持不變
@@ -149,12 +156,12 @@ class TestValidatorShortIdContract(unittest.TestCase):
 
         # 建立 Story fixture
         story_rows = [
-            {"name": "秘書", "unit_id": 6112, "words": "test 6112"}
+            {"type": "dialogue", "name": "秘書", "unit_id": 6112, "words": "test 6112"}
         ]
         if include_legacy_1411:
-            story_rows.append({"name": "路人", "unit_id": 1411, "words": "test legacy 1411"})
+            story_rows.append({"type": "dialogue", "name": "路人", "unit_id": 1411, "words": "test legacy 1411"})
         if include_six_digit:
-            story_rows.append({"name": "可可蘿", "unit_id": 100011, "words": "test 100011"})
+            story_rows.append({"type": "dialogue", "name": "可可蘿", "unit_id": 100011, "words": "test 100011"})
 
         (story_dir / "5218004.json").write_text(json.dumps(story_rows), encoding="utf-8")
 
@@ -180,16 +187,16 @@ class TestValidatorShortIdContract(unittest.TestCase):
             self.assertFalse(ok, "Case B should fail on asset_key mismatch")
             self.assertTrue(any("asset_key" in err or "006111" in err for err in res.errors))
 
-    def test_case_c_legacy_short_id_unregistered_passes(self):
-        """Case C: Story 額外加入 unit_id = 1411 但 registry 沒有 1411 -> 不因 legacy short ID 產生 missing-registry error"""
+    def test_case_c_unregistered_short_id_fails(self):
+        """Any positive explicit short ID missing from the registry must fail."""
         from pipeline.validate import validate_avatar_manifest_and_assets, ValidationResult
         with tempfile.TemporaryDirectory() as tmpdir:
             tmppath = Path(tmpdir)
             self._create_fixture(tmppath, include_legacy_1411=True)
             res = ValidationResult()
             ok = validate_avatar_manifest_and_assets(tmppath, res)
-            self.assertTrue(ok, f"Case C should pass without error for legacy 1411: {res.errors}")
-            self.assertEqual(len(res.errors), 0)
+            self.assertFalse(ok, f"Case C must fail for unregistered short ID: {res.errors}")
+            self.assertTrue(any("登錄" in error for error in res.errors))
 
     def test_case_d_existing_six_digit_strict_coverage_maintained(self):
         """Case D: existing six-digit ID fixture -> 維持原本 strict coverage 行為 (若 registry 缺失 100011 則報錯 FAIL)"""
@@ -201,6 +208,18 @@ class TestValidatorShortIdContract(unittest.TestCase):
             ok = validate_avatar_manifest_and_assets(tmppath, res)
             self.assertFalse(ok, "Case D should fail when six-digit ID in story is missing from registry")
             self.assertTrue(any("100011" in err for err in res.errors))
+
+    def test_case_e_unreadable_or_invalid_story_fails_closed(self):
+        """A partial Story scan must not be accepted as a complete registry check."""
+        from pipeline.validate import validate_avatar_manifest_and_assets, ValidationResult
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmppath = Path(tmpdir)
+            self._create_fixture(tmppath)
+            (tmppath / "story" / "9999.json").write_text("{invalid-json", encoding="utf-8")
+            res = ValidationResult()
+            ok = validate_avatar_manifest_and_assets(tmppath, res)
+            self.assertFalse(ok, "Invalid canonical Story JSON must fail validation")
+            self.assertTrue(any("無法讀取或解析" in error for error in res.errors))
 
 
 if __name__ == '__main__':

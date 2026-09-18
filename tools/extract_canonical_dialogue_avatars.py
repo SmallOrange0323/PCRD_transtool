@@ -14,8 +14,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 
-import UnityPy
-from PIL import Image
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if not (PROJECT_ROOT / "dashboard").exists():
@@ -25,11 +23,9 @@ DASHBOARD_DIR = PROJECT_ROOT / "dashboard"
 ICON_DIR = DASHBOARD_DIR / "icon" / "unit"
 REGISTRY_PATH = DASHBOARD_DIR / "data" / "avatar_assets.json"
 MANIFEST_PATH = DASHBOARD_DIR / "versions" / "cached_manifests" / "storydata2_assetmanifest.txt"
-INPUT_IDS_FILE = PROJECT_ROOT / "docs" / "avatar_needs_unpack_ids.txt"
 MISSING_IDS_FILE = PROJECT_ROOT / "docs" / "avatar_official_asset_missing_ids.txt"
 
 SONET_HEADER = {"User-Agent": "Dalvik/2.1.0 (Linux; U; Android 10; Pixel 3 XL)"}
-UnityPy.config.FALLBACK_UNITY_VERSION = "2021.3.20f1"
 
 
 def calc_sha256(file_path: Path) -> str:
@@ -38,6 +34,51 @@ def calc_sha256(file_path: Path) -> str:
         for chunk in iter(lambda: f.read(65536), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+def collect_required_exact_dialogue_ids() -> List[int]:
+    """Return every positive explicit dialogue unit_id from canonical Stories.
+
+    This is deliberately independent of avatar_assets.json: the registry is
+    an inventory of required identities, never the authority that decides
+    which identities are required.
+    """
+    story_dir = DASHBOARD_DIR / "story"
+    required_ids = set()
+    parse_failures = []
+
+    for path in sorted(story_dir.glob("*.json"), key=lambda p: int(p.stem) if p.stem.isdigit() else -1):
+        if not path.stem.isdigit():
+            continue
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except Exception as exc:
+            parse_failures.append(f"{path.name}: {exc!r}")
+            continue
+
+        rows = data if isinstance(data, list) else data.get("dialogue", [])
+        if not isinstance(rows, list):
+            parse_failures.append(f"{path.name}: dialogue is not a list")
+            continue
+        for index, row in enumerate(rows):
+            if not isinstance(row, dict) or row.get("type") != "dialogue":
+                continue
+            raw_uid = row.get("unit_id")
+            if raw_uid is None:
+                continue
+            try:
+                if isinstance(raw_uid, bool):
+                    raise ValueError("boolean is not a unit_id")
+                uid = int(raw_uid)
+            except (TypeError, ValueError) as exc:
+                parse_failures.append(f"{path.name}:{index}: invalid unit_id {raw_uid!r} ({exc})")
+                continue
+            if uid > 0:
+                required_ids.add(uid)
+
+    if parse_failures:
+        raise RuntimeError("Canonical Story scan failed; refusing partial registry generation:\n" + "\n".join(parse_failures[:20]))
+    return sorted(required_ids)
 
 
 def load_manifest_map() -> Dict[str, str]:
@@ -74,6 +115,15 @@ def download_and_extract_avatar(
             "sha256": sha,
             "provenance": "storydata2_assetmanifest",
         }
+
+    # Keep the no-op/idempotent path dependency-free.  UnityPy is only needed
+    # when an official bundle must actually be downloaded and unpacked.
+    try:
+        import UnityPy
+    except ImportError as exc:
+        print(f"[ERROR] UnityPy is required to extract missing ID {unit_id}: {exc}", file=sys.stderr)
+        return None
+    UnityPy.config.FALLBACK_UNITY_VERSION = "2021.3.20f1"
 
     url = f"https://img-pc.so-net.tw/dl/pool/AssetBundles/{pool_hash[:2]}/{pool_hash}"
     req = urllib.request.Request(url, headers=SONET_HEADER)
@@ -123,15 +173,22 @@ def download_and_extract_avatar(
 def run_extraction(max_workers: int = 16) -> bool:
     print("Starting Canonical Dialogue Avatar Extractor...")
 
-    if not INPUT_IDS_FILE.exists():
-        print(f"[ERROR] Input file not found: {INPUT_IDS_FILE}", file=sys.stderr)
-        return False
+    unique_req_ids = collect_required_exact_dialogue_ids()
+    print(f"Canonical Story required exact IDs: {len(unique_req_ids)}")
 
-    with open(INPUT_IDS_FILE, "r", encoding="utf-8") as f:
-        req_ids = [int(line.strip()) for line in f if line.strip() and not line.startswith("#")]
-
-    unique_req_ids = sorted(list(set(req_ids)))
-    print(f"Requested IDs: {len(unique_req_ids)} unique IDs")
+    # placeholder_only is a verified, explicit no-binary state.  It remains in
+    # the required-ID contract but must not be sent through acquisition or be
+    # reported as a missing official asset.
+    with open(REGISTRY_PATH, "r", encoding="utf-8") as f:
+        current_registry = json.load(f)
+    placeholder_ids = {
+        a.get("unit_id")
+        for a in current_registry.get("assets", [])
+        if a.get("usage") == "dialogue" and a.get("status") == "placeholder_only"
+    }
+    acquisition_ids = [uid for uid in unique_req_ids if uid not in placeholder_ids]
+    if placeholder_ids:
+        print(f"Preserving {len(placeholder_ids)} placeholder_only IDs without acquisition")
 
     manifest_map = load_manifest_map()
     print(f"Manifest loaded: {len(manifest_map)} assets")
@@ -139,7 +196,7 @@ def run_extraction(max_workers: int = 16) -> bool:
     matched = []
     missing_in_manifest = []
 
-    for uid in unique_req_ids:
+    for uid in acquisition_ids:
         key = f"{uid:06d}"
         if key in manifest_map:
             matched.append((uid, key, manifest_map[key]))
@@ -194,22 +251,51 @@ def run_extraction(max_workers: int = 16) -> bool:
         registry_data = json.load(f)
 
     existing_assets = registry_data.get("assets", [])
-    existing_uids = {a.get("unit_id") for a in existing_assets if a.get("unit_id") is not None}
+    existing_dialogue_by_uid = {
+        a.get("unit_id"): a
+        for a in existing_assets
+        if a.get("unit_id") is not None and a.get("usage") == "dialogue"
+    }
 
     new_assets_added = 0
+    registry_changed = False
     updated_assets_list = list(existing_assets)
 
     for entry in extracted_entries:
         uid = entry["unit_id"]
-        if uid in existing_uids:
+        existing = existing_dialogue_by_uid.get(uid)
+        if existing:
+            # A verified no-image identity is an explicit semantic exception;
+            # downloading or discovering a same-numbered file must not silently
+            # erase it.  Likewise preserve any dialogue-only namespace override.
+            if existing.get("status") == "placeholder_only":
+                continue
+            # An existing verified binary is already canonical.  Do not churn
+            # its provenance or optional fields merely because this idempotent
+            # run rediscovered the same file.
+            if (
+                existing.get("status") == "active"
+                and existing.get("filename") == entry.get("filename")
+                and existing.get("size_bytes") == entry.get("size_bytes")
+                and existing.get("sha256") == entry.get("sha256")
+            ):
+                continue
+            if "dialogue_asset" in existing:
+                entry["dialogue_asset"] = existing["dialogue_asset"]
             for idx, a in enumerate(updated_assets_list):
-                if a.get("unit_id") == uid:
+                if a is existing:
                     updated_assets_list[idx] = entry
+                    registry_changed = True
                     break
         else:
             updated_assets_list.append(entry)
-            existing_uids.add(uid)
+            existing_dialogue_by_uid[uid] = entry
             new_assets_added += 1
+            registry_changed = True
+
+    if not registry_changed:
+        print("Registry already matches all discovered active assets; no rewrite needed.")
+        return True
 
     updated_assets_list.sort(key=lambda a: (a.get("unit_id", 0), a.get("usage", ""), a.get("filename", "")))
 

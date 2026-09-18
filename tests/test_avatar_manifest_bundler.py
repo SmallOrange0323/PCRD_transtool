@@ -275,6 +275,18 @@ class TestAvatarManifestBundler(unittest.TestCase):
         for fname, src in catalog_mappings.items():
             self.assertEqual(union_mappings[fname], dialogue_mappings.get(fname) or src)
 
+    def test_12_corrupt_manifest_never_uses_legacy_publish_rules(self):
+        """A corrupt registry is a build error, not permission to publish legacy files."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_dash = Path(tmpdir)
+            (tmp_dash / "data").mkdir(parents=True)
+            (tmp_dash / "icon" / "unit").mkdir(parents=True)
+            (tmp_dash / "data" / "avatar_assets.json").write_text("{not-json", encoding="utf-8")
+            (tmp_dash / "icon" / "unit" / "107411.png").write_bytes(b"legacy candidate")
+
+            with self.assertRaises(ValueError):
+                get_expected_dialogue_icon_mappings(tmp_dash)
+
 
 if __name__ == "__main__":
     unittest.main()
