@@ -45,6 +45,9 @@ jobs:
       - name: Run Avatar Manifest & Bundler Tests
         run: python -m unittest tests.test_avatar_manifest_bundler -v
 
+      - name: Run Exact Avatar ID Audit
+        run: python tools/diagnostics/audit_exact_avatar_ids.py
+
       - name: Run Voice Gap Pipeline Tests
         run: python -m unittest tests.test_voice_gap_pipeline -v
 
