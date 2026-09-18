@@ -170,6 +170,7 @@ test("Test 5A — Reality story explicit unit_id wins unconditionally over reali
     });
 
     assert(html.includes("icon/unit/105913.png"), "Explicit unit_id 105913 must be rendered");
+    assert(html.includes('QuestMapModule.showCharaModal(&quot;可可蘿&quot;, 105913)'), "Explicit unit_id must be forwarded to modal click");
     assert(!html.includes("105932.png"), "Must NOT rewrite explicit 105913 to realityAvatarMap 105932");
 });
 
@@ -183,6 +184,7 @@ test("Test 5B — Story 13830* explicit unit_id wins unconditionally over 138331
     });
 
     assert(html.includes("icon/unit/105812.png"), "Explicit unit_id 105812 must be rendered");
+    assert(html.includes('QuestMapModule.showCharaModal(&quot;貪吃佩可&quot;, 105812)'), "Explicit unit_id must be forwarded for special variants");
     assert(!html.includes("138331.png"), "Must NOT rewrite explicit 105812 to 138331");
 });
 

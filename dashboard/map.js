@@ -2577,8 +2577,12 @@ const QuestMapModule = {
         return window.CharaModalView ? window.CharaModalView.getCharaModal() : null;
     },
 
-    async showCharaModal(charaName) {
+    async showCharaModal(charaName, unitId = null) {
         const realCharaName = this.getCharaRealName(charaName);
+        const numericUnitId = Number(unitId);
+        const explicitUnitId = Number.isInteger(numericUnitId) && numericUnitId > 0
+            ? numericUnitId
+            : null;
         await this.ensureAppearanceMap();
 
         let profile = this.charaDetailCache[realCharaName];
@@ -2605,6 +2609,7 @@ const QuestMapModule = {
 
         window.CharaModalView.renderModal({
             realCharaName,
+            explicitUnitId,
             profile,
             appearances,
             speakerAvatars: this.speakerAvatars,

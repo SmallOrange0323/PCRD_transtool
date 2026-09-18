@@ -37,7 +37,7 @@ assert.match(movieLoader, /data\/movie_links\.json/);
 const movieOpen = between('async openMoviePopup(movieId) {', 'closeMoviePopup() {');
 assert.match(movieOpen, /await this\.ensureMovieLinks\(\)/);
 
-const modalOpen = between('async showCharaModal(charaName) {', 'jumpToStory(storyId');
+const modalOpen = between('async showCharaModal(charaName, unitId = null) {', 'jumpToStory(storyId');
 assert.match(modalOpen, /await this\.ensureAppearanceMap\(\)/);
 
 const speakerBranch = source.slice(

@@ -74,7 +74,7 @@ test('Test 1 — {0} displays as 佑樹 while exact avatar keeps raw identity', 
 
     assert(html.includes('佑樹'), 'Speaker display should normalize {0} to 佑樹');
     assert(html.includes('icon/unit/100011.png'), 'Explicit unit_id avatar should render');
-    assert(html.includes('QuestMapModule.showCharaModal(&quot;{0}&quot;)'), 'Modal identity must remain raw {0}');
+    assert(html.includes('QuestMapModule.showCharaModal(&quot;{0}&quot;, 100011)'), 'Modal click must preserve raw {0} identity and explicit unit_id');
     assert.strictEqual(exactCalls.length, 1);
     assert.strictEqual(exactCalls[0].unitId, 100011);
     assert.strictEqual(exactCalls[0].realName, '{0}', 'Exact avatar lookup must retain raw identity');
@@ -159,6 +159,52 @@ test('Test 4 — modal title displays 佑樹 while exact identity remains {0}', 
         assert(modalExactCall, 'Modal should use exact current-dialogue unit_id');
         assert.strictEqual(modalExactCall.unitId, 100011);
         assert.strictEqual(modalExactCall.realName, '{0}', 'Modal exact lookup must keep raw identity');
+    } finally {
+        CharaModalView.getCharaModal = originalGetCharaModal;
+        global.QuestMapModule.currentDialogueList = [];
+    }
+});
+
+
+test('Test 5 — clicked explicit unit_id wins even when current dialogue name is ambiguous', () => {
+    global.QuestMapModule.currentDialogueList = [
+        { name: 'NPC甲', words: '第一個變體', unit_id: 190811 },
+        { name: 'NPC甲', words: '第二個變體', unit_id: 190812 }
+    ];
+
+    const originalGetCharaModal = CharaModalView.getCharaModal;
+    const fakeModal = {
+        innerHTML: '',
+        classList: { add() {} }
+    };
+    CharaModalView.getCharaModal = () => fakeModal;
+
+    let modalExactCall = null;
+    const avatarService = {
+        getAvatarHtmlByUnitId(unitId, realName) {
+            modalExactCall = { unitId, realName };
+            return `<img data-unit-id="${unitId}" data-real-name="${realName}">`;
+        },
+        getAvatarHtml() {
+            return '<div>fallback</div>';
+        }
+    };
+
+    try {
+        CharaModalView.renderModal({
+            realCharaName: 'NPC甲',
+            explicitUnitId: 190812,
+            profile: null,
+            appearances: [],
+            speakerAvatars: {},
+            avatarService,
+            resolveStoryLabel: null,
+            escapeHtml: (text) => String(text)
+        });
+
+        assert(modalExactCall, 'Modal should perform an exact unit-id lookup');
+        assert.strictEqual(modalExactCall.unitId, 190812, 'Clicked unit_id must win over ambiguous name scan');
+        assert.strictEqual(modalExactCall.realName, 'NPC甲');
     } finally {
         CharaModalView.getCharaModal = originalGetCharaModal;
         global.QuestMapModule.currentDialogueList = [];
