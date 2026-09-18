@@ -36,6 +36,7 @@ const QuestMapModule = {
     directoryLevel1ScrollTop: 0,
     autoVoiceStartIndex: null,
     _dialogueCache: new Map(),
+    _loadDataPromise: null,
 
     normalizeString(str) {
         if (!str) return "";
@@ -240,6 +241,29 @@ const QuestMapModule = {
     },
 
     async loadData() {
+        if (this._loadDataPromise) {
+            return this._loadDataPromise;
+        }
+
+        this._loadDataPromise = this._loadDataInternal();
+        try {
+            return await this._loadDataPromise;
+        } catch (err) {
+            // Allow a later retry if startup failed (for example, transient DB/network error).
+            this._loadDataPromise = null;
+            throw err;
+        }
+    },
+
+    async _loadDataInternal() {
+        // The first menu can render before SQLite is ready. Data-backed views
+        // join the single database startup promise when they are actually needed.
+        // Keep this await outside the broad data-loading catch so startup failure
+        // propagates to the caller instead of rendering an empty data view.
+        if (window.PCRD_DATABASE_READY) {
+            await window.PCRD_DATABASE_READY;
+        }
+
         try {
             // 優先確保 ChapterDataService 完整就緒（包含章節中繼資料與分支劇情補充元數據）
             if (window.ChapterDataService) {
@@ -914,10 +938,10 @@ const QuestMapModule = {
     },
 
     async _render(skipAutoSelect = false) {
-        await this.loadData();
-
         const tab = document.getElementById('map-tab');
 
+        // The landing menu is static UI. Render it immediately instead of making
+        // first paint wait for SQLite and the full Story Map data preload.
         if (this.currentView === 'menu') {
             tab.innerHTML = `
             <div class="menu-container">
@@ -965,6 +989,8 @@ const QuestMapModule = {
  if (existingBackBtn) existingBackBtn.remove();
  return;
  }
+
+        await this.loadData();
 
         if (this.activeTabType === 'speaker') {
             this.renderSpeakerTab(tab);
