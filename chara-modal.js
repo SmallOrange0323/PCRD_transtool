@@ -36,6 +36,39 @@ window.CharaModalView = {
     },
 
     /**
+     * 從目前已載入的對白中解析角色唯一的 explicit unit_id。
+     * 若同一顯示角色在本話對應到多個不同 unit_id，則視為具歧義並回傳 null，
+     * 避免角色檔案視窗自行猜測換裝或 NPC 變體。
+     *
+     * @param {string} realCharaName - 經 QuestMapModule 正規化後的角色名稱
+     * @returns {number|null} 唯一 canonical unit_id，或 null
+     */
+    resolveCurrentDialogueUnitId(realCharaName) {
+        if (!realCharaName || !window.QuestMapModule || !Array.isArray(window.QuestMapModule.currentDialogueList)) {
+            return null;
+        }
+
+        const unitIds = new Set();
+        const resolver = (typeof window.QuestMapModule.getCharaRealName === 'function')
+            ? window.QuestMapModule.getCharaRealName.bind(window.QuestMapModule)
+            : (name) => name;
+
+        window.QuestMapModule.currentDialogueList.forEach(item => {
+            if (!item || item.type) return;
+            const resolvedName = resolver(item.name || "");
+            if (resolvedName !== realCharaName) return;
+
+            const unitId = Number(item.unit_id);
+            if (Number.isInteger(unitId) && unitId > 0) {
+                unitIds.add(unitId);
+            }
+        });
+
+        if (unitIds.size !== 1) return null;
+        return unitIds.values().next().value;
+    },
+
+    /**
      * 渲染登場話數按鈕列表 HTML
      * @param {number[]} appearances - 登場話數 ID 陣列
      * @param {Function} resolveStoryLabel - 話數標籤轉換函式 (storyId) => string
@@ -146,6 +179,7 @@ window.CharaModalView = {
     renderModal(options) {
         const {
             realCharaName,
+            explicitUnitId,
             profile,
             appearances,
             speakerAvatars,
@@ -158,14 +192,26 @@ window.CharaModalView = {
         const appListHtml = this.renderAppearancesHtml(appearances, resolveStoryLabel);
         const detailsHtml = this.renderProfileDetailsHtml(profile);
         const bioHtml = this.renderProfileBioHtml(profile, escapeHtml);
-        const avatarHtml = avatarService 
-            ? avatarService.getAvatarHtml(realCharaName, speakerAvatars)
+        const numericExplicitUnitId = Number(explicitUnitId);
+        const resolvedUnitId = (Number.isInteger(numericExplicitUnitId) && numericExplicitUnitId > 0)
+            ? numericExplicitUnitId
+            : this.resolveCurrentDialogueUnitId(realCharaName);
+        const avatarHtml = avatarService
+            ? (resolvedUnitId && typeof avatarService.getAvatarHtmlByUnitId === 'function'
+                ? avatarService.getAvatarHtmlByUnitId(resolvedUnitId, realCharaName, speakerAvatars)
+                : avatarService.getAvatarHtml(realCharaName, speakerAvatars))
             : "";
+
+        // 僅正規化 UI 顯示文字；realCharaName 仍保留原始 identity key（例如 {0}）。
+        const displayCharaName = (window.DialogueView && typeof window.DialogueView.normalizePlayerName === 'function')
+            ? window.DialogueView.normalizePlayerName(realCharaName)
+            : realCharaName;
+        const safeDisplayCharaName = escapeHtml ? escapeHtml(displayCharaName) : displayCharaName;
 
         modalEl.innerHTML = `
             <div class="game-modal-content" style="max-height: 85vh; overflow-y: auto;">
                 <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(94, 107, 125, 0.1); padding-bottom: 12px; margin-bottom: 15px;">
-                    <h3 style="margin: 0; color: var(--accent-color); font-size: 1.25rem;">🔍 角色檔案：${realCharaName}</h3>
+                    <h3 style="margin: 0; color: var(--accent-color); font-size: 1.25rem;">🔍 角色檔案：${safeDisplayCharaName}</h3>
                     <span class="game-modal-close-btn" onclick="document.getElementById('game-chara-modal').classList.remove('active')" style="cursor: pointer; font-size: 1.5rem; color: var(--text-secondary); transition: transform 0.2s;"
                            onmouseover="this.style.transform='rotate(90deg)'" onmouseout="this.style.transform='none'">&times;</span>
                 </div>

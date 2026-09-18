@@ -36,6 +36,9 @@ const QuestMapModule = {
     directoryLevel1ScrollTop: 0,
     autoVoiceStartIndex: null,
     _dialogueCache: new Map(),
+    _loadDataPromise: null,
+    _appearanceMapPromise: null,
+    _movieLinksPromise: null,
 
     normalizeString(str) {
         if (!str) return "";
@@ -81,20 +84,7 @@ const QuestMapModule = {
             }
 
             const stories = this.chapters[chName];
-            const firstStory = stories[0];
-            const groupId = firstStory ? firstStory.groupId : 1001;
-            const cardId = `${groupId}31`;
-            const remoteCardUrl = `https://redive.estertion.win/card/full/${cardId}.webp`;
-            const localCardUrl = `card/${cardId}.webp`;
-            
-            gridHtml += `
-                <div class="chara-card" style="background-image: url('${localCardUrl}'), url('${remoteCardUrl}')" onclick="QuestMapModule.selectChara('${this.escapeForAttr(chName)}')">
-                    <div class="chara-card-overlay">
-                        <div class="chara-card-name">${this.escapeHtml(chName)}</div>
-                        <div class="chara-card-count">${stories.length} 話</div>
-                    </div>
-                </div>
-            `;
+            gridHtml += this.getCharaCardHtml(chName, stories);
             count++;
         });
 
@@ -103,6 +93,40 @@ const QuestMapModule = {
         } else {
             gridEl.innerHTML = gridHtml;
         }
+    },
+
+    getCharaCardHtml(chName, stories) {
+        const firstStory = Array.isArray(stories) ? stories[0] : null;
+        const groupId = firstStory ? firstStory.groupId : 1001;
+        const cardId = `${groupId}31`;
+        const localCardUrl = `card/${cardId}.webp`;
+        const remoteCardUrl = `https://redive.estertion.win/card/full/${cardId}.webp`;
+
+        return `
+            <div class="chara-card" onclick="QuestMapModule.selectChara('${this.escapeForAttr(chName)}')">
+                <img
+                    class="chara-card-image"
+                    src="${localCardUrl}"
+                    data-fallback-src="${remoteCardUrl}"
+                    loading="lazy"
+                    decoding="async"
+                    alt=""
+                    onerror="QuestMapModule.handleCharaCardImageError(this)"
+                >
+                <div class="chara-card-overlay">
+                    <div class="chara-card-name">${this.escapeHtml(chName)}</div>
+                    <div class="chara-card-count">${Array.isArray(stories) ? stories.length : 0} 話</div>
+                </div>
+            </div>
+        `;
+    },
+
+    handleCharaCardImageError(img) {
+        if (!img || img.dataset.fallbackUsed === '1') return;
+        const fallbackSrc = img.dataset.fallbackSrc;
+        if (!fallbackSrc) return;
+        img.dataset.fallbackUsed = '1';
+        img.src = fallbackSrc;
     },
 
     escapeHtml(str) {
@@ -214,22 +238,66 @@ const QuestMapModule = {
         }
     },
 
+    // Story Map playback / async lifecycle has one source of truth here.
+    // AUTO.stop() normally stops MediaService too; the explicit stop also
+    // covers manual voice playback while AUTO itself is IDLE.
+    _stopStoryPlayback() {
+        if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
+            window.AutoVoiceController.stop();
+        }
+        if (window.MediaService && typeof window.MediaService.stopVoice === 'function') {
+            window.MediaService.stopVoice();
+        }
+    },
+
+    _invalidateStoryAsyncWork() {
+        this._storyRenderToken = (this._storyRenderToken || 0) + 1;
+        this._dialogueLoadingToken = null;
+        this.isLoadingDialogue = false;
+    },
+
+    teardownPlayback(options = {}) {
+        this._stopStoryPlayback();
+        if (options.invalidateAsync === true) {
+            this._invalidateStoryAsyncWork();
+        }
+    },
+
     async loadData() {
+        if (this._loadDataPromise) {
+            return this._loadDataPromise;
+        }
+
+        this._loadDataPromise = this._loadDataInternal();
         try {
-            // 優先確保 ChapterDataService 完整就緒（包含章節中繼資料與分支劇情補充元數據）
-            if (window.ChapterDataService) {
-                await window.ChapterDataService.load();
-            }
+            return await this._loadDataPromise;
+        } catch (err) {
+            // Allow a later retry if startup failed (for example, transient DB/network error).
+            this._loadDataPromise = null;
+            throw err;
+        }
+    },
 
-            // 確保 AvatarService Manifest 完整就緒 (Exact Dialogue Avatar 治理)
-            if (window.AvatarService && typeof window.AvatarService.ensureManifestLoaded === 'function') {
-                await window.AvatarService.ensureManifestLoaded();
-            }
+    async _loadDataInternal() {
+        // The first menu can render before SQLite is ready. Data-backed views
+        // join the single database startup promise when they are actually needed.
+        // Keep this await outside the broad data-loading catch so startup failure
+        // propagates to the caller instead of rendering an empty data view.
+        if (window.PCRD_DATABASE_READY) {
+            await window.PCRD_DATABASE_READY;
+        }
 
-            // 確保 StoryDataService 官方元數據完整就緒 (活動副標題解析)
-            if (window.StoryDataService && typeof window.StoryDataService.ensureMetadataLoaded === 'function') {
-                await window.StoryDataService.ensureMetadataLoaded();
-            }
+        try {
+            // 核心清單資料彼此獨立，並行準備。官方大綱 metadata 不屬於
+            // 清單核心資料；它會在使用者真正開啟單話大綱時由 StoryDataService 載入。
+            await Promise.all([
+                window.ChapterDataService
+                    ? window.ChapterDataService.load()
+                    : Promise.resolve(),
+                (window.AvatarService && typeof window.AvatarService.ensureManifestLoaded === 'function')
+                    ? window.AvatarService.ensureManifestLoaded()
+                    : Promise.resolve()
+            ]);
 
             if (Object.keys(this.speakerAvatars).length === 0) {
                 try {
@@ -301,30 +369,6 @@ const QuestMapModule = {
                 } catch (e) {
                     console.error("無法加載活動劇情摘要:", e);
                     this.eventSummaries = {};
-                }
-            }
-
-            if (!this.appearanceMap) {
-                try {
-                    const resp = await fetch('story/speaker_appearance.json');
-                    if (resp.ok) {
-                        this.appearanceMap = await resp.json();
-                        console.log(`[QuestMapModule] 成功載入登場角色快取`);
-                    }
-                } catch (e) {
-                    console.error("無法加載登場快取:", e);
-                }
-            }
-
-            if (!this.movieLinks) {
-                try {
-                    const resp = await fetch('data/movie_links.json');
-                    if (resp.ok) {
-                        this.movieLinks = await resp.json();
-                        console.log(`[QuestMapModule] 成功載入動畫連結映射表`);
-                    }
-                } catch (e) {
-                    this.movieLinks = {};
                 }
             }
 
@@ -687,6 +731,50 @@ const QuestMapModule = {
         }
     },
 
+    async ensureAppearanceMap() {
+        if (this.appearanceMap) return this.appearanceMap;
+        if (this._appearanceMapPromise) return this._appearanceMapPromise;
+
+        this._appearanceMapPromise = (async () => {
+            try {
+                const resp = await fetch('story/speaker_appearance.json');
+                if (!resp.ok) return null;
+                this.appearanceMap = await resp.json();
+                console.log('[QuestMapModule] 成功載入登場角色快取');
+                return this.appearanceMap;
+            } catch (e) {
+                console.error('無法加載登場快取:', e);
+                return null;
+            } finally {
+                this._appearanceMapPromise = null;
+            }
+        })();
+
+        return this._appearanceMapPromise;
+    },
+
+    async ensureMovieLinks() {
+        if (this.movieLinks) return this.movieLinks;
+        if (this._movieLinksPromise) return this._movieLinksPromise;
+
+        this._movieLinksPromise = (async () => {
+            try {
+                const resp = await fetch('data/movie_links.json');
+                if (!resp.ok) return null;
+                this.movieLinks = await resp.json();
+                console.log('[QuestMapModule] 成功載入動畫連結映射表');
+                return this.movieLinks;
+            } catch (e) {
+                console.warn('無法加載動畫連結映射表:', e);
+                return null;
+            } finally {
+                this._movieLinksPromise = null;
+            }
+        })();
+
+        return this._movieLinksPromise;
+    },
+
     groupStories() {
         this.chapters = {};
         const filtered = this.stories.filter(s => s.type === 'main' && s.part === this.currentPart);
@@ -822,9 +910,7 @@ const QuestMapModule = {
     },
 
     switchTabType(type) {
-        if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
-            window.AutoVoiceController.stop();
-        }
+        this.teardownPlayback({ invalidateAsync: true });
         this.activeTabType = type;
         this.activeStoryId = null;
         this.expandedChapter = null;
@@ -833,25 +919,21 @@ const QuestMapModule = {
         this.safeRender(() => this._render());
     },
 
-	goBackToMenu() {
+    goBackToMenu() {
+        this.teardownPlayback({ invalidateAsync: true });
         window.ReaderNavigation?.left();
         this.activeStoryId = null;
-        if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
-            window.AutoVoiceController.stop();
-        }
-		this.currentView = 'menu';
-		this._fadeTransition(() => this._render());
-	},
+        this.currentView = 'menu';
+        this._fadeTransition(() => this._render());
+    },
 
     handleFloatingBack() {
         this.handleBackClick();
     },
 
     enterCategory(type) {
+        this.teardownPlayback({ invalidateAsync: true });
         window.ReaderNavigation?.left();
-        if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
-            window.AutoVoiceController.stop();
-        }
         this.currentView = 'list';
         this.activeTabType = type;
         this.activeStoryId = null;
@@ -895,10 +977,10 @@ const QuestMapModule = {
     },
 
     async _render(skipAutoSelect = false) {
-        await this.loadData();
-
         const tab = document.getElementById('map-tab');
 
+        // The landing menu is static UI. Render it immediately instead of making
+        // first paint wait for SQLite and the full Story Map data preload.
         if (this.currentView === 'menu') {
             tab.innerHTML = `
             <div class="menu-container">
@@ -947,7 +1029,10 @@ const QuestMapModule = {
  return;
  }
 
+        await this.loadData();
+
         if (this.activeTabType === 'speaker') {
+            await this.ensureAppearanceMap();
             this.renderSpeakerTab(tab);
             return;
         }
@@ -984,21 +1069,7 @@ const QuestMapModule = {
                 }
 
                 const stories = this.chapters[chName];
-                const firstStory = stories[0];
-                const groupId = firstStory ? firstStory.groupId : 1001;
-                // 3★卡面 ID
-                const cardId = `${groupId}31`;
-                const remoteCardUrl = `https://redive.estertion.win/card/full/${cardId}.webp`;
-                const localCardUrl = `card/${cardId}.webp`;
-                
-                gridHtml += `
-                    <div class="chara-card" style="background-image: url('${localCardUrl}'), url('${remoteCardUrl}')" onclick="QuestMapModule.selectChara('${this.escapeForAttr(chName)}')">
-                        <div class="chara-card-overlay">
-                            <div class="chara-card-name">${this.escapeHtml(chName)}</div>
-                            <div class="chara-card-count">${stories.length} 話</div>
-                        </div>
-                    </div>
-                `;
+                gridHtml += this.getCharaCardHtml(chName, stories);
                 count++;
             });
 
@@ -1314,10 +1385,8 @@ const QuestMapModule = {
     },
 
     switchPart(part) {
+        this.teardownPlayback({ invalidateAsync: true });
         window.ReaderNavigation?.left();
-        if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
-            window.AutoVoiceController.stop();
-        }
         this.currentPart = part;
         this.activeStoryId = null;
         this.expandedChapter = null;
@@ -1577,15 +1646,13 @@ const QuestMapModule = {
     },
 
     async selectStory(storyId) {
-        if (!this.getStoryById(storyId)) return;
-        if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
-            window.AutoVoiceController.stop();
-        }
-        const previousStoryId = this.activeStoryId;
-        if (previousStoryId === storyId) {
-            // 同話重複點擊：保持現有捲動位置，絕不跳回頂部
+        // Same-story re-selection is a strict no-op: keep AUTO/manual playback
+        // and the current scroll position intact.
+        if (this.activeStoryId === storyId) {
             return;
         }
+        this._stopStoryPlayback();
+        if (!this.getStoryById(storyId)) return;
         window.ReaderNavigation?.beforeSelect();
         this.activeStoryId = storyId;
         // A failed new request must never leave the preceding story playable.
@@ -1703,6 +1770,7 @@ const QuestMapModule = {
     },
 
     exitReader() {
+        this.teardownPlayback({ invalidateAsync: true });
         window.ReaderNavigation?.left();
         this.activeStoryId = null;
         document.querySelectorAll('.story-item').forEach(el => el.classList.remove('active'));
@@ -2182,26 +2250,24 @@ const QuestMapModule = {
 
     async loadDialogue(storyId, token) {
         const currentToken = token || this._storyRenderToken;
-        const board = document.getElementById('dialogue-board');
-        if (!board) return;
+        const isCurrentStory = () => (
+            currentToken === this._storyRenderToken &&
+            this.activeStoryId === storyId
+        );
 
-        // 若切換話數，檢查 token
-        if (currentToken !== this._storyRenderToken || this.activeStoryId !== storyId) {
-            return;
-        }
+        if (!isCurrentStory()) return;
 
-        // Token-scoped guard: 僅防止同一 token / 相同請求重複啟動，絕不阻止新話數 (新 token)
-        if (this._dialogueLoadingToken === currentToken) {
-            return;
-        }
+        const initialBoard = document.getElementById('dialogue-board');
+        if (!initialBoard) return;
+        if (this._dialogueLoadingToken === currentToken) return;
 
         this._dialogueLoadingToken = currentToken;
         this.isLoadingDialogue = true;
-
-        window.DialogueView.renderLoading(board);
+        window.DialogueView.renderLoading(initialBoard);
 
         try {
-            let dialogueList, speakerNames;
+            let dialogueList;
+            let speakerNames;
             const cached = this._dialogueCache.get(storyId);
 
             if (cached) {
@@ -2213,23 +2279,20 @@ const QuestMapModule = {
                 if (!response.ok) throw new Error("HTTP " + response.status);
 
                 const rawDialogueList = await response.json();
-
-                // 再次檢查 token (防止非同步 fetch 期間話數已切換)
-                if (currentToken !== this._storyRenderToken || this.activeStoryId !== storyId) {
-                    return;
-                }
+                if (!isCurrentStory()) return;
 
                 if (!rawDialogueList || rawDialogueList.length === 0) {
-                    window.DialogueView.renderEmpty(board);
+                    const liveBoard = document.getElementById('dialogue-board');
+                    if (liveBoard && isCurrentStory()) {
+                        window.DialogueView.renderEmpty(liveBoard);
+                    }
                     return;
                 }
 
-                // 使用 DialogueNormalizer 進行純資料正規化與發言人萃取
                 const normalized = window.DialogueNormalizer.normalize(rawDialogueList);
                 dialogueList = normalized.dialogueList;
                 speakerNames = normalized.speakerNames;
 
-                // 寫入 LRU 30 話快取
                 if (this._dialogueCache.size >= 30) {
                     const oldestKey = this._dialogueCache.keys().next().value;
                     this._dialogueCache.delete(oldestKey);
@@ -2238,41 +2301,45 @@ const QuestMapModule = {
             }
 
             await this.loadDialogueAvatars(speakerNames);
+            if (!isCurrentStory()) return;
 
-            // 再次檢查 token (防止頭像查詢期間話數已切換)
-            if (currentToken !== this._storyRenderToken || this.activeStoryId !== storyId) {
-                return;
-            }
+            // Final commit barrier: resolve live DOM targets after the last await,
+            // never write into a board captured for an older render.
+            const liveBoard = document.getElementById('dialogue-board');
+            if (!liveBoard || !isCurrentStory()) return;
 
             const badgesBar = document.getElementById('chara-badges-bar');
             const cinemaPanel = document.querySelector('.cinema-panel');
             const currentStoryObj = this.getStoryById(storyId);
 
             window.DialogueView.renderDialogue({
-                boardEl: board,
+                boardEl: liveBoard,
                 badgesBarEl: badgesBar,
                 cinemaPanelEl: cinemaPanel,
-                storyId: storyId,
-                dialogueList: dialogueList,
-                speakerNames: speakerNames,
+                storyId,
+                dialogueList,
+                speakerNames,
                 speakerAvatars: this.speakerAvatars,
-                currentStoryObj: currentStoryObj,
+                currentStoryObj,
                 resolveRealName: this.getCharaRealName.bind(this),
                 escapeHtml: this.escapeHtml.bind(this)
             });
 
+            if (!isCurrentStory()) return;
             this.currentDialogueList = dialogueList;
-            window.ReaderNavigation?.dialogueReady(storyId);
             this.updateAutoVoiceUI();
+            window.ReaderNavigation?.dialogueReady(storyId);
 
             if (this.autoVoiceStartIndex !== null && window.DialogueView && typeof window.DialogueView.setAutoStartSelection === 'function') {
-                window.DialogueView.setAutoStartSelection(board, this.autoVoiceStartIndex);
+                window.DialogueView.setAutoStartSelection(liveBoard, this.autoVoiceStartIndex);
             }
-
         } catch (err) {
-            if (currentToken === this._storyRenderToken && this.activeStoryId === storyId) {
+            if (isCurrentStory()) {
                 console.error("加載台詞失敗:", err);
-                window.DialogueView.renderError(board, storyId);
+                const liveBoard = document.getElementById('dialogue-board');
+                if (liveBoard && isCurrentStory()) {
+                    window.DialogueView.renderError(liveBoard, storyId);
+                }
             }
         } finally {
             if (this._dialogueLoadingToken === currentToken) {
@@ -2441,8 +2508,9 @@ const QuestMapModule = {
         }
     },
 
-    openMoviePopup(movieId) {
+    async openMoviePopup(movieId) {
         if (!movieId) return;
+        await this.ensureMovieLinks();
         if (window.MediaService && typeof window.MediaService.openMoviePopup === 'function') {
             return window.MediaService.openMoviePopup(movieId, this.movieLinks);
         }
@@ -2509,8 +2577,13 @@ const QuestMapModule = {
         return window.CharaModalView ? window.CharaModalView.getCharaModal() : null;
     },
 
-    async showCharaModal(charaName) {
+    async showCharaModal(charaName, unitId = null) {
         const realCharaName = this.getCharaRealName(charaName);
+        const numericUnitId = Number(unitId);
+        const explicitUnitId = Number.isInteger(numericUnitId) && numericUnitId > 0
+            ? numericUnitId
+            : null;
+        await this.ensureAppearanceMap();
 
         let profile = this.charaDetailCache[realCharaName];
         if (!profile) {
@@ -2536,6 +2609,7 @@ const QuestMapModule = {
 
         window.CharaModalView.renderModal({
             realCharaName,
+            explicitUnitId,
             profile,
             appearances,
             speakerAvatars: this.speakerAvatars,
@@ -2675,3 +2749,9 @@ if (window.ChapterDataService && window.AvatarService && window.SpeakerView && w
 }
 
 window.QuestMapModule = QuestMapModule;
+
+if (typeof window.addEventListener === 'function') {
+    window.addEventListener('pagehide', () => {
+        QuestMapModule.teardownPlayback({ invalidateAsync: true });
+    });
+}

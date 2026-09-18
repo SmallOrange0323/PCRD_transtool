@@ -88,8 +88,7 @@ console.log("dialogue-view.js loaded");
         renderSpeakerBadges(badgesBarEl, options) {
             if (!badgesBarEl) return;
             const { speakerNames, speakerAvatars, resolveRealName } = options || {};
-            const normalizedSpeakerNames = (speakerNames || []).map(n => this.normalizePlayerName(n));
-            const validSpeakers = normalizedSpeakerNames.filter(n => n !== "旁白" && n !== "【系統】" && !n.includes("【選擇肢】") && !n.includes("【選擇】") && n !== "？？？");
+            const validSpeakers = (speakerNames || []).filter(n => n !== "旁白" && n !== "【系統】" && !n.includes("【選擇肢】") && !n.includes("【選擇】") && n !== "？？？");
             const playableSpeakers = validSpeakers.filter(name => {
                 const realName = resolveRealName ? resolveRealName(name) : name;
                 return !!(speakerAvatars && speakerAvatars[realName]);
@@ -109,8 +108,9 @@ console.log("dialogue-view.js loaded");
                 if (renderedSet.has(realName)) return;
                 renderedSet.add(realName);
                 const avatarHtml = window.AvatarService.getAvatarHtml(realName, speakerAvatars);
+                const displayName = this.normalizePlayerName(realName);
                 badgeHtmls.push(`
-                    <div class="game-chara-avatar-badge" title="${realName}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})">
+                    <div class="game-chara-avatar-badge" title="${this.escapeHtml(displayName)}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})">
                         ${avatarHtml}
                     </div>
                 `);
@@ -189,30 +189,33 @@ console.log("dialogue-view.js loaded");
                     return;
                 }
 
+                // 顯示文字與角色身份分離：玩家 placeholder 只在 UI 顯示為「佑樹」，
+                // avatar / modal / unit_id 查找仍使用官方原始 speaker key（例如 {0}）。
                 const rawSpeaker = item.name || "旁白";
-                const speaker = this.normalizePlayerName(rawSpeaker);
-                const safeSpeaker = escapeFn(speaker);
+                const displaySpeaker = this.normalizePlayerName(rawSpeaker);
+                const safeSpeaker = escapeFn(displaySpeaker);
                 const normalizedRawWords = this.normalizePlayerName(item.words || "");
                 const words = escapeFn(normalizedRawWords)
                     .replace(/\\n/g, "<br>")
                     .replace(/\n/g, "<br>");
 
                 let speakerClass = "";
-                let isNarrator = speaker === "旁白" || speaker === "【系統】" || speaker === "？？？";
-                let isChoice = speaker.includes("【選擇肢】") || speaker.includes("【選擇】");
+                let isNarrator = rawSpeaker === "旁白" || rawSpeaker === "【系統】" || rawSpeaker === "？？？";
+                let isChoice = rawSpeaker.includes("【選擇肢】") || rawSpeaker.includes("【選擇】");
 
                 if (isNarrator) speakerClass = "role-narrator";
                 else if (isChoice) speakerClass = "role-choice";
 
-                const realNameForBtn = (isNarrator || isChoice) ? "" : (resolveRealName ? resolveRealName(speaker) : speaker);
+                const realNameForBtn = (isNarrator || isChoice) ? "" : (resolveRealName ? resolveRealName(rawSpeaker) : rawSpeaker);
+
+                const numUnitId = Number(item.unit_id);
+                const hasExplicitUnitId = Number.isInteger(numUnitId) && numUnitId > 0;
+                const modalUnitIdArg = hasExplicitUnitId ? `, ${numUnitId}` : "";
 
                 let avatarHtml = "";
                 if (!isNarrator && !isChoice) {
                     const realName = realNameForBtn;
                     let avatarContent = "";
-
-                    const numUnitId = Number(item.unit_id);
-                    const hasExplicitUnitId = Number.isInteger(numUnitId) && numUnitId > 0;
 
                     if (hasExplicitUnitId) {
                         // A. 顯式 Canonical unit_id 絕對優先 (EXPLICIT ALWAYS WINS)
@@ -223,7 +226,7 @@ console.log("dialogue-view.js loaded");
                         let inferredAvatars = speakerAvatars;
                         const isRealityStory = [2210102, 2211102, 2212103, 2212104, 2213104, 2214101, 2215102].includes(Number(storyId));
                         if (isRealityStory && window.AvatarService && window.AvatarService.realityAvatarMap) {
-                            const realityId = window.AvatarService.realityAvatarMap[realName] || window.AvatarService.realityAvatarMap[speaker];
+                            const realityId = window.AvatarService.realityAvatarMap[realName] || window.AvatarService.realityAvatarMap[rawSpeaker];
                             if (realityId) {
                                 inferredAvatars = Object.assign({}, speakerAvatars, { [realName]: realityId });
                             }
@@ -235,7 +238,7 @@ console.log("dialogue-view.js loaded");
                     }
 
                     avatarHtml = `
-                        <div class="game-chara-avatar-wrapper" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})" style="cursor: pointer;">
+                        <div class="game-chara-avatar-wrapper" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')}${modalUnitIdArg})" style="cursor: pointer;">
                              <div class="game-chara-avatar">
                                  ${avatarContent}
                              </div>
@@ -251,7 +254,7 @@ console.log("dialogue-view.js loaded");
                         ${avatarHtml}
                         <div class="game-dialogue-content">
                             <div class="game-dialogue-speaker-wrap">
-                                <span class="game-dialogue-speaker" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realNameForBtn).replace(/"/g, '&quot;')})" style="cursor: pointer;" title="查看角色資料">
+                                <span class="game-dialogue-speaker" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realNameForBtn).replace(/"/g, '&quot;')}${modalUnitIdArg})" style="cursor: pointer;" title="查看角色資料">
                                     ${safeSpeaker}
                                 </span>
                                 ${voiceBtn}
