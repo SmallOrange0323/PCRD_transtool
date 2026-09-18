@@ -84,6 +84,30 @@ test("Test 1 — Speaker badges rendering and exclusions", () => {
     assert.strictEqual(mockDisplay, "none", "Badges bar should hide when no playable speakers");
 });
 
+// Test 1B — Explicit dialogue unit_id bypasses legacy speakerAvatars gate
+test("Test 1B — Explicit unit_id renders badge without name registry entry", () => {
+    let mockDisplay = "";
+    let mockHtml = "";
+    const badgesBarEl = {
+        style: {
+            set display(val) { mockDisplay = val; },
+            get display() { return mockDisplay; }
+        },
+        set innerHTML(val) { mockHtml = val; },
+        get innerHTML() { return mockHtml; }
+    };
+
+    DialogueView.renderSpeakerBadges(badgesBarEl, {
+        speakerNames: ["秘書"],
+        dialogueList: [{ name: "秘書", unit_id: 6112 }],
+        speakerAvatars: {},
+        resolveRealName: (n) => n
+    });
+
+    assert.strictEqual(mockDisplay, "flex", "Explicit-ID speaker badge should be visible");
+    assert(mockHtml.includes("icon/unit/6112.png"), "Badge must use exact unit_id 6112");
+});
+
 // Test 2 — Normal dialogue bubble
 test("Test 2 — Normal bubble markup", () => {
     const { html } = DialogueView.generateDialogueHtml({
