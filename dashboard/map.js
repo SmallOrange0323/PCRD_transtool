@@ -256,12 +256,15 @@ const QuestMapModule = {
     },
 
     async _loadDataInternal() {
+        // The first menu can render before SQLite is ready. Data-backed views
+        // join the single database startup promise when they are actually needed.
+        // Keep this await outside the broad data-loading catch so startup failure
+        // propagates to the caller instead of rendering an empty data view.
+        if (window.PCRD_DATABASE_READY) {
+            await window.PCRD_DATABASE_READY;
+        }
+
         try {
-            // The first menu can render before SQLite is ready. Data-backed views
-            // join the single database startup promise when they are actually needed.
-            if (window.PCRD_DATABASE_READY) {
-                await window.PCRD_DATABASE_READY;
-            }
             // 優先確保 ChapterDataService 完整就緒（包含章節中繼資料與分支劇情補充元數據）
             if (window.ChapterDataService) {
                 await window.ChapterDataService.load();
