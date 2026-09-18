@@ -88,7 +88,8 @@ console.log("dialogue-view.js loaded");
         renderSpeakerBadges(badgesBarEl, options) {
             if (!badgesBarEl) return;
             const { speakerNames, speakerAvatars, resolveRealName } = options || {};
-            const validSpeakers = (speakerNames || []).filter(n => n !== "旁白" && n !== "【系統】" && !n.includes("【選擇肢】") && !n.includes("【選擇】") && n !== "？？？");
+            const normalizedSpeakerNames = (speakerNames || []).map(n => this.normalizePlayerName(n));
+            const validSpeakers = normalizedSpeakerNames.filter(n => n !== "旁白" && n !== "【系統】" && !n.includes("【選擇肢】") && !n.includes("【選擇】") && n !== "？？？");
             const playableSpeakers = validSpeakers.filter(name => {
                 const realName = resolveRealName ? resolveRealName(name) : name;
                 return !!(speakerAvatars && speakerAvatars[realName]);
