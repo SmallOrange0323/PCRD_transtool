@@ -88,10 +88,17 @@ console.log("dialogue-view.js loaded");
         renderSpeakerBadges(badgesBarEl, options) {
             if (!badgesBarEl) return;
             const { speakerNames, speakerAvatars, resolveRealName } = options || {};
-            const normalizedSpeakerNames = (speakerNames || []).map(n => this.normalizePlayerName(n));
-            const validSpeakers = normalizedSpeakerNames.filter(n => n !== "旁白" && n !== "【系統】" && !n.includes("【選擇肢】") && !n.includes("【選擇】") && n !== "？？？");
-            const playableSpeakers = validSpeakers.filter(name => {
-                const realName = resolveRealName ? resolveRealName(name) : name;
+            // Keep the raw speaker key for identity lookup; normalize only the
+            // text shown in the badge tooltip. For example, {0} must still
+            // resolve speakerAvatars["{0}"] after displaying as 佑樹.
+            const validSpeakers = (speakerNames || []).filter(rawName => {
+                const displayName = this.normalizePlayerName(rawName);
+                return displayName !== "旁白" && displayName !== "【系統】" && !displayName.includes("【選擇肢】") && !displayName.includes("【選擇】") && displayName !== "？？？";
+            });
+            const playableSpeakers = validSpeakers.map(rawName => {
+                const realName = resolveRealName ? resolveRealName(rawName) : rawName;
+                return { rawName, realName };
+            }).filter(({ realName }) => {
                 return !!(speakerAvatars && speakerAvatars[realName]);
             });
 
@@ -104,12 +111,11 @@ console.log("dialogue-view.js loaded");
             const renderedSet = new Set();
             const badgeHtmls = [];
 
-            playableSpeakers.forEach(name => {
-                const realName = resolveRealName ? resolveRealName(name) : name;
+            playableSpeakers.forEach(({ rawName, realName }) => {
                 if (renderedSet.has(realName)) return;
                 renderedSet.add(realName);
                 const avatarHtml = window.AvatarService.getAvatarHtml(realName, speakerAvatars);
-                const displayName = this.normalizePlayerName(realName);
+                const displayName = this.normalizePlayerName(rawName);
                 badgeHtmls.push(`
                     <div class="game-chara-avatar-badge" title="${this.escapeHtml(displayName)}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})">
                         ${avatarHtml}
