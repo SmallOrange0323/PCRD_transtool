@@ -37,6 +37,8 @@ const QuestMapModule = {
     autoVoiceStartIndex: null,
     _dialogueCache: new Map(),
     _loadDataPromise: null,
+    _appearanceMapPromise: null,
+    _movieLinksPromise: null,
 
     normalizeString(str) {
         if (!str) return "";
@@ -265,20 +267,16 @@ const QuestMapModule = {
         }
 
         try {
-            // 優先確保 ChapterDataService 完整就緒（包含章節中繼資料與分支劇情補充元數據）
-            if (window.ChapterDataService) {
-                await window.ChapterDataService.load();
-            }
-
-            // 確保 AvatarService Manifest 完整就緒 (Exact Dialogue Avatar 治理)
-            if (window.AvatarService && typeof window.AvatarService.ensureManifestLoaded === 'function') {
-                await window.AvatarService.ensureManifestLoaded();
-            }
-
-            // 確保 StoryDataService 官方元數據完整就緒 (活動副標題解析)
-            if (window.StoryDataService && typeof window.StoryDataService.ensureMetadataLoaded === 'function') {
-                await window.StoryDataService.ensureMetadataLoaded();
-            }
+            // 核心清單資料彼此獨立，並行準備。官方大綱 metadata 不屬於
+            // 清單核心資料；它會在使用者真正開啟單話大綱時由 StoryDataService 載入。
+            await Promise.all([
+                window.ChapterDataService
+                    ? window.ChapterDataService.load()
+                    : Promise.resolve(),
+                (window.AvatarService && typeof window.AvatarService.ensureManifestLoaded === 'function')
+                    ? window.AvatarService.ensureManifestLoaded()
+                    : Promise.resolve()
+            ]);
 
             if (Object.keys(this.speakerAvatars).length === 0) {
                 try {
@@ -350,30 +348,6 @@ const QuestMapModule = {
                 } catch (e) {
                     console.error("無法加載活動劇情摘要:", e);
                     this.eventSummaries = {};
-                }
-            }
-
-            if (!this.appearanceMap) {
-                try {
-                    const resp = await fetch('story/speaker_appearance.json');
-                    if (resp.ok) {
-                        this.appearanceMap = await resp.json();
-                        console.log(`[QuestMapModule] 成功載入登場角色快取`);
-                    }
-                } catch (e) {
-                    console.error("無法加載登場快取:", e);
-                }
-            }
-
-            if (!this.movieLinks) {
-                try {
-                    const resp = await fetch('data/movie_links.json');
-                    if (resp.ok) {
-                        this.movieLinks = await resp.json();
-                        console.log(`[QuestMapModule] 成功載入動畫連結映射表`);
-                    }
-                } catch (e) {
-                    this.movieLinks = {};
                 }
             }
 
@@ -736,6 +710,50 @@ const QuestMapModule = {
         }
     },
 
+    async ensureAppearanceMap() {
+        if (this.appearanceMap) return this.appearanceMap;
+        if (this._appearanceMapPromise) return this._appearanceMapPromise;
+
+        this._appearanceMapPromise = (async () => {
+            try {
+                const resp = await fetch('story/speaker_appearance.json');
+                if (!resp.ok) return null;
+                this.appearanceMap = await resp.json();
+                console.log('[QuestMapModule] 成功載入登場角色快取');
+                return this.appearanceMap;
+            } catch (e) {
+                console.error('無法加載登場快取:', e);
+                return null;
+            } finally {
+                this._appearanceMapPromise = null;
+            }
+        })();
+
+        return this._appearanceMapPromise;
+    },
+
+    async ensureMovieLinks() {
+        if (this.movieLinks) return this.movieLinks;
+        if (this._movieLinksPromise) return this._movieLinksPromise;
+
+        this._movieLinksPromise = (async () => {
+            try {
+                const resp = await fetch('data/movie_links.json');
+                if (!resp.ok) return null;
+                this.movieLinks = await resp.json();
+                console.log('[QuestMapModule] 成功載入動畫連結映射表');
+                return this.movieLinks;
+            } catch (e) {
+                console.warn('無法加載動畫連結映射表:', e);
+                return null;
+            } finally {
+                this._movieLinksPromise = null;
+            }
+        })();
+
+        return this._movieLinksPromise;
+    },
+
     groupStories() {
         this.chapters = {};
         const filtered = this.stories.filter(s => s.type === 'main' && s.part === this.currentPart);
@@ -993,6 +1011,7 @@ const QuestMapModule = {
         await this.loadData();
 
         if (this.activeTabType === 'speaker') {
+            await this.ensureAppearanceMap();
             this.renderSpeakerTab(tab);
             return;
         }
@@ -2482,8 +2501,9 @@ const QuestMapModule = {
         }
     },
 
-    openMoviePopup(movieId) {
+    async openMoviePopup(movieId) {
         if (!movieId) return;
+        await this.ensureMovieLinks();
         if (window.MediaService && typeof window.MediaService.openMoviePopup === 'function') {
             return window.MediaService.openMoviePopup(movieId, this.movieLinks);
         }
@@ -2552,6 +2572,7 @@ const QuestMapModule = {
 
     async showCharaModal(charaName) {
         const realCharaName = this.getCharaRealName(charaName);
+        await this.ensureAppearanceMap();
 
         let profile = this.charaDetailCache[realCharaName];
         if (!profile) {

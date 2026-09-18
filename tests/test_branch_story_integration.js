@@ -334,12 +334,12 @@ test("Test 16 — dashboard/map.js enforces ChapterDataService.load() before bra
     assert(loadDataMatch, "loadData function must exist in dashboard/map.js");
     const loadDataBody = loadDataMatch[1];
 
-    const loadCallIndex = loadDataBody.indexOf("await window.ChapterDataService.load()");
+    const loadCallIndex = loadDataBody.indexOf("window.ChapterDataService.load()");
     const branchMergeIndex = loadDataBody.indexOf("window.ChapterDataService.branchStories");
 
-    assert(loadCallIndex >= 0, "await window.ChapterDataService.load() must be called in loadData()");
+    assert(loadCallIndex >= 0, "window.ChapterDataService.load() must be scheduled in loadData()");
     assert(branchMergeIndex >= 0, "window.ChapterDataService.branchStories must be accessed in loadData()");
-    assert(loadCallIndex < branchMergeIndex, "ChapterDataService.load() must occur BEFORE branchStories is read for merge");
+    assert(loadCallIndex < branchMergeIndex, "ChapterDataService.load() must be scheduled BEFORE branchStories is read for merge");
 
     // 確保尾端無多餘的重複 load 呼叫
     const remainingAfterMerge = loadDataBody.substring(branchMergeIndex);
