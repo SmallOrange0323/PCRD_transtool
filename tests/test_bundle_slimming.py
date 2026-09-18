@@ -42,6 +42,7 @@ from pipeline.bundle import (
     prune_stale_dist_assets,
     build_expected_icon_unit_set,
     get_expected_icon_unit_mappings,
+    get_expected_dialogue_icon_mappings,
     render_index_html,
     sync_nojekyll,
     calculate_expected_additions_and_deltas,
@@ -58,6 +59,16 @@ from pipeline.validate import (
 
 class TestBundleSlimmingAndPrune(unittest.TestCase):
 
+    @staticmethod
+    def _write_avatar_manifest(dashboard_dir: Path, assets=None):
+        """Create the smallest valid registry required by manifest-first bundling."""
+        manifest_path = dashboard_dir / "data" / "avatar_assets.json"
+        manifest_path.parent.mkdir(parents=True, exist_ok=True)
+        manifest_path.write_text(
+            json.dumps({"version": 1, "assets": assets or []}, ensure_ascii=False),
+            encoding="utf-8",
+        )
+
     def setUp(self):
         self.temp_dir = tempfile.mkdtemp(prefix="pcrd_bundle_test_")
         self.mock_root = Path(self.temp_dir)
@@ -72,6 +83,7 @@ class TestBundleSlimmingAndPrune(unittest.TestCase):
         sample_json = json.dumps({"count": 0, "total_bytes": 0, "assets": []})
         (mock_data / "voice_gap_assets.json").write_text(sample_json, encoding="utf-8")
         (mock_dist_data / "voice_gap_assets.json").write_text(sample_json, encoding="utf-8")
+        self._write_avatar_manifest(self.mock_dash)
 
     def tearDown(self):
         try:
@@ -175,6 +187,16 @@ class TestBundleSlimmingAndPrune(unittest.TestCase):
         dash_unit = self.mock_dash / "icon" / "unit"
         dash_unit.mkdir(parents=True, exist_ok=True)
         (dash_unit / "100101.webp").write_bytes(b"ok")
+        self._write_avatar_manifest(
+            self.mock_dash,
+            [{
+                "unit_id": 100101,
+                "filename": "100101.webp",
+                "format": "webp",
+                "usage": "dialogue",
+                "status": "active",
+            }],
+        )
 
         dist_unit = self.mock_dist / "icon" / "unit"
         dist_unit.mkdir(parents=True, exist_ok=True)
@@ -336,6 +358,7 @@ class TestBundleSlimmingAndPrune(unittest.TestCase):
 
         (dash_card / "100131.webp").write_bytes(b"card_image_bytes_12345")
         (dash_voice / "vo_1001.m4a").write_bytes(b"voice_audio_bytes_67890")
+        self._write_avatar_manifest(self.mock_dist)
 
         dist_card = self.mock_dist / "card" / "full"
         dist_voice = self.mock_dist / "sound" / "story_vo"
@@ -351,7 +374,11 @@ class TestBundleSlimmingAndPrune(unittest.TestCase):
 
         # 測試 calculate_deployment_footprint 是否正確排除 card/ 並計入 sound/
         footprint = calculate_deployment_footprint(self.mock_dist)
-        exp_footprint = len(b"voice_audio_bytes_67890") + (self.mock_dist / "data" / "voice_gap_assets.json").stat().st_size
+        exp_footprint = (
+            len(b"voice_audio_bytes_67890")
+            + (self.mock_dist / "data" / "voice_gap_assets.json").stat().st_size
+            + (self.mock_dist / "data" / "avatar_assets.json").stat().st_size
+        )
         self.assertEqual(footprint, exp_footprint, "card/ 應被排除，sound/ 應計入 deployment footprint")
 
     # 20. dynamic rendered index.html growth reflected in dry-run estimate (Restored & Enhanced)
@@ -370,6 +397,7 @@ class TestBundleSlimmingAndPrune(unittest.TestCase):
         (self.mock_dist / "data").mkdir(parents=True, exist_ok=True)
         sim_db_info = json.dumps({"db_version": "hash_nodata", "tw_size": 0, "jp_size": 0}, ensure_ascii=False, indent=2).encode("utf-8")
         (self.mock_dist / "data" / "db_info.json").write_bytes(sim_db_info)
+        self._write_avatar_manifest(self.mock_dist)
 
         rendered1 = render_index_html(self.mock_dash)
         size1 = len(rendered1.encode("utf-8"))
@@ -413,12 +441,54 @@ class TestBundleSlimmingAndPrune(unittest.TestCase):
         # 僅提供 legacy 檔案 unit_icon_100201.webp
         legacy_file = dash_unit / "unit_icon_100201.webp"
         legacy_file.write_bytes(b"legacy_icon_content_123456")
+        (dash_unit / "100201.webp").write_bytes(b"legacy_icon_content_123456")
         file_sz = len(b"legacy_icon_content_123456")
+
+        # Manifest-first bundling requires both published names to be explicit
+        # in an isolated fixture; production no longer consults legacy rules.
+        self._write_avatar_manifest(
+            self.mock_dash,
+            [
+                {
+                    "unit_id": 100201,
+                    "filename": "100201.webp",
+                    "format": "webp",
+                    "usage": "dialogue",
+                    "status": "active",
+                },
+                {
+                    "unit_id": 100202,
+                    "filename": "unit_icon_100201.webp",
+                    "format": "webp",
+                    "usage": "ui",
+                    "status": "active",
+                },
+            ],
+        )
+        self._write_avatar_manifest(
+            self.mock_dist,
+            [
+                {
+                    "unit_id": 100201,
+                    "filename": "100201.webp",
+                    "format": "webp",
+                    "usage": "dialogue",
+                    "status": "active",
+                },
+                {
+                    "unit_id": 100202,
+                    "filename": "unit_icon_100201.webp",
+                    "format": "webp",
+                    "usage": "ui",
+                    "status": "active",
+                },
+            ],
+        )
 
         mappings = get_expected_icon_unit_mappings(self.mock_dash)
         self.assertIn("100201.webp", mappings)
         self.assertIn("unit_icon_100201.webp", mappings)
-        self.assertEqual(mappings["100201.webp"], legacy_file)
+        self.assertEqual(mappings["100201.webp"], dash_unit / "100201.webp")
 
         additions, deltas = calculate_expected_additions_and_deltas(self.mock_dash, self.mock_dist)
         self.assertEqual(additions, file_sz * 2, "dry-run 預估應精確包含 legacy 及由其映射生成之 canonical icon 大小")
@@ -528,6 +598,20 @@ class TestBundleSlimmingAndPrune(unittest.TestCase):
         real_sa_hash = hashlib.sha256(real_sa_path.read_bytes()).hexdigest()[:8]
         self.assertIn(f'<script src="story-asset-service.js?v={real_sa_hash}"></script>', real_rendered)
         self.assertNotIn('story-asset-service.js?v=5.2.1', real_rendered)
+
+    def test_25_avatar_manifest_is_required_and_minimal_fixture_is_valid(self):
+        """Manifest-first bundling rejects missing/corrupt registries and accepts the fixture helper."""
+        manifest_path = self.mock_dash / "data" / "avatar_assets.json"
+        manifest_path.unlink()
+        with self.assertRaises(FileNotFoundError):
+            get_expected_icon_unit_mappings(self.mock_dash)
+
+        manifest_path.write_text("{not-json", encoding="utf-8")
+        with self.assertRaises(ValueError):
+            get_expected_icon_unit_mappings(self.mock_dash)
+
+        self._write_avatar_manifest(self.mock_dash)
+        self.assertEqual(get_expected_dialogue_icon_mappings(self.mock_dash), {})
 
 
 if __name__ == "__main__":
