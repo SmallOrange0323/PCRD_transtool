@@ -84,20 +84,7 @@ const QuestMapModule = {
             }
 
             const stories = this.chapters[chName];
-            const firstStory = stories[0];
-            const groupId = firstStory ? firstStory.groupId : 1001;
-            const cardId = `${groupId}31`;
-            const remoteCardUrl = `https://redive.estertion.win/card/full/${cardId}.webp`;
-            const localCardUrl = `card/${cardId}.webp`;
-            
-            gridHtml += `
-                <div class="chara-card" style="background-image: url('${localCardUrl}'), url('${remoteCardUrl}')" onclick="QuestMapModule.selectChara('${this.escapeForAttr(chName)}')">
-                    <div class="chara-card-overlay">
-                        <div class="chara-card-name">${this.escapeHtml(chName)}</div>
-                        <div class="chara-card-count">${stories.length} 話</div>
-                    </div>
-                </div>
-            `;
+            gridHtml += this.getCharaCardHtml(chName, stories);
             count++;
         });
 
@@ -106,6 +93,40 @@ const QuestMapModule = {
         } else {
             gridEl.innerHTML = gridHtml;
         }
+    },
+
+    getCharaCardHtml(chName, stories) {
+        const firstStory = Array.isArray(stories) ? stories[0] : null;
+        const groupId = firstStory ? firstStory.groupId : 1001;
+        const cardId = `${groupId}31`;
+        const localCardUrl = `card/${cardId}.webp`;
+        const remoteCardUrl = `https://redive.estertion.win/card/full/${cardId}.webp`;
+
+        return `
+            <div class="chara-card" onclick="QuestMapModule.selectChara('${this.escapeForAttr(chName)}')">
+                <img
+                    class="chara-card-image"
+                    src="${localCardUrl}"
+                    data-fallback-src="${remoteCardUrl}"
+                    loading="lazy"
+                    decoding="async"
+                    alt=""
+                    onerror="QuestMapModule.handleCharaCardImageError(this)"
+                >
+                <div class="chara-card-overlay">
+                    <div class="chara-card-name">${this.escapeHtml(chName)}</div>
+                    <div class="chara-card-count">${Array.isArray(stories) ? stories.length : 0} 話</div>
+                </div>
+            </div>
+        `;
+    },
+
+    handleCharaCardImageError(img) {
+        if (!img || img.dataset.fallbackUsed === '1') return;
+        const fallbackSrc = img.dataset.fallbackSrc;
+        if (!fallbackSrc) return;
+        img.dataset.fallbackUsed = '1';
+        img.src = fallbackSrc;
     },
 
     escapeHtml(str) {
@@ -1048,21 +1069,7 @@ const QuestMapModule = {
                 }
 
                 const stories = this.chapters[chName];
-                const firstStory = stories[0];
-                const groupId = firstStory ? firstStory.groupId : 1001;
-                // 3★卡面 ID
-                const cardId = `${groupId}31`;
-                const remoteCardUrl = `https://redive.estertion.win/card/full/${cardId}.webp`;
-                const localCardUrl = `card/${cardId}.webp`;
-                
-                gridHtml += `
-                    <div class="chara-card" style="background-image: url('${localCardUrl}'), url('${remoteCardUrl}')" onclick="QuestMapModule.selectChara('${this.escapeForAttr(chName)}')">
-                        <div class="chara-card-overlay">
-                            <div class="chara-card-name">${this.escapeHtml(chName)}</div>
-                            <div class="chara-card-count">${stories.length} 話</div>
-                        </div>
-                    </div>
-                `;
+                gridHtml += this.getCharaCardHtml(chName, stories);
                 count++;
             });
 
