@@ -179,6 +179,7 @@ window.CharaModalView = {
     renderModal(options) {
         const {
             realCharaName,
+            explicitUnitId,
             profile,
             appearances,
             speakerAvatars,
@@ -191,10 +192,13 @@ window.CharaModalView = {
         const appListHtml = this.renderAppearancesHtml(appearances, resolveStoryLabel);
         const detailsHtml = this.renderProfileDetailsHtml(profile);
         const bioHtml = this.renderProfileBioHtml(profile, escapeHtml);
-        const explicitUnitId = this.resolveCurrentDialogueUnitId(realCharaName);
+        const numericExplicitUnitId = Number(explicitUnitId);
+        const resolvedUnitId = (Number.isInteger(numericExplicitUnitId) && numericExplicitUnitId > 0)
+            ? numericExplicitUnitId
+            : this.resolveCurrentDialogueUnitId(realCharaName);
         const avatarHtml = avatarService
-            ? (explicitUnitId && typeof avatarService.getAvatarHtmlByUnitId === 'function'
-                ? avatarService.getAvatarHtmlByUnitId(explicitUnitId, realCharaName, speakerAvatars)
+            ? (resolvedUnitId && typeof avatarService.getAvatarHtmlByUnitId === 'function'
+                ? avatarService.getAvatarHtmlByUnitId(resolvedUnitId, realCharaName, speakerAvatars)
                 : avatarService.getAvatarHtml(realCharaName, speakerAvatars))
             : "";
 
