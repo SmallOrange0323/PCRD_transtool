@@ -87,7 +87,15 @@ console.log("dialogue-view.js loaded");
          */
         renderSpeakerBadges(badgesBarEl, options) {
             if (!badgesBarEl) return;
-            const { speakerNames, speakerAvatars, resolveRealName } = options || {};
+            const { speakerNames, speakerAvatars, resolveRealName, dialogueList } = options || {};
+            const explicitIdsBySpeaker = new Map();
+            (dialogueList || []).forEach(item => {
+                const rawName = item && item.name;
+                const unitId = Number(item && item.unit_id);
+                if (!rawName || !Number.isInteger(unitId) || unitId <= 0) return;
+                if (!explicitIdsBySpeaker.has(rawName)) explicitIdsBySpeaker.set(rawName, new Set());
+                explicitIdsBySpeaker.get(rawName).add(unitId);
+            });
             // Keep the raw speaker key for identity lookup; normalize only the
             // text shown in the badge tooltip. For example, {0} must still
             // resolve speakerAvatars["{0}"] after displaying as 佑樹.
@@ -97,9 +105,14 @@ console.log("dialogue-view.js loaded");
             });
             const playableSpeakers = validSpeakers.map(rawName => {
                 const realName = resolveRealName ? resolveRealName(rawName) : rawName;
-                return { rawName, realName };
-            }).filter(({ realName }) => {
-                return !!(speakerAvatars && speakerAvatars[realName]);
+                const explicitIds = explicitIdsBySpeaker.get(rawName);
+                if (explicitIds && explicitIds.size > 1) {
+                    console.warn(`[DialogueView] Multiple explicit unit_id values for speaker ${rawName}; using legacy badge fallback.`);
+                }
+                const explicitUnitId = explicitIds && explicitIds.size === 1 ? [...explicitIds][0] : null;
+                return { rawName, realName, explicitUnitId };
+            }).filter(({ realName, explicitUnitId }) => {
+                return explicitUnitId !== null || !!(speakerAvatars && speakerAvatars[realName]);
             });
 
             if (playableSpeakers.length === 0) {
@@ -111,10 +124,13 @@ console.log("dialogue-view.js loaded");
             const renderedSet = new Set();
             const badgeHtmls = [];
 
-            playableSpeakers.forEach(({ rawName, realName }) => {
-                if (renderedSet.has(realName)) return;
-                renderedSet.add(realName);
-                const avatarHtml = window.AvatarService.getAvatarHtml(realName, speakerAvatars);
+            playableSpeakers.forEach(({ rawName, realName, explicitUnitId }) => {
+                const identityKey = explicitUnitId !== null ? `unit:${explicitUnitId}` : `name:${realName}`;
+                if (renderedSet.has(identityKey)) return;
+                renderedSet.add(identityKey);
+                const avatarHtml = explicitUnitId !== null
+                    ? window.AvatarService.getAvatarHtmlByUnitId(explicitUnitId, realName, speakerAvatars)
+                    : window.AvatarService.getAvatarHtml(realName, speakerAvatars);
                 const displayName = this.normalizePlayerName(rawName);
                 badgeHtmls.push(`
                     <div class="game-chara-avatar-badge" title="${this.escapeHtml(displayName)}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})">
@@ -312,7 +328,7 @@ console.log("dialogue-view.js loaded");
             } = options || {};
 
             // 1. 渲染上方角色徽章列
-            this.renderSpeakerBadges(badgesBarEl, { speakerNames, speakerAvatars, resolveRealName });
+            this.renderSpeakerBadges(badgesBarEl, { speakerNames, speakerAvatars, resolveRealName, dialogueList });
 
             // 2. 生成對白 HTML 與首張背景圖 URL
             const { html, firstBgUrl } = this.generateDialogueHtml({
