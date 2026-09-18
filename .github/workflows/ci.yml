@@ -38,6 +38,7 @@ jobs:
           node tests/test_database_cache.js
           node tests/test_fast_startup.js
           node tests/test_lazy_secondary_data.js
+          node tests/test_chara_card_images.js
           node tests/test_mobile_synopsis.js
           node tests/test_reader_keyboard.js
           node tests/test_reader_navigation.js
