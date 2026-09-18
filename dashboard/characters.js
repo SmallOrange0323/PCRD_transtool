@@ -5,6 +5,7 @@ window.CharactersModule = {
     viewMode: 'grid',
     realNameMap: null,
     activeUnitId: null,
+    _searchDebounceTimer: null,
     excludedUnitIds: (() => {
         try {
             const saved = JSON.parse(localStorage.getItem('excluded_unit_ids') || '[]');
@@ -82,14 +83,14 @@ window.CharactersModule = {
             }
             this.allCharacters.sort((a, b) => b.unit_id - a.unit_id);
             
-            this.renderLayout(container, this.allCharacters);
+            this.renderLayout(container);
         } catch (error) {
             console.error("Data Cleanup Error:", error);
             container.innerHTML = `<div class="error-box">數據清洗失敗: ${error.message}</div>`;
         }
     },
 
-    renderLayout(container, characters) {
+    renderLayout(container) {
         container.innerHTML = `
             <div class="gallery-header glass-card" style="margin-bottom: 20px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
@@ -111,9 +112,7 @@ window.CharactersModule = {
                     </div>
                 </div>
             </div>
-            <div id="char-grid" class="char-grid">
-                ${this.viewMode === 'grid' ? this.renderGrid(characters) : (this.viewMode === 'list' ? this.renderTable(characters) : this.renderGuildView(characters))}
-            </div>
+            <div id="char-grid" class="char-grid"></div>
         `;
 
         this.updateView = () => {
@@ -145,8 +144,20 @@ window.CharactersModule = {
         };
 
         const updateView = this.updateView;
+        const searchInput = document.getElementById('char-search');
 
-        document.getElementById('char-search').addEventListener('input', updateView);
+        if (this._searchDebounceTimer) {
+            clearTimeout(this._searchDebounceTimer);
+            this._searchDebounceTimer = null;
+        }
+
+        searchInput.addEventListener('input', () => {
+            if (this._searchDebounceTimer) clearTimeout(this._searchDebounceTimer);
+            this._searchDebounceTimer = setTimeout(() => {
+                this._searchDebounceTimer = null;
+                updateView();
+            }, 150);
+        });
         document.getElementById('char-sort').addEventListener('change', updateView);
 
         document.getElementById('view-btn-grid').addEventListener('click', () => {
