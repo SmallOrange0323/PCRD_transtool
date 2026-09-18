@@ -110,7 +110,7 @@ console.log("dialogue-view.js loaded");
                 const avatarHtml = window.AvatarService.getAvatarHtml(realName, speakerAvatars);
                 const displayName = this.normalizePlayerName(realName);
                 badgeHtmls.push(`
-                    <div class="game-chara-avatar-badge" title="${this.escapeHtml(displayName)}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')})">
+                    <div class="game-chara-avatar-badge" title="${this.escapeHtml(displayName)}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')}${modalUnitIdArg})">
                         ${avatarHtml}
                     </div>
                 `);
@@ -208,13 +208,14 @@ console.log("dialogue-view.js loaded");
 
                 const realNameForBtn = (isNarrator || isChoice) ? "" : (resolveRealName ? resolveRealName(rawSpeaker) : rawSpeaker);
 
+                const numUnitId = Number(item.unit_id);
+                const hasExplicitUnitId = Number.isInteger(numUnitId) && numUnitId > 0;
+                const modalUnitIdArg = hasExplicitUnitId ? `, ${numUnitId}` : "";
+
                 let avatarHtml = "";
                 if (!isNarrator && !isChoice) {
                     const realName = realNameForBtn;
                     let avatarContent = "";
-
-                    const numUnitId = Number(item.unit_id);
-                    const hasExplicitUnitId = Number.isInteger(numUnitId) && numUnitId > 0;
 
                     if (hasExplicitUnitId) {
                         // A. 顯式 Canonical unit_id 絕對優先 (EXPLICIT ALWAYS WINS)
@@ -253,7 +254,7 @@ console.log("dialogue-view.js loaded");
                         ${avatarHtml}
                         <div class="game-dialogue-content">
                             <div class="game-dialogue-speaker-wrap">
-                                <span class="game-dialogue-speaker" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realNameForBtn).replace(/"/g, '&quot;')})" style="cursor: pointer;" title="查看角色資料">
+                                <span class="game-dialogue-speaker" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realNameForBtn).replace(/"/g, '&quot;')}${modalUnitIdArg})" style="cursor: pointer;" title="查看角色資料">
                                     ${safeSpeaker}
                                 </span>
                                 ${voiceBtn}
