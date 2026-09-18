@@ -86,7 +86,7 @@
         }
 
         // 切換分頁
-        function switchTab(tabId) {
+        async function switchTab(tabId) {
             // 離開 Story Map 頂層分頁時，完整停止 AUTO 與任何手動音訊；
             // 保留已渲染內容與 pending dialogue，回來時不強迫重載閱讀狀態。
             if (tabId !== 'map' && window.QuestMapModule && typeof window.QuestMapModule.teardownPlayback === 'function') {
@@ -95,76 +95,95 @@
 
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-            
+
             document.getElementById(tabId + '-tab').classList.add('active');
             document.getElementById('tab-' + tabId + '-btn').classList.add('active');
 
-            // 如果分頁內容是空的，進行渲染
             if (tabId === 'map' && document.getElementById('map-tab').innerHTML.trim() === '') {
-                QuestMapModule.render();
+                await QuestMapModule.render();
             } else if (tabId === 'characters' && document.getElementById('characters-tab').innerHTML.trim() === '') {
-                CharactersModule.render();
+                const container = document.getElementById('characters-tab');
+                container.innerHTML = '<div class="loading-mini">角色資料準備中...</div>';
+                try {
+                    if (window.PCRD_DATABASE_READY) {
+                        await window.PCRD_DATABASE_READY;
+                    }
+                    await CharactersModule.render();
+                } catch (err) {
+                    container.textContent = '角色資料載入失敗，請重新整理後再試。';
+                    console.error(err);
+                }
             }
         }
 
-        // 初始化
+        function hideStartupOverlay() {
+            const overlay = document.getElementById('loading-overlay');
+            if (!overlay) return;
+            overlay.style.opacity = '0';
+            setTimeout(() => { overlay.style.display = 'none'; }, 300);
+        }
+
+        function showStartupNotice(message, id) {
+            const main = document.querySelector('main');
+            if (!main) return;
+            let notice = document.getElementById(id);
+            if (!notice) {
+                notice = document.createElement('p');
+                notice.id = id;
+                notice.setAttribute('role', 'status');
+                notice.className = 'cache-notice';
+                main.prepend(notice);
+            }
+            notice.textContent = message;
+        }
+
+        // 初始化：首頁先顯示；SQLite 與完整 Story Map 資料在背景準備。
         document.addEventListener('DOMContentLoaded', async () => {
             document.addEventListener('keydown', event => QuestMapModule.handleReaderKeydown(event));
             const progress = document.getElementById('loader-progress');
             const text = document.getElementById('loader-text');
             const regionSelector = document.getElementById('region-selector');
 
-            // 同步選擇器狀態
             if (regionSelector) {
                 regionSelector.value = PCRDatabase.currentRegion;
             }
 
+            // Single shared startup promise. Any data-backed view can await the
+            // same database initialization instead of starting duplicate work.
+            const databaseReadyPromise = window.PCRDatabase.initDatabase((msg, pct) => {
+                if (text) text.innerText = msg;
+                if (progress) progress.style.width = pct + '%';
+            });
+            window.PCRD_DATABASE_READY = databaseReadyPromise;
+
             try {
-                // 載入資料庫
-                await window.PCRDatabase.initDatabase((msg, pct) => {
-                    text.innerText = msg;
-                    progress.style.width = pct + '%';
-                });
+                // QuestMapModule._render() treats the landing menu as static UI,
+                // so this completes without waiting for SQLite or the large data sets.
+                await QuestMapModule.render();
+                hideStartupOverlay();
+            } catch (err) {
+                console.error('[Startup] 首頁渲染失敗:', err);
+                if (text) text.textContent = '首頁載入失敗，請重新整理後再試。';
+                return;
+            }
+
+            // Keep preparing the existing data set in the background so current
+            // navigation, resume/deep-link behavior and feature availability stay intact.
+            window.PCRD_APP_READY = (async () => {
+                await databaseReadyPromise;
 
                 if (PCRDatabase.cacheWarning) {
-                    const notice = document.createElement('p');
-                    notice.setAttribute('role', 'status');
-                    notice.className = 'cache-notice';
-                    notice.textContent = PCRDatabase.cacheWarning;
-                    document.querySelector('main').prepend(notice);
+                    showStartupNotice(PCRDatabase.cacheWarning, 'cache-warning-notice');
                 }
 
-                // 移除載入遮罩
-                const overlay = document.getElementById('loading-overlay');
-                overlay.style.opacity = '0';
-                setTimeout(() => overlay.style.display = 'none', 500);
-
-                // 預設渲染劇情地圖
-                await QuestMapModule.render();
+                await QuestMapModule.loadData();
                 window.ReaderNavigation.init(QuestMapModule);
-            } catch (err) {
-                text.innerHTML = `
-                    <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 10px;">
-                        <span style="color: #ff6b6b; font-weight: bold; font-size: 1.05rem;">資料庫載入失敗！可能是網路連線問題。</span>
-                        <span style="color: #ffb8b8; font-size: 0.85rem; background: rgba(0,0,0,0.2); padding: 6px 12px; border-radius: 4px; font-family: monospace; max-width: 90%; word-break: break-all;">錯誤原因：${err.message || err}</span>
-                        <button onclick="location.reload();" style="
-                            padding: 10px 24px;
-                            background: linear-gradient(135deg, #ff6b9d 0%, #e83875 100%);
-                            color: white;
-                            border: none;
-                            border-radius: 20px;
-                            font-weight: bold;
-                            cursor: pointer;
-                            box-shadow: 0 4px 12px rgba(232, 56, 117, 0.25);
-                            transition: all 0.2s ease;
-                            font-size: 0.9rem;
-                        " onmouseover="this.style.transform='translateY(-1px)'" onmouseout="this.style.transform='translateY(0)'">
-                            🔄 重新載入
-                        </button>
-                    </div>
-                `;
-                console.error(err);
-            }
+            })();
+
+            window.PCRD_APP_READY.catch(err => {
+                console.error('[Startup] 背景資料載入失敗:', err);
+                showStartupNotice('背景資料載入失敗；首頁仍可開啟，但劇情與角色資料暫時無法使用。請重新整理後再試。', 'startup-error-notice');
+            });
         });
     </script>
 </body>
