@@ -30,6 +30,8 @@ const QuestMapModule = {
     isLoadingDialogue: false,
     currentView: 'menu',
     storyThumbnails: null,
+    extraStoryIndex: null,
+    activeExtraCategory: null,
     activeCharaName: null,
     charaSearchQuery: "",
     directoryLevel: 'level1', // 'level1' (章節/活動卡片清單) | 'level2' (話數清單)
@@ -417,6 +419,17 @@ const QuestMapModule = {
                 }
             }
 
+            if (!this.extraStoryIndex) {
+                try {
+                    const resp = await fetch('data/extra_story_index.json');
+                    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+                    this.extraStoryIndex = await resp.json();
+                } catch (e) {
+                    console.error('[QuestMapModule] 無法載入官方額外劇情索引:', e);
+                    this.extraStoryIndex = { official_categories: [], special_categories: [] };
+                }
+            }
+
             if (this.stories.length === 0) {
                 const checkChara = await window.PCRDatabase.runQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='chara_story_detail'");
                 const isTW = !(checkChara && checkChara.length > 0);
@@ -726,6 +739,7 @@ const QuestMapModule = {
                 }
                 console.log(`[QuestMapModule] 成功載入 ${this.eventStories.length} 筆活動話數 (含新形式活動)`);
             }
+            this.integrateExtraStories();
         } catch (err) {
             console.error("[QuestMapModule] 載入劇情數據失敗:", err);
         }
@@ -909,6 +923,70 @@ const QuestMapModule = {
         });
     },
 
+    integrateExtraStories() {
+        if (!this.extraStoryIndex) return;
+        const existing = new Set(this.stories.map(s => s.id));
+        const categories = [
+            ...(this.extraStoryIndex.official_categories || []).map(c => ({ ...c, section: 'official' })),
+            ...(this.extraStoryIndex.special_categories || []).map(c => ({ ...c, section: 'special' }))
+        ];
+        categories.forEach(category => category.stories.forEach(entry => {
+            if (existing.has(entry.id)) return;
+            this.stories.push({
+                id: entry.id,
+                chapter: category.title,
+                title: entry.title || `劇情 ${entry.id}`,
+                groupId: null,
+                isEvent: false,
+                type: 'extra',
+                extraCategoryId: category.id,
+                extraSection: category.section,
+                language: entry.language
+            });
+            existing.add(entry.id);
+        }));
+    },
+
+    getExtraCategory(categoryId) {
+        const all = [
+            ...(this.extraStoryIndex?.official_categories || []),
+            ...(this.extraStoryIndex?.special_categories || [])
+        ];
+        return all.find(c => c.id === categoryId) || null;
+    },
+
+    selectExtraCategory(categoryId) {
+        if (!this.getExtraCategory(categoryId)) return;
+        this.activeExtraCategory = categoryId;
+        this.safeRender(() => this._render());
+    },
+
+    renderExtraView(tab) {
+        const official = this.extraStoryIndex?.official_categories || [];
+        const special = this.extraStoryIndex?.special_categories || [];
+        const category = this.getExtraCategory(this.activeExtraCategory);
+        if (category) {
+            const storyItems = category.stories.map(entry => {
+                const story = this.getStoryById(entry.id) || {
+                    id: entry.id,
+                    chapter: category.title,
+                    title: entry.title || `劇情 ${entry.id}`,
+                    type: 'extra'
+                };
+                return story;
+            });
+            this.chapters = { [category.title]: storyItems };
+            const items = storyItems.map((story, index) => {
+                const entry = category.stories[index];
+                return this.getStoryItemHtml(story, category.title, entry.title || story.title || `劇情 ${entry.id}`);
+            }).join('');
+            tab.innerHTML = `<div class="map-container"><div class="breadcrumb-container" style="display:flex;align-items:center;gap:12px;font-size:.95rem;"><span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()">🏠 劇情大廳</span><span>/</span><span class="breadcrumb-item linkable" onclick="QuestMapModule.activeExtraCategory=null; QuestMapModule.safeRender(() => QuestMapModule._render())">額外劇情</span><span>/</span><span class="breadcrumb-current">${this.escapeHtml(category.title)}</span></div><div class="story-navigation-header"><div class="other-category-title"><h2>📖 ${this.escapeHtml(category.title)}</h2><p class="subtitle">${category.stories.length} 篇</p></div></div><div class="directory-secondary-level" style="display:flex;flex-direction:column;gap:6px;">${items}</div></div>`;
+            return;
+        }
+        const section = (title, list) => `<h3 style="margin:18px 0 8px;">${title}</h3><div class="directory-primary-list" style="display:flex;flex-wrap:wrap;gap:12px;">${list.map(c => `<div class="directory-group-card" onclick="QuestMapModule.selectExtraCategory('${this.escapeForAttr(c.id)}')"><div class="dir-group-icon">📖</div><div class="dir-group-info"><div class="dir-group-name">${this.escapeHtml(c.title)}</div><div class="dir-group-count">${c.expected_count || c.stories.length} 篇</div></div></div>`).join('')}</div>`;
+        tab.innerHTML = `<div class="map-container"><div class="breadcrumb-container" style="display:flex;align-items:center;gap:12px;font-size:.95rem;"><span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()">🏠 劇情大廳</span><span>/</span><span class="breadcrumb-current">額外劇情</span></div><div class="story-navigation-header"><div class="other-category-title"><h2>📖 額外劇情</h2><p class="subtitle">官方額外劇情與特殊收錄</p></div></div>${section('官方額外劇情', official)}${section('特殊收錄', special)}</div>`;
+    },
+
     switchTabType(type) {
         this.teardownPlayback({ invalidateAsync: true });
         this.activeTabType = type;
@@ -942,6 +1020,9 @@ const QuestMapModule = {
         this.directoryLevel1ScrollTop = 0;
         if (type === 'chara') {
             this.activeCharaName = null;
+        }
+        if (type === 'extra') {
+            this.activeExtraCategory = null;
         }
         this._fadeTransition(() => this._render());
     },
@@ -1013,7 +1094,7 @@ const QuestMapModule = {
                         </div>
                     </div>
                     <!-- 額外劇情 (上下佈局) -->
-                    <div class="menu-card card-sub" onmouseenter="QuestMapModule.changeMenuBg('extra')" onclick="QuestMapModule.enterCategory('tower')" 
+                    <div class="menu-card card-sub" onmouseenter="QuestMapModule.changeMenuBg('extra')" onclick="QuestMapModule.enterCategory('extra')" 
                          style="background-image: url('https://redive.estertion.win/card/full/104461.webp');">
                         <div class="menu-card-bg-mask"></div>
                         <div class="menu-card-inner">
@@ -1030,6 +1111,13 @@ const QuestMapModule = {
  }
 
         await this.loadData();
+
+        if (this.activeTabType === 'extra') {
+            this.renderExtraView(tab);
+            const existingBackBtn = document.querySelector('.floating-back-btn');
+            if (existingBackBtn) existingBackBtn.remove();
+            return;
+        }
 
         if (this.activeTabType === 'speaker') {
             await this.ensureAppearanceMap();
@@ -1688,7 +1776,7 @@ const QuestMapModule = {
                 chTag.innerText = "公會";
             } else if (this.activeTabType === 'chara') {
                 chTag.innerText = "個人";
-            } else if (this.activeTabType === 'tower') {
+            } else if (this.activeTabType === 'tower' || this.activeTabType === 'extra') {
                 chTag.innerText = "其他";
             } else {
                 const match = story.chapter.match(/^(第\d+部\s*)?([^\s]+)/);
@@ -2650,7 +2738,7 @@ const QuestMapModule = {
             this.activeTabType = 'event';
         } else if (!isEvent) {
             // 根據 story.type 正確導向對應的分頁
-            if (storyType && ['chara', 'guild', 'tower'].includes(storyType)) {
+            if (storyType && ['chara', 'guild', 'tower', 'extra'].includes(storyType)) {
                 this.activeTabType = storyType;
             } else {
                 this.activeTabType = 'main';
@@ -2666,6 +2754,8 @@ const QuestMapModule = {
             this.groupGuildStories();
         } else if (storyType === 'tower') {
             this.groupTowerStories();
+        } else if (storyType === 'extra') {
+            this.activeExtraCategory = story.extraCategoryId || null;
         } else {
             this.groupStories();
         }
