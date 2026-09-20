@@ -982,20 +982,10 @@ const QuestMapModule = {
                 const sub = s.title || '';
                 const mMatch = sub.match(/(\d+)月/);
                 resolvedChapter = mMatch ? `${mMatch[1]}月生日劇情` : '生日劇情';
-            } else if (category.id === 'april_fools') {
-                // DISPLAY FALLBACK: Documented special event titles
-                const spMap = { 1001: '2019 愚人節', 1002: '2020 愚人節 (王都終末決戰前夜)', 1003: '2021 愚人節' };
-                resolvedChapter = spMap[sid] || `愚人節 ${sid}`;
-                if (!resolvedTitle || resolvedTitle.startsWith('劇情 ')) {
-                    resolvedTitle = resolvedChapter;
-                }
-            } else if (category.id === 'collaboration') {
-                // DISPLAY FALLBACK: Documented collaboration event titles
-                const colMap = { 1004: '碧藍幻想合作前日譚', 1005: '闇影詩章合作前日譚' };
-                resolvedChapter = colMap[sid] || `合作特別篇 ${sid}`;
-                if (!resolvedTitle || resolvedTitle.startsWith('劇情 ')) {
-                    resolvedTitle = resolvedChapter;
-                }
+            } else if (this.extraStoryIndex?.legacy_categories?.some(c => c.id === category.id)) {
+                // Legacy groups are explicitly separated in the index so the
+                // old "第 N 話" chapter-key collision cannot recur.
+                resolvedChapter = category.title;
             } else if (category.id === 'arena') {
                 // VERIFIED GROUPING: story_group_id 4002
                 resolvedChapter = s.chapter || '競技場';
@@ -1020,6 +1010,7 @@ const QuestMapModule = {
         const existing = new Set(this.stories.map(s => s.id));
         const categories = [
             ...(this.extraStoryIndex.official_categories || []).map(c => ({ ...c, section: 'official' })),
+            ...(this.extraStoryIndex.legacy_categories || []).map(c => ({ ...c, section: 'legacy' })),
             ...(this.extraStoryIndex.special_categories || []).map(c => ({ ...c, section: 'special' }))
         ];
         categories.forEach(category => category.stories.forEach(entry => {
@@ -1049,6 +1040,7 @@ const QuestMapModule = {
     getExtraCategory(categoryId) {
         const all = [
             ...(this.extraStoryIndex?.official_categories || []),
+            ...(this.extraStoryIndex?.legacy_categories || []),
             ...(this.extraStoryIndex?.special_categories || [])
         ];
         return all.find(c => c.id === categoryId) || null;
@@ -1076,18 +1068,21 @@ const QuestMapModule = {
 
     renderExtraCategorySelector(tab) {
         const official = this.extraStoryIndex?.official_categories || [];
+        const legacy = this.extraStoryIndex?.legacy_categories || [];
         const special = this.extraStoryIndex?.special_categories || [];
-        const section = (title, list) => `
-            <h3 style="margin: 20px 0 10px; font-size: 1.1rem; color: var(--text-primary); display: flex; align-items: center; gap: 8px;">
+        const legacyActivities = legacy.filter(c => !c.id.endsWith('_additional'));
+        const supplementary = legacy.filter(c => c.id.endsWith('_additional'));
+        const section = (title, list, compact = false) => `
+            <h3 class="extra-section-title${compact ? ' extra-section-title-compact' : ''}">
                 <span>📂</span> ${this.escapeHtml(title)}
             </h3>
-            <div class="directory-primary-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; margin-bottom: 24px;">
+            <div class="directory-primary-list extra-category-list${compact ? ' extra-compact-list' : ''}">
                 ${list.map(c => `
-                    <div class="directory-group-card" onclick="QuestMapModule.selectExtraCategory('${this.escapeForAttr(c.id)}')" style="cursor: pointer; padding: 12px 14px;">
-                        <div class="dir-group-icon" style="font-size: 1.5rem;">📖</div>
-                        <div class="dir-group-info" style="min-width: 0; flex: 1;">
-                            <div class="dir-group-name" style="font-weight: 700; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${this.escapeHtml(c.title)}</div>
-                            <div class="dir-group-count" style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">${c.expected_count || c.stories.length} 篇</div>
+                    <div class="directory-group-card extra-category-card${compact ? ' extra-compact-card' : ''}${c.representativeStoryThumbnail ? ' has-representative-thumbnail' : ' text-only'}" onclick="QuestMapModule.selectExtraCategory('${this.escapeForAttr(c.id)}')">
+                        ${c.representativeStoryThumbnail ? `<div class="extra-card-thumbnail"><img src="${this.escapeForAttr(c.representativeStoryThumbnail)}" alt="${this.escapeForAttr(c.title)}" loading="lazy" decoding="async" onerror="this.closest('.extra-category-card').classList.add('thumbnail-failed')"></div>` : '<div class="extra-card-text-mark" aria-hidden="true">✦</div>'}
+                        <div class="dir-group-info extra-card-info">
+                            <div class="dir-group-name extra-compact-title">${this.escapeHtml(c.title)}</div>
+                            <div class="dir-group-count extra-compact-count">${c.expected_count || c.stories.length} 篇</div>
                         </div>
                     </div>
                 `).join('')}
@@ -1104,11 +1099,13 @@ const QuestMapModule = {
                 <div class="story-navigation-header">
                     <div class="other-category-title" style="display: flex; align-items: center; gap: 8px;">
                         <h2 style="margin: 0; font-size: 1.3rem; color: var(--text-primary);">📖 額外劇情分類</h2>
-                        <p class="subtitle" style="margin: 0; color: var(--text-secondary); font-size: 0.85rem;">官方額外劇情與特殊收錄</p>
+                        <p class="subtitle" style="margin: 0; color: var(--text-secondary); font-size: 0.85rem;">官方額外劇情、補充與特殊收錄</p>
                     </div>
                 </div>
                 ${section('官方額外劇情', official)}
-                ${section('特殊收錄', special)}
+                ${section('特別活動', legacyActivities, true)}
+                ${section('補充收錄', supplementary, true)}
+                ${section('特殊收錄', special, true)}
             </div>
         `;
     },

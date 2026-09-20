@@ -3,6 +3,7 @@
   "official_categories": [
     {
       "id": "luna_tower",
+      "representativeStoryThumbnail": "icon/story/7001000.webp",
       "title": "露娜之塔",
       "expected_count": 179,
       "stories": [
@@ -905,6 +906,7 @@
     },
     {
       "id": "dimension_fault",
+      "representativeStoryThumbnail": "icon/story/4009001.webp",
       "title": "次元斷層",
       "expected_count": 2,
       "stories": [
@@ -922,6 +924,7 @@
     },
     {
       "id": "raid_activity",
+      "representativeStoryThumbnail": "icon/story/9100001.webp",
       "title": "突襲活動",
       "expected_count": 4,
       "stories": [
@@ -949,6 +952,7 @@
     },
     {
       "id": "elpis_extermination",
+      "representativeStoryThumbnail": "icon/story/4015001.webp",
       "title": "艾爾皮斯討魔戰線",
       "expected_count": 1,
       "stories": [
@@ -961,6 +965,7 @@
     },
     {
       "id": "adventure",
+      "representativeStoryThumbnail": "icon/story/4008001.webp",
       "title": "探險",
       "expected_count": 1,
       "stories": [
@@ -973,6 +978,7 @@
     },
     {
       "id": "dungeon",
+      "representativeStoryThumbnail": "icon/story/4003001.webp",
       "title": "地下城",
       "expected_count": 20,
       "stories": [
@@ -1080,6 +1086,7 @@
     },
     {
       "id": "dawn_labyrinth",
+      "representativeStoryThumbnail": "icon/story/4013001.webp",
       "title": "黎明界迷宮",
       "expected_count": 1,
       "stories": [
@@ -1092,6 +1099,7 @@
     },
     {
       "id": "battle_trial",
+      "representativeStoryThumbnail": "icon/story/4011001.webp",
       "title": "戰鬥試煉場",
       "expected_count": 1,
       "stories": [
@@ -1104,6 +1112,7 @@
     },
     {
       "id": "arena",
+      "representativeStoryThumbnail": "icon/story/4002001.webp",
       "title": "競技場",
       "expected_count": 2,
       "stories": [
@@ -1121,6 +1130,7 @@
     },
     {
       "id": "guild_house",
+      "representativeStoryThumbnail": "icon/story/4001001.webp",
       "title": "公會小屋",
       "expected_count": 5,
       "stories": [
@@ -1153,6 +1163,7 @@
     },
     {
       "id": "anniversary_countdown",
+      "representativeStoryThumbnail": "icon/story/9002001.webp",
       "title": "Anniversary 倒數",
       "expected_count": 10,
       "stories": [
@@ -1210,6 +1221,7 @@
     },
     {
       "id": "birthday_stories",
+      "representativeStoryThumbnail": "icon/story/4010001.webp",
       "title": "生日劇情",
       "expected_count": 206,
       "stories": [
@@ -2246,46 +2258,104 @@
       ]
     }
   ],
+  "legacy_categories": [
+    {
+      "id": "mechanical_rima",
+      "representativeStoryThumbnail": "icon/story/4004001.webp",
+      "title": "機械莉瑪特別劇情",
+      "expected_count": 5,
+      "provenance": "story_detail story_group_id 4006; canonical Story",
+      "stories": [
+        { "id": 4004001, "title": "災難前來吐口水" },
+        { "id": 4004002, "title": "主謀者登場？" },
+        { "id": 4004003, "title": "巨大物體所鼓吹出的幻想" },
+        { "id": 4004004, "title": "勝利的握手" },
+        { "id": 4004005, "title": "四月一日的女孩談心" }
+      ]
+    },
+    {
+      "id": "mysterious_disc",
+      "representativeStoryThumbnail": "icon/story/4007001.webp",
+      "title": "神秘圓盤特別劇情",
+      "expected_count": 5,
+      "provenance": "story_detail story_group_id 4007; canonical Story",
+      "stories": [
+        { "id": 4007001, "title": "神秘的圓盤來襲" },
+        { "id": 4007002, "title": "公主‧緊急起飛" },
+        { "id": 4007003, "title": "巨影復活" },
+        { "id": 4007004, "title": "最後一擊" },
+        { "id": 4007005, "title": "夢與現實都有幸福蘋果滋味" }
+      ]
+    },
+    {
+      "id": "dungeon_additional",
+      "representativeStoryThumbnail": "icon/story/4003021.webp",
+      "title": "地下城追加",
+      "expected_count": 2,
+      "provenance": "story_detail story_group_id 4003; outside official 20-entry index",
+      "stories": [
+        { "id": 4003021, "title": "登頂吧！「四彩靈峰」" },
+        { "id": 4003022, "title": "四季的美味凝於一盤" }
+      ]
+    },
+    {
+      "id": "birthday_additional",
+      "title": "生日劇情追加",
+      "expected_count": 2,
+      "provenance": "story_detail story_group_id 4010; outside official 206-entry index",
+      "stories": [
+        { "id": 4010207, "title": "9月22日的劇情3" },
+        { "id": 4010208, "title": "9月29日的劇情3" }
+      ]
+    }
+  ],
   "special_categories": [
     {
-      "id": "april_fools",
-      "title": "愚人節特別劇情",
+      "id": "grand_masters",
+      "title": "Grand Masters 特別劇情",
       "stories": [
         {
           "id": 1001,
-          "title": null,
+          "title": "GAME START！",
           "language": "zh-TW",
-          "provenance": "known special control / canonical Story"
+          "provenance": "official_story_metadata + canonical Story"
         },
         {
           "id": 1002,
-          "title": null,
+          "title": "訂單很多的可麗餅店？",
           "language": "zh-TW",
-          "provenance": "known special control / canonical Story"
-        },
-        {
-          "id": 1003,
-          "title": null,
-          "language": "zh-TW",
-          "provenance": "known special control / canonical Story"
+          "provenance": "official_story_metadata + canonical Story"
         }
       ]
     },
     {
-      "id": "collaboration",
-      "title": "合作特別劇情",
+      "id": "karyl_yabaival",
+      "title": "キャル＆ヤバイバル",
+      "stories": [
+        {
+          "id": 1003,
+          "title": "キャル＆ヤバイバル",
+          "language": "zh-TW",
+          "year": 2024,
+          "provenance": "canonical Story explicitly identifies 4月1日愚人節; campaign corroborated externally"
+        }
+      ]
+    },
+    {
+      "id": "gindaco_oedo_summer",
+      "title": "銀だこハイボール酒場 × オーエド横丁夏祭",
       "stories": [
         {
           "id": 1004,
-          "title": null,
+          "title": "オーエド横丁夏祭り・屋台攻略戦",
           "language": "ja",
-          "provenance": "known special control / canonical Story"
+          "provenance": "canonical Japanese text + collaboration evidence"
         },
         {
           "id": 1005,
-          "title": null,
+          "title": "オーエド横丁夏祭り・シルバーオクトパス商会",
           "language": "ja",
-          "provenance": "known special control / canonical Story"
+          "provenance": "canonical Japanese text + collaboration evidence"
         }
       ]
     }
