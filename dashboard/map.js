@@ -555,11 +555,12 @@ const QuestMapModule = {
                     }));
                     this.stories = this.stories.concat(guildStories);
 
-                    // 4. 台版露娜塔/系統劇情
+                    // 4. 台版露娜塔/系統/額外劇情 (4xxxxxx + 9xxxxxx)
                     const towerSql = `
                         SELECT story_id, title, sub_title, story_group_id
                         FROM story_detail
-                        WHERE story_id >= 4000000 AND story_id < 5000000
+                        WHERE (story_id >= 4000000 AND story_id < 5000000)
+                           OR (story_id >= 9000000 AND story_id < 10000000)
                         ORDER BY story_id ASC
                     `;
                     const rawTower = await window.PCRDatabase.runQuery(towerSql);
@@ -923,6 +924,97 @@ const QuestMapModule = {
         });
     },
 
+    groupExtraStories() {
+        this.chapters = {};
+        const category = this.getExtraCategory(this.activeExtraCategory);
+        if (!category) return;
+
+        const catStoryIds = new Set(category.stories.map(s => s.id));
+        // Anniversary entries in the official index are series-level anchors.
+        // Expand each anchor to all DB child episodes in its story group while
+        // keeping the 10-entry official index unchanged.
+        const anniversaryGroupIds = category.id === 'anniversary_countdown'
+            ? new Set(category.stories.map(s => Math.floor(Number(s.id) / 1000)))
+            : null;
+        const catStories = this.stories.filter(s => anniversaryGroupIds
+            ? anniversaryGroupIds.has(Number(s.groupId))
+            : catStoryIds.has(s.id));
+        catStories.sort((a, b) => a.id - b.id);
+
+        catStories.forEach(s => {
+            const sid = s.id;
+            let resolvedChapter = s.chapter || category.title;
+            let resolvedTitle = s.title;
+
+            if (category.id === 'luna_tower') {
+                // VERIFIED GROUPING: tower_schedule period grouping (7001xxx -> 期數 1)
+                const num = parseInt(String(sid).substring(1, 4), 10);
+                resolvedChapter = `第 ${num} 期`;
+                if (!resolvedTitle || resolvedTitle.startsWith('劇情 ')) {
+                    const epNum = parseInt(String(sid).slice(-3), 10);
+                    resolvedTitle = `第 ${epNum} 話`;
+                }
+            } else if (category.id === 'anniversary_countdown') {
+                // DISPLAY FALLBACK: UI label for series index entries
+                const num = parseInt(String(sid).substring(1, 4), 10);
+                const anniMap = {
+                    2: '0.5 週年倒數',
+                    4: '1 週年倒數',
+                    5: '1.5 週年倒數',
+                    6: '2 週年倒數',
+                    7: '2.5 週年倒數',
+                    8: '3 週年倒數',
+                    9: '3.5 週年倒數',
+                    10: '4 週年倒數',
+                    12: '5 週年倒數',
+                    13: '5.5 週年倒數'
+                };
+                resolvedChapter = anniMap[num] || `第 ${num} 期紀念倒數`;
+            } else if (category.id === 'raid_activity') {
+                // VERIFIED GROUPING: story_group_id 9100
+                resolvedChapter = '軍團之戰 (Legion War)';
+            } else if (category.id === 'dungeon') {
+                // VERIFIED GROUPING: official 20 entries are one subgroup.
+                // 4003021/4003022 are canonical rows outside that index.
+                resolvedChapter = '地下城';
+            } else if (category.id === 'birthday_stories') {
+                // DISPLAY FALLBACK (UI grouping): Month grouping for reader navigation UI
+                const sub = s.title || '';
+                const mMatch = sub.match(/(\d+)月/);
+                resolvedChapter = mMatch ? `${mMatch[1]}月生日劇情` : '生日劇情';
+            } else if (category.id === 'april_fools') {
+                // DISPLAY FALLBACK: Documented special event titles
+                const spMap = { 1001: '2019 愚人節', 1002: '2020 愚人節 (王都終末決戰前夜)', 1003: '2021 愚人節' };
+                resolvedChapter = spMap[sid] || `愚人節 ${sid}`;
+                if (!resolvedTitle || resolvedTitle.startsWith('劇情 ')) {
+                    resolvedTitle = resolvedChapter;
+                }
+            } else if (category.id === 'collaboration') {
+                // DISPLAY FALLBACK: Documented collaboration event titles
+                const colMap = { 1004: '碧藍幻想合作前日譚', 1005: '闇影詩章合作前日譚' };
+                resolvedChapter = colMap[sid] || `合作特別篇 ${sid}`;
+                if (!resolvedTitle || resolvedTitle.startsWith('劇情 ')) {
+                    resolvedTitle = resolvedChapter;
+                }
+            } else if (category.id === 'arena') {
+                // VERIFIED GROUPING: story_group_id 4002
+                resolvedChapter = s.chapter || '競技場';
+            } else {
+                resolvedChapter = s.chapter || category.title;
+            }
+
+            // Create non-mutating view-model object
+            const groupedStory = {
+                ...s,
+                chapter: resolvedChapter,
+                title: resolvedTitle
+            };
+
+            if (!this.chapters[resolvedChapter]) this.chapters[resolvedChapter] = [];
+            this.chapters[resolvedChapter].push(groupedStory);
+        });
+    },
+
     integrateExtraStories() {
         if (!this.extraStoryIndex) return;
         const existing = new Set(this.stories.map(s => s.id));
@@ -931,7 +1023,14 @@ const QuestMapModule = {
             ...(this.extraStoryIndex.special_categories || []).map(c => ({ ...c, section: 'special' }))
         ];
         categories.forEach(category => category.stories.forEach(entry => {
-            if (existing.has(entry.id)) return;
+            if (existing.has(entry.id)) {
+                const existingStory = this.stories.find(s => s.id === entry.id);
+                if (existingStory) {
+                    existingStory.extraCategoryId = category.id;
+                    existingStory.extraSection = category.section;
+                }
+                return;
+            }
             this.stories.push({
                 id: entry.id,
                 chapter: category.title,
@@ -958,33 +1057,60 @@ const QuestMapModule = {
     selectExtraCategory(categoryId) {
         if (!this.getExtraCategory(categoryId)) return;
         this.activeExtraCategory = categoryId;
+        this.expandedChapter = null;
+        this.directoryLevel = 'level1';
+        this.directoryLevel1ScrollTop = 0;
         this.safeRender(() => this._render());
     },
 
-    renderExtraView(tab) {
+    clearActiveExtraCategory() {
+        this.teardownPlayback({ invalidateAsync: true });
+        window.ReaderNavigation?.left();
+        this.activeExtraCategory = null;
+        this.activeStoryId = null;
+        this.expandedChapter = null;
+        this.directoryLevel = 'level1';
+        this.directoryLevel1ScrollTop = 0;
+        this.safeRender(() => this._render());
+    },
+
+    renderExtraCategorySelector(tab) {
         const official = this.extraStoryIndex?.official_categories || [];
         const special = this.extraStoryIndex?.special_categories || [];
-        const category = this.getExtraCategory(this.activeExtraCategory);
-        if (category) {
-            const storyItems = category.stories.map(entry => {
-                const story = this.getStoryById(entry.id) || {
-                    id: entry.id,
-                    chapter: category.title,
-                    title: entry.title || `劇情 ${entry.id}`,
-                    type: 'extra'
-                };
-                return story;
-            });
-            this.chapters = { [category.title]: storyItems };
-            const items = storyItems.map((story, index) => {
-                const entry = category.stories[index];
-                return this.getStoryItemHtml(story, category.title, entry.title || story.title || `劇情 ${entry.id}`);
-            }).join('');
-            tab.innerHTML = `<div class="map-container"><div class="breadcrumb-container" style="display:flex;align-items:center;gap:12px;font-size:.95rem;"><span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()">🏠 劇情大廳</span><span>/</span><span class="breadcrumb-item linkable" onclick="QuestMapModule.activeExtraCategory=null; QuestMapModule.safeRender(() => QuestMapModule._render())">額外劇情</span><span>/</span><span class="breadcrumb-current">${this.escapeHtml(category.title)}</span></div><div class="story-navigation-header"><div class="other-category-title"><h2>📖 ${this.escapeHtml(category.title)}</h2><p class="subtitle">${category.stories.length} 篇</p></div></div><div class="directory-secondary-level" style="display:flex;flex-direction:column;gap:6px;">${items}</div></div>`;
-            return;
-        }
-        const section = (title, list) => `<h3 style="margin:18px 0 8px;">${title}</h3><div class="directory-primary-list" style="display:flex;flex-wrap:wrap;gap:12px;">${list.map(c => `<div class="directory-group-card" onclick="QuestMapModule.selectExtraCategory('${this.escapeForAttr(c.id)}')"><div class="dir-group-icon">📖</div><div class="dir-group-info"><div class="dir-group-name">${this.escapeHtml(c.title)}</div><div class="dir-group-count">${c.expected_count || c.stories.length} 篇</div></div></div>`).join('')}</div>`;
-        tab.innerHTML = `<div class="map-container"><div class="breadcrumb-container" style="display:flex;align-items:center;gap:12px;font-size:.95rem;"><span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()">🏠 劇情大廳</span><span>/</span><span class="breadcrumb-current">額外劇情</span></div><div class="story-navigation-header"><div class="other-category-title"><h2>📖 額外劇情</h2><p class="subtitle">官方額外劇情與特殊收錄</p></div></div>${section('官方額外劇情', official)}${section('特殊收錄', special)}</div>`;
+        const section = (title, list) => `
+            <h3 style="margin: 20px 0 10px; font-size: 1.1rem; color: var(--text-primary); display: flex; align-items: center; gap: 8px;">
+                <span>📂</span> ${this.escapeHtml(title)}
+            </h3>
+            <div class="directory-primary-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; margin-bottom: 24px;">
+                ${list.map(c => `
+                    <div class="directory-group-card" onclick="QuestMapModule.selectExtraCategory('${this.escapeForAttr(c.id)}')" style="cursor: pointer; padding: 12px 14px;">
+                        <div class="dir-group-icon" style="font-size: 1.5rem;">📖</div>
+                        <div class="dir-group-info" style="min-width: 0; flex: 1;">
+                            <div class="dir-group-name" style="font-weight: 700; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${this.escapeHtml(c.title)}</div>
+                            <div class="dir-group-count" style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">${c.expected_count || c.stories.length} 篇</div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+
+        tab.innerHTML = `
+            <div class="map-container">
+                <div class="breadcrumb-container" style="display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
+                    <span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;"><span style="font-size: 1.1rem;">🏠</span> 劇情大廳</span>
+                    <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
+                    <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">🌙 額外劇情</span>
+                </div>
+                <div class="story-navigation-header">
+                    <div class="other-category-title" style="display: flex; align-items: center; gap: 8px;">
+                        <h2 style="margin: 0; font-size: 1.3rem; color: var(--text-primary);">📖 額外劇情分類</h2>
+                        <p class="subtitle" style="margin: 0; color: var(--text-secondary); font-size: 0.85rem;">官方額外劇情與特殊收錄</p>
+                    </div>
+                </div>
+                ${section('官方額外劇情', official)}
+                ${section('特殊收錄', special)}
+            </div>
+        `;
     },
 
     switchTabType(type) {
@@ -1112,8 +1238,8 @@ const QuestMapModule = {
 
         await this.loadData();
 
-        if (this.activeTabType === 'extra') {
-            this.renderExtraView(tab);
+        if (this.activeTabType === 'extra' && !this.activeExtraCategory) {
+            this.renderExtraCategorySelector(tab);
             const existingBackBtn = document.querySelector('.floating-back-btn');
             if (existingBackBtn) existingBackBtn.remove();
             return;
@@ -1133,6 +1259,8 @@ const QuestMapModule = {
             this.groupCharaStories();
         } else if (this.activeTabType === 'tower') {
             this.groupTowerStories();
+        } else if (this.activeTabType === 'extra') {
+            this.groupExtraStories();
         } else {
             this.groupStories();
         }
@@ -1314,7 +1442,7 @@ const QuestMapModule = {
                         </div>
                     `;
                 } else {
-                    chIcon = this.activeTabType === 'guild' ? "👥" : "🌙";
+                    chIcon = this.activeTabType === 'guild' ? "👥" : (this.activeTabType === 'extra' ? "📖" : "🌙");
                     primaryCardsHtml += `
                         <div class="directory-group-card ${isSelected ? 'active' : ''}" id="${safeId}" onclick="QuestMapModule.selectDirectoryGroup('${this.escapeForAttr(chKey)}')">
                             <div class="dir-group-icon">${chIcon}</div>
@@ -1340,7 +1468,7 @@ const QuestMapModule = {
             const secondaryStoriesHtml = this.renderDirectorySecondaryHtml(this.expandedChapter);
 
             const isL1 = (this.directoryLevel === 'level1');
-            const backBtnText = this.activeTabType === 'event' ? '⬅ 返回活動列表' : '⬅ 返回章節列表';
+            const backBtnText = this.activeTabType === 'event' ? '⬅ 返回活動列表' : (this.activeTabType === 'extra' ? '⬅ 返回系列列表' : '⬅ 返回章節列表');
 
             controlPanelHtml = `
                 <div class="directory-container">
@@ -1366,25 +1494,42 @@ const QuestMapModule = {
         }
 
         const isCharaActive = (this.activeTabType === 'chara' && this.activeCharaName);
+        const isExtraCategoryActive = (this.activeTabType === 'extra' && this.activeExtraCategory);
+        const currentExtraCategory = isExtraCategoryActive ? this.getExtraCategory(this.activeExtraCategory) : null;
+
+        let breadcrumbHtml = "";
+        if (isCharaActive) {
+            breadcrumbHtml = `
+                <span class="breadcrumb-item linkable" onclick="QuestMapModule.clearActiveChara()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;">👤 角色</span>
+                <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
+                <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">👤 ${this.escapeHtml(this.activeCharaName)}</span>
+            `;
+        } else if (isExtraCategoryActive && currentExtraCategory) {
+            breadcrumbHtml = `
+                <span class="breadcrumb-item linkable" onclick="QuestMapModule.clearActiveExtraCategory()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;">🌙 額外劇情</span>
+                <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
+                <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">📖 ${this.escapeHtml(currentExtraCategory.title)}</span>
+            `;
+        } else {
+            breadcrumbHtml = `
+                <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">${
+                    this.activeTabType === 'main' ? '⚔️ 主線劇情' :
+                    this.activeTabType === 'event' ? '🏆 活動' :
+                    this.activeTabType === 'guild' ? '👥 公會' :
+                    this.activeTabType === 'chara' ? '👤 角色' :
+                    this.activeTabType === 'tower' ? '🌙 額外' :
+                    this.activeTabType === 'extra' ? '🌙 額外' : '👥 登場角色'
+                }</span>
+            `;
+        }
+
         tab.innerHTML = `
             <div class="map-container">
                 <div class="breadcrumb-container" style="display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
                     <span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;"><span style="font-size: 1.1rem;">🏠</span> 劇情大廳</span>
-                <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
-                ${isCharaActive ? `
-                    <span class="breadcrumb-item linkable" onclick="QuestMapModule.clearActiveChara()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;">👤 角色</span>
                     <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
-                    <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">👤 ${this.escapeHtml(this.activeCharaName)}</span>
-                ` : `
-                    <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">${
-                        this.activeTabType === 'main' ? '⚔️ 主線劇情' :
-                        this.activeTabType === 'event' ? '🏆 活動' :
-                        this.activeTabType === 'guild' ? '👥 公會' :
-                        this.activeTabType === 'chara' ? '👤 角色' :
-                        this.activeTabType === 'tower' ? '🌙 額外' : '👥 登場角色'
-                    }</span>
-                `}
-            </div>
+                    ${breadcrumbHtml}
+                </div>
             <div class="story-navigation-header">
                 ${(this.activeTabType === 'main' || this.activeTabType === 'event') ? `
                 <div class="primary-nav-group" style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
@@ -1396,6 +1541,7 @@ const QuestMapModule = {
                     <h2 style="margin: 0; font-size: 1.3rem; color: var(--text-primary);">📖 ${
                         this.activeTabType === 'guild' ? '公會劇情' :
                         this.activeTabType === 'chara' ? `${this.activeCharaName ? this.escapeHtml(this.activeCharaName) + ' 的' : ''}角色劇情` :
+                        this.activeTabType === 'extra' ? `${currentExtraCategory ? this.escapeHtml(currentExtraCategory.title) : '額外劇情'}` :
                         this.activeTabType === 'tower' ? '額外劇情' : '登場角色'
                     }</h2>
                 </div>
@@ -1440,6 +1586,7 @@ const QuestMapModule = {
                             this.activeTabType === 'event' ? '活動與話數' :
                             this.activeTabType === 'guild' ? '公會劇情目錄' :
                             this.activeTabType === 'chara' ? `${this.activeCharaName} 的個人劇情目錄` :
+                            this.activeTabType === 'extra' ? `${currentExtraCategory ? this.escapeHtml(currentExtraCategory.title) + ' 目錄' : '額外劇情目錄'}` :
                             this.activeTabType === 'tower' ? '露娜塔/系統劇情目錄' : '目錄'
                         }
                     </div>
@@ -1702,6 +1849,12 @@ const QuestMapModule = {
 
     getAllActiveTabStories() {
         if (!this.chapters) return [];
+        // Keep reader prev/next within one Anniversary series; the official
+        // UI treats each of the ten series as an independent replay list.
+        if (this.activeTabType === 'extra' && this.activeExtraCategory === 'anniversary_countdown'
+            && this.expandedChapter && Array.isArray(this.chapters[this.expandedChapter])) {
+            return [...this.chapters[this.expandedChapter]];
+        }
         const all = [];
         for (const chKey of Object.keys(this.chapters)) {
             const list = this.chapters[chKey];
@@ -1877,6 +2030,8 @@ const QuestMapModule = {
         } else {
             if (this.activeTabType === 'chara' && this.activeCharaName) {
                 this.clearActiveChara();
+            } else if (this.activeTabType === 'extra' && this.activeExtraCategory) {
+                this.clearActiveExtraCategory();
             } else {
                 this.goBackToMenu();
             }
@@ -2756,6 +2911,7 @@ const QuestMapModule = {
             this.groupTowerStories();
         } else if (storyType === 'extra') {
             this.activeExtraCategory = story.extraCategoryId || null;
+            this.groupExtraStories();
         } else {
             this.groupStories();
         }
