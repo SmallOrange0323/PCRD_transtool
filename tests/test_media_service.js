@@ -22,10 +22,11 @@ console.log('開始執行 MediaService 測試案例...');
     const voiceName = 'vo_adv_1001001_001';
     // substring(7, 14) -> '1001001'
     const candidates = MediaService.getVoiceCandidates(voiceName);
-    assert.strictEqual(candidates.length, 3, '應產生 3 個候選 URL');
+    assert.strictEqual(candidates.length, 4, '應產生 4 個候選 URL');
     assert.strictEqual(candidates[0], 'sound/story_vo/vo_adv_1001001_001.m4a', '第 1 順位必須為本地目錄');
-    assert.strictEqual(candidates[1], 'https://prcn-sound.estertion.win/story_vo/1001001/vo_adv_1001001_001.m4a', '第 2 順位必須為 prcn-sound 鏡像');
-    assert.strictEqual(candidates[2], 'https://redive.estertion.win/sound/story_vo/1001001/vo_adv_1001001_001.m4a', '第 3 順位必須為 redive 鏡像');
+    assert.strictEqual(candidates[1], 'https://pcrd-story-voice.pages.dev/story_vo/1001001/vo_adv_1001001_001.m4a', '第 2 順位必須為 Cloudflare Pages 鏡像');
+    assert.strictEqual(candidates[2], 'https://prcn-sound.estertion.win/story_vo/1001001/vo_adv_1001001_001.m4a', '第 3 順位必須為 prcn-sound 鏡像');
+    assert.strictEqual(candidates[3], 'https://redive.estertion.win/sound/story_vo/1001001/vo_adv_1001001_001.m4a', '第 4 順位必須為 redive 鏡像');
 }
 
 // Case 2: 另一種 voiceName 格式
@@ -33,8 +34,9 @@ console.log('開始執行 MediaService 測試案例...');
     const voiceName = 'vo_adv_5045001_005';
     const candidates = MediaService.getVoiceCandidates(voiceName);
     assert.strictEqual(candidates[0], 'sound/story_vo/vo_adv_5045001_005.m4a');
-    assert.strictEqual(candidates[1], 'https://prcn-sound.estertion.win/story_vo/5045001/vo_adv_5045001_005.m4a');
-    assert.strictEqual(candidates[2], 'https://redive.estertion.win/sound/story_vo/5045001/vo_adv_5045001_005.m4a');
+    assert.strictEqual(candidates[1], 'https://pcrd-story-voice.pages.dev/story_vo/5045001/vo_adv_5045001_005.m4a');
+    assert.strictEqual(candidates[2], 'https://prcn-sound.estertion.win/story_vo/5045001/vo_adv_5045001_005.m4a');
+    assert.strictEqual(candidates[3], 'https://redive.estertion.win/sound/story_vo/5045001/vo_adv_5045001_005.m4a');
 }
 
 // Case 3: 空值或無效輸入
