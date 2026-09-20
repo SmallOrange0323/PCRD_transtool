@@ -39,6 +39,7 @@ function runTests(dbRows) {
         getExtraCategory(categoryId) {
             const all = [
                 ...(this.extraStoryIndex?.official_categories || []),
+                ...(this.extraStoryIndex?.legacy_categories || []),
                 ...(this.extraStoryIndex?.special_categories || [])
             ];
             return all.find(c => c.id === categoryId) || null;
@@ -60,6 +61,7 @@ function runTests(dbRows) {
             const existing = new Set(this.stories.map(s => s.id));
             const categories = [
                 ...(this.extraStoryIndex.official_categories || []).map(c => ({ ...c, section: 'official' })),
+                ...(this.extraStoryIndex.legacy_categories || []).map(c => ({ ...c, section: 'legacy' })),
                 ...(this.extraStoryIndex.special_categories || []).map(c => ({ ...c, section: 'special' }))
             ];
             categories.forEach(category => category.stories.forEach(entry => {
@@ -144,20 +146,8 @@ function runTests(dbRows) {
                     const sub = s.title || '';
                     const mMatch = sub.match(/(\d+)月/);
                     resolvedChapter = mMatch ? `${mMatch[1]}月生日劇情` : '生日劇情';
-                } else if (category.id === 'april_fools') {
-                    // DISPLAY FALLBACK: Documented special event titles
-                    const spMap = { 1001: '2019 愚人節', 1002: '2020 愚人節 (王都終末決戰前夜)', 1003: '2021 愚人節' };
-                    resolvedChapter = spMap[sid] || `愚人節 ${sid}`;
-                    if (!resolvedTitle || resolvedTitle.startsWith('劇情 ')) {
-                        resolvedTitle = resolvedChapter;
-                    }
-                } else if (category.id === 'collaboration') {
-                    // DISPLAY FALLBACK: Documented collaboration event titles
-                    const colMap = { 1004: '碧藍幻想合作前日譚', 1005: '闇影詩章合作前日譚' };
-                    resolvedChapter = colMap[sid] || `合作特別篇 ${sid}`;
-                    if (!resolvedTitle || resolvedTitle.startsWith('劇情 ')) {
-                        resolvedTitle = resolvedChapter;
-                    }
+                } else if (this.extraStoryIndex.legacy_categories?.some(c => c.id === category.id)) {
+                    resolvedChapter = category.title;
                 } else if (category.id === 'arena') {
                     // VERIFIED GROUPING: story_group_id 4002
                     resolvedChapter = s.chapter || '競技場';
@@ -231,7 +221,35 @@ function runTests(dbRows) {
     const specialCount = extraStoryIndex.special_categories.reduce((acc, c) => acc + c.stories.length, 0);
     assert.strictEqual(officialCount, 432, 'Official series index count must be 432');
     assert.strictEqual(specialCount, 5, 'Special count must be 5');
+    assert.deepStrictEqual(extraStoryIndex.special_categories.map(c => c.title), [
+        'Grand Masters 特別劇情',
+        'キャル＆ヤバイバル',
+        '銀だこハイボール酒場 × オーエド横丁夏祭'
+    ]);
+    assert.deepStrictEqual(extraStoryIndex.special_categories.map(c => c.stories.map(s => s.id)), [
+        [1001, 1002], [1003], [1004, 1005]
+    ]);
+    assert.strictEqual(extraStoryIndex.special_categories[1].stories[0].year, 2024);
+    const representativeThumbs = Object.fromEntries(extraStoryIndex.official_categories.map(c => [c.id, c.representativeStoryThumbnail]));
+    assert.strictEqual(representativeThumbs.luna_tower, 'icon/story/7001000.webp');
+    assert.strictEqual(representativeThumbs.birthday_stories, 'icon/story/4010001.webp');
+    assert.strictEqual(extraStoryIndex.legacy_categories.find(c => c.id === 'mechanical_rima').representativeStoryThumbnail, 'icon/story/4004001.webp');
+    assert.strictEqual(extraStoryIndex.legacy_categories.find(c => c.id === 'mysterious_disc').representativeStoryThumbnail, 'icon/story/4007001.webp');
+    assert.strictEqual(extraStoryIndex.legacy_categories.find(c => c.id === 'dungeon_additional').representativeStoryThumbnail, 'icon/story/4003021.webp');
+    assert.ok(!extraStoryIndex.legacy_categories.find(c => c.id === 'birthday_additional').representativeStoryThumbnail, 'Unverified birthday additions must stay text-only');
+    assert.ok(extraStoryIndex.special_categories.every(c => !c.representativeStoryThumbnail), 'Special corpus must stay text-only without verified thumbnails');
+    const serializedIndex = JSON.stringify(extraStoryIndex);
+    ['2019 愚人節', '2020 愚人節', '2021 愚人節', '碧藍幻想合作前日譚', '闇影詩章合作前日譚']
+        .forEach(label => assert.ok(!serializedIndex.includes(label), `Obsolete special metadata must be absent: ${label}`));
     console.log(`[PASS] Official series index: 432 entries across 12 official categories (+ 5 special = 437)`);
+
+    const legacyCategories = extraStoryIndex.legacy_categories || [];
+    const legacyIds = legacyCategories.flatMap(c => c.stories.map(s => s.id));
+    assert.strictEqual(legacyIds.length, 14, 'Recovered legacy count must be 14');
+    assert.strictEqual(new Set(legacyIds).size, 14, 'Recovered legacy IDs must be unique');
+    assert.deepStrictEqual(legacyCategories.find(c => c.id === 'mechanical_rima').stories.map(s => s.id), [4004001, 4004002, 4004003, 4004004, 4004005]);
+    assert.deepStrictEqual(legacyCategories.find(c => c.id === 'mysterious_disc').stories.map(s => s.id), [4007001, 4007002, 4007003, 4007004, 4007005]);
+    console.log('[PASS] Recovered legacy index contains 14 stories (4006/4007 + supplementary rows)');
 
     // Snapshot this.stories state before grouping
     const snapshotBefore = JSON.stringify(QuestMapModule.stories);
@@ -268,9 +286,25 @@ function runTests(dbRows) {
     assert.strictEqual(QuestMapModule.chapters['地下城'].length, 20, 'Official Dungeon subgroup must contain 20 stories');
     console.log('[PASS] Official Dungeon 20 is verified as a single subgroup (地下城)');
 
-    console.log('\n=== Test 5: All Categories Navigation & Immutability Check ===');
+    console.log('\n=== Test 5: Recovered Legacy Categories ===');
+    QuestMapModule.selectExtraCategory('mechanical_rima');
+    assert.strictEqual(Object.keys(QuestMapModule.chapters).length, 1);
+    assert.strictEqual(QuestMapModule.chapters['機械莉瑪特別劇情'].length, 5);
+    const mechanicalStories = QuestMapModule.chapters['機械莉瑪特別劇情'].map(s => s.id);
+    QuestMapModule.selectExtraCategory('mysterious_disc');
+    assert.strictEqual(Object.keys(QuestMapModule.chapters).length, 1);
+    assert.strictEqual(QuestMapModule.chapters['神秘圓盤特別劇情'].length, 5);
+    assert.notDeepStrictEqual(mechanicalStories, QuestMapModule.chapters['神秘圓盤特別劇情'].map(s => s.id));
+    QuestMapModule.selectExtraCategory('dungeon_additional');
+    assert.deepStrictEqual(QuestMapModule.chapters['地下城追加'].map(s => s.id), [4003021, 4003022]);
+    QuestMapModule.selectExtraCategory('birthday_additional');
+    assert.deepStrictEqual(QuestMapModule.chapters['生日劇情追加'].map(s => s.id), [4010207, 4010208]);
+    console.log('[PASS] Legacy activities and supplementary stories are separately navigable');
+
+    console.log('\n=== Test 6: All Categories Navigation & Immutability Check ===');
     const allCategories = [
         ...extraStoryIndex.official_categories,
+        ...legacyCategories,
         ...extraStoryIndex.special_categories
     ];
 
@@ -284,7 +318,8 @@ function runTests(dbRows) {
     // Immutability Check
     const snapshotAfter = JSON.stringify(QuestMapModule.stories);
     assert.strictEqual(snapshotBefore, snapshotAfter, 'this.stories must NOT be mutated by groupExtraStories()');
-    console.log('[PASS] Immutability verified: this.stories untouched across all 14 categories');
+    assert.deepStrictEqual(extraStoryIndex.special_categories.flatMap(c => c.stories.map(s => s.id)), [1001, 1002, 1003, 1004, 1005]);
+    console.log('[PASS] Immutability verified: this.stories untouched across all 18 categories');
 
     console.log('\n✅ All Metadata Closure & Navigation tests PASSED successfully with 0 errors.');
 }
