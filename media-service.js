@@ -14,7 +14,7 @@ console.log("media-service.js loaded");
         _stillPopupKeyHandler: null,
 
         /**
-         * 根據 voiceName 產生語音候選 URL 列表 (依優先順序：本地 -> 鏡像 1 -> 鏡像 2)
+         * 根據 voiceName 產生語音候選 URL 列表 (Cloudflare primary -> EsterTion PRCN -> EsterTion REDIVE)
          * @param {string} voiceName - 語音檔案標籤 (例如: vo_story_1001001)
          * @returns {string[]} 候選 URL 陣列
          */
@@ -22,7 +22,6 @@ console.log("media-service.js loaded");
             if (!voiceName || typeof voiceName !== 'string') return [];
             const groupId = voiceName.substring(7, 14);
             return [
-                `sound/story_vo/${voiceName}.m4a`,
                 `https://pcrd-story-voice.pages.dev/story_vo/${groupId}/${voiceName}.m4a`,
                 `https://prcn-sound.estertion.win/story_vo/${groupId}/${voiceName}.m4a`,
                 `https://redive.estertion.win/sound/story_vo/${groupId}/${voiceName}.m4a`
