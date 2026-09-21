@@ -26,7 +26,7 @@ from pipeline.coverage import (
     CoverageResult,
     CoverageAnalysisStatus
 )
-from pipeline.fetch import fetch_story_json_by_id, StoryFetchResult, load_story_manifest_hash_map
+from pipeline.fetch import fetch_story_json_by_id, StoryFetchResult, TruthVersionProbeResult, load_story_manifest_hash_map
 from pipeline.update import run_pipeline_update, check_and_sync_upstream, save_truth_version_state
 
 class TestUpdatePipelineC2Implementation(unittest.TestCase):
@@ -125,8 +125,9 @@ class TestUpdatePipelineC2Implementation(unittest.TestCase):
     @patch("pipeline.update.check_and_sync_upstream")
     @patch("pipeline.update.bundle_story_map")
     @patch("pipeline.update.validate_story_map")
+    @patch("pipeline.update.analyze_asset_completeness")
     @patch("pipeline.update.run_deploy")
-    def test_06_deploy_freshness_gate_blocks_unconfirmed(self, mock_deploy, mock_validate, mock_bundle, mock_sync):
+    def test_06_deploy_freshness_gate_blocks_unconfirmed(self, mock_deploy, mock_assets, mock_validate, mock_bundle, mock_sync):
         """Test 6: 驗證新鮮度未確認時 auto_deploy 預設阻斷 (BLOCK DEPLOY)"""
         mock_sync.return_value = (
             True,
@@ -143,6 +144,7 @@ class TestUpdatePipelineC2Implementation(unittest.TestCase):
         )
         mock_bundle.return_value = True
         mock_validate.return_value = True
+        mock_assets.return_value = MagicMock(success=True, movie_coverage=MagicMock(new_references_count=0))
 
         # Default: auto_deploy without override -> return 1 and DO NOT call deploy
         code = run_pipeline_update(dry_run=False, auto_deploy=True, allow_unconfirmed_freshness=False)
@@ -178,8 +180,9 @@ class TestUpdatePipelineC2Implementation(unittest.TestCase):
     @patch("pipeline.update.check_and_sync_upstream")
     @patch("pipeline.update.bundle_story_map")
     @patch("pipeline.update.validate_story_map")
+    @patch("pipeline.update.analyze_asset_completeness")
     @patch("pipeline.update.run_deploy")
-    def test_10_unknown_coverage_blocks_deploy(self, mock_deploy, mock_validate, mock_bundle, mock_sync):
+    def test_10_unknown_coverage_blocks_deploy(self, mock_deploy, mock_assets, mock_validate, mock_bundle, mock_sync):
         """Test 10: 驗證存在未分類話數 (Unknown > 0) 時阻斷生產發布"""
         cov = analyze_coverage()
         cov.unknown_expected_count = 5  # mock unknown exists
@@ -198,6 +201,7 @@ class TestUpdatePipelineC2Implementation(unittest.TestCase):
         )
         mock_bundle.return_value = True
         mock_validate.return_value = True
+        mock_assets.return_value = MagicMock(success=True, movie_coverage=MagicMock(new_references_count=0))
 
         code = run_pipeline_update(dry_run=False, auto_deploy=True)
         self.assertEqual(code, 1)
@@ -206,8 +210,9 @@ class TestUpdatePipelineC2Implementation(unittest.TestCase):
     @patch("pipeline.update.check_and_sync_upstream")
     @patch("pipeline.update.bundle_story_map")
     @patch("pipeline.update.validate_story_map")
+    @patch("pipeline.update.analyze_asset_completeness")
     @patch("pipeline.update.run_deploy")
-    def test_11_degraded_coverage_blocks_deploy_even_with_freshness_override(self, mock_deploy, mock_validate, mock_bundle, mock_sync):
+    def test_11_degraded_coverage_blocks_deploy_even_with_freshness_override(self, mock_deploy, mock_assets, mock_validate, mock_bundle, mock_sync):
         """Test 11: 驗證覆蓋率分析降級 (DEGRADED) 時發布阻斷，且 --allow-unconfirmed-freshness 無法覆蓋"""
         cov = analyze_coverage()
         cov.analysis_status = CoverageAnalysisStatus.DEGRADED
@@ -226,6 +231,7 @@ class TestUpdatePipelineC2Implementation(unittest.TestCase):
         )
         mock_bundle.return_value = True
         mock_validate.return_value = True
+        mock_assets.return_value = MagicMock(success=True, movie_coverage=MagicMock(new_references_count=0))
 
         code = run_pipeline_update(dry_run=False, auto_deploy=True, allow_unconfirmed_freshness=True)
         self.assertEqual(code, 1)
@@ -234,8 +240,9 @@ class TestUpdatePipelineC2Implementation(unittest.TestCase):
     @patch("pipeline.update.check_and_sync_upstream")
     @patch("pipeline.update.bundle_story_map")
     @patch("pipeline.update.validate_story_map")
+    @patch("pipeline.update.analyze_asset_completeness")
     @patch("pipeline.update.run_deploy")
-    def test_12_valid_deploy_path_calls_deploy(self, mock_deploy, mock_validate, mock_bundle, mock_sync):
+    def test_12_valid_deploy_path_calls_deploy(self, mock_deploy, mock_assets, mock_validate, mock_bundle, mock_sync):
         """Test 12: 驗證所有門禁均通過時，正常進入 deploy 呼叫"""
         cov = analyze_coverage()
         mock_sync.return_value = (
@@ -253,17 +260,18 @@ class TestUpdatePipelineC2Implementation(unittest.TestCase):
         )
         mock_bundle.return_value = True
         mock_validate.return_value = True
+        mock_assets.return_value = MagicMock(success=True, movie_coverage=MagicMock(new_references_count=0))
         mock_deploy.return_value = True
 
         code = run_pipeline_update(dry_run=False, auto_deploy=True)
         self.assertEqual(code, 0)
         mock_deploy.assert_called_once()
 
-    @patch("pipeline.fetch.get_truth_version", return_value="00600024")
+    @patch("pipeline.fetch.probe_truth_version", return_value=TruthVersionProbeResult("00600024", "test", True))
     @patch("pipeline.fetch.update_db")
-    def test_13_mirror_unproven_db_update_marks_unconfirmed_and_blocks_deploy(self, mock_update_db, mock_get_tv):
+    def test_13_mirror_unproven_db_update_marks_unconfirmed_and_blocks_deploy(self, mock_update_db, mock_probe):
         """Test 13: 驗證鏡像 DB 更新後標記 UPDATE_DOWNLOADED_UNCONFIRMED 且阻斷自動發布"""
-        mock_update_db.return_value = None
+        mock_update_db.return_value = {"status": "ok"}
         ok, freshness, cov = check_and_sync_upstream(dry_run=False)
         self.assertTrue(ok)
         self.assertEqual(freshness.status, FreshnessStatus.UPDATE_DOWNLOADED_UNCONFIRMED)
@@ -273,18 +281,20 @@ class TestUpdatePipelineC2Implementation(unittest.TestCase):
         # auto_deploy must be blocked by default
         with patch("pipeline.update.bundle_story_map", return_value=True), \
              patch("pipeline.update.validate_story_map", return_value=True), \
+             patch("pipeline.update.analyze_asset_completeness", return_value=MagicMock(success=True, movie_coverage=MagicMock(new_references_count=0))), \
              patch("pipeline.update.run_deploy") as mock_deploy:
             code = run_pipeline_update(dry_run=False, auto_deploy=True, allow_unconfirmed_freshness=False)
             self.assertEqual(code, 1)
             mock_deploy.assert_not_called()
 
-    @patch("pipeline.fetch.get_truth_version", return_value="00600024")
+    @patch("pipeline.fetch.probe_truth_version", return_value=TruthVersionProbeResult("00600024", "test", True))
     @patch("pipeline.fetch.update_db")
-    def test_14_mirror_unproven_db_update_with_override_passes_freshness(self, mock_update_db, mock_get_tv):
+    def test_14_mirror_unproven_db_update_with_override_passes_freshness(self, mock_update_db, mock_probe):
         """Test 14: 驗證鏡像未證實更新在帶入 --allow-unconfirmed-freshness 時可通過發布 (在 coverage VALID 下)"""
-        mock_update_db.return_value = None
+        mock_update_db.return_value = {"status": "ok"}
         with patch("pipeline.update.bundle_story_map", return_value=True), \
              patch("pipeline.update.validate_story_map", return_value=True), \
+             patch("pipeline.update.analyze_asset_completeness", return_value=MagicMock(success=True, movie_coverage=MagicMock(new_references_count=0))), \
              patch("pipeline.update.run_deploy", return_value=True) as mock_deploy:
             code = run_pipeline_update(dry_run=False, auto_deploy=True, allow_unconfirmed_freshness=True)
             self.assertEqual(code, 0)

@@ -16,6 +16,12 @@ DIST_DIR = PROJECT_ROOT / "dist_story_map"
 
 from pipeline.validate import validate_story_map
 
+_INTERNAL_DEPLOY_AUTHORIZATION = object()
+
+def _get_internal_deploy_authorization():
+    """Private capability passed only after pipeline.update has completed its policy gates."""
+    return _INTERNAL_DEPLOY_AUTHORIZATION
+
 def _run_git_in_dist(args: list) -> tuple[int, str]:
     """在 dist_story_map/ 獨立 working tree 執行 git 指令"""
     try:
@@ -32,13 +38,17 @@ def _run_git_in_dist(args: list) -> tuple[int, str]:
     except Exception as e:
         return 1, str(e)
 
-def run_deploy(message: str = None, dry_run: bool = False) -> bool:
+def run_deploy(message: str = None, dry_run: bool = False, authorization=None) -> bool:
     """
     執行帶有門禁驗證之部署
     :param message: Git commit 訊息
     :param dry_run: 模擬部署模式，不提交、不推送
     :return: True 部署成功, False 部署失敗
     """
+    if authorization is not _INTERNAL_DEPLOY_AUTHORIZATION:
+        print("❌ [ERROR] Direct deployment is disabled. Use: python update_story_map.py --deploy", file=sys.stderr)
+        return False
+
     print("\n🚀 啟動 Story Map 發布流程...")
 
     # 1. 執行單一驗證門禁 (驗證 dist_story_map)
@@ -91,5 +101,5 @@ if __name__ == "__main__":
     parser.add_argument("--dry-run", action="store_true", help="模擬運行，不提交、不推送")
     args = parser.parse_args()
 
-    success = run_deploy(message=args.message, dry_run=args.dry_run)
-    sys.exit(0 if success else 1)
+    print("Direct deployment is disabled. Use: python update_story_map.py --deploy", file=sys.stderr)
+    sys.exit(2)

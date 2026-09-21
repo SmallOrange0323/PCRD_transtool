@@ -55,6 +55,11 @@ def calc_sha256_bytes(data: bytes) -> str:
     """計算 byte string 的 SHA-256 Hash"""
     return hashlib.sha256(data).hexdigest()
 
+def ensure_destination_parent(destination: Path, dry_run: bool = False) -> None:
+    """Create a destination parent only for real bundle writes."""
+    if not dry_run:
+        destination.parent.mkdir(parents=True, exist_ok=True)
+
 def compute_story_aggregate_hash(story_dir: Path, max_workers: int = 16) -> str:
     """
     對 story_dir/*.json 建立確定性 aggregate SHA-256 雜湊。
@@ -1123,7 +1128,7 @@ def bundle_story_map(dry_run: bool = False) -> bool:
     story_overrides = get_expected_dialogue_override_mappings(DASHBOARD_DIR)
     for rel_path, src_file in story_overrides.items():
         df = DIST_DIR / rel_path
-        df.parent.mkdir(parents=True, exist_ok=True)
+        ensure_destination_parent(df, dry_run=dry_run)
         if copy_if_different(src_file, df, dry_run=dry_run):
             story_override_copied += 1
     if story_override_copied > 0:

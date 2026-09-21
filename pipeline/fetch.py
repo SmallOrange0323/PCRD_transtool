@@ -29,13 +29,19 @@ try:
         sync_story_batch_with_metadata,
         StoryFetchResult,
         load_story_manifest_hash_map,
-        _get_sonet_ver as get_truth_version,
+        TruthVersionProbeResult,
+        probe_truth_version,
         _get_story_ids_from_db,
         main as pcrd_fetch_main
     )
 except ImportError as e:
     print(f"[ERROR] 無法載入 tools/pcrd_fetch.py: {e}", file=sys.stderr)
     sys.exit(1)
+
+def get_truth_version():
+    """Remote-only convenience API for freshness decisions; None means unconfirmed."""
+    probe = probe_truth_version()
+    return probe.version if probe.confirmed_remote else None
 
 def get_story_ids_for_unit(unit_id: int) -> list[int]:
     """

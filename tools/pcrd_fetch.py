@@ -21,6 +21,7 @@ import sqlite3
 import sys
 import time
 import urllib.request
+from dataclasses import dataclass
 from struct import unpack
 from typing import Dict, List, Set, Any, Tuple, Optional
 from pathlib import Path
@@ -56,6 +57,14 @@ DB_PATH = os.path.join(DASHBOARD_DIR, "redive_tw.db")
 TRACKED_CHARS_PATH = os.path.join(DASHBOARD_DIR, "data", "tracked_characters.json")
 
 # ─────────────────────────── 工具函式 ───────────────────────────
+
+@dataclass(frozen=True)
+class TruthVersionProbeResult:
+    """TruthVersion 的來源與是否為遠端證據必須明確區分。"""
+    version: Optional[str]
+    source: str
+    confirmed_remote: bool
+    error: Optional[str] = None
 
 def _http_get(url, headers, timeout=15, retries=3):
     """帶重試與指數退避的 HTTP GET，返回 bytes。"""
@@ -225,10 +234,8 @@ def _query_game_snapshot(top_n=10):
     return result
 
 
-def _get_sonet_ver():
-    """取得台版目前實際使用的 So-net TruthVersion。"""
-    # wthee 的版本 API 反映當前台版 CDN；本地歷史僅能當離線備援。
-    # 不能讓舊的 version_history.json 蓋過線上已更新的 TruthVersion。
+def probe_truth_version() -> TruthVersionProbeResult:
+    """探測遠端 TruthVersion；失敗時絕不把本地值包裝成遠端證據。"""
     try:
         payload = json.dumps({"regionCode": "tw"}).encode("utf-8")
         req = urllib.request.Request(
@@ -240,10 +247,20 @@ def _get_sonet_ver():
         with urllib.request.urlopen(req, timeout=15) as res:
             data = json.loads(res.read().decode("utf-8"))
         version = data.get("data", {}).get("truthVersion")
-        if version:
-            return version
-    except Exception:
-        pass
+        if isinstance(version, str) and re.fullmatch(r"\d{8}", version):
+            return TruthVersionProbeResult(version, "remote_wthee_api", True)
+        return TruthVersionProbeResult(
+            None,
+            "remote_wthee_api",
+            False,
+            "response missing or invalid 8-digit truthVersion",
+        )
+    except Exception as e:
+        return TruthVersionProbeResult(None, "remote_wthee_api", False, str(e))
+
+
+def _get_local_fallback_version() -> str:
+    """Legacy/offline helper. Its return value is never remote freshness evidence."""
 
     # 離線時才使用 monitor 產生的歷史記錄。
     try:
@@ -269,6 +286,12 @@ def _get_sonet_ver():
     except Exception:
         pass
     return "00500030"  # 提高預設 fallback 至當前版本
+
+
+def _get_sonet_ver():
+    """相容舊下載工具：優先遠端版號，離線時回傳本機備援版號。"""
+    probe = probe_truth_version()
+    return probe.version if probe.confirmed_remote and probe.version else _get_local_fallback_version()
 
 
 def get_latest_truth_version() -> Optional[str]:
@@ -699,26 +722,28 @@ def _parse_bundle_dialogues(bundle_data, extract_metadata=False, portrait_asset_
 # ─────────────────────────── 子命令實作 ───────────────────────────
 
 def cmd_update_db(args):
-    """更新台版明文資料庫。"""
+    """下載、驗證後才以原子替換更新台版明文資料庫。"""
     print("📥 從 wthee 下載最新台服明文資料庫...")
     results = {"status": "ok", "db_path": DB_PATH, "checks": []}
+    db_path = Path(DB_PATH)
+    tmp_path = db_path.with_name(f"{db_path.name}.download.tmp")
 
     try:
         data = _http_get(WTHEE_DB_URL, WEB_HEADER, timeout=60, retries=2)
-        with open(DB_PATH, 'wb') as f:
+        tmp_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(tmp_path, 'wb') as f:
             f.write(data)
-        print(f"  ✅ 下載完成，大小: {len(data):,} bytes")
+        print(f"  ✅ 下載完成，暫存大小: {len(data):,} bytes")
         results["size_bytes"] = len(data)
     except Exception as e:
         results["status"] = "error"
         results["error"] = str(e)
         print(f"  ❌ 下載失敗: {e}", file=sys.stderr)
         _write_output(args.output, results)
-        sys.exit(1)
+        return results
 
-    # 驗證資料表
     try:
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(str(tmp_path))
         cur = conn.cursor()
         for table in ["unit_data", "chara_story_status", "unit_skill_data"]:
             cur.execute(f"SELECT COUNT(*) FROM {table}")
@@ -726,12 +751,30 @@ def cmd_update_db(args):
             results["checks"].append({"table": table, "count": count})
             print(f"  - {table}: {count} 筆")
         conn.close()
+        tmp_path.replace(db_path)
+        print("  ✅ 暫存資料庫驗證通過，已原子替換正式資料庫")
     except Exception as e:
+        try:
+            if 'conn' in locals():
+                conn.close()
+        except Exception:
+            pass
+        results["status"] = "error"
         results["checks_error"] = str(e)
-        print(f"  ⚠️ 資料表驗證失敗: {e}", file=sys.stderr)
+        print(f"  ❌ 資料庫驗證失敗，保留原正式資料庫: {e}", file=sys.stderr)
+    finally:
+        try:
+            if tmp_path.exists():
+                tmp_path.unlink()
+        except Exception as e:
+            if results["status"] == "ok":
+                results["status"] = "error"
+                results["cleanup_error"] = str(e)
 
     _write_output(args.output, results)
-    print(f"\n✅ DB 更新完成！報告已寫入 {args.output}")
+    if results["status"] == "ok":
+        print(f"\n✅ DB 更新完成！報告已寫入 {args.output}")
+    return results
 
 
 from dataclasses import dataclass
@@ -2475,7 +2518,9 @@ def main():
         "sync-episode": cmd_sync_episode,
         "fetch-story-thumbnails": cmd_fetch_story_thumbnails,
     }
-    dispatch[args.command](args)
+    result = dispatch[args.command](args)
+    if args.command == "update-db" and isinstance(result, dict) and result.get("status") != "ok":
+        sys.exit(1)
 
 
 if __name__ == "__main__":

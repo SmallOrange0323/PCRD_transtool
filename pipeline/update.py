@@ -33,7 +33,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "tools"))
 
 from pipeline.bundle import bundle_story_map
 from pipeline.validate import validate_story_map
-from pipeline.deploy import run_deploy
+from pipeline.deploy import run_deploy, _get_internal_deploy_authorization
 from pipeline.assets import analyze_asset_completeness
 from pipeline.story_sync import ensure_required_story_coverage
 from pipeline.coverage import (
@@ -86,7 +86,7 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
     
     try:
         from pipeline.fetch import (
-            get_truth_version,
+            probe_truth_version,
             update_db,
         )
     except ImportError as e:
@@ -98,8 +98,12 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
     # 1. 探測 CDN 版號 (So-net 上游觀察)
     remote_tv = None
     try:
-        remote_tv = get_truth_version()
-        print(f"  [CDN] 線上最高 TruthVersion: {remote_tv}")
+        probe = probe_truth_version()
+        if probe.confirmed_remote:
+            remote_tv = probe.version
+            print(f"  [CDN] 線上最高 TruthVersion: {remote_tv} ({probe.source})")
+        else:
+            print(f"  [WARN] 遠端 TruthVersion 未取得 ({probe.source}): {probe.error or 'unknown error'}")
     except Exception as e:
         print(f"  [WARN] 無法連接 CDN 探測版號 (離線或逾時): {e}")
 
@@ -136,7 +140,11 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
                 source = "sonet"
                 output = "tools/db_update_report.json"
             try:
-                update_db(MockArgs())
+                update_result = update_db(MockArgs())
+                if not isinstance(update_result, dict) or update_result.get("status") != "ok":
+                    detail = (update_result.get("error") or update_result.get("checks_error")
+                              if isinstance(update_result, dict) else "fetcher returned no success result")
+                    raise RuntimeError(f"DB update validation failed: {detail}")
                 # 鏡像資料庫下載完成：因第三方鏡像缺乏直接 So-net TruthVersion 對齊證明，誠實標記為未確認
                 freshness = FreshnessResult(
                     status=FreshnessStatus.UPDATE_DOWNLOADED_UNCONFIRMED,
@@ -382,7 +390,11 @@ def run_pipeline_update(
                 return 1
 
             print("\n[部署步驟] 啟動 GitHub Pages 自動發布 (僅推送 dist_story_map)...")
-            deploy_ok = run_deploy(message=message, dry_run=False)
+            deploy_ok = run_deploy(
+                message=message,
+                dry_run=False,
+                authorization=_get_internal_deploy_authorization(),
+            )
             if not deploy_ok:
                 print("❌ 部署步驟失敗！", file=sys.stderr)
                 return 1
