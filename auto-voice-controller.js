@@ -108,11 +108,21 @@ console.log("auto-voice-controller.js loaded");
 
             let resumed = false;
             if (window.MediaService && typeof window.MediaService.resumeVoice === 'function') {
+                const resumeSessionToken = this.sessionToken;
+                const resumeMediaSessionToken = window.MediaService._voiceSessionToken;
+                const resumeAudio = typeof window.MediaService.getCurrentAudio === 'function'
+                    ? window.MediaService.getCurrentAudio()
+                    : null;
                 const playPromise = window.MediaService.resumeVoice();
                 if (playPromise) {
                     resumed = true;
                     if (typeof playPromise.catch === 'function') {
                         playPromise.catch(err => {
+                            // 舊 resume promise 不得在新的 AUTO / Media session 已啟動後終止它。
+                            if (resumeSessionToken !== this.sessionToken) return;
+                            if (resumeMediaSessionToken !== window.MediaService._voiceSessionToken) return;
+                            if (resumeAudio && typeof window.MediaService.getCurrentAudio === 'function'
+                                && window.MediaService.getCurrentAudio() !== resumeAudio) return;
                             console.warn('[AutoVoiceController] 接續播放失敗:', err);
                             if (err && err.name === 'NotAllowedError') {
                                 this.stop();
