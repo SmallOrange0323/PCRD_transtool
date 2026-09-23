@@ -979,8 +979,11 @@ const QuestMapModule = {
         const annivCategory = officialCats.find(c => c.id === 'anniversary_countdown');
         if (annivCategory && Array.isArray(annivCategory.stories)) {
             const anniversaryGroupIds = new Set(annivCategory.stories.map(s => Math.floor(Number(s.id) / 1000)));
-            const storyGroupId = story && story.groupId != null ? Number(story.groupId) : Math.floor(storyId / 1000);
-            if (anniversaryGroupIds.has(storyGroupId)) {
+            const storyGroupId =
+                story && story.groupId != null
+                    ? Number(story.groupId)
+                    : null;
+            if (storyGroupId != null && !isNaN(storyGroupId) && anniversaryGroupIds.has(storyGroupId)) {
                 return {
                     category: annivCategory,
                     categoryId: 'anniversary_countdown',

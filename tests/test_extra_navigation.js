@@ -132,8 +132,11 @@ function runTests(dbRows) {
             const annivCategory = officialCats.find(c => c.id === 'anniversary_countdown');
             if (annivCategory && Array.isArray(annivCategory.stories)) {
                 const anniversaryGroupIds = new Set(annivCategory.stories.map(s => Math.floor(Number(s.id) / 1000)));
-                const storyGroupId = story && story.groupId != null ? Number(story.groupId) : Math.floor(storyId / 1000);
-                if (anniversaryGroupIds.has(storyGroupId)) {
+                const storyGroupId =
+                    story && story.groupId != null
+                        ? Number(story.groupId)
+                        : null;
+                if (storyGroupId != null && !isNaN(storyGroupId) && anniversaryGroupIds.has(storyGroupId)) {
                     return {
                         category: annivCategory,
                         categoryId: 'anniversary_countdown',
@@ -465,6 +468,11 @@ function runTests(dbRows) {
     QuestMapModule.jumpToStory(7999999);
     assert.strictEqual(QuestMapModule.activeTabType, 'tower', 'Non-extra tower story jumpToStory must route to tower tab');
     console.log('[PASS] Non-extra tower story strictly maintains existing tower tab routing');
+
+    // C. Negative check: 不存在之話數 9002999 即使前綴為 9002 也不得判定為 Extra / Anniversary
+    const nonExistent9002 = QuestMapModule.getExtraMembership(9002999);
+    assert.strictEqual(nonExistent9002, null, 'Non-existent 9002999 must return null membership despite 9002 prefix');
+    console.log('[PASS] Non-existent 9002999 strictly returns null membership');
 
     console.log('\n✅ All Metadata Closure & Navigation tests PASSED successfully with 0 errors.');
 }
