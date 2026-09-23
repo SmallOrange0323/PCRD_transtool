@@ -30,9 +30,14 @@ class FreshnessStatus:
     UPDATE_AVAILABLE = "UPDATE_AVAILABLE"
     UPDATED_SUCCESSFULLY = "UPDATED_SUCCESSFULLY"
     UPDATE_DOWNLOADED_UNCONFIRMED = "UPDATE_DOWNLOADED_UNCONFIRMED"
+    REMOTE_BEHIND_LOCAL = "REMOTE_BEHIND_LOCAL"
     REMOTE_UNREACHABLE = "REMOTE_UNREACHABLE"
     LOCAL_STATE_MISSING = "LOCAL_STATE_MISSING"
     UPDATE_FAILED = "UPDATE_FAILED"
+
+def is_valid_truth_version(ver: Any) -> bool:
+    """驗證 TruthVersion 是否為合規的 8 位數字字串"""
+    return bool(isinstance(ver, str) and len(ver) == 8 and ver.isdigit())
 
 @dataclass
 class FreshnessResult:
@@ -69,6 +74,32 @@ def evaluate_freshness(remote_tv: Optional[str], local_tv: Optional[str], db_exi
                 degraded=False,
                 message=f"線上 CDN 版號與本地記錄一致 ({remote_tv})，新鮮度已確認"
             )
+        elif local_tv and is_valid_truth_version(remote_tv) and is_valid_truth_version(local_tv):
+            remote_int = int(remote_tv)
+            local_int = int(local_tv)
+            if remote_int > local_int:
+                return FreshnessResult(
+                    status=FreshnessStatus.UPDATE_AVAILABLE,
+                    remote_version=remote_tv,
+                    local_version=local_tv,
+                    confirmed=True,
+                    update_required=True,
+                    degraded=False,
+                    message=f"線上 CDN 有新版本 (線上: {remote_tv}, 本地: {local_tv})"
+                )
+            elif remote_int < local_int:
+                return FreshnessResult(
+                    status=FreshnessStatus.REMOTE_BEHIND_LOCAL,
+                    remote_version=remote_tv,
+                    local_version=local_tv,
+                    confirmed=False,
+                    update_required=False,
+                    degraded=True,
+                    message=(
+                        f"線上 CDN 版號落後於本地記錄版本 (remote version is older than local recorded version: "
+                        f"remote={remote_tv}, local={local_tv})；來源不一致且新鮮度未確認，安全跳過資料庫下載"
+                    )
+                )
         else:
             return FreshnessResult(
                 status=FreshnessStatus.UPDATE_AVAILABLE,

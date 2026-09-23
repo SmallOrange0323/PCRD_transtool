@@ -267,7 +267,7 @@ class TestUpdatePipelineC2Implementation(unittest.TestCase):
         self.assertEqual(code, 0)
         mock_deploy.assert_called_once()
 
-    @patch("pipeline.fetch.probe_truth_version", return_value=TruthVersionProbeResult("00600024", "test", True))
+    @patch("pipeline.fetch.probe_truth_version", return_value=TruthVersionProbeResult("00610003", "test", True))
     @patch("pipeline.fetch.update_db")
     def test_13_mirror_unproven_db_update_marks_unconfirmed_and_blocks_deploy(self, mock_update_db, mock_probe):
         """Test 13: 驗證鏡像 DB 更新後標記 UPDATE_DOWNLOADED_UNCONFIRMED 且阻斷自動發布"""
@@ -287,7 +287,7 @@ class TestUpdatePipelineC2Implementation(unittest.TestCase):
             self.assertEqual(code, 1)
             mock_deploy.assert_not_called()
 
-    @patch("pipeline.fetch.probe_truth_version", return_value=TruthVersionProbeResult("00600024", "test", True))
+    @patch("pipeline.fetch.probe_truth_version", return_value=TruthVersionProbeResult("00610003", "test", True))
     @patch("pipeline.fetch.update_db")
     def test_14_mirror_unproven_db_update_with_override_passes_freshness(self, mock_update_db, mock_probe):
         """Test 14: 驗證鏡像未證實更新在帶入 --allow-unconfirmed-freshness 時可通過發布 (在 coverage VALID 下)"""

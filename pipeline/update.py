@@ -172,7 +172,10 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
                 )
                 return False, freshness, analyze_coverage()
     else:
-        print("  [Sync] 本地資料庫與 CDN 版號一致，無需重新下載資料庫。")
+        if freshness.status == FreshnessStatus.REMOTE_BEHIND_LOCAL:
+            print(f"  [Sync] 線上 CDN 版本 ({remote_tv}) 落後於本地記錄 ({local_tv})，安全跳過資料庫下載。")
+        else:
+            print("  [Sync] 本地資料庫與 CDN 版號一致，無需重新下載資料庫。")
 
     # 4. 執行劇本覆蓋率與來源健康度分析 (Coverage Guard)
     coverage = analyze_coverage()
