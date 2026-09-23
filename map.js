@@ -930,21 +930,81 @@ const QuestMapModule = {
         });
     },
 
+    /**
+     * 判定話數是否屬於 Extra 體系 (Phase 3 Part E 共用 Helper)
+     * 規則:
+     * 1. explicit entry: 出現在 official / legacy / special category.stories
+     * 2. anniversary child: story.groupId 屬於 anniversary_countdown 10 anchors 對應 group
+     * 3. 嚴禁單純以 story id 前綴或 type === 'tower' 猜測
+     * @param {Object|number|string} storyOrId 故事物件或故事 ID
+     * @returns {{ category: Object, categoryId: string, section: string, isSeriesChild: boolean }|null}
+     */
+    getExtraMembership(storyOrId) {
+        if (!this.extraStoryIndex) return null;
+
+        let story = null;
+        let storyId = null;
+        if (storyOrId && typeof storyOrId === 'object') {
+            story = storyOrId;
+            storyId = Number(story.id);
+        } else if (storyOrId != null) {
+            storyId = Number(storyOrId);
+            story = this.getStoryById ? this.getStoryById(storyId) : (this.stories ? this.stories.find(s => s.id === storyId) : null);
+        }
+        if (!storyId || isNaN(storyId)) return null;
+
+        const sections = [
+            { key: 'official_categories', section: 'official' },
+            { key: 'legacy_categories', section: 'legacy' },
+            { key: 'special_categories', section: 'special' }
+        ];
+
+        // 規則 1: explicit entry
+        for (const sec of sections) {
+            const cats = this.extraStoryIndex[sec.key] || [];
+            for (const category of cats) {
+                if (category.stories && category.stories.some(s => Number(s.id) === storyId)) {
+                    return {
+                        category: category,
+                        categoryId: category.id,
+                        section: sec.section,
+                        isSeriesChild: false
+                    };
+                }
+            }
+        }
+
+        // 規則 2: anniversary child
+        const officialCats = this.extraStoryIndex.official_categories || [];
+        const annivCategory = officialCats.find(c => c.id === 'anniversary_countdown');
+        if (annivCategory && Array.isArray(annivCategory.stories)) {
+            const anniversaryGroupIds = new Set(annivCategory.stories.map(s => Math.floor(Number(s.id) / 1000)));
+            const storyGroupId =
+                story && story.groupId != null
+                    ? Number(story.groupId)
+                    : null;
+            if (storyGroupId != null && !isNaN(storyGroupId) && anniversaryGroupIds.has(storyGroupId)) {
+                return {
+                    category: annivCategory,
+                    categoryId: 'anniversary_countdown',
+                    section: 'official',
+                    isSeriesChild: true
+                };
+            }
+        }
+
+        return null;
+    },
+
     groupExtraStories() {
         this.chapters = {};
         const category = this.getExtraCategory(this.activeExtraCategory);
         if (!category) return;
 
-        const catStoryIds = new Set(category.stories.map(s => s.id));
-        // Anniversary entries in the official index are series-level anchors.
-        // Expand each anchor to all DB child episodes in its story group while
-        // keeping the 10-entry official index unchanged.
-        const anniversaryGroupIds = category.id === 'anniversary_countdown'
-            ? new Set(category.stories.map(s => Math.floor(Number(s.id) / 1000)))
-            : null;
-        const catStories = this.stories.filter(s => anniversaryGroupIds
-            ? anniversaryGroupIds.has(Number(s.groupId))
-            : catStoryIds.has(s.id));
+        const catStories = this.stories.filter(s => {
+            const m = this.getExtraMembership(s);
+            return m && m.categoryId === category.id;
+        });
         catStories.sort((a, b) => a.id - b.id);
 
         catStories.forEach(s => {
@@ -3049,31 +3109,34 @@ const QuestMapModule = {
 
         const isEvent = story.isEvent;
         const storyType = story.type; // 'main', 'chara', 'guild', 'tower'
-        if (isEvent && this.activeTabType !== 'event') {
-            this.activeTabType = 'event';
-        } else if (!isEvent) {
+        const extraMembership = this.getExtraMembership(story);
+
+        if (extraMembership) {
+            // Extra membership 優先導向 Extra 分頁與對應分類 (Phase 3 Part F)
+            this.activeTabType = 'extra';
+            this.activeExtraCategory = extraMembership.categoryId;
+            this.groupExtraStories();
+        } else if (isEvent) {
+            if (this.activeTabType !== 'event') this.activeTabType = 'event';
+            this.groupEventStories();
+        } else {
             // 根據 story.type 正確導向對應的分頁
-            if (storyType && ['chara', 'guild', 'tower', 'extra'].includes(storyType)) {
+            if (storyType && ['chara', 'guild', 'tower'].includes(storyType)) {
                 this.activeTabType = storyType;
             } else {
                 this.activeTabType = 'main';
                 if (story.part) this.currentPart = story.part;
             }
-        }
 
-        if (isEvent) {
-            this.groupEventStories();
-        } else if (storyType === 'chara') {
-            this.groupCharaStories();
-        } else if (storyType === 'guild') {
-            this.groupGuildStories();
-        } else if (storyType === 'tower') {
-            this.groupTowerStories();
-        } else if (storyType === 'extra') {
-            this.activeExtraCategory = story.extraCategoryId || null;
-            this.groupExtraStories();
-        } else {
-            this.groupStories();
+            if (storyType === 'chara') {
+                this.groupCharaStories();
+            } else if (storyType === 'guild') {
+                this.groupGuildStories();
+            } else if (storyType === 'tower') {
+                this.groupTowerStories();
+            } else {
+                this.groupStories();
+            }
         }
 
         let targetChKey = null;
