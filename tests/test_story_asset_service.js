@@ -306,4 +306,79 @@ test("Test 19: getEventTopThumbnailHtml produces valid image tag, escaped attrib
     assert(emptyHtml.includes('onerror="StoryAssetService.handleImageError(this)"'));
 });
 
+// Test 20 — Story thumbnail fallback placeholder ordering (Phase 3 Part A)
+test("Test 20: Story thumbnail fallback placeholder ordering contract", () => {
+    const service = createServiceInstance();
+    const stillId = "100401";
+    const bgId = "10001";
+    const storyId = "2201101";
+
+    // 1. getStillUrls(id) 預設仍以 transparent GIF 結尾
+    const stillUrlsDefault = service.getStillUrls(stillId);
+    assert.strictEqual(
+        stillUrlsDefault[stillUrlsDefault.length - 1],
+        TRANSPARENT_PLACEHOLDER,
+        "getStillUrls(id) 預設必須以透明佔位圖結尾"
+    );
+
+    // 2. getStillUrls(id, false) 不含 transparent GIF
+    const stillUrlsNoPlaceholder = service.getStillUrls(stillId, false);
+    assert.strictEqual(
+        stillUrlsNoPlaceholder.includes(TRANSPARENT_PLACEHOLDER),
+        false,
+        "getStillUrls(id, false) 不得包含透明佔位圖"
+    );
+    assert.strictEqual(
+        stillUrlsNoPlaceholder.length,
+        stillUrlsDefault.length - 1,
+        "getStillUrls(id, false) 長度應為預設長度減 1"
+    );
+
+    // 3. getStoryThumbnailUrls(storyId, stillId, bgId) 排序與無佔位符驗證
+    const thumbUrls = service.getStoryThumbnailUrls(storyId, stillId, bgId);
+
+    // 4. transparent GIF 不在 getStoryThumbnailUrls() candidates 中
+    assert.strictEqual(
+        thumbUrls.includes(TRANSPARENT_PLACEHOLDER),
+        false,
+        "getStoryThumbnailUrls candidates 中嚴禁包含中間透明佔位圖"
+    );
+
+    // 驗證順序: story thumbnail -> real still candidates -> real bg candidates -> default card
+    const storyIdx = thumbUrls.indexOf(`icon/story/${storyId}.webp`);
+    assert.strictEqual(storyIdx, 0, "第一順位必須為官方專屬縮圖");
+
+    // 尋找任一 real still candidate 的 index
+    const firstStillUrl = stillUrlsNoPlaceholder[0];
+    const stillIdx = thumbUrls.indexOf(firstStillUrl);
+    assert(stillIdx > storyIdx, "real still candidate 必須在 story thumbnail 之後");
+
+    // 尋找任一 real bg candidate 的 index
+    const bgUrls = service.getBackgroundUrls(bgId);
+    const firstBgUrl = bgUrls[0];
+    const bgIdx = thumbUrls.indexOf(firstBgUrl);
+    assert(bgIdx > stillIdx, "real bg candidate 必須在 real still candidate 之後");
+
+    // 尋找 default card 的 index
+    const defaultCardUrl = 'https://redive.estertion.win/card/full/100431.webp';
+    const defaultCardIdx = thumbUrls.indexOf(defaultCardUrl);
+    assert(defaultCardIdx > bgIdx, "default card 必須在 real bg candidate 之後");
+
+    // 5. handleImageError 所有候選耗盡後仍會使用 transparent GIF
+    const mockImg = {
+        dataset: {
+            step: "1",
+            candidates: encodeURIComponent(JSON.stringify(["http://example.com/failed.png"]))
+        },
+        src: "http://example.com/failed.png"
+    };
+    // step 為 1，candidates 長度為 1，此時已耗盡
+    service.handleImageError(mockImg);
+    assert.strictEqual(
+        mockImg.src,
+        TRANSPARENT_PLACEHOLDER,
+        "handleImageError 在候選耗盡時最終必須設置透明佔位圖"
+    );
+});
+
 console.log(`\n🎉 All ${testsPassed} StoryAssetService tests passed!`);

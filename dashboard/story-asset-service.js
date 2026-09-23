@@ -108,7 +108,7 @@ window.StoryAssetService = {
      * @param {number|string} stillId CG 插畫 ID
      * @returns {string[]} URL 候選清單
      */
-    getStillUrls(stillId) {
+    getStillUrls(stillId, includePlaceholder = true) {
         const id = stillId ? String(stillId).trim() : "";
         const candidates = [];
 
@@ -142,8 +142,10 @@ window.StoryAssetService = {
             });
         }
 
-        // 4. 降級備用：使用透明 1px 圖片佔位符，避免在畫面上留下破圖標誌
-        candidates.push('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
+        // 4. 降級備用：使用透明 1px 圖片佔位符，避免在畫面上留下破圖標誌 (可選)
+        if (includePlaceholder) {
+            candidates.push('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
+        }
 
         return candidates;
     },
@@ -291,9 +293,9 @@ window.StoryAssetService = {
             urls.push(`https://redive.estertion.win/card/full/${validCharaGroupId}31.webp`);
         } else {
             // 一般劇情降級合約
-            // 候選 2: CG 劇照
+            // 候選 2: CG 劇照 (排除佔位符，確保後續背景與預設卡面能正常降級)
             if (stillId) {
-                const stillUrls = this.getStillUrls(stillId);
+                const stillUrls = this.getStillUrls(stillId, false);
                 for (const u of stillUrls) {
                     if (!urls.includes(u)) urls.push(u);
                 }

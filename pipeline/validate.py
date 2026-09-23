@@ -847,6 +847,187 @@ def validate_chapters_metadata(data: dict) -> Tuple[bool, str]:
 
     return True, ""
 
+
+def validate_extra_story_index(
+    data: dict,
+    base_dir: Optional[Path] = None,
+    db_path: Optional[Path] = None,
+    story_dir: Optional[Path] = None
+) -> Tuple[bool, List[str]]:
+    """
+    驗證 extra_story_index.json 的資料契約與分類架構 (Phase 3 Part B & C & D)。
+    1. Taxonomy 規範:
+       - official_categories: 12 個
+       - legacy_categories: 4 個
+       - special_categories: 3 個
+    2. Explicit story counts:
+       - official = 432
+       - legacy = 14
+       - special = 5
+    3. Category 規格:
+       - id: 非空字串
+       - title: 非空字串
+       - stories: 陣列
+       - story id: 正整數 (int 且 > 0，非 bool)
+       - story id 跨分類不得重複 (全域唯一)
+       - 若有 expected_count: expected_count == len(stories) (official/legacy 必備且吻合；special 可無)
+    4. Asset mixing 防禦契約 (Part B):
+       - story entry 嚴禁包含 representativeStoryThumbnail, still_id, bg_id, thumbnail_id
+    5. Representative thumbnail 規範:
+       - 若存在: 必須為合法路徑 (icon/story/, icon/exstory_top/, icon/tower_top/) 且檔案存在
+       - 若不存在: 合法，且 special 1001~1005 (grand_masters, karyl_yabaival, gindaco_oedo_summer) 必須為 None
+    6. Anniversary contract (Part D):
+       - official index 必須正好 10 個 anchors
+       - 10 個 anchors 不重複
+       - 依 anchor 對應之 story_group_id，在 DB story_detail 與本地 story 展開後總共得到 126 readable child episodes
+    """
+    errors = []
+    if not isinstance(data, dict):
+        return False, ["extra_story_index.json 根物件必須為字典"]
+
+    # 1. 檢查版本
+    if data.get("version") != 1:
+        errors.append(f"版本號必須為 1 (當前為: {data.get('version')})")
+
+    # 2. Taxonomy 結構與數量檢驗 (保留分類層級數量門禁，允許未來內容自然擴充)
+    expected_taxonomy = {
+        "official_categories": 12,
+        "legacy_categories": 4,
+        "special_categories": 3
+    }
+
+    all_seen_story_ids = set()
+    special_ids_text_only = {"grand_masters", "karyl_yabaival", "gindaco_oedo_summer"}
+    valid_thumb_prefixes = ("icon/story/", "icon/exstory_top/", "icon/tower_top/")
+    forbidden_entry_fields = {"representativeStoryThumbnail", "still_id", "bg_id", "thumbnail_id"}
+
+    for section_name, exp_cat_count in expected_taxonomy.items():
+        if section_name not in data:
+            errors.append(f"缺少必備章節集合: {section_name}")
+            continue
+        cats = data[section_name]
+        if not isinstance(cats, list):
+            errors.append(f"{section_name} 必須為陣列")
+            continue
+        if len(cats) != exp_cat_count:
+            errors.append(f"{section_name} 分類數量不符預期！(預期: {exp_cat_count}, 實際: {len(cats)})")
+
+        for cat in cats:
+            if not isinstance(cat, dict):
+                errors.append(f"{section_name} 中包含非字典分類項目: {cat}")
+                continue
+
+            cid = cat.get("id")
+            if not isinstance(cid, str) or not cid.strip():
+                errors.append(f"分類缺少合法 id: {cat}")
+                cid = str(cid)
+
+            title = cat.get("title")
+            if not isinstance(title, str) or not title.strip():
+                errors.append(f"分類 {cid} 缺少合法 title: {cat}")
+
+            stories = cat.get("stories")
+            if not isinstance(stories, list):
+                errors.append(f"分類 {cid} 的 stories 必須為陣列")
+                continue
+
+            # expected_count 規則: official 與 legacy 必須精確與自身話數相符；special 可無
+            exp_count = cat.get("expected_count")
+            if section_name in ("official_categories", "legacy_categories"):
+                if not isinstance(exp_count, int) or isinstance(exp_count, bool):
+                    errors.append(f"分類 {cid} 必須包含整數 expected_count (當前為: {exp_count})")
+                elif exp_count != len(stories):
+                    errors.append(f"分類 {cid} expected_count ({exp_count}) 與實際話數 ({len(stories)}) 不符！")
+            elif section_name == "special_categories":
+                if exp_count is not None and exp_count != len(stories):
+                    errors.append(f"特殊分類 {cid} expected_count ({exp_count}) 與實際話數 ({len(stories)}) 不符！")
+
+            # representativeStoryThumbnail 契約檢驗
+            thumb = cat.get("representativeStoryThumbnail")
+            if thumb is not None:
+                if cid in special_ids_text_only:
+                    errors.append(f"特殊分類 {cid} (1001~1005) 為 text-only，嚴禁設定 representativeStoryThumbnail！(當前值: {thumb})")
+                elif not isinstance(thumb, str) or not thumb.strip():
+                    errors.append(f"分類 {cid} representativeStoryThumbnail 必須為非空字串")
+                elif not any(thumb.startswith(p) for p in valid_thumb_prefixes) or not thumb.endswith(".webp"):
+                    errors.append(f"分類 {cid} representativeStoryThumbnail 路徑格式不合法: {thumb}")
+                elif base_dir is not None:
+                    thumb_file = base_dir / thumb
+                    if not thumb_file.exists():
+                        errors.append(f"分類 {cid} representativeStoryThumbnail 本地檔案不存在: {thumb_file}")
+            else:
+                if cid not in special_ids_text_only and section_name != "special_categories":
+                    pass
+
+            # 檢驗 stories 內的每個 entry
+            for entry in stories:
+                if not isinstance(entry, dict):
+                    errors.append(f"分類 {cid} 包含非字典話數項目: {entry}")
+                    continue
+
+                sid = entry.get("id")
+                if not isinstance(sid, int) or isinstance(sid, bool) or sid <= 0:
+                    errors.append(f"分類 {cid} 話數 id 必須為正整數: {sid}")
+                    continue
+
+                # 全局跨分類唯一性
+                if sid in all_seen_story_ids:
+                    errors.append(f"話數 ID {sid} 在跨分類中重複出現 (出現在分類: {cid})！")
+                all_seen_story_ids.add(sid)
+
+                # Part B: 禁止在 entry 中混合 canonical / representative asset 欄位
+                mixed_keys = set(entry.keys()) & forbidden_entry_fields
+                if mixed_keys:
+                    errors.append(f"話數 ID {sid} 違規包含混合資產欄位 {mixed_keys} (嚴禁將 representativeStoryThumbnail/still_id/bg_id/thumbnail_id 放入 story entry)！")
+
+    # 3. Anniversary contract (Part D)
+    official_cats = {c.get("id"): c for c in data.get("official_categories", []) if isinstance(c, dict)}
+    anniv_cat = official_cats.get("anniversary_countdown")
+    if not anniv_cat:
+        errors.append("official_categories 中缺少 anniversary_countdown 分類！")
+    else:
+        anniv_stories = anniv_cat.get("stories", [])
+        if anniv_cat.get("expected_count") != 10:
+            errors.append(f"anniversary_countdown expected_count 必須為 10 (當前: {anniv_cat.get('expected_count')})")
+        if len(anniv_stories) != 10:
+            errors.append(f"anniversary_countdown stories 數量必須為 10 (當前: {len(anniv_stories)})")
+        anchor_ids = [s.get("id") for s in anniv_stories if isinstance(s, dict)]
+        if len(set(anchor_ids)) != 10:
+            errors.append("anniversary_countdown 包含重複的 anchor story ID！")
+
+        # 依 anchor 對應 story_group_id 展開 126 readable child episodes
+        if db_path is not None and db_path.exists():
+            try:
+                conn = sqlite3.connect(str(db_path))
+                cur = conn.cursor()
+                cur.execute(
+                    f"SELECT DISTINCT story_group_id FROM story_detail WHERE story_id IN ({','.join('?' for _ in anchor_ids)})",
+                    anchor_ids
+                )
+                group_ids = [r[0] for r in cur.fetchall()]
+                if len(group_ids) != 10:
+                    errors.append(f"anniversary_countdown 10 個 anchors 對應之 story_group_id 數量不符 10！(實際: {len(group_ids)})")
+
+                cur.execute(
+                    f"SELECT story_id FROM story_detail WHERE story_group_id IN ({','.join('?' for _ in group_ids)})",
+                    group_ids
+                )
+                child_ids = [r[0] for r in cur.fetchall()]
+                conn.close()
+
+                if len(child_ids) != 126:
+                    errors.append(f"anniversary_countdown 展開 child episodes 總數不符 126！(DB 中為: {len(child_ids)})")
+
+                if story_dir is not None and story_dir.exists():
+                    missing_local = [cid for cid in child_ids if not (story_dir / f"{cid}.json").exists()]
+                    if missing_local:
+                        errors.append(f"anniversary_countdown 展開之 126 話中有 {len(missing_local)} 話本地對白 JSON 缺失 (範例: {missing_local[:5]})")
+            except Exception as e:
+                errors.append(f"驗證 anniversary_countdown DB 展開時發生異常: {e}")
+
+    return len(errors) == 0, errors
+
+
 def validate_story_map(
     target_dir: Path = None,
     check_dist: bool = False,
@@ -935,7 +1116,13 @@ def validate_story_map(
                 )
                 for s in d.get("stories")
             )
-        )
+        ),
+        "extra_story_index.json": lambda d: validate_extra_story_index(
+            d,
+            base_dir=base_dir,
+            db_path=(base_dir / "redive_tw.db"),
+            story_dir=target_story_dir
+        )[0],
     }
     
     for meta_name, schema_validator in required_metadata.items():
@@ -952,6 +1139,14 @@ def validate_story_map(
                 if meta_name == "chapters.json":
                     _, err = validate_chapters_metadata(data)
                     res.error(f"元數據 Schema 結構不符合預期: data/{meta_name} ({err})")
+                elif meta_name == "extra_story_index.json":
+                    _, errs = validate_extra_story_index(
+                        data,
+                        base_dir=base_dir,
+                        db_path=(base_dir / "redive_tw.db"),
+                        story_dir=target_story_dir
+                    )
+                    res.error(f"元數據 Schema 結構不符合預期: data/{meta_name} ({'; '.join(errs)})")
                 else:
                     res.error(f"元數據 Schema 結構不符合預期: data/{meta_name}")
         except Exception as e:

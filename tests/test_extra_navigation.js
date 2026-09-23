@@ -88,18 +88,111 @@ function runTests(dbRows) {
             }));
         },
 
+        getStoryById(id) {
+            return this.stories.find(s => s.id === Number(id)) || null;
+        },
+
+        getExtraMembership(storyOrId) {
+            if (!this.extraStoryIndex) return null;
+
+            let story = null;
+            let storyId = null;
+            if (storyOrId && typeof storyOrId === 'object') {
+                story = storyOrId;
+                storyId = Number(story.id);
+            } else if (storyOrId != null) {
+                storyId = Number(storyOrId);
+                story = this.getStoryById(storyId);
+            }
+            if (!storyId || isNaN(storyId)) return null;
+
+            const sections = [
+                { key: 'official_categories', section: 'official' },
+                { key: 'legacy_categories', section: 'legacy' },
+                { key: 'special_categories', section: 'special' }
+            ];
+
+            // 規則 1: explicit entry
+            for (const sec of sections) {
+                const cats = this.extraStoryIndex[sec.key] || [];
+                for (const category of cats) {
+                    if (category.stories && category.stories.some(s => Number(s.id) === storyId)) {
+                        return {
+                            category: category,
+                            categoryId: category.id,
+                            section: sec.section,
+                            isSeriesChild: false
+                        };
+                    }
+                }
+            }
+
+            // 規則 2: anniversary child
+            const officialCats = this.extraStoryIndex.official_categories || [];
+            const annivCategory = officialCats.find(c => c.id === 'anniversary_countdown');
+            if (annivCategory && Array.isArray(annivCategory.stories)) {
+                const anniversaryGroupIds = new Set(annivCategory.stories.map(s => Math.floor(Number(s.id) / 1000)));
+                const storyGroupId = story && story.groupId != null ? Number(story.groupId) : Math.floor(storyId / 1000);
+                if (anniversaryGroupIds.has(storyGroupId)) {
+                    return {
+                        category: annivCategory,
+                        categoryId: 'anniversary_countdown',
+                        section: 'official',
+                        isSeriesChild: true
+                    };
+                }
+            }
+
+            return null;
+        },
+
+        groupTowerStories() {
+            this.chapters = { '露娜之塔': this.stories.filter(s => s.type === 'tower') };
+        },
+
+        groupStories() {
+            this.chapters = { '主線劇情': this.stories.filter(s => s.type === 'main') };
+        },
+
+        jumpToStory(storyId, closeModalId) {
+            if (this.stories.length === 0) return;
+            const story = this.getStoryById(storyId);
+            if (!story) return;
+
+            const isEvent = story.isEvent;
+            const storyType = story.type;
+            const extraMembership = this.getExtraMembership(story);
+
+            if (extraMembership) {
+                this.activeTabType = 'extra';
+                this.activeExtraCategory = extraMembership.categoryId;
+                this.groupExtraStories();
+            } else if (isEvent) {
+                if (this.activeTabType !== 'event') this.activeTabType = 'event';
+            } else {
+                if (storyType && ['chara', 'guild', 'tower'].includes(storyType)) {
+                    this.activeTabType = storyType;
+                } else {
+                    this.activeTabType = 'main';
+                }
+
+                if (storyType === 'tower') {
+                    this.groupTowerStories();
+                } else {
+                    this.groupStories();
+                }
+            }
+        },
+
         groupExtraStories() {
             this.chapters = {};
             const category = this.getExtraCategory(this.activeExtraCategory);
             if (!category) return;
 
-            const catStoryIds = new Set(category.stories.map(s => s.id));
-            const anniversaryGroupIds = category.id === 'anniversary_countdown'
-                ? new Set(category.stories.map(s => Math.floor(Number(s.id) / 1000)))
-                : null;
-            const catStories = this.stories.filter(s => anniversaryGroupIds
-                ? anniversaryGroupIds.has(Number(s.groupId))
-                : catStoryIds.has(s.id));
+            const catStories = this.stories.filter(s => {
+                const m = this.getExtraMembership(s);
+                return m && m.categoryId === category.id;
+            });
             catStories.sort((a, b) => a.id - b.id);
 
             catStories.forEach(s => {
@@ -320,6 +413,58 @@ function runTests(dbRows) {
     assert.strictEqual(snapshotBefore, snapshotAfter, 'this.stories must NOT be mutated by groupExtraStories()');
     assert.deepStrictEqual(extraStoryIndex.special_categories.flatMap(c => c.stories.map(s => s.id)), [1001, 1002, 1003, 1004, 1005]);
     console.log('[PASS] Immutability verified: this.stories untouched across all 18 categories');
+
+    console.log('\n=== Test 7: Extra Membership & jumpToStory Routing ===');
+    // A. 驗證特別指定之話數 ID 導向
+    const testCases = [
+        { id: 4004001, expectedCategory: 'mechanical_rima', isChild: false, label: 'mechanical_rima' },
+        { id: 4007001, expectedCategory: 'mysterious_disc', isChild: false, label: 'mysterious_disc' },
+        { id: 4003021, expectedCategory: 'dungeon_additional', isChild: false, label: 'dungeon_additional' },
+        { id: 4010207, expectedCategory: 'birthday_additional', isChild: false, label: 'birthday_additional' },
+        { id: 1001, expectedCategory: 'grand_masters', isChild: false, label: 'grand_masters' },
+        { id: 1003, expectedCategory: 'karyl_yabaival', isChild: false, label: 'karyl_yabaival' },
+        { id: 1004, expectedCategory: 'gindaco_oedo_summer', isChild: false, label: 'gindaco_oedo_summer' },
+        { id: 9002001, expectedCategory: 'anniversary_countdown', isChild: false, label: 'anniversary anchor 9002001' },
+        { id: 9002002, expectedCategory: 'anniversary_countdown', isChild: true, label: 'anniversary child 9002002' },
+        { id: 7001000, expectedCategory: 'luna_tower', isChild: false, label: 'luna tower 7001000' }
+    ];
+
+    testCases.forEach(tc => {
+        const membership = QuestMapModule.getExtraMembership(tc.id);
+        assert.ok(membership, `${tc.label} (${tc.id}) must have Extra membership`);
+        assert.strictEqual(membership.categoryId, tc.expectedCategory, `${tc.label} categoryId mismatch`);
+        assert.strictEqual(membership.isSeriesChild, tc.isChild, `${tc.label} isSeriesChild mismatch`);
+
+        // 測試 jumpToStory
+        QuestMapModule.activeTabType = 'main'; // 重設為 main
+        QuestMapModule.jumpToStory(tc.id);
+        assert.strictEqual(QuestMapModule.activeTabType, 'extra', `${tc.label} jumpToStory must switch activeTabType to 'extra'`);
+        assert.strictEqual(QuestMapModule.activeExtraCategory, tc.expectedCategory, `${tc.label} jumpToStory must switch activeExtraCategory to ${tc.expectedCategory}`);
+
+        // 驗證原本為 tower 的故事其 story.type 本身絕不被修改 (保持原始值)
+        const storyObj = QuestMapModule.getStoryById(tc.id);
+        if (storyObj && ((tc.id >= 4000000 && tc.id < 5000000) || (tc.id >= 9000000 && tc.id < 10000000))) {
+            assert.strictEqual(storyObj.type, 'tower', `${tc.label} story.type must remain 'tower' without being overwritten`);
+        }
+    });
+    console.log('[PASS] All 10 specific Extra stories routed to correct Extra categories without mutating story.type');
+
+    // B. non-extra tower story 仍維持既有 tower routing
+    QuestMapModule.stories.push({
+        id: 7999999,
+        chapter: '測試未歸類塔',
+        title: '測試未歸類塔話數',
+        groupId: 7999,
+        isEvent: false,
+        type: 'tower'
+    });
+    const nonExtraMembership = QuestMapModule.getExtraMembership(7999999);
+    assert.strictEqual(nonExtraMembership, null, 'Non-extra tower story must return null membership');
+
+    QuestMapModule.activeTabType = 'main';
+    QuestMapModule.jumpToStory(7999999);
+    assert.strictEqual(QuestMapModule.activeTabType, 'tower', 'Non-extra tower story jumpToStory must route to tower tab');
+    console.log('[PASS] Non-extra tower story strictly maintains existing tower tab routing');
 
     console.log('\n✅ All Metadata Closure & Navigation tests PASSED successfully with 0 errors.');
 }
