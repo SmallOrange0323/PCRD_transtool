@@ -231,12 +231,12 @@ function runTests(dbRows) {
     ]);
     assert.strictEqual(extraStoryIndex.special_categories[1].stories[0].year, 2024);
     const representativeThumbs = Object.fromEntries(extraStoryIndex.official_categories.map(c => [c.id, c.representativeStoryThumbnail]));
-    assert.strictEqual(representativeThumbs.luna_tower, 'icon/story/7001000.webp');
-    assert.strictEqual(representativeThumbs.birthday_stories, 'icon/story/4010001.webp');
-    assert.strictEqual(extraStoryIndex.legacy_categories.find(c => c.id === 'mechanical_rima').representativeStoryThumbnail, 'icon/story/4004001.webp');
-    assert.strictEqual(extraStoryIndex.legacy_categories.find(c => c.id === 'mysterious_disc').representativeStoryThumbnail, 'icon/story/4007001.webp');
-    assert.strictEqual(extraStoryIndex.legacy_categories.find(c => c.id === 'dungeon_additional').representativeStoryThumbnail, 'icon/story/4003021.webp');
-    assert.ok(!extraStoryIndex.legacy_categories.find(c => c.id === 'birthday_additional').representativeStoryThumbnail, 'Unverified birthday additions must stay text-only');
+    assert.strictEqual(representativeThumbs.luna_tower, 'icon/tower_top/7001.webp');
+    assert.strictEqual(representativeThumbs.birthday_stories, 'icon/exstory_top/4010.webp');
+    assert.strictEqual(extraStoryIndex.legacy_categories.find(c => c.id === 'mechanical_rima').representativeStoryThumbnail, 'icon/exstory_top/4006.webp');
+    assert.strictEqual(extraStoryIndex.legacy_categories.find(c => c.id === 'mysterious_disc').representativeStoryThumbnail, 'icon/exstory_top/4007.webp');
+    assert.strictEqual(extraStoryIndex.legacy_categories.find(c => c.id === 'dungeon_additional').representativeStoryThumbnail, 'icon/exstory_top/4003.webp');
+    assert.strictEqual(extraStoryIndex.legacy_categories.find(c => c.id === 'birthday_additional').representativeStoryThumbnail, 'icon/exstory_top/4010.webp');
     assert.ok(extraStoryIndex.special_categories.every(c => !c.representativeStoryThumbnail), 'Special corpus must stay text-only without verified thumbnails');
     const serializedIndex = JSON.stringify(extraStoryIndex);
     ['2019 愚人節', '2020 愚人節', '2021 愚人節', '碧藍幻想合作前日譚', '闇影詩章合作前日譚']

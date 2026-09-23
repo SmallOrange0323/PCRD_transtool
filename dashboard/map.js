@@ -159,18 +159,24 @@ const QuestMapModule = {
     },
 
     getStoryItemHtml(s, chDisplay, titleDisplay) {
-        const thumbData = (this.storyThumbnails && this.storyThumbnails[s.id]) || {};
-        const stillId = thumbData.still_id || s.still_id || null;
-        const bgId = thumbData.bg_id || s.bg_id || null;
-        const options = (s.type === 'chara' && s.groupId) ? { characterGroupId: s.groupId } : {};
-        const thumbHtml = StoryAssetService.getStoryThumbnailHtml(
-            s.id,
-            stillId,
-            bgId,
-            'story-thumb-img',
-            'width:100%;height:100%;object-fit:cover;',
-            options
-        );
+        const isSpecialNoThumb = (s.id >= 1001 && s.id <= 1005);
+        let thumbHtml = "";
+        if (isSpecialNoThumb) {
+            thumbHtml = `<span style="font-size: 1.2rem; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">📖</span>`;
+        } else {
+            const thumbData = (this.storyThumbnails && this.storyThumbnails[s.id]) || {};
+            const stillId = thumbData.still_id || s.still_id || null;
+            const bgId = thumbData.bg_id || s.bg_id || null;
+            const options = (s.type === 'chara' && s.groupId) ? { characterGroupId: s.groupId } : {};
+            thumbHtml = StoryAssetService.getStoryThumbnailHtml(
+                s.id,
+                stillId,
+                bgId,
+                'story-thumb-img',
+                'width:100%;height:100%;object-fit:cover;',
+                options
+            );
+        }
         const cleanCh = this.normalizeDisplayTitle(chDisplay);
         const cleanTitle = this.normalizeDisplayTitle(titleDisplay);
         const hasTitle = cleanTitle && cleanTitle !== cleanCh;
@@ -1046,6 +1052,59 @@ const QuestMapModule = {
         return all.find(c => c.id === categoryId) || null;
     },
 
+    /**
+     * 解析 Extra 內層目錄系列卡片的縮圖描述符 (Pure Helper)
+     * @param {Object|null} category 當前 Extra Category 物件 (由 getExtraCategory 取得)
+     * @param {string} chKey 章節/期數名稱 (如 "第 1 期", "0.5 週年倒數")
+     * @param {Array} [childStories=[]] 該期/系列下的話數列表
+     * @returns {{ kind: string, id: string }|null} 縮圖描述符或 null
+     */
+    resolveExtraDirectoryThumbnail(category, chKey, childStories = []) {
+        if (!category) return null;
+
+        // A. luna_tower: 仍依期數使用 7001~7030
+        if (category.id === 'luna_tower') {
+            const match = String(chKey).match(/\d+/);
+            if (match) {
+                const towerId = 7000 + parseInt(match[0], 10);
+                return { kind: 'tower_top', id: String(towerId) };
+            }
+            return null;
+        }
+
+        // B. anniversary_countdown: 依各 series 的首話使用各自 story thumbnail
+        if (category.id === 'anniversary_countdown') {
+            if (childStories && childStories.length > 0 && childStories[0].id) {
+                return { kind: 'story', id: String(childStories[0].id) };
+            }
+            return null;
+        }
+
+        // C. 其他 category: 以 category 的 representativeStoryThumbnail 作為權威依據
+        const repThumb = category.representativeStoryThumbnail;
+        if (!repThumb || typeof repThumb !== 'string') {
+            // D. category 沒有 representativeStoryThumbnail (例如 1001~1005 special categories) -> null
+            return null;
+        }
+
+        const exstoryMatch = repThumb.match(/icon\/exstory_top\/(\d+)\.webp/);
+        if (exstoryMatch) {
+            return { kind: 'exstory_top', id: exstoryMatch[1] };
+        }
+
+        const towerMatch = repThumb.match(/icon\/tower_top\/(\d+)\.webp/);
+        if (towerMatch) {
+            return { kind: 'tower_top', id: towerMatch[1] };
+        }
+
+        const storyMatch = repThumb.match(/icon\/story\/(\d+)\.webp/);
+        if (storyMatch) {
+            return { kind: 'story', id: storyMatch[1] };
+        }
+
+        return null;
+    },
+
     selectExtraCategory(categoryId) {
         if (!this.getExtraCategory(categoryId)) return;
         this.activeExtraCategory = categoryId;
@@ -1486,53 +1545,62 @@ const QuestMapModule = {
                         }
                     }
 
-                    if (this.activeExtraCategory === 'luna_tower') {
-                        // 露娜之塔：期數轉 7001~7030
-                        let towerId = null;
-                        const match = chKey.match(/\d+/);
-                        if (match) {
-                            towerId = 7000 + parseInt(match[0], 10);
+                    const currentCategory = this.getExtraCategory(this.activeExtraCategory);
+                    const thumbDesc = this.resolveExtraDirectoryThumbnail(currentCategory, chKey, childStories);
+
+                    if (thumbDesc) {
+                        if (thumbDesc.kind === 'tower_top') {
+                            chapterCardThumbHtml = StoryAssetService.getTowerTopThumbnailHtml(
+                                thumbDesc.id,
+                                foundStoryId,
+                                foundStillId,
+                                foundBgId,
+                                'chapter-card-img',
+                                ''
+                            );
+                        } else if (thumbDesc.kind === 'exstory_top') {
+                            chapterCardThumbHtml = StoryAssetService.getExStoryTopThumbnailHtml(
+                                thumbDesc.id,
+                                foundStoryId,
+                                foundStillId,
+                                foundBgId,
+                                'chapter-card-img',
+                                ''
+                            );
+                        } else if (thumbDesc.kind === 'story') {
+                            chapterCardThumbHtml = StoryAssetService.getStoryThumbnailHtml(
+                                thumbDesc.id,
+                                foundStillId,
+                                foundBgId,
+                                'chapter-card-img',
+                                ''
+                            );
                         }
-                        chapterCardThumbHtml = StoryAssetService.getTowerTopThumbnailHtml(
-                            towerId,
-                            foundStoryId,
-                            foundStillId,
-                            foundBgId,
-                            'chapter-card-img',
-                            ''
-                        );
-                    } else {
-                        // 其他額外分類：解析分類 ID 或首話 ID
-                        let exCatId = null;
-                        if (childStories && childStories.length > 0) {
-                            const firstStory = childStories[0];
-                            if (firstStory.id && String(firstStory.id).startsWith('40')) {
-                                exCatId = String(firstStory.id).slice(0, 4);
-                            } else if (firstStory.groupId) {
-                                exCatId = String(firstStory.groupId);
-                            }
-                        }
-                        chapterCardThumbHtml = StoryAssetService.getExStoryTopThumbnailHtml(
-                            exCatId,
-                            foundStoryId,
-                            foundStillId,
-                            foundBgId,
-                            'chapter-card-img',
-                            ''
-                        );
                     }
 
-                    primaryCardsHtml += `
-                        <div class="directory-group-card ${isSelected ? 'active' : ''}" id="${safeId}" onclick="QuestMapModule.selectDirectoryGroup('${this.escapeForAttr(chKey)}')">
-                            <div class="chapter-card-thumb">
-                                ${chapterCardThumbHtml}
+                    if (chapterCardThumbHtml) {
+                        primaryCardsHtml += `
+                            <div class="directory-group-card ${isSelected ? 'active' : ''}" id="${safeId}" onclick="QuestMapModule.selectDirectoryGroup('${this.escapeForAttr(chKey)}')">
+                                <div class="chapter-card-thumb">
+                                    ${chapterCardThumbHtml}
+                                </div>
+                                <div class="dir-group-info">
+                                    <div class="dir-group-name">${this.escapeHtml(this.normalizeDisplayTitle(chKey))}</div>
+                                    <div class="dir-group-count">${childStories.length} 話</div>
+                                </div>
                             </div>
-                            <div class="dir-group-info">
-                                <div class="dir-group-name">${this.escapeHtml(this.normalizeDisplayTitle(chKey))}</div>
-                                <div class="dir-group-count">${childStories.length} 話</div>
+                        `;
+                    } else {
+                        primaryCardsHtml += `
+                            <div class="directory-group-card ${isSelected ? 'active' : ''}" id="${safeId}" onclick="QuestMapModule.selectDirectoryGroup('${this.escapeForAttr(chKey)}')">
+                                <div class="dir-group-icon">🌙</div>
+                                <div class="dir-group-info">
+                                    <div class="dir-group-name">${this.escapeHtml(this.normalizeDisplayTitle(chKey))}</div>
+                                    <div class="dir-group-count">${childStories.length} 話</div>
+                                </div>
                             </div>
-                        </div>
-                    `;
+                        `;
+                    }
                 } else {
                     chIcon = "🌙";
                     primaryCardsHtml += `
