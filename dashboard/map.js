@@ -1438,8 +1438,103 @@ const QuestMapModule = {
                             </div>
                         </div>
                     `;
+                } else if (this.activeTabType === 'guild') {
+                    let foundStoryId = (childStories && childStories.length > 0) ? childStories[0].id : null;
+                    let foundStillId = null;
+                    let foundBgId = null;
+                    let guildId = null;
+
+                    if (childStories && childStories.length > 0) {
+                        const firstStory = childStories[0];
+                        guildId = firstStory.groupId || (firstStory.id ? String(firstStory.id).slice(0, 4) : null);
+                        for (const s of childStories) {
+                            if (s.still_id) { foundStillId = s.still_id; break; }
+                            if (!foundBgId && s.bg_id) foundBgId = s.bg_id;
+                        }
+                    }
+
+                    const chapterCardThumbHtml = StoryAssetService.getGuildTopThumbnailHtml(
+                        guildId,
+                        foundStoryId,
+                        foundStillId,
+                        foundBgId,
+                        'chapter-card-img',
+                        ''
+                    );
+
+                    primaryCardsHtml += `
+                        <div class="directory-group-card ${isSelected ? 'active' : ''}" id="${safeId}" onclick="QuestMapModule.selectDirectoryGroup('${this.escapeForAttr(chKey)}')">
+                            <div class="chapter-card-thumb">
+                                ${chapterCardThumbHtml}
+                            </div>
+                            <div class="dir-group-info">
+                                <div class="dir-group-name">${this.escapeHtml(this.normalizeDisplayTitle(chKey))}</div>
+                                <div class="dir-group-count">${childStories.length} 話</div>
+                            </div>
+                        </div>
+                    `;
+                } else if (this.activeTabType === 'extra') {
+                    let foundStoryId = (childStories && childStories.length > 0) ? childStories[0].id : null;
+                    let foundStillId = null;
+                    let foundBgId = null;
+                    let chapterCardThumbHtml = "";
+
+                    if (childStories && childStories.length > 0) {
+                        for (const s of childStories) {
+                            if (s.still_id) { foundStillId = s.still_id; break; }
+                            if (!foundBgId && s.bg_id) foundBgId = s.bg_id;
+                        }
+                    }
+
+                    if (this.activeExtraCategory === 'luna_tower') {
+                        // 露娜之塔：期數轉 7001~7030
+                        let towerId = null;
+                        const match = chKey.match(/\d+/);
+                        if (match) {
+                            towerId = 7000 + parseInt(match[0], 10);
+                        }
+                        chapterCardThumbHtml = StoryAssetService.getTowerTopThumbnailHtml(
+                            towerId,
+                            foundStoryId,
+                            foundStillId,
+                            foundBgId,
+                            'chapter-card-img',
+                            ''
+                        );
+                    } else {
+                        // 其他額外分類：解析分類 ID 或首話 ID
+                        let exCatId = null;
+                        if (childStories && childStories.length > 0) {
+                            const firstStory = childStories[0];
+                            if (firstStory.id && String(firstStory.id).startsWith('40')) {
+                                exCatId = String(firstStory.id).slice(0, 4);
+                            } else if (firstStory.groupId) {
+                                exCatId = String(firstStory.groupId);
+                            }
+                        }
+                        chapterCardThumbHtml = StoryAssetService.getExStoryTopThumbnailHtml(
+                            exCatId,
+                            foundStoryId,
+                            foundStillId,
+                            foundBgId,
+                            'chapter-card-img',
+                            ''
+                        );
+                    }
+
+                    primaryCardsHtml += `
+                        <div class="directory-group-card ${isSelected ? 'active' : ''}" id="${safeId}" onclick="QuestMapModule.selectDirectoryGroup('${this.escapeForAttr(chKey)}')">
+                            <div class="chapter-card-thumb">
+                                ${chapterCardThumbHtml}
+                            </div>
+                            <div class="dir-group-info">
+                                <div class="dir-group-name">${this.escapeHtml(this.normalizeDisplayTitle(chKey))}</div>
+                                <div class="dir-group-count">${childStories.length} 話</div>
+                            </div>
+                        </div>
+                    `;
                 } else {
-                    chIcon = this.activeTabType === 'guild' ? "👥" : (this.activeTabType === 'extra' ? "📖" : "🌙");
+                    chIcon = "🌙";
                     primaryCardsHtml += `
                         <div class="directory-group-card ${isSelected ? 'active' : ''}" id="${safeId}" onclick="QuestMapModule.selectDirectoryGroup('${this.escapeForAttr(chKey)}')">
                             <div class="dir-group-icon">${chIcon}</div>

@@ -11,7 +11,14 @@ console.log("media-service.js loaded");
     const MediaService = {
         _currentAudio: null,
         _voiceSessionToken: 0,
+        _voicePausedIntent: false,
+        _candidateTimeoutId: null,
+        _pendingCandidateIndex: null,
+        _resumePendingCandidate: null,
         _stillPopupKeyHandler: null,
+
+        // 單一 CDN candidate 最長等待時間；避免載入既不成功也不報錯時卡住 AUTO。
+        VOICE_CANDIDATE_TIMEOUT_MS: 15000,
 
         /**
          * 根據 voiceName 產生語音候選 URL 列表 (Cloudflare primary -> EsterTion PRCN -> EsterTion REDIVE)
@@ -62,11 +69,34 @@ console.log("media-service.js loaded");
             const sessionToken = this._voiceSessionToken;
             const isCurrentSession = () => sessionToken === this._voiceSessionToken;
 
+            const makeVoiceError = (type, message, cause = null) => {
+                const error = cause instanceof Error ? cause : new Error(message);
+                error.voiceFailureType = type;
+                return error;
+            };
+
+            const clearCandidateTimeout = () => {
+                if (this._candidateTimeoutId !== null) {
+                    clearTimeout(this._candidateTimeoutId);
+                    this._candidateTimeoutId = null;
+                }
+            };
+
             const tryPlay = (index) => {
                 if (!isCurrentSession()) return;
 
+                // 暫停不是 stop：保留下一個候選的位置，但不得在 PAUSED 狀態開始播放。
+                if (this._voicePausedIntent) {
+                    this._pendingCandidateIndex = index;
+                    this._resumePendingCandidate = () => tryPlay(index);
+                    return null;
+                }
+
                 if (index >= cdnList.length) {
                     if (!isCurrentSession()) return;
+                    this._pendingCandidateIndex = null;
+                    this._resumePendingCandidate = null;
+                    this._currentAudio = null;
                     console.warn('[MediaService] 該劇情的語音檔在遠端鏡像站尚未同步更新: ' + voiceName);
                     if (typeof options.onError === 'function') {
                         options.onError(new Error('All CDN candidates failed for: ' + voiceName));
@@ -80,27 +110,38 @@ console.log("media-service.js loaded");
                     return;
                 }
                 this._currentAudio = audio;
+                this._pendingCandidateIndex = null;
+                this._resumePendingCandidate = null;
 
                 // 綁定結束事件
                 audio.onended = () => {
                     if (!isCurrentSession() || this._currentAudio !== audio) return;
+                    clearCandidateTimeout();
                     if (typeof options.onEnded === 'function') {
                         options.onEnded();
                     }
                 };
 
                 let failureHandled = false;
-                const handleFailure = (err) => {
+                const handleFailure = (err, type = 'play-rejection') => {
                     if (!isCurrentSession() || failureHandled) return;
                     failureHandled = true;
+                    clearCandidateTimeout();
 
                     audio.onended = null;
                     audio.onerror = null;
 
+                    if (this._currentAudio === audio) {
+                        this._currentAudio = null;
+                    }
+
+                    // PAUSED 時的錯誤不可推進或結束 AUTO；resume 再依原本規則處理。
+                    if (this._voicePausedIntent) {
+                        return tryPlay(err && err.name === 'NotAllowedError' ? index : index + 1);
+                    }
+
                     if (err && err.name === 'NotAllowedError') {
-                        if (this._currentAudio === audio) {
-                            this._currentAudio = null;
-                        }
+                        err.voiceFailureType = 'autoplay-blocked';
                         console.warn('[MediaService] 語音播放被瀏覽器自動播放政策封鎖。');
                         if (typeof options.onError === 'function') {
                             options.onError(err);
@@ -108,28 +149,77 @@ console.log("media-service.js loaded");
                         return;
                     }
 
-                    tryPlay(index + 1);
+                    console.warn(`[MediaService] 語音 candidate 失敗 (${type})，嘗試下一來源。`);
+                    const retryPromise = tryPlay(index + 1);
+                    if (retryPromise && typeof retryPromise.catch === 'function') {
+                        retryPromise.catch(() => {});
+                    }
                 };
+
+                let started = false;
+                const startCandidatePlayback = () => {
+                    if (!isCurrentSession() || this._currentAudio !== audio || this._voicePausedIntent) {
+                        return null;
+                    }
+
+                    clearCandidateTimeout();
+                    const timeoutId = setTimeout(() => {
+                        if (!isCurrentSession() || this._candidateTimeoutId !== timeoutId || this._currentAudio !== audio) return;
+                        this._candidateTimeoutId = null;
+                        handleFailure(makeVoiceError('timeout', 'Voice candidate timed out'), 'timeout');
+                    }, this.VOICE_CANDIDATE_TIMEOUT_MS);
+                    this._candidateTimeoutId = timeoutId;
+
+                    let playPromise;
+                    try {
+                        playPromise = audio.play();
+                    } catch (err) {
+                        handleFailure(makeVoiceError('play-rejection', 'Audio play failed', err), 'play-rejection');
+                        return null;
+                    }
+
+                    const onStarted = () => {
+                        if (!isCurrentSession() || this._currentAudio !== audio) {
+                            try { audio.pause(); } catch (e) { /* ignore */ }
+                            return;
+                        }
+                        clearCandidateTimeout();
+                        if (this._voicePausedIntent) {
+                            try { audio.pause(); } catch (e) { /* ignore */ }
+                            return;
+                        }
+                        if (!started) {
+                            started = true;
+                            if (typeof options.onStart === 'function') {
+                                options.onStart(audio);
+                            }
+                        }
+                    };
+
+                    if (playPromise && typeof playPromise.then === 'function') {
+                        return playPromise.then(onStarted).catch(err => {
+                            handleFailure(err, err && err.name === 'NotAllowedError' ? 'autoplay-blocked' : 'play-rejection');
+                            throw err;
+                        });
+                    }
+                    onStarted();
+                    return null;
+                };
+
+                this._resumePendingCandidate = startCandidatePlayback;
 
                 // 若載入中途出錯，嘗試下一候選 (防重守護)
                 audio.onerror = () => {
-                    handleFailure(new Error('Audio load error'));
+                    handleFailure(makeVoiceError('load-error', 'Audio load error'), 'load-error');
                 };
 
-                audio.play().then(() => {
-                    if (!isCurrentSession() || this._currentAudio !== audio) {
-                        try { audio.pause(); } catch (e) { /* ignore */ }
-                        return;
-                    }
-                    if (typeof options.onStart === 'function') {
-                        options.onStart(audio);
-                    }
-                }).catch(err => {
-                    handleFailure(err);
-                });
+                return startCandidatePlayback();
             };
 
-            tryPlay(0);
+            const initialPromise = tryPlay(0);
+            if (initialPromise && typeof initialPromise.catch === 'function') {
+                initialPromise.catch(() => {});
+            }
         },
 
         /**
@@ -137,8 +227,15 @@ console.log("media-service.js loaded");
          * @returns {boolean} 是否成功執行暫停
          */
         pauseVoice() {
-            if (this._currentAudio && !this._currentAudio.paused) {
-                this._currentAudio.pause();
+            if (this._currentAudio && !this._currentAudio.ended) {
+                this._voicePausedIntent = true;
+                if (this._candidateTimeoutId !== null) {
+                    clearTimeout(this._candidateTimeoutId);
+                    this._candidateTimeoutId = null;
+                }
+                if (!this._currentAudio.paused) {
+                    this._currentAudio.pause();
+                }
                 return true;
             }
             return false;
@@ -149,7 +246,16 @@ console.log("media-service.js loaded");
          * @returns {Promise<void>|null}
          */
         resumeVoice() {
+            this._voicePausedIntent = false;
+            if (this._pendingCandidateIndex !== null && typeof this._resumePendingCandidate === 'function') {
+                const resumePending = this._resumePendingCandidate;
+                this._pendingCandidateIndex = null;
+                return resumePending();
+            }
             if (this._currentAudio && this._currentAudio.paused && !this._currentAudio.ended) {
+                if (typeof this._resumePendingCandidate === 'function') {
+                    return this._resumePendingCandidate();
+                }
                 return this._currentAudio.play();
             }
             return null;
@@ -162,6 +268,13 @@ console.log("media-service.js loaded");
          */
         stopVoice() {
             this._voiceSessionToken++;
+            this._voicePausedIntent = false;
+            this._pendingCandidateIndex = null;
+            this._resumePendingCandidate = null;
+            if (this._candidateTimeoutId !== null) {
+                clearTimeout(this._candidateTimeoutId);
+                this._candidateTimeoutId = null;
+            }
 
             if (this._currentAudio) {
                 const audio = this._currentAudio;
@@ -190,7 +303,7 @@ console.log("media-service.js loaded");
          * @returns {boolean}
          */
         isPausedVoice() {
-            return !!(this._currentAudio && this._currentAudio.paused && !this._currentAudio.ended && this._currentAudio.currentTime > 0);
+            return this._voicePausedIntent;
         },
 
         /**

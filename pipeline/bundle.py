@@ -742,6 +742,17 @@ def prune_stale_dist_assets(dashboard_dir: Path = DASHBOARD_DIR, dist_dir: Path 
                 cnt, b = safe_prune_file(df, dry_run=dry_run, dist_root=dist_dir)
                 record_prune("stale icon/event_top", cnt, b)
 
+    # 4G. icon/guild_top, icon/exstory_top, icon/tower_top (*.webp 官方頂層縮圖鏡像清理)
+    for top_sub in ["guild_top", "exstory_top", "tower_top"]:
+        dist_top_dir = dist_dir / "icon" / top_sub
+        src_top_dir = dashboard_dir / "icon" / top_sub
+        if dist_top_dir.exists() and src_top_dir.exists():
+            src_top_icons = {p.name for p in src_top_dir.glob("*.webp")}
+            for df in list(dist_top_dir.glob("*.webp")):
+                if df.name not in src_top_icons:
+                    cnt, b = safe_prune_file(df, dry_run=dry_run, dist_root=dist_dir)
+                    record_prune(f"stale icon/{top_sub}", cnt, b)
+
     # 5. 清理 icon/unit/ 中不在 expected set 的圖片
     dist_icon_unit_dir = dist_dir / "icon" / "unit"
     if dist_icon_unit_dir.exists():
@@ -965,6 +976,21 @@ def calculate_expected_additions_and_deltas(dashboard_dir: Path = DASHBOARD_DIR,
                 if calc_sha256(sf) != calc_sha256(df):
                     deltas += (s_sz - d_sz)
 
+    # 7D2. icon/guild_top, icon/exstory_top, icon/tower_top (官方頂層專屬縮圖)
+    for top_sub in ["icon/guild_top", "icon/exstory_top", "icon/tower_top"]:
+        src_top_d = dashboard_dir / top_sub
+        dst_top_d = dist_dir / top_sub
+        if src_top_d.exists():
+            for sf in src_top_d.glob("*.webp"):
+                df = dst_top_d / sf.name
+                s_sz = sf.stat().st_size
+                if not df.exists():
+                    additions += s_sz
+                else:
+                    d_sz = df.stat().st_size
+                    if calc_sha256(sf) != calc_sha256(df):
+                        deltas += (s_sz - d_sz)
+
     # 7E. sound/story_vo (精準 Gap 語音)
     gap_voice_mappings = get_expected_gap_voice_mappings(dashboard_dir)
     dst_sound_dir = dist_dir / "sound" / "story_vo"
@@ -1138,6 +1164,14 @@ def bundle_story_map(dry_run: bool = False) -> bool:
     icon_event_top_copied = sync_directory_assets(DASHBOARD_DIR / "icon" / "event_top", DIST_DIR / "icon" / "event_top", [".webp"], dry_run=dry_run)
     if icon_event_top_copied > 0:
         print(f"  [EventTop] 官方活動頂層專屬縮圖: {'預計同步' if dry_run else '已同步'} {icon_event_top_copied} 個檔案")
+
+    # 7E. 同步公會、額外劇情與露娜塔頂層專屬縮圖
+    icon_guild_top_copied = sync_directory_assets(DASHBOARD_DIR / "icon" / "guild_top", DIST_DIR / "icon" / "guild_top", [".webp"], dry_run=dry_run)
+    icon_exstory_top_copied = sync_directory_assets(DASHBOARD_DIR / "icon" / "exstory_top", DIST_DIR / "icon" / "exstory_top", [".webp"], dry_run=dry_run)
+    icon_tower_top_copied = sync_directory_assets(DASHBOARD_DIR / "icon" / "tower_top", DIST_DIR / "icon" / "tower_top", [".webp"], dry_run=dry_run)
+    top_total = icon_guild_top_copied + icon_exstory_top_copied + icon_tower_top_copied
+    if top_total > 0:
+        print(f"  [TopThumbs] 官方頂層縮圖: {'預計同步' if dry_run else '已同步'} {top_total} 個檔案 (公會: {icon_guild_top_copied}, 額外: {icon_exstory_top_copied}, 露娜塔: {icon_tower_top_copied})")
 
     # 8. 同步語音音檔 (sound/story_vo) - 精準 Gap 語音同步
     gap_voice_mappings = get_expected_gap_voice_mappings(DASHBOARD_DIR)

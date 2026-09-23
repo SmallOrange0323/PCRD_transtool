@@ -3,7 +3,7 @@
   "official_categories": [
     {
       "id": "luna_tower",
-      "representativeStoryThumbnail": "icon/story/7001000.webp",
+      "representativeStoryThumbnail": "icon/tower_top/7001.webp",
       "title": "露娜之塔",
       "expected_count": 179,
       "stories": [
@@ -906,7 +906,7 @@
     },
     {
       "id": "dimension_fault",
-      "representativeStoryThumbnail": "icon/story/4009001.webp",
+      "representativeStoryThumbnail": "icon/exstory_top/4009.webp",
       "title": "次元斷層",
       "expected_count": 2,
       "stories": [
@@ -952,7 +952,7 @@
     },
     {
       "id": "elpis_extermination",
-      "representativeStoryThumbnail": "icon/story/4015001.webp",
+      "representativeStoryThumbnail": "icon/exstory_top/4015.webp",
       "title": "艾爾皮斯討魔戰線",
       "expected_count": 1,
       "stories": [
@@ -965,7 +965,7 @@
     },
     {
       "id": "adventure",
-      "representativeStoryThumbnail": "icon/story/4008001.webp",
+      "representativeStoryThumbnail": "icon/exstory_top/4008.webp",
       "title": "探險",
       "expected_count": 1,
       "stories": [
@@ -978,7 +978,7 @@
     },
     {
       "id": "dungeon",
-      "representativeStoryThumbnail": "icon/story/4003001.webp",
+      "representativeStoryThumbnail": "icon/exstory_top/4003.webp",
       "title": "地下城",
       "expected_count": 20,
       "stories": [
@@ -1086,7 +1086,7 @@
     },
     {
       "id": "dawn_labyrinth",
-      "representativeStoryThumbnail": "icon/story/4013001.webp",
+      "representativeStoryThumbnail": "icon/exstory_top/4013.webp",
       "title": "黎明界迷宮",
       "expected_count": 1,
       "stories": [
@@ -1099,7 +1099,7 @@
     },
     {
       "id": "battle_trial",
-      "representativeStoryThumbnail": "icon/story/4011001.webp",
+      "representativeStoryThumbnail": "icon/exstory_top/4011.webp",
       "title": "戰鬥試煉場",
       "expected_count": 1,
       "stories": [
@@ -1112,7 +1112,7 @@
     },
     {
       "id": "arena",
-      "representativeStoryThumbnail": "icon/story/4002001.webp",
+      "representativeStoryThumbnail": "icon/exstory_top/4002.webp",
       "title": "競技場",
       "expected_count": 2,
       "stories": [
@@ -1130,7 +1130,7 @@
     },
     {
       "id": "guild_house",
-      "representativeStoryThumbnail": "icon/story/4001001.webp",
+      "representativeStoryThumbnail": "icon/exstory_top/4001.webp",
       "title": "公會小屋",
       "expected_count": 5,
       "stories": [
@@ -1221,7 +1221,7 @@
     },
     {
       "id": "birthday_stories",
-      "representativeStoryThumbnail": "icon/story/4010001.webp",
+      "representativeStoryThumbnail": "icon/exstory_top/4010.webp",
       "title": "生日劇情",
       "expected_count": 206,
       "stories": [
@@ -2266,36 +2266,72 @@
       "expected_count": 5,
       "provenance": "story_detail story_group_id 4006; canonical Story",
       "stories": [
-        { "id": 4004001, "title": "災難前來吐口水" },
-        { "id": 4004002, "title": "主謀者登場？" },
-        { "id": 4004003, "title": "巨大物體所鼓吹出的幻想" },
-        { "id": 4004004, "title": "勝利的握手" },
-        { "id": 4004005, "title": "四月一日的女孩談心" }
+        {
+          "id": 4004001,
+          "title": "災難前來吐口水"
+        },
+        {
+          "id": 4004002,
+          "title": "主謀者登場？"
+        },
+        {
+          "id": 4004003,
+          "title": "巨大物體所鼓吹出的幻想"
+        },
+        {
+          "id": 4004004,
+          "title": "勝利的握手"
+        },
+        {
+          "id": 4004005,
+          "title": "四月一日的女孩談心"
+        }
       ]
     },
     {
       "id": "mysterious_disc",
-      "representativeStoryThumbnail": "icon/story/4007001.webp",
+      "representativeStoryThumbnail": "icon/exstory_top/4007.webp",
       "title": "神秘圓盤特別劇情",
       "expected_count": 5,
       "provenance": "story_detail story_group_id 4007; canonical Story",
       "stories": [
-        { "id": 4007001, "title": "神秘的圓盤來襲" },
-        { "id": 4007002, "title": "公主‧緊急起飛" },
-        { "id": 4007003, "title": "巨影復活" },
-        { "id": 4007004, "title": "最後一擊" },
-        { "id": 4007005, "title": "夢與現實都有幸福蘋果滋味" }
+        {
+          "id": 4007001,
+          "title": "神秘的圓盤來襲"
+        },
+        {
+          "id": 4007002,
+          "title": "公主‧緊急起飛"
+        },
+        {
+          "id": 4007003,
+          "title": "巨影復活"
+        },
+        {
+          "id": 4007004,
+          "title": "最後一擊"
+        },
+        {
+          "id": 4007005,
+          "title": "夢與現實都有幸福蘋果滋味"
+        }
       ]
     },
     {
       "id": "dungeon_additional",
-      "representativeStoryThumbnail": "icon/story/4003021.webp",
+      "representativeStoryThumbnail": "icon/exstory_top/4003.webp",
       "title": "地下城追加",
       "expected_count": 2,
       "provenance": "story_detail story_group_id 4003; outside official 20-entry index",
       "stories": [
-        { "id": 4003021, "title": "登頂吧！「四彩靈峰」" },
-        { "id": 4003022, "title": "四季的美味凝於一盤" }
+        {
+          "id": 4003021,
+          "title": "登頂吧！「四彩靈峰」"
+        },
+        {
+          "id": 4003022,
+          "title": "四季的美味凝於一盤"
+        }
       ]
     },
     {
@@ -2304,9 +2340,16 @@
       "expected_count": 2,
       "provenance": "story_detail story_group_id 4010; outside official 206-entry index",
       "stories": [
-        { "id": 4010207, "title": "9月22日的劇情3" },
-        { "id": 4010208, "title": "9月29日的劇情3" }
-      ]
+        {
+          "id": 4010207,
+          "title": "9月22日的劇情3"
+        },
+        {
+          "id": 4010208,
+          "title": "9月29日的劇情3"
+        }
+      ],
+      "representativeStoryThumbnail": "icon/exstory_top/4010.webp"
     }
   ],
   "special_categories": [

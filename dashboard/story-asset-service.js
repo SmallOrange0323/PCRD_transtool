@@ -375,5 +375,107 @@ window.StoryAssetService = {
         const safeClass = this.escapeHtml(className);
         const safeStyle = this.escapeHtml(style);
         return `<img class="${safeClass}" style="${safeStyle}" src="${firstSrc}" loading="lazy" decoding="async" data-candidates="${serialized}" data-step="0" onerror="StoryAssetService.handleImageError(this)" alt="thumbnail">`;
+    },
+
+    /**
+     * 取得公會專屬頂層縮圖 (256x128 官方公會封面) 及其降級候選清單
+     * @param {number|string} groupId 公會 ID (例如 3001 美食殿堂)
+     * @param {number|string} fallbackStoryId 降級首話 ID (可選)
+     * @param {number|string} stillId 劇照 CG ID (可選)
+     * @param {number|string} bgId 背景 ID (可選)
+     * @returns {string[]}
+     */
+    getGuildTopThumbnailUrls(groupId, fallbackStoryId = null, stillId = null, bgId = null) {
+        const urls = [];
+        const rawGid = groupId != null ? String(groupId).trim() : "";
+        if (rawGid && /^[1-9]\d*$/.test(rawGid)) {
+            urls.push(`icon/guild_top/${rawGid}.webp`);
+        }
+        const fallbackUrls = this.getStoryThumbnailUrls(fallbackStoryId, stillId, bgId);
+        for (const u of fallbackUrls) {
+            if (!urls.includes(u)) urls.push(u);
+        }
+        return urls;
+    },
+
+    /**
+     * 取得封裝好的公會頂層縮圖 HTML <img> 標籤
+     */
+    getGuildTopThumbnailHtml(groupId, fallbackStoryId = null, stillId = null, bgId = null, className = "", style = "") {
+        const candidates = this.getGuildTopThumbnailUrls(groupId, fallbackStoryId, stillId, bgId);
+        const firstSrc = candidates[0] || 'https://redive.estertion.win/card/full/100431.webp';
+        const remainingCandidates = candidates.slice(1);
+        const serialized = encodeURIComponent(JSON.stringify(remainingCandidates));
+        const safeClass = this.escapeHtml(className);
+        const safeStyle = this.escapeHtml(style);
+        return `<img class="${safeClass}" style="${safeStyle}" src="${firstSrc}" loading="lazy" decoding="async" data-candidates="${serialized}" data-step="0" onerror="StoryAssetService.handleImageError(this)" alt="guild thumbnail">`;
+    },
+
+    /**
+     * 取得額外劇情分類專屬頂層縮圖 (256x128) 及其降級候選清單
+     * @param {number|string} categoryId 額外分類 ID (例如 4001 公會小屋)
+     * @param {number|string} fallbackStoryId 降級首話 ID (可選)
+     * @param {number|string} stillId 劇照 CG ID (可選)
+     * @param {number|string} bgId 背景 ID (可選)
+     * @returns {string[]}
+     */
+    getExStoryTopThumbnailUrls(categoryId, fallbackStoryId = null, stillId = null, bgId = null) {
+        const urls = [];
+        const rawCid = categoryId != null ? String(categoryId).trim() : "";
+        if (rawCid && /^[1-9]\d*$/.test(rawCid)) {
+            urls.push(`icon/exstory_top/${rawCid}.webp`);
+        }
+        const fallbackUrls = this.getStoryThumbnailUrls(fallbackStoryId, stillId, bgId);
+        for (const u of fallbackUrls) {
+            if (!urls.includes(u)) urls.push(u);
+        }
+        return urls;
+    },
+
+    /**
+     * 取得封裝好的額外劇情頂層縮圖 HTML <img> 標籤
+     */
+    getExStoryTopThumbnailHtml(categoryId, fallbackStoryId = null, stillId = null, bgId = null, className = "", style = "") {
+        const candidates = this.getExStoryTopThumbnailUrls(categoryId, fallbackStoryId, stillId, bgId);
+        const firstSrc = candidates[0] || 'https://redive.estertion.win/card/full/100431.webp';
+        const remainingCandidates = candidates.slice(1);
+        const serialized = encodeURIComponent(JSON.stringify(remainingCandidates));
+        const safeClass = this.escapeHtml(className);
+        const safeStyle = this.escapeHtml(style);
+        return `<img class="${safeClass}" style="${safeStyle}" src="${firstSrc}" loading="lazy" decoding="async" data-candidates="${serialized}" data-step="0" onerror="StoryAssetService.handleImageError(this)" alt="extra thumbnail">`;
+    },
+
+    /**
+     * 取得露娜之塔各期專屬頂層縮圖 (256x128) 及其降級候選清單
+     * @param {number|string} towerId 露娜塔期數 ID (例如 7001 第 1 期)
+     * @param {number|string} fallbackStoryId 降級首話 ID (可選)
+     * @param {number|string} stillId 劇照 CG ID (可選)
+     * @param {number|string} bgId 背景 ID (可選)
+     * @returns {string[]}
+     */
+    getTowerTopThumbnailUrls(towerId, fallbackStoryId = null, stillId = null, bgId = null) {
+        const urls = [];
+        const rawTid = towerId != null ? String(towerId).trim() : "";
+        if (rawTid && /^[1-9]\d*$/.test(rawTid)) {
+            urls.push(`icon/tower_top/${rawTid}.webp`);
+        }
+        const fallbackUrls = this.getStoryThumbnailUrls(fallbackStoryId, stillId, bgId);
+        for (const u of fallbackUrls) {
+            if (!urls.includes(u)) urls.push(u);
+        }
+        return urls;
+    },
+
+    /**
+     * 取得封裝好的露娜之塔期數頂層縮圖 HTML <img> 標籤
+     */
+    getTowerTopThumbnailHtml(towerId, fallbackStoryId = null, stillId = null, bgId = null, className = "", style = "") {
+        const candidates = this.getTowerTopThumbnailUrls(towerId, fallbackStoryId, stillId, bgId);
+        const firstSrc = candidates[0] || 'https://redive.estertion.win/card/full/100431.webp';
+        const remainingCandidates = candidates.slice(1);
+        const serialized = encodeURIComponent(JSON.stringify(remainingCandidates));
+        const safeClass = this.escapeHtml(className);
+        const safeStyle = this.escapeHtml(style);
+        return `<img class="${safeClass}" style="${safeStyle}" src="${firstSrc}" loading="lazy" decoding="async" data-candidates="${serialized}" data-step="0" onerror="StoryAssetService.handleImageError(this)" alt="tower thumbnail">`;
     }
 };
