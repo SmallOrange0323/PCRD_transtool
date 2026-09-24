@@ -1,0 +1,259 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PCRD So-net Master DB Canonical Schema Mapping (Client Family 0061)",
+  "description": "Story Map & Character Module 台服官方資料庫 Schema 反混淆映射契約 (Client Family 0061)",
+  "client_family": "0061",
+  "verified_versions": [
+    "00610001",
+    "00610002",
+    "00610007",
+    "00610008"
+  ],
+  "tables": {
+    "story_detail": {
+      "plaintext_table": "story_detail",
+      "physical_table": "v1_5e51cfc597692b46540e990a16d43a8d48dc7e99c1540610b769982cc320e10f",
+      "primary_key": "story_id",
+      "category": "RUNTIME_REQUIRED",
+      "columns": {
+        "story_id": "45eb61e731085c91c99e2031d9f5bbd1e89dd885ccd2bb8fafe1aa2c3b0d4e04",
+        "story_group_id": "8a9da654ce03e849a417676c27747fea43e73dbef1bdce7b4efb9931d28263b3",
+        "title": "135a7da49ad3c3ca6aca7e9dfb85c7e1611694b01e5b869caba74b212fe36ad8",
+        "sub_title": "74754ed303891cef6f1717922c15d54eaff2ccbba5aaba4dc5d7df683cc2ef02",
+        "story_end": "42dd7e3607bdd7f86c50e7fb1361f76f617265c71383c743bea2e6b65bd62f0f"
+      },
+      "provenance": {
+        "verified_in": "00610008",
+        "verification_sample_pk": 1001001,
+        "sample_row": "日和 第1話"
+      }
+    },
+    "unit_data": {
+      "plaintext_table": "unit_data",
+      "physical_table": "v1_b700c5cdbe9c68c08e66489c003a4f96bd93131d990be24bf1eefb8d6f919795",
+      "primary_key": "unit_id",
+      "category": "RUNTIME_REQUIRED",
+      "columns": {
+        "unit_id": "69be87e1ac180b6e69e3911c135b2f09fbfcb10316d0c8d4359e8827a3d6256b",
+        "unit_name": "5d2bcf25610e69e3baa0b86431bcea8bff9033eee2873cf8d64ab496921c3b6f",
+        "rarity": "a98b335e60039145c096ec36cf18f1b6803725e92bc183888fcac958d4af516c",
+        "search_area_width": "476e04818357f50b97050f54bcf5ee0867bebb2fe3d8d29ad4822807970b96f3"
+      },
+      "provenance": {
+        "verified_in": "00610008",
+        "verification_sample_pk": 105801,
+        "sample_row": "佑樹 / 貪吃佩可"
+      }
+    },
+    "unit_profile": {
+      "plaintext_table": "unit_profile",
+      "physical_table": "v1_bdb790958cf34a91fb2fcbd6ba56479fc7b23a45d7babffba6c8ab4e58f75875",
+      "primary_key": "unit_id",
+      "category": "RUNTIME_REQUIRED",
+      "columns": {
+        "unit_id": "b0c9d87a23cb89acb79011335489447d4e600949d5badfe2d45f671b50ce8b4e",
+        "guild": "ed45b4c0a0ca7f5721125b5952a3407f797e982a74b65f03b9987f6c53c44bfd",
+        "race": "9cbe09ac429342df7bd6a6db4f9021163e100ae8096f3e9f838a60bb337dda61",
+        "age": "2729e1ad75de6b4fde52cc4a1b67f3db1ff639ac30311cfd0c90eb77121dbe57",
+        "height": "3990d9eafaa85c82ef26efb5542d1e22eed6524f61ab1a7fa8c5bf638e1958e6",
+        "weight": "4329d48c4d920d5f6026c160df86cd2d24671d8b7b974a8d3930bba197c2bb61",
+        "birth_month": "2f7cb60832c0f1add8b644ada24f4368410a59a72601eb2c4bc866892e8e4196",
+        "birth_day": "2e508459dbdc678c0bdf1c4b67cefe5879aed127db81a66abd38e4598d64a843",
+        "blood_type": "5d45ebab4e2bb4b72100ba806b84392fe241f3546121f61b000e3fc07d130249",
+        "catch_copy": "1f676c7751e8c9edba4ede215af2720dfa337f1b859c491de3cca646c493eae4",
+        "self_text": "1b4b6606cd2674f17bfa70ab3c5615fbcaad487844f879fdc4973f343cbafe14",
+        "voice": "8deae55a3649eb602845c37fd36284edf327cefb947640c30c14b1304bc974fc"
+      },
+      "provenance": {
+        "verified_in": "00610008",
+        "verification_sample_pk": 105801,
+        "sample_row": "阿部敦 / 165 / O"
+      }
+    },
+    "event_story_data": {
+      "plaintext_table": "event_story_data",
+      "physical_table": "v1_4eace2050871ea8c5cd2b46f7d800f745b831be4bd558b5b9d9b4008f01f2d4c",
+      "primary_key": "story_group_id",
+      "category": "RUNTIME_REQUIRED",
+      "columns": {
+        "story_group_id": "a33f1dc59ed8c760b1e7373bf4d95f627bc9354bf7426db00fae322531d0dd00",
+        "title": "1b02c93e255491c090bc3c16f9909cab6cc3e601e5ddc2ef83f7be992717ef47",
+        "start_time": "ea21b3593434b2d0c3225e780e5375a64210d41bd5768717718fb1e54909a090",
+        "thumbnail_id": "ea884ee6242be84d42c96b71e0fedc29c33e2006bb94d737071f12452c720e91",
+        "value": "be2219957793e9a03bee7cd5376774aa05100654f2f67bcc778778992dbedb37"
+      },
+      "provenance": {
+        "verified_in": "00610008",
+        "verification_sample_pk": 5001,
+        "sample_row": "初音的禮物大作戰"
+      }
+    },
+    "event_story_detail": {
+      "plaintext_table": "event_story_detail",
+      "physical_table": "v1_93f38b75b37aa15470a8d6efe1c90733d6369654163468bdd40ed942c8df3e11",
+      "primary_key": "story_id",
+      "category": "RUNTIME_REQUIRED",
+      "columns": {
+        "story_id": "bef7beb23ea0489344fcc614807187077ed942627f221d7ba4d5a225dad3466b",
+        "story_group_id": "156608d97c46eb0b75565afa7f60c3b2f52939f45036c7002eb484dbfb8b34f1",
+        "title": "529483e00c487fed5574e10fe44fab247743f5666c46b5d4dfaf30ad946cebe7",
+        "sub_title": "d850bbb56059a4fddb0394b2d809735fe881c7a7ab24fb83d519c8c892cf7852"
+      },
+      "provenance": {
+        "verified_in": "00610008",
+        "verification_sample_pk": 5001000,
+        "sample_row": "初音的禮物大作戰 序章 / 禮物大作戰開幕！"
+      }
+    },
+    "story_group_data": {
+      "plaintext_table": "story_group_data",
+      "physical_table": "v1_bd898756a50423303ea43202ad4f153bcc9b1ae015c472ddb2b45c728e145934",
+      "primary_key": "story_group_id",
+      "category": "PIPELINE_REQUIRED",
+      "columns": {
+        "story_group_id": "2d93abd410f640c856e2b891011919278155d8c97fcd7357262d25ca70ad4521",
+        "story_group_type": "c3ccdb0bff042948c40bf7d957740af7b28dd836ef8a9ae3bb3e30c1eb056fcb",
+        "title": "2bda5760ca63f9af771dbe533e3ba175c5fa2b7e3d326a44be9dc7e41c2be9f8"
+      },
+      "provenance": {
+        "verified_in": "00610008",
+        "verification_sample_pk": 2214,
+        "sample_row": "第3部 第14章_阿爾莎特的誘惑"
+      }
+    },
+    "chara_story_status": {
+      "plaintext_table": "chara_story_status",
+      "physical_table": "v1_d82cb911d78e7f223658be63e847596f1a88a431720b37f6f782db4053a07959",
+      "primary_key": "story_id",
+      "category": "PIPELINE_REQUIRED",
+      "columns": {
+        "story_id": "4f7353f34c5a94353b190e0c84bbfe1edfa3fa7c26e4201a6a56b7074f1c9f28",
+        "chara_id_1": "f142d2101c22fcb7faaf4ab273fd61838af9deeb20c1d83aba7042d701d7b987"
+      },
+      "provenance": {
+        "verified_in": "00610008",
+        "verification_sample_pk": 1001002,
+        "sample_row": "日和のエピソード第2話"
+      }
+    },
+    "unit_rarity": {
+      "plaintext_table": "unit_rarity",
+      "physical_table": "v1_8f11b266c52821f80aa504e5b6fe84fb5b9da9e29cb3374d920228c4a3d3fa13",
+      "primary_key": [
+        "unit_id",
+        "rarity"
+      ],
+      "category": "RUNTIME_REQUIRED",
+      "columns": {
+        "unit_id": "c8f7033667820174841d5b210ae3d1744df41becf9b23c7e0920e005e02e59b0",
+        "rarity": "4531e22306155512f8aa04fa455f04e1f86968433271a4696e97bbef018673c4",
+        "hp": "4799512eea7d74aa4195de0e0c09a379160cc381bceadb5f9fba02cd1d1a1b61",
+        "hp_growth": "7f779c8c1dde1aebd63d811df0f80f7dc764f620c96d8f9fc5ba08e5a1089e63",
+        "atk": "45cc6b7f57a01ac8ea7f0f4ca806d1a61426e644f676c582757e7ea3485bc532",
+        "atk_growth": "027585e687af554b6ee3c208a9d91f17e22fed1275492ab76247a7483184be25",
+        "magic_str": "b047ad46ffed557b77c7e3059d80350ee0ffa2d17eb22b00e44bca36b8009b8e",
+        "magic_str_growth": "b3ba682530bb9ad048219bd065ac7151de83b96e4ace3b7006a7469c6b52a836",
+        "def": "026d469bfc4b0ad943c67e7ba3ee7643cf09877d9869a82f90081adf945768d9",
+        "def_growth": "668417aa30f93a95ce7bc5b1cf5b0d5ffa8a9a0241b3f9b5e5b7fc175f9ca48b",
+        "magic_def": "2fe6d7d2a7a65cfe99ba41fc11b210b79a92fb79e520127160e26a8b9a075218",
+        "magic_def_growth": "d4a660ff05510013289ef015ef16afc857e37c27cb82b9a7452e1630639f856f",
+        "physical_critical": "ff9730d0172caf3b4b38f5bfc29dda7ffa49e4a63a866eb9a8f606a62b2c18ec",
+        "physical_critical_growth": "bf7cfb85ba0e55f88b18bd1555825fbc6a6b2daed5d5436c6c6de3e51410a918",
+        "magic_critical": "9169e75dea24657a1cc07788f8236e083b420aa846cabf42f5ae10617cc885e8",
+        "magic_critical_growth": "c936a1c2c5b9e104ab1a4edb36041f044e9debe1d322e39c101ec13e6cbbb91c",
+        "life_steal": "f998913d05e7f6131b58510f7af9a7de7ee8fb7622be5459680b884422a7786a",
+        "life_steal_growth": "12ded4b40f6daf434c0416d846463c458755880b10376a9af633dfa26f871aae"
+      },
+      "provenance": {
+        "verified_in": "00610008",
+        "verification_sample_pk": 105801,
+        "sample_row": "佑樹 ★1 HP/ATK/DEF/CRIT"
+      }
+    },
+    "unit_skill_data": {
+      "plaintext_table": "unit_skill_data",
+      "physical_table": "v1_55253f372dc210280cd81451189fd90f507cb90ddfb96dd22a0e2f2414ad2dcb",
+      "primary_key": "unit_id",
+      "category": "RUNTIME_REQUIRED",
+      "columns": {
+        "unit_id": "3611c2aa51a1cd72e43422b41bacc17db4a90b3161c7aa9396c037a7b5eb8b44",
+        "union_burst": "b0d0ace177d7c3137f3b390766586ca17b58d6ef345c5611f6c8800a2c288d23",
+        "main_skill_1": "3c51bfa2f4ef87eb7faa26393a5d7890e8fe03c76c2c4c86405669f5b79a558e",
+        "main_skill_2": "9730335772c2a47c1c97fb6e58be21504989bf5058932331ce75573c3cef60f6",
+        "main_skill_3": "44e40a0925aa5c7ea9b102408f81afad59a3ce3f627cb370dc3182ccfec6146f",
+        "main_skill_4": "e431fcb2451bbc3d04456e8c7695ebb1b39dc95db4fa356af0b5aaf2efe5b862",
+        "main_skill_5": "ff9a9abaefdb07c6a840b18827353ea326faf81c862e627647d5c6bf2c75d1bb",
+        "main_skill_6": "17b2d2e2066992858e0b8f9df01b7d0b17996388bc7d2f776b27ccfe355dee6f",
+        "main_skill_7": "4f420eb966b7de2179695d1b7661d2c5f4b42ef111773b052904e5dcfe893f12",
+        "main_skill_8": "bac3061be8bef99af7cee390fe95e6b247287b35415452d50d9ae59e808b8152",
+        "main_skill_9": "84ba87ff81ee83739b348814b6cc1fb46a1918895fa0f1da88a2f1ed748770da",
+        "main_skill_10": "0f0c1e14ef6837384f7c53f63e0a026fd5a60cfec74cc145972de8f101b82f5f",
+        "ex_skill_1": "4349a0399b4da6340fee159acbccb7a9315078c0c740d63919709101d28571a5",
+        "sp_skill_1": "cec3c01436a83047961e0fada1715b6e6c6a3382388e03b685f586bfff9fab95",
+        "sp_skill_2": "9011d664092b933029c432b71b1e7f3cda2a759bd026b8f402bca7f852fd1c32",
+        "sp_skill_3": "d0e61b5878b279cc8c74c58ff41236336065fcf164831b4813101f5f75cc469d",
+        "sp_skill_4": "547593a01a1ed3f585a992b23257f691c107e5766af1ffa6ed5d958b9cbd0429",
+        "sp_skill_5": "1e7d35eb147ee4857e7a70ed2a21b63ccc067f5827c4b8b40ed21d88a4f1693d"
+      },
+      "provenance": {
+        "verified_in": "00610008",
+        "verification_sample_pk": 105801,
+        "sample_row": "佩可 UB/S1/S2/EX1"
+      }
+    },
+    "unit_attack_pattern": {
+      "plaintext_table": "unit_attack_pattern",
+      "physical_table": "v1_f883e12bf0028b7f9dcae642643c0fbb1215a48d7ddfea692a8388a8d7981ec5",
+      "primary_key": "pattern_id",
+      "category": "RUNTIME_REQUIRED",
+      "columns": {
+        "pattern_id": "8936ed008de271a8bddb6bc6842b075f9a501ce1039e10071184d5fcabc782c7",
+        "unit_id": "cd02bb85027eed335cceb2ec365f28120f1e94fde2eafafd9a117dc951a3ca11",
+        "loop_start": "737e86bd60ee4b6c896b26619fc2d390311f5937ff3a18fcfda320a9346b3976",
+        "loop_end": "efa0048f251249567ce0a105b588f2c6db3d98da1ccda1db49879f492c272020",
+        "atk_pattern_1": "fa98616cf71b0f0680352ac6eb27f8fab6d6b8bdbe5880b5ad74da6bc7a5fb74",
+        "atk_pattern_2": "3c6bacb4c9bb354817207030f2a069cd746aac0b4ddb960dcab573074fb8ae87",
+        "atk_pattern_3": "1e710873f41e47b2abed5120fe3b999a9fadce9251237d84f450cec036a5b204",
+        "atk_pattern_4": "79788a8d5a8bf4a9f661cc98de46915499973ad5d234d5757e968bc1dce2cd98",
+        "atk_pattern_5": "6007fd3d9f30efd0bc3439329754e03636bc86d3c2f26b588b7b2dc0404e9fcb",
+        "atk_pattern_6": "fd931fc59ef93f444c8cbab8666a4649e825d1dab132eca924ab9fb17949df7e",
+        "atk_pattern_7": "d19dc3f71c73d8b0b361d0a7f49add5c87238b18dc1089f07356c5c498f1037c",
+        "atk_pattern_8": "bbbc67763f08d8ee7afc9a09a76db988d8c7a894674e9b8be6ebc3fe4a6a07d1",
+        "atk_pattern_9": "dbeb982276d177916c1907af7bfc93d8444054d403e25673e5f6a60245ab66ef",
+        "atk_pattern_10": "4df3640d49fc2de996042e988c6abba215b4d9192d4def2cadfe7e1736baa1c8",
+        "atk_pattern_11": "e911cc62007b1912b9c5d68c462a7b786f518be2e5d7bc3d62872d70fe3e9e3f",
+        "atk_pattern_12": "6bb6a79cff394a492997ad67afcce0dae5250953d8e125426a7f545198edab35",
+        "atk_pattern_13": "faf380bce6623e47cb6f73fd7cd935e3ebce0220281b5b40ab455a0e5e4ff515",
+        "atk_pattern_14": "6f0a31d7e7785b6279c8852bb3b009c0619b0050ef5c53bb9521c1a075612aca",
+        "atk_pattern_15": "da78ff28fff3ab816cc8040f48e37557629ef8ba6b0faaa8c07049818dcde60e",
+        "atk_pattern_16": "b255b55d191023a6d75f15dca805d5dd753abe84d3406def49f6fdae7efddaf6",
+        "atk_pattern_17": "7a74b0584dc02a69d7d5dbaa979b12b3cc4b5b39dee58f9921d0063552f6afb2",
+        "atk_pattern_18": "bdf81f32215eb3a2e41147e76c48ec619708adbfb333aee28d4e8fd32fa651d2",
+        "atk_pattern_19": "13a6e6e128fb9264ff5b0263a9d7b4f6b8d80c9d83596d75be60c789596b95af",
+        "atk_pattern_20": "2ccb0778ee7fa7561603f1bf3eb47c8464b1cd4e530d839567c428a05b1a8591"
+      },
+      "provenance": {
+        "verified_in": "00610008",
+        "verification_sample_pk": 10580101,
+        "sample_row": "佩可 動作循環 (loop 3~7)"
+      }
+    },
+    "skill_data": {
+      "plaintext_table": "skill_data",
+      "physical_table": "v1_27ace2830e51ca02d07330dc5d9cbd8041e64cd269368567dfa69879b2df4246",
+      "primary_key": "skill_id",
+      "category": "RUNTIME_REQUIRED",
+      "columns": {
+        "skill_id": "83413c59965df4e52f754d12a092b9946a62fbba36cc98e7e3d81d91a5505907",
+        "name": "d199d2a65d56ea37f560afcd10dbd9ccf9a910075383f66c31a5b958c3aa66b6",
+        "description": "23f8b142d6ff441b6e08330e5cbd8f487f573374cf7038c3f6aedda55f25fcef",
+        "icon_type": "7caf0af2e76afaf6fc43de3c9b8e94a2e61ef33bfa9a39e45bf31bf82fad8452"
+      },
+      "provenance": {
+        "verified_in": "00610008",
+        "verification_sample_pk": 1058001,
+        "sample_row": "皇家斬擊 / 1001"
+      }
+    }
+  }
+}

@@ -186,11 +186,12 @@ def _query_game_snapshot(top_n=10):
         conn = sqlite3.connect(DB_PATH)
         cur  = conn.cursor()
 
-        # 最新角色（rarity >= 1 排除 NPC；unit_id < 180000 排除故事版本）
+        # 最新角色（透過 unit_rarity 排除 NPC；unit_id < 180000 排除故事版本）
         cur.execute(
-            "SELECT unit_id, unit_name FROM unit_data "
-            "WHERE unit_id >= 100000 AND unit_id < 180000 AND rarity >= 1 "
-            "ORDER BY unit_id DESC LIMIT ?",
+            "SELECT u.unit_id, u.unit_name FROM unit_data u "
+            "WHERE u.unit_id >= 100000 AND u.unit_id < 180000 "
+            "AND EXISTS (SELECT 1 FROM unit_rarity r WHERE r.unit_id = u.unit_id) "
+            "ORDER BY u.unit_id DESC LIMIT ?",
             (top_n,)
         )
         result["latest_chars"] = cur.fetchall()
@@ -1467,8 +1468,9 @@ def cmd_report(args):
                 lines.append(f"- ✅ `unit_data` 中找到角色：**{row[1]}** (ID: {row[0]})")
             else:
                 lines.append(f"- ⚠️ `unit_data` 中尚無 unit_id={unit_id}，wthee 可能尚未更新")
+            chara_id = unit_id // 100
             cur.execute(
-                "SELECT COUNT(*) FROM chara_story_status WHERE unit_id = ?", (unit_id,)
+                "SELECT COUNT(*) FROM chara_story_status WHERE chara_id_1 = ?", (chara_id,)
             )
             cnt = cur.fetchone()[0]
             lines.append(f"- 劇情話數（DB）：**{cnt} 話**")
