@@ -39,7 +39,6 @@ except Exception:
 # ─────────────────────────── 常數 ───────────────────────────
 
 SONET_CDN = "https://img-pc.so-net.tw/dl"
-WTHEE_DB_URL = "https://wthee.xyz/db/redive_tw.db"
 
 SONET_HEADER = {
     'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 10; Pixel 3 XL Build/QQ3A.200805.001)'
@@ -723,58 +722,27 @@ def _parse_bundle_dialogues(bundle_data, extract_metadata=False, portrait_asset_
 # ─────────────────────────── 子命令實作 ───────────────────────────
 
 def cmd_update_db(args):
-    """下載、驗證後才以原子替換更新台版明文資料庫。"""
-    print("📥 從 wthee 下載最新台服明文資料庫...")
-    results = {"status": "ok", "db_path": DB_PATH, "checks": []}
-    db_path = Path(DB_PATH)
-    tmp_path = db_path.with_name(f"{db_path.name}.download.tmp")
-
-    try:
-        data = _http_get(WTHEE_DB_URL, WEB_HEADER, timeout=60, retries=2)
-        tmp_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(tmp_path, 'wb') as f:
-            f.write(data)
-        print(f"  ✅ 下載完成，暫存大小: {len(data):,} bytes")
-        results["size_bytes"] = len(data)
-    except Exception as e:
-        results["status"] = "error"
-        results["error"] = str(e)
-        print(f"  ❌ 下載失敗: {e}", file=sys.stderr)
+    """
+    從 So-net 官方 CDN 下載並正規化更新台版明文資料庫 (F2A.4 Canonical Implementation)。
+    要求明確傳入 --truth-version，未指定時嚴格 Fail-Closed。
+    """
+    truth_version = getattr(args, "truth_version", None)
+    if not truth_version:
+        print("❌ [ERROR] update-db 要求明確指定 --truth-version (例如: 00610008)，拒絕無版號或猜測性執行！", file=sys.stderr)
+        results = {"status": "error", "error": "MISSING_TRUTH_VERSION"}
         _write_output(args.output, results)
         return results
 
-    try:
-        conn = sqlite3.connect(str(tmp_path))
-        cur = conn.cursor()
-        for table in ["unit_data", "chara_story_status", "unit_skill_data"]:
-            cur.execute(f"SELECT COUNT(*) FROM {table}")
-            count = cur.fetchone()[0]
-            results["checks"].append({"table": table, "count": count})
-            print(f"  - {table}: {count} 筆")
-        conn.close()
-        tmp_path.replace(db_path)
-        print("  ✅ 暫存資料庫驗證通過，已原子替換正式資料庫")
-    except Exception as e:
-        try:
-            if 'conn' in locals():
-                conn.close()
-        except Exception:
-            pass
-        results["status"] = "error"
-        results["checks_error"] = str(e)
-        print(f"  ❌ 資料庫驗證失敗，保留原正式資料庫: {e}", file=sys.stderr)
-    finally:
-        try:
-            if tmp_path.exists():
-                tmp_path.unlink()
-        except Exception as e:
-            if results["status"] == "ok":
-                results["status"] = "error"
-                results["cleanup_error"] = str(e)
-
-    _write_output(args.output, results)
-    if results["status"] == "ok":
+    print(f"📥 從 So-net 官方 CDN 獲取並解密 TruthVersion {truth_version} 之 Master DB...")
+    from pipeline.fetch import update_db as canonical_update_db
+    results = canonical_update_db(
+        truth_version=truth_version,
+        output=args.output,
+    )
+    if results.get("status") == "ok":
         print(f"\n✅ DB 更新完成！報告已寫入 {args.output}")
+    else:
+        print(f"\n❌ DB 更新失敗: {results.get('error')}", file=sys.stderr)
     return results
 
 
@@ -2452,7 +2420,8 @@ def main():
     sub = parser.add_subparsers(dest="command", required=True)
 
     # update-db
-    p_db = sub.add_parser("update-db", help="更新台版明文資料庫")
+    p_db = sub.add_parser("update-db", help="更新台版明文資料庫 (So-net 官方 CDN)")
+    p_db.add_argument("--truth-version", type=str, default=None, help="明確指定 So-net TruthVersion (例如: 00610008)")
     p_db.add_argument("--output", default="tools/db_update_report.json", help="輸出報告路徑")
 
     # fetch-stories

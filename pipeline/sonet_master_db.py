@@ -49,19 +49,6 @@ WEB_HEADER = {
 
 SQLITE_MAGIC = b'SQLite format 3\x00'
 
-REQUIRED_TABLES = [
-    "story_detail",
-    "unit_data",
-    "unit_profile",
-    "event_story_data",
-    "tower_story_data",
-    "chara_story_status",
-]
-
-REQUIRED_COLUMNS = {
-    "story_detail": {"story_id", "story_group_id", "title"},
-    "unit_data": {"unit_id", "unit_name"},
-}
 
 
 @dataclass
@@ -113,39 +100,12 @@ def _validate_sqlite_db(db_file: Path) -> Dict[str, Any]:
         if not row or row[0] != "ok":
             raise ValueError(f"PRAGMA integrity_check 失敗: {row}")
 
-        # 2. 核心業務表齊全性
+        # 2. 實體表總數 sanity check (官方原生 Master DB 包含數百張混淆/實體表)
         cur.execute("SELECT name FROM sqlite_master WHERE type='table';")
-        existing_tables = set(r[0] for r in cur.fetchall())
-        missing_tables = [t for t in REQUIRED_TABLES if t not in existing_tables]
-        if missing_tables:
-            raise ValueError(f"缺少必要業務資料表: {missing_tables}")
-
-        # 3. 核心欄位完整性
-        for tbl, req_cols in REQUIRED_COLUMNS.items():
-            cur.execute(f"PRAGMA table_info({tbl});")
-            cols = set(r[1] for r in cur.fetchall())
-            missing_cols = req_cols - cols
-            if missing_cols:
-                raise ValueError(f"資料表 {tbl} 缺少必要欄位: {missing_cols}")
-
-        # 4. 基本非空 sanity check
-        cur.execute("SELECT COUNT(*) FROM story_detail;")
-        story_count = cur.fetchone()[0]
-        if story_count <= 0:
-            raise ValueError("story_detail 資料表筆數為 0，視為異常空庫")
-        sanity_stats["story_count"] = story_count
-
-        cur.execute("SELECT COUNT(*) FROM unit_data;")
-        unit_count = cur.fetchone()[0]
-        if unit_count <= 0:
-            raise ValueError("unit_data 資料表筆數為 0，視為異常空庫")
-        sanity_stats["unit_count"] = unit_count
-
-        cur.execute("SELECT MAX(unit_id) FROM unit_data;")
-        sanity_stats["max_unit_id"] = cur.fetchone()[0]
-
-        cur.execute("SELECT MAX(story_id) FROM story_detail;")
-        sanity_stats["max_story_id"] = cur.fetchone()[0]
+        tables = [r[0] for r in cur.fetchall()]
+        if len(tables) < 5:
+            raise ValueError(f"SQLite 資料表數量過少 ({len(tables)} 張)，視為異常空庫")
+        sanity_stats["table_count"] = len(tables)
 
     finally:
         conn.close()

@@ -132,35 +132,10 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
     if freshness.update_required:
         print(f"  [Sync] 檢測到 CDN 有新版本或本地 DB 缺失 (線上: {remote_tv}, 本地: {local_tv})")
         if dry_run:
-            print("  [DRY-RUN] 預計執行: 從鏡像下載最新台版資料庫 redive_tw.db")
+            print(f"  [DRY-RUN] 預計執行: 從 So-net 官方 CDN 獲取並正規化 TruthVersion {remote_tv} 之 Master DB (So-net Official Master DB)")
         else:
-            print("  [Sync] 正在從鏡像下載並解密最新台版 SQLite 資料庫...")
-            class MockArgs:
-                force = False
-                source = "sonet"
-                output = "tools/db_update_report.json"
-            try:
-                update_result = update_db(MockArgs())
-                if not isinstance(update_result, dict) or update_result.get("status") != "ok":
-                    detail = (update_result.get("error") or update_result.get("checks_error")
-                              if isinstance(update_result, dict) else "fetcher returned no success result")
-                    raise RuntimeError(f"DB update validation failed: {detail}")
-                # 鏡像資料庫下載完成：因第三方鏡像缺乏直接 So-net TruthVersion 對齊證明，誠實標記為未確認
-                freshness = FreshnessResult(
-                    status=FreshnessStatus.UPDATE_DOWNLOADED_UNCONFIRMED,
-                    remote_version=remote_tv,
-                    local_version=local_tv,
-                    confirmed=False,
-                    update_required=False,
-                    degraded=True,
-                    message=(
-                        f"已成功從鏡像下載資料庫，但鏡像內容無法直接驗證與 So-net TruthVersion ({remote_tv}) 之對齊性 "
-                        "(Mirror Freshness Unproven)；為防範 mirror-lag 風險，未虛假推進 version_history"
-                    )
-                )
-                print(f"  [Freshness] 狀態更新: {freshness.status} (Confirmed: {freshness.confirmed}) — {freshness.message}")
-            except Exception as e:
-                print(f"❌ [ERROR] 下載資料庫失敗: {e}", file=sys.stderr)
+            if not remote_tv:
+                print("❌ [ERROR] 缺少有效的遠端 TruthVersion，無法從 So-net 官方 CDN 獲取資料庫！", file=sys.stderr)
                 freshness = FreshnessResult(
                     status=FreshnessStatus.UPDATE_FAILED,
                     remote_version=remote_tv,
@@ -168,7 +143,42 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
                     confirmed=False,
                     update_required=False,
                     degraded=True,
-                    message=f"下載資料庫失敗: {e}"
+                    message="缺少有效遠端 TruthVersion"
+                )
+                return False, freshness, analyze_coverage()
+            print(f"  [Sync] 正在從 So-net 官方 CDN 獲取並解密 TruthVersion {remote_tv} 之 Master DB...")
+            try:
+                update_result = update_db(
+                    truth_version=remote_tv,
+                    output="tools/db_update_report.json"
+                )
+                if not isinstance(update_result, dict) or update_result.get("status") != "ok":
+                    detail = (update_result.get("error") if isinstance(update_result, dict) else "fetcher returned no success result")
+                    raise RuntimeError(f"So-net Master DB 獲取/正規化失敗: {detail}")
+                # 官方 CDN 資料庫下載與正規化完成：與指定 TruthVersion 決定性綁定
+                freshness = FreshnessResult(
+                    status=FreshnessStatus.UPDATED_SUCCESSFULLY,
+                    remote_version=remote_tv,
+                    local_version=local_tv,
+                    confirmed=True,
+                    update_required=False,
+                    degraded=False,
+                    message=(
+                        f"已成功從 So-net 官方 CDN 獲取並正規化 Master DB，保證與指定 TruthVersion ({remote_tv}) 完全對齊 "
+                        "(Official CDN Sourced & Version-Bound)"
+                    )
+                )
+                print(f"  [Freshness] 狀態更新: {freshness.status} (Confirmed: {freshness.confirmed}) — {freshness.message}")
+            except Exception as e:
+                print(f"❌ [ERROR] 獲取/正規化 So-net 資料庫失敗: {e}", file=sys.stderr)
+                freshness = FreshnessResult(
+                    status=FreshnessStatus.UPDATE_FAILED,
+                    remote_version=remote_tv,
+                    local_version=local_tv,
+                    confirmed=False,
+                    update_required=False,
+                    degraded=True,
+                    message=f"獲取/正規化 So-net 資料庫失敗: {e}"
                 )
                 return False, freshness, analyze_coverage()
     else:
@@ -338,6 +348,15 @@ def run_pipeline_update(
     except Exception as e:
         print(f"❌ 驗證過程發生異常: {e}", file=sys.stderr)
         return 1
+
+    # 4.1 晉升 TruthVersion 狀態 (僅在全流程驗證通過、非 dry-run 且狀態已確認時執行)
+    if not dry_run and freshness.confirmed and freshness.remote_version:
+        if freshness.remote_version != freshness.local_version:
+            print(f"\n[Version State Promotion] 全流程驗證通過，正在推進本地 TruthVersion 狀態: {freshness.remote_version}...")
+            promoted = save_truth_version_state(freshness.remote_version)
+            if not promoted:
+                print("❌ [ERROR] 版本狀態寫入失敗！阻斷流程。", file=sys.stderr)
+                return 1
 
     # 5. 晉升 Movie Reference Baseline (只有全流程驗證通過、非 dry-run 且有新 reference 時執行)
     if not dry_run and asset_res.movie_coverage.new_references_count > 0:

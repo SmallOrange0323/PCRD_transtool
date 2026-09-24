@@ -17,8 +17,6 @@ import urllib.error
 from pipeline.sonet_master_db import (
     fetch_master_db_from_sonet,
     MasterDbFetchResult,
-    REQUIRED_TABLES,
-    REQUIRED_COLUMNS,
     SQLITE_MAGIC
 )
 

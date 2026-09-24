@@ -223,23 +223,26 @@ For pure research, inspect or reuse its primitives rather than necessarily runni
 
 ## 4. Raw Master DB extraction
 
-### 4.1 Recommended public-main primitives
+### 4.1 Recommended canonical primitives
 
-For raw Master DB research, prefer functions in:
+For canonical Master DB acquisition and normalized schema generation, prefer the dedicated fail-closed modules:
 
 ```text
-pipeline/extract_chapter_titles.py
+pipeline/sonet_master_db.py
+pipeline/sonet_normalized_db.py
+pipeline/manifests/sonet_db_schema_map_0061.json
 ```
 
-Relevant functions:
+Key primitives:
 
-```python
-discover_bundle_from_cdn_manifest(...)
-download_bundle_by_pool_hash(...)
-extract_master_sqlite_from_bundle(...)
-```
+- `pipeline.sonet_master_db.fetch_master_db_from_sonet(truth_version, destination=...)`:
+  Downloads the official bundle from So-net CDN, extracts raw obfuscated SQLite, and verifies DB integrity.
+- `pipeline.sonet_normalized_db.generate_normalized_db(raw_db_path, truth_version, output_path=...)`:
+  Transforms raw obfuscated SQLite into the canonical normalized schema (11 tables, 99 mapped columns for Client Family 0061) in a fail-closed manner.
+- `pipeline.fetch.update_db(truth_version=...)`:
+  Canonical production update pipeline integrating So-net fetching, normalization, strict pre-promotion gates (integrity, schema completeness, CharactersModule query checks), and atomic replacement.
 
-These allow an AI agent to retrieve a specific TruthVersion's Master DB without using the legacy direct-write script.
+For lower-level exploratory research or legacy chapter extraction, the primitives in `pipeline/extract_chapter_titles.py` remain available:
 
 Example scratch-only extractor:
 
@@ -576,8 +579,7 @@ For a normal unpacking request, AI agents must not:
 ## 13. Repository evolution note
 
 This guide describes tools available on the tracked repository branch at the time of writing.
-
-If newer canonical So-net Master DB acquisition / normalization modules are added later, prefer those newer fail-closed modules over historical direct-write scripts.
+As of Phase F2A.4, the canonical So-net Master DB acquisition and normalization modules (`pipeline/sonet_master_db.py`, `pipeline/sonet_normalized_db.py`, and `pipeline/fetch.py::update_db`) have been integrated into the production pipeline. Historical direct-write scripts (such as `tools/fetch_db_from_sonet.py`) and third-party DB downloads are deprecated.
 
 When updating this guide, preserve these invariants:
 
