@@ -4,16 +4,14 @@
 Canonical So-net Master DB Acquisition Primitive (Phase F2A)
 
 責任範圍：
-1. 依顯式傳入之 TruthVersion 下載 So-net 官方 masterdata2_assetmanifest
+1. 依顯式傳入之 TruthVersion (8 碼格式校驗) 下載 So-net 官方 masterdata2_assetmanifest
 2. 解析並比對 masterdata_master.unity3d 之 bundle MD5、pool hash、bundle size
 3. 下載官方 Pool AssetBundle，進行二進位 MD5 完整性檢驗
-4. 透過 UnityPy 解密提取明文 SQLite
-5. 執行 6 重 Validate-before-replace 門禁：
-   - SQLite Magic Header
+4. 透過 UnityPy 解密提取原始混淆 SQLite (v1_* 實體表)
+5. 執行原始 SQLite 核心結構與完整性門禁：
+   - SQLite Magic Header (16 bytes)
    - PRAGMA integrity_check == 'ok'
-   - 必要業務表齊全性 (story_detail, unit_data, etc.)
-   - 必要欄位完整性
-   - 基本非空健全性檢查 (sanity checks)
+   - 實體表總數基礎健全性檢查 (sanity checks, 拒絕異常空庫)
 6. 於 destination.parent 同檔案系統建立 staging 檔，通過後執行原子替換 (os.replace)
 7. 失敗時保證原有 destination 檔案 100% byte-identical
 
@@ -77,7 +75,7 @@ def _http_get_bytes(url: str, timeout: int = 30) -> bytes:
 
 def _validate_sqlite_db(db_file: Path) -> Dict[str, Any]:
     """
-    對 SQLite 檔案進行 6 重嚴格校驗。
+    對原始混淆 SQLite 檔案進行核心完整性與結構校驗 (Magic Header, PRAGMA integrity_check, 實體表總數)。
     任一校驗失敗即拋出 ValueError。
     """
     file_size = db_file.stat().st_size

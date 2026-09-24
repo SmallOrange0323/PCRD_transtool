@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """
 pcrd_fetch.py — PCRD 台版資料抓取 CLI 工具
-用途: 從 So-net CDN 與 wthee 鏡像站下載新角色劇情、素材、資料庫
+用途: 從 So-net 官方 CDN 下載新角色劇情、素材與 Master DB
 
 子命令:
-  update-db       更新台版明文資料庫 (wthee)
+  update-db       更新台版 Master DB (使用 So-net 官方 CDN 原生解密與正規化管線)
   fetch-stories   下載並解密角色個人劇情 JSON
   fetch-assets    下載立繪與頭像素材
   report          產出驗證報告 Markdown

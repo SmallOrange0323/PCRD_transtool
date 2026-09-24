@@ -5,9 +5,9 @@ PCRD Story Map Pipeline - Update Orchestrator (統一增量更新協調器)
 負責協調完整的 CDN 增量同步、決定性打包、全量驗證與發布。
 
 Story Map Update Pipeline v1:
-  1. Freshness Evaluation & Gate (結構化判定、鏡像防滯後信任邊界、離線降級支援、生產發布新鮮度防禦門禁)
+  1. Freshness Evaluation & Gate (結構化判定、防滯後信任邊界、離線降級支援、生產發布新鮮度防禦門禁)
   2. Story Coverage Guard + Required Story Auto Sync (缺失核心劇本自動以官方 CDN snapshot 補齊；dry-run 僅驗證可抓取性)
-  3. DB sync (TruthVersion 探測與 SQLite 鏡像下載；未證實新鮮度前不虛假推進 version_history)
+  3. DB sync (TruthVersion 遠端探測與 So-net 官方 CDN Master DB 原生解密/正規化；未證實新鮮度前不虛假推進 version_history)
   4. Asset Completeness Gate (Event Top / Story Thumbnail 自動補齊；Movie 新缺口阻斷)
   5. Deterministic bundle & Cache-Busting (SHA-256 內容比對、體積控制)
   6. Single-source validation gate (9000+ 篇劇本與 dist 集合全量深度自檢)
@@ -95,17 +95,17 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
         coverage_dummy = analyze_coverage()
         return False, freshness_dummy, coverage_dummy
 
-    # 1. 探測 CDN 版號 (So-net 上游觀察)
+    # 1. 探測遠端 TruthVersion (ACTIVE_TRUTH_VERSION 當前由 remote_wthee_api 探測，待 Phase F2B 替換；Master DB 則由 So-net 官方 CDN 原生解密獲取)
     remote_tv = None
     try:
         probe = probe_truth_version()
         if probe.confirmed_remote:
             remote_tv = probe.version
-            print(f"  [CDN] 線上最高 TruthVersion: {remote_tv} ({probe.source})")
+            print(f"  [TruthVersion] 遠端版本探測: {remote_tv} (source={probe.source})")
         else:
-            print(f"  [WARN] 遠端 TruthVersion 未取得 ({probe.source}): {probe.error or 'unknown error'}")
+            print(f"  [WARN] 遠端 TruthVersion 未取得 (source={probe.source}): {probe.error or 'unknown error'}")
     except Exception as e:
-        print(f"  [WARN] 無法連接 CDN 探測版號 (離線或逾時): {e}")
+        print(f"  [WARN] 無法連接遠端探測版號 (離線或逾時): {e}")
 
     # 2. 比對本地記錄的 TruthVersion
     ver_file = DASHBOARD_DIR / "versions" / "version_history.json"

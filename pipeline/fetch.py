@@ -243,11 +243,15 @@ def update_db(
 
         report["manifest"] = {
             "name": "masterdata2_assetmanifest",
+            "url": fetch_res.manifest_url,
+            "sha256": fetch_res.manifest_sha256,
         }
         report["bundle"] = {
-            "bundle_name": "a/masterdata_master.unity3d",
+            "bundle_name": fetch_res.bundle_name or "a/masterdata_master.unity3d",
             "bundle_md5": fetch_res.bundle_md5,
             "pool_hash": fetch_res.pool_hash,
+            "bundle_size": fetch_res.bundle_size,
+            "bundle_url": fetch_res.bundle_url,
         }
         raw_size = raw_db_path.stat().st_size if raw_db_path.exists() else 0
         report["raw_db"] = {
@@ -273,8 +277,9 @@ def update_db(
             return report
 
         report["mapping"] = {
-            "contract_file": f"pipeline/manifests/sonet_db_schema_map_{client_family}.json",
-            "schema_version": client_family,
+            "client_family": client_family,
+            "contract_file": str(norm_res.mapping_file) if norm_res.mapping_file else f"pipeline/manifests/sonet_db_schema_map_{client_family}.json",
+            "schema_version": norm_res.mapping_schema_version,
         }
 
         # 4. 替換前全套門禁檢驗 (Pre-Promotion Multi-Query Gate)
@@ -287,20 +292,25 @@ def update_db(
                 _write_report(output, report)
             return report
 
-        # 5. 原子替換正式資料庫 (同檔案系統原子 replace)
-        staging_path.replace(target_path)
-
-        norm_size = target_path.stat().st_size
-        with open(target_path, "rb") as f:
-            norm_sha256 = hashlib.sha256(f.read()).hexdigest()
+        # 5. 在 promotion 前先行從 staging 計算 size、SHA256 並在記憶體建構報告
+        # 確保 replace 是最後的檔案系統操作，絕不因後續讀取失敗而導致狀態與磁碟不一致
+        norm_size = staging_path.stat().st_size
+        hasher_norm = hashlib.sha256()
+        with open(staging_path, "rb") as f:
+            while chunk := f.read(65536):
+                hasher_norm.update(chunk)
+        norm_sha256 = hasher_norm.hexdigest()
 
         report["normalized_db"] = {
             "sha256": norm_sha256,
             "size": norm_size,
             "table_count": len(norm_res.table_stats),
-            "mapped_column_count": 99,
+            "mapped_column_count": norm_res.provenance.get("mapped_column_count", 99),
             "table_stats": norm_res.table_stats,
         }
+
+        # 6. 原子替換正式資料庫 (同檔案系統原子 replace)
+        staging_path.replace(target_path)
         report["status"] = "ok"
 
     except Exception as e:

@@ -93,8 +93,13 @@ class TestDirectSonetDbPipelineIntegration(unittest.TestCase):
                 success=True,
                 truth_version=truth_version,
                 written_path=destination,
+                manifest_url="https://img-pc.so-net.tw/dl/Resources/00610008/Jpn/AssetBundles/Android/manifest/masterdata2_assetmanifest",
+                manifest_sha256="manifest_sha_123",
+                bundle_name="a/masterdata_master.unity3d",
                 bundle_md5="bundle_md5_123",
                 pool_hash="pool_hash_abc",
+                bundle_size=46022656,
+                bundle_url="https://img-pc.so-net.tw/dl/pool/AssetBundles/ea/ea31a8de308910be",
                 db_sha256="raw_sha_456"
             )
         mock_fetch.side_effect = side_effect_fetch
@@ -107,8 +112,11 @@ class TestDirectSonetDbPipelineIntegration(unittest.TestCase):
                 success=True,
                 truth_version=truth_version,
                 client_family="0061",
+                mapping_file=Path("pipeline/manifests/sonet_db_schema_map_0061.json"),
+                mapping_schema_version="1.0.0",
                 output_path=output_path,
-                table_stats={"story_detail": 100, "unit_data": 50}
+                table_stats={"story_detail": 100, "unit_data": 50},
+                provenance={"mapped_column_count": 99}
             )
         mock_norm.side_effect = side_effect_norm
         mock_val.return_value = True
@@ -123,7 +131,34 @@ class TestDirectSonetDbPipelineIntegration(unittest.TestCase):
         self.assertEqual(res["truth_version"], "00610008")
         self.assertEqual(res["source"], "sonet_official_cdn")
         self.assertEqual(res["client_family"], "0061")
+
+        # Manifest assertions
+        self.assertEqual(res["manifest"]["name"], "masterdata2_assetmanifest")
+        self.assertEqual(res["manifest"]["url"], "https://img-pc.so-net.tw/dl/Resources/00610008/Jpn/AssetBundles/Android/manifest/masterdata2_assetmanifest")
+        self.assertEqual(res["manifest"]["sha256"], "manifest_sha_123")
+
+        # Bundle assertions
+        self.assertEqual(res["bundle"]["bundle_name"], "a/masterdata_master.unity3d")
         self.assertEqual(res["bundle"]["bundle_md5"], "bundle_md5_123")
+        self.assertEqual(res["bundle"]["pool_hash"], "pool_hash_abc")
+        self.assertEqual(res["bundle"]["bundle_size"], 46022656)
+        self.assertEqual(res["bundle"]["bundle_url"], "https://img-pc.so-net.tw/dl/pool/AssetBundles/ea/ea31a8de308910be")
+
+        # Raw DB assertions
+        self.assertEqual(res["raw_db"]["sha256"], "raw_sha_456")
+        self.assertGreater(res["raw_db"]["size"], 0)
+
+        # Normalized DB assertions
+        self.assertTrue(res["normalized_db"]["sha256"])
+        self.assertGreater(res["normalized_db"]["size"], 0)
+        self.assertEqual(res["normalized_db"]["table_count"], 2)
+        self.assertEqual(res["normalized_db"]["mapped_column_count"], 99)
+
+        # Mapping assertions
+        self.assertEqual(res["mapping"]["client_family"], "0061")
+        self.assertIn("sonet_db_schema_map_0061.json", res["mapping"]["contract_file"])
+        self.assertNotEqual(res["mapping"]["schema_version"], "0061", "schema_version must not be 0061")
+        self.assertEqual(res["mapping"]["schema_version"], "1.0.0")
 
         # 驗證目標檔案已成功被原子替換
         with open(self.mock_db, "rb") as f:
@@ -312,6 +347,56 @@ class TestDirectSonetDbPipelineIntegration(unittest.TestCase):
         exit_code = update_module.run_pipeline_update(dry_run=False, auto_deploy=False)
         self.assertEqual(exit_code, 1)
         mock_save_state.assert_not_called()
+
+    # 10. regression: metadata/hash failure BEFORE promotion preserves production DB
+    @patch("pipeline.fetch.fetch_master_db_from_sonet")
+    @patch("pipeline.fetch.generate_normalized_db")
+    @patch("pipeline.fetch._validate_normalized_db_pre_promotion")
+    @patch("pipeline.fetch.hashlib.sha256")
+    def test_10_metadata_hash_failure_before_promotion_preserves_production_db(
+        self, mock_sha, mock_val, mock_norm, mock_fetch
+    ):
+        mock_fetch.return_value = MasterDbFetchResult(
+            success=True,
+            truth_version="00610008",
+            written_path=Path("mock.db"),
+            manifest_url="http://test/manifest",
+            manifest_sha256="sha1",
+            bundle_name="bundle.unity3d",
+            bundle_md5="md5",
+            pool_hash="hash",
+            bundle_size=1000,
+            db_sha256="dbsha"
+        )
+        def side_effect_norm(raw_db_path, truth_version, output_path, **kwargs):
+            with open(output_path, "wb") as f:
+                f.write(b"STAGING_BYTES_NOT_YET_PROMOTED")
+            return NormalizedDbResult(
+                success=True,
+                truth_version=truth_version,
+                client_family="0061",
+                output_path=output_path,
+                table_stats={"story_detail": 10}
+            )
+        mock_norm.side_effect = side_effect_norm
+        mock_val.return_value = True
+
+        # 模擬在替換前計算 SHA256 拋出 IOError
+        mock_sha.side_effect = IOError("Simulated disk error during hash calculation")
+
+        res = fetch_module.update_db(
+            truth_version="00610008",
+            output=str(self.report_path),
+            db_path=self.mock_db
+        )
+
+        self.assertEqual(res.get("status"), "error")
+        self.assertIn("Simulated disk error", res.get("error", ""))
+
+        # 驗證原正式 DB 仍保持完全一致的 byte-identical 舊狀態
+        with open(self.mock_db, "rb") as f:
+            final_bytes = f.read()
+        self.assertEqual(final_bytes, self.initial_bytes, "若在 promotion 前失敗，原 DB 必須 byte-identical")
 
 
 if __name__ == "__main__":
