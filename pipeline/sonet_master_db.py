@@ -269,3 +269,177 @@ def fetch_master_db_from_sonet(
                 staging_db.unlink()
             except Exception:
                 pass
+
+
+@dataclass
+class CdnCandidateProbeResult:
+    version: str
+    exists: bool
+    http_code: Optional[int] = None
+    manifest_url: Optional[str] = None
+    manifest_length: Optional[int] = None
+    manifest_sha256: Optional[str] = None
+    bundle_name: Optional[str] = None
+    bundle_md5: Optional[str] = None
+    pool_hash: Optional[str] = None
+    bundle_size: Optional[int] = None
+    # 保持向後相容欄位
+    master_bundle_md5: Optional[str] = None
+    master_pool_hash: Optional[str] = None
+    manifest_size: int = 0
+    error: Optional[str] = None
+
+
+@dataclass
+class CdnDiscoveryResult:
+    highest_observed_cdn_version: Optional[str]
+    candidates: Dict[str, CdnCandidateProbeResult]
+    scan_bounds: Dict[str, Any]
+    error: Optional[str] = None
+
+
+def probe_single_cdn_candidate(version: str, timeout: int = 6) -> CdnCandidateProbeResult:
+    """
+    輕量探測單一 TruthVersion 之 masterdata2_assetmanifest。
+    僅下載幾十 bytes 之 Manifest，不下載大型 Bundle。
+    """
+    manifest_url = f"{SONET_CDN}/Resources/{version}/Jpn/AssetBundles/Android/manifest/masterdata2_assetmanifest"
+    result = CdnCandidateProbeResult(
+        version=version,
+        exists=False,
+        manifest_url=manifest_url
+    )
+
+    try:
+        req = urllib.request.Request(manifest_url, headers=WEB_HEADER, method='GET')
+        with urllib.request.urlopen(req, timeout=timeout) as res:
+            result.http_code = res.status
+            content = res.read()
+            result.manifest_size = len(content)
+            result.manifest_length = len(content)
+            result.manifest_sha256 = hashlib.sha256(content).hexdigest()
+
+            content_text = content.decode('utf-8', errors='ignore')
+            for line in content_text.splitlines():
+                if "masterdata_master.unity3d" in line:
+                    parts = line.split(',')
+                    if len(parts) >= 3:
+                        result.bundle_name = parts[0].strip()
+                        result.bundle_md5 = parts[1].strip()
+                        result.master_bundle_md5 = parts[1].strip()
+                        result.pool_hash = parts[2].strip()
+                        result.master_pool_hash = parts[2].strip()
+                        if len(parts) > 4 and parts[4].strip().isdigit():
+                            result.bundle_size = int(parts[4].strip())
+                        break
+
+            if result.manifest_size > 0 and result.pool_hash:
+                result.exists = True
+            else:
+                result.error = "manifest 格式異常或未包含 masterdata_master"
+
+    except urllib.error.HTTPError as e:
+        result.http_code = e.code
+        if e.code != 404:
+            result.error = f"HTTP {e.code}: {e.reason}"
+    except Exception as e:
+        result.error = str(e)
+
+    return result
+
+
+def discover_cdn_candidate_snapshots(
+    base_version: Optional[str] = None,
+    lookahead_limit: int = 5,
+    family_seed_limit: int = 2,
+    known_versions: Optional[List[str]] = None,
+    timeout: int = 6
+) -> CdnDiscoveryResult:
+    """
+    有界探索 So-net 官方 CDN 候選快照。
+    原則：
+    - 不假設版本嚴格連續，不因單一 404 停止。
+    - 移除 consecutive-miss 提前終止：在宣告的 lookahead_limit 範圍內進行窮舉探測 (Exhaustive within bound)。
+    - 支援跨家族探索 (Client-Family Transition Probe)：主動探測下一版本家族之種子視窗 (如 0061 -> 00620001, 00620002)。
+      【語意邊界約束】
+      1. 跨家族種子探測僅為啟發式有界探索 (bounded heuristic discovery only)。
+      2. 探測命中僅證明該具體快照存在；未命中 (misses) 絕不構成「下一家族不存在」之證明。
+      3. 探測範圍 scan_bounds 必須完整回報供審計。
+      4. 未知家族即便被發現，後續正規化仍嚴格維持 NEEDS_NEW_SCHEMA_MAPPING 拒絕策略，嚴禁複用 0061 mapping。
+    - 回報 highest_observed_cdn_version 與完整可審計之 scan_bounds。
+    """
+    candidates: Dict[str, CdnCandidateProbeResult] = {}
+    effective_base = base_version if (base_version and re.fullmatch(r"\d{8}", base_version)) else "00610008"
+
+    prefix = effective_base[:4]
+    try:
+        base_seq = int(effective_base[4:])
+    except ValueError:
+        base_seq = 1
+
+    tested_ranges: Dict[str, List[int]] = {}
+
+    # 1. 探測基準版本
+    base_res = probe_single_cdn_candidate(effective_base, timeout=timeout)
+    candidates[effective_base] = base_res
+    highest_version = effective_base if base_res.exists else None
+    tested_ranges[prefix] = [base_seq, base_seq]
+
+    # 2. 探測額外提供的已知候選版本 (例如第三方參考版號或特定指定版號)
+    if known_versions:
+        for kv in known_versions:
+            if kv and kv not in candidates and re.fullmatch(r"\d{8}", kv):
+                kr = probe_single_cdn_candidate(kv, timeout=timeout)
+                candidates[kv] = kr
+                if kr.exists:
+                    if highest_version is None or int(kv) > int(highest_version):
+                        highest_version = kv
+
+    # 3. 當前家族向前有界窮舉探索 (Forward Bounded Exhaustive Probe)
+    curr_seq = base_seq + 1
+    max_seq = base_seq + lookahead_limit
+
+    while curr_seq <= max_seq:
+        ver_str = f"{prefix}{curr_seq:04d}"
+        if ver_str not in candidates:
+            pr = probe_single_cdn_candidate(ver_str, timeout=timeout)
+            candidates[ver_str] = pr
+            if pr.exists:
+                if highest_version is None or int(ver_str) > int(highest_version):
+                    highest_version = ver_str
+        curr_seq += 1
+
+    tested_ranges[prefix][1] = max_seq
+
+    # 4. 跨家族前綴探索 (Client-Family Transition Probe)
+    # 例如當前為 0061，探測下一個家族 0062 之初始種子 (00620001, 00620002...)
+    try:
+        current_family_int = int(prefix)
+        next_family_prefix = f"{current_family_int + 1:04d}"
+        tested_ranges[next_family_prefix] = [1, family_seed_limit]
+
+        for seed_seq in range(1, family_seed_limit + 1):
+            seed_ver = f"{next_family_prefix}{seed_seq:04d}"
+            if seed_ver not in candidates:
+                sr = probe_single_cdn_candidate(seed_ver, timeout=timeout)
+                candidates[seed_ver] = sr
+                if sr.exists:
+                    if highest_version is None or int(seed_ver) > int(highest_version):
+                        highest_version = seed_ver
+    except Exception:
+        pass
+
+    scan_bounds = {
+        "base_version": effective_base,
+        "lookahead_limit": lookahead_limit,
+        "family_seed_limit": family_seed_limit,
+        "tested_ranges": tested_ranges,
+        "total_probed": len(candidates),
+        "total_existing": sum(1 for c in candidates.values() if c.exists),
+    }
+
+    return CdnDiscoveryResult(
+        highest_observed_cdn_version=highest_version,
+        candidates=candidates,
+        scan_bounds=scan_bounds,
+    )

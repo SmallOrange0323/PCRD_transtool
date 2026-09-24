@@ -22,6 +22,7 @@ Exit Codes:
 import os
 import sys
 import json
+import re
 import argparse
 from pathlib import Path
 from typing import Tuple, Optional
@@ -45,9 +46,9 @@ from pipeline.coverage import (
     CoverageAnalysisStatus
 )
 
-def save_truth_version_state(new_version: str) -> bool:
+def save_truth_version_state(new_version: str, fingerprint: Optional[dict] = None) -> bool:
     """
-    以原子替換方式更新版本狀態 (僅在版號經證實時調用)
+    以原子替換方式更新版本與內容指紋狀態 (Phase F2C Content-Driven Provenance)
     """
     if not new_version:
         return False
@@ -64,14 +65,35 @@ def save_truth_version_state(new_version: str) -> bool:
         except Exception:
             pass
 
+    # 1. 現代 CDN 快照與指紋欄位
+    current_data["last_observed_cdn_version"] = new_version
+    current_data["last_applied_cdn_version"] = new_version
+    if fingerprint:
+        if fingerprint.get("manifest_sha256"):
+            current_data["last_applied_manifest_sha256"] = fingerprint["manifest_sha256"]
+        if fingerprint.get("master_bundle_md5"):
+            current_data["last_applied_master_bundle_md5"] = fingerprint["master_bundle_md5"]
+        if fingerprint.get("master_pool_hash"):
+            current_data["last_applied_master_pool_hash"] = fingerprint["master_pool_hash"]
+        if fingerprint.get("normalized_db_sha256"):
+            current_data["last_applied_normalized_db_sha256"] = fingerprint["normalized_db_sha256"]
+
+    import datetime
+    current_data["last_successful_validation_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+
+    # 2. 既有歷史相容欄位
     current_data["truth_version"] = new_version
     current_data["last_version"] = new_version
+    if "processed_versions" not in current_data:
+        current_data["processed_versions"] = []
+    if new_version not in current_data["processed_versions"]:
+        current_data["processed_versions"].append(new_version)
 
     try:
         with open(tmp_file, "w", encoding="utf-8") as f:
             json.dump(current_data, f, ensure_ascii=False, indent=2)
         tmp_file.replace(ver_file)
-        print(f"  [State] 已原子更新本地 TruthVersion 狀態: {new_version}")
+        print(f"  [State] 已原子更新本地 CDN 內容指紋與版本狀態: {new_version}")
         return True
     except Exception as e:
         print(f"  [WARN] 寫入版本狀態失敗: {e}", file=sys.stderr)
@@ -79,7 +101,7 @@ def save_truth_version_state(new_version: str) -> bool:
 
 def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResult, CoverageResult]:
     """
-    探測上游新鮮度、評估劇本覆蓋現況，並自動補齊缺失的核心必備劇本。
+    探測官方 CDN 候選快照與指紋新鮮度、評估劇本覆蓋現況，並自動補齊缺失的核心必備劇本。
     :return: (sync_ok, freshness_result, coverage_result)
     """
     print("\n[步驟 1/4] 探測 So-net CDN 與執行增量資料同步 (Pipeline v1 Scope)...")
@@ -87,6 +109,8 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
     try:
         from pipeline.fetch import (
             probe_truth_version,
+            probe_third_party_reference,
+            discover_cdn_candidate_snapshots,
             update_db,
         )
     except ImportError as e:
@@ -95,85 +119,163 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
         coverage_dummy = analyze_coverage()
         return False, freshness_dummy, coverage_dummy
 
-    # 1. 探測遠端 TruthVersion (ACTIVE_TRUTH_VERSION 當前由 remote_wthee_api 探測，待 Phase F2B 替換；Master DB 則由 So-net 官方 CDN 原生解密獲取)
-    remote_tv = None
-    try:
-        probe = probe_truth_version()
-        if probe.confirmed_remote:
-            remote_tv = probe.version
-            print(f"  [TruthVersion] 遠端版本探測: {remote_tv} (source={probe.source})")
-        else:
-            print(f"  [WARN] 遠端 TruthVersion 未取得 (source={probe.source}): {probe.error or 'unknown error'}")
-    except Exception as e:
-        print(f"  [WARN] 無法連接遠端探測版號 (離線或逾時): {e}")
-
-    # 2. 比對本地記錄的 TruthVersion
+    # 1. 讀取本地記錄的 TruthVersion 與內容指紋
     ver_file = DASHBOARD_DIR / "versions" / "version_history.json"
     local_tv = None
+    local_manifest_sha = None
+    local_bundle_md5 = None
+    local_pool_hash = None
     if ver_file.exists():
         try:
             with open(ver_file, "r", encoding="utf-8") as f:
                 vdata = json.load(f)
-            local_tv = vdata.get("truth_version") or vdata.get("last_version")
+
+            # 從本地歷史中尋找最高有效版本作為探測基準，避免受舊版號拖累
+            candidates_found = []
+            for key in ["last_applied_cdn_version", "last_version", "truth_version"]:
+                val = vdata.get(key)
+                if val and re.fullmatch(r"\d{8}", str(val)):
+                    candidates_found.append(str(val))
+            if "processed_versions" in vdata and isinstance(vdata["processed_versions"], list):
+                for val in vdata["processed_versions"]:
+                    if val and re.fullmatch(r"\d{8}", str(val)):
+                        candidates_found.append(str(val))
+
+            if candidates_found:
+                local_tv = max(candidates_found, key=lambda x: int(x))
+            else:
+                local_tv = vdata.get("truth_version") or vdata.get("last_version")
+
+            local_manifest_sha = vdata.get("last_applied_manifest_sha256")
+            local_bundle_md5 = vdata.get("last_applied_master_bundle_md5")
+            local_pool_hash = vdata.get("last_applied_master_pool_hash")
         except Exception:
             pass
 
-    print(f"  [Local] 本地記錄 TruthVersion: {local_tv or '未記錄'}")
+    print(f"  [Local] 本地記錄 TruthVersion (有效基準): {local_tv or '未記錄'}")
 
+    # 2. 探測第三方參考資訊 (wthee API, 非阻斷性，僅供診斷與候選種子參考)
+    third_party_info = probe_third_party_reference()
+    third_party_tv = third_party_info.get("version")
+    if third_party_tv:
+        print(f"  [Reference Info] 第三方參考版號: {third_party_tv} (source={third_party_info.get('source')})")
+    elif third_party_info.get("error"):
+        print(f"  [Reference Info] 第三方參考版號探測未完成 (非阻斷性): {third_party_info.get('error')}")
+
+    # 3. 官方 CDN 快照探索 (Official CDN Candidate Discovery)
+    known_candidates = [third_party_tv] if third_party_tv else []
+    cdn_discovery = discover_cdn_candidate_snapshots(
+        base_version=local_tv,
+        known_versions=known_candidates
+    )
+    observed_tv = cdn_discovery.highest_observed_cdn_version
+    if observed_tv:
+        print(f"  [Snapshot Discovery] 最高可觀察 CDN 快照: {observed_tv} (So-net Official CDN)")
+    else:
+        print(f"  [Snapshot Discovery] 官方 CDN 探測未發現可用快照 (離線或無連線)")
+
+    # 4. 內容指紋比對 (Content Fingerprint Comparison)
+    fingerprint_matched = None
+    active_candidate = cdn_discovery.candidates.get(observed_tv) if observed_tv else None
     db_file_exists = (DASHBOARD_DIR / "redive_tw.db").exists()
-    freshness = evaluate_freshness(remote_tv, local_tv, db_file_exists)
+
+    if active_candidate and active_candidate.exists and local_tv and observed_tv == local_tv:
+        if local_manifest_sha and local_bundle_md5:
+            if active_candidate.manifest_sha256 == local_manifest_sha and active_candidate.master_bundle_md5 == local_bundle_md5:
+                fingerprint_matched = True
+            else:
+                fingerprint_matched = False
+    elif active_candidate and active_candidate.exists and local_tv and observed_tv != local_tv:
+        fingerprint_matched = False
+
+    freshness = evaluate_freshness(
+        remote_tv=observed_tv,
+        local_tv=local_tv,
+        db_exists=db_file_exists,
+        fingerprint_matched=fingerprint_matched,
+        third_party_reference=third_party_tv,
+        cdn_candidates=list(cdn_discovery.candidates.keys())
+    )
     print(f"  [Freshness] 狀態: {freshness.status} (Confirmed: {freshness.confirmed}) — {freshness.message}")
 
     if freshness.status == FreshnessStatus.LOCAL_STATE_MISSING:
         print("❌ [ERROR] 本地資料庫缺失且無法連接 CDN，管線終止！", file=sys.stderr)
         return False, freshness, analyze_coverage()
 
-    # 3. 執行 DB 下載與同步 (若有新版本或本地 DB 缺失)
+    # 5. 執行 DB 下載與同步 (若有新版本、指紋變更或本地 DB 缺失)
+    target_tv = freshness.remote_version or observed_tv
     if freshness.update_required:
-        print(f"  [Sync] 檢測到 CDN 有新版本或本地 DB 缺失 (線上: {remote_tv}, 本地: {local_tv})")
+        print(f"  [Sync] 檢測到 CDN 快照變更或本地 DB 缺失 (線上快照: {target_tv}, 本地: {local_tv})")
         if dry_run:
-            print(f"  [DRY-RUN] 預計執行: 從 So-net 官方 CDN 獲取並正規化 TruthVersion {remote_tv} 之 Master DB (So-net Official Master DB)")
+            print(f"  [DRY-RUN] 預計執行: 從 So-net 官方 CDN 獲取並正規化 TruthVersion {target_tv} 之 Master DB (So-net Official Master DB)")
         else:
-            if not remote_tv:
-                print("❌ [ERROR] 缺少有效的遠端 TruthVersion，無法從 So-net 官方 CDN 獲取資料庫！", file=sys.stderr)
+            if not target_tv:
+                print("❌ [ERROR] 缺少有效的官方 CDN 快照版號，無法從 So-net 官方 CDN 獲取資料庫！", file=sys.stderr)
                 freshness = FreshnessResult(
                     status=FreshnessStatus.UPDATE_FAILED,
-                    remote_version=remote_tv,
+                    remote_version=target_tv,
                     local_version=local_tv,
                     confirmed=False,
                     update_required=False,
                     degraded=True,
-                    message="缺少有效遠端 TruthVersion"
+                    message="缺少有效官方 CDN 快照版號"
                 )
                 return False, freshness, analyze_coverage()
-            print(f"  [Sync] 正在從 So-net 官方 CDN 獲取並解密 TruthVersion {remote_tv} 之 Master DB...")
+            print(f"  [Sync] 正在從 So-net 官方 CDN 獲取並解密 TruthVersion {target_tv} 之 Master DB...")
             try:
                 update_result = update_db(
-                    truth_version=remote_tv,
-                    output="tools/db_update_report.json"
+                    truth_version=target_tv,
+                    output="tools/db_update_report.json",
+                    skip_if_identical=True
                 )
                 if not isinstance(update_result, dict) or update_result.get("status") != "ok":
                     detail = (update_result.get("error") if isinstance(update_result, dict) else "fetcher returned no success result")
                     raise RuntimeError(f"So-net Master DB 獲取/正規化失敗: {detail}")
-                # 官方 CDN 資料庫下載與正規化完成：與指定 TruthVersion 決定性綁定
-                freshness = FreshnessResult(
-                    status=FreshnessStatus.UPDATED_SUCCESSFULLY,
-                    remote_version=remote_tv,
-                    local_version=local_tv,
-                    confirmed=True,
-                    update_required=False,
-                    degraded=False,
-                    message=(
-                        f"已成功從 So-net 官方 CDN 獲取並正規化 Master DB，保證與指定 TruthVersion ({remote_tv}) 完全對齊 "
-                        "(Official CDN Sourced & Version-Bound)"
+
+                if update_result.get("applied") is False:
+                    # 內容比對完全一致，無實質變更
+                    freshness = FreshnessResult(
+                        status=FreshnessStatus.NO_CHANGE,
+                        remote_version=target_tv,
+                        local_version=local_tv,
+                        confirmed=True,
+                        update_required=False,
+                        degraded=False,
+                        message="官方 CDN 內容解包正規化後與本地現有資料庫完全一致，無實質變更",
+                        fingerprint_matched=True,
+                        third_party_reference=third_party_tv,
                     )
-                )
-                print(f"  [Freshness] 狀態更新: {freshness.status} (Confirmed: {freshness.confirmed}) — {freshness.message}")
+                    print(f"  [Freshness] 狀態更新: {freshness.status} — {freshness.message}")
+                    if target_tv and not dry_run:
+                        fp = {
+                            "manifest_sha256": active_candidate.manifest_sha256 if active_candidate else None,
+                            "master_bundle_md5": active_candidate.master_bundle_md5 if active_candidate else None,
+                            "master_pool_hash": active_candidate.master_pool_hash if active_candidate else None,
+                            "normalized_db_sha256": update_result.get("existing_normalized_db_sha256") or update_result.get("normalized_db_sha256")
+                        }
+                        save_truth_version_state(target_tv, fingerprint=fp)
+                else:
+                    # 官方 CDN 資料庫下載與正規化完成：與指定 TruthVersion 決定性綁定
+                    freshness = FreshnessResult(
+                        status=FreshnessStatus.UPDATED_SUCCESSFULLY,
+                        remote_version=target_tv,
+                        local_version=local_tv,
+                        confirmed=True,
+                        update_required=False,
+                        degraded=False,
+                        message=(
+                            f"已成功從 So-net 官方 CDN 獲取並正規化 Master DB，保證與指定 TruthVersion ({target_tv}) 完全對齊 "
+                            "(Official CDN Sourced & Version-Bound)"
+                        ),
+                        fingerprint_matched=False,
+                        third_party_reference=third_party_tv,
+                    )
+                    print(f"  [Freshness] 狀態更新: {freshness.status} (Confirmed: {freshness.confirmed}) — {freshness.message}")
             except Exception as e:
                 print(f"❌ [ERROR] 獲取/正規化 So-net 資料庫失敗: {e}", file=sys.stderr)
                 freshness = FreshnessResult(
                     status=FreshnessStatus.UPDATE_FAILED,
-                    remote_version=remote_tv,
+                    remote_version=target_tv,
                     local_version=local_tv,
                     confirmed=False,
                     update_required=False,
@@ -183,9 +285,9 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
                 return False, freshness, analyze_coverage()
     else:
         if freshness.status == FreshnessStatus.REMOTE_BEHIND_LOCAL:
-            print(f"  [Sync] 線上 CDN 版本 ({remote_tv}) 落後於本地記錄 ({local_tv})，安全跳過資料庫下載。")
+            print(f"  [Sync] 線上 CDN 版本 ({target_tv}) 落後於本地記錄 ({local_tv})，安全跳過資料庫下載。")
         else:
-            print("  [Sync] 本地資料庫與 CDN 版號一致，無需重新下載資料庫。")
+            print("  [Sync] 本地資料庫與 CDN 內容指紋一致，無需重新下載資料庫。")
 
     # 4. 執行劇本覆蓋率與來源健康度分析 (Coverage Guard)
     coverage = analyze_coverage()
@@ -203,12 +305,13 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
             print(f"    - {err}")
 
     # 5. 核心必備劇本缺失：自動接回官方 CDN Story Fetch primitive。
+    target_snapshot_tv = observed_tv or local_tv
     if coverage.missing_required_count > 0:
         print(f"  [StorySync] 發現 {coverage.missing_required_count} 話核心必備劇本缺失。")
         print(f"  [StorySync] 缺失 Sample: {coverage.missing_required_ids[:10]}")
         sync_result, effective_coverage = ensure_required_story_coverage(
             coverage,
-            truth_version=remote_tv,
+            truth_version=target_snapshot_tv,
             dry_run=dry_run,
         )
 
@@ -223,7 +326,7 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
         if dry_run:
             print(
                 f"  [DRY-RUN][StorySync] {len(sync_result.fetchable_ids)} 話均存在於 "
-                f"TruthVersion {remote_tv} 官方 story manifest；正式執行時將自動補齊。"
+                f"TruthVersion {target_snapshot_tv} 官方 story manifest；正式執行時將自動補齊。"
             )
         else:
             coverage = effective_coverage
@@ -349,10 +452,10 @@ def run_pipeline_update(
         print(f"❌ 驗證過程發生異常: {e}", file=sys.stderr)
         return 1
 
-    # 4.1 晉升 TruthVersion 狀態 (僅在全流程驗證通過、非 dry-run 且狀態已確認時執行)
+    # 4.1 晉升 TruthVersion 與指紋狀態 (僅在全流程驗證通過、非 dry-run 且狀態已確認時執行)
     if not dry_run and freshness.confirmed and freshness.remote_version:
-        if freshness.remote_version != freshness.local_version:
-            print(f"\n[Version State Promotion] 全流程驗證通過，正在推進本地 TruthVersion 狀態: {freshness.remote_version}...")
+        if freshness.remote_version != freshness.local_version or freshness.status == FreshnessStatus.UPDATED_SUCCESSFULLY:
+            print(f"\n[Version State Promotion] 全流程驗證通過，正在推進本地 TruthVersion 與指紋狀態: {freshness.remote_version}...")
             promoted = save_truth_version_state(freshness.remote_version)
             if not promoted:
                 print("❌ [ERROR] 版本狀態寫入失敗！阻斷流程。", file=sys.stderr)
@@ -379,9 +482,26 @@ def run_pipeline_update(
         if dry_run:
             print("\n[部署步驟] [DRY-RUN] 模擬部署模式：驗證通過，不執行 Git 提交與推送。")
         else:
-            # 檢查新鮮度防禦門禁 (Freshness Gate: 包括未探測與鏡像未證實之狀態)
+            # 檢查更新結果安全門禁 (若更新失敗或核心 DB 缺失，嚴禁發布未驗證或半成品產物)
+            if freshness.status == FreshnessStatus.UPDATE_FAILED:
+                print("\n" + "!" * 60, file=sys.stderr)
+                print(f"❌ [ERROR] 資料庫更新失敗 (Status: {freshness.status})！", file=sys.stderr)
+                print(f"  原因: {freshness.message}", file=sys.stderr)
+                print("🛡️  安全防禦門禁已阻斷自動生產發布，避免將損壞狀態推送至線上！", file=sys.stderr)
+                print("!" * 60, file=sys.stderr)
+                return 1
+
+            if not (DASHBOARD_DIR / "redive_tw.db").exists():
+                print("\n" + "!" * 60, file=sys.stderr)
+                print("❌ [ERROR] 本地核心資料庫缺失，阻斷生產發布！", file=sys.stderr)
+                print("!" * 60, file=sys.stderr)
+                return 1
+
+            # 若上游探測未連線，但本地資料庫完整且全量門禁均通過，允許正常發布
             if not freshness.confirmed:
-                if not allow_unconfirmed_freshness:
+                if freshness.status in (FreshnessStatus.REMOTE_UNREACHABLE, FreshnessStatus.REMOTE_PROBE_UNAVAILABLE):
+                    print(f"\nℹ️  [Deploy Gate] 遠端版號探測未連線，但本地資料庫與產物全量驗證通過，允許離線模式發布。")
+                elif not allow_unconfirmed_freshness:
                     print("\n" + "!" * 60, file=sys.stderr)
                     print(f"❌ [ERROR] 上游新鮮度未確認 (Freshness Status: {freshness.status})！", file=sys.stderr)
                     print(f"  原因: {freshness.message}", file=sys.stderr)

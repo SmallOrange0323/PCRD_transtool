@@ -23,7 +23,13 @@ CANONICAL_DB_PATH = DASHBOARD_DIR / "redive_tw.db"
 sys.path.insert(0, str(PROJECT_ROOT / "tools"))
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from pipeline.sonet_master_db import fetch_master_db_from_sonet
+from pipeline.sonet_master_db import (
+    fetch_master_db_from_sonet,
+    probe_single_cdn_candidate,
+    discover_cdn_candidate_snapshots,
+    CdnCandidateProbeResult,
+    CdnDiscoveryResult,
+)
 from pipeline.sonet_normalized_db import (
     generate_normalized_db,
     get_client_family,
@@ -182,11 +188,142 @@ def _validate_normalized_db_pre_promotion(staging_db_path: Path, truth_version: 
         conn.close()
 
 
+def compare_normalized_db_content(current_db_path: Path, staging_db_path: Path) -> Dict[str, Any]:
+    """
+    比對 staging normalized DB 與 current production DB 的實質內容差異 (Content Diff)。
+    """
+    diff: Dict[str, Any] = {
+        "has_meaningful_change": True,
+        "current_db_exists": current_db_path.exists(),
+        "sha256_identical": False,
+        "new_unit_ids": [],
+        "removed_unit_ids": [],
+        "new_story_ids_count": 0,
+        "new_event_ids_count": 0,
+        "table_count_deltas": {},
+    }
+
+    if not current_db_path.exists():
+        diff["reason"] = "current_db_missing"
+        return diff
+
+    # 1. 快速比較 SHA256
+    def _file_sha256(p: Path) -> str:
+        h = hashlib.sha256()
+        with open(p, "rb") as f:
+            while chunk := f.read(65536):
+                h.update(chunk)
+        return h.hexdigest()
+
+    curr_sha = _file_sha256(current_db_path)
+    stage_sha = _file_sha256(staging_db_path)
+    diff["current_db_sha256"] = curr_sha
+    diff["staging_db_sha256"] = stage_sha
+
+    if curr_sha == stage_sha:
+        diff["has_meaningful_change"] = False
+        diff["sha256_identical"] = True
+        diff["reason"] = "sha256_identical"
+        return diff
+
+    # 2. SHA 不同，進一步比對實體業務表內容
+    conn_curr = None
+    conn_stage = None
+    try:
+        conn_curr = sqlite3.connect(str(current_db_path))
+        conn_stage = sqlite3.connect(str(staging_db_path))
+
+        cur_c = conn_curr.cursor()
+        cur_s = conn_stage.cursor()
+
+        cur_c.execute("SELECT DISTINCT unit_id FROM unit_data")
+        curr_units = set(r[0] for r in cur_c.fetchall())
+        cur_s.execute("SELECT DISTINCT unit_id FROM unit_data")
+        stage_units = set(r[0] for r in cur_s.fetchall())
+
+        diff["new_unit_ids"] = sorted(stage_units - curr_units)
+        diff["removed_unit_ids"] = sorted(curr_units - stage_units)
+
+        cur_c.execute("SELECT DISTINCT story_id FROM story_detail")
+        curr_stories = set(r[0] for r in cur_c.fetchall())
+        cur_s.execute("SELECT DISTINCT story_id FROM story_detail")
+        stage_stories = set(r[0] for r in cur_s.fetchall())
+        diff["new_story_ids_count"] = len(stage_stories - curr_stories)
+
+        cur_c.execute("SELECT DISTINCT story_group_id FROM event_story_data")
+        curr_events = set(r[0] for r in cur_c.fetchall())
+        cur_s.execute("SELECT DISTINCT story_group_id FROM event_story_data")
+        stage_events = set(r[0] for r in cur_s.fetchall())
+        diff["new_event_ids_count"] = len(stage_events - curr_events)
+
+        diff["has_meaningful_change"] = bool(
+            diff["new_unit_ids"] or
+            diff["removed_unit_ids"] or
+            diff["new_story_ids_count"] > 0 or
+            diff["new_event_ids_count"] > 0 or
+            curr_sha != stage_sha
+        )
+    except Exception as e:
+        diff["comparison_error"] = str(e)
+        diff["has_meaningful_change"] = True
+    finally:
+        if conn_curr:
+            try:
+                conn_curr.close()
+            except Exception:
+                pass
+        if conn_stage:
+            try:
+                conn_stage.close()
+            except Exception:
+                pass
+
+    return diff
+
+
+def probe_third_party_reference(timeout: int = 8) -> Dict[str, Any]:
+    """
+    可選的第三方參考版號探測 (Non-blocking, Informational Reference Only)。
+    若不可用、逾時或回傳非預期，絕不拋出未捕捉例外，亦不阻斷主管線。
+    """
+    result: Dict[str, Any] = {
+        "source": "remote_wthee_api",
+        "version": None,
+        "confirmed": False,
+        "error": None,
+    }
+    try:
+        import urllib.request
+        payload = json.dumps({"regionCode": "tw"}).encode("utf-8")
+        req = urllib.request.Request(
+            "https://wthee.xyz/pcr/api/v1/db/info/v2",
+            data=payload,
+            headers={
+                "Content-Type": "application/json",
+                "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 10; Pixel 3 XL Build/QQ3A.200805.001)"
+            },
+            method="POST",
+        )
+        with urllib.request.urlopen(req, timeout=timeout) as res:
+            data = json.loads(res.read().decode("utf-8"))
+        version = data.get("data", {}).get("truthVersion")
+        if isinstance(version, str) and re.fullmatch(r"\d{8}", version):
+            result["version"] = version
+            result["confirmed"] = True
+        else:
+            result["error"] = f"未返回合規 truthVersion: {version!r}"
+    except Exception as e:
+        result["error"] = str(e)
+
+    return result
+
+
 def update_db(
     truth_version: str,
     output: Optional[str] = "tools/db_update_report.json",
     db_path: Optional[Path] = None,
-    force: bool = False
+    force: bool = False,
+    skip_if_identical: bool = False,
 ) -> Dict[str, Any]:
     """
     從 So-net 官方 CDN 下載指定 TruthVersion 之加密 Master DB Bundle，
@@ -292,6 +429,18 @@ def update_db(
                 _write_report(output, report)
             return report
 
+        # 4.1 比對內容差異 (Content Diff)
+        content_diff = compare_normalized_db_content(target_path, staging_path)
+        report["content_diff"] = content_diff
+
+        if skip_if_identical and not force and not content_diff["has_meaningful_change"]:
+            report["status"] = "ok"
+            report["applied"] = False
+            report["reason"] = "content_identical"
+            if output:
+                _write_report(output, report)
+            return report
+
         # 5. 在 promotion 前先行從 staging 計算 size、SHA256 並在記憶體建構報告
         # 確保 replace 是最後的檔案系統操作，絕不因後續讀取失敗而導致狀態與磁碟不一致
         norm_size = staging_path.stat().st_size
@@ -312,6 +461,7 @@ def update_db(
         # 6. 原子替換正式資料庫 (同檔案系統原子 replace)
         staging_path.replace(target_path)
         report["status"] = "ok"
+        report["applied"] = True
 
     except Exception as e:
         report["status"] = "error"

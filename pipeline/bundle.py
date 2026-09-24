@@ -502,7 +502,10 @@ def get_playable_character_unit_ids(dashboard_dir: Path = DASHBOARD_DIR) -> Set[
                 AND unit_id IN (SELECT DISTINCT unit_id FROM unit_rarity)
             """)
             for row in cursor.fetchall():
-                playable_uids.add(row[0])
+                try:
+                    playable_uids.add(int(row[0]))
+                except (ValueError, TypeError):
+                    pass
             conn.close()
         except Exception as e:
             print(f"  [WARN] 讀取 redive_tw.db 角色資料失敗: {e}", file=sys.stderr)
@@ -516,7 +519,10 @@ def get_playable_character_unit_ids(dashboard_dir: Path = DASHBOARD_DIR) -> Set[
             for char in tracked.get("characters", []):
                 uid = char.get("unit_id")
                 if uid:
-                    playable_uids.add(int(uid))
+                    try:
+                        playable_uids.add(int(uid))
+                    except (ValueError, TypeError):
+                        pass
         except Exception as e:
             print(f"  [WARN] 讀取 tracked_characters.json 失敗: {e}", file=sys.stderr)
 
@@ -543,7 +549,11 @@ def get_character_catalog_icon_mappings(dashboard_dir: Path = DASHBOARD_DIR) -> 
 
     # 收集候選代表頭像檔名
     candidate_filenames: Set[str] = set()
-    for uid in playable_uids:
+    for raw_uid in playable_uids:
+        try:
+            uid = int(raw_uid)
+        except (ValueError, TypeError):
+            continue
         if uid >= 190000:
             candidate_filenames.add(f"{uid}.png")
         else:

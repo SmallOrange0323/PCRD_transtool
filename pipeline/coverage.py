@@ -26,14 +26,21 @@ sys.path.insert(0, str(PROJECT_ROOT / "tools"))
 # ─────────────────────────── 新鮮度狀態模型 ───────────────────────────
 
 class FreshnessStatus:
+    # 現代 Content-Oriented 狀態 (Phase F2C)
+    NO_CHANGE = "NO_CHANGE"
+    CDN_CHANGE_DETECTED = "CDN_CHANGE_DETECTED"
+    UPDATE_VALIDATED = "UPDATE_VALIDATED"
+    UPDATED_SUCCESSFULLY = "UPDATED_SUCCESSFULLY"
+    UPDATE_FAILED = "UPDATE_FAILED"
+    REMOTE_PROBE_UNAVAILABLE = "REMOTE_PROBE_UNAVAILABLE"
+
+    # 既有相容狀態 (Legacy Backward Compatibility)
     CONFIRMED_CURRENT = "CONFIRMED_CURRENT"
     UPDATE_AVAILABLE = "UPDATE_AVAILABLE"
-    UPDATED_SUCCESSFULLY = "UPDATED_SUCCESSFULLY"
     UPDATE_DOWNLOADED_UNCONFIRMED = "UPDATE_DOWNLOADED_UNCONFIRMED"
     REMOTE_BEHIND_LOCAL = "REMOTE_BEHIND_LOCAL"
     REMOTE_UNREACHABLE = "REMOTE_UNREACHABLE"
     LOCAL_STATE_MISSING = "LOCAL_STATE_MISSING"
-    UPDATE_FAILED = "UPDATE_FAILED"
 
 def is_valid_truth_version(ver: Any) -> bool:
     """驗證 TruthVersion 是否為合規的 8 位數字字串"""
@@ -44,15 +51,57 @@ class FreshnessResult:
     status: str
     remote_version: Optional[str]
     local_version: Optional[str]
-    confirmed: bool
+    confirmed: bool  # 語意澄清 (Phase F2C): 嚴格代表「官方 CDN 快照觀測/內容指紋證據已確認 (official CDN observation/content evidence confirmed)」，絕不代表「遊戲伺服器 active version 已確認」，亦不代表「wthee 已確認」。
     update_required: bool
     degraded: bool
     message: str
+    fingerprint_matched: Optional[bool] = None
+    third_party_reference: Optional[str] = None
+    cdn_candidates: Optional[List[str]] = None
 
-def evaluate_freshness(remote_tv: Optional[str], local_tv: Optional[str], db_exists: bool) -> FreshnessResult:
+def evaluate_freshness(
+    remote_tv: Optional[str],
+    local_tv: Optional[str],
+    db_exists: bool,
+    fingerprint_matched: Optional[bool] = None,
+    third_party_reference: Optional[str] = None,
+    cdn_candidates: Optional[List[str]] = None,
+) -> FreshnessResult:
     """
     評估當前管線新鮮度狀態 (純粹邏輯判定，無副作用)
+    支援 Content-Driven 指紋比對與版本回退安全。
     """
+    # 1. 指紋明確一致且本地 DB 存在：最高優先級確認無變更 (NO_CHANGE)
+    if fingerprint_matched is True and db_exists:
+        return FreshnessResult(
+            status=FreshnessStatus.NO_CHANGE,
+            remote_version=remote_tv,
+            local_version=local_tv,
+            confirmed=True,
+            update_required=False,
+            degraded=False,
+            message=f"官方 CDN 內容指紋與本地記錄一致 ({remote_tv or local_tv})，無實質變更",
+            fingerprint_matched=True,
+            third_party_reference=third_party_reference,
+            cdn_candidates=cdn_candidates,
+        )
+
+    # 2. 指紋明確變更 (例如同版本號但內容 hash 變動) 且有遠端版號：必須更新
+    if fingerprint_matched is False and remote_tv is not None:
+        return FreshnessResult(
+            status=FreshnessStatus.CDN_CHANGE_DETECTED,
+            remote_version=remote_tv,
+            local_version=local_tv,
+            confirmed=True,
+            update_required=True,
+            degraded=False,
+            message=f"官方 CDN 內容指紋變更 (線上快照: {remote_tv}, 本地: {local_tv or '未記錄'})",
+            fingerprint_matched=False,
+            third_party_reference=third_party_reference,
+            cdn_candidates=cdn_candidates,
+        )
+
+    # 3. 常規或舊相容路徑 (未傳入 fingerprint_matched 時)
     if remote_tv is not None:
         if not db_exists:
             return FreshnessResult(
@@ -62,7 +111,10 @@ def evaluate_freshness(remote_tv: Optional[str], local_tv: Optional[str], db_exi
                 confirmed=True,
                 update_required=True,
                 degraded=False,
-                message=f"本地資料庫缺失，需從鏡像下載 (線上 TruthVersion: {remote_tv})"
+                message=f"本地資料庫缺失，需從官方 CDN 獲取 (快照 TruthVersion: {remote_tv})",
+                fingerprint_matched=fingerprint_matched,
+                third_party_reference=third_party_reference,
+                cdn_candidates=cdn_candidates,
             )
         elif local_tv and remote_tv == local_tv:
             return FreshnessResult(
@@ -72,7 +124,10 @@ def evaluate_freshness(remote_tv: Optional[str], local_tv: Optional[str], db_exi
                 confirmed=True,
                 update_required=False,
                 degraded=False,
-                message=f"線上 CDN 版號與本地記錄一致 ({remote_tv})，新鮮度已確認"
+                message=f"線上 CDN 版號與本地記錄一致 ({remote_tv})，新鮮度已確認",
+                fingerprint_matched=fingerprint_matched,
+                third_party_reference=third_party_reference,
+                cdn_candidates=cdn_candidates,
             )
         elif local_tv and is_valid_truth_version(remote_tv) and is_valid_truth_version(local_tv):
             remote_int = int(remote_tv)
@@ -85,7 +140,10 @@ def evaluate_freshness(remote_tv: Optional[str], local_tv: Optional[str], db_exi
                     confirmed=True,
                     update_required=True,
                     degraded=False,
-                    message=f"線上 CDN 有新版本 (線上: {remote_tv}, 本地: {local_tv})"
+                    message=f"線上 CDN 有新版本 (線上: {remote_tv}, 本地: {local_tv})",
+                    fingerprint_matched=fingerprint_matched,
+                    third_party_reference=third_party_reference,
+                    cdn_candidates=cdn_candidates,
                 )
             elif remote_int < local_int:
                 return FreshnessResult(
@@ -98,7 +156,10 @@ def evaluate_freshness(remote_tv: Optional[str], local_tv: Optional[str], db_exi
                     message=(
                         f"線上 CDN 版號落後於本地記錄版本 (remote version is older than local recorded version: "
                         f"remote={remote_tv}, local={local_tv})；來源不一致且新鮮度未確認，安全跳過資料庫下載"
-                    )
+                    ),
+                    fingerprint_matched=fingerprint_matched,
+                    third_party_reference=third_party_reference,
+                    cdn_candidates=cdn_candidates,
                 )
         else:
             return FreshnessResult(
@@ -108,7 +169,10 @@ def evaluate_freshness(remote_tv: Optional[str], local_tv: Optional[str], db_exi
                 confirmed=True,
                 update_required=True,
                 degraded=False,
-                message=f"線上 CDN 有新版本 (線上: {remote_tv}, 本地: {local_tv or '未記錄'})"
+                message=f"線上 CDN 有新版本 (線上: {remote_tv}, 本地: {local_tv or '未記錄'})",
+                fingerprint_matched=fingerprint_matched,
+                third_party_reference=third_party_reference,
+                cdn_candidates=cdn_candidates,
             )
     else:
         # remote_tv is None (探測失敗或離線)
@@ -120,7 +184,10 @@ def evaluate_freshness(remote_tv: Optional[str], local_tv: Optional[str], db_exi
                 confirmed=False,
                 update_required=False,
                 degraded=True,
-                message=f"無法連接 CDN 探測版號 (降級為離線模式，使用本地 DB: {local_tv or '未知版號'})"
+                message=f"無法連接 CDN 探測版號 (降級為離線模式，使用本地 DB: {local_tv or '未知版號'})",
+                fingerprint_matched=fingerprint_matched,
+                third_party_reference=third_party_reference,
+                cdn_candidates=cdn_candidates,
             )
         else:
             return FreshnessResult(
@@ -130,7 +197,10 @@ def evaluate_freshness(remote_tv: Optional[str], local_tv: Optional[str], db_exi
                 confirmed=False,
                 update_required=True,
                 degraded=True,
-                message="無法連接 CDN 且本地資料庫不存在，管線無法執行"
+                message="無法連接 CDN 且本地資料庫不存在，管線無法執行",
+                fingerprint_matched=fingerprint_matched,
+                third_party_reference=third_party_reference,
+                cdn_candidates=cdn_candidates,
             )
 
 # ─────────────────────────── 覆蓋率分析模型 ───────────────────────────
@@ -198,7 +268,8 @@ def _get_story_ids_from_db_isolated(db_path: Path, unit_id: int) -> List[int]:
         rows = cur.fetchall()
         if rows:
             expected = {base_7 + i for i in range(4)}
-            return sorted({r[0] for r in rows} | expected)
+            int_rows = {int(r[0]) for r in rows if str(r[0]).isdigit()}
+            return sorted(int_rows | expected)
         return fallback_ids
     finally:
         conn.close()
