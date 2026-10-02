@@ -35,6 +35,8 @@ from pipeline.sonet_normalized_db import (
     get_client_family,
     load_schema_mapping,
     validate_mapping_contract,
+    validate_canonical_normalized_db,
+    CanonicalDbValidationResult,
 )
 
 # 匯入現有成熟之 pcrd_fetch 核心功能 (除 update_db 外)
@@ -67,6 +69,14 @@ def _validate_normalized_db_pre_promotion(staging_db_path: Path, truth_version: 
     """
     在原子替換至正式資料庫前，執行全量資料完整性與生產查詢門禁驗證。
     """
+    # 1. 核心 Canonical Normalized DB 合約檢驗 (HARD STOP)
+    canon_res = validate_canonical_normalized_db(staging_db_path, truth_version)
+    if not canon_res.valid:
+        err_msg = "; ".join(canon_res.errors)
+        raise ValueError(
+            f"HARD STOP: candidate DB is not canonical normalized form; production DB was not replaced: {err_msg}"
+        )
+
     client_family, mapping = load_schema_mapping(get_client_family(truth_version))
     validate_mapping_contract(mapping)
 
@@ -74,37 +84,12 @@ def _validate_normalized_db_pre_promotion(staging_db_path: Path, truth_version: 
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
     try:
-        # 1. PRAGMA integrity_check
-        cur.execute("PRAGMA integrity_check")
-        row = cur.fetchone()
-        if not row or row[0] != "ok":
-            raise ValueError(f"PRAGMA integrity_check 失敗: {row[0] if row else 'empty'}")
-
-        # 2. 驗證 11 張業務表與 mapped columns
-        cur.execute("SELECT name FROM sqlite_master WHERE type='table'")
-        existing_tables = set(r[0] for r in cur.fetchall())
-        expected_tables = set(mapping["tables"].keys())
-        missing_tables = expected_tables - existing_tables
-        if missing_tables:
-            raise ValueError(f"缺失必要業務表: {missing_tables}")
-
-        total_mapped = 0
-        for tbl_name, tbl_meta in mapping["tables"].items():
+        # 2. 驗證資料表筆數非空
+        for tbl_name in mapping["tables"].keys():
             cur.execute(f'SELECT COUNT(*) FROM "{tbl_name}"')
             cnt = cur.fetchone()[0]
             if cnt == 0:
                 raise ValueError(f"表 {tbl_name} 筆數為 0，視為異常資料庫")
-
-            cur.execute(f'PRAGMA table_info("{tbl_name}")')
-            col_names = set(r["name"] for r in cur.fetchall())
-            exp_cols = set(tbl_meta["columns"].keys())
-            missing_cols = exp_cols - col_names
-            if missing_cols:
-                raise ValueError(f"表 {tbl_name} 缺失必要欄位: {missing_cols}")
-            total_mapped += len(exp_cols)
-
-        if total_mapped != 99:
-            raise ValueError(f"Mapped columns 總數不符: 預期 99，實際 {total_mapped}")
 
         # 3. 生產查詢模擬門禁 (CharactersModule.render)
         render_sql = """
@@ -458,7 +443,15 @@ def update_db(
             "table_stats": norm_res.table_stats,
         }
 
-        # 6. 原子替換正式資料庫 (同檔案系統原子 replace)
+        # 6. 原子替換前最後硬防禦 (Defense-in-Depth Promotion Guard)
+        final_check = validate_canonical_normalized_db(staging_path, truth_version)
+        if not final_check.valid:
+            err_msg = "; ".join(final_check.errors)
+            raise ValueError(
+                f"HARD STOP: candidate DB is not canonical normalized form; production DB was not replaced: {err_msg}"
+            )
+
+        # 原子替換正式資料庫 (同檔案系統原子 replace)
         staging_path.replace(target_path)
         report["status"] = "ok"
         report["applied"] = True

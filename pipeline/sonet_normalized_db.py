@@ -27,9 +27,23 @@ from pathlib import Path
 import sqlite3
 import tempfile
 import time
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Set, Tuple
 
 SQLITE_MAGIC = b'SQLite format 3\x00'
+
+
+@dataclass
+class CanonicalDbValidationResult:
+    valid: bool
+    errors: List[str] = field(default_factory=list)
+    integrity_result: str = "unknown"
+    table_count: int = 0
+    unexpected_tables: List[str] = field(default_factory=list)
+    missing_tables: List[str] = field(default_factory=list)
+    raw_v1_tables: List[str] = field(default_factory=list)
+    missing_columns: Dict[str, List[str]] = field(default_factory=dict)
+    mapped_column_count: int = 0
+    client_family: Optional[str] = None
 
 
 @dataclass
@@ -57,6 +71,119 @@ def get_client_family(truth_version: str) -> str:
     if not truth_version or len(truth_version) < 4:
         raise ValueError(f"無效的 TruthVersion 格式: {truth_version!r}")
     return truth_version[:4]
+
+
+def validate_canonical_normalized_db(
+    candidate_db_path: Path,
+    truth_version_or_family: str,
+    manifest_dir: Optional[Path] = None
+) -> CanonicalDbValidationResult:
+    """
+    驗證 candidate SQLite 是否為合法、純淨之 Canonical Normalized DB。
+    嚴格門禁：
+    1. 檔案存在且為合法 SQLite 資料庫
+    2. PRAGMA integrity_check == 'ok'
+    3. 資料表集合與指定 client family 之 schema mapping 100% 吻合 (無缺失亦無多餘業務表)
+    4. 零混淆表殘留 (嚴禁包含 table name LIKE 'v1_%')
+    5. 各業務表完整包含 schema mapping 宣告之所有 mapped canonical columns
+    """
+    candidate_path = Path(candidate_db_path)
+    # 若傳入 TruthVersion 則解析 client family，否則直接視為 client family
+    if len(truth_version_or_family) >= 4 and truth_version_or_family[:4].isdigit():
+        client_family = truth_version_or_family[:4]
+    else:
+        client_family = truth_version_or_family
+
+    res = CanonicalDbValidationResult(valid=False, client_family=client_family)
+
+    # 1. 檔案存在性檢查
+    if not candidate_path.is_file():
+        res.errors.append(f"候選資料庫檔案不存在: {candidate_path}")
+        return res
+
+    try:
+        mapping_file, mapping_data = load_schema_mapping(client_family, manifest_dir=manifest_dir)
+        validate_mapping_contract(mapping_data)
+    except Exception as e:
+        res.errors.append(f"載入/校驗 Schema Mapping 契約失敗 ({client_family}): {e}")
+        return res
+
+    tables_cfg = mapping_data.get("tables", {})
+    expected_tables = set(tables_cfg.keys())
+
+    conn = None
+    try:
+        conn = sqlite3.connect(str(candidate_path))
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+
+        # 2. PRAGMA integrity_check
+        try:
+            cur.execute("PRAGMA integrity_check")
+            row = cur.fetchone()
+            integ_status = str(row[0]) if row else "empty"
+        except Exception as e:
+            integ_status = f"error: {e}"
+
+        res.integrity_result = integ_status
+        if integ_status != "ok":
+            res.errors.append(f"SQLite PRAGMA integrity_check 失敗: {integ_status}")
+
+        # 3. 取得資料表清單並排除內部 sqlite_* 表
+        cur.execute("SELECT name FROM sqlite_master WHERE type='table'")
+        actual_all_tables = [r["name"] for r in cur.fetchall()]
+        user_tables = [t for t in actual_all_tables if not t.startswith("sqlite_")]
+        actual_tables_set = set(user_tables)
+        res.table_count = len(user_tables)
+
+        # 4. 檢查混淆表 (v1_*)
+        raw_v1 = [t for t in actual_all_tables if t.startswith("v1_")]
+        res.raw_v1_tables = sorted(raw_v1)
+        if raw_v1:
+            res.errors.append(f"FAIL_CLOSED: 發現 {len(raw_v1)} 張 raw/hybrid 混淆表 (v1_*): {raw_v1[:5]}")
+
+        # 5. 比對規範業務表集合 (Canonical Table Set Parity)
+        missing_tables = sorted(list(expected_tables - actual_tables_set))
+        unexpected_tables = sorted(list(actual_tables_set - expected_tables))
+        res.missing_tables = missing_tables
+        res.unexpected_tables = unexpected_tables
+
+        if missing_tables:
+            res.errors.append(f"缺失 Canonical 必要業務表: {missing_tables}")
+        if unexpected_tables:
+            res.errors.append(f"包含非預期的多餘資料表: {unexpected_tables}")
+
+        # 6. 比對各表 mapped canonical columns
+        total_mapped = 0
+        missing_cols_dict: Dict[str, List[str]] = {}
+        for tbl_name, tbl_meta in tables_cfg.items():
+            exp_cols = set(tbl_meta.get("columns", {}).keys())
+            total_mapped += len(exp_cols)
+            if tbl_name in actual_tables_set:
+                cur.execute(f'PRAGMA table_info("{tbl_name}")')
+                col_names = set(r["name"] for r in cur.fetchall())
+                missing_cols = sorted(list(exp_cols - col_names))
+                if missing_cols:
+                    missing_cols_dict[tbl_name] = missing_cols
+                    res.errors.append(f"資料表 {tbl_name} 缺失 Canonical 欄位: {missing_cols}")
+
+        res.missing_columns = missing_cols_dict
+        res.mapped_column_count = total_mapped
+
+        if not res.errors:
+            res.valid = True
+
+    except Exception as e:
+        res.errors.append(f"檢驗候選資料庫時發生未預期異常: {e}")
+    finally:
+        if conn:
+            try:
+                conn.close()
+            except Exception:
+                pass
+
+    return res
+
 
 
 def load_schema_mapping(client_family: str, manifest_dir: Optional[Path] = None) -> Tuple[Path, Dict[str, Any]]:

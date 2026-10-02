@@ -57,10 +57,20 @@ class TestDirectSonetDbPipelineIntegration(unittest.TestCase):
         self.assertEqual(hashlib.sha256(actual).hexdigest(), self.initial_sha256, "資料庫被篡改，未維持 byte-identical！")
 
     # 1. pipeline passes exact remote_tv to updater
+    @patch("pipeline.update.analyze_coverage")
     @patch("pipeline.update.evaluate_freshness")
     @patch("pipeline.fetch.probe_truth_version")
     @patch("pipeline.fetch.update_db")
-    def test_01_pipeline_passes_exact_remote_tv_to_updater(self, mock_update_db, mock_probe, mock_eval):
+    def test_01_pipeline_passes_exact_remote_tv_to_updater(self, mock_update_db, mock_probe, mock_eval, mock_cov):
+        mock_coverage = MagicMock()
+        mock_coverage.analysis_status = update_module.CoverageAnalysisStatus.VALID
+        mock_coverage.analysis_errors = []
+        mock_coverage.missing_required_count = 0
+        mock_coverage.missing_optional_count = 0
+        mock_coverage.unknown_expected_count = 0
+        mock_coverage.missing_unknown_count = 0
+        mock_cov.return_value = mock_coverage
+
         mock_probe.return_value = MagicMock(confirmed_remote=True, version="00610008", source="remote_wthee_api")
         mock_eval.return_value = FreshnessResult(
             status=FreshnessStatus.UPDATE_AVAILABLE,
@@ -105,9 +115,9 @@ class TestDirectSonetDbPipelineIntegration(unittest.TestCase):
         mock_fetch.side_effect = side_effect_fetch
 
         # 模擬 normalizer 成功
+        from tests.test_canonical_db_promotion_guard import _create_minimal_canonical_db
         def side_effect_norm(raw_db_path, truth_version, output_path, **kwargs):
-            with open(output_path, "wb") as f:
-                f.write(b"NORMALIZED_SQLITE_NEW_PRODUCTION_BYTES")
+            _create_minimal_canonical_db(Path(output_path), "0061")
             return NormalizedDbResult(
                 success=True,
                 truth_version=truth_version,
@@ -163,7 +173,10 @@ class TestDirectSonetDbPipelineIntegration(unittest.TestCase):
         # 驗證目標檔案已成功被原子替換
         with open(self.mock_db, "rb") as f:
             final_bytes = f.read()
-        self.assertEqual(final_bytes, b"NORMALIZED_SQLITE_NEW_PRODUCTION_BYTES")
+        self.assertNotEqual(final_bytes, self.initial_bytes, "資料庫應被替換為新產物")
+        from pipeline.sonet_normalized_db import validate_canonical_normalized_db
+        v = validate_canonical_normalized_db(self.mock_db, "00610008")
+        self.assertTrue(v.valid)
 
         # 驗證報告已寫入磁碟
         self.assertTrue(self.report_path.exists())

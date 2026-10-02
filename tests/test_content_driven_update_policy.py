@@ -357,7 +357,7 @@ class TestContentDrivenUpdatePolicy(unittest.TestCase):
     @patch("pipeline.fetch.generate_normalized_db")
     @patch("pipeline.fetch._validate_normalized_db_pre_promotion")
     def test_10_validated_cdn_change_promotes_db_atomically(self, mock_val, mock_norm, mock_fetch):
-        new_content = b"PROMOTED_NEW_VALIDATED_NORMALIZED_DB_DATA_12345"
+        from tests.test_canonical_db_promotion_guard import _create_minimal_canonical_db
         mock_fetch.return_value = MasterDbFetchResult(
             success=True,
             truth_version="00610009",
@@ -368,8 +368,7 @@ class TestContentDrivenUpdatePolicy(unittest.TestCase):
             pool_hash="pool"
         )
         def side_effect_norm(raw_db_path, truth_version, output_path):
-            with open(output_path, "wb") as f:
-                f.write(new_content)
+            _create_minimal_canonical_db(Path(output_path), "0061")
             return NormalizedDbResult(success=True, truth_version="00610009", client_family="0061")
         mock_norm.side_effect = side_effect_norm
 
@@ -383,7 +382,12 @@ class TestContentDrivenUpdatePolicy(unittest.TestCase):
         self.assertEqual(res.get("status"), "ok", f"error was: {res.get('error')}")
         self.assertTrue(res.get("applied"))
         with open(self.mock_db, "rb") as f:
-            self.assertEqual(f.read(), new_content, "生產 DB 應原子替換為新產物")
+            final_bytes = f.read()
+        self.assertNotEqual(final_bytes, self.initial_bytes, "生產 DB 應原子替換為新產物")
+        # 驗證新產物符合 canonical 規範
+        from pipeline.sonet_normalized_db import validate_canonical_normalized_db
+        v = validate_canonical_normalized_db(self.mock_db, "00610009")
+        self.assertTrue(v.valid)
 
     # 11. deployment of already validated local state -> does not call remote_wthee_api
     @patch("pipeline.update.check_and_sync_upstream")
