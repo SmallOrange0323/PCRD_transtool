@@ -1,19 +1,43 @@
 {
   "status": "ok",
-  "db_path": "E:\\OneDrive - 寰宇知識科技股份有限公司\\PCRD_tool\\dashboard\\redive_tw.db",
-  "checks": [
-    {
-      "table": "unit_data",
-      "count": 441
-    },
-    {
-      "table": "chara_story_status",
-      "count": 1563
-    },
-    {
-      "table": "unit_skill_data",
-      "count": 2638
-    }
-  ],
-  "size_bytes": 14807040
+  "truth_version": "00610008",
+  "source": "sonet_official_cdn",
+  "target_db_path": "E:\\OneDrive - 寰宇知識科技股份有限公司\\PCRD_tool\\dashboard\\redive_tw.db",
+  "client_family": "0061",
+  "manifest": {
+    "name": "masterdata2_assetmanifest",
+    "url": "https://img-pc.so-net.tw/dl/Resources/00610008/Jpn/AssetBundles/Android/manifest/masterdata2_assetmanifest",
+    "sha256": "0be3bad930d49c6846e6f2956d287ea20824c4ce7bd608df71670fdd760e623d"
+  },
+  "bundle": {
+    "bundle_name": "a/masterdata_master.unity3d",
+    "bundle_md5": "e590b77dd2a9062a4181ba3ea8f545c5",
+    "pool_hash": "ea31a8de308910be",
+    "bundle_size": 14233987,
+    "bundle_url": "https://img-pc.so-net.tw/dl/pool/AssetBundles/ea/ea31a8de308910be"
+  },
+  "raw_db": {
+    "sha256": "55e9520db2b011feab9db552bf51e6c3cc4889317b74901f6e1b720bf27fd068",
+    "size": 46022656
+  },
+  "mapping": {
+    "client_family": "0061",
+    "contract_file": "E:\\OneDrive - 寰宇知識科技股份有限公司\\PCRD_tool\\pipeline\\manifests\\sonet_db_schema_map_0061.json",
+    "schema_version": "1.0.0"
+  },
+  "content_diff": {
+    "has_meaningful_change": false,
+    "current_db_exists": true,
+    "sha256_identical": true,
+    "new_unit_ids": [],
+    "removed_unit_ids": [],
+    "new_story_ids_count": 0,
+    "new_event_ids_count": 0,
+    "table_count_deltas": {},
+    "current_db_sha256": "86f205632c33cbfdbe138fd5d7fde724845ee24f1a16b4d6fec7b5b32a59d73d",
+    "staging_db_sha256": "86f205632c33cbfdbe138fd5d7fde724845ee24f1a16b4d6fec7b5b32a59d73d",
+    "reason": "sha256_identical"
+  },
+  "applied": false,
+  "reason": "content_identical"
 }
