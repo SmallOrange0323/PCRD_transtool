@@ -65,3 +65,12 @@ downloads/
 
 # 15. 忽略本地二進位執行檔
 tools/bin/
+
+# 16. 忽略私人授權憑證
+gvg_token.json
+
+# R2 cleanup: regenerated local artifacts
+tools/ffmpeg.exe
+dashboard/scratch_dmm_all_character_textures/
+temp/masterdata_master.unity3d
+temp_jp.db
