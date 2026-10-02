@@ -74,3 +74,12 @@ tools/ffmpeg.exe
 dashboard/scratch_dmm_all_character_textures/
 temp/masterdata_master.unity3d
 temp_jp.db
+
+# R2 cleanup: local workspace artifacts and historical snapshots
+.wrangler/
+tmp/
+dashboard/card/
+dashboard/sound/
+dashboard/redive_tw.db.bak*
+dashboard/redive_tw.db.pre_*
+dashboard_antigravity_rescue_*/
