@@ -262,25 +262,23 @@ window.CharactersModule = {
         body.innerHTML = '<div class="loading-mini">讀取角色詳情中...</div>';
 
         try {
-            // 1. 取得詳細數值與成長值
+            // 1. 取得詳細數值與成長值 (僅來自 unit_rarity，嚴禁以 unit_data 作為 fallback)
             const stats = window.PCRDatabase.runQuery(`
                 SELECT * FROM unit_rarity WHERE unit_id = ? ORDER BY rarity DESC LIMIT 1
-            `, [unitId])[0] || window.PCRDatabase.runQuery(`
-                SELECT * FROM unit_data WHERE unit_id = ?
-            `, [unitId])[0];
+            `, [unitId])[0] || null;
 
             const unitData = window.PCRDatabase.runQuery(`
                 SELECT search_area_width FROM unit_data WHERE unit_id = ?
-            `, [unitId])[0];
+            `, [unitId])[0] || null;
 
             // 2. 取得技能 ID
             const skillIds = window.PCRDatabase.runQuery(`
                 SELECT * FROM unit_skill_data WHERE unit_id = ?
             `, [unitId])[0];
 
-            // 3. 取得動作循環
+            // 3. 取得動作循環 (依 pattern_id 升冪確保優先展示角色基本常態循環)
             const attackPattern = window.PCRDatabase.runQuery(`
-                SELECT * FROM unit_attack_pattern WHERE unit_id = ?
+                SELECT * FROM unit_attack_pattern WHERE unit_id = ? ORDER BY pattern_id ASC LIMIT 1
             `, [unitId])[0];
 
             // 4. 取得技能詳情
