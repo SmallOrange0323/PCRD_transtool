@@ -1,101 +1,118 @@
 ---
 name: pcrd-deploy-website
 description: >-
-  將公主連結 Re:Dive 台版工具網站的最新角色資料與前端代碼打包，推送到 GitHub Pages 並監控部署狀態。使用時機：使用者已確認 pcrd-fetch-new-data 的資料報告無誤，需要將新角色或新劇情發佈到線上網頁時觸發。執行前必須先取得使用者明確確認。
+  將公主連結 Re:Dive 劇情地圖（Story Map）最新資料與前端代碼發布到 GitHub Pages。使用時機：使用者已確認更新數據無誤，並明確批准發布時觸發。核心入口唯一為 python update_story_map.py --deploy。
 ---
 
 # PCRD 網頁部署 Skill
 
 ## Overview
 
-將 `dashboard/` 目錄下已更新的資料與前端代碼，自動注入新角色定義、打包到 `dist_story_map/`，並強制推送到 GitHub Pages `gh-pages` 分支，最後監控線上部署狀態。
+將劇情地圖（Story Map）已更新驗證的資料與前端代碼發布至 GitHub Pages（`gh-pages` 分支）。
 
-**此 Skill 是 `pcrd-fetch-new-data` 的下游流程，必須在使用者確認資料報告無誤後才可執行。**
-
-## Dependencies
-
-無外部 Skill 依賴。
-
-## Quick Start
-
-```
-# 使用者確認資料後觸發
-「資料確認沒問題，幫我更新到網站上」
-「把剛才抓的新劇情部署到 GitHub Pages」
-「上線！」
-```
-
-## Utility Scripts
-
-使用 `tools/pcrd_deploy.py` CLI 工具：
-
-### `inject-character` — 注入新角色到前端
-
+**核心規則**：
+**專案唯一對外部署入口為：**
 ```bash
-python tools/pcrd_deploy.py inject-character --unit-id 138301 --name "貪吃佩可（阿斯特萊亞）" --output tools/inject_report.json
+python update_story_map.py --deploy
 ```
 
-在 `dashboard/characters.js` 中尋找注入點，插入新角色的 JS 物件定義（ID、名稱、故事 ID 清單）。若角色已存在則跳過（冪等操作）。
+**嚴禁代理人直接執行 `python -m pipeline.deploy`**。底層 `pipeline/deploy.py` 屬於內部模組（Internal Only），只能由 `pipeline.update` 在通過完整的前置驗證與門禁後內部授權呼叫。
 
-### `bundle` — 打包靜態資源
+---
 
+## 核心部署工作流 (Canonical Workflow)
+
+### 1. 使用者明確授權 (User Approval)
+發布到線上生產環境具有不可逆之影響。在執行實際部署指令前，**必須取得使用者明確確認**。
+
+```text
+# 使用者明確確認範例
+「確認資料與驗證無誤，請部署到線上。」
+「可以發布了。」
+「請執行 deploy 上線。」
+```
+
+### 2. 安全預檢 (Safe Preflight)
+若尚未在當前確切狀態下通過完整門禁，或需要向使用者呈報發布影響範圍，建議先執行零副作用的乾跑預檢：
 ```bash
-python tools/pcrd_deploy.py bundle --output tools/bundle_report.json
+python update_story_map.py --dry-run
 ```
+*功能*：執行完整的管線驗證、CDN 新鮮度比對與構建模擬，不產生檔案寫入或 Git 推送。若當前狀態已剛通過相同門禁，則無須重複執行。
 
-執行 `dashboard/scripts/bundle_story_map.py`，根據 `dashboard/data/tracked_characters.json` 複製所有已追蹤角色的素材到 `dist_story_map/`。
-
-### `push-pages` — 推送到 GitHub Pages
-
+### 3. 正式發布 (Production Deployment)
+取得使用者確認後，執行官方標準發布命令：
 ```bash
-python tools/pcrd_deploy.py push-pages --message "deploy: add new character" --output tools/push_report.json
+python update_story_map.py --deploy
 ```
-
-在 `dist_story_map/` 執行 Git 操作（清除 index.lock → reset → add -A → commit → push -f origin gh-pages），並同步將前端源碼 push 到 master 分支。
-
-### `monitor` — 監控部署狀態
-
+可選自訂 Commit 訊息：
 ```bash
-python tools/pcrd_deploy.py monitor --timeout 300 --output tools/monitor_report.json
+python update_story_map.py --deploy -m "deploy: update story map to version <ver>"
 ```
 
-輪詢 GitHub REST API，確認 `gh-pages` 分支最新 commit 已被 GitHub Pages CDN 正式上線，超時則通知使用者手動刷新。
+---
 
-## Workflow
+## 內部部署原語與門禁 (Internal Deployment Primitives)
 
-### 完整部署新角色的標準流程
+底層模組 `pipeline/deploy.py` 為專案內部實作，由 `pipeline.update` 依序在完成以下檢驗後受控調用：
+1. **官方 CDN 新鮮度評估 (Freshness Evaluation)**：確認當前資料庫與 CDN 版本一致或處於已知基準。
+2. **話數覆蓋率檢查 (Story Coverage Checks)**：確保所有必要劇情章節與對白未有缺漏。
+3. **正規 Master DB 處理 (Master DB Handling)**：確保資料庫完整解密且雜湊可追蹤。
+4. **資源完整性門禁 (Asset Completeness Gate)**：確認頭像、CG 插畫、背景圖等無遺漏。
+5. **決定性打包 (Deterministic Bundle)**：將資源與 cache-busting 元數據確定性地同步至 `dist_story_map/`。
+6. **全量驗證 (Full Pipeline Validation)**：執行 `pipeline.validate`（包含二進位 Avatar Manifest 對等性等三重驗證）。
 
-1. **AI 再次確認** → 向使用者說明即將執行的操作（注入哪個角色、推送到哪個 Repo），取得確認
-2. **執行** `inject-character --unit-id {id}` → 注入前端 JS 定義
-3. **執行** `bundle` → 打包所有靜態資源
-4. **執行** `push-pages` → 清除鎖定、提交、強制推送
-5. **執行** `monitor` → 監控 CDN 上線狀態
-6. **呈報結果** → 告知使用者部署成功，提示以 Ctrl+F5 強制刷新瀏覽器
+**代理人絕對不得繞過上述流程直接調用 `pipeline.deploy`。**
 
-## Rate Limiting
+---
 
-- **GitHub API**：未認證請求限速 60 次/小時，monitor 每 10 秒一次，不會超出限制
+## 安全不變式 (Safety Invariants)
 
-## Pre-Deployment Verification (發布前三道防禦自檢)
+發布過程中嚴格禁止以下危險行為：
+- ❌ **嚴禁對 `gh-pages` 執行強制推送 (`git push -f`)**。
+- ❌ **嚴禁手動刪除 `.git/index.lock`**。
+- ❌ **嚴禁手動修改或破壞 `dist_story_map/.git` 內部狀態**。
+- ❌ **嚴禁在部署過程中自動對源碼分支執行 `git add`、`git commit` 或 `git push`**。
+- ❌ **嚴禁直接推送到 `master` 分支**。
+- ❌ **嚴禁跳過任何安全與資料驗證門禁**。
+- ❌ **嚴禁使用已廢棄的舊部署腳本（如 `tools/pcrd_deploy.py`、`tools/force_deploy.py`）**。
 
-在執行 `push-pages` 發布前，AI **必須**嚴格完成以下三道防禦性自檢：
+---
 
-1. **靜態語法檢查 (Linter Check)**：
-   * 若修改了 `db.js` 或 `chapter-data.js` 等核心 JS 代碼，發布前必須強制在本地執行：
-     ```bash
-     node --check dashboard/db.js
-     node --check dashboard/chapter-data.js
-     ```
-   * 確保完全無 JS 語法解析錯誤。
-2. **打包檔案映射自檢 (Bundle Mapping Check)**：
-   * 執行 `bundle` 後，必須確認新加入的素材（頭像、劇照、語音、背景）已出現在 `dist_story_map/` 對應目錄中。
-   * 檢查 `dist_story_map/data/db_info.json` 內容是否正確生成且版本號已更新。
-3. **快取破壞內嵌機制 (Cache-Busting Inline Integration)**：
-   * 為了克服 GitHub Pages CDN 極度頑固的舊 JS 快取問題，任何對 `db.js` 或 `chapter-data.js` 的修改，**必須強制執行 inline 腳本**，將這兩個核心 JS 的實體內容直接內嵌 (inline) 到 `dist_story_map/index.html` 中發布。
+## 源碼倉庫與部署目錄分離原則 (Source vs Deployment Separation)
 
-## Common Mistakes
+- **`PCRD_transtool` 主倉庫（`main` 分支）**：專注保存源碼、管線代碼、資料定義與歷史演進。主分支之提交與推送必須由工程師或代理人手動獨立審查完成。
+- **`dist_story_map` 部署目錄（獨立 `gh-pages` 分支）**：純粹為 GitHub Pages 提供線上靜態網頁與資源產物。
 
-1. **index.lock 殘留**：前次中斷的 Git 進程會留下鎖定檔，`push-pages` 已自動處理，但若仍失敗請手動確認 `dist_story_map/.git/` 下無 lock 檔。
-2. **音訊目錄被誤追蹤**：`dist_story_map/.gitignore` 已設定忽略 `sound/`，若音訊誤入 staging 會導致 `git add` 卡死數分鐘，需執行 `git rm -r --cached sound` 解微追蹤。
-3. **瀏覽器強快取**：GitHub Pages 成功部署後，使用者仍需按 Ctrl+F5 強制刷新才能看到最新版，純刷新 F5 可能仍顯示舊版。
-4. **JS 語法錯誤上線**：未經驗證直接提交修改後的 `db.js`，導致線上網頁開啟時直接出現 JavaScript 引擎語法解析崩潰。必須強制執行 Pre-Deployment Linter。
+**部署管線只會將打包驗證後的產物推送到 `origin/gh-pages`，絕不會也不得自動提交或推送主倉庫源碼。**
+
+---
+
+## 新鮮度覆寫機制 (Freshness Override)
+
+參數 `--allow-unconfirmed-freshness` 屬於**緊急/手動覆寫開關**：
+- **禁止自動套用**。
+- **使用條件**：
+  1. 發布被阻擋的**唯一原因**為 CDN 新鮮度未確認（Freshness uncertainty）。
+  2. 經工程審查確認本地資料無誤，且經**使用者明確授權**。
+- **限制**：該開關**無法**也不得覆寫話數結構覆蓋率不足或 `pipeline.validate` 失敗等硬性門禁。
+
+---
+
+## 門禁失敗處置原則 (Gate Failure Behavior)
+
+若任何部署門禁（CDN 新鮮度、話數覆蓋率、資源完整性、靜態驗證等）失敗：
+1. **立即停止 (STOP)**。
+2. **呈報詳細診斷**：
+   - 失敗之具體門禁名稱與原因。
+   - 當前新鮮度狀態（Freshness State）。
+   - 驗證錯誤摘要（Validation Result）。
+   - 明確說明**尚未執行任何 Git 推送**。
+3. **嚴禁嘗試任何 fallback 備用腳本或 force-push**。
+
+---
+
+## 部署後監控說明 (Monitoring)
+
+- 當官方權威指令 `python update_story_map.py --deploy` 執行成功，即代表已通過所有門禁並成功將驗證產物推送至 `origin/gh-pages`。
+- GitHub Pages CDN 或用戶端瀏覽器可能存在快取延遲（數十秒至數分鐘不等）。
+- **嚴禁**僅因瀏覽器暫時顯示快取舊內容而採取任何具破壞性的重試或 force-push 操作；應提示使用者使用 Ctrl+F5 或無痕視窗檢查。
