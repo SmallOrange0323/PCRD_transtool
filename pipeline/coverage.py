@@ -275,6 +275,19 @@ def _get_story_ids_from_db_isolated(db_path: Path, unit_id: int) -> List[int]:
         conn.close()
 
 
+def canonical_story_id(val: Any) -> int:
+    """
+    將任意輸入值轉換為 canonical 劇本 ID (int)。
+    若輸入為 None、空字串、或無法以純十進位整數解析之值，嚴格拋出 ValueError (Fail-Closed)。
+    """
+    if val is None:
+        raise ValueError("[ContractError] story_id 不能為 None")
+    s = str(val).strip()
+    if not s or not s.isdigit():
+        raise ValueError(f"[ContractError] 無效的非數字或空 story_id: {val!r}")
+    return int(s)
+
+
 def build_canonical_story_universe(dashboard_dir: Optional[Union[str, Path]] = None) -> CanonicalStoryUniverse:
     """
     建構 Story Map 權威話數宇宙 (Canonical Story Universe)：
@@ -314,7 +327,8 @@ def build_canonical_story_universe(dashboard_dir: Optional[Union[str, Path]] = N
             conn = sqlite3.connect(str(db_path))
             cur = conn.cursor()
             cur.execute("SELECT story_id FROM story_detail")
-            for (sid,) in cur.fetchall():
+            for (sid_raw,) in cur.fetchall():
+                sid = canonical_story_id(sid_raw)
                 db_story_detail_ids.add(sid)
                 s_str = str(sid)
                 if s_str.startswith("1"):
@@ -347,7 +361,9 @@ def build_canonical_story_universe(dashboard_dir: Optional[Union[str, Path]] = N
             tracked_uids = [c["unit_id"] for c in tracked_data.get("characters", []) if "unit_id" in c]
             tracked_units_count = len(tracked_uids)
             for uid in tracked_uids:
-                tracked_char_required_ids.update(_get_story_ids_from_db_isolated(db_path, uid))
+                raw_ids = _get_story_ids_from_db_isolated(db_path, uid)
+                for raw_sid in raw_ids:
+                    tracked_char_required_ids.add(canonical_story_id(raw_sid))
         except Exception as e:
             source_status["tracked_characters"] = f"ERROR ({e})"
             analysis_errors.append(f"解析 tracked_characters 或計算話數失敗: {e}")
@@ -366,9 +382,9 @@ def build_canonical_story_universe(dashboard_dir: Optional[Union[str, Path]] = N
             if not isinstance(stories, list):
                 raise ValueError("頂層 'stories' 欄位非列表或缺失")
             for item in stories:
-                sid = item.get("story_id")
-                if isinstance(sid, int):
-                    branch_expected_ids.add(sid)
+                raw_sid = item.get("story_id")
+                if raw_sid is not None:
+                    branch_expected_ids.add(canonical_story_id(raw_sid))
         except Exception as e:
             source_status["branch_stories"] = f"ERROR ({e})"
             analysis_errors.append(f"解析 branch_stories.json 失敗: {e}")
@@ -387,9 +403,9 @@ def build_canonical_story_universe(dashboard_dir: Optional[Union[str, Path]] = N
             if not isinstance(stories, list):
                 raise ValueError("頂層 'stories' 欄位非列表或缺失")
             for item in stories:
-                sid = item.get("id") or item.get("story_id")
-                if isinstance(sid, int):
-                    extra_event_expected_ids.add(sid)
+                raw_sid = item.get("id") or item.get("story_id")
+                if raw_sid is not None:
+                    extra_event_expected_ids.add(canonical_story_id(raw_sid))
         except Exception as e:
             source_status["extra_events"] = f"ERROR ({e})"
             analysis_errors.append(f"解析 extra_events.json 失敗: {e}")
