@@ -9,7 +9,7 @@ window.CharactersModule = {
     excludedUnitIds: (() => {
         try {
             const saved = JSON.parse(localStorage.getItem('excluded_unit_ids') || '[]');
-            return new Set(Array.isArray(saved) ? saved : []);
+            return new Set(Array.isArray(saved) ? saved.map(String) : []);
         } catch (_) { return new Set(); }
     })(),
     
@@ -51,37 +51,11 @@ window.CharactersModule = {
                 ORDER BY unit_id DESC
             `);
 
-            this.allCharacters = data;
-            
-            // 動態注入最新的角色（防止 SQLite 快取時間差）
-            const extraUnits = [
-                { unit_id: 139401, unit_name: "艾麗卡（少戰）", rarity: 3, pos: 322, race: "精靈族", guild: "？？？" },
-                { unit_id: 139301, unit_name: "真穗", rarity: 3, pos: null, race: "??", guild: "??" },
-                { unit_id: 139201, unit_name: "美穗", rarity: 3, pos: null, race: "??", guild: "??" },
-                { unit_id: 139101, unit_name: "凱留（霸瞳天星）", rarity: 3, pos: 760, race: "獸人族", guild: "美食殿堂" },
-                { unit_id: 181201, unit_name: "雪菲（公主）", rarity: 3, pos: 368, race: "龍人族", guild: "美食殿堂" },
-                { unit_id: 181101, unit_name: "靜流＆璃乃", rarity: 3, pos: 283, race: "人類", guild: "拉比林斯" },
-                { unit_id: 181001, unit_name: "安＆古蕾婭", rarity: 3, pos: 755, race: "龍人族", guild: "無所屬" },
-                { unit_id: 180901, unit_name: "秋乃＆咲戀", rarity: 3, pos: 185, race: "人類", guild: "梅爾克力亞財團" },
-                { unit_id: 180801, unit_name: "禊＆美美＆鏡華", rarity: 3, pos: 195, race: "獸人族", guild: "小小甜心" },
-                { unit_id: 180701, unit_name: "初音＆栞", rarity: 3, pos: 733, race: "精靈", guild: "無所屬" },
-                { unit_id: 180601, unit_name: "凱留（公主）", rarity: 3, pos: 760, race: "獸人族", guild: "美食殿堂" },
-                { unit_id: 180501, unit_name: "可可蘿（公主）", rarity: 3, pos: 545, race: "精靈", guild: "美食殿堂" },
-                { unit_id: 180401, unit_name: "貪吃佩可（公主）", rarity: 3, pos: 155, race: "人類", guild: "美食殿堂" },
-                { unit_id: 180301, unit_name: "怜（公主）", rarity: 3, pos: 190, race: "魔族", guild: "破曉之星" },
-                { unit_id: 180201, unit_name: "優衣（公主）", rarity: 3, pos: 780, race: "人類", guild: "破曉之星" },
-                { unit_id: 180101, unit_name: "日和（公主）", rarity: 3, pos: 140, race: "獸人族", guild: "破曉之星" },
-                { unit_id: 139001, unit_name: "鏡華（哥德）", rarity: 3, pos: 816, race: "精靈", guild: "小小甜心" },
-                { unit_id: 138901, unit_name: "格蕾斯（兔女郎）", rarity: 3, pos: 155, race: "人類", guild: "無所屬" },
-                { unit_id: 138301, unit_name: "貪吃佩可（阿斯特賴亞）", rarity: 3, pos: 155, race: "人類", guild: "美食殿堂" }
-            ];
-
-            for (const u of extraUnits) {
-                if (!this.allCharacters.some(c => c.unit_id === u.unit_id)) {
-                    this.allCharacters.push(u);
-                }
-            }
-            this.allCharacters.sort((a, b) => b.unit_id - a.unit_id);
+            this.allCharacters = (data || []).map(c => ({
+                ...c,
+                unit_id: String(c.unit_id)
+            }));
+            this.allCharacters.sort((a, b) => Number(b.unit_id) - Number(a.unit_id));
             
             this.renderLayout(container);
         } catch (error) {
@@ -255,7 +229,7 @@ window.CharactersModule = {
     },
 
     async showDetail(unitId) {
-        this.activeUnitId = unitId;
+        this.activeUnitId = String(unitId);
         const modal = document.getElementById('char-detail-modal');
         const body = document.getElementById('modal-body');
         modal.classList.add('active');
@@ -327,8 +301,8 @@ window.CharactersModule = {
             }
 
             // 5. 渲染詳情
-            const baseId = Math.floor(unitId / 100) * 100;
-            const profile = this.allCharacters.find(c => c.unit_id === unitId);
+            const baseId = Math.floor(Number(unitId) / 100) * 100;
+            const profile = this.allCharacters.find(c => c.unit_id === String(unitId));
             
             this.currentStats = stats;
             const maxLevel = window.PCRDatabase.currentRegion === 'jp' ? 305 : 280;
@@ -545,10 +519,11 @@ window.CharactersModule = {
 
     toggleExclude(unitId, event) {
         if (event) event.stopPropagation();
-        if (this.excludedUnitIds.has(unitId)) {
-            this.excludedUnitIds.delete(unitId);
+        const canonicalId = String(unitId);
+        if (this.excludedUnitIds.has(canonicalId)) {
+            this.excludedUnitIds.delete(canonicalId);
         } else {
-            this.excludedUnitIds.add(unitId);
+            this.excludedUnitIds.add(canonicalId);
         }
         try {
             localStorage.setItem('excluded_unit_ids', JSON.stringify([...this.excludedUnitIds]));
