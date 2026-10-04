@@ -361,22 +361,28 @@ def batch_update_manifest_entries(
     6. 透過 save_canonical_manifest 原子寫入檔案
     7. 回傳更新後之 metadata_version
     """
+    if entries:
+        if not truth_version or not isinstance(truth_version, str) or not re.fullmatch(r"\d{8}", truth_version):
+            raise ValueError("[ContractError] 寫入官方元數據時 caller 必須顯式提供有效的 8 碼 authoritative TruthVersion，嚴禁隱式繼承")
+
     if replace_existing:
         if not truth_version:
             raise ValueError("replace_existing=True 時必須提供有效的 truth_version！")
         manifest = create_empty_manifest(truth_version=str(truth_version))
     else:
+        if not filepath.exists() and not truth_version:
+            raise ValueError("[ContractError] 寫入官方元數據時必須顯式提供 authoritative 8 位數字 TruthVersion")
         manifest = load_metadata_manifest(filepath, default_truth_version=truth_version)
 
-    if truth_version:
-        str_tv = str(truth_version)
-        manifest["truth_version"] = str_tv
+    if entries:
+        target_tv = str(truth_version)
+        manifest["truth_version"] = target_tv
         for sid, entry in entries.items():
             prov = entry.get("provenance", {}) if isinstance(entry, dict) else {}
             entry_tv = prov.get("truth_version")
-            if entry_tv and entry_tv != str_tv:
+            if entry_tv and entry_tv != target_tv:
                 raise ValueError(
-                    f"話數 {sid} provenance.truth_version ({entry_tv}) 與本次批次 snapshot truth_version ({str_tv}) 不一致！"
+                    f"話數 {sid} provenance.truth_version ({entry_tv}) 與本次批次 snapshot truth_version ({target_tv}) 不一致！"
                 )
 
     for sid, entry in entries.items():

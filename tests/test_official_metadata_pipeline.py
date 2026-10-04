@@ -628,6 +628,7 @@ class TestOfficialMetadataPipeline(unittest.TestCase):
 
         manifest_file = mock_board / "data" / "official_story_metadata.json"
         batch_update_manifest_entries({100101: self._create_mock_entry(100101)}, truth_version="00600025", filepath=manifest_file)
+        (mock_board / "data" / "avatar_assets.json").write_text(json.dumps({"assets": []}), encoding="utf-8")
 
         with patch("pipeline.bundle.DASHBOARD_DIR", mock_board), \
              patch("pipeline.bundle.DIST_DIR", mock_dist), \

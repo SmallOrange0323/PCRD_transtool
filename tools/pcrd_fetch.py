@@ -288,10 +288,38 @@ def _get_local_fallback_version() -> str:
     return "00500030"  # 提高預設 fallback 至當前版本
 
 
-def _get_sonet_ver():
-    """相容舊下載工具：優先遠端版號，離線時回傳本機備援版號。"""
-    probe = probe_truth_version()
-    return probe.version if probe.confirmed_remote and probe.version else _get_local_fallback_version()
+def _get_sonet_ver() -> Optional[str]:
+    """相容舊下載工具：取得本地已確認之官方 TruthVersion。第三方僅為參考，絕不在此作為官方版本回傳；無官方版本時 Fail Closed 回傳 None。"""
+    # 1. 優先從本地歷史記錄取得已確認版號
+    try:
+        hist_path = os.path.join(os.path.dirname(DB_PATH), "versions", "version_history.json")
+        if os.path.exists(hist_path):
+            with open(hist_path, "r", encoding="utf-8") as f:
+                hist = json.load(f)
+                candidates = []
+                for k in ["last_applied_cdn_version", "last_version", "truth_version"]:
+                    v = hist.get(k)
+                    if v and re.fullmatch(r"\d{8}", str(v)):
+                        candidates.append(str(v))
+                if candidates:
+                    return max(candidates, key=lambda x: int(x))
+    except Exception:
+        pass
+
+    # 2. 次選從本地有效 SQLite DB 讀取
+    if os.path.exists(DB_PATH):
+        try:
+            conn = sqlite3.connect(DB_PATH)
+            cur = conn.cursor()
+            cur.execute("SELECT string_value FROM app_version WHERE key='asset_version' LIMIT 1")
+            row = cur.fetchone()
+            conn.close()
+            if row and row[0] and re.fullmatch(r"\d{8}", str(row[0])):
+                return str(row[0])
+        except Exception:
+            pass
+
+    return None
 
 
 def get_latest_truth_version() -> Optional[str]:
@@ -954,12 +982,12 @@ def fetch_story_json_by_id(
             resolved_truth_ver = str(truth_version)
     else:
         # Snapshot TruthVersion 一次，貫穿後續流程，避免 race condition
-        resolved_truth_ver = truth_version or _get_sonet_ver()
-        if not resolved_truth_ver:
+        resolved_truth_ver = str(truth_version) if truth_version else _get_sonet_ver()
+        if not resolved_truth_ver or not re.fullmatch(r"\d{8}", str(resolved_truth_ver)):
             return StoryFetchResult(
                 story_id=story_id,
                 status="NETWORK_ERROR",
-                error_message="無法取得 So-net TruthVersion"
+                error_message="[ContractError] 無法取得有效 8 碼 So-net TruthVersion"
             )
         try:
             refs = load_story_manifest_bundle_refs(truth_version=resolved_truth_ver)
@@ -1122,9 +1150,9 @@ def sync_story_batch_with_metadata(
             raise ValueError(f"傳入之 truth_version ({truth_version}) 與 bundle_refs 之版號 ({refs_tv}) 不一致！")
         resolved_tv = refs_tv
     else:
-        resolved_tv = truth_version or _get_sonet_ver()
-        if not resolved_tv:
-            return False, None, [], story_ids
+        if not truth_version:
+            raise ValueError("[ContractError] 批次同步元數據必須顯式提供 authoritative truth_version 或 bundle_refs，禁止回退第三方參考來源")
+        resolved_tv = str(truth_version)
         try:
             bundle_refs = load_story_manifest_bundle_refs(truth_version=resolved_tv)
         except Exception:
