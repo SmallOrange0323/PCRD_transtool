@@ -484,13 +484,32 @@ window.CharactersModule = {
         `;
     },
 
+    toFiniteStat(value) {
+        if (value === null || value === undefined || value === '') {
+            return null;
+        }
+        const n = Number(value);
+        return Number.isFinite(n) ? n : null;
+    },
+
+    calcStat(base, growth, level) {
+        const b = this.toFiniteStat(base);
+        const g = this.toFiniteStat(growth);
+        if (b === null || g === null) {
+            return null;
+        }
+        const lv = parseInt(level, 10);
+        const validLv = Number.isFinite(lv) && lv >= 1 ? lv : 1;
+        const result = Math.floor(b + (validLv - 1) * g);
+        return Number.isFinite(result) ? result : null;
+    },
+
     updateCalculatedStats(level) {
-        const lv = parseInt(level) || 1;
         const stats = this.currentStats;
         if (!stats) return;
 
         const grid = document.getElementById('stats-display-grid');
-        const calc = (base, growth) => Math.floor((base || 0) + (lv - 1) * (growth || 0));
+        const calc = (base, growth) => this.calcStat(base, growth, level);
 
         grid.innerHTML = `
             ${this.renderStat('HP', calc(stats.hp, stats.hp_growth))}
@@ -505,10 +524,13 @@ window.CharactersModule = {
     },
 
     renderStat(label, value) {
+        const safeValue = (value !== null && value !== undefined && Number.isFinite(Number(value)))
+            ? value
+            : '—';
         return `
             <div class="stat-box">
                 <span class="label">${label}</span>
-                <span class="value">${value}</span>
+                <span class="value">${safeValue}</span>
             </div>
         `;
     },

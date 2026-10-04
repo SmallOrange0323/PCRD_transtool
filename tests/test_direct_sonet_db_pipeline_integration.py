@@ -126,7 +126,7 @@ class TestDirectSonetDbPipelineIntegration(unittest.TestCase):
                 mapping_schema_version="1.0.0",
                 output_path=output_path,
                 table_stats={"story_detail": 100, "unit_data": 50},
-                provenance={"mapped_column_count": 99}
+                provenance={"mapped_column_count": 103}
             )
         mock_norm.side_effect = side_effect_norm
         mock_val.return_value = True
@@ -162,7 +162,7 @@ class TestDirectSonetDbPipelineIntegration(unittest.TestCase):
         self.assertTrue(res["normalized_db"]["sha256"])
         self.assertGreater(res["normalized_db"]["size"], 0)
         self.assertEqual(res["normalized_db"]["table_count"], 2)
-        self.assertEqual(res["normalized_db"]["mapped_column_count"], 99)
+        self.assertEqual(res["normalized_db"]["mapped_column_count"], 103)
 
         # Mapping assertions
         self.assertEqual(res["mapping"]["client_family"], "0061")

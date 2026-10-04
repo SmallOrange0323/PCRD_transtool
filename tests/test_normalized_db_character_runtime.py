@@ -121,6 +121,12 @@ def _build_mock_raw_0061_db(raw_db_path: Path):
         "story_id": "1058001",
         "chara_id_1": "1058"
     })
+    insert_row("actual_unit_background", {
+        "unit_id": "105831",
+        "real_name": "尤絲蒂亞娜‧F‧阿斯特賴亞",
+        "face_type": "4",
+        "bg_id": "510300"
+    })
 
     conn.commit()
     conn.close()
@@ -165,20 +171,21 @@ class TestNormalizedDbCharacterRuntime(unittest.TestCase):
         clean_src = " ".join(self.characters_js_content.split())
         self.assertIn(clean_frag, clean_src, f"SQL fragment not found in characters.js: {sql_fragment}")
 
-    def test_01_schema_contract_contains_11_tables_and_99_columns(self):
-        """驗證 schema mapping 契約定義了完整的 11 張業務表與 99 個欄位"""
+    def test_01_schema_contract_contains_12_tables_and_103_columns(self):
+        """驗證 schema mapping 契約定義了完整的 12 張業務表與 103 個欄位"""
         _, mapping = load_schema_mapping("0061")
         validate_mapping_contract(mapping)
 
         expected_tables = {
             "story_detail", "unit_data", "unit_profile", "event_story_data",
             "event_story_detail", "story_group_data", "chara_story_status",
-            "unit_rarity", "unit_skill_data", "unit_attack_pattern", "skill_data"
+            "unit_rarity", "unit_skill_data", "unit_attack_pattern", "skill_data",
+            "actual_unit_background"
         }
         actual_tables = set(mapping["tables"].keys())
         self.assertEqual(expected_tables, actual_tables)
         total_mapped = sum(len(t["columns"]) for t in mapping["tables"].values())
-        self.assertEqual(total_mapped, 99)
+        self.assertEqual(total_mapped, 103)
 
     def test_02_unit_data_schema_and_primary_key(self):
         """驗證 unit_data 映射正確的主鍵與角色圖鑑所需欄位"""
@@ -392,6 +399,54 @@ class TestNormalizedDbCharacterRuntime(unittest.TestCase):
             self.assertTrue(any("貪吃佩可" in t for t in titles))
         finally:
             conn.close()
+
+    def test_09_real_name_mapping_official_precedence(self):
+        """
+        驗證 real_name_mapping 的 official precedence 契約：
+        1. Official DB 優先覆蓋，指向同一 base_game_name 的 legacy aliases 必須移除
+        2. Official 不存在的 legacy-only entry 必須保留
+        3. 產生的 mapping 中 duplicate base_game_name values 必須為 0
+        """
+        from pipeline.fetch import generate_real_name_mapping_from_db
+
+        with tempfile.TemporaryDirectory() as td:
+            db_file = Path(td) / "test.db"
+            mapping_file = Path(td) / "real_name_mapping.json"
+
+            # 建立 minimal db
+            conn = sqlite3.connect(str(db_file))
+            cur = conn.cursor()
+            cur.execute("CREATE TABLE unit_data (unit_id INTEGER, unit_name TEXT)")
+            cur.execute("CREATE TABLE actual_unit_background (unit_id INTEGER, real_name TEXT)")
+            
+            # 官方: 136901 璐璐伊 -> 136901 深見璐璐
+            cur.execute("INSERT INTO unit_data VALUES (136901, '璐璐伊')")
+            cur.execute("INSERT INTO actual_unit_background VALUES (136901, '深見璐璐')")
+            conn.commit()
+            conn.close()
+
+            # 預置 existing mapping: 包含 official 與 legacy alias 以及 legacy-only
+            existing_data = {
+                "舊璐璐伊名稱": "璐璐伊",       # legacy alias -> 應被移除
+                "某獨立舊角色真名": "純舊角色",   # official 不存在之 legacy-only -> 應被保留
+            }
+            with open(mapping_file, "w", encoding="utf-8") as f:
+                json.dump(existing_data, f, ensure_ascii=False)
+
+            result = generate_real_name_mapping_from_db(db_file, mapping_file)
+
+            # 驗證
+            self.assertIn("深見璐璐", result)
+            self.assertEqual(result["深見璐璐"], "璐璐伊")
+            self.assertNotIn("舊璐璐伊名稱", result, "指向同一 base_game_name 的 legacy alias 必須被移除")
+            self.assertIn("某獨立舊角色真名", result, "official 不存在的 legacy-only entry 必須被保留")
+            self.assertEqual(result["某獨立舊角色真名"], "純舊角色")
+
+            # 驗證 duplicate values = 0
+            from collections import Counter
+            counts = Counter(result.values())
+            dups = [k for k, v in counts.items() if v > 1]
+            self.assertEqual(len(dups), 0, f"duplicate base_game_name values 必須為 0，實際有: {dups}")
 
 
 if __name__ == "__main__":

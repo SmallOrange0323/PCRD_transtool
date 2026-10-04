@@ -303,6 +303,91 @@ def probe_third_party_reference(timeout: int = 8) -> Dict[str, Any]:
     return result
 
 
+def generate_real_name_mapping_from_db(
+    db_path: Path,
+    mapping_path: Optional[Path] = None
+) -> Dict[str, str]:
+    """
+    從 canonical normalized DB (包含 unit_data 與 actual_unit_background)
+    決定性抽取並生成角色真名對照表 (real_name_mapping.json)。
+
+    契約規則：
+    1. 官方 DB 優先 (Official Canonical Precedence)
+    2. 保留既有 legacy/manual entries (不得無條件刪除)
+    3. 檢測同角色不同官方真名之衝突，若有衝突則拋出異常阻斷
+    4. 決定性排序 (字典序)，保證冪等性 (多次重跑無 diff)
+    """
+    target_mapping = Path(mapping_path) if mapping_path else (DASHBOARD_DIR / "data" / "real_name_mapping.json")
+
+    conn = sqlite3.connect(str(db_path))
+    cur = conn.cursor()
+
+    cur.execute("SELECT unit_id, unit_name FROM unit_data WHERE unit_id < 200000 AND unit_id > 100000")
+    unit_dict = {int(r[0]): r[1] for r in cur.fetchall()}
+
+    cur.execute("SELECT unit_id, real_name FROM actual_unit_background")
+    actual_rows = cur.fetchall()
+    conn.close()
+
+    game_to_official = {}
+    official_entries = {}
+    for uid, real_name in actual_rows:
+        base_id = (int(uid) // 100) * 100
+        candidates = [unit_dict[u] for u in unit_dict if (u // 100) * 100 == base_id]
+        if candidates:
+            base_game = candidates[0].split("（")[0].split("(")[0].strip()
+            clean_real = real_name.strip()
+            if base_game in game_to_official and game_to_official[base_game] != clean_real:
+                raise ValueError(
+                    f"Collision in official DB: {base_game} has multiple official real names: "
+                    f"{game_to_official[base_game]!r} vs {clean_real!r}"
+                )
+            game_to_official[base_game] = clean_real
+            official_entries[clean_real] = base_game
+
+    official_game_names = set(game_to_official.keys())
+
+    existing = {}
+    if target_mapping.exists():
+        try:
+            with open(target_mapping, "r", encoding="utf-8") as f:
+                existing = json.load(f)
+        except Exception:
+            existing = {}
+
+    # Official Precedence 契約：
+    # 若 official DB 已有某個 base_game_name 的 canonical real_name，
+    # 最終 mapping 中該 base_game_name 只能保留 official entry，
+    # 所有指向同一 base_game_name 的 legacy aliases 必須移除。
+    # 只有 official DB 完全沒有對應的 legacy game_name 才保留。
+    legacy_only = {
+        real_name: game_name
+        for real_name, game_name in existing.items()
+        if game_name not in official_game_names
+    }
+
+    merged = dict(legacy_only)
+    merged.update(official_entries)
+
+    # 嚴格驗證: duplicate base_game_name values 必須為 0
+    val_counts = {}
+    for r_name, g_name in merged.items():
+        val_counts[g_name] = val_counts.get(g_name, 0) + 1
+    duplicates = {g: count for g, count in val_counts.items() if count > 1}
+    if duplicates:
+        raise ValueError(
+            f"Duplicate base_game_name values found after precedence merge: {duplicates}"
+        )
+
+    sorted_merged = dict(sorted(merged.items(), key=lambda x: x[0]))
+
+    target_mapping.parent.mkdir(parents=True, exist_ok=True)
+    with open(target_mapping, "w", encoding="utf-8") as f:
+        json.dump(sorted_merged, f, ensure_ascii=False, indent=2)
+
+    return sorted_merged
+
+
 def update_db(
     truth_version: str,
     output: Optional[str] = "tools/db_update_report.json",
@@ -439,7 +524,7 @@ def update_db(
             "sha256": norm_sha256,
             "size": norm_size,
             "table_count": len(norm_res.table_stats),
-            "mapped_column_count": norm_res.provenance.get("mapped_column_count", 99),
+            "mapped_column_count": norm_res.provenance.get("mapped_column_count", 103),
             "table_stats": norm_res.table_stats,
         }
 
@@ -455,6 +540,12 @@ def update_db(
         staging_path.replace(target_path)
         report["status"] = "ok"
         report["applied"] = True
+
+        # 7. 自動從最新 DB 決定性更新/導出角色真名對照表 (real_name_mapping.json)
+        try:
+            generate_real_name_mapping_from_db(target_path)
+        except Exception as e:
+            print(f"  [WARN] 自動生成 real_name_mapping.json 時發生異常 (非致命): {e}", file=sys.stderr)
 
     except Exception as e:
         report["status"] = "error"

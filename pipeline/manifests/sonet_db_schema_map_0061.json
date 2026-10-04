@@ -254,6 +254,23 @@
         "verification_sample_pk": 1058001,
         "sample_row": "皇家斬擊 / 1001"
       }
+    },
+    "actual_unit_background": {
+      "plaintext_table": "actual_unit_background",
+      "physical_table": "v1_74f345bf4f4a239dd995e345a7b11ae4e2f6ef83daa829a9603e59d4885f19df",
+      "primary_key": "unit_id",
+      "category": "RUNTIME_REQUIRED",
+      "columns": {
+        "unit_id": "271a808b7d41f8ec4c4a36f7253126667c3f282aefb1be1362bc559ba11b767d",
+        "real_name": "7ac91252885e0687363576d31cd96b9a0aee1acd607d8ee1baf69558a995cd76",
+        "face_type": "3f4525adb4d3119ecfaa0e60657953f056075f91dee0863ab5eb1b8a2f1c0afd",
+        "bg_id": "d1620a33b3d5a34550b6182aad05503fa5e1b9b249ea254817a3369a872f86cf"
+      },
+      "provenance": {
+        "verified_in": "00610014",
+        "verification_sample_pk": 100131,
+        "sample_row": "春咲 日和 / 100131"
+      }
     }
   }
 }

@@ -10,7 +10,7 @@ So-net Master DB Normalizer Primitive (Phase F2A.3)
    - 未知 Client Family 拒絕執行（NEEDS_NEW_SCHEMA_MAPPING）
    - 實體混淆表或實體欄位 Token 缺失立即拒絕
    - Mapping 存在重複或衝突立即拒絕
-4. 從原生混淆 DB 僅選取 Story Map 與角色圖鑑核心 11 表（共 99 個 mapped columns），生成全新乾淨的 Normalized SQLite
+4. 從原生混淆 DB 僅選取 Story Map 與角色圖鑑核心 12 表（共 103 個 mapped columns），生成全新乾淨的 Normalized SQLite
 5. 建立主鍵索引，並通過 PRAGMA integrity_check 驗收
 
 邊界規範：

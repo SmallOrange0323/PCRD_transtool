@@ -62,8 +62,8 @@ class TestCanonicalDbPromotionGuard(unittest.TestCase):
         self.assertEqual(len(res.errors), 0)
         self.assertEqual(res.integrity_result, "ok")
         self.assertEqual(len(res.raw_v1_tables), 0)
-        self.assertEqual(res.table_count, 11)
-        self.assertEqual(res.mapped_column_count, 99)
+        self.assertEqual(res.table_count, 12)
+        self.assertEqual(res.mapped_column_count, 103)
 
     def test_case_b_raw_db_rejected(self):
         """B. RAW DB: contains many v1_* tables -> FAIL"""
