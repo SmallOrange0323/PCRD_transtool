@@ -175,6 +175,13 @@
             return this.parsePosition({ storyId: params.get('story'), line: params.get('line') ?? 0 });
         },
 
+        readInitialDeepLink() {
+            if (!window.location.hash) return null;
+            const params = new URLSearchParams(window.location.hash.slice(1));
+            if (!params.has('line')) return null;
+            return this.readHash();
+        },
+
         setStatus(message) {
             const status = document.getElementById('reader-navigation-status');
             if (status) status.textContent = message;
@@ -216,17 +223,30 @@
                 }
             });
 
-            // 路由判斷：
-            // 1. 若 URL hash 為有效 story deep-link，直接導向該話並抑制 prompt；
-            // 2. 若 URL hash 無效但有 hash，顯示提示訊息，不自動跳轉；
-            // 3. 若無有效 deep-link，禁止自動導向任何 saved position，檢查是否有未讀完進度並顯示非阻塞提醒。
-            const position = this.readHash();
-            if (position) {
-                this.open(position);
+            // 初始載入路由判斷：
+            // A. Explicit shared deep-link: 必須包含明確 'line' 參數（如 #story=...&line=0 或 line=42），
+            //    視為使用者明確點擊分享連結進入，直接導向該話並抑制 resume prompt。
+            // B. Internal reader route: 若僅有 #story=...（無 line 參數），視為上一次站內瀏覽殘留之 stale hash，
+            //    絕不自動 open，使用 replaceState 清除 hash 保持 landing page，並在有 saved progress 時提示 resume prompt。
+            // C. 無效 hash: 提示連結格式無效，不自動跳轉，有 saved progress 仍可提示 resume prompt。
+            // D. 無 hash: landing page，有 saved progress 則提示 resume prompt。
+            const initialDeepLink = this.readInitialDeepLink();
+            if (initialDeepLink) {
+                this.open(initialDeepLink);
             } else {
-                if (window.location.hash) {
+                const parsedAny = this.readHash();
+                if (parsedAny) {
+                    // 屬於情境 B：帶有 story 但無 line 參數的 stale internal route，清除 hash 保持 landing page
+                    try {
+                        const url = new URL(window.location.href);
+                        url.hash = '';
+                        window.history.replaceState(window.history.state, '', url);
+                    } catch (_) {}
+                } else if (window.location.hash) {
+                    // 屬於情境 C：無法解析為 story 的無效 hash
                     this.setStatus('連結格式無效，請從目錄選擇劇情。');
                 }
+
                 const target = this.getResumeTarget();
                 if (target && target.position.storyId !== this.map.activeStoryId) {
                     this.showResumePrompt(target);
