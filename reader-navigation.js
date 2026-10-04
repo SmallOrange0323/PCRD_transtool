@@ -7,6 +7,8 @@
         restore: null,
         routeRequest: 0,
 
+        sessionPromptKey: 'pcrd_reader_prompt_seen_v1',
+
         parsePosition(value) {
             if (!value || !/^\d{1,9}$/.test(String(value.storyId))) return null;
             const storyId = Number(value.storyId);
@@ -18,6 +20,154 @@
         readSaved() {
             try { return this.parsePosition(JSON.parse(localStorage.getItem(this.storageKey))); }
             catch (_) { return null; }
+        },
+
+        getResumeTarget() {
+            const saved = this.readSaved();
+            if (!saved || !this.map) return null;
+            const story = this.map.getStoryById(saved.storyId);
+            if (!story) return null;
+            return { position: saved, story };
+        },
+
+        formatResumeLabel(story) {
+            if (!story) return '';
+            const chapter = (story.chapter || '').trim();
+            const title = (story.title || '').trim();
+            const type = story.type;
+            const isEvent = story.isEvent;
+
+            // 1. 角色劇情：如 "優衣 第6話" -> "優衣・角色劇情 第6話"
+            if (type === 'chara') {
+                const m = chapter.match(/^(.*?)\s*第(\d+)話/);
+                if (m) {
+                    return `${m[1].trim()}・角色劇情 第${m[2]}話`;
+                }
+                const baseName = story.charaName ? `${story.charaName}・角色劇情` : '角色劇情';
+                return chapter ? `${baseName} ${chapter}` : baseName;
+            }
+
+            // 2. 活動劇情：如 "初音的禮物大作戰 第4話" -> "活動：初音的禮物大作戰・第4話"
+            if (isEvent || type === 'event') {
+                const m = chapter.match(/^(.*?)\s*第(\d+)話/);
+                if (m) {
+                    return `活動：${m[1].trim()}・第${m[2]}話`;
+                }
+                return `活動：${chapter || title || '活動劇情'}`;
+            }
+
+            // 3. 主線劇情：
+            // 第2部、第3部必須保留部別：如 "第2部 第1章 第1話" -> "主線劇情 第2部・第1章・第1話"
+            // 第1部若未明寫第1部：如 "第15章 第3話" -> "主線劇情 第15章・第3話"（不硬補第1部）
+            if (type === 'main') {
+                const mPart = chapter.match(/^(第[23]部)\s*(第\d+章)\s*(第\d+話)/);
+                if (mPart) {
+                    return `主線劇情 ${mPart[1]}・${mPart[2]}・${mPart[3]}`;
+                }
+                const mChapter = chapter.match(/^(?:第1部\s*)?(第\d+章)\s*(第\d+話)/);
+                if (mChapter) {
+                    return `主線劇情 ${mChapter[1]}・${mChapter[2]}`;
+                }
+                if (chapter.includes('序章')) {
+                    return `主線劇情 序章${title ? `・${title}` : ''}`;
+                }
+                if (chapter.startsWith('幕間')) {
+                    return `主線劇情 ${chapter}`;
+                }
+                return `主線劇情 ${chapter || title || ''}`.trim();
+            }
+
+            // 4. 公會劇情：如 "美食殿堂 第1話" -> "公會：美食殿堂・第1話"
+            if (type === 'guild') {
+                const m = chapter.match(/^(.*?)\s*第(\d+)話/);
+                if (m) {
+                    return `公會：${m[1].trim()}・第${m[2]}話`;
+                }
+                return `公會劇情 ${chapter || title || ''}`.trim();
+            }
+
+            // 5. 額外 / 露娜塔等其他類型
+            if (chapter) return chapter;
+            if (title) return title;
+            return `劇情 ${story.id || ''}`.trim();
+        },
+
+        async resumeToLastStory() {
+            this.dismissPrompt();
+            const target = this.getResumeTarget();
+            if (target) {
+                await this.open(target.position);
+            }
+        },
+
+        dismissPrompt() {
+            try { sessionStorage.setItem(this.sessionPromptKey, '1'); } catch (_) {}
+            const toast = document.getElementById('reader-resume-toast');
+            if (toast) toast.remove();
+        },
+
+        showResumePrompt(target) {
+            if (!target || !target.story) return;
+            // 檢查本 session 是否已顯示過（seen flag）
+            try {
+                if (sessionStorage.getItem(this.sessionPromptKey) === '1') return;
+            } catch (_) {}
+
+            const label = this.formatResumeLabel(target.story);
+            if (!label) return;
+
+            // 成功顯示前立即記錄 seen flag，確保本 session 不再主動重複顯示
+            try { sessionStorage.setItem(this.sessionPromptKey, '1'); } catch (_) {}
+
+            // 若目前已有 toast，先移除舊的
+            const existing = document.getElementById('reader-resume-toast');
+            if (existing) existing.remove();
+
+            const toast = document.createElement('div');
+            toast.id = 'reader-resume-toast';
+            toast.className = 'reader-resume-toast';
+            toast.setAttribute('role', 'region');
+            toast.setAttribute('aria-label', '上次閱讀提醒');
+
+            const header = document.createElement('div');
+            header.className = 'reader-resume-toast-header';
+            header.innerHTML = `<span>📖 上次閱讀</span>`;
+
+            const closeBtn = document.createElement('button');
+            closeBtn.type = 'button';
+            closeBtn.className = 'reader-resume-toast-close';
+            closeBtn.setAttribute('aria-label', '關閉提醒');
+            closeBtn.textContent = '×';
+            closeBtn.addEventListener('click', () => this.dismissPrompt());
+            header.appendChild(closeBtn);
+
+            const body = document.createElement('div');
+            body.className = 'reader-resume-toast-body';
+            body.textContent = label;
+
+            const actions = document.createElement('div');
+            actions.className = 'reader-resume-toast-actions';
+
+            const dismissBtn = document.createElement('button');
+            dismissBtn.type = 'button';
+            dismissBtn.className = 'reader-resume-toast-btn-dismiss';
+            dismissBtn.textContent = '關閉';
+            dismissBtn.addEventListener('click', () => this.dismissPrompt());
+
+            const resumeBtn = document.createElement('button');
+            resumeBtn.type = 'button';
+            resumeBtn.className = 'reader-resume-toast-btn-resume';
+            resumeBtn.textContent = '繼續閱讀';
+            resumeBtn.addEventListener('click', () => this.resumeToLastStory());
+
+            actions.appendChild(dismissBtn);
+            actions.appendChild(resumeBtn);
+
+            toast.appendChild(header);
+            toast.appendChild(body);
+            toast.appendChild(actions);
+
+            document.body.appendChild(toast);
         },
 
         readHash() {
@@ -37,7 +187,7 @@
             if (host) {
                 host.innerHTML = `<button type="button" id="reader-resume" class="reader-nav-button">繼續閱讀</button>
                     <button type="button" id="reader-share" class="reader-nav-button" disabled>分享本話</button>`;
-                document.getElementById('reader-resume').addEventListener('click', () => this.open(this.readSaved()));
+                document.getElementById('reader-resume').addEventListener('click', () => this.resumeToLastStory());
                 document.getElementById('reader-share').addEventListener('click', () => this.share());
             }
             const status = document.createElement('p');
@@ -65,18 +215,36 @@
                     else this.setStatus('連結格式無效，請從目錄選擇劇情。');
                 }
             });
+
+            // 路由判斷：
+            // 1. 若 URL hash 為有效 story deep-link，直接導向該話並抑制 prompt；
+            // 2. 若 URL hash 無效但有 hash，顯示提示訊息，不自動跳轉；
+            // 3. 若無有效 deep-link，禁止自動導向任何 saved position，檢查是否有未讀完進度並顯示非阻塞提醒。
             const position = this.readHash();
-            if (position) this.open(position);
-            else if (window.location.hash) this.setStatus('連結格式無效，請從目錄選擇劇情。');
+            if (position) {
+                this.open(position);
+            } else {
+                if (window.location.hash) {
+                    this.setStatus('連結格式無效，請從目錄選擇劇情。');
+                }
+                const target = this.getResumeTarget();
+                if (target && target.position.storyId !== this.map.activeStoryId) {
+                    this.showResumePrompt(target);
+                }
+            }
         },
 
         updateResume() {
             const button = document.getElementById('reader-resume');
             if (!button) return;
-            const saved = this.readSaved();
-            const story = saved && this.map.getStoryById(saved.storyId);
-            button.disabled = !story;
-            button.title = story ? `繼續閱讀：${story.title || saved.storyId}` : '尚無閱讀紀錄';
+            const target = this.getResumeTarget();
+            button.disabled = !target;
+            if (target) {
+                const label = this.formatResumeLabel(target.story);
+                button.title = label ? `上次閱讀：${label}` : `上次閱讀：${target.position.storyId}`;
+            } else {
+                button.title = '尚無閱讀紀錄';
+            }
         },
 
         beforeSelect() {
@@ -97,6 +265,15 @@
             const button = document.getElementById('reader-share');
             if (button) button.disabled = false;
             this.setStatus('');
+            this.updateResume();
+            // 若切換至某篇劇情，且該劇情恰好為 resume target，自動關閉 toast
+            const toast = document.getElementById('reader-resume-toast');
+            if (toast) {
+                const target = this.getResumeTarget();
+                if (target && target.position.storyId === storyId) {
+                    toast.remove();
+                }
+            }
         },
 
         left() {
