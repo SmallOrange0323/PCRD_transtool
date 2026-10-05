@@ -16,6 +16,7 @@ import sys
 import json
 import sqlite3
 import hashlib
+import re
 from pathlib import Path
 from typing import Tuple, Set, Optional, List, Dict, Any
 
@@ -62,6 +63,69 @@ def calc_sha256(filepath: Path) -> str:
         while chunk := f.read(65536):
             h.update(chunk)
     return h.hexdigest()
+
+def validate_content_hash_reference(
+    entry_path: Path,
+    asset_path: Path,
+    asset_public_name: str,
+    res: Optional[ValidationResult] = None
+) -> Tuple[bool, str]:
+    """
+    驗證 production HTML 對靜態資產的引用格式是否符合內容雜湊要求：
+    {asset_public_name}?v=<8 hex>
+    且 <8 hex> == SHA-256(actual asset_path)[:8]
+
+    :return: (is_valid, message)
+    """
+    if not entry_path.exists():
+        msg = f"找不到 HTML 入口檔案: {entry_path}"
+        if res:
+            res.error(msg)
+        return False, msg
+
+    if not asset_path.exists():
+        msg = f"找不到資產檔案: {asset_path}"
+        if res:
+            res.error(msg)
+        return False, msg
+
+    html_content = entry_path.read_text(encoding="utf-8")
+    actual_hash = calc_sha256(asset_path)[:8]
+
+    escaped_name = re.escape(asset_public_name)
+    pattern = rf'(?:href|src)=["\']{escaped_name}(?:\?([^"\']*))?["\']'
+    matches = re.findall(pattern, html_content)
+
+    if not matches:
+        msg = f"HTML 未包含對 {asset_public_name} 的引用"
+        if res:
+            res.error(msg)
+        return False, msg
+
+    query = matches[0]
+    if not query or not query.startswith("v="):
+        msg = f"{asset_public_name} 引用缺少 ?v= 查詢參數"
+        if res:
+            res.error(msg)
+        return False, msg
+
+    version_val = query.split("v=", 1)[1].split("&")[0]
+    if not re.fullmatch(r"[0-9a-fA-F]{8}", version_val):
+        msg = f"{asset_public_name} 的版本參數 '{version_val}' 不是 8 位十六進位 hash"
+        if res:
+            res.error(msg)
+        return False, msg
+
+    if version_val.lower() != actual_hash.lower():
+        msg = f"{asset_public_name} 的版本參數 '{version_val}' 與實際檔案 hash '{actual_hash}' 不一致"
+        if res:
+            res.error(msg)
+        return False, msg
+
+    ok_msg = f"{asset_public_name} 內容雜湊驗證通過 (hash: {version_val})"
+    if res:
+        res.ok(ok_msg)
+    return True, ok_msg
 
 def calculate_deployment_footprint(dist_dir: Path = DIST_DIR, exclude_subdirs: Optional[Set[str]] = None) -> int:
     """
@@ -1271,6 +1335,14 @@ def validate_story_map(
                 res.ok("dist_story_map/index.html 已成功內嵌 chapter-data.js")
             else:
                 res.error("dist_story_map/index.html 缺少 chapter-data.js 內嵌標記！")
+
+            dist_css = DIST_DIR / "style.css"
+            validate_content_hash_reference(
+                entry_path=dist_idx,
+                asset_path=dist_css,
+                asset_public_name="style.css",
+                res=res
+            )
         else:
             res.error("dist_story_map/index.html 不存在！")
 

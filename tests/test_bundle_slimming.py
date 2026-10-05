@@ -54,7 +54,9 @@ from pipeline.validate import (
     check_footprint_gate,
     calculate_deployment_footprint,
     FOOTPRINT_WARN_BYTES,
-    FOOTPRINT_HARD_BYTES
+    FOOTPRINT_HARD_BYTES,
+    validate_content_hash_reference,
+    ValidationResult
 )
 
 class TestBundleSlimmingAndPrune(unittest.TestCase):
@@ -612,6 +614,102 @@ class TestBundleSlimmingAndPrune(unittest.TestCase):
 
         self._write_avatar_manifest(self.mock_dash)
         self.assertEqual(get_expected_dialogue_icon_mappings(self.mock_dash), {})
+
+    # 26. style.css cache-busting and determinism
+    def test_26_style_css_cache_busting(self):
+        """確保 style.css 具備 SHA-256 前 8 碼 content-hash cache-busting 且具備決定性"""
+        (self.mock_dash / "story_map.html").write_text(
+            '<link rel="stylesheet" href="style.css">\n'
+            '<script src="db.js"></script>\n'
+            '<script src="chapter-data.js"></script>',
+            encoding="utf-8"
+        )
+        (self.mock_dash / "db.js").write_text('console.log("db");', encoding="utf-8")
+        (self.mock_dash / "chapter-data.js").write_text('console.log("chapter");', encoding="utf-8")
+
+        initial_css = "body { color: red; }"
+        (self.mock_dash / "style.css").write_text(initial_css, encoding="utf-8")
+        expected_hash1 = hashlib.sha256(initial_css.encode("utf-8")).hexdigest()[:8]
+
+        # 1. 第一次渲染 (A: Fixture template)
+        rendered1 = render_index_html(self.mock_dash)
+        self.assertIn(f'<link rel="stylesheet" href="style.css?v={expected_hash1}">', rendered1)
+
+        # 2. 決定性驗證 (B: deterministic byte-for-byte)
+        rendered1_repeat = render_index_html(self.mock_dash)
+        self.assertEqual(rendered1, rendered1_repeat, "相同 source 必須產生完全相同的 byte-for-byte index.html")
+
+        # 3. 內容變更驗證 (C: CSS mutation)
+        mutated_css = "body { color: blue; }"
+        (self.mock_dash / "style.css").write_text(mutated_css, encoding="utf-8")
+        expected_hash2 = hashlib.sha256(mutated_css.encode("utf-8")).hexdigest()[:8]
+        self.assertNotEqual(expected_hash1, expected_hash2)
+
+        rendered2 = render_index_html(self.mock_dash)
+        self.assertIn(f'<link rel="stylesheet" href="style.css?v={expected_hash2}">', rendered2)
+        self.assertNotIn(f'<link rel="stylesheet" href="style.css?v={expected_hash1}">', rendered2)
+
+        # 4. 舊版人工查詢參數相容驗證 (D: Legacy template compatibility)
+        (self.mock_dash / "story_map.html").write_text(
+            '<link rel="stylesheet" href="style.css?v=20260916">\n'
+            '<script src="db.js"></script>\n'
+            '<script src="chapter-data.js"></script>',
+            encoding="utf-8"
+        )
+        rendered_legacy = render_index_html(self.mock_dash)
+        self.assertIn(f'<link rel="stylesheet" href="style.css?v={expected_hash2}">', rendered_legacy)
+        self.assertNotIn('style.css?v=20260916', rendered_legacy)
+
+        # 5. 真實 repo 渲染驗證 (E: Real repo render)
+        from pipeline.bundle import DASHBOARD_DIR
+        real_rendered = render_index_html(DASHBOARD_DIR)
+        real_css_path = DASHBOARD_DIR / "style.css"
+        real_css_hash = hashlib.sha256(real_css_path.read_bytes()).hexdigest()[:8]
+        self.assertIn(f'<link rel="stylesheet" href="style.css?v={real_css_hash}">', real_rendered)
+        self.assertNotIn('style.css?v=20260916', real_rendered)
+
+    # 27. validator style.css content-hash gate
+    def test_27_validator_style_css_content_hash(self):
+        """驗證 validate_content_hash_reference 門禁行為 (PASS, FAIL mismatch, FAIL missing query, FAIL malformed)"""
+        test_dir = self.mock_root / "validator_test"
+        test_dir.mkdir(parents=True, exist_ok=True)
+        css_file = test_dir / "style.css"
+        html_file = test_dir / "index.html"
+
+        css_content = "body { margin: 0; }"
+        css_file.write_text(css_content, encoding="utf-8")
+        actual_hash = hashlib.sha256(css_content.encode("utf-8")).hexdigest()[:8]
+
+        # 案例 1: PASS - 正確的實際 hash
+        html_file.write_text(f'<link rel="stylesheet" href="style.css?v={actual_hash}">', encoding="utf-8")
+        res1 = ValidationResult()
+        ok1, msg1 = validate_content_hash_reference(html_file, css_file, "style.css", res=res1)
+        self.assertTrue(ok1)
+        self.assertTrue(res1.is_valid)
+
+        # 案例 2: FAIL - hash 不匹配 (deadbeef)
+        html_file.write_text('<link rel="stylesheet" href="style.css?v=deadbeef">', encoding="utf-8")
+        res2 = ValidationResult()
+        ok2, msg2 = validate_content_hash_reference(html_file, css_file, "style.css", res=res2)
+        self.assertFalse(ok2)
+        self.assertFalse(res2.is_valid)
+        self.assertIn("不一致", msg2)
+
+        # 案例 3: FAIL - 沒有 ?v= 查詢參數
+        html_file.write_text('<link rel="stylesheet" href="style.css">', encoding="utf-8")
+        res3 = ValidationResult()
+        ok3, msg3 = validate_content_hash_reference(html_file, css_file, "style.css", res=res3)
+        self.assertFalse(ok3)
+        self.assertFalse(res3.is_valid)
+        self.assertIn("缺少 ?v=", msg3)
+
+        # 案例 4: FAIL - hash 不是 8 位十六進位 (例如 123)
+        html_file.write_text('<link rel="stylesheet" href="style.css?v=123">', encoding="utf-8")
+        res4 = ValidationResult()
+        ok4, msg4 = validate_content_hash_reference(html_file, css_file, "style.css", res=res4)
+        self.assertFalse(ok4)
+        self.assertFalse(res4.is_valid)
+        self.assertIn("不是 8 位", msg4)
 
 
 if __name__ == "__main__":

@@ -358,7 +358,10 @@ def render_index_html(dashboard_dir: Path = DASHBOARD_DIR, story_hash: Optional[
     story_data_hash = calc_sha256(story_data_js_path)[:8]
     map_hash = calc_sha256(map_js_path)[:8]
     reader_hash = calc_sha256(dashboard_dir / "reader-navigation.js")[:8]
+    style_css_path = dashboard_dir / "style.css"
+    style_hash = calc_sha256(style_css_path)[:8]
 
+    html_content = re.sub(r'<link rel="stylesheet" href="style\.css(?:\?v=[^"]*)?">', f'<link rel="stylesheet" href="style.css?v={style_hash}">', html_content)
     html_content = re.sub(r'<script src="characters\.js(?:\?v=[^"]*)?"></script>', f'<script src="characters.js?v={char_hash}"></script>', html_content)
     html_content = re.sub(r'<script src="avatar-service\.js(?:\?v=[^"]*)?"></script>', f'<script src="avatar-service.js?v={avatar_hash}"></script>', html_content)
     html_content = re.sub(r'<script src="story-asset-service\.js(?:\?v=[^"]*)?"></script>', f'<script src="story-asset-service.js?v={story_asset_hash}"></script>', html_content)
