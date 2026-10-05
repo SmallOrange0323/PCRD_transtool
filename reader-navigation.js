@@ -269,6 +269,7 @@
 
         beforeSelect() {
             if (!this.map) return;
+            this.dismissPrompt();
             this.savePosition();
             this.readyStoryId = null;
         },
@@ -286,14 +287,6 @@
             if (button) button.disabled = false;
             this.setStatus('');
             this.updateResume();
-            // 若切換至某篇劇情，且該劇情恰好為 resume target，自動關閉 toast
-            const toast = document.getElementById('reader-resume-toast');
-            if (toast) {
-                const target = this.getResumeTarget();
-                if (target && target.position.storyId === storyId) {
-                    toast.remove();
-                }
-            }
         },
 
         left() {
@@ -358,7 +351,7 @@
         },
 
         currentPosition() {
-            if (!this.map || this.readyStoryId !== this.map.activeStoryId) return null;
+            if (!this.map || !this.readyStoryId || this.readyStoryId !== this.map.activeStoryId) return null;
             const tab = document.getElementById('map-tab');
             if (!tab?.classList.contains('active')) return null;
             const board = document.getElementById('dialogue-board');
