@@ -1231,6 +1231,7 @@ const QuestMapModule = {
 
     switchTabType(type) {
         this.teardownPlayback({ invalidateAsync: true });
+        window.ReaderNavigation?.left();
         this.activeTabType = type;
         this.activeStoryId = null;
         this.expandedChapter = null;
@@ -1818,11 +1819,6 @@ const QuestMapModule = {
         </div>
         `;
 
-        if (!skipAutoSelect && (this.activeTabType !== 'chara' || this.activeCharaName) && chapterKeys.length > 0 && this.expandedChapter && this.chapters[this.expandedChapter] && this.chapters[this.expandedChapter].length > 0) {
-            setTimeout(() => {
-                this.selectStory(this.chapters[this.expandedChapter][0].id);
-            }, 0);
-        }
         this.updateReaderState();
 
         // 處理非同步暫存跳轉
@@ -1874,8 +1870,13 @@ const QuestMapModule = {
     },
 
     clearActiveChara() {
+        this.teardownPlayback({ invalidateAsync: true });
+        window.ReaderNavigation?.left();
+        this.activeStoryId = null;
         this.activeCharaName = null;
         this.expandedChapter = null;
+        this.directoryLevel = 'level1';
+        this.directoryLevel1ScrollTop = 0;
         this.safeRender(() => this._render());
     },
 
@@ -2336,6 +2337,8 @@ const QuestMapModule = {
     },
 
     async selectPartFromTab(part) {
+        this.teardownPlayback({ invalidateAsync: true });
+        window.ReaderNavigation?.left();
         this.currentPart = part;
         this.activeStoryId = null;
         this.expandedChapter = null;

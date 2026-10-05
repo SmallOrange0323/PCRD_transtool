@@ -1,8 +1,32 @@
-const { test } = require('node:test');
-const assert = require('node:assert/strict');
-const vm = require('node:vm');
-const fs = require('node:fs');
-const path = require('node:path');
+let test;
+try {
+    test = require('node:test').test || require('node:test');
+} catch (_) {
+    test = (name, fn) => {
+        try {
+            const res = fn();
+            if (res && typeof res.then === 'function') {
+                return res.then(() => console.log('PASS:', name)).catch(err => {
+                    console.error('FAIL:', name, err);
+                    process.exitCode = 1;
+                });
+            }
+            console.log('PASS:', name);
+        } catch (err) {
+            console.error('FAIL:', name, err);
+            process.exitCode = 1;
+        }
+    };
+}
+let assert;
+try {
+    assert = require('node:assert/strict');
+} catch (_) {
+    assert = require('assert').strict || require('assert');
+}
+const vm = require('vm');
+const fs = require('fs');
+const path = require('path');
 const source = fs.readFileSync(path.join(__dirname, '../dashboard/reader-navigation.js'), 'utf8');
 
 function setup() {

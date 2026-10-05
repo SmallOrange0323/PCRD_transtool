@@ -1,9 +1,14 @@
 'use strict';
 
-const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const path = require('node:path');
-const vm = require('node:vm');
+let assert;
+try {
+    assert = require('node:assert/strict');
+} catch (_) {
+    assert = require('assert').strict || require('assert');
+}
+const fs = require('fs');
+const path = require('path');
+const vm = require('vm');
 
 const source = fs.readFileSync(path.join(__dirname, '../dashboard/reader-navigation.js'), 'utf8');
 
