@@ -323,7 +323,6 @@
                 return;
             }
             this.readyStoryId = null;
-            this.map.currentView = 'list';
             await this.map.jumpToStory(position.storyId);
         },
 

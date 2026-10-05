@@ -1,14 +1,19 @@
 'use strict';
 
-const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const path = require('node:path');
+let assert;
+try {
+    assert = require('node:assert/strict');
+} catch (_) {
+    assert = require('assert').strict || require('assert');
+}
+const fs = require('fs');
+const path = require('path');
 
 const mapSource = fs.readFileSync(path.join(__dirname, '../dashboard/map.js'), 'utf8');
 const htmlSource = fs.readFileSync(path.join(__dirname, '../dashboard/story_map.html'), 'utf8');
 
 // Landing menu must be rendered before the first data preload await.
-const renderStart = mapSource.indexOf('async _render(skipAutoSelect = false)');
+const renderStart = mapSource.indexOf('async _render()');
 const menuCheck = mapSource.indexOf("if (this.currentView === 'menu')", renderStart);
 const dataAwait = mapSource.indexOf('await this.loadData();', renderStart);
 assert.ok(renderStart >= 0, 'map.js must define _render');
