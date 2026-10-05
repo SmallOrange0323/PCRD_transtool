@@ -235,15 +235,31 @@ const QuestMapModule = {
         return AvatarService.getAvatarHtml(realName, this.speakerAvatars);
     },
 
-    // safeRender 包裝器：防止競態條件
-    async safeRender(fn) {
-        if (this.isRendering) return;
+    // 渲染序列化佇列：保證每個請求依序執行，不 drop，且執行或排隊期間 isRendering 恆為 true
+    _renderQueue: null,
+    _renderQueueDepth: 0,
+
+    safeRender(fn) {
+        this._renderQueueDepth = (this._renderQueueDepth || 0) + 1;
         this.isRendering = true;
-        try {
-            await fn();
-        } finally {
-            this.isRendering = false;
-        }
+
+        const runTask = async () => {
+            try {
+                return await fn();
+            } finally {
+                this._renderQueueDepth--;
+                if (this._renderQueueDepth <= 0) {
+                    this._renderQueueDepth = 0;
+                    this.isRendering = false;
+                    this._renderQueue = null;
+                }
+            }
+        };
+
+        const prevQueue = this._renderQueue || Promise.resolve();
+        const nextQueue = prevQueue.catch(() => {}).then(runTask);
+        this._renderQueue = nextQueue;
+        return nextQueue;
     },
 
     // Story Map playback / async lifecycle has one source of truth here.
@@ -1300,7 +1316,7 @@ const QuestMapModule = {
         bgArea.style.backgroundImage = `url('${url}')`;
     },
 
-    async _render(skipAutoSelect = false) {
+    async _render() {
         const tab = document.getElementById('map-tab');
 
         // The landing menu is static UI. Render it immediately instead of making
@@ -1820,19 +1836,10 @@ const QuestMapModule = {
         `;
 
         this.updateReaderState();
-
-        // 處理非同步暫存跳轉
-        if (this.pendingJumpStoryId) {
-            const tempId = this.pendingJumpStoryId;
-            this.pendingJumpStoryId = null;
-            setTimeout(() => {
-                this.jumpToStory(tempId);
-            }, 50);
-        }
     },
 
-    async render(skipAutoSelect = false) {
-        return this.safeRender(() => this._render(skipAutoSelect));
+    async render() {
+        return this.safeRender(() => this._render());
     },
 
     switchPart(part) {
@@ -3092,74 +3099,79 @@ const QuestMapModule = {
         });
     },
 
-    jumpToStory(storyId, closeModalId) {
+    async jumpToStory(storyId, closeModalId) {
         if (closeModalId) {
             const modal = document.getElementById(closeModalId);
             if (modal) modal.classList.remove('active');
         }
 
-        // 如果 stories 尚未載入完畢，暫存此次跳轉，等待 _render 結束後自動重試
-        if (this.stories.length === 0) {
-            this.pendingJumpStoryId = storyId;
-            return;
+        try {
+            await this.loadData();
+        } catch (err) {
+            console.error('[QuestMapModule] 載入劇情資料失敗，無法執行跳轉:', err);
+            return false;
         }
 
         const story = this.getStoryById(storyId);
         if (!story) {
             console.warn('[QuestMapModule] 找不到對應的故事 ID:', storyId);
-            return;
-        }
-
-        const isEvent = story.isEvent;
-        const storyType = story.type; // 'main', 'chara', 'guild', 'tower'
-        const extraMembership = this.getExtraMembership(story);
-
-        if (extraMembership) {
-            // Extra membership 優先導向 Extra 分頁與對應分類 (Phase 3 Part F)
-            this.activeTabType = 'extra';
-            this.activeExtraCategory = extraMembership.categoryId;
-            this.groupExtraStories();
-        } else if (isEvent) {
-            if (this.activeTabType !== 'event') this.activeTabType = 'event';
-            this.groupEventStories();
-        } else {
-            // 根據 story.type 正確導向對應的分頁
-            if (storyType && ['chara', 'guild', 'tower'].includes(storyType)) {
-                this.activeTabType = storyType;
-            } else {
-                this.activeTabType = 'main';
-                if (story.part) this.currentPart = story.part;
-            }
-
-            if (storyType === 'chara') {
-                this.groupCharaStories();
-            } else if (storyType === 'guild') {
-                this.groupGuildStories();
-            } else if (storyType === 'tower') {
-                this.groupTowerStories();
-            } else {
-                this.groupStories();
-            }
-        }
-
-        let targetChKey = null;
-        for (const [chKey, stories] of Object.entries(this.chapters)) {
-            if (stories.some(s => s.id === storyId)) {
-                targetChKey = chKey;
-                break;
-            }
-        }
-
-        if (targetChKey) {
-            this.expandedChapter = targetChKey;
-            this.directoryLevel = 'level2';
-            if (storyType === 'chara') {
-                this.activeCharaName = targetChKey;
-            }
+            return false;
         }
 
         return this.safeRender(async () => {
-            await this._render(true);
+            window.ReaderNavigation?.beforeSelect();
+
+            const isEvent = story.isEvent;
+            const storyType = story.type; // 'main', 'chara', 'guild', 'tower'
+            const extraMembership = this.getExtraMembership(story);
+
+            this.currentView = 'list';
+
+            if (extraMembership) {
+                // Extra membership 優先導向 Extra 分頁與對應分類 (Phase 3 Part F)
+                this.activeTabType = 'extra';
+                this.activeExtraCategory = extraMembership.categoryId;
+                this.groupExtraStories();
+            } else if (isEvent) {
+                if (this.activeTabType !== 'event') this.activeTabType = 'event';
+                this.groupEventStories();
+            } else {
+                // 根據 story.type 正確導向對應的分頁
+                if (storyType && ['chara', 'guild', 'tower'].includes(storyType)) {
+                    this.activeTabType = storyType;
+                } else {
+                    this.activeTabType = 'main';
+                    if (story.part) this.currentPart = story.part;
+                }
+
+                if (storyType === 'chara') {
+                    this.groupCharaStories();
+                } else if (storyType === 'guild') {
+                    this.groupGuildStories();
+                } else if (storyType === 'tower') {
+                    this.groupTowerStories();
+                } else {
+                    this.groupStories();
+                }
+            }
+
+            let targetChKey = null;
+            for (const [chKey, stories] of Object.entries(this.chapters)) {
+                if (stories.some(s => s.id === storyId)) {
+                    targetChKey = chKey;
+                    break;
+                }
+            }
+
+            if (targetChKey) {
+                this.expandedChapter = targetChKey;
+                this.directoryLevel = 'level2';
+                if (storyType === 'chara') {
+                    this.activeCharaName = targetChKey;
+                }
+            }
+
+            await this._render();
             // Rebuilding the shell needs a fresh selection even for the same ID.
             this.activeStoryId = null;
             await this.selectStory(storyId);
