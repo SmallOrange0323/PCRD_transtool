@@ -233,7 +233,11 @@ test('Test 7 — resolveAppearanceStoryMeta resolves official metadata fallback 
     mockMapModule.resolveAppearanceStoryMeta = new Function('storyId', fnBody);
 
     // Mock StoryDataService
+    let mockMetadataLoaded = true;
     global.window.StoryDataService = {
+        hasMetadataLoaded() {
+            return mockMetadataLoaded;
+        },
         getMetadataSync(storyId) {
             if (storyId === 10001) {
                 return { chapter_title: '第1章', subtitle: '冒險的開始' };
@@ -280,7 +284,7 @@ test('Test 7 — resolveAppearanceStoryMeta resolves official metadata fallback 
     assert.strictEqual(res4.label, '未命名劇情（ID: 10004）');
     assert.strictEqual(res4.canNavigate, false);
 
-    // Case 5: no official metadata at all -> '無法識別'
+    // Case 5: metadata loaded, but ID absent -> '無法識別'
     const res5 = mockMapModule.resolveAppearanceStoryMeta(99999);
     assert.deepStrictEqual(res5.path, ['無法識別']);
     assert.strictEqual(res5.label, 'ID: 99999');
@@ -288,6 +292,15 @@ test('Test 7 — resolveAppearanceStoryMeta resolves official metadata fallback 
     assert.strictEqual(res5.searchText, 'ID 99999');
     assert.strictEqual(res5.sortKey, '99-000099999');
     assert.strictEqual(res5.canNavigate, false);
+
+    // Case 6: metadata NOT loaded yet -> '載入名稱中…（ID: {storyId}）'
+    mockMetadataLoaded = false;
+    const res6 = mockMapModule.resolveAppearanceStoryMeta(99999);
+    assert.deepStrictEqual(res6.path, ['其他／未編目劇情']);
+    assert.strictEqual(res6.label, '載入名稱中…（ID: 99999）');
+    assert.strictEqual(res6.fullLabel, '其他／未編目劇情・載入名稱中…（ID: 99999）');
+    assert(res6.searchText.includes('載入名稱中…'));
+    assert.strictEqual(res6.canNavigate, false);
 });
 
 test('Test 8 — appearance directory renders metadata fallback items and prevents navigation', () => {
@@ -377,7 +390,7 @@ test('Test 9 — showCharaModal opens synchronously without awaiting metadata fe
 
     global.window.StoryDataService = {
         _metadataCache: null,
-        hasMetadataLoaded() { return Boolean(this._metadataCache); },
+        hasMetadataLoaded() { return false; },
         ensureMetadataLoaded() {
             return pendingPromise;
         },
@@ -394,15 +407,16 @@ test('Test 9 — showCharaModal opens synchronously without awaiting metadata fe
         charaDetailCache: { '可可蘿': { guild: '美食殿堂' } },
         speakerAvatars: {},
         getCharaRealName: (n) => n,
+        getStoryById: (id) => null, // unindexed -> needsMetadata is true
         ensureAppearanceMap: async () => {},
         getCharaModal: () => fakeModal,
         resolveAppearanceStoryMeta: (id) => ({
             storyId: id,
-            path: ['無法識別'],
-            label: `ID: ${id}`,
-            fullLabel: `無法識別・ID: ${id}`,
+            path: ['其他／未編目劇情'],
+            label: `載入名稱中…（ID: ${id}）`,
+            fullLabel: `其他／未編目劇情・載入名稱中…（ID: ${id}）`,
             searchText: `ID ${id}`,
-            sortKey: `99-${id}`,
+            sortKey: `98-${id}`,
             canNavigate: false
         }),
         escapeHtml: (s) => s
@@ -422,7 +436,7 @@ test('Test 9 — showCharaModal opens synchronously without awaiting metadata fe
     // The modal must open immediately BEFORE metadata promise resolves
     assert.strictEqual(modalOpened, true, 'Modal must open immediately');
     assert.strictEqual(metadataFetched, false, 'Modal opened without awaiting metadata completion');
-    assert(fakeModal.innerHTML.includes('無法識別'), 'Initially renders before metadata is available');
+    assert(fakeModal.innerHTML.includes('載入名稱中…'), 'Initially renders "載入名稱中…" before metadata is available');
 
     // Clean up
     resolveFetch();
@@ -533,6 +547,7 @@ test('Test 11 — stale requestId or inactive modal drops background metadata up
         charaDetailCache: { '佩可': { guild: '美食殿堂' } },
         speakerAvatars: {},
         getCharaRealName: (n) => n,
+        getStoryById: (id) => null,
         ensureAppearanceMap: async () => {},
         getCharaModal: () => fakeModal,
         resolveAppearanceStoryMeta: (id) => ({
@@ -568,6 +583,119 @@ test('Test 11 — stale requestId or inactive modal drops background metadata up
 
     CharaModalView.updateAppearancesSection = origUpdate;
     CharaModalView.getCharaModal = origGetCharaModal;
+});
+
+test('Test 12 — all canonical appearances do NOT trigger ensureMetadataLoaded', async () => {
+    let ensureMetadataCalled = false;
+    global.window.StoryDataService = {
+        hasMetadataLoaded() { return false; },
+        ensureMetadataLoaded() {
+            ensureMetadataCalled = true;
+            return Promise.resolve({});
+        },
+        getMetadataSync() { return null; }
+    };
+
+    const fakeModal = {
+        innerHTML: '',
+        classList: {
+            contains(cls) { return true; },
+            add(cls) {},
+            remove(cls) {}
+        }
+    };
+    const origGet = CharaModalView.getCharaModal;
+    CharaModalView.getCharaModal = () => fakeModal;
+
+    const testModule = {
+        _charaModalRequestId: 0,
+        appearanceMap: { '凱留': [100101, 100102] },
+        charaDetailCache: { '凱留': { guild: '美食殿堂' } },
+        speakerAvatars: {},
+        getCharaRealName: (n) => n,
+        // All stories exist in canonical index
+        getStoryById: (id) => ({ id, chapter: '第1章', title: '測試' }),
+        ensureAppearanceMap: async () => {},
+        getCharaModal: () => fakeModal,
+        resolveAppearanceStoryMeta: (id) => ({
+            storyId: id,
+            path: ['主線劇情'],
+            label: '第1話',
+            fullLabel: '主線劇情・第1話',
+            searchText: '100101',
+            sortKey: id,
+            canNavigate: true
+        }),
+        escapeHtml: (s) => s
+    };
+
+    const mapCode = require('fs').readFileSync(path.join(__dirname, '../dashboard/map.js'), 'utf8');
+    const match = mapCode.match(/async showCharaModal\(charaName, unitId = null\)\s*\{[\s\S]*?\n    \},/);
+    const fnBody = match[0].replace(/async showCharaModal\(charaName, unitId = null\)\s*\{/, '').replace(/\},\s*$/, '');
+    testModule.showCharaModal = new Function('charaName', 'unitId = null', `return (async () => { ${fnBody} })()`);
+
+    await testModule.showCharaModal('凱留');
+
+    assert.strictEqual(ensureMetadataCalled, false, 'Should not trigger ensureMetadataLoaded when all stories are canonical');
+    CharaModalView.getCharaModal = origGet;
+});
+
+test('Test 13 — unindexed appearance triggers ensureMetadataLoaded once in background', async () => {
+    let ensureMetadataCalls = 0;
+    global.window.StoryDataService = {
+        hasMetadataLoaded() { return false; },
+        ensureMetadataLoaded() {
+            ensureMetadataCalls++;
+            return Promise.resolve({});
+        },
+        getMetadataSync() { return null; }
+    };
+
+    const fakeModal = {
+        innerHTML: '',
+        classList: {
+            contains(cls) { return true; },
+            add(cls) {},
+            remove(cls) {}
+        },
+        querySelector(selector) {
+            return null;
+        }
+    };
+    const origGet = CharaModalView.getCharaModal;
+    CharaModalView.getCharaModal = () => fakeModal;
+
+    const testModule = {
+        _charaModalRequestId: 0,
+        appearanceMap: { '可可蘿': [100101, 99999] },
+        charaDetailCache: { '可可蘿': { guild: '美食殿堂' } },
+        speakerAvatars: {},
+        getCharaRealName: (n) => n,
+        // 99999 is unindexed
+        getStoryById: (id) => (id === 100101 ? { id, chapter: '第1章', title: '測試' } : null),
+        ensureAppearanceMap: async () => {},
+        getCharaModal: () => fakeModal,
+        resolveAppearanceStoryMeta: (id) => ({
+            storyId: id,
+            path: ['其他'],
+            label: `${id}`,
+            fullLabel: `${id}`,
+            searchText: `${id}`,
+            sortKey: id,
+            canNavigate: false
+        }),
+        escapeHtml: (s) => s
+    };
+
+    const mapCode = require('fs').readFileSync(path.join(__dirname, '../dashboard/map.js'), 'utf8');
+    const match = mapCode.match(/async showCharaModal\(charaName, unitId = null\)\s*\{[\s\S]*?\n    \},/);
+    const fnBody = match[0].replace(/async showCharaModal\(charaName, unitId = null\)\s*\{/, '').replace(/\},\s*$/, '');
+    testModule.showCharaModal = new Function('charaName', 'unitId = null', `return (async () => { ${fnBody} })()`);
+
+    await testModule.showCharaModal('可可蘿');
+
+    assert.strictEqual(ensureMetadataCalls, 1, 'Should trigger ensureMetadataLoaded once for unindexed story');
+    CharaModalView.getCharaModal = origGet;
 });
 
 runTests().catch(err => {

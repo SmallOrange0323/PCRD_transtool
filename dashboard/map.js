@@ -3055,6 +3055,10 @@ const QuestMapModule = {
         const numericStoryId = Number(storyId);
         const story = this.getStoryById(numericStoryId);
         if (!story) {
+            const hasMetadata = typeof window.StoryDataService?.hasMetadataLoaded === 'function'
+                ? window.StoryDataService.hasMetadataLoaded()
+                : false;
+
             const rawMeta = window.StoryDataService?.getMetadataSync
                 ? window.StoryDataService.getMetadataSync(numericStoryId)
                 : null;
@@ -3090,6 +3094,23 @@ const QuestMapModule = {
                 };
             }
 
+            // 若官方元數據側車尚未載入完成，顯示「載入名稱中…」，歸入「其他／未編目劇情」
+            if (!hasMetadata) {
+                const label = `載入名稱中…（ID: ${numericStoryId}）`;
+                const path = ['其他／未編目劇情'];
+                const fullLabel = [...path, label].join('・');
+                return {
+                    storyId: numericStoryId,
+                    path,
+                    label,
+                    fullLabel,
+                    searchText: `${fullLabel} ${numericStoryId}`,
+                    sortKey: `98-${String(numericStoryId).padStart(9, '0')}`,
+                    canNavigate: false
+                };
+            }
+
+            // 元數據已確認載入，但該 ID 確定不在官方元數據中
             return {
                 storyId: numericStoryId,
                 path: ['無法識別'],
@@ -3260,11 +3281,15 @@ const QuestMapModule = {
             escapeHtml: (str) => this.escapeHtml(str)
         });
 
-        // 非同步背景載入官方劇情元數據側車（約 5.8 MB），完成後僅局部更新登場目錄，絕不阻塞彈窗顯示
-        if (window.StoryDataService && typeof window.StoryDataService.ensureMetadataLoaded === 'function') {
+        // 僅在角色包含未在 canonical 索引中編目之劇情話數，且官方元數據尚未載入時，才在背景請求 5.8 MB 側車
+        const needsMetadata = appearances.some(
+            storyId => !this.getStoryById(Number(storyId))
+        );
+
+        if (needsMetadata && window.StoryDataService && typeof window.StoryDataService.ensureMetadataLoaded === 'function') {
             const hasMetadata = typeof window.StoryDataService.hasMetadataLoaded === 'function'
                 ? window.StoryDataService.hasMetadataLoaded()
-                : Boolean(window.StoryDataService._metadataCache);
+                : false;
 
             if (!hasMetadata) {
                 window.StoryDataService.ensureMetadataLoaded()
