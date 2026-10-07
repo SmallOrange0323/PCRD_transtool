@@ -206,4 +206,123 @@ test('Test 6 — unresolved story IDs are isolated under an explicit fallback gr
     assert(!html.includes('QuestMapModule.jumpToStory(9876543'), 'Unresolved IDs should not render a dead navigation button');
 });
 
+test('Test 7 — resolveAppearanceStoryMeta resolves official metadata fallback when story is unindexed', () => {
+    // Setup QuestMapModule with resolveAppearanceStoryMeta
+    const mockMapModule = {
+        getStoryById(id) {
+            return null; // unindexed story
+        },
+        normalizeDisplayTitle(val) {
+            return String(val || '').trim();
+        }
+    };
+
+    // Load resolveAppearanceStoryMeta implementation onto mockMapModule
+    const mapCode = require('fs').readFileSync(path.join(__dirname, '../dashboard/map.js'), 'utf8');
+    // Extract resolveAppearanceStoryMeta definition
+    const match = mapCode.match(/resolveAppearanceStoryMeta\(storyId\)\s*\{[\s\S]*?\n    \},/);
+    assert(match, 'Must find resolveAppearanceStoryMeta in map.js');
+    const fnBody = match[0].replace(/resolveAppearanceStoryMeta\(storyId\)\s*\{/, '').replace(/\},\s*$/, '');
+    mockMapModule.resolveAppearanceStoryMeta = new Function('storyId', fnBody);
+
+    // Mock StoryDataService
+    global.window.StoryDataService = {
+        getMetadataSync(storyId) {
+            if (storyId === 10001) {
+                return { chapter_title: '第1章', subtitle: '冒險的開始' };
+            }
+            if (storyId === 10002) {
+                return { chapter_title: '第2章', subtitle: null };
+            }
+            if (storyId === 10003) {
+                return { chapter_title: '', subtitle: '只有副標題' };
+            }
+            if (storyId === 10004) {
+                return { chapter_title: null, subtitle: null };
+            }
+            return null;
+        }
+    };
+
+    // Case 1: both chapter_title and subtitle
+    const res1 = mockMapModule.resolveAppearanceStoryMeta(10001);
+    assert.deepStrictEqual(res1.path, ['其他／未編目劇情']);
+    assert.strictEqual(res1.label, '第1章｜冒險的開始');
+    assert.strictEqual(res1.fullLabel, '其他／未編目劇情・第1章｜冒險的開始');
+    assert(res1.searchText.includes('第1章｜冒險的開始'));
+    assert(res1.searchText.includes('10001'));
+    assert.strictEqual(res1.canNavigate, false);
+    assert.strictEqual(res1.sortKey, '98-000010001');
+
+    // Case 2: only chapter_title
+    const res2 = mockMapModule.resolveAppearanceStoryMeta(10002);
+    assert.deepStrictEqual(res2.path, ['其他／未編目劇情']);
+    assert.strictEqual(res2.label, '第2章');
+    assert.strictEqual(res2.fullLabel, '其他／未編目劇情・第2章');
+    assert.strictEqual(res2.canNavigate, false);
+
+    // Case 3: only subtitle
+    const res3 = mockMapModule.resolveAppearanceStoryMeta(10003);
+    assert.deepStrictEqual(res3.path, ['其他／未編目劇情']);
+    assert.strictEqual(res3.label, '只有副標題');
+    assert.strictEqual(res3.canNavigate, false);
+
+    // Case 4: empty titles fallback to '劇情 {storyId}'
+    const res4 = mockMapModule.resolveAppearanceStoryMeta(10004);
+    assert.deepStrictEqual(res4.path, ['其他／未編目劇情']);
+    assert.strictEqual(res4.label, '劇情 10004');
+    assert.strictEqual(res4.canNavigate, false);
+
+    // Case 5: no official metadata at all -> '無法識別'
+    const res5 = mockMapModule.resolveAppearanceStoryMeta(99999);
+    assert.deepStrictEqual(res5.path, ['無法識別']);
+    assert.strictEqual(res5.label, 'ID: 99999');
+    assert.strictEqual(res5.fullLabel, '無法識別・ID: 99999');
+    assert.strictEqual(res5.searchText, 'ID 99999');
+    assert.strictEqual(res5.sortKey, '99-000099999');
+    assert.strictEqual(res5.canNavigate, false);
+});
+
+test('Test 8 — appearance directory renders metadata fallback items and prevents navigation', () => {
+    const metaResolver = (storyId) => {
+        if (storyId === 10001) {
+            return {
+                storyId: 10001,
+                path: ['其他／未編目劇情'],
+                label: '第1章｜冒險的開始',
+                fullLabel: '其他／未編目劇情・第1章｜冒險的開始',
+                searchText: '其他／未編目劇情・第1章｜冒險的開始 10001',
+                sortKey: '98-000010001',
+                canNavigate: false
+            };
+        }
+        if (storyId === 99999) {
+            return {
+                storyId: 99999,
+                path: ['無法識別'],
+                label: 'ID: 99999',
+                fullLabel: '無法識別・ID: 99999',
+                searchText: 'ID 99999',
+                sortKey: '99-000099999',
+                canNavigate: false
+            };
+        }
+        return null;
+    };
+
+    const html = CharaModalView.renderAppearancesHtml(
+        [10001, 99999],
+        metaResolver,
+        null,
+        null
+    );
+
+    assert(html.includes('其他／未編目劇情'), 'Should contain unindexed metadata section');
+    assert(html.includes('第1章｜冒險的開始'), 'Should render human-readable chapter and subtitle');
+    assert(html.includes('無法識別'), 'Should contain unidentifiable fallback section');
+    assert(html.includes('ID: 99999'), 'Should show raw ID under unidentifiable section');
+    assert(!html.includes('QuestMapModule.jumpToStory(10001'), 'Must not render navigation click handler for unindexed stories');
+    assert(!html.includes('QuestMapModule.jumpToStory(99999'), 'Must not render navigation click handler for unidentifiable stories');
+});
+
 console.log(`\n✅ All ${passed} CharaModalView tests passed successfully!`);

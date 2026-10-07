@@ -3053,16 +3053,52 @@ const QuestMapModule = {
     resolveAppearanceStoryMeta(storyId) {
         const numericStoryId = Number(storyId);
         const story = this.getStoryById(numericStoryId);
-        const unresolved = {
-            storyId: numericStoryId,
-            path: ['其他／無法分類'],
-            label: `ID: ${numericStoryId}`,
-            fullLabel: `其他／無法分類・ID: ${numericStoryId}`,
-            searchText: `ID ${numericStoryId}`,
-            sortKey: `99-${numericStoryId}`,
-            canNavigate: false
-        };
-        if (!story) return unresolved;
+        if (!story) {
+            const rawMeta = window.StoryDataService?.getMetadataSync
+                ? window.StoryDataService.getMetadataSync(numericStoryId)
+                : null;
+
+            if (rawMeta) {
+                const normalize = value => this.normalizeDisplayTitle
+                    ? this.normalizeDisplayTitle(value || '')
+                    : String(value || '').trim();
+                const chapterTitle = normalize(rawMeta.chapter_title);
+                const subtitle = normalize(rawMeta.subtitle);
+
+                let label = '';
+                if (chapterTitle && subtitle) {
+                    label = `${chapterTitle}｜${subtitle}`;
+                } else if (chapterTitle) {
+                    label = chapterTitle;
+                } else if (subtitle) {
+                    label = subtitle;
+                } else {
+                    label = `劇情 ${numericStoryId}`;
+                }
+
+                const path = ['其他／未編目劇情'];
+                const fullLabel = [...path, label].join('・');
+                return {
+                    storyId: numericStoryId,
+                    path,
+                    label,
+                    fullLabel,
+                    searchText: `${fullLabel} ${numericStoryId}`,
+                    sortKey: `98-${String(numericStoryId).padStart(9, '0')}`,
+                    canNavigate: false
+                };
+            }
+
+            return {
+                storyId: numericStoryId,
+                path: ['無法識別'],
+                label: `ID: ${numericStoryId}`,
+                fullLabel: `無法識別・ID: ${numericStoryId}`,
+                searchText: `ID ${numericStoryId}`,
+                sortKey: `99-${String(numericStoryId).padStart(9, '0')}`,
+                canNavigate: false
+            };
+        }
 
         const normalize = value => this.normalizeDisplayTitle
             ? this.normalizeDisplayTitle(value || '')
@@ -3185,6 +3221,13 @@ const QuestMapModule = {
             ? numericUnitId
             : null;
         await this.ensureAppearanceMap();
+        if (window.StoryDataService && typeof window.StoryDataService.ensureMetadataLoaded === 'function') {
+            try {
+                await window.StoryDataService.ensureMetadataLoaded();
+            } catch (e) {
+                console.warn('[QuestMapModule] 載入官方劇情元數據側車失敗:', e);
+            }
+        }
 
         let profile = this.charaDetailCache[realCharaName];
         if (!profile) {
