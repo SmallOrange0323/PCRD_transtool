@@ -22,18 +22,25 @@ require(path.join(__dirname, '../dashboard/chara-modal.js'));
 const CharaModalView = global.CharaModalView;
 
 let passed = 0;
+const testQueue = [];
 function test(name, fn) {
-    try {
-        fn();
-        console.log(`  [PASS] ${name}`);
-        passed++;
-    } catch (error) {
-        console.error(`  [FAIL] ${name}:`, error);
-        process.exit(1);
-    }
+    testQueue.push({ name, fn });
 }
 
-console.log('=== Testing CharaModalView avatar resolution ===');
+async function runTests() {
+    console.log('=== Testing CharaModalView avatar resolution ===');
+    for (const { name, fn } of testQueue) {
+        try {
+            await fn();
+            console.log(`  [PASS] ${name}`);
+            passed++;
+        } catch (error) {
+            console.error(`  [FAIL] ${name}:`, error);
+            process.exit(1);
+        }
+    }
+    console.log(`\n✅ All ${passed} CharaModalView tests passed successfully!`);
+}
 
 test('Test 1 — unique explicit dialogue unit_id is resolved', () => {
     global.QuestMapModule.currentDialogueList = [
@@ -267,10 +274,10 @@ test('Test 7 — resolveAppearanceStoryMeta resolves official metadata fallback 
     assert.strictEqual(res3.label, '只有副標題');
     assert.strictEqual(res3.canNavigate, false);
 
-    // Case 4: empty titles fallback to '劇情 {storyId}'
+    // Case 4: empty titles fallback to '未命名劇情（ID: {storyId}）'
     const res4 = mockMapModule.resolveAppearanceStoryMeta(10004);
     assert.deepStrictEqual(res4.path, ['其他／未編目劇情']);
-    assert.strictEqual(res4.label, '劇情 10004');
+    assert.strictEqual(res4.label, '未命名劇情（ID: 10004）');
     assert.strictEqual(res4.canNavigate, false);
 
     // Case 5: no official metadata at all -> '無法識別'
@@ -325,4 +332,245 @@ test('Test 8 — appearance directory renders metadata fallback items and preven
     assert(!html.includes('QuestMapModule.jumpToStory(99999'), 'Must not render navigation click handler for unidentifiable stories');
 });
 
-console.log(`\n✅ All ${passed} CharaModalView tests passed successfully!`);
+test('Test 9 — showCharaModal opens synchronously without awaiting metadata fetch', async () => {
+    let metadataFetched = false;
+    let modalOpened = false;
+
+    const fakeSection = {
+        innerHTML: '',
+        querySelector(selector) {
+            return null;
+        }
+    };
+
+    const fakeModal = {
+        className: 'game-modal-overlay',
+        classList: {
+            contains(cls) { return this.classListInternal ? this.classListInternal.has(cls) : false; },
+            add(cls) {
+                if (!this.classListInternal) this.classListInternal = new Set();
+                this.classListInternal.add(cls);
+                if (cls === 'active') modalOpened = true;
+            },
+            remove(cls) {
+                if (!this.classListInternal) this.classListInternal = new Set();
+                this.classListInternal.delete(cls);
+            }
+        },
+        innerHTML: '',
+        querySelector(selector) {
+            if (selector === '.chara-appearance-section') return fakeSection;
+            return null;
+        }
+    };
+
+    const originalGetCharaModal = CharaModalView.getCharaModal;
+    CharaModalView.getCharaModal = () => fakeModal;
+
+    let resolveFetch;
+    const pendingPromise = new Promise((resolve) => {
+        resolveFetch = () => {
+            metadataFetched = true;
+            resolve();
+        };
+    });
+
+    global.window.StoryDataService = {
+        _metadataCache: null,
+        hasMetadataLoaded() { return Boolean(this._metadataCache); },
+        ensureMetadataLoaded() {
+            return pendingPromise;
+        },
+        getMetadataSync() { return null; }
+    };
+
+    global.window.PCRDatabase = {
+        runQuery: async () => []
+    };
+
+    const testModule = {
+        _charaModalRequestId: 0,
+        appearanceMap: { '可可蘿': [10001] },
+        charaDetailCache: { '可可蘿': { guild: '美食殿堂' } },
+        speakerAvatars: {},
+        getCharaRealName: (n) => n,
+        ensureAppearanceMap: async () => {},
+        getCharaModal: () => fakeModal,
+        resolveAppearanceStoryMeta: (id) => ({
+            storyId: id,
+            path: ['無法識別'],
+            label: `ID: ${id}`,
+            fullLabel: `無法識別・ID: ${id}`,
+            searchText: `ID ${id}`,
+            sortKey: `99-${id}`,
+            canNavigate: false
+        }),
+        escapeHtml: (s) => s
+    };
+
+    // Load showCharaModal definition from map.js
+    const mapCode = require('fs').readFileSync(path.join(__dirname, '../dashboard/map.js'), 'utf8');
+    const match = mapCode.match(/async showCharaModal\(charaName, unitId = null\)\s*\{[\s\S]*?\n    \},/);
+    assert(match, 'Must find showCharaModal in map.js');
+    const fnBody = match[0].replace(/async showCharaModal\(charaName, unitId = null\)\s*\{/, '').replace(/\},\s*$/, '');
+    testModule.showCharaModal = new Function('charaName', 'unitId = null', `return (async () => { ${fnBody} })()`);
+
+    // Call showCharaModal
+    const openPromise = testModule.showCharaModal('可可蘿');
+    await openPromise;
+
+    // The modal must open immediately BEFORE metadata promise resolves
+    assert.strictEqual(modalOpened, true, 'Modal must open immediately');
+    assert.strictEqual(metadataFetched, false, 'Modal opened without awaiting metadata completion');
+    assert(fakeModal.innerHTML.includes('無法識別'), 'Initially renders before metadata is available');
+
+    // Clean up
+    resolveFetch();
+    await pendingPromise;
+    await new Promise(r => setTimeout(r, 10));
+    CharaModalView.getCharaModal = originalGetCharaModal;
+});
+
+test('Test 10 — updateAppearancesSection preserves search query and only updates appearance DOM', () => {
+    let innerHtml = `
+        <div class="game-modal-content">
+            <div class="chara-profile-header">頭像與資料保持不變</div>
+            <div class="chara-appearance-section">
+                <h4>📖 登場劇情目錄</h4>
+                <div class="chara-appearance-directory">
+                    <div class="chara-appearance-toolbar">
+                        <input type="search" class="chara-appearance-search" value="關鍵字搜尋" />
+                        <span class="chara-appearance-search-status">1 話</span>
+                    </div>
+                    <div class="chara-appearance-tree">
+                        <div class="chara-appearance-item">舊項目</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    const fakeSection = {
+        innerHTML: '',
+        querySelector(selector) {
+            if (selector === '.chara-appearance-search') {
+                return { value: '關鍵字搜尋' };
+            }
+            return null;
+        }
+    };
+
+    const fakeModal = {
+        querySelector(selector) {
+            if (selector === '.chara-appearance-section') return fakeSection;
+            return null;
+        }
+    };
+
+    const originalGetCharaModal = CharaModalView.getCharaModal;
+    CharaModalView.getCharaModal = () => fakeModal;
+
+    try {
+        let filterCalledWith = null;
+        const origFilter = CharaModalView.filterAppearanceDirectory;
+        CharaModalView.filterAppearanceDirectory = (inputEl) => {
+            filterCalledWith = inputEl.value;
+        };
+
+        CharaModalView.updateAppearancesSection(
+            [2217001],
+            (id) => ({
+                storyId: id,
+                path: ['主線劇情'],
+                label: '第1話',
+                fullLabel: '主線劇情・第1話',
+                searchText: '主線劇情 第1話',
+                sortKey: id,
+                canNavigate: true
+            }),
+            (s) => s
+        );
+
+        assert(fakeSection.innerHTML.includes('<h4>📖 登場劇情目錄</h4>'));
+        assert(fakeSection.innerHTML.includes('主線劇情'));
+        CharaModalView.filterAppearanceDirectory = origFilter;
+    } finally {
+        CharaModalView.getCharaModal = originalGetCharaModal;
+    }
+});
+
+test('Test 11 — stale requestId or inactive modal drops background metadata update', async () => {
+    let partialUpdateCalled = false;
+    let resolveMetadata;
+    const metadataPromise = new Promise(r => { resolveMetadata = r; });
+
+    global.window.StoryDataService = {
+        _metadataCache: null,
+        hasMetadataLoaded() { return false; },
+        ensureMetadataLoaded() { return metadataPromise; },
+        getMetadataSync() { return null; }
+    };
+
+    const fakeModal = {
+        innerHTML: '',
+        classList: {
+            contains(cls) { return cls === 'active' ? false : false; }, // Closed modal
+            add(cls) {},
+            remove(cls) {}
+        }
+    };
+
+    const origUpdate = CharaModalView.updateAppearancesSection;
+    const origGetCharaModal = CharaModalView.getCharaModal;
+    CharaModalView.getCharaModal = () => fakeModal;
+    CharaModalView.updateAppearancesSection = () => {
+        partialUpdateCalled = true;
+    };
+
+    const testModule = {
+        _charaModalRequestId: 0,
+        appearanceMap: { '佩可': [10001] },
+        charaDetailCache: { '佩可': { guild: '美食殿堂' } },
+        speakerAvatars: {},
+        getCharaRealName: (n) => n,
+        ensureAppearanceMap: async () => {},
+        getCharaModal: () => fakeModal,
+        resolveAppearanceStoryMeta: (id) => ({
+            storyId: id,
+            path: ['其他'],
+            label: `ID: ${id}`,
+            fullLabel: `ID: ${id}`,
+            searchText: `${id}`,
+            sortKey: `${id}`,
+            canNavigate: false
+        }),
+        escapeHtml: (s) => s
+    };
+
+    const mapCode = require('fs').readFileSync(path.join(__dirname, '../dashboard/map.js'), 'utf8');
+    const match = mapCode.match(/async showCharaModal\(charaName, unitId = null\)\s*\{[\s\S]*?\n    \},/);
+    const fnBody = match[0].replace(/async showCharaModal\(charaName, unitId = null\)\s*\{/, '').replace(/\},\s*$/, '');
+    testModule.showCharaModal = new Function('charaName', 'unitId = null', `return (async () => { ${fnBody} })()`);
+
+    // Call modal, which initiates background load
+    await testModule.showCharaModal('佩可');
+
+    // Simulate modal closed or new character clicked
+    testModule._charaModalRequestId++; // Token advance (e.g. clicked another character)
+
+    // Resolve metadata fetch
+    resolveMetadata();
+    await metadataPromise;
+    // Let event loop drain microtasks
+    await new Promise(r => setTimeout(r, 10));
+
+    assert.strictEqual(partialUpdateCalled, false, 'Should not perform update when token advanced or modal closed');
+
+    CharaModalView.updateAppearancesSection = origUpdate;
+    CharaModalView.getCharaModal = origGetCharaModal;
+});
+
+runTests().catch(err => {
+    console.error('Test execution failed:', err);
+    process.exit(1);
+});

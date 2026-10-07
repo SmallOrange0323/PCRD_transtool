@@ -37,6 +37,7 @@ const QuestMapModule = {
     directoryLevel: 'level1', // 'level1' (章節/活動卡片清單) | 'level2' (話數清單)
     directoryLevel1ScrollTop: 0,
     autoVoiceStartIndex: null,
+    _charaModalRequestId: 0,
     _dialogueCache: new Map(),
     _loadDataPromise: null,
     _appearanceMapPromise: null,
@@ -3073,7 +3074,7 @@ const QuestMapModule = {
                 } else if (subtitle) {
                     label = subtitle;
                 } else {
-                    label = `劇情 ${numericStoryId}`;
+                    label = `未命名劇情（ID: ${numericStoryId}）`;
                 }
 
                 const path = ['其他／未編目劇情'];
@@ -3215,19 +3216,13 @@ const QuestMapModule = {
     },
 
     async showCharaModal(charaName, unitId = null) {
+        const requestId = ++this._charaModalRequestId;
         const realCharaName = this.getCharaRealName(charaName);
         const numericUnitId = Number(unitId);
         const explicitUnitId = Number.isInteger(numericUnitId) && numericUnitId > 0
             ? numericUnitId
             : null;
         await this.ensureAppearanceMap();
-        if (window.StoryDataService && typeof window.StoryDataService.ensureMetadataLoaded === 'function') {
-            try {
-                await window.StoryDataService.ensureMetadataLoaded();
-            } catch (e) {
-                console.warn('[QuestMapModule] 載入官方劇情元數據側車失敗:', e);
-            }
-        }
 
         let profile = this.charaDetailCache[realCharaName];
         if (!profile) {
@@ -3248,6 +3243,9 @@ const QuestMapModule = {
             }
         }
 
+        // 若在載入 profile 期間已有新的彈窗請求，捨棄本次過期呈現
+        if (requestId !== this._charaModalRequestId) return;
+
         const appearances = (this.appearanceMap &&
             (this.appearanceMap[realCharaName] || this.appearanceMap[charaName])) || [];
 
@@ -3261,6 +3259,34 @@ const QuestMapModule = {
             resolveStoryMeta: (storyId) => this.resolveAppearanceStoryMeta(storyId),
             escapeHtml: (str) => this.escapeHtml(str)
         });
+
+        // 非同步背景載入官方劇情元數據側車（約 5.8 MB），完成後僅局部更新登場目錄，絕不阻塞彈窗顯示
+        if (window.StoryDataService && typeof window.StoryDataService.ensureMetadataLoaded === 'function') {
+            const hasMetadata = typeof window.StoryDataService.hasMetadataLoaded === 'function'
+                ? window.StoryDataService.hasMetadataLoaded()
+                : Boolean(window.StoryDataService._metadataCache);
+
+            if (!hasMetadata) {
+                window.StoryDataService.ensureMetadataLoaded()
+                    .then(() => {
+                        // 驗證 token 與彈窗開啟狀態，避免過期寫入 (stale write)
+                        if (requestId !== this._charaModalRequestId) return;
+                        const modalEl = this.getCharaModal();
+                        if (!modalEl || !modalEl.classList.contains('active')) return;
+
+                        if (window.CharaModalView && typeof window.CharaModalView.updateAppearancesSection === 'function') {
+                            window.CharaModalView.updateAppearancesSection(
+                                appearances,
+                                (storyId) => this.resolveAppearanceStoryMeta(storyId),
+                                (str) => this.escapeHtml(str)
+                            );
+                        }
+                    })
+                    .catch(e => {
+                        console.warn('[QuestMapModule] 背景載入官方劇情元數據側車失敗:', e);
+                    });
+            }
+        }
     },
 
     async jumpToStory(storyId, closeModalId) {

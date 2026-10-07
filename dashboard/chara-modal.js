@@ -220,6 +220,35 @@ window.CharaModalView = {
         `;
     },
 
+    /**
+     * 僅局部更新 Modal 內的登場劇情目錄 (.chara-appearance-section)，
+     * 避免非同步補載官方 metadata 時重新繪製整個 Modal 破壞使用者操作狀態。
+     */
+    updateAppearancesSection(appearances, resolveStoryMeta, escapeHtml, resolveStoryLabel) {
+        const modalEl = this.getCharaModal();
+        if (!modalEl) return;
+        const sectionEl = modalEl.querySelector('.chara-appearance-section');
+        if (!sectionEl) return;
+
+        // 若使用者已在搜尋框輸入內容，更新後應盡量保留搜尋狀態
+        const currentSearchInput = sectionEl.querySelector('.chara-appearance-search');
+        const currentQuery = currentSearchInput ? currentSearchInput.value : '';
+
+        const appListHtml = this.renderAppearancesHtml(appearances, resolveStoryMeta, escapeHtml, resolveStoryLabel);
+        sectionEl.innerHTML = `
+            <h4>📖 登場劇情目錄</h4>
+            ${appListHtml}
+        `;
+
+        if (currentQuery) {
+            const newSearchInput = sectionEl.querySelector('.chara-appearance-search');
+            if (newSearchInput) {
+                newSearchInput.value = currentQuery;
+                this.filterAppearanceDirectory(newSearchInput);
+            }
+        }
+    },
+
     filterAppearanceDirectory(inputEl) {
         const directory = inputEl && inputEl.closest
             ? inputEl.closest('.chara-appearance-directory')
