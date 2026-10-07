@@ -68,23 +68,191 @@ window.CharaModalView = {
         return unitIds.values().next().value;
     },
 
-    /**
-     * 渲染登場話數按鈕列表 HTML
-     * @param {number[]} appearances - 登場話數 ID 陣列
-     * @param {Function} resolveStoryLabel - 話數標籤轉換函式 (storyId) => string
-     * @returns {string} 登場話數按鈕 HTML 字串
-     */
-    renderAppearancesHtml(appearances, resolveStoryLabel) {
-        if (!appearances || appearances.length === 0) {
-            return `<div style="color: var(--text-secondary); font-size: 0.85rem; font-style: italic;">暫無登場話數統計數據。</div>`;
-        }
-        return appearances.map(storyId => {
-            let label = `ID: ${storyId}`;
-            if (resolveStoryLabel) {
-                label = resolveStoryLabel(storyId) || label;
+    _escapeAppearanceText(value, escapeHtml) {
+        const text = value == null ? "" : String(value);
+        if (typeof escapeHtml === 'function') return escapeHtml(text);
+        return text.replace(/[&<>"']/g, ch => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;'
+        }[ch]));
+    },
+
+    _buildAppearanceTree(items) {
+        const root = { label: '', count: 0, children: new Map(), items: [] };
+        items.forEach(item => {
+            root.count++;
+            let node = root;
+            const path = Array.isArray(item.path) && item.path.length
+                ? item.path
+                : ['其他／無法分類'];
+            path.forEach(label => {
+                if (!node.children.has(label)) {
+                    node.children.set(label, { label, count: 0, children: new Map(), items: [] });
+                }
+                node = node.children.get(label);
+                node.count++;
+            });
+            node.items.push(item);
+        });
+        return root;
+    },
+
+    _renderAppearanceTreeNode(node, depth, escapeHtml) {
+        const safeLabel = this._escapeAppearanceText(node.label, escapeHtml);
+        const childGroups = [...node.children.values()]
+            .sort((a, b) => a.label.localeCompare(b.label, 'zh-Hant'));
+        const items = [...node.items]
+            .sort((a, b) => String(a.sortKey || a.storyId).localeCompare(String(b.sortKey || b.storyId), 'zh-Hant', { numeric: true }));
+
+        const childrenHtml = childGroups
+            .map(child => this._renderAppearanceTreeNode(child, depth + 1, escapeHtml))
+            .join('');
+
+        const itemsHtml = items.map(item => {
+            const safeLeaf = this._escapeAppearanceText(item.label || `ID: ${item.storyId}`, escapeHtml);
+            const safeSearch = this._escapeAppearanceText(item.searchText || '', escapeHtml);
+            const safeTitle = this._escapeAppearanceText(item.fullLabel || item.label || `ID: ${item.storyId}`, escapeHtml);
+            if (item.canNavigate === false) {
+                return `
+                    <div class="chara-appearance-item is-unresolved"
+                         data-appearance-search="${safeSearch}"
+                         title="${safeTitle}">
+                        <span class="chara-appearance-leaf">${safeLeaf}</span>
+                    </div>
+                `;
             }
-            return `<button class="chara-appear-btn" onclick="QuestMapModule.jumpToStory(${storyId}, 'game-chara-modal')" style="background: rgba(232,56,117,0.07); border: 1px solid rgba(232,56,117,0.2); border-radius: 8px; padding: 6px 12px; color: var(--accent-color); cursor: pointer; font-size: 0.82rem; font-weight: 600; transition: all 0.2s; display: inline-block;">${label}</button>`;
+            return `
+                <button type="button"
+                        class="chara-appearance-item"
+                        data-appearance-search="${safeSearch}"
+                        title="${safeTitle}"
+                        onclick="QuestMapModule.jumpToStory(${Number(item.storyId)}, 'game-chara-modal')">
+                    <span class="chara-appearance-leaf">${safeLeaf}</span>
+                </button>
+            `;
         }).join('');
+
+        return `
+            <details class="chara-appearance-group" data-appearance-depth="${depth}">
+                <summary>
+                    <span class="chara-appearance-group-title">${safeLabel}</span>
+                    <span class="chara-appearance-count">${node.count}</span>
+                </summary>
+                <div class="chara-appearance-group-body">
+                    ${childrenHtml}
+                    ${itemsHtml}
+                </div>
+            </details>
+        `;
+    },
+
+    /**
+     * 以可搜尋的階層目錄渲染角色登場劇情。
+     * resolveStoryMeta(storyId) 應回傳：
+     * { storyId, path: string[], label, fullLabel, searchText, sortKey, canNavigate }
+     */
+    renderAppearancesHtml(appearances, resolveStoryMeta, escapeHtml, resolveStoryLabel) {
+        if (!appearances || appearances.length === 0) {
+            return `<div class="chara-appearance-empty">暫無登場話數統計數據。</div>`;
+        }
+
+        const items = appearances.map(rawStoryId => {
+            const storyId = Number(rawStoryId);
+            let meta = null;
+            if (typeof resolveStoryMeta === 'function') {
+                meta = resolveStoryMeta(storyId);
+            }
+
+            // Legacy compatibility for callers/tests that only provide a flat label resolver.
+            if (!meta) {
+                let label = `ID: ${storyId}`;
+                if (typeof resolveStoryLabel === 'function') {
+                    label = resolveStoryLabel(storyId) || label;
+                }
+                meta = {
+                    storyId,
+                    path: ['其他／無法分類'],
+                    label,
+                    fullLabel: label,
+                    searchText: `${label} ${storyId}`,
+                    sortKey: storyId,
+                    canNavigate: !String(label).startsWith('ID:')
+                };
+            }
+
+            return {
+                storyId,
+                path: Array.isArray(meta.path) && meta.path.length ? meta.path : ['其他／無法分類'],
+                label: meta.label || `ID: ${storyId}`,
+                fullLabel: meta.fullLabel || meta.label || `ID: ${storyId}`,
+                searchText: [meta.searchText, meta.fullLabel, meta.label, ...(meta.path || []), storyId]
+                    .filter(Boolean)
+                    .join(' ')
+                    .toLowerCase(),
+                sortKey: meta.sortKey ?? storyId,
+                canNavigate: meta.canNavigate !== false
+            };
+        });
+
+        const tree = this._buildAppearanceTree(items);
+        const groupsHtml = [...tree.children.values()]
+            .sort((a, b) => a.label.localeCompare(b.label, 'zh-Hant'))
+            .map(node => this._renderAppearanceTreeNode(node, 0, escapeHtml))
+            .join('');
+
+        return `
+            <div class="chara-appearance-directory">
+                <div class="chara-appearance-toolbar">
+                    <input type="search"
+                           class="chara-appearance-search"
+                           placeholder="搜尋劇情名稱、活動、章節或 ID..."
+                           aria-label="搜尋角色登場劇情"
+                           oninput="CharaModalView.filterAppearanceDirectory(this)">
+                    <span class="chara-appearance-search-status" aria-live="polite">${items.length} 話</span>
+                </div>
+                <div class="chara-appearance-tree">
+                    ${groupsHtml}
+                </div>
+            </div>
+        `;
+    },
+
+    filterAppearanceDirectory(inputEl) {
+        const directory = inputEl && inputEl.closest
+            ? inputEl.closest('.chara-appearance-directory')
+            : null;
+        if (!directory) return;
+
+        const query = String(inputEl.value || '').trim().toLowerCase();
+        const items = [...directory.querySelectorAll('.chara-appearance-item')];
+        let visibleCount = 0;
+
+        items.forEach(item => {
+            const haystack = String(item.dataset.appearanceSearch || '').toLowerCase();
+            const visible = !query || haystack.includes(query);
+            item.hidden = !visible;
+            if (visible) visibleCount++;
+        });
+
+        const groups = [...directory.querySelectorAll('.chara-appearance-group')].reverse();
+        groups.forEach(group => {
+            const hasVisibleItem = [...group.querySelectorAll('.chara-appearance-item')]
+                .some(item => !item.hidden);
+            group.hidden = !hasVisibleItem;
+            if (query && hasVisibleItem) {
+                group.open = true;
+            } else if (!query) {
+                group.open = false;
+            }
+        });
+
+        const status = directory.querySelector('.chara-appearance-search-status');
+        if (status) {
+            status.textContent = query ? `找到 ${visibleCount} 話` : `${items.length} 話`;
+        }
     },
 
     /**
@@ -184,12 +352,13 @@ window.CharaModalView = {
             appearances,
             speakerAvatars,
             avatarService,
+            resolveStoryMeta,
             resolveStoryLabel,
             escapeHtml
         } = options || {};
 
         const modalEl = this.getCharaModal();
-        const appListHtml = this.renderAppearancesHtml(appearances, resolveStoryLabel);
+        const appListHtml = this.renderAppearancesHtml(appearances, resolveStoryMeta, escapeHtml, resolveStoryLabel);
         const detailsHtml = this.renderProfileDetailsHtml(profile);
         const bioHtml = this.renderProfileBioHtml(profile, escapeHtml);
         const numericExplicitUnitId = Number(explicitUnitId);
@@ -225,11 +394,9 @@ window.CharaModalView = {
 
                 ${bioHtml}
 
-                <div style="border-top: 1px solid rgba(94, 107, 125, 0.1); padding-top: 15px;">
-                    <h4 style="margin: 0 0 10px 0; color: var(--text-primary); font-size: 0.95rem;">📖 登場話數 (點擊直接跳轉放映)：</h4>
-                    <div style="display: flex; gap: 8px; flex-wrap: wrap; max-height: 150px; overflow-y: auto; padding: 5px;">
-                        ${appListHtml}
-                    </div>
+                <div class="chara-appearance-section">
+                    <h4>📖 登場劇情目錄</h4>
+                    ${appListHtml}
                 </div>
             </div>
         `;
