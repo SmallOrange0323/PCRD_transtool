@@ -153,4 +153,57 @@ test('Test 4 — renderModal preserves name fallback without unique explicit ide
     }
 });
 
+
+test('Test 5 — appearance directory renders hierarchical context without truncating titles', () => {
+    const html = CharaModalView.renderAppearancesHtml(
+        [2217001, 5215005],
+        (storyId) => {
+            if (storyId === 2217001) {
+                return {
+                    storyId,
+                    path: ['主線劇情', '第3部', '第17章'],
+                    label: '第1話｜「第二型態」',
+                    fullLabel: '主線劇情・第3部・第17章・第1話｜「第二型態」',
+                    searchText: '主線劇情 第3部 第17章 第1話 第二型態 2217001',
+                    sortKey: '10-002217001',
+                    canNavigate: true
+                };
+            }
+            return {
+                storyId,
+                path: ['活動劇情', '2026年', 'VILLAINESS 避開吧！鏡華的變疑分子毀滅結局'],
+                label: '第5話｜測試標題',
+                fullLabel: '活動劇情・2026年・VILLAINESS 避開吧！鏡華的變疑分子毀滅結局・第5話｜測試標題',
+                searchText: '活動劇情 2026 VILLAINESS 第5話 測試標題 5215005',
+                sortKey: '20-005215005',
+                canNavigate: true
+            };
+        },
+        null,
+        null
+    );
+
+    assert(html.includes('chara-appearance-search'), 'Directory should provide a search field');
+    assert(html.includes('主線劇情'));
+    assert(html.includes('第3部'));
+    assert(html.includes('第17章'));
+    assert(html.includes('第1話｜「第二型態」'));
+    assert(html.includes('VILLAINESS 避開吧！鏡華的變疑分子毀滅結局'), 'Long event title must not be cut to 15 characters');
+    assert(html.includes('QuestMapModule.jumpToStory(2217001'));
+});
+
+test('Test 6 — unresolved story IDs are isolated under an explicit fallback group', () => {
+    const html = CharaModalView.renderAppearancesHtml(
+        [9876543],
+        () => null,
+        null,
+        null
+    );
+
+    assert(html.includes('其他／無法分類'));
+    assert(html.includes('ID: 9876543'));
+    assert(html.includes('is-unresolved'));
+    assert(!html.includes('QuestMapModule.jumpToStory(9876543'), 'Unresolved IDs should not render a dead navigation button');
+});
+
 console.log(`\n✅ All ${passed} CharaModalView tests passed successfully!`);
