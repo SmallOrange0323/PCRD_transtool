@@ -862,7 +862,7 @@ test('Test 15 — metadata failure handling, explicit error label, and safe retr
             '可可蘿'
         );
         assert(html.includes('chara-appearance-retry-btn'), 'Must render retry button on failure');
-        assert(html.includes("QuestMapModule.retryCharaMetadata('可可蘿')"), 'Retry button must invoke retryCharaMetadata');
+        assert(html.includes("QuestMapModule.retryCharaMetadata(this.getAttribute('data-chara-name'))"), 'Retry button must invoke retryCharaMetadata safely');
 
         // 4. 驗證 clearMetadataError 與重試恢復流程
         service.clearMetadataError();
@@ -882,6 +882,176 @@ test('Test 15 — metadata failure handling, explicit error label, and safe retr
         assert.strictEqual(okMeta.label, '第99章｜已復原');
     } finally {
         global.fetch = origFetch;
+    }
+});
+
+test('Test 16 — filtering and clearing search preserves retry button', () => {
+    const failMeta = {
+        storyId: 99999,
+        path: ['其他／未編目劇情'],
+        label: '名稱載入失敗（ID: 99999）',
+        fullLabel: '其他／未編目劇情・名稱載入失敗（ID: 99999）',
+        searchText: '99999',
+        canNavigate: false,
+        hasFailed: true
+    };
+
+    const html = CharaModalView.renderAppearancesHtml(
+        [99999],
+        () => failMeta,
+        null,
+        null,
+        '可可蘿'
+    );
+
+    // 建立微型 DOM 容器以模擬真實瀏覽器行為
+    let searchStatusText = '';
+    let retryBtnExists = true;
+
+    const fakeRetryBtn = {
+        className: 'chara-appearance-retry-btn',
+        getAttribute(attr) { return attr === 'data-chara-name' ? '可可蘿' : null; }
+    };
+
+    const fakeSearchStatus = {
+        className: 'chara-appearance-search-status',
+        get textContent() { return searchStatusText; },
+        set textContent(val) { searchStatusText = val; }
+    };
+
+    const fakeDirectory = {
+        querySelectorAll(selector) {
+            if (selector === '.chara-appearance-item') return [{ dataset: { appearanceSearch: '99999' }, hidden: false }];
+            if (selector === '.chara-appearance-group') return [{ querySelectorAll: () => [{ hidden: false }], hidden: false, open: false }];
+            return [];
+        },
+        querySelector(selector) {
+            if (selector === '.chara-appearance-search-status') return fakeSearchStatus;
+            if (selector === '.chara-appearance-retry-btn') return retryBtnExists ? fakeRetryBtn : null;
+            return null;
+        }
+    };
+
+    const inputEl = {
+        value: '測試搜尋',
+        closest(sel) { return sel === '.chara-appearance-directory' ? fakeDirectory : null; }
+    };
+
+    // 1. 執行搜尋過濾：驗證 status 更新文字，但 retryBtn 不受影響
+    CharaModalView.filterAppearanceDirectory(inputEl);
+    assert.strictEqual(searchStatusText, '找到 0 話');
+    assert.strictEqual(fakeDirectory.querySelector('.chara-appearance-retry-btn'), fakeRetryBtn, 'Retry button must remain after filtering');
+
+    // 2. 清空搜尋：驗證 status 恢復，且 retryBtn 依然存在
+    inputEl.value = '';
+    CharaModalView.filterAppearanceDirectory(inputEl);
+    assert.strictEqual(searchStatusText, '1 話');
+    assert.strictEqual(fakeDirectory.querySelector('.chara-appearance-retry-btn'), fakeRetryBtn, 'Retry button must remain after clearing search');
+});
+
+test('Test 17 — single quotes in character name safely passed via data-chara-name attribute', () => {
+    const rawCharaName = "D'Arc";
+    const failMeta = {
+        storyId: 99999,
+        path: ['其他／未編目劇情'],
+        label: '名稱載入失敗（ID: 99999）',
+        fullLabel: '其他／未編目劇情・名稱載入失敗（ID: 99999）',
+        searchText: '99999',
+        canNavigate: false,
+        hasFailed: true
+    };
+
+    const html = CharaModalView.renderAppearancesHtml(
+        [99999],
+        () => failMeta,
+        null,
+        null,
+        rawCharaName
+    );
+
+    // 1. 嚴禁在 onclick 中直接以未跳脫單引號拼接 JS 字串
+    assert(!html.includes("retryCharaMetadata('D'Arc')"), 'Must NOT generate invalid JavaScript syntax with raw single quotes');
+
+    // 2. 必須使用 data-chara-name 屬性存儲轉義後的名稱
+    assert(html.includes('data-chara-name="D&#39;Arc"') || html.includes('data-chara-name="D&#039;Arc"'), 'Must store escaped chara name in data-chara-name');
+    assert(html.includes("QuestMapModule.retryCharaMetadata(this.getAttribute('data-chara-name'))"), 'Must delegate parameter extraction to getAttribute');
+
+    // 3. 驗證事件處理邏輯傳入原始角色名稱
+    let passedParam = null;
+    const origRetry = global.QuestMapModule.retryCharaMetadata;
+    global.QuestMapModule.retryCharaMetadata = (name) => {
+        passedParam = name;
+    };
+
+    try {
+        // 模擬 DOM 元素：瀏覽器 getAttribute 會將 HTML entity 解碼為原始字元
+        const fakeButton = {
+            getAttribute(attr) {
+                if (attr === 'data-chara-name') return rawCharaName;
+                return null;
+            }
+        };
+
+        // 執行按鈕的 onclick 語意
+        global.QuestMapModule.retryCharaMetadata(fakeButton.getAttribute('data-chara-name'));
+        assert.strictEqual(passedParam, rawCharaName, 'Event handler must receive exact original character name including single quotes');
+    } finally {
+        global.QuestMapModule.retryCharaMetadata = origRetry;
+    }
+});
+
+test('Test 18 — successful retry removes failure label and retry button', () => {
+    let currentHtml = '';
+    const fakeSection = {
+        set innerHTML(val) { currentHtml = val; },
+        get innerHTML() { return currentHtml; },
+        querySelector: () => null,
+        querySelectorAll: () => []
+    };
+
+    const fakeModal = {
+        querySelector(selector) {
+            if (selector === '.chara-appearance-section') return fakeSection;
+            return null;
+        }
+    };
+
+    const origGet = CharaModalView.getCharaModal;
+    CharaModalView.getCharaModal = () => fakeModal;
+
+    try {
+        // 1. 失敗狀態渲染
+        const failMeta = {
+            storyId: 99999,
+            path: ['其他／未編目劇情'],
+            label: '名稱載入失敗（ID: 99999）',
+            fullLabel: '其他／未編目劇情・名稱載入失敗（ID: 99999）',
+            searchText: '99999',
+            canNavigate: false,
+            hasFailed: true
+        };
+
+        CharaModalView.updateAppearancesSection([99999], () => failMeta, null, null, '可可蘿');
+        assert(currentHtml.includes('名稱載入失敗（ID: 99999）'), 'Must display failure label');
+        assert(currentHtml.includes('chara-appearance-retry-btn'), 'Must render retry button in failed state');
+
+        // 2. 成功狀態重新渲染
+        const successMeta = {
+            storyId: 99999,
+            path: ['主線劇情', '第3部', '第18章'],
+            label: '第1話｜新的冒險',
+            fullLabel: '主線劇情・第3部・第18章・第1話｜新的冒險',
+            searchText: '新的冒險 99999',
+            canNavigate: true,
+            hasFailed: false
+        };
+
+        CharaModalView.updateAppearancesSection([99999], () => successMeta, null, null, '可可蘿');
+        assert(!currentHtml.includes('名稱載入失敗'), 'Failure label must disappear after successful resolution');
+        assert(!currentHtml.includes('chara-appearance-retry-btn'), 'Retry button must disappear after successful resolution');
+        assert(currentHtml.includes('第1話｜新的冒險'), 'Resolved story title must be displayed');
+    } finally {
+        CharaModalView.getCharaModal = origGet;
     }
 });
 

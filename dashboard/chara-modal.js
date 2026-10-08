@@ -210,7 +210,7 @@ window.CharaModalView = {
         const hasFailedItems = items.some(it => it.hasFailed || (typeof it.label === 'string' && it.label.includes('名稱載入失敗')));
         const safeCharaName = realCharaName ? this._escapeAppearanceText(realCharaName, escapeHtml) : '';
         const retryBtnHtml = (hasFailedItems && safeCharaName)
-            ? ` <button type="button" class="chara-appearance-retry-btn" onclick="QuestMapModule.retryCharaMetadata('${safeCharaName}')">重試載入</button>`
+            ? `<button type="button" class="chara-appearance-retry-btn" data-chara-name="${safeCharaName}" onclick="QuestMapModule.retryCharaMetadata(this.getAttribute('data-chara-name'))">重試載入</button>`
             : '';
 
         return `
@@ -221,7 +221,8 @@ window.CharaModalView = {
                            placeholder="搜尋劇情名稱、活動、章節或 ID..."
                            aria-label="搜尋角色登場劇情"
                            oninput="CharaModalView.filterAppearanceDirectory(this)">
-                    <span class="chara-appearance-search-status" aria-live="polite">${items.length} 話${retryBtnHtml}</span>
+                    <span class="chara-appearance-search-status" aria-live="polite">${items.length} 話</span>
+                    ${retryBtnHtml}
                 </div>
                 <div class="chara-appearance-tree">
                     ${groupsHtml}
