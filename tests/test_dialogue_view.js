@@ -275,7 +275,8 @@ test("Test 8 — Error UI retry contract", () => {
 
     DialogueView.renderError(containerEl, 1001002);
 
-    assert(errorHtml.includes("⚠️ 台詞文本尚未下載"), "Should render error title");
+    assert(errorHtml.includes("⚠️ 對白文本載入失敗"), "Should render visitor-friendly error title");
+    assert(!errorHtml.includes("python tools/"), "Should NOT prompt visitors to run python maintenance tools");
     assert(errorHtml.includes("QuestMapModule.loadDialogue(1001002)"), "Should include reload button calling QuestMapModule.loadDialogue(storyId)");
 });
 

@@ -3094,9 +3094,15 @@ const QuestMapModule = {
                 };
             }
 
-            // 若官方元數據側車尚未載入完成，顯示「載入名稱中…」，歸入「其他／未編目劇情」
+            // 若官方元數據側車尚未載入完成：區分載入失敗與載入中
             if (!hasMetadata) {
-                const label = `載入名稱中…（ID: ${numericStoryId}）`;
+                const hasFailed = typeof window.StoryDataService?.hasMetadataFailed === 'function'
+                    ? window.StoryDataService.hasMetadataFailed()
+                    : false;
+
+                const label = hasFailed
+                    ? `名稱載入失敗（ID: ${numericStoryId}）`
+                    : `載入名稱中…（ID: ${numericStoryId}）`;
                 const path = ['其他／未編目劇情'];
                 const fullLabel = [...path, label].join('・');
                 return {
@@ -3293,7 +3299,7 @@ const QuestMapModule = {
 
             if (!hasMetadata) {
                 window.StoryDataService.ensureMetadataLoaded()
-                    .then(() => {
+                    .then((episodes) => {
                         // 驗證 token 與彈窗開啟狀態，避免過期寫入 (stale write)
                         if (requestId !== this._charaModalRequestId) return;
                         const modalEl = this.getCharaModal();
@@ -3303,13 +3309,71 @@ const QuestMapModule = {
                             window.CharaModalView.updateAppearancesSection(
                                 appearances,
                                 (storyId) => this.resolveAppearanceStoryMeta(storyId),
-                                (str) => this.escapeHtml(str)
+                                (str) => this.escapeHtml(str),
+                                null,
+                                realCharaName
                             );
                         }
                     })
                     .catch(e => {
                         console.warn('[QuestMapModule] 背景載入官方劇情元數據側車失敗:', e);
+                        if (requestId !== this._charaModalRequestId) return;
+                        const modalEl = this.getCharaModal();
+                        if (!modalEl || !modalEl.classList.contains('active')) return;
+
+                        if (window.CharaModalView && typeof window.CharaModalView.updateAppearancesSection === 'function') {
+                            window.CharaModalView.updateAppearancesSection(
+                                appearances,
+                                (storyId) => this.resolveAppearanceStoryMeta(storyId),
+                                (str) => this.escapeHtml(str),
+                                null,
+                                realCharaName
+                            );
+                        }
                     });
+            }
+        }
+    },
+
+    /**
+     * 安全重試載入官方元數據側車並重新整理目前角色登場目錄
+     */
+    async retryCharaMetadata(realCharaName) {
+        if (window.StoryDataService && typeof window.StoryDataService.clearMetadataError === 'function') {
+            window.StoryDataService.clearMetadataError();
+        }
+        const appearances = (this.appearanceMap &&
+            (this.appearanceMap[realCharaName] || this.appearanceMap[this.getCharaRealName(realCharaName)])) || [];
+        
+        // 立即以載入中狀態刷新視圖
+        if (window.CharaModalView && typeof window.CharaModalView.updateAppearancesSection === 'function') {
+            window.CharaModalView.updateAppearancesSection(
+                appearances,
+                (storyId) => this.resolveAppearanceStoryMeta(storyId),
+                (str) => this.escapeHtml(str),
+                null,
+                realCharaName
+            );
+        }
+
+        const currentRequestId = this._charaModalRequestId;
+        if (window.StoryDataService && typeof window.StoryDataService.ensureMetadataLoaded === 'function') {
+            try {
+                await window.StoryDataService.ensureMetadataLoaded();
+            } catch (err) {
+                console.warn('[QuestMapModule] 重試載入官方元數據側車失敗:', err);
+            }
+            if (currentRequestId !== this._charaModalRequestId) return;
+            const modalEl = this.getCharaModal();
+            if (!modalEl || !modalEl.classList.contains('active')) return;
+            if (window.CharaModalView && typeof window.CharaModalView.updateAppearancesSection === 'function') {
+                window.CharaModalView.updateAppearancesSection(
+                    appearances,
+                    (storyId) => this.resolveAppearanceStoryMeta(storyId),
+                    (str) => this.escapeHtml(str),
+                    null,
+                    realCharaName
+                );
             }
         }
     },

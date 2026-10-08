@@ -20,6 +20,8 @@ global.QuestMapModule = {
 
 require(path.join(__dirname, '../dashboard/chara-modal.js'));
 const CharaModalView = global.CharaModalView;
+require(path.join(__dirname, '../dashboard/story-data-service.js'));
+const realStoryDataService = global.window.StoryDataService;
 
 let passed = 0;
 const testQueue = [];
@@ -696,6 +698,191 @@ test('Test 13 — unindexed appearance triggers ensureMetadataLoaded once in bac
 
     assert.strictEqual(ensureMetadataCalls, 1, 'Should trigger ensureMetadataLoaded once for unindexed story');
     CharaModalView.getCharaModal = origGet;
+});
+
+test('Test 14 — updateAppearancesSection preserves focus, caret, scroll, and open details state', () => {
+    let focusCalled = false;
+    let selectionRangeCalled = false;
+    let selectedRange = null;
+
+    const oldInput = {
+        value: '',
+        selectionStart: 4,
+        selectionEnd: 4
+    };
+
+    const newInput = {
+        value: '',
+        focus() { focusCalled = true; },
+        setSelectionRange(s, e) {
+            selectionRangeCalled = true;
+            selectedRange = [s, e];
+        }
+    };
+
+    const oldDetailsGroup = {
+        getAttribute(attr) {
+            return attr === 'data-group-path' ? '主線劇情 / 第1部' : null;
+        },
+        open: true
+    };
+
+    const newDetailsGroup1 = {
+        getAttribute(attr) {
+            return attr === 'data-group-path' ? '主線劇情 / 第1部' : null;
+        },
+        open: false
+    };
+
+    const newDetailsGroup2 = {
+        getAttribute(attr) {
+            return attr === 'data-group-path' ? '活動劇情 / 2026年' : null;
+        },
+        open: false
+    };
+
+    const oldTree = { scrollTop: 128 };
+    const newTree = { scrollTop: 0 };
+
+    let currentInput = oldInput;
+    let currentTree = oldTree;
+    let currentGroups = [oldDetailsGroup];
+
+    const fakeSection = {
+        innerHTML: '',
+        querySelector(selector) {
+            if (selector === '.chara-appearance-search') return currentInput;
+            if (selector === '.chara-appearance-tree') return currentTree;
+            return null;
+        },
+        querySelectorAll(selector) {
+            if (selector === '.chara-appearance-group[open]') {
+                return currentGroups.filter(g => g.open);
+            }
+            if (selector === '.chara-appearance-group') {
+                return currentGroups;
+            }
+            return [];
+        }
+    };
+
+    const fakeModal = {
+        querySelector(selector) {
+            if (selector === '.chara-appearance-section') return fakeSection;
+            return null;
+        }
+    };
+
+    const origGet = CharaModalView.getCharaModal;
+    CharaModalView.getCharaModal = () => fakeModal;
+
+    // Simulate activeElement being oldInput
+    const origDoc = global.document;
+    global.document = {
+        activeElement: oldInput,
+        getElementById() { return fakeModal; }
+    };
+
+    try {
+        // Hook into innerHTML setter to simulate new DOM creation upon rendering
+        Object.defineProperty(fakeSection, 'innerHTML', {
+            set(val) {
+                currentInput = newInput;
+                currentTree = newTree;
+                currentGroups = [newDetailsGroup1, newDetailsGroup2];
+            },
+            get() { return ''; }
+        });
+
+        CharaModalView.updateAppearancesSection(
+            [100101],
+            (id) => ({
+                storyId: id,
+                path: ['主線劇情', '第1部'],
+                label: '第1話',
+                fullLabel: '主線劇情・第1部・第1話',
+                searchText: '100101',
+                sortKey: id,
+                canNavigate: true
+            }),
+            (s) => s
+        );
+
+        assert.strictEqual(focusCalled, true, 'Search input focus must be restored');
+        assert.strictEqual(selectionRangeCalled, true, 'Search caret must be restored');
+        assert.deepStrictEqual(selectedRange, [4, 4], 'Caret range must match snapshot');
+        assert.strictEqual(newTree.scrollTop, 128, 'Tree scrollTop must be restored');
+        assert.strictEqual(newDetailsGroup1.open, true, 'Previously opened group must remain open');
+        assert.strictEqual(newDetailsGroup2.open, false, 'Previously closed group must remain closed');
+    } finally {
+        global.document = origDoc;
+        CharaModalView.getCharaModal = origGet;
+    }
+});
+
+test('Test 15 — metadata failure handling, explicit error label, and safe retry', async () => {
+    // 1. 驗證 StoryDataService 失敗標記
+    const service = realStoryDataService;
+    service._metadataCache = null;
+    service._loadingPromise = null;
+    service._loadFailed = false;
+    assert.strictEqual(service.hasMetadataFailed(), false);
+
+    // Mock fetch failure
+    const origFetch = global.fetch;
+    global.fetch = async () => ({ ok: false, status: 500 });
+
+    try {
+        const res = await service.ensureMetadataLoaded();
+        assert.strictEqual(res, null);
+        assert.strictEqual(service.hasMetadataFailed(), true);
+
+        // 2. 驗證 resolveAppearanceStoryMeta 在 failure 時產生明確錯誤狀態
+        global.window.StoryDataService = service;
+        const mockMapModule = {
+            getStoryById: () => null,
+            normalizeDisplayTitle: (s) => s
+        };
+        const mapCode = require('fs').readFileSync(path.join(__dirname, '../dashboard/map.js'), 'utf8');
+        const match = mapCode.match(/resolveAppearanceStoryMeta\(storyId\)\s*\{[\s\S]*?\n    \},/);
+        const fnBody = match[0].replace(/resolveAppearanceStoryMeta\(storyId\)\s*\{/, '').replace(/\},\s*$/, '');
+        mockMapModule.resolveAppearanceStoryMeta = new Function('storyId', fnBody);
+
+        const failMeta = mockMapModule.resolveAppearanceStoryMeta(99999);
+        assert.deepStrictEqual(failMeta.path, ['其他／未編目劇情']);
+        assert.strictEqual(failMeta.label, '名稱載入失敗（ID: 99999）');
+        assert.strictEqual(failMeta.canNavigate, false);
+
+        // 3. 驗證 renderAppearancesHtml 產生重試按鈕
+        const html = CharaModalView.renderAppearancesHtml(
+            [99999],
+            () => failMeta,
+            null,
+            null,
+            '可可蘿'
+        );
+        assert(html.includes('chara-appearance-retry-btn'), 'Must render retry button on failure');
+        assert(html.includes("QuestMapModule.retryCharaMetadata('可可蘿')"), 'Retry button must invoke retryCharaMetadata');
+
+        // 4. 驗證 clearMetadataError 與重試恢復流程
+        service.clearMetadataError();
+        assert.strictEqual(service.hasMetadataFailed(), false);
+
+        // Mock successful fetch on retry
+        global.fetch = async () => ({
+            ok: true,
+            json: async () => ({ episodes: { '99999': { chapter_title: '第99章', subtitle: '已復原' } } })
+        });
+        const retryRes = await service.ensureMetadataLoaded();
+        assert(retryRes !== null);
+        assert.strictEqual(service.hasMetadataFailed(), false);
+        assert.strictEqual(service.hasMetadataLoaded(), true);
+
+        const okMeta = mockMapModule.resolveAppearanceStoryMeta(99999);
+        assert.strictEqual(okMeta.label, '第99章｜已復原');
+    } finally {
+        global.fetch = origFetch;
+    }
 });
 
 runTests().catch(err => {

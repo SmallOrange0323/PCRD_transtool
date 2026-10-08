@@ -65,17 +65,15 @@ console.log("dialogue-view.js loaded");
          */
         renderError(containerEl, storyId) {
             if (!containerEl) return;
+            const numericStoryId = Number(storyId);
             containerEl.innerHTML = `
-                <div class="dialogue-error-box" style="padding: 15px; border-radius: 8px; background: rgba(230, 73, 73, 0.05); border: 1px dashed rgba(230, 73, 73, 0.2); text-align: left;">
-                    <div style="color: #d63031; font-weight: 700; font-size: 0.88rem; margin-bottom: 6px;">⚠️ 台詞文本尚未下載</div>
-                    <div style="color: var(--text-primary); font-size: 0.82rem; line-height: 1.5;">
-                        本話的對白文本尚未下載到您的電腦中。<br>
-                        請在本地專案根目錄中，執行命令下載全部對白：
+                <div class="dialogue-error-box" style="padding: 18px 20px; border-radius: 8px; background: rgba(230, 73, 73, 0.05); border: 1px dashed rgba(230, 73, 73, 0.25); text-align: left;">
+                    <div style="color: #d63031; font-weight: 700; font-size: 0.92rem; margin-bottom: 8px;">⚠️ 對白文本載入失敗</div>
+                    <div style="color: var(--text-primary); font-size: 0.85rem; line-height: 1.6;">
+                        無法順利取得本話劇情台詞文本。這可能是因為網路連線不穩定，或是該劇情暫時無法存取。<br>
+                        請檢查您的網路連線後點擊下方按鈕重試。
                     </div>
-                    <code style="display: block; margin-top: 8px; background: rgba(0,0,0,0.05); padding: 8px; border-radius: 4px; color: var(--accent-color); font-family: Consolas, monospace; font-size: 0.8rem; border: 1px solid rgba(94, 107, 125, 0.15);">
-                        python tools/maintenance/download_stories_tw.py
-                    </code>
-                    <button onclick="QuestMapModule.loadDialogue(${storyId})" style="margin-top: 10px; padding: 8px 16px; background: var(--accent-color); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">🔄 重新載入</button>
+                    <button onclick="QuestMapModule.loadDialogue(${numericStoryId})" style="margin-top: 12px; padding: 8px 16px; background: var(--accent-color); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem; transition: opacity 0.2s ease;">🔄 重新載入</button>
                 </div>
             `;
         },

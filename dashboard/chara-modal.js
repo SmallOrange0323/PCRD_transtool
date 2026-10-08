@@ -100,7 +100,10 @@ window.CharaModalView = {
         return root;
     },
 
-    _renderAppearanceTreeNode(node, depth, escapeHtml) {
+    _renderAppearanceTreeNode(node, depth, escapeHtml, currentPath = []) {
+        const path = node.label ? [...currentPath, node.label] : currentPath;
+        const groupPathStr = path.join(' / ');
+        const safeGroupPath = this._escapeAppearanceText(groupPathStr, escapeHtml);
         const safeLabel = this._escapeAppearanceText(node.label, escapeHtml);
         const childGroups = [...node.children.values()]
             .sort((a, b) => a.label.localeCompare(b.label, 'zh-Hant'));
@@ -108,7 +111,7 @@ window.CharaModalView = {
             .sort((a, b) => String(a.sortKey || a.storyId).localeCompare(String(b.sortKey || b.storyId), 'zh-Hant', { numeric: true }));
 
         const childrenHtml = childGroups
-            .map(child => this._renderAppearanceTreeNode(child, depth + 1, escapeHtml))
+            .map(child => this._renderAppearanceTreeNode(child, depth + 1, escapeHtml, path))
             .join('');
 
         const itemsHtml = items.map(item => {
@@ -136,7 +139,7 @@ window.CharaModalView = {
         }).join('');
 
         return `
-            <details class="chara-appearance-group" data-appearance-depth="${depth}">
+            <details class="chara-appearance-group" data-appearance-depth="${depth}" data-group-path="${safeGroupPath}">
                 <summary>
                     <span class="chara-appearance-group-title">${safeLabel}</span>
                     <span class="chara-appearance-count">${node.count}</span>
@@ -154,7 +157,7 @@ window.CharaModalView = {
      * resolveStoryMeta(storyId) 應回傳：
      * { storyId, path: string[], label, fullLabel, searchText, sortKey, canNavigate }
      */
-    renderAppearancesHtml(appearances, resolveStoryMeta, escapeHtml, resolveStoryLabel) {
+    renderAppearancesHtml(appearances, resolveStoryMeta, escapeHtml, resolveStoryLabel, realCharaName) {
         if (!appearances || appearances.length === 0) {
             return `<div class="chara-appearance-empty">暫無登場話數統計數據。</div>`;
         }
@@ -193,7 +196,8 @@ window.CharaModalView = {
                     .join(' ')
                     .toLowerCase(),
                 sortKey: meta.sortKey ?? storyId,
-                canNavigate: meta.canNavigate !== false
+                canNavigate: meta.canNavigate !== false,
+                hasFailed: meta.hasFailed || false
             };
         });
 
@@ -203,6 +207,12 @@ window.CharaModalView = {
             .map(node => this._renderAppearanceTreeNode(node, 0, escapeHtml))
             .join('');
 
+        const hasFailedItems = items.some(it => it.hasFailed || (typeof it.label === 'string' && it.label.includes('名稱載入失敗')));
+        const safeCharaName = realCharaName ? this._escapeAppearanceText(realCharaName, escapeHtml) : '';
+        const retryBtnHtml = (hasFailedItems && safeCharaName)
+            ? ` <button type="button" class="chara-appearance-retry-btn" onclick="QuestMapModule.retryCharaMetadata('${safeCharaName}')">重試載入</button>`
+            : '';
+
         return `
             <div class="chara-appearance-directory">
                 <div class="chara-appearance-toolbar">
@@ -211,7 +221,7 @@ window.CharaModalView = {
                            placeholder="搜尋劇情名稱、活動、章節或 ID..."
                            aria-label="搜尋角色登場劇情"
                            oninput="CharaModalView.filterAppearanceDirectory(this)">
-                    <span class="chara-appearance-search-status" aria-live="polite">${items.length} 話</span>
+                    <span class="chara-appearance-search-status" aria-live="polite">${items.length} 話${retryBtnHtml}</span>
                 </div>
                 <div class="chara-appearance-tree">
                     ${groupsHtml}
@@ -224,27 +234,72 @@ window.CharaModalView = {
      * 僅局部更新 Modal 內的登場劇情目錄 (.chara-appearance-section)，
      * 避免非同步補載官方 metadata 時重新繪製整個 Modal 破壞使用者操作狀態。
      */
-    updateAppearancesSection(appearances, resolveStoryMeta, escapeHtml, resolveStoryLabel) {
+    updateAppearancesSection(appearances, resolveStoryMeta, escapeHtml, resolveStoryLabel, realCharaName) {
         const modalEl = this.getCharaModal();
         if (!modalEl) return;
         const sectionEl = modalEl.querySelector('.chara-appearance-section');
         if (!sectionEl) return;
 
-        // 若使用者已在搜尋框輸入內容，更新後應盡量保留搜尋狀態
-        const currentSearchInput = sectionEl.querySelector('.chara-appearance-search');
-        const currentQuery = currentSearchInput ? currentSearchInput.value : '';
+        // 記錄使用者目前的搜尋框狀態、捲動位置與展開節點
+        const currentSearchInput = typeof sectionEl.querySelector === 'function'
+            ? sectionEl.querySelector('.chara-appearance-search')
+            : null;
+        const isSearchFocused = typeof document !== 'undefined' && document.activeElement === currentSearchInput;
+        const caretStart = currentSearchInput && typeof currentSearchInput.selectionStart === 'number' ? currentSearchInput.selectionStart : null;
+        const caretEnd = currentSearchInput && typeof currentSearchInput.selectionEnd === 'number' ? currentSearchInput.selectionEnd : null;
+        const currentQuery = currentSearchInput ? (currentSearchInput.value || '') : '';
 
-        const appListHtml = this.renderAppearancesHtml(appearances, resolveStoryMeta, escapeHtml, resolveStoryLabel);
+        const currentTreeEl = typeof sectionEl.querySelector === 'function'
+            ? sectionEl.querySelector('.chara-appearance-tree')
+            : null;
+        const treeScrollTop = currentTreeEl && typeof currentTreeEl.scrollTop === 'number' ? currentTreeEl.scrollTop : 0;
+
+        const openGroupPaths = new Set(
+            typeof sectionEl.querySelectorAll === 'function'
+                ? [...sectionEl.querySelectorAll('.chara-appearance-group[open]')]
+                    .map(el => (typeof el.getAttribute === 'function' ? el.getAttribute('data-group-path') : el.dataset?.groupPath))
+                    .filter(Boolean)
+                : []
+        );
+
+        const appListHtml = this.renderAppearancesHtml(appearances, resolveStoryMeta, escapeHtml, resolveStoryLabel, realCharaName);
         sectionEl.innerHTML = `
             <h4>📖 登場劇情目錄</h4>
             ${appListHtml}
         `;
 
-        if (currentQuery) {
-            const newSearchInput = sectionEl.querySelector('.chara-appearance-search');
-            if (newSearchInput) {
-                newSearchInput.value = currentQuery;
-                this.filterAppearanceDirectory(newSearchInput);
+        // 還原先前已展開的目錄階層
+        if (openGroupPaths.size > 0 && !currentQuery && typeof sectionEl.querySelectorAll === 'function') {
+            sectionEl.querySelectorAll('.chara-appearance-group').forEach(group => {
+                const p = typeof group.getAttribute === 'function' ? group.getAttribute('data-group-path') : group.dataset?.groupPath;
+                if (p && openGroupPaths.has(p)) {
+                    group.open = true;
+                }
+            });
+        }
+
+        // 若原先有搜尋字串，重新套用過濾
+        const newSearchInput = typeof sectionEl.querySelector === 'function'
+            ? sectionEl.querySelector('.chara-appearance-search')
+            : null;
+        if (newSearchInput && currentQuery) {
+            newSearchInput.value = currentQuery;
+            this.filterAppearanceDirectory(newSearchInput);
+        }
+
+        // 還原捲動位置
+        const newTreeEl = typeof sectionEl.querySelector === 'function'
+            ? sectionEl.querySelector('.chara-appearance-tree')
+            : null;
+        if (newTreeEl && typeof treeScrollTop === 'number') {
+            newTreeEl.scrollTop = treeScrollTop;
+        }
+
+        // 還原搜尋輸入框焦點與游標位置
+        if (newSearchInput && isSearchFocused && typeof newSearchInput.focus === 'function') {
+            newSearchInput.focus();
+            if (caretStart !== null && caretEnd !== null && typeof newSearchInput.setSelectionRange === 'function') {
+                newSearchInput.setSelectionRange(caretStart, caretEnd);
             }
         }
     },
@@ -387,7 +442,7 @@ window.CharaModalView = {
         } = options || {};
 
         const modalEl = this.getCharaModal();
-        const appListHtml = this.renderAppearancesHtml(appearances, resolveStoryMeta, escapeHtml, resolveStoryLabel);
+        const appListHtml = this.renderAppearancesHtml(appearances, resolveStoryMeta, escapeHtml, resolveStoryLabel, realCharaName);
         const detailsHtml = this.renderProfileDetailsHtml(profile);
         const bioHtml = this.renderProfileBioHtml(profile, escapeHtml);
         const numericExplicitUnitId = Number(explicitUnitId);

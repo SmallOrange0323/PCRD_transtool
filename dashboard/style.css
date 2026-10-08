@@ -4374,6 +4374,24 @@ body {
     white-space: nowrap;
 }
 
+.chara-appearance-retry-btn {
+    margin-left: 8px;
+    padding: 2px 8px;
+    font-size: 0.74rem;
+    color: var(--accent-color, #e83875);
+    background: rgba(232, 56, 117, 0.08);
+    border: 1px solid rgba(232, 56, 117, 0.28);
+    border-radius: 4px;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.chara-appearance-retry-btn:hover {
+    background: rgba(232, 56, 117, 0.16);
+    border-color: rgba(232, 56, 117, 0.45);
+}
+
 .chara-appearance-tree {
     max-height: min(46vh, 440px);
     overflow-y: auto;

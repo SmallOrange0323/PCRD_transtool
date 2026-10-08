@@ -16,6 +16,7 @@
         constructor() {
             this._metadataCache = null;
             this._loadingPromise = null;
+            this._loadFailed = false;
         }
 
         /**
@@ -24,6 +25,21 @@
          */
         hasMetadataLoaded() {
             return this._metadataCache !== null;
+        }
+
+        /**
+         * 檢查官方元數據側車最近一次載入是否失敗。
+         * @returns {boolean}
+         */
+        hasMetadataFailed() {
+            return this._loadFailed && this._metadataCache === null;
+        }
+
+        /**
+         * 重設載入失敗標記以允許重新嘗試。
+         */
+        clearMetadataError() {
+            this._loadFailed = false;
         }
 
         /**
@@ -61,6 +77,7 @@
                     const res = await fetch(metadataUrl, fetchOptions);
                     if (!res.ok) {
                         console.warn(`[StoryDataService] 官方元數據側車載入失敗 (HTTP ${res.status}): ${metadataUrl}`);
+                        this._loadFailed = true;
                         return null;
                     }
 
@@ -69,12 +86,14 @@
                     // 3. Minimal Runtime Shape 防禦
                     if (!data || typeof data !== "object" || Array.isArray(data)) {
                         console.warn("[StoryDataService] 官方元數據側車頂層結構無效 (非物件)");
+                        this._loadFailed = true;
                         return null;
                     }
 
                     const episodes = data.episodes;
                     if (!episodes || typeof episodes !== "object" || Array.isArray(episodes)) {
                         console.warn("[StoryDataService] 官方元數據側車 episodes 結構無效 (非字典物件)");
+                        this._loadFailed = true;
                         return null;
                     }
 
@@ -82,14 +101,17 @@
                     for (const [sid, ep] of Object.entries(episodes)) {
                         if (ep === null || typeof ep !== "object" || Array.isArray(ep)) {
                             console.warn(`[StoryDataService] 話數 ${sid} 之元數據結構無效 (非物件或為 Array)`);
+                            this._loadFailed = true;
                             return null;
                         }
                     }
 
                     this._metadataCache = episodes;
+                    this._loadFailed = false;
                     return this._metadataCache;
                 } catch (err) {
                     console.warn("[StoryDataService] 載入官方元數據側車發生異常:", err);
+                    this._loadFailed = true;
                     return null;
                 } finally {
                     this._loadingPromise = null;
