@@ -37,6 +37,7 @@ const QuestMapModule = {
     directoryLevel: 'level1', // 'level1' (章節/活動卡片清單) | 'level2' (話數清單)
     directoryLevel1ScrollTop: 0,
     autoVoiceStartIndex: null,
+    _charaModalRequestId: 0,
     _dialogueCache: new Map(),
     _loadDataPromise: null,
     _appearanceMapPromise: null,
@@ -3050,7 +3051,193 @@ const QuestMapModule = {
         return window.CharaModalView ? window.CharaModalView.getCharaModal() : null;
     },
 
+    resolveAppearanceStoryMeta(storyId) {
+        const numericStoryId = Number(storyId);
+        const story = this.getStoryById(numericStoryId);
+        if (!story) {
+            const hasMetadata = typeof window.StoryDataService?.hasMetadataLoaded === 'function'
+                ? window.StoryDataService.hasMetadataLoaded()
+                : false;
+
+            const rawMeta = window.StoryDataService?.getMetadataSync
+                ? window.StoryDataService.getMetadataSync(numericStoryId)
+                : null;
+
+            if (rawMeta) {
+                const normalize = value => this.normalizeDisplayTitle
+                    ? this.normalizeDisplayTitle(value || '')
+                    : String(value || '').trim();
+                const chapterTitle = normalize(rawMeta.chapter_title);
+                const subtitle = normalize(rawMeta.subtitle);
+
+                let label = '';
+                if (chapterTitle && subtitle) {
+                    label = `${chapterTitle}｜${subtitle}`;
+                } else if (chapterTitle) {
+                    label = chapterTitle;
+                } else if (subtitle) {
+                    label = subtitle;
+                } else {
+                    label = `未命名劇情（ID: ${numericStoryId}）`;
+                }
+
+                const path = ['其他／未編目劇情'];
+                const fullLabel = [...path, label].join('・');
+                return {
+                    storyId: numericStoryId,
+                    path,
+                    label,
+                    fullLabel,
+                    searchText: `${fullLabel} ${numericStoryId}`,
+                    sortKey: `98-${String(numericStoryId).padStart(9, '0')}`,
+                    canNavigate: false
+                };
+            }
+
+            // 若官方元數據側車尚未載入完成，顯示「載入名稱中…」，歸入「其他／未編目劇情」
+            if (!hasMetadata) {
+                const label = `載入名稱中…（ID: ${numericStoryId}）`;
+                const path = ['其他／未編目劇情'];
+                const fullLabel = [...path, label].join('・');
+                return {
+                    storyId: numericStoryId,
+                    path,
+                    label,
+                    fullLabel,
+                    searchText: `${fullLabel} ${numericStoryId}`,
+                    sortKey: `98-${String(numericStoryId).padStart(9, '0')}`,
+                    canNavigate: false
+                };
+            }
+
+            // 元數據已確認載入，但該 ID 確定不在官方元數據中
+            return {
+                storyId: numericStoryId,
+                path: ['無法識別'],
+                label: `ID: ${numericStoryId}`,
+                fullLabel: `無法識別・ID: ${numericStoryId}`,
+                searchText: `ID ${numericStoryId}`,
+                sortKey: `99-${String(numericStoryId).padStart(9, '0')}`,
+                canNavigate: false
+            };
+        }
+
+        const normalize = value => this.normalizeDisplayTitle
+            ? this.normalizeDisplayTitle(value || '')
+            : String(value || '').trim();
+        const chapter = normalize(story.chapter);
+        const title = normalize(story.title);
+        const groupId = Number(story.groupId);
+
+        const partMatch = chapter.match(/第?\s*(\d+)\s*部/);
+        const chapterMatch = chapter.match(/第\s*(\d+)\s*章/);
+        const episodeMatch = chapter.match(/第\s*(\d+)\s*話/);
+
+        let episodeLabel = episodeMatch ? `第${episodeMatch[1]}話` : '';
+        if (!episodeLabel) {
+            if (/序章/.test(chapter)) episodeLabel = '序章';
+            else if (/終幕|終章/.test(chapter)) episodeLabel = /終幕/.test(chapter) ? '終幕' : '終章';
+            else if (/幕間/.test(chapter)) {
+                const interlude = chapter.match(/幕間[^\s]*/);
+                episodeLabel = interlude ? interlude[0] : '幕間';
+            }
+        }
+
+        const buildLeaf = (fallback = '') => {
+            const pieces = [];
+            if (episodeLabel) pieces.push(episodeLabel);
+            else if (fallback) pieces.push(fallback);
+            if (title && !pieces.includes(title)) pieces.push(title);
+            if (!pieces.length) pieces.push(`劇情 ${numericStoryId}`);
+            return pieces.join('｜');
+        };
+
+        let path = [];
+        let leaf = '';
+        let sortPrefix = '90';
+
+        const extraMembership = this.getExtraMembership(story);
+        if (extraMembership) {
+            const categoryTitle = normalize(extraMembership.category?.title) || '額外劇情';
+            path = ['露娜塔／額外', categoryTitle];
+            sortPrefix = '50';
+
+            if (extraMembership.categoryId === 'luna_tower') {
+                const period = parseInt(String(numericStoryId).substring(1, 4), 10);
+                if (Number.isInteger(period)) path.push(`第${period}期`);
+            } else if (extraMembership.categoryId === 'anniversary_countdown') {
+                const seriesNum = parseInt(String(numericStoryId).substring(1, 4), 10);
+                const anniversaryMap = {
+                    2: '0.5週年倒數',
+                    4: '1週年倒數',
+                    5: '1.5週年倒數',
+                    6: '2週年倒數',
+                    7: '2.5週年倒數',
+                    8: '3週年倒數',
+                    9: '3.5週年倒數',
+                    10: '4週年倒數',
+                    12: '5週年倒數',
+                    13: '5.5週年倒數'
+                };
+                if (anniversaryMap[seriesNum]) path.push(anniversaryMap[seriesNum]);
+            }
+            leaf = buildLeaf(chapter);
+        } else if (story.isEvent) {
+            const event = this.events.find(evt => Number(evt.story_group_id) === groupId);
+            const eventTitle = normalize(event?.title) || (groupId ? `活動 ${groupId}` : '活動名稱未明');
+            let yearLabel = '年份不明';
+            if (event?.start_time) {
+                const date = new Date(event.start_time);
+                if (!Number.isNaN(date.getTime())) yearLabel = `${date.getFullYear()}年`;
+            }
+            path = ['活動劇情', yearLabel, eventTitle];
+            leaf = buildLeaf(chapter);
+            sortPrefix = '20';
+        } else if (story.type === 'main') {
+            const part = Number(story.part) || Number(partMatch?.[1]) || null;
+            const partLabel = part ? `第${part}部` : '部別未明';
+            let chapterLabel = chapterMatch ? `第${chapterMatch[1]}章` : '';
+            if (!chapterLabel && /序章/.test(chapter)) chapterLabel = '序章';
+            if (!chapterLabel && /幕間/.test(chapter)) chapterLabel = '幕間';
+            if (!chapterLabel) chapterLabel = '其他';
+            path = ['主線劇情', partLabel, chapterLabel];
+            leaf = buildLeaf(chapter);
+            sortPrefix = '10';
+        } else if (story.type === 'chara') {
+            const ownerMatch = chapter.match(/^(.*?)\s*第\s*\d+\s*話/);
+            const ownerName = ownerMatch?.[1]?.trim() || story.charaName || '角色未明';
+            path = ['角色劇情', ownerName];
+            leaf = buildLeaf(chapter);
+            sortPrefix = '30';
+        } else if (story.type === 'guild') {
+            const guildMatch = chapter.match(/^(.*?)\s*第\s*\d+\s*話/);
+            const guildName = guildMatch?.[1]?.trim() || '公會未明';
+            path = ['公會劇情', guildName];
+            leaf = buildLeaf(chapter);
+            sortPrefix = '40';
+        } else if (story.type === 'tower') {
+            path = ['露娜塔／額外', '露娜塔／系統劇情'];
+            leaf = buildLeaf(chapter);
+            sortPrefix = '50';
+        } else {
+            path = ['其他劇情'];
+            leaf = buildLeaf(chapter);
+        }
+
+        const fullLabel = [...path, leaf].filter(Boolean).join('・');
+        return {
+            storyId: numericStoryId,
+            path,
+            label: leaf,
+            fullLabel,
+            searchText: `${fullLabel} ${numericStoryId}`,
+            sortKey: `${sortPrefix}-${String(numericStoryId).padStart(9, '0')}`,
+            canNavigate: true
+        };
+    },
+
     async showCharaModal(charaName, unitId = null) {
+        const requestId = ++this._charaModalRequestId;
         const realCharaName = this.getCharaRealName(charaName);
         const numericUnitId = Number(unitId);
         const explicitUnitId = Number.isInteger(numericUnitId) && numericUnitId > 0
@@ -3077,6 +3264,9 @@ const QuestMapModule = {
             }
         }
 
+        // 若在載入 profile 期間已有新的彈窗請求，捨棄本次過期呈現
+        if (requestId !== this._charaModalRequestId) return;
+
         const appearances = (this.appearanceMap &&
             (this.appearanceMap[realCharaName] || this.appearanceMap[charaName])) || [];
 
@@ -3087,16 +3277,41 @@ const QuestMapModule = {
             appearances,
             speakerAvatars: this.speakerAvatars,
             avatarService: window.AvatarService,
-            resolveStoryLabel: (storyId) => {
-                const story = this.getStoryById(storyId);
-                if (!story) return `ID: ${storyId}`;
-                const cleanCh = story.chapter.replace(/^(第\d+部\s*)?([^\s]+章\s*|[^\s]+序章\s*|[^\s]+幕間[^\s]*\s*)/, '');
-                let label = `${cleanCh} ${story.title}`.trim();
-                if (label.length > 15) label = label.substring(0, 15) + "...";
-                return label;
-            },
+            resolveStoryMeta: (storyId) => this.resolveAppearanceStoryMeta(storyId),
             escapeHtml: (str) => this.escapeHtml(str)
         });
+
+        // 僅在角色包含未在 canonical 索引中編目之劇情話數，且官方元數據尚未載入時，才在背景請求 5.8 MB 側車
+        const needsMetadata = appearances.some(
+            storyId => !this.getStoryById(Number(storyId))
+        );
+
+        if (needsMetadata && window.StoryDataService && typeof window.StoryDataService.ensureMetadataLoaded === 'function') {
+            const hasMetadata = typeof window.StoryDataService.hasMetadataLoaded === 'function'
+                ? window.StoryDataService.hasMetadataLoaded()
+                : false;
+
+            if (!hasMetadata) {
+                window.StoryDataService.ensureMetadataLoaded()
+                    .then(() => {
+                        // 驗證 token 與彈窗開啟狀態，避免過期寫入 (stale write)
+                        if (requestId !== this._charaModalRequestId) return;
+                        const modalEl = this.getCharaModal();
+                        if (!modalEl || !modalEl.classList.contains('active')) return;
+
+                        if (window.CharaModalView && typeof window.CharaModalView.updateAppearancesSection === 'function') {
+                            window.CharaModalView.updateAppearancesSection(
+                                appearances,
+                                (storyId) => this.resolveAppearanceStoryMeta(storyId),
+                                (str) => this.escapeHtml(str)
+                            );
+                        }
+                    })
+                    .catch(e => {
+                        console.warn('[QuestMapModule] 背景載入官方劇情元數據側車失敗:', e);
+                    });
+            }
+        }
     },
 
     async jumpToStory(storyId, closeModalId) {

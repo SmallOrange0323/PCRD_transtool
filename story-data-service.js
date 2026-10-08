@@ -19,6 +19,14 @@
         }
 
         /**
+         * 檢查官方元數據側車是否已載入至記憶體快取。
+         * @returns {boolean}
+         */
+        hasMetadataLoaded() {
+            return this._metadataCache !== null;
+        }
+
+        /**
          * 確保官方元數據已載入至記憶體快取。
          * @returns {Promise<Object|null>} episodes map 或 null (若載入失敗)
          */
