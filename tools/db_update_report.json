@@ -26,36 +26,18 @@
     "schema_version": "1.0.0"
   },
   "content_diff": {
-    "has_meaningful_change": true,
+    "has_meaningful_change": false,
     "current_db_exists": true,
-    "sha256_identical": false,
+    "sha256_identical": true,
     "new_unit_ids": [],
     "removed_unit_ids": [],
-    "new_story_ids_count": 4,
+    "new_story_ids_count": 0,
     "new_event_ids_count": 0,
     "table_count_deltas": {},
-    "current_db_sha256": "713b16ebc906213a83fd281a61674574eb6d58470b86ea79d292461b3f8da4c8",
-    "staging_db_sha256": "8f2a5555b3283b66d5a3afadb5bf1a1d646b197d6e7e4d68c84e851062045c72"
+    "current_db_sha256": "8f2a5555b3283b66d5a3afadb5bf1a1d646b197d6e7e4d68c84e851062045c72",
+    "staging_db_sha256": "8f2a5555b3283b66d5a3afadb5bf1a1d646b197d6e7e4d68c84e851062045c72",
+    "reason": "sha256_identical"
   },
-  "normalized_db": {
-    "sha256": "8f2a5555b3283b66d5a3afadb5bf1a1d646b197d6e7e4d68c84e851062045c72",
-    "size": 2220032,
-    "table_count": 12,
-    "mapped_column_count": 103,
-    "table_stats": {
-      "story_detail": 2879,
-      "unit_data": 448,
-      "unit_profile": 344,
-      "event_story_data": 87,
-      "event_story_detail": 712,
-      "story_group_data": 431,
-      "chara_story_status": 1575,
-      "unit_rarity": 1964,
-      "unit_skill_data": 2664,
-      "unit_attack_pattern": 2994,
-      "skill_data": 7446,
-      "actual_unit_background": 322
-    }
-  },
-  "applied": true
+  "applied": false,
+  "reason": "content_identical"
 }
