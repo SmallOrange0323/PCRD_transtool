@@ -233,7 +233,13 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
                     raise RuntimeError(f"So-net Master DB 獲取/正規化失敗: {detail}")
 
                 if update_result.get("applied") is False:
-                    # 內容比對完全一致，無實質變更
+                    # 內容比對完全一致，無實質變更（不提前寫入 version_history.json，待步驟 4.1 驗證通過後統一晉升）
+                    fp = {
+                        "manifest_sha256": (active_candidate.manifest_sha256 if active_candidate else None) or update_result.get("manifest_sha256"),
+                        "master_bundle_md5": (active_candidate.master_bundle_md5 if active_candidate else None) or update_result.get("master_bundle_md5"),
+                        "master_pool_hash": (active_candidate.master_pool_hash if active_candidate else None) or update_result.get("master_pool_hash"),
+                        "normalized_db_sha256": update_result.get("existing_normalized_db_sha256") or update_result.get("normalized_db_sha256"),
+                    }
                     freshness = FreshnessResult(
                         status=FreshnessStatus.NO_CHANGE,
                         remote_version=target_tv,
@@ -244,16 +250,9 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
                         message="官方 CDN 內容解包正規化後與本地現有資料庫完全一致，無實質變更",
                         fingerprint_matched=True,
                         third_party_reference=third_party_tv,
+                        fingerprint=fp if any(fp.values()) else None,
                     )
                     print(f"  [Freshness] 狀態更新: {freshness.status} — {freshness.message}")
-                    if target_tv and not dry_run:
-                        fp = {
-                            "manifest_sha256": active_candidate.manifest_sha256 if active_candidate else None,
-                            "master_bundle_md5": active_candidate.master_bundle_md5 if active_candidate else None,
-                            "master_pool_hash": active_candidate.master_pool_hash if active_candidate else None,
-                            "normalized_db_sha256": update_result.get("existing_normalized_db_sha256") or update_result.get("normalized_db_sha256")
-                        }
-                        save_truth_version_state(target_tv, fingerprint=fp)
                 else:
                     # 官方 CDN 資料庫下載與正規化完成：與指定 TruthVersion 決定性綁定
                     fp = {
@@ -461,9 +460,14 @@ def run_pipeline_update(
 
     # 4.1 晉升 TruthVersion 與指紋狀態 (僅在全流程驗證通過、非 dry-run 且狀態已確認時執行)
     if not dry_run and freshness.confirmed and freshness.remote_version:
-        if freshness.remote_version != freshness.local_version or freshness.status == FreshnessStatus.UPDATED_SUCCESSFULLY:
+        fp_to_promote = getattr(freshness, "fingerprint", None)
+        should_promote = (
+            freshness.remote_version != freshness.local_version
+            or freshness.status == FreshnessStatus.UPDATED_SUCCESSFULLY
+            or bool(fp_to_promote)
+        )
+        if should_promote:
             print(f"\n[Version State Promotion] 全流程驗證通過，正在推進本地 TruthVersion 與指紋狀態: {freshness.remote_version}...")
-            fp_to_promote = getattr(freshness, "fingerprint", None)
             if fp_to_promote:
                 promoted = save_truth_version_state(freshness.remote_version, fingerprint=fp_to_promote)
             else:

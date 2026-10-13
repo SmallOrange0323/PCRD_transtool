@@ -38,6 +38,12 @@ jobs:
       - name: Run Bundle Slimming & Prune Tests
         run: python -m unittest tests.test_bundle_slimming -v
 
+      - name: Run Update Pipeline & Content-Driven Policy Hermetic Tests
+        run: |
+          python -m unittest tests.test_update_pipeline_c2_implementation -v
+          python -m unittest tests.test_content_driven_update_policy -v
+          python -m unittest tests.test_direct_sonet_db_pipeline_integration -v
+
       - name: Run Reader Regression Tests
         run: |
           node tests/test_database_cache.js

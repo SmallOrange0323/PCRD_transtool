@@ -373,5 +373,162 @@ class TestUpdatePipelineC2Implementation(unittest.TestCase):
         saved = save_truth_version_state("")
         self.assertFalse(saved)
 
+    @patch("pipeline.fetch.probe_third_party_reference")
+    @patch("pipeline.fetch.discover_cdn_candidate_snapshots")
+    @patch("pipeline.fetch.update_db")
+    @patch("pipeline.update.save_truth_version_state")
+    def test_16_no_change_different_version_promotes_only_after_full_validation_success(
+        self, mock_save_state, mock_update_db, mock_discover, mock_wthee
+    ):
+        """Test 16: 驗證不同版號相同內容 (applied=False) 不提前寫入，驗證失敗不晉升，驗證成功後才正式晉升"""
+        from pipeline.sonet_master_db import CdnCandidateProbeResult, CdnDiscoveryResult
+
+        mock_wthee.return_value = {"source": "remote_wthee_api", "version": "00610019", "confirmed": True}
+        candidate = CdnCandidateProbeResult(
+            version="00610019",
+            exists=True,
+            manifest_sha256="sha_19",
+            master_bundle_md5="md5_19",
+            master_pool_hash="pool_19",
+        )
+        mock_discover.return_value = CdnDiscoveryResult(
+            highest_observed_cdn_version="00610019",
+            candidates={"00610019": candidate},
+            scan_bounds={"base_version": "00610018"},
+        )
+        mock_update_db.return_value = {
+            "status": "ok",
+            "applied": False,
+            "existing_normalized_db_sha256": "norm_existing",
+        }
+
+        # 1. check_and_sync_upstream 絕不提前呼叫 save_truth_version_state
+        ok, freshness, cov = check_and_sync_upstream(dry_run=False)
+        self.assertTrue(ok)
+        self.assertEqual(freshness.status, FreshnessStatus.NO_CHANGE)
+        mock_save_state.assert_not_called()
+        self.assertEqual(
+            freshness.fingerprint,
+            {
+                "manifest_sha256": "sha_19",
+                "master_bundle_md5": "md5_19",
+                "master_pool_hash": "pool_19",
+                "normalized_db_sha256": "norm_existing",
+            },
+        )
+
+        # 2. 若後續全量驗證門禁失敗，run_pipeline_update 阻斷且絕不推進 version_history
+        with patch("pipeline.update.check_and_sync_upstream", return_value=(True, freshness, cov)), \
+             patch("pipeline.update.bundle_story_map", return_value=True), \
+             patch("pipeline.update.validate_story_map", return_value=False), \
+             patch("pipeline.update.analyze_asset_completeness", return_value=MagicMock(success=True, movie_coverage=MagicMock(new_references_count=0))):
+            code_fail = run_pipeline_update(dry_run=False)
+            self.assertEqual(code_fail, 1)
+            mock_save_state.assert_not_called()
+
+        # 3. 若全流程驗證均通過，步驟 4.1 正常原子晉升
+        mock_save_state.return_value = True
+        with patch("pipeline.update.check_and_sync_upstream", return_value=(True, freshness, cov)), \
+             patch("pipeline.update.bundle_story_map", return_value=True), \
+             patch("pipeline.update.validate_story_map", return_value=True), \
+             patch("pipeline.update.analyze_asset_completeness", return_value=MagicMock(success=True, movie_coverage=MagicMock(new_references_count=0))):
+            code_success = run_pipeline_update(dry_run=False)
+            self.assertEqual(code_success, 0)
+            mock_save_state.assert_called_once_with(
+                "00610019",
+                fingerprint={
+                    "manifest_sha256": "sha_19",
+                    "master_bundle_md5": "md5_19",
+                    "master_pool_hash": "pool_19",
+                    "normalized_db_sha256": "norm_existing",
+                },
+            )
+
+    @patch("pipeline.fetch.probe_third_party_reference")
+    @patch("pipeline.fetch.discover_cdn_candidate_snapshots")
+    @patch("pipeline.fetch.update_db")
+    @patch("pipeline.update.save_truth_version_state")
+    def test_17_no_change_same_version_changed_fingerprint_promotes_fingerprint_after_validation(
+        self, mock_save_state, mock_update_db, mock_discover, mock_wthee
+    ):
+        """Test 17: 驗證相同版號但指紋變更且內容相同 (applied=False)，在驗證成功後步驟 4.1 仍正常推進新指紋"""
+        from pipeline.sonet_master_db import CdnCandidateProbeResult, CdnDiscoveryResult
+
+        # 線上與本地同為 00610018，但 CDN 指紋更新
+        candidate = CdnCandidateProbeResult(
+            version="00610018",
+            exists=True,
+            manifest_sha256="sha_NEW",
+            master_bundle_md5="md5_NEW",
+            master_pool_hash="pool_NEW",
+        )
+        mock_wthee.return_value = {"source": "remote_wthee_api", "version": "00610018", "confirmed": True}
+        mock_discover.return_value = CdnDiscoveryResult(
+            highest_observed_cdn_version="00610018",
+            candidates={"00610018": candidate},
+            scan_bounds={"base_version": "00610018"},
+        )
+        mock_update_db.return_value = {
+            "status": "ok",
+            "applied": False,
+            "existing_normalized_db_sha256": "norm_current",
+        }
+
+        ok, freshness, cov = check_and_sync_upstream(dry_run=False)
+        self.assertTrue(ok)
+        mock_save_state.assert_not_called()  # 不提前寫入
+
+        # 全流程驗證通過後，步驟 4.1 應推進指紋
+        mock_save_state.return_value = True
+        with patch("pipeline.update.check_and_sync_upstream", return_value=(True, freshness, cov)), \
+             patch("pipeline.update.bundle_story_map", return_value=True), \
+             patch("pipeline.update.validate_story_map", return_value=True), \
+             patch("pipeline.update.analyze_asset_completeness", return_value=MagicMock(success=True, movie_coverage=MagicMock(new_references_count=0))):
+            code = run_pipeline_update(dry_run=False)
+            self.assertEqual(code, 0)
+            mock_save_state.assert_called_once_with(
+                "00610018",
+                fingerprint={
+                    "manifest_sha256": "sha_NEW",
+                    "master_bundle_md5": "md5_NEW",
+                    "master_pool_hash": "pool_NEW",
+                    "normalized_db_sha256": "norm_current",
+                },
+            )
+
+    @patch("pipeline.update.check_and_sync_upstream")
+    @patch("pipeline.update.bundle_story_map")
+    @patch("pipeline.update.validate_story_map")
+    @patch("pipeline.update.analyze_asset_completeness")
+    @patch("pipeline.update.save_truth_version_state", return_value=False)
+    @patch("pipeline.update.run_deploy")
+    def test_18_version_promotion_write_failure_blocks_pipeline(
+        self, mock_deploy, mock_save_state, mock_asset, mock_val, mock_bundle, mock_sync
+    ):
+        """Test 18: 驗證步驟 4.1 正式晉升寫入失敗時必須阻斷流程且不執行部署"""
+        mock_sync.return_value = (
+            True,
+            FreshnessResult(
+                status=FreshnessStatus.UPDATED_SUCCESSFULLY,
+                remote_version="00610025",
+                local_version="00610018",
+                confirmed=True,
+                update_required=False,
+                degraded=False,
+                message="更新成功",
+                fingerprint={"manifest_sha256": "sha25"},
+            ),
+            analyze_coverage()
+        )
+        mock_bundle.return_value = True
+        mock_val.return_value = True
+        mock_asset.return_value = MagicMock(success=True, movie_coverage=MagicMock(new_references_count=0))
+
+        code = run_pipeline_update(dry_run=False, auto_deploy=True)
+        self.assertEqual(code, 1)
+        mock_save_state.assert_called_once()
+        mock_deploy.assert_not_called()
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+

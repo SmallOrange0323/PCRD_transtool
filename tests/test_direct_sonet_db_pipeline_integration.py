@@ -59,9 +59,10 @@ class TestDirectSonetDbPipelineIntegration(unittest.TestCase):
     # 1. pipeline passes exact remote_tv to updater
     @patch("pipeline.update.analyze_coverage")
     @patch("pipeline.update.evaluate_freshness")
-    @patch("pipeline.fetch.probe_truth_version")
+    @patch("pipeline.fetch.probe_third_party_reference")
+    @patch("pipeline.fetch.discover_cdn_candidate_snapshots")
     @patch("pipeline.fetch.update_db")
-    def test_01_pipeline_passes_exact_remote_tv_to_updater(self, mock_update_db, mock_probe, mock_eval, mock_cov):
+    def test_01_pipeline_passes_exact_remote_tv_to_updater(self, mock_update_db, mock_discover, mock_wthee, mock_eval, mock_cov):
         mock_coverage = MagicMock()
         mock_coverage.analysis_status = update_module.CoverageAnalysisStatus.VALID
         mock_coverage.analysis_errors = []
@@ -71,7 +72,8 @@ class TestDirectSonetDbPipelineIntegration(unittest.TestCase):
         mock_coverage.missing_unknown_count = 0
         mock_cov.return_value = mock_coverage
 
-        mock_probe.return_value = MagicMock(confirmed_remote=True, version="00610008", source="remote_wthee_api")
+        mock_wthee.return_value = {"source": "remote_wthee_api", "version": "00610008", "confirmed": True}
+        mock_discover.return_value = MagicMock(highest_observed_cdn_version="00610008", candidates={})
         mock_eval.return_value = FreshnessResult(
             status=FreshnessStatus.UPDATE_AVAILABLE,
             remote_version="00610008",
@@ -274,14 +276,16 @@ class TestDirectSonetDbPipelineIntegration(unittest.TestCase):
         self._assert_db_unchanged()
 
     # 7. dry-run -> no Master DB bundle download, no DB replace, no version-state write
-    @patch("pipeline.fetch.probe_truth_version")
+    @patch("pipeline.fetch.probe_third_party_reference")
+    @patch("pipeline.fetch.discover_cdn_candidate_snapshots")
     @patch("pipeline.update.evaluate_freshness")
     @patch("pipeline.fetch.update_db")
     @patch("pipeline.update.save_truth_version_state")
     def test_07_dry_run_contract_no_download_no_replace_no_state_write(
-        self, mock_save_state, mock_update_db, mock_eval, mock_probe
+        self, mock_save_state, mock_update_db, mock_eval, mock_discover, mock_wthee
     ):
-        mock_probe.return_value = MagicMock(confirmed_remote=True, version="00610008", source="remote_wthee_api")
+        mock_wthee.return_value = {"source": "remote_wthee_api", "version": "00610008", "confirmed": True}
+        mock_discover.return_value = MagicMock(highest_observed_cdn_version="00610008", candidates={})
         mock_eval.return_value = FreshnessResult(
             status=FreshnessStatus.UPDATE_AVAILABLE,
             remote_version="00610008",

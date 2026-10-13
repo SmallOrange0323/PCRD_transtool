@@ -67,12 +67,19 @@ DEPLOYED GH-PAGES HEAD: 810a60483277aa0e9813bbd0e8b45fd863c4141a (TruthVersion: 
 2. **`[VERIFIED]` `pipeline/validate.py` 漏檢 6 個核心前端 JS 檔案與 Dist 雜湊（已於 Slice 2 修復）**
    - 位置：`pipeline/validate.py#L1118-L1138`、`#L1345-L1366`。
    - 修復內容：在 `required_files` 補齊 `speaker-view.js`、`chara-modal.js`、`dialogue-normalizer.js`、`media-service.js`、`dialogue-view.js`、`auto-voice-controller.js`；並在 `check_dist=True` 區段對 `style.css` 與全部 12 個外部 JS 檔案執行 `validate_content_hash_reference` 驗證（同步更新 `tests/test_story_data_service.py` `test_25` 之 mock 面板）。
-3. **`[VERIFIED]` `pipeline/update.py` 在 DB 真實更新（`UPDATED_SUCCESSFULLY`）晉升時未傳遞 `fingerprint`（已於 Slice 2 修復）**
-   - 位置：`pipeline/coverage.py` `FreshnessResult`、`pipeline/update.py#L258-L279`、`#L463-L473`。
-   - 修復內容：為 `FreshnessResult` 新增可選欄位 `fingerprint: Optional[Dict[str, Any]] = None`；當 `update_db` 實質套用更新（`UPDATED_SUCCESSFULLY`）時保存 CDN 與正規化 DB 雜湊指紋，並於步驟 4.1 全量驗證通過後傳遞予 `save_truth_version_state(freshness.remote_version, fingerprint=fp_to_promote)`（若 `fingerprint` 為 `None` 則維持單參數呼叫以相容既有單元測試契約）。（註：經複核 `pipeline/update.py#L209, #L249`，`NO_CHANGE` 分支已位於 `if not dry_run` 保護內，無須額外改動）。
-4. **`[VERIFIED]` `tests/test_update_pipeline_c2_implementation.py` 歷史測試漂移與未隔離外部連線（已於 Slice 2 修復）**
-   - 位置：`tests/test_update_pipeline_c2_implementation.py` `test_06`、`test_13`、`test_14`。
-   - 修復內容：更新 `test_06` 以 `UPDATE_DOWNLOADED_UNCONFIRMED` 驗證未確認新鮮度之發布阻斷與 `--allow-unconfirmed-freshness` 覆蓋（因 `REMOTE_UNREACHABLE` 在 Phase F2C 已改為允許離線發布）；重構 `test_13` 與 `test_14` 以完整 mock `probe_third_party_reference`、`discover_cdn_candidate_snapshots` 與 `save_truth_version_state`，消除測試期間連線真實 CDN 及污染本地 `version_history.json` 的副作用，並驗證 `UPDATED_SUCCESSFULLY` 指紋晉升與 `UPDATE_FAILED` 阻斷。
+3. **`[VERIFIED]` `pipeline/update.py` 在 DB 真實更新（`UPDATED_SUCCESSFULLY`）或相同內容（`NO_CHANGE`）時的版本狀態與指紋晉升安全性（已於 Slice 2 修復）**
+   - 位置：`pipeline/coverage.py` `FreshnessResult`、`pipeline/update.py#L235-L279`、`#L460-L476`。
+   - 修復內容：
+     1. **修復 `NO_CHANGE` 提前寫入漏洞（GPT-6 Review P1）**：移除 `check_and_sync_upstream()` 在 `update_db()` 回傳 `applied=False` 時提前呼叫之 `save_truth_version_state()`；將指紋妥善保存在 `FreshnessResult.fingerprint`，統一交由 `run_pipeline_update()` 步驟 4.1，在 Asset Completeness、Bundle 與全量 Validate 門禁全部成功後才原子晉升版本狀態與指紋。
+     2. **支援「同版號、指紋變更、DB 內容不變」安全推進指紋**：在步驟 4.1 中若 `freshness.fingerprint` 存在，即使 `remote_version == local_version` 依然推進新指紋，避免下次更新重複下載。
+     3. **門禁失敗不晉升 & 寫入失敗嚴格阻斷**：全量門禁失敗時 `version_history.json` 完全保持不變；步驟 4.1 正式寫入若失敗（`not promoted`）則嚴格回傳 `1` 阻斷部署流程。
+4. **`[VERIFIED]` `tests/test_update_pipeline_c2_implementation.py` 測試漂移與 CI 測試覆蓋缺口（已於 Slice 2 修復）**
+   - 位置：`tests/test_update_pipeline_c2_implementation.py`、`tests/test_direct_sonet_db_pipeline_integration.py`、`.github/workflows/ci.yml`。
+   - 修復內容：
+     1. 更新 `test_06` 以 `UPDATE_DOWNLOADED_UNCONFIRMED` 驗證未確認新鮮度之發布阻斷與 `--allow-unconfirmed-freshness` 覆蓋；重構 `test_13` 與 `test_14` 補齊 `probe_third_party_reference`、`discover_cdn_candidate_snapshots` 離線 mock 與指紋晉升斷言。
+     2. 新增 `test_16`（不同版號相同內容不提前寫入、驗證失敗不晉升、全流程成功才晉升）、`test_17`（相同版號指紋變更在驗證成功後推進新指紋）、`test_18`（步驟 4.1 寫入失敗阻斷流程且不部署）。
+     3. 在 `test_direct_sonet_db_pipeline_integration.py` `test_01` & `test_07` 補齊離線 mock，確保完全無外網請求。
+     4. **補強 GitHub Actions CI 覆蓋（GPT-6 Review P2）**：在 `.github/workflows/ci.yml` 補上獨立離線測試步驟 `Run Update Pipeline & Content-Driven Policy Hermetic Tests`，納入 `test_update_pipeline_c2_implementation`、`test_content_driven_update_policy` 與 `test_direct_sonet_db_pipeline_integration`。
 
 ### C. UI/UX 樣式與 DOM 轉義（UI/UX & Security）
 1. **`[VERIFIED]` 淺色主題下殘留深色主題的半透明白字（已於 Slice 1 `67730a44` 修復並合併）**
@@ -86,7 +93,7 @@ DEPLOYED GH-PAGES HEAD: 810a60483277aa0e9813bbd0e8b45fd863c4141a (TruthVersion: 
 | 階段 | 分支名稱 | 狀態 | 核心目標與邊界 |
 | :--- | :--- | :---: | :--- |
 | **Slice 1** | `fix/reader-and-branch-ux` | **已合併至 `main` (`67730a44`)** | 修復 `dialogue-view.js`、`speaker-view.js` 淺色主題白字、移除旁白／選擇肢無效 `showCharaModal("")`、角色頭像／人名點擊 `stopPropagation`、排除 `'end'` 標記對片尾 CG 的阻斷、空話數／錯誤時隱藏 `#chara-badges-bar`、第 3 部分支劇情登場目錄章節歸類（限定 `story.isBranch === true`）、手機端 `.game-dialogue-header` `top: 0`。 |
-| **Slice 2** | `fix/pipeline-and-validation-gate` | **已完成待審 (READY FOR REVIEW)** | 同步更新 Source `dashboard/data/db_info.json`、補齊 `pipeline/validate.py` 6 個前端 JS 與 12 個外部 JS Dist 雜湊檢查、修復 `pipeline/update.py` `UPDATED_SUCCESSFULLY` 指紋晉升傳遞、修復 `test_update_pipeline_c2_implementation.py` 離線隔離與斷言。 |
+| **Slice 2** | `fix/pipeline-and-validation-gate` | **已完成待審 (READY FOR GPT-6 REVIEW)** | 同步更新 Source `dashboard/data/db_info.json`、補齊 `pipeline/validate.py` 6 個前端 JS 與 12 個外部 JS Dist 雜湊檢查、消除 `check_and_sync_upstream()` 提前寫入版本紀錄、統一於步驟 4.1 全量驗證成功後原子晉升 TruthVersion 與指紋（含同版號指紋變更與寫入失敗阻斷）、在 `.github/workflows/ci.yml` 補齊三大核心管線政策離線測試。 |
 | **Slice 3** | `fix/avatar-and-media-edge-cases` | **待執行 (PENDING)** | 修復 `AvatarService.cleanName()`「日和」截斷與括號順序（嚴守 Exact-ID-First 契約）、`SpeakerView` NPC `.png` 頭像支援、`MediaService` `_resumePendingCandidate` 清理。 |
 
 ---
