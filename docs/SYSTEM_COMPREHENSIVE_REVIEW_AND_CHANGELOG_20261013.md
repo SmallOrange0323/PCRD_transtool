@@ -2,9 +2,9 @@
 
 ```text
 STATUS: ACTIVE REVIEW & HANDOVER RECORD
-BASE MAIN COMMIT: 9c6b221e95b37daf1a293f8adb593a96adcb5afc
-CURRENT SLICE BRANCH: fix/avatar-and-media-edge-cases
-DEPLOYED GH-PAGES HEAD: 810a60483277aa0e9813bbd0e8b45fd863c4141a (TruthVersion: 00610018)
+BASE MAIN COMMIT: 934a0194ed31aeffa59887aa6aa68d03e4683498
+CURRENT SLICE BRANCH: main
+DEPLOYED GH-PAGES HEAD: f5e44450b32d41e2b23d6a887975bbdf49236758 (TruthVersion: 00610020)
 ```
 
 本文件供共同維護本專案之所有 AI 智能體（Antigravity、GPT-6、Codex、Claude 等）與開發者參考，記錄 2026-10-13 完成之改版、全系統唯讀審查發現（依循 Evidence-Calibrated Research Mode），以及分階段修復路線圖（3-Slice Roadmap）。
@@ -49,8 +49,8 @@ DEPLOYED GH-PAGES HEAD: 810a60483277aa0e9813bbd0e8b45fd863c4141a (TruthVersion: 
   3. **`pipeline/update.py`**：消除 `check_and_sync_upstream()` 提前推進版本紀錄的漏洞（GPT-6 Review P1），統一由 `run_pipeline_update()` 步驟 4.1 在全量驗證成功後原子晉升 TruthVersion 與指紋；支援相同版號指紋變更推進，並在寫入失敗時嚴格回傳 `1` 阻斷發布流程。
   4. **CI 測試與離線隔離**：重構三大更新管線政策測試（`test_update_pipeline_c2_implementation`、`test_content_driven_update_policy`、`test_direct_sonet_db_pipeline_integration`）並在 `.github/workflows/ci.yml` 補上獨立離線測試步驟（GPT-6 Review P2）。
 
-### 6. Slice 3：角色頭像邊界解析、登場清單 NPC 本地頭像支援與媒體生命週期強化（分支 `fix/avatar-and-media-edge-cases`）
-* **分支**：`fix/avatar-and-media-edge-cases`（READY FOR GPT-6 REVIEW）
+### 6. Slice 3：角色頭像邊界解析、登場清單 NPC 本地頭像支援與媒體生命週期強化（Commit `934a0194ed31aeffa59887aa6aa68d03e4683498`）
+* **分支**：`fix/avatar-and-media-edge-cases`（經 GPT-6 審查核准並已快轉合併至 `main`，GitHub Actions Run `#38377191305` 全數 PASS）
 * **變更內容**：
   1. **`dashboard/avatar-service.js`**：
      - 修復 `cleanName()`：調整順序為先完整移除全形與半形括號說明語（消除「栞（初音＆栞）」殘留未閉合括號），再移除後綴「的聲音」，並以否定後行斷言 `/[、＆&]|(?<!日)和|與/` 分割並列發言人，徹底保護「日和」、「春咲日和」本名不被誤截斷為單字「日」。
@@ -66,6 +66,13 @@ DEPLOYED GH-PAGES HEAD: 810a60483277aa0e9813bbd0e8b45fd863c4141a (TruthVersion: 
      - `tests/test_media_service.js`（新增 Case 6 抽取非標準 voice 前綴、Case 7 重複開啟 still 彈窗之監聽器清理）。
      - `tests/test_speaker_view.js`（新建專屬單元測試，驗證 `renderSpeakerCard`、NPC `.png` 優先級與排序/過濾契約）。
      - `.github/workflows/ci.yml`（新增 `Run Speaker View Tests` 步驟）。
+
+### 7. Slices 1～3 整合發布與 TruthVersion 00610020 CDN 同步（Commit `f5e44450b32d41e2b23d6a887975bbdf49236758`）
+* **分支**：`gh-pages`（線上正式部署完成，[GitHub Pages 網址](https://smallorange0323.github.io/PCRD_transtool/)）
+* **變更內容**：
+  1. 完整打包包含 Slices 1～3 所有前端優化與回歸修正（附加 cache-busting 雜湊）。
+  2. 探測 So-net 官方 CDN 同步升級至 `TruthVersion: 00610020`，原子推進 `dashboard/redive_tw.db`（新增第 3 部第 17 章前 3 話資料）與 `dashboard/versions/version_history.json`。
+  3. 全量通過資產完整性、決定性打包與部署體積門禁（`302.18 MiB`）。
 
 ---
 
@@ -121,7 +128,7 @@ DEPLOYED GH-PAGES HEAD: 810a60483277aa0e9813bbd0e8b45fd863c4141a (TruthVersion: 
 | :--- | :--- | :---: | :--- |
 | **Slice 1** | `fix/reader-and-branch-ux` | **已合併至 `main` (`67730a44`)** | 修復 `dialogue-view.js`、`speaker-view.js` 淺色主題白字、移除旁白／選擇肢無效 `showCharaModal("")`、角色頭像／人名點擊 `stopPropagation`、排除 `'end'` 標記對片尾 CG 的阻斷、空話數／錯誤時隱藏 `#chara-badges-bar`、第 3 部分支劇情登場目錄章節歸類（限定 `story.isBranch === true`）、手機端 `.game-dialogue-header` `top: 0`。 |
 | **Slice 2** | `fix/pipeline-and-validation-gate` | **已合併至 `main` (`9c6b221e`)** | 同步更新 Source `dashboard/data/db_info.json`、補齊 `pipeline/validate.py` 6 個前端 JS 與 12 個外部 JS Dist 雜湊檢查、消除 `check_and_sync_upstream()` 提前寫入版本紀錄、統一於步驟 4.1 全量驗證成功後原子晉升 TruthVersion 與指紋（含同版號指紋變更與寫入失敗阻斷）、在 `.github/workflows/ci.yml` 補齊三大核心管線政策離線測試。 |
-| **Slice 3** | `fix/avatar-and-media-edge-cases` | **已完成待審 (READY FOR GPT-6 REVIEW)** | 修復 `AvatarService.cleanName()`「日和」截斷與括號順序（保護本名含「和」與 Exact-ID-First 契約）、`SpeakerView` NPC 本地 `.png` 頭像支援與 6 級 fallback 鏈、`MediaService` 7 位 groupId 抽取與 `_resumePendingCandidate` / `openStillPopup` 鍵盤監聽器清理，新建 `tests/test_speaker_view.js` 並納入 CI。 |
+| **Slice 3** | `fix/avatar-and-media-edge-cases` | **已合併至 `main` (`934a0194`)** | 修復 `AvatarService.cleanName()`「日和」截斷與括號順序（保護本名含「和」與 Exact-ID-First 契約）、`SpeakerView` NPC 本地 `.png` 頭像支援與 6 級 fallback 鏈、`MediaService` 7 位 groupId 抽取與 `_resumePendingCandidate` / `openStillPopup` 鍵盤監聽器清理，新建 `tests/test_speaker_view.js` 並納入 CI。 |
 
 ---
 

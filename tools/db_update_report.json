@@ -1,24 +1,24 @@
 {
   "status": "ok",
-  "truth_version": "00610018",
+  "truth_version": "00610020",
   "source": "sonet_official_cdn",
   "target_db_path": "E:\\OneDrive - 寰宇知識科技股份有限公司\\PCRD_tool\\dashboard\\redive_tw.db",
   "client_family": "0061",
   "manifest": {
     "name": "masterdata2_assetmanifest",
-    "url": "https://img-pc.so-net.tw/dl/Resources/00610018/Jpn/AssetBundles/Android/manifest/masterdata2_assetmanifest",
-    "sha256": "f6c606893704cf5caf98885c6b7e6235e762eb844f9f93757efe88536095b32c"
+    "url": "https://img-pc.so-net.tw/dl/Resources/00610020/Jpn/AssetBundles/Android/manifest/masterdata2_assetmanifest",
+    "sha256": "f236d3d4ef1f221084585214fc6a239d2616117454b72c3a373f53a4441d3414"
   },
   "bundle": {
     "bundle_name": "a/masterdata_master.unity3d",
-    "bundle_md5": "13c953167ed5b92b356492403dd0d30e",
-    "pool_hash": "435073fd5fb18bf4",
-    "bundle_size": 14315883,
-    "bundle_url": "https://img-pc.so-net.tw/dl/pool/AssetBundles/43/435073fd5fb18bf4"
+    "bundle_md5": "fc613d85699aef5daf7f13dd01a46ae9",
+    "pool_hash": "2e4c46e3566f6c45",
+    "bundle_size": 14311053,
+    "bundle_url": "https://img-pc.so-net.tw/dl/pool/AssetBundles/2e/2e4c46e3566f6c45"
   },
   "raw_db": {
-    "sha256": "f42910b8bc05a778a5f0cdc25bcbdba234fd74672f28cdac9efc2511ead0a804",
-    "size": 46223360
+    "sha256": "765932bd9fba0f5525199f51c6ff108c319be5f0713bebed9ffc146b5b3e385b",
+    "size": 46252032
   },
   "mapping": {
     "client_family": "0061",
@@ -26,18 +26,36 @@
     "schema_version": "1.0.0"
   },
   "content_diff": {
-    "has_meaningful_change": false,
+    "has_meaningful_change": true,
     "current_db_exists": true,
-    "sha256_identical": true,
+    "sha256_identical": false,
     "new_unit_ids": [],
     "removed_unit_ids": [],
-    "new_story_ids_count": 0,
+    "new_story_ids_count": 3,
     "new_event_ids_count": 0,
     "table_count_deltas": {},
     "current_db_sha256": "8f2a5555b3283b66d5a3afadb5bf1a1d646b197d6e7e4d68c84e851062045c72",
-    "staging_db_sha256": "8f2a5555b3283b66d5a3afadb5bf1a1d646b197d6e7e4d68c84e851062045c72",
-    "reason": "sha256_identical"
+    "staging_db_sha256": "f1b3c6358a78789723ee95057166e6dcca2822cb520dd62682b7dd0524a65810"
   },
-  "applied": false,
-  "reason": "content_identical"
+  "normalized_db": {
+    "sha256": "f1b3c6358a78789723ee95057166e6dcca2822cb520dd62682b7dd0524a65810",
+    "size": 2220032,
+    "table_count": 12,
+    "mapped_column_count": 103,
+    "table_stats": {
+      "story_detail": 2882,
+      "unit_data": 448,
+      "unit_profile": 344,
+      "event_story_data": 87,
+      "event_story_detail": 712,
+      "story_group_data": 432,
+      "chara_story_status": 1575,
+      "unit_rarity": 1964,
+      "unit_skill_data": 2664,
+      "unit_attack_pattern": 2994,
+      "skill_data": 7446,
+      "actual_unit_background": 322
+    }
+  },
+  "applied": true
 }
