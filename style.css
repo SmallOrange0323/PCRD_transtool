@@ -3850,6 +3850,10 @@ body {
         position: relative !important; /* 手機端 navbar 不置頂，防雙重 sticky 遮擋螢幕 */
     }
 
+    .game-dialogue-header {
+        top: 0;
+    }
+
     .gallery-header {
         position: sticky !important;
         top: 0 !important;
