@@ -64,9 +64,13 @@ window.SpeakerView = {
         const unitId = avatarService ? avatarService.getUnitId(realName, speakerAvatars) : null;
 
         let avatarHtml = "";
-        if (unitId && avatarService) {
+        if (avatarService && typeof avatarService.getAvatarHtml === "function") {
+            avatarHtml = avatarService.getAvatarHtml(realName, speakerAvatars);
+        } else if (unitId && avatarService && typeof avatarService.getUrlCandidates === "function") {
             const candidates = avatarService.getUrlCandidates(unitId);
-            avatarHtml = `<img src="${candidates[0]}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='${candidates[1] || candidates[0]}'">`;
+            const firstSrc = candidates.find(c => c.endsWith('.png')) || candidates[0];
+            const fallbackSrc = candidates.find(c => c !== firstSrc) || firstSrc;
+            avatarHtml = `<img src="${firstSrc}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src='${fallbackSrc}';">`;
         } else {
             avatarHtml = `<div class="npc-avatar-placeholder" style="font-size: 1.2rem; font-weight: bold; color: var(--primary-dark);">${safeRealName.substring(0, 2)}</div>`;
         }

@@ -2,8 +2,8 @@
 
 ```text
 STATUS: ACTIVE REVIEW & HANDOVER RECORD
-BASE MAIN COMMIT: 67730a4475a36246ab59aa1a54a7a233851d7620
-CURRENT SLICE BRANCH: fix/pipeline-and-validation-gate
+BASE MAIN COMMIT: 9c6b221e95b37daf1a293f8adb593a96adcb5afc
+CURRENT SLICE BRANCH: fix/avatar-and-media-edge-cases
 DEPLOYED GH-PAGES HEAD: 810a60483277aa0e9813bbd0e8b45fd863c4141a (TruthVersion: 00610018)
 ```
 
@@ -41,6 +41,32 @@ DEPLOYED GH-PAGES HEAD: 810a60483277aa0e9813bbd0e8b45fd863c4141a (TruthVersion: 
   2. **`dashboard/map.js`**：空對白話數與載入錯誤時在當前權杖下清除並隱藏 `#chara-badges-bar`；`resolveAppearanceStoryMeta()` 針對 `story.isBranch === true && part === 3 && groupId > 2200 && groupId < 2300` 推導 `第${groupId - 2200}章`，同時保留一般非分支主線之「序章／幕間」判定。
   3. **`dashboard/style.css`**：行動端 `@media (max-width: 768px)` 下將 `.game-dialogue-header` 之 `top` 設為 `0`。
 
+### 5. Slice 2：管線門禁、版本狀態原子晉升與 CI 強化（Commit `9c6b221e95b37daf1a293f8adb593a96adcb5afc`）
+* **分支**：`fix/pipeline-and-validation-gate`（經 GPT-6 審查通過並已快轉合併至 `main`，GitHub Actions Run `#38361428304` 全數 PASS）
+* **變更內容**：
+  1. **`dashboard/data/db_info.json`**：同步更新 Source 端之雜湊與大小，對齊實際 `redive_tw.db`（`db_version: "hash_8f2a5555b328"`、`tw_size: 2220032`、`metadata_version: "2769c249bdd4"`）。
+  2. **`pipeline/validate.py`**：補齊 6 個核心前端 JS 檔案之存在性檢查，並對 Dist 12 個外部 JS 與 `style.css` 執行版本雜湊引用校驗。
+  3. **`pipeline/update.py`**：消除 `check_and_sync_upstream()` 提前推進版本紀錄的漏洞（GPT-6 Review P1），統一由 `run_pipeline_update()` 步驟 4.1 在全量驗證成功後原子晉升 TruthVersion 與指紋；支援相同版號指紋變更推進，並在寫入失敗時嚴格回傳 `1` 阻斷發布流程。
+  4. **CI 測試與離線隔離**：重構三大更新管線政策測試（`test_update_pipeline_c2_implementation`、`test_content_driven_update_policy`、`test_direct_sonet_db_pipeline_integration`）並在 `.github/workflows/ci.yml` 補上獨立離線測試步驟（GPT-6 Review P2）。
+
+### 6. Slice 3：角色頭像邊界解析、登場清單 NPC 本地頭像支援與媒體生命週期強化（分支 `fix/avatar-and-media-edge-cases`）
+* **分支**：`fix/avatar-and-media-edge-cases`（READY FOR GPT-6 REVIEW）
+* **變更內容**：
+  1. **`dashboard/avatar-service.js`**：
+     - 修復 `cleanName()`：調整順序為先完整移除全形與半形括號說明語（消除「栞（初音＆栞）」殘留未閉合括號），再移除後綴「的聲音」，並以否定後行斷言 `/[、＆&]|(?<!日)和|與/` 分割並列發言人，徹底保護「日和」、「春咲日和」本名不被誤截斷為單字「日」。
+     - 修復 `getAvatarHtml()`：傳遞原始 `charaName` 給 `getUnitId()`，確保「佩可（現實）」等現實篇章換裝括號名稱能被優先精準解析為對應 Unit ID。
+  2. **`dashboard/speaker-view.js`**：
+     - `renderSpeakerCard()`：優先使用 `avatarService.getAvatarHtml(realName, speakerAvatars)`，享有完整本地 NPC `.png` 與 6 級 CDN fallback 鏈；降級路徑（`getUrlCandidates`）優先選取 `.png` 並補上 `this.onerror=null` 防止循環。
+  3. **`dashboard/media-service.js`**：
+     - `getVoiceCandidates()`：以 `voiceName.match(/\d{7}/)` 安全抽取 7 位數字 groupId，解決固定 7 字元切片脆弱性。
+     - `_playVoiceSequential()`：在 `onStarted` 時清理 `this._resumePendingCandidate = null`，避免播放中重複觸發。
+     - `openStillPopup()`：在綁定鍵盤事件前先清理舊的 `_stillPopupKeyHandler`，防止重複開啟事件監聽器洩漏。
+  4. **回歸測試與 CI**：
+     - `tests/test_avatar_service.js`（新增 Test 19 覆蓋「日和」、括號內＆、連接詞分割等情境）。
+     - `tests/test_media_service.js`（新增 Case 6 抽取非標準 voice 前綴、Case 7 重複開啟 still 彈窗之監聽器清理）。
+     - `tests/test_speaker_view.js`（新建專屬單元測試，驗證 `renderSpeakerCard`、NPC `.png` 優先級與排序/過濾契約）。
+     - `.github/workflows/ci.yml`（新增 `Run Speaker View Tests` 步驟）。
+
 ---
 
 ## 二、 全系統深度審查發現清單（System Review Findings）
@@ -48,17 +74,18 @@ DEPLOYED GH-PAGES HEAD: 810a60483277aa0e9813bbd0e8b45fd863c4141a (TruthVersion: 
 以下為針對全系統進行唯讀審查後，按模組與證據等級彙整之問題清單：
 
 ### A. 功能與邏輯正確性（Functional & Logic Bugs）
-1. **`[VERIFIED]` `AvatarService.cleanName()` 誤截斷含「和／與」的角色本名（待於 Slice 3 處理）**
+1. **`[VERIFIED]` `AvatarService.cleanName()` 誤截斷含「和／與」的角色本名（已於 Slice 3 修復）**
    - 位置：`dashboard/avatar-service.js` `cleanName()`（`#L828-L834`）與 `getAvatarHtml()`（`#L901-L904`）。
-   - 現象：`name.split(/[、＆&]|和|與/)[0]` 會將「日和」、「春咲日和」截斷為 `"日"`，在無顯式 `unit_id` 的舊劇本或徽章查找時導致 `getUnitId("日")` 失敗；且先 `split` 再剝除括號會使 `"栞（初音＆栞）"` 殘留未閉合括號 `"栞（初音"`。
+   - 修復：調整為先完整剝除全形／半形括號說明語（消除「栞（初音＆栞）」未閉合括號），再移除後綴「的聲音」，並以否定後行斷言 `/[、＆&]|(?<!日)和|與/` 分割並列發言人，徹底保護「日和」、「春咲日和」本名不被誤截斷為單字「日」；`getAvatarHtml()` 傳遞原始 `charaName` 給 `getUnitId()` 確保換裝名稱優先 Exact 解析。
 2. **`[VERIFIED]` 第 3 部分支劇情在角色登場目錄中被歸入「其他」（已於 Slice 1 `67730a44` 修復並合併）**
 3. **`[VERIFIED]` 空對白話數與對白載入失敗時，`#chara-badges-bar` 卡在載入中（已於 Slice 1 `67730a44` 修復並合併）**
-4. **`[VERIFIED]` `SpeakerView.renderSpeakerCard` 繞過 `AvatarService` 導致 NPC `.png` 頭像破圖（待於 Slice 3 處理）**
+4. **`[VERIFIED]` `SpeakerView.renderSpeakerCard` 繞過 `AvatarService` 導致 NPC `.png` 頭像破圖（已於 Slice 3 修復）**
    - 位置：`dashboard/speaker-view.js#L64-L72`。
-   - 現象：直接取 `candidates[0]` 與 `candidates[1]`（皆為 `.webp`），跳過了 `candidates[3..]` 的本地 `.png`（NPC 頭像主要格式），且 `onerror` 未設 `this.onerror=null`。
+   - 修復：優先呼叫 `avatarService.getAvatarHtml(realName, speakerAvatars)` 取得包含本地 NPC `.png` 與 6 級 CDN fallback 鏈之頭像；降級路徑（`getUrlCandidates`）優先選取 `.png` 並補上 `this.onerror=null` 防止死循環。
 5. **`[VERIFIED]` `DialogueView` 旁白／選擇肢無效點擊、事件冒泡與 `'end'` 標記阻斷片尾 CG（已於 Slice 1 `67730a44` 修復並合併）**
-6. **`[VERIFIED]` `MediaService` 語音路徑固定 7 字元切片與 `_resumePendingCandidate` 殘留（待於 Slice 3 處理）**
-   - 位置：`dashboard/media-service.js#L25-L36`、`#L181-L209`、`#L248-L262`、`#L374-L377`。
+6. **`[VERIFIED]` `MediaService` 語音路徑固定 7 字元切片與 `_resumePendingCandidate` 殘留（已於 Slice 3 修復）**
+   - 位置：`dashboard/media-service.js#L25-L36`、`#L181-L209`、`#L371-L380`。
+   - 修復：以 `voiceName.match(/\d{7}/)` 支援非標準前綴語音之 7 位 groupId 抽取；在播放開始時清理 `_resumePendingCandidate` 避免重複觸發；在重複開啟 still 彈窗前清理舊的鍵盤 Escape 監聽器。
 
 ### B. 本地開發與打包環境對等性、管線門禁與 CI（Pipeline, Gate & CI — 已於 Slice 2 處理）
 1. **`[VERIFIED]` Source 端 `dashboard/data/db_info.json` 與 `dist_story_map/data/db_info.json` 脫節（已於 Slice 2 修復）**
@@ -93,8 +120,8 @@ DEPLOYED GH-PAGES HEAD: 810a60483277aa0e9813bbd0e8b45fd863c4141a (TruthVersion: 
 | 階段 | 分支名稱 | 狀態 | 核心目標與邊界 |
 | :--- | :--- | :---: | :--- |
 | **Slice 1** | `fix/reader-and-branch-ux` | **已合併至 `main` (`67730a44`)** | 修復 `dialogue-view.js`、`speaker-view.js` 淺色主題白字、移除旁白／選擇肢無效 `showCharaModal("")`、角色頭像／人名點擊 `stopPropagation`、排除 `'end'` 標記對片尾 CG 的阻斷、空話數／錯誤時隱藏 `#chara-badges-bar`、第 3 部分支劇情登場目錄章節歸類（限定 `story.isBranch === true`）、手機端 `.game-dialogue-header` `top: 0`。 |
-| **Slice 2** | `fix/pipeline-and-validation-gate` | **已完成待審 (READY FOR GPT-6 REVIEW)** | 同步更新 Source `dashboard/data/db_info.json`、補齊 `pipeline/validate.py` 6 個前端 JS 與 12 個外部 JS Dist 雜湊檢查、消除 `check_and_sync_upstream()` 提前寫入版本紀錄、統一於步驟 4.1 全量驗證成功後原子晉升 TruthVersion 與指紋（含同版號指紋變更與寫入失敗阻斷）、在 `.github/workflows/ci.yml` 補齊三大核心管線政策離線測試。 |
-| **Slice 3** | `fix/avatar-and-media-edge-cases` | **待執行 (PENDING)** | 修復 `AvatarService.cleanName()`「日和」截斷與括號順序（嚴守 Exact-ID-First 契約）、`SpeakerView` NPC `.png` 頭像支援、`MediaService` `_resumePendingCandidate` 清理。 |
+| **Slice 2** | `fix/pipeline-and-validation-gate` | **已合併至 `main` (`9c6b221e`)** | 同步更新 Source `dashboard/data/db_info.json`、補齊 `pipeline/validate.py` 6 個前端 JS 與 12 個外部 JS Dist 雜湊檢查、消除 `check_and_sync_upstream()` 提前寫入版本紀錄、統一於步驟 4.1 全量驗證成功後原子晉升 TruthVersion 與指紋（含同版號指紋變更與寫入失敗阻斷）、在 `.github/workflows/ci.yml` 補齊三大核心管線政策離線測試。 |
+| **Slice 3** | `fix/avatar-and-media-edge-cases` | **已完成待審 (READY FOR GPT-6 REVIEW)** | 修復 `AvatarService.cleanName()`「日和」截斷與括號順序（保護本名含「和」與 Exact-ID-First 契約）、`SpeakerView` NPC 本地 `.png` 頭像支援與 6 級 fallback 鏈、`MediaService` 7 位 groupId 抽取與 `_resumePendingCandidate` / `openStillPopup` 鍵盤監聽器清理，新建 `tests/test_speaker_view.js` 並納入 CI。 |
 
 ---
 

@@ -165,4 +165,48 @@ console.log('\n開始執行 Movie Feature 聚焦測試案例 (5項指標)...');
     console.log('  [PASS] 5. close popup clears iframe/body');
 }
 
+// 6. getVoiceCandidates non-standard prefix robustness
+{
+    const candidates1 = MediaService.getVoiceCandidates('vo_1001001_001');
+    assert.strictEqual(candidates1[0], 'https://pcrd-story-voice.pages.dev/story_vo/1001001/vo_1001001_001.m4a');
+    const candidates2 = MediaService.getVoiceCandidates('1001001_001');
+    assert.strictEqual(candidates2[0], 'https://pcrd-story-voice.pages.dev/story_vo/1001001/1001001_001.m4a');
+    console.log('  [PASS] 6. non-standard voice prefix extracts 7-digit groupId correctly');
+}
+
+// 7. openStillPopup clears existing keydown handler on repeat open
+{
+    let removeCount = 0;
+    let addCount = 0;
+    global.document = {
+        getElementById: () => ({ classList: { add() {}, remove() {} }, removeAttribute() {} }),
+        createElement: () => ({ classList: { add() {} }, appendChild() {}, removeAttribute() {} }),
+        body: { appendChild() {} },
+        addEventListener: (evt, fn) => { if (evt === 'keydown') addCount++; },
+        removeEventListener: (evt, fn) => { if (evt === 'keydown') removeCount++; }
+    };
+    global.requestAnimationFrame = (fn) => fn();
+
+    const mockEvent = {
+        target: {
+            closest: () => ({
+                querySelector: () => ({ src: 'still_test.webp', dataset: {} })
+            })
+        }
+    };
+
+    MediaService.openStillPopup(mockEvent);
+    assert.strictEqual(addCount, 1);
+    assert.strictEqual(removeCount, 0);
+
+    // 重複開啟第二次：必須先 removeEventListener 舊 handler
+    MediaService.openStillPopup(mockEvent);
+    assert.strictEqual(removeCount, 1, '重複開啟前必須先移除舊鍵盤監聽器');
+    assert.strictEqual(addCount, 2);
+
+    MediaService.closeStillPopup();
+    assert.strictEqual(removeCount, 2, '關閉時必須再次移除鍵盤監聽器');
+    console.log('  [PASS] 7. openStillPopup cleans up previous keydown listener before binding new one');
+}
+
 console.log('\n✅ All MediaService and Movie Feature tests passed successfully!');

@@ -824,12 +824,16 @@ globalScope.AvatarService = {
         return null;
     },
 
-    // 清理名稱（移除括號限定語、「的聲音」等）
+    // 清理名稱（移除括號限定語、「的聲音」等，保護本名含「和」之角色）
     cleanName(name) {
         if (!name) return "";
-        let clean = name.split(/[、＆&]|和|與/)[0].trim();
+        let clean = String(name).trim();
+        // 1. 先完整移除全形與半形括號說明語（例如換裝稱號、雙人組合標記）
         clean = clean.replace(/（[^）]+）/g, "").replace(/\([^)]+\)/g, "").trim();
-        if (clean.endsWith("的聲音")) clean = clean.replace(/的聲音$/, "");
+        // 2. 移除特定後綴語
+        if (clean.endsWith("的聲音")) clean = clean.replace(/的聲音$/, "").trim();
+        // 3. 處理並列發言人（使用否定後行斷言避免將「日和」之本名「和」視為連接詞）
+        clean = clean.split(/[、＆&]|(?<!日)和|與/)[0].trim();
         return clean;
     },
 
@@ -900,7 +904,7 @@ globalScope.AvatarService = {
     // 公開 API：取得最佳頭像 img 元素 HTML (根據角色名稱，通用推斷路徑)
     getAvatarHtml(charaName, externalAvatars = {}) {
         const cleanName = this.cleanName(charaName);
-        const unitId = this.getUnitId(cleanName, externalAvatars);
+        const unitId = this.getUnitId(charaName, externalAvatars);
 
         if (!unitId || unitId < 100000) {
             return this.getFallbackHtml(cleanName);

@@ -78,6 +78,9 @@ jobs:
           node tests/test_chara_modal.js
           node tests/test_player_name_identity.js
 
+      - name: Run Speaker View Tests
+        run: node tests/test_speaker_view.js
+
       - name: Run Media Service Tests
         run: node tests/test_media_service.js
 

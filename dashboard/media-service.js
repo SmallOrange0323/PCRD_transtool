@@ -27,7 +27,8 @@ console.log("media-service.js loaded");
          */
         getVoiceCandidates(voiceName) {
             if (!voiceName || typeof voiceName !== 'string') return [];
-            const groupId = voiceName.substring(7, 14);
+            const match = voiceName.match(/\d{7}/);
+            const groupId = match ? match[0] : voiceName.substring(7, 14);
             return [
                 `https://pcrd-story-voice.pages.dev/story_vo/${groupId}/${voiceName}.m4a`,
                 `https://prcn-sound.estertion.win/story_vo/${groupId}/${voiceName}.m4a`,
@@ -184,6 +185,7 @@ console.log("media-service.js loaded");
                             return;
                         }
                         clearCandidateTimeout();
+                        this._resumePendingCandidate = null;
                         if (this._voicePausedIntent) {
                             try { audio.pause(); } catch (e) { /* ignore */ }
                             return;
@@ -362,8 +364,10 @@ console.log("media-service.js loaded");
                     window.StoryAssetService.handleImageError(this);
                 };
             } else {
-                popupImg.removeAttribute('data-candidates');
-                popupImg.removeAttribute('data-step');
+                if (typeof popupImg.removeAttribute === 'function') {
+                    popupImg.removeAttribute('data-candidates');
+                    popupImg.removeAttribute('data-step');
+                }
                 popupImg.onerror = null;
             }
 
@@ -371,6 +375,10 @@ console.log("media-service.js loaded");
                 overlay.classList.add('active');
             });
 
+            if (this._stillPopupKeyHandler) {
+                document.removeEventListener('keydown', this._stillPopupKeyHandler);
+                this._stillPopupKeyHandler = null;
+            }
             this._stillPopupKeyHandler = (e) => {
                 if (e.key === 'Escape') this.closeStillPopup();
             };

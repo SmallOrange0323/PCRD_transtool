@@ -535,5 +535,52 @@ test("Test 18 — Normal non-collision and placeholder-only regression coverage"
     assert(!htmlPlaceholder.includes("<img"));
 });
 
+// Test 19 — cleanName bracket order, multi-speaker, and Hiyori preservation
+test("Test 19 — cleanName bracket order, multi-speaker, and Hiyori preservation", () => {
+    // 1. 本名含「和」不被誤截斷為「日」
+    assert.strictEqual(AvatarService.cleanName("日和"), "日和");
+    assert.strictEqual(AvatarService.cleanName("春咲日和"), "春咲日和");
+    assert.strictEqual(AvatarService.cleanName("春咲 日和"), "春咲 日和");
+    assert.strictEqual(AvatarService.cleanName("日和（新年）"), "日和");
+    assert.strictEqual(AvatarService.cleanName("日和（公主）"), "日和");
+
+    // 2. 括號內含 & 不留未閉合括號
+    assert.strictEqual(AvatarService.cleanName("栞（初音＆栞）"), "栞");
+
+    // 3. 連接詞與並列發言人正確分割
+    assert.strictEqual(AvatarService.cleanName("佩可、可可蘿"), "佩可");
+    assert.strictEqual(AvatarService.cleanName("初音＆栞"), "初音");
+    assert.strictEqual(AvatarService.cleanName("佩可&凱留"), "佩可");
+    assert.strictEqual(AvatarService.cleanName("佩可和可可蘿"), "佩可");
+    assert.strictEqual(AvatarService.cleanName("佩可與可可蘿"), "佩可");
+    assert.strictEqual(AvatarService.cleanName("佩可和日和"), "佩可");
+    assert.strictEqual(AvatarService.cleanName("日和與佩可"), "日和");
+    assert.strictEqual(AvatarService.cleanName("日和、佩可"), "日和");
+    assert.strictEqual(AvatarService.cleanName("可可蘿的聲音"), "可可蘿");
+
+    // 4. getUnitId 與 getAvatarHtml 不退化成無效的「日」
+    // (a) 在 realityAvatarMap (isReality = true) 中：
+    const unitIdHiyoriReality = AvatarService.getUnitId("日和", {}, true);
+    assert.strictEqual(unitIdHiyoriReality, 100132, "日和 在 realityAvatarMap 中必須正確解析為 100132");
+    const unitIdHarusakiReality = AvatarService.getUnitId("春咲日和", {}, true);
+    assert.strictEqual(unitIdHarusakiReality, 100132, "春咲日和 在 realityAvatarMap 中必須正確解析為 100132");
+
+    // (b) 一般外部 speakerAvatars 查找：即使傳入「日和（新年）」也能正確依據 cleanName 查到「日和」
+    const speakerAvatars = { "日和": 100101 };
+    const unitIdHiyori = AvatarService.getUnitId("日和", speakerAvatars);
+    assert.strictEqual(unitIdHiyori, 100101, "日和 在 speakerAvatars 中必須正確解析為 100101 而非 null");
+    const unitIdHiyoriNewYear = AvatarService.getUnitId("日和（新年）", speakerAvatars);
+    assert.strictEqual(unitIdHiyoriNewYear, 100101, "日和（新年） 必須透過 cleanName 解析出 日和 並取得 100101");
+
+    // (c) 透過 speakerAvatars 取得頭像 HTML
+    const htmlHiyori = AvatarService.getAvatarHtml("日和", speakerAvatars);
+    assert(htmlHiyori.includes("icon/unit/100111.png"), "日和 頭像必須指向 100111.png 而非文字佔位符");
+    assert(!htmlHiyori.includes("npc-avatar-placeholder"), "日和 頭像不得降級為佔位符");
+
+    // (d) 現實篇章直接解析頭像（realityAvatarMap Exact 解析）
+    const htmlHiyoriReality = AvatarService.getAvatarHtml("日和", { "日和": 100132 });
+    assert(htmlHiyoriReality.includes("icon/unit/100132.png"), "日和 現實篇頭像必須指向 100132.png");
+});
+
 console.log(`\n✅ All ${testsPassed} AvatarService Phase 6 tests passed successfully!`);
 })();
