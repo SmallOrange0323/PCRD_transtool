@@ -1055,6 +1055,44 @@ test('Test 18 — successful retry removes failure label and retry button', () =
     }
 });
 
+test('Test 19 — resolveAppearanceStoryMeta classifies Part 3 branch story under its chapter via groupId', () => {
+    const mockMapModule = {
+        events: [],
+        getExtraMembership() {
+            return null;
+        },
+        getStoryById(id) {
+            if (id === 2213101) {
+                return {
+                    id: 2213101,
+                    chapter: '分支劇情 XLIX',
+                    title: '棘手大小姐們的觀光約會？',
+                    groupId: 2213,
+                    part: 3,
+                    isEvent: false,
+                    type: 'main',
+                    isBranch: true
+                };
+            }
+            return null;
+        },
+        normalizeDisplayTitle(val) {
+            return String(val || '').trim();
+        }
+    };
+
+    const mapCode = require('fs').readFileSync(path.join(__dirname, '../dashboard/map.js'), 'utf8');
+    const match = mapCode.match(/resolveAppearanceStoryMeta\(storyId\)\s*\{[\s\S]*?\n    \},/);
+    assert(match, 'Must find resolveAppearanceStoryMeta in map.js');
+    const fnBody = match[0].replace(/resolveAppearanceStoryMeta\(storyId\)\s*\{/, '').replace(/\},\s*$/, '');
+    mockMapModule.resolveAppearanceStoryMeta = new Function('storyId', fnBody);
+
+    const res = mockMapModule.resolveAppearanceStoryMeta(2213101);
+    assert.deepStrictEqual(res.path, ['主線劇情', '第3部', '第13章'], 'Part 3 branch story must map to 第13章 instead of 其他');
+    assert.strictEqual(res.label, '分支劇情 XLIX｜棘手大小姐們的觀光約會？');
+    assert.strictEqual(res.canNavigate, true);
+});
+
 runTests().catch(err => {
     console.error('Test execution failed:', err);
     process.exit(1);

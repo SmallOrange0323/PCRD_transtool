@@ -2757,6 +2757,11 @@ const QuestMapModule = {
 
                 if (!rawDialogueList || rawDialogueList.length === 0) {
                     const liveBoard = document.getElementById('dialogue-board');
+                    const badgesBar = document.getElementById('chara-badges-bar');
+                    if (badgesBar && isCurrentStory()) {
+                        badgesBar.style.display = 'none';
+                        badgesBar.innerHTML = '';
+                    }
                     if (liveBoard && isCurrentStory()) {
                         window.DialogueView.renderEmpty(liveBoard);
                     }
@@ -2810,6 +2815,11 @@ const QuestMapModule = {
         } catch (err) {
             if (isCurrentStory()) {
                 console.error("加載台詞失敗:", err);
+                const badgesBar = document.getElementById('chara-badges-bar');
+                if (badgesBar) {
+                    badgesBar.style.display = 'none';
+                    badgesBar.innerHTML = '';
+                }
                 const liveBoard = document.getElementById('dialogue-board');
                 if (liveBoard && isCurrentStory()) {
                     window.DialogueView.renderError(liveBoard, storyId);
@@ -3203,6 +3213,9 @@ const QuestMapModule = {
             const part = Number(story.part) || Number(partMatch?.[1]) || null;
             const partLabel = part ? `第${part}部` : '部別未明';
             let chapterLabel = chapterMatch ? `第${chapterMatch[1]}章` : '';
+            if (!chapterLabel && part === 3 && groupId > 2200 && groupId < 2300) {
+                chapterLabel = `第${groupId - 2200}章`;
+            }
             if (!chapterLabel && /序章/.test(chapter)) chapterLabel = '序章';
             if (!chapterLabel && /幕間/.test(chapter)) chapterLabel = '幕間';
             if (!chapterLabel) chapterLabel = '其他';

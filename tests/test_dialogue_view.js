@@ -251,18 +251,43 @@ test("Test 6 — Player-name substitution & escaping", () => {
 });
 
 // Test 7 — Ending still auto-append
-test("Test 7 — Ending still auto-append when no still in dialogue", () => {
+test("Test 7 — Ending still auto-append when no still in dialogue or only 'end' control marker", () => {
     const { html } = DialogueView.generateDialogueHtml({
         storyId: 1001001,
-        dialogueList: [{ name: "佑樹", words: "......" }],
+        dialogueList: [
+            { name: "佑樹", words: "......" },
+            { type: "still", still_id: "end" }
+        ],
         currentStoryObj: { still_id: "999001" },
         speakerAvatars: {},
         resolveRealName: (n) => n
     });
 
-    assert(html.includes("✨ 劇情插畫"), "Should append ending still label");
+    assert(html.includes("✨ 劇情插畫"), "Should append ending still label even when 'end' marker exists");
     assert(html.includes("still/scenario/999001.webp"), "Should render ending still image");
     assert(html.includes("QuestMapModule.openStillPopup(event)"), "Ending still must have openStillPopup contract");
+});
+
+// Test 7B — Narrator/choice speaker span has no dead showCharaModal("") while playable speaker stops propagation
+test("Test 7B — Narrator/choice speaker has no dead modal click and playable speaker stops propagation", () => {
+    const { html: narratorHtml } = DialogueView.generateDialogueHtml({
+        storyId: 1001001,
+        dialogueList: [
+            { name: "旁白", words: "靜謐的森林。" },
+            { name: "【選擇肢】1", words: "前進吧！" }
+        ],
+        speakerAvatars: {},
+        resolveRealName: (n) => n
+    });
+    assert(!narratorHtml.includes("showCharaModal"), "Narrator and choice rows must not bind showCharaModal");
+
+    const { html: playableHtml } = DialogueView.generateDialogueHtml({
+        storyId: 1001001,
+        dialogueList: [{ name: "可可蘿", words: "主人，早安。" }],
+        speakerAvatars: { "可可蘿": 105701 },
+        resolveRealName: (n) => n
+    });
+    assert(playableHtml.includes('onclick="event.stopPropagation(); QuestMapModule.showCharaModal(&quot;可可蘿&quot;)"'), "Playable avatar/speaker must stopPropagation before opening modal");
 });
 
 // Test 8 — Error UI retry contract

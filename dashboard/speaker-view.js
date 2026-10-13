@@ -117,7 +117,7 @@ window.SpeakerView = {
             <div class="map-container glass-card">
                 <div class="breadcrumb-container" style="display: flex; align-items: center; gap: 12px; font-size: 0.95rem;">
                     <span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;"><span style="font-size: 1.1rem;">🏠</span> 劇情大廳</span>
-                    <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
+                    <span class="breadcrumb-separator" style="color: var(--text-muted, #9e7a8f);">/</span>
                     <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">👥 登場角色</span>
                 </div>
                 <div class="map-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 15px; margin-bottom: 20px;">
@@ -134,7 +134,7 @@ window.SpeakerView = {
                                style="width: 100%; padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(0,0,0,0.2); color: #fff; font-size: 0.9rem; outline: none; transition: border 0.2s;">
                     </div>
                     <div style="display: flex; align-items: center; gap: 8px;">
-                        <span style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">排序方式：</span>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem;">排序方式：</span>
                         <select onchange="QuestMapModule.handleSpeakerSort(this.value)" 
                                 style="padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(20,20,20,0.8); color: #fff; font-size: 0.9rem; outline: none; cursor: pointer;">
                             <option value="appearances-desc" ${sortVal === 'appearances-desc' ? 'selected' : ''}>登場話數：多 ➔ 少</option>

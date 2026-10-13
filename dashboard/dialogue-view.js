@@ -43,7 +43,7 @@ console.log("dialogue-view.js loaded");
         renderLoading(containerEl) {
             if (!containerEl) return;
             containerEl.innerHTML = `
-                <div style="text-align: center; color: rgba(255,255,255,0.5); padding: 40px 0; font-size: 0.9rem;">
+                <div style="text-align: center; color: var(--text-secondary); padding: 40px 0; font-size: 0.9rem;">
                     <span class="loading-spinner" style="display: inline-block; animation: spin 1s linear infinite; margin-right: 5px;">🔄</span> 正在載入本地官方繁中對白，請稍候...
                 </div>
             `;
@@ -55,7 +55,7 @@ console.log("dialogue-view.js loaded");
          */
         renderEmpty(containerEl) {
             if (!containerEl) return;
-            containerEl.innerHTML = `<div style="color: rgba(255,255,255,0.4); text-align: center; font-size: 0.9rem; padding: 20px;">本話無語音對白數據。</div>`;
+            containerEl.innerHTML = `<div style="color: var(--text-secondary); text-align: center; font-size: 0.9rem; padding: 20px;">本話無語音對白數據。</div>`;
         },
 
         /**
@@ -260,7 +260,7 @@ console.log("dialogue-view.js loaded");
                     }
 
                     avatarHtml = `
-                        <div class="game-chara-avatar-wrapper" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')}${modalUnitIdArg})" style="cursor: pointer;">
+                        <div class="game-chara-avatar-wrapper" onclick="event.stopPropagation(); QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')}${modalUnitIdArg})" style="cursor: pointer;">
                              <div class="game-chara-avatar">
                                  ${avatarContent}
                              </div>
@@ -270,13 +270,16 @@ console.log("dialogue-view.js loaded");
 
                 const voiceBtn = item.voice ? `<button type="button" class="dialogue-voice-btn" onclick="event.stopPropagation(); QuestMapModule.playVoice('${item.voice}')" title="播放語音" aria-label="播放語音">🔊</button>` : '';
                 const voiceAttr = item.voice ? ` data-voice="${item.voice}"` : '';
+                const speakerAttrs = realNameForBtn
+                    ? ` onclick="event.stopPropagation(); QuestMapModule.showCharaModal(${JSON.stringify(realNameForBtn).replace(/"/g, '&quot;')}${modalUnitIdArg})" style="cursor: pointer;" title="查看角色資料"`
+                    : '';
 
                 html += `
                     <div class="game-dialogue-line ${speakerClass}" data-dialogue-index="${index}"${voiceAttr} onclick="QuestMapModule.handleDialogueLineClick(${index}, event)">
                         ${avatarHtml}
                         <div class="game-dialogue-content">
                             <div class="game-dialogue-speaker-wrap">
-                                <span class="game-dialogue-speaker" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realNameForBtn).replace(/"/g, '&quot;')}${modalUnitIdArg})" style="cursor: pointer;" title="查看角色資料">
+                                <span class="game-dialogue-speaker"${speakerAttrs}>
                                     ${safeSpeaker}
                                 </span>
                                 ${voiceBtn}
@@ -289,7 +292,11 @@ console.log("dialogue-view.js loaded");
 
             // 如果該話擁有 CG 插畫且對白 JSON 內沒有 special still 節點，則自動在末端追加完結 CG 圖片
             if (currentStoryObj && (currentStoryObj.still_id || currentStoryObj.bg_id)) {
-                const hasStillInList = (dialogueList || []).some(item => item.type === 'still');
+                const hasStillInList = (dialogueList || []).some(item => {
+                    if (!item || item.type !== 'still') return false;
+                    const stillId = item.still_id || item.still;
+                    return Boolean(stillId && String(stillId).trim().toLowerCase() !== 'end');
+                });
                 if (!hasStillInList) {
                     const bottomStillImgHtml = currentStoryObj.still_id
                         ? window.StoryAssetService.getStillHtml(currentStoryObj.still_id, 'dialogue-still-img still-clickable', '')
