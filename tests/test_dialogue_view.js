@@ -251,7 +251,7 @@ test("Test 6 — Player-name substitution & escaping", () => {
 });
 
 // Test 7 — Ending still auto-append
-test("Test 7 — Ending still auto-append when no still in dialogue or only 'end' control marker", () => {
+test("Test 7 — Ending still auto-append when no still in dialogue or only 'end' control marker, but not when valid still exists", () => {
     const { html } = DialogueView.generateDialogueHtml({
         storyId: 1001001,
         dialogueList: [
@@ -266,6 +266,22 @@ test("Test 7 — Ending still auto-append when no still in dialogue or only 'end
     assert(html.includes("✨ 劇情插畫"), "Should append ending still label even when 'end' marker exists");
     assert(html.includes("still/scenario/999001.webp"), "Should render ending still image");
     assert(html.includes("QuestMapModule.openStillPopup(event)"), "Ending still must have openStillPopup contract");
+
+    const { html: htmlWithValidStill } = DialogueView.generateDialogueHtml({
+        storyId: 1001001,
+        dialogueList: [
+            { name: "佑樹", words: "......" },
+            { type: "still", still_id: "1000101" },
+            { type: "still", still_id: "end" }
+        ],
+        currentStoryObj: { still_id: "999001" },
+        speakerAvatars: {},
+        resolveRealName: (n) => n
+    });
+
+    assert(htmlWithValidStill.includes("still/scenario/1000101.webp"), "Should render inline valid still image");
+    assert(!htmlWithValidStill.includes("still/scenario/999001.webp"), "Must NOT append ending still when valid still already exists in dialogueList");
+    assert.strictEqual((htmlWithValidStill.match(/✨ 劇情插畫/g) || []).length, 1, "Should only render one still block");
 });
 
 // Test 7B — Narrator/choice speaker span has no dead showCharaModal("") while playable speaker stops propagation

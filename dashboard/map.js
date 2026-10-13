@@ -3213,7 +3213,13 @@ const QuestMapModule = {
             const part = Number(story.part) || Number(partMatch?.[1]) || null;
             const partLabel = part ? `第${part}部` : '部別未明';
             let chapterLabel = chapterMatch ? `第${chapterMatch[1]}章` : '';
-            if (!chapterLabel && part === 3 && groupId > 2200 && groupId < 2300) {
+            if (
+                !chapterLabel &&
+                story.isBranch === true &&
+                part === 3 &&
+                groupId > 2200 &&
+                groupId < 2300
+            ) {
                 chapterLabel = `第${groupId - 2200}章`;
             }
             if (!chapterLabel && /序章/.test(chapter)) chapterLabel = '序章';

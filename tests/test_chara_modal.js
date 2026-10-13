@@ -1055,7 +1055,7 @@ test('Test 18 — successful retry removes failure label and retry button', () =
     }
 });
 
-test('Test 19 — resolveAppearanceStoryMeta classifies Part 3 branch story under its chapter via groupId', () => {
+test('Test 19 — resolveAppearanceStoryMeta classifies Part 3 branch story under its chapter via groupId while preserving non-branch interlude', () => {
     const mockMapModule = {
         events: [],
         getExtraMembership() {
@@ -1074,6 +1074,17 @@ test('Test 19 — resolveAppearanceStoryMeta classifies Part 3 branch story unde
                     isBranch: true
                 };
             }
+            if (id === 2213099) {
+                return {
+                    id: 2213099,
+                    chapter: '幕間・ⅩⅦ',
+                    title: 'evacuate from empress',
+                    groupId: 2213,
+                    part: 3,
+                    isEvent: false,
+                    type: 'main'
+                };
+            }
             return null;
         },
         normalizeDisplayTitle(val) {
@@ -1087,10 +1098,15 @@ test('Test 19 — resolveAppearanceStoryMeta classifies Part 3 branch story unde
     const fnBody = match[0].replace(/resolveAppearanceStoryMeta\(storyId\)\s*\{/, '').replace(/\},\s*$/, '');
     mockMapModule.resolveAppearanceStoryMeta = new Function('storyId', fnBody);
 
-    const res = mockMapModule.resolveAppearanceStoryMeta(2213101);
-    assert.deepStrictEqual(res.path, ['主線劇情', '第3部', '第13章'], 'Part 3 branch story must map to 第13章 instead of 其他');
-    assert.strictEqual(res.label, '分支劇情 XLIX｜棘手大小姐們的觀光約會？');
-    assert.strictEqual(res.canNavigate, true);
+    const branchRes = mockMapModule.resolveAppearanceStoryMeta(2213101);
+    assert.deepStrictEqual(branchRes.path, ['主線劇情', '第3部', '第13章'], 'Part 3 branch story must map to 第13章 instead of 其他');
+    assert.strictEqual(branchRes.label, '分支劇情 XLIX｜棘手大小姐們的觀光約會？');
+    assert.strictEqual(branchRes.canNavigate, true);
+
+    const interludeRes = mockMapModule.resolveAppearanceStoryMeta(2213099);
+    assert.deepStrictEqual(interludeRes.path, ['主線劇情', '第3部', '幕間'], 'Non-branch Part 3 interlude without chapter number must remain under 幕間');
+    assert.strictEqual(interludeRes.label, '幕間・ⅩⅦ｜evacuate from empress');
+    assert.strictEqual(interludeRes.canNavigate, true);
 });
 
 runTests().catch(err => {

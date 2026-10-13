@@ -90,7 +90,7 @@ DEPLOYED GH-PAGES HEAD: 810a60483277aa0e9813bbd0e8b45fd863c4141a (TruthVersion: 
 
 | 階段 | 分支名稱 | 狀態 | 核心目標與邊界 |
 | :--- | :--- | :---: | :--- |
-| **Slice 1** | `fix/reader-and-branch-ux` | **已完成待審 (READY FOR REVIEW)** | 修復 `dialogue-view.js`、`speaker-view.js` 淺色主題白字、移除旁白／選擇肢無效 `showCharaModal("")`、角色頭像／人名點擊 `stopPropagation`、排除 `'end'` 標記對片尾 CG 的阻斷、空話數／錯誤時隱藏 `#chara-badges-bar`、第 3 部分支劇情登場目錄章節歸類、手機端 `.game-dialogue-header` `top: 0`。 |
+| **Slice 1** | `fix/reader-and-branch-ux` | **已完成待審 (READY FOR REVIEW)** | 修復 `dialogue-view.js`、`speaker-view.js` 淺色主題白字、移除旁白／選擇肢無效 `showCharaModal("")`、角色頭像／人名點擊 `stopPropagation`、排除 `'end'` 標記對片尾 CG 的阻斷（並驗證已有有效 `still` 時不重複追加）、空話數／錯誤時隱藏 `#chara-badges-bar`、第 3 部分支劇情登場目錄章節歸類（限定 `story.isBranch === true` 以保留非分支「序章／幕間」）、手機端 `.game-dialogue-header` `top: 0`。 |
 | **Slice 2** | `fix/pipeline-and-validation-gate` | **待執行 (PENDING)** | 同步更新 Source `dashboard/data/db_info.json`、補齊 `pipeline/validate.py` 6 個前端 JS 與雜湊檢查、修復 `pipeline/update.py` `fingerprint` 與 `dry_run`、修復 `test_update_pipeline_c2_implementation.py` 並擴充 CI Hermetic 測試。 |
 | **Slice 3** | `fix/avatar-and-media-edge-cases` | **待執行 (PENDING)** | 修復 `AvatarService.cleanName()`「日和」截斷與括號順序（嚴守 Exact-ID-First 契約）、`SpeakerView` NPC `.png` 頭像支援、`MediaService` `_resumePendingCandidate` 清理。 |
 
