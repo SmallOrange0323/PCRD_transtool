@@ -913,6 +913,13 @@ class TestStoryDataServiceRuntime(unittest.TestCase):
         (mock_board / "characters.js").write_text("var a=1;", encoding="utf-8")
         (mock_board / "avatar-service.js").write_text("var a=1;", encoding="utf-8")
         (mock_board / "story-asset-service.js").write_text("var a=1;", encoding="utf-8")
+        (mock_board / "reader-navigation.js").write_text("var a=1;", encoding="utf-8")
+        (mock_board / "speaker-view.js").write_text("var a=1;", encoding="utf-8")
+        (mock_board / "chara-modal.js").write_text("var a=1;", encoding="utf-8")
+        (mock_board / "dialogue-normalizer.js").write_text("var a=1;", encoding="utf-8")
+        (mock_board / "media-service.js").write_text("var a=1;", encoding="utf-8")
+        (mock_board / "dialogue-view.js").write_text("var a=1;", encoding="utf-8")
+        (mock_board / "auto-voice-controller.js").write_text("var a=1;", encoding="utf-8")
         (mock_board / "chapter-data.js").write_text("var cd=1;", encoding="utf-8")
         (mock_board / "db.js").write_text("var a=1;", encoding="utf-8")
         (mock_board / "sql-wasm.js").write_text("var a=1;", encoding="utf-8")
@@ -926,6 +933,7 @@ class TestStoryDataServiceRuntime(unittest.TestCase):
         output_str = out.getvalue()
         self.assertFalse(ok)
         self.assertIn("story-data-service.js", output_str)
+        self.assertNotIn("核心檔案缺失或為空: " + str(mock_board / "dialogue-view.js"), output_str)
 
     # 26. dialogue concurrency: A pending dialogue -> B dialogue still starts
     def test_26_pending_a_dialogue_allows_b_dialogue_start(self):

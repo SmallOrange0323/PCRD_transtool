@@ -1124,6 +1124,12 @@ def validate_story_map(
         base_dir / "story-asset-service.js",
         base_dir / "story-data-service.js",
         base_dir / "reader-navigation.js",
+        base_dir / "speaker-view.js",
+        base_dir / "chara-modal.js",
+        base_dir / "dialogue-normalizer.js",
+        base_dir / "media-service.js",
+        base_dir / "dialogue-view.js",
+        base_dir / "auto-voice-controller.js",
         base_dir / "chapter-data.js",
         base_dir / "db.js",
         base_dir / "sql-wasm.js",
@@ -1336,13 +1342,28 @@ def validate_story_map(
             else:
                 res.error("dist_story_map/index.html 缺少 chapter-data.js 內嵌標記！")
 
-            dist_css = DIST_DIR / "style.css"
-            validate_content_hash_reference(
-                entry_path=dist_idx,
-                asset_path=dist_css,
-                asset_public_name="style.css",
-                res=res
-            )
+            dist_hashed_assets = [
+                "style.css",
+                "map.js",
+                "characters.js",
+                "avatar-service.js",
+                "story-asset-service.js",
+                "story-data-service.js",
+                "reader-navigation.js",
+                "speaker-view.js",
+                "chara-modal.js",
+                "dialogue-normalizer.js",
+                "media-service.js",
+                "dialogue-view.js",
+                "auto-voice-controller.js",
+            ]
+            for asset_name in dist_hashed_assets:
+                validate_content_hash_reference(
+                    entry_path=dist_idx,
+                    asset_path=DIST_DIR / asset_name,
+                    asset_public_name=asset_name,
+                    res=res
+                )
         else:
             res.error("dist_story_map/index.html 不存在！")
 

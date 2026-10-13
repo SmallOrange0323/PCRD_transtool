@@ -58,6 +58,7 @@ class FreshnessResult:
     fingerprint_matched: Optional[bool] = None
     third_party_reference: Optional[str] = None
     cdn_candidates: Optional[List[str]] = None
+    fingerprint: Optional[Dict[str, Any]] = None
 
 def evaluate_freshness(
     remote_tv: Optional[str],

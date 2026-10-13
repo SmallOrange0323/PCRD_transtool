@@ -256,6 +256,12 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
                         save_truth_version_state(target_tv, fingerprint=fp)
                 else:
                     # 官方 CDN 資料庫下載與正規化完成：與指定 TruthVersion 決定性綁定
+                    fp = {
+                        "manifest_sha256": (active_candidate.manifest_sha256 if active_candidate else None) or update_result.get("manifest_sha256"),
+                        "master_bundle_md5": (active_candidate.master_bundle_md5 if active_candidate else None) or update_result.get("master_bundle_md5"),
+                        "master_pool_hash": (active_candidate.master_pool_hash if active_candidate else None) or update_result.get("master_pool_hash"),
+                        "normalized_db_sha256": update_result.get("normalized_db_sha256") or update_result.get("existing_normalized_db_sha256"),
+                    }
                     freshness = FreshnessResult(
                         status=FreshnessStatus.UPDATED_SUCCESSFULLY,
                         remote_version=target_tv,
@@ -269,6 +275,7 @@ def check_and_sync_upstream(dry_run: bool = False) -> Tuple[bool, FreshnessResul
                         ),
                         fingerprint_matched=False,
                         third_party_reference=third_party_tv,
+                        fingerprint=fp if any(fp.values()) else None,
                     )
                     print(f"  [Freshness] 狀態更新: {freshness.status} (Confirmed: {freshness.confirmed}) — {freshness.message}")
             except Exception as e:
@@ -456,7 +463,11 @@ def run_pipeline_update(
     if not dry_run and freshness.confirmed and freshness.remote_version:
         if freshness.remote_version != freshness.local_version or freshness.status == FreshnessStatus.UPDATED_SUCCESSFULLY:
             print(f"\n[Version State Promotion] 全流程驗證通過，正在推進本地 TruthVersion 與指紋狀態: {freshness.remote_version}...")
-            promoted = save_truth_version_state(freshness.remote_version)
+            fp_to_promote = getattr(freshness, "fingerprint", None)
+            if fp_to_promote:
+                promoted = save_truth_version_state(freshness.remote_version, fingerprint=fp_to_promote)
+            else:
+                promoted = save_truth_version_state(freshness.remote_version)
             if not promoted:
                 print("❌ [ERROR] 版本狀態寫入失敗！阻斷流程。", file=sys.stderr)
                 return 1

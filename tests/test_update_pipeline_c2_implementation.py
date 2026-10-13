@@ -128,17 +128,17 @@ class TestUpdatePipelineC2Implementation(unittest.TestCase):
     @patch("pipeline.update.analyze_asset_completeness")
     @patch("pipeline.update.run_deploy")
     def test_06_deploy_freshness_gate_blocks_unconfirmed(self, mock_deploy, mock_assets, mock_validate, mock_bundle, mock_sync):
-        """Test 6: 驗證新鮮度未確認時 auto_deploy 預設阻斷 (BLOCK DEPLOY)"""
+        """Test 6: 驗證新鮮度未確認 (UPDATE_DOWNLOADED_UNCONFIRMED) 時 auto_deploy 預設阻斷 (BLOCK DEPLOY)"""
         mock_sync.return_value = (
             True,
             FreshnessResult(
-                status=FreshnessStatus.REMOTE_UNREACHABLE,
+                status=FreshnessStatus.UPDATE_DOWNLOADED_UNCONFIRMED,
                 remote_version=None,
                 local_version="00600023",
                 confirmed=False,
                 update_required=False,
                 degraded=True,
-                message="Remote unreachable"
+                message="Unconfirmed mirror update"
             ),
             analyze_coverage()
         )
@@ -267,38 +267,106 @@ class TestUpdatePipelineC2Implementation(unittest.TestCase):
         self.assertEqual(code, 0)
         mock_deploy.assert_called_once()
 
-    @patch("pipeline.fetch.probe_truth_version", return_value=TruthVersionProbeResult("00610003", "test", True))
+    @patch("pipeline.fetch.probe_third_party_reference")
+    @patch("pipeline.fetch.discover_cdn_candidate_snapshots")
     @patch("pipeline.fetch.update_db")
-    def test_13_mirror_unproven_db_update_marks_unconfirmed_and_blocks_deploy(self, mock_update_db, mock_probe):
-        """Test 13: 驗證鏡像 DB 更新後標記 UPDATE_DOWNLOADED_UNCONFIRMED 且阻斷自動發布"""
-        mock_update_db.return_value = {"status": "ok"}
+    def test_13_official_cdn_db_update_marks_confirmed_and_promotes_fingerprint(
+        self, mock_update_db, mock_discover, mock_wthee
+    ):
+        """Test 13: 驗證官方 CDN DB 更新後標記 UPDATED_SUCCESSFULLY、攜帶 fingerprint，並於驗證通過後一併晉升指紋"""
+        from pipeline.sonet_master_db import CdnCandidateProbeResult, CdnDiscoveryResult
+
+        mock_wthee.return_value = {"source": "remote_wthee_api", "version": "00610020", "confirmed": True}
+        candidate = CdnCandidateProbeResult(
+            version="00610020",
+            exists=True,
+            manifest_sha256="sha_20",
+            master_bundle_md5="md5_20",
+            master_pool_hash="pool_20",
+        )
+        mock_discover.return_value = CdnDiscoveryResult(
+            highest_observed_cdn_version="00610020",
+            candidates={"00610020": candidate},
+            scan_bounds={"base_version": "00610018"},
+        )
+        mock_update_db.return_value = {
+            "status": "ok",
+            "applied": True,
+            "normalized_db_sha256": "norm_20",
+        }
+
         ok, freshness, cov = check_and_sync_upstream(dry_run=False)
         self.assertTrue(ok)
-        self.assertEqual(freshness.status, FreshnessStatus.UPDATE_DOWNLOADED_UNCONFIRMED)
+        self.assertEqual(freshness.status, FreshnessStatus.UPDATED_SUCCESSFULLY)
+        self.assertTrue(freshness.confirmed)
+        self.assertFalse(freshness.degraded)
+        self.assertEqual(
+            freshness.fingerprint,
+            {
+                "manifest_sha256": "sha_20",
+                "master_bundle_md5": "md5_20",
+                "master_pool_hash": "pool_20",
+                "normalized_db_sha256": "norm_20",
+            },
+        )
+
+        with patch("pipeline.update.bundle_story_map", return_value=True), \
+             patch("pipeline.update.validate_story_map", return_value=True), \
+             patch("pipeline.update.analyze_asset_completeness", return_value=MagicMock(success=True, movie_coverage=MagicMock(new_references_count=0))), \
+             patch("pipeline.update.save_truth_version_state", return_value=True) as mock_save_state, \
+             patch("pipeline.update.run_deploy", return_value=True) as mock_deploy:
+            code = run_pipeline_update(dry_run=False, auto_deploy=True)
+            self.assertEqual(code, 0)
+            mock_save_state.assert_called_once_with(
+                "00610020",
+                fingerprint={
+                    "manifest_sha256": "sha_20",
+                    "master_bundle_md5": "md5_20",
+                    "master_pool_hash": "pool_20",
+                    "normalized_db_sha256": "norm_20",
+                },
+            )
+            mock_deploy.assert_called_once()
+
+    @patch("pipeline.fetch.probe_third_party_reference")
+    @patch("pipeline.fetch.discover_cdn_candidate_snapshots")
+    @patch("pipeline.fetch.update_db")
+    def test_14_db_update_failure_marks_failed_and_blocks_pipeline(
+        self, mock_update_db, mock_discover, mock_wthee
+    ):
+        """Test 14: 驗證 DB 更新失敗時標記 UPDATE_FAILED 並阻斷後續流程與發布"""
+        from pipeline.sonet_master_db import CdnCandidateProbeResult, CdnDiscoveryResult
+
+        mock_wthee.return_value = {"source": "remote_wthee_api", "version": "00610020", "confirmed": True}
+        candidate = CdnCandidateProbeResult(
+            version="00610020",
+            exists=True,
+            manifest_sha256="sha_20",
+            master_bundle_md5="md5_20",
+            master_pool_hash="pool_20",
+        )
+        mock_discover.return_value = CdnDiscoveryResult(
+            highest_observed_cdn_version="00610020",
+            candidates={"00610020": candidate},
+            scan_bounds={"base_version": "00610018"},
+        )
+        mock_update_db.return_value = {"status": "error", "error": "Simulated CDN timeout"}
+
+        ok, freshness, cov = check_and_sync_upstream(dry_run=False)
+        self.assertFalse(ok)
+        self.assertEqual(freshness.status, FreshnessStatus.UPDATE_FAILED)
         self.assertFalse(freshness.confirmed)
         self.assertTrue(freshness.degraded)
 
-        # auto_deploy must be blocked by default
         with patch("pipeline.update.bundle_story_map", return_value=True), \
              patch("pipeline.update.validate_story_map", return_value=True), \
              patch("pipeline.update.analyze_asset_completeness", return_value=MagicMock(success=True, movie_coverage=MagicMock(new_references_count=0))), \
-             patch("pipeline.update.run_deploy") as mock_deploy:
-            code = run_pipeline_update(dry_run=False, auto_deploy=True, allow_unconfirmed_freshness=False)
-            self.assertEqual(code, 1)
-            mock_deploy.assert_not_called()
-
-    @patch("pipeline.fetch.probe_truth_version", return_value=TruthVersionProbeResult("00610003", "test", True))
-    @patch("pipeline.fetch.update_db")
-    def test_14_mirror_unproven_db_update_with_override_passes_freshness(self, mock_update_db, mock_probe):
-        """Test 14: 驗證鏡像未證實更新在帶入 --allow-unconfirmed-freshness 時可通過發布 (在 coverage VALID 下)"""
-        mock_update_db.return_value = {"status": "ok"}
-        with patch("pipeline.update.bundle_story_map", return_value=True), \
-             patch("pipeline.update.validate_story_map", return_value=True), \
-             patch("pipeline.update.analyze_asset_completeness", return_value=MagicMock(success=True, movie_coverage=MagicMock(new_references_count=0))), \
+             patch("pipeline.update.save_truth_version_state", return_value=True) as mock_save_state, \
              patch("pipeline.update.run_deploy", return_value=True) as mock_deploy:
             code = run_pipeline_update(dry_run=False, auto_deploy=True, allow_unconfirmed_freshness=True)
-            self.assertEqual(code, 0)
-            mock_deploy.assert_called_once()
+            self.assertEqual(code, 1)
+            mock_save_state.assert_not_called()
+            mock_deploy.assert_not_called()
 
     def test_15_save_truth_version_state_empty_string_fails(self):
         """Test 15: 驗證 save_truth_version_state 空字串防禦"""
