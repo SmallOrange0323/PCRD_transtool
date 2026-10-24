@@ -492,19 +492,6 @@ const QuestMapModule = {
                         }
                     });
 
-                    // 【主線第 17 章後續話數兜底 (4～6 話)】
-                    // 註：第 1～3 話 (2217001～2217003) 已正式收錄於資料庫中，此處僅補齊資料庫未收錄之第 4～6 話
-                    const pendingCh17Stories = [
-                        { id: 2217004, chapter: "3部 第17章 第4話", title: "皇帝與山羊與騎士們", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
-                        { id: 2217005, chapter: "3部 第17章 第5話", title: "『索爾之龍』", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
-                        { id: 2217006, chapter: "3部 第17章 第6話", title: "『倒懸之塔』防衛戰", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
-                    ];
-                    pendingCh17Stories.forEach(ep => {
-                        if (!this.stories.some(s => Number(s.id) === Number(ep.id))) {
-                            this.stories.push(ep);
-                        }
-                    });
-
                     // 2. 台版個人劇情
                     const charaSql = `
                         SELECT story_id, title, sub_title, story_group_id
