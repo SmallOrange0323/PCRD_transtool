@@ -467,16 +467,16 @@ const QuestMapModule = {
                     `;
                     const rawData = await window.PCRDatabase.runQuery(sql);
                     this.stories = rawData.map(row => {
-                        const groupId = row.story_group_id;
+                        const groupId = Number(row.story_group_id);
                         return {
-                            id: row.story_id,
+                            id: Number(row.story_id),
                             chapter: row.title || "",
                             title: row.sub_title || "",
                             groupId: groupId,
                             part: ChapterDataService.getPartFromGroupId(groupId),
                             isEvent: false,
                             type: 'main',
-                            storyEnd: row.story_end || 0,
+                            storyEnd: Number(row.story_end) || 0,
                         };
                     });
 
@@ -487,22 +487,20 @@ const QuestMapModule = {
                         { id: 2216099, chapter: "幕間‧XXIX", title: "ANSWER.", groupId: 2216, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
                     ];
                     pendingCh16Interludes.forEach(ep => {
-                        if (!this.stories.some(s => s.id === ep.id)) {
+                        if (!this.stories.some(s => Number(s.id) === Number(ep.id))) {
                             this.stories.push(ep);
                         }
                     });
 
-                    // 【主線第 17 章第 1～6 話兜底】
+                    // 【主線第 17 章後續話數兜底 (4～6 話)】
+                    // 註：第 1～3 話 (2217001～2217003) 已正式收錄於資料庫中，此處僅補齊資料庫未收錄之第 4～6 話
                     const pendingCh17Stories = [
-                        { id: 2217001, chapter: "3部 第17章 第1話", title: "「第二型態」", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
-                        { id: 2217002, chapter: "3部 第17章 第2話", title: "不相交的100億與１", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
-                        { id: 2217003, chapter: "3部 第17章 第3話", title: "雪菲vs彌勒", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
                         { id: 2217004, chapter: "3部 第17章 第4話", title: "皇帝與山羊與騎士們", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
                         { id: 2217005, chapter: "3部 第17章 第5話", title: "『索爾之龍』", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
                         { id: 2217006, chapter: "3部 第17章 第6話", title: "『倒懸之塔』防衛戰", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
                     ];
                     pendingCh17Stories.forEach(ep => {
-                        if (!this.stories.some(s => s.id === ep.id)) {
+                        if (!this.stories.some(s => Number(s.id) === Number(ep.id))) {
                             this.stories.push(ep);
                         }
                     });
@@ -516,10 +514,10 @@ const QuestMapModule = {
                     `;
                     const rawChara = await window.PCRDatabase.runQuery(charaSql);
                     const charaStories = rawChara.map(row => ({
-                        id: row.story_id,
+                        id: Number(row.story_id),
                         chapter: row.title || "個人劇情",
                         title: row.sub_title || "",
-                        groupId: row.story_group_id,
+                        groupId: Number(row.story_group_id),
                         isEvent: false,
                         type: 'chara',
                     }));
