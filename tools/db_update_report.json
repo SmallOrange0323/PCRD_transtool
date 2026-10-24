@@ -1,28 +1,28 @@
 {
   "status": "ok",
-  "truth_version": "00610020",
+  "truth_version": "00610024",
   "source": "sonet_official_cdn",
-  "target_db_path": "E:\\OneDrive - 寰宇知識科技股份有限公司\\PCRD_tool\\dashboard\\redive_tw.db",
+  "target_db_path": "G:\\OneDrive - 寰宇知識科技股份有限公司\\PCRD_tool\\dashboard\\redive_tw.db",
   "client_family": "0061",
   "manifest": {
     "name": "masterdata2_assetmanifest",
-    "url": "https://img-pc.so-net.tw/dl/Resources/00610020/Jpn/AssetBundles/Android/manifest/masterdata2_assetmanifest",
-    "sha256": "f236d3d4ef1f221084585214fc6a239d2616117454b72c3a373f53a4441d3414"
+    "url": "https://img-pc.so-net.tw/dl/Resources/00610024/Jpn/AssetBundles/Android/manifest/masterdata2_assetmanifest",
+    "sha256": "bdd1d3051f0b99a93c44b4ba33c6f3adf02a75dfef30521cdc6595ed55184247"
   },
   "bundle": {
     "bundle_name": "a/masterdata_master.unity3d",
-    "bundle_md5": "fc613d85699aef5daf7f13dd01a46ae9",
-    "pool_hash": "2e4c46e3566f6c45",
-    "bundle_size": 14311053,
-    "bundle_url": "https://img-pc.so-net.tw/dl/pool/AssetBundles/2e/2e4c46e3566f6c45"
+    "bundle_md5": "576158aa194cca553d44ff5125826375",
+    "pool_hash": "95627a5267df66c1",
+    "bundle_size": 14370466,
+    "bundle_url": "https://img-pc.so-net.tw/dl/pool/AssetBundles/95/95627a5267df66c1"
   },
   "raw_db": {
-    "sha256": "765932bd9fba0f5525199f51c6ff108c319be5f0713bebed9ffc146b5b3e385b",
-    "size": 46252032
+    "sha256": "dd70048129a5d50620c06fab8152740e959920165e4e91e879c0b995cddc9dc2",
+    "size": 46301184
   },
   "mapping": {
     "client_family": "0061",
-    "contract_file": "E:\\OneDrive - 寰宇知識科技股份有限公司\\PCRD_tool\\pipeline\\manifests\\sonet_db_schema_map_0061.json",
+    "contract_file": "G:\\OneDrive - 寰宇知識科技股份有限公司\\PCRD_tool\\pipeline\\manifests\\sonet_db_schema_map_0061.json",
     "schema_version": "1.0.0"
   },
   "content_diff": {
@@ -31,30 +31,30 @@
     "sha256_identical": false,
     "new_unit_ids": [],
     "removed_unit_ids": [],
-    "new_story_ids_count": 3,
+    "new_story_ids_count": 4,
     "new_event_ids_count": 0,
     "table_count_deltas": {},
-    "current_db_sha256": "8f2a5555b3283b66d5a3afadb5bf1a1d646b197d6e7e4d68c84e851062045c72",
-    "staging_db_sha256": "f1b3c6358a78789723ee95057166e6dcca2822cb520dd62682b7dd0524a65810"
+    "current_db_sha256": "f1b3c6358a78789723ee95057166e6dcca2822cb520dd62682b7dd0524a65810",
+    "staging_db_sha256": "27742201bff5ce509f8688d6a288159303e8db737ed87427e146063890af4ad6"
   },
   "normalized_db": {
-    "sha256": "f1b3c6358a78789723ee95057166e6dcca2822cb520dd62682b7dd0524a65810",
+    "sha256": "27742201bff5ce509f8688d6a288159303e8db737ed87427e146063890af4ad6",
     "size": 2220032,
     "table_count": 12,
     "mapped_column_count": 103,
     "table_stats": {
-      "story_detail": 2882,
+      "story_detail": 2886,
       "unit_data": 448,
-      "unit_profile": 344,
+      "unit_profile": 345,
       "event_story_data": 87,
       "event_story_detail": 712,
-      "story_group_data": 432,
-      "chara_story_status": 1575,
-      "unit_rarity": 1964,
-      "unit_skill_data": 2664,
-      "unit_attack_pattern": 2994,
-      "skill_data": 7446,
-      "actual_unit_background": 322
+      "story_group_data": 433,
+      "chara_story_status": 1578,
+      "unit_rarity": 1969,
+      "unit_skill_data": 2665,
+      "unit_attack_pattern": 2996,
+      "skill_data": 7454,
+      "actual_unit_background": 323
     }
   },
   "applied": true

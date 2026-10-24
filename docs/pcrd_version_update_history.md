@@ -1,5 +1,12 @@
 # PCRD CDN update history
 
+## 2026-10-24 — So-net CDN 00610024
+
+- 更新實裝角色「可璃亞（女武神）」（`139601`）戰鬥相關數據至角色圖鑑與正式正規化資料庫 `redive_tw.db`。
+- 從 So-net CDN 獲取最新 TruthVersion `00610024` 加密 Master DB，經反混淆映射正規化處理為乾淨的 12 表 SQLite 資料庫。
+- 驗證包含站位（150）、基本數值與成長率（1星～5星）、必殺技與全套技能（UB: 光輝接戰 -愛棘-、Skill 1: 愛心穿刺、Skill 2: 羽翼庇護、EX: 女武神模式（Q））、動作循環及角色檔案。
+- 更新角色追蹤清單 `tracked_characters.json` 及資料庫驗證資訊 `db_info.json`，並同步至 `dist_story_map`。
+
 ## 2026-08-10 — So-net CDN 00600011
 
 - Recovered the stable website release and deployed chapter 16 stories `2216004`, `2216005`, `2216006`, and the extra story `2216101`.
