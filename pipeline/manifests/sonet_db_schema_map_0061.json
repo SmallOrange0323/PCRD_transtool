@@ -7,7 +7,8 @@
     "00610001",
     "00610002",
     "00610007",
-    "00610008"
+    "00610008",
+    "00610024"
   ],
   "tables": {
     "story_detail": {
@@ -193,7 +194,15 @@
         "sp_skill_2": "9011d664092b933029c432b71b1e7f3cda2a759bd026b8f402bca7f852fd1c32",
         "sp_skill_3": "d0e61b5878b279cc8c74c58ff41236336065fcf164831b4813101f5f75cc469d",
         "sp_skill_4": "547593a01a1ed3f585a992b23257f691c107e5766af1ffa6ed5d958b9cbd0429",
-        "sp_skill_5": "1e7d35eb147ee4857e7a70ed2a21b63ccc067f5827c4b8b40ed21d88a4f1693d"
+        "sp_skill_5": "1e7d35eb147ee4857e7a70ed2a21b63ccc067f5827c4b8b40ed21d88a4f1693d",
+        "union_burst_evolution": "54ae5de82f057c62a4f56ff74c4d151d4a95b48cde5cb40d02623366998cc5ae",
+        "main_skill_evolution_1": "c2ec1ce933e15822d7887f1e187b24a8b17627f43ebc16d1530d3a16dbd50928",
+        "main_skill_evolution_2": "6117a745ae12db40f35bbe7a63c20b3463cef72e70a6ddeedd4667090e46f577",
+        "sp_skill_evolution_1": "ba1bd207698cbdff5c56233ed52d645bba7f811733dcf765f1f3cec9db024ecb",
+        "sp_union_burst": "b9d24f41bcb96d901df6a6bb6251f8f162a1649b56d9af0848d36f8f311fe7ef",
+        "ex_skill_evolution_1": "9ea2907fbabcd9560310714d1d82f0b25fd9b0fa686ded2f9e15d60bd42b0977",
+        "main_skill_evolution_1_pro": "b0e6379cfd2196a8c6db0d101592b5bc1d39d5f68f625bc5830ab159e29fc51d",
+        "sp_skill_evolution_1_pro": "cf65b80ce906a6d940ce03322af4c397cd0ff5c146a353cf697a18c21061b2e5"
       },
       "provenance": {
         "verified_in": "00610008",
@@ -270,6 +279,71 @@
         "verified_in": "00610014",
         "verification_sample_pk": 100131,
         "sample_row": "春咲 日和 / 100131"
+      }
+    },
+    "unit_unique_equipment": {
+      "plaintext_table": "unit_unique_equipment",
+      "physical_table": "v1_9486e074c126a673732d549631ff49c28286bb534048a9cfc4442f2242ca6fa8",
+      "primary_key": "equip_id",
+      "category": "RUNTIME_REQUIRED",
+      "columns": {
+        "unit_id": "8913856e28b537cd15999d6816550f7f741631daf50f9bc71d58eb28768ed74c",
+        "equip_slot": "cfa095e5d027b9f88783216d038490ac98fcb63e2e7dbf70605cfd77b43967cb",
+        "equip_id": "476b8d6652bf05c21b57ea406f81ae7b509b688269f2ad078faea0680dab63f1"
+      },
+      "provenance": {
+        "verified_in": "00610024",
+        "verification_sample_pk": 130581,
+        "sample_row": "佩可 專1 / 槽位1"
+      }
+    },
+    "unique_equipment_data": {
+      "plaintext_table": "unique_equipment_data",
+      "physical_table": "v1_5a555ea98f520b516bc2b2dc3ce814f015a72d033c5d3aab56ed8a4eca0c504f",
+      "primary_key": "equipment_id",
+      "category": "RUNTIME_REQUIRED",
+      "columns": {
+        "equipment_id": "ce7c6d056829c434763bc77bfe0a0cfef1d9aea066c31a0daf26e757da196148",
+        "equipment_name": "6a5296fadf7938457702a91062b4799efd0d7ae2918b14ef54cc48864338abdc",
+        "description": "efc3711bc758cbdbeaf2ebd4d19d7cf7a146b2985035d0efe52e87c8735e0614",
+        "release_time": "b3a02771ae2a43ad3b15a1d8c84fad4fc6a3772f17c3e9ee9be58a871ed63b91",
+        "hp": "446e5834978bc80b038bebf5f133046add25a03e98151d1e7bfc85ba6996517f",
+        "atk": "d5e82c78f87ba58b18b24427c8a346ed3c84eb562ee198126f6ff3ce12b9db8b",
+        "magic_str": "e74b13c0eced2a6d5d185ee35d58505ba699e9e955c6ae87eef24494390d7dda",
+        "def": "0ce292bf0eb0c08642a66dc3487961b91977171a34f670e3862cc68bf5aeaf67",
+        "magic_def": "509a67c81ccf05aabf12fbd99eddc550e7ed18db11bae8222bea151f10fad626",
+        "physical_critical": "29d51c6edaf1a4dffe3b67ab16955466d403d99770682fe98574f6444112319b",
+        "magic_critical": "9ac838b63d86af2f14688f166430541fe038421cac6b080d0bd1b52cc4a99d48",
+        "dodge": "e9bad3c692770ee7dd99c05e93a34bef7bf2824090dc21a3593fbdf569e35ea1",
+        "life_steal": "2634dd22603059fdd7256640f2512a23d14849a51804a41efa2808319ac3715b",
+        "wave_hp_recovery": "ca1728a593fbc227ebd68da0006145e12073e978cedbac87da7c3c341ef4db82",
+        "energy_recovery_rate": "488fc10b0cfc9d9f34b6c27b64bb36d2b70ce0ee0342d5ab03fa604cc290f9a0",
+        "hp_recovery_rate": "6e4daee691d1bc552a97e9012f16ddbbeea8498d5841bd0e9a4d166d96725c46",
+        "accuracy": "a3d167756b82e80e9fa173c4613b54d57cdf64f2af980c7c0d79b311a34be6fb",
+        "promotion_level": "0abeeb0e969f48a1521045fba899396659ca129ed54cf6760a9fb10a5183d1d8"
+      },
+      "provenance": {
+        "verified_in": "00610024",
+        "verification_sample_pk": 130581,
+        "sample_row": "公主之劍 / 佩可專1"
+      }
+    },
+    "unit_skill_data_rf": {
+      "plaintext_table": "unit_skill_data_rf",
+      "physical_table": "v1_f62b28ca5b9919cb26dd1a20ba9b5b8bfbbdd345706cfce93ba496741e09adfd",
+      "primary_key": "rf_skill_id",
+      "category": "RUNTIME_REQUIRED",
+      "columns": {
+        "id": "229b9a03a1075af3976051fcd7525836b2f146e354751f3c43a426a361cb1d9a",
+        "skill_id": "21d69bb65040462414f4459f353cade1616a19b6ed2f110b5fd1c2dee39f0140",
+        "rf_skill_id": "2e64a285bf33fc1dc4502c8f2fb1c84ba2afdb6f724669d06df09ee69208b61b",
+        "min_lv": "1c254d18f7fc71e5545af61238f64a17f206c35e4dd35ee6f4639f3edafb1302",
+        "max_lv": "3730daa3e35e4602a6bbd94205662ad2192d58311bb76b5054b1b5a56d6c1a15"
+      },
+      "provenance": {
+        "verified_in": "00610024",
+        "verification_sample_pk": 1026211,
+        "sample_row": "由加莉 技能平衡調整 (1026011 -> 1026211)"
       }
     }
   }

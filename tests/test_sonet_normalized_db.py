@@ -219,16 +219,17 @@ class TestSonetNormalizedDb(unittest.TestCase):
         with open(canonical_map_file, "r", encoding="utf-8") as f:
             data = json.load(f)
         
-        # 必須包含全部 12 張核心表且 mapped columns 總計 103 個
+        # 必須包含全部 15 張核心表且 mapped columns 總計 137 個
         expected_tables = {
             "story_detail", "unit_data", "unit_profile", "event_story_data",
             "event_story_detail", "story_group_data", "chara_story_status",
             "unit_rarity", "unit_skill_data", "unit_attack_pattern", "skill_data",
-            "actual_unit_background"
+            "actual_unit_background", "unit_unique_equipment", "unique_equipment_data",
+            "unit_skill_data_rf"
         }
         self.assertEqual(set(data["tables"].keys()), expected_tables)
         mapped_cols_count = sum(len(tbl["columns"]) for tbl in data["tables"].values())
-        self.assertEqual(mapped_cols_count, 103)
+        self.assertEqual(mapped_cols_count, 137)
         validate_mapping_contract(data)
 
     def test_game_snapshot_query_against_normalized_db(self):
