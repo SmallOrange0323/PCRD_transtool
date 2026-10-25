@@ -250,29 +250,172 @@ window.CharactersModule = {
                 SELECT * FROM unit_skill_data WHERE unit_id = ?
             `, [unitId])[0];
 
-            // 3. 取得動作循環 (依 pattern_id 升冪確保優先展示角色基本常態循環)
-            const attackPattern = window.PCRDatabase.runQuery(`
-                SELECT * FROM unit_attack_pattern WHERE unit_id = ? ORDER BY pattern_id ASC LIMIT 1
-            `, [unitId])[0];
+            // 3. 取得所有動作循環 (依 pattern_id 升冪排序)
+            const attackPatterns = window.PCRDatabase.runQuery(`
+                SELECT * FROM unit_attack_pattern WHERE unit_id = ? ORDER BY pattern_id ASC
+            `, [unitId]) || [];
 
-            // 4. 取得技能詳情
-            const skills = [];
+            // 3.1 取得平衡調整對照資料
+            const rfRows = window.PCRDatabase.runQuery(`
+                SELECT skill_id, rf_skill_id FROM unit_skill_data_rf
+            `) || [];
+            const rfSkillMap = new Map();
+            for (const r of rfRows) {
+                rfSkillMap.set(Number(r.skill_id), Number(r.rf_skill_id));
+            }
+
+            // 3.2 取得專屬裝備 (專1 / 專2)
+            const uniqueEquips = window.PCRDatabase.runQuery(`
+                SELECT u.equip_slot, e.* 
+                FROM unit_unique_equipment u 
+                JOIN unique_equipment_data e ON u.equip_id = e.equipment_id 
+                WHERE u.unit_id = ? 
+                ORDER BY u.equip_slot ASC
+            `, [unitId]) || [];
+
+            // 4. 取得技能詳情與形態變體
+            const skillSlots = [];
             const skillMap = {}; 
+
+            const fetchSkillMeta = (sId) => {
+                if (!sId || Number(sId) === 0) return null;
+                const r = window.PCRDatabase.runQuery(
+                    `SELECT skill_id, name, description, icon_type FROM skill_data WHERE skill_id = ?`,
+                    [sId]
+                )[0];
+                return r || null;
+            };
+
             if (skillIds) {
-                const sids = [
-                    { id: skillIds.union_burst, label: '必殺技 (UB)', key: 'ub' },
-                    { id: skillIds.main_skill_1, label: '技能 1', key: '1001' },
-                    { id: skillIds.main_skill_2, label: '技能 2', key: '1002' },
-                    { id: skillIds.ex_skill_1, label: 'EX 技能', key: 'ex' }
+                const rawSlots = [
+                    {
+                        key: 'ub',
+                        label: '必殺技 (UB)',
+                        patternKey: null,
+                        candidateVariants: [
+                            { id: skillIds.union_burst, tag: '基礎' },
+                            { id: skillIds.union_burst_evolution, tag: '★6 UB' }
+                        ]
+                    },
+                    {
+                        key: '1001',
+                        label: '技能 1',
+                        patternKey: '1001',
+                        candidateVariants: [
+                            { id: skillIds.main_skill_1, tag: '基礎' },
+                            { id: skillIds.main_skill_evolution_1, tag: '專武 1+' },
+                            { id: skillIds.main_skill_evolution_1_pro, tag: '專武 1+ Pro' }
+                        ]
+                    },
+                    {
+                        key: '1002',
+                        label: '技能 2',
+                        patternKey: '1002',
+                        candidateVariants: [
+                            { id: skillIds.main_skill_2, tag: '基礎' },
+                            { id: skillIds.main_skill_evolution_2, tag: '專武 2+' }
+                        ]
+                    },
+                    {
+                        key: 'ex',
+                        label: 'EX 技能',
+                        patternKey: null,
+                        candidateVariants: [
+                            { id: skillIds.ex_skill_1, tag: '基礎' },
+                            { id: skillIds.ex_skill_evolution_1, tag: '★5 EX+' }
+                        ]
+                    }
                 ];
-                
-                for (const s of sids) {
-                    if (s.id) {
-                        const sInfo = window.PCRDatabase.runQuery(`SELECT name, description, icon_type FROM skill_data WHERE skill_id = ?`, [s.id])[0];
-                        if (sInfo) {
-                            const fullSkill = { ...sInfo, label: s.label };
-                            skills.push(fullSkill);
-                            skillMap[s.key] = fullSkill;
+
+                // 檢查是否具有 SP 形態技能 (例如變身或特定技能組)
+                if (skillIds.sp_union_burst || skillIds.sp_skill_1) {
+                    if (skillIds.sp_union_burst) {
+                        rawSlots.push({
+                            key: 'sp_ub',
+                            label: 'SP 必殺技 (UB)',
+                            patternKey: null,
+                            candidateVariants: [{ id: skillIds.sp_union_burst, tag: 'SP' }]
+                        });
+                    }
+                    if (skillIds.sp_skill_1) {
+                        rawSlots.push({
+                            key: '2001',
+                            label: 'SP 技能 1',
+                            patternKey: '2001',
+                            candidateVariants: [
+                                { id: skillIds.sp_skill_1, tag: 'SP' },
+                                { id: skillIds.sp_skill_evolution_1, tag: 'SP 專武 1+' },
+                                { id: skillIds.sp_skill_evolution_1_pro, tag: 'SP 專武 1+ Pro' }
+                            ]
+                        });
+                    }
+                    if (skillIds.sp_skill_2) {
+                        rawSlots.push({
+                            key: '2002',
+                            label: 'SP 技能 2',
+                            patternKey: '2002',
+                            candidateVariants: [{ id: skillIds.sp_skill_2, tag: 'SP' }]
+                        });
+                    }
+                    if (skillIds.sp_skill_3) {
+                        rawSlots.push({
+                            key: '2003',
+                            label: 'SP 技能 3',
+                            patternKey: '2003',
+                            candidateVariants: [{ id: skillIds.sp_skill_3, tag: 'SP' }]
+                        });
+                    }
+                }
+
+                // 展開各槽位形態與平衡調整
+                for (const raw of rawSlots) {
+                    const resolvedVariants = [];
+                    for (const cand of raw.candidateVariants) {
+                        if (!cand.id || Number(cand.id) === 0) continue;
+                        const meta = fetchSkillMeta(cand.id);
+                        if (!meta) continue;
+
+                        resolvedVariants.push({
+                            id: cand.id,
+                            tag: cand.tag,
+                            isRf: false,
+                            name: meta.name,
+                            description: meta.description,
+                            icon_type: meta.icon_type
+                        });
+
+                        // 檢查是否有平衡調整版本
+                        const rfId = rfSkillMap.get(Number(cand.id));
+                        if (rfId) {
+                            const rfMeta = fetchSkillMeta(rfId);
+                            if (rfMeta) {
+                                resolvedVariants.push({
+                                    id: rfId,
+                                    tag: `${cand.tag} 平衡調整`,
+                                    isRf: true,
+                                    name: rfMeta.name,
+                                    description: rfMeta.description,
+                                    icon_type: rfMeta.icon_type
+                                });
+                            }
+                        }
+                    }
+
+                    if (resolvedVariants.length > 0) {
+                        // 預設選中最後一個形態 (最新/最高強化階層)
+                        const activeIndex = resolvedVariants.length - 1;
+                        const slotObj = {
+                            key: raw.key,
+                            label: raw.label,
+                            patternKey: raw.patternKey,
+                            variants: resolvedVariants,
+                            activeIndex: activeIndex
+                        };
+                        skillSlots.push(slotObj);
+
+                        // 填入動作循環對照表
+                        if (raw.patternKey) {
+                            skillMap[raw.patternKey] = resolvedVariants[activeIndex];
                         }
                     }
                 }
@@ -281,7 +424,7 @@ window.CharactersModule = {
                 for (let i = 1; i <= 10; i++) {
                     const skillId = skillIds[`main_skill_${i}`];
                     if (skillId && !skillMap[String(1000 + i)]) {
-                        const sInfo = window.PCRDatabase.runQuery(`SELECT name, description, icon_type FROM skill_data WHERE skill_id = ?`, [skillId])[0];
+                        const sInfo = fetchSkillMeta(skillId);
                         if (sInfo) {
                             skillMap[String(1000 + i)] = sInfo;
                         }
@@ -292,13 +435,18 @@ window.CharactersModule = {
                 for (let i = 1; i <= 5; i++) {
                     const skillId = skillIds[`sp_skill_${i}`];
                     if (skillId && !skillMap[String(2000 + i)]) {
-                        const sInfo = window.PCRDatabase.runQuery(`SELECT name, description, icon_type FROM skill_data WHERE skill_id = ?`, [skillId])[0];
+                        const sInfo = fetchSkillMeta(skillId);
                         if (sInfo) {
                             skillMap[String(2000 + i)] = sInfo;
                         }
                     }
                 }
             }
+
+            this.currentSkillSlots = skillSlots;
+            this.currentAttackPatterns = attackPatterns;
+            this.currentSkillMap = skillMap;
+            this.activePatternIndex = 0;
 
             // 5. 渲染詳情
             const baseId = Math.floor(Number(unitId) / 100) * 100;
@@ -334,6 +482,94 @@ window.CharactersModule = {
                     🔍 顯示真名
                 </button>
             ` : '';
+
+            // 輔助函式：渲染技能卡片
+            const renderSkillSlotsHtml = (slots) => {
+                if (!slots || slots.length === 0) {
+                    return '<div style="color: var(--text-secondary); font-size: 0.85rem; padding: 10px 0;">暫無技能數據</div>';
+                }
+                return slots.map(slot => {
+                    const activeVariant = slot.variants[slot.activeIndex];
+                    const hasMultiple = slot.variants.length > 1;
+                    return `
+                        <div class="skill-item" id="skill-slot-${slot.key}">
+                            <div class="skill-icon" id="skill-slot-icon-${slot.key}" style="width: 50px; height: 50px; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                ${window.AvatarService.getSkillIconHtml(activeVariant.icon_type)}
+                            </div>
+                            <div class="skill-info">
+                                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 4px;">
+                                    <div class="skill-label" style="font-size: 0.72rem; color: var(--accent-color); font-weight: bold; display: flex; align-items: center;">
+                                        ${slot.label}
+                                        <span id="skill-slot-rf-badge-${slot.key}">${activeVariant.isRf ? '<span class="skill-rf-tag">⚖️ 平衡調整</span>' : ''}</span>
+                                    </div>
+                                    ${hasMultiple ? `
+                                        <div class="skill-variant-group">
+                                            ${slot.variants.map((v, vIdx) => `
+                                                <button type="button" class="skill-pill-btn ${vIdx === slot.activeIndex ? 'active' : ''}" 
+                                                        onclick="CharactersModule.selectSkillVariant('${slot.key}', ${vIdx})">
+                                                    ${v.tag}
+                                                </button>
+                                            `).join('')}
+                                        </div>
+                                    ` : ''}
+                                </div>
+                                <div class="skill-name" id="skill-slot-name-${slot.key}">${activeVariant.name}</div>
+                                <div class="skill-desc" id="skill-slot-desc-${slot.key}">${(activeVariant.description || '').replace(/\\n/g, '<br>')}</div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            };
+
+            // 輔助函式：渲染專屬裝備卡片
+            const renderUniqueEquipHtml = (equips) => {
+                if (!equips || equips.length === 0) return '';
+                const STAT_NAMES = {
+                    hp: 'HP',
+                    atk: '物理攻擊力',
+                    magic_str: '魔法攻擊力',
+                    def: '物理防禦力',
+                    magic_def: '魔法防禦力',
+                    physical_critical: '物理暴擊',
+                    magic_critical: '魔法暴擊',
+                    dodge: '迴避',
+                    life_steal: 'HP 吸收',
+                    wave_hp_recovery: 'HP 回復',
+                    energy_recovery_rate: 'TP 上升',
+                    hp_recovery_rate: '回復量上升',
+                    accuracy: '命中'
+                };
+                return `
+                    <div class="unique-equip-section" style="margin-top: 30px;">
+                        <h3 style="border-left: 4px solid #ffd43b; padding-left: 15px; margin: 25px 0 15px; color: #ffd43b;">專屬武器 (專屬裝備)</h3>
+                        ${equips.map(eq => {
+                            const slotName = Number(eq.equip_slot) === 2 ? '專屬裝備 2' : '專屬裝備 1';
+                            const statBadges = [];
+                            for (const [key, label] of Object.entries(STAT_NAMES)) {
+                                const val = parseFloat(eq[key]);
+                                if (val && val > 0) {
+                                    statBadges.push(`<span class="unique-equip-stat-badge">${label} +${val}</span>`);
+                                }
+                            }
+                            return `
+                                <div class="unique-equip-card">
+                                    <div class="unique-equip-icon">
+                                        ${window.AvatarService.getEquipmentIconHtml(eq.equipment_id)}
+                                    </div>
+                                    <div class="unique-equip-info">
+                                        <div class="unique-equip-title">
+                                            <span class="unique-equip-slot-tag">【${slotName}】</span>
+                                            <span>${eq.equipment_name}</span>
+                                        </div>
+                                        ${statBadges.length > 0 ? `<div class="unique-equip-stats">${statBadges.join('')}</div>` : ''}
+                                        <div class="unique-equip-desc">${(eq.description || '').replace(/\\n/g, '<br>')}</div>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
+            };
 
             body.innerHTML = `
                 <div class="detail-header">
@@ -377,24 +613,15 @@ window.CharactersModule = {
 
                     <div class="skill-section">
                         <h3>技能介紹</h3>
-                        ${skills.length > 0 ? skills.map(s => `
-                            <div class="skill-item">
-                                <div class="skill-icon" style="width: 50px; height: 50px; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    ${window.AvatarService.getSkillIconHtml(s.icon_type)}
-                                </div>
-                                <div class="skill-info">
-                                    <div class="skill-label" style="font-size: 0.7rem; color: var(--accent-color); font-weight: bold;">${s.label}</div>
-                                    <div class="skill-name">${s.name}</div>
-                                    <div class="skill-desc">${s.description.replace(/\\n/g, '<br>')}</div>
-                                </div>
-                            </div>
-                        `).join('') : '<div style="color: var(--text-secondary); font-size: 0.85rem; padding: 10px 0;">暫無技能數據</div>'}
+                        ${renderSkillSlotsHtml(skillSlots)}
                     </div>
+
+                    ${renderUniqueEquipHtml(uniqueEquips)}
                 </div>
  
                 <div id="modal-content-pattern" style="display: none;">
                     <h3>動作循環模式</h3>
-                    ${this.renderAttackPattern(attackPattern, skillMap)}
+                    ${this.renderAttackPatternsView(attackPatterns, skillMap)}
                 </div>
 
                 <div id="modal-content-story" style="display: none;">
@@ -424,63 +651,124 @@ window.CharactersModule = {
         }
     },
 
-    renderAttackPattern(pattern, skillMap) {
-        if (!pattern) return '<div class="empty-msg">找不到動作循環數據</div>';
+    selectSkillVariant(slotKey, variantIndex) {
+        if (!this.currentSkillSlots) return;
+        const slot = this.currentSkillSlots.find(s => s.key === slotKey);
+        if (!slot || !slot.variants[variantIndex]) return;
+        slot.activeIndex = variantIndex;
+        const v = slot.variants[variantIndex];
 
-        const items = [];
-        for (let i = 1; i <= 20; i++) {
-            const act = pattern[`atk_pattern_${i}`];
-            if (act === undefined || act === null || act === 0) break;
-            items.push({ id: act, index: i });
+        const iconEl = document.getElementById(`skill-slot-icon-${slotKey}`);
+        const nameEl = document.getElementById(`skill-slot-name-${slotKey}`);
+        const descEl = document.getElementById(`skill-slot-desc-${slotKey}`);
+        const badgeEl = document.getElementById(`skill-slot-rf-badge-${slotKey}`);
+
+        if (iconEl) iconEl.innerHTML = window.AvatarService.getSkillIconHtml(v.icon_type);
+        if (nameEl) nameEl.textContent = v.name;
+        if (descEl) descEl.innerHTML = (v.description || '').replace(/\n/g, '<br>');
+        if (badgeEl) badgeEl.innerHTML = v.isRf ? '<span class="skill-rf-tag">⚖️ 平衡調整</span>' : '';
+
+        const slotEl = document.getElementById(`skill-slot-${slotKey}`);
+        if (slotEl) {
+            const btns = slotEl.querySelectorAll('.skill-pill-btn');
+            btns.forEach((b, idx) => {
+                b.classList.toggle('active', idx === variantIndex);
+            });
         }
+    },
 
-        const loopStart = pattern.loop_start;
-        const loopEnd = pattern.loop_end;
+    selectPatternTab(patternIdx) {
+        if (!this.currentAttackPatterns) return;
+        this.currentAttackPatterns.forEach((_, idx) => {
+            const btn = document.getElementById(`pattern-mode-btn-${idx}`);
+            const panel = document.getElementById(`pattern-panel-${idx}`);
+            if (btn) btn.classList.toggle('active', idx === patternIdx);
+            if (panel) panel.style.display = idx === patternIdx ? '' : 'none';
+        });
+    },
+
+    renderAttackPattern(pattern, skillMap) {
+        return this.renderAttackPatternsView(pattern ? [pattern] : [], skillMap);
+    },
+
+    renderAttackPatternsView(patterns, skillMap) {
+        if (!patterns || patterns.length === 0) return '<div class="empty-msg">找不到動作循環數據</div>';
+
+        const tabsHtml = patterns.length > 1 ? `
+            <div class="pattern-mode-tabs">
+                ${patterns.map((p, idx) => `
+                    <button type="button" class="pattern-mode-btn ${idx === 0 ? 'active' : ''}" 
+                            id="pattern-mode-btn-${idx}"
+                            onclick="CharactersModule.selectPatternTab(${idx})">
+                        ${idx === 0 ? '常態模式 (循環 1)' : (idx === 1 ? '型態切換 / 變身 (循環 2)' : `特殊模式 (循環 ${idx + 1})`)}
+                    </button>
+                `).join('')}
+            </div>
+        ` : '';
+
+        const panelsHtml = patterns.map((pattern, pIdx) => {
+            const items = [];
+            for (let i = 1; i <= 20; i++) {
+                const act = pattern[`atk_pattern_${i}`];
+                if (act === undefined || act === null || act === 0) break;
+                items.push({ id: act, index: i });
+            }
+
+            const loopStart = pattern.loop_start;
+            const loopEnd = pattern.loop_end;
+
+            return `
+                <div class="pattern-panel" id="pattern-panel-${pIdx}" style="${pIdx === 0 ? '' : 'display: none;'}">
+                    <div class="pattern-container">
+                        ${items.map(item => {
+                            const isLoop = item.index >= loopStart && item.index <= loopEnd;
+                            let iconHtml = '';
+                            let name = '';
+                            
+                            if (item.id === 1) {
+                                name = '普通攻擊';
+                                // 漂亮且具質感的單手劍 SVG 作為普通攻擊圖示
+                                iconHtml = `
+                                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(73, 80, 87, 0.4), rgba(52, 58, 64, 0.6));">
+                                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="18" y1="2" x2="22" y2="6"></line>
+                                            <path d="M7.5 20.5 2 22l1.5-5.5L17 3.5 20.5 7z"></path>
+                                        </svg>
+                                    </div>
+                                `;
+                            } else {
+                                const skillKey = String(item.id);
+                                if (skillMap[skillKey]) {
+                                    iconHtml = window.AvatarService.getSkillIconHtml(skillMap[skillKey].icon_type);
+                                    name = skillMap[skillKey].name;
+                                } else {
+                                    // 當在 skillMap 找不到時（例如 1003, 1004, 2001），先當作 icon_type 去嘗試載入（它會自動嘗試本地、So-net、最後去日版 EsterTion 下載！）
+                                    iconHtml = window.AvatarService.getSkillIconHtml(item.id);
+                                    name = `技能 ${item.id}`;
+                                }
+                            }
+
+                            return `
+                                <div class="pattern-item" style="${isLoop ? 'border: 2px solid var(--accent-color); background: rgba(255,107,157,0.1);' : 'border: 1px solid rgba(255,255,255,0.05);'}">
+                                    <div style="width: 40px; height: 40px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                                        ${iconHtml}
+                                    </div>
+                                    <div style="font-size: 0.7rem; margin-top: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: ${item.id > 1 ? '#ffa94d' : 'inherit'}">${name}</div>
+                                    <div style="font-size: 0.6rem; color: var(--text-secondary); margin-top: 2px;">${item.index}</div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                    <div style="margin-top: 15px; font-size: 0.85rem; color: var(--accent-color);">
+                        💡 框線部分為循環區間 (Step ${loopStart} ~ ${loopEnd})
+                    </div>
+                </div>
+            `;
+        }).join('');
 
         return `
-            <div class="pattern-container">
-                ${items.map(item => {
-                    const isLoop = item.index >= loopStart && item.index <= loopEnd;
-                    let iconHtml = '';
-                    let name = '';
-                    
-                    if (item.id === 1) {
-                        name = '普通攻擊';
-                        // 漂亮且具質感的單手劍 SVG 作為普通攻擊圖示
-                        iconHtml = `
-                            <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(73, 80, 87, 0.4), rgba(52, 58, 64, 0.6));">
-                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="18" y1="2" x2="22" y2="6"></line>
-                                    <path d="M7.5 20.5 2 22l1.5-5.5L17 3.5 20.5 7z"></path>
-                                </svg>
-                            </div>
-                        `;
-                    } else {
-                        const skillKey = String(item.id);
-                        if (skillMap[skillKey]) {
-                            iconHtml = window.AvatarService.getSkillIconHtml(skillMap[skillKey].icon_type);
-                            name = skillMap[skillKey].name;
-                        } else {
-                            // 當在 skillMap 找不到時（例如 1003, 1004, 2001），先當作 icon_type 去嘗試載入（它會自動嘗試本地、So-net、最後去日版 EsterTion 下載！）
-                            iconHtml = window.AvatarService.getSkillIconHtml(item.id);
-                            name = `技能 ${item.id}`;
-                        }
-                    }
-
-                    return `
-                        <div class="pattern-item" style="${isLoop ? 'border: 2px solid var(--accent-color); background: rgba(255,107,157,0.1);' : 'border: 1px solid rgba(255,255,255,0.05);'}">
-                            <div style="width: 40px; height: 40px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                                ${iconHtml}
-                            </div>
-                            <div style="font-size: 0.7rem; margin-top: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: ${item.id > 1 ? '#ffa94d' : 'inherit'}">${name}</div>
-                            <div style="font-size: 0.6rem; color: var(--text-secondary); margin-top: 2px;">${item.index}</div>
-                        </div>
-                    `;
-                }).join('')}
-            </div>
-            <div style="margin-top: 15px; font-size: 0.85rem; color: var(--accent-color);">
-                💡 框線部分為循環區間 (Step ${loopStart} ~ ${loopEnd})
-            </div>
+            ${tabsHtml}
+            ${panelsHtml}
         `;
     },
 

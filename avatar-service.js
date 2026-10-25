@@ -1101,6 +1101,44 @@ globalScope.AvatarService = {
         }
         // 最後失敗：顯示 999999 佔位符（代表未知技能/裝備，這張圖在 EsterTion 上真實存在，是一張精美質感的問號圖案，比 000000 破圖好得多）
         img.src = 'https://redive.estertion.win/icon/equipment/999999.webp';
+    },
+
+    // 取得裝備/專屬武器圖示 HTML
+    getEquipmentIconHtml(equipmentId) {
+        if (!equipmentId) {
+            return `<img src="https://redive.estertion.win/icon/equipment/999999.webp" style="width: 100%; height: 100%; object-fit: cover;">`;
+        }
+        const src = `icon/equipment/${equipmentId}.png`;
+        return `<img src="${src}" style="width: 100%; height: 100%; object-fit: cover;" onerror="AvatarService.handleEquipmentError(this, ${equipmentId})">`;
+    },
+
+    // 裝備圖示多級錯誤降級處理
+    handleEquipmentError(img, equipmentId) {
+        if (!img.dataset.step) {
+            img.dataset.step = "1";
+        }
+        const step = parseInt(img.dataset.step, 10);
+
+        if (step === 1) {
+            img.dataset.step = "2";
+            // 第一步：嘗試 So-net CDN 的 .png
+            img.src = `https://img-pc.so-net.tw/dl/Resources/00610024/Jpn/AssetBundles/Android/icon/equipment/${equipmentId}.png`;
+            return;
+        }
+        if (step === 2) {
+            img.dataset.step = "3";
+            // 第二步：嘗試 EsterTion 鏡像 .webp
+            img.src = `https://redive.estertion.win/icon/equipment/${equipmentId}.webp`;
+            return;
+        }
+        if (step === 3) {
+            img.dataset.step = "4";
+            // 第三步：嘗試 EsterTion 鏡像 .png
+            img.src = `https://redive.estertion.win/icon/equipment/${equipmentId}.png`;
+            return;
+        }
+        // 最後失敗：顯示未知裝備佔位圖
+        img.src = 'https://redive.estertion.win/icon/equipment/999999.webp';
     }
 };
 // Node.js 環境自動載入 Manifest 支援單元測試與審查腳本
