@@ -492,6 +492,18 @@ const QuestMapModule = {
                         }
                     });
 
+                    // 【主線第 17 章後續話數兜底 (第 4～6 話)】
+                    const pendingCh17Episodes = [
+                        { id: 2217004, chapter: "第3部 第17章 第4話", title: "皇帝與龍與騎士", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2217005, chapter: "第3部 第17章 第5話", title: "『龍』", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2217006, chapter: "第3部 第17章 第6話", title: "『神威』顯現", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                    ];
+                    pendingCh17Episodes.forEach(ep => {
+                        if (!this.stories.some(s => Number(s.id) === Number(ep.id))) {
+                            this.stories.push(ep);
+                        }
+                    });
+
                     // 2. 台版個人劇情
                     const charaSql = `
                         SELECT story_id, title, sub_title, story_group_id
