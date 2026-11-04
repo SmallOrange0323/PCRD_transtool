@@ -537,7 +537,8 @@ const QuestMapModule = {
                         { unitId: 139601, name: "可璃亞（女武神）", prefix: "139600", titles: ["可璃亞，成為不良分子", "我的真心話", "不是乖孩子了", "libertas qualia"] },
                         { unitId: 139701, name: "普蕾西亞（女武神）", prefix: "139700", titles: ["重逢 的 Porco", "贖罪 的 Ossabaw", "美夢 的 Mangalica", "硬邦邦 的 扭來扭去"] },
                         { unitId: 139801, name: "雪菲（真龍）", prefix: "139800", titles: ["停下來的翅膀", "兄妹之間", "在追憶的彼端所獲得的事物", "夢見黃昏之影與決心之夢"] },
-                        { unitId: 139901, name: "露易絲瑪莉（夏日）", prefix: "139900", titles: ["HOT LIMIT", "夏日時光的憂鬱", "無法妥協的夏天", "小小戀歌"] }
+                        { unitId: 139901, name: "露易絲瑪莉（夏日）", prefix: "139900", titles: ["HOT LIMIT", "夏日時光的憂鬱", "無法妥協的夏天", "小小戀歌"] },
+                        { unitId: 140001, name: "克蕾琪塔（夏日）", prefix: "140000", titles: ["酷暑！進擊的女商人", "這不過是業務的一環罷了", "只有半天的頂級度假", "從國外來的商人（金比基尼）"] }
                     ];
 
                     pendingNewCharas.forEach(ch => {
