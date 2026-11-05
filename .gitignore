@@ -87,3 +87,7 @@ dashboard_antigravity_rescue_*/
 
 # Restored/local OneDrive preservation data
 local_archive/
+
+# 忽略 dashboard 內部的 scratch 暫存檔與除錯腳本
+dashboard/scratch_*
+

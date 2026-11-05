@@ -68,6 +68,10 @@ window.CharaModalView = {
         return unitIds.values().next().value;
     },
 
+    escapeHtml(value) {
+        return this._escapeAppearanceText(value);
+    },
+
     _escapeAppearanceText(value, escapeHtml) {
         const text = value == null ? "" : String(value);
         if (typeof escapeHtml === 'function') return escapeHtml(text);
@@ -343,9 +347,10 @@ window.CharaModalView = {
     /**
      * 渲染角色基本資料設定表格 HTML
      * @param {Object|null} profile - 角色 Profile 資料物件
+     * @param {Function} [escapeHtml] - HTML 轉義函式
      * @returns {string} 基本資料 HTML 字串
      */
-    renderProfileDetailsHtml(profile) {
+    renderProfileDetailsHtml(profile, escapeHtml) {
         if (!profile) {
             return `
                 <div style="flex: 1; min-width: 200px; display: flex; flex-direction: column; justify-content: center;">
@@ -356,16 +361,18 @@ window.CharaModalView = {
             `;
         }
 
-        const guild = profile.guild || "未知";
-        const race = profile.race || "未知";
+        const esc = typeof escapeHtml === 'function' ? escapeHtml : (s) => this.escapeHtml(s);
+
+        const guild = esc(profile.guild || "未知");
+        const race = esc(profile.race || "未知");
         const rawAge = profile.age || "";
-        const age = rawAge ? `${rawAge}歲` : "未知";
+        const age = esc(rawAge ? `${rawAge}歲` : "未知");
         const rawHeight = profile.height || "";
-        const height = rawHeight ? `${rawHeight}cm` : "未知";
+        const height = esc(rawHeight ? `${rawHeight}cm` : "未知");
         const rawWeight = profile.weight || "";
-        const weight = rawWeight ? `${rawWeight}kg` : "未知";
-        const birth = (profile.birth_month) ? `${profile.birth_month}月${profile.birth_day}日` : "未知";
-        const cv = profile.voice || "未知";
+        const weight = esc(rawWeight ? `${rawWeight}kg` : "未知");
+        const birth = esc((profile.birth_month) ? `${profile.birth_month}月${profile.birth_day}日` : "未知");
+        const cv = esc(profile.voice || "未知");
 
         return `
             <div style="flex: 1; min-width: 200px;">
@@ -400,15 +407,14 @@ window.CharaModalView = {
     /**
      * 渲染角色自我介紹與標語 HTML
      * @param {Object|null} profile - 角色 Profile 資料物件
-     * @param {Function} escapeHtml - HTML 轉義函式
+     * @param {Function} [escapeHtml] - HTML 轉義函式
      * @returns {string} 自我介紹 HTML 字串
      */
     renderProfileBioHtml(profile, escapeHtml) {
         if (!profile) return "";
-        const catchCopy = profile.catch_copy || "";
-        const selfText = escapeHtml 
-            ? escapeHtml(profile.self_text || "暫無自我介紹。").replace(/\\n/g, '<br>')
-            : (profile.self_text || "暫無自我介紹。").replace(/\\n/g, '<br>');
+        const esc = typeof escapeHtml === 'function' ? escapeHtml : (s) => this.escapeHtml(s);
+        const catchCopy = profile.catch_copy ? esc(profile.catch_copy).replace(/\\n|\n/g, '<br>') : '';
+        const selfText = esc(profile.self_text || "暫無自我介紹。").replace(/\\n|\n/g, '<br>');
 
         return `
             ${catchCopy ? `<div style="font-style: italic; color: var(--accent-color); font-size: 0.9rem; margin-bottom: 10px; text-align: left;">「${catchCopy}」</div>` : ''}
@@ -444,7 +450,7 @@ window.CharaModalView = {
 
         const modalEl = this.getCharaModal();
         const appListHtml = this.renderAppearancesHtml(appearances, resolveStoryMeta, escapeHtml, resolveStoryLabel, realCharaName);
-        const detailsHtml = this.renderProfileDetailsHtml(profile);
+        const detailsHtml = this.renderProfileDetailsHtml(profile, escapeHtml);
         const bioHtml = this.renderProfileBioHtml(profile, escapeHtml);
         const numericExplicitUnitId = Number(explicitUnitId);
         const resolvedUnitId = (Number.isInteger(numericExplicitUnitId) && numericExplicitUnitId > 0)

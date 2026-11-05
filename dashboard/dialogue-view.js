@@ -268,8 +268,9 @@ console.log("dialogue-view.js loaded");
                     `;
                 }
 
-                const voiceBtn = item.voice ? `<button type="button" class="dialogue-voice-btn" onclick="event.stopPropagation(); QuestMapModule.playVoice('${item.voice}')" title="播放語音" aria-label="播放語音">🔊</button>` : '';
-                const voiceAttr = item.voice ? ` data-voice="${item.voice}"` : '';
+                const safeVoiceAttr = item.voice ? escapeFn(String(item.voice)).replace(/\\/g, '\\\\').replace(/'/g, "\\'") : '';
+                const voiceBtn = item.voice ? `<button type="button" class="dialogue-voice-btn" onclick="event.stopPropagation(); QuestMapModule.playVoice('${safeVoiceAttr}')" title="播放語音" aria-label="播放語音">🔊</button>` : '';
+                const voiceAttr = item.voice ? ` data-voice="${escapeFn(String(item.voice))}"` : '';
                 const speakerAttrs = realNameForBtn
                     ? ` onclick="event.stopPropagation(); QuestMapModule.showCharaModal(${JSON.stringify(realNameForBtn).replace(/"/g, '&quot;')}${modalUnitIdArg})" style="cursor: pointer;" title="查看角色資料"`
                     : '';
