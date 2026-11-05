@@ -222,7 +222,7 @@ const QuestMapModule = {
             "克蕾琪塔的聲音": "克蕾琪塔", "蘭法的聲音": "蘭法", "美空的聲音": "美空",
             "涅比亞的聲音": "涅比亞", "古蕾婭的聲音": "古蕾婭", "安的聲音": "安",
             "莫妮卡的聲音": "莫妮卡",
-            "ジュ": "純", "シュ": "雪", "アオ": "碧", "カオ": "香織", "ユカ": "由加莉",
+            "ジュ": "純", "シュ": "雪", "アオ": "碧", "カオ": "香織", "ユカ": "優花梨",
             "コッ": "可可蘿", "コッコロ": "可可蘿", "ナレーション": "旁白", "ナレ": "旁白"
         };
         if (aliases[singleName]) return aliases[singleName];
@@ -525,7 +525,7 @@ const QuestMapModule = {
                     // 由於台服資料庫 (redive_tw.db) 有時尚未上架新角色的個人故事章節，
                     // 我們在此自動為已下載故事對話的新角色補全 4 話的個人故事目錄，確保網頁必定能順利讀取！
                     const pendingNewCharas = [
-                        { unitId: 138301, name: "貪吃佩可（阿斯特萊亞）", prefix: "138300" },
+                        { unitId: 138301, name: "貪吃佩可（阿斯特賴亞）", prefix: "138300" },
                         { unitId: 138701, name: "若菜（冬日）", prefix: "138700" },
                         { unitId: 138801, name: "栞（冬日）", prefix: "138800" },
                         { unitId: 139101, name: "凱留（霸瞳天星）", prefix: "139100" },
@@ -1305,19 +1305,6 @@ const QuestMapModule = {
         }, 80);
     },
 
-    changeMenuBg(type) {
-        const bgArea = document.getElementById('menu-visual-area');
-        if (!bgArea) return;
-        const bgs = {
-            'main': 'https://redive.estertion.win/card/full/105931.webp',
-            'chara': 'https://redive.estertion.win/card/full/100131.webp',
-            'guild': 'https://redive.estertion.win/card/full/105331.webp',
-            'extra': 'https://redive.estertion.win/card/full/105631.webp'
-        };
-        const url = bgs[type] || bgs['main'];
-        bgArea.style.backgroundImage = `url('${url}')`;
-    },
-
     async _render() {
         const tab = document.getElementById('map-tab');
 
@@ -1328,7 +1315,7 @@ const QuestMapModule = {
             <div class="menu-container">
                 <div class="menu-cards-area">
                     <!-- 主要劇情 (左右佈局，橫跨3列) -->
-                    <div class="menu-card card-main" onmouseenter="QuestMapModule.changeMenuBg('main')" onclick="QuestMapModule.enterCategory('main')" 
+                    <div class="menu-card card-main" onclick="QuestMapModule.enterCategory('main')" 
                          style="background-image: url('https://redive.estertion.win/card/full/105861.webp'); background-position: center 25%;">
                         <div class="menu-card-bg-mask"></div>
                         <div class="menu-card-inner">
@@ -1337,7 +1324,7 @@ const QuestMapModule = {
                         </div>
                     </div>
                     <!-- 角色劇情 (上下佈局) -->
-                    <div class="menu-card card-sub" onmouseenter="QuestMapModule.changeMenuBg('chara')" onclick="QuestMapModule.enterCategory('chara')" 
+                    <div class="menu-card card-sub" onclick="QuestMapModule.enterCategory('chara')" 
                          style="background-image: url('https://redive.estertion.win/card/full/100261.webp');">
                         <div class="menu-card-bg-mask"></div>
                         <div class="menu-card-inner">
@@ -1346,7 +1333,7 @@ const QuestMapModule = {
                         </div>
                     </div>
                     <!-- 公會劇情 (上下佈局) -->
-                    <div class="menu-card card-sub" onmouseenter="QuestMapModule.changeMenuBg('guild')" onclick="QuestMapModule.enterCategory('guild')" 
+                    <div class="menu-card card-sub" onclick="QuestMapModule.enterCategory('guild')" 
                          style="background-image: url('https://redive.estertion.win/card/full/101761.webp');">
                         <div class="menu-card-bg-mask"></div>
                         <div class="menu-card-inner">
@@ -1355,7 +1342,7 @@ const QuestMapModule = {
                         </div>
                     </div>
                     <!-- 額外劇情 (上下佈局) -->
-                    <div class="menu-card card-sub" onmouseenter="QuestMapModule.changeMenuBg('extra')" onclick="QuestMapModule.enterCategory('extra')" 
+                    <div class="menu-card card-sub" onclick="QuestMapModule.enterCategory('extra')" 
                          style="background-image: url('https://redive.estertion.win/card/full/104461.webp');">
                         <div class="menu-card-bg-mask"></div>
                         <div class="menu-card-inner">
@@ -2325,7 +2312,7 @@ const QuestMapModule = {
             chaptersList.forEach(chKey => {
                 const isActive = chKey === currentChapter;
                 const shortChName = chKey.replace(/^(第\d+部\s*)/, '');
-                html += `<button class="quick-dir-btn chapter-btn ${isActive ? 'active' : ''}" onclick="QuestMapModule.selectChapterFromTab('${this.escapeHtml(chKey)}')">${this.escapeHtml(shortChName)}</button>`;
+                html += `<button class="quick-dir-btn chapter-btn ${isActive ? 'active' : ''}" onclick="QuestMapModule.selectChapterFromTab('${this.escapeForAttr(chKey)}')">${this.escapeHtml(shortChName)}</button>`;
             });
             if (chaptersList.length === 0) {
                 html += `<span style="font-size: 0.85rem; color: var(--text-secondary); padding: 8px;">暫無章節</span>`;
@@ -2996,61 +2983,15 @@ const QuestMapModule = {
     async openMoviePopup(movieId) {
         if (!movieId) return;
         await this.ensureMovieLinks();
-        if (window.MediaService && typeof window.MediaService.openMoviePopup === 'function') {
-            return window.MediaService.openMoviePopup(movieId, this.movieLinks);
+        if (window.MediaService) {
+            window.MediaService.openMoviePopup(movieId, this.movieLinks, typeof document !== 'undefined' ? document : null);
         }
-        const cleanId = String(movieId).replace('movie_', '').replace('story_', '');
-        const gdriveId = this.movieLinks ? (this.movieLinks[cleanId] || this.movieLinks[`story_${cleanId}`]) : null;
-
-        let modal = document.getElementById('movie-player-modal');
-        if (!modal) {
-            modal = document.createElement('div');
-            modal.id = 'movie-player-modal';
-            modal.className = 'movie-player-modal';
-            modal.innerHTML = `
-                <div class="movie-player-box">
-                    <div class="movie-player-body" id="movie-player-body"></div>
-                </div>
-            `;
-            document.body.appendChild(modal);
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) QuestMapModule.closeMoviePopup();
-            });
-        }
-
-        const bodyEl = document.getElementById('movie-player-body');
-        if (!bodyEl) return;
-
-        if (gdriveId) {
-            bodyEl.innerHTML = `<iframe src="https://drive.google.com/file/d/${gdriveId}/preview?autoplay=1" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>`;
-        } else {
-            bodyEl.innerHTML = `
-                <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; background: #162030; padding: 24px; text-align: center;">
-                    <div style="font-size: 2.6rem; margin-bottom: 12px; animation: pulse 2s infinite;">☁️</div>
-                    <div style="font-size: 1.15rem; font-weight: 700; color: #60a5fa; margin-bottom: 8px;">動畫標識：story_${cleanId}</div>
-                    <div style="font-size: 0.88rem; color: #cbd5e1; max-width: 480px; line-height: 1.6;">
-                        此動畫正在準備上傳至 Google Drive 雲端中，或尚未同步至映射表。<br>
-                        若您在本地已壓制完畢，請執行同步腳本更新線上串流連結。
-                    </div>
-                </div>
-            `;
-        }
-
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
     },
 
     closeMoviePopup() {
-        if (window.MediaService && typeof window.MediaService.closeMoviePopup === 'function') {
-            return window.MediaService.closeMoviePopup();
+        if (window.MediaService) {
+            window.MediaService.closeMoviePopup(typeof document !== 'undefined' ? document : null);
         }
-        const modal = document.getElementById('movie-player-modal');
-        if (modal) {
-            modal.classList.remove('active');
-            const bodyEl = document.getElementById('movie-player-body');
-            if (bodyEl) bodyEl.innerHTML = '';
-        }
-        document.body.style.overflow = '';
     },
 
     handleAvatarError(img, realName) {

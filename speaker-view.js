@@ -135,12 +135,12 @@ window.SpeakerView = {
                     <div style="flex: 1; min-width: 250px;">
                         <input type="text" id="speaker-search-input" placeholder="🔍 搜尋登場角色名字..." value="${safeSearchVal}"  
                                oninput="QuestMapModule.handleSpeakerSearch(this.value)" 
-                               style="width: 100%; padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(0,0,0,0.2); color: #fff; font-size: 0.9rem; outline: none; transition: border 0.2s;">
+                               style="width: 100%; padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(232, 56, 117, 0.25); background: rgba(255, 255, 255, 0.85); color: var(--text-primary); font-size: 0.9rem; outline: none; transition: border 0.2s;">
                     </div>
                     <div style="display: flex; align-items: center; gap: 8px;">
                         <span style="color: var(--text-secondary); font-size: 0.9rem;">排序方式：</span>
                         <select onchange="QuestMapModule.handleSpeakerSort(this.value)" 
-                                style="padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(20,20,20,0.8); color: #fff; font-size: 0.9rem; outline: none; cursor: pointer;">
+                                style="padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(232, 56, 117, 0.25); background: rgba(255, 255, 255, 0.85); color: var(--text-primary); font-size: 0.9rem; outline: none; cursor: pointer;">
                             <option value="appearances-desc" ${sortVal === 'appearances-desc' ? 'selected' : ''}>登場話數：多 ➔ 少</option>
                             <option value="appearances-asc" ${sortVal === 'appearances-asc' ? 'selected' : ''}>登場話數：少 ➔ 多</option>
                             <option value="name-asc" ${sortVal === 'name-asc' ? 'selected' : ''}>名字排序：A ➔ Z</option>

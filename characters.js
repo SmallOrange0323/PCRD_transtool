@@ -171,7 +171,7 @@ window.CharactersModule = {
                         ${avatarHtml}
                     </div>
                     <div class="char-info">
-                        <div class="char-name">${c.unit_name}</div>
+                        <div class="char-name">${this.escapeHtml(c.unit_name)}</div>
                         <div style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 5px;">ID: ${c.unit_id}</div>
                         <div class="char-meta">
                             <span>站位: ${c.pos || '??'}</span>
@@ -213,10 +213,10 @@ window.CharactersModule = {
                                     </div>
                                 </td>
                                 <td class="cell-id">${c.unit_id}</td>
-                                <td class="cell-name">${c.unit_name}</td>
+                                <td class="cell-name">${this.escapeHtml(c.unit_name)}</td>
                                 <td class="cell-pos">${c.pos || '??'}</td>
-                                <td>${c.race || ''}</td>
-                                <td class="cell-guild">${c.guild || '無所屬'}</td>
+                                <td>${this.escapeHtml(c.race || '??')}</td>
+                                <td class="cell-guild">${this.escapeHtml(c.guild || '??')}</td>
                                 <td style="text-align: center;" onclick="event.stopPropagation()">
                                     <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer;" ${isExcluded ? 'checked' : ''} onchange="CharactersModule.toggleExclude(${c.unit_id}, event)">
                                 </td>
@@ -513,8 +513,8 @@ window.CharactersModule = {
                                         </div>
                                     ` : ''}
                                 </div>
-                                <div class="skill-name" id="skill-slot-name-${slot.key}">${activeVariant.name}</div>
-                                <div class="skill-desc" id="skill-slot-desc-${slot.key}">${(activeVariant.description || '').replace(/\\n/g, '<br>')}</div>
+                                <div class="skill-name" id="skill-slot-name-${slot.key}">${this.escapeHtml(activeVariant.name)}</div>
+                                <div class="skill-desc" id="skill-slot-desc-${slot.key}">${this.escapeHtml(activeVariant.description || '').replace(/\\n|\n/g, '<br>')}</div>
                             </div>
                         </div>
                     `;
@@ -559,10 +559,10 @@ window.CharactersModule = {
                                     <div class="unique-equip-info">
                                         <div class="unique-equip-title">
                                             <span class="unique-equip-slot-tag">【${slotName}】</span>
-                                            <span>${eq.equipment_name}</span>
+                                            <span>${this.escapeHtml(eq.equipment_name)}</span>
                                         </div>
                                         ${statBadges.length > 0 ? `<div class="unique-equip-stats">${statBadges.join('')}</div>` : ''}
-                                        <div class="unique-equip-desc">${(eq.description || '').replace(/\\n/g, '<br>')}</div>
+                                        <div class="unique-equip-desc">${this.escapeHtml(eq.description || '').replace(/\\n|\n/g, '<br>')}</div>
                                     </div>
                                 </div>
                             `;
@@ -578,7 +578,7 @@ window.CharactersModule = {
                     </div>
                     <div class="detail-main-info">
                         <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
-                            <h2 style="margin: 0; display: flex; align-items: center; gap: 8px;">${gameName} <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: normal;">(ID: ${unitId})</span></h2>
+                            <h2 style="margin: 0; display: flex; align-items: center; gap: 8px;">${this.escapeHtml(gameName)} <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: normal;">(ID: ${unitId})</span></h2>
                             ${toggleBtn}
                             <div class="level-input-group">
                                 <span>Lv.</span>
@@ -665,7 +665,7 @@ window.CharactersModule = {
 
         if (iconEl) iconEl.innerHTML = window.AvatarService.getSkillIconHtml(v.icon_type);
         if (nameEl) nameEl.textContent = v.name;
-        if (descEl) descEl.innerHTML = (v.description || '').replace(/\n/g, '<br>');
+        if (descEl) descEl.innerHTML = this.escapeHtml(v.description || '').replace(/\\n|\n/g, '<br>');
         if (badgeEl) badgeEl.innerHTML = v.isRf ? '<span class="skill-rf-tag">⚖️ 平衡調整</span>' : '';
 
         const slotEl = document.getElementById(`skill-slot-${slotKey}`);
@@ -772,6 +772,15 @@ window.CharactersModule = {
         `;
     },
 
+    escapeHtml(str) {
+        return String(str == null ? '' : str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    },
+
     toFiniteStat(value) {
         if (value === null || value === undefined || value === '') {
             return null;
@@ -824,6 +833,14 @@ window.CharactersModule = {
     },
 
     closeDetail() {
+        if (this.currentAudio) {
+            this.currentAudio.pause();
+            this.currentAudio.currentTime = 0;
+            this.currentAudio = null;
+        }
+        if (window.MediaService && typeof window.MediaService.stopVoice === 'function') {
+            window.MediaService.stopVoice();
+        }
         document.getElementById('char-detail-modal').classList.remove('active');
     },
 
@@ -852,10 +869,10 @@ window.CharactersModule = {
         
         const isShowingReal = btn.innerText.includes('遊戲名');
         if (isShowingReal) {
-            titleEl.innerHTML = `${gameName} <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: normal;">(ID: ${this.activeUnitId})</span>`;
+            titleEl.innerHTML = `${this.escapeHtml(gameName)} <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: normal;">(ID: ${this.activeUnitId})</span>`;
             btn.innerText = `🔍 顯示真名`;
         } else {
-            titleEl.innerHTML = `${realName} <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: normal;">(ID: ${this.activeUnitId})</span>`;
+            titleEl.innerHTML = `${this.escapeHtml(realName)} <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: normal;">(ID: ${this.activeUnitId})</span>`;
             btn.innerText = `🎮 顯示遊戲名`;
         }
     },
@@ -908,12 +925,15 @@ window.CharactersModule = {
             '庫露露': { world: 'GeoTheogonia', guild: '吉歐‧提格尼亞' },
             '莉莉': { world: 'GeoTheogonia', guild: '幻變少女' },
             '克羅榭': { world: 'GeoTheogonia', guild: '幻變少女' },
+            '克蘿茜': { world: 'GeoTheogonia', guild: '幻變少女' },
             '普蕾希亞': { world: 'GeoTheogonia', guild: '幻變少女' },
             '普蕾西亞': { world: 'GeoTheogonia', guild: '幻變少女' },
             '可璃亞': { world: 'GeoTheogonia', guild: '幻變少女' },
             
             // 吉歐‧格黑納
             '涅妃＝涅羅': { world: 'GeoGehenna', guild: '無公會' },
+            '涅妃‧涅羅': { world: 'GeoGehenna', guild: '無公會' },
+            '涅妃・涅羅': { world: 'GeoGehenna', guild: '無公會' },
             '涅妃': { world: 'GeoGehenna', guild: '無公會' },
             '華音': { world: 'GeoGehenna', guild: '無公會' },
             '鳳凰': { world: 'GeoGehenna', guild: '無公會' },
@@ -959,7 +979,7 @@ window.CharactersModule = {
             const override = charWorldOverrides[baseName] || charWorldOverrides[c.unit_name];
             if (override) {
                 worldKey = override.world;
-                guildName = override.guild;
+                guildName = override.guild || c.guild || '無公會';
             } else if (guildToWorld[c.guild]) {
                 worldKey = guildToWorld[c.guild];
                 guildName = c.guild;
@@ -968,6 +988,17 @@ window.CharactersModule = {
                     guildName = '無公會';
                     worldKey = 'Astraea';
                 }
+            }
+
+            if (!worlds[worldKey]) {
+                worlds[worldKey] = {
+                    name: worldKey,
+                    desc: `${worldKey} 角色群`,
+                    bg: override && override.color
+                        ? `linear-gradient(135deg, ${override.color}18 0%, rgba(255, 255, 255, 0.03) 100%)`
+                        : 'linear-gradient(135deg, rgba(255, 107, 157, 0.08) 0%, rgba(255, 230, 235, 0.03) 100%)',
+                    guilds: {}
+                };
             }
 
             if (!worlds[worldKey].guilds[guildName]) {
@@ -1011,7 +1042,7 @@ window.CharactersModule = {
                                 return `
                                     <div class="guild-box glass-card" style="padding: 16px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.015); display: flex; flex-direction: column; gap: 12px; transition: var(--transition);">
                                         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 10px;">
-                                            <h4 style="margin: 0; font-size: 0.95rem; color: var(--text-primary); font-weight: 600;">${guildName}</h4>
+                                            <h4 style="margin: 0; font-size: 0.95rem; color: var(--text-primary); font-weight: 600;">${this.escapeHtml(guildName)}</h4>
                                             <span style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 500; background: rgba(255,255,255,0.05); padding: 2px 8px; border-radius: 8px;">${list.length} 人</span>
                                         </div>
                                         <div class="guild-members" style="display: flex; flex-wrap: wrap; gap: 8px;">
@@ -1019,7 +1050,7 @@ window.CharactersModule = {
                                                 const avatarHtml = window.AvatarService.getCharacterCardAvatarHtml(c.unit_id, c.unit_name);
                                                 return `
                                                     <div class="member-avatar-wrapper" onclick="CharactersModule.showDetail(${c.unit_id})" 
-                                                         title="${c.unit_name} (ID: ${c.unit_id})" 
+                                                         title="${this.escapeHtml(c.unit_name)} (ID: ${c.unit_id})" 
                                                          style="cursor: pointer; transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative;">
                                                         <div class="guild-member-avatar" style="width: 44px; height: 44px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
                                                             ${avatarHtml}
@@ -1079,8 +1110,8 @@ window.CharactersModule = {
                             <div class="story-header" onclick="CharactersModule.toggleStoryDialogue(${s.story_id})" 
                                  style="padding: 15px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; background: rgba(255,255,255,0.015);">
                                 <div>
-                                    <h4 style="margin: 0; font-size: 0.95rem; color: var(--text-primary); font-weight: 600;">${s.title}</h4>
-                                    <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px;">${s.sub_title}</div>
+                                    <h4 style="margin: 0; font-size: 0.95rem; color: var(--text-primary); font-weight: 600;">${this.escapeHtml(s.title)}</h4>
+                                    <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px;">${this.escapeHtml(s.sub_title)}</div>
                                 </div>
                                 <div style="display: flex; align-items: center;">
                                     <button class="play-story-btn active-hover-effect" onclick="event.stopPropagation(); CharactersModule.jumpToStoryPlayer(${s.story_id})" 
@@ -1090,7 +1121,7 @@ window.CharactersModule = {
                                     <span class="chevron-${s.story_id}" style="transition: transform 0.3s ease; font-size: 0.85rem; color: var(--text-secondary);">▼</span>
                                 </div>
                             </div>
-                            <div id="story-dialogue-${s.story_id}" class="story-dialogue-content" style="display: none; padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.05); background: rgba(0,0,0,0.15);">
+                            <div id="story-dialogue-${s.story_id}" class="story-dialogue-content" style="display: none; padding: 15px 20px; border-top: 1px dashed rgba(232, 56, 117, 0.2); background: rgba(0,0,0,0.15);">
                                 <div class="loading-mini" style="text-align: center; padding: 10px; color: var(--text-secondary);">正在讀取原生繁中台詞與語音...</div>
                             </div>
                         </div>
@@ -1119,7 +1150,15 @@ window.CharactersModule = {
                     const resp = await fetch(`story/${storyId}.json?v=${Date.now()}`);
                     if (!resp.ok) throw new Error("HTTP " + resp.status);
                     
-                    const dialogues = await resp.json();
+                    const rawDialogues = await resp.json();
+                    let dialogues = [];
+                    if (window.DialogueNormalizer && typeof window.DialogueNormalizer.normalize === 'function') {
+                        const normResult = window.DialogueNormalizer.normalize(rawDialogues);
+                        dialogues = Array.isArray(normResult) ? normResult : (normResult.dialogueList || []);
+                    } else if (Array.isArray(rawDialogues)) {
+                        dialogues = rawDialogues.filter(d => d && (d.words || (!d.type || d.type === 'talk')));
+                    }
+
                     if (!dialogues || dialogues.length === 0) {
                         contentDiv.innerHTML = '<div style="color: var(--text-secondary); font-size: 0.85rem; text-align: center; padding: 10px;">此話無對白數據</div>';
                         return;
@@ -1147,30 +1186,50 @@ window.CharactersModule = {
                                 <span style="color: var(--accent-color); font-weight: bold;">觀看 ➔</span>
                             </div>
                             ${dialogues.map(d => {
+                                if (!d || d.type === 'background' || d.type === 'movie') return '';
+                                if (!d.words) {
+                                    if (d.type === 'still' && d.still_id && d.still_id !== 'end' && window.StoryAssetService && typeof window.StoryAssetService.getStillImageUrl === 'function') {
+                                        const stillUrl = window.StoryAssetService.getStillImageUrl(d.still_id);
+                                        return `
+                                            <div class="dialogue-still-card" style="margin: 8px 0; text-align: center;">
+                                                <img src="${this.escapeHtml(stillUrl)}" alt="CG 插畫" style="max-width: 100%; max-height: 240px; border-radius: 8px; border: 1px solid rgba(232, 56, 117, 0.2); box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                            </div>
+                                        `;
+                                    }
+                                    return '';
+                                }
+
                                 const hasVoice = !!d.voice;
+                                const safeVoice = hasVoice ? this.escapeHtml(d.voice) : '';
                                 const playBtn = hasVoice ? `
-                                    <button class="voice-play-btn" onclick="CharactersModule.playCharaVoice(${storyId}, '${d.voice}')"
+                                    <button class="voice-play-btn" onclick="CharactersModule.playCharaVoice(${storyId}, '${safeVoice}')"
                                             style="border: none; background: var(--accent-color); color: white; border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; box-shadow: 0 2px 6px rgba(232,56,117,0.3); transition: all 0.2s; font-size: 0.7rem;">
                                         ▶
                                     </button>
                                 ` : '';
-                                
+
+                                const rawWords = window.DialogueView && typeof window.DialogueView.normalizePlayerName === 'function'
+                                    ? window.DialogueView.normalizePlayerName(d.words || '')
+                                    : String(d.words || '');
+                                const cleanWords = this.escapeHtml(rawWords).replace(/\\n|\n/g, '<br>');
+                                const speakerName = d.name ? this.escapeHtml(d.name) : '';
+
                                 return `
-                                    <div class="dialogue-row" style="display: flex; gap: 10px; align-items: flex-start; justify-content: ${d.name ? 'flex-start' : 'center'};">
+                                    <div class="dialogue-row" style="display: flex; gap: 10px; align-items: flex-start; justify-content: ${speakerName ? 'flex-start' : 'center'};">
                                         ${playBtn}
                                         <div class="dialogue-balloon" style="
-                                            background: ${d.name ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.015)'};
-                                            border: 1px solid ${d.name ? 'rgba(255,255,255,0.06)' : 'transparent'};
+                                            background: rgba(255, 248, 250, 0.85);
+                                            border: 1px solid rgba(232, 56, 117, 0.15);
                                             padding: 10px 14px;
                                             border-radius: 12px;
                                             max-width: 80%;
                                             font-size: 0.85rem;
                                             line-height: 1.5;
-                                            font-style: ${d.name ? 'normal' : 'italic'};
-                                            color: ${d.name ? 'var(--text-primary)' : 'var(--text-secondary)'};
+                                            font-style: ${speakerName ? 'normal' : 'italic'};
+                                            color: var(--text-primary);
                                         ">
-                                            ${d.name ? `<strong style="color: var(--accent-color); display: block; margin-bottom: 4px; font-size: 0.8rem;">${d.name}</strong>` : ''}
-                                            <div>${d.words.replace(/\\n|\n/g, '<br>')}</div>
+                                            ${speakerName ? `<strong style="color: var(--accent-color); display: block; margin-bottom: 4px; font-size: 0.8rem;">${this.escapeHtml(d.name || '旁白')}</strong>` : ''}
+                                            <div>${cleanWords}</div>
                                         </div>
                                     </div>
                                 `;
