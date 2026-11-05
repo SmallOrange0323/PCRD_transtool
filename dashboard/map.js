@@ -570,10 +570,10 @@ const QuestMapModule = {
                     `;
                     const rawGuild = await window.PCRDatabase.runQuery(guildSql);
                     const guildStories = rawGuild.map(row => ({
-                        id: row.story_id,
+                        id: Number(row.story_id),
                         chapter: row.title || "公會劇情",
                         title: row.sub_title || "",
-                        groupId: row.story_group_id,
+                        groupId: Number(row.story_group_id),
                         isEvent: false,
                         type: 'guild',
                     }));
@@ -589,10 +589,10 @@ const QuestMapModule = {
                     `;
                     const rawTower = await window.PCRDatabase.runQuery(towerSql);
                     const towerStories = rawTower.map(row => ({
-                        id: row.story_id,
+                        id: Number(row.story_id),
                         chapter: row.title || "露娜塔/系統劇情",
                         title: row.sub_title || "",
-                        groupId: row.story_group_id,
+                        groupId: Number(row.story_group_id),
                         isEvent: false,
                         type: 'tower',
                     }));
@@ -600,8 +600,8 @@ const QuestMapModule = {
 
                     // 5. 台版第 3 部分支劇情補充 (Supplemental Branch Stories)
                     if (window.ChapterDataService && Array.isArray(window.ChapterDataService.branchStories)) {
-                        const existingIds = new Set(this.stories.map(s => s.id));
-                        const newBranchStories = window.ChapterDataService.branchStories.filter(s => !existingIds.has(s.id));
+                        const existingIds = new Set(this.stories.map(s => Number(s.id)));
+                        const newBranchStories = window.ChapterDataService.branchStories.filter(s => !existingIds.has(Number(s.id)));
                         this.stories = this.stories.concat(newBranchStories);
                         console.log(`[QuestMapModule] 成功補充載入 ${newBranchStories.length} 篇第 3 部分支劇情`);
                     }
@@ -742,10 +742,10 @@ const QuestMapModule = {
                 `;
                 const rawEventStories = await window.PCRDatabase.runQuery(eventDetailSql);
                 this.eventStories = rawEventStories.map(row => ({
-                    id: row.story_id,
+                    id: Number(row.story_id),
                     chapter: row.title || "",
                     title: row.sub_title || "",
-                    groupId: row.story_group_id,
+                    groupId: Number(row.story_group_id),
                     isEvent: true,
                 }));
                 
@@ -817,6 +817,7 @@ const QuestMapModule = {
     groupStories() {
         this.chapters = {};
         const filtered = this.stories.filter(s => s.type === 'main' && s.part === this.currentPart);
+        filtered.sort((a, b) => Number(a.id) - Number(b.id));
 
         filtered.forEach(s => {
             // Part 3 主線分頁：隱藏幕間劇情 (group_id >= 3000)
@@ -825,7 +826,9 @@ const QuestMapModule = {
             }
             const chKey = ChapterDataService.getChapterKey(this.currentPart, s.groupId, s.chapter);
             if (!this.chapters[chKey]) this.chapters[chKey] = [];
-            this.chapters[chKey].push(s);
+            if (!this.chapters[chKey].some(existing => Number(existing.id) === Number(s.id))) {
+                this.chapters[chKey].push(s);
+            }
         });
 
         // 依章節順序排序
@@ -1931,7 +1934,7 @@ const QuestMapModule = {
             let displayChapterName = "";
             let episodeSubtitle = s.title;
             if (this.activeTabType === 'main') {
-                displayChapterName = s.chapter.replace(/^(第\d+部\s*)?([^\s]+章\s*|[^\s]+序章\s*|[^\s]+幕間[^\s]*\s*)/, '');
+                displayChapterName = s.chapter.replace(/^(第?\d+部\s*)?([^\s]+章\s*|[^\s]+序章\s*|[^\s]+幕間[^\s]*\s*)/, '');
                 if (!displayChapterName) displayChapterName = s.chapter;
             } else if (this.activeTabType === 'event') {
                 const cleanEventTitle = chKey.substring(chKey.indexOf('』') + 1 || chKey.indexOf('】') + 1 || chKey.indexOf('」') + 1).trim();
@@ -2100,7 +2103,8 @@ const QuestMapModule = {
     },
 
     getStoryById(storyId) {
-        return this.stories.find(s => s.id === storyId) || this.eventStories.find(s => s.id === storyId);
+        const targetId = Number(storyId);
+        return this.stories.find(s => Number(s.id) === targetId) || this.eventStories.find(s => Number(s.id) === targetId);
     },
 
     async selectStory(storyId) {
