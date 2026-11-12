@@ -33,6 +33,7 @@ const QuestMapModule = {
     extraStoryIndex: null,
     activeExtraCategory: null,
     pcpMode: false,
+    pcpReturnContext: null,
     activeCharaName: null,
     charaSearchQuery: "",
     directoryLevel: 'level1', // 'level1' (章節/活動卡片清單) | 'level2' (話數清單)
@@ -1211,9 +1212,14 @@ const QuestMapModule = {
         this.safeRender(() => this._render());
     },
 
-    openPcpView() {
+    openPcpView(returnContext = null) {
         this.teardownPlayback({ invalidateAsync: true });
         window.ReaderNavigation?.left();
+        this.pcpReturnContext = returnContext || (
+            this.activeTabType === 'main'
+                ? { tab: 'main', part: this.currentPart, expandedChapter: this.expandedChapter }
+                : null
+        );
         this.currentView = 'list';
         this.activeTabType = 'extra';
         this.activeExtraCategory = 'phantom_dragon_raid';
@@ -1221,9 +1227,32 @@ const QuestMapModule = {
         this.safeRender(() => this._render());
     },
 
+    openPhantomDragonSection(sectionTitle) {
+        this.teardownPlayback({ invalidateAsync: true });
+        window.PcpView?.teardown();
+        window.ReaderNavigation?.left();
+        this.pcpMode = false;
+        this.pcpReturnContext = null;
+        this.currentView = 'list';
+        this.activeTabType = 'extra';
+        this.activeExtraCategory = 'phantom_dragon_raid';
+        this.expandedChapter = sectionTitle;
+        this.directoryLevel = 'level2';
+        this.safeRender(() => this._render());
+    },
+
     closePcpView() {
         window.PcpView?.teardown();
         this.pcpMode = false;
+        const ret = this.pcpReturnContext;
+        this.pcpReturnContext = null;
+        if (ret && ret.tab === 'main') {
+            this.activeTabType = 'main';
+            this.currentPart = ret.part || 3;
+            this.activeExtraCategory = null;
+            this.expandedChapter = ret.expandedChapter || null;
+            this.directoryLevel = this.expandedChapter ? 'level2' : 'level1';
+        }
         this.safeRender(() => this._render());
     },
 
@@ -2004,18 +2033,40 @@ const QuestMapModule = {
         const isPart3Ch17 = this.activeTabType === 'main' && this.currentPart === 3 && (chKey.includes('第17章') || childStories.some(s => Number(s.groupId) === 2217));
         if (!isPart3Ch17) return itemsHtml;
         const pcpShortcutHtml = `
-            <div class="story-item" id="story-item-pcp-raid-entry" onclick="QuestMapModule.openPcpView()" style="border: 1.5px solid rgba(232, 56, 117, 0.45); background: linear-gradient(135deg, rgba(255, 232, 242, 0.92), rgba(255, 245, 250, 0.92));">
+            <div class="story-item" id="story-item-raid-pre-entry" onclick="QuestMapModule.openPhantomDragonSection('終末幻境 ─幻龍爭霸戰─（Boss 戰前）')" style="border: 1px solid rgba(232, 56, 117, 0.25); background: linear-gradient(135deg, rgba(255, 245, 250, 0.9), rgba(255, 255, 255, 0.95));">
                 <div class="story-item-thumb">
-                    <img src="icon/story/9500001.webp" alt="終末幻境 ─幻龍爭霸戰─" class="story-thumb-img" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                    <img src="icon/story/9014001.webp" alt="終末幻境 ─幻龍爭霸戰─（Boss 戰前）" class="story-thumb-img" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
                 </div>
                 <div class="story-item-content">
-                    <div class="story-item-ch" style="color: #e83875; font-weight: 800;">✨ 終末幻境 ─幻龍爭霸戰─（239 話）</div>
-                    <div class="story-item-title" style="color: #9c2754;">開啟公主選擇互動介面 (Princess Connect Process)</div>
+                    <div class="story-item-ch" style="color: #e83875; font-weight: 700;">⚔️ 終末幻境 ─幻龍爭霸戰─</div>
+                    <div class="story-item-title">Boss 戰前（預告・開場・決戰前夕 30 話）</div>
                 </div>
                 <div class="story-item-arrow">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                    </svg>
+                    <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                </div>
+            </div>
+            <div class="story-item" id="story-item-pcp-raid-entry" onclick="QuestMapModule.openPcpView()" style="border: 1.5px solid rgba(232, 56, 117, 0.55); background: linear-gradient(135deg, rgba(255, 224, 238, 0.92), rgba(255, 242, 248, 0.95));">
+                <div class="story-item-thumb">
+                    <img src="icon/story/9500001.webp" alt="Princess Connect Process" class="story-thumb-img" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                </div>
+                <div class="story-item-content">
+                    <div class="story-item-ch" style="color: #d81b60; font-weight: 800;">✨ Princess Connect Process</div>
+                    <div class="story-item-title" style="color: #9c2754;">公主選擇互動介面（102 位角色・207 話）</div>
+                </div>
+                <div class="story-item-arrow">
+                    <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                </div>
+            </div>
+            <div class="story-item" id="story-item-raid-post-entry" onclick="QuestMapModule.openPhantomDragonSection('終末幻境 ─幻龍爭霸戰─（Boss 戰後）')" style="border: 1px solid rgba(232, 56, 117, 0.25); background: linear-gradient(135deg, rgba(255, 245, 250, 0.9), rgba(255, 255, 255, 0.95));">
+                <div class="story-item-thumb">
+                    <img src="icon/story/9500001.webp" alt="終末幻境 ─幻龍爭霸戰─（Boss 戰後）" class="story-thumb-img" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                </div>
+                <div class="story-item-content">
+                    <div class="story-item-ch" style="color: #e83875; font-weight: 700;">⚔️ 終末幻境 ─幻龍爭霸戰─</div>
+                    <div class="story-item-title">Boss 戰後（恐懼消失之日・決戰尾聲 2 話）</div>
+                </div>
+                <div class="story-item-arrow">
+                    <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
                 </div>
             </div>
         `;
@@ -2023,6 +2074,10 @@ const QuestMapModule = {
     },
 
     selectDirectoryGroup(chKey) {
+        if (this.activeTabType === 'extra' && this.activeExtraCategory === 'phantom_dragon_raid' && chKey === 'Princess Connect Process（角色專屬劇情）') {
+            this.openPcpView({ tab: 'extra' });
+            return;
+        }
         if (!this.chapters || !this.chapters[chKey]) return;
 
         // 1. 記錄 Level 1 目前滾動位置
