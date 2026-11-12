@@ -218,6 +218,7 @@ console.log("dialogue-view.js loaded");
                 const safeSpeaker = escapeFn(displaySpeaker);
                 const normalizedRawWords = this.normalizePlayerName(item.words || "");
                 const words = escapeFn(normalizedRawWords)
+                    .replace(/\[rub:\s*([^\]]+)\]([\s\S]*?)\[\/rub\]/g, (_, rt, base) => `<ruby>${base}<rt>${rt.trim()}</rt></ruby>`)
                     .replace(/\\n/g, "<br>")
                     .replace(/\n/g, "<br>");
 

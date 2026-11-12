@@ -2198,6 +2198,23 @@ body {
     text-align: left;
 }
 
+.game-dialogue-text:has(ruby) {
+    line-height: 2;
+}
+
+.game-dialogue-text ruby {
+    ruby-position: over;
+    ruby-align: center;
+}
+
+.game-dialogue-text ruby rt {
+    font-size: 0.62em;
+    line-height: 1;
+    color: #7a8694;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
 /* 右側圓形 3D 藍色喇叭語音按鈕 */
 
 
