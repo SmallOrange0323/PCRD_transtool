@@ -27,12 +27,16 @@ console.log("media-service.js loaded");
          */
         getVoiceCandidates(voiceName) {
             if (!voiceName || typeof voiceName !== 'string') return [];
+            if (voiceName.startsWith('vo_ps_')) {
+                return [`sound/story_vo/princess_select/${voiceName}.m4a`];
+            }
             const match = voiceName.match(/\d{7}/);
             const groupId = match ? match[0] : voiceName.substring(7, 14);
             return [
                 `https://pcrd-story-voice.pages.dev/story_vo/${groupId}/${voiceName}.m4a`,
                 `https://prcn-sound.estertion.win/story_vo/${groupId}/${voiceName}.m4a`,
-                `https://redive.estertion.win/sound/story_vo/${groupId}/${voiceName}.m4a`
+                `https://redive.estertion.win/sound/story_vo/${groupId}/${voiceName}.m4a`,
+                `sound/story_vo/${voiceName}.m4a`
             ];
         },
 

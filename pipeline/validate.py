@@ -921,7 +921,7 @@ def validate_extra_story_index(
     """
     驗證 extra_story_index.json 的資料契約與分類架構 (Phase 3 Part B & C & D)。
     1. Taxonomy 規範:
-       - official_categories: 12 個
+       - official_categories: 13 個
        - legacy_categories: 4 個
        - special_categories: 3 個
     2. Explicit story counts:
@@ -955,7 +955,7 @@ def validate_extra_story_index(
 
     # 2. Taxonomy 結構與數量檢驗 (保留分類層級數量門禁，允許未來內容自然擴充)
     expected_taxonomy = {
-        "official_categories": 12,
+        "official_categories": 13,
         "legacy_categories": 4,
         "special_categories": 3
     }
@@ -1124,6 +1124,7 @@ def validate_story_map(
         base_dir / "story-asset-service.js",
         base_dir / "story-data-service.js",
         base_dir / "reader-navigation.js",
+        base_dir / "pcp-view.js",
         base_dir / "speaker-view.js",
         base_dir / "chara-modal.js",
         base_dir / "dialogue-normalizer.js",
@@ -1350,6 +1351,7 @@ def validate_story_map(
                 "story-asset-service.js",
                 "story-data-service.js",
                 "reader-navigation.js",
+                "pcp-view.js",
                 "speaker-view.js",
                 "chara-modal.js",
                 "dialogue-normalizer.js",

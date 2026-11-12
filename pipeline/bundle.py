@@ -358,6 +358,7 @@ def render_index_html(dashboard_dir: Path = DASHBOARD_DIR, story_hash: Optional[
     story_data_hash = calc_sha256(story_data_js_path)[:8]
     map_hash = calc_sha256(map_js_path)[:8]
     reader_hash = calc_sha256(dashboard_dir / "reader-navigation.js")[:8]
+    pcp_hash = calc_sha256(dashboard_dir / "pcp-view.js")[:8]
     style_css_path = dashboard_dir / "style.css"
     style_hash = calc_sha256(style_css_path)[:8]
 
@@ -375,6 +376,7 @@ def render_index_html(dashboard_dir: Path = DASHBOARD_DIR, story_hash: Optional[
     html_content = re.sub(r'<script src="map\.js(?:\?v=[^"]*)?"></script>', f'<script src="map.js?v={map_hash}"></script>', html_content)
 
     html_content = re.sub(r'<script src="reader-navigation\.js(?:\?v=[^"]*)?"></script>', f'<script src="reader-navigation.js?v={reader_hash}"></script>', html_content)
+    html_content = re.sub(r'<script src="pcp-view\.js(?:\?v=[^"]*)?"></script>', f'<script src="pcp-view.js?v={pcp_hash}"></script>', html_content)
     return html_content
 
 def get_expected_dialogue_icon_mappings(dashboard_dir: Path = DASHBOARD_DIR) -> Dict[str, Path]:
@@ -837,7 +839,7 @@ def calculate_expected_additions_and_deltas(dashboard_dir: Path = DASHBOARD_DIR,
         "style.css", "db.js", "avatar-service.js", "story-asset-service.js",
         "chapter-data.js", "characters.js", "speaker-view.js", "chara-modal.js",
         "dialogue-normalizer.js", "media-service.js", "dialogue-view.js",
-        "auto-voice-controller.js", "story-data-service.js", "map.js", "reader-navigation.js",
+        "auto-voice-controller.js", "story-data-service.js", "map.js", "reader-navigation.js", "pcp-view.js",
         "sql-wasm.js", "sql-wasm.wasm", "redive_tw.db"
     ]
     for cf in core_files:
@@ -1061,6 +1063,7 @@ def bundle_story_map(dry_run: bool = False) -> bool:
         ("auto-voice-controller.js", "auto-voice-controller.js"),
         ("story-data-service.js", "story-data-service.js"),
         ("reader-navigation.js", "reader-navigation.js"),
+        ("pcp-view.js", "pcp-view.js"),
         ("map.js", "map.js"),
         ("sql-wasm.js", "sql-wasm.js"),
         ("sql-wasm.wasm", "sql-wasm.wasm"),
@@ -1123,6 +1126,7 @@ def bundle_story_map(dry_run: bool = False) -> bool:
     # 注意：大體積 still/story (~1.24 GB) 已完全移交遠端 CDN，不再打包至發布包！
     bg_copied = sync_directory_assets(DASHBOARD_DIR / "still" / "bg", DIST_DIR / "still" / "bg", [".webp", ".png"], dry_run=dry_run)
     scenario_copied = sync_directory_assets(DASHBOARD_DIR / "still" / "scenario", DIST_DIR / "still" / "scenario", [".webp", ".png"], dry_run=dry_run)
+    pcp_still_copied = sync_directory_assets(DASHBOARD_DIR / "still" / "princess_select", DIST_DIR / "still" / "princess_select", [".webp", ".png"], dry_run=dry_run)
 
     # 7. 精準同步角色卡面與頭像 (使用 get_expected_icon_unit_mappings 精準同步)
     card_copied = 0

@@ -76,7 +76,13 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     for r in records:
         t_start = fmt_ass_time(r["startTime"])
         t_end = fmt_ass_time(r["endTime"])
-        txt = r["text"].strip().replace("\n", "\\N")
+        txt = (
+            r["text"]
+            .strip()
+            .replace("\n", "\\N")
+            .replace("♡", "{\\fnSegoe UI Symbol}♡{\\r}")
+            .replace("♥", "{\\fnSegoe UI Symbol}♥{\\r}")
+        )
         dialogue_lines.append(f"Dialogue: 0,{t_start},{t_end},Default,,0,0,0,,{txt}")
 
     with open(ass_path, "w", encoding="utf-8") as f:

@@ -1,0 +1,3594 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princess Connect Process — 公主選擇特別劇情原型</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #ffeef2 0%, #f5e6f8 48%, #e6f0fa 100%);
+            --glass-bg: rgba(255, 255, 255, 0.84);
+            --glass-bg-strong: rgba(255, 255, 255, 0.94);
+            --glass-border: rgba(232, 56, 117, 0.18);
+            --accent-color: #e83875;
+            --accent-soft: rgba(232, 56, 117, 0.1);
+            --accent-gradient: linear-gradient(135deg, #e83875 0%, #c4246a 100%);
+            --gold-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            --text-primary: #2d3540;
+            --text-secondary: #5e6b7d;
+            --shadow-soft: 0 12px 32px rgba(94, 107, 125, 0.1);
+            --shadow-pink: 0 10px 28px rgba(232, 56, 117, 0.18);
+            --font-main: 'Outfit', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* 柔光背景裝飾 */
+        body::before,
+        body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            pointer-events: none;
+        }
+        body::before {
+            width: 380px;
+            height: 380px;
+            top: -100px;
+            left: -80px;
+            background: rgba(232, 56, 117, 0.16);
+        }
+        body::after {
+            width: 420px;
+            height: 420px;
+            bottom: -120px;
+            right: -80px;
+            background: rgba(147, 197, 253, 0.22);
+        }
+
+        /* 頂部標題列 */
+        .top-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 14px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 4px 20px rgba(94, 107, 125, 0.06);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background: var(--accent-gradient);
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            box-shadow: 0 4px 12px rgba(232, 56, 117, 0.25);
+        }
+
+        .brand-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brand-sub {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+
+        /* 雙欄主舞台 */
+        .main-container {
+            max-width: 1200px;
+            margin: 28px auto 48px;
+            padding: 0 20px;
+        }
+
+        .protocol-banner {
+            display: none;
+            margin-bottom: 20px;
+            padding: 14px 18px;
+            border-radius: 16px;
+            background: rgba(255, 247, 237, 0.92);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            color: #92400e;
+            font-size: 0.92rem;
+            box-shadow: var(--shadow-soft);
+        }
+        .protocol-banner.visible {
+            display: block;
+        }
+        .protocol-banner code {
+            background: rgba(146, 64, 14, 0.1);
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-family: Consolas, monospace;
+            font-size: 0.88rem;
+        }
+
+        .dual-layout {
+            display: grid;
+            grid-template-columns: 1.05fr 1.25fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+        }
+
+        /* 左側：媞雅互動區 */
+        .tiya-panel {
+            position: sticky;
+            top: 88px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .section-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            letter-spacing: 0.06em;
+            margin-bottom: 12px;
+        }
+
+        .section-eyebrow::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            box-shadow: 0 0 8px rgba(232, 56, 117, 0.6);
+        }
+
+        .tiya-stage {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid rgba(232, 56, 117, 0.22);
+            background: linear-gradient(180deg, #fff8fa 0%, #fde8f0 100%);
+            cursor: pointer;
+            user-select: none;
+            transition: var(--transition);
+            box-shadow: 0 10px 26px rgba(232, 56, 117, 0.14);
+        }
+
+        .tiya-stage:hover {
+            transform: translateY(-2px);
+            border-color: rgba(232, 56, 117, 0.5);
+            box-shadow: var(--shadow-pink);
+        }
+
+        .tiya-stage:active {
+            transform: scale(0.985);
+        }
+
+        .tiya-stage.shake {
+            animation: tiyaPulse 0.32s ease;
+        }
+
+        @keyframes tiyaPulse {
+            0% { transform: scale(1); }
+            45% { transform: scale(0.975); filter: brightness(1.06); }
+            100% { transform: scale(1); }
+        }
+
+        .tiya-visual-wrap {
+            position: relative;
+            height: 420px;
+            width: 100%;
+            overflow: hidden;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(28, 36, 72, 0.28) 100%),
+                url('./still/princess_select/princess_select_BG_blur.webp') center/cover no-repeat;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .tiya-visual {
+            width: auto;
+            height: 145%;
+            max-width: none;
+            padding-top: 8px;
+            display: block;
+            filter: brightness(1.06) drop-shadow(0 8px 20px rgba(10, 16, 40, 0.42));
+            transition: transform 0.35s ease;
+        }
+
+        .tiya-stage:hover .tiya-visual {
+            transform: scale(1.03);
+        }
+
+        .tiya-overlay-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px 6px 6px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(232, 56, 117, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .tiya-mini-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1.5px solid var(--accent-color);
+        }
+
+        .tiya-name-tag {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* 5 次點擊進度點 */
+        .tiya-tap-dots {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            display: flex;
+            gap: 6px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(45, 53, 64, 0.55);
+            backdrop-filter: blur(6px);
+        }
+
+        .tap-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            transition: var(--transition);
+        }
+
+        .tap-dot.active {
+            background: #ff7aa8;
+            box-shadow: 0 0 8px #ff7aa8;
+            transform: scale(1.2);
+        }
+
+        .tiya-dialogue-box {
+            margin-top: 18px;
+            padding: 18px 20px;
+            border-radius: 18px;
+            background: var(--glass-bg-strong);
+            border: 1px solid rgba(232, 56, 117, 0.22);
+            position: relative;
+            box-shadow: 0 6px 18px rgba(94, 107, 125, 0.06);
+        }
+
+        .tiya-dialogue-speaker {
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 999px;
+            background: var(--accent-gradient);
+            color: #fff;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .tiya-dialogue-text {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            min-height: 3.2em;
+        }
+
+        .tiya-footer-tools {
+            margin-top: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .tiya-hint-text {
+            opacity: 0.85;
+        }
+
+        .btn-reset-tiny {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(94, 107, 125, 0.22);
+            color: var(--text-secondary);
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.76rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .btn-reset-tiny:hover {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+            background: #fff;
+        }
+
+        /* 右側：公會角色列表區 */
+        .guild-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .guild-title-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .guild-subtitle {
+            font-size: 0.94rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .guild-section {
+            margin-bottom: 22px;
+        }
+
+        .guild-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .guild-section-title {
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .guild-section-title::before {
+            content: '';
+            width: 4px;
+            height: 16px;
+            border-radius: 999px;
+            background: var(--accent-gradient);
+            display: inline-block;
+        }
+
+        .char-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
+            gap: 14px 12px;
+        }
+
+        .char-card {
+            position: relative;
+            background: transparent;
+            border: none;
+            border-radius: 16px;
+            padding: 6px 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .char-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .char-portrait {
+            width: 96px;
+            height: 96px;
+            border-radius: 18px;
+            object-fit: cover;
+            border: 3px solid rgba(232, 56, 117, 0.2);
+            background: #fff5f8;
+            box-shadow: 0 4px 12px rgba(94, 107, 125, 0.08);
+            display: block;
+            margin-bottom: 8px;
+            transition: var(--transition);
+        }
+
+        .char-card:hover .char-portrait {
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 20px rgba(232, 56, 117, 0.28);
+            transform: scale(1.04);
+        }
+
+        .char-name {
+            font-size: 0.96rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.3;
+            transition: color 0.2s ease;
+        }
+
+        .char-card:hover .char-name {
+            color: var(--accent-color);
+        }
+
+        .none-select-box {
+            width: 96px;
+            height: 96px;
+            border-radius: 18px;
+            border: 3px solid rgba(232, 56, 117, 0.2);
+            background:
+                linear-gradient(135deg, rgba(255, 245, 248, 0.78) 0%, rgba(246, 232, 250, 0.72) 100%),
+                url('./still/princess_select/princess_select_BG_blur.webp') center/cover no-repeat;
+            box-shadow: 0 4px 12px rgba(94, 107, 125, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+            font-size: 0.92rem;
+            font-weight: 700;
+            line-height: 1.3;
+            transition: var(--transition);
+        }
+
+        .char-card:hover .none-select-box {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            box-shadow: 0 8px 20px rgba(232, 56, 117, 0.28);
+            transform: scale(1.04);
+        }
+
+        /* 通用彈窗遮罩 */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(30, 36, 48, 0.56);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 200;
+            opacity: 0;
+            transition: opacity 0.24s ease;
+        }
+
+        .modal-backdrop.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-card {
+            width: 100%;
+            max-width: 480px;
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid rgba(232, 56, 117, 0.25);
+            border-radius: 24px;
+            padding: 26px;
+            box-shadow: 0 24px 60px rgba(30, 36, 48, 0.28);
+            position: relative;
+            animation: modalPop 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        @keyframes modalPop {
+            from { opacity: 0; transform: translateY(12px) scale(0.97); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1px solid rgba(94, 107, 125, 0.2);
+            background: #fff;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background: var(--accent-color);
+            color: #fff;
+            border-color: var(--accent-color);
+        }
+
+        .choice-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+            padding-right: 32px;
+        }
+
+        .choice-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 4px 12px rgba(232, 56, 117, 0.2);
+        }
+
+        .choice-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .choice-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        .choice-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .choice-btn {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 16px;
+            border: 1px solid rgba(232, 56, 117, 0.24);
+            background: linear-gradient(135deg, #fff 0%, #fff5f8 100%);
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: var(--transition);
+            text-align: left;
+        }
+
+        .choice-btn:hover {
+            background: var(--accent-gradient);
+            color: #fff;
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-pink);
+        }
+
+        .choice-btn .story-id-pill {
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 999px;
+            background: rgba(232, 56, 117, 0.12);
+            color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .choice-btn:hover .story-id-pill {
+            background: rgba(255, 255, 255, 0.24);
+            color: #fff;
+        }
+
+        /* 對白閱讀器彈窗 */
+        .reader-modal-card {
+            max-width: 780px;
+            max-height: 88vh;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .reader-header {
+            padding: 18px 24px;
+            background: linear-gradient(135deg, #fff7fa 0%, #f3f7ff 100%);
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding-right: 60px;
+        }
+
+        .reader-title-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .reader-char-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-color);
+        }
+
+        .reader-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .reader-subtitle {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+
+        .reader-switch-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 10px 24px;
+            background: rgba(255, 255, 255, 0.92);
+            border-bottom: 1px solid rgba(94, 107, 125, 0.1);
+        }
+
+        .switch-btn {
+            padding: 6px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(232, 56, 117, 0.25);
+            background: #fff;
+            color: var(--text-secondary);
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .switch-btn:hover {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .switch-btn.active {
+            background: var(--accent-gradient);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(232, 56, 117, 0.24);
+        }
+
+        .reader-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 24px;
+            background: linear-gradient(180deg, #fff9fb 0%, #f8faff 100%);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .reader-bg-banner {
+            width: 100%;
+            height: 120px;
+            border-radius: 14px;
+            object-fit: cover;
+            border: 1px solid rgba(232, 56, 117, 0.16);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+        }
+
+        .dialogue-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .dialogue-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 1.5px solid rgba(232, 56, 117, 0.28);
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(94, 107, 125, 0.1);
+        }
+
+        .dialogue-avatar-fallback {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            flex-shrink: 0;
+            background: var(--accent-gradient);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dialogue-bubble {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid rgba(232, 56, 117, 0.14);
+            border-radius: 16px;
+            padding: 12px 16px;
+            box-shadow: 0 4px 14px rgba(94, 107, 125, 0.05);
+        }
+
+        .dialogue-speaker {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 4px;
+        }
+
+        /* 沿用主站語音播放按鈕樣式 */
+        .dialogue-voice-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            min-width: 36px;
+            min-height: 36px;
+            padding: 0;
+            border: none;
+            border-radius: 8px;
+            background: transparent;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            line-height: 1;
+            cursor: pointer;
+            transition: background-color 0.15s ease, opacity 0.15s ease;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .dialogue-voice-btn:hover {
+            background-color: rgba(232, 56, 117, 0.08);
+            opacity: 0.85;
+        }
+
+        .dialogue-voice-btn:active {
+            background-color: rgba(232, 56, 117, 0.16);
+            opacity: 1;
+        }
+
+        .dialogue-text {
+            font-size: 0.98rem;
+            color: var(--text-primary);
+            line-height: 1.72;
+            word-break: break-word;
+        }
+
+        .dialogue-text ruby {
+            ruby-position: over;
+        }
+
+        .dialogue-text rt {
+            font-size: 0.68em;
+            color: var(--text-secondary);
+        }
+
+        .reader-status {
+            padding: 28px 20px;
+            text-align: center;
+            color: var(--text-secondary);
+            background: rgba(255, 255, 255, 0.86);
+            border-radius: 16px;
+            border: 1px dashed rgba(232, 56, 117, 0.3);
+        }
+
+        .reader-status.error {
+            color: #991b1b;
+            background: rgba(254, 242, 242, 0.95);
+            border-color: rgba(220, 38, 38, 0.35);
+            text-align: left;
+        }
+
+        .reader-status code {
+            background: rgba(0, 0, 0, 0.06);
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-family: Consolas, monospace;
+        }
+
+        .reader-footer {
+            padding: 12px 24px;
+            background: #fff;
+            border-top: 1px solid var(--glass-border);
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .btn-close-footer {
+            padding: 8px 20px;
+            border-radius: 999px;
+            border: none;
+            background: var(--accent-gradient);
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-close-footer:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-pink);
+        }
+
+        /* 響應式 */
+        @media (max-width: 900px) {
+            .tiya-panel { position: static; }
+            .dual-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .char-grid {
+                grid-template-columns: 1fr;
+            }
+            .reader-modal-card {
+                max-height: 92vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="top-header">
+        <div class="header-inner">
+            <div class="brand">
+                <span class="brand-badge">PCP PROTOTYPE</span>
+                <div>
+                    <div class="brand-title">Princess Connect Process</div>
+                    <div class="brand-sub">終末幻境 — 公主選擇與美食殿堂特別劇情原型</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div id="protocol-banner" class="protocol-banner" role="alert">
+            偵測到目前是透過本機檔案路徑（<code>file://</code>）開啟頁面，瀏覽器安全性政策會阻擋讀取 <code>./story/*.json</code> 劇本。請改於 <code>dashboard/</code> 目錄執行 <code>python -m http.server 8000</code>，再開啟 <code>http://localhost:8000/pcp_preview.html</code>。
+        </div>
+
+        <div class="dual-layout">
+            <!-- 左側：媞雅互動區 -->
+            <section class="glass-panel tiya-panel" aria-label="媞雅互動區">
+                <div>
+                    <div class="section-eyebrow">SPECIAL INTERACTION</div>
+                    <div id="tiya-stage" class="tiya-stage" role="button" tabindex="0" aria-label="點擊媞雅圖片進行互動">
+                        <div class="tiya-visual-wrap">
+                            <img class="tiya-visual" src="./still/princess_select/princess_select_chara_140301_1.webp" alt="媞雅完整立繪">
+                            <div class="tiya-overlay-badge">
+                                <img class="tiya-mini-avatar" src="./icon/unit/140331.png" alt="媞雅頭像">
+                                <span class="tiya-name-tag">媞雅</span>
+                            </div>
+                            <div id="tiya-tap-dots" class="tiya-tap-dots" aria-hidden="true">
+                                <span class="tap-dot"></span>
+                                <span class="tap-dot"></span>
+                                <span class="tap-dot"></span>
+                                <span class="tap-dot"></span>
+                                <span class="tap-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tiya-dialogue-box">
+                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+                            <span class="tiya-dialogue-speaker" style="margin-bottom:0;">媞雅</span>
+                            <button id="tiya-voice-btn" type="button" class="dialogue-voice-btn" style="min-width:28px;min-height:28px;font-size:1rem;" title="重聽目前台詞語音" aria-label="播放媞雅語音">🔊</button>
+                        </div>
+                        <p id="tiya-dialogue-text" class="tiya-dialogue-text">對你來說，「公主」指的是誰呢？</p>
+                    </div>
+                </div>
+
+                <div class="tiya-footer-tools">
+                    <span id="tiya-hint-text" class="tiya-hint-text">提示：試著輕觸媞雅圖片 5 次看看（目前 0 / 5）</span>
+                    <button id="tiya-reset-btn" type="button" class="btn-reset-tiny">重置次數</button>
+                </div>
+            </section>
+
+            <!-- 右側：公會角色區 -->
+            <section class="glass-panel" aria-label="公會角色列表區">
+                <div class="guild-header">
+                    <div class="guild-title-wrap">
+                        <div class="section-eyebrow">GUILD STORY</div>
+                        <p class="guild-subtitle">選擇一位角色，重溫「幻境龍后討伐」與「公主選擇」專屬劇情</p>
+                    </div>
+                </div>
+
+                <div id="guild-sections"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 角色故事選擇彈窗 -->
+    <div id="choice-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="choice-title">
+        <div class="modal-card">
+            <button id="choice-close-btn" type="button" class="modal-close" aria-label="關閉選擇視窗">&times;</button>
+            <div class="choice-header">
+                <img id="choice-avatar" class="choice-avatar" src="" alt="">
+                <div>
+                    <h2 id="choice-title" class="choice-title"></h2>
+                    <p id="choice-desc" class="choice-desc"></p>
+                </div>
+            </div>
+            <div id="choice-buttons" class="choice-buttons"></div>
+        </div>
+    </div>
+
+    <!-- 內嵌對白閱讀器彈窗 -->
+    <div id="reader-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="reader-title">
+        <div class="modal-card reader-modal-card">
+            <button id="reader-close-btn" type="button" class="modal-close" aria-label="關閉對白閱讀器">&times;</button>
+            <div class="reader-header">
+                <div class="reader-title-group">
+                    <img id="reader-char-icon" class="reader-char-icon" src="" alt="">
+                    <div>
+                        <h2 id="reader-title" class="reader-title"></h2>
+                        <div id="reader-subtitle" class="reader-subtitle"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="reader-switch-bar" class="reader-switch-bar"></div>
+            <div id="reader-body" class="reader-body"></div>
+            <div class="reader-footer">
+                <button id="reader-footer-close" type="button" class="btn-close-footer">關閉返回</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            'use strict';
+
+            const CHARACTERS = {
+            "u_105801": {
+                        "key": "u_105801",
+                        "name": "貪吃佩可",
+                        "tag": "美食殿堂",
+                        "avatar": "./icon/unit/105811.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501001",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500001",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_105901": {
+                        "key": "u_105901",
+                        "name": "可可蘿",
+                        "tag": "美食殿堂",
+                        "avatar": "./icon/unit/105911.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501002",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500002",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_106001": {
+                        "key": "u_106001",
+                        "name": "凱留",
+                        "tag": "美食殿堂",
+                        "avatar": "./icon/unit/106011.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501003",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500003",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_106401": {
+                        "key": "u_106401",
+                        "name": "雪菲",
+                        "tag": "美食殿堂",
+                        "avatar": "./icon/unit/106411.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501004",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500004",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_100101": {
+                        "key": "u_100101",
+                        "name": "日和",
+                        "tag": "破曉之星",
+                        "avatar": "./icon/unit/100111.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501005",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500005",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_100201": {
+                        "key": "u_100201",
+                        "name": "優衣",
+                        "tag": "破曉之星",
+                        "avatar": "./icon/unit/100211.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501006",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500006",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_100301": {
+                        "key": "u_100301",
+                        "name": "怜",
+                        "tag": "破曉之星",
+                        "avatar": "./icon/unit/100311.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501007",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500007",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_101101": {
+                        "key": "u_101101",
+                        "name": "璃乃",
+                        "tag": "拉比林斯",
+                        "avatar": "./icon/unit/101111.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501008",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500008",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_104901": {
+                        "key": "u_104901",
+                        "name": "靜流",
+                        "tag": "拉比林斯",
+                        "avatar": "./icon/unit/104911.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501009",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500009",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_106801": {
+                        "key": "u_106801",
+                        "name": "拉比林斯達",
+                        "tag": "拉比林斯",
+                        "avatar": "./icon/unit/106811.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501010",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500010",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_102901": {
+                        "key": "u_102901",
+                        "name": "望",
+                        "tag": "慈樂之音",
+                        "avatar": "./icon/unit/102911.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501011",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500011",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_104201": {
+                        "key": "u_104201",
+                        "name": "千歌",
+                        "tag": "慈樂之音",
+                        "avatar": "./icon/unit/104211.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501012",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500012",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_105401": {
+                        "key": "u_105401",
+                        "name": "紡希",
+                        "tag": "慈樂之音",
+                        "avatar": "./icon/unit/105411.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501013",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500013",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_100401": {
+                        "key": "u_100401",
+                        "name": "禊",
+                        "tag": "小小甜心",
+                        "avatar": "./icon/unit/100411.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501014",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500014",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_102001": {
+                        "key": "u_102001",
+                        "name": "美美",
+                        "tag": "小小甜心",
+                        "avatar": "./icon/unit/102011.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501015",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500015",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_103601": {
+                        "key": "u_103601",
+                        "name": "鏡華",
+                        "tag": "小小甜心",
+                        "avatar": "./icon/unit/103611.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501016",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500016",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_101201": {
+                        "key": "u_101201",
+                        "name": "初音",
+                        "tag": "森林守衛",
+                        "avatar": "./icon/unit/101211.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501017",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500017",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_101501": {
+                        "key": "u_101501",
+                        "name": "美里",
+                        "tag": "森林守衛",
+                        "avatar": "./icon/unit/101511.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501018",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500018",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_104001": {
+                        "key": "u_104001",
+                        "name": "碧",
+                        "tag": "森林守衛",
+                        "avatar": "./icon/unit/104011.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501019",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500019",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_100601": {
+                        "key": "u_100601",
+                        "name": "茜里",
+                        "tag": "惡魔偽王國軍",
+                        "avatar": "./icon/unit/100611.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501020",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500020",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_100701": {
+                        "key": "u_100701",
+                        "name": "宮子",
+                        "tag": "惡魔偽王國軍",
+                        "avatar": "./icon/unit/100711.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501021",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500021",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_102201": {
+                        "key": "u_102201",
+                        "name": "依里",
+                        "tag": "惡魔偽王國軍",
+                        "avatar": "./icon/unit/102211.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501022",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500022",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_103101": {
+                        "key": "u_103101",
+                        "name": "忍",
+                        "tag": "惡魔偽王國軍",
+                        "avatar": "./icon/unit/103111.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501023",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500023",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_104401": {
+                        "key": "u_104401",
+                        "name": "伊莉亞",
+                        "tag": "惡魔偽王國軍",
+                        "avatar": "./icon/unit/104411.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501024",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500024",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_100501": {
+                        "key": "u_100501",
+                        "name": "茉莉",
+                        "tag": "王宮騎士團",
+                        "avatar": "./icon/unit/100511.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501025",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500025",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_103701": {
+                        "key": "u_103701",
+                        "name": "智",
+                        "tag": "王宮騎士團",
+                        "avatar": "./icon/unit/103711.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501026",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500026",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_104701": {
+                        "key": "u_104701",
+                        "name": "純",
+                        "tag": "王宮騎士團",
+                        "avatar": "./icon/unit/104711.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501027",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500027",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_107101": {
+                        "key": "u_107101",
+                        "name": "克莉絲提娜",
+                        "tag": "王宮騎士團",
+                        "avatar": "./icon/unit/107111.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501028",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500028",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_102101": {
+                        "key": "u_102101",
+                        "name": "胡桃",
+                        "tag": "咲戀育幼院",
+                        "avatar": "./icon/unit/102111.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501029",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500029",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_102301": {
+                        "key": "u_102301",
+                        "name": "綾音",
+                        "tag": "咲戀育幼院",
+                        "avatar": "./icon/unit/102311.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501030",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500030",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_102501": {
+                        "key": "u_102501",
+                        "name": "鈴莓",
+                        "tag": "咲戀育幼院",
+                        "avatar": "./icon/unit/102511.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501031",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500031",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_102801": {
+                        "key": "u_102801",
+                        "name": "咲戀",
+                        "tag": "咲戀育幼院",
+                        "avatar": "./icon/unit/102811.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501032",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500032",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_101001": {
+                        "key": "u_101001",
+                        "name": "真步",
+                        "tag": "哞哞自衛隊",
+                        "avatar": "./icon/unit/101011.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501033",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500033",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_101401": {
+                        "key": "u_101401",
+                        "name": "霞",
+                        "tag": "哞哞自衛隊",
+                        "avatar": "./icon/unit/101411.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501034",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500034",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_101701": {
+                        "key": "u_101701",
+                        "name": "香織",
+                        "tag": "哞哞自衛隊",
+                        "avatar": "./icon/unit/101711.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501035",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500035",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_104301": {
+                        "key": "u_104301",
+                        "name": "真琴",
+                        "tag": "哞哞自衛隊",
+                        "avatar": "./icon/unit/104311.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501036",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500036",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_102601": {
+                        "key": "u_102601",
+                        "name": "鈴",
+                        "tag": "伊麗莎白牧場",
+                        "avatar": "./icon/unit/102611.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501037",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500037",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_103301": {
+                        "key": "u_103301",
+                        "name": "真陽",
+                        "tag": "伊麗莎白牧場",
+                        "avatar": "./icon/unit/103311.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501038",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500038",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_103801": {
+                        "key": "u_103801",
+                        "name": "栞",
+                        "tag": "伊麗莎白牧場",
+                        "avatar": "./icon/unit/103811.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501039",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500039",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_105201": {
+                        "key": "u_105201",
+                        "name": "莉瑪",
+                        "tag": "伊麗莎白牧場",
+                        "avatar": "./icon/unit/105211.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501040",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500040",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_103201": {
+                        "key": "u_103201",
+                        "name": "秋乃",
+                        "tag": "墨丘利財團",
+                        "avatar": "./icon/unit/103211.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501041",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500041",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_103401": {
+                        "key": "u_103401",
+                        "name": "優花梨",
+                        "tag": "墨丘利財團",
+                        "avatar": "./icon/unit/103411.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501042",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500042",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_104601": {
+                        "key": "u_104601",
+                        "name": "珠希",
+                        "tag": "墨丘利財團",
+                        "avatar": "./icon/unit/104611.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501043",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500043",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_104801": {
+                        "key": "u_104801",
+                        "name": "美冬",
+                        "tag": "墨丘利財團",
+                        "avatar": "./icon/unit/104811.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501044",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500044",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_100901": {
+                        "key": "u_100901",
+                        "name": "杏奈",
+                        "tag": "暮光流星群",
+                        "avatar": "./icon/unit/100911.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501045",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500045",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_101301": {
+                        "key": "u_101301",
+                        "name": "七七香",
+                        "tag": "暮光流星群",
+                        "avatar": "./icon/unit/101311.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501046",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500046",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_102701": {
+                        "key": "u_102701",
+                        "name": "惠理子",
+                        "tag": "暮光流星群",
+                        "avatar": "./icon/unit/102711.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501047",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500047",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_105101": {
+                        "key": "u_105101",
+                        "name": "深月",
+                        "tag": "暮光流星群",
+                        "avatar": "./icon/unit/105111.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501048",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500048",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_105601": {
+                        "key": "u_105601",
+                        "name": "流夏",
+                        "tag": "暮光流星群",
+                        "avatar": "./icon/unit/105611.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501049",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500049",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_101601": {
+                        "key": "u_101601",
+                        "name": "鈴奈",
+                        "tag": "月光學院",
+                        "avatar": "./icon/unit/101611.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501050",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500050",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_101801": {
+                        "key": "u_101801",
+                        "name": "伊緒",
+                        "tag": "月光學院",
+                        "avatar": "./icon/unit/101811.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501051",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500051",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_105001": {
+                        "key": "u_105001",
+                        "name": "美咲",
+                        "tag": "月光學院",
+                        "avatar": "./icon/unit/105011.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501052",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500052",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_100801": {
+                        "key": "u_100801",
+                        "name": "雪",
+                        "tag": "純白之翼 蘭德索爾分部",
+                        "avatar": "./icon/unit/100811.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501053",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500053",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_103001": {
+                        "key": "u_103001",
+                        "name": "妮諾",
+                        "tag": "純白之翼 蘭德索爾分部",
+                        "avatar": "./icon/unit/103011.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501054",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500054",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_104501": {
+                        "key": "u_104501",
+                        "name": "空花",
+                        "tag": "純白之翼 蘭德索爾分部",
+                        "avatar": "./icon/unit/104511.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501055",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500055",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_105301": {
+                        "key": "u_105301",
+                        "name": "莫妮卡",
+                        "tag": "純白之翼 蘭德索爾分部",
+                        "avatar": "./icon/unit/105311.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501056",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500056",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_105501": {
+                        "key": "u_105501",
+                        "name": "步未",
+                        "tag": "純白之翼 蘭德索爾分部",
+                        "avatar": "./icon/unit/105511.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501057",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500057",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_110801": {
+                        "key": "u_110801",
+                        "name": "克蘿依",
+                        "tag": "聖德蕾莎女子學院（好朋友社）",
+                        "avatar": "./icon/unit/110811.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501058",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500058",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_110901": {
+                        "key": "u_110901",
+                        "name": "琪愛兒",
+                        "tag": "聖德蕾莎女子學院（好朋友社）",
+                        "avatar": "./icon/unit/110911.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501059",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500059",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_111001": {
+                        "key": "u_111001",
+                        "name": "優妮",
+                        "tag": "聖德蕾莎女子學院（好朋友社）",
+                        "avatar": "./icon/unit/111011.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501060",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500060",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_106501": {
+                        "key": "u_106501",
+                        "name": "嘉夜",
+                        "tag": "龍族巢穴",
+                        "avatar": "./icon/unit/106511.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501061",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500061",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_106601": {
+                        "key": "u_106601",
+                        "name": "祈梨",
+                        "tag": "龍族巢穴",
+                        "avatar": "./icon/unit/106611.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501062",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500062",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_106701": {
+                        "key": "u_106701",
+                        "name": "帆稀",
+                        "tag": "龍族巢穴",
+                        "avatar": "./icon/unit/106711.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501063",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500063",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_118101": {
+                        "key": "u_118101",
+                        "name": "蘭法",
+                        "tag": "憤怒‧軍團",
+                        "avatar": "./icon/unit/118111.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501064",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500064",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_118201": {
+                        "key": "u_118201",
+                        "name": "美空",
+                        "tag": "憤怒‧軍團",
+                        "avatar": "./icon/unit/118211.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501065",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500065",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_123301": {
+                        "key": "u_123301",
+                        "name": "涅婭",
+                        "tag": "憤怒‧軍團",
+                        "avatar": "./icon/unit/123311.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501066",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500066",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_118001": {
+                        "key": "u_118001",
+                        "name": "克蕾琪塔",
+                        "tag": "里士滿工商會",
+                        "avatar": "./icon/unit/118011.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501067",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500067",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_125801": {
+                        "key": "u_125801",
+                        "name": "莉莉",
+                        "tag": "幻變少女",
+                        "avatar": "./icon/unit/125811.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501068",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500068",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_126001": {
+                        "key": "u_126001",
+                        "name": "可璃亞",
+                        "tag": "幻變少女",
+                        "avatar": "./icon/unit/126011.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501069",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500069",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_126101": {
+                        "key": "u_126101",
+                        "name": "普蕾西亞",
+                        "tag": "幻變少女",
+                        "avatar": "./icon/unit/126111.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501070",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500070",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_126501": {
+                        "key": "u_126501",
+                        "name": "萊拉耶爾",
+                        "tag": "吉歐‧提格尼亞",
+                        "avatar": "./icon/unit/126511.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501078",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500078",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_126401": {
+                        "key": "u_126401",
+                        "name": "克蘿茜",
+                        "tag": "吉歐‧提格尼亞",
+                        "avatar": "./icon/unit/126411.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501077",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500077",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_127701": {
+                        "key": "u_127701",
+                        "name": "琳德",
+                        "tag": "吉歐‧提格尼亞",
+                        "avatar": "./icon/unit/127711.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501079",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500079",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_127801": {
+                        "key": "u_127801",
+                        "name": "烏爾姆",
+                        "tag": "吉歐‧提格尼亞",
+                        "avatar": "./icon/unit/127811.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501080",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500080",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_130901": {
+                        "key": "u_130901",
+                        "name": "庫露露",
+                        "tag": "吉歐‧提格尼亞",
+                        "avatar": "./icon/unit/130911.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501081",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500081",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_129701": {
+                        "key": "u_129701",
+                        "name": "涅妃‧涅羅",
+                        "tag": "吉歐‧格黑納",
+                        "avatar": "./icon/unit/129711.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501083",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500083",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_129601": {
+                        "key": "u_129601",
+                        "name": "安涅默涅",
+                        "tag": "吉歐‧格黑納",
+                        "avatar": "./icon/unit/129611.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501082",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500082",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_134701": {
+                        "key": "u_134701",
+                        "name": "鳳凰",
+                        "tag": "吉歐‧格黑納",
+                        "avatar": "./icon/unit/134711.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501085",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500085",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_133601": {
+                        "key": "u_133601",
+                        "name": "梅杜莎",
+                        "tag": "吉歐‧格黑納",
+                        "avatar": "./icon/unit/133611.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501084",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500084",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_134901": {
+                        "key": "u_134901",
+                        "name": "華音",
+                        "tag": "吉歐‧格黑納",
+                        "avatar": "./icon/unit/134911.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501086",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500086",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_136201": {
+                        "key": "u_136201",
+                        "name": "拿娜",
+                        "tag": "吉歐‧格黑納",
+                        "avatar": "./icon/unit/136211.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501087",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500087",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_136001": {
+                        "key": "u_136001",
+                        "name": "阿剌克涅",
+                        "tag": "吉歐‧格黑納",
+                        "avatar": "./icon/unit/136011.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501088",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500088",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_133101": {
+                        "key": "u_133101",
+                        "name": "薇歐莉特",
+                        "tag": "吉歐‧尼布爾黑爾",
+                        "avatar": "./icon/unit/133111.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501090",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500090",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_133001": {
+                        "key": "u_133001",
+                        "name": "格蕾斯",
+                        "tag": "吉歐‧尼布爾黑爾",
+                        "avatar": "./icon/unit/133011.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501089",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500089",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_135801": {
+                        "key": "u_135801",
+                        "name": "雪野",
+                        "tag": "吉歐‧尼布爾黑爾",
+                        "avatar": "./icon/unit/135811.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501091",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500091",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_135901": {
+                        "key": "u_135901",
+                        "name": "剎鬼",
+                        "tag": "吉歐‧尼布爾黑爾",
+                        "avatar": "./icon/unit/135911.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501092",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500092",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_136901": {
+                        "key": "u_136901",
+                        "name": "璐璐伊",
+                        "tag": "吉歐‧尼布爾黑爾",
+                        "avatar": "./icon/unit/136911.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501093",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500093",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_130001": {
+                        "key": "u_130001",
+                        "name": "倭",
+                        "tag": "蠻賊三姊妹",
+                        "avatar": "./icon/unit/130011.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501071",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500071",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_130101": {
+                        "key": "u_130101",
+                        "name": "若菜",
+                        "tag": "蠻賊三姊妹",
+                        "avatar": "./icon/unit/130111.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501072",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500072",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_130201": {
+                        "key": "u_130201",
+                        "name": "布武機",
+                        "tag": "蠻賊三姊妹",
+                        "avatar": "./icon/unit/130211.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501073",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500073",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_132301": {
+                        "key": "u_132301",
+                        "name": "露易絲瑪莉",
+                        "tag": "阿爾克絲鍊金堂",
+                        "avatar": "./icon/unit/132311.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501074",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500074",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_132401": {
+                        "key": "u_132401",
+                        "name": "彩羽",
+                        "tag": "阿爾克絲鍊金堂",
+                        "avatar": "./icon/unit/132411.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501075",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500075",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_132501": {
+                        "key": "u_132501",
+                        "name": "苑",
+                        "tag": "阿爾克絲鍊金堂",
+                        "avatar": "./icon/unit/132511.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501076",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500076",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_123001": {
+                        "key": "u_123001",
+                        "name": "愛梅斯",
+                        "tag": "？？？",
+                        "avatar": "./icon/unit/123011.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501098",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500098",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_118601": {
+                        "key": "u_118601",
+                        "name": "涅比亞",
+                        "tag": "？？？",
+                        "avatar": "./icon/unit/118611.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501102",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500102",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_106101": {
+                        "key": "u_106101",
+                        "name": "諾維姆",
+                        "tag": "？？？",
+                        "avatar": "./icon/unit/106111.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501095",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500095",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_107001": {
+                        "key": "u_107001",
+                        "name": "似似花",
+                        "tag": "？？？",
+                        "avatar": "./icon/unit/107011.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501096",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500096",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_118501": {
+                        "key": "u_118501",
+                        "name": "花凜",
+                        "tag": "？？？",
+                        "avatar": "./icon/unit/118511.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501100",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500100",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_129001": {
+                        "key": "u_129001",
+                        "name": "厄莉絲",
+                        "tag": "？？？",
+                        "avatar": "./icon/unit/129011.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501101",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500101",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_135501": {
+                        "key": "u_135501",
+                        "name": "埃拉",
+                        "tag": "？？？",
+                        "avatar": "./icon/unit/135511.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501103",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500103",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_135601": {
+                        "key": "u_135601",
+                        "name": "志那都",
+                        "tag": "？？？",
+                        "avatar": "./icon/unit/135611.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501104",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500104",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "u_122301": {
+                        "key": "u_122301",
+                        "name": "班比",
+                        "tag": "？？？",
+                        "avatar": "./icon/unit/122311.png",
+                        "desc": "請選擇要閱讀的特別劇情分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501097",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500097",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "tiya": {
+                        "key": "tiya",
+                        "name": "媞雅（隱藏角色故事）",
+                        "tag": "特別角色",
+                        "avatar": "./icon/unit/140311.png",
+                        "desc": "已觸發媞雅隱藏劇情！請選擇要閱讀的結局分歧：",
+                        "stories": [
+                                    {
+                                                "id": "9501105",
+                                                "label": "幻境龍后討伐"
+                                    },
+                                    {
+                                                "id": "9500105",
+                                                "label": "公主選擇"
+                                    }
+                        ]
+            },
+            "none_selected": {
+                        "key": "none_selected",
+                        "name": "誰都不選",
+                        "tag": "不選擇",
+                        "avatar": "./icon/unit/140331.png",
+                        "desc": "不選擇任何公主的特別結局：",
+                        "stories": [
+                                    {
+                                                "id": "9500106",
+                                                "label": "選不出來"
+                                    }
+                        ]
+            }
+};
+
+            const GUILD_GROUPS = [
+            {
+                        "id": "gourmet",
+                        "name": "美食殿堂",
+                        "members": [
+                                    "u_105801",
+                                    "u_105901",
+                                    "u_106001",
+                                    "u_106401"
+                        ]
+            },
+            {
+                        "id": "twinkle",
+                        "name": "破曉之星",
+                        "members": [
+                                    "u_100101",
+                                    "u_100201",
+                                    "u_100301"
+                        ]
+            },
+            {
+                        "id": "labyrinth",
+                        "name": "拉比林斯",
+                        "members": [
+                                    "u_101101",
+                                    "u_104901",
+                                    "u_106801"
+                        ]
+            },
+            {
+                        "id": "carmina",
+                        "name": "慈樂之音",
+                        "members": [
+                                    "u_102901",
+                                    "u_104201",
+                                    "u_105401"
+                        ]
+            },
+            {
+                        "id": "little_lyrical",
+                        "name": "小小甜心",
+                        "members": [
+                                    "u_100401",
+                                    "u_102001",
+                                    "u_103601"
+                        ]
+            },
+            {
+                        "id": "forestier",
+                        "name": "森林守衛",
+                        "members": [
+                                    "u_101201",
+                                    "u_101501",
+                                    "u_104001"
+                        ]
+            },
+            {
+                        "id": "diabolos",
+                        "name": "惡魔偽王國軍",
+                        "members": [
+                                    "u_100601",
+                                    "u_100701",
+                                    "u_102201",
+                                    "u_103101",
+                                    "u_104401"
+                        ]
+            },
+            {
+                        "id": "nightmare",
+                        "name": "王宮騎士團",
+                        "members": [
+                                    "u_100501",
+                                    "u_103701",
+                                    "u_104701",
+                                    "u_107101"
+                        ]
+            },
+            {
+                        "id": "sarendia",
+                        "name": "咲戀育幼院",
+                        "members": [
+                                    "u_102101",
+                                    "u_102301",
+                                    "u_102501",
+                                    "u_102801"
+                        ]
+            },
+            {
+                        "id": "caon",
+                        "name": "哞哞自衛隊",
+                        "members": [
+                                    "u_101001",
+                                    "u_101401",
+                                    "u_101701",
+                                    "u_104301"
+                        ]
+            },
+            {
+                        "id": "elizabeth",
+                        "name": "伊麗莎白牧場",
+                        "members": [
+                                    "u_102601",
+                                    "u_103301",
+                                    "u_103801",
+                                    "u_105201"
+                        ]
+            },
+            {
+                        "id": "mercurius",
+                        "name": "墨丘利財團",
+                        "members": [
+                                    "u_103201",
+                                    "u_103401",
+                                    "u_104601",
+                                    "u_104801"
+                        ]
+            },
+            {
+                        "id": "twilight",
+                        "name": "暮光流星群",
+                        "members": [
+                                    "u_100901",
+                                    "u_101301",
+                                    "u_102701",
+                                    "u_105101",
+                                    "u_105601"
+                        ]
+            },
+            {
+                        "id": "lucent",
+                        "name": "月光學院",
+                        "members": [
+                                    "u_101601",
+                                    "u_101801",
+                                    "u_105001"
+                        ]
+            },
+            {
+                        "id": "weissflugel",
+                        "name": "純白之翼 蘭德索爾分部",
+                        "members": [
+                                    "u_100801",
+                                    "u_103001",
+                                    "u_104501",
+                                    "u_105301",
+                                    "u_105501"
+                        ]
+            },
+            {
+                        "id": "nakayoshi",
+                        "name": "聖德蕾莎女子學院（好朋友社）",
+                        "members": [
+                                    "u_110801",
+                                    "u_110901",
+                                    "u_111001"
+                        ]
+            },
+            {
+                        "id": "dragons_nest",
+                        "name": "龍族巢穴",
+                        "members": [
+                                    "u_106501",
+                                    "u_106601",
+                                    "u_106701"
+                        ]
+            },
+            {
+                        "id": "rage_legion",
+                        "name": "憤怒‧軍團",
+                        "members": [
+                                    "u_118101",
+                                    "u_118201",
+                                    "u_123301"
+                        ]
+            },
+            {
+                        "id": "richmond",
+                        "name": "里士滿工商會",
+                        "members": [
+                                    "u_118001"
+                        ]
+            },
+            {
+                        "id": "alter_maiden",
+                        "name": "幻變少女",
+                        "members": [
+                                    "u_125801",
+                                    "u_126001",
+                                    "u_126101"
+                        ]
+            },
+            {
+                        "id": "geo_theogonia",
+                        "name": "吉歐‧提格尼亞",
+                        "members": [
+                                    "u_126501",
+                                    "u_126401",
+                                    "u_127701",
+                                    "u_127801",
+                                    "u_130901"
+                        ]
+            },
+            {
+                        "id": "geo_gehenna",
+                        "name": "吉歐‧格黑納",
+                        "members": [
+                                    "u_129701",
+                                    "u_129601",
+                                    "u_134701",
+                                    "u_133601",
+                                    "u_134901",
+                                    "u_136201",
+                                    "u_136001"
+                        ]
+            },
+            {
+                        "id": "geo_niflheim",
+                        "name": "吉歐‧尼布爾黑爾",
+                        "members": [
+                                    "u_133101",
+                                    "u_133001",
+                                    "u_135801",
+                                    "u_135901",
+                                    "u_136901"
+                        ]
+            },
+            {
+                        "id": "bandy_sisters",
+                        "name": "蠻賊三姊妹",
+                        "members": [
+                                    "u_130001",
+                                    "u_130101",
+                                    "u_130201"
+                        ]
+            },
+            {
+                        "id": "alces",
+                        "name": "阿爾克絲鍊金堂",
+                        "members": [
+                                    "u_132301",
+                                    "u_132401",
+                                    "u_132501"
+                        ]
+            },
+            {
+                        "id": "unknown",
+                        "name": "？？？",
+                        "members": [
+                                    "u_123001",
+                                    "u_118601",
+                                    "u_106101",
+                                    "u_107001",
+                                    "u_118501",
+                                    "u_129001",
+                                    "u_135501",
+                                    "u_135601",
+                                    "u_122301"
+                        ]
+            }
+];
+
+            const TIYA_PROMPTS = [
+                '對你來說，「公主」指的是誰呢？',
+                '咦……？這樣輕輕戳我，是已經有想法了嗎？',
+                '再這麼一直看著我……難道你的視線一直都在我身上？',
+                '呼呼……稍微有點令人在意呢。還差一點點，要繼續嗎？',
+                '真是拿你沒辦法呢……好吧，接下來就是屬於我們的隱藏選擇了喔。',
+                '既然你這麼堅持要問我的心意……那麼，請選擇吧♪'
+            ];
+
+            const TIYA_VOICE_IDS = [
+                'vo_ps_tiya_000',
+                'vo_ps_tiya_001',
+                'vo_ps_tiya_002',
+                'vo_ps_tiya_003',
+                'vo_ps_tiya_004',
+                'vo_ps_tiya_005'
+            ];
+
+            let tiyaTapCount = 0;
+            let activeCharacter = null;
+            let activeStoryId = null;
+            let activeAudio = null;
+
+            function stopCurrentAudio() {
+                if (activeAudio) {
+                    try {
+                        activeAudio.pause();
+                        activeAudio.currentTime = 0;
+                    } catch (e) {}
+                    activeAudio = null;
+                }
+            }
+
+            function playSingleAudio(url, onMissing) {
+                // 後段語音直接覆蓋前段：先中斷舊音軌，確保連續點擊不疊音
+                stopCurrentAudio();
+                const audio = new Audio(url);
+                activeAudio = audio;
+                audio.addEventListener('ended', function () {
+                    if (activeAudio === audio) {
+                        activeAudio = null;
+                    }
+                });
+                audio.play().catch(function () {
+                    if (activeAudio === audio) {
+                        activeAudio = null;
+                    }
+                    if (typeof onMissing === 'function') {
+                        onMissing();
+                    }
+                });
+            }
+
+            function playTiyaPromptVoice(stepIndex) {
+                const voiceId = TIYA_VOICE_IDS[Math.min(stepIndex, TIYA_VOICE_IDS.length - 1)];
+                const url = './sound/story_vo/princess_select/' + encodeURIComponent(voiceId) + '.m4a';
+                if (tiyaVoiceBtn) {
+                    tiyaVoiceBtn.title = '播放語音 (' + voiceId + ')';
+                }
+                playSingleAudio(url, function () {
+                    if (tiyaVoiceBtn) {
+                        tiyaVoiceBtn.title = '尚未轉檔媞雅語音：' + voiceId + '.m4a';
+                    }
+                });
+            }
+
+            const protocolBanner = document.getElementById('protocol-banner');
+            const tiyaStage = document.getElementById('tiya-stage');
+            const tiyaTapDots = document.getElementById('tiya-tap-dots').querySelectorAll('.tap-dot');
+            const tiyaDialogueText = document.getElementById('tiya-dialogue-text');
+            const tiyaVoiceBtn = document.getElementById('tiya-voice-btn');
+            const tiyaHintText = document.getElementById('tiya-hint-text');
+            const tiyaResetBtn = document.getElementById('tiya-reset-btn');
+            const guildSections = document.getElementById('guild-sections');
+
+            const choiceModal = document.getElementById('choice-modal');
+            const choiceCloseBtn = document.getElementById('choice-close-btn');
+            const choiceAvatar = document.getElementById('choice-avatar');
+            const choiceTitle = document.getElementById('choice-title');
+            const choiceDesc = document.getElementById('choice-desc');
+            const choiceButtons = document.getElementById('choice-buttons');
+
+            const readerModal = document.getElementById('reader-modal');
+            const readerCloseBtn = document.getElementById('reader-close-btn');
+            const readerFooterClose = document.getElementById('reader-footer-close');
+            const readerCharIcon = document.getElementById('reader-char-icon');
+            const readerTitle = document.getElementById('reader-title');
+            const readerSubtitle = document.getElementById('reader-subtitle');
+            const readerSwitchBar = document.getElementById('reader-switch-bar');
+            const readerBody = document.getElementById('reader-body');
+
+            function initProtocolCheck() {
+                if (window.location.protocol === 'file:') {
+                    protocolBanner.classList.add('visible');
+                }
+            }
+
+                        function renderGuildCards() {
+                guildSections.innerHTML = '';
+                GUILD_GROUPS.forEach(function (guild) {
+                    const sec = document.createElement('div');
+                    sec.className = 'guild-section';
+
+                    const title = document.createElement('h2');
+                    title.className = 'guild-section-title';
+                    title.textContent = guild.name;
+                    sec.appendChild(title);
+
+                    const grid = document.createElement('div');
+                    grid.className = 'char-grid';
+
+                    guild.members.forEach(function (key) {
+                        const charData = CHARACTERS[key];
+                        if (!charData) return;
+                        const card = document.createElement('button');
+                        card.type = 'button';
+                        card.className = 'char-card';
+
+                        const img = document.createElement('img');
+                        img.className = 'char-portrait';
+                        img.src = charData.avatar;
+                        img.alt = charData.name;
+                        img.loading = 'lazy';
+
+                        const nameEl = document.createElement('div');
+                        nameEl.className = 'char-name';
+                        nameEl.textContent = charData.name;
+
+                        card.appendChild(img);
+                        card.appendChild(nameEl);
+
+                        card.addEventListener('click', function () {
+                            openChoiceModal(key);
+                        });
+
+                        grid.appendChild(card);
+                    });
+
+                    sec.appendChild(grid);
+                    guildSections.appendChild(sec);
+                });
+
+                // 第 27 區：最下方「不選擇」->「誰都不選」(9500106)
+                const noneSec = document.createElement('div');
+                noneSec.className = 'guild-section';
+
+                const noneTitle = document.createElement('h2');
+                noneTitle.className = 'guild-section-title';
+                noneTitle.textContent = '不選擇';
+                noneSec.appendChild(noneTitle);
+
+                const noneGrid = document.createElement('div');
+                noneGrid.className = 'char-grid';
+
+                const noneBtn = document.createElement('button');
+                noneBtn.type = 'button';
+                noneBtn.className = 'char-card';
+
+                const noneBox = document.createElement('div');
+                noneBox.className = 'none-select-box';
+                noneBox.textContent = '誰都不選';
+
+                const noneLabel = document.createElement('div');
+                noneLabel.className = 'char-name';
+                noneLabel.textContent = '選不出來';
+
+                noneBtn.appendChild(noneBox);
+                noneBtn.appendChild(noneLabel);
+                noneBtn.addEventListener('click', function () {
+                    openStoryReader('none_selected', '9500106');
+                });
+
+                noneGrid.appendChild(noneBtn);
+                noneSec.appendChild(noneGrid);
+                guildSections.appendChild(noneSec);
+            }
+
+            function updateTiyaUI() {
+                const clamped = Math.min(tiyaTapCount, 5);
+                tiyaTapDots.forEach(function (dot, idx) {
+                    dot.classList.toggle('active', idx < clamped);
+                });
+                tiyaDialogueText.textContent = TIYA_PROMPTS[clamped];
+                if (clamped < 5) {
+                    tiyaHintText.textContent = '提示：試著輕觸媞雅圖片 5 次看看（目前 ' + clamped + ' / 5）';
+                } else {
+                    tiyaHintText.textContent = '已解鎖媞雅隱藏角色故事！（再次點擊可重開選擇視窗）';
+                }
+            }
+
+            function handleTiyaTap() {
+                tiyaStage.classList.remove('shake');
+                void tiyaStage.offsetWidth;
+                tiyaStage.classList.add('shake');
+
+                if (tiyaTapCount < 5) {
+                    tiyaTapCount += 1;
+                }
+                updateTiyaUI();
+                playTiyaPromptVoice(tiyaTapCount);
+
+                if (tiyaTapCount >= 5) {
+                    openChoiceModal('tiya');
+                }
+            }
+
+            function resetTiyaTap() {
+                stopCurrentAudio();
+                tiyaTapCount = 0;
+                updateTiyaUI();
+            }
+
+            function openChoiceModal(charKey) {
+                const charData = CHARACTERS[charKey];
+                if (!charData) return;
+
+                activeCharacter = charData;
+                choiceAvatar.src = charData.avatar;
+                choiceAvatar.alt = charData.name;
+                choiceTitle.textContent = charData.name;
+                choiceDesc.textContent = charData.desc;
+
+                choiceButtons.innerHTML = '';
+                charData.stories.forEach(function (story) {
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'choice-btn';
+
+                    const labelSpan = document.createElement('span');
+                    labelSpan.textContent = story.label;
+
+                    const idSpan = document.createElement('span');
+                    idSpan.className = 'story-id-pill';
+                    idSpan.textContent = story.id;
+
+                    btn.appendChild(labelSpan);
+                    btn.appendChild(idSpan);
+
+                    btn.addEventListener('click', function () {
+                        closeChoiceModal();
+                        openStoryReader(charKey, story.id);
+                    });
+
+                    choiceButtons.appendChild(btn);
+                });
+
+                choiceModal.classList.add('open');
+            }
+
+            function closeChoiceModal() {
+                choiceModal.classList.remove('open');
+            }
+
+            function escapeHtml(text) {
+                return String(text)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;');
+            }
+
+            function formatSpeakerName(rawName) {
+                const name = (rawName || '').replace(/\{0\}/g, '佑樹').trim();
+                return name || '旁白';
+            }
+
+            function formatDialogueWords(rawWords) {
+                const replaced = String(rawWords || '').replace(/\{0\}/g, '佑樹');
+                // 處理遊戲劇本中的字面 "\\n" 換行標記
+                const normalized = replaced.replace(/\\n/g, '\n');
+                if (!normalized.trim()) {
+                    // 純換行指令保留為段落空行標記，不再印出字面 "\n"
+                    return normalized.includes('\n') ? '__GAP__' : '';
+                }
+                const trimmed = normalized.replace(/^\n+|\n+$/g, '').trimEnd();
+                const escaped = escapeHtml(trimmed);
+                const withRuby = escaped.replace(
+                    /\[rub:\s*([^\]]+)\]([\s\S]*?)\[\/rub\]/g,
+                    '<ruby>$2<rt>$1</rt></ruby>'
+                );
+                return withRuby.replace(/\n/g, '<br>');
+            }
+
+            function mergeConsecutiveDialogues(items) {
+                const merged = [];
+                let firstBgId = null;
+
+                items.forEach(function (item) {
+                    if (!item || typeof item !== 'object') return;
+                    if (item.type === 'background') {
+                        if (!firstBgId && item.bg_id) {
+                            firstBgId = String(item.bg_id);
+                        }
+                        return;
+                    }
+                    if (item.type !== 'dialogue') return;
+
+                    const htmlWords = formatDialogueWords(item.words);
+                    if (!htmlWords) return;
+
+                    const speaker = formatSpeakerName(item.name);
+                    const unitId = item.unit_id ? String(item.unit_id) : '';
+                    const voiceId = item.voice ? String(item.voice).trim() : '';
+                    const last = merged[merged.length - 1];
+
+                    // 以語音分段為對話氣泡邊界：遇到新的 voice 或更換發言人時，開啟新氣泡
+                    const canAppendToLast = last
+                        && !voiceId
+                        && last.speaker === speaker
+                        && last.unitId === unitId;
+
+                    if (canAppendToLast) {
+                        if (htmlWords === '__GAP__') {
+                            if (last.lines.length > 0 && last.lines[last.lines.length - 1] !== '') {
+                                last.lines.push('');
+                            }
+                        } else {
+                            last.lines.push(htmlWords);
+                        }
+                    } else if (htmlWords !== '__GAP__') {
+                        merged.push({
+                            speaker: speaker,
+                            unitId: unitId,
+                            voiceId: voiceId,
+                            lines: [htmlWords]
+                        });
+                    }
+                });
+
+                merged.forEach(function (entry) {
+                    while (entry.lines.length > 0 && entry.lines[entry.lines.length - 1] === '') {
+                        entry.lines.pop();
+                    }
+                });
+
+                return {
+                    bgId: firstBgId,
+                    dialogues: merged
+                };
+            }
+
+            function renderSwitchBar(charData, currentStoryId) {
+                readerSwitchBar.innerHTML = '';
+                charData.stories.forEach(function (story) {
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'switch-btn' + (story.id === currentStoryId ? ' active' : '');
+                    btn.textContent = story.label + ' (' + story.id + ')';
+                    btn.addEventListener('click', function () {
+                        if (story.id !== activeStoryId) {
+                            openStoryReader(charData.key, story.id);
+                        }
+                    });
+                    readerSwitchBar.appendChild(btn);
+                });
+            }
+
+            function createAvatarElement(unitId, speaker) {
+                if (!unitId) {
+                    const fallback = document.createElement('div');
+                    fallback.className = 'dialogue-avatar-fallback';
+                    fallback.textContent = speaker.slice(0, 1);
+                    return fallback;
+                }
+
+                const img = document.createElement('img');
+                img.className = 'dialogue-avatar';
+                img.src = './icon/unit/' + unitId + '.png';
+                img.alt = speaker;
+                img.addEventListener('error', function () {
+                    const fallback = document.createElement('div');
+                    fallback.className = 'dialogue-avatar-fallback';
+                    fallback.textContent = speaker.slice(0, 1);
+                    if (img.parentNode) {
+                        img.parentNode.replaceChild(fallback, img);
+                    }
+                });
+                return img;
+            }
+
+            function playPreviewVoice(storyId, voiceId, btn) {
+                const audioUrl = './sound/story_vo/' + encodeURIComponent(storyId) + '/' + encodeURIComponent(voiceId) + '.m4a';
+                playSingleAudio(audioUrl, function () {
+                    if (btn) {
+                        btn.title = '尚未轉檔本地語音檔：' + voiceId + '.m4a';
+                    }
+                });
+            }
+
+            async function openStoryReader(charKey, storyId) {
+                const charData = CHARACTERS[charKey];
+                if (!charData) return;
+
+                activeCharacter = charData;
+                activeStoryId = storyId;
+
+                const storyMeta = charData.stories.find(function (s) {
+                    return s.id === storyId;
+                });
+
+                readerCharIcon.src = charData.avatar;
+                readerCharIcon.alt = charData.name;
+                readerTitle.textContent = charData.name + ' — ' + (storyMeta ? storyMeta.label : storyId);
+                readerSubtitle.textContent = '劇本編號：' + storyId + '.json';
+                renderSwitchBar(charData, storyId);
+
+                readerBody.innerHTML = '<div class="reader-status">正在載入劇本對白（story/' + escapeHtml(storyId) + '.json）…</div>';
+                readerModal.classList.add('open');
+
+                try {
+                    const response = await fetch('./story/' + storyId + '.json');
+                    if (!response.ok) {
+                        throw new Error('HTTP ' + response.status + ' ' + response.statusText);
+                    }
+                    const rawData = await response.json();
+                    if (!Array.isArray(rawData)) {
+                        throw new Error('劇本格式非預期陣列結構');
+                    }
+
+                    // 避免快速切換時舊請求覆蓋新結果
+                    if (activeStoryId !== storyId) return;
+
+                    const parsed = mergeConsecutiveDialogues(rawData);
+                    readerBody.innerHTML = '';
+
+                    if (parsed.bgId) {
+                        const bgImg = document.createElement('img');
+                        bgImg.className = 'reader-bg-banner';
+                        bgImg.src = './still/bg/bg_' + parsed.bgId + '.webp';
+                        bgImg.alt = '場景背景 ' + parsed.bgId;
+                        bgImg.addEventListener('error', function () {
+                            bgImg.remove();
+                        });
+                        readerBody.appendChild(bgImg);
+                    }
+
+                    if (parsed.dialogues.length === 0) {
+                        readerBody.innerHTML = '<div class="reader-status">此劇本目前沒有可顯示的對白內容。</div>';
+                        return;
+                    }
+
+                    parsed.dialogues.forEach(function (entry) {
+                        const row = document.createElement('div');
+                        row.className = 'dialogue-row';
+
+                        const avatarEl = createAvatarElement(entry.unitId, entry.speaker);
+
+                        const bubble = document.createElement('div');
+                        bubble.className = 'dialogue-bubble';
+
+                        const speakerEl = document.createElement('div');
+                        speakerEl.className = 'dialogue-speaker';
+                        const speakerNameSpan = document.createElement('span');
+                        speakerNameSpan.textContent = entry.speaker;
+                        speakerEl.appendChild(speakerNameSpan);
+                        if (entry.voiceId) {
+                            const voBtn = document.createElement('button');
+                            voBtn.type = 'button';
+                            voBtn.className = 'dialogue-voice-btn';
+                            voBtn.title = '播放語音 (' + entry.voiceId + ')';
+                            voBtn.setAttribute('aria-label', '播放語音');
+                            voBtn.textContent = '🔊';
+                            voBtn.addEventListener('click', function (ev) {
+                                ev.stopPropagation();
+                                playPreviewVoice(storyId, entry.voiceId, voBtn);
+                            });
+                            speakerEl.appendChild(voBtn);
+                        }
+
+                        const textEl = document.createElement('div');
+                        textEl.className = 'dialogue-text';
+                        textEl.innerHTML = entry.lines.join('<br>');
+
+                        bubble.appendChild(speakerEl);
+                        bubble.appendChild(textEl);
+                        row.appendChild(avatarEl);
+                        row.appendChild(bubble);
+                        readerBody.appendChild(row);
+                    });
+
+                    readerBody.scrollTop = 0;
+                } catch (err) {
+                    if (activeStoryId !== storyId) return;
+                    const isFileProtocol = window.location.protocol === 'file:';
+                    readerBody.innerHTML =
+                        '<div class="reader-status error">' +
+                        '<strong>無法載入劇本檔案（./story/' + escapeHtml(storyId) + '.json）</strong><br><br>' +
+                        (isFileProtocol
+                            ? '目前頁面是直接以 <code>file://</code> 開啟，瀏覽器 CORS 政策會阻擋 <code>fetch()</code> 讀取本機 JSON。<br>' +
+                              '請改於 <code>dashboard/</code> 目錄執行本機靜態伺服器：<br>' +
+                              '<code>python -m http.server 8000</code><br>' +
+                              '再開啟 <code>http://localhost:8000/pcp_preview.html</code> 即可正常閱讀對白。'
+                            : '錯誤訊息：' + escapeHtml(err && err.message ? err.message : String(err))) +
+                        '</div>';
+                }
+            }
+
+            function closeStoryReader() {
+                readerModal.classList.remove('open');
+                activeStoryId = null;
+            }
+
+            tiyaStage.addEventListener('click', handleTiyaTap);
+            tiyaStage.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleTiyaTap();
+                }
+            });
+            tiyaResetBtn.addEventListener('click', resetTiyaTap);
+            if (tiyaVoiceBtn) {
+                tiyaVoiceBtn.addEventListener('click', function () {
+                    playTiyaPromptVoice(tiyaTapCount);
+                });
+            }
+
+            choiceCloseBtn.addEventListener('click', closeChoiceModal);
+            choiceModal.addEventListener('click', function (e) {
+                if (e.target === choiceModal) closeChoiceModal();
+            });
+
+            readerCloseBtn.addEventListener('click', closeStoryReader);
+            readerFooterClose.addEventListener('click', closeStoryReader);
+            readerModal.addEventListener('click', function (e) {
+                if (e.target === readerModal) closeStoryReader();
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    if (readerModal.classList.contains('open')) {
+                        closeStoryReader();
+                    } else if (choiceModal.classList.contains('open')) {
+                        closeChoiceModal();
+                    }
+                }
+            });
+
+            initProtocolCheck();
+            renderGuildCards();
+            updateTiyaUI();
+        })();
+    </script>
+</body>
+</html>

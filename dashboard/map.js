@@ -32,6 +32,7 @@ const QuestMapModule = {
     storyThumbnails: null,
     extraStoryIndex: null,
     activeExtraCategory: null,
+    pcpMode: false,
     activeCharaName: null,
     charaSearchQuery: "",
     directoryLevel: 'level1', // 'level1' (章節/活動卡片清單) | 'level2' (話數清單)
@@ -492,11 +493,17 @@ const QuestMapModule = {
                         }
                     });
 
-                    // 【主線第 17 章後續話數兜底 (第 4～6 話)】
+                    // 【主線第 17 章後續話數與第 3 部終幕兜底】
                     const pendingCh17Episodes = [
-                        { id: 2217004, chapter: "第3部 第17章 第4話", title: "皇帝與龍與騎士", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
-                        { id: 2217005, chapter: "第3部 第17章 第5話", title: "『龍』", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
-                        { id: 2217006, chapter: "第3部 第17章 第6話", title: "『神威』顯現", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2217004, chapter: "第3部 第17章 第4話", title: "皇帝與山羊與騎士們", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2217005, chapter: "第3部 第17章 第5話", title: "「索爾龍」", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2217006, chapter: "第3部 第17章 第6話", title: "「顛倒之塔」防衛戰", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2217007, chapter: "第3部 第17章 第7話", title: "「中立」的祈禱", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2217008, chapter: "第3部 第17章 第8話", title: "恐怖的盡頭", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2217009, chapter: "第3部 第17章 第9話", title: "飛翔吧！美食獵人號", groupId: 2217, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2218001, chapter: "第3部 終幕 第1話", title: "「未曾選擇」的世界", groupId: 2218, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2218002, chapter: "第3部 終幕 第2話", title: "片刻的離別", groupId: 2218, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
+                        { id: 2218003, chapter: "第3部 終幕 第3話", title: "離開‧阿斯特朗", groupId: 2218, part: 3, isEvent: false, type: 'main', storyEnd: 0 },
                     ];
                     pendingCh17Episodes.forEach(ep => {
                         if (!this.stories.some(s => Number(s.id) === Number(ep.id))) {
@@ -538,7 +545,12 @@ const QuestMapModule = {
                         { unitId: 139701, name: "普蕾西亞（女武神）", prefix: "139700", titles: ["重逢 的 Porco", "贖罪 的 Ossabaw", "美夢 的 Mangalica", "硬邦邦 的 扭來扭去"] },
                         { unitId: 139801, name: "雪菲（真龍）", prefix: "139800", titles: ["停下來的翅膀", "兄妹之間", "在追憶的彼端所獲得的事物", "夢見黃昏之影與決心之夢"] },
                         { unitId: 139901, name: "露易絲瑪莉（夏日）", prefix: "139900", titles: ["HOT LIMIT", "夏日時光的憂鬱", "無法妥協的夏天", "小小戀歌"] },
-                        { unitId: 140001, name: "克蕾琪塔（夏日）", prefix: "140000", titles: ["酷暑！進擊的女商人", "這不過是業務的一環罷了", "只有半天的頂級度假", "從國外來的商人（金比基尼）"] }
+                        { unitId: 140001, name: "克蕾琪塔（夏日）", prefix: "140000", titles: ["酷暑！進擊的女商人", "這不過是業務的一環罷了", "只有半天的頂級度假", "從國外來的商人（金比基尼）"] },
+                        { unitId: 140101, name: "布武機（夏日）", prefix: "140100", titles: ["爆紅吧♡海邊的直播", "獨佔♡睡臉收藏", "懲罰♡頸部的印記", "保留♡夏天的獎勵"] },
+                        { unitId: 140201, name: "班比（夏日）", prefix: "140200", titles: ["第一次的♡閒聊", "第一次的♡自拍", "第一次的♡漂來漂去", "兩人一起「呸──」"] },
+                        { unitId: 140301, name: "媞雅", prefix: "140300", titles: ["打發時間的東西在哪裡？", "那是約會嗎？", "為什麼會誕生？", "你是誰的玩具？"] },
+                        { unitId: 140401, name: "黎薩", prefix: "140400", titles: ["回不去的歸途", "甜蜜又苦澀", "在死亡終點歸於幽冥", "流浪狗的體悟"] },
+                        { unitId: 140501, name: "烏爾姆（熱烈之龍）", prefix: "140500", titles: ["在被設定好的情感之外", "注入愛情的怠惰成品", "不再獨自飛翔", "寄居型女僕服務"] }
                     ];
 
                     pendingNewCharas.forEach(ch => {
@@ -1060,6 +1072,8 @@ const QuestMapModule = {
             } else if (category.id === 'raid_activity') {
                 // VERIFIED GROUPING: story_group_id 9100
                 resolvedChapter = '軍團之戰 (Legion War)';
+            } else if (category.id === 'phantom_dragon_raid') {
+                resolvedChapter = s.chapter || '終末幻境 ─幻龍爭霸戰─';
             } else if (category.id === 'dungeon') {
                 // VERIFIED GROUPING: official 20 entries are one subgroup.
                 // 4003021/4003022 are canonical rows outside that index.
@@ -1188,6 +1202,8 @@ const QuestMapModule = {
 
     selectExtraCategory(categoryId) {
         if (!this.getExtraCategory(categoryId)) return;
+        window.PcpView?.teardown();
+        this.pcpMode = false;
         this.activeExtraCategory = categoryId;
         this.expandedChapter = null;
         this.directoryLevel = 'level1';
@@ -1195,9 +1211,27 @@ const QuestMapModule = {
         this.safeRender(() => this._render());
     },
 
-    clearActiveExtraCategory() {
+    openPcpView() {
         this.teardownPlayback({ invalidateAsync: true });
         window.ReaderNavigation?.left();
+        this.currentView = 'list';
+        this.activeTabType = 'extra';
+        this.activeExtraCategory = 'phantom_dragon_raid';
+        this.pcpMode = true;
+        this.safeRender(() => this._render());
+    },
+
+    closePcpView() {
+        window.PcpView?.teardown();
+        this.pcpMode = false;
+        this.safeRender(() => this._render());
+    },
+
+    clearActiveExtraCategory() {
+        this.teardownPlayback({ invalidateAsync: true });
+        window.PcpView?.teardown();
+        window.ReaderNavigation?.left();
+        this.pcpMode = false;
         this.activeExtraCategory = null;
         this.activeStoryId = null;
         this.expandedChapter = null;
@@ -1252,7 +1286,9 @@ const QuestMapModule = {
 
     switchTabType(type) {
         this.teardownPlayback({ invalidateAsync: true });
+        window.PcpView?.teardown();
         window.ReaderNavigation?.left();
+        this.pcpMode = false;
         this.activeTabType = type;
         this.activeStoryId = null;
         this.expandedChapter = null;
@@ -1263,7 +1299,9 @@ const QuestMapModule = {
 
     goBackToMenu() {
         this.teardownPlayback({ invalidateAsync: true });
+        window.PcpView?.teardown();
         window.ReaderNavigation?.left();
+        this.pcpMode = false;
         this.activeStoryId = null;
         this.currentView = 'menu';
         this._fadeTransition(() => this._render());
@@ -1275,7 +1313,9 @@ const QuestMapModule = {
 
     enterCategory(type) {
         this.teardownPlayback({ invalidateAsync: true });
+        window.PcpView?.teardown();
         window.ReaderNavigation?.left();
+        this.pcpMode = false;
         this.currentView = 'list';
         this.activeTabType = type;
         this.activeStoryId = null;
@@ -1365,6 +1405,13 @@ const QuestMapModule = {
 
         if (this.activeTabType === 'extra' && !this.activeExtraCategory) {
             this.renderExtraCategorySelector(tab);
+            const existingBackBtn = document.querySelector('.floating-back-btn');
+            if (existingBackBtn) existingBackBtn.remove();
+            return;
+        }
+
+        if (this.activeTabType === 'extra' && this.activeExtraCategory === 'phantom_dragon_raid' && this.pcpMode && window.PcpView) {
+            window.PcpView.render(tab);
             const existingBackBtn = document.querySelector('.floating-back-btn');
             if (existingBackBtn) existingBackBtn.remove();
             return;
@@ -1766,13 +1813,18 @@ const QuestMapModule = {
                     <button class="primary-nav-btn ${this.activeTabType === 'event' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('event')">🏆 活動劇情</button>
                 </div>
                 ` : `
-                <div class="other-category-title" style="display: flex; align-items: center; gap: 8px;">
+                <div class="other-category-title" style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; width: 100%; justify-content: space-between;">
                     <h2 style="margin: 0; font-size: 1.3rem; color: var(--text-primary);">📖 ${
                         this.activeTabType === 'guild' ? '公會劇情' :
                         this.activeTabType === 'chara' ? `${this.activeCharaName ? this.escapeHtml(this.activeCharaName) + ' 的' : ''}角色劇情` :
                         this.activeTabType === 'extra' ? `${currentExtraCategory ? this.escapeHtml(currentExtraCategory.title) : '額外劇情'}` :
                         this.activeTabType === 'tower' ? '額外劇情' : '登場角色'
                     }</h2>
+                    ${(this.activeTabType === 'extra' && this.activeExtraCategory === 'phantom_dragon_raid') ? `
+                    <button type="button" class="pcp-entry-btn" onclick="QuestMapModule.openPcpView()">
+                        ✨ 開啟公主選擇互動介面 (Princess Connect Process)
+                    </button>
+                    ` : ''}
                 </div>
                 `}
 

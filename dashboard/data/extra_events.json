@@ -121,10 +121,24 @@
     },
     {
       "story_group_id": 10218,
-      "title": "史上最糟的夏天，開幕",
+      "title": "禁止觸碰♡島嶼　\n夏日少女是戀愛炸彈",
       "start_time": "2026/11/01 16:00:00",
       "thumbnail_id": 521800101,
       "value": 10218
+    },
+    {
+      "story_group_id": 10219,
+      "title": "點擊愛心♡爆紅之夏──！　\n#布武機 #班比 #可愛擴散中！",
+      "start_time": "2026/12/01 16:00:00",
+      "thumbnail_id": 521900001,
+      "value": 10219
+    },
+    {
+      "story_group_id": 10220,
+      "title": "To be connected　\n虛擬世界的啟航",
+      "start_time": "2027/01/01 16:00:00",
+      "thumbnail_id": 522000001,
+      "value": 10220
     }
   ],
   "stories": [
@@ -2390,6 +2404,197 @@
       "title": "夏日仍未結束！",
       "groupId": 10218,
       "isEvent": true
+    },
+    {
+      "id": 5219000,
+      "chapter": "序幕",
+      "title": "布武機VS班比！",
+      "groupId": 10219,
+      "isEvent": true,
+      "still_id": "521900001",
+      "bg_id": "502922"
+    },
+    {
+      "id": 5219001,
+      "chapter": "第 1 話",
+      "title": "輸不得的對戰",
+      "groupId": 10219,
+      "isEvent": true,
+      "bg_id": "502922"
+    },
+    {
+      "id": 5219002,
+      "chapter": "第 2 話",
+      "title": "合作直播的真相",
+      "groupId": 10219,
+      "isEvent": true,
+      "still_id": "521900201",
+      "bg_id": "502922"
+    },
+    {
+      "id": 5219003,
+      "chapter": "第 3 話",
+      "title": "布武機的祕密兵器♡",
+      "groupId": 10219,
+      "isEvent": true,
+      "bg_id": "502922"
+    },
+    {
+      "id": 5219004,
+      "chapter": "第 4 話",
+      "title": "再次登場的那傢伙！？",
+      "groupId": 10219,
+      "isEvent": true,
+      "still_id": "521900401",
+      "bg_id": "500520"
+    },
+    {
+      "id": 5219005,
+      "chapter": "第 5 話",
+      "title": "最強的吸血鬼公主",
+      "groupId": 10219,
+      "isEvent": true,
+      "still_id": "521900501",
+      "bg_id": "501850"
+    },
+    {
+      "id": 5219006,
+      "chapter": "第 6 話",
+      "title": "愛心♡爆紅♪最終表演！",
+      "groupId": 10219,
+      "isEvent": true,
+      "still_id": "521900601",
+      "bg_id": "502911"
+    },
+    {
+      "id": 5219007,
+      "chapter": "終幕",
+      "title": "#兩人是好朋友♡",
+      "groupId": 10219,
+      "isEvent": true,
+      "bg_id": "502921"
+    },
+    {
+      "id": 5219052,
+      "chapter": "片頭動畫",
+      "title": "點擊愛心♡爆紅之夏──！ OP",
+      "groupId": 10219,
+      "isEvent": true
+    },
+    {
+      "id": 5219401,
+      "chapter": "特別演出",
+      "title": "壞孩子要懲罰喔♪",
+      "groupId": 10219,
+      "isEvent": true,
+      "bg_id": "501850"
+    },
+    {
+      "id": 5219411,
+      "chapter": "特別演出",
+      "title": "兩人霸佔一人♪",
+      "groupId": 10219,
+      "isEvent": true,
+      "bg_id": "502922"
+    },
+    {
+      "id": 5220000,
+      "chapter": "序幕",
+      "title": "和平的前景",
+      "groupId": 10220,
+      "isEvent": true,
+      "still_id": "522000001",
+      "bg_id": "500010"
+    },
+    {
+      "id": 5220001,
+      "chapter": "第 1 話",
+      "title": "追尋龍的殘香",
+      "groupId": 10220,
+      "isEvent": true,
+      "bg_id": "501770"
+    },
+    {
+      "id": 5220002,
+      "chapter": "第 2 話",
+      "title": "尋求反抗的意義",
+      "groupId": 10220,
+      "isEvent": true,
+      "bg_id": "501663"
+    },
+    {
+      "id": 5220003,
+      "chapter": "第 3 話",
+      "title": "航向險惡的大海",
+      "groupId": 10220,
+      "isEvent": true,
+      "bg_id": "502400"
+    },
+    {
+      "id": 5220004,
+      "chapter": "第 4 話",
+      "title": "不會讓大家消失的",
+      "groupId": 10220,
+      "isEvent": true,
+      "still_id": "522000401",
+      "bg_id": "500285"
+    },
+    {
+      "id": 5220005,
+      "chapter": "第 5 話",
+      "title": "振翅高飛的決心",
+      "groupId": 10220,
+      "isEvent": true,
+      "bg_id": "500111"
+    },
+    {
+      "id": 5220006,
+      "chapter": "第 6 話",
+      "title": "在我最喜歡的這個地方",
+      "groupId": 10220,
+      "isEvent": true,
+      "still_id": "522000601",
+      "bg_id": "502250"
+    },
+    {
+      "id": 5220007,
+      "chapter": "終幕",
+      "title": "continue world, and……",
+      "groupId": 10220,
+      "isEvent": true,
+      "still_id": "500000001",
+      "bg_id": "500160"
+    },
+    {
+      "id": 5220051,
+      "chapter": "次回預告",
+      "title": "To be connected　虛擬世界的啟航 下回預告",
+      "groupId": 10220,
+      "isEvent": true,
+      "bg_id": "501640"
+    },
+    {
+      "id": 5220052,
+      "chapter": "片頭動畫",
+      "title": "To be connected　虛擬世界的啟航 OP",
+      "groupId": 10220,
+      "isEvent": true
+    },
+    {
+      "id": 5220401,
+      "chapter": "特別演出",
+      "title": "相背而立的決心",
+      "groupId": 10220,
+      "isEvent": true,
+      "bg_id": "502350"
+    },
+    {
+      "id": 5220411,
+      "chapter": "特別演出",
+      "title": "幾乎快被壓扁的幸福",
+      "groupId": 10220,
+      "isEvent": true,
+      "bg_id": "501710"
     }
   ]
 }
