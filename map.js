@@ -1982,7 +1982,7 @@ const QuestMapModule = {
             return `<div style="padding: 20px; text-align: center; color: var(--text-secondary); font-size: 0.85rem;">暫無話數</div>`;
         }
         const childStories = this.chapters[chKey] || [];
-        return childStories.map(s => {
+        const itemsHtml = childStories.map(s => {
             let displayChapterName = "";
             let episodeSubtitle = s.title;
             if (this.activeTabType === 'main') {
@@ -2001,6 +2001,25 @@ const QuestMapModule = {
             }
             return this.getStoryItemHtml(s, displayChapterName, episodeSubtitle);
         }).join('');
+        const isPart3Ch17 = this.activeTabType === 'main' && this.currentPart === 3 && (chKey.includes('第17章') || childStories.some(s => Number(s.groupId) === 2217));
+        if (!isPart3Ch17) return itemsHtml;
+        const pcpShortcutHtml = `
+            <div class="story-item" id="story-item-pcp-raid-entry" onclick="QuestMapModule.openPcpView()" style="border: 1.5px solid rgba(232, 56, 117, 0.45); background: linear-gradient(135deg, rgba(255, 232, 242, 0.92), rgba(255, 245, 250, 0.92));">
+                <div class="story-item-thumb">
+                    <img src="icon/story/9500001.webp" alt="終末幻境 ─幻龍爭霸戰─" class="story-thumb-img" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                </div>
+                <div class="story-item-content">
+                    <div class="story-item-ch" style="color: #e83875; font-weight: 800;">✨ 終末幻境 ─幻龍爭霸戰─（239 話）</div>
+                    <div class="story-item-title" style="color: #9c2754;">開啟公主選擇互動介面 (Princess Connect Process)</div>
+                </div>
+                <div class="story-item-arrow">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                    </svg>
+                </div>
+            </div>
+        `;
+        return itemsHtml + pcpShortcutHtml;
     },
 
     selectDirectoryGroup(chKey) {
