@@ -32,6 +32,7 @@ const QuestMapModule = {
     storyThumbnails: null,
     extraStoryIndex: null,
     activeExtraCategory: null,
+    pcpMode: false,
     activeCharaName: null,
     charaSearchQuery: "",
     directoryLevel: 'level1', // 'level1' (章節/活動卡片清單) | 'level2' (話數清單)
@@ -1071,6 +1072,8 @@ const QuestMapModule = {
             } else if (category.id === 'raid_activity') {
                 // VERIFIED GROUPING: story_group_id 9100
                 resolvedChapter = '軍團之戰 (Legion War)';
+            } else if (category.id === 'phantom_dragon_raid') {
+                resolvedChapter = s.chapter || '終末幻境 ─幻龍爭霸戰─';
             } else if (category.id === 'dungeon') {
                 // VERIFIED GROUPING: official 20 entries are one subgroup.
                 // 4003021/4003022 are canonical rows outside that index.
@@ -1199,6 +1202,8 @@ const QuestMapModule = {
 
     selectExtraCategory(categoryId) {
         if (!this.getExtraCategory(categoryId)) return;
+        window.PcpView?.teardown();
+        this.pcpMode = false;
         this.activeExtraCategory = categoryId;
         this.expandedChapter = null;
         this.directoryLevel = 'level1';
@@ -1206,9 +1211,27 @@ const QuestMapModule = {
         this.safeRender(() => this._render());
     },
 
-    clearActiveExtraCategory() {
+    openPcpView() {
         this.teardownPlayback({ invalidateAsync: true });
         window.ReaderNavigation?.left();
+        this.currentView = 'list';
+        this.activeTabType = 'extra';
+        this.activeExtraCategory = 'phantom_dragon_raid';
+        this.pcpMode = true;
+        this.safeRender(() => this._render());
+    },
+
+    closePcpView() {
+        window.PcpView?.teardown();
+        this.pcpMode = false;
+        this.safeRender(() => this._render());
+    },
+
+    clearActiveExtraCategory() {
+        this.teardownPlayback({ invalidateAsync: true });
+        window.PcpView?.teardown();
+        window.ReaderNavigation?.left();
+        this.pcpMode = false;
         this.activeExtraCategory = null;
         this.activeStoryId = null;
         this.expandedChapter = null;
@@ -1263,7 +1286,9 @@ const QuestMapModule = {
 
     switchTabType(type) {
         this.teardownPlayback({ invalidateAsync: true });
+        window.PcpView?.teardown();
         window.ReaderNavigation?.left();
+        this.pcpMode = false;
         this.activeTabType = type;
         this.activeStoryId = null;
         this.expandedChapter = null;
@@ -1274,7 +1299,9 @@ const QuestMapModule = {
 
     goBackToMenu() {
         this.teardownPlayback({ invalidateAsync: true });
+        window.PcpView?.teardown();
         window.ReaderNavigation?.left();
+        this.pcpMode = false;
         this.activeStoryId = null;
         this.currentView = 'menu';
         this._fadeTransition(() => this._render());
@@ -1286,7 +1313,9 @@ const QuestMapModule = {
 
     enterCategory(type) {
         this.teardownPlayback({ invalidateAsync: true });
+        window.PcpView?.teardown();
         window.ReaderNavigation?.left();
+        this.pcpMode = false;
         this.currentView = 'list';
         this.activeTabType = type;
         this.activeStoryId = null;
@@ -1376,6 +1405,13 @@ const QuestMapModule = {
 
         if (this.activeTabType === 'extra' && !this.activeExtraCategory) {
             this.renderExtraCategorySelector(tab);
+            const existingBackBtn = document.querySelector('.floating-back-btn');
+            if (existingBackBtn) existingBackBtn.remove();
+            return;
+        }
+
+        if (this.activeTabType === 'extra' && this.activeExtraCategory === 'phantom_dragon_raid' && this.pcpMode && window.PcpView) {
+            window.PcpView.render(tab);
             const existingBackBtn = document.querySelector('.floating-back-btn');
             if (existingBackBtn) existingBackBtn.remove();
             return;
@@ -1777,13 +1813,18 @@ const QuestMapModule = {
                     <button class="primary-nav-btn ${this.activeTabType === 'event' ? 'active' : ''}" onclick="QuestMapModule.switchTabType('event')">🏆 活動劇情</button>
                 </div>
                 ` : `
-                <div class="other-category-title" style="display: flex; align-items: center; gap: 8px;">
+                <div class="other-category-title" style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; width: 100%; justify-content: space-between;">
                     <h2 style="margin: 0; font-size: 1.3rem; color: var(--text-primary);">📖 ${
                         this.activeTabType === 'guild' ? '公會劇情' :
                         this.activeTabType === 'chara' ? `${this.activeCharaName ? this.escapeHtml(this.activeCharaName) + ' 的' : ''}角色劇情` :
                         this.activeTabType === 'extra' ? `${currentExtraCategory ? this.escapeHtml(currentExtraCategory.title) : '額外劇情'}` :
                         this.activeTabType === 'tower' ? '額外劇情' : '登場角色'
                     }</h2>
+                    ${(this.activeTabType === 'extra' && this.activeExtraCategory === 'phantom_dragon_raid') ? `
+                    <button type="button" class="pcp-entry-btn" onclick="QuestMapModule.openPcpView()">
+                        ✨ 開啟公主選擇互動介面 (Princess Connect Process)
+                    </button>
+                    ` : ''}
                 </div>
                 `}
 
