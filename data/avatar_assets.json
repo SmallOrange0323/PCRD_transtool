@@ -2,14 +2,14 @@
   "version": 1,
   "metadata": {
     "description": "PCRD Story Map - Canonical Avatar Asset Registry",
-    "total_assets": 1403,
-    "dialogue_assets_count": 1391,
-    "active_dialogue_count": 1388,
+    "total_assets": 1430,
+    "dialogue_assets_count": 1418,
+    "active_dialogue_count": 1415,
     "placeholder_only_count": 3,
     "ui_assets_count": 12,
     "dialogue_overrides_count": 1,
-    "total_active_bytes": 26606964,
-    "total_active_mib": 25.3744
+    "total_active_bytes": 27045503,
+    "total_active_mib": 25.7926
   },
   "assets": [
     {
@@ -2334,6 +2334,17 @@
       "provenance": "storydata2_assetmanifest"
     },
     {
+      "unit_id": 8312,
+      "asset_key": "008312",
+      "filename": "008312.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 17198,
+      "sha256": "df9204c1911a4221fbe8eaa8731867634a3dc307b78d414509f266aae203c15e",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
       "unit_id": 8411,
       "asset_key": "008411",
       "filename": "008411.png",
@@ -2727,6 +2738,17 @@
       "status": "active",
       "size_bytes": 19337,
       "sha256": "c8e371acf08d8a8104d27e39ff02da551ccca40a8b4cfe07113b682191e8d1b1",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
+      "unit_id": 10713,
+      "asset_key": "010713",
+      "filename": "010713.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 18651,
+      "sha256": "71e9602049e86e6d0aa1ff48af49612ec5026d4c094d0051d841c05966c17f2c",
       "provenance": "storydata2_assetmanifest"
     },
     {
@@ -4322,6 +4344,17 @@
       "status": "active",
       "size_bytes": 18585,
       "sha256": "c03bb4f3b1b063d5ebe642778dd40cc9cf49337a2e695b98aa878287f7de2210",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
+      "unit_id": 20511,
+      "asset_key": "020511",
+      "filename": "020511.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 22292,
+      "sha256": "3a0ff6bf672c8e3982869c4e39e96c7aabe00bf7cc14cbb41bff59001924de33",
       "provenance": "storydata2_assetmanifest"
     },
     {
@@ -7408,6 +7441,17 @@
       "provenance": "legacy_existing_asset"
     },
     {
+      "unit_id": 106712,
+      "asset_key": "106712",
+      "filename": "106712.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 18643,
+      "sha256": "f3a92a75add25e2adc351b2a4f40a57271d066b90b48e823a5943c42af26657c",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
       "unit_id": 106713,
       "filename": "106713.png",
       "format": "png",
@@ -7795,6 +7839,17 @@
       "status": "active",
       "size_bytes": 22923,
       "sha256": "229de4f5c66e3ef06756742866a63cf6d240af271e27e844d85f6f2ea7186e04",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
+      "unit_id": 107418,
+      "asset_key": "107418",
+      "filename": "107418.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 22841,
+      "sha256": "3de5497c7cd012442e7643ace30a6369f1df6a66b65e240e12f444759816b6a7",
       "provenance": "storydata2_assetmanifest"
     },
     {
@@ -9938,6 +9993,17 @@
       "provenance": "legacy_existing_asset"
     },
     {
+      "unit_id": 123031,
+      "asset_key": "123031",
+      "filename": "123031.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 31933,
+      "sha256": "b151d11db7f133f64ae38ec586096c45d10081426f5c4eef1b25147781e2ad1a",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
       "unit_id": 123111,
       "filename": "123111.png",
       "format": "png",
@@ -10938,6 +11004,17 @@
       "provenance": "legacy_existing_asset"
     },
     {
+      "unit_id": 127732,
+      "asset_key": "127732",
+      "filename": "127732.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 16886,
+      "sha256": "abcfb855d581d4dfc7c7881545ca49de4a9508cbe4abc432ed13e871330efb8d",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
       "unit_id": 127812,
       "filename": "127812.png",
       "format": "png",
@@ -10966,6 +11043,17 @@
       "size_bytes": 16435,
       "sha256": "2ef17e19034206e38c64229c8cbf2cb6a6e802c6a8365cd6d00a14af0a789fae",
       "provenance": "legacy_existing_asset"
+    },
+    {
+      "unit_id": 127832,
+      "asset_key": "127832",
+      "filename": "127832.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 17390,
+      "sha256": "3245b71796efeaedede6d9df55c28077fc55c2d6f4be51967e25e54d22757e51",
+      "provenance": "storydata2_assetmanifest"
     },
     {
       "unit_id": 127911,
@@ -12026,6 +12114,17 @@
       "size_bytes": 19852,
       "sha256": "3ec17fdd23bfafce2d4c46f7c50358b4debef9fedeacfddc53c43f14600d081f",
       "provenance": "legacy_existing_asset"
+    },
+    {
+      "unit_id": 133116,
+      "asset_key": "133116",
+      "filename": "133116.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 20672,
+      "sha256": "599a1c952a2be0a47e13063d081051854ded015ed5219720873df5cd6f58a4b6",
+      "provenance": "storydata2_assetmanifest"
     },
     {
       "unit_id": 133117,
@@ -13528,6 +13627,17 @@
       "provenance": "storydata2_assetmanifest"
     },
     {
+      "unit_id": 140111,
+      "asset_key": "140111",
+      "filename": "140111.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 23677,
+      "sha256": "bc963ad042db1dd606b164f4ee3b0efcbe2f5452194bd19387e669da9dfdbd22",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
       "unit_id": 140112,
       "filename": "140112.png",
       "format": "png",
@@ -13538,6 +13648,17 @@
       "provenance": "storydata2_assetmanifest"
     },
     {
+      "unit_id": 140113,
+      "asset_key": "140113",
+      "filename": "140113.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 17232,
+      "sha256": "ba5db1eca066ac042c9319f125ecefc210b383e90a1d42866041855dd341a048",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
       "unit_id": 140211,
       "filename": "140211.png",
       "format": "png",
@@ -13545,6 +13666,61 @@
       "status": "active",
       "size_bytes": 21585,
       "sha256": "34b6cbd96c2e35b6fa5d11beaf56af62e1d90ad63233c361ca60675f108bfa31",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
+      "unit_id": 140311,
+      "asset_key": "140311",
+      "filename": "140311.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 21124,
+      "sha256": "74199f72201bfb980933d2063ab2aad15af4e9c673b6db6522c52c78a6875708",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
+      "unit_id": 140331,
+      "asset_key": "140331",
+      "filename": "140331.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 19727,
+      "sha256": "7492a5c8aaa9c29abeffc6369784dc6697dcd8756507706e1d9d7406d9b9d16d",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
+      "unit_id": 140341,
+      "asset_key": "140341",
+      "filename": "140341.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 21124,
+      "sha256": "74199f72201bfb980933d2063ab2aad15af4e9c673b6db6522c52c78a6875708",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
+      "unit_id": 140411,
+      "asset_key": "140411",
+      "filename": "140411.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 19769,
+      "sha256": "dd00f9e023b26976efd9f2761065af9c8d14a731319e4f2c77ad3161356c87cb",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
+      "unit_id": 140412,
+      "asset_key": "140412",
+      "filename": "140412.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 19769,
+      "sha256": "dd00f9e023b26976efd9f2761065af9c8d14a731319e4f2c77ad3161356c87cb",
       "provenance": "storydata2_assetmanifest"
     },
     {
@@ -13566,6 +13742,72 @@
       "size_bytes": 20205,
       "sha256": "72f300b040d4beb9555c8d08da67054f913e11662646e1c1c1b453f17cfc2f86",
       "provenance": "official_tw_localized_asset"
+    },
+    {
+      "unit_id": 140415,
+      "asset_key": "140415",
+      "filename": "140415.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 19769,
+      "sha256": "dd00f9e023b26976efd9f2761065af9c8d14a731319e4f2c77ad3161356c87cb",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
+      "unit_id": 140431,
+      "asset_key": "140431",
+      "filename": "140431.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 17331,
+      "sha256": "2b1ee1c2135539ce54e6dc03fd6f36b7c1c43da2fdac6820f68764acfb6770aa",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
+      "unit_id": 140511,
+      "asset_key": "140511",
+      "filename": "140511.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 19432,
+      "sha256": "cdbe9ed85de1ef7d02ee890ecc4c59122fdb0eef9181039aec867a2668ba101b",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
+      "unit_id": 140611,
+      "asset_key": "140611",
+      "filename": "140611.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 22428,
+      "sha256": "d3f69771cc24fdd9bd4b22fed188c33b35521145e41790e2e17a5c32aca9ba9e",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
+      "unit_id": 140612,
+      "asset_key": "140612",
+      "filename": "140612.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 22428,
+      "sha256": "d3f69771cc24fdd9bd4b22fed188c33b35521145e41790e2e17a5c32aca9ba9e",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
+      "unit_id": 140613,
+      "asset_key": "140613",
+      "filename": "140613.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 4746,
+      "sha256": "3be819b416ebf85e7b0ae4ed07e5dcb854034dc1643105b4cdc3bcfc7efb3c87",
+      "provenance": "storydata2_assetmanifest"
     },
     {
       "unit_id": 170111,
@@ -14138,6 +14380,17 @@
       "provenance": "legacy_existing_asset"
     },
     {
+      "unit_id": 192614,
+      "asset_key": "192614",
+      "filename": "192614.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 22543,
+      "sha256": "563d0d935d2c942a64e965440fb0d026fdfcd59493eb919e708c18d60744f237",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
       "unit_id": 192711,
       "filename": "192711.png",
       "format": "png",
@@ -14473,6 +14726,28 @@
       "size_bytes": 3870,
       "sha256": "7aafc1f774eb4bdab500b4bc3dd8910d8bca9ac4e3e2b4815665893afab82614",
       "provenance": "legacy_existing_asset"
+    },
+    {
+      "unit_id": 195613,
+      "asset_key": "195613",
+      "filename": "195613.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 21045,
+      "sha256": "deedfbba6b732dd998a0e41dfef720b8a1d63b90f7bc9a3e06ccd8744546e1c1",
+      "provenance": "storydata2_assetmanifest"
+    },
+    {
+      "unit_id": 195712,
+      "asset_key": "195712",
+      "filename": "195712.png",
+      "format": "png",
+      "usage": "dialogue",
+      "status": "active",
+      "size_bytes": 3655,
+      "sha256": "47efeec213f255a7eeb96aa645867a52accbbc5705b3a6c412fbcc06dfe0aff2",
+      "provenance": "storydata2_assetmanifest"
     },
     {
       "unit_id": 198211,
