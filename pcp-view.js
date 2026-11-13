@@ -2057,6 +2057,9 @@ console.log("pcp-view.js loaded");
         tiyaTapCount: 0,
         activeCharacter: null,
         activeStoryId: null,
+        currentDialogueList: [],
+        autoVoiceStartIndex: null,
+        isLoadingDialogue: false,
         _keydownHandler: null,
 
         escapeHtml(str) {
@@ -2085,12 +2088,16 @@ console.log("pcp-view.js loaded");
                 choiceDesc: document.getElementById('pcp-choice-desc'),
                 choiceButtons: document.getElementById('pcp-choice-buttons'),
                 readerModal: document.getElementById('pcp-reader-modal'),
+                readerCinemaPanel: document.getElementById('pcp-cinema-panel'),
                 readerCloseBtn: document.getElementById('pcp-reader-close-btn'),
                 readerFooterClose: document.getElementById('pcp-reader-footer-close'),
                 readerCharIcon: document.getElementById('pcp-reader-char-icon'),
                 readerTitle: document.getElementById('pcp-reader-title'),
                 readerSubtitle: document.getElementById('pcp-reader-subtitle'),
                 readerSwitchBar: document.getElementById('pcp-reader-switch-bar'),
+                autoVoiceBar: document.getElementById('pcp-auto-voice-bar'),
+                btnAutoVoice: document.getElementById('pcp-btn-auto-voice'),
+                btnStopVoice: document.getElementById('pcp-btn-stop-voice'),
                 readerBadgesBar: document.getElementById('pcp-chara-badges-bar'),
                 readerBoard: document.getElementById('pcp-dialogue-board')
             };
@@ -2099,6 +2106,130 @@ console.log("pcp-view.js loaded");
         stopVoice() {
             if (window.MediaService && typeof window.MediaService.stopVoice === 'function') {
                 window.MediaService.stopVoice();
+            }
+        },
+
+        stopAutoVoice(clearCallback = false) {
+            if (window.AutoVoiceController && typeof window.AutoVoiceController.stop === 'function') {
+                window.AutoVoiceController.stop();
+                if (clearCallback) {
+                    window.AutoVoiceController.onStateChange = null;
+                }
+            }
+            this.stopVoice();
+            this.updateAutoVoiceUI('IDLE');
+        },
+
+        toggleAutoVoice() {
+            if (!window.AutoVoiceController) return;
+            const dom = this.getDom();
+            if (!dom.readerBoard) return;
+
+            window.AutoVoiceController.onStateChange = (state) => {
+                this.updateAutoVoiceUI(state);
+            };
+
+            if (window.AutoVoiceController.state === 'IDLE') {
+                if (!this.currentDialogueList || this.currentDialogueList.length === 0) {
+                    console.warn('[PcpView] 尚無載入完成之對白清單');
+                    return;
+                }
+                const startIndex = (typeof this.autoVoiceStartIndex === 'number' && this.autoVoiceStartIndex >= 0)
+                    ? this.autoVoiceStartIndex
+                    : 0;
+                window.AutoVoiceController.start(this.currentDialogueList, Number(this.activeStoryId), dom.readerBoard, startIndex);
+            } else if (window.AutoVoiceController.state === 'PLAYING') {
+                window.AutoVoiceController.pause();
+            } else if (window.AutoVoiceController.state === 'PAUSED') {
+                window.AutoVoiceController.resume();
+            }
+        },
+
+        updateAutoVoiceUI(state) {
+            const dom = this.getDom();
+            const bar = dom.autoVoiceBar;
+            const btnToggle = dom.btnAutoVoice;
+            const btnStop = dom.btnStopVoice;
+            const currentState = state || (window.AutoVoiceController ? window.AutoVoiceController.state : 'IDLE');
+
+            if (btnToggle && btnStop) {
+                const iconEl = btnToggle.querySelector('.auto-voice-icon') || btnToggle;
+                if (currentState === 'PLAYING') {
+                    iconEl.textContent = '⏸';
+                    btnToggle.setAttribute('aria-label', '暫停 AUTO');
+                    btnToggle.title = '暫停 (Space)';
+                    btnToggle.classList.add('is-playing');
+                    btnToggle.classList.remove('is-paused');
+                    btnStop.disabled = false;
+                    btnStop.setAttribute('aria-label', '停止 AUTO');
+                    if (bar) bar.classList.add('is-playing');
+                } else if (currentState === 'PAUSED') {
+                    iconEl.textContent = '▶';
+                    btnToggle.setAttribute('aria-label', '繼續 AUTO');
+                    btnToggle.title = '繼續播放 (Space)';
+                    btnToggle.classList.remove('is-playing');
+                    btnToggle.classList.add('is-paused');
+                    btnStop.disabled = false;
+                    btnStop.setAttribute('aria-label', '停止 AUTO');
+                    if (bar) bar.classList.remove('is-playing');
+                } else {
+                    iconEl.textContent = '▶';
+                    btnToggle.setAttribute('aria-label', '開始 AUTO');
+                    btnToggle.title = '播放 (Space)';
+                    btnToggle.classList.remove('is-playing', 'is-paused');
+                    btnStop.disabled = true;
+                    btnStop.setAttribute('aria-label', '停止 AUTO (已停止)');
+                    if (bar) bar.classList.remove('is-playing');
+                }
+            }
+
+            if (dom.readerBoard) {
+                if (currentState === 'PLAYING' || currentState === 'PAUSED') {
+                    dom.readerBoard.classList.add('auto-voice-running');
+                } else {
+                    dom.readerBoard.classList.remove('auto-voice-running');
+                    if (this.autoVoiceStartIndex !== null && window.DialogueView && typeof window.DialogueView.setAutoStartSelection === 'function') {
+                        window.DialogueView.setAutoStartSelection(dom.readerBoard, this.autoVoiceStartIndex);
+                    }
+                }
+            }
+        },
+
+        handleDialogueLineClick(index, event) {
+            if (window.AutoVoiceController && window.AutoVoiceController.state !== 'IDLE') {
+                return;
+            }
+            if (event && event.target && typeof event.target.closest === 'function') {
+                if (event.target.closest('.dialogue-voice-btn') ||
+                    event.target.closest('.game-chara-avatar-wrapper') ||
+                    event.target.closest('.game-dialogue-speaker')) {
+                    return;
+                }
+            }
+            const selection = window.getSelection ? window.getSelection() : null;
+            if (selection && selection.toString().trim().length > 0) {
+                return;
+            }
+            const dom = this.getDom();
+            if (!dom.readerBoard) return;
+            if (this.autoVoiceStartIndex === index) {
+                this.autoVoiceStartIndex = null;
+                window.DialogueView?.clearAutoStartSelection?.(dom.readerBoard);
+            } else {
+                this.autoVoiceStartIndex = index;
+                window.DialogueView?.setAutoStartSelection?.(dom.readerBoard, index);
+            }
+        },
+
+        handleVoicePlay(voiceId) {
+            if (!voiceId) return;
+            if (window.AutoVoiceController && typeof window.AutoVoiceController.onManualVoicePlay === 'function') {
+                window.AutoVoiceController.onManualVoicePlay();
+            }
+            if (window.QuestMapModule && typeof window.QuestMapModule.playVoice === 'function') {
+                window.QuestMapModule.playVoice(voiceId);
+            } else if (window.MediaService && typeof window.MediaService.playVoiceWithOptions === 'function') {
+                window.MediaService.playVoiceWithOptions(voiceId);
             }
         },
 
@@ -2306,9 +2437,12 @@ console.log("pcp-view.js loaded");
             const dom = this.getDom();
             if (!dom.readerModal || !dom.readerBoard) return;
 
-            this.stopVoice();
+            this.stopAutoVoice(false);
             this.activeCharacter = charData;
             this.activeStoryId = storyId;
+            this.currentDialogueList = [];
+            this.autoVoiceStartIndex = null;
+            this.isLoadingDialogue = true;
 
             const storyMeta = charData.stories.find(s => s.id === storyId);
             dom.readerCharIcon.src = charData.avatar;
@@ -2317,12 +2451,17 @@ console.log("pcp-view.js loaded");
             dom.readerSubtitle.textContent = '劇本編號：' + storyId + '.json';
             this.renderSwitchBar(charData, storyId);
 
+            if (dom.readerCinemaPanel) {
+                dom.readerCinemaPanel._bgLoadToken = (dom.readerCinemaPanel._bgLoadToken || 0) + 1;
+                dom.readerCinemaPanel.style.backgroundImage = 'none';
+            }
             if (dom.readerBadgesBar) {
                 dom.readerBadgesBar.style.display = 'none';
                 dom.readerBadgesBar.innerHTML = '';
             }
             window.DialogueView.renderLoading(dom.readerBoard);
             dom.readerModal.classList.add('open');
+            dom.readerModal.setAttribute('open', '');
 
             try {
                 const ver = window.PCRD_DATA_VERSION || (window.PCRDatabase && window.PCRDatabase.dbVersion) || 'dev';
@@ -2334,6 +2473,7 @@ console.log("pcp-view.js loaded");
                 if (this.activeStoryId !== storyId) return;
 
                 if (!Array.isArray(rawData) || rawData.length === 0) {
+                    this.isLoadingDialogue = false;
                     window.DialogueView.renderEmpty(dom.readerBoard);
                     return;
                 }
@@ -2350,6 +2490,9 @@ console.log("pcp-view.js loaded");
                 const liveDom = this.getDom();
                 if (!liveDom.readerBoard) return;
 
+                this.currentDialogueList = dialogueList;
+                this.isLoadingDialogue = false;
+
                 const speakerAvatars = (window.QuestMapModule && window.QuestMapModule.speakerAvatars) || {};
                 const resolveRealName = (window.QuestMapModule && typeof window.QuestMapModule.getCharaRealName === 'function')
                     ? window.QuestMapModule.getCharaRealName.bind(window.QuestMapModule)
@@ -2361,17 +2504,22 @@ console.log("pcp-view.js loaded");
                 window.DialogueView.renderDialogue({
                     boardEl: liveDom.readerBoard,
                     badgesBarEl: liveDom.readerBadgesBar,
-                    cinemaPanelEl: null,
+                    cinemaPanelEl: liveDom.readerCinemaPanel,
                     storyId: Number(storyId),
                     dialogueList,
                     speakerNames,
                     speakerAvatars,
                     currentStoryObj,
                     resolveRealName,
-                    escapeHtml: this.escapeHtml.bind(this)
+                    escapeHtml: this.escapeHtml.bind(this),
+                    enableCinemaBackground: true,
+                    onLineClick: (idx, evt) => this.handleDialogueLineClick(idx, evt),
+                    onVoicePlay: (voiceId) => this.handleVoicePlay(voiceId)
                 });
+                this.updateAutoVoiceUI('IDLE');
             } catch (err) {
                 if (this.activeStoryId !== storyId) return;
+                this.isLoadingDialogue = false;
                 const liveDom = this.getDom();
                 if (liveDom.readerBoard) {
                     liveDom.readerBoard.innerHTML =
@@ -2384,16 +2532,33 @@ console.log("pcp-view.js loaded");
         },
 
         closeStoryReader() {
-            this.stopVoice();
+            this.stopAutoVoice(true);
             const dom = this.getDom();
             if (dom.readerModal) {
                 dom.readerModal.classList.remove('open');
+                dom.readerModal.removeAttribute('open');
+            }
+            if (dom.readerCinemaPanel) {
+                dom.readerCinemaPanel._bgLoadToken = (dom.readerCinemaPanel._bgLoadToken || 0) + 1;
+                dom.readerCinemaPanel.style.backgroundImage = 'none';
             }
             this.activeStoryId = null;
+            this.currentDialogueList = [];
+            this.autoVoiceStartIndex = null;
+            this.isLoadingDialogue = false;
         },
 
         teardown() {
-            this.stopVoice();
+            this.stopAutoVoice(true);
+            this.activeStoryId = null;
+            this.currentDialogueList = [];
+            this.autoVoiceStartIndex = null;
+            this.isLoadingDialogue = false;
+            const dom = this.getDom();
+            if (dom.readerModal) {
+                dom.readerModal.classList.remove('open');
+                dom.readerModal.removeAttribute('open');
+            }
             if (this._keydownHandler) {
                 document.removeEventListener('keydown', this._keydownHandler);
                 this._keydownHandler = null;
@@ -2499,23 +2664,40 @@ console.log("pcp-view.js loaded");
                         </div>
                     </div>
 
-                    <!-- 內嵌對白閱讀器彈窗 (複用主站 DialogueView) -->
-                    <div id="pcp-reader-modal" class="pcp-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="pcp-reader-title">
-                        <div class="pcp-modal-card pcp-reader-modal-card">
-                            <button id="pcp-reader-close-btn" type="button" class="pcp-modal-close" aria-label="關閉對白閱讀器">&times;</button>
-                            <div class="pcp-reader-header">
-                                <div class="pcp-reader-title-group">
-                                    <img id="pcp-reader-char-icon" class="pcp-reader-char-icon" src="" alt="">
-                                    <div>
-                                        <h2 id="pcp-reader-title" class="pcp-reader-title"></h2>
-                                        <div id="pcp-reader-subtitle" class="pcp-reader-subtitle"></div>
+                    <!-- 沉浸式劇院對白閱讀器 (複用主站 DialogueView 與 AutoVoiceController) -->
+                    <div id="pcp-reader-modal" class="pcp-modal-backdrop pcp-cinema-backdrop" role="dialog" aria-modal="true" aria-labelledby="pcp-reader-title">
+                        <div id="pcp-cinema-panel" class="pcp-modal-card pcp-reader-modal-card pcp-cinema-panel">
+                            <div class="pcp-cinema-scrim" aria-hidden="true"></div>
+                            <div class="pcp-reader-sticky-top">
+                                <div class="pcp-reader-header">
+                                    <div class="pcp-reader-title-group">
+                                        <img id="pcp-reader-char-icon" class="pcp-reader-char-icon" src="" alt="">
+                                        <div>
+                                            <h2 id="pcp-reader-title" class="pcp-reader-title"></h2>
+                                            <div id="pcp-reader-subtitle" class="pcp-reader-subtitle"></div>
+                                        </div>
+                                    </div>
+                                    <button id="pcp-reader-close-btn" type="button" class="pcp-modal-close pcp-cinema-close" aria-label="關閉對白閱讀器">&times;</button>
+                                </div>
+                                <div class="pcp-reader-toolbar">
+                                    <div id="pcp-reader-switch-bar" class="pcp-reader-switch-bar"></div>
+                                    <div class="auto-voice-controls pcp-auto-voice-controls">
+                                        <div id="pcp-auto-voice-bar" class="auto-voice-control-bar">
+                                            <span class="auto-voice-label">AUTO</span>
+                                            <button id="pcp-btn-auto-voice" class="auto-voice-play-toggle" type="button" aria-label="開始 AUTO" title="播放 / 暫停 (Space)">
+                                                <span class="auto-voice-icon">▶</span>
+                                            </button>
+                                            <button id="pcp-btn-stop-voice" class="auto-voice-stop" type="button" aria-label="停止 AUTO" title="停止連播 (Esc)" disabled>
+                                                <span class="auto-voice-icon">⏹</span>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
+                                <div id="pcp-chara-badges-bar" class="game-chara-badges-bar pcp-cinema-badges-bar" style="display:none;"></div>
                             </div>
-                            <div id="pcp-reader-switch-bar" class="pcp-reader-switch-bar"></div>
-                            <div id="pcp-chara-badges-bar" class="game-chara-badges-bar" style="display:none; padding: 8px 16px; border-bottom: 1px solid rgba(232,56,117,0.1);"></div>
-                            <div id="pcp-dialogue-board" class="game-dialogue-board pcp-reader-body"></div>
+                            <div id="pcp-dialogue-board" class="game-dialogue-board pcp-reader-body pcp-cinema-board"></div>
                             <div class="pcp-reader-footer">
+                                <span class="pcp-reader-hotkey-hint">點擊對白可指定 AUTO 起點 · Space 播放/暫停 · Esc 停止/關閉</span>
                                 <button id="pcp-reader-footer-close" type="button" class="pcp-btn-close-footer">關閉返回</button>
                             </div>
                         </div>
@@ -2550,6 +2732,12 @@ console.log("pcp-view.js loaded");
                     if (e.target === dom.choiceModal) this.closeChoiceModal();
                 });
             }
+            if (dom.btnAutoVoice) {
+                dom.btnAutoVoice.addEventListener('click', () => this.toggleAutoVoice());
+            }
+            if (dom.btnStopVoice) {
+                dom.btnStopVoice.addEventListener('click', () => this.stopAutoVoice(false));
+            }
             if (dom.readerCloseBtn) {
                 dom.readerCloseBtn.addEventListener('click', () => this.closeStoryReader());
             }
@@ -2563,13 +2751,38 @@ console.log("pcp-view.js loaded");
             }
 
             this._keydownHandler = e => {
-                if (e.key === 'Escape') {
-                    const liveDom = this.getDom();
-                    if (liveDom.readerModal && liveDom.readerModal.classList.contains('open')) {
-                        this.closeStoryReader();
-                    } else if (liveDom.choiceModal && liveDom.choiceModal.classList.contains('open')) {
-                        this.closeChoiceModal();
+                if (e.defaultPrevented || e.repeat || e.isComposing || e.keyCode === 229 ||
+                    e.ctrlKey || e.metaKey || e.altKey || e.shiftKey) {
+                    return;
+                }
+                // 若主站上層彈窗 (#chara-modal / #still-popup / #movie-popup) 開啟中，交由上層彈窗處理
+                if (document.querySelector('.modal-overlay.active')) {
+                    return;
+                }
+                const liveDom = this.getDom();
+                if (liveDom.readerModal && liveDom.readerModal.classList.contains('open')) {
+                    if (e.key === 'Escape') {
+                        e.preventDefault();
+                        if (window.AutoVoiceController && typeof window.AutoVoiceController.isActive === 'function' && window.AutoVoiceController.isActive()) {
+                            this.stopAutoVoice(false);
+                        } else {
+                            this.closeStoryReader();
+                        }
+                        return;
                     }
+                    if (e.code === 'Space' || e.key === ' ') {
+                        const target = e.target;
+                        if (target && (target.isContentEditable || (typeof target.closest === 'function' && target.closest('input, textarea, select, button, a, summary, [role="button"], [role="textbox"], [contenteditable]:not([contenteditable="false"])')))) {
+                            return;
+                        }
+                        if (!this.isLoadingDialogue && this.currentDialogueList && this.currentDialogueList.length > 0) {
+                            e.preventDefault();
+                            this.toggleAutoVoice();
+                        }
+                        return;
+                    }
+                } else if (e.key === 'Escape' && liveDom.choiceModal && liveDom.choiceModal.classList.contains('open')) {
+                    this.closeChoiceModal();
                 }
             };
             document.addEventListener('keydown', this._keydownHandler);
