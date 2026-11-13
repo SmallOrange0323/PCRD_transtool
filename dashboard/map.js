@@ -3439,12 +3439,14 @@ const QuestMapModule = {
         if (!profile) {
             try {
                 const sql = `
-                    SELECT guild, race, age, height, weight, birth_month, birth_day, blood_type, catch_copy, self_text, voice
-                    FROM unit_profile
-                    WHERE unit_name = ? OR unit_name LIKE ?
+                    SELECT p.guild, p.race, p.age, p.height, p.weight, p.birth_month, p.birth_day, p.blood_type, p.catch_copy, p.self_text, p.voice
+                    FROM unit_profile p
+                    JOIN unit_data u ON p.unit_id = u.unit_id
+                    WHERE u.unit_name = ? OR u.unit_name LIKE ?
+                    ORDER BY CASE WHEN u.unit_name = ? THEN 0 ELSE 1 END, p.unit_id ASC
                     LIMIT 1
                 `;
-                const result = await window.PCRDatabase.runQuery(sql, [realCharaName, realCharaName + '（%']);
+                const result = await window.PCRDatabase.runQuery(sql, [realCharaName, realCharaName + '（%', realCharaName]);
                 if (result && result.length > 0) {
                     profile = result[0];
                     this.charaDetailCache[realCharaName] = profile;
