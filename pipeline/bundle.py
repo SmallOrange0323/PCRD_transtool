@@ -1127,6 +1127,7 @@ def bundle_story_map(dry_run: bool = False) -> bool:
     bg_copied = sync_directory_assets(DASHBOARD_DIR / "still" / "bg", DIST_DIR / "still" / "bg", [".webp", ".png"], dry_run=dry_run)
     scenario_copied = sync_directory_assets(DASHBOARD_DIR / "still" / "scenario", DIST_DIR / "still" / "scenario", [".webp", ".png"], dry_run=dry_run)
     pcp_still_copied = sync_directory_assets(DASHBOARD_DIR / "still" / "princess_select", DIST_DIR / "still" / "princess_select", [".webp", ".png"], dry_run=dry_run)
+    pcp_sound_copied = sync_directory_assets(DASHBOARD_DIR / "sound" / "princess_select", DIST_DIR / "sound" / "princess_select", [".m4a"], dry_run=dry_run)
 
     # 7. 精準同步角色卡面與頭像 (使用 get_expected_icon_unit_mappings 精準同步)
     card_copied = 0
