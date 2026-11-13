@@ -30,6 +30,9 @@ console.log("media-service.js loaded");
             if (voiceName.startsWith('vo_ps_')) {
                 return [`sound/story_vo/princess_select/${voiceName}.m4a`];
             }
+            if (/^vo_navi_\d+_sfc_/.test(voiceName)) {
+                return [`sound/princess_select/${voiceName}.m4a`];
+            }
             const match = voiceName.match(/\d{7}/);
             const groupId = match ? match[0] : voiceName.substring(7, 14);
             return [
