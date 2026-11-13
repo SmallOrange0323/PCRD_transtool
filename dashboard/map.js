@@ -34,6 +34,7 @@ const QuestMapModule = {
     activeExtraCategory: null,
     pcpMode: false,
     pcpReturnContext: null,
+    phantomReturnContext: null,
     activeCharaName: null,
     charaSearchQuery: "",
     directoryLevel: 'level1', // 'level1' (章節/活動卡片清單) | 'level2' (話數清單)
@@ -1228,6 +1229,8 @@ const QuestMapModule = {
         if (!this.getExtraCategory(categoryId)) return;
         window.PcpView?.teardown();
         this.pcpMode = false;
+        this.pcpReturnContext = null;
+        this.phantomReturnContext = null;
         this.activeExtraCategory = categoryId;
         this.expandedChapter = null;
         this.directoryLevel = 'level1';
@@ -1238,11 +1241,15 @@ const QuestMapModule = {
     openPcpView(returnContext = null) {
         this.teardownPlayback({ invalidateAsync: true });
         window.ReaderNavigation?.left();
-        this.pcpReturnContext = returnContext || (
+        const resolvedReturn = returnContext || (
             this.activeTabType === 'main'
                 ? { tab: 'main', part: this.currentPart, expandedChapter: this.expandedChapter }
-                : null
+                : (this.phantomReturnContext?.tab === 'main' ? { ...this.phantomReturnContext } : null)
         );
+        this.pcpReturnContext = resolvedReturn;
+        if (resolvedReturn?.tab === 'main' && window.history?.pushState) {
+            window.history.pushState({ pcrdSubView: 'pcp' }, '', window.location.href);
+        }
         this.currentView = 'list';
         this.activeTabType = 'extra';
         this.activeExtraCategory = 'phantom_dragon_raid';
@@ -1250,12 +1257,21 @@ const QuestMapModule = {
         this.safeRender(() => this._render());
     },
 
-    openPhantomDragonSection(sectionTitle) {
+    openPhantomDragonSection(sectionTitle, returnContext = null) {
         this.teardownPlayback({ invalidateAsync: true });
         window.PcpView?.teardown();
         window.ReaderNavigation?.left();
         this.pcpMode = false;
         this.pcpReturnContext = null;
+        const resolvedReturn = returnContext || (
+            this.activeTabType === 'main'
+                ? { tab: 'main', part: this.currentPart, expandedChapter: this.expandedChapter }
+                : null
+        );
+        this.phantomReturnContext = resolvedReturn;
+        if (resolvedReturn?.tab === 'main' && window.history?.pushState) {
+            window.history.pushState({ pcrdSubView: 'phantom_section' }, '', window.location.href);
+        }
         this.currentView = 'list';
         this.activeTabType = 'extra';
         this.activeExtraCategory = 'phantom_dragon_raid';
@@ -1264,12 +1280,33 @@ const QuestMapModule = {
         this.safeRender(() => this._render());
     },
 
-    closePcpView() {
+    returnFromPhantomDragonSection(options = {}) {
+        this.teardownPlayback({ invalidateAsync: true });
+        window.PcpView?.teardown();
+        window.ReaderNavigation?.left();
+        this.pcpMode = false;
+        this.pcpReturnContext = null;
+        const ret = this.phantomReturnContext;
+        this.phantomReturnContext = null;
+        if (ret && ret.tab === 'main') {
+            this.activeTabType = 'main';
+            this.currentPart = ret.part || 3;
+            this.activeExtraCategory = null;
+            this.expandedChapter = ret.expandedChapter || null;
+            this.directoryLevel = this.expandedChapter ? 'level2' : 'level1';
+        } else {
+            this.directoryLevel = 'level1';
+        }
+        this.safeRender(() => this._render());
+    },
+
+    closePcpView(options = {}) {
         window.PcpView?.teardown();
         this.pcpMode = false;
         const ret = this.pcpReturnContext;
         this.pcpReturnContext = null;
         if (ret && ret.tab === 'main') {
+            this.phantomReturnContext = null;
             this.activeTabType = 'main';
             this.currentPart = ret.part || 3;
             this.activeExtraCategory = null;
@@ -1284,6 +1321,8 @@ const QuestMapModule = {
         window.PcpView?.teardown();
         window.ReaderNavigation?.left();
         this.pcpMode = false;
+        this.pcpReturnContext = null;
+        this.phantomReturnContext = null;
         this.activeExtraCategory = null;
         this.activeStoryId = null;
         this.expandedChapter = null;
@@ -1341,6 +1380,8 @@ const QuestMapModule = {
         window.PcpView?.teardown();
         window.ReaderNavigation?.left();
         this.pcpMode = false;
+        this.pcpReturnContext = null;
+        this.phantomReturnContext = null;
         this.activeTabType = type;
         this.activeStoryId = null;
         this.expandedChapter = null;
@@ -1354,6 +1395,8 @@ const QuestMapModule = {
         window.PcpView?.teardown();
         window.ReaderNavigation?.left();
         this.pcpMode = false;
+        this.pcpReturnContext = null;
+        this.phantomReturnContext = null;
         this.activeStoryId = null;
         this.currentView = 'menu';
         this._fadeTransition(() => this._render());
@@ -1368,6 +1411,8 @@ const QuestMapModule = {
         window.PcpView?.teardown();
         window.ReaderNavigation?.left();
         this.pcpMode = false;
+        this.pcpReturnContext = null;
+        this.phantomReturnContext = null;
         this.currentView = 'list';
         this.activeTabType = type;
         this.activeStoryId = null;
@@ -1463,7 +1508,7 @@ const QuestMapModule = {
         }
 
         if (this.activeTabType === 'extra' && this.activeExtraCategory === 'phantom_dragon_raid' && this.pcpMode && window.PcpView) {
-            window.PcpView.render(tab);
+            window.PcpView.render(tab, { returnContext: this.pcpReturnContext });
             const existingBackBtn = document.querySelector('.floating-back-btn');
             if (existingBackBtn) existingBackBtn.remove();
             return;
@@ -1796,7 +1841,10 @@ const QuestMapModule = {
             const secondaryStoriesHtml = this.renderDirectorySecondaryHtml(this.expandedChapter);
 
             const isL1 = (this.directoryLevel === 'level1');
-            const backBtnText = this.activeTabType === 'event' ? '⬅ 返回活動列表' : (this.activeTabType === 'extra' ? '⬅ 返回系列列表' : '⬅ 返回章節列表');
+            const isPhantomMainOrigin = (this.activeTabType === 'extra' && this.activeExtraCategory === 'phantom_dragon_raid' && this.phantomReturnContext?.tab === 'main');
+            const backBtnText = isPhantomMainOrigin
+                ? `⬅ 返回 ${this.escapeHtml(this.phantomReturnContext.expandedChapter || '第3部 第17章')}`
+                : (this.activeTabType === 'event' ? '⬅ 返回活動列表' : (this.activeTabType === 'extra' ? '⬅ 返回系列列表' : '⬅ 返回章節列表'));
 
             controlPanelHtml = `
                 <div class="directory-container">
@@ -1833,11 +1881,23 @@ const QuestMapModule = {
                 <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">👤 ${this.escapeHtml(this.activeCharaName)}</span>
             `;
         } else if (isExtraCategoryActive && currentExtraCategory) {
-            breadcrumbHtml = `
-                <span class="breadcrumb-item linkable" onclick="QuestMapModule.clearActiveExtraCategory()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;">🌙 額外劇情</span>
-                <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
-                <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">📖 ${this.escapeHtml(currentExtraCategory.title)}</span>
-            `;
+            if (this.activeExtraCategory === 'phantom_dragon_raid' && this.phantomReturnContext?.tab === 'main') {
+                const retPart = this.phantomReturnContext.part || 3;
+                const retChapter = this.phantomReturnContext.expandedChapter || '第3部 第17章';
+                breadcrumbHtml = `
+                    <span class="breadcrumb-item linkable" onclick="QuestMapModule.returnFromPhantomDragonSection()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;">⚔️ 主線劇情 第${retPart}部</span>
+                    <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
+                    <span class="breadcrumb-item linkable" onclick="QuestMapModule.returnFromPhantomDragonSection()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;">📖 ${this.escapeHtml(retChapter)}</span>
+                    <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
+                    <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">🐉 ${this.escapeHtml(this.expandedChapter || currentExtraCategory.title)}</span>
+                `;
+            } else {
+                breadcrumbHtml = `
+                    <span class="breadcrumb-item linkable" onclick="QuestMapModule.clearActiveExtraCategory()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold; transition: opacity 0.2s;">🌙 額外劇情</span>
+                    <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
+                    <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">📖 ${this.escapeHtml(currentExtraCategory.title)}</span>
+                `;
+            }
         } else {
             breadcrumbHtml = `
                 <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">${
@@ -2133,6 +2193,10 @@ const QuestMapModule = {
     },
 
     backToLevel1() {
+        if (this.activeTabType === 'extra' && this.activeExtraCategory === 'phantom_dragon_raid' && this.phantomReturnContext?.tab === 'main') {
+            this.returnFromPhantomDragonSection();
+            return;
+        }
         this.directoryLevel = 'level1';
         const v1 = document.getElementById('directory-primary-list');
         const v2 = document.getElementById('directory-secondary-view');
@@ -2404,6 +2468,8 @@ const QuestMapModule = {
         } else {
             if (this.activeTabType === 'chara' && this.activeCharaName) {
                 this.clearActiveChara();
+            } else if (this.activeTabType === 'extra' && this.activeExtraCategory === 'phantom_dragon_raid' && this.phantomReturnContext?.tab === 'main') {
+                this.returnFromPhantomDragonSection();
             } else if (this.activeTabType === 'extra' && this.activeExtraCategory) {
                 this.clearActiveExtraCategory();
             } else {
@@ -3522,6 +3588,8 @@ const QuestMapModule = {
             const storyType = story.type; // 'main', 'chara', 'guild', 'tower'
             const extraMembership = this.getExtraMembership(story);
 
+            this.pcpReturnContext = null;
+            this.phantomReturnContext = null;
             this.currentView = 'list';
 
             if (extraMembership) {

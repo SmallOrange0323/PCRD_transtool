@@ -2400,18 +2400,33 @@ console.log("pcp-view.js loaded");
             }
         },
 
-        render(tabEl) {
+        render(tabEl, options = {}) {
             if (!tabEl) return;
             this.teardown();
+
+            const ret = options && options.returnContext ? options.returnContext : null;
+            const isFromMain = ret && ret.tab === 'main';
+            const mainPartLabel = isFromMain ? `主線劇情 第${ret.part || 3}部` : '';
+            const mainChapterLabel = isFromMain ? (ret.expandedChapter || '第3部 第17章') : '';
+            const breadcrumbTrailHtml = isFromMain
+                ? `
+                        <span class="breadcrumb-item linkable" onclick="QuestMapModule.closePcpView()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold;">⚔️ ${this.escapeHtml(mainPartLabel)}</span>
+                        <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
+                        <span class="breadcrumb-item linkable" onclick="QuestMapModule.closePcpView()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold;">📖 ${this.escapeHtml(mainChapterLabel)}</span>
+                `
+                : `
+                        <span class="breadcrumb-item linkable" onclick="QuestMapModule.clearActiveExtraCategory()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold;">🌙 額外劇情</span>
+                        <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
+                        <span class="breadcrumb-item linkable" onclick="QuestMapModule.closePcpView()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold;">📖 終末幻境 ─幻龍爭霸戰─</span>
+                `;
+            const backBtnText = isFromMain ? `⬅ 返回 ${mainChapterLabel}` : '⬅ 返回《終末幻境》目錄';
 
             tabEl.innerHTML = `
                 <div class="map-container pcp-root">
                     <div class="breadcrumb-container" style="display: flex; align-items: center; gap: 12px; font-size: 0.95rem; flex-wrap: wrap;">
                         <span class="breadcrumb-item linkable" onclick="QuestMapModule.goBackToMenu()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold;"><span style="font-size: 1.1rem;">🏠</span> 劇情大廳</span>
                         <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
-                        <span class="breadcrumb-item linkable" onclick="QuestMapModule.clearActiveExtraCategory()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold;">🌙 額外劇情</span>
-                        <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
-                        <span class="breadcrumb-item linkable" onclick="QuestMapModule.closePcpView()" style="color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: bold;">📖 終末幻境 ─幻龍爭霸戰─</span>
+                        ${breadcrumbTrailHtml}
                         <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.3);">/</span>
                         <span class="breadcrumb-current" style="color: var(--text-primary); font-weight: 500;">✨ 公主選擇 (Princess Connect Process)</span>
                     </div>
@@ -2421,7 +2436,7 @@ console.log("pcp-view.js loaded");
                             <span class="pcp-brand-badge">Princess Connect Process</span>
                             <h2 style="margin: 0; font-size: 1.25rem; color: var(--text-primary);">公主選擇互動介面</h2>
                         </div>
-                        <button type="button" id="pcp-back-dir-btn" class="directory-back-btn" onclick="QuestMapModule.closePcpView()">⬅ 返回《終末幻境》目錄</button>
+                        <button type="button" id="pcp-back-dir-btn" class="directory-back-btn" onclick="QuestMapModule.closePcpView()">${this.escapeHtml(backBtnText)}</button>
                     </div>
 
                     <div class="pcp-dual-layout">

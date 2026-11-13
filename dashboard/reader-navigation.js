@@ -211,7 +211,9 @@
             document.addEventListener('visibilitychange', () => {
                 if (document.visibilityState === 'hidden') this.savePosition();
             });
+            this.lastHash = window.location.hash || '';
             window.addEventListener('hashchange', () => {
+                this.lastHash = window.location.hash || '';
                 if (!window.location.hash) {
                     this.routeRequest++;
                     this.restore = null;
@@ -220,6 +222,23 @@
                     const position = this.readHash();
                     if (position) this.open(position);
                     else this.setStatus('連結格式無效，請從目錄選擇劇情。');
+                }
+            });
+            window.addEventListener('popstate', () => {
+                const prevHash = this.lastHash || '';
+                const currentHash = window.location.hash || '';
+                if (prevHash === '' && currentHash === '') {
+                    if (map.pcpMode && map.pcpReturnContext && map.pcpReturnContext.tab === 'main') {
+                        map.closePcpView({ fromPopstate: true });
+                    } else if (
+                        map.activeTabType === 'extra' &&
+                        map.activeExtraCategory === 'phantom_dragon_raid' &&
+                        map.phantomReturnContext &&
+                        map.phantomReturnContext.tab === 'main' &&
+                        !map.activeStoryId
+                    ) {
+                        map.returnFromPhantomDragonSection({ fromPopstate: true });
+                    }
                 }
             });
 
@@ -282,6 +301,7 @@
                 const url = new URL(window.location.href);
                 url.hash = `story=${storyId}`;
                 window.history.pushState(null, '', url);
+                this.lastHash = url.hash;
             }
             const button = document.getElementById('reader-share');
             if (button) button.disabled = false;
@@ -301,6 +321,7 @@
                 const url = new URL(window.location.href);
                 url.hash = '';
                 window.history.pushState(null, '', url);
+                this.lastHash = '';
             }
             this.updateResume();
         },
