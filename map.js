@@ -1039,7 +1039,15 @@ const QuestMapModule = {
             const m = this.getExtraMembership(s);
             return m && m.categoryId === category.id;
         });
-        catStories.sort((a, b) => a.id - b.id);
+        if (category.id === 'phantom_dragon_raid') {
+            catStories.sort((a, b) => (a.extraOrder ?? a.id) - (b.extraOrder ?? b.id));
+            this.chapters['8.5 週年倒數 ─終末幻境前夕─'] = [];
+            this.chapters['終末幻境 ─幻龍爭霸戰─（Boss 戰前）'] = [];
+            this.chapters['Princess Connect Process（角色專屬劇情）'] = [];
+            this.chapters['終末幻境 ─幻龍爭霸戰─（Boss 戰後）'] = [];
+        } else {
+            catStories.sort((a, b) => a.id - b.id);
+        }
 
         catStories.forEach(s => {
             const sid = s.id;
@@ -1074,7 +1082,18 @@ const QuestMapModule = {
                 // VERIFIED GROUPING: story_group_id 9100
                 resolvedChapter = '軍團之戰 (Legion War)';
             } else if (category.id === 'phantom_dragon_raid') {
-                resolvedChapter = s.chapter || '終末幻境 ─幻龍爭霸戰─';
+                const sidNum = Number(sid);
+                if (sidNum >= 9500000 && sidNum < 9502000) {
+                    resolvedChapter = 'Princess Connect Process（角色專屬劇情）';
+                } else if (sidNum >= 9014000 && sidNum < 9015000) {
+                    resolvedChapter = '8.5 週年倒數 ─終末幻境前夕─';
+                } else if (sidNum === 9006724) {
+                    resolvedChapter = '終末幻境 ─幻龍爭霸戰─（Boss 戰後）';
+                } else if (sidNum >= 9006701 && sidNum <= 9006726) {
+                    resolvedChapter = '終末幻境 ─幻龍爭霸戰─（Boss 戰前）';
+                } else {
+                    resolvedChapter = s.extraChapter || s.chapter || '終末幻境 ─幻龍爭霸戰─（Boss 戰前）';
+                }
             } else if (category.id === 'dungeon') {
                 // VERIFIED GROUPING: official 20 entries are one subgroup.
                 // 4003021/4003022 are canonical rows outside that index.
@@ -1115,24 +1134,28 @@ const QuestMapModule = {
             ...(this.extraStoryIndex.legacy_categories || []).map(c => ({ ...c, section: 'legacy' })),
             ...(this.extraStoryIndex.special_categories || []).map(c => ({ ...c, section: 'special' }))
         ];
-        categories.forEach(category => category.stories.forEach(entry => {
+        categories.forEach(category => category.stories.forEach((entry, idx) => {
             if (existing.has(entry.id)) {
                 const existingStory = this.stories.find(s => s.id === entry.id);
                 if (existingStory) {
                     existingStory.extraCategoryId = category.id;
                     existingStory.extraSection = category.section;
+                    existingStory.extraOrder = idx;
+                    if (entry.chapter) existingStory.extraChapter = entry.chapter;
                 }
                 return;
             }
             this.stories.push({
                 id: entry.id,
-                chapter: category.title,
+                chapter: entry.chapter || category.title,
                 title: entry.title || `劇情 ${entry.id}`,
                 groupId: null,
                 isEvent: false,
                 type: 'extra',
                 extraCategoryId: category.id,
                 extraSection: category.section,
+                extraOrder: idx,
+                extraChapter: entry.chapter || null,
                 language: entry.language
             });
             existing.add(entry.id);
@@ -2032,14 +2055,18 @@ const QuestMapModule = {
         }).join('');
         const isPart3Ch17 = this.activeTabType === 'main' && this.currentPart === 3 && (chKey.includes('第17章') || childStories.some(s => Number(s.groupId) === 2217));
         if (!isPart3Ch17) return itemsHtml;
+        const raidCat = this.getExtraCategory('phantom_dragon_raid');
+        const raidStories = (raidCat && Array.isArray(raidCat.stories)) ? raidCat.stories : [];
+        const preCount = raidStories.filter(s => s.chapter === '終末幻境 ─幻龍爭霸戰─（Boss 戰前）').length || 25;
+        const postCount = raidStories.filter(s => s.chapter === '終末幻境 ─幻龍爭霸戰─（Boss 戰後）').length || 1;
         const pcpShortcutHtml = `
             <div class="story-item" id="story-item-raid-pre-entry" onclick="QuestMapModule.openPhantomDragonSection('終末幻境 ─幻龍爭霸戰─（Boss 戰前）')" style="border: 1px solid rgba(232, 56, 117, 0.25); background: linear-gradient(135deg, rgba(255, 245, 250, 0.9), rgba(255, 255, 255, 0.95));">
                 <div class="story-item-thumb">
-                    <img src="icon/story/9014001.webp" alt="終末幻境 ─幻龍爭霸戰─（Boss 戰前）" class="story-thumb-img" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                    <img src="still/story/140300101.webp" alt="終末幻境 ─幻龍爭霸戰─（Boss 戰前）" class="story-thumb-img" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
                 </div>
                 <div class="story-item-content">
                     <div class="story-item-ch" style="color: #e83875; font-weight: 700;">⚔️ 終末幻境 ─幻龍爭霸戰─</div>
-                    <div class="story-item-title">Boss 戰前（預告・開場・決戰前夕 30 話）</div>
+                    <div class="story-item-title">Boss 戰前（預告・開場・守護者與龍后決戰 ${preCount} 話）</div>
                 </div>
                 <div class="story-item-arrow">
                     <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
@@ -2059,11 +2086,11 @@ const QuestMapModule = {
             </div>
             <div class="story-item" id="story-item-raid-post-entry" onclick="QuestMapModule.openPhantomDragonSection('終末幻境 ─幻龍爭霸戰─（Boss 戰後）')" style="border: 1px solid rgba(232, 56, 117, 0.25); background: linear-gradient(135deg, rgba(255, 245, 250, 0.9), rgba(255, 255, 255, 0.95));">
                 <div class="story-item-thumb">
-                    <img src="icon/story/9500001.webp" alt="終末幻境 ─幻龍爭霸戰─（Boss 戰後）" class="story-thumb-img" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                    <img src="still/story/140300101.webp" alt="終末幻境 ─幻龍爭霸戰─（Boss 戰後）" class="story-thumb-img" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
                 </div>
                 <div class="story-item-content">
                     <div class="story-item-ch" style="color: #e83875; font-weight: 700;">⚔️ 終末幻境 ─幻龍爭霸戰─</div>
-                    <div class="story-item-title">Boss 戰後（恐懼消失之日・決戰尾聲 2 話）</div>
+                    <div class="story-item-title">Boss 戰後（恐懼消失之日・決戰尾聲 ${postCount} 話）</div>
                 </div>
                 <div class="story-item-arrow">
                     <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
