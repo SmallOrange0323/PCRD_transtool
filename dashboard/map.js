@@ -3112,7 +3112,7 @@ const QuestMapModule = {
         const target = event.target;
         if (target?.isContentEditable || target?.closest('input, textarea, select, button, a, summary, [role="button"], [role="textbox"], [contenteditable]:not([contenteditable="false"])')) return;
         // Dialogs own their keys. Escape must close a popup before stopping AUTO.
-        if (document.body.style.overflow === 'hidden' || document.querySelector('.modal-overlay.active, [role="dialog"][open], dialog[open]')) return;
+        if (document.body.style.overflow === 'hidden' || document.querySelector('.modal-overlay.active, #pcp-reader-modal.open, [role="dialog"][open], dialog[open]')) return;
         if (event.code === 'Space' || event.key === ' ') {
             event.preventDefault();
             this.toggleAutoVoice();

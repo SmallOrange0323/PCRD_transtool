@@ -152,12 +152,15 @@ console.log("dialogue-view.js loaded");
                 speakerAvatars,
                 currentStoryObj,
                 resolveRealName,
-                escapeHtml
+                escapeHtml,
+                useDelegatedEvents = false,
+                enableCinemaBackground = false
             } = options || {};
 
             const escapeFn = escapeHtml || this.escapeHtml.bind(this);
             let html = "";
             let firstBgUrl = "";
+            let firstBgId = "";
 
             (dialogueList || []).forEach((item, index) => {
                 if (item.type === 'still') {
@@ -177,6 +180,12 @@ console.log("dialogue-view.js loaded");
                 }
 
                 if (item.type === 'background') {
+                    if (enableCinemaBackground && !firstBgId && item.bg_id) {
+                        firstBgId = String(item.bg_id).trim();
+                        if (window.StoryAssetService && typeof window.StoryAssetService.getBackgroundUrl === 'function') {
+                            firstBgUrl = window.StoryAssetService.getBackgroundUrl(firstBgId);
+                        }
+                    }
                     // 全文閱讀模式依官方遊戲規格，不渲染場景切換卡片與背景圖
                     return;
                 }
@@ -270,14 +279,16 @@ console.log("dialogue-view.js loaded");
                 }
 
                 const safeVoiceAttr = item.voice ? escapeFn(String(item.voice)).replace(/\\/g, '\\\\').replace(/'/g, "\\'") : '';
-                const voiceBtn = item.voice ? `<button type="button" class="dialogue-voice-btn" onclick="event.stopPropagation(); QuestMapModule.playVoice('${safeVoiceAttr}')" title="播放語音" aria-label="播放語音">🔊</button>` : '';
+                const voiceOnclickAttr = useDelegatedEvents ? '' : ` onclick="event.stopPropagation(); QuestMapModule.playVoice('${safeVoiceAttr}')"`;
+                const voiceBtn = item.voice ? `<button type="button" class="dialogue-voice-btn"${voiceOnclickAttr} title="播放語音" aria-label="播放語音">🔊</button>` : '';
                 const voiceAttr = item.voice ? ` data-voice="${escapeFn(String(item.voice))}"` : '';
                 const speakerAttrs = realNameForBtn
                     ? ` onclick="event.stopPropagation(); QuestMapModule.showCharaModal(${JSON.stringify(realNameForBtn).replace(/"/g, '&quot;')}${modalUnitIdArg})" style="cursor: pointer;" title="查看角色資料"`
                     : '';
+                const lineOnclickAttr = useDelegatedEvents ? '' : ` onclick="QuestMapModule.handleDialogueLineClick(${index}, event)"`;
 
                 html += `
-                    <div class="game-dialogue-line ${speakerClass}" data-dialogue-index="${index}"${voiceAttr} onclick="QuestMapModule.handleDialogueLineClick(${index}, event)">
+                    <div class="game-dialogue-line ${speakerClass}" data-dialogue-index="${index}"${voiceAttr}${lineOnclickAttr}>
                         ${avatarHtml}
                         <div class="game-dialogue-content">
                             <div class="game-dialogue-speaker-wrap">
@@ -314,7 +325,93 @@ console.log("dialogue-view.js loaded");
                 }
             }
 
-            return { html, firstBgUrl };
+            if (enableCinemaBackground && !firstBgId && currentStoryObj && currentStoryObj.bg_id) {
+                firstBgId = String(currentStoryObj.bg_id).trim();
+                if (window.StoryAssetService && typeof window.StoryAssetService.getBackgroundUrl === 'function') {
+                    firstBgUrl = window.StoryAssetService.getBackgroundUrl(firstBgId);
+                }
+            }
+
+            return { html, firstBgUrl, firstBgId };
+        },
+
+        /**
+         * 綁定看板委派互動事件 (僅綁定一次，透過實例屬性動態切換回呼)
+         * @private
+         */
+        _ensureDelegatedEvents(boardEl) {
+            if (!boardEl || boardEl._hasDelegatedDialogueEvents) return;
+            boardEl._hasDelegatedDialogueEvents = true;
+            boardEl.addEventListener('click', (event) => {
+                const target = event.target;
+                if (!target || typeof target.closest !== 'function') return;
+
+                const voiceBtn = target.closest('.dialogue-voice-btn');
+                if (voiceBtn && boardEl.contains(voiceBtn)) {
+                    const lineEl = voiceBtn.closest('.game-dialogue-line[data-voice]');
+                    const voiceId = lineEl ? lineEl.getAttribute('data-voice') : '';
+                    if (voiceId && typeof boardEl._dialogueVoicePlayHandler === 'function') {
+                        event.stopPropagation();
+                        boardEl._dialogueVoicePlayHandler(voiceId, event);
+                    }
+                    return;
+                }
+
+                if (target.closest('.game-chara-avatar-wrapper') || target.closest('.game-dialogue-speaker')) {
+                    return;
+                }
+
+                const lineEl = target.closest('.game-dialogue-line[data-dialogue-index]');
+                if (lineEl && boardEl.contains(lineEl) && typeof boardEl._dialogueLineClickHandler === 'function') {
+                    const index = Number(lineEl.getAttribute('data-dialogue-index'));
+                    if (Number.isInteger(index) && index >= 0) {
+                        boardEl._dialogueLineClickHandler(index, event);
+                    }
+                }
+            });
+        },
+
+        /**
+         * 依序嘗試背景圖候選清單並安全套用至劇院面板
+         * @private
+         */
+        _applyCinemaBackground(cinemaPanelEl, bgId) {
+            if (!cinemaPanelEl) return;
+            const loadToken = (cinemaPanelEl._bgLoadToken || 0) + 1;
+            cinemaPanelEl._bgLoadToken = loadToken;
+
+            if (!bgId || !window.StoryAssetService || typeof window.StoryAssetService.getBackgroundUrls !== 'function') {
+                cinemaPanelEl.style.backgroundImage = 'none';
+                return;
+            }
+
+            const candidates = window.StoryAssetService.getBackgroundUrls(bgId);
+            if (!candidates || candidates.length === 0) {
+                cinemaPanelEl.style.backgroundImage = 'none';
+                return;
+            }
+
+            const tryNext = (idx) => {
+                if (cinemaPanelEl._bgLoadToken !== loadToken) return;
+                if (idx >= candidates.length) {
+                    cinemaPanelEl.style.backgroundImage = 'none';
+                    return;
+                }
+                const url = candidates[idx];
+                const img = new Image();
+                img.onload = () => {
+                    if (cinemaPanelEl._bgLoadToken !== loadToken) return;
+                    cinemaPanelEl.style.backgroundImage = `url('${url}')`;
+                    cinemaPanelEl.style.backgroundSize = 'cover';
+                    cinemaPanelEl.style.backgroundPosition = 'center';
+                };
+                img.onerror = () => {
+                    tryNext(idx + 1);
+                };
+                img.src = url;
+            };
+
+            tryNext(0);
         },
 
         /**
@@ -332,37 +429,55 @@ console.log("dialogue-view.js loaded");
                 speakerAvatars,
                 currentStoryObj,
                 resolveRealName,
-                escapeHtml
+                escapeHtml,
+                onLineClick,
+                onVoicePlay,
+                enableCinemaBackground = false
             } = options || {};
+
+            const useDelegatedEvents = typeof onLineClick === 'function' || typeof onVoicePlay === 'function';
 
             // 1. 渲染上方角色徽章列
             this.renderSpeakerBadges(badgesBarEl, { speakerNames, speakerAvatars, resolveRealName, dialogueList });
 
             // 2. 生成對白 HTML 與首張背景圖 URL
-            const { html, firstBgUrl } = this.generateDialogueHtml({
+            const { html, firstBgUrl, firstBgId } = this.generateDialogueHtml({
                 storyId,
                 dialogueList,
                 speakerAvatars,
                 currentStoryObj,
                 resolveRealName,
-                escapeHtml
+                escapeHtml,
+                useDelegatedEvents,
+                enableCinemaBackground
             });
 
             // 3. 寫入看板並將捲軸歸零
             if (boardEl) {
+                if (useDelegatedEvents) {
+                    boardEl._dialogueLineClickHandler = typeof onLineClick === 'function' ? onLineClick : null;
+                    boardEl._dialogueVoicePlayHandler = typeof onVoicePlay === 'function' ? onVoicePlay : null;
+                    this._ensureDelegatedEvents(boardEl);
+                } else {
+                    boardEl._dialogueLineClickHandler = null;
+                    boardEl._dialogueVoicePlayHandler = null;
+                }
                 boardEl.innerHTML = html;
                 boardEl.scrollTop = 0;
             }
 
             // 4. 切換劇院看板背景
             if (cinemaPanelEl) {
-                if (firstBgUrl) {
+                if (enableCinemaBackground && firstBgId) {
+                    this._applyCinemaBackground(cinemaPanelEl, firstBgId);
+                } else if (firstBgUrl) {
                     cinemaPanelEl.style.backgroundImage = `url('${firstBgUrl}')`;
+                    cinemaPanelEl.style.backgroundSize = 'cover';
+                    cinemaPanelEl.style.backgroundPosition = 'center';
                 } else {
+                    cinemaPanelEl._bgLoadToken = (cinemaPanelEl._bgLoadToken || 0) + 1;
                     cinemaPanelEl.style.backgroundImage = 'none';
                 }
-                cinemaPanelEl.style.backgroundSize = 'cover';
-                cinemaPanelEl.style.backgroundPosition = 'center';
             }
         },
 
