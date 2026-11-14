@@ -582,5 +582,20 @@ test("Test 19 — cleanName bracket order, multi-speaker, and Hiyori preservatio
     assert(htmlHiyoriReality.includes("icon/unit/100132.png"), "日和 現實篇頭像必須指向 100132.png");
 });
 
+// Test 20 — cleanName protects 和正/和服 and npc_avatars.json has no stale "日"/"" keys
+test("Test 20 — cleanName protects 和正/和服 and npc_avatars.json is clean", () => {
+    const fs = require("fs");
+    assert.strictEqual(AvatarService.cleanName("和正"), "和正");
+    assert.strictEqual(AvatarService.cleanName("和服的女性"), "和服的女性");
+    assert.strictEqual(AvatarService.cleanName("優花梨、和正"), "優花梨");
+    assert.strictEqual(AvatarService.cleanName("日和與？？？"), "日和");
+    assert.strictEqual(AvatarService.cleanName("日和、怜"), "日和");
+
+    const npcPath = path.resolve(__dirname, "../dashboard/data/npc_avatars.json");
+    const npcAvatars = JSON.parse(fs.readFileSync(npcPath, "utf8"));
+    assert(!Object.prototype.hasOwnProperty.call(npcAvatars, "日"), "npc_avatars.json 不得包含殘留鍵 \"日\"");
+    assert(!Object.prototype.hasOwnProperty.call(npcAvatars, ""), "npc_avatars.json 不得包含殘留空鍵 \"\"");
+});
+
 console.log(`\n✅ All ${testsPassed} AvatarService Phase 6 tests passed successfully!`);
 })();

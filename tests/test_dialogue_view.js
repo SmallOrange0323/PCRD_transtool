@@ -401,4 +401,43 @@ test("Test 11 — normalizePlayerName helper (player placeholder -> 佑樹)", ()
     assert(!html.includes("{player}"), "Must not contain {player}");
 });
 
+// Test 12 — QuestMapModule.getCharaRealName & 9006707 speaker badges protect 日和/和正/和服
+test("Test 12 — getCharaRealName & 9006707 speaker badges protect 日和/和正/和服", () => {
+    const fs = require("fs");
+    const vm = require("vm");
+    const mapCode = fs.readFileSync(path.resolve(__dirname, "../dashboard/map.js"), "utf8");
+    const sandbox = {
+        window: {},
+        document: { addEventListener() {}, getElementById() { return null; }, querySelector() { return null; } },
+        console: { log() {}, warn() {}, error() {} }
+    };
+    sandbox.window = sandbox;
+    vm.runInNewContext(mapCode, sandbox);
+    const getCharaRealName = sandbox.QuestMapModule.getCharaRealName.bind(sandbox.QuestMapModule);
+
+    assert.strictEqual(getCharaRealName("日和"), "日和");
+    assert.strictEqual(getCharaRealName("日和、怜"), "日和");
+    assert.strictEqual(getCharaRealName("和正"), "和正");
+    assert.strictEqual(getCharaRealName("和服的女性"), "和服的女性");
+    assert.strictEqual(getCharaRealName("日和與？？？"), "日和");
+    assert.strictEqual(getCharaRealName("佩可和日和"), "佩可");
+
+    // 驗證 9006707 頂部角色徽章列的日和頭像標題與點擊參數
+    global.window.DialogueNormalizer = undefined;
+    require(path.resolve(__dirname, "../dashboard/dialogue-normalizer.js"));
+    const raw9006707 = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../dashboard/story/9006707.json"), "utf8"));
+    const norm9006707 = global.window.DialogueNormalizer.normalize(raw9006707);
+
+    const badgesBarEl = { style: {}, innerHTML: "" };
+    DialogueView.renderSpeakerBadges(badgesBarEl, {
+        speakerNames: norm9006707.speakerNames,
+        speakerAvatars: { "日和": 100111 },
+        resolveRealName: getCharaRealName,
+        dialogueList: norm9006707.dialogueList
+    });
+    assert(badgesBarEl.innerHTML.includes('title="日和"'), "9006707 頂部徽章必須顯示 title=\"日和\"");
+    assert(badgesBarEl.innerHTML.includes("showCharaModal(&quot;日和&quot;"), "9006707 頂部徽章必須以 日和 呼叫 showCharaModal");
+    assert(!badgesBarEl.innerHTML.includes("showCharaModal(&quot;日&quot;"), "9006707 頂部徽章不得呼叫 showCharaModal(\"日\")");
+});
+
 console.log(`\n✅ All ${testsPassed} DialogueView tests passed successfully!`);

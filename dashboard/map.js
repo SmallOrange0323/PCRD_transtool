@@ -204,7 +204,7 @@ const QuestMapModule = {
 
     getCharaRealName(name) {
         if (!name) return "";
-        let singleName = name.split(/[、＆&]|和|與/)[0].trim();
+        let singleName = name.split(/[、＆&]|(?<!日)和(?!正|服)|與/)[0].trim();
         const aliases = {
             "貪吃佩可的聲音": "貪吃佩可", "大食客": "貪吃佩可", "飢餓的公主": "貪吃佩可",
             "可可蘿的聲音": "可可蘿", "導引者": "可可蘿", "引導者": "可可蘿", "導引少女": "可可蘿",

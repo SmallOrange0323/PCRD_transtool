@@ -260,4 +260,35 @@ console.log('開始執行 DialogueNormalizer 測試案例...');
     assert.strictEqual(res.dialogueList[1].words, '台詞 2\n台詞 3');
 }
 
+// Case 18: Protect 日和 / 和正 / 和服 from split while keeping multi-speaker 和/與 split
+{
+    const fs = require('fs');
+    const input = [
+        { name: '日和', words: '大家一起加油！' },
+        { name: '日和、怜', words: '沒問題！' },
+        { name: '和正', words: '歡迎光臨。' },
+        { name: '和服的女性', words: '請進。' },
+        { name: '優花梨、和正', words: '乾杯！' },
+        { name: '日和與？？？', words: '咦？' },
+        { name: '貪吃佩可和可可蘿', words: '開動囉！' }
+    ];
+    const res = DialogueNormalizer.normalize(input);
+    assert.deepStrictEqual(res.speakerNames, [
+        '日和', '怜', '和正', '和服的女性', '優花梨', '？？？', '貪吃佩可', '可可蘿'
+    ], '日和/和正/和服不得被誤拆，真並列合稱仍須正確拆分');
+    assert(!res.speakerNames.includes('日'), '不得切出「日」');
+    assert(!res.speakerNames.includes('正'), '不得切出「正」');
+    assert(!res.speakerNames.includes('服的女性'), '不得切出「服的女性」');
+    assert(!res.speakerNames.includes(''), '不得切出空字串');
+
+    const story9006707Path = path.resolve(__dirname, '../dashboard/story/9006707.json');
+    if (fs.existsSync(story9006707Path)) {
+        const raw9006707 = JSON.parse(fs.readFileSync(story9006707Path, 'utf8'));
+        const norm9006707 = DialogueNormalizer.normalize(raw9006707);
+        assert(norm9006707.speakerNames.includes('日和'), '9006707 speakerNames 必須保留「日和」');
+        assert(!norm9006707.speakerNames.includes('日'), '9006707 speakerNames 不得包含「日」');
+        assert(!norm9006707.speakerNames.includes(''), '9006707 speakerNames 不得包含空字串');
+    }
+}
+
 console.log('DialogueNormalizer tests passed.');
