@@ -348,9 +348,10 @@ window.CharaModalView = {
      * 渲染角色基本資料設定表格 HTML
      * @param {Object|null} profile - 角色 Profile 資料物件
      * @param {Function} [escapeHtml] - HTML 轉義函式
+     * @param {Object|null} [identityInfo] - 角色正規名稱與真實姓名資訊
      * @returns {string} 基本資料 HTML 字串
      */
-    renderProfileDetailsHtml(profile, escapeHtml) {
+    renderProfileDetailsHtml(profile, escapeHtml, identityInfo = null) {
         if (!profile) {
             return `
                 <div style="flex: 1; min-width: 200px; display: flex; flex-direction: column; justify-content: center;">
@@ -362,6 +363,17 @@ window.CharaModalView = {
         }
 
         const esc = typeof escapeHtml === 'function' ? escapeHtml : (s) => this.escapeHtml(s);
+
+        const rawCanonicalName = (identityInfo && identityInfo.canonicalGameName)
+            || profile.canonical_game_name
+            || profile.unit_name
+            || (identityInfo && identityInfo.fallbackName)
+            || "未知";
+        const rawOfficialRealName = (identityInfo && identityInfo.realName !== undefined)
+            ? identityInfo.realName
+            : profile.real_name;
+        const gameName = esc(rawCanonicalName);
+        const officialRealName = esc(rawOfficialRealName ? String(rawOfficialRealName) : "—");
 
         const guild = esc(profile.guild || "未知");
         const race = esc(profile.race || "未知");
@@ -378,25 +390,31 @@ window.CharaModalView = {
             <div style="flex: 1; min-width: 200px;">
                 <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; color: var(--text-primary);">
                     <tr>
-                        <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600; width: 60px;">公會：</td>
-                        <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${guild}</td>
-                        <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600; width: 60px;">種族：</td>
+                        <td style="padding: 4px 8px 4px 0; color: var(--accent-color); font-weight: 600; width: 78px; white-space: nowrap;">角色名稱：</td>
+                        <td style="padding: 4px 10px 4px 0; color: var(--text-primary); font-weight: 500;">${gameName}</td>
+                        <td style="padding: 4px 8px 4px 0; color: var(--accent-color); font-weight: 600; width: 60px; white-space: nowrap;">真名：</td>
+                        <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${officialRealName}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 4px 8px 4px 0; color: var(--accent-color); font-weight: 600; width: 78px; white-space: nowrap;">公會：</td>
+                        <td style="padding: 4px 10px 4px 0; color: var(--text-primary); font-weight: 500;">${guild}</td>
+                        <td style="padding: 4px 8px 4px 0; color: var(--accent-color); font-weight: 600; width: 60px; white-space: nowrap;">種族：</td>
                         <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${race}</td>
                     </tr>
                     <tr>
-                        <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">年齡：</td>
-                        <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${age}</td>
-                        <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">生日：</td>
+                        <td style="padding: 4px 8px 4px 0; color: var(--accent-color); font-weight: 600; white-space: nowrap;">年齡：</td>
+                        <td style="padding: 4px 10px 4px 0; color: var(--text-primary); font-weight: 500;">${age}</td>
+                        <td style="padding: 4px 8px 4px 0; color: var(--accent-color); font-weight: 600; white-space: nowrap;">生日：</td>
                         <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${birth}</td>
                     </tr>
                     <tr>
-                        <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">身高：</td>
-                        <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${height}</td>
-                        <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">體重：</td>
+                        <td style="padding: 4px 8px 4px 0; color: var(--accent-color); font-weight: 600; white-space: nowrap;">身高：</td>
+                        <td style="padding: 4px 10px 4px 0; color: var(--text-primary); font-weight: 500;">${height}</td>
+                        <td style="padding: 4px 8px 4px 0; color: var(--accent-color); font-weight: 600; white-space: nowrap;">體重：</td>
                         <td style="padding: 4px 0; color: var(--text-primary); font-weight: 500;">${weight}</td>
                     </tr>
                     <tr>
-                        <td style="padding: 4px 0; color: var(--accent-color); font-weight: 600;">聲優：</td>
+                        <td style="padding: 4px 8px 4px 0; color: var(--accent-color); font-weight: 600; white-space: nowrap;">聲優：</td>
                         <td colspan="3" style="padding: 4px 0; color: var(--accent-color); font-weight: bold;">${cv}</td>
                     </tr>
                 </table>
@@ -438,6 +456,9 @@ window.CharaModalView = {
     renderModal(options) {
         const {
             realCharaName,
+            displayTitle,
+            canonicalGameName,
+            officialRealName,
             explicitUnitId,
             profile,
             appearances,
@@ -448,25 +469,43 @@ window.CharaModalView = {
             escapeHtml
         } = options || {};
 
+        // 僅正規化 UI 顯示文字；realCharaName / displayTitle 仍保留原始 identity key（例如 {0}）。
+        const rawTitleSource = displayTitle || realCharaName;
+        const displayCharaName = (window.DialogueView && typeof window.DialogueView.normalizePlayerName === 'function')
+            ? window.DialogueView.normalizePlayerName(rawTitleSource)
+            : rawTitleSource;
+        const safeDisplayCharaName = escapeHtml ? escapeHtml(displayCharaName) : displayCharaName;
+
         const modalEl = this.getCharaModal();
-        const appListHtml = this.renderAppearancesHtml(appearances, resolveStoryMeta, escapeHtml, resolveStoryLabel, realCharaName);
-        const detailsHtml = this.renderProfileDetailsHtml(profile, escapeHtml);
+        const retryCharaKey = canonicalGameName || realCharaName;
+        const appListHtml = this.renderAppearancesHtml(appearances, resolveStoryMeta, escapeHtml, resolveStoryLabel, retryCharaKey);
+        const detailsHtml = this.renderProfileDetailsHtml(profile, escapeHtml, {
+            canonicalGameName: canonicalGameName || displayCharaName,
+            realName: officialRealName !== undefined ? officialRealName : null,
+            fallbackName: displayCharaName
+        });
         const bioHtml = this.renderProfileBioHtml(profile, escapeHtml);
+        const avatarLookupKey = realCharaName || displayTitle;
         const numericExplicitUnitId = Number(explicitUnitId);
         const resolvedUnitId = (Number.isInteger(numericExplicitUnitId) && numericExplicitUnitId > 0)
             ? numericExplicitUnitId
-            : this.resolveCurrentDialogueUnitId(realCharaName);
-        const avatarHtml = avatarService
-            ? (resolvedUnitId && typeof avatarService.getAvatarHtmlByUnitId === 'function'
-                ? avatarService.getAvatarHtmlByUnitId(resolvedUnitId, realCharaName, speakerAvatars)
-                : avatarService.getAvatarHtml(realCharaName, speakerAvatars))
-            : "";
+            : this.resolveCurrentDialogueUnitId(avatarLookupKey);
 
-        // 僅正規化 UI 顯示文字；realCharaName 仍保留原始 identity key（例如 {0}）。
-        const displayCharaName = (window.DialogueView && typeof window.DialogueView.normalizePlayerName === 'function')
-            ? window.DialogueView.normalizePlayerName(realCharaName)
-            : realCharaName;
-        const safeDisplayCharaName = escapeHtml ? escapeHtml(displayCharaName) : displayCharaName;
+        let avatarHtml = "";
+        if (avatarService) {
+            if (resolvedUnitId && typeof avatarService.getAvatarHtmlByUnitId === 'function') {
+                avatarHtml = avatarService.getAvatarHtmlByUnitId(resolvedUnitId, avatarLookupKey, speakerAvatars);
+            } else {
+                const hasDirectAvatar = Boolean(
+                    (speakerAvatars && speakerAvatars[avatarLookupKey]) ||
+                    (typeof avatarService.getUnitId === 'function' && avatarService.getUnitId(avatarLookupKey, speakerAvatars))
+                );
+                const fallbackLookupName = (!hasDirectAvatar && canonicalGameName)
+                    ? canonicalGameName
+                    : avatarLookupKey;
+                avatarHtml = avatarService.getAvatarHtml(fallbackLookupName, speakerAvatars);
+            }
+        }
 
         modalEl.innerHTML = `
             <div class="game-modal-content" style="max-height: 85vh; overflow-y: auto;">

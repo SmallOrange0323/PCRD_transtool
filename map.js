@@ -45,6 +45,8 @@ const QuestMapModule = {
     _loadDataPromise: null,
     _appearanceMapPromise: null,
     _movieLinksPromise: null,
+    speakerIdentityRules: null,
+    _speakerIdentityRulesPromise: null,
 
     normalizeString(str) {
         if (!str) return "";
@@ -826,6 +828,247 @@ const QuestMapModule = {
         })();
 
         return this._movieLinksPromise;
+    },
+
+    async ensureSpeakerIdentityRules() {
+        if (this.speakerIdentityRules) return this.speakerIdentityRules;
+        if (this._speakerIdentityRulesPromise) return this._speakerIdentityRulesPromise;
+
+        this._speakerIdentityRulesPromise = (async () => {
+            try {
+                if (typeof fetch !== 'function') return null;
+                const resp = await fetch('data/speaker_identity_rules.json');
+                if (!resp || !resp.ok) return null;
+                const data = await resp.json();
+                if (data && typeof data === 'object') {
+                    this.speakerIdentityRules = data;
+                    console.log(`[QuestMapModule] 成功載入角色身份歸戶規則 (${Object.keys(data.entities || {}).length} 個實體)`);
+                    return this.speakerIdentityRules;
+                }
+                return null;
+            } catch (e) {
+                console.warn('[QuestMapModule] 載入 speaker_identity_rules.json 失敗，使用降級解析:', e);
+                return null;
+            } finally {
+                this._speakerIdentityRulesPromise = null;
+            }
+        })();
+
+        return this._speakerIdentityRulesPromise;
+    },
+
+    /**
+     * 依據 (charaName, explicitUnitId) 與 speaker_identity_rules.json 解析角色本尊實體。
+     * - 先查 speaker_rules[name]：若有 explicitUnitId，驗證 Math.floor(unitId / 100) 是否在 allowed_base_ids；
+     *   若無 explicitUnitId，僅匹配 allow_null_unit_id === true 的規則。
+     * - 未命中 speaker_rules 時，依序比對 entities 基礎遊戲名、剝除括號與「的聲音」後名稱、及非衝突既有別名。
+     * - ？？？、系統角色與未登錄 NPC（如耶兒、大神）絕不誤併。
+     */
+    resolveSpeakerIdentity(charaName, explicitUnitId = null) {
+        const rawName = String(charaName || '').trim();
+        const normalizedPlayerName = (window.DialogueView && typeof window.DialogueView.normalizePlayerName === 'function')
+            ? window.DialogueView.normalizePlayerName(rawName)
+            : rawName;
+
+        const numUnitId = Number(explicitUnitId);
+        const validUnitId = (Number.isInteger(numUnitId) && numUnitId > 0) ? numUnitId : null;
+        const explicitBaseId = validUnitId !== null ? Math.floor(validUnitId / 100) : null;
+
+        const nonEntityNames = new Set(['', '旁白', '【系統】', '？？？', '店員', '店長']);
+        if (nonEntityNames.has(normalizedPlayerName) || normalizedPlayerName.includes('【選擇')) {
+            return {
+                rawName,
+                canonicalName: normalizedPlayerName,
+                realName: null,
+                entity: null,
+                isUnregisteredNpc: true
+            };
+        }
+
+        const rules = this.speakerIdentityRules;
+        if (!rules || typeof rules !== 'object') {
+            const fallbackName = this.getCharaRealName(rawName) || normalizedPlayerName;
+            return {
+                rawName,
+                canonicalName: fallbackName,
+                realName: null,
+                entity: null,
+                isUnregisteredNpc: false
+            };
+        }
+
+        const entities = rules.entities || {};
+        const speakerRules = rules.speaker_rules || {};
+
+        const matchRuleList = (ruleList) => {
+            if (!Array.isArray(ruleList)) return null;
+            if (explicitBaseId !== null) {
+                return ruleList.find(r =>
+                    r && Array.isArray(r.allowed_base_ids) && r.allowed_base_ids.includes(explicitBaseId)
+                ) || null;
+            }
+            return ruleList.find(r => r && r.allow_null_unit_id === true) || null;
+        };
+
+        const buildEntityResult = (entityObj) => ({
+            rawName,
+            canonicalName: entityObj.canonical_game_name,
+            realName: entityObj.real_name || null,
+            entity: entityObj,
+            isUnregisteredNpc: false
+        });
+
+        const buildNpcResult = () => ({
+            rawName,
+            canonicalName: normalizedPlayerName,
+            realName: null,
+            entity: null,
+            isUnregisteredNpc: true
+        });
+
+        const isUnitAllowedForEntity = (entityObj) => {
+            if (!entityObj) return false;
+            if (explicitBaseId === null) return true;
+            return Array.isArray(entityObj.base_ids) && entityObj.base_ids.includes(explicitBaseId);
+        };
+
+        // 1. 先比對 speaker_rules[rawName]
+        if (Object.prototype.hasOwnProperty.call(speakerRules, rawName)) {
+            const matchedRule = matchRuleList(speakerRules[rawName]);
+            if (matchedRule && entities[matchedRule.entity]) {
+                return buildEntityResult(entities[matchedRule.entity]);
+            }
+            return buildNpcResult();
+        }
+
+        // 2. 比對 entities 內基礎遊戲名
+        if (Object.prototype.hasOwnProperty.call(entities, rawName)) {
+            const entityObj = entities[rawName];
+            if (isUnitAllowedForEntity(entityObj)) {
+                return buildEntityResult(entityObj);
+            }
+            return buildNpcResult();
+        }
+
+        // 3. 剝除括號限定語與「的聲音」後比對
+        let stripped = rawName.replace(/（[^）]+）/g, '').replace(/\([^)]+\)/g, '').trim();
+        if (stripped.endsWith('的聲音')) {
+            stripped = stripped.replace(/的聲音$/, '').trim();
+        }
+
+        if (stripped && stripped !== rawName) {
+            if (Object.prototype.hasOwnProperty.call(speakerRules, stripped)) {
+                const matchedRule = matchRuleList(speakerRules[stripped]);
+                if (matchedRule && entities[matchedRule.entity]) {
+                    return buildEntityResult(entities[matchedRule.entity]);
+                }
+                return buildNpcResult();
+            }
+            if (Object.prototype.hasOwnProperty.call(entities, stripped)) {
+                const entityObj = entities[stripped];
+                if (isUnitAllowedForEntity(entityObj)) {
+                    return buildEntityResult(entityObj);
+                }
+                return buildNpcResult();
+            }
+        }
+
+        // 4. 保留非衝突既有別名與並列發言人
+        const protectedNpcs = new Set(['耶兒', '大神', '跳躍王', '拉基拉基', '尾狗刀', '詠斗', '贊恩', '善']);
+        if (!protectedNpcs.has(rawName) && !protectedNpcs.has(stripped)) {
+            const legacyAliasName = this.getCharaRealName(rawName);
+            if (legacyAliasName && legacyAliasName !== rawName && legacyAliasName !== stripped) {
+                if (Object.prototype.hasOwnProperty.call(speakerRules, legacyAliasName)) {
+                    const matchedRule = matchRuleList(speakerRules[legacyAliasName]);
+                    if (matchedRule && entities[matchedRule.entity]) {
+                        return buildEntityResult(entities[matchedRule.entity]);
+                    }
+                } else if (Object.prototype.hasOwnProperty.call(entities, legacyAliasName)) {
+                    const entityObj = entities[legacyAliasName];
+                    if (isUnitAllowedForEntity(entityObj)) {
+                        return buildEntityResult(entityObj);
+                    }
+                }
+            }
+        }
+
+        return buildNpcResult();
+    },
+
+    /**
+     * 依解析後的實體查詢共用 unit_profile：
+     * 先查 explicitUnitId（支援換裝獨立自介），查不到再依 profile_unit_id 或 base_ids 查本尊共用設定集。
+     */
+    async fetchEntityProfile(entity, explicitUnitId = null) {
+        if (!entity || !window.PCRDatabase) return null;
+
+        const profileCols = 'p.guild, p.race, p.age, p.height, p.weight, p.birth_month, p.birth_day, p.blood_type, p.catch_copy, p.self_text, p.voice';
+
+        // 1. 優先嘗試依 explicitUnitId 查詢（含獨立自介之換裝）
+        if (explicitUnitId) {
+            const unitCacheKey = `unit:${explicitUnitId}`;
+            if (Object.prototype.hasOwnProperty.call(this.charaDetailCache, unitCacheKey)) {
+                if (this.charaDetailCache[unitCacheKey]) {
+                    return this.charaDetailCache[unitCacheKey];
+                }
+            } else {
+                try {
+                    const unitRes = await window.PCRDatabase.runQuery(
+                        `SELECT ${profileCols} FROM unit_profile p WHERE CAST(p.unit_id AS INTEGER) = ? LIMIT 1`,
+                        [explicitUnitId]
+                    );
+                    if (unitRes && unitRes.length > 0) {
+                        this.charaDetailCache[unitCacheKey] = unitRes[0];
+                        return unitRes[0];
+                    }
+                    this.charaDetailCache[unitCacheKey] = null;
+                } catch (e) {
+                    console.error('查詢 explicitUnitId Profile 失敗:', e);
+                }
+            }
+        }
+
+        // 2. 共用本尊 Profile 快取
+        const canonicalName = entity.canonical_game_name;
+        const entityCacheKey = `entity:${canonicalName}`;
+        if (Object.prototype.hasOwnProperty.call(this.charaDetailCache, entityCacheKey)) {
+            return this.charaDetailCache[entityCacheKey];
+        }
+
+        let profile = null;
+        try {
+            // 2a. 依 profile_unit_id 查詢
+            const profileUnitId = Number(entity.profile_unit_id);
+            if (Number.isInteger(profileUnitId) && profileUnitId > 0) {
+                const res = await window.PCRDatabase.runQuery(
+                    `SELECT ${profileCols} FROM unit_profile p WHERE CAST(p.unit_id AS INTEGER) = ? LIMIT 1`,
+                    [profileUnitId]
+                );
+                if (res && res.length > 0) {
+                    profile = res[0];
+                }
+            }
+
+            // 2b. 若 profile_unit_id 未命中，依 base_ids 查詢（CAST 整數除法避開舊 SQLite FLOOR 限制）
+            if (!profile && Array.isArray(entity.base_ids) && entity.base_ids.length > 0) {
+                const baseIds = entity.base_ids.map(Number).filter(id => Number.isInteger(id) && id > 0);
+                if (baseIds.length > 0) {
+                    const placeholders = baseIds.map(() => '?').join(', ');
+                    const res = await window.PCRDatabase.runQuery(
+                        `SELECT ${profileCols} FROM unit_profile p WHERE CAST(p.unit_id AS INTEGER) / 100 IN (${placeholders}) ORDER BY CAST(p.unit_id AS INTEGER) ASC LIMIT 1`,
+                        baseIds
+                    );
+                    if (res && res.length > 0) {
+                        profile = res[0];
+                    }
+                }
+            }
+        } catch (e) {
+            console.error('讀取角色共用 Profile 失敗:', e);
+        }
+
+        this.charaDetailCache[entityCacheKey] = profile;
+        return profile;
     },
 
     groupStories() {
@@ -3428,42 +3671,68 @@ const QuestMapModule = {
 
     async showCharaModal(charaName, unitId = null) {
         const requestId = ++this._charaModalRequestId;
-        const realCharaName = this.getCharaRealName(charaName);
         const numericUnitId = Number(unitId);
         const explicitUnitId = Number.isInteger(numericUnitId) && numericUnitId > 0
             ? numericUnitId
             : null;
+        const rulesPromise = (typeof this.ensureSpeakerIdentityRules === 'function')
+            ? this.ensureSpeakerIdentityRules()
+            : null;
         await this.ensureAppearanceMap();
+        if (rulesPromise) {
+            await rulesPromise;
+        }
 
-        let profile = this.charaDetailCache[realCharaName];
-        if (!profile) {
-            try {
-                const sql = `
-                    SELECT p.guild, p.race, p.age, p.height, p.weight, p.birth_month, p.birth_day, p.blood_type, p.catch_copy, p.self_text, p.voice
-                    FROM unit_profile p
-                    JOIN unit_data u ON p.unit_id = u.unit_id
-                    WHERE u.unit_name = ? OR u.unit_name LIKE ?
-                    ORDER BY CASE WHEN u.unit_name = ? THEN 0 ELSE 1 END, p.unit_id ASC
-                    LIMIT 1
-                `;
-                const result = await window.PCRDatabase.runQuery(sql, [realCharaName, realCharaName + '（%', realCharaName]);
-                if (result && result.length > 0) {
-                    profile = result[0];
-                    this.charaDetailCache[realCharaName] = profile;
+        const identity = (typeof this.resolveSpeakerIdentity === 'function')
+            ? this.resolveSpeakerIdentity(charaName, explicitUnitId)
+            : null;
+        const realCharaName = identity ? identity.canonicalName : this.getCharaRealName(charaName);
+        const matchedEntity = identity ? identity.entity : null;
+        const isUnregisteredNpc = Boolean(identity && identity.isUnregisteredNpc);
+        const officialRealName = matchedEntity ? (matchedEntity.real_name || null) : null;
+
+        let profile = null;
+        if (!isUnregisteredNpc) {
+            if (matchedEntity && typeof this.fetchEntityProfile === 'function') {
+                profile = await this.fetchEntityProfile(matchedEntity, explicitUnitId);
+            } else {
+                profile = this.charaDetailCache[realCharaName];
+                if (!profile) {
+                    try {
+                        const sql = `
+                            SELECT p.guild, p.race, p.age, p.height, p.weight, p.birth_month, p.birth_day, p.blood_type, p.catch_copy, p.self_text, p.voice
+                            FROM unit_profile p
+                            JOIN unit_data u ON p.unit_id = u.unit_id
+                            WHERE u.unit_name = ? OR u.unit_name LIKE ?
+                            ORDER BY CASE WHEN u.unit_name = ? THEN 0 ELSE 1 END, p.unit_id ASC
+                            LIMIT 1
+                        `;
+                        const result = await window.PCRDatabase.runQuery(sql, [realCharaName, realCharaName + '（%', realCharaName]);
+                        if (result && result.length > 0) {
+                            profile = result[0];
+                            this.charaDetailCache[realCharaName] = profile;
+                        }
+                    } catch (e) {
+                        console.error("讀取角色 Profile 失敗:", e);
+                    }
                 }
-            } catch (e) {
-                console.error("讀取角色 Profile 失敗:", e);
             }
         }
 
         // 若在載入 profile 期間已有新的彈窗請求，捨棄本次過期呈現
         if (requestId !== this._charaModalRequestId) return;
 
-        const appearances = (this.appearanceMap &&
-            (this.appearanceMap[realCharaName] || this.appearanceMap[charaName])) || [];
+        const appearances = (this.appearanceMap && (
+            (matchedEntity && this.appearanceMap[realCharaName]) ||
+            this.appearanceMap[charaName] ||
+            (!isUnregisteredNpc ? this.appearanceMap[realCharaName] : null)
+        )) || [];
 
         window.CharaModalView.renderModal({
-            realCharaName,
+            realCharaName: charaName,
+            displayTitle: charaName,
+            canonicalGameName: matchedEntity ? realCharaName : null,
+            officialRealName,
             explicitUnitId,
             profile,
             appearances,
@@ -3484,6 +3753,7 @@ const QuestMapModule = {
                 : false;
 
             if (!hasMetadata) {
+                const retryKey = matchedEntity ? realCharaName : charaName;
                 window.StoryDataService.ensureMetadataLoaded()
                     .then((episodes) => {
                         // 驗證 token 與彈窗開啟狀態，避免過期寫入 (stale write)
@@ -3497,7 +3767,7 @@ const QuestMapModule = {
                                 (storyId) => this.resolveAppearanceStoryMeta(storyId),
                                 (str) => this.escapeHtml(str),
                                 null,
-                                realCharaName
+                                retryKey
                             );
                         }
                     })
@@ -3513,7 +3783,7 @@ const QuestMapModule = {
                                 (storyId) => this.resolveAppearanceStoryMeta(storyId),
                                 (str) => this.escapeHtml(str),
                                 null,
-                                realCharaName
+                                retryKey
                             );
                         }
                     });
@@ -3528,8 +3798,12 @@ const QuestMapModule = {
         if (window.StoryDataService && typeof window.StoryDataService.clearMetadataError === 'function') {
             window.StoryDataService.clearMetadataError();
         }
+        const identity = (typeof this.resolveSpeakerIdentity === 'function')
+            ? this.resolveSpeakerIdentity(realCharaName, null)
+            : null;
+        const canonicalName = identity && identity.entity ? identity.entity.canonical_game_name : this.getCharaRealName(realCharaName);
         const appearances = (this.appearanceMap &&
-            (this.appearanceMap[realCharaName] || this.appearanceMap[this.getCharaRealName(realCharaName)])) || [];
+            (this.appearanceMap[canonicalName] || this.appearanceMap[realCharaName])) || [];
         
         // 立即以載入中狀態刷新視圖
         if (window.CharaModalView && typeof window.CharaModalView.updateAppearancesSection === 'function') {
