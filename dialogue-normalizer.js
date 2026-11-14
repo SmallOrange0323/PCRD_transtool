@@ -112,11 +112,11 @@ console.log("dialogue-normalizer.js loaded");
                 }
             });
 
-            // 萃取登場發言人名單 (支援合稱拆分與順序去重)
+            // 萃取登場發言人名單 (支援合稱拆分與順序去重；保護本名含「和」之角色與服裝詞彙)
             const speakerNames = [];
             dialogueList.forEach(item => {
                 if (item.name) {
-                    const names = item.name.split(/[、＆&]|和|與/).map(n => n.trim()).filter(Boolean);
+                    const names = item.name.split(/[、＆&]|(?<!日)和(?!正|服)|與/).map(n => n.trim()).filter(Boolean);
                     names.forEach(name => {
                         if (!speakerNames.includes(name)) {
                             speakerNames.push(name);

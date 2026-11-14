@@ -832,8 +832,8 @@ globalScope.AvatarService = {
         clean = clean.replace(/（[^）]+）/g, "").replace(/\([^)]+\)/g, "").trim();
         // 2. 移除特定後綴語
         if (clean.endsWith("的聲音")) clean = clean.replace(/的聲音$/, "").trim();
-        // 3. 處理並列發言人（使用否定後行斷言避免將「日和」之本名「和」視為連接詞）
-        clean = clean.split(/[、＆&]|(?<!日)和|與/)[0].trim();
+        // 3. 處理並列發言人（使用前後行斷言避免將「日和」「和正」「和服」之「和」視為連接詞）
+        clean = clean.split(/[、＆&]|(?<!日)和(?!正|服)|與/)[0].trim();
         return clean;
     },
 
