@@ -4962,6 +4962,19 @@ body {
     box-shadow: 0 4px 12px rgba(232, 56, 117, 0.28);
 }
 
+.speaker-generic-filter-bar {
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(232, 56, 117, 0.14);
+}
+
+.speaker-generic-summary {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
 .speaker-npc-container {
     max-height: 62vh;
     overflow-y: auto;

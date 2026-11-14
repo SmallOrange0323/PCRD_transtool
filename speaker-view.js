@@ -7,20 +7,95 @@ console.log("speaker-view.js loaded");
 
 window.SpeakerView = {
     /**
-     * 過濾登場角色名稱清單（排除非實體角色如旁白、系統、店員等，並套用搜尋關鍵字）
+     * 建立已收錄主要角色與具名 NPC 的名稱白名單集合
+     * @param {Object} [options] - { npcCatalog, speakerIdentityRules }
+     * @returns {Set<string>|null} 若缺乏登錄來源則回傳 null
+     */
+    _buildNamedSpeakerSet(options) {
+        const { npcCatalog, speakerIdentityRules } = options || {};
+        const hasEntities = Boolean(speakerIdentityRules && speakerIdentityRules.entities && typeof speakerIdentityRules.entities === 'object');
+        const hasSpeakerRules = Boolean(speakerIdentityRules && speakerIdentityRules.speaker_rules && typeof speakerIdentityRules.speaker_rules === 'object');
+        const hasCatalog = Boolean(npcCatalog && Array.isArray(npcCatalog.npcs));
+        if (!hasEntities && !hasSpeakerRules && !hasCatalog) return null;
+
+        const allowed = new Set();
+        if (hasEntities) {
+            Object.keys(speakerIdentityRules.entities).forEach(name => {
+                if (name) allowed.add(name);
+            });
+        }
+        if (hasSpeakerRules) {
+            Object.entries(speakerIdentityRules.speaker_rules).forEach(([speakerName, ruleList]) => {
+                if (!speakerName || !Array.isArray(ruleList)) return;
+                if (ruleList.some(rule => rule && rule.target_type === 'entity')) {
+                    allowed.add(speakerName);
+                }
+            });
+        }
+        if (hasCatalog) {
+            npcCatalog.npcs.forEach(npc => {
+                if (npc && npc.name) allowed.add(npc.name);
+            });
+        }
+        return allowed;
+    },
+
+    /**
+     * 取得目前「全部登場角色」在隱藏泛用 NPC 機制下的統計摘要
+     * @param {Object} options - { appearanceMap, hideGenericNpc, npcCatalog, speakerIdentityRules, searchQuery }
+     * @returns {Object} { canFilter, hideGenericNpc, totalRealCount, namedCount, hiddenGenericCount, visibleCount }
+     */
+    getGenericFilterStats(options) {
+        const { appearanceMap, searchQuery, hideGenericNpc = false } = options || {};
+        const allNames = Object.keys(appearanceMap || {});
+        const baseReal = this.filterSpeakers(allNames, '');
+        const namedSet = this._buildNamedSpeakerSet(options);
+        if (!namedSet) {
+            const visible = this.filterSpeakers(allNames, searchQuery);
+            return {
+                canFilter: false,
+                hideGenericNpc: false,
+                totalRealCount: baseReal.length,
+                namedCount: baseReal.length,
+                hiddenGenericCount: 0,
+                visibleCount: visible.length
+            };
+        }
+        const namedOnly = baseReal.filter(name => namedSet.has(name));
+        const activeHide = Boolean(hideGenericNpc);
+        const visible = this.filterSpeakers(allNames, searchQuery, options);
+        return {
+            canFilter: true,
+            hideGenericNpc: activeHide,
+            totalRealCount: baseReal.length,
+            namedCount: namedOnly.length,
+            hiddenGenericCount: Math.max(0, baseReal.length - namedOnly.length),
+            visibleCount: visible.length
+        };
+    },
+
+    /**
+     * 過濾登場角色名稱清單（排除非實體角色如旁白、系統、店員等，並可選擇隱藏泛用 NPC 及套用搜尋關鍵字）
      * @param {string[]} speakers - 登場角色名稱陣列
      * @param {string} searchQuery - 搜尋關鍵字
+     * @param {Object} [filterOptions] - 選填過濾選項 { hideGenericNpc, npcCatalog, speakerIdentityRules }
      * @returns {string[]} 過濾後的角色名稱陣列
      */
-    filterSpeakers(speakers, searchQuery) {
+    filterSpeakers(speakers, searchQuery, filterOptions = null) {
         const nonRealSpeakers = ["旁白", "【系統】", "？？？", "店員", "店長", "選擇肢", "選擇"];
         let list = (speakers || []).filter(name => {
             const clean = (name || "").trim();
             return !nonRealSpeakers.some(nonReal => clean.includes(nonReal));
         });
+        if (filterOptions && filterOptions.hideGenericNpc === true) {
+            const namedSet = this._buildNamedSpeakerSet(filterOptions);
+            if (namedSet) {
+                list = list.filter(name => namedSet.has(name));
+            }
+        }
         if (searchQuery && searchQuery.trim()) {
-            const query = searchQuery.trim().toLowerCase();
-            list = list.filter(name => name.toLowerCase().includes(query));
+            const query = this._normalizeSearchText(searchQuery);
+            list = list.filter(name => this._normalizeSearchText(name).includes(query));
         }
         return list;
     },
@@ -64,19 +139,35 @@ window.SpeakerView = {
         const unitId = avatarService ? avatarService.getUnitId(realName, speakerAvatars) : null;
 
         let avatarHtml = "";
-        if (avatarService && typeof avatarService.getAvatarHtml === "function") {
-            avatarHtml = avatarService.getAvatarHtml(realName, speakerAvatars);
-        } else if (unitId && avatarService && typeof avatarService.getUrlCandidates === "function") {
-            const candidates = avatarService.getUrlCandidates(unitId);
-            const firstSrc = candidates.find(c => c.endsWith('.png')) || candidates[0];
-            const fallbackSrc = candidates.find(c => c !== firstSrc) || firstSrc;
-            avatarHtml = `<img src="${firstSrc}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src='${fallbackSrc}';">`;
-        } else {
-            avatarHtml = `<div class="npc-avatar-placeholder" style="font-size: 1.2rem; font-weight: bold; color: var(--primary-dark);">${safeRealName.substring(0, 2)}</div>`;
+        let resolvedExactNpcId = null;
+        const numUnitId = Number(unitId);
+        if (Number.isInteger(numUnitId) && numUnitId > 0 && numUnitId < 100000 &&
+            avatarService && typeof avatarService.resolveExactDialoguePortrait === "function" &&
+            typeof avatarService.getAvatarHtmlByUnitId === "function") {
+            const exact = avatarService.resolveExactDialoguePortrait(numUnitId, { warnIfAbsent: false });
+            if (exact && exact.status === 'active') {
+                avatarHtml = avatarService.getAvatarHtmlByUnitId(numUnitId, realName, speakerAvatars);
+                resolvedExactNpcId = numUnitId;
+            }
+        }
+        if (!avatarHtml) {
+            if (avatarService && typeof avatarService.getAvatarHtml === "function") {
+                avatarHtml = avatarService.getAvatarHtml(realName, speakerAvatars);
+            } else if (unitId && avatarService && typeof avatarService.getUrlCandidates === "function") {
+                const candidates = avatarService.getUrlCandidates(unitId);
+                const firstSrc = candidates.find(c => c.endsWith('.png')) || candidates[0];
+                const fallbackSrc = candidates.find(c => c !== firstSrc) || firstSrc;
+                avatarHtml = `<img src="${firstSrc}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src='${fallbackSrc}';">`;
+            } else {
+                avatarHtml = `<div class="npc-avatar-placeholder" style="font-size: 1.2rem; font-weight: bold; color: var(--primary-dark);">${safeRealName.substring(0, 2)}</div>`;
+            }
         }
 
+        const jsNameArg = JSON.stringify(name).replace(/"/g, '&quot;');
+        const modalClickArg = resolvedExactNpcId ? `${jsNameArg}, ${resolvedExactNpcId}` : jsNameArg;
+
         return `
-            <div class="speaker-card glass-card" onclick="QuestMapModule.showCharaModal(${JSON.stringify(name).replace(/"/g, '&quot;')})"
+            <div class="speaker-card glass-card" onclick="QuestMapModule.showCharaModal(${modalClickArg})"
                  style="background: rgba(255,255,255,0.03); border: 1px solid rgba(232,56,117,0.1); border-radius: 12px; padding: 15px 10px; text-align: center; cursor: pointer; transition: all 0.2s ease-in-out; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;"
                  onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='rgba(232,56,117,0.25)'; this.style.background='rgba(232,56,117,0.04)';"
                  onmouseout="this.style.transform='none'; this.style.borderColor='rgba(232,56,117,0.1)'; this.style.background='rgba(255,255,255,0.03)';">
@@ -97,7 +188,7 @@ window.SpeakerView = {
     renderSpeakerGridHtml(options) {
         const { appearanceMap, searchQuery, sortOrder } = options || {};
         const allNames = Object.keys(appearanceMap || {});
-        const filtered = this.filterSpeakers(allNames, searchQuery);
+        const filtered = this.filterSpeakers(allNames, searchQuery, options);
         const sorted = this.sortSpeakers(filtered, appearanceMap, sortOrder);
 
         if (sorted.length === 0) {
@@ -343,6 +434,19 @@ window.SpeakerView = {
     },
 
     /**
+     * 格式化「隱藏泛用 NPC」機制之顯示人數摘要文字
+     * @param {Object} stats - getGenericFilterStats() 回傳物件
+     * @returns {string}
+     */
+    formatGenericFilterSummary(stats) {
+        if (!stats || !stats.canFilter) return '';
+        if (stats.hideGenericNpc) {
+            return `顯示 ${stats.visibleCount} 位主要與具名角色（已隱藏 ${stats.hiddenGenericCount} 項泛用／未登錄 NPC）`;
+        }
+        return `顯示全部 ${stats.visibleCount} 項角色（含 ${stats.hiddenGenericCount} 項泛用／未登錄 NPC）`;
+    },
+
+    /**
      * 渲染登場角色完整頁面結構 HTML
      * @param {Object} options - 依賴注入選項
      * @returns {string} 完整頁面 HTML 字串
@@ -409,9 +513,16 @@ window.SpeakerView = {
                 </div>
             `;
         } else {
+            const filterStats = this.getGenericFilterStats(options);
+            const filterBarHtml = filterStats.canFilter ? `
+                <div class="npc-filter-bar speaker-generic-filter-bar">
+                    <span id="speaker-generic-summary" class="speaker-generic-summary">${this.formatGenericFilterSummary(filterStats)}</span>
+                    <button type="button" id="speaker-hide-generic-btn" class="part-btn secondary-pill npc-female-toggle ${filterStats.hideGenericNpc ? 'active' : ''}" onclick="QuestMapModule.handleHideGenericNpcToggle()">${filterStats.hideGenericNpc ? '✨ 已隱藏泛用 NPC' : '👥 顯示全部（含泛用 NPC）'}</button>
+                </div>
+            ` : '';
             const gridHtml = this.renderSpeakerGridHtml(options);
             bodyHtml = `
-                <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap; margin-bottom: 20px;">
+                <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap; margin-bottom: ${filterStats.canFilter ? '12px' : '20px'};">
                     <div style="flex: 1; min-width: 250px;">
                         <input type="text" id="speaker-search-input" placeholder="🔍 搜尋登場角色名字..." value="${safeSearchVal}"  
                                oninput="QuestMapModule.handleSpeakerSearch(this.value)" 
@@ -427,6 +538,8 @@ window.SpeakerView = {
                         </select>
                     </div>
                 </div>
+
+                ${filterBarHtml}
 
                 <div class="speaker-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 15px; max-height: 65vh; overflow-y: auto; padding-right: 5px;">
                     ${gridHtml}

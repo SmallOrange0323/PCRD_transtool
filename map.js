@@ -27,6 +27,7 @@ const QuestMapModule = {
     speakerSearchQuery: "",
     speakerSortOrder: "appearances-desc",
     speakerSubTab: 'all',
+    hideGenericNpc: true,
     npcScopeFilter: 'all',
     npcFemaleOnly: false,
     npcCatalog: null,
@@ -1858,9 +1859,14 @@ const QuestMapModule = {
 
         if (this.activeTabType === 'speaker') {
             const npcCatalogPromise = (typeof this.ensureNpcCatalog === 'function') ? this.ensureNpcCatalog() : null;
+            const rulesPromise = (typeof this.ensureSpeakerIdentityRules === 'function') ? this.ensureSpeakerIdentityRules() : null;
             await this.ensureAppearanceMap();
-            if (npcCatalogPromise) {
-                await npcCatalogPromise;
+            const pending = [npcCatalogPromise, rulesPromise].filter(Boolean);
+            if (pending.length > 0) {
+                await Promise.all(pending);
+            }
+            if (typeof this.mergeNpcCatalogAvatars === 'function') {
+                this.mergeNpcCatalogAvatars();
             }
             this.renderSpeakerTab(tab);
             return;
@@ -4081,7 +4087,17 @@ const QuestMapModule = {
             const isEntity = Boolean(entityNames && Object.prototype.hasOwnProperty.call(entityNames, name));
             if (isEntity || protectedNames.has(name)) continue;
 
-            if (!this.speakerAvatars[name] || name === '鬼魂教父' || npc.is_special) {
+            const existingId = Number(this.speakerAvatars[name]);
+            const hasInactiveEnemyId = Boolean(
+                existingId >= 190000 &&
+                window.AvatarService &&
+                window.AvatarService.manifestLoaded &&
+                !window.AvatarService.manifestUnavailable &&
+                typeof window.AvatarService.resolveExactDialoguePortrait === 'function' &&
+                (window.AvatarService.resolveExactDialoguePortrait(existingId, { warnIfAbsent: false }) || {}).status !== 'active'
+            );
+
+            if (!this.speakerAvatars[name] || name === '鬼魂教父' || npc.is_special || hasInactiveEnemyId) {
                 this.speakerAvatars[name] = unitId;
             }
         }
@@ -4094,9 +4110,11 @@ const QuestMapModule = {
             searchQuery: this.speakerSearchQuery,
             sortOrder: this.speakerSortOrder,
             speakerSubTab: this.speakerSubTab,
+            hideGenericNpc: this.hideGenericNpc !== false,
             npcScopeFilter: this.npcScopeFilter,
             npcFemaleOnly: this.npcFemaleOnly,
             npcCatalog: this.npcCatalog,
+            speakerIdentityRules: this.speakerIdentityRules,
             avatarService: window.AvatarService,
             resolveRealName: (name) => this.getCharaRealName(name),
             escapeHtml: (str) => this.escapeHtml(str)
@@ -4123,6 +4141,11 @@ const QuestMapModule = {
     handleNpcFemaleToggle() {
         this.npcFemaleOnly = !this.npcFemaleOnly;
         this._updateNpcCatalogView();
+    },
+
+    handleHideGenericNpcToggle() {
+        this.hideGenericNpc = !(this.hideGenericNpc !== false);
+        this._updateSpeakerGrid();
     },
 
     handleSpeakerSearch(value) {
@@ -4171,7 +4194,7 @@ const QuestMapModule = {
         containerEl.innerHTML = window.SpeakerView.renderNpcCatalogContentHtml(options);
     },
 
-    /** 只更新角色 grid 內容，不重建整個頁面（保留搜尋框焦點） */
+    /** 只更新角色 grid 內容與泛用 NPC 篩選按鈕狀態，不重建整個頁面（保留搜尋框焦點） */
     _updateSpeakerGrid() {
         const gridEl = document.querySelector('.speaker-grid');
         if (!gridEl) {
@@ -4181,6 +4204,19 @@ const QuestMapModule = {
             return;
         }
         const options = this._getSpeakerViewOptions();
+        const hideBtn = document.getElementById('speaker-hide-generic-btn');
+        if (hideBtn) {
+            const isHidden = Boolean(options.hideGenericNpc);
+            if (hideBtn.classList) {
+                hideBtn.classList.toggle('active', isHidden);
+            }
+            hideBtn.textContent = isHidden ? '✨ 已隱藏泛用 NPC' : '👥 顯示全部（含泛用 NPC）';
+        }
+        const summaryEl = document.getElementById('speaker-generic-summary');
+        if (summaryEl && typeof window.SpeakerView.getGenericFilterStats === 'function') {
+            const stats = window.SpeakerView.getGenericFilterStats(options);
+            summaryEl.textContent = window.SpeakerView.formatGenericFilterSummary(stats);
+        }
         gridEl.innerHTML = window.SpeakerView.renderSpeakerGridHtml(options);
     }
 };
