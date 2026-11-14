@@ -335,52 +335,6 @@ window.SpeakerView = {
     },
 
     /**
-     * 渲染特殊立繪 NPC 獨立區塊（例如 秘書（秘書子）常服 / 泳裝雙立繪）
-     */
-    renderSpecialNpcSectionHtml(specialNpcs, options = {}) {
-        if (!specialNpcs || specialNpcs.length === 0) return '';
-        const { avatarService, escapeHtml } = options || {};
-        const esc = escapeHtml ? escapeHtml : (s) => String(s || '');
-
-        return specialNpcs.map(npc => {
-            const displayTitle = npc.special_label ? `${npc.name}（${npc.special_label}）` : npc.name;
-            const safeTitle = esc(displayTitle);
-            const jsNameArg = JSON.stringify(npc.name).replace(/"/g, '&quot;');
-            const variants = (Array.isArray(npc.variants) && npc.variants.length > 0)
-                ? npc.variants
-                : [{ unit_id: npc.unit_id, label: '預設' }];
-
-            const variantsHtml = variants.map(variant => {
-                const vUid = Number(variant.unit_id);
-                const vLabel = esc(variant.label || '立繪');
-                const avatarHtml = this._renderNpcAvatarHtml(vUid, npc.name, avatarService, escapeHtml);
-                return `
-                    <button type="button" class="npc-variant-btn"
-                            onclick="QuestMapModule.showCharaModal(${jsNameArg}, ${vUid})"
-                            title="點擊查看 ${safeTitle}（${vLabel}）登場話數">
-                        <div class="npc-variant-avatar">${avatarHtml}</div>
-                        <span class="npc-variant-label">${vLabel}</span>
-                    </button>
-                `;
-            }).join('');
-
-            return `
-                <div class="npc-special-section glass-card">
-                    <div class="npc-special-header">
-                        <div class="npc-special-title-wrap">
-                            <span class="npc-special-title">⭐ 特殊立繪 NPC — ${safeTitle}</span>
-                            <span class="npc-special-stats">總計 ${Number(npc.appearance_count) || 0} 話 ・ 主線 ${Number(npc.main_count) || 0} 話 ・ 活動 ${Number(npc.event_count) || 0} 話</span>
-                        </div>
-                    </div>
-                    <div class="npc-variant-list">
-                        ${variantsHtml}
-                    </div>
-                </div>
-            `;
-        }).join('');
-    },
-
-    /**
      * 渲染一般具名 NPC 圖鑑單張卡片
      */
     renderNpcCard(npc, options = {}) {
@@ -409,7 +363,7 @@ window.SpeakerView = {
     },
 
     /**
-     * 渲染 NPC 圖鑑內容區域（含特殊立繪獨立區塊與一般具名 NPC 網格）
+     * 渲染 NPC 圖鑑內容區域（統一於具名 NPC 網格內呈現）
      */
     renderNpcCatalogContentHtml(options = {}) {
         const { npcCatalog, npcScopeFilter = 'all', sortOrder = 'appearances-desc' } = options || {};
@@ -422,15 +376,8 @@ window.SpeakerView = {
             return `<div class="npc-catalog-empty">查無符合條件的 NPC 角色 🔍</div>`;
         }
 
-        const specialNpcs = this.sortNpcCatalog(filtered.filter(npc => npc.is_special), sortOrder, npcScopeFilter);
-        const regularNpcs = this.sortNpcCatalog(filtered.filter(npc => !npc.is_special), sortOrder, npcScopeFilter);
-
-        const specialHtml = this.renderSpecialNpcSectionHtml(specialNpcs, options);
-        const regularGridHtml = regularNpcs.length > 0
-            ? `<div class="npc-catalog-grid">${regularNpcs.map(npc => this.renderNpcCard(npc, options)).join('')}</div>`
-            : '';
-
-        return `${specialHtml}${regularGridHtml}`;
+        const sortedNpcs = this.sortNpcCatalog(filtered, sortOrder, npcScopeFilter);
+        return `<div class="npc-catalog-grid">${sortedNpcs.map(npc => this.renderNpcCard(npc, options)).join('')}</div>`;
     },
 
     /**
