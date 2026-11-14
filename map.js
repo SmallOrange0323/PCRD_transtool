@@ -1774,7 +1774,20 @@ const QuestMapModule = {
         }, 80);
     },
 
+    _syncTopNavActiveTab() {
+        if (typeof document === 'undefined' || typeof document.getElementById !== 'function') return;
+        const mapBtn = document.getElementById('tab-map-btn');
+        const speakerBtn = document.getElementById('tab-speaker-btn');
+        const charactersTab = document.getElementById('characters-tab');
+        if (!mapBtn || !speakerBtn) return;
+        if (charactersTab && charactersTab.classList?.contains('active')) return;
+        const isSpeakerView = this.currentView === 'list' && this.activeTabType === 'speaker';
+        speakerBtn.classList?.toggle('active', isSpeakerView);
+        mapBtn.classList?.toggle('active', !isSpeakerView);
+    },
+
     async _render() {
+        this._syncTopNavActiveTab();
         const tab = document.getElementById('map-tab');
 
         // The landing menu is static UI. Render it immediately instead of making

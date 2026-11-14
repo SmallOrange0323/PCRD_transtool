@@ -71,6 +71,7 @@ body {
 .nav-tabs {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
     position: relative;
 }
@@ -91,6 +92,7 @@ body {
     font-weight: 600;
     transition: var(--transition);
     border-radius: 12px;
+    white-space: nowrap;
 }
 
 .tab-btn:hover {
