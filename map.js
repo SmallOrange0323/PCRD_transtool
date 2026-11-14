@@ -26,6 +26,11 @@ const QuestMapModule = {
     activeSummaryTab: 'episode',
     speakerSearchQuery: "",
     speakerSortOrder: "appearances-desc",
+    speakerSubTab: 'all',
+    npcScopeFilter: 'all',
+    npcFemaleOnly: false,
+    npcCatalog: null,
+    _npcCatalogPromise: null,
     isRendering: false,
     isLoadingDialogue: false,
     currentView: 'menu',
@@ -204,8 +209,15 @@ const QuestMapModule = {
         `;
     },
 
+    hasJapaneseKana(name) {
+        if (!name) return false;
+        // 排除全形中點「・」(U+30FB)，避免誤判伊莉亞・奧恩斯坦等繁中譯名
+        return /[\u3040-\u309f\u30a1-\u30fa\u30fc-\u30ff]/.test(String(name));
+    },
+
     getCharaRealName(name) {
         if (!name) return "";
+        if (this.hasJapaneseKana(name)) return String(name).trim();
         let singleName = name.split(/[、＆&]|(?<!日)和(?!正|服)|與/)[0].trim();
         const aliases = {
             "貪吃佩可的聲音": "貪吃佩可", "大食客": "貪吃佩可", "飢餓的公主": "貪吃佩可",
@@ -221,14 +233,11 @@ const QuestMapModule = {
             "安涅默涅": "安涅默涅", "普蕾西亞": "普蕾西亞",
             "莉莉的聲音": "莉莉", "可璃的聲音": "可璃亞",
             "可璃": "可璃亞", "可璃亞的聲音": "可璃亞",
-            "八斗金局長": "八斗神", "八斗": "八斗神", "八斗神局長": "八斗神",
-            "剎鬼‧八斗神": "八斗神", "傻": "倭",
-            "菲絲雷斯": "菲絲", "吉塔的聲音": "吉塔", "深月的聲音": "深月",
+            "八斗神局長": "八斗神", "傻": "倭",
+            "吉塔的聲音": "吉塔", "深月的聲音": "深月",
             "克蕾琪塔的聲音": "克蕾琪塔", "蘭法的聲音": "蘭法", "美空的聲音": "美空",
             "涅比亞的聲音": "涅比亞", "古蕾婭的聲音": "古蕾婭", "安的聲音": "安",
-            "莫妮卡的聲音": "莫妮卡",
-            "ジュ": "純", "シュ": "雪", "アオ": "碧", "カオ": "香織", "ユカ": "優花梨",
-            "コッ": "可可蘿", "コッコロ": "可可蘿", "ナレーション": "旁白", "ナレ": "旁白"
+            "莫妮卡的聲音": "莫妮卡"
         };
         if (aliases[singleName]) return aliases[singleName];
         let clean = singleName.replace(/（[^）]+）/g, "").replace(/\([^)]+\)/g, "").trim();
@@ -862,7 +871,7 @@ const QuestMapModule = {
      * - 先查 speaker_rules[name]：若有 explicitUnitId，驗證 Math.floor(unitId / 100) 是否在 allowed_base_ids；
      *   若無 explicitUnitId，僅匹配 allow_null_unit_id === true 的規則。
      * - 未命中 speaker_rules 時，依序比對 entities 基礎遊戲名、剝除括號與「的聲音」後名稱、及非衝突既有別名。
-     * - ？？？、系統角色與未登錄 NPC（如耶兒、大神）絕不誤併。
+     * - ？？？、系統角色與未登錄 NPC（如大神、跳躍王）絕不誤併。
      */
     resolveSpeakerIdentity(charaName, explicitUnitId = null) {
         const rawName = String(charaName || '').trim();
@@ -881,7 +890,22 @@ const QuestMapModule = {
                 canonicalName: normalizedPlayerName,
                 realName: null,
                 entity: null,
-                isUnregisteredNpc: true
+                npcGroup: null,
+                isUnregisteredNpc: true,
+                disableAppearanceLink: false
+            };
+        }
+
+        // 含日文假名之發言人（排除全形中點 U+30FB）絕不歸戶中文實體，亦不連結登場劇本目錄
+        if (this.hasJapaneseKana(normalizedPlayerName) || this.hasJapaneseKana(rawName)) {
+            return {
+                rawName,
+                canonicalName: normalizedPlayerName,
+                realName: null,
+                entity: null,
+                npcGroup: null,
+                isUnregisteredNpc: true,
+                disableAppearanceLink: true
             };
         }
 
@@ -893,12 +917,16 @@ const QuestMapModule = {
                 canonicalName: fallbackName,
                 realName: null,
                 entity: null,
-                isUnregisteredNpc: false
+                npcGroup: null,
+                isUnregisteredNpc: false,
+                disableAppearanceLink: false
             };
         }
 
         const entities = rules.entities || {};
         const speakerRules = rules.speaker_rules || {};
+        const npcGroups = rules.npc_groups || {};
+        const npcRules = rules.npc_rules || {};
 
         const matchRuleList = (ruleList) => {
             if (!Array.isArray(ruleList)) return null;
@@ -915,7 +943,19 @@ const QuestMapModule = {
             canonicalName: entityObj.canonical_game_name,
             realName: entityObj.real_name || null,
             entity: entityObj,
-            isUnregisteredNpc: false
+            npcGroup: null,
+            isUnregisteredNpc: false,
+            disableAppearanceLink: false
+        });
+
+        const buildNpcGroupResult = (groupObj) => ({
+            rawName,
+            canonicalName: groupObj.canonical_npc_name,
+            realName: null,
+            entity: null,
+            npcGroup: groupObj,
+            isUnregisteredNpc: true,
+            disableAppearanceLink: false
         });
 
         const buildNpcResult = () => ({
@@ -923,7 +963,9 @@ const QuestMapModule = {
             canonicalName: normalizedPlayerName,
             realName: null,
             entity: null,
-            isUnregisteredNpc: true
+            npcGroup: null,
+            isUnregisteredNpc: true,
+            disableAppearanceLink: false
         });
 
         const isUnitAllowedForEntity = (entityObj) => {
@@ -932,20 +974,37 @@ const QuestMapModule = {
             return Array.isArray(entityObj.base_ids) && entityObj.base_ids.includes(explicitBaseId);
         };
 
-        // 1. 先比對 speaker_rules[rawName]
-        if (Object.prototype.hasOwnProperty.call(speakerRules, rawName)) {
-            const matchedRule = matchRuleList(speakerRules[rawName]);
-            if (matchedRule && entities[matchedRule.entity]) {
-                return buildEntityResult(entities[matchedRule.entity]);
+        // 1. 先比對 speaker_rules[rawName] 與 npc_rules[rawName]
+        const hasSpeakerRule = Object.prototype.hasOwnProperty.call(speakerRules, rawName);
+        const hasNpcRule = Object.prototype.hasOwnProperty.call(npcRules, rawName);
+        if (hasSpeakerRule || hasNpcRule) {
+            if (hasSpeakerRule) {
+                const matchedRule = matchRuleList(speakerRules[rawName]);
+                if (matchedRule && entities[matchedRule.entity]) {
+                    return buildEntityResult(entities[matchedRule.entity]);
+                }
+            }
+            if (hasNpcRule) {
+                const matchedNpcRule = matchRuleList(npcRules[rawName]);
+                if (matchedNpcRule && npcGroups[matchedNpcRule.npc_group]) {
+                    return buildNpcGroupResult(npcGroups[matchedNpcRule.npc_group]);
+                }
             }
             return buildNpcResult();
         }
 
-        // 2. 比對 entities 內基礎遊戲名
+        // 2. 比對 entities / npc_groups 內基礎名稱
         if (Object.prototype.hasOwnProperty.call(entities, rawName)) {
             const entityObj = entities[rawName];
             if (isUnitAllowedForEntity(entityObj)) {
                 return buildEntityResult(entityObj);
+            }
+            return buildNpcResult();
+        }
+        if (Object.prototype.hasOwnProperty.call(npcGroups, rawName)) {
+            const groupObj = npcGroups[rawName];
+            if (isUnitAllowedForEntity(groupObj)) {
+                return buildNpcGroupResult(groupObj);
             }
             return buildNpcResult();
         }
@@ -957,10 +1016,20 @@ const QuestMapModule = {
         }
 
         if (stripped && stripped !== rawName) {
-            if (Object.prototype.hasOwnProperty.call(speakerRules, stripped)) {
-                const matchedRule = matchRuleList(speakerRules[stripped]);
-                if (matchedRule && entities[matchedRule.entity]) {
-                    return buildEntityResult(entities[matchedRule.entity]);
+            const hasStrippedSpeakerRule = Object.prototype.hasOwnProperty.call(speakerRules, stripped);
+            const hasStrippedNpcRule = Object.prototype.hasOwnProperty.call(npcRules, stripped);
+            if (hasStrippedSpeakerRule || hasStrippedNpcRule) {
+                if (hasStrippedSpeakerRule) {
+                    const matchedRule = matchRuleList(speakerRules[stripped]);
+                    if (matchedRule && entities[matchedRule.entity]) {
+                        return buildEntityResult(entities[matchedRule.entity]);
+                    }
+                }
+                if (hasStrippedNpcRule) {
+                    const matchedNpcRule = matchRuleList(npcRules[stripped]);
+                    if (matchedNpcRule && npcGroups[matchedNpcRule.npc_group]) {
+                        return buildNpcGroupResult(npcGroups[matchedNpcRule.npc_group]);
+                    }
                 }
                 return buildNpcResult();
             }
@@ -971,10 +1040,17 @@ const QuestMapModule = {
                 }
                 return buildNpcResult();
             }
+            if (Object.prototype.hasOwnProperty.call(npcGroups, stripped)) {
+                const groupObj = npcGroups[stripped];
+                if (isUnitAllowedForEntity(groupObj)) {
+                    return buildNpcGroupResult(groupObj);
+                }
+                return buildNpcResult();
+            }
         }
 
         // 4. 保留非衝突既有別名與並列發言人
-        const protectedNpcs = new Set(['耶兒', '大神', '跳躍王', '拉基拉基', '尾狗刀', '詠斗', '贊恩', '善']);
+        const protectedNpcs = new Set(['大神', '跳躍王', '拉基拉基', '尾狗刀', '詠斗', '贊恩', '善', '長老', '嚮導老君', '剎鬼‧八斗神']);
         if (!protectedNpcs.has(rawName) && !protectedNpcs.has(stripped)) {
             const legacyAliasName = this.getCharaRealName(rawName);
             if (legacyAliasName && legacyAliasName !== rawName && legacyAliasName !== stripped) {
@@ -983,10 +1059,20 @@ const QuestMapModule = {
                     if (matchedRule && entities[matchedRule.entity]) {
                         return buildEntityResult(entities[matchedRule.entity]);
                     }
+                } else if (Object.prototype.hasOwnProperty.call(npcRules, legacyAliasName)) {
+                    const matchedNpcRule = matchRuleList(npcRules[legacyAliasName]);
+                    if (matchedNpcRule && npcGroups[matchedNpcRule.npc_group]) {
+                        return buildNpcGroupResult(npcGroups[matchedNpcRule.npc_group]);
+                    }
                 } else if (Object.prototype.hasOwnProperty.call(entities, legacyAliasName)) {
                     const entityObj = entities[legacyAliasName];
                     if (isUnitAllowedForEntity(entityObj)) {
                         return buildEntityResult(entityObj);
+                    }
+                } else if (Object.prototype.hasOwnProperty.call(npcGroups, legacyAliasName)) {
+                    const groupObj = npcGroups[legacyAliasName];
+                    if (isUnitAllowedForEntity(groupObj)) {
+                        return buildNpcGroupResult(groupObj);
                     }
                 }
             }
@@ -1758,7 +1844,11 @@ const QuestMapModule = {
         }
 
         if (this.activeTabType === 'speaker') {
+            const npcCatalogPromise = (typeof this.ensureNpcCatalog === 'function') ? this.ensureNpcCatalog() : null;
             await this.ensureAppearanceMap();
+            if (npcCatalogPromise) {
+                await npcCatalogPromise;
+            }
             this.renderSpeakerTab(tab);
             return;
         }
@@ -3688,7 +3778,9 @@ const QuestMapModule = {
             : null;
         const realCharaName = identity ? identity.canonicalName : this.getCharaRealName(charaName);
         const matchedEntity = identity ? identity.entity : null;
+        const matchedNpcGroup = identity ? identity.npcGroup : null;
         const isUnregisteredNpc = Boolean(identity && identity.isUnregisteredNpc);
+        const disableAppearanceLink = Boolean(identity && identity.disableAppearanceLink);
         const officialRealName = matchedEntity ? (matchedEntity.real_name || null) : null;
 
         let profile = null;
@@ -3722,11 +3814,15 @@ const QuestMapModule = {
         // 若在載入 profile 期間已有新的彈窗請求，捨棄本次過期呈現
         if (requestId !== this._charaModalRequestId) return;
 
-        const appearances = (this.appearanceMap && (
-            (matchedEntity && this.appearanceMap[realCharaName]) ||
-            this.appearanceMap[charaName] ||
-            (!isUnregisteredNpc ? this.appearanceMap[realCharaName] : null)
-        )) || [];
+        const npcGroupName = matchedNpcGroup ? matchedNpcGroup.canonical_npc_name : null;
+        const appearances = disableAppearanceLink
+            ? []
+            : (this.appearanceMap && (
+                (matchedEntity && this.appearanceMap[realCharaName]) ||
+                (npcGroupName && this.appearanceMap[npcGroupName]) ||
+                this.appearanceMap[charaName] ||
+                (!isUnregisteredNpc ? this.appearanceMap[realCharaName] : null)
+            )) || [];
 
         window.CharaModalView.renderModal({
             realCharaName: charaName,
@@ -3753,7 +3849,7 @@ const QuestMapModule = {
                 : false;
 
             if (!hasMetadata) {
-                const retryKey = matchedEntity ? realCharaName : charaName;
+                const retryKey = matchedEntity ? realCharaName : (npcGroupName || charaName);
                 window.StoryDataService.ensureMetadataLoaded()
                     .then((episodes) => {
                         // 驗證 token 與彈窗開啟狀態，避免過期寫入 (stale write)
@@ -3801,9 +3897,15 @@ const QuestMapModule = {
         const identity = (typeof this.resolveSpeakerIdentity === 'function')
             ? this.resolveSpeakerIdentity(realCharaName, null)
             : null;
-        const canonicalName = identity && identity.entity ? identity.entity.canonical_game_name : this.getCharaRealName(realCharaName);
-        const appearances = (this.appearanceMap &&
-            (this.appearanceMap[canonicalName] || this.appearanceMap[realCharaName])) || [];
+        const disableAppearanceLink = Boolean(identity && identity.disableAppearanceLink);
+        const canonicalName = identity && identity.entity
+            ? identity.entity.canonical_game_name
+            : (identity && identity.npcGroup
+                ? identity.npcGroup.canonical_npc_name
+                : this.getCharaRealName(realCharaName));
+        const appearances = disableAppearanceLink
+            ? []
+            : ((this.appearanceMap && (this.appearanceMap[canonicalName] || this.appearanceMap[realCharaName])) || []);
         
         // 立即以載入中狀態刷新視圖
         if (window.CharaModalView && typeof window.CharaModalView.updateAppearancesSection === 'function') {
@@ -3923,12 +4025,65 @@ const QuestMapModule = {
         });
     },
 
+    async ensureNpcCatalog() {
+        if (this.npcCatalog) return this.npcCatalog;
+        if (this._npcCatalogPromise) return this._npcCatalogPromise;
+
+        this._npcCatalogPromise = (async () => {
+            try {
+                if (typeof fetch !== 'function') return null;
+                const resp = await fetch('data/npc_catalog.json');
+                if (!resp || !resp.ok) return null;
+                const data = await resp.json();
+                if (data && Array.isArray(data.npcs)) {
+                    this.npcCatalog = data;
+                    this.mergeNpcCatalogAvatars(data);
+                    console.log(`[QuestMapModule] 成功載入 NPC 圖鑑 (${data.npcs.length} 位)`);
+                    return this.npcCatalog;
+                }
+                return null;
+            } catch (e) {
+                console.warn('[QuestMapModule] 載入 npc_catalog.json 失敗，略過圖鑑頭像整合:', e);
+                return null;
+            } finally {
+                this._npcCatalogPromise = null;
+            }
+        })();
+
+        return this._npcCatalogPromise;
+    },
+
+    mergeNpcCatalogAvatars(catalog = this.npcCatalog) {
+        if (!catalog || !Array.isArray(catalog.npcs)) return;
+        const entityNames = (this.speakerIdentityRules && this.speakerIdentityRules.entities)
+            ? this.speakerIdentityRules.entities
+            : null;
+        const protectedNames = new Set(['格蕾斯', '飛白']);
+
+        for (const npc of catalog.npcs) {
+            const name = npc && npc.name;
+            const unitId = Number(npc && npc.unit_id);
+            if (!name || !Number.isInteger(unitId) || unitId <= 0) continue;
+
+            const isEntity = Boolean(entityNames && Object.prototype.hasOwnProperty.call(entityNames, name));
+            if (isEntity || protectedNames.has(name)) continue;
+
+            if (!this.speakerAvatars[name] || name === '鬼魂教父' || npc.is_special) {
+                this.speakerAvatars[name] = unitId;
+            }
+        }
+    },
+
     _getSpeakerViewOptions() {
         return {
             appearanceMap: this.appearanceMap,
             speakerAvatars: this.speakerAvatars,
             searchQuery: this.speakerSearchQuery,
             sortOrder: this.speakerSortOrder,
+            speakerSubTab: this.speakerSubTab,
+            npcScopeFilter: this.npcScopeFilter,
+            npcFemaleOnly: this.npcFemaleOnly,
+            npcCatalog: this.npcCatalog,
             avatarService: window.AvatarService,
             resolveRealName: (name) => this.getCharaRealName(name),
             escapeHtml: (str) => this.escapeHtml(str)
@@ -3941,18 +4096,66 @@ const QuestMapModule = {
         tab.innerHTML = window.SpeakerView.renderSpeakerPageHtml(options);
     },
 
+    handleSpeakerSubTab(subTab) {
+        this.speakerSubTab = (subTab === 'npc') ? 'npc' : 'all';
+        const tab = document.getElementById('map-tab');
+        if (tab) this.renderSpeakerTab(tab);
+    },
+
+    handleNpcScopeFilter(scope) {
+        this.npcScopeFilter = ['all', 'main', 'event'].includes(scope) ? scope : 'all';
+        this._updateNpcCatalogView();
+    },
+
+    handleNpcFemaleToggle() {
+        this.npcFemaleOnly = !this.npcFemaleOnly;
+        this._updateNpcCatalogView();
+    },
+
     handleSpeakerSearch(value) {
         this.speakerSearchQuery = value;
         // 使用 debounce 防止每次按鍵都完整重建 DOM
         clearTimeout(this._speakerSearchTimer);
         this._speakerSearchTimer = setTimeout(() => {
-            this._updateSpeakerGrid();
+            if (this.speakerSubTab === 'npc') {
+                this._updateNpcCatalogView();
+            } else {
+                this._updateSpeakerGrid();
+            }
         }, 300);
     },
 
     handleSpeakerSort(value) {
         this.speakerSortOrder = value;
-        this._updateSpeakerGrid();
+        if (this.speakerSubTab === 'npc') {
+            this._updateNpcCatalogView();
+        } else {
+            this._updateSpeakerGrid();
+        }
+    },
+
+    /** 只更新 NPC 圖鑑內容與篩選按鈕狀態，不重建搜尋框（保留打字焦點） */
+    _updateNpcCatalogView() {
+        const containerEl = document.getElementById('speaker-npc-container');
+        if (!containerEl) {
+            const tab = document.getElementById('map-tab');
+            if (tab) this.renderSpeakerTab(tab);
+            return;
+        }
+        if (typeof document.querySelectorAll === 'function') {
+            document.querySelectorAll('[data-npc-scope]').forEach(btn => {
+                const scopeVal = btn.getAttribute ? btn.getAttribute('data-npc-scope') : (btn.dataset && btn.dataset.npcScope);
+                if (btn.classList) {
+                    btn.classList.toggle('active', scopeVal === this.npcScopeFilter);
+                }
+            });
+        }
+        const femaleBtn = document.getElementById('speaker-npc-female-btn');
+        if (femaleBtn && femaleBtn.classList) {
+            femaleBtn.classList.toggle('active', Boolean(this.npcFemaleOnly));
+        }
+        const options = this._getSpeakerViewOptions();
+        containerEl.innerHTML = window.SpeakerView.renderNpcCatalogContentHtml(options);
     },
 
     /** 只更新角色 grid 內容，不重建整個頁面（保留搜尋框焦點） */

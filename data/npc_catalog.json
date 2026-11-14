@@ -1,0 +1,3159 @@
+{
+  "version": 1,
+  "metadata": {
+    "total_npcs": 184,
+    "female_count": 43,
+    "main_count": 59,
+    "event_count": 156,
+    "special_count": 1
+  },
+  "npcs": [
+    {
+      "name": "噗吉",
+      "unit_id": 2111,
+      "gender": "other",
+      "appearance_count": 109,
+      "main_count": 19,
+      "event_count": 50,
+      "other_count": 40,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "骷髏老爸",
+      "unit_id": 2411,
+      "gender": "male",
+      "appearance_count": 98,
+      "main_count": 15,
+      "event_count": 39,
+      "other_count": 44,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "骷髏老爸？",
+        "骷髏頭"
+      ],
+      "variants": []
+    },
+    {
+      "name": "卡里莎",
+      "unit_id": 191611,
+      "gender": "male",
+      "appearance_count": 96,
+      "main_count": 62,
+      "event_count": 7,
+      "other_count": 27,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "尾狗刀",
+      "unit_id": 106211,
+      "gender": "male",
+      "appearance_count": 72,
+      "main_count": 37,
+      "event_count": 30,
+      "other_count": 5,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "尾狗刀？",
+        "尾狗刀？？",
+        "尾狗刀？？？",
+        "詠斗",
+        "過去的詠斗"
+      ],
+      "variants": []
+    },
+    {
+      "name": "秘書",
+      "unit_id": 6111,
+      "gender": "female",
+      "appearance_count": 72,
+      "main_count": 14,
+      "event_count": 41,
+      "other_count": 17,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": true,
+      "special_label": "秘書子",
+      "aliases": [
+        "秘書子"
+      ],
+      "variants": [
+        {
+          "unit_id": 6111,
+          "label": "常服"
+        },
+        {
+          "unit_id": 6112,
+          "label": "泳裝"
+        }
+      ]
+    },
+    {
+      "name": "媞雅",
+      "unit_id": 193211,
+      "gender": "female",
+      "appearance_count": 68,
+      "main_count": 19,
+      "event_count": 1,
+      "other_count": 48,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "摩拉",
+      "unit_id": 4211,
+      "gender": "male",
+      "appearance_count": 60,
+      "main_count": 1,
+      "event_count": 48,
+      "other_count": 11,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "拉基拉基",
+      "unit_id": 107331,
+      "gender": "male",
+      "appearance_count": 58,
+      "main_count": 29,
+      "event_count": 24,
+      "other_count": 5,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "拉基尼卡東",
+        "跳躍王"
+      ],
+      "variants": []
+    },
+    {
+      "name": "黎薩",
+      "unit_id": 140412,
+      "gender": "female",
+      "appearance_count": 55,
+      "main_count": 34,
+      "event_count": 11,
+      "other_count": 10,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "芙蕾雅",
+      "unit_id": 193711,
+      "gender": "female",
+      "appearance_count": 53,
+      "main_count": 44,
+      "event_count": 0,
+      "other_count": 9,
+      "story_scopes": [
+        "main",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "菲絲雷斯",
+        "通訊魔法的芙蕾雅",
+        "黎‧普賽爾"
+      ],
+      "variants": []
+    },
+    {
+      "name": "反逆獸",
+      "unit_id": 15311,
+      "gender": "other",
+      "appearance_count": 52,
+      "main_count": 0,
+      "event_count": 38,
+      "other_count": 14,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "小樂",
+      "unit_id": 9512,
+      "gender": "other",
+      "appearance_count": 49,
+      "main_count": 16,
+      "event_count": 17,
+      "other_count": 16,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "真軌",
+      "unit_id": 191011,
+      "gender": "male",
+      "appearance_count": 49,
+      "main_count": 27,
+      "event_count": 12,
+      "other_count": 10,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "阿澤爾德",
+      "unit_id": 191911,
+      "gender": "male",
+      "appearance_count": 45,
+      "main_count": 30,
+      "event_count": 1,
+      "other_count": 14,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "阿澤爾德的幻影",
+        "阿澤爾德？"
+      ],
+      "variants": []
+    },
+    {
+      "name": "贊恩",
+      "unit_id": 191711,
+      "gender": "male",
+      "appearance_count": 41,
+      "main_count": 31,
+      "event_count": 0,
+      "other_count": 10,
+      "story_scopes": [
+        "main",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "善",
+        "回憶的贊恩",
+        "贊恩？"
+      ],
+      "variants": []
+    },
+    {
+      "name": "彌勒",
+      "unit_id": 192613,
+      "gender": "male",
+      "appearance_count": 40,
+      "main_count": 25,
+      "event_count": 0,
+      "other_count": 15,
+      "story_scopes": [
+        "main",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "彌勒的聲音"
+      ],
+      "variants": []
+    },
+    {
+      "name": "米亞",
+      "unit_id": 51611,
+      "gender": "female",
+      "appearance_count": 37,
+      "main_count": 5,
+      "event_count": 14,
+      "other_count": 18,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "梅杜莎‧米亞"
+      ],
+      "variants": []
+    },
+    {
+      "name": "大吾",
+      "unit_id": 190711,
+      "gender": "male",
+      "appearance_count": 34,
+      "main_count": 19,
+      "event_count": 4,
+      "other_count": 11,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "和正",
+      "unit_id": 6411,
+      "gender": "male",
+      "appearance_count": 33,
+      "main_count": 2,
+      "event_count": 27,
+      "other_count": 4,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "小飯糰",
+      "unit_id": 9611,
+      "gender": "other",
+      "appearance_count": 33,
+      "main_count": 24,
+      "event_count": 3,
+      "other_count": 6,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "波波爺爺",
+      "unit_id": 9212,
+      "gender": "male",
+      "appearance_count": 32,
+      "main_count": 5,
+      "event_count": 20,
+      "other_count": 7,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "拉菲",
+      "unit_id": 5511,
+      "gender": "female",
+      "appearance_count": 31,
+      "main_count": 0,
+      "event_count": 29,
+      "other_count": 2,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "帕克",
+      "unit_id": 2611,
+      "gender": "male",
+      "appearance_count": 30,
+      "main_count": 0,
+      "event_count": 22,
+      "other_count": 8,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "阿爾莎特",
+      "unit_id": 195611,
+      "gender": "female",
+      "appearance_count": 30,
+      "main_count": 15,
+      "event_count": 10,
+      "other_count": 5,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "女性教員",
+      "unit_id": 3211,
+      "gender": "female",
+      "appearance_count": 26,
+      "main_count": 0,
+      "event_count": 16,
+      "other_count": 10,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "幻境龍后",
+      "unit_id": 107411,
+      "gender": "female",
+      "appearance_count": 26,
+      "main_count": 15,
+      "event_count": 3,
+      "other_count": 8,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "愛麗絲",
+      "unit_id": 4611,
+      "gender": "female",
+      "appearance_count": 26,
+      "main_count": 0,
+      "event_count": 19,
+      "other_count": 7,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "八斗神",
+      "unit_id": 193611,
+      "gender": "male",
+      "appearance_count": 25,
+      "main_count": 15,
+      "event_count": 10,
+      "other_count": 0,
+      "story_scopes": [
+        "main",
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "八斗神局長"
+      ],
+      "variants": []
+    },
+    {
+      "name": "沃爾加諾",
+      "unit_id": 193511,
+      "gender": "male",
+      "appearance_count": 25,
+      "main_count": 18,
+      "event_count": 1,
+      "other_count": 6,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "米奈娃",
+      "unit_id": 191112,
+      "gender": "female",
+      "appearance_count": 25,
+      "main_count": 12,
+      "event_count": 4,
+      "other_count": 9,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "米奈娃β",
+        "過去的米奈娃"
+      ],
+      "variants": []
+    },
+    {
+      "name": "羅蘭",
+      "unit_id": 194211,
+      "gender": "male",
+      "appearance_count": 24,
+      "main_count": 18,
+      "event_count": 6,
+      "other_count": 0,
+      "story_scopes": [
+        "main",
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "瑪麗亞",
+      "unit_id": 7112,
+      "gender": "female",
+      "appearance_count": 23,
+      "main_count": 0,
+      "event_count": 18,
+      "other_count": 5,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "輝美",
+      "unit_id": 16712,
+      "gender": "female",
+      "appearance_count": 22,
+      "main_count": 0,
+      "event_count": 22,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "拉格",
+      "unit_id": 50211,
+      "gender": "male",
+      "appearance_count": 21,
+      "main_count": 0,
+      "event_count": 12,
+      "other_count": 9,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "拉格？"
+      ],
+      "variants": []
+    },
+    {
+      "name": "格魯尼",
+      "unit_id": 194312,
+      "gender": "male",
+      "appearance_count": 21,
+      "main_count": 19,
+      "event_count": 2,
+      "other_count": 0,
+      "story_scopes": [
+        "main",
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "分身格魯尼"
+      ],
+      "variants": []
+    },
+    {
+      "name": "豪紳",
+      "unit_id": 191411,
+      "gender": "male",
+      "appearance_count": 21,
+      "main_count": 15,
+      "event_count": 0,
+      "other_count": 6,
+      "story_scopes": [
+        "main",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "貴族議長",
+        "鬼魂豪紳"
+      ],
+      "variants": []
+    },
+    {
+      "name": "昴",
+      "unit_id": 2713,
+      "gender": "male",
+      "appearance_count": 18,
+      "main_count": 0,
+      "event_count": 13,
+      "other_count": 5,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "諾斯德拉達姆斯？"
+      ],
+      "variants": []
+    },
+    {
+      "name": "杜蘭",
+      "unit_id": 52612,
+      "gender": "male",
+      "appearance_count": 18,
+      "main_count": 2,
+      "event_count": 10,
+      "other_count": 6,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "哈尼哈尼",
+      "unit_id": 20111,
+      "gender": "other",
+      "appearance_count": 17,
+      "main_count": 0,
+      "event_count": 17,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "宙",
+      "unit_id": 107231,
+      "gender": "male",
+      "appearance_count": 17,
+      "main_count": 3,
+      "event_count": 13,
+      "other_count": 1,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "佐拉"
+      ],
+      "variants": []
+    },
+    {
+      "name": "弗洛艾",
+      "unit_id": 52412,
+      "gender": "male",
+      "appearance_count": 17,
+      "main_count": 0,
+      "event_count": 17,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "賭場王",
+      "unit_id": 16011,
+      "gender": "male",
+      "appearance_count": 17,
+      "main_count": 0,
+      "event_count": 17,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "前賭場王",
+        "吉諾"
+      ],
+      "variants": []
+    },
+    {
+      "name": "冬麥斯",
+      "unit_id": 9712,
+      "gender": "male",
+      "appearance_count": 16,
+      "main_count": 0,
+      "event_count": 12,
+      "other_count": 4,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "小小格里芬",
+      "unit_id": 2211,
+      "gender": "other",
+      "appearance_count": 16,
+      "main_count": 0,
+      "event_count": 6,
+      "other_count": 10,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "艾米",
+      "unit_id": 8912,
+      "gender": "female",
+      "appearance_count": 16,
+      "main_count": 0,
+      "event_count": 14,
+      "other_count": 2,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "魔物的公主",
+      "unit_id": 7011,
+      "gender": "female",
+      "appearance_count": 16,
+      "main_count": 1,
+      "event_count": 11,
+      "other_count": 4,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "喵特",
+      "unit_id": 2312,
+      "gender": "other",
+      "appearance_count": 15,
+      "main_count": 0,
+      "event_count": 11,
+      "other_count": 4,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "好朋友X",
+      "unit_id": 13211,
+      "gender": "other",
+      "appearance_count": 15,
+      "main_count": 0,
+      "event_count": 9,
+      "other_count": 6,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "好朋友Ｘ？"
+      ],
+      "variants": []
+    },
+    {
+      "name": "梅莉莎",
+      "unit_id": 20011,
+      "gender": "female",
+      "appearance_count": 15,
+      "main_count": 0,
+      "event_count": 15,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "樂園守護者",
+      "unit_id": 17111,
+      "gender": "male",
+      "appearance_count": 15,
+      "main_count": 0,
+      "event_count": 9,
+      "other_count": 6,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "好朋友號",
+      "unit_id": 7211,
+      "gender": "other",
+      "appearance_count": 14,
+      "main_count": 1,
+      "event_count": 9,
+      "other_count": 4,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "小棉花糖",
+      "unit_id": 7611,
+      "gender": "other",
+      "appearance_count": 14,
+      "main_count": 0,
+      "event_count": 14,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "旭",
+      "unit_id": 5011,
+      "gender": "male",
+      "appearance_count": 14,
+      "main_count": 1,
+      "event_count": 10,
+      "other_count": 3,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "玩具王",
+      "unit_id": 14911,
+      "gender": "other",
+      "appearance_count": 14,
+      "main_count": 0,
+      "event_count": 14,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "機械玩具王"
+      ],
+      "variants": []
+    },
+    {
+      "name": "小繆",
+      "unit_id": 8411,
+      "gender": "male",
+      "appearance_count": 13,
+      "main_count": 0,
+      "event_count": 13,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "貝斯",
+      "unit_id": 8311,
+      "gender": "male",
+      "appearance_count": 13,
+      "main_count": 1,
+      "event_count": 1,
+      "other_count": 11,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "奧洛克伯爵",
+      "unit_id": 2516,
+      "gender": "male",
+      "appearance_count": 12,
+      "main_count": 3,
+      "event_count": 9,
+      "other_count": 0,
+      "story_scopes": [
+        "main",
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "薔薇假面",
+      "unit_id": 6211,
+      "gender": "male",
+      "appearance_count": 12,
+      "main_count": 0,
+      "event_count": 9,
+      "other_count": 3,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "馬修",
+      "unit_id": 5712,
+      "gender": "male",
+      "appearance_count": 12,
+      "main_count": 0,
+      "event_count": 12,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "半藏",
+      "unit_id": 13311,
+      "gender": "male",
+      "appearance_count": 11,
+      "main_count": 0,
+      "event_count": 8,
+      "other_count": 3,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "啾二",
+      "unit_id": 15911,
+      "gender": "male",
+      "appearance_count": 11,
+      "main_count": 0,
+      "event_count": 9,
+      "other_count": 2,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "大地",
+      "unit_id": 5112,
+      "gender": "male",
+      "appearance_count": 11,
+      "main_count": 0,
+      "event_count": 8,
+      "other_count": 3,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "富美惠",
+      "unit_id": 18211,
+      "gender": "female",
+      "appearance_count": 11,
+      "main_count": 0,
+      "event_count": 11,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "庫西",
+      "unit_id": 52211,
+      "gender": "other",
+      "appearance_count": 11,
+      "main_count": 9,
+      "event_count": 0,
+      "other_count": 2,
+      "story_scopes": [
+        "main",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "植物羊",
+      "unit_id": 16612,
+      "gender": "other",
+      "appearance_count": 11,
+      "main_count": 0,
+      "event_count": 11,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "莫夫",
+      "unit_id": 17511,
+      "gender": "other",
+      "appearance_count": 11,
+      "main_count": 0,
+      "event_count": 11,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "館主"
+      ],
+      "variants": []
+    },
+    {
+      "name": "亞斯來",
+      "unit_id": 17211,
+      "gender": "male",
+      "appearance_count": 10,
+      "main_count": 0,
+      "event_count": 10,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "惡代官",
+      "unit_id": 11411,
+      "gender": "male",
+      "appearance_count": 10,
+      "main_count": 1,
+      "event_count": 5,
+      "other_count": 4,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "雨吉",
+      "unit_id": 11611,
+      "gender": "other",
+      "appearance_count": 10,
+      "main_count": 2,
+      "event_count": 4,
+      "other_count": 4,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "雨神大人"
+      ],
+      "variants": []
+    },
+    {
+      "name": "休茲",
+      "unit_id": 5912,
+      "gender": "male",
+      "appearance_count": 9,
+      "main_count": 0,
+      "event_count": 9,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "傑克",
+      "unit_id": 10511,
+      "gender": "male",
+      "appearance_count": 9,
+      "main_count": 0,
+      "event_count": 9,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "冥",
+      "unit_id": 53011,
+      "gender": "female",
+      "appearance_count": 9,
+      "main_count": 0,
+      "event_count": 5,
+      "other_count": 4,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "神秘女性"
+      ],
+      "variants": []
+    },
+    {
+      "name": "啾三",
+      "unit_id": 15912,
+      "gender": "male",
+      "appearance_count": 9,
+      "main_count": 0,
+      "event_count": 7,
+      "other_count": 2,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "無敵好朋友號",
+      "unit_id": 7311,
+      "gender": "other",
+      "appearance_count": 9,
+      "main_count": 0,
+      "event_count": 9,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "瑪莉絲黛菈",
+      "unit_id": 53111,
+      "gender": "female",
+      "appearance_count": 9,
+      "main_count": 0,
+      "event_count": 9,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "露易絲瑪莉的祖母"
+      ],
+      "variants": []
+    },
+    {
+      "name": "神燈精靈",
+      "unit_id": 5313,
+      "gender": "female",
+      "appearance_count": 9,
+      "main_count": 0,
+      "event_count": 3,
+      "other_count": 6,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "聖誕老人",
+      "unit_id": 3911,
+      "gender": "male",
+      "appearance_count": 9,
+      "main_count": 0,
+      "event_count": 7,
+      "other_count": 2,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "黑之王",
+      "unit_id": 13411,
+      "gender": "male",
+      "appearance_count": 9,
+      "main_count": 0,
+      "event_count": 5,
+      "other_count": 4,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "TYPE-R",
+      "unit_id": 192711,
+      "gender": "female",
+      "appearance_count": 8,
+      "main_count": 8,
+      "event_count": 0,
+      "other_count": 0,
+      "story_scopes": [
+        "main"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "島鯨",
+      "unit_id": 10412,
+      "gender": "other",
+      "appearance_count": 8,
+      "main_count": 0,
+      "event_count": 8,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "布拉德",
+      "unit_id": 9811,
+      "gender": "male",
+      "appearance_count": 8,
+      "main_count": 0,
+      "event_count": 7,
+      "other_count": 1,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "幻影男爵",
+      "unit_id": 12111,
+      "gender": "male",
+      "appearance_count": 8,
+      "main_count": 0,
+      "event_count": 2,
+      "other_count": 6,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "怪奇怪靈",
+      "unit_id": 192013,
+      "gender": "other",
+      "appearance_count": 8,
+      "main_count": 5,
+      "event_count": 2,
+      "other_count": 1,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "未菈",
+      "unit_id": 9011,
+      "gender": "female",
+      "appearance_count": 8,
+      "main_count": 0,
+      "event_count": 8,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "皮喵太",
+      "unit_id": 4411,
+      "gender": "other",
+      "appearance_count": 8,
+      "main_count": 0,
+      "event_count": 8,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "維多",
+      "unit_id": 5812,
+      "gender": "male",
+      "appearance_count": 8,
+      "main_count": 0,
+      "event_count": 8,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "艾迪",
+      "unit_id": 6012,
+      "gender": "male",
+      "appearance_count": 8,
+      "main_count": 0,
+      "event_count": 8,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "花",
+      "unit_id": 3411,
+      "gender": "female",
+      "appearance_count": 8,
+      "main_count": 0,
+      "event_count": 4,
+      "other_count": 4,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "茉莉的母親",
+      "unit_id": 8511,
+      "gender": "female",
+      "appearance_count": 8,
+      "main_count": 1,
+      "event_count": 6,
+      "other_count": 1,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "音寵之精靈",
+      "unit_id": 19211,
+      "gender": "other",
+      "appearance_count": 8,
+      "main_count": 0,
+      "event_count": 6,
+      "other_count": 2,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "扭曲的音寵之精靈"
+      ],
+      "variants": []
+    },
+    {
+      "name": "鬼魂教父",
+      "unit_id": 14011,
+      "gender": "male",
+      "appearance_count": 8,
+      "main_count": 0,
+      "event_count": 8,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "黑灰色的龍",
+      "unit_id": 19512,
+      "gender": "other",
+      "appearance_count": 8,
+      "main_count": 7,
+      "event_count": 0,
+      "other_count": 1,
+      "story_scopes": [
+        "main",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "可可亞烏拉",
+      "unit_id": 10911,
+      "gender": "other",
+      "appearance_count": 7,
+      "main_count": 0,
+      "event_count": 7,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "哀嘆之女神",
+      "unit_id": 11111,
+      "gender": "female",
+      "appearance_count": 7,
+      "main_count": 0,
+      "event_count": 7,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "山神大人",
+      "unit_id": 12711,
+      "gender": "male",
+      "appearance_count": 7,
+      "main_count": 1,
+      "event_count": 2,
+      "other_count": 4,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "招財貓",
+      "unit_id": 17312,
+      "gender": "other",
+      "appearance_count": 7,
+      "main_count": 0,
+      "event_count": 7,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "晴吉",
+      "unit_id": 11711,
+      "gender": "other",
+      "appearance_count": 7,
+      "main_count": 2,
+      "event_count": 1,
+      "other_count": 4,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "終炎巨神",
+      "unit_id": 16111,
+      "gender": "other",
+      "appearance_count": 7,
+      "main_count": 7,
+      "event_count": 0,
+      "other_count": 0,
+      "story_scopes": [
+        "main"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "貝特魯吉烏斯",
+      "unit_id": 2811,
+      "gender": "male",
+      "appearance_count": 7,
+      "main_count": 0,
+      "event_count": 7,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "長老",
+      "unit_id": 107212,
+      "gender": "male",
+      "appearance_count": 7,
+      "main_count": 4,
+      "event_count": 0,
+      "other_count": 3,
+      "story_scopes": [
+        "main",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "龍次",
+      "unit_id": 6312,
+      "gender": "male",
+      "appearance_count": 7,
+      "main_count": 0,
+      "event_count": 7,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "TYPE-P",
+      "unit_id": 192911,
+      "gender": "female",
+      "appearance_count": 6,
+      "main_count": 6,
+      "event_count": 0,
+      "other_count": 0,
+      "story_scopes": [
+        "main"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "TYPE-Q",
+      "unit_id": 192811,
+      "gender": "female",
+      "appearance_count": 6,
+      "main_count": 6,
+      "event_count": 0,
+      "other_count": 0,
+      "story_scopes": [
+        "main"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "似龍",
+      "unit_id": 12311,
+      "gender": "other",
+      "appearance_count": 6,
+      "main_count": 0,
+      "event_count": 6,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "似龍生物"
+      ],
+      "variants": []
+    },
+    {
+      "name": "南希",
+      "unit_id": 419,
+      "gender": "female",
+      "appearance_count": 6,
+      "main_count": 0,
+      "event_count": 6,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "安布拉",
+      "unit_id": 1731,
+      "gender": "other",
+      "appearance_count": 6,
+      "main_count": 0,
+      "event_count": 5,
+      "other_count": 1,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "巴西利斯克‧阿洛斯",
+      "unit_id": 18011,
+      "gender": "other",
+      "appearance_count": 6,
+      "main_count": 0,
+      "event_count": 6,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "布羅肯",
+      "unit_id": 52511,
+      "gender": "male",
+      "appearance_count": 6,
+      "main_count": 2,
+      "event_count": 1,
+      "other_count": 3,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "弗萊迪",
+      "unit_id": 711,
+      "gender": "male",
+      "appearance_count": 6,
+      "main_count": 0,
+      "event_count": 6,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "時間管理員",
+      "unit_id": 14611,
+      "gender": "male",
+      "appearance_count": 6,
+      "main_count": 0,
+      "event_count": 5,
+      "other_count": 1,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "森神",
+      "unit_id": 5413,
+      "gender": "female",
+      "appearance_count": 6,
+      "main_count": 0,
+      "event_count": 6,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "澄花",
+      "unit_id": 52711,
+      "gender": "female",
+      "appearance_count": 6,
+      "main_count": 0,
+      "event_count": 6,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "瑪莎",
+      "unit_id": 1514,
+      "gender": "female",
+      "appearance_count": 6,
+      "main_count": 0,
+      "event_count": 6,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "瘋狂喬",
+      "unit_id": 18711,
+      "gender": "male",
+      "appearance_count": 6,
+      "main_count": 0,
+      "event_count": 6,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "超級‧衝刺喬"
+      ],
+      "variants": []
+    },
+    {
+      "name": "織女",
+      "unit_id": 4811,
+      "gender": "female",
+      "appearance_count": 6,
+      "main_count": 0,
+      "event_count": 6,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "美衣子",
+      "unit_id": 3011,
+      "gender": "female",
+      "appearance_count": 6,
+      "main_count": 0,
+      "event_count": 3,
+      "other_count": 3,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "老虎族族長",
+      "unit_id": 8611,
+      "gender": "male",
+      "appearance_count": 6,
+      "main_count": 0,
+      "event_count": 5,
+      "other_count": 1,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "賈斯頓",
+      "unit_id": 2513,
+      "gender": "male",
+      "appearance_count": 6,
+      "main_count": 0,
+      "event_count": 6,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "飯綱",
+      "unit_id": 193914,
+      "gender": "male",
+      "appearance_count": 6,
+      "main_count": 3,
+      "event_count": 0,
+      "other_count": 3,
+      "story_scopes": [
+        "main",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "哥布林女士",
+      "unit_id": 19411,
+      "gender": "female",
+      "appearance_count": 5,
+      "main_count": 0,
+      "event_count": 5,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "喬",
+      "unit_id": 711,
+      "gender": "male",
+      "appearance_count": 5,
+      "main_count": 0,
+      "event_count": 5,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "大蛇",
+      "unit_id": 18911,
+      "gender": "other",
+      "appearance_count": 5,
+      "main_count": 0,
+      "event_count": 5,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "威爾",
+      "unit_id": 313,
+      "gender": "male",
+      "appearance_count": 5,
+      "main_count": 0,
+      "event_count": 5,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "席茲",
+      "unit_id": 10111,
+      "gender": "male",
+      "appearance_count": 5,
+      "main_count": 0,
+      "event_count": 3,
+      "other_count": 2,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "改造蓋登",
+      "unit_id": 50512,
+      "gender": "male",
+      "appearance_count": 5,
+      "main_count": 0,
+      "event_count": 3,
+      "other_count": 2,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "宇宙蓋登"
+      ],
+      "variants": []
+    },
+    {
+      "name": "梅杜希亞娜",
+      "unit_id": 18912,
+      "gender": "other",
+      "appearance_count": 5,
+      "main_count": 1,
+      "event_count": 2,
+      "other_count": 2,
+      "story_scopes": [
+        "main",
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "特務Q",
+      "unit_id": 51011,
+      "gender": "male",
+      "appearance_count": 5,
+      "main_count": 0,
+      "event_count": 5,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "特務V",
+      "unit_id": 51111,
+      "gender": "male",
+      "appearance_count": 5,
+      "main_count": 0,
+      "event_count": 5,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "管理員老婆婆",
+      "unit_id": 9111,
+      "gender": "female",
+      "appearance_count": 5,
+      "main_count": 4,
+      "event_count": 0,
+      "other_count": 1,
+      "story_scopes": [
+        "main",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "索菲",
+      "unit_id": 711,
+      "gender": "male",
+      "appearance_count": 5,
+      "main_count": 0,
+      "event_count": 5,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "荷姆荷姆",
+      "unit_id": 19311,
+      "gender": "other",
+      "appearance_count": 5,
+      "main_count": 0,
+      "event_count": 5,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "路克",
+      "unit_id": 711,
+      "gender": "male",
+      "appearance_count": 5,
+      "main_count": 0,
+      "event_count": 5,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "醜陋可愛",
+      "unit_id": 11011,
+      "gender": "other",
+      "appearance_count": 5,
+      "main_count": 0,
+      "event_count": 5,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "高登",
+      "unit_id": 2511,
+      "gender": "male",
+      "appearance_count": 5,
+      "main_count": 0,
+      "event_count": 5,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "鮫肌牙之丞",
+      "unit_id": 13711,
+      "gender": "male",
+      "appearance_count": 5,
+      "main_count": 0,
+      "event_count": 5,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "鯊魚魔物"
+      ],
+      "variants": []
+    },
+    {
+      "name": "嚮導老君",
+      "unit_id": 107211,
+      "gender": "male",
+      "appearance_count": 4,
+      "main_count": 1,
+      "event_count": 3,
+      "other_count": 0,
+      "story_scopes": [
+        "main",
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "小宇",
+      "unit_id": 1112,
+      "gender": "male",
+      "appearance_count": 4,
+      "main_count": 0,
+      "event_count": 4,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "小律",
+      "unit_id": 50912,
+      "gender": "male",
+      "appearance_count": 4,
+      "main_count": 0,
+      "event_count": 4,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [
+        "小嬰兒"
+      ],
+      "variants": []
+    },
+    {
+      "name": "牛郎",
+      "unit_id": 4711,
+      "gender": "male",
+      "appearance_count": 4,
+      "main_count": 0,
+      "event_count": 4,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "索爾龍",
+      "unit_id": 20411,
+      "gender": "other",
+      "appearance_count": 4,
+      "main_count": 1,
+      "event_count": 0,
+      "other_count": 3,
+      "story_scopes": [
+        "main",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "羅伊德",
+      "unit_id": 2511,
+      "gender": "male",
+      "appearance_count": 4,
+      "main_count": 0,
+      "event_count": 4,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "舔刀子氏",
+      "unit_id": 816,
+      "gender": "male",
+      "appearance_count": 4,
+      "main_count": 1,
+      "event_count": 3,
+      "other_count": 0,
+      "story_scopes": [
+        "main",
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "覺醒‧花心星",
+      "unit_id": 13511,
+      "gender": "male",
+      "appearance_count": 4,
+      "main_count": 0,
+      "event_count": 4,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "路易斯",
+      "unit_id": 1012,
+      "gender": "male",
+      "appearance_count": 4,
+      "main_count": 0,
+      "event_count": 4,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "輔佐",
+      "unit_id": 8711,
+      "gender": "male",
+      "appearance_count": 4,
+      "main_count": 0,
+      "event_count": 4,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "靈界之王",
+      "unit_id": 7711,
+      "gender": "male",
+      "appearance_count": 4,
+      "main_count": 0,
+      "event_count": 4,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "鬼族族長",
+      "unit_id": 7412,
+      "gender": "male",
+      "appearance_count": 4,
+      "main_count": 0,
+      "event_count": 3,
+      "other_count": 1,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "佐賀牛頭怪",
+      "unit_id": 19611,
+      "gender": "other",
+      "appearance_count": 3,
+      "main_count": 0,
+      "event_count": 0,
+      "other_count": 3,
+      "story_scopes": [
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "席茲爺爺",
+      "unit_id": 511,
+      "gender": "male",
+      "appearance_count": 3,
+      "main_count": 0,
+      "event_count": 0,
+      "other_count": 3,
+      "story_scopes": [
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "法莉達",
+      "unit_id": 1214,
+      "gender": "female",
+      "appearance_count": 3,
+      "main_count": 0,
+      "event_count": 3,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "甜心",
+      "unit_id": 1212,
+      "gender": "female",
+      "appearance_count": 3,
+      "main_count": 0,
+      "event_count": 0,
+      "other_count": 3,
+      "story_scopes": [
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "白鯨",
+      "unit_id": 18511,
+      "gender": "other",
+      "appearance_count": 3,
+      "main_count": 0,
+      "event_count": 3,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "蓋登",
+      "unit_id": 50511,
+      "gender": "male",
+      "appearance_count": 3,
+      "main_count": 0,
+      "event_count": 3,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "薩依德",
+      "unit_id": 1012,
+      "gender": "male",
+      "appearance_count": 3,
+      "main_count": 0,
+      "event_count": 3,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "達令",
+      "unit_id": 312,
+      "gender": "male",
+      "appearance_count": 3,
+      "main_count": 0,
+      "event_count": 0,
+      "other_count": 3,
+      "story_scopes": [
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "邪餅神鏡餅",
+      "unit_id": 10811,
+      "gender": "other",
+      "appearance_count": 3,
+      "main_count": 0,
+      "event_count": 3,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "金幣怪",
+      "unit_id": 191914,
+      "gender": "other",
+      "appearance_count": 3,
+      "main_count": 3,
+      "event_count": 0,
+      "other_count": 0,
+      "story_scopes": [
+        "main"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "鏡華的母親",
+      "unit_id": 53211,
+      "gender": "female",
+      "appearance_count": 3,
+      "main_count": 0,
+      "event_count": 2,
+      "other_count": 1,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "阿爾珈提",
+      "unit_id": 20511,
+      "gender": "other",
+      "appearance_count": 3,
+      "main_count": 0,
+      "event_count": 3,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "七冠融合體",
+      "unit_id": 19011,
+      "gender": "other",
+      "appearance_count": 2,
+      "main_count": 0,
+      "event_count": 2,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "佐藤",
+      "unit_id": 6511,
+      "gender": "female",
+      "appearance_count": 2,
+      "main_count": 0,
+      "event_count": 0,
+      "other_count": 2,
+      "story_scopes": [
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "傑克南瓜布丁",
+      "unit_id": 10512,
+      "gender": "other",
+      "appearance_count": 2,
+      "main_count": 0,
+      "event_count": 2,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "加爾格",
+      "unit_id": 10311,
+      "gender": "other",
+      "appearance_count": 2,
+      "main_count": 0,
+      "event_count": 2,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "啾",
+      "unit_id": 15915,
+      "gender": "male",
+      "appearance_count": 2,
+      "main_count": 0,
+      "event_count": 2,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "啾太",
+      "unit_id": 15913,
+      "gender": "male",
+      "appearance_count": 2,
+      "main_count": 0,
+      "event_count": 2,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "溫泉之神",
+      "unit_id": 17011,
+      "gender": "male",
+      "appearance_count": 2,
+      "main_count": 0,
+      "event_count": 2,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "花心星",
+      "unit_id": 13611,
+      "gender": "male",
+      "appearance_count": 2,
+      "main_count": 0,
+      "event_count": 2,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "阿爾杰什",
+      "unit_id": 17711,
+      "gender": "other",
+      "appearance_count": 2,
+      "main_count": 0,
+      "event_count": 2,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "阿爾瑪",
+      "unit_id": 10211,
+      "gender": "other",
+      "appearance_count": 2,
+      "main_count": 0,
+      "event_count": 2,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "雙冠龍雷克斯",
+      "unit_id": 50411,
+      "gender": "other",
+      "appearance_count": 2,
+      "main_count": 0,
+      "event_count": 1,
+      "other_count": 1,
+      "story_scopes": [
+        "event",
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "霧奇",
+      "unit_id": 10711,
+      "gender": "male",
+      "appearance_count": 2,
+      "main_count": 0,
+      "event_count": 2,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "卡巴邦",
+      "unit_id": 50111,
+      "gender": "other",
+      "appearance_count": 1,
+      "main_count": 1,
+      "event_count": 0,
+      "other_count": 0,
+      "story_scopes": [
+        "main"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "哈立德",
+      "unit_id": 17811,
+      "gender": "other",
+      "appearance_count": 1,
+      "main_count": 0,
+      "event_count": 1,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "啾也",
+      "unit_id": 15914,
+      "gender": "male",
+      "appearance_count": 1,
+      "main_count": 0,
+      "event_count": 1,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "奧拉姆",
+      "unit_id": 19111,
+      "gender": "other",
+      "appearance_count": 1,
+      "main_count": 0,
+      "event_count": 0,
+      "other_count": 1,
+      "story_scopes": [
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "岡薩雷茲",
+      "unit_id": 1711,
+      "gender": "other",
+      "appearance_count": 1,
+      "main_count": 0,
+      "event_count": 0,
+      "other_count": 1,
+      "story_scopes": [
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "愛德華‧迪德",
+      "unit_id": 8211,
+      "gender": "male",
+      "appearance_count": 1,
+      "main_count": 0,
+      "event_count": 1,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "玩具王二世",
+      "unit_id": 14913,
+      "gender": "other",
+      "appearance_count": 1,
+      "main_count": 0,
+      "event_count": 1,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "神荒尾",
+      "unit_id": 18411,
+      "gender": "other",
+      "appearance_count": 1,
+      "main_count": 0,
+      "event_count": 0,
+      "other_count": 1,
+      "story_scopes": [
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "艾爾格雅",
+      "unit_id": 192711,
+      "gender": "female",
+      "appearance_count": 1,
+      "main_count": 1,
+      "event_count": 0,
+      "other_count": 0,
+      "story_scopes": [
+        "main"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "草莓",
+      "unit_id": 6111,
+      "gender": "female",
+      "appearance_count": 1,
+      "main_count": 0,
+      "event_count": 1,
+      "other_count": 0,
+      "story_scopes": [
+        "event"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "蕾忒",
+      "unit_id": 192811,
+      "gender": "female",
+      "appearance_count": 1,
+      "main_count": 1,
+      "event_count": 0,
+      "other_count": 0,
+      "story_scopes": [
+        "main"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "薰子",
+      "unit_id": 231,
+      "gender": "female",
+      "appearance_count": 1,
+      "main_count": 0,
+      "event_count": 0,
+      "other_count": 1,
+      "story_scopes": [
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    },
+    {
+      "name": "馬克",
+      "unit_id": 1111,
+      "gender": "male",
+      "appearance_count": 1,
+      "main_count": 0,
+      "event_count": 0,
+      "other_count": 1,
+      "story_scopes": [
+        "other"
+      ],
+      "is_special": false,
+      "special_label": null,
+      "aliases": [],
+      "variants": []
+    }
+  ]
+}

@@ -1268,6 +1268,7 @@
         "allowed_base_ids": [
           1038,
           1123,
+          1184,
           1254,
           1388
         ],
@@ -1474,7 +1475,8 @@
         "entity": "克蘿茜",
         "allowed_base_ids": [
           1264,
-          1345
+          1345,
+          1406
         ],
         "allow_null_unit_id": true
       }
@@ -1484,7 +1486,8 @@
         "entity": "克蘿茜",
         "allowed_base_ids": [
           1264,
-          1345
+          1345,
+          1406
         ],
         "allow_null_unit_id": true
       }
@@ -1739,6 +1742,7 @@
           1028,
           1103,
           1145,
+          1218,
           1275,
           1335
         ],
@@ -1752,6 +1756,7 @@
           1028,
           1103,
           1145,
+          1218,
           1275,
           1335
         ],
@@ -1778,7 +1783,8 @@
         "entity": "花凜",
         "allowed_base_ids": [
           1185,
-          1257
+          1257,
+          1908
         ],
         "allow_null_unit_id": true
       }
@@ -2337,7 +2343,8 @@
         "entity": "克蘿茜",
         "allowed_base_ids": [
           1264,
-          1345
+          1345,
+          1406
         ],
         "allow_null_unit_id": true
       }
@@ -2347,7 +2354,8 @@
         "entity": "克蘿茜",
         "allowed_base_ids": [
           1264,
-          1345
+          1345,
+          1406
         ],
         "allow_null_unit_id": true
       }
@@ -2357,7 +2365,8 @@
         "entity": "克蘿茜",
         "allowed_base_ids": [
           1264,
-          1345
+          1345,
+          1406
         ],
         "allow_null_unit_id": true
       }
@@ -2368,6 +2377,7 @@
         "allowed_base_ids": [
           1036,
           1111,
+          1206,
           1227,
           1307,
           1390
@@ -2381,6 +2391,7 @@
         "allowed_base_ids": [
           1036,
           1111,
+          1206,
           1227,
           1307,
           1390
@@ -2578,6 +2589,7 @@
         "allowed_base_ids": [
           1012,
           1134,
+          1183,
           1284
         ],
         "allow_null_unit_id": true
@@ -2607,6 +2619,7 @@
         "allowed_base_ids": [
           1012,
           1134,
+          1183,
           1284
         ],
         "allow_null_unit_id": true
@@ -2636,6 +2649,7 @@
         "allowed_base_ids": [
           1012,
           1134,
+          1183,
           1284
         ],
         "allow_null_unit_id": true
@@ -2647,6 +2661,7 @@
         "allowed_base_ids": [
           1012,
           1134,
+          1183,
           1284
         ],
         "allow_null_unit_id": true
@@ -2674,7 +2689,8 @@
       {
         "entity": "志那都",
         "allowed_base_ids": [
-          1356
+          1356,
+          5000
         ],
         "allow_null_unit_id": true
       }
@@ -2683,7 +2699,8 @@
       {
         "entity": "志那都",
         "allowed_base_ids": [
-          1356
+          1356,
+          5000
         ],
         "allow_null_unit_id": true
       }
@@ -2715,7 +2732,8 @@
         "entity": "克蘿茜",
         "allowed_base_ids": [
           1264,
-          1345
+          1345,
+          1406
         ],
         "allow_null_unit_id": true
       }
@@ -2895,11 +2913,21 @@
         "allow_null_unit_id": true
       }
     ],
+    "反派千金": [
+      {
+        "entity": "鏡華",
+        "allowed_base_ids": [
+          1390
+        ],
+        "allow_null_unit_id": false
+      }
+    ],
     "古蕾婭": [
       {
         "entity": "古蕾婭",
         "allowed_base_ids": [
-          1094
+          1094,
+          1244
         ],
         "allow_null_unit_id": true
       }
@@ -2908,7 +2936,8 @@
       {
         "entity": "古蕾婭",
         "allowed_base_ids": [
-          1094
+          1094,
+          1244
         ],
         "allow_null_unit_id": true
       }
@@ -3154,7 +3183,8 @@
         "entity": "吉塔",
         "allowed_base_ids": [
           1057,
-          1255
+          1255,
+          1701
         ],
         "allow_null_unit_id": true
       }
@@ -3164,7 +3194,8 @@
         "entity": "吉塔",
         "allowed_base_ids": [
           1057,
-          1255
+          1255,
+          1701
         ],
         "allow_null_unit_id": true
       }
@@ -3174,9 +3205,19 @@
         "entity": "吉塔",
         "allowed_base_ids": [
           1057,
-          1255
+          1255,
+          1701
         ],
         "allow_null_unit_id": true
+      }
+    ],
+    "和服的女性": [
+      {
+        "entity": "雪野",
+        "allowed_base_ids": [
+          1358
+        ],
+        "allow_null_unit_id": false
       }
     ],
     "咲戀": [
@@ -3186,6 +3227,7 @@
           1028,
           1103,
           1145,
+          1218,
           1275,
           1335
         ],
@@ -3199,6 +3241,7 @@
           1028,
           1103,
           1145,
+          1218,
           1275,
           1335
         ],
@@ -3212,6 +3255,7 @@
           1028,
           1103,
           1145,
+          1218,
           1275,
           1335
         ],
@@ -3225,6 +3269,7 @@
           1028,
           1103,
           1145,
+          1218,
           1275,
           1335
         ],
@@ -3238,6 +3283,7 @@
           1028,
           1103,
           1145,
+          1218,
           1275,
           1335
         ],
@@ -3251,6 +3297,7 @@
           1028,
           1103,
           1145,
+          1218,
           1275,
           1335
         ],
@@ -3669,6 +3716,22 @@
         "allow_null_unit_id": true
       }
     ],
+    "姊姊": [
+      {
+        "entity": "似似花",
+        "allowed_base_ids": [
+          1070
+        ],
+        "allow_null_unit_id": false
+      },
+      {
+        "entity": "埃拉",
+        "allowed_base_ids": [
+          1355
+        ],
+        "allow_null_unit_id": false
+      }
+    ],
     "姬宮 真步": [
       {
         "entity": "真步",
@@ -3699,7 +3762,8 @@
       {
         "entity": "安",
         "allowed_base_ids": [
-          1092
+          1092,
+          1243
         ],
         "allow_null_unit_id": true
       }
@@ -3756,7 +3820,8 @@
       {
         "entity": "安",
         "allowed_base_ids": [
-          1092
+          1092,
+          1243
         ],
         "allow_null_unit_id": true
       }
@@ -3907,7 +3972,8 @@
         "entity": "涅婭",
         "allowed_base_ids": [
           1233,
-          1311
+          1311,
+          1916
         ],
         "allow_null_unit_id": true
       }
@@ -3942,6 +4008,16 @@
         "allow_null_unit_id": true
       }
     ],
+    "小孩彩羽": [
+      {
+        "entity": "彩羽",
+        "allowed_base_ids": [
+          1324,
+          1326
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
     "小霧": [
       {
         "entity": "霞",
@@ -3953,6 +4029,15 @@
           1374
         ],
         "allow_null_unit_id": true
+      }
+    ],
+    "少女": [
+      {
+        "entity": "雪菲",
+        "allowed_base_ids": [
+          1064
+        ],
+        "allow_null_unit_id": false
       }
     ],
     "尤絲蒂亞娜": [
@@ -4068,7 +4153,8 @@
       {
         "entity": "布武機",
         "allowed_base_ids": [
-          1302
+          1302,
+          1401
         ],
         "allow_null_unit_id": true
       }
@@ -4077,7 +4163,8 @@
       {
         "entity": "布武機",
         "allowed_base_ids": [
-          1302
+          1302,
+          1401
         ],
         "allow_null_unit_id": true
       }
@@ -4207,7 +4294,8 @@
       {
         "entity": "彩羽",
         "allowed_base_ids": [
-          1324
+          1324,
+          1326
         ],
         "allow_null_unit_id": true
       }
@@ -4216,7 +4304,8 @@
       {
         "entity": "彩羽",
         "allowed_base_ids": [
-          1324
+          1324,
+          1326
         ],
         "allow_null_unit_id": true
       }
@@ -4329,7 +4418,8 @@
       {
         "entity": "志那都",
         "allowed_base_ids": [
-          1356
+          1356,
+          5000
         ],
         "allow_null_unit_id": true
       }
@@ -4339,7 +4429,8 @@
         "entity": "涅婭",
         "allowed_base_ids": [
           1233,
-          1311
+          1311,
+          1916
         ],
         "allow_null_unit_id": true
       }
@@ -4359,7 +4450,8 @@
         "entity": "涅婭",
         "allowed_base_ids": [
           1233,
-          1311
+          1311,
+          1916
         ],
         "allow_null_unit_id": true
       }
@@ -4378,7 +4470,8 @@
       {
         "entity": "志那都",
         "allowed_base_ids": [
-          1356
+          1356,
+          5000
         ],
         "allow_null_unit_id": true
       }
@@ -4387,7 +4480,8 @@
       {
         "entity": "志那都",
         "allowed_base_ids": [
-          1356
+          1356,
+          5000
         ],
         "allow_null_unit_id": true
       }
@@ -4595,7 +4689,8 @@
         "entity": "愛梅斯",
         "allowed_base_ids": [
           1230,
-          1317
+          1317,
+          1900
         ],
         "allow_null_unit_id": true
       }
@@ -4605,7 +4700,8 @@
         "entity": "愛梅斯",
         "allowed_base_ids": [
           1230,
-          1317
+          1317,
+          1900
         ],
         "allow_null_unit_id": true
       }
@@ -4615,7 +4711,8 @@
         "entity": "愛梅斯",
         "allowed_base_ids": [
           1230,
-          1317
+          1317,
+          1900
         ],
         "allow_null_unit_id": true
       }
@@ -4656,6 +4753,38 @@
         "allowed_base_ids": [
           1099,
           1319
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "戀愛中的流夏": [
+      {
+        "entity": "流夏",
+        "allowed_base_ids": [
+          1056,
+          1131,
+          1208,
+          1276
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "成人苑": [
+      {
+        "entity": "苑",
+        "allowed_base_ids": [
+          1325,
+          1327
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "成人苑？": [
+      {
+        "entity": "苑",
+        "allowed_base_ids": [
+          1325,
+          1327
         ],
         "allow_null_unit_id": true
       }
@@ -4766,7 +4895,8 @@
       {
         "entity": "烏爾姆",
         "allowed_base_ids": [
-          1278
+          1278,
+          1405
         ],
         "allow_null_unit_id": true
       }
@@ -4924,6 +5054,7 @@
           1091,
           1171,
           1200,
+          1281,
           1365
         ],
         "allow_null_unit_id": true
@@ -4955,6 +5086,7 @@
           1091,
           1171,
           1200,
+          1281,
           1365
         ],
         "allow_null_unit_id": true
@@ -5379,6 +5511,7 @@
         "allowed_base_ids": [
           1012,
           1134,
+          1183,
           1284
         ],
         "allow_null_unit_id": true
@@ -5408,6 +5541,7 @@
         "allowed_base_ids": [
           1038,
           1123,
+          1184,
           1254,
           1388
         ],
@@ -5420,6 +5554,7 @@
         "allowed_base_ids": [
           1012,
           1134,
+          1183,
           1284
         ],
         "allow_null_unit_id": true
@@ -5449,6 +5584,7 @@
         "allowed_base_ids": [
           1038,
           1123,
+          1184,
           1254,
           1388
         ],
@@ -5483,6 +5619,7 @@
         "allowed_base_ids": [
           1038,
           1123,
+          1184,
           1254,
           1388
         ],
@@ -5495,6 +5632,7 @@
         "allowed_base_ids": [
           1038,
           1123,
+          1184,
           1254,
           1388
         ],
@@ -5507,6 +5645,7 @@
         "allowed_base_ids": [
           1038,
           1123,
+          1184,
           1254,
           1388
         ],
@@ -5519,6 +5658,7 @@
         "allowed_base_ids": [
           1038,
           1123,
+          1184,
           1254,
           1388
         ],
@@ -5531,6 +5671,7 @@
         "allowed_base_ids": [
           1038,
           1123,
+          1184,
           1254,
           1388
         ],
@@ -5795,13 +5936,38 @@
         "allow_null_unit_id": true
       }
     ],
+    "治療中的貪吃佩可": [
+      {
+        "entity": "貪吃佩可",
+        "allowed_base_ids": [
+          1058,
+          1075,
+          1118,
+          1210,
+          1279,
+          1383,
+          1804
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "活潑的小女孩": [
+      {
+        "entity": "彩羽",
+        "allowed_base_ids": [
+          1324
+        ],
+        "allow_null_unit_id": false
+      }
+    ],
     "流 魅空": [
       {
         "entity": "美空",
         "allowed_base_ids": [
           1182,
           1312,
-          1363
+          1363,
+          1920
         ],
         "allow_null_unit_id": true
       }
@@ -5872,7 +6038,8 @@
         "allowed_base_ids": [
           1182,
           1312,
-          1363
+          1363,
+          1920
         ],
         "allow_null_unit_id": true
       }
@@ -5912,7 +6079,8 @@
         "entity": "涅婭",
         "allowed_base_ids": [
           1233,
-          1311
+          1311,
+          1916
         ],
         "allow_null_unit_id": true
       }
@@ -5922,7 +6090,8 @@
         "entity": "涅婭",
         "allowed_base_ids": [
           1233,
-          1311
+          1311,
+          1916
         ],
         "allow_null_unit_id": true
       }
@@ -5932,7 +6101,8 @@
         "entity": "涅婭",
         "allowed_base_ids": [
           1233,
-          1311
+          1311,
+          1916
         ],
         "allow_null_unit_id": true
       }
@@ -5941,7 +6111,8 @@
       {
         "entity": "涅比亞",
         "allowed_base_ids": [
-          1186
+          1186,
+          1909
         ],
         "allow_null_unit_id": true
       }
@@ -5950,7 +6121,8 @@
       {
         "entity": "涅比亞",
         "allowed_base_ids": [
-          1186
+          1186,
+          1909
         ],
         "allow_null_unit_id": true
       }
@@ -5960,7 +6132,8 @@
         "entity": "涅婭",
         "allowed_base_ids": [
           1233,
-          1311
+          1311,
+          1916
         ],
         "allow_null_unit_id": true
       }
@@ -6058,7 +6231,8 @@
       {
         "entity": "烏爾姆",
         "allowed_base_ids": [
-          1278
+          1278,
+          1405
         ],
         "allow_null_unit_id": true
       }
@@ -6067,7 +6241,8 @@
       {
         "entity": "烏爾姆",
         "allowed_base_ids": [
-          1278
+          1278,
+          1405
         ],
         "allow_null_unit_id": true
       }
@@ -6179,7 +6354,8 @@
       {
         "entity": "班比",
         "allowed_base_ids": [
-          1223
+          1223,
+          1402
         ],
         "allow_null_unit_id": true
       }
@@ -6188,7 +6364,8 @@
       {
         "entity": "班比",
         "allowed_base_ids": [
-          1223
+          1223,
+          1402
         ],
         "allow_null_unit_id": true
       }
@@ -6286,6 +6463,7 @@
           1011,
           1129,
           1193,
+          1282,
           1379
         ],
         "allow_null_unit_id": true
@@ -6298,6 +6476,7 @@
           1011,
           1129,
           1193,
+          1282,
           1379
         ],
         "allow_null_unit_id": true
@@ -6310,6 +6489,7 @@
           1011,
           1129,
           1193,
+          1282,
           1379
         ],
         "allow_null_unit_id": true
@@ -6322,6 +6502,7 @@
           1011,
           1129,
           1193,
+          1282,
           1379
         ],
         "allow_null_unit_id": true
@@ -6334,6 +6515,7 @@
           1011,
           1129,
           1193,
+          1282,
           1379
         ],
         "allow_null_unit_id": true
@@ -6740,7 +6922,8 @@
       {
         "entity": "彩羽",
         "allowed_base_ids": [
-          1324
+          1324,
+          1326
         ],
         "allow_null_unit_id": true
       }
@@ -6749,7 +6932,8 @@
       {
         "entity": "苑",
         "allowed_base_ids": [
-          1325
+          1325,
+          1327
         ],
         "allow_null_unit_id": true
       }
@@ -6758,7 +6942,8 @@
       {
         "entity": "彩羽",
         "allowed_base_ids": [
-          1324
+          1324,
+          1326
         ],
         "allow_null_unit_id": true
       }
@@ -6767,7 +6952,8 @@
       {
         "entity": "苑",
         "allowed_base_ids": [
-          1325
+          1325,
+          1327
         ],
         "allow_null_unit_id": true
       }
@@ -6790,6 +6976,17 @@
           1055,
           1130,
           1215
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "研究派深月": [
+      {
+        "entity": "深月",
+        "allowed_base_ids": [
+          1051,
+          1175,
+          1247
         ],
         "allow_null_unit_id": true
       }
@@ -6981,12 +7178,22 @@
         "allow_null_unit_id": true
       }
     ],
+    "神秘女性": [
+      {
+        "entity": "花凜",
+        "allowed_base_ids": [
+          1185
+        ],
+        "allow_null_unit_id": false
+      }
+    ],
     "禊": [
       {
         "entity": "禊",
         "allowed_base_ids": [
           1004,
           1112,
+          1205,
           1228
         ],
         "allow_null_unit_id": true
@@ -7016,6 +7223,7 @@
         "allowed_base_ids": [
           1004,
           1112,
+          1205,
           1228
         ],
         "allow_null_unit_id": true
@@ -7045,6 +7253,7 @@
         "allowed_base_ids": [
           1004,
           1112,
+          1205,
           1228
         ],
         "allow_null_unit_id": true
@@ -7056,6 +7265,7 @@
         "allowed_base_ids": [
           1004,
           1112,
+          1205,
           1228
         ],
         "allow_null_unit_id": true
@@ -7077,6 +7287,7 @@
         "allowed_base_ids": [
           1032,
           1144,
+          1217,
           1267
         ],
         "allow_null_unit_id": true
@@ -7106,6 +7317,7 @@
         "allowed_base_ids": [
           1032,
           1144,
+          1217,
           1267
         ],
         "allow_null_unit_id": true
@@ -7135,6 +7347,7 @@
         "allowed_base_ids": [
           1032,
           1144,
+          1217,
           1267
         ],
         "allow_null_unit_id": true
@@ -7146,6 +7359,7 @@
         "allowed_base_ids": [
           1032,
           1144,
+          1217,
           1267
         ],
         "allow_null_unit_id": true
@@ -7157,6 +7371,7 @@
         "allowed_base_ids": [
           1004,
           1112,
+          1205,
           1228
         ],
         "allow_null_unit_id": true
@@ -7186,6 +7401,7 @@
         "allowed_base_ids": [
           1004,
           1112,
+          1205,
           1228
         ],
         "allow_null_unit_id": true
@@ -7422,6 +7638,17 @@
         "allow_null_unit_id": true
       }
     ],
+    "結婚派深月": [
+      {
+        "entity": "深月",
+        "allowed_base_ids": [
+          1051,
+          1175,
+          1247
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
     "綾瀨 優花梨": [
       {
         "entity": "優花梨",
@@ -7558,6 +7785,17 @@
           1348
         ],
         "allow_null_unit_id": true
+      }
+    ],
+    "羅塞塔通話中的優妮": [
+      {
+        "entity": "優妮",
+        "allowed_base_ids": [
+          1110,
+          1164,
+          1293
+        ],
+        "allow_null_unit_id": false
       }
     ],
     "美冬": [
@@ -7721,7 +7959,8 @@
         "allowed_base_ids": [
           1182,
           1312,
-          1363
+          1363,
+          1920
         ],
         "allow_null_unit_id": true
       }
@@ -7732,7 +7971,8 @@
         "allowed_base_ids": [
           1182,
           1312,
-          1363
+          1363,
+          1920
         ],
         "allow_null_unit_id": true
       }
@@ -7743,7 +7983,8 @@
         "allowed_base_ids": [
           1182,
           1312,
-          1363
+          1363,
+          1920
         ],
         "allow_null_unit_id": true
       }
@@ -7754,7 +7995,8 @@
         "allowed_base_ids": [
           1182,
           1312,
-          1363
+          1363,
+          1920
         ],
         "allow_null_unit_id": true
       }
@@ -7765,6 +8007,7 @@
         "allowed_base_ids": [
           1020,
           1113,
+          1204,
           1229
         ],
         "allow_null_unit_id": true
@@ -7776,6 +8019,7 @@
         "allowed_base_ids": [
           1020,
           1113,
+          1204,
           1229
         ],
         "allow_null_unit_id": true
@@ -7787,6 +8031,7 @@
         "allowed_base_ids": [
           1020,
           1113,
+          1204,
           1229
         ],
         "allow_null_unit_id": true
@@ -7798,6 +8043,7 @@
         "allowed_base_ids": [
           1020,
           1113,
+          1204,
           1229
         ],
         "allow_null_unit_id": true
@@ -7843,6 +8089,17 @@
           1015,
           1135,
           1246
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "耶兒": [
+      {
+        "entity": "萊拉耶爾",
+        "allowed_base_ids": [
+          1265,
+          1328,
+          1381
         ],
         "allow_null_unit_id": true
       }
@@ -7950,7 +8207,8 @@
         "entity": "花凜",
         "allowed_base_ids": [
           1185,
-          1257
+          1257,
+          1908
         ],
         "allow_null_unit_id": true
       }
@@ -7960,7 +8218,8 @@
         "entity": "花凜",
         "allowed_base_ids": [
           1185,
-          1257
+          1257,
+          1908
         ],
         "allow_null_unit_id": true
       }
@@ -7970,7 +8229,8 @@
         "entity": "花凜",
         "allowed_base_ids": [
           1185,
-          1257
+          1257,
+          1908
         ],
         "allow_null_unit_id": true
       }
@@ -8008,7 +8268,8 @@
       {
         "entity": "苑",
         "allowed_base_ids": [
-          1325
+          1325,
+          1327
         ],
         "allow_null_unit_id": true
       }
@@ -8017,7 +8278,8 @@
       {
         "entity": "苑",
         "allowed_base_ids": [
-          1325
+          1325,
+          1327
         ],
         "allow_null_unit_id": true
       }
@@ -8102,6 +8364,7 @@
         "allowed_base_ids": [
           1020,
           1113,
+          1204,
           1229
         ],
         "allow_null_unit_id": true
@@ -8113,6 +8376,7 @@
         "allowed_base_ids": [
           1020,
           1113,
+          1204,
           1229
         ],
         "allow_null_unit_id": true
@@ -8423,6 +8687,7 @@
       {
         "entity": "菲歐",
         "allowed_base_ids": [
+          527,
           1340
         ],
         "allow_null_unit_id": true
@@ -8432,7 +8697,19 @@
       {
         "entity": "菲歐",
         "allowed_base_ids": [
+          527,
           1340
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "菲歐？": [
+      {
+        "entity": "愛梅斯",
+        "allowed_base_ids": [
+          1230,
+          1317,
+          1900
         ],
         "allow_null_unit_id": true
       }
@@ -8511,12 +8788,22 @@
         "allow_null_unit_id": true
       }
     ],
+    "藍髮少女": [
+      {
+        "entity": "普蕾西亞",
+        "allowed_base_ids": [
+          1261
+        ],
+        "allow_null_unit_id": false
+      }
+    ],
     "藤堂 秋乃": [
       {
         "entity": "秋乃",
         "allowed_base_ids": [
           1032,
           1144,
+          1217,
           1267
         ],
         "allow_null_unit_id": true
@@ -8546,6 +8833,7 @@
         "allowed_base_ids": [
           1032,
           1144,
+          1217,
           1267
         ],
         "allow_null_unit_id": true
@@ -8646,6 +8934,15 @@
         "allow_null_unit_id": true
       }
     ],
+    "蠍獅少女": [
+      {
+        "entity": "華音",
+        "allowed_base_ids": [
+          1349
+        ],
+        "allow_null_unit_id": false
+      }
+    ],
     "蠻出井 倭": [
       {
         "entity": "倭",
@@ -8659,7 +8956,8 @@
       {
         "entity": "布武機",
         "allowed_base_ids": [
-          1302
+          1302,
+          1401
         ],
         "allow_null_unit_id": true
       }
@@ -8687,7 +8985,8 @@
       {
         "entity": "布武機",
         "allowed_base_ids": [
-          1302
+          1302,
+          1401
         ],
         "allow_null_unit_id": true
       }
@@ -8709,6 +9008,7 @@
           1011,
           1129,
           1193,
+          1282,
           1379
         ],
         "allow_null_unit_id": true
@@ -8721,6 +9021,7 @@
           1011,
           1129,
           1193,
+          1282,
           1379
         ],
         "allow_null_unit_id": true
@@ -8767,7 +9068,8 @@
         "entity": "花凜",
         "allowed_base_ids": [
           1185,
-          1257
+          1257,
+          1908
         ],
         "allow_null_unit_id": true
       }
@@ -8777,7 +9079,80 @@
         "entity": "花凜",
         "allowed_base_ids": [
           1185,
-          1257
+          1257,
+          1908
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "觀眾席的凱留": [
+      {
+        "entity": "凱留",
+        "allowed_base_ids": [
+          1060,
+          1078,
+          1120,
+          1211,
+          1272,
+          1391,
+          1806
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "觀眾席的可可蘿": [
+      {
+        "entity": "可可蘿",
+        "allowed_base_ids": [
+          1059,
+          1076,
+          1119,
+          1155,
+          1253,
+          1376,
+          1805
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "觀眾席的可璃亞": [
+      {
+        "entity": "可璃亞",
+        "allowed_base_ids": [
+          1260,
+          1353,
+          1396
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "觀眾席的普蕾西亞": [
+      {
+        "entity": "普蕾西亞",
+        "allowed_base_ids": [
+          1261,
+          1352,
+          1397
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "觀眾席的莉莉": [
+      {
+        "entity": "莉莉",
+        "allowed_base_ids": [
+          1258,
+          1316,
+          1395
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "觀眾席的鳳凰": [
+      {
+        "entity": "鳳凰",
+        "allowed_base_ids": [
+          1347
         ],
         "allow_null_unit_id": true
       }
@@ -8996,6 +9371,17 @@
         "allow_null_unit_id": true
       }
     ],
+    "通訊魔法的帆稀": [
+      {
+        "entity": "帆稀",
+        "allowed_base_ids": [
+          1067,
+          1245,
+          1318
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
     "逸見 艾麗卡": [
       {
         "entity": "艾麗卡",
@@ -9010,6 +9396,60 @@
         "entity": "艾麗卡",
         "allowed_base_ids": [
           1394
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "過去嘉夜": [
+      {
+        "entity": "嘉夜",
+        "allowed_base_ids": [
+          1065,
+          1166,
+          1249
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "過去的可璃亞": [
+      {
+        "entity": "可璃亞",
+        "allowed_base_ids": [
+          1260,
+          1353,
+          1396
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "過去的矛依未": [
+      {
+        "entity": "矛依未",
+        "allowed_base_ids": [
+          1061,
+          1147,
+          1250
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "過去的阿剌克涅": [
+      {
+        "entity": "阿剌克涅",
+        "allowed_base_ids": [
+          1360
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "過去祈梨": [
+      {
+        "entity": "祈梨",
+        "allowed_base_ids": [
+          1066,
+          1165,
+          1216,
+          1283
         ],
         "allow_null_unit_id": true
       }
@@ -9080,6 +9520,15 @@
           1192
         ],
         "allow_null_unit_id": true
+      }
+    ],
+    "金髮少女": [
+      {
+        "entity": "可璃亞",
+        "allowed_base_ids": [
+          1260
+        ],
+        "allow_null_unit_id": false
       }
     ],
     "鈴": [
@@ -9246,12 +9695,31 @@
         "allow_null_unit_id": true
       }
     ],
+    "銀髮少女": [
+      {
+        "entity": "梅杜莎",
+        "allowed_base_ids": [
+          1336
+        ],
+        "allow_null_unit_id": false
+      }
+    ],
+    "銅鑼台的拿娜": [
+      {
+        "entity": "拿娜",
+        "allowed_base_ids": [
+          1362
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
     "鏡華": [
       {
         "entity": "鏡華",
         "allowed_base_ids": [
           1036,
           1111,
+          1206,
           1227,
           1307,
           1390
@@ -9265,6 +9733,7 @@
         "allowed_base_ids": [
           1036,
           1111,
+          1206,
           1227,
           1307,
           1390
@@ -9278,6 +9747,7 @@
         "allowed_base_ids": [
           1036,
           1111,
+          1206,
           1227,
           1307,
           1390
@@ -9291,6 +9761,7 @@
         "allowed_base_ids": [
           1036,
           1111,
+          1206,
           1227,
           1307,
           1390
@@ -9304,6 +9775,7 @@
         "allowed_base_ids": [
           1036,
           1111,
+          1206,
           1227,
           1307,
           1390
@@ -9317,6 +9789,7 @@
         "allowed_base_ids": [
           1036,
           1111,
+          1206,
           1227,
           1307,
           1390
@@ -9388,6 +9861,31 @@
           1812
         ],
         "allow_null_unit_id": true
+      }
+    ],
+    "陌生的女性": [
+      {
+        "entity": "埃拉",
+        "allowed_base_ids": [
+          1355
+        ],
+        "allow_null_unit_id": false
+      },
+      {
+        "entity": "志那都",
+        "allowed_base_ids": [
+          1356
+        ],
+        "allow_null_unit_id": false
+      }
+    ],
+    "陰沉的少女": [
+      {
+        "entity": "碧卡拉",
+        "allowed_base_ids": [
+          1256
+        ],
+        "allow_null_unit_id": false
       }
     ],
     "雙葉 碧": [
@@ -9831,6 +10329,7 @@
           1091,
           1171,
           1200,
+          1281,
           1365
         ],
         "allow_null_unit_id": true
@@ -9862,6 +10361,7 @@
           1091,
           1171,
           1200,
+          1281,
           1365
         ],
         "allow_null_unit_id": true
@@ -9893,6 +10393,7 @@
           1091,
           1171,
           1200,
+          1281,
           1365
         ],
         "allow_null_unit_id": true
@@ -9906,6 +10407,7 @@
           1091,
           1171,
           1200,
+          1281,
           1365
         ],
         "allow_null_unit_id": true
@@ -9919,6 +10421,7 @@
           1091,
           1171,
           1200,
+          1281,
           1365
         ],
         "allow_null_unit_id": true
@@ -9932,6 +10435,7 @@
           1091,
           1171,
           1200,
+          1281,
           1365
         ],
         "allow_null_unit_id": true
@@ -10122,7 +10626,8 @@
         "allowed_base_ids": [
           1182,
           1312,
-          1363
+          1363,
+          1920
         ],
         "allow_null_unit_id": true
       }
@@ -10242,6 +10747,7 @@
           1091,
           1171,
           1200,
+          1281,
           1365
         ],
         "allow_null_unit_id": true
@@ -10269,6 +10775,15 @@
         "allow_null_unit_id": true
       }
     ],
+    "黑髮少女": [
+      {
+        "entity": "莉莉",
+        "allowed_base_ids": [
+          1258
+        ],
+        "allow_null_unit_id": false
+      }
+    ],
     "１號": [
       {
         "entity": "櫻",
@@ -10276,6 +10791,828 @@
           1361
         ],
         "allow_null_unit_id": false
+      }
+    ],
+    "Ｈ先生": [
+      {
+        "entity": "初音",
+        "allowed_base_ids": [
+          1134
+        ],
+        "allow_null_unit_id": false
+      }
+    ]
+  },
+  "npc_groups": {
+    "似龍": {
+      "canonical_npc_name": "似龍",
+      "base_ids": [
+        123
+      ]
+    },
+    "八斗神": {
+      "canonical_npc_name": "八斗神",
+      "base_ids": [
+        1936
+      ]
+    },
+    "冥": {
+      "canonical_npc_name": "冥",
+      "base_ids": [
+        530
+      ]
+    },
+    "好朋友X": {
+      "canonical_npc_name": "好朋友X",
+      "base_ids": [
+        132
+      ]
+    },
+    "宙": {
+      "canonical_npc_name": "宙",
+      "base_ids": [
+        1072
+      ]
+    },
+    "小律": {
+      "canonical_npc_name": "小律",
+      "base_ids": [
+        509
+      ]
+    },
+    "尾狗刀": {
+      "canonical_npc_name": "尾狗刀",
+      "base_ids": [
+        1062
+      ]
+    },
+    "彌勒": {
+      "canonical_npc_name": "彌勒",
+      "base_ids": [
+        1926
+      ]
+    },
+    "拉基拉基": {
+      "canonical_npc_name": "拉基拉基",
+      "base_ids": [
+        1073,
+        9999
+      ]
+    },
+    "拉格": {
+      "canonical_npc_name": "拉格",
+      "base_ids": [
+        502
+      ]
+    },
+    "改造蓋登": {
+      "canonical_npc_name": "改造蓋登",
+      "base_ids": [
+        505
+      ]
+    },
+    "昴": {
+      "canonical_npc_name": "昴",
+      "base_ids": [
+        27
+      ]
+    },
+    "格魯尼": {
+      "canonical_npc_name": "格魯尼",
+      "base_ids": [
+        1943
+      ]
+    },
+    "玩具王": {
+      "canonical_npc_name": "玩具王",
+      "base_ids": [
+        149
+      ]
+    },
+    "瑪莉絲黛菈": {
+      "canonical_npc_name": "瑪莉絲黛菈",
+      "base_ids": [
+        531
+      ]
+    },
+    "瘋狂喬": {
+      "canonical_npc_name": "瘋狂喬",
+      "base_ids": [
+        187
+      ]
+    },
+    "米亞": {
+      "canonical_npc_name": "米亞",
+      "base_ids": [
+        516
+      ]
+    },
+    "米奈娃": {
+      "canonical_npc_name": "米奈娃",
+      "base_ids": [
+        1911
+      ]
+    },
+    "芙蕾雅": {
+      "canonical_npc_name": "芙蕾雅",
+      "base_ids": [
+        1937
+      ]
+    },
+    "莫夫": {
+      "canonical_npc_name": "莫夫",
+      "base_ids": [
+        175
+      ]
+    },
+    "豪紳": {
+      "canonical_npc_name": "豪紳",
+      "base_ids": [
+        1914
+      ]
+    },
+    "賭場王": {
+      "canonical_npc_name": "賭場王",
+      "base_ids": [
+        160
+      ]
+    },
+    "贊恩": {
+      "canonical_npc_name": "贊恩",
+      "base_ids": [
+        1917
+      ]
+    },
+    "阿澤爾德": {
+      "canonical_npc_name": "阿澤爾德",
+      "base_ids": [
+        1919
+      ]
+    },
+    "雨吉": {
+      "canonical_npc_name": "雨吉",
+      "base_ids": [
+        116,
+        118
+      ]
+    },
+    "音寵之精靈": {
+      "canonical_npc_name": "音寵之精靈",
+      "base_ids": [
+        192
+      ]
+    },
+    "骷髏老爸": {
+      "canonical_npc_name": "骷髏老爸",
+      "base_ids": [
+        24,
+        1031
+      ]
+    },
+    "鮫肌牙之丞": {
+      "canonical_npc_name": "鮫肌牙之丞",
+      "base_ids": [
+        137
+      ]
+    }
+  },
+  "npc_rules": {
+    "似龍": [
+      {
+        "npc_group": "似龍",
+        "allowed_base_ids": [
+          123
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "似龍生物": [
+      {
+        "npc_group": "似龍",
+        "allowed_base_ids": [
+          123
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "佐拉": [
+      {
+        "npc_group": "宙",
+        "allowed_base_ids": [
+          1072
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "八斗神": [
+      {
+        "npc_group": "八斗神",
+        "allowed_base_ids": [
+          1936
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "八斗神局長": [
+      {
+        "npc_group": "八斗神",
+        "allowed_base_ids": [
+          1936
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "冥": [
+      {
+        "npc_group": "冥",
+        "allowed_base_ids": [
+          530
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "分身格魯尼": [
+      {
+        "npc_group": "格魯尼",
+        "allowed_base_ids": [
+          1943
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "前賭場王": [
+      {
+        "npc_group": "賭場王",
+        "allowed_base_ids": [
+          160
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "吉諾": [
+      {
+        "npc_group": "賭場王",
+        "allowed_base_ids": [
+          160
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "善": [
+      {
+        "npc_group": "贊恩",
+        "allowed_base_ids": [
+          1917
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "回憶的贊恩": [
+      {
+        "npc_group": "贊恩",
+        "allowed_base_ids": [
+          1917
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "好朋友X": [
+      {
+        "npc_group": "好朋友X",
+        "allowed_base_ids": [
+          132
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "好朋友Ｘ？": [
+      {
+        "npc_group": "好朋友X",
+        "allowed_base_ids": [
+          132
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "宇宙蓋登": [
+      {
+        "npc_group": "改造蓋登",
+        "allowed_base_ids": [
+          505
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "宙": [
+      {
+        "npc_group": "宙",
+        "allowed_base_ids": [
+          1072
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "小嬰兒": [
+      {
+        "npc_group": "小律",
+        "allowed_base_ids": [
+          509
+        ],
+        "allow_null_unit_id": false
+      }
+    ],
+    "小律": [
+      {
+        "npc_group": "小律",
+        "allowed_base_ids": [
+          509
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "尾狗刀": [
+      {
+        "npc_group": "尾狗刀",
+        "allowed_base_ids": [
+          1062
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "尾狗刀？": [
+      {
+        "npc_group": "尾狗刀",
+        "allowed_base_ids": [
+          1062
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "尾狗刀？？": [
+      {
+        "npc_group": "尾狗刀",
+        "allowed_base_ids": [
+          1062
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "尾狗刀？？？": [
+      {
+        "npc_group": "尾狗刀",
+        "allowed_base_ids": [
+          1062
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "彌勒": [
+      {
+        "npc_group": "彌勒",
+        "allowed_base_ids": [
+          1926
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "彌勒的聲音": [
+      {
+        "npc_group": "彌勒",
+        "allowed_base_ids": [
+          1926
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "扭曲的音寵之精靈": [
+      {
+        "npc_group": "音寵之精靈",
+        "allowed_base_ids": [
+          192
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "拉基尼卡東": [
+      {
+        "npc_group": "拉基拉基",
+        "allowed_base_ids": [
+          1073,
+          9999
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "拉基拉基": [
+      {
+        "npc_group": "拉基拉基",
+        "allowed_base_ids": [
+          1073,
+          9999
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "拉格": [
+      {
+        "npc_group": "拉格",
+        "allowed_base_ids": [
+          502
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "拉格？": [
+      {
+        "npc_group": "拉格",
+        "allowed_base_ids": [
+          502
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "改造蓋登": [
+      {
+        "npc_group": "改造蓋登",
+        "allowed_base_ids": [
+          505
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "昴": [
+      {
+        "npc_group": "昴",
+        "allowed_base_ids": [
+          27
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "格魯尼": [
+      {
+        "npc_group": "格魯尼",
+        "allowed_base_ids": [
+          1943
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "梅杜莎‧米亞": [
+      {
+        "npc_group": "米亞",
+        "allowed_base_ids": [
+          516
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "機械玩具王": [
+      {
+        "npc_group": "玩具王",
+        "allowed_base_ids": [
+          149
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "玩具王": [
+      {
+        "npc_group": "玩具王",
+        "allowed_base_ids": [
+          149
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "瑪莉絲黛菈": [
+      {
+        "npc_group": "瑪莉絲黛菈",
+        "allowed_base_ids": [
+          531
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "瘋狂喬": [
+      {
+        "npc_group": "瘋狂喬",
+        "allowed_base_ids": [
+          187
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "神秘女性": [
+      {
+        "npc_group": "冥",
+        "allowed_base_ids": [
+          530
+        ],
+        "allow_null_unit_id": false
+      }
+    ],
+    "米亞": [
+      {
+        "npc_group": "米亞",
+        "allowed_base_ids": [
+          516
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "米奈娃": [
+      {
+        "npc_group": "米奈娃",
+        "allowed_base_ids": [
+          1911
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "米奈娃β": [
+      {
+        "npc_group": "米奈娃",
+        "allowed_base_ids": [
+          1911
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "芙蕾雅": [
+      {
+        "npc_group": "芙蕾雅",
+        "allowed_base_ids": [
+          1937
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "莫夫": [
+      {
+        "npc_group": "莫夫",
+        "allowed_base_ids": [
+          175
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "菲絲雷斯": [
+      {
+        "npc_group": "芙蕾雅",
+        "allowed_base_ids": [
+          1937
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "詠斗": [
+      {
+        "npc_group": "尾狗刀",
+        "allowed_base_ids": [
+          1062
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "諾斯德拉達姆斯？": [
+      {
+        "npc_group": "昴",
+        "allowed_base_ids": [
+          27
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "豪紳": [
+      {
+        "npc_group": "豪紳",
+        "allowed_base_ids": [
+          1914
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "貴族議長": [
+      {
+        "npc_group": "豪紳",
+        "allowed_base_ids": [
+          1914
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "賭場王": [
+      {
+        "npc_group": "賭場王",
+        "allowed_base_ids": [
+          160
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "贊恩": [
+      {
+        "npc_group": "贊恩",
+        "allowed_base_ids": [
+          1917
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "贊恩？": [
+      {
+        "npc_group": "贊恩",
+        "allowed_base_ids": [
+          1917
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "超級‧衝刺喬": [
+      {
+        "npc_group": "瘋狂喬",
+        "allowed_base_ids": [
+          187
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "跳躍王": [
+      {
+        "npc_group": "拉基拉基",
+        "allowed_base_ids": [
+          1073,
+          9999
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "通訊魔法的芙蕾雅": [
+      {
+        "npc_group": "芙蕾雅",
+        "allowed_base_ids": [
+          1937
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "過去的米奈娃": [
+      {
+        "npc_group": "米奈娃",
+        "allowed_base_ids": [
+          1911
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "過去的詠斗": [
+      {
+        "npc_group": "尾狗刀",
+        "allowed_base_ids": [
+          1062
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "阿澤爾德": [
+      {
+        "npc_group": "阿澤爾德",
+        "allowed_base_ids": [
+          1919
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "阿澤爾德的幻影": [
+      {
+        "npc_group": "阿澤爾德",
+        "allowed_base_ids": [
+          1919
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "阿澤爾德？": [
+      {
+        "npc_group": "阿澤爾德",
+        "allowed_base_ids": [
+          1919
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "雨吉": [
+      {
+        "npc_group": "雨吉",
+        "allowed_base_ids": [
+          116,
+          118
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "雨神大人": [
+      {
+        "npc_group": "雨吉",
+        "allowed_base_ids": [
+          116,
+          118
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "露易絲瑪莉的祖母": [
+      {
+        "npc_group": "瑪莉絲黛菈",
+        "allowed_base_ids": [
+          531
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "音寵之精靈": [
+      {
+        "npc_group": "音寵之精靈",
+        "allowed_base_ids": [
+          192
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "館主": [
+      {
+        "npc_group": "莫夫",
+        "allowed_base_ids": [
+          175
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "骷髏老爸": [
+      {
+        "npc_group": "骷髏老爸",
+        "allowed_base_ids": [
+          24,
+          1031
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "骷髏老爸？": [
+      {
+        "npc_group": "骷髏老爸",
+        "allowed_base_ids": [
+          24,
+          1031
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "骷髏頭": [
+      {
+        "npc_group": "骷髏老爸",
+        "allowed_base_ids": [
+          24,
+          1031
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "鬼魂豪紳": [
+      {
+        "npc_group": "豪紳",
+        "allowed_base_ids": [
+          1914
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "鮫肌牙之丞": [
+      {
+        "npc_group": "鮫肌牙之丞",
+        "allowed_base_ids": [
+          137
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "鯊魚魔物": [
+      {
+        "npc_group": "鮫肌牙之丞",
+        "allowed_base_ids": [
+          137
+        ],
+        "allow_null_unit_id": true
+      }
+    ],
+    "黎‧普賽爾": [
+      {
+        "npc_group": "芙蕾雅",
+        "allowed_base_ids": [
+          1937
+        ],
+        "allow_null_unit_id": true
       }
     ]
   }
