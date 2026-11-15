@@ -33,6 +33,8 @@ const QuestMapModule = {
     npcFemaleOnly: false,
     npcCatalog: null,
     _npcCatalogPromise: null,
+    speakerFallbackAvatars: null,
+    _speakerFallbackAvatarsPromise: null,
     isRendering: false,
     isLoadingDialogue: false,
     currentView: 'menu',
@@ -1861,8 +1863,12 @@ const QuestMapModule = {
         if (this.activeTabType === 'speaker') {
             const npcCatalogPromise = (typeof this.ensureNpcCatalog === 'function') ? this.ensureNpcCatalog() : null;
             const rulesPromise = (typeof this.ensureSpeakerIdentityRules === 'function') ? this.ensureSpeakerIdentityRules() : null;
+            const fallbackPromise = (typeof this.ensureSpeakerFallbackAvatars === 'function') ? this.ensureSpeakerFallbackAvatars() : null;
+            const manifestPromise = (window.AvatarService && typeof window.AvatarService.ensureManifestLoaded === 'function')
+                ? window.AvatarService.ensureManifestLoaded()
+                : null;
             await this.ensureAppearanceMap();
-            const pending = [npcCatalogPromise, rulesPromise].filter(Boolean);
+            const pending = [npcCatalogPromise, rulesPromise, fallbackPromise, manifestPromise].filter(Boolean);
             if (pending.length > 0) {
                 await Promise.all(pending);
             }
@@ -3847,12 +3853,18 @@ const QuestMapModule = {
             ? this.getCatalogedAppearances(rawAppearances)
             : rawAppearances;
 
+        const fallbackAvatarId = (!explicitUnitId && !matchedEntity && this.speakerFallbackAvatars &&
+            !(this.speakerAvatars && (this.speakerAvatars[charaName] || this.speakerAvatars[realCharaName])))
+            ? (Number(this.speakerFallbackAvatars[charaName] || this.speakerFallbackAvatars[realCharaName]) || null)
+            : null;
+        const modalExplicitUnitId = explicitUnitId || fallbackAvatarId;
+
         window.CharaModalView.renderModal({
             realCharaName: charaName,
             displayTitle: charaName,
             canonicalGameName: matchedEntity ? realCharaName : null,
             officialRealName,
-            explicitUnitId,
+            explicitUnitId: modalExplicitUnitId,
             profile,
             appearances,
             speakerAvatars: this.speakerAvatars,
@@ -4079,6 +4091,32 @@ const QuestMapModule = {
         return this._npcCatalogPromise;
     },
 
+    async ensureSpeakerFallbackAvatars() {
+        if (this.speakerFallbackAvatars) return this.speakerFallbackAvatars;
+        if (this._speakerFallbackAvatarsPromise) return this._speakerFallbackAvatarsPromise;
+
+        this._speakerFallbackAvatarsPromise = (async () => {
+            try {
+                if (typeof fetch !== 'function') return null;
+                const resp = await fetch('data/speaker_fallback_avatars.json');
+                if (!resp || !resp.ok) return null;
+                const data = await resp.json();
+                if (data && typeof data === 'object' && !Array.isArray(data)) {
+                    this.speakerFallbackAvatars = data;
+                    return this.speakerFallbackAvatars;
+                }
+                return null;
+            } catch (e) {
+                console.warn('[QuestMapModule] 載入 speaker_fallback_avatars.json 失敗，略過泛用代表圖補齊:', e);
+                return null;
+            } finally {
+                this._speakerFallbackAvatarsPromise = null;
+            }
+        })();
+
+        return this._speakerFallbackAvatarsPromise;
+    },
+
     mergeNpcCatalogAvatars(catalog = this.npcCatalog) {
         if (!catalog || !Array.isArray(catalog.npcs)) return;
         const entityNames = (this.speakerIdentityRules && this.speakerIdentityRules.entities)
@@ -4194,6 +4232,7 @@ const QuestMapModule = {
             appearanceMap: catalogedAppearanceMap,
             catalogedNpcStatsMap,
             speakerAvatars: this.speakerAvatars,
+            speakerFallbackAvatars: this.speakerFallbackAvatars,
             searchQuery: this.speakerSearchQuery,
             sortOrder: this.speakerSortOrder,
             speakerSubTab: this.speakerSubTab,

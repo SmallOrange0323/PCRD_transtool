@@ -234,33 +234,53 @@ window.SpeakerView = {
      * @returns {string} 卡片 HTML 字串
      */
     renderSpeakerCard(name, options) {
-        const { appearanceMap, speakerAvatars, avatarService, resolveRealName, escapeHtml } = options || {};
+        const {
+            appearanceMap,
+            speakerAvatars,
+            speakerFallbackAvatars = null,
+            avatarService,
+            resolveRealName,
+            escapeHtml
+        } = options || {};
         const count = ((appearanceMap && appearanceMap[name]) || []).length;
         const realName = resolveRealName ? resolveRealName(name) : name;
         const safeName = escapeHtml ? escapeHtml(name) : name;
         const safeRealName = escapeHtml ? escapeHtml(realName) : realName;
-        const unitId = avatarService ? avatarService.getUnitId(realName, speakerAvatars) : null;
+        const primaryUnitId = avatarService ? avatarService.getUnitId(realName, speakerAvatars) : null;
+        const rawFallback = speakerFallbackAvatars
+            ? (speakerFallbackAvatars[name] || speakerFallbackAvatars[realName] || null)
+            : null;
+        const fallbackUnitId = (rawFallback && !primaryUnitId) ? Number(rawFallback) : null;
+        const unitId = primaryUnitId || (Number.isInteger(fallbackUnitId) && fallbackUnitId > 0 ? fallbackUnitId : null);
+        const cardSpeakerAvatars = (fallbackUnitId && !primaryUnitId)
+            ? Object.assign({}, speakerAvatars, { [realName]: fallbackUnitId })
+            : speakerAvatars;
 
         let avatarHtml = "";
         let resolvedExactNpcId = null;
         const numUnitId = Number(unitId);
-        if (Number.isInteger(numUnitId) && numUnitId > 0 && numUnitId < 100000 &&
+        if (Number.isInteger(numUnitId) && numUnitId > 0 &&
+            (numUnitId < 100000 || fallbackUnitId) &&
             avatarService && typeof avatarService.resolveExactDialoguePortrait === "function" &&
             typeof avatarService.getAvatarHtmlByUnitId === "function") {
             const exact = avatarService.resolveExactDialoguePortrait(numUnitId, { warnIfAbsent: false });
             if (exact && exact.status === 'active') {
-                avatarHtml = avatarService.getAvatarHtmlByUnitId(numUnitId, realName, speakerAvatars);
+                avatarHtml = avatarService.getAvatarHtmlByUnitId(numUnitId, realName, cardSpeakerAvatars);
                 resolvedExactNpcId = numUnitId;
             }
         }
         if (!avatarHtml) {
             if (avatarService && typeof avatarService.getAvatarHtml === "function") {
-                avatarHtml = avatarService.getAvatarHtml(realName, speakerAvatars);
+                avatarHtml = avatarService.getAvatarHtml(realName, cardSpeakerAvatars);
+                if (fallbackUnitId && !avatarHtml.includes('npc-avatar-placeholder')) {
+                    resolvedExactNpcId = fallbackUnitId;
+                }
             } else if (unitId && avatarService && typeof avatarService.getUrlCandidates === "function") {
                 const candidates = avatarService.getUrlCandidates(unitId);
                 const firstSrc = candidates.find(c => c.endsWith('.png')) || candidates[0];
                 const fallbackSrc = candidates.find(c => c !== firstSrc) || firstSrc;
                 avatarHtml = `<img src="${firstSrc}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src='${fallbackSrc}';">`;
+                if (fallbackUnitId) resolvedExactNpcId = fallbackUnitId;
             } else {
                 avatarHtml = `<div class="npc-avatar-placeholder" style="font-size: 1.2rem; font-weight: bold; color: var(--primary-dark);">${safeRealName.substring(0, 2)}</div>`;
             }
