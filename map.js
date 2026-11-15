@@ -27,6 +27,7 @@ const QuestMapModule = {
     speakerSearchQuery: "",
     speakerSortOrder: "appearances-desc",
     speakerSubTab: 'all',
+    speakerRoleFilter: 'playable',
     hideGenericNpc: true,
     npcScopeFilter: 'all',
     npcFemaleOnly: false,
@@ -3834,7 +3835,7 @@ const QuestMapModule = {
         if (requestId !== this._charaModalRequestId) return;
 
         const npcGroupName = matchedNpcGroup ? matchedNpcGroup.canonical_npc_name : null;
-        const appearances = disableAppearanceLink
+        const rawAppearances = disableAppearanceLink
             ? []
             : (this.appearanceMap && (
                 (matchedEntity && this.appearanceMap[realCharaName]) ||
@@ -3842,6 +3843,9 @@ const QuestMapModule = {
                 this.appearanceMap[charaName] ||
                 (!isUnregisteredNpc ? this.appearanceMap[realCharaName] : null)
             )) || [];
+        const appearances = typeof this.getCatalogedAppearances === 'function'
+            ? this.getCatalogedAppearances(rawAppearances)
+            : rawAppearances;
 
         window.CharaModalView.renderModal({
             realCharaName: charaName,
@@ -3922,9 +3926,12 @@ const QuestMapModule = {
             : (identity && identity.npcGroup
                 ? identity.npcGroup.canonical_npc_name
                 : this.getCharaRealName(realCharaName));
-        const appearances = disableAppearanceLink
+        const rawRetryAppearances = disableAppearanceLink
             ? []
             : ((this.appearanceMap && (this.appearanceMap[canonicalName] || this.appearanceMap[realCharaName])) || []);
+        const appearances = typeof this.getCatalogedAppearances === 'function'
+            ? this.getCatalogedAppearances(rawRetryAppearances)
+            : rawRetryAppearances;
         
         // 立即以載入中狀態刷新視圖
         if (window.CharaModalView && typeof window.CharaModalView.updateAppearancesSection === 'function') {
@@ -4103,13 +4110,94 @@ const QuestMapModule = {
         }
     },
 
+    getCatalogedAppearances(storyIds) {
+        if (!Array.isArray(storyIds) || storyIds.length === 0) return [];
+        const hasCatalogLoaded = (Array.isArray(this.stories) && this.stories.length > 0) ||
+            (Array.isArray(this.eventStories) && this.eventStories.length > 0);
+        if (!hasCatalogLoaded) return storyIds;
+        return storyIds.filter(id => Boolean(this.getStoryById(Number(id))));
+    },
+
+    getCatalogedAppearanceMap() {
+        const raw = this.appearanceMap;
+        if (!raw || typeof raw !== 'object') return raw;
+        const hasCatalogLoaded = (Array.isArray(this.stories) && this.stories.length > 0) ||
+            (Array.isArray(this.eventStories) && this.eventStories.length > 0);
+        if (!hasCatalogLoaded) return raw;
+
+        const cacheKey = `${this.stories ? this.stories.length : 0}:${this.eventStories ? this.eventStories.length : 0}`;
+        if (this._catalogedAppearanceMapRaw === raw &&
+            this._catalogedAppearanceMapKey === cacheKey &&
+            this._catalogedAppearanceMapCache) {
+            return this._catalogedAppearanceMapCache;
+        }
+
+        const filteredMap = {};
+        for (const [name, list] of Object.entries(raw)) {
+            if (!Array.isArray(list)) continue;
+            const validIds = list.filter(id => Boolean(this.getStoryById(Number(id))));
+            if (validIds.length > 0) {
+                filteredMap[name] = validIds;
+            }
+        }
+        this._catalogedAppearanceMapRaw = raw;
+        this._catalogedAppearanceMapKey = cacheKey;
+        this._catalogedAppearanceMapCache = filteredMap;
+        return filteredMap;
+    },
+
+    getCatalogedNpcStatsMap() {
+        const hasCatalogLoaded = (Array.isArray(this.stories) && this.stories.length > 0) ||
+            (Array.isArray(this.eventStories) && this.eventStories.length > 0);
+        if (!hasCatalogLoaded || !this.npcCatalog || !Array.isArray(this.npcCatalog.npcs)) {
+            return null;
+        }
+        const catalogedMap = this.getCatalogedAppearanceMap();
+        if (!catalogedMap) return null;
+
+        const cacheKey = `${this._catalogedAppearanceMapKey}:${this.npcCatalog.npcs.length}`;
+        if (this._catalogedNpcStatsCacheKey === cacheKey &&
+            this._catalogedNpcStatsRaw === catalogedMap &&
+            this._catalogedNpcStatsCache) {
+            return this._catalogedNpcStatsCache;
+        }
+
+        const statsMap = {};
+        for (const npc of this.npcCatalog.npcs) {
+            const name = npc && npc.name;
+            if (!name) continue;
+            const ids = Array.isArray(catalogedMap[name]) ? catalogedMap[name] : [];
+            let main = 0;
+            let event = 0;
+            for (const sid of ids) {
+                const story = this.getStoryById(Number(sid));
+                if (!story) continue;
+                if (story.isEvent) {
+                    event++;
+                } else if (story.type === 'main' || (!story.type && story.part >= 1)) {
+                    main++;
+                }
+            }
+            statsMap[name] = { all: ids.length, main, event };
+        }
+
+        this._catalogedNpcStatsCacheKey = cacheKey;
+        this._catalogedNpcStatsRaw = catalogedMap;
+        this._catalogedNpcStatsCache = statsMap;
+        return statsMap;
+    },
+
     _getSpeakerViewOptions() {
+        const catalogedAppearanceMap = this.getCatalogedAppearanceMap();
+        const catalogedNpcStatsMap = this.getCatalogedNpcStatsMap();
         return {
-            appearanceMap: this.appearanceMap,
+            appearanceMap: catalogedAppearanceMap,
+            catalogedNpcStatsMap,
             speakerAvatars: this.speakerAvatars,
             searchQuery: this.speakerSearchQuery,
             sortOrder: this.speakerSortOrder,
             speakerSubTab: this.speakerSubTab,
+            speakerRoleFilter: this.speakerRoleFilter || 'playable',
             hideGenericNpc: this.hideGenericNpc !== false,
             npcScopeFilter: this.npcScopeFilter,
             npcFemaleOnly: this.npcFemaleOnly,
@@ -4143,8 +4231,16 @@ const QuestMapModule = {
         this._updateNpcCatalogView();
     },
 
+    handleSpeakerRoleFilter(role) {
+        const validRoles = ['playable', 'main_npc', 'generic_npc', 'all'];
+        this.speakerRoleFilter = validRoles.includes(role) ? role : 'playable';
+        this.hideGenericNpc = (this.speakerRoleFilter !== 'all');
+        this._updateSpeakerGrid();
+    },
+
     handleHideGenericNpcToggle() {
         this.hideGenericNpc = !(this.hideGenericNpc !== false);
+        this.speakerRoleFilter = this.hideGenericNpc ? 'playable' : 'all';
         this._updateSpeakerGrid();
     },
 
@@ -4204,18 +4300,18 @@ const QuestMapModule = {
             return;
         }
         const options = this._getSpeakerViewOptions();
-        const hideBtn = document.getElementById('speaker-hide-generic-btn');
-        if (hideBtn) {
-            const isHidden = Boolean(options.hideGenericNpc);
-            if (hideBtn.classList) {
-                hideBtn.classList.toggle('active', isHidden);
-            }
-            hideBtn.textContent = isHidden ? '✨ 已隱藏泛用 NPC' : '👥 顯示全部（含泛用 NPC）';
+        if (typeof document.querySelectorAll === 'function') {
+            document.querySelectorAll('[data-speaker-role]').forEach(btn => {
+                const roleVal = btn.getAttribute ? btn.getAttribute('data-speaker-role') : (btn.dataset && btn.dataset.speakerRole);
+                if (btn.classList) {
+                    btn.classList.toggle('active', roleVal === options.speakerRoleFilter);
+                }
+            });
         }
         const summaryEl = document.getElementById('speaker-generic-summary');
-        if (summaryEl && typeof window.SpeakerView.getGenericFilterStats === 'function') {
-            const stats = window.SpeakerView.getGenericFilterStats(options);
-            summaryEl.textContent = window.SpeakerView.formatGenericFilterSummary(stats);
+        if (summaryEl && typeof window.SpeakerView.getSpeakerRoleStats === 'function' && typeof window.SpeakerView.formatSpeakerRoleSummary === 'function') {
+            const stats = window.SpeakerView.getSpeakerRoleStats(options);
+            summaryEl.textContent = window.SpeakerView.formatSpeakerRoleSummary(stats);
         }
         gridEl.innerHTML = window.SpeakerView.renderSpeakerGridHtml(options);
     }

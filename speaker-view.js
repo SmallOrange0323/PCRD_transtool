@@ -7,37 +7,123 @@ console.log("speaker-view.js loaded");
 
 window.SpeakerView = {
     /**
-     * 建立已收錄主要角色與具名 NPC 的名稱白名單集合
+     * 依據身分規則與具名 NPC 圖鑑建立互斥的角色分類集合
      * @param {Object} [options] - { npcCatalog, speakerIdentityRules }
-     * @returns {Set<string>|null} 若缺乏登錄來源則回傳 null
+     * @returns {{ hasRules: boolean, playableSet: Set<string>, mainNpcSet: Set<string>, namedSet: Set<string>|null }}
      */
-    _buildNamedSpeakerSet(options) {
+    _buildSpeakerRoleSets(options) {
         const { npcCatalog, speakerIdentityRules } = options || {};
         const hasEntities = Boolean(speakerIdentityRules && speakerIdentityRules.entities && typeof speakerIdentityRules.entities === 'object');
         const hasSpeakerRules = Boolean(speakerIdentityRules && speakerIdentityRules.speaker_rules && typeof speakerIdentityRules.speaker_rules === 'object');
         const hasCatalog = Boolean(npcCatalog && Array.isArray(npcCatalog.npcs));
-        if (!hasEntities && !hasSpeakerRules && !hasCatalog) return null;
+        if (!hasEntities && !hasSpeakerRules && !hasCatalog) {
+            return {
+                hasRules: false,
+                playableSet: new Set(),
+                mainNpcSet: new Set(),
+                namedSet: null
+            };
+        }
 
-        const allowed = new Set();
+        const playableSet = new Set();
         if (hasEntities) {
             Object.keys(speakerIdentityRules.entities).forEach(name => {
-                if (name) allowed.add(name);
+                if (name) playableSet.add(name);
             });
         }
         if (hasSpeakerRules) {
             Object.entries(speakerIdentityRules.speaker_rules).forEach(([speakerName, ruleList]) => {
                 if (!speakerName || !Array.isArray(ruleList)) return;
                 if (ruleList.some(rule => rule && rule.target_type === 'entity')) {
-                    allowed.add(speakerName);
+                    playableSet.add(speakerName);
                 }
             });
         }
+
+        const mainNpcSet = new Set();
         if (hasCatalog) {
             npcCatalog.npcs.forEach(npc => {
-                if (npc && npc.name) allowed.add(npc.name);
+                if (npc && npc.name && !playableSet.has(npc.name)) {
+                    mainNpcSet.add(npc.name);
+                }
             });
         }
-        return allowed;
+
+        const namedSet = new Set([...playableSet, ...mainNpcSet]);
+        return {
+            hasRules: true,
+            playableSet,
+            mainNpcSet,
+            namedSet
+        };
+    },
+
+    /**
+     * 建立已收錄主要角色與具名 NPC 的名稱白名單集合
+     * @param {Object} [options] - { npcCatalog, speakerIdentityRules }
+     * @returns {Set<string>|null} 若缺乏登錄來源則回傳 null
+     */
+    _buildNamedSpeakerSet(options) {
+        return this._buildSpeakerRoleSets(options).namedSet;
+    },
+
+    /**
+     * 取得「全部登場角色」分頁中 4 種角色狀態篩選器的計數摘要
+     * @param {Object} options - { appearanceMap, speakerRoleFilter, hideGenericNpc, npcCatalog, speakerIdentityRules, searchQuery }
+     * @returns {Object}
+     */
+    getSpeakerRoleStats(options) {
+        const {
+            appearanceMap,
+            searchQuery,
+            speakerRoleFilter = 'playable'
+        } = options || {};
+        const validRoles = ['playable', 'main_npc', 'generic_npc', 'all'];
+        const activeRole = validRoles.includes(speakerRoleFilter) ? speakerRoleFilter : 'playable';
+        const allNames = Object.keys(appearanceMap || {});
+        const baseReal = this.filterSpeakers(allNames, '');
+        const { hasRules, playableSet, mainNpcSet } = this._buildSpeakerRoleSets(options);
+
+        if (!hasRules) {
+            const visible = this.filterSpeakers(allNames, searchQuery);
+            return {
+                canFilter: false,
+                speakerRoleFilter: 'all',
+                totalRealCount: baseReal.length,
+                playableCount: baseReal.length,
+                mainNpcCount: 0,
+                genericNpcCount: 0,
+                visibleCount: visible.length
+            };
+        }
+
+        let playableCount = 0;
+        let mainNpcCount = 0;
+        let genericNpcCount = 0;
+        baseReal.forEach(name => {
+            if (playableSet.has(name)) {
+                playableCount += 1;
+            } else if (mainNpcSet.has(name)) {
+                mainNpcCount += 1;
+            } else {
+                genericNpcCount += 1;
+            }
+        });
+
+        const visible = this.filterSpeakers(allNames, searchQuery, {
+            ...(options || {}),
+            speakerRoleFilter: activeRole
+        });
+
+        return {
+            canFilter: true,
+            speakerRoleFilter: activeRole,
+            totalRealCount: baseReal.length,
+            playableCount,
+            mainNpcCount,
+            genericNpcCount,
+            visibleCount: visible.length
+        };
     },
 
     /**
@@ -75,10 +161,10 @@ window.SpeakerView = {
     },
 
     /**
-     * 過濾登場角色名稱清單（排除非實體角色如旁白、系統、店員等，並可選擇隱藏泛用 NPC 及套用搜尋關鍵字）
+     * 過濾登場角色名稱清單（排除非實體角色如旁白、系統、店員等，並可依角色分類或搜尋關鍵字篩選）
      * @param {string[]} speakers - 登場角色名稱陣列
      * @param {string} searchQuery - 搜尋關鍵字
-     * @param {Object} [filterOptions] - 選填過濾選項 { hideGenericNpc, npcCatalog, speakerIdentityRules }
+     * @param {Object} [filterOptions] - 選填過濾選項 { speakerRoleFilter, hideGenericNpc, npcCatalog, speakerIdentityRules }
      * @returns {string[]} 過濾後的角色名稱陣列
      */
     filterSpeakers(speakers, searchQuery, filterOptions = null) {
@@ -87,7 +173,24 @@ window.SpeakerView = {
             const clean = (name || "").trim();
             return !nonRealSpeakers.some(nonReal => clean.includes(nonReal));
         });
-        if (filterOptions && filterOptions.hideGenericNpc === true) {
+        const validRoles = ['playable', 'main_npc', 'generic_npc', 'all'];
+        const requestedRole = filterOptions && validRoles.includes(filterOptions.speakerRoleFilter)
+            ? filterOptions.speakerRoleFilter
+            : null;
+        if (requestedRole) {
+            if (requestedRole !== 'all') {
+                const { hasRules, playableSet, mainNpcSet } = this._buildSpeakerRoleSets(filterOptions);
+                if (hasRules) {
+                    if (requestedRole === 'playable') {
+                        list = list.filter(name => playableSet.has(name));
+                    } else if (requestedRole === 'main_npc') {
+                        list = list.filter(name => mainNpcSet.has(name));
+                    } else if (requestedRole === 'generic_npc') {
+                        list = list.filter(name => !playableSet.has(name) && !mainNpcSet.has(name));
+                    }
+                }
+            }
+        } else if (filterOptions && filterOptions.hideGenericNpc === true) {
             const namedSet = this._buildNamedSpeakerSet(filterOptions);
             if (namedSet) {
                 list = list.filter(name => namedSet.has(name));
@@ -238,8 +341,14 @@ window.SpeakerView = {
      * @param {string} scope - 'all' | 'main' | 'event'
      * @returns {number} 對應話數
      */
-    getNpcScopeCount(npc, scope = 'all') {
+    getNpcScopeCount(npc, scope = 'all', catalogedNpcStatsMap = null) {
         if (!npc) return 0;
+        const stats = (catalogedNpcStatsMap && npc.name && catalogedNpcStatsMap[npc.name]) || null;
+        if (stats) {
+            if (scope === 'main') return Number(stats.main) || 0;
+            if (scope === 'event') return Number(stats.event) || 0;
+            return Number(stats.all) || 0;
+        }
         if (scope === 'main') return Number(npc.main_count) || 0;
         if (scope === 'event') return Number(npc.event_count) || 0;
         return Number(npc.appearance_count) || 0;
@@ -248,21 +357,34 @@ window.SpeakerView = {
     /**
      * 過濾 NPC 圖鑑項目（支援分類、女角限定與名稱/別名關鍵字搜尋）
      * @param {Array<Object>} npcs - NPC 項目陣列
-     * @param {Object} options - 過濾條件 { npcScopeFilter, npcFemaleOnly, searchQuery }
+     * @param {Object} options - 過濾條件 { npcScopeFilter, npcFemaleOnly, searchQuery, catalogedNpcStatsMap }
      * @returns {Array<Object>} 過濾後的 NPC 陣列
      */
     filterNpcCatalog(npcs, options = {}) {
-        const { npcScopeFilter = 'all', npcFemaleOnly = false, searchQuery = '' } = options || {};
+        const {
+            npcScopeFilter = 'all',
+            npcFemaleOnly = false,
+            searchQuery = '',
+            catalogedNpcStatsMap = null
+        } = options || {};
         const query = this._normalizeSearchText(searchQuery);
 
         return (npcs || []).filter(npc => {
             if (!npc || typeof npc !== 'object') return false;
 
+            if (catalogedNpcStatsMap && this.getNpcScopeCount(npc, 'all', catalogedNpcStatsMap) <= 0) {
+                return false;
+            }
+
             if (npcScopeFilter === 'main') {
-                const inMain = (Array.isArray(npc.story_scopes) && npc.story_scopes.includes('main')) || (Number(npc.main_count) > 0);
+                const inMain = catalogedNpcStatsMap
+                    ? this.getNpcScopeCount(npc, 'main', catalogedNpcStatsMap) > 0
+                    : ((Array.isArray(npc.story_scopes) && npc.story_scopes.includes('main')) || (Number(npc.main_count) > 0));
                 if (!inMain) return false;
             } else if (npcScopeFilter === 'event') {
-                const inEvent = (Array.isArray(npc.story_scopes) && npc.story_scopes.includes('event')) || (Number(npc.event_count) > 0);
+                const inEvent = catalogedNpcStatsMap
+                    ? this.getNpcScopeCount(npc, 'event', catalogedNpcStatsMap) > 0
+                    : ((Array.isArray(npc.story_scopes) && npc.story_scopes.includes('event')) || (Number(npc.event_count) > 0));
                 if (!inEvent) return false;
             }
 
@@ -289,15 +411,16 @@ window.SpeakerView = {
      * @param {Array<Object>} npcs - 待排序 NPC 陣列
      * @param {string} sortOrder - 'appearances-desc' | 'appearances-asc' | 'name-asc'
      * @param {string} scope - 'all' | 'main' | 'event'
+     * @param {Object|null} catalogedNpcStatsMap - 已編目統計表
      * @returns {Array<Object>} 排序後的 NPC 陣列
      */
-    sortNpcCatalog(npcs, sortOrder = 'appearances-desc', scope = 'all') {
+    sortNpcCatalog(npcs, sortOrder = 'appearances-desc', scope = 'all', catalogedNpcStatsMap = null) {
         const sorted = [...(npcs || [])];
         sorted.sort((a, b) => {
             const nameA = String(a && a.name || '');
             const nameB = String(b && b.name || '');
-            const countA = this.getNpcScopeCount(a, scope);
-            const countB = this.getNpcScopeCount(b, scope);
+            const countA = this.getNpcScopeCount(a, scope, catalogedNpcStatsMap);
+            const countB = this.getNpcScopeCount(b, scope, catalogedNpcStatsMap);
             if (sortOrder === 'appearances-desc') {
                 return countB - countA || nameA.localeCompare(nameB, 'zh-Hant-TW');
             }
@@ -338,12 +461,12 @@ window.SpeakerView = {
      * 渲染一般具名 NPC 圖鑑單張卡片
      */
     renderNpcCard(npc, options = {}) {
-        const { npcScopeFilter = 'all', avatarService, escapeHtml } = options || {};
+        const { npcScopeFilter = 'all', catalogedNpcStatsMap = null, avatarService, escapeHtml } = options || {};
         const esc = escapeHtml ? escapeHtml : (s) => String(s || '');
         const safeName = esc(npc.name);
         const jsNameArg = JSON.stringify(npc.name).replace(/"/g, '&quot;');
         const uid = Number(npc.unit_id);
-        const count = this.getNpcScopeCount(npc, npcScopeFilter);
+        const count = this.getNpcScopeCount(npc, npcScopeFilter, catalogedNpcStatsMap);
         const scopeLabel = npcScopeFilter === 'main' ? '主線' : (npcScopeFilter === 'event' ? '活動' : '登場');
         const avatarHtml = this._renderNpcAvatarHtml(uid, npc.name, avatarService, escapeHtml);
         const genderTag = npc.gender === 'female' ? '<span class="npc-gender-badge" title="女性角色">♀</span>' : '';
@@ -366,7 +489,7 @@ window.SpeakerView = {
      * 渲染 NPC 圖鑑內容區域（統一於具名 NPC 網格內呈現）
      */
     renderNpcCatalogContentHtml(options = {}) {
-        const { npcCatalog, npcScopeFilter = 'all', sortOrder = 'appearances-desc' } = options || {};
+        const { npcCatalog, npcScopeFilter = 'all', sortOrder = 'appearances-desc', catalogedNpcStatsMap = null } = options || {};
         if (!npcCatalog || !Array.isArray(npcCatalog.npcs)) {
             return `<div class="npc-catalog-empty">目前暫無法載入 NPC 頭像圖鑑資料。</div>`;
         }
@@ -376,7 +499,7 @@ window.SpeakerView = {
             return `<div class="npc-catalog-empty">查無符合條件的 NPC 角色 🔍</div>`;
         }
 
-        const sortedNpcs = this.sortNpcCatalog(filtered, sortOrder, npcScopeFilter);
+        const sortedNpcs = this.sortNpcCatalog(filtered, sortOrder, npcScopeFilter, catalogedNpcStatsMap);
         return `<div class="npc-catalog-grid">${sortedNpcs.map(npc => this.renderNpcCard(npc, options)).join('')}</div>`;
     },
 
@@ -394,6 +517,23 @@ window.SpeakerView = {
     },
 
     /**
+     * 格式化 4 狀態角色分類篩選器的摘要文字
+     * @param {Object} stats - getSpeakerRoleStats() 回傳物件
+     * @returns {string}
+     */
+    formatSpeakerRoleSummary(stats) {
+        if (!stats || !stats.canFilter) return '';
+        const labels = {
+            playable: '可用角色',
+            main_npc: '主要 NPC',
+            generic_npc: '泛用 NPC',
+            all: '全部角色'
+        };
+        const roleLabel = labels[stats.speakerRoleFilter] || '可用角色';
+        return `目前顯示「${roleLabel}」共 ${stats.visibleCount} 項`;
+    },
+
+    /**
      * 渲染登場角色完整頁面結構 HTML
      * @param {Object} options - 依賴注入選項
      * @returns {string} 完整頁面 HTML 字串
@@ -406,13 +546,15 @@ window.SpeakerView = {
             speakerSubTab = 'all',
             npcScopeFilter = 'all',
             npcFemaleOnly = false,
-            npcCatalog = null
+            npcCatalog = null,
+            catalogedNpcStatsMap = null
         } = options || {};
         const safeSearchVal = escapeHtml ? escapeHtml(searchQuery || "") : (searchQuery || "");
         const sortVal = sortOrder || "appearances-desc";
         const activeSubTab = speakerSubTab === 'npc' ? 'npc' : 'all';
         const allNpcs = (npcCatalog && Array.isArray(npcCatalog.npcs)) ? npcCatalog.npcs : [];
-        const npcTabCountLabel = allNpcs.length > 0 ? ` (${allNpcs.length})` : '';
+        const visibleNpcTotal = this.filterNpcCatalog(allNpcs, { catalogedNpcStatsMap }).length;
+        const npcTabCountLabel = visibleNpcTotal > 0 ? ` (${visibleNpcTotal})` : '';
 
         const subTabsHtml = `
             <div class="speaker-subtabs" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px;">
@@ -423,9 +565,9 @@ window.SpeakerView = {
 
         let bodyHtml = '';
         if (activeSubTab === 'npc') {
-            const mainTotal = this.filterNpcCatalog(allNpcs, { npcScopeFilter: 'main' }).length;
-            const eventTotal = this.filterNpcCatalog(allNpcs, { npcScopeFilter: 'event' }).length;
-            const femaleTotal = this.filterNpcCatalog(allNpcs, { npcFemaleOnly: true }).length;
+            const mainTotal = this.filterNpcCatalog(allNpcs, { npcScopeFilter: 'main', catalogedNpcStatsMap }).length;
+            const eventTotal = this.filterNpcCatalog(allNpcs, { npcScopeFilter: 'event', catalogedNpcStatsMap }).length;
+            const femaleTotal = this.filterNpcCatalog(allNpcs, { npcFemaleOnly: true, catalogedNpcStatsMap }).length;
             const contentHtml = this.renderNpcCatalogContentHtml(options);
 
             bodyHtml = `
@@ -448,7 +590,7 @@ window.SpeakerView = {
 
                 <div class="npc-filter-bar">
                     <div class="npc-scope-pills">
-                        <button type="button" class="part-btn secondary-pill ${npcScopeFilter === 'all' ? 'active' : ''}" data-npc-scope="all" onclick="QuestMapModule.handleNpcScopeFilter('all')">全部 (${allNpcs.length})</button>
+                        <button type="button" class="part-btn secondary-pill ${npcScopeFilter === 'all' ? 'active' : ''}" data-npc-scope="all" onclick="QuestMapModule.handleNpcScopeFilter('all')">全部 (${visibleNpcTotal})</button>
                         <button type="button" class="part-btn secondary-pill ${npcScopeFilter === 'main' ? 'active' : ''}" data-npc-scope="main" onclick="QuestMapModule.handleNpcScopeFilter('main')">主線登場 (${mainTotal})</button>
                         <button type="button" class="part-btn secondary-pill ${npcScopeFilter === 'event' ? 'active' : ''}" data-npc-scope="event" onclick="QuestMapModule.handleNpcScopeFilter('event')">活動登場 (${eventTotal})</button>
                     </div>
@@ -460,16 +602,25 @@ window.SpeakerView = {
                 </div>
             `;
         } else {
-            const filterStats = this.getGenericFilterStats(options);
-            const filterBarHtml = filterStats.canFilter ? `
+            const roleStats = this.getSpeakerRoleStats(options);
+            const gridOptions = {
+                ...(options || {}),
+                speakerRoleFilter: roleStats.speakerRoleFilter
+            };
+            const filterBarHtml = roleStats.canFilter ? `
                 <div class="npc-filter-bar speaker-generic-filter-bar">
-                    <span id="speaker-generic-summary" class="speaker-generic-summary">${this.formatGenericFilterSummary(filterStats)}</span>
-                    <button type="button" id="speaker-hide-generic-btn" class="part-btn secondary-pill npc-female-toggle ${filterStats.hideGenericNpc ? 'active' : ''}" onclick="QuestMapModule.handleHideGenericNpcToggle()">${filterStats.hideGenericNpc ? '✨ 已隱藏泛用 NPC' : '👥 顯示全部（含泛用 NPC）'}</button>
+                    <div class="npc-scope-pills" role="group" aria-label="角色分類篩選">
+                        <button type="button" class="part-btn secondary-pill ${roleStats.speakerRoleFilter === 'playable' ? 'active' : ''}" data-speaker-role="playable" onclick="QuestMapModule.handleSpeakerRoleFilter('playable')">可用角色 (${roleStats.playableCount})</button>
+                        <button type="button" class="part-btn secondary-pill ${roleStats.speakerRoleFilter === 'main_npc' ? 'active' : ''}" data-speaker-role="main_npc" onclick="QuestMapModule.handleSpeakerRoleFilter('main_npc')">主要 NPC (${roleStats.mainNpcCount})</button>
+                        <button type="button" class="part-btn secondary-pill ${roleStats.speakerRoleFilter === 'generic_npc' ? 'active' : ''}" data-speaker-role="generic_npc" onclick="QuestMapModule.handleSpeakerRoleFilter('generic_npc')">泛用 NPC (${roleStats.genericNpcCount})</button>
+                        <button type="button" class="part-btn secondary-pill ${roleStats.speakerRoleFilter === 'all' ? 'active' : ''}" data-speaker-role="all" onclick="QuestMapModule.handleSpeakerRoleFilter('all')">全部角色 (${roleStats.totalRealCount})</button>
+                    </div>
+                    <span id="speaker-generic-summary" class="speaker-generic-summary">${this.formatSpeakerRoleSummary(roleStats)}</span>
                 </div>
             ` : '';
-            const gridHtml = this.renderSpeakerGridHtml(options);
+            const gridHtml = this.renderSpeakerGridHtml(gridOptions);
             bodyHtml = `
-                <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap; margin-bottom: ${filterStats.canFilter ? '12px' : '20px'};">
+                <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap; margin-bottom: ${roleStats.canFilter ? '12px' : '20px'};">
                     <div style="flex: 1; min-width: 250px;">
                         <input type="text" id="speaker-search-input" placeholder="🔍 搜尋登場角色名字..." value="${safeSearchVal}"  
                                oninput="QuestMapModule.handleSpeakerSearch(this.value)" 

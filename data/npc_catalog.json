@@ -1,10 +1,10 @@
 {
   "version": 1,
   "metadata": {
-    "total_npcs": 184,
-    "female_count": 43,
-    "main_count": 59,
-    "event_count": 156,
+    "total_npcs": 158,
+    "female_count": 40,
+    "main_count": 54,
+    "event_count": 135,
     "special_count": 1
   },
   "npcs": [
@@ -464,23 +464,6 @@
       "other_count": 5,
       "story_scopes": [
         "main",
-        "event",
-        "other"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
-      "name": "女性教員",
-      "unit_id": 3211,
-      "gender": "female",
-      "appearance_count": 26,
-      "main_count": 0,
-      "event_count": 16,
-      "other_count": 10,
-      "story_scopes": [
         "event",
         "other"
       ],
@@ -1108,23 +1091,6 @@
       "variants": []
     },
     {
-      "name": "啾二",
-      "unit_id": 15911,
-      "gender": "male",
-      "appearance_count": 11,
-      "main_count": 0,
-      "event_count": 9,
-      "other_count": 2,
-      "story_scopes": [
-        "event",
-        "other"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
       "name": "大地",
       "unit_id": 5112,
       "gender": "male",
@@ -1311,23 +1277,6 @@
       "aliases": [
         "神秘女性"
       ],
-      "variants": []
-    },
-    {
-      "name": "啾三",
-      "unit_id": 15912,
-      "gender": "male",
-      "appearance_count": 9,
-      "main_count": 0,
-      "event_count": 7,
-      "other_count": 2,
-      "story_scopes": [
-        "event",
-        "other"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
       "variants": []
     },
     {
@@ -1634,23 +1583,6 @@
       "variants": []
     },
     {
-      "name": "黑灰色的龍",
-      "unit_id": 19512,
-      "gender": "other",
-      "appearance_count": 8,
-      "main_count": 7,
-      "event_count": 0,
-      "other_count": 1,
-      "story_scopes": [
-        "main",
-        "other"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
       "name": "可可亞烏拉",
       "unit_id": 10911,
       "gender": "other",
@@ -1829,24 +1761,6 @@
       "is_special": false,
       "special_label": null,
       "aliases": [],
-      "variants": []
-    },
-    {
-      "name": "似龍",
-      "unit_id": 12311,
-      "gender": "other",
-      "appearance_count": 6,
-      "main_count": 0,
-      "event_count": 6,
-      "other_count": 0,
-      "story_scopes": [
-        "event"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [
-        "似龍生物"
-      ],
       "variants": []
     },
     {
@@ -2049,23 +1963,6 @@
       "variants": []
     },
     {
-      "name": "老虎族族長",
-      "unit_id": 8611,
-      "gender": "male",
-      "appearance_count": 6,
-      "main_count": 0,
-      "event_count": 5,
-      "other_count": 1,
-      "story_scopes": [
-        "event",
-        "other"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
       "name": "賈斯頓",
       "unit_id": 2513,
       "gender": "male",
@@ -2099,41 +1996,9 @@
       "variants": []
     },
     {
-      "name": "哥布林女士",
-      "unit_id": 19411,
-      "gender": "female",
-      "appearance_count": 5,
-      "main_count": 0,
-      "event_count": 5,
-      "other_count": 0,
-      "story_scopes": [
-        "event"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
       "name": "喬",
       "unit_id": 711,
       "gender": "male",
-      "appearance_count": 5,
-      "main_count": 0,
-      "event_count": 5,
-      "other_count": 0,
-      "story_scopes": [
-        "event"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
-      "name": "大蛇",
-      "unit_id": 18911,
-      "gender": "other",
       "appearance_count": 5,
       "main_count": 0,
       "event_count": 5,
@@ -2217,55 +2082,6 @@
       "variants": []
     },
     {
-      "name": "特務Q",
-      "unit_id": 51011,
-      "gender": "male",
-      "appearance_count": 5,
-      "main_count": 0,
-      "event_count": 5,
-      "other_count": 0,
-      "story_scopes": [
-        "event"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
-      "name": "特務V",
-      "unit_id": 51111,
-      "gender": "male",
-      "appearance_count": 5,
-      "main_count": 0,
-      "event_count": 5,
-      "other_count": 0,
-      "story_scopes": [
-        "event"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
-      "name": "管理員老婆婆",
-      "unit_id": 9111,
-      "gender": "female",
-      "appearance_count": 5,
-      "main_count": 4,
-      "event_count": 0,
-      "other_count": 1,
-      "story_scopes": [
-        "main",
-        "other"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
       "name": "索菲",
       "unit_id": 711,
       "gender": "male",
@@ -2301,22 +2117,6 @@
       "name": "路克",
       "unit_id": 711,
       "gender": "male",
-      "appearance_count": 5,
-      "main_count": 0,
-      "event_count": 5,
-      "other_count": 0,
-      "story_scopes": [
-        "event"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
-      "name": "醜陋可愛",
-      "unit_id": 11011,
-      "gender": "other",
       "appearance_count": 5,
       "main_count": 0,
       "event_count": 5,
@@ -2431,58 +2231,8 @@
       "variants": []
     },
     {
-      "name": "索爾龍",
-      "unit_id": 20411,
-      "gender": "other",
-      "appearance_count": 4,
-      "main_count": 1,
-      "event_count": 0,
-      "other_count": 3,
-      "story_scopes": [
-        "main",
-        "other"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
       "name": "羅伊德",
       "unit_id": 2511,
-      "gender": "male",
-      "appearance_count": 4,
-      "main_count": 0,
-      "event_count": 4,
-      "other_count": 0,
-      "story_scopes": [
-        "event"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
-      "name": "舔刀子氏",
-      "unit_id": 816,
-      "gender": "male",
-      "appearance_count": 4,
-      "main_count": 1,
-      "event_count": 3,
-      "other_count": 0,
-      "story_scopes": [
-        "main",
-        "event"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
-      "name": "覺醒‧花心星",
-      "unit_id": 13511,
       "gender": "male",
       "appearance_count": 4,
       "main_count": 0,
@@ -2513,22 +2263,6 @@
       "variants": []
     },
     {
-      "name": "輔佐",
-      "unit_id": 8711,
-      "gender": "male",
-      "appearance_count": 4,
-      "main_count": 0,
-      "event_count": 4,
-      "other_count": 0,
-      "story_scopes": [
-        "event"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
       "name": "靈界之王",
       "unit_id": 7711,
       "gender": "male",
@@ -2545,42 +2279,9 @@
       "variants": []
     },
     {
-      "name": "鬼族族長",
-      "unit_id": 7412,
-      "gender": "male",
-      "appearance_count": 4,
-      "main_count": 0,
-      "event_count": 3,
-      "other_count": 1,
-      "story_scopes": [
-        "event",
-        "other"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
       "name": "佐賀牛頭怪",
       "unit_id": 19611,
       "gender": "other",
-      "appearance_count": 3,
-      "main_count": 0,
-      "event_count": 0,
-      "other_count": 3,
-      "story_scopes": [
-        "other"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
-      "name": "席茲爺爺",
-      "unit_id": 511,
-      "gender": "male",
       "appearance_count": 3,
       "main_count": 0,
       "event_count": 0,
@@ -2619,22 +2320,6 @@
       "other_count": 3,
       "story_scopes": [
         "other"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
-      "name": "白鯨",
-      "unit_id": 18511,
-      "gender": "other",
-      "appearance_count": 3,
-      "main_count": 0,
-      "event_count": 3,
-      "other_count": 0,
-      "story_scopes": [
-        "event"
       ],
       "is_special": false,
       "special_label": null,
@@ -2699,22 +2384,6 @@
       "other_count": 0,
       "story_scopes": [
         "event"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
-      "name": "金幣怪",
-      "unit_id": 191914,
-      "gender": "other",
-      "appearance_count": 3,
-      "main_count": 3,
-      "event_count": 0,
-      "other_count": 0,
-      "story_scopes": [
-        "main"
       ],
       "is_special": false,
       "special_label": null,
@@ -2787,22 +2456,6 @@
       "variants": []
     },
     {
-      "name": "傑克南瓜布丁",
-      "unit_id": 10512,
-      "gender": "other",
-      "appearance_count": 2,
-      "main_count": 0,
-      "event_count": 2,
-      "other_count": 0,
-      "story_scopes": [
-        "event"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
       "name": "加爾格",
       "unit_id": 10311,
       "gender": "other",
@@ -2819,56 +2472,8 @@
       "variants": []
     },
     {
-      "name": "啾",
-      "unit_id": 15915,
-      "gender": "male",
-      "appearance_count": 2,
-      "main_count": 0,
-      "event_count": 2,
-      "other_count": 0,
-      "story_scopes": [
-        "event"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
-      "name": "啾太",
-      "unit_id": 15913,
-      "gender": "male",
-      "appearance_count": 2,
-      "main_count": 0,
-      "event_count": 2,
-      "other_count": 0,
-      "story_scopes": [
-        "event"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
       "name": "溫泉之神",
       "unit_id": 17011,
-      "gender": "male",
-      "appearance_count": 2,
-      "main_count": 0,
-      "event_count": 2,
-      "other_count": 0,
-      "story_scopes": [
-        "event"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
-      "name": "花心星",
-      "unit_id": 13611,
       "gender": "male",
       "appearance_count": 2,
       "main_count": 0,
@@ -2915,23 +2520,6 @@
       "variants": []
     },
     {
-      "name": "雙冠龍雷克斯",
-      "unit_id": 50411,
-      "gender": "other",
-      "appearance_count": 2,
-      "main_count": 0,
-      "event_count": 1,
-      "other_count": 1,
-      "story_scopes": [
-        "event",
-        "other"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
       "name": "霧奇",
       "unit_id": 10711,
       "gender": "male",
@@ -2967,22 +2555,6 @@
       "name": "哈立德",
       "unit_id": 17811,
       "gender": "other",
-      "appearance_count": 1,
-      "main_count": 0,
-      "event_count": 1,
-      "other_count": 0,
-      "story_scopes": [
-        "event"
-      ],
-      "is_special": false,
-      "special_label": null,
-      "aliases": [],
-      "variants": []
-    },
-    {
-      "name": "啾也",
-      "unit_id": 15914,
-      "gender": "male",
       "appearance_count": 1,
       "main_count": 0,
       "event_count": 1,
