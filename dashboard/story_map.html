@@ -41,6 +41,7 @@
         <div class="nav-tabs">
             <button id="tab-map-btn" class="tab-btn active" onclick="switchTab('map')">劇情地圖</button>
             <button id="tab-characters-btn" class="tab-btn" onclick="switchTab('characters')">角色圖鑑</button>
+            <button id="tab-speaker-btn" class="tab-btn" onclick="switchTab('speaker')">登場角色總覽</button>
         </div>
         <div class="nav-right"></div>
     </nav>
@@ -97,11 +98,27 @@
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
 
+            if (tabId === 'speaker') {
+                document.getElementById('map-tab').classList.add('active');
+                const speakerBtn = document.getElementById('tab-speaker-btn');
+                if (speakerBtn) speakerBtn.classList.add('active');
+                if (window.QuestMapModule) {
+                    if (QuestMapModule.currentView !== 'list' || QuestMapModule.activeTabType !== 'speaker') {
+                        QuestMapModule.enterCategory('speaker');
+                    }
+                }
+                return;
+            }
+
             document.getElementById(tabId + '-tab').classList.add('active');
             document.getElementById('tab-' + tabId + '-btn').classList.add('active');
 
-            if (tabId === 'map' && document.getElementById('map-tab').innerHTML.trim() === '') {
-                await QuestMapModule.render();
+            if (tabId === 'map') {
+                if (window.QuestMapModule && QuestMapModule.currentView === 'list' && QuestMapModule.activeTabType === 'speaker') {
+                    QuestMapModule.goBackToMenu();
+                } else if (document.getElementById('map-tab').innerHTML.trim() === '') {
+                    await QuestMapModule.render();
+                }
             } else if (tabId === 'characters' && document.getElementById('characters-tab').innerHTML.trim() === '') {
                 const container = document.getElementById('characters-tab');
                 container.innerHTML = '<div class="loading-mini">角色資料準備中...</div>';

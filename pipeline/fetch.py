@@ -346,6 +346,10 @@ def generate_real_name_mapping_from_db(
             official_entries[clean_real] = base_game
 
     official_game_names = set(game_to_official.keys())
+    # 兼容半形 '&' 與全形 '＆'（例如 unit_data 180901 '秋乃&咲戀' 與舊版遺留 '秋乃＆咲戀'）
+    normalized_official_game_names = {
+        name.replace("&", "＆") for name in official_game_names
+    }
 
     existing = {}
     if target_mapping.exists():
@@ -363,7 +367,7 @@ def generate_real_name_mapping_from_db(
     legacy_only = {
         real_name: game_name
         for real_name, game_name in existing.items()
-        if game_name not in official_game_names
+        if game_name.replace("&", "＆") not in normalized_official_game_names
     }
 
     merged = dict(legacy_only)

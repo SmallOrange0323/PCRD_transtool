@@ -48,7 +48,7 @@ KNOWN_EXACT = {
     104632: ("珠希", "宮坂 珠希"),
     102832: ("咲戀", "佐佐木 咲戀"),
     106832: ("拉比林斯達", "模索路 晶"),
-    107032: ("似似花", "現士場 黑江"),
+    107032: ("似似花", "現士實 似似花"),
     107131: ("克莉絲提娜", "克莉絲提娜・摩根"),
     106931: ("霸瞳皇帝", "千里 真那"),
     106432: ("雪菲", "阿賀斗 紫布菜"),
@@ -178,7 +178,7 @@ def build_reality_character_catalog(manifest_icons: dict) -> tuple:
     if '拉比林斯達' in characters:
         characters['拉比林斯達']['aliases'].update(['拉比林斯達', '模索路晶', '晶'])
     if '似似花' in characters:
-        characters['似似花']['aliases'].update(['似似花', '現士場黑江', '黑江'])
+        characters['似似花']['aliases'].update(['似似花', '現士實 似似花', '現士實似似花'])
     if '霸瞳皇帝' in characters:
         characters['霸瞳皇帝']['aliases'].update(['霸瞳皇帝', '霸瞳', '千里真那', '真那'])
 

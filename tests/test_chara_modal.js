@@ -1109,6 +1109,516 @@ test('Test 19 — resolveAppearanceStoryMeta classifies Part 3 branch story unde
     assert.strictEqual(interludeRes.canNavigate, true);
 });
 
+test('Test 20 — renderProfileDetailsHtml renders canonical game name and real name top row', () => {
+    const profile = {
+        guild: '？？？',
+        race: '人族',
+        age: '17',
+        height: '154',
+        weight: '43',
+        birth_month: '4',
+        birth_day: '20',
+        voice: '長縄まりあ'
+    };
+
+    const htmlWithRealName = CharaModalView.renderProfileDetailsHtml(profile, null, {
+        canonicalGameName: '薇歐莉特',
+        realName: '菫'
+    });
+    assert(htmlWithRealName.includes('角色名稱：'), 'Top row must include 角色名稱： label');
+    assert(htmlWithRealName.includes('薇歐莉特'), 'Top row must display canonical game name');
+    assert(htmlWithRealName.includes('真名：'), 'Top row must include 真名： label');
+    assert(htmlWithRealName.includes('菫'), 'Top row must display official real name');
+    assert(
+        htmlWithRealName.indexOf('角色名稱：') < htmlWithRealName.indexOf('公會：'),
+        '角色名稱/真名 row must appear above 公會/種族 row'
+    );
+
+    const htmlWithoutRealName = CharaModalView.renderProfileDetailsHtml(profile, null, {
+        canonicalGameName: '雷姆',
+        realName: null
+    });
+    assert(htmlWithoutRealName.includes('雷姆'), 'Top row must display canonical game name for collab chara');
+    assert(htmlWithoutRealName.includes('—'), 'Missing real name must display — placeholder');
+
+    const npcHtml = CharaModalView.renderProfileDetailsHtml(null, null, {
+        canonicalGameName: '大神',
+        realName: null
+    });
+    assert(npcHtml.includes('尚無設定集數據'), 'Null profile must keep NPC empty hint');
+});
+
+test('Test 21 — renderModal preserves clicked displayTitle & explicitUnitId while sharing canonical details', () => {
+    const originalGetCharaModal = CharaModalView.getCharaModal;
+    const fakeModal = {
+        innerHTML: '',
+        classList: { add() {} }
+    };
+    CharaModalView.getCharaModal = () => fakeModal;
+
+    const avatarService = {
+        getAvatarHtmlByUnitId(unitId, charaName) {
+            return `<img data-unit-id="${unitId}" data-name="${charaName}" src="icon/unit/${unitId}.png">`;
+        },
+        getAvatarHtml(charaName) {
+            return `<img data-fallback-name="${charaName}">`;
+        }
+    };
+
+    try {
+        CharaModalView.renderModal({
+            realCharaName: '菫',
+            displayTitle: '菫',
+            canonicalGameName: '薇歐莉特',
+            officialRealName: '菫',
+            explicitUnitId: 133131,
+            profile: {
+                guild: '？？？',
+                race: '人族',
+                age: '17',
+                height: '154',
+                weight: '43',
+                birth_month: '4',
+                birth_day: '20',
+                voice: '長縄まりあ',
+                catch_copy: '測試標語',
+                self_text: '測試自介'
+            },
+            appearances: [2216001],
+            speakerAvatars: { '薇歐莉特': 133101 },
+            avatarService,
+            resolveStoryMeta: () => ({
+                storyId: 2216001,
+                path: ['主線劇情', '第3部', '第16章'],
+                label: '第1話',
+                fullLabel: '主線劇情・第3部・第16章・第1話',
+                searchText: '2216001',
+                sortKey: '10-002216001',
+                canNavigate: true
+            }),
+            escapeHtml: (s) => String(s)
+        });
+
+        assert(fakeModal.innerHTML.includes('角色檔案：菫'), 'Modal title must preserve clicked displayTitle 菫');
+        assert(fakeModal.innerHTML.includes('data-unit-id="133131"'), 'Modal avatar must preserve explicit unit_id 133131');
+        assert(fakeModal.innerHTML.includes('角色名稱：') && fakeModal.innerHTML.includes('薇歐莉特'), 'Green-box details must show canonical game name 薇歐莉特');
+        assert(fakeModal.innerHTML.includes('真名：') && fakeModal.innerHTML.includes('菫'), 'Green-box details must show real name 菫');
+        assert(fakeModal.innerHTML.includes('測試自介'), 'Shared self_text must be displayed');
+        assert(fakeModal.innerHTML.includes('QuestMapModule.jumpToStory(2216001'), 'Shared appearances must be rendered');
+    } finally {
+        CharaModalView.getCharaModal = originalGetCharaModal;
+    }
+});
+
+test('Test 22 — QuestMapModule identity resolution, shared profile & NPC isolation', async () => {
+    const fs = require('fs');
+    const vm = require('vm');
+    const mapCode = fs.readFileSync(path.join(__dirname, '../dashboard/map.js'), 'utf8');
+
+    const mockRules = {
+        version: '1.0',
+        entities: {
+            '薇歐莉特': { canonical_game_name: '薇歐莉特', real_name: '菫', base_ids: [1331], profile_unit_id: 133101 },
+            '拉比林斯達': { canonical_game_name: '拉比林斯達', real_name: '模索路 晶', base_ids: [1068, 1212, 1337], profile_unit_id: 106801 },
+            '霸瞳皇帝': { canonical_game_name: '霸瞳皇帝', real_name: '千里 真那', base_ids: [1069], profile_unit_id: 106901 },
+            '貪吃佩可': { canonical_game_name: '貪吃佩可', real_name: '尤絲蒂亞娜‧F‧阿斯特賴亞', base_ids: [1058, 1075, 1118, 1210, 1279, 1383, 1804], profile_unit_id: 105801 },
+            '伊緒': { canonical_game_name: '伊緒', real_name: '支倉 伊緒', base_ids: [1018, 1101, 1190, 1329], profile_unit_id: 101801 },
+            '萊拉耶爾': { canonical_game_name: '萊拉耶爾', real_name: '祓樹 艾爾', base_ids: [1265, 1328, 1381], profile_unit_id: 126501 },
+            '櫻': { canonical_game_name: '櫻', real_name: '源 櫻花', base_ids: [1361], profile_unit_id: 136101 },
+            '大神 美冬': { canonical_game_name: '大神 美冬', real_name: null, base_ids: [1048], profile_unit_id: 104801 },
+            '雷姆': { canonical_game_name: '雷姆', real_name: null, base_ids: [1099], profile_unit_id: 109901 }
+        },
+        speaker_rules: {
+            '菫': [{ entity: '薇歐莉特', allowed_base_ids: [1331], allow_null_unit_id: true }],
+            '晶': [{ entity: '拉比林斯達', allowed_base_ids: [1068, 1212, 1337], allow_null_unit_id: true }],
+            '尤絲蒂亞娜': [
+                { entity: '霸瞳皇帝', allowed_base_ids: [1069], allow_null_unit_id: false },
+                { entity: '貪吃佩可', allowed_base_ids: [1058, 1075, 1118, 1210, 1279, 1383, 1804], allow_null_unit_id: false }
+            ],
+            '黑暗伊緒': [{ entity: '伊緒', allowed_base_ids: [1018, 1101, 1190, 1329], allow_null_unit_id: true }],
+            '耶兒': [{ entity: '萊拉耶爾', allowed_base_ids: [1265, 1328, 1381], allow_null_unit_id: true }],
+            '１號': [{ entity: '櫻', allowed_base_ids: [1361], allow_null_unit_id: false }]
+        }
+    };
+
+    let lastRenderedOptions = null;
+    const origRenderModal = CharaModalView.renderModal;
+    const origFetch = global.fetch;
+    const origPCRDatabase = global.window.PCRDatabase;
+    const origDialogueView = global.window.DialogueView;
+
+    try {
+        const sandbox = {
+            window: {},
+            document: { addEventListener() {}, getElementById() { return null; }, querySelector() { return null; } },
+            console: { log() {}, warn() {}, error() {} },
+            fetch: async (url) => {
+                if (url.includes('speaker_identity_rules.json')) {
+                    return { ok: true, json: async () => mockRules };
+                }
+                return { ok: false, status: 404 };
+            }
+        };
+        sandbox.window = sandbox;
+        sandbox.window.DialogueView = { normalizePlayerName: (s) => String(s || '').replace(/\{0\}/g, '佑樹') };
+        sandbox.window.CharaModalView = { renderModal: (opts) => { lastRenderedOptions = opts; } };
+        sandbox.window.AvatarService = { getAvatarHtml: () => '', getAvatarHtmlByUnitId: () => '' };
+        sandbox.window.PCRDatabase = {
+            async runQuery(sql, params) {
+                const uid = params && params[0];
+                if (uid === 133101) return [{ guild: '？？？', race: '人族', voice: '長縄まりあ', self_text: '薇歐莉特自介' }];
+                if (uid === 106801) return [{ guild: '拉比林斯', race: '人族', voice: '沢城みゆき', self_text: '拉比林斯達自介' }];
+                if (uid === 106901) return [{ guild: '？？？', race: '獸人族', voice: '蒼井翔太', self_text: '霸瞳皇帝自介' }];
+                if (uid === 101801) return [{ guild: '月光學院', race: '魔族', voice: '伊藤静', self_text: '伊緒自介' }];
+                if (uid === 126501) return [{ guild: '？？？', race: '人族', voice: '河野ひより', self_text: '萊拉耶爾自介' }];
+                return [];
+            }
+        };
+
+        vm.runInNewContext(mapCode, sandbox);
+        const QMM = sandbox.QuestMapModule;
+        QMM.appearanceMap = {
+            '薇歐莉特': [2216001, 2216002],
+            '拉比林斯達': [2001001, 5201011],
+            '霸瞳皇帝': [2005004],
+            '伊緒': [1018001, 1190001],
+            '萊拉耶爾': [1265004, 1328004, 1381004, 4010239],
+            '大神': [1048001]
+        };
+        QMM.getStoryById = () => ({ id: 1, chapter: 'c', title: 't' });
+
+        // 1. 菫 (133131) -> 共用薇歐莉特設定集與登場目錄，保留標題菫與頭像 133131
+        await QMM.showCharaModal('菫', 133131);
+        assert.strictEqual(lastRenderedOptions.displayTitle, '菫');
+        assert.strictEqual(lastRenderedOptions.explicitUnitId, 133131);
+        assert.strictEqual(lastRenderedOptions.canonicalGameName, '薇歐莉特');
+        assert.strictEqual(lastRenderedOptions.officialRealName, '菫');
+        assert.strictEqual(lastRenderedOptions.profile.self_text, '薇歐莉特自介');
+        assert.deepStrictEqual(lastRenderedOptions.appearances, [2216001, 2216002]);
+
+        // 2. 晶 (null) -> 共用拉比林斯達設定集與登場目錄
+        await QMM.showCharaModal('晶', null);
+        assert.strictEqual(lastRenderedOptions.displayTitle, '晶');
+        assert.strictEqual(lastRenderedOptions.canonicalGameName, '拉比林斯達');
+        assert.strictEqual(lastRenderedOptions.officialRealName, '模索路 晶');
+        assert.strictEqual(lastRenderedOptions.profile.self_text, '拉比林斯達自介');
+        assert.deepStrictEqual(lastRenderedOptions.appearances, [2001001, 5201011]);
+
+        // 3. 尤絲蒂亞娜 (106911) -> 霸瞳皇帝; 尤絲蒂亞娜 (null) -> 不誤併
+        await QMM.showCharaModal('尤絲蒂亞娜', 106911);
+        assert.strictEqual(lastRenderedOptions.canonicalGameName, '霸瞳皇帝');
+        assert.strictEqual(lastRenderedOptions.officialRealName, '千里 真那');
+        assert.strictEqual(lastRenderedOptions.profile.self_text, '霸瞳皇帝自介');
+
+        await QMM.showCharaModal('尤絲蒂亞娜', null);
+        assert.strictEqual(lastRenderedOptions.canonicalGameName, null);
+        assert.strictEqual(lastRenderedOptions.profile, null);
+
+        // 4. １號 (1411) -> NPC 不得併入櫻
+        await QMM.showCharaModal('１號', 1411);
+        assert.strictEqual(lastRenderedOptions.canonicalGameName, null);
+        assert.strictEqual(lastRenderedOptions.profile, null);
+
+        // 5. 黑暗伊緒 (119011) -> 共用伊緒
+        await QMM.showCharaModal('黑暗伊緒', 119011);
+        assert.strictEqual(lastRenderedOptions.displayTitle, '黑暗伊緒');
+        assert.strictEqual(lastRenderedOptions.canonicalGameName, '伊緒');
+        assert.strictEqual(lastRenderedOptions.officialRealName, '支倉 伊緒');
+        assert.strictEqual(lastRenderedOptions.profile.self_text, '伊緒自介');
+
+        // 6. 耶兒 (126531 及 null) -> 維持標題 耶兒，共用 萊拉耶爾 / 祓樹 艾爾 與登場目錄
+        await QMM.showCharaModal('耶兒', 126531);
+        assert.strictEqual(lastRenderedOptions.displayTitle, '耶兒');
+        assert.strictEqual(lastRenderedOptions.explicitUnitId, 126531);
+        assert.strictEqual(lastRenderedOptions.canonicalGameName, '萊拉耶爾');
+        assert.strictEqual(lastRenderedOptions.officialRealName, '祓樹 艾爾');
+        assert.strictEqual(lastRenderedOptions.profile.self_text, '萊拉耶爾自介');
+        assert.deepStrictEqual(lastRenderedOptions.appearances, [1265004, 1328004, 1381004, 4010239]);
+
+        await QMM.showCharaModal('耶兒', null);
+        assert.strictEqual(lastRenderedOptions.displayTitle, '耶兒');
+        assert.strictEqual(lastRenderedOptions.canonicalGameName, '萊拉耶爾');
+        assert.strictEqual(lastRenderedOptions.officialRealName, '祓樹 艾爾');
+        assert.strictEqual(lastRenderedOptions.profile.self_text, '萊拉耶爾自介');
+        assert.deepStrictEqual(lastRenderedOptions.appearances, [1265004, 1328004, 1381004, 4010239]);
+
+        // 7. 大神 (51411) / ？？？ -> 不誤併，profile 為 null
+        await QMM.showCharaModal('大神', 51411);
+        assert.strictEqual(lastRenderedOptions.canonicalGameName, null);
+        assert.strictEqual(lastRenderedOptions.profile, null);
+
+        await QMM.showCharaModal('？？？', null);
+        assert.strictEqual(lastRenderedOptions.canonicalGameName, null);
+        assert.strictEqual(lastRenderedOptions.profile, null);
+
+        // 8. fetch 失敗時優雅降級不報錯
+        sandbox.fetch = async () => { throw new Error('Network error'); };
+        QMM.speakerIdentityRules = null;
+        QMM._speakerIdentityRulesPromise = null;
+        const loaded = await QMM.ensureSpeakerIdentityRules();
+        assert.strictEqual(loaded, null);
+    } finally {
+        CharaModalView.renderModal = origRenderModal;
+        global.fetch = origFetch;
+        global.window.PCRDatabase = origPCRDatabase;
+        global.window.DialogueView = origDialogueView;
+    }
+});
+
+test('Test 23 — NPC groups share appearances without green profile box, Japanese names block links, and P2 strict unit_id gating', async () => {
+    const fs = require('fs');
+    const vm = require('vm');
+    const mapCode = fs.readFileSync(path.join(__dirname, '../dashboard/map.js'), 'utf8');
+    const rules = JSON.parse(fs.readFileSync(path.join(__dirname, '../dashboard/data/speaker_identity_rules.json'), 'utf8'));
+
+    let lastRenderedOptions = null;
+    const sandbox = {
+        window: {},
+        document: { addEventListener() {}, getElementById() { return null; }, querySelector() { return null; } },
+        console: { log() {}, warn() {}, error() {} },
+        fetch: async (url) => {
+            if (url.includes('speaker_identity_rules.json')) {
+                return { ok: true, json: async () => rules };
+            }
+            return { ok: false, status: 404 };
+        }
+    };
+    sandbox.window = sandbox;
+    sandbox.window.DialogueView = { normalizePlayerName: (s) => String(s || '').replace(/\{0\}/g, '佑樹') };
+    sandbox.window.CharaModalView = { renderModal: (opts) => { lastRenderedOptions = opts; } };
+    sandbox.window.AvatarService = { getAvatarHtml: () => '', getAvatarHtmlByUnitId: () => '' };
+    sandbox.window.PCRDatabase = {
+        async runQuery(sql, params) {
+            const uid = params && params[0];
+            if (uid === 132401) return [{ guild: '動物苑', race: '人族', voice: '小倉唯', self_text: '彩羽自介' }];
+            if (uid === 132501) return [{ guild: '動物苑', race: '人族', voice: '佐倉綾音', self_text: '苑自介' }];
+            if (uid === 104401) return [{ guild: '惡魔偽王國軍', race: '魔族', voice: '丹下桜', self_text: '伊莉亞自介' }];
+            if (uid === 111001) return [{ guild: '好朋友部', race: '人族', voice: '小原好美', self_text: '優妮自介' }];
+            if (uid === 135501) return [{ guild: '阿爾克絲', race: '人族', voice: '長谷川育美', self_text: '埃拉自介' }];
+            if (uid === 135601) return [{ guild: '阿爾克絲', race: '人族', voice: '富田美憂', self_text: '志那都自介' }];
+            if (uid === 118501) return [{ guild: '？？？', race: '人族', voice: '洲崎綾', self_text: '花凜自介' }];
+            if (uid === 107001) return [{ guild: '七冠', race: '人族', voice: '佳村はるか', self_text: '似似花自介' }];
+            return [];
+        }
+    };
+
+    vm.runInNewContext(mapCode, sandbox);
+    const QMM = sandbox.QuestMapModule;
+    QMM.appearanceMap = {
+        '尾狗刀': [1062001, 1062002],
+        '拉基拉基': [1073001, 2000001],
+        '贊恩': [1917001, 1917002],
+        '宙': [1072001, 1072002],
+        '長老': [1072099],
+        '嚮導老君': [1072098],
+        '芙蕾雅': [1937001],
+        '八斗神': [1936001],
+        '剎鬼‧八斗神': [2212004],
+        '米奈娃': [1911001],
+        'ジュン': [9999991],
+        '彩羽': [1324001],
+        '苑': [1325001],
+        '伊莉亞': [1044001],
+        '優妮': [1110001],
+        '埃拉': [1355001],
+        '志那都': [1356001],
+        '花凜': [1185001],
+        '冥': [5300001],
+        '似似花': [1070001],
+        '羅塞塔': [1110099],
+        '變成依里的茜里': [9001001]
+    };
+    QMM.getStoryById = () => ({ id: 1, chapter: 'c', title: 't' });
+
+    // 1. 7 組 NPC 共用登場目錄，但不得產生綠框/真名欄 (profile=null, canonicalGameName=null)
+    for (const [sp, uid, expectedApps] of [
+        ['詠斗', 106211, [1062001, 1062002]],
+        ['過去的詠斗', null, [1062001, 1062002]],
+        ['跳躍王', null, [1073001, 2000001]],
+        ['拉基尼卡東', 999911, [1073001, 2000001]],
+        ['善', 191711, [1917001, 1917002]],
+        ['佐拉', 107211, [1072001, 1072002]],
+        ['菲絲雷斯', 193732, [1937001]],
+        ['八斗神局長', 193631, [1936001]],
+        ['米奈娃β', 191111, [1911001]]
+    ]) {
+        await QMM.showCharaModal(sp, uid);
+        assert.strictEqual(lastRenderedOptions.displayTitle, sp);
+        assert.strictEqual(lastRenderedOptions.explicitUnitId, uid);
+        assert.strictEqual(lastRenderedOptions.canonicalGameName, null);
+        assert.strictEqual(lastRenderedOptions.officialRealName, null);
+        assert.strictEqual(lastRenderedOptions.profile, null);
+        assert.deepStrictEqual(lastRenderedOptions.appearances, expectedApps);
+        const noBoxHtml = CharaModalView.renderProfileDetailsHtml(lastRenderedOptions.profile, (s) => s, {
+            canonicalGameName: lastRenderedOptions.canonicalGameName,
+            realName: lastRenderedOptions.officialRealName
+        });
+        assert(noBoxHtml.includes('尚無設定集數據'));
+        assert(!noBoxHtml.includes('角色名稱：'));
+    }
+
+    // 2. 1072 長老/嚮導老君 與 剎鬼‧八斗神 嚴格隔離
+    await QMM.showCharaModal('長老', 107212);
+    assert.strictEqual(lastRenderedOptions.profile, null);
+    assert.deepStrictEqual(lastRenderedOptions.appearances, [1072099]);
+
+    await QMM.showCharaModal('嚮導老君', 107213);
+    assert.strictEqual(lastRenderedOptions.profile, null);
+    assert.deepStrictEqual(lastRenderedOptions.appearances, [1072098]);
+
+    await QMM.showCharaModal('剎鬼‧八斗神', 193611);
+    assert.strictEqual(lastRenderedOptions.profile, null);
+    assert.deepStrictEqual(lastRenderedOptions.appearances, [2212004]);
+
+    // 3. 日文假名禁止連結劇本與實體，但 U+30FB 中點繁中名 (伊莉亞・奧恩斯坦) 不得誤傷
+    await QMM.showCharaModal('ジュン', 104711);
+    assert.strictEqual(lastRenderedOptions.displayTitle, 'ジュン');
+    assert.strictEqual(lastRenderedOptions.explicitUnitId, 104711);
+    assert.strictEqual(lastRenderedOptions.canonicalGameName, null);
+    assert.strictEqual(lastRenderedOptions.profile, null);
+    assert.strictEqual(lastRenderedOptions.appearances.length, 0);
+
+    await QMM.showCharaModal('コッコロ', null);
+    assert.strictEqual(lastRenderedOptions.canonicalGameName, null);
+    assert.strictEqual(lastRenderedOptions.appearances.length, 0);
+
+    await QMM.showCharaModal('伊莉亞・奧恩斯坦', 104411);
+    assert.strictEqual(lastRenderedOptions.displayTitle, '伊莉亞・奧恩斯坦');
+    assert.strictEqual(lastRenderedOptions.canonicalGameName, '伊莉亞');
+    assert.strictEqual(lastRenderedOptions.profile.self_text, '伊莉亞自介');
+    assert.deepStrictEqual(lastRenderedOptions.appearances, [1044001]);
+
+    // 4. 第二大點：嚴格 unit_id 放行與匿名路人隔離
+    await QMM.showCharaModal('小孩彩羽', 132612);
+    assert.strictEqual(lastRenderedOptions.canonicalGameName, '彩羽');
+    assert.strictEqual(lastRenderedOptions.profile.self_text, '彩羽自介');
+
+    await QMM.showCharaModal('成人苑', 132712);
+    assert.strictEqual(lastRenderedOptions.canonicalGameName, '苑');
+    assert.strictEqual(lastRenderedOptions.profile.self_text, '苑自介');
+
+    await QMM.showCharaModal('羅塞塔通話中的優妮', 111011);
+    assert.strictEqual(lastRenderedOptions.canonicalGameName, '優妮');
+    assert.strictEqual(lastRenderedOptions.profile.self_text, '優妮自介');
+
+    await QMM.showCharaModal('羅塞塔', 111011);
+    assert.strictEqual(lastRenderedOptions.canonicalGameName, null);
+    assert.strictEqual(lastRenderedOptions.profile, null);
+    assert.deepStrictEqual(lastRenderedOptions.appearances, [1110099]);
+
+    await QMM.showCharaModal('陌生的女性', 135511);
+    assert.strictEqual(lastRenderedOptions.canonicalGameName, '埃拉');
+    await QMM.showCharaModal('陌生的女性', 135611);
+    assert.strictEqual(lastRenderedOptions.canonicalGameName, '志那都');
+    await QMM.showCharaModal('陌生的女性', 50011);
+    assert.strictEqual(lastRenderedOptions.canonicalGameName, null);
+    assert.strictEqual(lastRenderedOptions.profile, null);
+    await QMM.showCharaModal('陌生的女性', null);
+    assert.strictEqual(lastRenderedOptions.canonicalGameName, null);
+    assert.strictEqual(lastRenderedOptions.profile, null);
+
+    await QMM.showCharaModal('神秘女性', 118511);
+    assert.strictEqual(lastRenderedOptions.canonicalGameName, '花凜');
+    await QMM.showCharaModal('神秘女性', 53011);
+    assert.strictEqual(lastRenderedOptions.canonicalGameName, null);
+    assert.strictEqual(lastRenderedOptions.profile, null);
+    assert.deepStrictEqual(lastRenderedOptions.appearances, [5300001]);
+    await QMM.showCharaModal('神秘女性', null);
+    assert.strictEqual(lastRenderedOptions.canonicalGameName, null);
+    assert.strictEqual(lastRenderedOptions.appearances.length, 0);
+
+    await QMM.showCharaModal('姊姊', 107011);
+    assert.strictEqual(lastRenderedOptions.canonicalGameName, '似似花');
+    await QMM.showCharaModal('姊姊', null);
+    assert.strictEqual(lastRenderedOptions.canonicalGameName, null);
+
+    await QMM.showCharaModal('變成依里的茜里', null);
+    assert.strictEqual(lastRenderedOptions.canonicalGameName, null);
+    assert.strictEqual(lastRenderedOptions.profile, null);
+    assert.deepStrictEqual(lastRenderedOptions.appearances, [9001001]);
+});
+
+test('Test 24 — Phase 1B Chinese NPC groups share appearances without profile box and protect excluded speakers', async () => {
+    const fs = require('fs');
+    const vm = require('vm');
+    const mapCode = fs.readFileSync(path.join(__dirname, '../dashboard/map.js'), 'utf8');
+    const rules = JSON.parse(fs.readFileSync(path.join(__dirname, '../dashboard/data/speaker_identity_rules.json'), 'utf8'));
+
+    let lastRenderedOptions = null;
+    const sandbox = {
+        window: {},
+        document: { addEventListener() {}, getElementById() { return null; }, querySelector() { return null; } },
+        console: { log() {}, warn() {}, error() {} },
+        fetch: async (url) => {
+            if (url.includes('speaker_identity_rules.json')) {
+                return { ok: true, json: async () => rules };
+            }
+            return { ok: false, status: 404 };
+        }
+    };
+    sandbox.window = sandbox;
+    sandbox.window.DialogueView = { normalizePlayerName: (s) => String(s || '').replace(/\{0\}/g, '佑樹') };
+    sandbox.window.CharaModalView = { renderModal: (opts) => { lastRenderedOptions = opts; } };
+    sandbox.window.AvatarService = { getAvatarHtml: () => '', getAvatarHtmlByUnitId: () => '' };
+    sandbox.window.PCRDatabase = { async runQuery() { return []; } };
+
+    vm.runInNewContext(mapCode, sandbox);
+    const QMM = sandbox.QuestMapModule;
+    QMM.appearanceMap = {
+        '賭場王': [160001],
+        '豪紳': [191401],
+        '阿澤爾德': [191901],
+        '骷髏老爸': [1031001],
+        '拉格': [502001],
+        '帆稀？': [502099],
+        '玩具王': [149001],
+        '玩具王二世': [149099],
+        '小律': [509001],
+        '改造蓋登': [1346003],
+        '蓋登': [5203002],
+        '優衣？': [5211005],
+        '啾': [900001],
+        '啾太': [900002]
+    };
+    QMM.getStoryById = () => ({ id: 1, chapter: 'c', title: 't' });
+
+    for (const [sp, uid, expectedApps] of [
+        ['吉諾', 16011, [160001]],
+        ['貴族議長', null, [191401]],
+        ['阿澤爾德的幻影', 191911, [191901]],
+        ['骷髏頭', 2411, [1031001]],
+        ['拉格？', 50211, [502001]],
+        ['機械玩具王', 14911, [149001]],
+        ['小嬰兒', 50911, [509001]],
+        ['宇宙蓋登', 50512, [1346003]]
+    ]) {
+        await QMM.showCharaModal(sp, uid);
+        assert.strictEqual(lastRenderedOptions.displayTitle, sp);
+        assert.strictEqual(lastRenderedOptions.canonicalGameName, null);
+        assert.strictEqual(lastRenderedOptions.profile, null);
+        assert.deepStrictEqual(lastRenderedOptions.appearances, expectedApps);
+    }
+
+    // 嚴格排除無 ID 之小嬰兒，並保護獨立項目
+    await QMM.showCharaModal('小嬰兒', null);
+    assert.strictEqual(lastRenderedOptions.profile, null);
+    assert.strictEqual(lastRenderedOptions.appearances.length, 0);
+
+    for (const [sp, uid, expectedApps] of [
+        ['帆稀？', 50211, [502099]],
+        ['玩具王二世', 14911, [149099]],
+        ['蓋登', 50511, [5203002]],
+        ['優衣？', null, [5211005]],
+        ['啾', null, [900001]],
+        ['啾太', null, [900002]]
+    ]) {
+        await QMM.showCharaModal(sp, uid);
+        assert.strictEqual(lastRenderedOptions.canonicalGameName, null);
+        assert.strictEqual(lastRenderedOptions.profile, null);
+        assert.deepStrictEqual(lastRenderedOptions.appearances, expectedApps);
+    }
+});
+
 runTests().catch(err => {
     console.error('Test execution failed:', err);
     process.exit(1);

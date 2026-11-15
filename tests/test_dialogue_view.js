@@ -421,6 +421,12 @@ test("Test 12 — getCharaRealName & 9006707 speaker badges protect 日和/和�
     assert.strictEqual(getCharaRealName("和服的女性"), "和服的女性");
     assert.strictEqual(getCharaRealName("日和與？？？"), "日和");
     assert.strictEqual(getCharaRealName("佩可和日和"), "佩可");
+    assert.strictEqual(getCharaRealName("剎鬼‧八斗神"), "剎鬼‧八斗神");
+    assert.strictEqual(getCharaRealName("菲絲雷斯"), "菲絲雷斯");
+    assert.strictEqual(getCharaRealName("ジュン"), "ジュン");
+    assert.strictEqual(getCharaRealName("コッコロ"), "コッコロ");
+    assert.strictEqual(getCharaRealName("ナレーション"), "ナレーション");
+    assert.strictEqual(getCharaRealName("伊莉亞・奧恩斯坦"), "伊莉亞・奧恩斯坦");
 
     // 驗證 9006707 頂部角色徽章列的日和頭像標題與點擊參數
     global.window.DialogueNormalizer = undefined;
@@ -438,6 +444,51 @@ test("Test 12 — getCharaRealName & 9006707 speaker badges protect 日和/和�
     assert(badgesBarEl.innerHTML.includes('title="日和"'), "9006707 頂部徽章必須顯示 title=\"日和\"");
     assert(badgesBarEl.innerHTML.includes("showCharaModal(&quot;日和&quot;"), "9006707 頂部徽章必須以 日和 呼叫 showCharaModal");
     assert(!badgesBarEl.innerHTML.includes("showCharaModal(&quot;日&quot;"), "9006707 頂部徽章不得呼叫 showCharaModal(\"日\")");
+});
+
+// Test 13 — Preserve raw script speaker name for modal title while retaining realName avatar fallback
+test("Test 13 — Preserve raw script speaker name for showCharaModal while keeping realName fallback", () => {
+    const aliasMap = {
+        "菫": "薇歐莉特",
+        "黑暗伊緒": "伊緒",
+        "晶": "拉比林斯達"
+    };
+    const resolveRealName = (n) => aliasMap[n] || n;
+    const speakerAvatars = {
+        "薇歐莉特": 133101,
+        "伊緒": 101801,
+        "拉比林斯達": 106801
+    };
+
+    const badgesBarEl = { style: {}, innerHTML: "" };
+    const dialogueList = [
+        { name: "菫", words: "不要過來……", unit_id: 133131 },
+        { name: "黑暗伊緒", words: "呵呵……", unit_id: 119011 },
+        { name: "晶", words: "開始作戰吧。" }
+    ];
+    DialogueView.renderSpeakerBadges(badgesBarEl, {
+        speakerNames: ["菫", "黑暗伊緒", "晶"],
+        speakerAvatars,
+        resolveRealName,
+        dialogueList
+    });
+
+    assert(badgesBarEl.innerHTML.includes('showCharaModal(&quot;菫&quot;, 133131)'), "Badge click must pass raw 菫 and explicit unit_id 133131");
+    assert(!badgesBarEl.innerHTML.includes('showCharaModal(&quot;薇歐莉特&quot;'), "Badge click must NOT replace 菫 with 薇歐莉特");
+    assert(badgesBarEl.innerHTML.includes('showCharaModal(&quot;黑暗伊緒&quot;, 119011)'), "Badge click must pass raw 黑暗伊緒 and 119011");
+    assert(badgesBarEl.innerHTML.includes('showCharaModal(&quot;晶&quot;)'), "Badge click must pass raw 晶");
+    assert(badgesBarEl.innerHTML.includes('icon/unit/106801.png'), "Badge without explicit unit_id still resolves avatar via realName fallback");
+
+    const { html } = DialogueView.generateDialogueHtml({
+        storyId: 2001001,
+        dialogueList,
+        speakerAvatars,
+        resolveRealName
+    });
+    assert(html.includes('showCharaModal(&quot;菫&quot;, 133131)'), "Dialogue line must pass raw 菫 and 133131");
+    assert(html.includes('showCharaModal(&quot;黑暗伊緒&quot;, 119011)'), "Dialogue line must pass raw 黑暗伊緒 and 119011");
+    assert(html.includes('showCharaModal(&quot;晶&quot;)'), "Dialogue line must pass raw 晶");
+    assert(!html.includes('showCharaModal(&quot;薇歐莉特&quot;'), "Dialogue line must NOT replace 菫 with 薇歐莉特");
 });
 
 console.log(`\n✅ All ${testsPassed} DialogueView tests passed successfully!`);

@@ -132,7 +132,7 @@ console.log("dialogue-view.js loaded");
                 const displayName = this.normalizePlayerName(rawName);
                 const modalUnitIdArg = explicitUnitId !== null ? `, ${explicitUnitId}` : "";
                 badgeHtmls.push(`
-                    <div class="game-chara-avatar-badge" title="${this.escapeHtml(displayName)}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')}${modalUnitIdArg})">
+                    <div class="game-chara-avatar-badge" title="${this.escapeHtml(displayName)}" onclick="QuestMapModule.showCharaModal(${JSON.stringify(rawName).replace(/"/g, '&quot;')}${modalUnitIdArg})">
                         ${avatarHtml}
                     </div>
                 `);
@@ -239,6 +239,7 @@ console.log("dialogue-view.js loaded");
                 else if (isChoice) speakerClass = "role-choice";
 
                 const realNameForBtn = (isNarrator || isChoice) ? "" : (resolveRealName ? resolveRealName(rawSpeaker) : rawSpeaker);
+                const modalNameForBtn = (isNarrator || isChoice) ? "" : rawSpeaker;
 
                 const numUnitId = Number(item.unit_id);
                 const hasExplicitUnitId = Number.isInteger(numUnitId) && numUnitId > 0;
@@ -270,7 +271,7 @@ console.log("dialogue-view.js loaded");
                     }
 
                     avatarHtml = `
-                        <div class="game-chara-avatar-wrapper" onclick="event.stopPropagation(); QuestMapModule.showCharaModal(${JSON.stringify(realName).replace(/"/g, '&quot;')}${modalUnitIdArg})" style="cursor: pointer;">
+                        <div class="game-chara-avatar-wrapper" onclick="event.stopPropagation(); QuestMapModule.showCharaModal(${JSON.stringify(modalNameForBtn).replace(/"/g, '&quot;')}${modalUnitIdArg})" style="cursor: pointer;">
                              <div class="game-chara-avatar">
                                  ${avatarContent}
                              </div>
@@ -282,8 +283,8 @@ console.log("dialogue-view.js loaded");
                 const voiceOnclickAttr = useDelegatedEvents ? '' : ` onclick="event.stopPropagation(); QuestMapModule.playVoice('${safeVoiceAttr}')"`;
                 const voiceBtn = item.voice ? `<button type="button" class="dialogue-voice-btn"${voiceOnclickAttr} title="播放語音" aria-label="播放語音">🔊</button>` : '';
                 const voiceAttr = item.voice ? ` data-voice="${escapeFn(String(item.voice))}"` : '';
-                const speakerAttrs = realNameForBtn
-                    ? ` onclick="event.stopPropagation(); QuestMapModule.showCharaModal(${JSON.stringify(realNameForBtn).replace(/"/g, '&quot;')}${modalUnitIdArg})" style="cursor: pointer;" title="查看角色資料"`
+                const speakerAttrs = modalNameForBtn
+                    ? ` onclick="event.stopPropagation(); QuestMapModule.showCharaModal(${JSON.stringify(modalNameForBtn).replace(/"/g, '&quot;')}${modalUnitIdArg})" style="cursor: pointer;" title="查看角色資料"`
                     : '';
                 const lineOnclickAttr = useDelegatedEvents ? '' : ` onclick="QuestMapModule.handleDialogueLineClick(${index}, event)"`;
 

@@ -53,7 +53,8 @@ const keyCharacters = {
     '怜': 100332, '士條怜': 100332,
     // 七冠
     '拉比林斯達': 106832, '模索路晶': 106832,
-    '似似花': 107032, '現士場黑江': 107032,
+    '似似花': 107032, '現士實 似似花': 107032, '現士實似似花': 107032,
+    '黑江 花子': 110832, '黑江花子': 110832,
     '克莉絲提娜': 107131,
     '霸瞳皇帝': 106931, '千里真那': 106931,
     // 第 3 部角色
@@ -72,6 +73,8 @@ for (const [name, expectedId] of Object.entries(keyCharacters)) {
     assert.strictEqual(actualId, expectedId, `角色 ${name} 的現實 ID 應為 ${expectedId}，實際為 ${actualId}`);
     passCount++;
 }
+assert.strictEqual(AvatarService.realityAvatarMap['現士場黑江'], undefined, '不得殘留錯誤別名 現士場黑江');
+assert.strictEqual(AvatarService.realityAvatarMap['黑江'], undefined, '不得殘留錯誤對應 黑江 -> 107032');
 console.log(`  ✅ ${passCount}/${Object.keys(keyCharacters).length} 個關鍵角色現實名稱對應驗證成功！`);
 
 // 測試 2: exactRealityIds 與 resolveDialoguePortraitIds 完整性
