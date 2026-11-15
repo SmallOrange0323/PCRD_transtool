@@ -1619,6 +1619,46 @@ test('Test 24 — Phase 1B Chinese NPC groups share appearances without profile 
     }
 });
 
+test('Test 25 — getCatalogedAppearances & getCatalogedAppearanceMap filter unindexed stories when stories loaded', async () => {
+    const fs = require('fs');
+    const path = require('path');
+    const vm = require('vm');
+    const mapCode = fs.readFileSync(path.join(__dirname, '../dashboard/map.js'), 'utf8');
+
+    let lastRenderedOptions = null;
+    const sandbox = {
+        window: {},
+        document: { addEventListener() {}, getElementById() { return null; }, querySelector() { return null; } },
+        console: { log() {}, warn() {}, error() {} },
+        fetch: async () => ({ ok: false, status: 404 })
+    };
+    sandbox.window = sandbox;
+    sandbox.window.DialogueView = { normalizePlayerName: (s) => String(s || '') };
+    sandbox.window.CharaModalView = { renderModal: (opts) => { lastRenderedOptions = opts; } };
+    sandbox.window.AvatarService = { getAvatarHtml: () => '', getAvatarHtmlByUnitId: () => '' };
+    sandbox.window.PCRDatabase = { async runQuery() { return []; } };
+
+    vm.runInNewContext(mapCode, sandbox);
+    const QMM = sandbox.QuestMapModule;
+    QMM.stories = [
+        { id: 2001001, title: '主線第1話', chapter: '第1章', story_group_id: 2001, part: 1 }
+    ];
+    QMM.eventStories = [
+        { id: 5001001, title: '活動第1話', chapter: '活動故事', isEvent: true }
+    ];
+    QMM.appearanceMap = {
+        '可可蘿': [2001001, 5001001, 21, 9000001],
+        '僅未編目': [22, 9000002]
+    };
+
+    const filteredMap = QMM.getCatalogedAppearanceMap();
+    assert.deepStrictEqual(filteredMap['可可蘿'], [2001001, 5001001], '未編目話數 21 / 9000001 須自統計地圖濾除');
+    assert.strictEqual(filteredMap['僅未編目'], undefined, '扣除後剩 0 話的角色應自動隱藏');
+
+    await QMM.showCharaModal('可可蘿');
+    assert.deepStrictEqual(lastRenderedOptions.appearances, [2001001, 5001001], '彈窗傳入之 appearances 不得包含未編目話數');
+});
+
 runTests().catch(err => {
     console.error('Test execution failed:', err);
     process.exit(1);

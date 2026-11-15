@@ -27,11 +27,14 @@ const QuestMapModule = {
     speakerSearchQuery: "",
     speakerSortOrder: "appearances-desc",
     speakerSubTab: 'all',
+    speakerRoleFilter: 'playable',
     hideGenericNpc: true,
     npcScopeFilter: 'all',
     npcFemaleOnly: false,
     npcCatalog: null,
     _npcCatalogPromise: null,
+    speakerFallbackAvatars: null,
+    _speakerFallbackAvatarsPromise: null,
     isRendering: false,
     isLoadingDialogue: false,
     currentView: 'menu',
@@ -1860,8 +1863,12 @@ const QuestMapModule = {
         if (this.activeTabType === 'speaker') {
             const npcCatalogPromise = (typeof this.ensureNpcCatalog === 'function') ? this.ensureNpcCatalog() : null;
             const rulesPromise = (typeof this.ensureSpeakerIdentityRules === 'function') ? this.ensureSpeakerIdentityRules() : null;
+            const fallbackPromise = (typeof this.ensureSpeakerFallbackAvatars === 'function') ? this.ensureSpeakerFallbackAvatars() : null;
+            const manifestPromise = (window.AvatarService && typeof window.AvatarService.ensureManifestLoaded === 'function')
+                ? window.AvatarService.ensureManifestLoaded()
+                : null;
             await this.ensureAppearanceMap();
-            const pending = [npcCatalogPromise, rulesPromise].filter(Boolean);
+            const pending = [npcCatalogPromise, rulesPromise, fallbackPromise, manifestPromise].filter(Boolean);
             if (pending.length > 0) {
                 await Promise.all(pending);
             }
@@ -3834,7 +3841,7 @@ const QuestMapModule = {
         if (requestId !== this._charaModalRequestId) return;
 
         const npcGroupName = matchedNpcGroup ? matchedNpcGroup.canonical_npc_name : null;
-        const appearances = disableAppearanceLink
+        const rawAppearances = disableAppearanceLink
             ? []
             : (this.appearanceMap && (
                 (matchedEntity && this.appearanceMap[realCharaName]) ||
@@ -3842,13 +3849,22 @@ const QuestMapModule = {
                 this.appearanceMap[charaName] ||
                 (!isUnregisteredNpc ? this.appearanceMap[realCharaName] : null)
             )) || [];
+        const appearances = typeof this.getCatalogedAppearances === 'function'
+            ? this.getCatalogedAppearances(rawAppearances)
+            : rawAppearances;
+
+        const fallbackAvatarId = (!explicitUnitId && !matchedEntity && this.speakerFallbackAvatars &&
+            !(this.speakerAvatars && (this.speakerAvatars[charaName] || this.speakerAvatars[realCharaName])))
+            ? (Number(this.speakerFallbackAvatars[charaName] || this.speakerFallbackAvatars[realCharaName]) || null)
+            : null;
+        const modalExplicitUnitId = explicitUnitId || fallbackAvatarId;
 
         window.CharaModalView.renderModal({
             realCharaName: charaName,
             displayTitle: charaName,
             canonicalGameName: matchedEntity ? realCharaName : null,
             officialRealName,
-            explicitUnitId,
+            explicitUnitId: modalExplicitUnitId,
             profile,
             appearances,
             speakerAvatars: this.speakerAvatars,
@@ -3922,9 +3938,12 @@ const QuestMapModule = {
             : (identity && identity.npcGroup
                 ? identity.npcGroup.canonical_npc_name
                 : this.getCharaRealName(realCharaName));
-        const appearances = disableAppearanceLink
+        const rawRetryAppearances = disableAppearanceLink
             ? []
             : ((this.appearanceMap && (this.appearanceMap[canonicalName] || this.appearanceMap[realCharaName])) || []);
+        const appearances = typeof this.getCatalogedAppearances === 'function'
+            ? this.getCatalogedAppearances(rawRetryAppearances)
+            : rawRetryAppearances;
         
         // 立即以載入中狀態刷新視圖
         if (window.CharaModalView && typeof window.CharaModalView.updateAppearancesSection === 'function') {
@@ -4072,6 +4091,32 @@ const QuestMapModule = {
         return this._npcCatalogPromise;
     },
 
+    async ensureSpeakerFallbackAvatars() {
+        if (this.speakerFallbackAvatars) return this.speakerFallbackAvatars;
+        if (this._speakerFallbackAvatarsPromise) return this._speakerFallbackAvatarsPromise;
+
+        this._speakerFallbackAvatarsPromise = (async () => {
+            try {
+                if (typeof fetch !== 'function') return null;
+                const resp = await fetch('data/speaker_fallback_avatars.json');
+                if (!resp || !resp.ok) return null;
+                const data = await resp.json();
+                if (data && typeof data === 'object' && !Array.isArray(data)) {
+                    this.speakerFallbackAvatars = data;
+                    return this.speakerFallbackAvatars;
+                }
+                return null;
+            } catch (e) {
+                console.warn('[QuestMapModule] 載入 speaker_fallback_avatars.json 失敗，略過泛用代表圖補齊:', e);
+                return null;
+            } finally {
+                this._speakerFallbackAvatarsPromise = null;
+            }
+        })();
+
+        return this._speakerFallbackAvatarsPromise;
+    },
+
     mergeNpcCatalogAvatars(catalog = this.npcCatalog) {
         if (!catalog || !Array.isArray(catalog.npcs)) return;
         const entityNames = (this.speakerIdentityRules && this.speakerIdentityRules.entities)
@@ -4103,13 +4148,95 @@ const QuestMapModule = {
         }
     },
 
+    getCatalogedAppearances(storyIds) {
+        if (!Array.isArray(storyIds) || storyIds.length === 0) return [];
+        const hasCatalogLoaded = (Array.isArray(this.stories) && this.stories.length > 0) ||
+            (Array.isArray(this.eventStories) && this.eventStories.length > 0);
+        if (!hasCatalogLoaded) return storyIds;
+        return storyIds.filter(id => Boolean(this.getStoryById(Number(id))));
+    },
+
+    getCatalogedAppearanceMap() {
+        const raw = this.appearanceMap;
+        if (!raw || typeof raw !== 'object') return raw;
+        const hasCatalogLoaded = (Array.isArray(this.stories) && this.stories.length > 0) ||
+            (Array.isArray(this.eventStories) && this.eventStories.length > 0);
+        if (!hasCatalogLoaded) return raw;
+
+        const cacheKey = `${this.stories ? this.stories.length : 0}:${this.eventStories ? this.eventStories.length : 0}`;
+        if (this._catalogedAppearanceMapRaw === raw &&
+            this._catalogedAppearanceMapKey === cacheKey &&
+            this._catalogedAppearanceMapCache) {
+            return this._catalogedAppearanceMapCache;
+        }
+
+        const filteredMap = {};
+        for (const [name, list] of Object.entries(raw)) {
+            if (!Array.isArray(list)) continue;
+            const validIds = list.filter(id => Boolean(this.getStoryById(Number(id))));
+            if (validIds.length > 0) {
+                filteredMap[name] = validIds;
+            }
+        }
+        this._catalogedAppearanceMapRaw = raw;
+        this._catalogedAppearanceMapKey = cacheKey;
+        this._catalogedAppearanceMapCache = filteredMap;
+        return filteredMap;
+    },
+
+    getCatalogedNpcStatsMap() {
+        const hasCatalogLoaded = (Array.isArray(this.stories) && this.stories.length > 0) ||
+            (Array.isArray(this.eventStories) && this.eventStories.length > 0);
+        if (!hasCatalogLoaded || !this.npcCatalog || !Array.isArray(this.npcCatalog.npcs)) {
+            return null;
+        }
+        const catalogedMap = this.getCatalogedAppearanceMap();
+        if (!catalogedMap) return null;
+
+        const cacheKey = `${this._catalogedAppearanceMapKey}:${this.npcCatalog.npcs.length}`;
+        if (this._catalogedNpcStatsCacheKey === cacheKey &&
+            this._catalogedNpcStatsRaw === catalogedMap &&
+            this._catalogedNpcStatsCache) {
+            return this._catalogedNpcStatsCache;
+        }
+
+        const statsMap = {};
+        for (const npc of this.npcCatalog.npcs) {
+            const name = npc && npc.name;
+            if (!name) continue;
+            const ids = Array.isArray(catalogedMap[name]) ? catalogedMap[name] : [];
+            let main = 0;
+            let event = 0;
+            for (const sid of ids) {
+                const story = this.getStoryById(Number(sid));
+                if (!story) continue;
+                if (story.isEvent) {
+                    event++;
+                } else if (story.type === 'main' || (!story.type && story.part >= 1)) {
+                    main++;
+                }
+            }
+            statsMap[name] = { all: ids.length, main, event };
+        }
+
+        this._catalogedNpcStatsCacheKey = cacheKey;
+        this._catalogedNpcStatsRaw = catalogedMap;
+        this._catalogedNpcStatsCache = statsMap;
+        return statsMap;
+    },
+
     _getSpeakerViewOptions() {
+        const catalogedAppearanceMap = this.getCatalogedAppearanceMap();
+        const catalogedNpcStatsMap = this.getCatalogedNpcStatsMap();
         return {
-            appearanceMap: this.appearanceMap,
+            appearanceMap: catalogedAppearanceMap,
+            catalogedNpcStatsMap,
             speakerAvatars: this.speakerAvatars,
+            speakerFallbackAvatars: this.speakerFallbackAvatars,
             searchQuery: this.speakerSearchQuery,
             sortOrder: this.speakerSortOrder,
             speakerSubTab: this.speakerSubTab,
+            speakerRoleFilter: this.speakerRoleFilter || 'playable',
             hideGenericNpc: this.hideGenericNpc !== false,
             npcScopeFilter: this.npcScopeFilter,
             npcFemaleOnly: this.npcFemaleOnly,
@@ -4143,8 +4270,16 @@ const QuestMapModule = {
         this._updateNpcCatalogView();
     },
 
+    handleSpeakerRoleFilter(role) {
+        const validRoles = ['playable', 'main_npc', 'generic_npc', 'all'];
+        this.speakerRoleFilter = validRoles.includes(role) ? role : 'playable';
+        this.hideGenericNpc = (this.speakerRoleFilter !== 'all');
+        this._updateSpeakerGrid();
+    },
+
     handleHideGenericNpcToggle() {
         this.hideGenericNpc = !(this.hideGenericNpc !== false);
+        this.speakerRoleFilter = this.hideGenericNpc ? 'playable' : 'all';
         this._updateSpeakerGrid();
     },
 
@@ -4204,18 +4339,18 @@ const QuestMapModule = {
             return;
         }
         const options = this._getSpeakerViewOptions();
-        const hideBtn = document.getElementById('speaker-hide-generic-btn');
-        if (hideBtn) {
-            const isHidden = Boolean(options.hideGenericNpc);
-            if (hideBtn.classList) {
-                hideBtn.classList.toggle('active', isHidden);
-            }
-            hideBtn.textContent = isHidden ? '✨ 已隱藏泛用 NPC' : '👥 顯示全部（含泛用 NPC）';
+        if (typeof document.querySelectorAll === 'function') {
+            document.querySelectorAll('[data-speaker-role]').forEach(btn => {
+                const roleVal = btn.getAttribute ? btn.getAttribute('data-speaker-role') : (btn.dataset && btn.dataset.speakerRole);
+                if (btn.classList) {
+                    btn.classList.toggle('active', roleVal === options.speakerRoleFilter);
+                }
+            });
         }
         const summaryEl = document.getElementById('speaker-generic-summary');
-        if (summaryEl && typeof window.SpeakerView.getGenericFilterStats === 'function') {
-            const stats = window.SpeakerView.getGenericFilterStats(options);
-            summaryEl.textContent = window.SpeakerView.formatGenericFilterSummary(stats);
+        if (summaryEl && typeof window.SpeakerView.getSpeakerRoleStats === 'function' && typeof window.SpeakerView.formatSpeakerRoleSummary === 'function') {
+            const stats = window.SpeakerView.getSpeakerRoleStats(options);
+            summaryEl.textContent = window.SpeakerView.formatSpeakerRoleSummary(stats);
         }
         gridEl.innerHTML = window.SpeakerView.renderSpeakerGridHtml(options);
     }

@@ -385,7 +385,7 @@ const sampleNpcCatalog = {
         console.log('  [PASS] 9. renderSpeakerCard resolves < 100000 active exact NPC portrait');
     }
 
-    // 10. hideGenericNpc filter default + toggle + backward compatibility
+    // 10. 4 狀態角色分類篩選器（預設可用角色 / 主要 NPC / 泛用 NPC / 全部角色）與向下相容
     {
         const sampleRules = {
             entities: { '貪吃佩可': { canonical_game_name: '貪吃佩可' } },
@@ -403,56 +403,162 @@ const sampleNpcCatalog = {
 
         // 未傳 filterOptions 維持原行為（保留王宮騎士）
         const legacyFiltered = SpeakerView.filterSpeakers(Object.keys(appearanceMap), '');
-        assert(legacyFiltered.includes('王宮騎士'), '未傳 hideGenericNpc 時必須向後相容保留泛用 NPC');
+        assert(legacyFiltered.includes('王宮騎士'), '未傳篩選條件時必須向後相容保留泛用 NPC');
 
-        // 啟用 hideGenericNpc: true 時僅保留 entities / entity rules / npcCatalog 名單
-        const filteredNamed = SpeakerView.filterSpeakers(Object.keys(appearanceMap), '', {
+        // 保留 hideGenericNpc: true 向後相容
+        const legacyHidden = SpeakerView.filterSpeakers(Object.keys(appearanceMap), '', {
             hideGenericNpc: true,
             npcCatalog: sampleNpcCatalog,
             speakerIdentityRules: sampleRules
         });
-        assert.deepStrictEqual(filteredNamed, ['貪吃佩可', '飢餓的公主', '女性教員'], 'hideGenericNpc 應只留下主要與具名角色');
+        assert.deepStrictEqual(legacyHidden, ['貪吃佩可', '飢餓的公主', '女性教員'], 'hideGenericNpc 相容路徑應只留下主要與具名角色');
 
-        const allPageHtmlHidden = SpeakerView.renderSpeakerPageHtml({
+        // 驗證 4 種 speakerRoleFilter 分流結果互斥且完整
+        const playableOnly = SpeakerView.filterSpeakers(Object.keys(appearanceMap), '', {
+            speakerRoleFilter: 'playable',
+            npcCatalog: sampleNpcCatalog,
+            speakerIdentityRules: sampleRules
+        });
+        assert.deepStrictEqual(playableOnly, ['貪吃佩可', '飢餓的公主'], 'playable 應只保留可用角色與其規則別稱');
+
+        const mainNpcOnly = SpeakerView.filterSpeakers(Object.keys(appearanceMap), '', {
+            speakerRoleFilter: 'main_npc',
+            npcCatalog: sampleNpcCatalog,
+            speakerIdentityRules: sampleRules
+        });
+        assert.deepStrictEqual(mainNpcOnly, ['女性教員'], 'main_npc 應只保留 npcCatalog 具名主要 NPC');
+
+        const genericNpcOnly = SpeakerView.filterSpeakers(Object.keys(appearanceMap), '', {
+            speakerRoleFilter: 'generic_npc',
+            npcCatalog: sampleNpcCatalog,
+            speakerIdentityRules: sampleRules
+        });
+        assert.deepStrictEqual(genericNpcOnly, ['王宮騎士'], 'generic_npc 應只保留未登錄的泛用 NPC');
+
+        const allRoles = SpeakerView.filterSpeakers(Object.keys(appearanceMap), '', {
+            speakerRoleFilter: 'all',
+            npcCatalog: sampleNpcCatalog,
+            speakerIdentityRules: sampleRules
+        });
+        assert.deepStrictEqual(allRoles, ['貪吃佩可', '飢餓的公主', '女性教員', '王宮騎士'], 'all 應包含全部真實說話者（仍排除旁白）');
+
+        const allPageHtmlDefault = SpeakerView.renderSpeakerPageHtml({
             appearanceMap,
             speakerAvatars: {},
             speakerSubTab: 'all',
-            hideGenericNpc: true,
+            speakerRoleFilter: 'playable',
             npcCatalog: sampleNpcCatalog,
             speakerIdentityRules: sampleRules,
             escapeHtml: (s) => s
         });
-        assert(allPageHtmlHidden.includes('id="speaker-hide-generic-btn"'), '全部登場角色頁應渲染隱藏泛用 NPC 切換按鈕');
-        assert(allPageHtmlHidden.includes('顯示 3 位主要與具名角色（已隱藏 1 項泛用／未登錄 NPC）'), '應正確顯示統計摘要');
-        assert(!allPageHtmlHidden.includes('王宮騎士'), '預設隱藏泛用 NPC 時不得出現王宮騎士');
+        assert(allPageHtmlDefault.includes('data-speaker-role="playable"'), '應渲染可用角色篩選鈕');
+        assert(allPageHtmlDefault.includes('可用角色 (2)'), '應標註可用角色人數');
+        assert(allPageHtmlDefault.includes('主要 NPC (1)'), '應標註主要 NPC 人數');
+        assert(allPageHtmlDefault.includes('泛用 NPC (1)'), '應標註泛用 NPC 人數');
+        assert(allPageHtmlDefault.includes('全部角色 (4)'), '應標註全部角色人數');
+        assert(allPageHtmlDefault.includes('目前顯示「可用角色」共 2 項'), '應顯示預設可用角色摘要');
+        assert(!allPageHtmlDefault.includes('女性教員'), '預設 playable 分頁不應渲染主要 NPC');
+        assert(!allPageHtmlDefault.includes('王宮騎士'), '預設 playable 分頁不應渲染泛用 NPC');
 
-        // 驗證 QuestMapModule.handleHideGenericNpcToggle 局部更新 DOM 而不重建整頁
-        const hideBtnEl = { classList: { _active: true, toggle(cls, f) { this._active = Boolean(f); } }, textContent: '' };
+        // 驗證 QuestMapModule.handleSpeakerRoleFilter 局部更新 DOM 而不重建整頁
+        const roleBtnEls = ['playable', 'main_npc', 'generic_npc', 'all'].map(r => ({
+            getAttribute: () => r,
+            classList: { _active: r === 'playable', toggle(cls, f) { this._active = Boolean(f); } }
+        }));
         const summaryEl = { textContent: '' };
         const gridEl = { innerHTML: '' };
-        const fullTabEl = { innerHTML: allPageHtmlHidden };
+        const fullTabEl = { innerHTML: allPageHtmlDefault };
         sandbox.document.getElementById = (id) => {
-            if (id === 'speaker-hide-generic-btn') return hideBtnEl;
             if (id === 'speaker-generic-summary') return summaryEl;
             if (id === 'map-tab') return fullTabEl;
             return null;
         };
         sandbox.document.querySelector = (sel) => (sel === '.speaker-grid' ? gridEl : null);
+        sandbox.document.querySelectorAll = (sel) => (sel === '[data-speaker-role]' ? roleBtnEls : []);
 
         QMM.appearanceMap = appearanceMap;
         QMM.npcCatalog = sampleNpcCatalog;
         QMM.speakerIdentityRules = sampleRules;
         QMM.speakerSubTab = 'all';
         QMM.speakerSearchQuery = '';
-        QMM.hideGenericNpc = true;
+        QMM.speakerRoleFilter = 'playable';
 
-        QMM.handleHideGenericNpcToggle();
-        assert.strictEqual(QMM.hideGenericNpc, false, '點擊切換應將 hideGenericNpc 改為 false');
-        assert.strictEqual(hideBtnEl.classList._active, false, '按鈕 active 狀態應同步關閉');
-        assert(gridEl.innerHTML.includes('王宮騎士'), '切換為顯示全部後 grid 應立即包含王宮騎士');
-        assert(summaryEl.textContent.includes('顯示全部 4 項角色'), '摘要文字應同步更新');
-        assert.strictEqual(fullTabEl.innerHTML, allPageHtmlHidden, '局部更新不得重建整個 map-tab（保留搜尋框焦點）');
-        console.log('  [PASS] 10. hideGenericNpc filtering, summary stats and QuestMapModule toggle');
+        QMM.handleSpeakerRoleFilter('main_npc');
+        assert.strictEqual(QMM.speakerRoleFilter, 'main_npc', '點擊應切換 speakerRoleFilter 為 main_npc');
+        assert.strictEqual(roleBtnEls.find(b => b.getAttribute() === 'main_npc').classList._active, true, 'main_npc 按鈕應為 active');
+        assert.strictEqual(roleBtnEls.find(b => b.getAttribute() === 'playable').classList._active, false, 'playable 按鈕應取消 active');
+        assert(gridEl.innerHTML.includes('女性教員'), '切換主要 NPC 後 grid 應顯示女性教員');
+        assert(!gridEl.innerHTML.includes('貪吃佩可'), '切換主要 NPC 後 grid 不應包含可用角色');
+        assert(summaryEl.textContent.includes('目前顯示「主要 NPC」共 1 項'), '摘要文字應同步更新');
+        assert.strictEqual(fullTabEl.innerHTML, allPageHtmlDefault, '局部更新不得重建整個 map-tab（保留搜尋框焦點）');
+        console.log('  [PASS] 10. 4-state speaker role filter, counts and QuestMapModule local DOM update');
+    }
+
+    // 11. catalogedNpcStatsMap 僅計入可閱讀編目話數並自動隱藏 0 話 NPC
+    {
+        const catalogedNpcStatsMap = {
+            '秘書': { all: 5, main: 2, event: 3 },
+            '尾狗刀': { all: 1, main: 1, event: 0 },
+            '鬼魂教父': { all: 0, main: 0, event: 0 },
+            '女性教員': { all: 4, main: 0, event: 4 }
+        };
+        const visibleNpcs = SpeakerView.filterNpcCatalog(sampleNpcCatalog.npcs, {
+            catalogedNpcStatsMap
+        });
+        assert.deepStrictEqual(visibleNpcs.map(n => n.name), ['秘書', '尾狗刀', '女性教員'], '扣除未編目後剩 0 話之鬼魂教父應被自動隱藏');
+        assert.strictEqual(SpeakerView.getNpcScopeCount(sampleNpcCatalog.npcs[0], 'all', catalogedNpcStatsMap), 5, '應改以 catalogedNpcStatsMap 計算話數');
+        const pageNpcHtml = SpeakerView.renderSpeakerPageHtml({
+            npcCatalog: sampleNpcCatalog,
+            catalogedNpcStatsMap,
+            speakerSubTab: 'npc',
+            escapeHtml: (s) => s
+        });
+        assert(pageNpcHtml.includes('🖼️ NPC 頭像圖鑑 (3)'), 'NPC 分頁人數應扣掉 0 話條目');
+        assert(pageNpcHtml.includes('🎬 登場 5 話'), '卡片上應顯示可閱讀話數');
+        console.log('  [PASS] 11. catalogedNpcStatsMap excludes unindexed-only NPCs and displays cataloged counts');
+    }
+
+    // 12. speakerFallbackAvatars 只在缺乏主對照時補齊泛用 NPC 代表圖且不污染原規則
+    {
+        const mockFallbackAvatarSvc = {
+            getUnitId: (name, map) => (map && map[name]) ? map[name] : null,
+            resolveExactDialoguePortrait: (uid) => ({ status: [50611, 191411, 712].includes(Number(uid)) ? 'active' : 'missing' }),
+            getAvatarHtmlByUnitId: (uid, realName) => `<img src="icon/unit/${String(uid).padStart(6, '0')}.png" alt="${realName}">`,
+            getAvatarHtml: (realName, map) => {
+                const uid = map && map[realName];
+                if (uid) return `<img src="icon/unit/${String(uid).padStart(6, '0')}.png">`;
+                return `<div class="npc-avatar-placeholder">${realName.slice(0, 2)}</div>`;
+            }
+        };
+
+        const genericCard = SpeakerView.renderSpeakerCard('衝鋒迅豹女性', {
+            appearanceMap: { '衝鋒迅豹女性': [1, 2] },
+            speakerAvatars: { '王宮騎士團隊長': 712 },
+            speakerFallbackAvatars: { '衝鋒迅豹女性': 50611, '王宮騎士團隊長': 99999 },
+            avatarService: mockFallbackAvatarSvc,
+            escapeHtml: (s) => s
+        });
+        assert(genericCard.includes('icon/unit/050611.png'), '未在 speakerAvatars 的泛用 NPC 應使用 fallback 代表圖');
+        assert(genericCard.includes('QuestMapModule.showCharaModal(&quot;衝鋒迅豹女性&quot;, 50611)'), '點擊卡片須帶入 fallback unit_id 供彈窗預覽');
+
+        const protectedPrimary = SpeakerView.renderSpeakerCard('王宮騎士團隊長', {
+            appearanceMap: { '王宮騎士團隊長': [1] },
+            speakerAvatars: { '王宮騎士團隊長': 712 },
+            speakerFallbackAvatars: { '王宮騎士團隊長': 99999 },
+            avatarService: mockFallbackAvatarSvc,
+            escapeHtml: (s) => s
+        });
+        assert(protectedPrimary.includes('icon/unit/000712.png'), '已有 speakerAvatars 的項目不得被 fallback 覆蓋');
+
+        const pureNullGeneric = SpeakerView.renderSpeakerCard('教師', {
+            appearanceMap: { '教師': [1] },
+            speakerAvatars: {},
+            speakerFallbackAvatars: { '衝鋒迅豹女性': 50611 },
+            avatarService: mockFallbackAvatarSvc,
+            escapeHtml: (s) => s
+        });
+        assert(pureNullGeneric.includes('npc-avatar-placeholder'), '無任何官方頭像的路人應維持文字佔位符');
+        console.log('  [PASS] 12. speakerFallbackAvatars populates generic NPC cards without overriding primary rules');
     }
 
     console.log('\n✅ All SpeakerView tests passed successfully!');

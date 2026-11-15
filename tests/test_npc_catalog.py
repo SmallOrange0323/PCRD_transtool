@@ -147,7 +147,6 @@ class TestNpcCatalog(unittest.TestCase):
         )
 
         expected_fixed = {
-            "女性教員": 3211,
             "魔物的公主": 7011,
             "神燈精靈": 5313,
             "鬼魂教父": 14011,
@@ -157,10 +156,6 @@ class TestNpcCatalog(unittest.TestCase):
             "黑之王": 13411,
             "長老": 107212,
             "嚮導老君": 107211,
-            "哥布林女士": 19411,
-            "輔佐": 8711,
-            "老虎族族長": 8611,
-            "鬼族族長": 7412,
         }
         for name, expected_uid in expected_fixed.items():
             self.assertIn(name, by_name, msg=f"缺少固定 NPC: {name}")

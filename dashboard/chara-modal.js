@@ -503,7 +503,20 @@ window.CharaModalView = {
                 const fallbackLookupName = (!hasDirectAvatar && canonicalGameName)
                     ? canonicalGameName
                     : avatarLookupKey;
-                avatarHtml = avatarService.getAvatarHtml(fallbackLookupName, speakerAvatars);
+                const inferredUid = (typeof avatarService.getUnitId === 'function')
+                    ? Number(avatarService.getUnitId(fallbackLookupName, speakerAvatars))
+                    : 0;
+                if (Number.isInteger(inferredUid) && inferredUid > 0 && inferredUid < 100000 &&
+                    typeof avatarService.resolveExactDialoguePortrait === 'function' &&
+                    typeof avatarService.getAvatarHtmlByUnitId === 'function') {
+                    const exact = avatarService.resolveExactDialoguePortrait(inferredUid, { warnIfAbsent: false });
+                    if (exact && exact.status === 'active') {
+                        avatarHtml = avatarService.getAvatarHtmlByUnitId(inferredUid, fallbackLookupName, speakerAvatars);
+                    }
+                }
+                if (!avatarHtml) {
+                    avatarHtml = avatarService.getAvatarHtml(fallbackLookupName, speakerAvatars);
+                }
             }
         }
 

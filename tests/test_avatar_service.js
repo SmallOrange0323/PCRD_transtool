@@ -595,6 +595,14 @@ test("Test 20 — cleanName protects 和正/和服 and npc_avatars.json is clean
     const npcAvatars = JSON.parse(fs.readFileSync(npcPath, "utf8"));
     assert(!Object.prototype.hasOwnProperty.call(npcAvatars, "日"), "npc_avatars.json 不得包含殘留鍵 \"日\"");
     assert(!Object.prototype.hasOwnProperty.call(npcAvatars, ""), "npc_avatars.json 不得包含殘留空鍵 \"\"");
+    assert.strictEqual(npcAvatars["噗吉"], 2111, "噗吉必須對應熊布偶對白頭像 2111，不得誤綁綾音 102332");
+    assert.strictEqual(npcAvatars["骷髏老爸"], 2411, "骷髏老爸必須對應骷髏對白頭像 2411，不得誤綁忍 103111");
+    assert.strictEqual(npcAvatars["弗洛艾"], 52412, "弗洛艾必須對應 52412");
+    assert.strictEqual(npcAvatars["瘋狂喬"], 18711, "瘋狂喬必須對應 18711");
+    assert.strictEqual(npcAvatars["黎薩"], 140412, "黎薩必須對應 140412");
+    assert.strictEqual(npcAvatars["王宮騎士團隊長"], 712, "王宮騎士團隊長必須對應對白實圖 712，不得誤綁 132811");
+    assert.strictEqual(npcAvatars["鬼魂豪紳們"], 191411, "鬼魂豪紳們必須對應 191411");
+    assert.strictEqual(npcAvatars["貪吃佩可等人"], undefined, "無實圖群稱 貪吃佩可等人 不得寫入 npc_avatars.json");
 });
 
 console.log(`\n✅ All ${testsPassed} AvatarService Phase 6 tests passed successfully!`);
