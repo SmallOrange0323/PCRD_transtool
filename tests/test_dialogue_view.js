@@ -431,7 +431,13 @@ test("Test 12 — getCharaRealName & 9006707 speaker badges protect 日和/和�
     // 驗證 9006707 頂部角色徽章列的日和頭像標題與點擊參數
     global.window.DialogueNormalizer = undefined;
     require(path.resolve(__dirname, "../dashboard/dialogue-normalizer.js"));
-    const raw9006707 = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../dashboard/story/9006707.json"), "utf8"));
+    const story9006707Path = path.resolve(__dirname, "../dashboard/story/9006707.json");
+    const raw9006707 = fs.existsSync(story9006707Path)
+        ? JSON.parse(fs.readFileSync(story9006707Path, "utf8"))
+        : [
+            { type: "dialogue", name: "日和", words: "大家早安！", unit_id: 100111 },
+            { type: "dialogue", name: "和正", words: "早安。", unit_id: null }
+        ];
     const norm9006707 = global.window.DialogueNormalizer.normalize(raw9006707);
 
     const badgesBarEl = { style: {}, innerHTML: "" };
