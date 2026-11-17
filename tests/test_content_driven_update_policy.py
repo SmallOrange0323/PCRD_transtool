@@ -275,7 +275,7 @@ class TestContentDrivenUpdatePolicy(unittest.TestCase):
     # 7. unknown client family -> NEEDS_NEW_SCHEMA_MAPPING hard stop
     def test_07_unknown_client_family_hard_stop(self):
         res = fetch_module.update_db(
-            truth_version="00620001",
+            truth_version="99990001",
             db_path=self.mock_db,
             output=str(self.report_path)
         )

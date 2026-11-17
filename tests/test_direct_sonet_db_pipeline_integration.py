@@ -220,7 +220,7 @@ class TestDirectSonetDbPipelineIntegration(unittest.TestCase):
     # 4. unknown family -> NEEDS_NEW_SCHEMA_MAPPING -> no fallback
     def test_04_unknown_family_fails_closed_needs_new_schema_mapping(self):
         res = fetch_module.update_db(
-            truth_version="00620001",  # 未知家族
+            truth_version="99990001",  # 未知家族
             output=str(self.report_path),
             db_path=self.mock_db
         )
