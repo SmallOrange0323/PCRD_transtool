@@ -9,6 +9,7 @@ Unknown Coverage Gate、Mirror-Lag Defense (UPDATE_DOWNLOADED_UNCONFIRMED)、Dry
 import os
 import sys
 import json
+import sqlite3
 import unittest
 from unittest.mock import patch, MagicMock
 from pathlib import Path
@@ -30,6 +31,79 @@ from pipeline.fetch import fetch_story_json_by_id, StoryFetchResult, TruthVersio
 from pipeline.update import run_pipeline_update, check_and_sync_upstream, save_truth_version_state
 
 class TestUpdatePipelineC2Implementation(unittest.TestCase):
+
+    def setUp(self):
+        """建立完全隔離的暫存 dashboard 環境，避免 CI clean-clone 因缺少本機未追蹤對白而失敗。"""
+        self._tmp_dir = tempfile.TemporaryDirectory()
+        self.addCleanup(self._tmp_dir.cleanup)
+
+        dash_dir = Path(self._tmp_dir.name) / "dashboard"
+        data_dir = dash_dir / "data"
+        story_dir = dash_dir / "story"
+        ver_dir = dash_dir / "versions"
+        for d in (data_dir, story_dir, ver_dir):
+            d.mkdir(parents=True, exist_ok=True)
+
+        db_path = dash_dir / "redive_tw.db"
+        conn = sqlite3.connect(str(db_path))
+        cur = conn.cursor()
+        cur.execute("CREATE TABLE story_detail (story_id INTEGER PRIMARY KEY, story_group_id INTEGER, title TEXT, sub_title TEXT)")
+        cur.execute("CREATE TABLE chara_story_status (story_id INTEGER PRIMARY KEY, unlock_story_name TEXT)")
+        cur.executemany(
+            "INSERT INTO story_detail (story_id, story_group_id, title, sub_title) VALUES (?, ?, ?, ?)",
+            [
+                (1002001, 1002, "可選角色劇情", "第1話"),
+                (2001001, 2001, "主線序章", "序幕"),
+                (3001001, 3001, "公會劇情", "第1話"),
+            ],
+        )
+        cur.executemany(
+            "INSERT INTO chara_story_status (story_id, unlock_story_name) VALUES (?, ?)",
+            [(1001001, "角色第1話")],
+        )
+        conn.commit()
+        conn.close()
+
+        (data_dir / "tracked_characters.json").write_text(
+            json.dumps({"characters": [{"unit_id": 100101, "name": "日和"}]}, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        (data_dir / "branch_stories.json").write_text(
+            json.dumps({"stories": [{"story_id": 2001001}]}, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        (data_dir / "extra_events.json").write_text(
+            json.dumps({"stories": [{"id": 7001001}]}, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        for sid in (1001001, 1001002, 1001003, 1001004, 1002001, 2001001, 3001001, 7001001):
+            (story_dir / f"{sid}.json").write_text("[]", encoding="utf-8")
+
+        (ver_dir / "version_history.json").write_text(
+            json.dumps(
+                {
+                    "last_version": "00610018",
+                    "last_applied_cdn_version": "00610018",
+                    "last_applied_manifest_sha256": "sha_18",
+                    "last_applied_master_bundle_md5": "md5_18",
+                    "last_applied_master_pool_hash": "pool_18",
+                    "last_applied_normalized_db_sha256": "norm_18",
+                },
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
+
+        for target, value in [
+            ("pipeline.coverage.DASHBOARD_DIR", dash_dir),
+            ("pipeline.coverage.DATA_DIR", data_dir),
+            ("pipeline.coverage.STORY_DIR", story_dir),
+            ("pipeline.coverage.DB_PATH", db_path),
+            ("pipeline.update.DASHBOARD_DIR", dash_dir),
+        ]:
+            p = patch(target, value)
+            p.start()
+            self.addCleanup(p.stop)
 
     def test_01_freshness_evaluation_matrix(self):
         """Test 1: 驗證新鮮度狀態機流轉邏輯"""
