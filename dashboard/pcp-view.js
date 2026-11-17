@@ -1610,7 +1610,7 @@ console.log("pcp-view.js loaded");
                         "key": "u_118601",
                         "name": "涅比亞",
                         "tag": "？？？",
-                        "avatar": "icon/unit/118611.png",
+                        "avatar": "icon/unit/118641.png",
                         "desc": "請選擇要閱讀的特別劇情分歧：",
                         "stories": [
                                     {
