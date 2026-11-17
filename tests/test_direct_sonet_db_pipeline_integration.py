@@ -279,11 +279,23 @@ class TestDirectSonetDbPipelineIntegration(unittest.TestCase):
     @patch("pipeline.fetch.probe_third_party_reference")
     @patch("pipeline.fetch.discover_cdn_candidate_snapshots")
     @patch("pipeline.update.evaluate_freshness")
+    @patch("pipeline.update.analyze_coverage")
     @patch("pipeline.fetch.update_db")
     @patch("pipeline.update.save_truth_version_state")
     def test_07_dry_run_contract_no_download_no_replace_no_state_write(
-        self, mock_save_state, mock_update_db, mock_eval, mock_discover, mock_wthee
+        self, mock_save_state, mock_update_db, mock_cov, mock_eval, mock_discover, mock_wthee
     ):
+        mock_cov.return_value = MagicMock(
+            analysis_status="VALID",
+            missing_required_count=0,
+            required_total_count=100,
+            optional_total_count=50,
+            missing_optional_count=0,
+            unknown_expected_count=0,
+            missing_unknown_count=0,
+            missing_required_sample=[],
+            missing_required_ids=[],
+        )
         mock_wthee.return_value = {"source": "remote_wthee_api", "version": "00610008", "confirmed": True}
         mock_discover.return_value = MagicMock(highest_observed_cdn_version="00610008", candidates={})
         mock_eval.return_value = FreshnessResult(
