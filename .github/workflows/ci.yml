@@ -57,12 +57,6 @@ jobs:
           node tests/test_story_playback_stabilization.js
           node tests/test_media_service_stale_callbacks.js
 
-      - name: Run Avatar Manifest & Bundler Tests
-        run: python -m unittest tests.test_avatar_manifest_bundler -v
-
-      - name: Run Voice Gap Pipeline Tests
-        run: python -m unittest tests.test_voice_gap_pipeline -v
-
       - name: Run Movie Restore & Identity Preservation Tests
         run: python -m unittest tests.test_movie_restore -v
 
@@ -112,9 +106,10 @@ jobs:
           echo "=================================================="
           echo "LEVEL B: Local Release Gate is mandatory before production deploy:"
           echo "  1. node tests/test_reality_avatars.js (requires untracked local icons)"
-          echo "  2. python -m pipeline.bundle"
-          echo "  3. python -m pipeline.validate (requires full local stories)"
-          echo "  4. python update_story_map.py --dry-run"
-          echo "  5. node tests/test_chapter_cover_reality.js"
-          echo "  6. python tools/fetch_event_top_thumbnails.py --verify-only"
+          echo "  2. python -m unittest tests.test_avatar_manifest_bundler tests.test_voice_gap_pipeline -v (requires untracked local icons/sounds)"
+          echo "  3. python -m pipeline.bundle"
+          echo "  4. python -m pipeline.validate (requires full local stories)"
+          echo "  5. python update_story_map.py --dry-run"
+          echo "  6. node tests/test_chapter_cover_reality.js"
+          echo "  7. python tools/fetch_event_top_thumbnails.py --verify-only"
           echo "=================================================="
